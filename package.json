@@ -1,0 +1,24 @@
+{
+  "name": "css-framework",
+  "version": "0.0.1",
+  "description": "SiteVision CSS framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "lessc src/styles.less dist/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.sitevision.net:7990/scm/sv/css-framework.git"
+  },
+  "keywords": [
+    "CSS",
+    "SiteVision",
+    "SDK"
+  ],
+  "author": "SiteVision AB",
+  "license": "MIT",
+  "devDependencies": {
+    "less": "^2.7.1"
+  }
+}
