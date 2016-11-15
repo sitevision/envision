@@ -1,0 +1,125 @@
+
+.test-menu {
+   position: fixed;
+}
+.test-menu li {
+   list-style: none;
+}
+.test-menu li .menu-item {
+    padding: 4px 8px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.test-menu li.active .menu-item {
+    background-color: #0080FF;
+    color: #fff;
+}
+
+.row {
+   padding: 0 @space4 @space4 0;
+   box-sizing: content-box;
+}
+
+[class^='col-'] {
+   display: inline-block;
+   box-sizing: content-box;
+}
+
+/* Loop though and build col */
+.span-loop (@i) when (@i > 0) {
+   .col-@{i} {
+      width: ((100% / @grid-columns) * @i ) ;
+      float: left;
+   }
+   .span-loop(@i - 1);
+}
+.span-loop (@grid-columns);
+
+.s {
+    color: #d44950;
+}
+.na {
+    color: #4f9fcf;
+}
+.nt {
+    color: #2f6f9f;
+}
+.example {
+   margin-right: 0;
+   margin-left: 0;
+   background-color: @baseC;
+   border-color: @lightC;
+   border-style: solid;
+   border-width: 1px 1px 0 1px;
+   border-radius: @radius2 @radius2 0 0;
+   position: relative;
+   padding: @space8 @space2 @space2;
+   margin: 0 -@space2 @space2;
+}
+.figure {
+   margin: -@space2 -@space2 @space2;
+}
+.example:after {
+   position: absolute;
+   top: 15px;
+   left: 15px;
+   font-size: 12px;
+   font-weight: 700;
+   color: #959595;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   content: "Example";
+}
+.figure--highlight {
+   border-color: @lightC;
+   border-style: solid;
+   border-width: 0 1px 1px 1px;
+   border-radius: 0 0 @radius2 @radius2;
+   background-color: #f7f7f9;
+   border: 1px solid #e1e1e8;
+}
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-radius: 4px;
+}
+pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+}
+.highlight pre {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-break: normal;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.wrapper {
+   max-width: @page-width;
+}
+
+.wrapper--center {
+   margin: 0 auto;
+}
+
+.wrapper--plate {
+   background-color: @baseC;
+   padding: @space5;
+}
+
+.wrapper--borderRadius {
+   border-radius: @radius2;
+}

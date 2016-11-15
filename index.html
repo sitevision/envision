@@ -1,11 +1,572 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
-      <meta charset="utf-8">
-      <link href="dist/styles.css" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+      <link rel="stylesheet" href="dist/styles.css">
+
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
    </head>
    <body>
-      <h1>Hello, World</h1>
-      <p>More content will follow</p>
+      <div class="wrapper wrapper--center">
+
+         <div class="col-9">
+
+            <div class="row container">
+               <h1 class="h1--baseLine">Base</h1>
+               <h2 class="content-font">Font</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <h1>h1. SiteVision heading </h1>
+                  <h2>h2. SiteVision heading </h2>
+                  <h3>h3. SiteVision heading </h3>
+                  <h4>h4. SiteVision heading </h4>
+                  <h5>h5. SiteVision heading </h5>
+                  <h6>h6. SiteVision heading </h6>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span>h1. SiteVision heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>h2. SiteVision heading<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>h3. SiteVision heading<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>h4. SiteVision heading<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>h5. SiteVision heading<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>h6. SiteVision heading<span class="nt">&lt;/h6&gt;</span>
+</code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h1 class="h1--baseLine">Button</h1>
+               <h2 class="content-button">Button tags</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <a class="btn" href="#" role="button">Link</a>
+                  <button class="btn" type="submit">Button</button>
+                  <input class="btn" type="button" value="Input">
+                  <input class="btn" type="submit" value="Submit">
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Button<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"button"</span> <span class=na>value=</span><span class=s>"Input"</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"submit"</span> <span class=na>value=</span><span class=s>"Submit"</span><span class=nt>&gt;</span>
+</code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-button-options">Options</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <button type="button" class="btn">Default</button>
+                  <button type="button" class="btn btn--primary">Primary</button>
+                  <button type="button" class="btn btn--danger">Danger</button>
+                  <button type="button" class="btn btn--link">Link</button>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Default<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn btn-primary"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Primary<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn btn-danger"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Danger<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn btn-link"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/button&gt;</span>
+</code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-button-size">Size</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <p>
+                     <button type="button" class="btn btn--primary btn--large">Large button</button>
+                     <button type="button" class="btn btn--large">Large button</button>
+                  </p>
+                  <p>
+                     <button type="button" class="btn btn--primary">Default button</button>
+                     <button type="button" class="btn">Default button</button>
+                  </p>
+                  <p>
+                     <button type="button" class="btn btn--primary btn--small">Small button</button>
+                     <button type="button" class="btn btn--small">Small button</button>
+                  </p>
+                  <p>
+                     <button type="button" class="btn btn--primary btn--tiny">Tiny button</button>
+                     <button type="button" class="btn btn--tiny">Tiny button</button>
+                  </p>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn--large"</span><span class="nt">&gt;</span>Large button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn--large"</span><span class="nt">&gt;</span>Large button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Default button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Default button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn--small"</span><span class="nt">&gt;</span>Small button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn--small"</span><span class="nt">&gt;</span>Small button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn--tiny"</span><span class="nt">&gt;</span>Extra small button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn--tiny"</span><span class="nt">&gt;</span>Extra small button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-button-state">State</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <p>
+                     <button type="button" class="btn" disabled="disabled">Disabled button</button>
+                     <a class="btn btn--link btn--disabled" href="#" role="button">Disabled link</a>
+                  </p>
+                  <p>
+                     <button type="button" class="btn">Default</button>
+                     <button type="button" class="btn btn--hover">Hover</button>
+                     <button type="button" class="btn btn--active">Active</button>
+                  </p>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Disabled button<span class="nt">&lt;/button&gt;</span>
+  <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--link btn--disabled"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Disabled link<span class=nt>&lt;/a&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--hover"</span><span class="nt">&gt;</span>Hover<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--active"</span><span class="nt">&gt;</span>Active<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h1 class="h1--baseLine">Form</h1>
+               <h2 class="content-form-basic">Basic example</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <form>
+                     <div class="form__group">
+                        <label class="form__label" for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form__input" id="exampleInputEmail1" placeholder="Email">
+                     </div>
+                     <div class="form__group">
+                        <label class="form__label" for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form__input" id="exampleInputPassword1" placeholder="Password">
+                     </div>
+                     <div class="form__group">
+                        <label class="form__label" for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+                        <p class="form__helpBlock">Example block-level help text here.</p>
+                     </div>
+                     <div class="form__checkbox">
+                        <label><input type="checkbox"> Check me out</label>
+                     </div>
+                     <button type="submit" class="btn">Submit</button>
+                  </form>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form__group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form__label"</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form__group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form__label"</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form__input"</span> <span class="na">id=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form__group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"file"</span><span class="nt">&gt;</span>File input<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"file"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"form__helpBlock"</span><span class="nt">&gt;</span>Example block-level help text here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form__checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span> Check me out
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h1 class="h1--baseLine">List</h1>
+               <h2 class="content-list">Header</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="header">
+                     <div class="header__headline">Header</div>
+                  </div>
+                  <br>
+                  <div class="header">
+                     <div class="header__text">
+                        <div class="header__headline">Header</div>
+                        <div class="header__subline">Lorum ipsum</div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="header header--icon">
+                     <div class="header__text">
+                        <div class="header__headline">Header</div>
+                        <div class="header__subline">Lorum ipsum</div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="header header--icon">
+                     <div class="header__text">
+                        <div class="header__headline">Header</div>
+                        <div class="header__subline">Lorum ipsum</div>
+                     </div>
+                     <div class="header__action">
+                        <a class="btn btn--primary" href="#" role="button">Action</a>
+                     </div>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>header<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__text"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>header<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header header--icon"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__text"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>header<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header header--icon"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__text"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>header<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__action"</span><span class="nt">&gt;</span>
+     <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Action<span class=nt>&lt;/a&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+               </figure>
+            </div>
+
+
+            <div class="container">
+               <h2 class="content-list-actionbar">Actionbar</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="actionbar">
+                     <div class="actionbar__input">
+                        <input type="email" class="form__input" id="email" placeholder="Search..">
+                     </div>
+                  </div>
+                  <br>
+                  <div class="actionbar">
+                     <div class="actionbar__input">
+                        <span class="form__icon icon-search"></span>
+                        <input type="email" class="form__input form__input--icon" id="email" placeholder="Search..">
+                     </div>
+                  </div>
+                  <br>
+                  <div class="actionbar actionbar--button">
+                     <div class="actionbar__input">
+                        <span class="form__icon icon-search"></span>
+                        <input type="email" class="form__input form__input--icon" id="email" placeholder="Search..">
+                     </div>
+                     <a class="actionbar__button btn btn--primary" href="#" role="button">Next</a>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"></code></pre>
+               </figure>
+            </div>
+
+
+            <div class="container">
+               <h2 class="content-footer">Footer</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="footer">
+                     <a href="#" class="footer__more">More..</a>
+                  </div>
+                  <br>
+                  <div class="footer">
+                     <ul class="footer__pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                     </ul>
+                  </div>
+                  <br>
+                  <div class="footer">
+                     <ul class="footer__pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                     </ul>
+                     <div class="footer__action">
+                        <a class="btn btn--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span> <span class="na">class=</span><span class="s">"footer__more"</span><span class="nt">&gt;</span>header<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"footer__pagination"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"footer__pagination"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class="nt">&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/a&gt;</span><span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer__action"</span><span class="nt">&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Next<span class=nt>&lt;/a&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+               </figure>
+            </div>
+
+
+            <div class="container">
+               <h2 class="content-list-items">Items</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <ul>
+                     <li class=""></li>
+                  </ul>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"></code></pre>
+               </figure>
+            </div>
+
+
+            <div class="container">
+               <h2 class="content-list-exemple">List exemple</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <section>
+                     <header class="header header--icon">
+                        <div class="header__text">
+                           <div class="header__headline">Header</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                     </header>
+                     <ul>
+                        <li></li>
+                     </ul>
+                     <footer class="footer">
+                        <ul class="footer__pagination">
+                           <li class="active"><a href="#">1</a></li>
+                           <li><a href="#">2</a></li>
+                           <li><a href="#">3</a></li>
+                           <li><a href="#">4</a></li>
+                        </ul>
+                     </footer>
+                  </section>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"></code></pre>
+               </figure>
+            </div>
+
+
+
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         </div>
+         <div class="row col-2">
+            <ul class="test-menu">
+               <li class="item-font"><span class="menu-item">Font</span></li>
+               <li class="item-button"><span class="menu-item">Button</span></li>
+               <li class="item-button-options"><span class="menu-item">Options</span></li>
+               <li class="item-button-size"><span class="menu-item">Size</span></li>
+               <li class="item-button-state"><span class="menu-item">State</span></li>
+               <li class="item-form-basic"><span class="menu-item">Form</span></li>
+               <li class="item-list"><span class="menu-item">List</span></li>
+               <li class="item-list-actionbar"><span class="menu-item">Actionbar</span></li>
+               <li class="item-footer"><span class="menu-item">Footer</span></li>
+               <li class="item-list-items"><span class="menu-item">Items</span></li>
+               <li class="item-list-exemple"><span class="menu-item">Exemple</span></li>
+            </ul>
+         </div>
+
+
+
+
+
+      </div>
    </body>
+
+
+   <script>
+      $(document).ready(function() {
+
+            $.fn.isOnScreen = function(){
+                  var viewport = {};
+                  viewport.top = $(window).scrollTop();
+                  viewport.bottom = viewport.top + $(window).height();
+                  var bounds = {};
+                  bounds.top = this.offset().top;
+                  bounds.bottom = bounds.top + this.outerHeight();
+                  return ((bounds.top <= viewport.bottom) && (bounds.bottom >= viewport.top));
+            };
+
+            $(window).scroll(function() {
+                  if ($('.content-font').isOnScreen(1,1)) {
+                           $('.item-font').addClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-button').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').addClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-button-options').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').addClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-button-size').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').addClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-button-state').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').addClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-form-basic').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').addClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-list').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').addClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-list-actionbar').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').addClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-footer').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').addClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-list-items').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').addClass( 'active' );
+                           $('.item-list-exemple').removeClass( 'active' );
+                  } else if ($('.content-list-exemple').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-list-exemple').addClass( 'active' );
+                  }
+            });
+
+      });
+   </script>
 </html>
