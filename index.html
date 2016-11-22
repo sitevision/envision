@@ -4,9 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
       <link rel="stylesheet" href="dist/styles.css">
-
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
    </head>
    <body>
       <div class="wrapper wrapper--center">
@@ -47,10 +45,10 @@
                   <input class="btn" type="submit" value="Submit">
                </div>
                <figure class="figure figure--highlight">
-<pre><code class="language-html" data-lang="html"><span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
-<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Button<span class=nt>&lt;/button&gt;</span>
-<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"button"</span> <span class=na>value=</span><span class=s>"Input"</span><span class=nt>&gt;</span>
-<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn btn-default"</span> <span class=na>type=</span><span class=s>"submit"</span> <span class=na>value=</span><span class=s>"Submit"</span><span class=nt>&gt;</span>
+<pre><code class="language-html" data-lang="html"><span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+<span class=nt>&lt;button</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>type=</span><span class=s>"submit"</span><span class=nt>&gt;</span>Button<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>type=</span><span class=s>"button"</span> <span class=na>value=</span><span class=s>"Input"</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>type=</span><span class=s>"submit"</span> <span class=na>value=</span><span class=s>"Submit"</span><span class=nt>&gt;</span>
 </code></pre>
                </figure>
             </div>
@@ -138,6 +136,65 @@
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--hover"</span><span class="nt">&gt;</span>Hover<span class="nt">&lt;/button&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--active"</span><span class="nt">&gt;</span>Active<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/p&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-button-toolbar">Toolbar</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="btn--toolbar">
+                     <a class="btn" href="#" role="button">Link</a>
+                     <a class="btn active" href="#" role="button">Link</a>
+                     <a class="btn" href="#" role="button">Link</a>
+                     <a class="btn" href="#" role="button">Link</a>
+                     <a class="btn" href="#" role="button">Link</a>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn--toolbar"</span><span class="nt">&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn active"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-button-actionButton">Action button</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="btn--group">
+                     <button type="button" class="btn">Action</button>
+                     <button type="button" class="btn">
+                        <span class="icon-tooltip-menu"></span>
+                     </button>
+                     <ul class="dropdown--menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="dropdown--divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn--group"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+   <span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;ul</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"dropdown--menu"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Action<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Another action<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Something else here<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"dropdown--divider"</span><span class="nt">&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Separated link<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
                </figure>
             </div>
 
@@ -281,9 +338,68 @@
                      </div>
                      <a class="actionbar__button btn btn--primary" href="#" role="button">Next</a>
                   </div>
+                  <br>
+                  <div class="actionbar actionbar--toolbar">
+                     <div class="btn--toolbar">
+                        <a class="btn" href="#" role="button">Link</a>
+                        <a class="btn" href="#" role="button">Link</a>
+                        <a class="btn" href="#" role="button">Link</a>
+                        <a class="btn" href="#" role="button">Link</a>
+                        <a class="btn" href="#" role="button">Link</a>
+                     </div>
+                     <a class="actionbar__button btn btn--primary" href="#" role="button">Next</a>
+                  </div>
+                  <br>
+                  <div class="actionbar actionbar--tab">
+                     <ul>
+                        <li class="active"><a href="#">Tab</a></li>
+                        <li><a href="#">Tab</a></li>
+                        <li><a href="#">Tab</a></li>
+                     </ul>
+                  </div>
                </div>
                <figure class="figure figure--highlight">
-<pre><code class="language-html" data-lang="html"></code></pre>
+<pre><code class="language-html" data-lang="html">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar__input"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar__input"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form__icon icon-search"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input  form__input--icon"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar actionbar--button"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar__input"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form__icon icon-search"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input  form__input--icon"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"actionbar__button btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Next<span class=nt>&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar actionbar--toolbar"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn--toolbar"</span><span class="nt">&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+      <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Link<span class=nt>&lt;/a&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"actionbar__button btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Next<span class=nt>&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar actionbar--tab"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ul</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Tab<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Tab<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span><span class="nt">&gt;</span><span class=nt>&lt;a</span> <span class=na>href=</span><span class=s>"#"</span><span class=nt>&gt;</span>Tab<span class=nt>&lt;/a&gt;</span><span class=nt>&lt;/li&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
                </figure>
             </div>
 
@@ -293,7 +409,7 @@
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
                <div class="example">
                   <div class="footer">
-                     <a href="#" class="footer__more">More..</a>
+                     <a href="#" class="btn">More..</a>
                   </div>
                   <br>
                   <div class="footer">
@@ -350,44 +466,611 @@
                <h2 class="content-list-items">Items</h2>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
                <div class="example">
-                  <ul>
-                     <li class=""></li>
+                  <ul class="list">
+                     <li class="list__item">
+                        <div class="header__headline">List</div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item list--icon">
+                        <div class="header__headline">List</div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item">
+                        <div class="list__text">
+                           <div class="header__headline">List</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item list--icon">
+                        <div class="list__text">
+                           <div class="header__headline">List</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item list--icon list--active">
+                        <div class="list__text">
+                           <div class="header__headline">List</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                        <div class="list__action">
+                           <a class="btn btn--primary" href="#" role="button">Action</a>
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item list--image">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                        <div class="list__text">
+                           <div class="header__headline">List</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                        <div class="list__action">
+                           <a class="btn btn--primary" href="#" role="button">Action</a>
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list list--gallery">
+                     <li class="list__item">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </li>
+                     <li class="list__item">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </li>
+                     <li class="list__item">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </li>
+                     <li class="list__item">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </li>
+                     <li class="list__item">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list">
+                     <li class="list__item list--image list--icon">
+                        <div class="list__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                        <div class="list__text">
+                           <div class="header__headline">List</div>
+                           <div class="header__subline">Lorum ipsum</div>
+                        </div>
+                        <div class="list__action">
+                           <a class="btn btn--primary" href="#" role="button">Action</a>
+                        </div>
+                     </li>
+                  </ul>
+                  <br>
+                  <ul class="list list--empty">
+                     <li class="list__item">
+                        Lorum ipsum
+                     </li>
                   </ul>
                </div>
                <figure class="figure figure--highlight">
-<pre><code class="language-html" data-lang="html"></code></pre>
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item list--icon"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item list--icon"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item list--icon list--active"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Action<span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Action<span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list list--gallery"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list__item list--image list--icon"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>List<span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--primary"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Action<span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list list--empty"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;li</span><span class="nt">&gt;</span>Lorum ipsum<span class=nt>&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h1 class="h1--baseLine">Feed</h1>
+               <h2 class="content-feed-top">Header</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="feed">
+                     <div class="feed__header feed__header--like">
+                        <div class="feed__header__text"><span class="bold">Lorum</span> giller detta</div>
+                        <div class="feed__header__action">
+                           <a class="btn btn--setup" href="#" role="button"><span class="icon-tooltip-menu"></span></a>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__header feed__header--comment">
+                        <div class="feed__header__text"><span class="bold">Lorum</span> kommenterat detta</div>
+                        <div class="feed__header__action">
+                           <a class="btn btn--setup" href="#" role="button"><span class="icon-tooltip-menu"></span></a>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__header feed__header--comment">
+                        <div class="feed__header__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                        <div class="feed__header__text">
+                           <div class="feed__header__headline">Lorum <span class="feed__header__headline__time">16:34</span></div>
+                           <div class="feed__header__subline">Delat U2's video</div>
+                        </div>
+                        <div class="feed__header__action">
+                           <a class="btn btn--setup" href="#" role="button"><span class="icon-tooltip-menu"></span></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header feed__header--like"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Lorum<span class="nt">&lt;/span&gt;</span> giller detta
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+         <span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header feed__header--comment"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Lorum<span class="nt">&lt;/span&gt;</span> kommenterat detta
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+         <span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header feed__header--comment"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__headline"</span><span class="nt">&gt;</span>
+            Lorum <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"feed__header__headline__time"</span><span class="nt">&gt;</span>16:34<span class="nt">&lt;/span&gt;</span>
+         <span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header__subline"</span><span class="nt">&gt;</span>Delat U2's video<span class=nt>&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__header__action"</span><span class="nt">&gt;</span>
+         <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+         <span class=nt>&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+               </figure>
+            </div>
+
+            <div class="container">
+               <h2 class="content-feed-Content">Content</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+                  <div class="feed">
+                     <div class="feed__content feed__content--active">
+                        <div class="feed__content__saying">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__content">
+                        <div class="feed__content__more">Visa mer..</div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__content">
+                        <div class="feed__content__image">
+                           <img src="dist/img/image.png" />
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__content">
+                        <div class="feed__content__gallery">
+                           <div class="image"><img src="dist/img/image.png" width="400" height="200" /></div>
+                           <div class="image"><img src="dist/img/image1.png" width="400" height="400" /></div>
+                           <div class="image"><img src="dist/img/image2.png" width="400" height="200" /></div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__content">
+                        <div class="feed__content__video">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/Psv5dmrs3U0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content feed__content--active"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content__saying"</span><span class="nt">&gt;</span>
+         Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content__more"</span><span class="nt">&gt;</span>Visa mer..<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content__image"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content__gallery"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__content__video"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/Psv5dmrs3U0"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;</span><span class="nt">&lt;/iframe&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
                </figure>
             </div>
 
 
             <div class="container">
-               <h2 class="content-list-exemple">List exemple</h2>
+               <h2 class="content-feed-comments">Comments</h2>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
                <div class="example">
-                  <section>
-                     <header class="header header--icon">
-                        <div class="header__text">
-                           <div class="header__headline">Header</div>
-                           <div class="header__subline">Lorum ipsum</div>
+                  <div class="feed">
+                     <div class="feed__comments">
+                        <div class="social">
+                           <a class="like" href="#">Gilla</a>
+                           <a class="comment" href="#">Kommentera</a>
+                           <a class="date" href="#">15:34</a>
                         </div>
-                     </header>
-                     <ul>
-                        <li></li>
-                     </ul>
-                     <footer class="footer">
-                        <ul class="footer__pagination">
-                           <li class="active"><a href="#">1</a></li>
-                           <li><a href="#">2</a></li>
-                           <li><a href="#">3</a></li>
-                           <li><a href="#">4</a></li>
-                        </ul>
-                     </footer>
-                  </section>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments">
+                        <div class="more">
+                           <a class="like" href="#">Visa flera kommentarer (14st)..</a>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments">
+                        <div class="item item--active">
+                           <div class="comments__image">
+                              <img src="dist/img/image.png" />
+                           </div>
+                           <div class="comments__text">
+                              <div class="item__comments"><span class="bold">Lorum</span> ipsum dolor sit</div>
+                              <div class="item__social">
+                                 <a class="like" href="#">Gilla</a>
+                                 <a class="answer" href="#">Svara</a>
+                                 <a class="date" href="#">15:34</a>
+                              </div>
+                           </div>
+                           <div class="comments__action">
+                              <a class="btn btn--setup" href="#" role="button"><span class="icon-tooltip-menu"></span></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments sub--items">
+                        <div class="item">
+                           <div class="comments__image">
+                              <img src="dist/img/image.png" />
+                           </div>
+                           <div class="comments__text">
+                              <div class="item__comments"><span class="bold">Lorum</span> ipsum dolor sit</div>
+                              <div class="item__social">
+                                 <a class="like" href="#">Gilla</a>
+                                 <a class="answer" href="#">Svara</a>
+                                 <a class="date" href="#">15:34</a>
+                              </div>
+                           </div>
+                           <div class="comments__action">
+                              <a class="btn btn--setup" href="#" role="button"><span class="icon-tooltip-menu"></span></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments sub--items">
+                        <div class="more">
+                           <a class="more__coments" href="#">Visa flera svar (8st)..</a>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments sub--items">
+                        <div class="item input">
+                           <div class="comments__image">
+                              <img src="dist/img/image.png" />
+                           </div>
+                           <div class="comments__input">
+                              <div class="actionbar__input">
+                                 <input type="email" class="form__input" id="email" placeholder="Svara..">
+                              </div>
+                              <a class="actionbar__button btn btn--primary" href="#" role="button">Skicka</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="feed">
+                     <div class="feed__comments">
+                        <div class="item input">
+                           <div class="comments__image">
+                              <img src="dist/img/image.png" />
+                           </div>
+                           <div class="comments__input">
+                              <div class="actionbar__input">
+                                 <input type="email" class="form__input" id="email" placeholder="Kommentera..">
+                              </div>
+                              <a class="actionbar__button btn btn--primary" href="#" role="button">Skicka</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
                <figure class="figure figure--highlight">
-<pre><code class="language-html" data-lang="html"></code></pre>
+<pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"like"</span><span class="nt">&gt;</span>Gilla<span class="nt">&lt;/a&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"comment"</span><span class="nt">&gt;</span>Kommentera<span class="nt">&lt;/a&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>15:34<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"more"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"more__coments"</span><span class="nt">&gt;</span>Visa flera kommentarer (14st)..<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item item--active"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__text"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item__comments"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Lorum<span class="nt">&lt;/span&gt;</span> ipsum dolor sit
+            <span class=nt>&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item__social"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"like"</span><span class="nt">&gt;</span>Gilla<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"comment"</span><span class="nt">&gt;</span>Kommentera<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>15:34<span class="nt">&lt;/a&gt;</span>
+            <span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__action"</span><span class="nt">&gt;</span>
+            <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+            <span class=nt>&lt;/a&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments sub--items"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__text"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item__comments"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"bold"</span><span class="nt">&gt;</span>Lorum<span class="nt">&lt;/span&gt;</span> ipsum dolor sit
+            <span class=nt>&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item__social"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"like"</span><span class="nt">&gt;</span>Gilla<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"answer"</span><span class="nt">&gt;</span>Svara<span class="nt">&lt;/a&gt;</span>
+               <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>15:34<span class="nt">&lt;/a&gt;</span>
+            <span class=nt>&lt;/div&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__action"</span><span class="nt">&gt;</span>
+            <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-tooltip-menu"</span><span class="nt">&gt;</span><span class="nt">&lt;/span&gt;</span>
+            <span class=nt>&lt;/a&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments sub--items"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"more"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"more__coments"</span><span class="nt">&gt;</span>Visa flera kommentarer (14st)..<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments sub--items"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item input"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar__input"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"actionbar__button btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Skicka<span class=nt>&lt;/a&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feed__comments"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item input"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__image"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"dist/img/image.png"</span><span class="nt"> /&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"comments__input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"actionbar__input"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form__input"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class=nt>&lt;a</span> <span class=na>class=</span><span class=s>"actionbar__button btn btn--setup"</span> <span class=na>href=</span><span class=s>"#"</span> <span class=na>role=</span><span class=s>"button"</span><span class=nt>&gt;</span>Skicka<span class=nt>&lt;/a&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
                </figure>
             </div>
+
+
 
 
 
@@ -401,12 +1084,16 @@
                <li class="item-button-options"><span class="menu-item">Options</span></li>
                <li class="item-button-size"><span class="menu-item">Size</span></li>
                <li class="item-button-state"><span class="menu-item">State</span></li>
+               <li class="item-button-toolbar"><span class="menu-item">Toolbar</span></li>
+               <li class="item-button-actionButton"><span class="menu-item">Action Button</span></li>
                <li class="item-form-basic"><span class="menu-item">Form</span></li>
                <li class="item-list"><span class="menu-item">List</span></li>
                <li class="item-list-actionbar"><span class="menu-item">Actionbar</span></li>
                <li class="item-footer"><span class="menu-item">Footer</span></li>
                <li class="item-list-items"><span class="menu-item">Items</span></li>
-               <li class="item-list-exemple"><span class="menu-item">Exemple</span></li>
+               <li class="item-feed-top"><span class="menu-item">Header</span></li>
+               <li class="item-feed-Content"><span class="menu-item">Content</span></li>
+               <li class="item-feed-comments"><span class="menu-item">Comments</span></li>
             </ul>
          </div>
 
@@ -438,135 +1125,260 @@
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-button').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').addClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-button-options').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').addClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
                            $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-button-size').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').addClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-button-state').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').addClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
+                  } else if ($('.content-button-toolbar').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').addClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
+                  } else if ($('.content-button-actionButton').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').addClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-form-basic').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').addClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-list').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').addClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-list-actionbar').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').addClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-footer').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').addClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
                   } else if ($('.content-list-items').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').addClass( 'active' );
-                           $('.item-list-exemple').removeClass( 'active' );
-                  } else if ($('.content-list-exemple').isOnScreen(1,1)) {
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
+                  } else if ($('.content-feed-top').isOnScreen(1,1)) {
                            $('.item-font').removeClass( 'active' );
                            $('.item-button').removeClass( 'active' );
                            $('.item-button-options').removeClass( 'active' );
                            $('.item-button-size').removeClass( 'active' );
                            $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
                            $('.item-form-basic').removeClass( 'active' );
                            $('.item-list').removeClass( 'active' );
                            $('.item-list-actionbar').removeClass( 'active' );
                            $('.item-footer').removeClass( 'active' );
                            $('.item-list-items').removeClass( 'active' );
-                           $('.item-list-exemple').addClass( 'active' );
+                           $('.item-feed-top').addClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
+                  } else if ($('.content-feed-Content').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').addClass( 'active' );
+                           $('.item-feed-comments').removeClass( 'active' );
+                  } else if ($('.content-feed-comments').isOnScreen(1,1)) {
+                           $('.item-font').removeClass( 'active' );
+                           $('.item-button').removeClass( 'active' );
+                           $('.item-button-options').removeClass( 'active' );
+                           $('.item-button-size').removeClass( 'active' );
+                           $('.item-button-state').removeClass( 'active' );
+                           $('.item-button-toolbar').removeClass( 'active' );
+                           $('.item-button-actionButton').removeClass( 'active' );
+                           $('.item-form-basic').removeClass( 'active' );
+                           $('.item-list').removeClass( 'active' );
+                           $('.item-list-actionbar').removeClass( 'active' );
+                           $('.item-footer').removeClass( 'active' );
+                           $('.item-list-items').removeClass( 'active' );
+                           $('.item-feed-top').removeClass( 'active' );
+                           $('.item-feed-Content').removeClass( 'active' );
+                           $('.item-feed-comments').addClass( 'active' );
                   }
             });
 
+
+            $(".test-menu .item-font").click(function() { $('html, body').animate({ scrollTop: $(".content-font").offset().top - 93 }, 500); });
+            $(".test-menu .item-button").click(function() { $('html, body').animate({ scrollTop: $(".content-button").offset().top - 93 }, 500); });
+            $(".test-menu .item-button-options").click(function() { $('html, body').animate({ scrollTop: $(".content-button-options").offset().top - 93 }, 500); });
+            $(".test-menu .item-button-size").click(function() { $('html, body').animate({ scrollTop: $(".content-button-size").offset().top - 93 }, 500); });
+            $(".test-menu .item-button-state").click(function() { $('html, body').animate({ scrollTop: $(".content-button-state").offset().top - 93 }, 500); });
+            $(".test-menu .item-button-toolbar").click(function() { $('html, body').animate({ scrollTop: $(".content-button-toolbar").offset().top - 93 }, 500); });
+            $(".test-menu .item-button-actionButton").click(function() { $('html, body').animate({ scrollTop: $(".content-button-actionButton").offset().top - 93 }, 500); });
+            $(".test-menu .item-form-basic").click(function() { $('html, body').animate({ scrollTop: $(".content-form-basic").offset().top - 93 }, 500); });
+            $(".test-menu .item-list").click(function() { $('html, body').animate({ scrollTop: $(".content-list").offset().top - 93 }, 500); });
+            $(".test-menu .item-list-actionbar").click(function() { $('html, body').animate({ scrollTop: $(".content-list-actionbar").offset().top - 93 }, 500); });
+            $(".test-menu .item-footer").click(function() { $('html, body').animate({ scrollTop: $(".content-footer").offset().top - 93 }, 500); });
+            $(".test-menu .item-list-items").click(function() { $('html, body').animate({ scrollTop: $(".content-list-items").offset().top - 93 }, 500); });
+            $(".test-menu .item-feed-top").click(function() { $('html, body').animate({ scrollTop: $(".content-feed-top").offset().top - 93 }, 500); });
+            $(".test-menu .item-feed-Content").click(function() { $('html, body').animate({ scrollTop: $(".content-feed-Content").offset().top - 93 }, 500); });
+            $(".test-menu .item-feed-comments").click(function() { $('html, body').animate({ scrollTop: $(".content-feed-comments").offset().top - 93 }, 500); });
       });
    </script>
 </html>

@@ -1,0 +1,60 @@
+.form {
+
+   &__group {
+      margin-bottom: 15px;
+   }
+
+   &__label {
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 5px;
+      font-weight: 700;
+   }
+
+   &__icon {
+      position: absolute;
+      z-index: 1;
+      line-height: @lineH2;
+      font-size: @fontS2;
+      padding: @space0 0 @space0 @space1;
+   }
+
+   &__input {
+      display: block;
+      width: 100%;
+      font-size: @fontS1;
+      line-height: @lineH2;
+      padding: @space0 @space2 @space0 @space2;
+      border: 1px solid @lightC;
+      border-radius: @radius1;
+      background-color: @baseC;
+
+      &--icon {
+         padding-left: @space6;
+         position: relative;
+      }
+   }
+
+   &__checkbox,
+   &__radio {
+      position: relative;
+      display: block;
+      margin-top: @space2;
+      margin-bottom: @space2;
+   }
+
+   &__helpBlock {
+      display: block;
+      margin-top: @space1;
+      margin-bottom: @space2;
+      color: @typeLightC;
+      font-size: @fontS1;
+   }
+
+   input[type=file] {
+      display: block;
+   }
+
+}
+
+
