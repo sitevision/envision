@@ -1,78 +1,43 @@
-@font-face {
-  font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?1q7o5s');
-  src: url('fonts/icomoon.eot?1q7o5s#iefix') format('embedded-opentype'), url('fonts/icomoon.woff2?1q7o5s') format('woff2'), url('fonts/icomoon.ttf?1q7o5s') format('truetype'), url('fonts/icomoon.woff?1q7o5s') format('woff'), url('fonts/icomoon.svg?1q7o5s#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-search:before {
-  content: "\e912";
-}
-.icon-chat-fill:before {
-  content: "\e90e";
-}
-.icon-chat:before {
-  content: "\e90f";
-}
-.icon-phone-fill:before {
-  content: "\e910";
-}
-.icon-phone:before {
-  content: "\e911";
-}
-.icon-history:before {
-  content: "\e90d";
-}
-.icon-files:before {
-  content: "\e908";
-}
-.icon-notis:before {
-  content: "\e909";
-}
-.icon-photos:before {
-  content: "\e90a";
-}
-.icon-user:before {
-  content: "\e90b";
-}
-.icon-users:before {
-  content: "\e90c";
-}
-.icon-app:before {
-  content: "\e907";
-}
-.icon-photo-fill:before {
-  content: "\e905";
-}
-.icon-photo:before {
-  content: "\e906";
-}
-.icon-comment-fill:before {
-  content: "\e903";
-}
-.icon-like-fill:before {
-  content: "\e904";
-}
-.icon-comment:before {
-  content: "\e901";
-}
-.icon-like:before {
-  content: "\e902";
-}
-.icon-tooltip-menu:before {
-  content: "\e900";
+.sv-font {
+   font-family: 'Roboto', sans-serif;
+   color: @typeC;
+   line-height: 1.1;
+   margin: 0;
+
+   &--title {
+      font-weight: @fontW2;
+      font-size: @fontS2;
+
+   }
+
+   &--detail {
+      font-weight: @fontW0;
+      color: @typeLightC;
+   }
+
+   &--comments {
+      font-weight: @fontW1;
+   }
+
+   &--detail-small {
+      font-weight: @fontW0;
+      font-size: @fontS1;
+      color: @typeLightC;
+   }
+
+   &--tagline {
+      font-weight: @fontW0;
+      font-size: @fontS1;
+      color: @typeLightC;
+      margin-top: @space0;
+   }
+
+   &--empty {
+      font-weight: @fontW0;
+      font-size: @fontS1;
+      color: @typeLightC;
+      text-align: center;
+      margin: @space8 0;
+      font-style: italic;
+   }
 }

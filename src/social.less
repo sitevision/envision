@@ -1,0 +1,38 @@
+.sv-social {
+   margin-top: 2px;
+
+   &__link {
+      font-weight: @fontW0;
+      font-size: @fontS1;
+      color: @typeLightC;
+      text-decoration: none;
+      margin-right: -3px;
+
+      &--more {
+         font-weight: @fontW1;
+         font-size: @fontS1;
+         text-decoration: none;
+         color: @typeLightC;
+      }
+
+      &:last-child {
+
+         &:after {
+            content: initial;
+         }
+      }
+
+      &:after {
+         font-family: 'sitevision-icons' !important;
+         content: "\e913";
+         position: relative;
+         top: 1px;
+      }
+
+
+   }
+
+   &--sub {
+      padding-left: @space7;
+   }
+}
