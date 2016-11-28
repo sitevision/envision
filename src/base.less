@@ -1,6 +1,24 @@
 .sv-link {
    text-decoration: none;
    color: @typeC;
+   padding: 2px @space0;
+   border-radius: @radius1;
+
+   &:first-child {
+      margin-left: -@space0;
+   }
+
+   &:hover,
+   &.btn--hover {
+      background-color: rgba(0,0,0,0.05);
+      border-color: rgba(0,0,0,0.1);
+   }
+
+   &:focus,
+   &.btn--focus {
+      background-color: rgba(0,0,0,0.2);
+      border-color: rgba(0,0,0,0.2);
+   }
 }
 
 .sv-active {
