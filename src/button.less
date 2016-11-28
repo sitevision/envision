@@ -30,6 +30,12 @@
       box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
    }
 
+   &:focus,
+   &.btn--focus {
+      background-color: rgba(0,0,0,0.2);
+      border-color: rgba(0,0,0,0.2);
+   }
+
    &--primary {
       color: @baseC;
       background-color: @brandC;
@@ -47,6 +53,12 @@
          -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+      }
+
+      &:focus,
+      &.btn--focus {
+         background-color: darken(@brandC, 10%);
+         border-color: darken(@brandC, 10%);
       }
    }
 
@@ -69,6 +81,12 @@
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
       }
+
+      &:focus,
+      &.btn--focus {
+         background-color: darken(@btnDangerC, 10%);
+         border-color: darken(@btnDangerC, 10%);
+      }
    }
 
    &--link {
@@ -90,6 +108,12 @@
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
       }
+
+      &:focus,
+      &.btn--focus {
+         background-color: rgba(0,0,0,0.1);
+         border-color: rgba(0,0,0,0.1);
+      }
    }
 
    &--setup {
@@ -106,6 +130,12 @@
 
       &:hover{
          background-color: rgba(0,0,0,.1);
+         border-color: transparent;
+      }
+
+      &:focus,
+      &.btn--focus {
+         background-color: rgba(0,0,0,.2);
          border-color: transparent;
       }
    }
@@ -165,17 +195,21 @@
          }
       }
 
-      &:hover {
+      &:hover,
+      &.btn--hover {
          background-color: rgba(0, 0, 0, 0.1);
          border-color: transparent;
          border-right: 1px solid @lightC;
       }
 
-      &:after {
-         content: "";
-         clear: both;
-         display: table;
+      &:focus,
+      &.btn--focus {
+         background-color: rgba(0, 0, 0, 0.2);
+         border-color: transparent;
+         border-right: 1px solid @lightC;
       }
+
+      .clear-fix()
 
    }
 
@@ -204,7 +238,11 @@
          border-color: transparent;
       }
 
-
+      &:focus,
+      &.btn--focus {
+         background-color: rgba(0, 0, 0, 0.2);
+         border-color: transparent;
+      }
    }
 
    &--group {
@@ -228,11 +266,7 @@
          }
       }
 
-      &:after {
-         content: "";
-         clear: both;
-         display: table;
-      }
+      .clear-fix()
    }
 }
 
