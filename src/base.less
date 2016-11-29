@@ -4,7 +4,7 @@
    position: relative;
    padding: 0 @space1;
 
-   &--lagre {
+   &--large {
       flex-grow: 1;
       align-self: center;
       margin: @space1 0;
@@ -30,13 +30,12 @@
    }
 
    &--active {
-      border-left: @space1 solid @color-brand;
-      padding-left: @space0;
-   }
-
-   &--active {
       border-left: @space0 solid @color-brand;
       padding-left: @space0;
+
+      &.@{prefix}-base--indent {
+         padding-left: @space7 - @space0;
+      }
    }
 
    &--indent {

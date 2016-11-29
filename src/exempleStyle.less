@@ -1,7 +1,8 @@
 
 
 body {
-   font-family: 'Roboto', sans-serif;
+   font-family: @font-family;
+   background-color: @color-page-bg;
 }
 .test-menu {
    position: fixed;
@@ -16,8 +17,8 @@ body {
    cursor: pointer;
 }
 .test-menu li.active .menu-item {
-   background-color: #0080FF;
-   color: #fff;
+   background-color: @color-brand;
+   color: @font-color-invert;
 }
 
 .row {
@@ -52,7 +53,7 @@ body {
 .example {
    margin-right: 0;
    margin-left: 0;
-   background-color: @baseC;
+   background-color: @font-color-invert;
    border-color: @color-element-bg;
    border-style: solid;
    border-width: 1px 1px 0 1px;
@@ -68,9 +69,9 @@ body {
    position: absolute;
    top: 15px;
    left: 15px;
-   font-size: 12px;
-   font-weight: 700;
-   color: #959595;
+   font-size: @font-size-xtrasmall;
+   font-weight: @font-weight-bold;
+   color: @color-gray-light;
    text-transform: uppercase;
    letter-spacing: 1px;
    content: "Example";
@@ -121,8 +122,8 @@ pre code {
 }
 
 .wrapper--plate {
-   background-color: @baseC;
-   padding: @line-height-extralagre;
+   background-color: @font-color-invert;
+   padding: @line-height-extralarge;
 }
 
 .wrapper--borderRadius {
@@ -143,8 +144,8 @@ h1 {
    line-height: @line-height-super;
 }
 h2 {
-   font-size: @font-size-extralagre;
-   line-height: @line-height-extralagre;
+   font-size: @font-size-extralarge;
+   line-height: @line-height-extralarge;
 }
 h3 {
    font-size: @font-size-large;

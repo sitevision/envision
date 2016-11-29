@@ -1,6 +1,6 @@
 .@{prefix}-font {
-   font-family: 'Roboto', sans-serif;
-   color: @typeC;
+   font-family: @font-family;
+   color: @font-color;
    line-height: 1.1em;
    margin: 0;
 
@@ -12,7 +12,7 @@
 
    &--detail {
       font-weight: @font-weight-light;
-      color: @typeLightC;
+      color: @font-color-lighter;
    }
 
    &--comments {
@@ -22,20 +22,20 @@
    &--detail-small {
       font-weight: @font-weight-light;
       font-size: @font-size-small;
-      color: @typeLightC;
+      color: @font-color-lighter;
    }
 
    &--tagline {
       font-weight: @font-weight-light;
       font-size: @font-size-small;
-      color: @typeLightC;
-      margin-top: @space0;
+      color: @font-color-lighter;
+      margin-top: @space;
    }
 
    &--empty {
       font-weight: @font-weight-light;
       font-size: @font-size-small;
-      color: @typeLightC;
+      color: @font-color-lighter;
       text-align: center;
       margin: @space8 0;
       font-style: italic;

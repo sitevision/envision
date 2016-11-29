@@ -5,6 +5,11 @@
    &--profile {
       width: @space8;
       height: @space8;
+
+      &.@{prefix}-media--profile--me {
+         width: @space7;
+         height: @space7;
+      }
    }
 
    &--thumb {
@@ -34,6 +39,7 @@
 
    &--collage {
       overflow: hidden;
+      margin: 0;
 
       .@{prefix}-media__item {
          width: 50%;
@@ -52,6 +58,7 @@
    }
 
    &--video {
+      margin: 0;
       display: block;
       position: relative;
       padding-bottom: 56.25%;
@@ -81,7 +88,7 @@
    }
 
    &__tumbnail {
-      max-width: 300px;
+      max-width: 150px;
       width: 100%;
    }
 

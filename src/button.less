@@ -13,7 +13,7 @@
    border-radius: @radius1;
    background-color: rgba(0, 0, 0, 0.05);
    text-decoration: none;
-   color: @typeC;
+   color: @font-color;
    box-sizing: border-box;
 
    &:hover,
@@ -37,7 +37,7 @@
    }
 
    &--primary {
-      color: @baseC;
+      color: @font-color-invert;
       background-color: @color-brand;
       border-color: @color-brand;
 
@@ -64,7 +64,7 @@
    }
 
    &--danger {
-      color: @baseC;
+      color: @font-color-invert;
       background-color: @color-danger;
       border-color: @color-danger;
 
@@ -91,20 +91,20 @@
    }
 
    &--link {
-      color: @typeC;
+      color: @font-color;
       background-color: transparent;
       border-color: transparent;
 
       &:hover,
       &.btn--hover {
-         background-color: @color-border;
-         border-color: @color-border;
+         background-color: @color-gray-dark;
+         border-color: @color-gray-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: @color-border-dark;
-         border-color: @color-border-dark;
+         background-color: @color-gray-dark;
+         border-color: @color-gray-dark;
          -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
@@ -112,12 +112,12 @@
 
       &:focus,
       &.btn--focus {
-         background-color: @color-border-dark;
-         border-color: @color-border-dark;
+         background-color: @color-gray-dark;
+         border-color: @color-gray-dark;
       }
    }
 
-   &--setup {
+   &--dropdown {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -210,7 +210,7 @@
       }
 
       &--active {
-         color: @baseC;
+         color: @font-color-invert;
          background-color: @color-brand;
          border-color: @color-brand;
 
@@ -260,7 +260,7 @@
       border-top-left-radius: @radius1;
       border-top-right-radius: @radius1;
       line-height: @line-height-small;
-      color: @typeC;
+      color: @font-color;
       padding: @space0 @space1;
       display: inline-block;
       background-color: rgba(0,0,0,0.05);
@@ -278,7 +278,7 @@
       }
 
       &--active {
-         color: @baseC;
+         color: @font-color-invert;
          background-color: @color-brand;
          border-color: @color-brand;
          border-bottom-left-radius: 0;
@@ -317,11 +317,10 @@
             border-right: 1px solid @color-element-bg;
          }
 
-         &:last-child {
+         &:nth-child(2) {
+            border-top-right-radius: @radius1;
+            border-bottom-right-radius: @radius1;
 
-            &:hover {
-               border-right: 0;
-            }
          }
       }
 
