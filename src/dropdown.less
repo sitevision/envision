@@ -1,8 +1,8 @@
-.sv-dropdown {
+.@{prefix}-dropdown {
    position: relative;
 
    &--open {
-      .sv-dropdown__menu {
+      .@{prefix}-dropdown__menu {
          display: block;
       }
    }
@@ -12,10 +12,10 @@
       display: none;
       list-style: none;
       background-color: #fff;
-      padding: 12px;
+      padding: @space2;
       border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 2px;
-      top: 18px;
+      border-radius: @radius1;
+      top: @space3;
       -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       z-index: 1000;
@@ -23,8 +23,8 @@
       right: 0px;
 
       a {
-         padding: @space0 0;
          display: block;
+         margin-bottom: @space0;
       }
    }
 

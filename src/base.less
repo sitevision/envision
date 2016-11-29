@@ -1,28 +1,45 @@
-.sv-link {
-   text-decoration: none;
-   color: @typeC;
-   padding: 2px @space0;
-   border-radius: @radius1;
+.@{prefix}-base {
+   display: flex;
+   flex-direction: row;
+   position: relative;
+   padding: 0 @space1;
 
-   &:first-child {
-      margin-left: -@space0;
+   &--lagre {
+      flex-grow: 1;
+      align-self: center;
+      margin: @space1 0;
    }
 
-   &:hover,
-   &.btn--hover {
-      background-color: rgba(0,0,0,0.05);
-      border-color: rgba(0,0,0,0.1);
+   &--left {
+      align-self: center;
+      margin: @space1 @space1 @space1 0;
    }
 
-   &:focus,
-   &.btn--focus {
-      background-color: rgba(0,0,0,0.2);
-      border-color: rgba(0,0,0,0.2);
+   &--right {
+      align-self: center;
+      margin-left: @space1;
+   }
+
+   &--box {
+      background-color: @color-element-bg;
+   }
+
+   &--tab {
+      padding: @space1 0 0 0;
+      margin: 0;
+   }
+
+   &--active {
+      border-left: @space1 solid @color-brand;
+      padding-left: @space0;
+   }
+
+   &--active {
+      border-left: @space0 solid @color-brand;
+      padding-left: @space0;
+   }
+
+   &--indent {
+      padding-left: @space7;
    }
 }
-
-.sv-active {
-   border-left: @space0 solid @brandC;
-   padding-left: @space1;
-}
-

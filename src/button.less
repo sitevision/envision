@@ -1,10 +1,10 @@
-.sv-button {
+.@{prefix}-button {
    display: inline-block;
-   padding: @space0 @space2;
+   padding: @space0 @space1;
    margin-bottom: 0;
-   font-size: @fontS1;
-   font-weight: 400;
-   line-height: @lineH2;
+   font-size: @font-size-small;
+   font-weight: @font-weight-regular;
+   line-height: @line-height-small;
    text-align: center;
    white-space: nowrap;
    vertical-align: middle;
@@ -38,19 +38,19 @@
 
    &--primary {
       color: @baseC;
-      background-color: @brandC;
-      border-color: @brandC;
+      background-color: @color-brand;
+      border-color: @color-brand;
 
       &:hover,
       &.btn--hover {
-         background-color: darken(@brandC, 5%);
-         border-color: darken(@brandC, 5%);
+         background-color: @color-brand-dark;
+         border-color: @color-brand-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: darken(@brandC, 5%);
-         border-color: darken(@brandC, 5%);
+         background-color: @color-brand-dark;
+         border-color: @color-brand-dark;
          -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
@@ -58,26 +58,26 @@
 
       &:focus,
       &.btn--focus {
-         background-color: darken(@brandC, 10%);
-         border-color: darken(@brandC, 10%);
+         background-color: @color-brand-dark;
+         border-color: @color-brand-dark;
       }
    }
 
    &--danger {
       color: @baseC;
-      background-color: @btnDangerC;
-      border-color: @btnDangerC;
+      background-color: @color-danger;
+      border-color: @color-danger;
 
       &:hover,
       &.btn--hover {
-         background-color: darken(@btnDangerC, 5%);
-         border-color: darken(@btnDangerC, 5%);
+         background-color: @color-danger-dark;
+         border-color: @color-danger-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: darken(@btnDangerC, 5%);
-         border-color: darken(@btnDangerC, 5%);
+         background-color: @color-danger-dark;
+         border-color: @color-danger-dark;
          -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
@@ -85,8 +85,8 @@
 
       &:focus,
       &.btn--focus {
-         background-color: darken(@btnDangerC, 10%);
-         border-color: darken(@btnDangerC, 10%);
+         background-color: @color-danger-dark;
+         border-color: @color-danger-dark;
       }
    }
 
@@ -97,14 +97,14 @@
 
       &:hover,
       &.btn--hover {
-         background-color: rgba(0,0,0,0.05);
-         border-color: rgba(0,0,0,0.1);
+         background-color: @color-border;
+         border-color: @color-border;
       }
 
       &:active,
       &.btn--active {
-         background-color: darken(@btnDangerC, 5%);
-         border-color: darken(@btnDangerC, 5%);
+         background-color: @color-border-dark;
+         border-color: @color-border-dark;
          -webkit-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          -moz-box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
          box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
@@ -112,8 +112,8 @@
 
       &:focus,
       &.btn--focus {
-         background-color: rgba(0,0,0,0.1);
-         border-color: rgba(0,0,0,0.1);
+         background-color: @color-border-dark;
+         border-color: @color-border-dark;
       }
    }
 
@@ -127,7 +127,6 @@
       height: @space7;
       padding: 0;
       color: #1d1d1b;
-      font-size: @fontS2;
 
       &:hover{
          background-color: rgba(0,0,0,.1);
@@ -142,24 +141,24 @@
    }
 
    &--large {
-      padding: @space0 @space5;
-      font-size: @fontS3;
-      font-weight: 400;
-      line-height: @lineH5;
+      padding: @space0 @space3;
+      font-size: @font-size-large;
+      font-weight: @font-weight-regular;
+      line-height: @line-height-large;
    }
 
    &--small {
       padding: @space0 @space2;
-      font-size: @fontS1;
-      font-weight: 400;
-      line-height: @lineH2;
+      font-size: @font-size-small;
+      font-weight: @font-weight-regular;
+      line-height: @line-height-small;
    }
 
    &--tiny {
       padding: @space0 @space0;
-      font-size: @fontS1;
-      font-weight: 400;
-      line-height: @lineH0;
+      font-size: @font-size-small;
+      font-weight: @font-weight-regular;
+      line-height: @line-height-small;
    }
 
    &--disabled,
@@ -179,7 +178,7 @@
       border-color: transparent;
       border-radius: 0;
       float: left;
-      border-right: 1px solid @lightC;
+      border-right: 1px solid @color-element-bg;
 
       &:first-child {
          border-top-left-radius: @radius1;
@@ -200,42 +199,51 @@
       &.btn--hover {
          background-color: rgba(0, 0, 0, 0.1);
          border-color: transparent;
-         border-right: 1px solid @lightC;
+         border-right: 1px solid @color-element-bg;
       }
 
       &:focus,
       &.btn--focus {
          background-color: rgba(0, 0, 0, 0.2);
          border-color: transparent;
-         border-right: 1px solid @lightC;
+         border-right: 1px solid @color-element-bg;
       }
 
       &--active {
          color: @baseC;
-         background-color: @brandC;
-         border-color: @brandC;
+         background-color: @color-brand;
+         border-color: @color-brand;
 
          &:hover,
          &.btn--hover {
-            background-color: darken(@brandC, 5%);
-            border-color: darken(@brandC, 5%);
+            background-color: darken(@color-brand, 5%);
+            border-color: darken(@color-brand, 5%);
          }
 
          &:active,
          &.btn--active {
-            background-color: darken(@brandC, 5%);
-            border-color: darken(@brandC, 5%);
+            background-color: darken(@color-brand, 5%);
+            border-color: darken(@color-brand, 5%);
          }
 
          &:focus,
          &.btn--focus {
-            background-color: darken(@brandC, 10%);
-            border-color: darken(@brandC, 10%);
+            background-color: darken(@color-brand, 10%);
+            border-color: darken(@color-brand, 10%);
          }
       }
 
       .clear-fix()
 
+   }
+
+   &--divider {
+      background-color: transparent;
+      cursor: default;
+
+      &:hover {
+         background: transparent;
+      }
    }
 
    &__tabs {
@@ -251,9 +259,9 @@
    &--tab {
       border-top-left-radius: @radius1;
       border-top-right-radius: @radius1;
-      line-height: @lineH2;
+      line-height: @line-height-small;
       color: @typeC;
-      padding: @space1 @space2;
+      padding: @space0 @space1;
       display: inline-block;
       background-color: rgba(0,0,0,0.05);
       border-bottom-color: transparent;
@@ -271,27 +279,27 @@
 
       &--active {
          color: @baseC;
-         background-color: @brandC;
-         border-color: @brandC;
+         background-color: @color-brand;
+         border-color: @color-brand;
          border-bottom-left-radius: 0;
          border-bottom-right-radius: 0;
 
          &:hover,
          &.btn--hover {
-            background-color: darken(@brandC, 5%);
-            border-color: darken(@brandC, 5%);
+            background-color: darken(@color-brand, 5%);
+            border-color: darken(@color-brand, 5%);
          }
 
          &:active,
          &.btn--active {
-            background-color: darken(@brandC, 5%);
-            border-color: darken(@brandC, 5%);
+            background-color: darken(@color-brand, 5%);
+            border-color: darken(@color-brand, 5%);
          }
 
          &:focus,
          &.btn--focus {
-            background-color: darken(@brandC, 10%);
-            border-color: darken(@brandC, 10%);
+            background-color: darken(@color-brand, 10%);
+            border-color: darken(@color-brand, 10%);
          }
       }
    }
@@ -299,14 +307,14 @@
    &--group {
       position: relative;
 
-      .sv-button {
+      .@{prefix}-button {
          float: left;
          border-radius: 0;
 
          &:first-child {
             border-top-left-radius: @radius1;
             border-bottom-left-radius: @radius1;
-            border-right: 1px solid @lightC;
+            border-right: 1px solid @color-element-bg;
          }
 
          &:last-child {
@@ -319,6 +327,7 @@
 
       .clear-fix()
    }
+
 }
 
 

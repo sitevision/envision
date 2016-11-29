@@ -1,49 +1,72 @@
 
 
 // Base
-@prefix-:          sv-;
-@grid-columns:    12;
-@page-width:      600px;
-
-
-// Size (Margin/Padding)
-@space0: 4px;        // 8
-@space1: 8px;        // 16
-@space2: 12px;       // 24
-@space3: 16px;       // 32
-@space4: 20px;       // 40
-@space5: 24px;       // 48
-@space6: 28px;       // 56
-@space7: 32px;       // 64
-@space8: 40px;       // 80
-@space9: 64px;       // 128
-@space10: 128px;     // 256
+@prefix:                   sv;
+@grid-columns:             12;
+@page-width:               600px;
 
 // Font Size
-@fontS0: 10px; // 20
-@fontS1: 14px; // 24
-@fontS2: 16px; // 28 (Base)
-@fontS3: 22px; // 44
-@fontS4: 26px; // 52
-@fontS5: 30px; // 60
-@fontS6: 40px; // 80
+@font-size-xtrasmall:      12px;
+@font-size-small:          14px;
+@font-size-normal:         16px;
+@font-size-large:          20px;
+@font-size-extralagre:     40px;
+@font-size-super:          60px;
 
-// Font wrapping
-@fontW0: 300; // Light
-@fontW1: 400; // Regular
-@fontW2: 500; // Semi
-@fontW3: 600; // Bold
-@fontW4: 600; // Havy
+// Font weight
+@font-weight-light:        300;
+@font-weight-regular:      400;
+@font-weight-semibold:     600;
+@font-weight-bold:         700;
+@font-weight-extrabold:    800;
 
 // Font Line-height
-@lineH: 6px; //(For text blocks and wrapping text)
-@lineH0: @lineH + @fontS0;
-@lineH1: @lineH + @fontS1;
-@lineH2: @lineH + @fontS2;
-@lineH3: @lineH + @fontS3;
-@lineH4: @lineH + @fontS4;
-@lineH5: @lineH + @fontS5;
-@lineH6: @lineH + @fontS6;
+@line-height-base:         6px; //(For text blocks and wrapping text)
+@line-height-xtrasmall:    @line-height-base + @font-size-xtrasmall;
+@line-height-small:        @line-height-base + @font-size-small;
+@line-height-normal:       @line-height-base + @font-size-normal;
+@line-height-large:        @line-height-base + @font-size-large;
+@line-height-extralagre:   @line-height-base + @font-size-extralagre;
+@line-height-super:        @line-height-base + @font-size-super;
+
+// Size (Margin/Padding)
+@space:                    2px;   // 4
+@space0:                   4px;   // 8
+@space1:                   8px;   // 16
+@space2:                   12px;  // 24
+@space3:                   16px;  // 32
+@space4:                   20px;  // 40
+@space5:                   24px;  // 48
+@space6:                   28px;  // 56
+@space7:                   32px;  // 64
+@space8:                   40px;  // 80
+@space9:                   64px;  // 128
+@space10:                  128px; // 256
+
+
+// Icon Size
+@icon-size-xtrasmall:      10px;
+@icon-size-small:          20px;
+@icon-size-normal:         30px;
+@icon-size-large:          40px;
+@icon-size-extralagre:     50px;
+@icon-size-super:          60px;
+
+// Color
+@color-brand:              #0080FF;
+@color-brand-light:        lighten(@color-brand, 10%);
+@color-brand-dark:         darken(@color-brand, 10%);
+
+@color-danger:             #e02525;
+@color-danger-light:       lighten(@color-brand, 10%);
+@color-danger-dark:        darken(@color-brand, 10%);
+
+@color-page-bg:            #fff;
+@color-element-bg:         #f6f5f5;
+
+@color-border:             #f6f5f5;
+@color-border-light:       lighten(@color-border, 10%);
+@color-border-dark:        darken(@color-border, 10%);
 
 // Radius
 @radius1: 2px; // 4
@@ -51,8 +74,6 @@
 @radius3: 8px; // 16
 @radius4: 50px; // Rounded at ends
 @radius5: 100%; // Circle
-
-
 
 // Brand
 @brandC:             #a6529a;

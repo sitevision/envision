@@ -1,43 +1,49 @@
-.sv-font {
+.@{prefix}-font {
    font-family: 'Roboto', sans-serif;
    color: @typeC;
-   line-height: 1.1;
+   line-height: 1.1em;
    margin: 0;
 
+   .@{prefix}-link--title,
    &--title {
-      font-weight: @fontW2;
-      font-size: @fontS2;
-
+      font-weight: @font-weight-semibold;
+      font-size: @font-size-normal;
    }
 
    &--detail {
-      font-weight: @fontW0;
+      font-weight: @font-weight-light;
       color: @typeLightC;
    }
 
    &--comments {
-      font-weight: @fontW1;
+      font-weight: @font-weight-regular;
    }
 
    &--detail-small {
-      font-weight: @fontW0;
-      font-size: @fontS1;
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
       color: @typeLightC;
    }
 
    &--tagline {
-      font-weight: @fontW0;
-      font-size: @fontS1;
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
       color: @typeLightC;
       margin-top: @space0;
    }
 
    &--empty {
-      font-weight: @fontW0;
-      font-size: @fontS1;
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
       color: @typeLightC;
       text-align: center;
       margin: @space8 0;
       font-style: italic;
+   }
+
+   &--text {
+      font-weight: @font-weight-regular;
+      font-size: @font-size-small;
+      line-height: @line-height-small;
    }
 }

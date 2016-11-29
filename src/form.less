@@ -1,31 +1,31 @@
-.sv-form {
+.@{prefix}-form {
 
    &__group {
-      margin-bottom: 15px;
+      margin-bottom: @space3;
    }
 
    &__label {
       display: inline-block;
       max-width: 100%;
-      margin-bottom: 5px;
-      font-weight: 700;
+      margin-bottom: @space0;
+      font-weight: @font-weight-bold;
    }
 
    &__icon {
       position: absolute;
       z-index: 1;
-      line-height: @lineH2;
-      font-size: @fontS2;
+      line-height: @line-height-small;
+      font-size: @font-size-normal;
       padding: @space0 0 @space0 @space1;
    }
 
    &__input {
       display: block;
       width: 100%;
-      font-size: @fontS1;
-      line-height: @lineH2;
-      padding: 5px 12px 5px 12px;
-      border: 1px solid @lightC;
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+      padding: @space0 @space2;
+      border: 1px solid @color-element-bg;
       border-radius: @radius1;
       background-color: @baseC;
 
@@ -49,10 +49,10 @@
 
    &__helpBlock {
       display: block;
-      margin-top: @space1;
-      margin-bottom: @space2;
+      margin-top:@space1;
+      margin-bottom:@space1;
       color: @typeLightC;
-      font-size: @fontS1;
+      font-size: @font-size-small;
    }
 
    input[type=file] {
