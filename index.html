@@ -1,11 +1,574 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
-      <meta charset="utf-8">
-      <link href="dist/styles.css" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+      <link rel="stylesheet" href="dist/styles.css">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
    </head>
    <body>
-      <h1>Hello, World</h1>
-      <p>More content will follow</p>
+      <div class="wrapper wrapper--center">
+
+         <div class="col-9">
+
+            <div class="container">
+               <h1 class="h1--baseLine">Framework</h1>
+               <h2 class="content-elements">Elements</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+               <div class="example">
+
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left">
+                        <i class="sv-media__icon sv-icon--history"></i>
+                     </div>
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left">
+                        <i class="sv-media__icon sv-icon--history"></i>
+                     </div>
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-button sv-button--primary" href="#" role="button">Action</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--active">
+                     <div class="sv-base--left">
+                        <i class="sv-media__icon sv-icon--history"></i>
+                     </div>
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <div class="sv-button--group sv-dropdown">
+                           <button type="button" class="sv-button sv-button--primary">Action</button>
+                           <button type="button" class="sv-button sv-button--primary sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Lorum</a> <span class="sv-font--detail">giller detta</span></h2>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Lorum</a> <span class="sv-font--detail">kommenterat detta</span></h2>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left sv-base--align-vertical">
+                        <img class="sv-media__image sv-media--profile" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a> <span class="sv-font--detail-small">16:34</span></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--active">
+                     <div class="sv-base--left sv-base--align-vertical">
+                        <i class="sv-media__icon sv-icon--history"></i>
+                     </div>
+                     <div class="sv-base--left">
+                        <img class="sv-media__image sv-media--profile" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a> <span class="sv-font--detail-small">16:34</span></h2>
+                        <p class="sv-font sv-font--tagline">Tagline tagline</p>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <input type="text" class="sv-form__input sv-form__input--background" id="email" placeholder="Search..">
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <i class="sv-form__icon sv-icon--search"></i>
+                        <input type="text" class="sv-form__input sv-form__input--icon sv-form__input--background" id="email" placeholder="Search..">
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <i class="sv-form__icon sv-icon--search"></i>
+                        <input type="search" class="sv-form__input sv-form__input--icon sv-form__input--background" id="email" placeholder="Search..">
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-actionbar__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <i class="sv-form__icon sv-icon--search"></i>
+                        <input type="search" class="sv-form__input sv-form__input--icon sv-form__input--background" id="email" placeholder="Search..">
+                        <a class="sv-form__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--align-vertical">
+                     <div class="sv-base--large">
+                        <div class="sv-button__toolbar">
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                        </div>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-actionbar__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-base--tab">
+                        <ul class="sv-button__tabs">
+                           <li><a class="sv-button sv-button--tab sv-button--tab--active" href="#">Tab</a></li>
+                           <li><a class="sv-button sv-button--tab" href="#">Tab</a></li>
+                           <li><a class="sv-button sv-button--tab" href="#">Tab</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-base--tab">
+                        <ul class="sv-button__tabs">
+                           <li><a class="sv-button sv-button--tab active" href="#">Tab</a></li>
+                           <li><a class="sv-button sv-button--tab" href="#">Tab</a></li>
+                           <li><a class="sv-button sv-button--tab" href="#">Tab</a></li>
+                        </ul>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-actionbar__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <div class="sv-button__toolbar">
+                           <a class="sv-button sv-button--tool sv-button--tool--active" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">Link</a>
+                        </div>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <div class="sv-button--group sv-dropdown">
+                           <button type="button" class="sv-button sv-button--primary">Action</button>
+                           <button type="button" class="sv-button sv-button--primary sv-button--icon sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <a class="sv-button" href="#">More..</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <div class="sv-button__toolbar">
+                           <a class="sv-button sv-button--tool" href="#" role="button">1</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">2</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">3</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">4</a>
+                           <span class="sv-button sv-button--tool sv-button--divider">..</span>
+                           <a class="sv-button sv-button--tool" href="#" role="button">22</a>
+                        </div>
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-actionbar__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left">
+                        <div class="sv-button__toolbar">
+                           <a class="sv-button sv-button--tool" href="#" role="button">1</a>
+                           <a class="sv-button sv-button--tool sv-button--tool--active" href="#" role="button">2</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">3</a>
+                           <a class="sv-button sv-button--tool" href="#" role="button">4</a>
+                        </div>
+                     </div>
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <i class="sv-form__icon sv-icon--search"></i>
+                        <input type="search" class="sv-form__input sv-form__input--icon sv-form__input--background" id="email" placeholder="Search..">
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <a class="sv-actionbar__button sv-button sv-button--primary" href="#" role="button">Next</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-media">
+                        <div class="sv-media__tumbnail"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__info">
+                           <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a></h2>
+                           <div class="sv-media__data"><a class="sv-link sv-link--url" href="#">http://www.lipsum.com/</a></div>
+                           <p class="sv-font sv-font--text">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-media sv-media--gallery">
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                        <div class="sv-media__item"><img class="sv-media__image sv-media--thumb" src="dist/img/image.png" /></div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <p class="sv-font sv-font--empty">Lorem ipsum dolor</p>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <p class="sv-font">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</p>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <p class="sv-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <a class="sv-link sv-link--more" href="#">Visa mer..</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large sv-gallery--single">
+                        <img class="sv-media__image sv-media--cover" src="dist/img/image.png" />
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <div class="sv-base--large sv-media--collage">
+                           <div class="sv-media__item"><img class="sv-media--cover" src="dist/img/image.png" /></div>
+                           <div class="sv-media__item"><img class="sv-media--cover" src="dist/img/image1.png" /></div>
+                           <div class="sv-media__item"><img class="sv-media--cover" src="dist/img/image2.png" /></div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <div class="sv-base--large sv-media--video">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/Psv5dmrs3U0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <div class="sv-link-base">
+                           <a class="sv-link sv-link--base" href="#">Gilla</a>
+                           <i class="sv-link__between sv-icon--dot"></i>
+                           <a class="sv-link sv-link--base" href="#">Svara</a>
+                           <i class="sv-link__between sv-icon--dot"></i>
+                           <span class="sv-link__nolink" href="#">15:34</span>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--large">
+                        <a class="sv-link sv-link--more" href="#">Visa flera kommentarer (14st)..</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left">
+                        <img class="sv-media__image sv-media--profile" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">Header</a> <span class="sv-font--comments">ipsum dolor sit</span></h2>
+                        <div class="sv-link-base">
+                           <a class="sv-link sv-link--base" href="#">Gilla</a>
+                           <span class="sv-link__between sv-icon--dot"></span>
+                           <a class="sv-link sv-link--base" href="#">Kommentera</a>
+                           <span class="sv-link__between sv-icon--dot"></span>
+                           <span class="sv-link__nolink" href="#">15:34</span>
+                        </div>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--indent">
+                     <div class="sv-base--large">
+                        <a class="sv-link sv-link--more" href="#">Visa flera svar (14st)..</a>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--indent sv-base--active">
+                     <div class="sv-base--left">
+                        <img class="sv-media__image sv-media--profile" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large">
+                        <h2 class="sv-font sv-font--title"><a class="sv-link sv-link--title" href="#">User</a> <span class="sv-font--comments">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</span></h2>
+                        <div class="sv-link-base">
+                           <a class="sv-link sv-link--base" href="#">Gilla</a>
+                           <span class="sv-link__between sv-icon--dot"></span>
+                           <a class="sv-link sv-link--base" href="#">Svara</a>
+                           <span class="sv-link__between sv-icon--dot"></span>
+                           <span class="sv-link__nolink" href="#">15:34</span>
+                        </div>
+                     </div>
+                     <div class="sv-base--right sv-base--action-dropdown">
+                        <div class="sv-button--dropdown sv-dropdown">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle">
+                              <i class="sv-icon--dropdown-menu"></i>
+                           </button>
+                           <ul type="button" class="sv-dropdown__menu">
+                              <li><a class="sv-link" href="#">Action</a></li>
+                              <li><a class="sv-link" href="#">Another action</a></li>
+                              <li><a class="sv-link" href="#">Something else here</a></li>
+                              <li role="separator" class="sv-dropdown--divider"></li>
+                              <li><a class="sv-link" href="#">Separated link</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box sv-base--indent">
+                     <div class="sv-base--left">
+                        <img class="sv-media__image sv-media--profile sv-media--profile--me" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <input type="search" class="sv-form__input sv-form__input--background" id="email" placeholder="Lorum ipsum..">
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <button class="sv-actionbar__button sv-button sv-button--primary" type="submit">Svara</button>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="sv-base sv-base--box">
+                     <div class="sv-base--left">
+                        <img class="sv-media__image sv-media--profile sv-media--profile--me" src="dist/img/image.png" />
+                     </div>
+                     <div class="sv-base--large sv-base--align-vertical">
+                        <input type="search" class="sv-form__input sv-form__input--background" id="email" placeholder="Lorum ipsum..">
+                     </div>
+                     <div class="sv-base--right sv-base--align-vertical">
+                        <button class="sv-actionbar__button sv-button sv-button--primary" type="submit">Kommentera</button>
+                     </div>
+                  </div>
+                  <br>
+
+
+               </div>
+               <figure class="figure figure--highlight">
+<pre><code class="language-html" data-lang="html"></code></pre>
+               </figure>
+            </div>
+
+
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         </div>
+         <div class="row col-2">
+            <ul class="test-menu">
+               <li class="item-elements active"><span class="menu-item">Elements</span></li>
+            </ul>
+         </div>
+
+      </div>
    </body>
+
+
+   <script>
+      $(document).ready(function() {
+
+            $.fn.isOnScreen = function(){
+                  var viewport = {};
+                  viewport.top = $(window).scrollTop();
+                  viewport.bottom = viewport.top + $(window).height();
+                  var bounds = {};
+                  bounds.top = this.offset().top;
+                  bounds.bottom = bounds.top + this.outerHeight();
+                  return ((bounds.top <= viewport.bottom) && (bounds.bottom >= viewport.top));
+            };
+
+            $(window).scroll(function() {
+                  if ($('.content-elements').isOnScreen(1,1)) {
+                           $('.item-elements').addClass( 'active' );
+                  }
+            });
+
+            $(".test-menu .item-elements").click(function() { $('html, body').animate({ scrollTop: $(".content-elements").offset().top - 93 }, 500); });
+
+
+
+         $('.sv-dropdown__toggle').on('click', function () {
+            var $parent = $(this).parent();
+               $parent.toggleClass('sv-dropdown--open');
+         });
+
+      });
+
+   </script>
+
+
+
 </html>

@@ -1,0 +1,49 @@
+.@{prefix}-font {
+   font-family: @font-family;
+   color: @font-color;
+   line-height: 1.1em;
+   margin: 0;
+
+   .@{prefix}-link--title,
+   &--title {
+      font-weight: @font-weight-semibold;
+      font-size: @font-size-normal;
+   }
+
+   &--detail {
+      font-weight: @font-weight-light;
+      color: @font-color-lighter;
+   }
+
+   &--comments {
+      font-weight: @font-weight-regular;
+   }
+
+   &--detail-small {
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
+      color: @font-color-lighter;
+   }
+
+   &--tagline {
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
+      color: @font-color-lighter;
+      margin-top: @space;
+   }
+
+   &--empty {
+      font-weight: @font-weight-light;
+      font-size: @font-size-small;
+      color: @font-color-lighter;
+      text-align: center;
+      margin: @space8 0;
+      font-style: italic;
+   }
+
+   &--text {
+      font-weight: @font-weight-regular;
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+   }
+}

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-less": "lessc src/styles.less dist/styles.css",
-    "watch-less": "nodemon --watch src/*.less --ext less --exec 'npm run build-less'"
+    "copy-images": "cp -r src/img dist/img",
+    "watch-less": "nodemon --watch src/ --ext less --exec 'npm run build-less'"
   },
   "repository": {
     "type": "git",
