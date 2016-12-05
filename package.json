@@ -4,10 +4,7 @@
   "description": "SiteVision CSS framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-less": "lessc src/styles.less dist/styles.css",
-    "copy-images": "cp -r src/img dist/img",
-    "watch-less": "nodemon --watch src/ --ext less --exec 'npm run build-less'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,7 +18,9 @@
   "author": "SiteVision AB",
   "license": "MIT",
   "devDependencies": {
-    "less": "^2.7.1",
-    "nodemon": "^1.11.0"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-less": "^3.3.0"
   }
 }
