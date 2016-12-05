@@ -1,14 +1,14 @@
 # SiteVision CSS Framework #
 
 ## Getting started ##
-Clone repository
-
-`npm install`
+1. Clone repository
+2. Install [gulp-cli](http://gulpjs.com/) `npm install -g gulp-cli`
+3. Run `npm install` to install dependencies
 
 ## To build ##
-`npm run build-less`
+Run `gulp`
 
-To build continously when a less file is saved. Start `npm run watch-less`
+To build continously when a file is saved. Start `gulp watch`
 
 ## Code standard ##
 We are using the BEM model as described [here](https://css-tricks.com/bem-101/)
