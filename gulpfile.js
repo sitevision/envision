@@ -4,6 +4,7 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
+var rename = require('gulp-rename');
 
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
@@ -31,6 +32,9 @@ function doLess() {
 
 function doMinifyCSS() {
    return gulp.src('./dist/styles.css')
+      .pipe(rename({
+         suffix: '.min'
+      }))
       .pipe(sourcemaps.init())
       .pipe(cleanCSS())
       .pipe(sourcemaps.write('./map'))
