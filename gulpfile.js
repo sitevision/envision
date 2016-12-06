@@ -2,13 +2,16 @@ var gulp = require('gulp');
 var path = require('path');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
 
 gulp.task('less', doLess);
 gulp.task('autoprefix', ['less'], doAutoprefix);
-gulp.task('buildcss', ['less', 'autoprefix']);
+gulp.task('minifycss', ['autoprefix'], doMinifyCSS);
+gulp.task('buildcss', ['less', 'autoprefix', 'minifycss']);
 gulp.task('default', ['buildcss', 'copyimages', 'copyfonts']);
 gulp.task('watch', doWatch);
 
@@ -24,6 +27,14 @@ function doLess() {
          paths: [ path.join(__dirname, 'src') ]
       }))
       .pipe(gulp.dest('./build'));
+}
+
+function doMinifyCSS() {
+   return gulp.src('./dist/styles.css')
+      .pipe(sourcemaps.init())
+      .pipe(cleanCSS())
+      .pipe(sourcemaps.write('./map'))
+      .pipe(gulp.dest('./dist'));
 }
 
 function doWatch() {
