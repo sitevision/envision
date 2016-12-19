@@ -1,18 +1,16 @@
 .@{prefix}-menu  {
+   list-style: none;
 
    &--horizontal {
       padding: 0;
       margin: 0;
    }
 
-   &__row {
-      display: inline-block;
+   &__item {
       float: left;
-
-      .clear-fix()
    }
 
-   &__item {
+   &__link {
       font-size: @font-size-large;
       font-weight: @font-weight-light;
       color: @font-color-invert;
@@ -30,4 +28,5 @@
       border-right: 1px solid @color-brand-light;
    }
 
+   .clear-fix()
 }
