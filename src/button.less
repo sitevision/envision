@@ -61,6 +61,31 @@
       }
    }
 
+   &--invert {
+      color: @color-brand;
+      background-color: @font-color-invert;
+      border-color: @font-color-invert;
+
+      &:hover,
+      &.btn--hover {
+         background-color: @font-color-invert;
+         border-color: @font-color-invert;
+      }
+
+      &:active,
+      &.btn--active {
+         background-color: @font-color-invert;
+         border-color: @font-color-invert;
+         box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+      }
+
+      &:focus,
+      &.btn--focus {
+         background-color: @font-color-invert;
+         border-color: @font-color-invert;
+      }
+   }
+
    &--danger {
       color: @font-color-invert;
       background-color: @color-danger;
