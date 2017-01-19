@@ -3,10 +3,22 @@
    flex-direction: row;
    position: relative;
    padding: 0 @space1;
+   flex-direction: row;
+   list-style: none;
+
+   &__item {
+      margin: @space1 0;
+   }
+
 
    &--large {
       flex-grow: 1;
       margin: @space1 0;
+   }
+
+   &--inside {
+      flex-grow: 1;
+      margin: @space1 -@space1;
    }
 
    &--left {
@@ -23,11 +35,13 @@
    }
 
    &--align-vertical {
-      align-self: center;
+      justify-content: center;
+      align-items: center;
    }
 
    &--box {
       background-color: @color-element-bg;
+      border-bottom: 1px solid #fff;
    }
 
    &--navbar {

@@ -4,7 +4,6 @@
 
    &--profile {
       width: @space8;
-      height: @space8;
 
       &.@{prefix}-media--profile--me {
          width: @space7;
@@ -31,9 +30,8 @@
    }
 
    &--cover {
-      width: 100%;
+      max-width: 100%;
       height: auto;
-      max-height: 220px;
       vertical-align: top;
    }
 
@@ -85,11 +83,13 @@
       overflow: hidden;
       border-radius: @radius1;
       vertical-align: middle;
+      display: block;
    }
 
    &__tumbnail {
       max-width: 150px;
-      width: 100%;
+      height: auto;
+      display: block;
    }
 
    &__info {
