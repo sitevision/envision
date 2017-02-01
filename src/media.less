@@ -3,18 +3,18 @@
    flex-direction: row;
 
    &--profile {
-      width: @space8;
       height: auto;
+      width: @space8;
 
       &.@{prefix}-media--profile--me {
-         width: @space7;
          height: @space7;
+         width: @space7;
       }
    }
 
    &--thumb {
-      width: 100%;
       height: auto;
+      width: 100%;
    }
 
    &--gallery {
@@ -22,34 +22,35 @@
       margin: @space0 -@space0;
 
       .@{prefix}-media__item {
-         width: 25%;
          box-sizing: border-box;
          padding: @space0;
+         width: 25%;
       }
 
       .clear-fix()
    }
 
    &--cover {
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
       vertical-align: top;
+      width: 100%;
    }
 
    &--collage {
-      overflow: hidden;
       margin: 0;
+      overflow: hidden;
 
       .@{prefix}-media__item {
-         width: 50%;
-         height: auto;
          display: inline-block;
          float: left;
+         height: auto;
          max-height: 150px;
+         width: 50%;
 
          &:last-child {
-            width: 100%;
             max-height: 200px;
+            width: 100%;
          }
       }
 
@@ -57,22 +58,22 @@
    }
 
    &--video {
-      margin: 0;
       display: block;
-      position: relative;
-      padding-bottom: 56.25%;
       height: 0;
-      overflow: hidden;
+      margin: 0;
       max-width: 100%;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
 
       iframe,
       object,
       embed {
+         height: 100%;
+         left: 0;
          position: absolute;
          top: 0;
-         left: 0;
          width: 100%;
-         height: 100%
       }
    }
 
@@ -81,28 +82,21 @@
    }
 
    &__image {
-      overflow: hidden;
       border-radius: @radius1;
-      vertical-align: middle;
       display: block;
+      overflow: hidden;
+      vertical-align: middle;
    }
 
-   &__image {
-      overflow: hidden;
-      border-radius: @radius1;
-      vertical-align: middle;
+   &__tumbnail {
       display: block;
-   }
-
-   &__thumbnail {
-      max-width: 150px;
       height: auto;
-      display: block;
+      max-width: 150px;
    }
 
    &__info {
-      flex-grow: 1;
       box-sizing: border-box;
+      flex-grow: 1;
       margin-left: @space1;
    }
 
