@@ -1,116 +1,129 @@
-
-
 body {
-   font-family: @font-family;
    background-color: @color-page-bg;
+   font-family: @font-family;
 }
+
 .test-menu {
    position: fixed;
 }
+
 .test-menu li {
    list-style: none;
 }
+
 .test-menu li .menu-item {
-   padding: 4px 8px;
    border-radius: 3px;
-   display: inline-block;
    cursor: pointer;
+   display: inline-block;
+   padding: 4px 8px;
 }
+
 .test-menu li.active .menu-item {
    background-color: @color-brand;
    color: @font-color-invert;
 }
 
 .row {
-   padding: 0 @line-height-large @line-height-large 0;
    box-sizing: content-box;
+   padding: 0 @line-height-large @line-height-large 0;
 }
 
-[class^='col-'] {
-   display: inline-block;
+[class^="col-"] {
    box-sizing: content-box;
+   display: inline-block;
 }
 
 /* Loop though and build col */
 .span-loop (@i) when (@i > 0) {
    .col-@{i} {
-      width: ((100% / @grid-columns) * @i ) ;
       float: left;
+      width: ((100% / @grid-columns) * @i);
    }
+
    .span-loop(@i - 1);
 }
+
 .span-loop (@grid-columns);
 
 .s {
-    color: #d44950;
+   color: #d44950;
 }
+
 .na {
-    color: #4f9fcf;
+   color: #4f9fcf;
 }
+
 .nt {
     color: #2f6f9f;
 }
+
 .example {
-   margin-right: 0;
-   margin-left: 0;
    background-color: @font-color-invert;
    border-color: @color-element-bg;
+   border-radius: @radius2 @radius2 0 0;
    border-style: solid;
    border-width: 1px 1px 0 1px;
-   border-radius: @radius2 @radius2 0 0;
-   position: relative;
-   padding: @space8 @line-height-small @line-height-small;
    margin: 0 -@line-height-small @line-height-small;
+   margin-left: 0;
+   margin-right: 0;
+   padding: @space8 @line-height-small @line-height-small;
+   position: relative;
 }
+
 .figure {
    margin: -@line-height-small -@line-height-small @line-height-small;
 }
+
 .example:after {
-   position: absolute;
-   top: 15px;
-   left: 15px;
+   color: @color-light;
+   content: "Example";
    font-size: @font-size-xtrasmall;
    font-weight: @font-weight-bold;
-   color: @color-light;
-   text-transform: uppercase;
+   left: 15px;
    letter-spacing: 1px;
-   content: "Example";
+   position: absolute;
+   text-transform: uppercase;
+   top: 15px;
 }
+
 .figure--highlight {
-   border-color: @color-element-bg;
-   border-style: solid;
-   border-width: 0 1px 1px 1px;
-   border-radius: 0 0 @radius2 @radius2;
    background-color: #f7f7f9;
    border: 1px solid #e1e1e8;
+   border-color: @color-element-bg;
+   border-radius: 0 0 @radius2 @radius2;
+   border-style: solid;
+   border-width: 0 1px 1px 1px;
 }
+
 pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    border-radius: 4px;
+   border-radius: 4px;
+   color: #333333;
+   display: block;
+   font-size: 13px;
+   line-height: 1.42857143;
+   margin: 0;
+   padding: 9.5px;
+   word-break: break-all;
+   word-wrap: break-word;
 }
+
 pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-}
-.highlight pre {
+   background-color: transparent;
+   border-radius: 0;
+   color: inherit;
+   font-size: inherit;
    padding: 0;
-   margin-top: 0;
-   margin-bottom: 0;
-   word-break: normal;
-   white-space: nowrap;
+   white-space: pre-wrap;
+}
+
+.highlight pre {
    background-color: transparent;
    border: 0;
+   margin-bottom: 0;
+   margin-top: 0;
+   padding: 0;
+   white-space: nowrap;
+   word-break: normal;
 }
 
 .wrapper {
@@ -126,46 +139,51 @@ pre code {
    padding: @line-height-extralarge;
 }
 
-.wrapper--borderRadius {
-   border-radius: @radius2;
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   box-sizing: border-box;
+   color: inherit;
    font-family: inherit;
    font-weight: 500;
    line-height: 1.1;
-   color: inherit;
-   box-sizing: border-box;
-   margin-top: @space3;
    margin-bottom: @space1;
+   margin-top: @space3;
 }
+
 h1 {
    font-size: @font-size-super;
    line-height: @line-height-super;
 }
+
 h2 {
    font-size: @font-size-extralarge;
    line-height: @line-height-extralarge;
 }
+
 h3 {
    font-size: @font-size-large;
    line-height: @line-height-large;
 }
+
 h4 {
    font-size: @font-size-normal;
    line-height: @line-height-normal;
 }
+
 h5 {
    font-size: @font-size-small;
    line-height: @line-height-small;
 }
+
 h6 {
    font-size: @font-size-xtrasmall;
    line-height: @line-height-xtrasmall;
 }
 
-.h1--baseLine {
+.h1--base-line {
    border-bottom: 1px solid @color-element-bg;
 }
-
-

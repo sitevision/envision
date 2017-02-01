@@ -6,25 +6,25 @@
 
    &__label {
       display: inline-block;
-      max-width: 100%;
-      margin-bottom: @space0;
       font-weight: @font-weight-bold;
+      margin-bottom: @space0;
+      max-width: 100%;
    }
 
    &__icon {
-      position: absolute;
-      line-height: @line-height-small;
       font-size: @font-size-normal;
+      line-height: @line-height-small;
       padding: @space0 0 @space0 @space1;
+      position: absolute;
    }
 
    &__button {
       position: absolute;
-      top: @space1;
       right: @space1;
+      top: @space1;
    }
 
-   input[type=search]&__input {
+   input[type="search"]&__input {
       appearance: textfield;
    }
 
@@ -33,19 +33,18 @@
       display: none;
    }
 
-
    &__input {
+      background-color: @font-color-invert;
       background-image: none;
-      margin: 0;
-      display: block;
-      width: 100%;
-      font-size: @font-size-small;
-      line-height: @line-height-small;
-      padding: @space0 @space2;
       border: 1px solid @color-element-bg;
       border-radius: @radius1;
-      background-color: @font-color-invert;
       box-sizing: border-box;
+      display: block;
+      font-size: @font-size-small;
+      line-height: @line-height-small;
+      margin: 0;
+      padding: @space0 @space2;
+      width: 100%;
 
       &--icon {
          padding-left: @space6;
@@ -59,24 +58,21 @@
 
    &__checkbox,
    &__radio {
-      position: relative;
       display: block;
-      margin-top: @space2;
       margin-bottom: @space2;
+      margin-top: @space2;
+      position: relative;
    }
 
    &__helpBlock {
-      display: block;
-      margin-top: @space1;
-      margin-bottom: @space1;
       color: @font-color-lighter;
+      display: block;
       font-size: @font-size-small;
+      margin-bottom: @space1;
+      margin-top: @space1;
    }
 
-   input[type=file] {
+   input[type="file"] {
       display: block;
    }
-
 }
-
-

@@ -1,45 +1,46 @@
 .@{prefix}-button {
    appearance: none;
-   user-select: none;
+   background-color: rgba(0, 0, 0, .05);
+   border: 1px solid transparent;
+   border-radius: @radius1;
+   box-sizing: border-box;
+   color: @font-color;
+   cursor: pointer;
    display: inline-block;
-   padding: @space0 @space1;
-   margin: 0;
    font-size: @font-size-small;
    font-weight: @font-weight-regular;
    line-height: @line-height-small;
+   margin: 0;
+   padding: @space0 @space1;
    text-align: center;
-   white-space: nowrap;
-   vertical-align: middle;
-   cursor: pointer;
-   border: 1px solid transparent;
-   border-radius: @radius1;
-   background-color: rgba(0, 0, 0, 0.05);
    text-decoration: none;
-   color: @font-color;
-   box-sizing: border-box;
+   user-select: none;
+   vertical-align: middle;
+   white-space: nowrap;
 
    &:hover,
    &.btn--hover {
-      background-color: rgba(0,0,0,0.05);
-      border-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, .05);
+      border-color: rgba(0, 0, 0, .1);
    }
+
    &:active,
    &.btn--active {
-      background-color: rgba(0,0,0,0.2);
-      border: 1px solid rgba(0,0,0,0.2);
-      box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, .2);
+      border: 1px solid rgba(0, 0, 0, .2);
+      box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
    }
 
    &:focus,
    &.btn--focus {
-      background-color: rgba(0,0,0,0.2);
-      border-color: rgba(0,0,0,0.2);
+      background-color: rgba(0, 0, 0, .2);
+      border-color: rgba(0, 0, 0, .2);
    }
 
    &--primary {
-      color: @font-color-invert;
       background-color: @color-brand;
       border-color: @color-brand;
+      color: @font-color-invert;
 
       &:hover,
       &.btn--hover {
@@ -51,7 +52,7 @@
       &.btn--active {
          background-color: @color-brand-dark;
          border-color: @color-brand-dark;
-         box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
@@ -62,9 +63,9 @@
    }
 
    &--danger {
-      color: @font-color-invert;
       background-color: @color-danger;
       border-color: @color-danger;
+      color: @font-color-invert;
 
       &:hover,
       &.btn--hover {
@@ -76,7 +77,7 @@
       &.btn--active {
          background-color: @color-danger-dark;
          border-color: @color-danger-dark;
-         box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
@@ -87,9 +88,9 @@
    }
 
    &--link {
-      color: @font-color;
       background-color: transparent;
       border-color: transparent;
+      color: @font-color;
 
       &:hover,
       &.btn--hover {
@@ -101,7 +102,7 @@
       &.btn--active {
          background-color: @color-dark;
          border-color: @color-dark;
-         box-shadow: inset 1px 1px 2px 0px rgba(0,0,0,0.3);
+         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
@@ -114,42 +115,42 @@
    &--dropdown {
       background-color: transparent;
       border-color: transparent;
-      width: @space7;
+      color: #1d1d1b;
       height: @space7;
       padding: 0;
-      color: #1d1d1b;
+      width: @space7;
 
-      &:hover{
-         background-color: rgba(0,0,0,.1);
+      &:hover {
+         background-color: rgba(0, 0, 0, .1);
          border-color: transparent;
       }
 
       &:focus,
       &.btn--focus {
-         background-color: rgba(0,0,0,.2);
+         background-color: rgba(0, 0, 0, .2);
          border-color: transparent;
       }
    }
 
    &--large {
-      padding: @space0 @space3;
       font-size: @font-size-large;
       font-weight: @font-weight-regular;
       line-height: @line-height-large;
+      padding: @space0 @space3;
    }
 
    &--small {
-      padding: @space0 @space2;
       font-size: @font-size-small;
       font-weight: @font-weight-regular;
       line-height: @line-height-small;
+      padding: @space0 @space2;
    }
 
    &--tiny {
-      padding: @space0 @space0;
       font-size: @font-size-small;
       font-weight: @font-weight-regular;
       line-height: @line-height-small;
+      padding: @space0 @space0;
    }
 
    &--disabled,
@@ -160,12 +161,12 @@
 
 
    &__toolbar {
-      flex-grow: 1;
       align-self: center;
+      flex-grow: 1;
    }
 
    &--tool {
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, .05);
       border-color: transparent;
       border-radius: 0;
       float: left;
@@ -182,20 +183,20 @@
 
       &:hover,
       &.btn--hover {
-         background-color: rgba(0, 0, 0, 0.1);
+         background-color: rgba(0, 0, 0, .1);
          border-color: transparent;
       }
 
       &:focus,
       &.btn--focus {
-         background-color: rgba(0, 0, 0, 0.2);
+         background-color: rgba(0, 0, 0, .2);
          border-color: transparent;
       }
 
       &--active {
-         color: @font-color-invert;
          background-color: @color-brand;
          border-color: @color-brand;
+         color: @font-color-invert;
 
          &:hover,
          &.btn--hover {
@@ -217,7 +218,6 @@
       }
 
       .clear-fix()
-
    }
 
    &--divider {
@@ -243,32 +243,31 @@
    }
 
    &--tab {
+      background-color: rgba(0, 0, 0, .05);
+      border-bottom-color: transparent;
       border-top-left-radius: @radius1;
       border-top-right-radius: @radius1;
-      line-height: @line-height-small;
-      color: @font-color;
-      padding: @space0 @space1;
       display: inline-block;
-      background-color: rgba(0,0,0,0.05);
-      border-bottom-color: transparent;
+      line-height: @line-height-small;
+      padding: @space0 @space1;
 
       &:hover {
-         background-color: rgba(0, 0, 0, 0.1);
+         background-color: rgba(0, 0, 0, .1);
          border-color: transparent;
       }
 
       &:focus,
       &.btn--focus {
-         background-color: rgba(0, 0, 0, 0.2);
+         background-color: rgba(0, 0, 0, .2);
          border-color: transparent;
       }
 
       &--active {
-         color: @font-color-invert;
          background-color: @color-brand;
-         border-color: @color-brand;
          border-bottom-left-radius: 0;
          border-bottom-right-radius: 0;
+         border-color: @color-brand;
+         color: @font-color-invert;
 
          &:hover,
          &.btn--hover {
@@ -294,8 +293,8 @@
       position: relative;
 
       .@{prefix}-button {
-         float: left;
          border-radius: 0;
+         float: left;
 
          &:first-child {
             border-radius: @radius1 0 0 @radius1;
@@ -309,8 +308,4 @@
 
       .clear-fix()
    }
-
 }
-
-
-

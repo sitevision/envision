@@ -8,18 +8,18 @@
    }
 
    &__menu {
-      position: absolute;
+      background-color: @font-color-invert;
+      border: 1px solid rgba(0, 0, 0, .15);
+      border-radius: @radius1;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
       display: none;
       list-style: none;
-      background-color: @font-color-invert;
-      padding: @space2;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: @radius1;
-      top: @space3;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-      z-index: 1000;
       min-width: 160px;
-      right: 0px;
+      padding: @space2;
+      position: absolute;
+      right: 0;
+      top: @space3;
+      z-index: 1000;
 
       a {
          display: block;
@@ -28,8 +28,8 @@
    }
 
    &--divider {
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
       margin: @space1 0;
-      border-bottom: 1px solid rgba(0,0,0,.1);
    }
 
    .clear-fix()
