@@ -1,56 +1,56 @@
 // Arrow Size
-@arrow-position:      -22px;
-@arrow-border-size:   10px;
+@arrow-position: -22px;
+@arrow-border-size: 10px;
 
 .@{prefix}-popover {
    background-color: @color-element-bg;
-   max-width: @popover-width;
+   border: 1px solid @color-lighter;
    border-radius: @radius2;
    box-shadow: @popover-shadow;
+   max-width: @popover-width;
    position: relative;
-   border: 1px solid @color-lighter;
 
    &__header {
-      display: block;
-      border-radius: @radius2 @radius2 0 0;
       background-color: @color-lighter;
+      border-radius: @radius2 @radius2 0 0;
+      display: block;
       padding: @space0 @space1;
 
       &__title {
          display: inline-block;
-         margin: 0;
          font-size: @font-size-normal;
          font-weight: @font-weight-semibold;
          line-height: @line-height-large;
+         margin: 0;
       }
    }
 
    &__content {
       display: block;
-      padding: 0 @space1;
       font-size: @font-size-small;
       font-weight: @font-weight-regular;
       line-height: @line-height-small;
+      padding: 0 @space1;
    }
 
    &__arrow {
-      position: absolute;
-      display: block;
-      width: 0;
-      height: 0;
       border-color: transparent;
       border-style: solid;
       border-width: @arrow-border-size + 1;
+      display: block;
+      height: 0;
+      position: absolute;
+      width: 0;
 
       &:after {
-         position: absolute;
-         display: block;
-         width: 0;
-         height: 0;
          border-color: transparent;
          border-style: solid;
          border-width: @arrow-border-size;
          content: "";
+         display: block;
+         height: 0;
+         position: absolute;
+         width: 0;
       }
 
       &--top,
@@ -64,31 +64,31 @@
       }
 
       &--top {
-         top: @arrow-position;
          border-bottom-color: @color-lighter;
+         top: @arrow-position;
 
          &:after {
-            top: 1px;
             border-bottom-color: @color-lighter;
             border-top-width: 0;
+            top: 1px;
          }
       }
 
       &--bottom {
-         bottom: @arrow-position;
          border-top-color: @color-lighter;
+         bottom: @arrow-position;
 
          &:after {
-            bottom: 1px;
-            border-top-color: @color-element-bg;
             border-bottom-width: 0;
+            border-top-color: @color-element-bg;
+            bottom: 1px;
          }
       }
 
       &--right,
       &--left {
-         top: 50%;
          margin-top: -@arrow-border-size;
+         top: 50%;
 
          &:after {
             margin-top: -@arrow-border-size;
@@ -96,24 +96,24 @@
       }
 
       &--right {
-         right: @arrow-position;
          border-left-color: @color-lighter;
+         right: @arrow-position;
 
          &:after {
-            right: 1px;
             border-left-color: @color-element-bg;
             border-right-width: 0;
+            right: 1px;
          }
       }
 
       &--left {
-         left: @arrow-position;
          border-right-color: @color-lighter;
+         left: @arrow-position;
 
          &:after {
-            left: 1px;
-            border-right-color: @color-element-bg;
             border-left-width: 0;
+            border-right-color: @color-element-bg;
+            left: 1px;
          }
       }
    }
