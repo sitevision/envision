@@ -1,0 +1,32 @@
+.@{prefix}-menu  {
+
+   &--horizontal {
+      padding: 0;
+      margin: 0;
+   }
+
+   &__item {
+      float: left;
+      list-style: none;
+   }
+
+   &__link {
+      font-size: @font-size-large;
+      font-weight: @font-weight-light;
+      color: @font-color-invert;
+      padding: @space2;
+      border-left: 1px solid @color-brand-light;
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+         background-color: @color-brand-light;
+      }
+   }
+
+   &__row:last-child .@{prefix}-menu__item {
+      border-right: 1px solid @color-brand-light;
+   }
+
+   .clear-fix()
+}

@@ -1,12 +1,23 @@
 .@{prefix}-base {
    display: flex;
    flex-direction: row;
+   list-style: none;
    padding: 0 @space1;
    position: relative;
+
+   &__item {
+      margin: @space1 0;
+   }
+
 
    &--large {
       flex-grow: 1;
       margin: @space1 0;
+   }
+
+   &--inside {
+      flex-grow: 1;
+      margin: @space1 -@space1;
    }
 
    &--left {
@@ -23,11 +34,17 @@
    }
 
    &--align-vertical {
-      align-self: center;
+      align-items: center;
+      justify-content: center;
    }
 
    &--box {
       background-color: @color-element-bg;
+      border-bottom: 1px solid #fff;
+   }
+
+   &--navbar {
+      background-color: @color-brand;
    }
 
    &--tab {
