@@ -1,0 +1,17 @@
+- title: Getting started
+  pages:
+    - title: Introduction
+
+- title: Components
+  pages:
+    - title: Actionbar
+    - title: Buttons
+    - title: Form
+
+- title: About
+  pages:
+    - title: History
+    - title: Team
+    - title: Brand
+    - title: License
+    - title: Translations

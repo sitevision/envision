@@ -1,0 +1,19 @@
+@import "highlight";
+@import "nav-top";
+
+body {
+   background-color: #ffffff;
+   font-family: Roboto, sans-serif;
+}
+
+.main-container {
+   display: flex;
+
+   main {
+      flex: 5;
+   }
+
+   nav {
+      flex: 1;
+   }
+}

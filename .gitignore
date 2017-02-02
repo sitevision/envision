@@ -3,3 +3,6 @@ dist
 build
 npm-debug.log
 .idea
+_site
+.sass-cache
+.jekyll-metadata
