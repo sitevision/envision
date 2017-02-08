@@ -5,14 +5,16 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
+var lessHint = require('gulp-lesshint');
 
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
 
+gulp.task('hintcss', doHint);
 gulp.task('less', doLess);
 gulp.task('autoprefix', ['less'], doAutoprefix);
 gulp.task('minifycss', ['autoprefix'], doMinifyCSS);
-gulp.task('buildcss', ['less', 'autoprefix', 'minifycss']);
+gulp.task('buildcss', ['hintcss', 'less', 'autoprefix', 'minifycss']);
 gulp.task('default', ['buildcss', 'copyimages', 'copyfonts']);
 gulp.task('watch', doWatch);
 
@@ -57,3 +59,9 @@ function doCopyFonts() {
       .pipe(gulp.dest('./dist/fonts'));
 }
 
+function doHint() {
+   return gulp.src(['./src/*.less', '!./src/**variable.less', '!./src/**icons.less'])
+      .pipe(lessHint())
+      .pipe(lessHint.reporter())
+      .pipe(lessHint.failOnError());
+}
