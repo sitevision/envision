@@ -28,6 +28,9 @@
       <li>
          <a class="active" href="/documentation/">Documentation</a>
       </li>
+      <li>
+         <a class="" href="/about/">About</a>
+      </li>
    </ul>
 </nav>
 
@@ -122,111 +125,84 @@
       </ul>
     </div>
   
-  
-  
-  
-  
-
-  
-
-  <div>
-      <a href="/about/history/">
-        About
-      </a>
-
-      <ul>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/about/history/">
-              History
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/about/team/">
-              Team
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/about/brand/">
-              Brand
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/about/license/">
-              License
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/about/translations/">
-              Translations
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
 </nav>
 
          <main>
             <h1 id="content">Buttons</h1>
-            
+            <h2 id="types">Types</h2>
+
 <div class="code-example" data-example-id="">
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="sv-button">Default</button>
+
 <button type="button" class="sv-button sv-button--primary">Primary</button>
 
-<!-- Secondary, outline button -->
 <button type="button" class="sv-button sv-button--danger">Secondary</button>
 
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="sv-button sv-button--invert">Invert</button>
+
 <button type="button" class="sv-button sv-button--link">Link</button>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
 
-<span class="c">&lt;!-- Secondary, outline button --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--danger"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
 
-<span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--invert"</span><span class="nt">&gt;</span>Invert<span class="nt">&lt;/button&gt;</span>
+
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+<h2 id="sizes">Sizes</h2>
+
+<div class="code-example" data-example-id="">
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--large">Large</button>
+   <button type="button" class="sv-button sv-button--large">Large</button>
+</p>
+
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--small">Small</button>
+   <button type="button" class="sv-button sv-button--small">Small</button>
+</p>
+
+<p>
+   <button type="button" class="sv-button sv-button--primary">Default</button>
+   <button type="button" class="sv-button">Default</button>
+</p>
+
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--tiny">Tiny</button>
+   <button type="button" class="sv-button sv-button--tiny">Tiny</button>
+</p>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--primary sv-button--large"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--large"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--primary sv-button--small"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--small"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--primary"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--primary sv-button--tiny"</span><span class="nt">&gt;</span>Tiny<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button sv-button--tiny"</span><span class="nt">&gt;</span>Tiny<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<h2 id="state">State</h2>
+
+<h3 id="disabled">Disabled</h3>
+
+<div class="code-example" data-example-id="">
+<button type="button" class="sv-button" disabled="">Disabled</button>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"sv-button"</span> <span class="na">disabled</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
 
          </main>

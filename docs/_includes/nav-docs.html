@@ -1,6 +1,6 @@
 <nav>
   {% assign page_slug = page.url | split: '/' | last %}
-  {% for group in site.data.nav %}
+  {% for group in site.data.nav-docs %}
   {% assign link = group.pages | first %}
   {% assign link_slug = link.title | slugify %}
   {% assign group_slug = group.title | slugify %}
