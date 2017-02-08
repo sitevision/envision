@@ -1,0 +1,13 @@
+<nav class="nav-top">
+   <ul>
+      <li>
+         <a class="{% if page.layout == "home" %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+      </li>
+      <li>
+         <a class="{% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
+      </li>
+      <li>
+         <a class="{% if page.layout == "about" %}active{% endif %}" href="{{ site.baseurl }}/about/">About</a>
+      </li>
+   </ul>
+</nav>

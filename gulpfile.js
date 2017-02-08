@@ -7,6 +7,9 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var lessHint = require('gulp-lesshint');
 
+var DIST_FOLDER = './dist';
+var DOCS_DIST_FOLDER = './docs/dist'
+
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
 
@@ -33,14 +36,15 @@ function doLess() {
 }
 
 function doMinifyCSS() {
-   return gulp.src('./dist/styles.css')
+   return gulp.src(DIST_FOLDER + '/styles.css')
       .pipe(rename({
          suffix: '.min'
       }))
       .pipe(sourcemaps.init())
       .pipe(cleanCSS())
       .pipe(sourcemaps.write('./map'))
-      .pipe(gulp.dest('./dist'));
+      .pipe(gulp.dest(DIST_FOLDER))
+      .pipe(gulp.dest(DOCS_DIST_FOLDER));
 }
 
 function doWatch() {
@@ -51,12 +55,14 @@ function doWatch() {
 
 function doCopyImages() {
    gulp.src('src/img/**/*')
-      .pipe(gulp.dest('./dist/img'));
+      .pipe(gulp.dest(DIST_FOLDER + '/img'))
+      .pipe(gulp.dest(DOCS_DIST_FOLDER + '/img'))
 }
 
 function doCopyFonts() {
    gulp.src('src/fonts/**/*')
-      .pipe(gulp.dest('./dist/fonts'));
+      .pipe(gulp.dest(DIST_FOLDER + '/fonts'))
+      .pipe(gulp.dest(DOCS_DIST_FOLDER + '/fonts'));
 }
 
 function doHint() {
