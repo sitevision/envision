@@ -1,0 +1,17 @@
+.#{$prefix}-actionbar {
+
+   &--icon::before {
+      content: "\e90d";
+      font-family: "icomoon";
+      font-size: $font-size-large;
+   }
+
+   &--tab {
+      margin: 0;
+      padding: $space2 $space2 0;
+
+      .#{$prefix}-actionbar__button {
+         margin-bottom: $space1;
+      }
+   }
+}

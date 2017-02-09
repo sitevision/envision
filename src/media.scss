@@ -1,21 +1,21 @@
-.@{prefix}-media {
+.#{$prefix}-media {
    display: flex;
    flex-direction: row;
 
    &--profile {
       height: auto;
-      width: @space8;
+      width: $space8;
 
-      &.@{prefix}-media--profile--me {
-         height: @space7;
-         width: @space7;
+      &.#{$prefix}-media--profile--me {
+         height: $space7;
+         width: $space7;
       }
    }
 
    &--profile-header {
-      width: @space9;
+      border-radius: $radius5;
       height: auto;
-      border-radius: @radius5;
+      width: $space9;
    }
 
    &--thumb {
@@ -25,15 +25,15 @@
 
    &--gallery {
       flex-wrap: wrap;
-      margin: @space0 -@space0;
+      margin: $space0 #{-$space0};
 
-      .@{prefix}-media__item {
+      .#{$prefix}-media__item {
          box-sizing: border-box;
-         padding: @space0;
+         padding: $space0;
          width: 25%;
       }
 
-      .clear-fix()
+      @extend .clear-fix;
    }
 
    &--cover {
@@ -47,7 +47,7 @@
       margin: 0;
       overflow: hidden;
 
-      .@{prefix}-media__item {
+      .#{$prefix}-media__item {
          display: inline-block;
          float: left;
          height: auto;
@@ -60,7 +60,7 @@
          }
       }
 
-      .clear-fix()
+      @extend .clear-fix;
    }
 
    &--video {
@@ -84,16 +84,16 @@
    }
 
    &__icon {
-      font-size: @icon-size-normal;
+      font-size: $icon-size-normal;
    }
 
    &__breadcrumb {
-      font-size: @icon-size-xtrasmall;
-      margin: 0 @space0;
+      font-size: $icon-size-xtrasmall;
+      margin: 0 $space0;
    }
 
    &__image {
-      border-radius: @radius1;
+      border-radius: $radius1;
       display: block;
       overflow: hidden;
       vertical-align: middle;
@@ -108,10 +108,10 @@
    &__info {
       box-sizing: border-box;
       flex-grow: 1;
-      margin-left: @space1;
+      margin-left: $space1;
    }
 
    &__data {
-      margin-bottom: @space0;
+      margin-bottom: $space0;
    }
 }

@@ -1,0 +1,101 @@
+// Base
+$prefix:                   sv;
+$grid-columns:             12;
+$page-width:               700px;
+$inner-page-width:         600px;
+$popover-width:            300px;
+
+
+// Font family
+$font-family:              "Roboto", sans-serif;
+
+// Font Size
+$font-size-xtrasmall:      12px;
+$font-size-small:          14px;
+$font-size-normal:         16px;
+$font-size-large:          20px;
+$font-size-extralarge:     40px;
+$font-size-super:          60px;
+
+// Font weight
+$font-weight-light:        300;
+$font-weight-regular:      400;
+$font-weight-semibold:     500;
+$font-weight-bold:         600;
+$font-weight-extrabold:    700;
+
+// Font Line-height
+$line-height-base:         6px; //(For text blocks and wrapping text)
+$line-height-xtrasmall:    $line-height-base + $font-size-xtrasmall;
+$line-height-small:        $line-height-base + $font-size-small;
+$line-height-normal:       $line-height-base + $font-size-normal;
+$line-height-large:        $line-height-base + $font-size-large;
+$line-height-extralarge:   $line-height-base + $font-size-extralarge;
+$line-height-super:        $line-height-base + $font-size-super;
+
+// Size (Margin/Padding)
+$space:                    2px;   // 4
+$space0:                   4px;   // 8
+$space1:                   8px;   // 16
+$space2:                   12px;  // 24
+$space3:                   16px;  // 32
+$space4:                   20px;  // 40
+$space5:                   24px;  // 48
+$space6:                   28px;  // 56
+$space7:                   32px;  // 64
+$space8:                   40px;  // 80
+$space9:                   64px;  // 128
+$space10:                  128px; // 256
+
+// Radius
+$radius1: 2px; // 4
+$radius2: 4px; // 8
+$radius3: 8px; // 16
+$radius4: 50px; // Rounded at ends
+$radius5: 100%; // Circle
+
+// shadow
+$popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
+
+// Icon Size
+$icon-size-xtrasmall:      14px;
+$icon-size-small:          20px;
+$icon-size-normal:         30px;
+$icon-size-large:          40px;
+$icon-size-extralarge:     50px;
+$icon-size-super:          60px;
+
+// Color
+$color-page-bg:            #ffffff;
+$color-element-bg:         #f6f5f5;
+
+$color-brand:              #1395ba;
+$color-brand-light:        lighten($color-brand, 10%);
+$color-brand-dark:         darken($color-brand, 10%);
+
+$color-danger:             #e02525;
+$color-danger-light:       lighten($color-brand, 10%);
+$color-danger-dark:        darken($color-brand, 10%);
+
+$font-color:               #373d3f;
+$font-color-light:         #333333;
+$font-color-lighter:       #878787;
+$font-color-invert:        #ffffff;
+
+$color-base:               #000000;
+$color-darker:             lighten($color-base, 5%);
+$color-dark:               lighten($color-base, 20%);
+$color-normal:             lighten($color-base, 40%);
+$color-light:              lighten($color-base, 60%);
+$color-lighter:            lighten($color-base, 80%);
+$color-lightest:           lighten($color-base, 100%);
+
+
+$hover-background-color:   rgba(0, 0, 0, .1);
+$border-color-light:       rgba(0, 0, 0, .1);
+
+// Z-index value
+$zindex-base:              1;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+

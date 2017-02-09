@@ -1,17 +1,17 @@
-.@{prefix}-button {
+.#{$prefix}-button {
    appearance: none;
    background-color: rgba(0, 0, 0, .05);
    border: 1px solid transparent;
-   border-radius: @radius1;
+   border-radius: $radius1;
    box-sizing: border-box;
-   color: @font-color;
+   color: $font-color;
    cursor: pointer;
    display: inline-block;
-   font-size: @font-size-small;
-   font-weight: @font-weight-regular;
-   line-height: @line-height-small;
+   font-size: $font-size-small;
+   font-weight: $font-weight-regular;
+   line-height: $line-height-small;
    margin: 0;
-   padding: @space0 @space1;
+   padding: $space0 $space1;
    text-align: center;
    text-decoration: none;
    user-select: none;
@@ -38,102 +38,102 @@
    }
 
    &--primary {
-      background-color: @color-brand;
-      border-color: @color-brand;
-      color: @font-color-invert;
+      background-color: $color-brand;
+      border-color: $color-brand;
+      color: $font-color-invert;
 
       &:hover,
       &.btn--hover {
-         background-color: @color-brand-dark;
-         border-color: @color-brand-dark;
+         background-color: $color-brand-dark;
+         border-color: $color-brand-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: @color-brand-dark;
-         border-color: @color-brand-dark;
+         background-color: $color-brand-dark;
+         border-color: $color-brand-dark;
          box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
       &.btn--focus {
-         background-color: @color-brand-dark;
-         border-color: @color-brand-dark;
+         background-color: $color-brand-dark;
+         border-color: $color-brand-dark;
       }
    }
 
    &--invert {
-      background-color: @font-color-invert;
-      border-color: @font-color-invert;
-      color: @color-brand;
+      background-color: $font-color-invert;
+      border-color: $font-color-invert;
+      color: $color-brand;
 
       &:hover,
       &.btn--hover {
-         background-color: @font-color-invert;
-         border-color: @font-color-invert;
+         background-color: $font-color-invert;
+         border-color: $font-color-invert;
       }
 
       &:active,
       &.btn--active {
-         background-color: @font-color-invert;
-         border-color: @font-color-invert;
+         background-color: $font-color-invert;
+         border-color: $font-color-invert;
          box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
       &.btn--focus {
-         background-color: @font-color-invert;
-         border-color: @font-color-invert;
+         background-color: $font-color-invert;
+         border-color: $font-color-invert;
       }
    }
 
    &--danger {
-      background-color: @color-danger;
-      border-color: @color-danger;
-      color: @font-color-invert;
+      background-color: $color-danger;
+      border-color: $color-danger;
+      color: $font-color-invert;
 
       &:hover,
       &.btn--hover {
-         background-color: @color-danger-dark;
-         border-color: @color-danger-dark;
+         background-color: $color-danger-dark;
+         border-color: $color-danger-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: @color-danger-dark;
-         border-color: @color-danger-dark;
+         background-color: $color-danger-dark;
+         border-color: $color-danger-dark;
          box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
       &.btn--focus {
-         background-color: @color-danger-dark;
-         border-color: @color-danger-dark;
+         background-color: $color-danger-dark;
+         border-color: $color-danger-dark;
       }
    }
 
    &--link {
       background-color: transparent;
       border-color: transparent;
-      color: @font-color;
+      color: $font-color;
 
       &:hover,
       &.btn--hover {
-         background-color: @color-dark;
-         border-color: @color-dark;
+         background-color: $color-dark;
+         border-color: $color-dark;
       }
 
       &:active,
       &.btn--active {
-         background-color: @color-dark;
-         border-color: @color-dark;
+         background-color: $color-dark;
+         border-color: $color-dark;
          box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
       }
 
       &:focus,
       &.btn--focus {
-         background-color: @color-dark;
-         border-color: @color-dark;
+         background-color: $color-dark;
+         border-color: $color-dark;
       }
    }
 
@@ -141,9 +141,9 @@
       background-color: transparent;
       border-color: transparent;
       color: #1d1d1b;
-      height: @space7;
+      height: $space7;
       padding: 0;
-      width: @space7;
+      width: $space7;
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);
@@ -158,24 +158,24 @@
    }
 
    &--large {
-      font-size: @font-size-large;
-      font-weight: @font-weight-regular;
-      line-height: @line-height-large;
-      padding: @space0 @space3;
+      font-size: $font-size-large;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-large;
+      padding: $space0 $space3;
    }
 
    &--small {
-      font-size: @font-size-small;
-      font-weight: @font-weight-regular;
-      line-height: @line-height-small;
-      padding: @space0 @space2;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
+      padding: $space0 $space2;
    }
 
    &--tiny {
-      font-size: @font-size-small;
-      font-weight: @font-weight-regular;
-      line-height: @line-height-small;
-      padding: @space0 @space0;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
+      padding: $space0;
    }
 
    &--disabled,
@@ -197,11 +197,11 @@
       margin-right: 1px;
 
       &:first-child {
-         border-radius: @radius1 0 0 @radius1;
+         border-radius: $radius1 0 0 $radius1;
       }
 
       &:last-child {
-         border-radius: 0 @radius1 @radius1 0;
+         border-radius: 0 $radius1 $radius1 0;
          margin-right: 0;
       }
 
@@ -218,30 +218,30 @@
       }
 
       &--active {
-         background-color: @color-brand;
-         border-color: @color-brand;
-         color: @font-color-invert;
+         background-color: $color-brand;
+         border-color: $color-brand;
+         color: $font-color-invert;
 
          &:hover,
          &.btn--hover {
-            background-color: darken(@color-brand, 5%);
-            border-color: darken(@color-brand, 5%);
+            background-color: darken($color-brand, 5%);
+            border-color: darken($color-brand, 5%);
          }
 
          &:active,
          &.btn--active {
-            background-color: darken(@color-brand, 5%);
-            border-color: darken(@color-brand, 5%);
+            background-color: darken($color-brand, 5%);
+            border-color: darken($color-brand, 5%);
          }
 
          &:focus,
          &.btn--focus {
-            background-color: darken(@color-brand, 10%);
-            border-color: darken(@color-brand, 10%);
+            background-color: darken($color-brand, 10%);
+            border-color: darken($color-brand, 10%);
          }
       }
 
-      .clear-fix()
+      @extend .clear-fix;
    }
 
    &--divider {
@@ -269,11 +269,11 @@
    &--tab {
       background-color: rgba(0, 0, 0, .05);
       border-bottom-color: transparent;
-      border-top-left-radius: @radius1;
-      border-top-right-radius: @radius1;
+      border-top-left-radius: $radius1;
+      border-top-right-radius: $radius1;
       display: inline-block;
-      line-height: @line-height-small;
-      padding: @space0 @space1;
+      line-height: $line-height-small;
+      padding: $space0 $space1;
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);
@@ -287,28 +287,28 @@
       }
 
       &--active {
-         background-color: @color-brand;
+         background-color: $color-brand;
          border-bottom-left-radius: 0;
          border-bottom-right-radius: 0;
-         border-color: @color-brand;
-         color: @font-color-invert;
+         border-color: $color-brand;
+         color: $font-color-invert;
 
          &:hover,
          &.btn--hover {
-            background-color: darken(@color-brand, 5%);
-            border-color: darken(@color-brand, 5%);
+            background-color: darken($color-brand, 5%);
+            border-color: darken($color-brand, 5%);
          }
 
          &:active,
          &.btn--active {
-            background-color: darken(@color-brand, 5%);
-            border-color: darken(@color-brand, 5%);
+            background-color: darken($color-brand, 5%);
+            border-color: darken($color-brand, 5%);
          }
 
          &:focus,
          &.btn--focus {
-            background-color: darken(@color-brand, 10%);
-            border-color: darken(@color-brand, 10%);
+            background-color: darken($color-brand, 10%);
+            border-color: darken($color-brand, 10%);
          }
       }
    }
@@ -316,20 +316,20 @@
    &--group {
       position: relative;
 
-      .@{prefix}-button {
+      .#{$prefix}-button {
          border-radius: 0;
          float: left;
 
          &:first-child {
-            border-radius: @radius1 0 0 @radius1;
+            border-radius: $radius1 0 0 $radius1;
             margin-right: 1px;
          }
 
          &:nth-child(2) {
-            border-radius: 0 @radius1 @radius1 0;
+            border-radius: 0 $radius1 $radius1 0;
          }
       }
 
-      .clear-fix()
+      @extend .clear-fix;
    }
 }

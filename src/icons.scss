@@ -26,72 +26,72 @@
 }
 
 
-.@{prefix}-icon--list_breadcrumb:before {
+.#{$prefix}-icon--list_breadcrumb:before {
   content: "\e916";
 }
-.@{prefix}-icon--check-done:before {
+.#{$prefix}-icon--check-done:before {
   content: "\e914";
 }
-.@{prefix}-icon--check:before {
+.#{$prefix}-icon--check:before {
   content: "\e915";
 }
-.@{prefix}-icon--dot:before {
+.#{$prefix}-icon--dot:before {
    content: "\e913";
 }
-.@{prefix}-icon--search:before {
+.#{$prefix}-icon--search:before {
    content: "\e912";
 }
-.@{prefix}-icon--chat-fill:before {
+.#{$prefix}-icon--chat-fill:before {
    content: "\e90e";
 }
-.@{prefix}-icon--chat:before {
+.#{$prefix}-icon--chat:before {
    content: "\e90f";
 }
-.@{prefix}-icon--phone-fill:before {
+.#{$prefix}-icon--phone-fill:before {
    content: "\e910";
 }
-.@{prefix}-icon--phone:before {
+.#{$prefix}-icon--phone:before {
    content: "\e911";
 }
-.@{prefix}-icon--history:before {
+.#{$prefix}-icon--history:before {
    content: "\e90d";
 }
-.@{prefix}-icon--files:before {
+.#{$prefix}-icon--files:before {
    content: "\e908";
 }
-.@{prefix}-icon--notis:before {
+.#{$prefix}-icon--notis:before {
    content: "\e909";
 }
-.@{prefix}-icon--photos:before {
+.#{$prefix}-icon--photos:before {
    content: "\e90a";
 }
-.@{prefix}-icon--user:before {
+.#{$prefix}-icon--user:before {
    content: "\e90b";
 }
-.@{prefix}-icon--users:before {
+.#{$prefix}-icon--users:before {
    content: "\e90c";
 }
-.@{prefix}-icon--app:before {
+.#{$prefix}-icon--app:before {
    content: "\e907";
 }
-.@{prefix}-icon--photo-fill:before {
+.#{$prefix}-icon--photo-fill:before {
    content: "\e905";
 }
-.@{prefix}-icon--photo:before {
+.#{$prefix}-icon--photo:before {
    content: "\e906";
 }
-.@{prefix}-icon--comment-fill:before {
+.#{$prefix}-icon--comment-fill:before {
    content: "\e903";
 }
-.@{prefix}-icon--like-fill:before {
+.#{$prefix}-icon--like-fill:before {
    content: "\e904";
 }
-.@{prefix}-icon--comment:before {
+.#{$prefix}-icon--comment:before {
    content: "\e901";
 }
-.@{prefix}-icon--like:before {
+.#{$prefix}-icon--like:before {
    content: "\e902";
 }
-.@{prefix}-icon--dropdown-menu:before {
+.#{$prefix}-icon--dropdown-menu:before {
    content: "\e900";
 }

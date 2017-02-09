@@ -1,5 +1,5 @@
-.@{prefix}-navbar {
-   background-color: @color-brand;
+.#{$prefix}-navbar {
+   background-color: $color-brand;
 
    &__wrapper {
       display: flex;
@@ -7,7 +7,7 @@
       margin: 0 auto;
 
       &--max {
-         max-width: @inner-page-width;
+         max-width: $inner-page-width;
       }
    }
 
@@ -28,6 +28,6 @@
    }
 
    &--push {
-      margin-right: @space1;
+      margin-right: $space1;
    }
 }

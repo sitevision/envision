@@ -2,8 +2,11 @@
 
 ## Getting started ##
 1. Clone repository
-2. Install [gulp-cli](http://gulpjs.com/) `npm install -g gulp-cli`
-3. Run `npm install` to install dependencies
+2. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+3. Install [Bundler](http://bundler.io/) with `gem install bundler`
+4. Run `bundle install`. This will install all Ruby dependencies, such as Jekyll and plugins.
+5. Install [gulp-cli](http://gulpjs.com/) `npm install -g gulp-cli`
+6. Run `npm install` to install dependencies
 
 ## To build ##
 Run `gulp`
@@ -17,6 +20,4 @@ Markup should comply to the [WAI-ARIA standard](https://www.w3.org/TR/wai-aria-1
 
 
 ## Build docs ##
-[Install Ruby](https://www.ruby-lang.org/en/documentation/installation/), install [Bundler](http://bundler.io/) with `gem install bundler`, and finally run `bundle install`. This will install all Ruby dependencies, such as Jekyll and plugins.
-
 From console run `jekyll serve`

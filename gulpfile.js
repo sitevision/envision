@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 var path = require('path');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
-var lessHint = require('gulp-lesshint');
+var scsslint = require('gulp-scss-lint');
 
 var DIST_FOLDER = './dist';
 var DOCS_DIST_FOLDER = './docs/dist'
@@ -14,10 +14,10 @@ gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
 
 gulp.task('hintcss', doHint);
-gulp.task('less', doLess);
-gulp.task('autoprefix', ['less'], doAutoprefix);
+gulp.task('sass', doSass);
+gulp.task('autoprefix', ['sass'], doAutoprefix);
 gulp.task('minifycss', ['autoprefix'], doMinifyCSS);
-gulp.task('buildcss', ['hintcss', 'less', 'autoprefix', 'minifycss']);
+gulp.task('buildcss', ['hintcss', 'sass', 'autoprefix', 'minifycss']);
 gulp.task('default', ['buildcss', 'copyimages', 'copyfonts']);
 gulp.task('watch', doWatch);
 
@@ -27,11 +27,11 @@ function doAutoprefix() {
       .pipe(gulp.dest('dist'));
 }
 
-function doLess() {
-   return gulp.src('./src/styles.less')
-      .pipe(less({
-         paths: [ path.join(__dirname, 'src') ]
-      }))
+function doSass() {
+   return gulp.src('./src/styles.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(sourcemaps.write('../dist/map'))
       .pipe(gulp.dest('./build'));
 }
 
@@ -40,15 +40,13 @@ function doMinifyCSS() {
       .pipe(rename({
          suffix: '.min'
       }))
-      .pipe(sourcemaps.init())
       .pipe(cleanCSS())
-      .pipe(sourcemaps.write('./map'))
       .pipe(gulp.dest(DIST_FOLDER))
       .pipe(gulp.dest(DOCS_DIST_FOLDER));
 }
 
 function doWatch() {
-   gulp.watch('src/*.less', ['buildcss']);
+   gulp.watch('src/*.scss', ['buildcss']);
    gulp.watch('src/img/**/*', ['copyimages']);
    gulp.watch('src/fonts/**/*', ['copyfonts']);
 }
@@ -66,8 +64,8 @@ function doCopyFonts() {
 }
 
 function doHint() {
-   return gulp.src(['./src/*.less', '!./src/**variable.less', '!./src/**icons.less'])
-      .pipe(lessHint())
-      .pipe(lessHint.reporter())
-      .pipe(lessHint.failOnError());
+   return gulp.src(['./src/*.scss', '!./src/**variable.scss', '!./src/**icons.scss'])
+      .pipe(scsslint({
+         config: 'scss-lint.yml'
+      }));
 }
