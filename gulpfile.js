@@ -28,7 +28,7 @@ function doAutoprefix() {
 }
 
 function doSass() {
-   return gulp.src('./src/styles.scss')
+   return gulp.src('./src/scss/styles.scss')
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(sourcemaps.write('../dist/map'))
@@ -46,7 +46,7 @@ function doMinifyCSS() {
 }
 
 function doWatch() {
-   gulp.watch('src/*.scss', ['buildcss']);
+   gulp.watch('src/scss/**/*.scss', ['buildcss']);
    gulp.watch('src/img/**/*', ['copyimages']);
    gulp.watch('src/fonts/**/*', ['copyfonts']);
 }
@@ -64,7 +64,7 @@ function doCopyFonts() {
 }
 
 function doHint() {
-   return gulp.src(['./src/*.scss', '!./src/**variable.scss', '!./src/**icons.scss'])
+   return gulp.src(['./src/scss/*.scss', '!./src/**/variable.scss', '!./src/**/icons.scss'])
       .pipe(scsslint({
          config: 'scss-lint.yml'
       }));

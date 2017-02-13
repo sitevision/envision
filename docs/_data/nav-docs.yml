@@ -6,4 +6,5 @@
   pages:
     - title: Actionbar
     - title: Buttons
+    - title: Button group
     - title: Form

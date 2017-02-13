@@ -137,26 +137,6 @@
       }
    }
 
-   &--dropdown {
-      background-color: transparent;
-      border-color: transparent;
-      color: #1d1d1b;
-      height: $space7;
-      padding: 0;
-      width: $space7;
-
-      &:hover {
-         background-color: rgba(0, 0, 0, .1);
-         border-color: transparent;
-      }
-
-      &:focus,
-      &.btn--focus {
-         background-color: rgba(0, 0, 0, .2);
-         border-color: transparent;
-      }
-   }
-
    &--large {
       font-size: $font-size-large;
       font-weight: $font-weight-regular;
@@ -182,6 +162,26 @@
    &[disabled] {
       cursor: not-allowed;
       opacity: .55;
+   }
+
+   &--dropdown {
+      background-color: transparent;
+      border-color: transparent;
+      color: #1d1d1b;
+      height: $space7;
+      padding: 0;
+      width: $space7;
+
+      &:hover {
+         background-color: rgba(0, 0, 0, .1);
+         border-color: transparent;
+      }
+
+      &:focus,
+      &.btn--focus {
+         background-color: rgba(0, 0, 0, .2);
+         border-color: transparent;
+      }
    }
 
    &__toolbar {
@@ -241,7 +241,7 @@
          }
       }
 
-      @extend .clear-fix;
+      @include clearfix();
    }
 
    &--divider {
@@ -311,25 +311,5 @@
             border-color: darken($color-brand, 10%);
          }
       }
-   }
-
-   &--group {
-      position: relative;
-
-      .#{$prefix}-button {
-         border-radius: 0;
-         float: left;
-
-         &:first-child {
-            border-radius: $radius1 0 0 $radius1;
-            margin-right: 1px;
-         }
-
-         &:nth-child(2) {
-            border-radius: 0 $radius1 $radius1 0;
-         }
-      }
-
-      @extend .clear-fix;
    }
 }

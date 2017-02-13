@@ -33,7 +33,7 @@
          width: 25%;
       }
 
-      @extend .clear-fix;
+      @include clearfix();
    }
 
    &--cover {
@@ -60,7 +60,7 @@
          }
       }
 
-      @extend .clear-fix;
+      @include clearfix();
    }
 
    &--video {

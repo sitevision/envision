@@ -32,5 +32,5 @@
       margin: $space1 0;
    }
 
-   @extend .clear-fix;
+   @include clearfix();
 }
