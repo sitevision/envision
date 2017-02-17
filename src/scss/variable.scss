@@ -4,6 +4,7 @@ $grid-columns:             12;
 $page-width:               700px;
 $inner-page-width:         600px;
 $popover-width:            300px;
+$enable-rounded-corners:   true;
 
 
 // Font family
@@ -48,6 +49,7 @@ $space9:                   64px;  // 128
 $space10:                  128px; // 256
 
 // Radius
+$button-border-radius: 2px;
 $radius1: 2px; // 4
 $radius2: 4px; // 8
 $radius3: 8px; // 16

@@ -1,59 +1,26 @@
 .#{$prefix}-toolbar {
-   align-self: center;
-   flex-grow: 1;
+   background-color: $color-element-bg;
+   padding: $space1;
 
-   &--tool {
+   &__tool {
+      @include button-base($button-border-radius);
+
       background-color: rgba(0, 0, 0, .05);
       border-color: transparent;
       border-radius: 0;
-      float: left;
       margin-right: 1px;
 
       &:first-child {
-         border-radius: $radius1 0 0 $radius1;
+         @include border-left-radius($button-border-radius);
       }
 
       &:last-child {
-         border-radius: 0 $radius1 $radius1 0;
+         @include border-right-radius($button-border-radius);
          margin-right: 0;
       }
 
-      &:hover,
-      &.btn--hover {
-         background-color: rgba(0, 0, 0, .1);
-         border-color: transparent;
+      &.#{$prefix}-is-active {
+         @include button-color-variant($font-color-invert, $color-brand, $color-brand)
       }
-
-      &:focus,
-      &.btn--focus {
-         background-color: rgba(0, 0, 0, .2);
-         border-color: transparent;
-      }
-
-      &--active {
-         background-color: $color-brand;
-         border-color: $color-brand;
-         color: $font-color-invert;
-
-         &:hover,
-         &.btn--hover {
-            background-color: darken($color-brand, 5%);
-            border-color: darken($color-brand, 5%);
-         }
-
-         &:active,
-         &.btn--active {
-            background-color: darken($color-brand, 5%);
-            border-color: darken($color-brand, 5%);
-         }
-
-         &:focus,
-         &.btn--focus {
-            background-color: darken($color-brand, 10%);
-            border-color: darken($color-brand, 10%);
-         }
-      }
-
-      @include clearfix();
    }
 }

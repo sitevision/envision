@@ -1,0 +1,51 @@
+@mixin button-base($border-radius: $button-border-radius) {
+   appearance: none;
+   border: 1px solid;
+   box-sizing: border-box;
+   cursor: pointer;
+   display: inline-block;
+   margin: 0;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   vertical-align: middle;
+   white-space: nowrap;
+
+   @include border-radius($border-radius);
+
+   @include button-color-variant($font-color, rgba(0, 0, 0, .05), transparent);
+
+   @include button-size($space0, $space2, $font-size-small, $line-height-small);
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
+   font-size: $font-size;
+   line-height: $line-height;
+   padding: $padding-y $padding-x;
+}
+
+@mixin button-color-variant($color, $background-color, $border-color) {
+   $active-background-color: darken($background-color, 10%);
+   $active-border-color: darken($border-color, 12%);
+
+   background-color: $background-color;
+   border-color: $border-color;
+   color: $color;
+
+   &:hover {
+      background-color: $active-background-color;
+      border-color: $active-border-color;
+   }
+
+   &:active {
+      background-color: $active-background-color;
+      border-color: $active-border-color;
+
+      box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
+   }
+
+   &:focus {
+      background-color: $active-background-color;
+      border-color: $active-border-color;
+   }
+}

@@ -26,18 +26,13 @@ group: components
 </p>
 
 <p>
-   <button type="button" class="sv-button sv-button--primary sv-button--small">Small</button>
-   <button type="button" class="sv-button sv-button--small">Small</button>
-</p>
-
-<p>
    <button type="button" class="sv-button sv-button--primary">Default</button>
    <button type="button" class="sv-button">Default</button>
 </p>
 
 <p>
-   <button type="button" class="sv-button sv-button--primary sv-button--tiny">Tiny</button>
-   <button type="button" class="sv-button sv-button--tiny">Tiny</button>
+   <button type="button" class="sv-button sv-button--primary sv-button--small">Small</button>
+   <button type="button" class="sv-button sv-button--small">Small</button>
 </p>
 {% endexample %}
 

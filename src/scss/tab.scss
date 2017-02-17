@@ -1,0 +1,23 @@
+.#{$prefix}-tabs {
+
+   &__nav {
+      background-color: $color-element-bg;
+      list-style: none;
+      margin: 0;
+      padding: $space1 $space1 0;
+
+      &__item {
+         display: inline;
+      }
+
+      &__link {
+         @include button-base(0);
+         @include border-top-radius($button-border-radius);
+
+         &.#{$prefix}-is-active {
+            background-color: $color-brand;
+            color: $font-color-invert;
+         }
+      }
+   }
+}
