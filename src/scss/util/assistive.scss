@@ -1,0 +1,7 @@
+.#{$prefix}-assitive-text {
+   @include assitive-text();
+}
+
+.#{$prefix}-assitive-text-focusable {
+   @include assitive-text-focusable();
+}
