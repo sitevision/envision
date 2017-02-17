@@ -1,7 +1,7 @@
 .#{$prefix}-assitive-text {
-   @include assitive-text();
+   @include assistive-text();
 }
 
 .#{$prefix}-assitive-text-focusable {
-   @include assitive-text-focusable();
+   @include assistive-text-focusable();
 }
