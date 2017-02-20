@@ -4,10 +4,8 @@
 
 - title: Components
   pages:
-    - title: Actionbar
-    - title: Buttons
+    - title: Button
     - title: Button group
     - title: Form
     - title: Popover
-    - title: Toolbar
     - title: Tab
