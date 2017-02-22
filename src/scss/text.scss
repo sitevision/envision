@@ -49,6 +49,11 @@
       margin: $space1 0;
    }
 
+   &--error-danger {
+      color: $color-danger;
+      font-size: $font-size-small;
+   }
+
    // Heading sizes
 
    // Text sizes
@@ -87,5 +92,14 @@
 
    &-align--right {
       text-align: right;
+   }
+
+   // Text weight
+   &--bold {
+      font-weight: $font-weight-bold;
+   }
+
+   &--extra-bold {
+      font-weight: $font-weight-extrabold;
    }
 }
