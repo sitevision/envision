@@ -1,26 +1,24 @@
 .#{$prefix}-news-item {
    display: flex;
+   flex-direction: column;
    overflow-wrap: break-word;
    word-wrap: break-word;
    background-color: $color-element-bg;
-
-   &--column {
-      flex-direction: column;
-   }
+   margin: $space;
 
    &__media {
-      padding: 8px;
+      padding: $space1;
    }
 
    &__headline {
-      padding: 8px;
+      padding: 0 $space1;
    }
 
    &__preamble {
-      padding: 8px;
+      padding: $space1;
    }
 
    &__footer {
-      padding: 8px;
+      padding: $space1;
    }
 }
