@@ -27,6 +27,11 @@
       @include button-size($space0, $space0, $font-size-small, $line-height-small);
    }
 
+   &--block {
+      display: block;
+      width: 100%;
+   }
+
    &--disabled,
    &[disabled] {
       cursor: not-allowed;

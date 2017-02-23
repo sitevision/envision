@@ -7,7 +7,7 @@ group: components
 
 ## Types ##
 {% example html %}
-<div class="sv-button-group">
+<div class="sv-button-group" role="group">
    <button type="button" class="sv-button">Default</button>
 
    <button type="button" class="sv-button sv-button--primary">Primary</button>

@@ -9,6 +9,7 @@ $arrow-border-size: 10px;
    box-shadow: $popover-shadow;
    max-width: $popover-width;
    position: relative;
+   z-index: $zindex-popover;
 
    &__header {
       background-color: $color-lighter;
