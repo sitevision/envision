@@ -18,20 +18,20 @@ group: components
    <header class="sv-news-item__headline">
       <div class="sv-news-item__headline__title">
          <h2 class="sv-font sv-font--title">
-            <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+            <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
          </h2>
-         <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+         <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
       </div>
    </header>
    <section class="sv-news-item__preamble">
-      <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
+      <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
          t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage pork belly chicken hamburger,
-         andouille pork loin capicola. </p>
+         andouille pork loin capicola.</p>
    </section>
    <footer class="sv-news-item__footer">
-      <a href="#" class="sv-link sv-link--base">Gilla </a>
+      <a href="#" class="sv-link sv-link--base">Like</a>
       <i class="sv-icon--dot"></i>
-      <a href="#" class="sv-link sv-link--base">Svara </a>
+      <a href="#" class="sv-link sv-link--base">Reply</a>
       <i class="sv-icon--dot"></i>
       <span class="sv-link sv-link--base">12:56</span>
    </footer>
@@ -40,9 +40,9 @@ group: components
 
 {% endexample %} 
 ### Example: Vertical list ### 
-`.sv-list--column`
-<div class="container" style="width:526px;">
-   <ul style="display:flex; flex-direction: column; list-style-type: none;">
+`.sv-list`
+<div class="container" style="max-width:488px;">
+   <ul style="display: inline; list-style-type: none;">
       <li>
          <article class="sv-news-item">
             <div class="sv-news-item__media">
@@ -51,20 +51,20 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
@@ -78,20 +78,20 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
@@ -105,47 +105,20 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
-               <i class="sv-icon--dot"></i>
-               <span class="sv-link sv-link--base">12:56</span>
-            </footer>
-         </article>
-      </li>
-      <li>
-         <article class="sv-news-item">
-            <div class="sv-news-item__media">
-               <img src="https://unsplash.it/467/300/?blur" />
-            </div>
-            <header class="sv-news-item__headline">
-               <div class="sv-news-item__headline__title">
-                  <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
-                  </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
-               </div>
-            </header>
-            <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
-                  salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
-            </div>
-            <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
-               <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
@@ -158,7 +131,7 @@ group: components
 
 <div class="container" style="max-width:1400px;">
    <ul style="display:flex; flex-wrap: wrap;  justify-content: flex-start; list-style-type: none;">
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -166,26 +139,26 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
          </article>
       </li>
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -193,26 +166,26 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
          </article>
       </li>
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -220,26 +193,26 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
          </article>
       </li>
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -247,26 +220,26 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
          </article>
       </li>
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -274,26 +247,26 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>
          </article>
       </li>
-      <li style="max-width:416px">
+      <li style="max-width:420px">
          <article class="sv-news-item">
             <div class="sv-news-item__media">
                <img src="https://unsplash.it/400/300/?blur" />
@@ -301,20 +274,20 @@ group: components
             <header class="sv-news-item__headline">
                <div class="sv-news-item__headline__title">
                   <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title"> Lorem ipsum </a>
+                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, 12 aug 12:56</p>
+                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
             <div class="sv-news-item__preamble">
-               <p class="sv-font"> Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
-                  pork belly chicken hamburger, andouille pork loin capicola. </p>
+                  pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
             <footer class="sv-news-item__footer">
-               <a href="#" class="sv-link sv-link--base">Gilla </a>
+               <a href="#" class="sv-link sv-link--base">Like</a>
                <i class="sv-icon--dot"></i>
-               <a href="#" class="sv-link sv-link--base">Svara </a>
+               <a href="#" class="sv-link sv-link--base">Reply</a>
                <i class="sv-icon--dot"></i>
                <span class="sv-link sv-link--base">12:56</span>
             </footer>

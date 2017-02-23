@@ -1,10 +1,10 @@
 .#{$prefix}-news-item {
+   background-color: $color-element-bg;
    display: flex;
    flex-direction: column;
+   margin: $space;
    overflow-wrap: break-word;
    word-wrap: break-word;
-   background-color: $color-element-bg;
-   margin: $space;
 
    &__media {
       padding: $space1;
