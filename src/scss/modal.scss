@@ -1,0 +1,33 @@
+.#{$prefix}-modal {
+   background-color: #f6f5f5;
+   border: 1px solid #cccccc;
+   border-radius: $radius2;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+   max-width: 300px;
+   position: relative;
+
+   &__header {
+      background-color: #cccccc;
+      display: block;
+      padding: $space0 $space1;
+
+      &__title {
+         display: inline-block;
+         font-size: 16px;
+         font-weight: 500;
+         line-height: 26px;
+         margin: 0;
+      }
+   }
+
+   &__body {
+      padding: $space1;
+   }
+
+   &__footer {
+      background-color: $color-element-bg;
+      border-radius: 0 0 $radius2 $radius2;
+      padding: $space1 $space1;
+      text-align: right;
+   }
+}
