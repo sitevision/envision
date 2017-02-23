@@ -59,10 +59,12 @@
    // Text sizes
    &-size--x-small {
       font-size: $font-size-xtrasmall;
+      line-height: $line-height-xtrasmall;
    }
 
    &-size--small {
       font-size: $font-size-small;
+      line-height: $line-height-small;
    }
 
    &-size--normal {
