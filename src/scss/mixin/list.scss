@@ -1,0 +1,20 @@
+@mixin basis-value($i) {
+   flex-basis: 100/$i+%;
+}
+
+@mixin border-divider($property) {
+   #{$property}: 1px solid $color-lighter;
+}
+
+@mixin dot-divider() {
+   background-color: $color-dark;
+   content: "";
+   display: inline-block;
+   height: 2px;
+   vertical-align: middle;
+   width: 2px;
+   margin-left: 2px;
+   margin-right: 2px;
+   border-radius: 50%;
+}
+
