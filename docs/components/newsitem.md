@@ -1,8 +1,8 @@
 --- 
-layout: docs 
-title: News item 
-description: Newslist description 
-group: components 
+layout: docs
+title: News item
+description: Newslist description
+group: components
 --- 
 
 ## Types ## 
@@ -41,7 +41,7 @@ group: components
 {% endexample %} 
 ### Example: Vertical list ### 
 `.sv-list--column`
-<div class="container" style="width:524px;">
+<div class="container" style="width:526px;">
    <ul style="display:flex; flex-direction: column; list-style-type: none;">
       <li>
          <article class="sv-news-item">
