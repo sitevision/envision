@@ -55,6 +55,21 @@
    }
 
    // Heading sizes
+   &-size-heading--small {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+   }
+
+   &-size-heading--medium {
+      font-size: $font-size-normal;
+      line-height: $line-height-normal;
+      font-weight: $font-weight-semibold;
+   }
+
+   &-size-heading--large {
+      font-size: $font-size-large;
+      line-height: $line-height-large;
+   }
 
    // Text sizes
    &-size--x-small {
@@ -103,5 +118,9 @@
 
    &--extra-bold {
       font-weight: $font-weight-extrabold;
+   }
+
+   &--uppercase {
+      text-transform: uppercase;
    }
 }
