@@ -5,7 +5,7 @@ $page-width:               700px;
 $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
-
+$enable-box-shadow:        true;
 
 // Font family
 $font-family:              "Roboto", sans-serif;
@@ -58,6 +58,8 @@ $radius5: 100%; // Circle
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
+$modal-shadow:              inset 0 3px 6px rgba(0,0,0,1);
+$modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
 
 // Icon Size
 $icon-size-xtrasmall:      14px;
@@ -98,6 +100,11 @@ $border-color-light:       rgba(0, 0, 0, .1);
 
 // Z-index value
 $zindex-base:              1;
+$zindex-modal:             1050;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
 
+// Dialog Modal
+$modal-small:              300px;
+$modal-regular:            450px;
+$modal-large:              900px;
