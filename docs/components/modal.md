@@ -43,7 +43,7 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
 
 {% example html %}
 <div id="example1" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="sv-modal__dialog--large">
+   <div class="sv-modal__dialog sv-modal__dialog--large">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
             <h3 class="sv-modal__header__title">Modal Header</h3>
@@ -66,7 +66,7 @@ Uses `sv-modal-dialog--small`
 {%example html %}
 
 <div id="example2" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="sv-modal__dialog--small">
+   <div class="sv-modal__dialog sv-modal__dialog--small">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
             <h3 class="sv-modal__header__title">Modal Header</h3>
