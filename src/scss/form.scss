@@ -3,7 +3,7 @@
       margin: 0;
    }
 
-   .#{$prefix}-form-element {
+   &-element {
       margin-bottom: $space3;
 
       &__label {
@@ -24,8 +24,8 @@
          line-height: $line-height-small;
          margin: 0;
          padding: $space0 $space2;
+         transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
          width: 100%;
-         @include transition(border-color .2s ease-in-out, box-shadow .2s ease-in-out);
 
          &[disabled],
          &[readonly] {
@@ -39,9 +39,7 @@
          }
 
          &:focus {
-            border-color: $color-input-focus;
-            box-shadow: 0 0 5px $color-input-focus;
-            outline: 0;
+            @include focus();
          }
 
          &[type="search"] {
@@ -84,8 +82,8 @@
    }
 
    //Radio button & checkbox handling
-   .#{$prefix}-form-radio,
-   .#{$prefix}-form-checkbox {
+   &-radio,
+   &-checkbox {
       display: block;
       margin-bottom: $space1;
       position: relative;
@@ -102,13 +100,15 @@
       }
    }
 
+
+   $form-element: #{$prefix}-form-element;
    //Variants
    &--horizontal {
-      .#{$prefix}-form-element {
+      .#{$form-element} {
          display: flex;
          flex-wrap: wrap;
 
-         & > .#{$prefix}-form-element__label {
+         & > .#{$form-element}__label {
             flex-basis: 20%;
          }
 
@@ -125,7 +125,7 @@
    &--inline {
       display: flex;
 
-      .#{$prefix}-form-element {
+      .#{$form-element} {
          align-items: center;
          display: flex;
          margin-right: $space1;
@@ -148,7 +148,7 @@
    &__row {
       display: flex;
 
-      .#{$prefix}-form-element {
+      .#{$form-element} {
          flex: 1;
 
          @for $i from 1 through 6 {
@@ -157,7 +157,7 @@
             }
          }
 
-         + .#{$prefix}-form-element {
+         + .#{$form-element} {
             margin-left: $space0;
          }
       }

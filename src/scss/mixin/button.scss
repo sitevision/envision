@@ -46,6 +46,6 @@
 
    &:focus {
       background-color: $active-background-color;
-      border-color: $active-border-color;
+      @include focus();
    }
 }
