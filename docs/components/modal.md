@@ -52,7 +52,7 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
             <p class="sv-font sv-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="sv-modal__footer--right">
+         <footer class="sv-modal__footer sv-modal__footer--right">
             <button type="button" class="sv-button sv-button--primary">Save</button>
             <button type="button" class="sv-button sv-button--link" id="demo1">Cancel</button>
          </footer>
