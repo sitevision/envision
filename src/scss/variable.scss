@@ -76,8 +76,8 @@ $color-brand-light:        lighten($color-brand, 10%);
 $color-brand-dark:         darken($color-brand, 10%);
 
 $color-danger:             #e02525;
-$color-danger-light:       lighten($color-brand, 10%);
-$color-danger-dark:        darken($color-brand, 10%);
+$color-success:            #5cb85c;
+$color-warning:            #f0ad4e;
 
 $font-color:               #373d3f;
 $font-color-light:         #333333;
@@ -92,12 +92,11 @@ $color-light:              lighten($color-base, 60%);
 $color-lighter:            lighten($color-base, 80%);
 $color-lightest:           lighten($color-base, 100%);
 
-
 $hover-background-color:   rgba(0, 0, 0, .1);
 $border-color-light:       rgba(0, 0, 0, .1);
+$color-focus:            #5cb3fd;
 
 // Z-index value
 $zindex-base:              1;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
-
