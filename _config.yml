@@ -40,5 +40,7 @@ url:              https://cssframework.sitevision.se/
 encoding:         UTF-8
 exclude:          [assets/scss/]
 
+permalink:        pretty
+
 sass:
    sass_dir: _assets/scss
