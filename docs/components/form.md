@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Forms
+title: Form
 description: Form elements
 group: components
 ---

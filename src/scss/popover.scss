@@ -64,7 +64,7 @@ $arrow-border-size: 10px;
          }
       }
 
-      &--top {
+      &--bottom {
          border-bottom-color: $color-lighter;
          top: $arrow-position;
 
@@ -75,7 +75,7 @@ $arrow-border-size: 10px;
          }
       }
 
-      &--bottom {
+      &--top {
          border-top-color: $color-lighter;
          bottom: $arrow-position;
 
@@ -96,7 +96,7 @@ $arrow-border-size: 10px;
          }
       }
 
-      &--right {
+      &--left {
          border-left-color: $color-lighter;
          right: $arrow-position;
 
@@ -107,7 +107,7 @@ $arrow-border-size: 10px;
          }
       }
 
-      &--left {
+      &--right {
          border-right-color: $color-lighter;
          left: $arrow-position;
 
