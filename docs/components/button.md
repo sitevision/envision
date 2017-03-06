@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Buttons
+title: Button
 description: Buttons description
 group: components
 ---

@@ -1,0 +1,3 @@
+(function($) {
+   $('.example-popover').popover();
+}($));
