@@ -5,7 +5,7 @@
 
    &--horizontal {
       .#{$prefix}-list__item {
-         display: inline;
+         display: inline-block;
       }
 
       &.#{$prefix}-list-dividers {

@@ -5,14 +5,11 @@ description: Modal description
 group: components
 ---
 
-## Modal ##
-
 ### Default modal ###
-
 
 {% example html %}
 
-<div class="sv-modal sv-demo__modal--regular" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div class="sv-modal sv-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="sv-modal__dialog">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
@@ -31,17 +28,14 @@ group: components
 </div>
 
 {% endexample %}
-<br/>
 
 ### Optional sizes ###
-
-<button id="largeBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show large</button>
-<button id="smallBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show small</button>
-<br />
 
 Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning footer descendents to the right.
 
 {% example html %}
+<button id="largeBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show large</button>
+
 <div id="example1" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="sv-modal__dialog sv-modal__dialog--large">
       <section class="sv-modal__content">
@@ -64,6 +58,7 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
 
 Uses `sv-modal-dialog--small` 
 {%example html %}
+<button id="smallBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show small</button>
 
 <div id="example2" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="sv-modal__dialog sv-modal__dialog--small">
@@ -107,6 +102,3 @@ Uses `sv-modal-dialog--small`
    });
 
 </script>
-
-
-
