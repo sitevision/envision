@@ -4,7 +4,7 @@ const Popover = (($) => {
    const IDENTIFIER = 'sv.popover';
    const EVENT_NAMESPACE = `.${IDENTIFIER}`;
    const NO_CONFLICT = $.fn[NAME];
-   const CLASS_PREFIX = 'sv-tehter';
+   const CLASS_PREFIX = 'sv-tether';
 
    const attachmentMapping = {
       top: 'bottom center',
