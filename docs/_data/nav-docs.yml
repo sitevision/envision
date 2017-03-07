@@ -4,6 +4,7 @@
 
 - title: Components
   pages:
+    - title: Breadcrumb
     - title: Button
     - title: Button group
     - title: Form

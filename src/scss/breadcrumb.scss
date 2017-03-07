@@ -1,0 +1,17 @@
+.#{$prefix}-breadcrumb {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+
+   &__item {
+      display: inline-block;
+
+      & + &::before {
+         color: $breadcrumb-divider-color;
+         content: "#{$breadcrumb-divider}";
+         display: inline-block;
+         padding-left: $breadcrumb-item-padding;
+         padding-right: $breadcrumb-item-padding;
+      }
+   }
+}
