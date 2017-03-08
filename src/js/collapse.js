@@ -17,13 +17,17 @@ const Collapse = (($) => {
 
    class Collapse {
 
-      constructor (element) {
+      constructor(element) {
          this.el = element;
          this.$el = $(element);
       }
 
       toggle() {
-         this.$el.hasClass(MODIFIER_BASE + SHOW) ? this.hide() : this.show();
+         if (this.$el.hasClass(MODIFIER_BASE + SHOW)) {
+            this.hide();
+         } else {
+            this.show();
+         }
       }
 
       show() {
@@ -62,12 +66,15 @@ const Collapse = (($) => {
 
       whichTransitionEvent() {
          const el = document.createElement('fakeelement');
+         let t;
 
          for (t in TRANSITIONS) {
             if (el.style[t] !== undefined) {
                return TRANSITIONS[t];
             }
          }
+
+         return false;
       }
 
       static _jQuery() {
@@ -87,7 +94,7 @@ const Collapse = (($) => {
    };
 
 
-   $(document).on('click', '[data-sv-collapse]', function (e) {
+   $(document).on('click', '[data-sv-collapse]', function(e) {
       e.preventDefault();
 
       const $this = $(this);
