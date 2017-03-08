@@ -7,7 +7,7 @@ group: components
 
 ## Types ##
 {% example html %}
-<nav>
+<nav aria-label="Breadcrumb">
    <ol class="sv-breadcrumb">
       <li class="sv-breadcrumb__item"><a class="sv-link" href="#">Node</a></li>
       <li class="sv-breadcrumb__item"><a class="sv-link" href="#">Node</a></li>
