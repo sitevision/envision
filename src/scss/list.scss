@@ -58,6 +58,7 @@
       @for $i from 1 through 12 {
          &--#{$i} .#{$prefix}-list__item {
             @include basis-value($i);
+            box-sizing: border-box;
          }
       }
    }
