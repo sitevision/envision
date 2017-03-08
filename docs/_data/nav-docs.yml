@@ -6,6 +6,7 @@
   pages:
     - title: Button
     - title: Button group
+    - title: Feed
     - title: Form
     - title: List
     - title: Modal

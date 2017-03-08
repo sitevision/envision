@@ -10,19 +10,19 @@ group: components
    <div class="sv-form-element">
       <label for="text" class="sv-form-element__label">Input text</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="text">
+         <input type="text" class="sv-form-input" id="text">
       </div>
    </div>
    <div class="sv-form-element">
       <label for="textarea" class="sv-form-element__label">Textarea</label>
       <div class="sv-form-element__control">
-         <textarea class="sv-form-element__input" id="textarea" rows="3"></textarea>
+         <textarea class="sv-form-input" id="textarea" rows="3"></textarea>
       </div>
    </div>
    <div class="sv-form-element">
       <label for="select" class="sv-form-element__label">Select</label>
       <div class="sv-form-element__control">
-         <select class="sv-form-element__input" id="select">
+         <select class="sv-form-input" id="select">
             <option>Item</option>
             <option>Item 2</option>
             <option>Item 3</option>
@@ -33,7 +33,7 @@ group: components
    <div class="sv-form-element">
       <label for="multiple-select" class="sv-form-element__label">Multiple select</label>
       <div class="sv-form-element__control">
-         <select class="sv-form-element__input" id="multiple-select" multiple>
+         <select class="sv-form-input" id="multiple-select" multiple>
             <option>Item</option>
             <option>Item 2</option>
             <option>Item 3</option>
@@ -109,13 +109,13 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    <div class="sv-form-element">
       <label for="first-name" class="sv-form-element__label">First name</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="first-name">
+         <input type="text" class="sv-form-input" id="first-name">
       </div>
    </div>
    <div class="sv-form-element">
       <label for="last-name" class="sv-form-element__label">Last name</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="last-name">
+         <input type="text" class="sv-form-input" id="last-name">
       </div>
    </div>
    <div class="sv-form-element">
@@ -155,13 +155,13 @@ The label of the element takes up 20% of the width and the `.sv-form-element__co
    <div class="sv-form-element">
       <label for="country" class="sv-form-element__label">Country</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="country">
+         <input type="text" class="sv-form-input" id="country">
       </div>
    </div>
    <div class="sv-form-element">
       <label for="city" class="sv-form-element__label">City</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="city">
+         <input type="text" class="sv-form-input" id="city">
       </div>
    </div>
    <div class="sv-form-element">
@@ -188,13 +188,13 @@ Apply modifier `.sv-form--inline` to the form wrapper to display elements inline
       <div class="sv-form-element">
          <label for="username" class="sv-form-element__label">Username</label>
          <div class="sv-form-element__control">
-            <input type="text" class="sv-form-element__input" id="username">
+            <input type="text" class="sv-form-input" id="username">
          </div>
       </div>
       <div class="sv-form-element">
          <label for="full-name" class="sv-form-element__label">Full name</label>
          <div class="sv-form-element__control">
-            <input type="text" class="sv-form-element__input" id="full-name">
+            <input type="text" class="sv-form-input" id="full-name">
          </div>
       </div>
    </div>
@@ -202,20 +202,20 @@ Apply modifier `.sv-form--inline` to the form wrapper to display elements inline
       <div class="sv-form-element sv-form-element--2">
          <label for="address" class="sv-form-element__label">Address</label>
          <div class="sv-form-element__control">
-            <input type="text" class="sv-form-element__input" id="address">
+            <input type="text" class="sv-form-input" id="address">
          </div>
       </div>
       <div class="sv-form-element">
          <label for="contact-tel" class="sv-form-element__label">Telephone</label>
          <div class="sv-form-element__control">
-            <input type="tel" class="sv-form-element__input" id="contact-tel">
+            <input type="tel" class="sv-form-input" id="contact-tel">
          </div>
       </div>
    </div>
    <div class="sv-form-element">
       <label for="other" class="sv-form-element__label">Other</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="other">
+         <input type="text" class="sv-form-input" id="other">
       </div>
    </div>
    <div class="sv-form-element">
@@ -232,7 +232,7 @@ Use modifer `.sv-form-element--*` to specify the length of an element, relative 
    <div class="sv-form-element">
       <label for="password" class="sv-form-element__label">Password</label>
       <div class="sv-form-element__control">
-         <input type="password" class="sv-form-element__input" id="password" aria-describedby="password-help">
+         <input type="password" class="sv-form-input" id="password" aria-describedby="password-help">
       </div>
       <span id="password-help" class="sv-form-element__help">Enter a secure password</span>
    </div>
@@ -248,13 +248,13 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
    <div class="sv-form-element">
       <label for="disabled" class="sv-form-element__label">Disabled text input</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="disabled" placeholder="Disabled" disabled>
+         <input type="text" class="sv-form-input" id="disabled" placeholder="Disabled" disabled>
       </div>
    </div>
    <div class="sv-form-element">
       <label for="disabled-select" class="sv-form-element__label">Disabled select</label>
       <div class="sv-form-element__control">
-         <select class="sv-form-element__input" id="disabled-select" disabled>
+         <select class="sv-form-input" id="disabled-select" disabled>
             <option>Disabled</option>
          </select>
       </div>
@@ -282,7 +282,7 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
    <div class="sv-form-element">
       <label for="readonly" class="sv-form-element__label">Readonly text input</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="readonly" placeholder="Readonly" readonly>
+         <input type="text" class="sv-form-input" id="readonly" placeholder="Readonly" readonly>
       </div>
    </div>
 </div>  
@@ -296,21 +296,21 @@ For disabled radio buttons and checkboxes, apply modifier `.sv-form-radio--disab
    <div class="sv-form-element sv-form-element--success">
       <label for="success" class="sv-form-element__label">Success</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="success" aria-describedby="sucess-feedback">
+         <input type="text" class="sv-form-input" id="success" aria-describedby="sucess-feedback">
       </div>
       <span id="success-feedback" class="sv-form-element__feedback">Success feedback</span>
    </div>
    <div class="sv-form-element sv-form-element--warning">
       <label for="warning" class="sv-form-element__label">Warning</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="warning" aria-describedby="warning-feedback">
+         <input type="text" class="sv-form-input" id="warning" aria-describedby="warning-feedback">
       </div>
       <span id="warning-feedback" class="sv-form-element__feedback">Warning feedback</span>
    </div>
    <div class="sv-form-element sv-form-element--danger">
       <label for="danger" class="sv-form-element__label">Danger</label>
       <div class="sv-form-element__control">
-         <input type="text" class="sv-form-element__input" id="danger" aria-describedby="danger-feedback">
+         <input type="text" class="sv-form-input" id="danger" aria-describedby="danger-feedback">
       </div>
       <span id="danger-feedback" class="sv-form-element__feedback">Danger feedback</span>
    </div>
