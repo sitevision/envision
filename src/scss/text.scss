@@ -5,6 +5,18 @@
    line-height: 1.1em;
    margin: 0;
 
+   &--uppercase {
+      text-transform: uppercase;
+   }
+
+   &--lowercase {
+      text-transform: lowercase;
+   }
+
+   &--capitalize {
+      text-transform: capitalize;
+   }
+
    .#{$prefix}-link--title,
    &--title {
       font-size: $font-size-normal;
@@ -62,8 +74,8 @@
 
    &-size-heading--medium {
       font-size: $font-size-normal;
-      line-height: $line-height-normal;
       font-weight: $font-weight-semibold;
+      line-height: $line-height-normal;
    }
 
    &-size-heading--large {

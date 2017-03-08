@@ -12,3 +12,7 @@
     - title: Newsitem
     - title: Popover
     - title: Tab
+    - title: Text
+- title: Utils
+  pages:
+    - title: Text
