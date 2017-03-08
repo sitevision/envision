@@ -4,4 +4,8 @@
 
 .#{$prefix}-assistive-text-focusable {
    @include assistive-text-focusable();
+
+   &--focusable {
+      @include assistive-text-focusable();
+   }
 }

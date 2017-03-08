@@ -1,3 +1,5 @@
+/* global Tether */
+
 const Popover = (($) => {
 
    const NAME = 'popover';
@@ -21,7 +23,6 @@ const Popover = (($) => {
    };
 
    const DEFAULTS = {
-      placement: 'top',
       constraints: [],
       container: 'body',
       content: '',
@@ -126,16 +127,19 @@ const Popover = (($) => {
             attachment        : attachmentMapping[this.config.placement],
             element           : $popoverElement,
             target            : this.el,
-            classes           : { element: false, enabled: false },
+            classes           : {
+               element: false,
+               enabled: false
+            },
             classPrefix       : CLASS_PREFIX,
             offset            : this._getOffset(),
             constraints       : this.config.constraints,
             addTargetClasses  : false
-        });
+         });
 
-        this._tether.position();
+         this._tether.position();
 
-        this.isShowing = true;
+         this.isShowing = true;
       }
 
       destroy() {
@@ -172,7 +176,7 @@ const Popover = (($) => {
             }
          });
       }
-   };
+   }
 
    $.fn[NAME] = Popover._jQuery;
    $.fn[NAME].Constructor = Popover;

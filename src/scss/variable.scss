@@ -109,5 +109,10 @@ $modal-small:              300px;
 $modal-regular:            450px;
 $modal-large:              900px;
 
+// Breadcrumb
+$breadcrumb-item-padding:  .5em;
+$breadcrumb-divider-color: $color-light;
+$breadcrumb-divider:       '/';
+
 // Animation
 $toggle-duration:          .4s
