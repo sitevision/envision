@@ -5,7 +5,7 @@ $page-width:               700px;
 $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
-
+$enable-box-shadow:        true;
 
 // Font family
 $font-family:              "Roboto", sans-serif;
@@ -58,6 +58,8 @@ $radius5: 100%; // Circle
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
+$modal-shadow:              inset 0 3px 6px rgba(0,0,0,1);
+$modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
 
 // Icon Size
 $icon-size-xtrasmall:      14px;
@@ -76,8 +78,8 @@ $color-brand-light:        lighten($color-brand, 10%);
 $color-brand-dark:         darken($color-brand, 10%);
 
 $color-danger:             #e02525;
-$color-danger-light:       lighten($color-brand, 10%);
-$color-danger-dark:        darken($color-brand, 10%);
+$color-success:            #5cb85c;
+$color-warning:            #f0ad4e;
 
 $font-color:               #373d3f;
 $font-color-light:         #333333;
@@ -92,12 +94,17 @@ $color-light:              lighten($color-base, 60%);
 $color-lighter:            lighten($color-base, 80%);
 $color-lightest:           lighten($color-base, 100%);
 
-
 $hover-background-color:   rgba(0, 0, 0, .1);
 $border-color-light:       rgba(0, 0, 0, .1);
+$color-focus:              #5cb3fd;
 
 // Z-index value
 $zindex-base:              1;
+$zindex-modal:             1050;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
 
+// Dialog Modal
+$modal-small:              300px;
+$modal-regular:            450px;
+$modal-large:              900px;

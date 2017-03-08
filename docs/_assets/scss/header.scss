@@ -1,0 +1,27 @@
+.header {
+   max-width: 1000px;
+   display: flex;
+   margin: 0 auto;
+   height: 40px;
+   align-items: center;
+   justify-content: space-between;
+
+   .logo {
+      width: 25px;
+      display: inherit;
+   }
+
+   .header-nav {
+
+      ul {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+
+         li {
+            display: inline-block;
+            margin-left: 10px;
+         }
+      }
+   }
+}

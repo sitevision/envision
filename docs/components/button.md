@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Buttons
+title: Button
 description: Buttons description
 group: components
 ---
@@ -33,6 +33,24 @@ group: components
 <p>
    <button type="button" class="sv-button sv-button--primary sv-button--small">Small</button>
    <button type="button" class="sv-button sv-button--small">Small</button>
+</p>
+{% endexample %}
+
+### Block ###
+{% example html %}
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--large sv-button--block">Large</button>
+   <button type="button" class="sv-button sv-button--large sv-button--block">Large</button>
+</p>
+
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--block">Default</button>
+   <button type="button" class="sv-button sv-button--block">Default</button>
+</p>
+
+<p>
+   <button type="button" class="sv-button sv-button--primary sv-button--small sv-button--block">Small</button>
+   <button type="button" class="sv-button sv-button--small sv-button--block">Small</button>
 </p>
 {% endexample %}
 

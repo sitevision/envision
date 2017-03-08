@@ -60,3 +60,90 @@ group: components
 </div>
 
 {% endexample %}
+
+{% example html %}
+
+<button 
+   class="sv-button sv-button--primary example-popover"
+   data-placement="top"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Try me!
+</button>
+
+{% endexample %}
+
+{% example html %}
+
+<button 
+   class="sv-button example-popover"
+   data-placement="top"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Top
+</button>
+
+<button 
+   class="sv-button example-popover"
+   data-placement="right"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Right
+</button>
+
+<button 
+   class="sv-button example-popover"
+   data-placement="bottom"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Bottom
+</button>
+
+<button 
+   class="sv-button example-popover"
+   data-placement="left"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Left
+</button>
+
+{% endexample %}
+
+{% example html %}
+
+<button 
+   class="sv-button sv-button--primary example-popover"
+   data-placement="top"
+   data-trigger="focus"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Focus me!
+</button>
+
+{% endexample %}
+
+{% example html %}
+
+<button 
+   class="sv-button sv-button--primary example-popover"
+   data-placement="top"
+   data-trigger="hover"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Hover me!
+</button>
+
+{% endexample %}
+
+{% example html %}
+
+<button 
+   class="sv-button sv-button--primary example-popover"
+   data-placement="top"
+   data-trigger="hover focus"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Hover OR focus me!
+</button>
+
+{% endexample %}
