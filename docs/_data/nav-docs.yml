@@ -13,3 +13,6 @@
     - title: Newsitem
     - title: Popover
     - title: Tab
+- title: Utils
+  pages:
+    - title: Accessibility
