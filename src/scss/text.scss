@@ -1,0 +1,145 @@
+.#{$prefix}-text {
+   color: $font-color;
+   font-family: $font-family;
+   font-weight: $font-weight-regular;
+   line-height: 1.1em;
+   margin: 0;
+
+   &--uppercase {
+      text-transform: uppercase;
+   }
+
+   &--lowercase {
+      text-transform: lowercase;
+   }
+
+   &--capitalize {
+      text-transform: capitalize;
+   }
+
+   &--truncate {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+
+   .#{$prefix}-link--title,
+   &--title {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-semibold;
+   }
+
+   &--detail {
+      color: $font-color-lighter;
+      font-weight: $font-weight-light;
+   }
+
+   &--comments {
+      font-weight: $font-weight-regular;
+   }
+
+   &--detail-small {
+      color: $font-color-lighter;
+      font-size: $font-size-small;
+      font-weight: $font-weight-light;
+   }
+
+   &--tagline {
+      color: $font-color-lighter;
+      font-size: $font-size-small;
+      font-weight: $font-weight-light;
+      margin-top: $space;
+   }
+
+   &--empty {
+      color: $font-color-lighter;
+      font-size: $font-size-small;
+      font-style: italic;
+      font-weight: $font-weight-light;
+      margin: $space8 0;
+      text-align: center;
+   }
+
+   &--regular {
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
+      margin: $space1 0;
+   }
+
+   &--error-danger {
+      color: $color-danger;
+      font-size: $font-size-small;
+   }
+
+   // Heading sizes
+   &-size-heading--small {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+   }
+
+   &-size-heading--medium {
+      font-size: $font-size-normal;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-normal;
+   }
+
+   &-size-heading--large {
+      font-size: $font-size-large;
+      line-height: $line-height-large;
+   }
+
+   // Text sizes
+   &-size--x-small {
+      font-size: $font-size-xtrasmall;
+      line-height: $line-height-xtrasmall;
+   }
+
+   &-size--small {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+   }
+
+   &-size--normal {
+      font-size: $font-size-normal;
+   }
+
+   &-size--large {
+      font-size: $font-size-large;
+   }
+
+   &-size--x-large {
+      font-size: $font-size-extralarge;
+   }
+
+   &-size--super {
+      font-size: $font-size-super;
+   }
+
+   // Text alignment
+   &-align--left {
+      text-align: left;
+   }
+
+   &-align--center {
+      text-align: center;
+   }
+
+   &-align--right {
+      text-align: right;
+   }
+
+   // Text weight
+   &--bold {
+      font-weight: $font-weight-bold;
+   }
+
+   &--extra-bold {
+      font-weight: $font-weight-extrabold;
+   }
+
+   &--uppercase {
+      text-transform: uppercase;
+   }
+}
