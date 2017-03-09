@@ -1,11 +1,11 @@
 @mixin input-validation-state($color) {
    color: $color;
 
-   .#{$prefix}-form-element__input {
+   .#{$prefix}-form-input {
       border-color: $color;
-   }
 
-   .#{$prefix}-form-element__input:focus {
-      @include focus(darken($color, 10%), lighten($color, 10%));
+      &:focus {
+         @include focus(darken($color, 10%), lighten($color, 10%));
+      }
    }
 }
