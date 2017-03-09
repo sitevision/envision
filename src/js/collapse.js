@@ -33,11 +33,22 @@ const Collapse = (($) => {
       show() {
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(this.whichTransitionEvent(), this.showTransitionComplete)
+            .one(this._whichTransitionEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
       }
 
-      showTransitionComplete(e) {
+      hide() {
+         this.$el
+            .height(this.$el.height())
+            .removeClass(MODIFIER_BASE + SHOW)
+            .addClass(MODIFIER_BASE + COLLAPSING)
+            .one(this._whichTransitionEvent(), this._hideTransitionComplete)
+            .height(0);
+      }
+
+      // Private
+
+      _showTransitionComplete(e) {
          const $target = $(e.currentTarget);
 
          $target
@@ -47,16 +58,7 @@ const Collapse = (($) => {
             .attr(ARIA_EXPANDED, true);
       }
 
-      hide() {
-         this.$el
-            .height(this.$el.height())
-            .removeClass(MODIFIER_BASE + SHOW)
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(this.whichTransitionEvent(), this.hideTransitionComplete)
-            .height(0);
-      }
-
-      hideTransitionComplete(e) {
+      _hideTransitionComplete(e) {
          const $target = $(e.currentTarget);
 
          $target
@@ -64,7 +66,7 @@ const Collapse = (($) => {
             .attr(ARIA_EXPANDED, false);
       }
 
-      whichTransitionEvent() {
+      _whichTransitionEvent() {
          const el = document.createElement('fakeelement');
          let t;
 
@@ -77,9 +79,17 @@ const Collapse = (($) => {
          return false;
       }
 
-      static _jQuery() {
+      static _jQuery(config) {
          return this.each(function() {
             const data = new Collapse(this);
+
+            if (typeof config === 'string') {
+               if (data[config] === undefined) {
+                  throw new Error(`No method named "${config}"`);
+               }
+               data[config]();
+               return;
+            }
 
             data.toggle();
          });
