@@ -1,117 +1,53 @@
 .#{$prefix}-media {
    display: flex;
-   flex-direction: row;
 
-   &--profile {
-      height: auto;
-      width: $space8;
-
-      &.#{$prefix}-media--profile--me {
-         height: $space7;
-         width: $space7;
-      }
-   }
-
-   &--profile-header {
-      border-radius: $radius5;
-      height: auto;
-      width: $space9;
-   }
-
-   &--thumb {
-      height: auto;
-      width: 100%;
-   }
-
-   &--gallery {
+   &__body {
+      display: flex;
+      flex: 1;
       flex-wrap: wrap;
-      margin: $space0 #{-$space0};
 
-      .#{$prefix}-media__item {
-         box-sizing: border-box;
-         padding: $space0;
-         width: 25%;
-      }
+      &--inline {
+         display: block;
 
-      @include clearfix();
-   }
+         > * {
+            display: inline;
+         }
 
-   &--cover {
-      height: auto;
-      max-width: 100%;
-      vertical-align: top;
-      width: 100%;
-   }
-
-   &--collage {
-      margin: 0;
-      overflow: hidden;
-
-      .#{$prefix}-media__item {
-         display: inline-block;
-         float: left;
-         height: auto;
-         max-height: 150px;
-         width: 50%;
-
-         &:last-child {
-            max-height: 200px;
-            width: 100%;
+         .#{$prefix}-media__actions {
+            float: right;
          }
       }
-
-      @include clearfix();
    }
 
-   &--video {
-      display: block;
-      height: 0;
-      margin: 0;
-      max-width: 100%;
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
+   &__figure {
+      margin-right: $space1;
+   }
 
-      iframe,
-      object,
-      embed {
-         height: 100%;
-         left: 0;
-         position: absolute;
-         top: 0;
-         width: 100%;
+   &__actions {
+      margin-left: auto;
+   }
+
+   &--column {
+      flex-direction: column;
+
+      .#{$prefix}-media__figure {
+         margin-right: 0;
       }
    }
 
-   &__icon {
-      font-size: $icon-size-normal;
+   &--center {
+      align-items: center;
    }
 
-   &__breadcrumb {
-      font-size: $icon-size-xtrasmall;
-      margin: 0 $space0;
+   &--bottom {
+      align-items: flex-end;
    }
 
-   &__image {
-      border-radius: $radius1;
-      display: block;
-      overflow: hidden;
-      vertical-align: middle;
+   &--reverse {
+      flex-direction: row-reverse;
    }
 
-   &__tumbnail {
-      display: block;
-      height: auto;
-      max-width: 150px;
-   }
-
-   &__info {
-      box-sizing: border-box;
-      flex-grow: 1;
-      margin-left: $space1;
-   }
-
-   &__data {
-      margin-bottom: $space0;
+   & & { // Nested media
+      margin-top: $space1;
    }
 }
