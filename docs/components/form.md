@@ -5,6 +5,12 @@ description: Form elements
 group: components
 ---
 ## Elements ##
+
+Related elements (radio buttons and checkboxes in this example) should have a `role="radiogroup"` / `role="group"` 
+applied to its container to indicate group membership of the contained elements. 
+
+The `aria-labelledby` is used to reference the `ID` of the text that labels the group.
+
 {% example html %}
 <div class="sv-form">
    <div class="sv-form-element">
@@ -98,12 +104,12 @@ group: components
    </div>
 </div>
 {% endexample %}
-Related elements (radio buttons and checkboxes in this example) should have a `role="radiogroup"` / `role="group"` 
-applied to its container to indicate group membership of the contained elements. 
-
-The `aria-labelledby` is used to reference the `ID` of the text that labels the group.
 
 ## Horizontal ##
+
+To create a horizontal form (horizontally align labels with input), apply modifier `.sv-form--horizontal` to the form wrapper.
+The label of the element takes up 20% of the width and the `.sv-form-element__control` uses the remaining width.
+
 {% example html %}
 <div class="sv-form sv-form--horizontal">
    <div class="sv-form-element">
@@ -146,10 +152,11 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    </div>
 </div>  
 {% endexample %}
-To create a horizontal form (horizontally align labels with input), apply modifier `.sv-form--horizontal` to the form wrapper.
-The label of the element takes up 20% of the width and the `.sv-form-element__control` uses the remaining width.
 
 ## Inline ##
+
+Apply modifier `.sv-form--inline` to the form wrapper to display elements inline.
+
 {% example html %}
 <div class="sv-form sv-form--inline">
    <div class="sv-form-element">
@@ -179,9 +186,12 @@ The label of the element takes up 20% of the width and the `.sv-form-element__co
    </div>
 </div>  
 {% endexample %}
-Apply modifier `.sv-form--inline` to the form wrapper to display elements inline.
 
 ## Hybrid ##
+
+To position multiple elements on a row, wrap target elements (`.sv-form-element`) with a `.sv-form__row` container.
+Use modifer `.sv-form-element--*` to specify the length of an element, relative to other elements on the row. Valid values `1-6`. Default is `1`
+
 {% example html %}
 <div class="sv-form">
    <div class="sv-form__row">
@@ -223,10 +233,13 @@ Apply modifier `.sv-form--inline` to the form wrapper to display elements inline
    </div>
 </div>  
 {% endexample %}
-To position multiple elements on a row, wrap target elements (`.sv-form-element`) with a `.sv-form__row` container.
-Use modifer `.sv-form-element--*` to specify the length of an element, relative to other elements on the row. Valid values `1-6`. Default is `1`
 
 ## Help text ##
+
+Use `.sv-form-element__help` for help texts associated with a form element.
+
+The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
+
 {% example html %}
 <div class="sv-form">
    <div class="sv-form-element">
@@ -238,11 +251,12 @@ Use modifer `.sv-form-element--*` to specify the length of an element, relative 
    </div>
 </div>  
 {% endexample %}
-Use `.sv-form-element__help` for help texts associated with a form element.
-
-The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
 
 ## States ##
+
+Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default cursor.
+For disabled radio buttons and checkboxes, apply modifier `.sv-form-radio--disabled` / `.sv-form-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
+
 {% example html %}
 <div class="sv-form">
    <div class="sv-form-element">
@@ -287,10 +301,13 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
    </div>
 </div>  
 {% endexample %}
-Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default cursor.
-For disabled radio buttons and checkboxes, apply modifier `.sv-form-radio--disabled` / `.sv-form-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.     
 
 ## Validation ##
+
+Add modifiers `.sv-form-element--success`, `.sv-form-element--warning` or `.sv-form-element--danger` to define a validation state.
+
+The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
+
 {% example html %}
 <div class="sv-form">
    <div class="sv-form-element sv-form-element--success">
@@ -316,6 +333,3 @@ For disabled radio buttons and checkboxes, apply modifier `.sv-form-radio--disab
    </div>
 </div>  
 {% endexample %}
-Add modifiers `.sv-form-element--success`, `.sv-form-element--warning` or `.sv-form-element--danger` to define a validation state.
-
-The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
