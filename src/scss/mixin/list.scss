@@ -2,8 +2,8 @@
    flex-basis: 100/$i+%;
 }
 
-@mixin border-divider($property) {
-   #{$property}: 1px solid $color-lighter;
+@mixin border-divider($property, $thickness: 1px, $border-color: $color-lighter) {
+   #{$property}: $thickness solid $border-color;
 }
 
 @mixin dot-divider() {

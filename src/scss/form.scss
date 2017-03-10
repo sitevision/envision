@@ -3,6 +3,46 @@
       margin: 0;
    }
 
+   &-input {
+      background-color: $font-color-invert;
+      background-image: none;
+      border: 1px solid $color-lighter;
+      border-radius: $radius1;
+      box-sizing: border-box;
+      color: $font-color;
+      display: block;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      margin: 0;
+      padding: $space0 $space2;
+      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      width: 100%;
+
+      &[disabled],
+      &[readonly] {
+         background-color: lighten($color-lighter, 10%);
+         border-color: $color-lighter;
+      }
+
+      &[disabled] {
+         cursor: not-allowed;
+         user-select: none;
+      }
+
+      &:focus {
+         @include focus();
+      }
+
+      &[type="search"] {
+         appearance: none;
+      }
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button {
+         display: none;
+      }
+   }
+
    &-element {
       margin-bottom: $space3;
 
@@ -10,46 +50,6 @@
          display: inline-block;
          font-weight: $font-weight-semibold;
          margin-bottom: $space0;
-      }
-
-      &__input {
-         background-color: $font-color-invert;
-         background-image: none;
-         border: 1px solid $color-lighter;
-         border-radius: $radius1;
-         box-sizing: border-box;
-         color: $font-color;
-         display: block;
-         font-size: $font-size-small;
-         line-height: $line-height-small;
-         margin: 0;
-         padding: $space0 $space2;
-         transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
-         width: 100%;
-
-         &[disabled],
-         &[readonly] {
-            background-color: lighten($color-lighter, 10%);
-            border-color: $color-lighter;
-         }
-
-         &[disabled] {
-            cursor: not-allowed;
-            user-select: none;
-         }
-
-         &:focus {
-            @include focus();
-         }
-
-         &[type="search"] {
-            appearance: none;
-         }
-
-         &::-webkit-search-decoration,
-         &::-webkit-search-cancel-button {
-            display: none;
-         }
       }
 
       &__help,

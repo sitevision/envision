@@ -7,6 +7,7 @@
     - title: Breadcrumb
     - title: Button
     - title: Button group
+    - title: Feed
     - title: Form
     - title: List
     - title: Media
@@ -17,3 +18,5 @@
 - title: Utils
   pages:
     - title: Accessibility
+    - title: Icons
+    - title: Text

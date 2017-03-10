@@ -1,0 +1,11 @@
+.icons-demo {
+   li {
+      background-color: rgba(0, 0, 0, .02);
+      padding: 1.5em;
+      text-align: center;
+
+      &:hover {
+         background-color: rgba(0, 0, 0, .1);
+      }
+   }
+}

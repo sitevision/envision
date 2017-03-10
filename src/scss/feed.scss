@@ -1,0 +1,91 @@
+.#{$prefix}-post {
+   @include border-divider(border, 1px, $color-element-bg);
+
+   img {
+      height: auto;
+      max-width: 100%;
+   }
+
+   &__header,
+   &__entry,
+   &__attachment,
+   &__shared {
+      @include border-divider(border-bottom, 1px, $color-element-bg);
+   }
+
+   &__shared {
+      .#{$prefix}-post {
+         @include border-divider(border-left, 3px, $color-brand);
+
+         &__entry {
+            padding: $space1;
+         }
+      }
+   }
+
+   > :not(:last-child) {
+      padding: $space1;
+   }
+}
+
+.#{$prefix}-comments {
+   @include border-divider(border-top, 1px, $color-element-bg);
+   background-color: $color-element-bg;
+
+   &__wrapper {
+      padding: $space1;
+   }
+
+   &__comment {
+      padding-top: $space1;
+   }
+}
+
+.#{$prefix}-comment {
+   @include border-divider(border-bottom, 1px, $color-page-bg);
+   display: flex;
+   padding: $space1 0;
+
+   &__body {
+      flex: 1;
+   }
+}
+
+.#{$prefix}-feed {
+   &__item:not(:last-child) {
+      padding-bottom: $space1;
+   }
+}
+
+.#{$prefix}-social {
+   display: flex;
+
+   img {
+      height: auto;
+      max-width: 100%;
+   }
+
+   > :not(:last-child) {
+      margin-right: $space1;
+   }
+
+   &__figure {
+      &--profile {
+         height: auto;
+         width: 40px;
+      }
+
+      &--me {
+         height: auto;
+         width: 32px;
+      }
+   }
+
+   &__body {
+      flex: 1;
+   }
+
+   &__actions {
+      margin-left: auto;
+   }
+}
