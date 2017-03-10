@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Media
-description: Media objecy
+description: Media object
 group: components
 ---
 ## Types ##
