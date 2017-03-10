@@ -22,6 +22,18 @@
             content: none;
          }
       }
+
+      &--fixed {
+         display: flex;
+         flex-wrap: wrap;
+
+         @for $i from 1 through 12 {
+            &--#{$i} .#{$prefix}-list__item {
+               @include basis-value($i);
+               box-sizing: border-box;
+            }
+         }
+      }
    }
 
    &.#{$prefix}-list-dividers {
@@ -48,18 +60,6 @@
       }
       &--around {
          @include border-divider(border);
-      }
-   }
-
-   &.#{$prefix}-list-horizontal-fixed {
-      display: flex;
-      flex-wrap: wrap;
-
-      @for $i from 1 through 12 {
-         &--#{$i} .#{$prefix}-list__item {
-            @include basis-value($i);
-            box-sizing: border-box;
-         }
       }
    }
 }

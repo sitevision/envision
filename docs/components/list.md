@@ -22,6 +22,7 @@ group: components
 </ul>
 {% endexample %}
 ### Dividers ###
+
 Apply `.sv-list-dividers--*` to add dividers between items. Valid values: `top`, `bottom`, `around` 
 {% example html %}
 <ul class="sv-list sv-list-dividers--top">
@@ -84,10 +85,10 @@ Apply `.sv-list-dividers--*` to add dividers between items. Valid values: `right
 {% endexample %}
 
 ## Horizontal list with fixed number of items per row ##
-Use `sv-list-horizontal-fixed` in combination with modifer `sv-list-horizontal-fixed--*`. Valid values: `1-12`
+Use modifiers `sv-list--horizontal--fixed sv-list--horizontal--fixed--*`. Valid values: `1-12`
  
 {% example html %}
-<ul class="sv-list sv-list-horizontal-fixed sv-list-horizontal-fixed--4">
+<ul class="sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--4">
    <li class="sv-list__item">
       <img src="https://placehold.it/100x100&text=1">
    </li>
