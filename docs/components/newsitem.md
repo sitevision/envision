@@ -150,12 +150,12 @@ group: components
 
 
 ### Example: Horizontal list ###
-`sv-list sv-list--horizontal`
-<ul class="sv-list sv-list--horizontal">
-   <li class="sv-list__item" style="max-width:420px">
+`sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--2`
+<ul class="sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--2">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/100/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
@@ -185,10 +185,10 @@ group: components
          </footer>
       </article>
    </li>
-   <li class="sv-list__item" style="max-width:420px">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/100/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
@@ -218,10 +218,10 @@ group: components
          </footer>
       </article>
    </li>
-   <li class="sv-list__item" style="max-width:420px">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/100/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
@@ -251,10 +251,10 @@ group: components
          </footer>
       </article>
    </li>
-   <li class="sv-list__item" style="max-width:420px">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/400/300/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
@@ -284,10 +284,10 @@ group: components
          </footer>
       </article>
    </li>
-   <li class="sv-list__item" style="max-width:420px">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/400/300/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
@@ -317,10 +317,10 @@ group: components
          </footer>
       </article>
    </li>
-   <li class="sv-list__item" style="max-width:420px">
+   <li class="sv-list__item">
       <article class="sv-news-item">
          <div class="sv-news-item__media">
-            <img src="https://unsplash.it/400/300/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" />
          </div>
          <header class="sv-news-item__headline">
             <div class="sv-news-item__headline__title">
