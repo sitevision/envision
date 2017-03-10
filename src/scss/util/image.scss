@@ -1,0 +1,12 @@
+.#{$prefix}-image {
+   height: auto;
+   max-width: 100%;
+
+   &--small {
+      width: 40px;
+   }
+
+   &--tiny {
+      width: 32px;
+   }
+}
