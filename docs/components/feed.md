@@ -7,18 +7,20 @@ group: components
 ## Simple post with attached image ##
 {% example html %}
 <article class="sv-post">
-   <header class="sv-post__header sv-social">
-      <div class="sv-social__figure sv-social__figure--profile">
+   <header class="sv-post__header sv-media">
+      <div class="sv-media__figure">
          <a href="#">
-            <img src="https://placehold.it/250x250">
+            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-social__body">
-         <a class="sv-link sv-link--title" href="#">Erik</a>
-         <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="sv-media__body">
+         <h3 class="sv-font sv-font--title">
+            <a class="sv-link sv-link--title" href="#">Erik</a>
+            <span class="sv-font sv-font--detail-small">16:34</span>
+         </h3>
          <p class="sv-font sv-font--tagline">Design</p>
       </div>
-      <div class="sv-social__actions">
+      <div class="sv-media__actions">
          <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
             <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
             <span class="sv-assistive-text">More options</span>
@@ -52,16 +54,16 @@ group: components
       <div class="sv-comments__wrapper">
          <ul class="sv-comments__list sv-list">
          </ul>
-         <div class="sv-comments__comment sv-social"> 
-            <div class="sv-social__figure sv-social__figure--me">
+         <div class="sv-comments__comment sv-media"> 
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/400x400.png">
+                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-social__body">
+            <div class="sv-media__body">
                <input type="text" class="sv-form-input" />
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--primary">Comment</button>
             </div>
          </div>
@@ -72,29 +74,21 @@ group: components
 
 ## Comment ##
 {% example html %}
-<article class="sv-comment sv-social">
-   <div class="sv-social__figure sv-social__figure--profile">
+<article class="sv-comment sv-media">
+   <div class="sv-media__figure">
       <a href="#">
-         <img src="https://placehold.it/400x400.png">
+         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-comment__body">
-      <header class="sv-comment__header sv-social">
-         <div class="sv-social__body">
-            <a class="sv-link sv-link--title" href="#">Erik</a>
-         </div>
-         <div class="sv-social__actions">
-            <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-               <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-               <span class="sv-assistive-text">More options</span>
-            </button>
-         </div>
+   <div class="sv-media__body">
+      <header class="sv-comment__header">
+         <h3 class="sv-font">
+            <a class="sv-link sv-link--title" href="#">Emma</a>
+         </h3>
       </header>
-      <div class="sv-comment__entry">
-         <p class="sv-font">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
-         </p>
-      </div>
+      <p class="sv-font">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
+      </p>
       <footer class="sv-comment__footer">
          <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
             <li class="sv-list__item">
@@ -106,24 +100,32 @@ group: components
          </ul>
       </footer>
    </div>
+   <div class="sv-media__actions">
+      <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+         <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+         <span class="sv-assistive-text">More options</span>
+      </button>
+   </div>
 </article>
 {% endexample %}
 
 ## Post with comments ##
 {% example html %}
 <article class="sv-post">
-   <header class="sv-post__header sv-social">
-      <div class="sv-social__figure sv-social__figure--profile">
+   <header class="sv-post__header sv-media">
+      <div class="sv-media__figure">
          <a href="#">
-            <img src="https://placehold.it/250x250">
+            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-social__body">
-         <a class="sv-link sv-link--title" href="#">Erik</a>
-         <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="sv-media__body">
+         <h3 class="sv-font sv-font--title">
+            <a class="sv-link sv-link--title" href="#">Erik</a>
+            <span class="sv-font sv-font--detail-small">16:34</span>
+         </h3>
          <p class="sv-font sv-font--tagline">Design</p>
       </div>
-      <div class="sv-social__actions">
+      <div class="sv-media__actions">
          <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
             <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
             <span class="sv-assistive-text">More options</span>
@@ -152,29 +154,21 @@ group: components
       <div class="sv-comments__wrapper">
          <ul class="sv-comments__list sv-list">
             <li>
-               <article class="sv-comment sv-social">
-                  <div class="sv-social__figure sv-social__figure--profile">
+               <article class="sv-comment sv-media">
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-comment__body">
-                     <header class="sv-comment__header sv-social">
-                        <div class="sv-social__body">
+                  <div class="sv-media__body">
+                     <header class="sv-comment__header">
+                        <h3 class="sv-font">
                            <a class="sv-link sv-link--title" href="#">Malin</a>
-                        </div>
-                        <div class="sv-social__actions">
-                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                              <span class="sv-assistive-text">More options</span>
-                           </button>
-                        </div>
+                        </h3>
                      </header>
-                     <div class="sv-comment__entry">
-                        <p class="sv-font">
-                           Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. 
-                        </p>
-                     </div>
+                     <p class="sv-font">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
+                     </p>
                      <footer class="sv-comment__footer">
                         <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
                            <li class="sv-list__item">
@@ -186,32 +180,30 @@ group: components
                         </ul>
                      </footer>
                   </div>
+                  <div class="sv-media__actions">
+                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="sv-assistive-text">More options</span>
+                     </button>
+                  </div>
                </article>
             </li>
             <li>
-               <article class="sv-comment sv-social">
-                  <div class="sv-social__figure sv-social__figure--profile">
+               <article class="sv-comment sv-media">
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-comment__body">
-                     <header class="sv-comment__header sv-social">
-                        <div class="sv-social__body">
+                  <div class="sv-media__body">
+                     <header class="sv-comment__header">
+                        <h3 class="sv-font">
                            <a class="sv-link sv-link--title" href="#">Robin</a>
-                        </div>
-                        <div class="sv-social__actions">
-                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                              <span class="sv-assistive-text">More options</span>
-                           </button>
-                        </div>
+                        </h3>
                      </header>
-                     <div class="sv-comment__entry">
-                        <p class="sv-font">
-                           Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
-                        </p>
-                     </div>
+                     <p class="sv-font">
+                        Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
+                     </p>
                      <footer class="sv-comment__footer">
                         <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
                            <li class="sv-list__item">
@@ -223,32 +215,30 @@ group: components
                         </ul>
                      </footer>
                   </div>
+                  <div class="sv-media__actions">
+                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="sv-assistive-text">More options</span>
+                     </button>
+                  </div>
                </article>
             </li>
             <li>
-               <article class="sv-comment sv-social">
-                  <div class="sv-social__figure sv-social__figure--profile">
+               <article class="sv-comment sv-media">
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-comment__body">
-                     <header class="sv-comment__header sv-social">
-                        <div class="sv-social__body">
+                  <div class="sv-media__body">
+                     <header class="sv-comment__header">
+                        <h3 class="sv-font">
                            <a class="sv-link sv-link--title" href="#">Anders</a>
-                        </div>
-                        <div class="sv-social__actions">
-                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                              <span class="sv-assistive-text">More options</span>
-                           </button>
-                        </div>
+                        </h3>
                      </header>
-                     <div class="sv-comment__entry">
-                        <p class="sv-font">
-                           Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. 
-                        </p>
-                     </div>
+                     <p class="sv-font">
+                        Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
+                     </p>
                      <footer class="sv-comment__footer">
                         <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
                            <li class="sv-list__item">
@@ -260,19 +250,25 @@ group: components
                         </ul>
                      </footer>
                   </div>
+                  <div class="sv-media__actions">
+                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="sv-assistive-text">More options</span>
+                     </button>
+                  </div>
                </article>
             </li>
          </ul>
-         <div class="sv-comments__comment sv-social"> 
-            <div class="sv-social__figure sv-social__figure--me">
+         <div class="sv-comments__comment sv-media"> 
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/400x400.png">
+                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-social__body">
+            <div class="sv-media__body">
                <input type="text" class="sv-form-input" />
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--primary">Comment</button>
             </div>
          </div>
@@ -284,18 +280,20 @@ group: components
 ## Shared post ##
 {% example html %}
 <article class="sv-post">
-   <header class="sv-post__header sv-social">
-      <div class="sv-social__figure sv-social__figure--profile">
+   <header class="sv-post__header sv-media">
+      <div class="sv-media__figure">
          <a href="#">
-            <img src="https://placehold.it/250x250">
+            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-social__body">
-         <a class="sv-link sv-link--title" href="#">Erik</a> <span class="sv-font sv-font--detail-small">shared</span> <a class="sv-link sv-link--title" href="#">Malin's</a> <span class="sv-font sv-font--detail-small">post</span>
-         <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="sv-media__body">
+         <h3 class="sv-font sv-font--title">
+            <a class="sv-link sv-link--title" href="#">Erik</a> <span class="sv-font sv-font--detail-small">shared</span> <a class="sv-link sv-link--title" href="#">Malin's</a> <span class="sv-font sv-font--detail-small">post</span>
+            <span class="sv-font sv-font--detail-small">16:34</span>
+         </h3>
          <p class="sv-font sv-font--tagline">Design</p>
       </div>
-      <div class="sv-social__actions">
+      <div class="sv-media__actions">
          <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
             <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
             <span class="sv-assistive-text">More options</span>
@@ -309,15 +307,17 @@ group: components
    </div>
    <div class="sv-post__shared">
       <blockquote class="sv-post">
-         <header class="sv-post__header sv-social">
-            <div class="sv-social__figure sv-social__figure--profile">
+         <header class="sv-post__header sv-media">
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/250x250">
+                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-social__body">
-               <a class="sv-link sv-link--title" href="#">Malin</a>
-               <span class="sv-font sv-font--detail-small">17:29</span>
+            <div class="sv-media__body">
+               <h3 class="sv-font sv-font--title">
+                  <a class="sv-link sv-link--title" href="#">Malin</a>
+                  <span class="sv-font sv-font--detail-small">17:29</span>
+               </h3>
                <p class="sv-font sv-font--tagline">Design</p>
             </div>
          </header>
@@ -345,16 +345,16 @@ group: components
       <div class="sv-comments__wrapper">
          <ul class="sv-comments__list sv-list">
          </ul>
-         <div class="sv-comments__comment sv-social"> 
-            <div class="sv-social__figure sv-social__figure--me">
+         <div class="sv-comments__comment sv-media"> 
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/400x400.png">
+                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-social__body">
+            <div class="sv-media__body">
                <input type="text" class="sv-form-input" />
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--primary">Comment</button>
             </div>
          </div>
@@ -368,18 +368,20 @@ group: components
 <ul class="sv-feed sv-list">
    <li class="sv-feed__item">
       <article class="sv-post">
-         <header class="sv-post__header sv-social">
-            <div class="sv-social__figure sv-social__figure--profile">
+         <header class="sv-post__header sv-media">
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/250x250">
+                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-social__body">
-               <a class="sv-link sv-link--title" href="#">Erik</a>
-               <span class="sv-font sv-font--detail-small">16:34</span>
+            <div class="sv-media__body">
+               <h3 class="sv-font sv-font--title">
+                  <a class="sv-link sv-link--title" href="#">Erik</a>
+                  <span class="sv-font sv-font--detail-small">16:34</span>
+               </h3>
                <p class="sv-font sv-font--tagline">Design</p>
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
                   <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
                   <span class="sv-assistive-text">More options</span>
@@ -408,29 +410,21 @@ group: components
             <div class="sv-comments__wrapper">
                <ul class="sv-comments__list sv-list">
                   <li>
-                     <article class="sv-comment sv-social">
-                        <div class="sv-social__figure sv-social__figure--profile">
+                     <article class="sv-comment sv-media">
+                        <div class="sv-media__figure">
                            <a href="#">
-                              <img src="https://placehold.it/400x400.png">
+                              <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
                            </a>
                         </div>
-                        <div class="sv-comment__body">
-                           <header class="sv-comment__header sv-social">
-                              <div class="sv-social__body">
+                        <div class="sv-media__body">
+                           <header class="sv-comment__header">
+                              <h3 class="sv-font">
                                  <a class="sv-link sv-link--title" href="#">Anders</a>
-                              </div>
-                              <div class="sv-social__actions">
-                                 <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                                    <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                                    <span class="sv-assistive-text">More options</span>
-                                 </button>
-                              </div>
+                              </h3>
                            </header>
-                           <div class="sv-comment__entry">
-                              <p class="sv-font">
-                                 Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. 
-                              </p>
-                           </div>
+                           <p class="sv-font">
+                              Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
+                           </p>
                            <footer class="sv-comment__footer">
                               <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
                                  <li class="sv-list__item">
@@ -442,32 +436,30 @@ group: components
                               </ul>
                            </footer>
                         </div>
+                        <div class="sv-media__actions">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+                              <span class="sv-assistive-text">More options</span>
+                           </button>
+                        </div>
                      </article>
                   </li>
                   <li>
-                     <article class="sv-comment sv-social">
-                        <div class="sv-social__figure sv-social__figure--profile">
+                     <article class="sv-comment sv-media">
+                        <div class="sv-media__figure">
                            <a href="#">
-                              <img src="https://placehold.it/400x400.png">
+                              <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
                            </a>
                         </div>
-                        <div class="sv-comment__body">
-                           <header class="sv-comment__header sv-social">
-                              <div class="sv-social__body">
+                        <div class="sv-media__body">
+                           <header class="sv-comment__header">
+                              <h3 class="sv-font">
                                  <a class="sv-link sv-link--title" href="#">Emma</a>
-                              </div>
-                              <div class="sv-social__actions">
-                                 <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                                    <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                                    <span class="sv-assistive-text">More options</span>
-                                 </button>
-                              </div>
+                              </h3>
                            </header>
-                           <div class="sv-comment__entry">
-                              <p class="sv-font">
-                                 Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. 
-                              </p>
-                           </div>
+                           <p class="sv-font">
+                              Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
+                           </p>
                            <footer class="sv-comment__footer">
                               <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
                                  <li class="sv-list__item">
@@ -479,19 +471,25 @@ group: components
                               </ul>
                            </footer>
                         </div>
+                        <div class="sv-media__actions">
+                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+                              <span class="sv-assistive-text">More options</span>
+                           </button>
+                        </div>
                      </article>
                   </li>
                </ul>
-               <div class="sv-comments__comment sv-social"> 
-                  <div class="sv-social__figure sv-social__figure--me">
+               <div class="sv-comments__comment sv-media"> 
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-social__body">
+                  <div class="sv-media__body">
                      <input type="text" class="sv-form-input" />
                   </div>
-                  <div class="sv-social__actions">
+                  <div class="sv-media__actions">
                      <button type="button" class="sv-button sv-button--primary">Comment</button>
                   </div>
                </div>
@@ -501,18 +499,20 @@ group: components
    </li>
    <li class="sv-feed__item">
       <article class="sv-post">
-         <header class="sv-post__header sv-social">
-            <div class="sv-social__figure sv-social__figure--profile">
+         <header class="sv-post__header sv-media">
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/250x250">
+                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-social__body">
-               <a class="sv-link sv-link--title" href="#">Robin</a>
-               <span class="sv-font sv-font--detail-small">17:28</span>
+            <div class="sv-media__body">
+               <h3 class="sv-font sv-font--title">
+                  <a class="sv-link sv-link--title" href="#">Robin</a>
+                  <span class="sv-font sv-font--detail-small">17:28</span>
+               </h3>
                <p class="sv-font sv-font--tagline">Design</p>
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
                   <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
                   <span class="sv-assistive-text">More options</span>
@@ -541,16 +541,16 @@ group: components
             <div class="sv-comments__wrapper">
                <ul class="sv-comments__list sv-list">
                </ul>
-               <div class="sv-comments__comment sv-social"> 
-                  <div class="sv-social__figure sv-social__figure--me">
+               <div class="sv-comments__comment sv-media"> 
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-social__body">
+                  <div class="sv-media__body">
                      <input type="text" class="sv-form-input" />
                   </div>
-                  <div class="sv-social__actions">
+                  <div class="sv-media__actions">
                      <button type="button" class="sv-button sv-button--primary">Comment</button>
                   </div>
                </div>
@@ -560,18 +560,20 @@ group: components
    </li>
    <li class="sv-feed__item">
       <article class="sv-post">
-         <header class="sv-post__header sv-social">
-            <div class="sv-social__figure sv-social__figure--profile">
+         <header class="sv-post__header sv-media">
+            <div class="sv-media__figure">
                <a href="#">
-                  <img src="https://placehold.it/250x250">
+                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-social__body">
-               <a class="sv-link sv-link--title" href="#">Ebba</a>
-               <span class="sv-font sv-font--detail-small">19:05</span>
+            <div class="sv-media__body">
+               <h3 class="sv-font sv-font--title">
+                  <a class="sv-link sv-link--title" href="#">Ebba</a>
+                  <span class="sv-font sv-font--detail-small">19:05</span>
+               </h3>
                <p class="sv-font sv-font--tagline">Design</p>
             </div>
-            <div class="sv-social__actions">
+            <div class="sv-media__actions">
                <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
                   <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
                   <span class="sv-assistive-text">More post options</span>
@@ -600,16 +602,16 @@ group: components
             <div class="sv-comments__wrapper">
                <ul class="sv-comments__list sv-list">
                </ul>
-               <div class="sv-comments__comment sv-social"> 
-                  <div class="sv-social__figure sv-social__figure--me">
+               <div class="sv-comments__comment sv-media"> 
+                  <div class="sv-media__figure">
                      <a href="#">
-                        <img src="https://placehold.it/400x400.png">
+                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-social__body">
+                  <div class="sv-media__body">
                      <input type="text" class="sv-form-input" />
                   </div>
-                  <div class="sv-social__actions">
+                  <div class="sv-media__actions">
                      <button type="button" class="sv-button sv-button--primary">Comment</button>
                   </div>
                </div>

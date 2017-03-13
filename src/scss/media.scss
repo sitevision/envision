@@ -1,37 +1,27 @@
 .#{$prefix}-media {
    display: flex;
 
+   > :not(:last-child) {
+      margin: 0 $space1 0 0;
+   }
+
    &__body {
-      display: flex;
       flex: 1;
-      flex-wrap: wrap;
 
       &--inline {
-         display: block;
+         display: inline;
 
          > * {
             display: inline;
          }
-
-         .#{$prefix}-media__actions {
-            float: right;
-         }
       }
-   }
-
-   &__figure {
-      margin-right: $space1;
-   }
-
-   &__actions {
-      margin-left: auto;
    }
 
    &--column {
       flex-direction: column;
 
-      .#{$prefix}-media__figure {
-         margin-right: 0;
+      > :not(:last-child) {
+         margin: 0 0 $space1;
       }
    }
 
@@ -45,6 +35,10 @@
 
    &--reverse {
       flex-direction: row-reverse;
+
+      > :not(:last-child) {
+         margin: 0 0 0 $space1;
+      }
    }
 
    & & { // Nested media

@@ -37,16 +37,16 @@ group: components
       <h3 class="sv-font">
          <a class="sv-link sv-link--title" href="#">Emma</a>
       </h3>
-      <div class="sv-media__actions">
-         <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-            <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-            <span class="sv-assistive-text">More options</span>
-         </button>
-      </div>
       <p class="sv-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
+   </div>
+   <div class="sv-media__actions">
+      <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
+         <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
+         <span class="sv-assistive-text">More options</span>
+      </button>
    </div>
 </article>
 {% endexample %}
