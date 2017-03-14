@@ -162,9 +162,9 @@ group: components
                   </div>
                   <div class="sv-media__body">
                      <header class="sv-comment__header">
-                        <h3 class="sv-font">
+                        <h4 class="sv-font sv-font--title">
                            <a class="sv-link sv-link--title" href="#">Malin</a>
-                        </h3>
+                        </h4>
                      </header>
                      <p class="sv-font">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
@@ -197,9 +197,9 @@ group: components
                   </div>
                   <div class="sv-media__body">
                      <header class="sv-comment__header">
-                        <h3 class="sv-font">
+                        <h4 class="sv-font sv-font--title">
                            <a class="sv-link sv-link--title" href="#">Robin</a>
-                        </h3>
+                        </h4>
                      </header>
                      <p class="sv-font">
                         Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
@@ -418,9 +418,9 @@ group: components
                         </div>
                         <div class="sv-media__body">
                            <header class="sv-comment__header">
-                              <h3 class="sv-font">
+                              <h4 class="sv-font sv-font--title">
                                  <a class="sv-link sv-link--title" href="#">Anders</a>
-                              </h3>
+                              </h4>
                            </header>
                            <p class="sv-font">
                               Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
@@ -453,9 +453,9 @@ group: components
                         </div>
                         <div class="sv-media__body">
                            <header class="sv-comment__header">
-                              <h3 class="sv-font">
+                              <h4 class="sv-font sv-font--title">
                                  <a class="sv-link sv-link--title" href="#">Emma</a>
-                              </h3>
+                              </h4>
                            </header>
                            <p class="sv-font">
                               Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
