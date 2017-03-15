@@ -9,13 +9,13 @@ group: components
 {% example html %}
 <nav aria-label="Pagination example">
    <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">4</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">5</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Next</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">4</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">5</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -25,13 +25,13 @@ group: components
 {% example html %}
 <nav aria-label="Pagination example">
    <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item sv-pagination__item--disabled">
-         <a class="sv-button" href="#" tabindex="-1">Previous</a>
+      <li class="sv-pagination__item">
+         <a class="sv-pagination__link sv-is-disabled" href="#" tabindex="-1">Previous</a>
       </li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Next</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -40,13 +40,13 @@ group: components
 {% example html %}
 <nav aria-label="Pagination example">
    <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">1</a></li>
-      <li class="sv-pagination__item sv-pagination__item--active">
-         <a class="sv-button" href="#">2 <span class="sv-assistive-text">Current</span></a>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
+      <li class="sv-pagination__item">
+         <a class="sv-pagination__link sv-is-active" href="#">2 <span class="sv-assistive-text">Current</span></a>
       </li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Next</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -56,11 +56,11 @@ group: components
 {% example html %}
 <nav aria-label="Pagination example">
    <ul class="sv-pagination sv-pagination--center sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Next</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -69,11 +69,11 @@ group: components
 {% example html %}
 <nav aria-label="Pagination example">
    <ul class="sv-pagination sv-pagination--end sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-button" href="#">Next</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
+      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
