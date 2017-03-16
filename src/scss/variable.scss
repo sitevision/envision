@@ -116,4 +116,10 @@ $breadcrumb-divider-color: $color-light;
 $breadcrumb-divider:       '/';
 
 // Animation
-$toggle-duration:          .4s
+$toggle-duration:          .4s;
+
+// Badge
+$badge-padding:            .2em .35em;
+$badge-radius:             .2em;
+$badge-font-color:         $font-color-invert;
+$badge-font-size:          75%;
