@@ -10,11 +10,11 @@
    background-color: $color-dark;
    content: "";
    display: inline-block;
-   height: 2px;
+   height: $space;
    vertical-align: middle;
-   width: 2px;
-   margin-left: 2px;
-   margin-right: 2px;
+   width: $space;
+   margin-left: $space1;
+   margin-right: $space1;
    border-radius: 50%;
 }
 

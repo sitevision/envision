@@ -3,22 +3,27 @@
    margin: 0;
    padding: 0;
 
+   $item: #{$prefix}-list__item;
+
    &--horizontal {
-      .#{$prefix}-list__item {
-         display: inline-block;
-      }
+      display: flex;
 
       &.#{$prefix}-list-dividers {
-         &--left > .#{$prefix}-list__item:before {
+         &--left > .#{$item},
+         &--right > .#{$item} {
+            align-items: center;
+            display: flex;
+         }
+         &--left > .#{$item}:before {
             @include dot-divider();
          }
-         &--left > .#{$prefix}-list__item:first-child:before {
+         &--left > .#{$item}:first-child:before {
             content: none;
          }
-         &--right > .#{$prefix}-list__item:after {
+         &--right > .#{$item}:after {
             @include dot-divider();
          }
-         &--right > .#{$prefix}-list__item:last-child:after {
+         &--right > .#{$item}:last-child:after {
             content: none;
          }
       }
@@ -28,7 +33,7 @@
          flex-wrap: wrap;
 
          @for $i from 1 through 12 {
-            &--#{$i} .#{$prefix}-list__item {
+            &--#{$i} > .#{$item} {
                @include basis-value($i);
                box-sizing: border-box;
             }
@@ -37,15 +42,15 @@
    }
 
    &.#{$prefix}-list-dividers {
-      &--top > .#{$prefix}-list__item {
+      &--top > .#{$item} {
          @include border-divider(border-top);
       }
-      &--bottom > .#{$prefix}-list__item {
+      &--bottom > .#{$item} {
          @include border-divider(border-bottom);
       }
-      &--around > .#{$prefix}-list__item {
+      &--around > .#{$item} {
          @include border-divider(border);
-         + .#{$prefix}-list__item {
+         + .#{$item} {
             margin-top: $space;
          }
       }

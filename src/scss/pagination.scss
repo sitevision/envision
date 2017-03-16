@@ -1,0 +1,30 @@
+.#{$prefix}-pagination {
+   &__item:not(:last-child) {
+      margin-right: $space;
+   }
+
+   &__link {
+      @include button-base(0);
+
+      &.#{$prefix}-is-active {
+         @include is-active();
+      }
+
+      &.#{$prefix}-is-disabled {
+         @include is-disabled();
+      }
+   }
+
+   &--center {
+      justify-content: center;
+   }
+
+   &--end {
+      justify-content: flex-end;
+   }
+
+   [tabindex="-1"]:focus {
+      border: 1px solid transparent;
+      box-shadow: none;
+   }
+}

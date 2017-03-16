@@ -15,8 +15,7 @@
          @include border-top-radius($button-border-radius);
 
          &.#{$prefix}-is-active {
-            background-color: $color-brand;
-            color: $font-color-invert;
+            @include is-active();
          }
       }
    }
