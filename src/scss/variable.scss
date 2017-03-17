@@ -110,6 +110,11 @@ $modal-small:              300px;
 $modal-regular:            450px;
 $modal-large:              900px;
 
+// Table
+$table-padding:            .6em;
+$table-zebra-color:        $default-button-color;
+$table-active-color:       $table-zebra-color;
+
 // Breadcrumb
 $breadcrumb-item-padding:  .5em;
 $breadcrumb-divider-color: $color-light;
