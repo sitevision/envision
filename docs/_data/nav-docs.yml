@@ -4,6 +4,7 @@
 
 - title: Components
   pages:
+    - title: Badge
     - title: Breadcrumb
     - title: Button
     - title: Button group
