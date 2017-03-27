@@ -95,6 +95,7 @@ $color-light:              lighten($color-base, 60%);
 $color-lighter:            lighten($color-base, 80%);
 $color-lightest:           lighten($color-base, 100%);
 
+$default-button-color:     lighten($color-base, 95%);
 $hover-background-color:   rgba(0, 0, 0, .1);
 $border-color-light:       rgba(0, 0, 0, .1);
 $color-focus:              #5cb3fd;
@@ -127,3 +128,9 @@ $toggle-duration:          .4s;
 $transition-base:        all .2s ease-in-out;
 $transition-fade:        opacity 1.15s linear;
 $modal-transition:       transform .3s ease-out;
+
+// Badge
+$badge-padding:            .2em .35em;
+$badge-radius:             .2em;
+$badge-font-color:         $font-color-invert;
+$badge-font-size:          75%;
