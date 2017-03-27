@@ -4,8 +4,10 @@ div.sv-demo__modal--default {
    border-width: 1px 0;
    box-shadow: inset 0 3px 6px rgba(0,0,0,1);
    max-width: 900px;
+   background-color: rgba(0,0,0,.5);
    visibility: visible;
    padding: 45px 15px;
    position: relative;
+   opacity: 1;
 }
 

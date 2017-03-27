@@ -9,7 +9,7 @@ group: components
 
 {% example html %}
 
-<div class="sv-modal sv-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div class="sv-modal sv-demo__modal--default" style="display:block" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="0">
    <div class="sv-modal__dialog">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
@@ -34,9 +34,9 @@ group: components
 Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning footer descendents to the right.
 
 {% example html %}
-<button id="largeBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show large</button>
+<button id="largeBtn" data-sv-modal type="button" data-target="#example1" class="sv-button sv-button--primary sv-button--large">Show large</button>
 
-<div id="example1" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div id="example1" class="sv-modal" role="dialog" aria-labelledby="myDialogLarge" aria-hidden="true" tabindex="-1">
    <div class="sv-modal__dialog sv-modal__dialog--large">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
@@ -47,8 +47,8 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
                and fall asleep.</p>
          </div>
          <footer class="sv-modal__footer sv-modal__footer--right">
-            <button type="button" class="sv-button sv-button--primary">Save</button>
-            <button type="button" class="sv-button sv-button--link" id="demo1">Cancel</button>
+            <button type="button" data-sv-modal-dismiss class="sv-button sv-button--primary">Save</button>
+            <button type="button" data-sv-modal-dismiss class="sv-button sv-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -58,9 +58,9 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
 
 Uses `sv-modal-dialog--small` 
 {%example html %}
-<button id="smallBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show small</button>
+<button id="smallBtn" data-sv-modal type="button" class="sv-button sv-button--primary sv-button--large" data-target="#example2">Show small</button>
 
-<div id="example2" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div id="example2" class="sv-modal" role="dialog" aria-labelledby="myDialogSmall" aria-hidden="true" tabindex="-1">
    <div class="sv-modal__dialog sv-modal__dialog--small">
       <section class="sv-modal__content">
          <header class="sv-modal__header">
@@ -71,34 +71,11 @@ Uses `sv-modal-dialog--small`
                and fall asleep.</p>
          </div>
          <footer class="sv-modal__footer">
-            <button type="button" class="sv-button sv-button--primary">Save</button>
-            <button type="button" class="sv-button sv-button--link" id="demo2">Cancel</button>
+            <button type="button" data-sv-modal-dismiss class="sv-button sv-button--primary">Save</button>
+            <button type="button" data-sv-modal-dismiss class="sv-button sv-button--link">Cancel</button>
          </footer>
       </section>
    </div>
 </div>
 
 {% endexample %}
-
-<script>
-
-   var demo1 = document.getElementById("example1");
-   var demo2 = document.getElementById("example2");
-
-   document.getElementById("largeBtn").addEventListener("click", function(event) {   
-      demo1.classList.toggle("sv-modal--show");
-   }); 
-
-   document.getElementById("demo1").addEventListener("click", function(event) {
-      demo1.classList.toggle("sv-modal--show");
-   });
-
-   document.getElementById("smallBtn").addEventListener("click", function(event) {
-      demo2.classList.toggle("sv-modal--show");
-   });
-
-   document.getElementById("demo2").addEventListener("click", function(event) {
-      demo2.classList.toggle("sv-modal--show");
-   });
-
-</script>

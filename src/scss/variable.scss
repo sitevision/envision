@@ -6,6 +6,7 @@ $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
 $enable-box-shadow:        true;
+$enable-transitions:       true;
 
 // Font family
 $font-family:              "Roboto", sans-serif;
@@ -100,6 +101,7 @@ $color-focus:              #5cb3fd;
 
 // Z-index value
 $zindex-base:              1;
+$zindex-modal-backdrop:    1040;
 $zindex-modal:             1050;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
@@ -109,10 +111,19 @@ $modal-small:              300px;
 $modal-regular:            450px;
 $modal-large:              900px;
 
+// Modal background opacity
+$modal-backdrop-opacity:   .5;
+$modal-backdrop-bg:      #000000;
+
 // Breadcrumb
 $breadcrumb-item-padding:  .5em;
 $breadcrumb-divider-color: $color-light;
 $breadcrumb-divider:       '/';
 
 // Animation
-$toggle-duration:          .4s
+$toggle-duration:          .4s;
+
+// Transition
+$transition-base:        all .2s ease-in-out;
+$transition-fade:        opacity 1.15s linear;
+$modal-transition:       transform .3s ease-out;
