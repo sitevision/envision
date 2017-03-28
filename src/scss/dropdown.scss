@@ -7,29 +7,61 @@
       }
    }
 
+   ul {
+      padding-left: 0;
+      top: $space3;
+   }
+
    &__menu {
       background-color: $font-color-invert;
       border: 1px solid rgba(0, 0, 0, .15);
       border-radius: $radius1;
       box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
       display: none;
+      left: 0;
       list-style: none;
       min-width: 160px;
-      padding: $space2;
       position: absolute;
-      right: 0;
-      top: $space3;
+      top: $space7;
       z-index: 1000;
 
-      a {
+      a, li {
          display: block;
          margin-bottom: $space0;
+      }
+   }
+
+   &__item {
+      padding: $space1 $space2;
+
+      &:hover {
+         background-color: rgba(0, 0, 0, .1);
       }
    }
 
    &--divider {
       border-bottom: 1px solid rgba(0, 0, 0, .1);
       margin: $space1 0;
+   }
+
+   &--toggle::after {
+      border-left: .3em solid transparent;
+      border-right: .3em solid transparent;
+      border-top: .3em solid;
+      content: "";
+      display: inline-block;
+      height: 0;
+      margin-left: .4em;
+      vertical-align: middle;
+      width: 0;
+   }
+
+   &--toggle-split::after {
+      margin-left: 0;
+   }
+
+   &--toggle-split--ld {
+      border-left: 2px solid #ffffff;
    }
 
    @include clearfix();
