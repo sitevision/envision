@@ -10,8 +10,8 @@
          color: $breadcrumb-divider-color;
          content: "#{$breadcrumb-divider}";
          display: inline-block;
-         padding-left: $breadcrumb-item-padding;
-         padding-right: $breadcrumb-item-padding;
+         padding-left: $padding-xs;
+         padding-right: $padding-xs;
       }
    }
 }

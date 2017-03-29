@@ -11,8 +11,8 @@
       box-sizing: border-box;
       color: $font-color;
       display: block;
-      font-size: $font-size-small;
-      line-height: $line-height-small;
+      font-size: $font-size-s;
+      line-height: $line-height-s;
       margin: 0;
       padding: $space0 $space2;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -61,7 +61,7 @@
 
       &__help {
          color: $font-color-lighter;
-         font-size: $font-size-small;
+         font-size: $font-size-s;
       }
 
       &--success {

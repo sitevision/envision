@@ -16,7 +16,7 @@
    &__dialog {
       @media (min-width: 768px) {
          margin: 10% auto;
-         max-width: $modal-regular;
+         max-width: $modal-medium;
       }
       position: relative;
 
@@ -58,9 +58,9 @@
       // ######### Ska bytas till text.scss
       &__title {
          display: inline-block;
-         font-size: $font-size-normal;
+         font-size: $font-size-m;
          font-weight: $font-weight-semibold;
-         line-height: $line-height-large;
+         line-height: $line-height-l;
          margin: 0;
       }
    }

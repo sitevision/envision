@@ -122,7 +122,6 @@ group: components
 
 ## Sizing ##
 ### Small ###
-`$table-padding / 2`
 {% example html %}
 
 <table class="sv-table sv-table--small">
@@ -153,7 +152,6 @@ group: components
 {% endexample %}
 
 ### Large ###
-`$table-padding * 2`
 {% example html %}
 
 <table class="sv-table sv-table--large">

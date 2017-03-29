@@ -10,7 +10,7 @@
 
    th, td {
       @include border-divider(border-top);
-      padding: $table-padding;
+      padding: $padding-xs;
       vertical-align: top;
    }
 
@@ -38,13 +38,13 @@
 
    &--small {
       th, td {
-         padding: ($table-padding / 2);
+         padding: $padding-xxs;
       }
    }
 
    &--large {
       th, td {
-         padding: ($table-padding * 2);
+         padding: $padding-s;
       }
    }
 

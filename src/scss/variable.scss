@@ -11,28 +11,28 @@ $enable-box-shadow:        true;
 $font-family:              "Roboto", sans-serif;
 
 // Font Size
-$font-size-xtrasmall:      12px;
-$font-size-small:          14px;
-$font-size-normal:         16px;
-$font-size-large:          20px;
-$font-size-extralarge:     40px;
-$font-size-super:          60px;
+$font-size-xs:             12px;
+$font-size-s:              14px;
+$font-size-m:              16px;
+$font-size-l:              20px;
+$font-size-xl:             40px;
+$font-size-xxl:            60px;
 
 // Font weight
 $font-weight-light:        300;
-$font-weight-regular:      400;
+$font-weight-medium:       400;
 $font-weight-semibold:     500;
 $font-weight-bold:         600;
 $font-weight-extrabold:    700;
 
 // Font Line-height
 $line-height-base:         6px; //(For text blocks and wrapping text)
-$line-height-xtrasmall:    $line-height-base + $font-size-xtrasmall;
-$line-height-small:        $line-height-base + $font-size-small;
-$line-height-normal:       $line-height-base + $font-size-normal;
-$line-height-large:        $line-height-base + $font-size-large;
-$line-height-extralarge:   $line-height-base + $font-size-extralarge;
-$line-height-super:        $line-height-base + $font-size-super;
+$line-height-xs:           $line-height-base + $font-size-xs;
+$line-height-s:            $line-height-base + $font-size-s;
+$line-height-m:            $line-height-base + $font-size-m;
+$line-height-l:            $line-height-base + $font-size-l;
+$line-height-xl:           $line-height-base + $font-size-xl;
+$line-height-xxl:          $line-height-base + $font-size-xxl;
 
 // Size (Margin/Padding)
 $space:                    2px;   // 4
@@ -47,6 +47,15 @@ $space7:                   32px;  // 64
 $space8:                   40px;  // 80
 $space9:                   64px;  // 128
 $space10:                  128px; // 256
+
+$padding-base: 0.25em;
+$padding-xxs: ($padding-base * 1);
+$padding-xs: ($padding-base * 2);
+$padding-s: ($padding-base * 3);
+$padding-m: ($padding-base * 4);
+$padding-l: ($padding-base * 5);
+$padding-xl: ($padding-base * 6);
+$padding-xxl: ($padding-base * 7);
 
 // Radius
 $button-border-radius: 2px;
@@ -64,7 +73,7 @@ $modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
 // Icon Size
 $icon-size-xtrasmall:      14px;
 $icon-size-small:          20px;
-$icon-size-normal:         30px;
+$icon-size-medium:         30px;
 $icon-size-large:          40px;
 $icon-size-extralarge:     50px;
 $icon-size-super:          60px;
@@ -107,16 +116,14 @@ $zindex-tooltip:           1070;
 
 // Dialog Modal
 $modal-small:              300px;
-$modal-regular:            450px;
+$modal-medium:             450px;
 $modal-large:              900px;
 
 // Table
-$table-padding:            .6em;
 $table-zebra-color:        $default-button-color;
 $table-active-color:       $table-zebra-color;
 
 // Breadcrumb
-$breadcrumb-item-padding:  .5em;
 $breadcrumb-divider-color: $color-light;
 $breadcrumb-divider:       '/';
 
@@ -124,7 +131,6 @@ $breadcrumb-divider:       '/';
 $toggle-duration:          .4s;
 
 // Badge
-$badge-padding:            .2em .35em;
 $badge-radius:             .2em;
 $badge-font-color:         $font-color-invert;
 $badge-font-size:          75%;

@@ -1,7 +1,7 @@
 .#{$prefix}-text {
    color: $font-color;
    font-family: $font-family;
-   font-weight: $font-weight-regular;
+   font-weight: $font-weight-medium;
    line-height: 1.1em;
    margin: 0;
 
@@ -26,7 +26,7 @@
 
    .#{$prefix}-link--title,
    &--title {
-      font-size: $font-size-normal;
+      font-size: $font-size-m;
       font-weight: $font-weight-semibold;
    }
 
@@ -36,85 +36,85 @@
    }
 
    &--comments {
-      font-weight: $font-weight-regular;
+      font-weight: $font-weight-medium;
    }
 
    &--detail-small {
       color: $font-color-lighter;
-      font-size: $font-size-small;
+      font-size: $font-size-s;
       font-weight: $font-weight-light;
    }
 
    &--tagline {
       color: $font-color-lighter;
-      font-size: $font-size-small;
+      font-size: $font-size-s;
       font-weight: $font-weight-light;
       margin-top: $space;
    }
 
    &--empty {
       color: $font-color-lighter;
-      font-size: $font-size-small;
+      font-size: $font-size-s;
       font-style: italic;
       font-weight: $font-weight-light;
       margin: $space8 0;
       text-align: center;
    }
 
-   &--regular {
-      font-size: $font-size-small;
-      font-weight: $font-weight-regular;
-      line-height: $line-height-small;
+   &--medium {
+      font-size: $font-size-s;
+      font-weight: $font-weight-medium;
+      line-height: $line-height-s;
       margin: $space1 0;
    }
 
    &--error-danger {
       color: $color-danger;
-      font-size: $font-size-small;
+      font-size: $font-size-s;
    }
 
    // Heading sizes
    &-size-heading--small {
-      font-size: $font-size-small;
-      line-height: $line-height-small;
+      font-size: $font-size-s;
+      line-height: $line-height-s;
    }
 
    &-size-heading--medium {
-      font-size: $font-size-normal;
+      font-size: $font-size-m;
       font-weight: $font-weight-semibold;
-      line-height: $line-height-normal;
+      line-height: $line-height-m;
    }
 
    &-size-heading--large {
-      font-size: $font-size-large;
-      line-height: $line-height-large;
+      font-size: $font-size-l;
+      line-height: $line-height-l;
    }
 
    // Text sizes
    &-size--x-small {
-      font-size: $font-size-xtrasmall;
-      line-height: $line-height-xtrasmall;
+      font-size: $font-size-xs;
+      line-height: $line-height-xs;
    }
 
    &-size--small {
-      font-size: $font-size-small;
-      line-height: $line-height-small;
+      font-size: $font-size-s;
+      line-height: $line-height-s;
    }
 
-   &-size--normal {
-      font-size: $font-size-normal;
+   &-size--medium {
+      font-size: $font-size-m;
    }
 
    &-size--large {
-      font-size: $font-size-large;
+      font-size: $font-size-l;
    }
 
    &-size--x-large {
-      font-size: $font-size-extralarge;
+      font-size: $font-size-xl;
    }
 
    &-size--super {
-      font-size: $font-size-super;
+      font-size: $font-size-xxl;
    }
 
    // Text alignment
