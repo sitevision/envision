@@ -1,3 +1,5 @@
+import Util from './util';
+
 const Modal = (($) => {
 
    const NAME = 'modal';
@@ -12,13 +14,6 @@ const Modal = (($) => {
    const ANIMATION = 'sv-animation-in-progress';
    const ANIMATION_END = 'animationend';
    const FOCUSIN = 'focusin.sv-modal';
-
-   const TRANSITIONS = {
-      transition        : 'transitionend',
-      OTransition       : 'oTransitionEnd',
-      MozTransition     : 'transitionend',
-      WebkitTransition  : 'webkitTransitionEnd'
-   };
 
    class Modal {
 
@@ -38,10 +33,9 @@ const Modal = (($) => {
          this._showBackdrop();
          this.$el.outerWidth();
 
-         this.el.removeAttr('aria-hidden');
-
          this.$el
             .addClass(MODIFIER_BASE + SHOW)
+            .removeAttr('aria-hidden')
             .css('opacity', 1);
 
          this._isShown = true;
@@ -63,19 +57,20 @@ const Modal = (($) => {
          const removeBackdropCallback = () => {
             this.$backdrop.remove();
          };
-         this.el.attr('aria-hidden', 'true');
+
          this.$el
-            .one(this._whichTransitionEvent(), hideModalCallback)
-            .css('opacity', 0);
+            .one(Util.whenTransitionEnd(), hideModalCallback)
+            .attr('aria-hidden', 'true')
+            .css('opacity', 0)
+            .off('click');
 
          this.$backdrop
-            .one(this._whichTransitionEvent(), removeBackdropCallback)
+            .one(Util.whenTransitionEnd(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
 
          this._focus = false;
          this._isShown = false;
          this._setEscapeKey();
-         this.$el.off('click');
       }
 
       _setEscapeKey() {
@@ -88,7 +83,7 @@ const Modal = (($) => {
                   this.hide();
                }
             });
-         } else if (!this._isShown) {
+         } else {
             this.$el.off('keydown');
          }
       }
@@ -103,19 +98,6 @@ const Modal = (($) => {
                   this.el.focus();
                }
             });
-      }
-
-      _whichTransitionEvent() {
-         const el = document.createElement('fakeelement');
-         let t;
-
-         for (t in TRANSITIONS) {
-            if (el.style[t] !== undefined) {
-               return TRANSITIONS[t];
-            }
-         }
-
-         return false;
       }
 
       _showBackdrop() {
@@ -143,8 +125,7 @@ const Modal = (($) => {
 
          this.$backdrop
             .one(ANIMATION_END, this._whenAnimationEnds)
-            .addClass(BACKDROP_ANIMATION)
-            .addClass(ANIMATION);
+            .addClass(`${BACKDROP_ANIMATION} ${ANIMATION}`);
       }
 
       _whenAnimationEnds(e) {
@@ -171,7 +152,7 @@ const Modal = (($) => {
       e.preventDefault();
 
       const $this = $(this);
-      const $target = $($this.data('target'));
+      const $target = $($this.data('sv-target'));
 
       $target.modal();
    });

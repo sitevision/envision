@@ -6,7 +6,6 @@ $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
 $enable-box-shadow:        true;
-$enable-transitions:       true;
 
 // Font family
 $font-family:              "Roboto", sans-serif;
@@ -125,9 +124,9 @@ $breadcrumb-divider:       '/';
 $toggle-duration:          .4s;
 
 // Transition
-$transition-base:        all .2s ease-in-out;
-$transition-fade:        opacity 1.15s linear;
-$modal-transition:       transform .3s ease-out;
+$transition-base:          all .2s ease-in-out;
+$transition-fade:          opacity 1.15s linear;
+$modal-transition:         transform .3s ease-out;
 
 // Badge
 $badge-padding:            .2em .35em;
