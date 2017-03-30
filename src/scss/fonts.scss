@@ -6,7 +6,7 @@
 
    .#{$prefix}-link--title,
    &--title {
-      font-size: $font-size-m;
+      font-size: $font-size-medium;
       font-weight: $font-weight-semibold;
    }
 
@@ -16,25 +16,25 @@
    }
 
    &--comment {
-      font-weight: $font-weight-medium;
+      font-weight: $font-weight-regular;
    }
 
    &--detail-small {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
    }
 
    &--tagline {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
       margin-top: $space;
    }
 
    &--empty {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-style: italic;
       font-weight: $font-weight-light;
       margin: $space8 0;
@@ -42,9 +42,9 @@
    }
 
    &--text {
-      font-size: $font-size-s;
-      font-weight: $font-weight-medium;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
       margin: $space1 0;
    }
 }

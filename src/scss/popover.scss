@@ -5,7 +5,7 @@ $arrow-border-size: 10px;
 .#{$prefix}-popover {
    background-color: $color-element-bg;
    border: 1px solid $color-lighter;
-   border-radius: $radius2;
+   border-radius: $radius-medium;
    box-shadow: $popover-shadow;
    max-width: $popover-width;
    position: relative;
@@ -13,24 +13,24 @@ $arrow-border-size: 10px;
 
    &__header {
       background-color: $color-lighter;
-      border-radius: $radius2 $radius2 0 0;
+      border-radius: $radius-medium $radius-medium 0 0;
       display: block;
       padding: $space0 $space1;
 
       &__title {
          display: inline-block;
-         font-size: $font-size-m;
+         font-size: $font-size-medium;
          font-weight: $font-weight-semibold;
-         line-height: $line-height-l;
+         line-height: $line-height-large;
          margin: 0;
       }
    }
 
    &__content {
       display: block;
-      font-size: $font-size-s;
-      font-weight: $font-weight-medium;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
       padding: 0 $space1;
    }
 

@@ -7,12 +7,12 @@
       background-color: $font-color-invert;
       background-image: none;
       border: 1px solid $color-lighter;
-      border-radius: $radius1;
+      border-radius: $radius-small;
       box-sizing: border-box;
       color: $font-color;
       display: block;
-      font-size: $font-size-s;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
       margin: 0;
       padding: $space0 $space2;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -61,7 +61,7 @@
 
       &__help {
          color: $font-color-lighter;
-         font-size: $font-size-s;
+         font-size: $font-size-small;
       }
 
       &--success {

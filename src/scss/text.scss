@@ -1,7 +1,7 @@
 .#{$prefix}-text {
    color: $font-color;
    font-family: $font-family;
-   font-weight: $font-weight-medium;
+   font-weight: $font-weight-regular;
    line-height: 1.1em;
    margin: 0;
 
@@ -26,7 +26,7 @@
 
    .#{$prefix}-link--title,
    &--title {
-      font-size: $font-size-m;
+      font-size: $font-size-medium;
       font-weight: $font-weight-semibold;
    }
 
@@ -36,25 +36,25 @@
    }
 
    &--comments {
-      font-weight: $font-weight-medium;
+      font-weight: $font-weight-regular;
    }
 
    &--detail-small {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
    }
 
    &--tagline {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
       margin-top: $space;
    }
 
    &--empty {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-style: italic;
       font-weight: $font-weight-light;
       margin: $space8 0;
@@ -62,59 +62,59 @@
    }
 
    &--medium {
-      font-size: $font-size-s;
-      font-weight: $font-weight-medium;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-small;
       margin: $space1 0;
    }
 
    &--error-danger {
       color: $color-danger;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
    }
 
    // Heading sizes
    &-size-heading--small {
-      font-size: $font-size-s;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
    }
 
    &-size-heading--medium {
-      font-size: $font-size-m;
+      font-size: $font-size-medium;
       font-weight: $font-weight-semibold;
-      line-height: $line-height-m;
+      line-height: $line-height-medium;
    }
 
    &-size-heading--large {
-      font-size: $font-size-l;
-      line-height: $line-height-l;
+      font-size: $font-size-large;
+      line-height: $line-height-large;
    }
 
    // Text sizes
    &-size--x-small {
-      font-size: $font-size-xs;
-      line-height: $line-height-xs;
+      font-size: $font-size-x-small;
+      line-height: $line-height-x-small;
    }
 
    &-size--small {
-      font-size: $font-size-s;
-      line-height: $line-height-s;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
    }
 
    &-size--medium {
-      font-size: $font-size-m;
+      font-size: $font-size-medium;
    }
 
    &-size--large {
-      font-size: $font-size-l;
+      font-size: $font-size-large;
    }
 
    &-size--x-large {
-      font-size: $font-size-xl;
+      font-size: $font-size-x-large;
    }
 
    &-size--super {
-      font-size: $font-size-xxl;
+      font-size: $font-size-xx-large;
    }
 
    // Text alignment

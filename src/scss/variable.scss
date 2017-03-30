@@ -11,28 +11,28 @@ $enable-box-shadow:        true;
 $font-family:              "Roboto", sans-serif;
 
 // Font Size
-$font-size-xs:             12px;
-$font-size-s:              14px;
-$font-size-m:              16px;
-$font-size-l:              20px;
-$font-size-xl:             40px;
-$font-size-xxl:            60px;
+$font-size-x-small:        12px;
+$font-size-small:          14px;
+$font-size-medium:         16px;
+$font-size-large:          20px;
+$font-size-x-large:        40px;
+$font-size-xx-large:       60px;
 
 // Font weight
 $font-weight-light:        300;
-$font-weight-medium:       400;
+$font-weight-regular:      400;
 $font-weight-semibold:     500;
 $font-weight-bold:         600;
 $font-weight-extrabold:    700;
 
 // Font Line-height
 $line-height-base:         6px; //(For text blocks and wrapping text)
-$line-height-xs:           $line-height-base + $font-size-xs;
-$line-height-s:            $line-height-base + $font-size-s;
-$line-height-m:            $line-height-base + $font-size-m;
-$line-height-l:            $line-height-base + $font-size-l;
-$line-height-xl:           $line-height-base + $font-size-xl;
-$line-height-xxl:          $line-height-base + $font-size-xxl;
+$line-height-x-small:      $line-height-base + $font-size-x-small;
+$line-height-small:        $line-height-base + $font-size-small;
+$line-height-medium:       $line-height-base + $font-size-medium;
+$line-height-large:        $line-height-base + $font-size-large;
+$line-height-x-large:      $line-height-base + $font-size-x-large;
+$line-height-xx-large:     $line-height-base + $font-size-xx-large;
 
 // Size (Margin/Padding)
 $space:                    2px;   // 4
@@ -48,22 +48,22 @@ $space8:                   40px;  // 80
 $space9:                   64px;  // 128
 $space10:                  128px; // 256
 
-$padding-base: 0.25em;
-$padding-xxs: ($padding-base * 1);
-$padding-xs: ($padding-base * 2);
-$padding-s: ($padding-base * 3);
-$padding-m: ($padding-base * 4);
-$padding-l: ($padding-base * 5);
-$padding-xl: ($padding-base * 6);
-$padding-xxl: ($padding-base * 7);
+$padding-base:             0.25em;
+$padding-xx-small:         $padding-base * 1;
+$padding-x-small:          $padding-base * 2;
+$padding-small:            $padding-base * 3;
+$padding-medium:           $padding-base * 4;
+$padding-large:            $padding-base * 5;
+$padding-x-large:          $padding-base * 6;
+$padding-xx-large:         $padding-base * 7;
 
 // Radius
-$button-border-radius: 2px;
-$radius1: 2px; // 4
-$radius2: 4px; // 8
-$radius3: 8px; // 16
-$radius4: 50px; // Rounded at ends
-$radius5: 100%; // Circle
+$button-border-radius:     2px;
+$radius-small:             2px; // 4
+$radius-medium:            4px; // 8
+$radius-large:             8px; // 16
+$radius-rounded-corners:   50px;
+$radius-circle:            100%; // Circle
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
@@ -71,12 +71,12 @@ $modal-shadow:              inset 0 3px 6px rgba(0,0,0,1);
 $modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
 
 // Icon Size
-$icon-size-xtrasmall:      14px;
+$icon-size-x-small:        14px;
 $icon-size-small:          20px;
 $icon-size-medium:         30px;
 $icon-size-large:          40px;
-$icon-size-extralarge:     50px;
-$icon-size-super:          60px;
+$icon-size-x-large:        50px;
+$icon-size-xx-large:       60px;
 
 // Color
 $color-page-bg:            #ffffff;

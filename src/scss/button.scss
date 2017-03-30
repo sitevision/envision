@@ -20,11 +20,11 @@
 
    // Sizes
    &--large {
-      @include button-size($space0, $space3, $font-size-l, $line-height-l);
+      @include button-size($space0, $space3, $font-size-large, $line-height-large);
    }
 
    &--small {
-      @include button-size($space0, $space0, $font-size-s, $line-height-s);
+      @include button-size($space0, $space0, $font-size-small, $line-height-small);
    }
 
    &--block {

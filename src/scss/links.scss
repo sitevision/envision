@@ -1,5 +1,5 @@
 .#{$prefix}-link {
-   border-radius: $radius1;
+   border-radius: $radius-small;
    color: $font-color;
    margin-right: #{-$space0};
    padding: $space $space0;
@@ -7,26 +7,26 @@
 
    &--base {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
    }
 
    &--url {
       color: $font-color-lighter;
-      font-size: $font-size-xs;
+      font-size: $font-size-x-small;
       font-weight: $font-weight-light;
    }
 
    &--more {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-style: italic;
       font-weight: $font-weight-light;
    }
 
    &__between {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       margin: 0 #{-$space1};
    }
 
@@ -52,14 +52,14 @@
 
    &__between {
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       margin: 0 #{-$space1};
    }
 
    &__nolink {
-      border-radius: $radius1;
+      border-radius: $radius-small;
       color: $font-color-lighter;
-      font-size: $font-size-s;
+      font-size: $font-size-small;
       font-weight: $font-weight-light;
       padding: $space0;
       text-decoration: none;
