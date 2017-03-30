@@ -17,6 +17,7 @@
     - title: Pagination
     - title: Popover
     - title: Tab
+    - title: Table
 - title: Utils
   pages:
     - title: Accessibility
