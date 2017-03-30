@@ -1,26 +1,31 @@
 const Util = (() => {
 
-
-   /**
-    * ------------------------------------------------------------------------
-    * Private TransitionEnd Helpers
-    * ------------------------------------------------------------------------
-    */
-
-
-   const TransitionEndEvent = {
+   const TRANSITIONS = {
       WebkitTransition: 'webkitTransitionEnd',
       MozTransition: 'transitionend',
       OTransition: 'oTransitionEnd otransitionend',
       transition: 'transitionend'
    };
 
-   const animations = {
+   const ANIMATIONS = {
       animation         : 'animationend',
       OAnimation        : 'oAnimationEnd',
       MozAnimation      : 'animationend',
       WebkitAnimation   : 'webkitAnimationEnd'
    };
+
+   function getEndEvent(events) {
+      let t;
+      const el = document.createElement('fakeelement');
+
+      for (t in events) {
+         if (el.style[t] !== undefined) {
+            return events[t];
+         }
+      }
+
+      return false;
+   }
 
    /**
     * --------------------------------------------------------------------------
@@ -31,33 +36,16 @@ const Util = (() => {
    const Util = {
 
       getAnimationEndEvent() {
-         let t;
-         const el = document.createElement('fakeelement');
-
-         for (t in animations) {
-            if (el.style[t] !== undefined) {
-               return animations[t];
-            }
-         }
-         return false;
+         return getEndEvent(ANIMATIONS);
       },
 
       getTranstionEndEvent() {
-         const el = document.createElement('fakeelement');
-         let t;
-
-         for (t in TransitionEndEvent) {
-            if (el.style[t] !== undefined) {
-               return TransitionEndEvent[t];
-            }
-         }
-
-         return false;
+         return getEndEvent(TRANSITIONS);
       }
    };
 
    return Util;
 
-})(jQuery);
+})();
 
 export default Util;

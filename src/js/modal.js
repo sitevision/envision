@@ -43,17 +43,12 @@ const Modal = (($) => {
 
       show() {
          this.$el.outerWidth();
-         const dialogModal = this.$el;
 
-         const showEvent = $.Event(EVENTS.SHOW, {
-            dialogModal
-         });
+         const showEvent = $.Event(EVENTS.SHOW, {});
 
          this.$el.trigger(showEvent);
 
-         const shownEvent = $.Event(EVENTS.SHOWN, {
-            dialogModal
-         });
+         const shownEvent = $.Event(EVENTS.SHOWN, {});
 
          this.$el
             .one(Util.getTranstionEndEvent(), () => {
@@ -78,13 +73,10 @@ const Modal = (($) => {
       }
 
       hide() {
-         const dialogModal = this.$el;
          const hideModalCallback = () => {
             this.$el.removeClass(MODIFIER_BASE + SHOW);
 
-            const hiddenEvent = $.Event(EVENTS.HIDDEN, {
-               dialogModal
-            });
+            const hiddenEvent = $.Event(EVENTS.HIDDEN, {});
             this.$el.trigger(hiddenEvent);
          };
 
@@ -92,9 +84,7 @@ const Modal = (($) => {
             this.$backdrop.remove();
          };
 
-         const hideEvent = $.Event(EVENTS.HIDE, {
-            dialogModal
-         });
+         const hideEvent = $.Event(EVENTS.HIDE, {});
 
          this.$el.trigger(hideEvent);
 
@@ -175,11 +165,12 @@ const Modal = (($) => {
 
       static _jQuery(action) {
          return this.each(() => {
-            let data = $(this).data(DATA_KEY);
+            const $element = $(this);
+            let data = $element.data(DATA_KEY);
 
             if (!data) {
                data = new Modal(this);
-               $(this).data(DATA_KEY, data);
+               $element.data(DATA_KEY, data);
             }
 
             if (typeof action === 'string') {

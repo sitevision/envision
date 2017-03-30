@@ -78,7 +78,7 @@
       z-index: $zindex-modal-backdrop;
 
       &--in {
-         animation: sv-fade .3s;
+         animation: #{$prefix}-fade .3s;
          opacity: .5;
       }
    }
@@ -99,7 +99,7 @@
    }
 }
 
-@keyframes sv-fade {
+@keyframes #{$prefix}-fade {
    from { opacity: 0; }
    to { opacity: .5; }
 }

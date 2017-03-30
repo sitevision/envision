@@ -82,13 +82,18 @@ Uses `sv-modal-dialog--small`
 
 ## Methods ##
 
-<p>Show</p> `$('#myModal').modal('show')`
-<p>Hide</p> `$('#myModal').modal('hide')`
-<p>Toggle</p> `$('#myModal').modal('toggle')`
+Show  
+`$('#myModal').modal('show')`
+
+Hide   
+`$('#myModal').modal('hide')`
+
+Toggle   
+`$('#myModal').modal('toggle')`
 
 ## Events ##
 
-<p></p>`hide.sv-modal`
-<p></p>`hidden.sv-modal`
-<p></p>`show.sv-modal`
-<p></p>`shown.sv-modal`
+`hide.sv-modal`
+`hidden.sv-modal`
+`show.sv-modal`
+`shown.sv-modal`
