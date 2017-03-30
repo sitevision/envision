@@ -28,7 +28,7 @@ const Collapse = (($) => {
       show() {
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.whenTransitionEnd(), this._showTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
       }
 
@@ -37,7 +37,7 @@ const Collapse = (($) => {
             .height(this.$el.height())
             .removeClass(MODIFIER_BASE + SHOW)
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.whenTransitionEnd(), this._hideTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
             .height(0);
       }
 

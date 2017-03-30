@@ -79,3 +79,16 @@ Uses `sv-modal-dialog--small`
 </div>
 
 {% endexample %}
+
+## Methods ##
+
+<p>Show</p> `$('#myModal').modal('show')`
+<p>Hide</p> `$('#myModal').modal('hide')`
+<p>Toggle</p> `$('#myModal').modal('toggle')`
+
+## Events ##
+
+<p></p>`hide.sv-modal`
+<p></p>`hidden.sv-modal`
+<p></p>`show.sv-modal`
+<p></p>`shown.sv-modal`

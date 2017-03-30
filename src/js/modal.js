@@ -3,6 +3,7 @@ import Util from './util';
 const Modal = (($) => {
 
    const NAME = 'modal';
+   const DATA_KEY = 'sv.modal';
    const NO_CONFLICT = $.fn[NAME];
    const SELECTOR = '[data-sv-modal]';
    const DISMISS_SELECTOR = '[data-sv-modal-dismiss]';
@@ -12,8 +13,20 @@ const Modal = (($) => {
    const SHOW = 'show';
    const ESCAPE_KEY = 27;
    const ANIMATION = 'sv-animation-in-progress';
-   const ANIMATION_END = 'animationend';
    const FOCUSIN = 'focusin.sv-modal';
+
+   const METHODS = [
+      'show',
+      'hide',
+      'toggle'
+   ];
+
+   const EVENTS = {
+      HIDE: 'hide.sv-modal',
+      HIDDEN: 'hidden.sv-modal',
+      SHOW: 'show.sv-modal',
+      SHOWN: 'shown.sv-modal'
+   };
 
    class Modal {
 
@@ -22,21 +35,36 @@ const Modal = (($) => {
          this.$el = $(element);
          this._isShown = false;
          this._focus = false;
-         this._bindEvents();
       }
 
-      _bindEvents() {
-         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
+      toggle() {
+         return this._isShown ? this.hide() : this.show();
       }
 
       show() {
-         this._showBackdrop();
          this.$el.outerWidth();
+         const dialogModal = this.$el;
+
+         const showEvent = $.Event(EVENTS.SHOW, {
+            dialogModal
+         });
+
+         this.$el.trigger(showEvent);
+
+         const shownEvent = $.Event(EVENTS.SHOWN, {
+            dialogModal
+         });
 
          this.$el
+            .one(Util.getTranstionEndEvent(), () => {
+               this.$el.trigger(shownEvent);
+            })
             .addClass(MODIFIER_BASE + SHOW)
             .removeAttr('aria-hidden')
             .css('opacity', 1);
+
+         this._showBackdrop();
+         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
 
          this._isShown = true;
 
@@ -50,22 +78,34 @@ const Modal = (($) => {
       }
 
       hide() {
+         const dialogModal = this.$el;
          const hideModalCallback = () => {
             this.$el.removeClass(MODIFIER_BASE + SHOW);
+
+            const hiddenEvent = $.Event(EVENTS.HIDDEN, {
+               dialogModal
+            });
+            this.$el.trigger(hiddenEvent);
          };
 
          const removeBackdropCallback = () => {
             this.$backdrop.remove();
          };
 
+         const hideEvent = $.Event(EVENTS.HIDE, {
+            dialogModal
+         });
+
+         this.$el.trigger(hideEvent);
+
          this.$el
-            .one(Util.whenTransitionEnd(), hideModalCallback)
+            .one(Util.getTranstionEndEvent(), hideModalCallback)
             .attr('aria-hidden', 'true')
             .css('opacity', 0)
-            .off('click');
+            .off('click', DISMISS_SELECTOR);
 
          this.$backdrop
-            .one(Util.whenTransitionEnd(), removeBackdropCallback)
+            .one(Util.getTranstionEndEvent(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
 
          this._focus = false;
@@ -90,7 +130,7 @@ const Modal = (($) => {
 
       _focusModal() {
          $(document)
-            .off(FOCUSIN) // guard against infinite focus loop
+            .off(FOCUSIN)
             .on(FOCUSIN, (event) => {
                if (document !== event.target &&
                   this.$el[0] !== event.target &&
@@ -124,19 +164,39 @@ const Modal = (($) => {
          });
 
          this.$backdrop
-            .one(ANIMATION_END, this._whenAnimationEnds)
+            .one(Util.getAnimationEndEvent(), this._removeBackdropAnimation)
             .addClass(`${BACKDROP_ANIMATION} ${ANIMATION}`);
       }
 
-      _whenAnimationEnds(e) {
+      _removeBackdropAnimation(e) {
          const $target = $(e.currentTarget);
          $target.removeClass(ANIMATION);
       }
 
-      static _jQuery() {
+      static _jQuery(action) {
          return this.each(() => {
-            const data = new Modal(this);
-            data.show();
+            let data = $(this).data(DATA_KEY);
+
+            if (!data) {
+               data = new Modal(this);
+               $(this).data(DATA_KEY, data);
+            }
+
+            if (typeof action === 'string') {
+               if (METHODS.includes(action)) {
+                  if (action === 'show') {
+                     data.show();
+                  } else if (action === 'toggle') {
+                     data.toggle();
+                  } else if (action === 'hide') {
+                     data.hide();
+                  }
+               } else {
+                  throw new Error(`No method named "${action}"`);
+               }
+            } else {
+               data.show();
+            }
          });
       }
    }
@@ -162,3 +222,4 @@ const Modal = (($) => {
 })(jQuery);
 
 export default Modal;
+
