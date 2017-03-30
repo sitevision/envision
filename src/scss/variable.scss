@@ -29,7 +29,7 @@ $font-weight-bold:         600;
 $font-weight-extrabold:    700;
 
 // Font Line-height
-$line-height-base:         6; //(For text blocks and wrapping text)
+$line-height-base:         6; // For text blocks and wrapping text
 $line-height-x-small:      em($line-height-base + 12);
 $line-height-small:        em($line-height-base + 14);
 $line-height-medium:       em($line-height-base + 16);
@@ -38,15 +38,15 @@ $line-height-x-large:      em($line-height-base + 40);
 $line-height-xx-large:     em($line-height-base + 60);
 
 // Size (Margin/Padding)
-$spacing-xxx-small:        em(2);   //  $space
-$spacing-xx-small:         em(4);   //  0
-$spacing-x-small:          em(8);   //  1
-$spacing-small:            em(12);  //  2
-$spacing-medium:           em(16);  //  3
-$spacing-large:            em(20);  // 4
-$spacing-x-large:          em(24);  // 5
-$spacing-xx-large:         em(28);  // 6
-$spacing-xxx-large:        em(32);  // 7
+$spacing-xxx-small:        em(2);
+$spacing-xx-small:         em(4);
+$spacing-x-small:          em(8);
+$spacing-small:            em(12);
+$spacing-medium:           em(16);
+$spacing-large:            em(20);
+$spacing-x-large:          em(24);
+$spacing-xx-large:         em(28);
+$spacing-xxx-large:        em(32);
 
 // Radius
 $button-border-radius:     em(2);
@@ -54,7 +54,7 @@ $radius-small:             em(2);
 $radius-medium:            em(4);
 $radius-large:             em(8);
 $radius-rounded-corners:   em(50);
-$radius-circle:            100%; // Circle
+$radius-circle:            100%;
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
