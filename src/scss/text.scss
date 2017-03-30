@@ -26,7 +26,7 @@
 
    .#{$prefix}-link--title,
    &--title {
-      font-size: $font-size-normal;
+      font-size: $font-size-medium;
       font-weight: $font-weight-semibold;
    }
 
@@ -61,7 +61,7 @@
       text-align: center;
    }
 
-   &--regular {
+   &--medium {
       font-size: $font-size-small;
       font-weight: $font-weight-regular;
       line-height: $line-height-small;
@@ -80,9 +80,9 @@
    }
 
    &-size-heading--medium {
-      font-size: $font-size-normal;
+      font-size: $font-size-medium;
       font-weight: $font-weight-semibold;
-      line-height: $line-height-normal;
+      line-height: $line-height-medium;
    }
 
    &-size-heading--large {
@@ -92,8 +92,8 @@
 
    // Text sizes
    &-size--x-small {
-      font-size: $font-size-xtrasmall;
-      line-height: $line-height-xtrasmall;
+      font-size: $font-size-x-small;
+      line-height: $line-height-x-small;
    }
 
    &-size--small {
@@ -101,8 +101,8 @@
       line-height: $line-height-small;
    }
 
-   &-size--normal {
-      font-size: $font-size-normal;
+   &-size--medium {
+      font-size: $font-size-medium;
    }
 
    &-size--large {
@@ -110,11 +110,11 @@
    }
 
    &-size--x-large {
-      font-size: $font-size-extralarge;
+      font-size: $font-size-x-large;
    }
 
    &-size--super {
-      font-size: $font-size-super;
+      font-size: $font-size-xx-large;
    }
 
    // Text alignment

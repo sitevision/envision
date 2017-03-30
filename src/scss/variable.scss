@@ -11,12 +11,12 @@ $enable-box-shadow:        true;
 $font-family:              "Roboto", sans-serif;
 
 // Font Size
-$font-size-xtrasmall:      12px;
+$font-size-x-small:        12px;
 $font-size-small:          14px;
-$font-size-normal:         16px;
+$font-size-medium:         16px;
 $font-size-large:          20px;
-$font-size-extralarge:     40px;
-$font-size-super:          60px;
+$font-size-x-large:        40px;
+$font-size-xx-large:       60px;
 
 // Font weight
 $font-weight-light:        300;
@@ -27,12 +27,12 @@ $font-weight-extrabold:    700;
 
 // Font Line-height
 $line-height-base:         6px; //(For text blocks and wrapping text)
-$line-height-xtrasmall:    $line-height-base + $font-size-xtrasmall;
+$line-height-x-small:      $line-height-base + $font-size-x-small;
 $line-height-small:        $line-height-base + $font-size-small;
-$line-height-normal:       $line-height-base + $font-size-normal;
+$line-height-medium:       $line-height-base + $font-size-medium;
 $line-height-large:        $line-height-base + $font-size-large;
-$line-height-extralarge:   $line-height-base + $font-size-extralarge;
-$line-height-super:        $line-height-base + $font-size-super;
+$line-height-x-large:      $line-height-base + $font-size-x-large;
+$line-height-xx-large:     $line-height-base + $font-size-xx-large;
 
 // Size (Margin/Padding)
 $space:                    2px;   // 4
@@ -48,13 +48,22 @@ $space8:                   40px;  // 80
 $space9:                   64px;  // 128
 $space10:                  128px; // 256
 
+$padding-base:             0.25em;
+$padding-xx-small:         $padding-base * 1;
+$padding-x-small:          $padding-base * 2;
+$padding-small:            $padding-base * 3;
+$padding-medium:           $padding-base * 4;
+$padding-large:            $padding-base * 5;
+$padding-x-large:          $padding-base * 6;
+$padding-xx-large:         $padding-base * 7;
+
 // Radius
-$button-border-radius: 2px;
-$radius1: 2px; // 4
-$radius2: 4px; // 8
-$radius3: 8px; // 16
-$radius4: 50px; // Rounded at ends
-$radius5: 100%; // Circle
+$button-border-radius:     2px;
+$radius-small:             2px; // 4
+$radius-medium:            4px; // 8
+$radius-large:             8px; // 16
+$radius-rounded-corners:   50px;
+$radius-circle:            100%; // Circle
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
@@ -62,12 +71,12 @@ $modal-shadow:              inset 0 3px 6px rgba(0,0,0,1);
 $modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
 
 // Icon Size
-$icon-size-xtrasmall:      14px;
+$icon-size-x-small:        14px;
 $icon-size-small:          20px;
-$icon-size-normal:         30px;
+$icon-size-medium:         30px;
 $icon-size-large:          40px;
-$icon-size-extralarge:     50px;
-$icon-size-super:          60px;
+$icon-size-x-large:        50px;
+$icon-size-xx-large:       60px;
 
 // Color
 $color-page-bg:            #ffffff;
@@ -107,11 +116,14 @@ $zindex-tooltip:           1070;
 
 // Dialog Modal
 $modal-small:              300px;
-$modal-regular:            450px;
+$modal-medium:             450px;
 $modal-large:              900px;
 
+// Table
+$table-zebra-color:        $default-button-color;
+$table-active-color:       $table-zebra-color;
+
 // Breadcrumb
-$breadcrumb-item-padding:  .5em;
 $breadcrumb-divider-color: $color-light;
 $breadcrumb-divider:       '/';
 
@@ -119,7 +131,6 @@ $breadcrumb-divider:       '/';
 $toggle-duration:          .4s;
 
 // Badge
-$badge-padding:            .2em .35em;
 $badge-radius:             .2em;
 $badge-font-color:         $font-color-invert;
 $badge-font-size:          75%;
