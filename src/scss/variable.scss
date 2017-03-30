@@ -1,5 +1,3 @@
-@import "util/converter";
-
 // Base
 $prefix:                   sv;
 $grid-columns:             12;
@@ -9,6 +7,10 @@ $popover-width:            300px;
 $enable-rounded-corners:   true;
 $enable-box-shadow:        true;
 $base-font-size:           16; // Used to calculate px to em
+
+@function em($pixels, $base: $base-font-size) {
+   @return #{$pixels/$base}em;
+}
 
 // Font family
 $font-family:              "Roboto", sans-serif;
