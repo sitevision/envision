@@ -16,7 +16,7 @@
    &__dialog {
       @media (min-width: 768px) {
          margin: 10% auto;
-         max-width: $modal-regular;
+         max-width: $modal-medium;
       }
       position: relative;
 
@@ -39,7 +39,7 @@
       background-clip: padding-box;
       background-color: $color-element-bg;
       border: 1px solid #999999;
-      @include border-radius($radius2);
+      @include border-radius($radius-medium);
       @include box-shadow($modal-dialog-shadow);
       outline: 0;
       position: relative;
@@ -51,14 +51,14 @@
 
    &__header {
       background-color: #cccccc;
-      @include border-top-radius($radius2);
+      @include border-top-radius($radius-medium);
       display: block;
       padding: $space0 $space1;
 
       // ######### Ska bytas till text.scss
       &__title {
          display: inline-block;
-         font-size: $font-size-normal;
+         font-size: $font-size-medium;
          font-weight: $font-weight-semibold;
          line-height: $line-height-large;
          margin: 0;
@@ -71,7 +71,7 @@
 
    &__footer {
       background-color: $color-element-bg;
-      @include border-bottom-radius($radius2 $radius2);
+      @include border-bottom-radius($radius-medium $radius-medium);
       padding: $space1;
       text-align: left;
 

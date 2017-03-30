@@ -1,0 +1,72 @@
+.#{$prefix}-table {
+   border-collapse: collapse;
+
+   thead th {
+      vertical-align: bottom;
+   }
+   th {
+      text-align: left;
+   }
+
+   th, td {
+      @include border-divider(border-top);
+      padding: $padding-x-small;
+      vertical-align: top;
+   }
+
+   &--zebra {
+      tbody tr:nth-of-type(odd) {
+         background-color: $table-zebra-color;
+      }
+   }
+
+   &--borders-around {
+      th, td {
+         @include border-divider(border);
+      }
+   }
+
+   $border-directions: right bottom left;
+   @each $direction in $border-directions {
+      &--borders-#{$direction} {
+         th, td {
+            border-top: 0;
+            @include border-divider(border-#{$direction});
+         }
+      }
+   }
+
+   &--small {
+      th, td {
+         padding: $padding-xx-small;
+      }
+   }
+
+   &--large {
+      th, td {
+         padding: $padding-small;
+      }
+   }
+
+   &--hover {
+      tbody tr:hover {
+         background-color: $table-active-color;
+      }
+   }
+
+   $colors: (
+      active: $table-active-color,
+      info: $color-brand,
+      success: $color-success,
+      warning: $color-warning,
+      danger: $color-danger
+   );
+   $blocks: row cell;
+   @each $state, $color in $colors {
+      @each $block in $blocks {
+         .#{$prefix}-table__#{$block}--#{$state} {
+            background-color: $color;
+         }
+      }
+   }
+}

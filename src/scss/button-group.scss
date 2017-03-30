@@ -7,12 +7,12 @@
    }
 
    &:first-child {
-      border-radius: $radius1 0 0 $radius1;
+      border-radius: $radius-small 0 0 $radius-small;
       margin-right: 1px;
    }
 
    &:nth-child(2) {
-      border-radius: 0 $radius1 $radius1 0;
+      border-radius: 0 $radius-small $radius-small 0;
    }
 
    @include clearfix();

@@ -1,5 +1,5 @@
 .#{$prefix}-link {
-   border-radius: $radius1;
+   border-radius: $radius-small;
    color: $font-color;
    margin-right: #{-$space0};
    padding: $space $space0;
@@ -13,7 +13,7 @@
 
    &--url {
       color: $font-color-lighter;
-      font-size: $font-size-xtrasmall;
+      font-size: $font-size-x-small;
       font-weight: $font-weight-light;
    }
 
@@ -57,7 +57,7 @@
    }
 
    &__nolink {
-      border-radius: $radius1;
+      border-radius: $radius-small;
       color: $font-color-lighter;
       font-size: $font-size-small;
       font-weight: $font-weight-light;
