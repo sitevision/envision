@@ -6,17 +6,22 @@ $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
 $enable-box-shadow:        true;
+$base-font-size:           16; // Used to calculate px to em
+
+@function em($pixels, $base: $base-font-size) {
+   @return #{$pixels/$base}em;
+}
 
 // Font family
 $font-family:              "Roboto", sans-serif;
 
 // Font Size
-$font-size-x-small:        12px;
-$font-size-small:          14px;
-$font-size-medium:         16px;
-$font-size-large:          20px;
-$font-size-x-large:        40px;
-$font-size-xx-large:       60px;
+$font-size-x-small:        em(12);
+$font-size-small:          em(14);
+$font-size-medium:         em(16);
+$font-size-large:          em(20);
+$font-size-x-large:        em(40);
+$font-size-xx-large:       em(60);
 
 // Font weight
 $font-weight-light:        300;
@@ -26,44 +31,32 @@ $font-weight-bold:         600;
 $font-weight-extrabold:    700;
 
 // Font Line-height
-$line-height-base:         6px; //(For text blocks and wrapping text)
-$line-height-x-small:      $line-height-base + $font-size-x-small;
-$line-height-small:        $line-height-base + $font-size-small;
-$line-height-medium:       $line-height-base + $font-size-medium;
-$line-height-large:        $line-height-base + $font-size-large;
-$line-height-x-large:      $line-height-base + $font-size-x-large;
-$line-height-xx-large:     $line-height-base + $font-size-xx-large;
+$line-height-base:         6; // For text blocks and wrapping text
+$line-height-x-small:      em($line-height-base + 12);
+$line-height-small:        em($line-height-base + 14);
+$line-height-medium:       em($line-height-base + 16);
+$line-height-large:        em($line-height-base + 20);
+$line-height-x-large:      em($line-height-base + 40);
+$line-height-xx-large:     em($line-height-base + 60);
 
 // Size (Margin/Padding)
-$space:                    2px;   // 4
-$space0:                   4px;   // 8
-$space1:                   8px;   // 16
-$space2:                   12px;  // 24
-$space3:                   16px;  // 32
-$space4:                   20px;  // 40
-$space5:                   24px;  // 48
-$space6:                   28px;  // 56
-$space7:                   32px;  // 64
-$space8:                   40px;  // 80
-$space9:                   64px;  // 128
-$space10:                  128px; // 256
-
-$padding-base:             0.25em;
-$padding-xx-small:         $padding-base * 1;
-$padding-x-small:          $padding-base * 2;
-$padding-small:            $padding-base * 3;
-$padding-medium:           $padding-base * 4;
-$padding-large:            $padding-base * 5;
-$padding-x-large:          $padding-base * 6;
-$padding-xx-large:         $padding-base * 7;
+$spacing-xxx-small:        em(2);
+$spacing-xx-small:         em(4);
+$spacing-x-small:          em(8);
+$spacing-small:            em(12);
+$spacing-medium:           em(16);
+$spacing-large:            em(20);
+$spacing-x-large:          em(24);
+$spacing-xx-large:         em(28);
+$spacing-xxx-large:        em(32);
 
 // Radius
-$button-border-radius:     2px;
-$radius-small:             2px; // 4
-$radius-medium:            4px; // 8
-$radius-large:             8px; // 16
-$radius-rounded-corners:   50px;
-$radius-circle:            100%; // Circle
+$button-border-radius:     em(2);
+$radius-small:             em(2);
+$radius-medium:            em(4);
+$radius-large:             em(8);
+$radius-rounded-corners:   em(50);
+$radius-circle:            100%;
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);

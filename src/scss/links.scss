@@ -1,8 +1,8 @@
 .#{$prefix}-link {
    border-radius: $radius-small;
    color: $font-color;
-   margin-right: #{-$space0};
-   padding: $space $space0;
+   margin-right: #{-$spacing-xx-small};
+   padding: $spacing-xxx-small $spacing-xx-small;
    text-decoration: none;
 
    &--base {
@@ -27,7 +27,7 @@
    &__between {
       color: $font-color-lighter;
       font-size: $font-size-small;
-      margin: 0 #{-$space1};
+      margin: 0 #{-$spacing-x-small};
    }
 
    &:hover {
@@ -39,7 +39,7 @@
    }
 
    &:first-child {
-      margin-left: #{-$space0};
+      margin-left: #{-$spacing-xx-small};
    }
 
    &-base {
@@ -53,7 +53,7 @@
    &__between {
       color: $font-color-lighter;
       font-size: $font-size-small;
-      margin: 0 #{-$space1};
+      margin: 0 #{-$spacing-x-small};
    }
 
    &__nolink {
@@ -61,7 +61,7 @@
       color: $font-color-lighter;
       font-size: $font-size-small;
       font-weight: $font-weight-light;
-      padding: $space0;
+      padding: $spacing-xx-small;
       text-decoration: none;
    }
 }
