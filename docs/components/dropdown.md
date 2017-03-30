@@ -56,11 +56,12 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 
 ### Split button dropdown ###
 Use `sv-button-group` to split buttons and add `sv-dropdown--toggle-split` to desired button.
+Use `sv-dropdown--toggle-split--space` to create space between button and dropdown menu.
 {% example html %}
 <div class="sv-list sv-list--horizontal">
    <div class='sv-dropdown sv-button-group sv_list__item'>
       <button class='sv-button sv-button--primary' type='button'>Dropdown</button>
-      <button class="sv-button sv-button--primary sv-dropdown--toggle sv-dropdown--toggle-split" type="button" data-sv-dropdown
+      <button class="sv-button sv-button--primary sv-dropdown--toggle sv-dropdown--toggle-split sv-dropdown--toggle-split--space" type="button" data-sv-dropdown
          aria-haspopup="true" aria-expanded="false">
          <span class="sv-assistive-text">Toggle Dropdown Menu</span>
       </button>
@@ -74,7 +75,7 @@ Use `sv-button-group` to split buttons and add `sv-dropdown--toggle-split` to de
 
    <div class='sv-dropdown sv-button-group sv-list__item'>
       <button class='sv-button sv-button--danger' type='button'>Dropdown</button>
-      <button class="sv-button sv-button--danger sv-dropdown--toggle sv-dropdown--toggle-split" type="button" data-sv-dropdown
+      <button class="sv-button sv-button--danger sv-dropdown--toggle sv-dropdown--toggle-split sv-dropdown--toggle-split--space" type="button" data-sv-dropdown
          aria-haspopup="true" aria-expanded="false">
          <span class="sv-assistive-text">Toggle Dropdown Menu</span>
       </button>

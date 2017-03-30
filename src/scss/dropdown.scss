@@ -60,8 +60,9 @@
       margin-left: 0;
    }
 
-   &--toggle-split--ld {
-      border-left: 2px solid #ffffff;
+   &--toggle-split--space {
+      margin-left: 1px;
+      margin-right: 1px;
    }
 
    @include clearfix();
