@@ -51,7 +51,7 @@
       &--around > .#{$item} {
          @include border-divider(border);
          + .#{$item} {
-            margin-top: $space;
+            margin-top: $spacing-xxx-small;
          }
       }
    }

@@ -15,7 +15,7 @@ $arrow-border-size: 10px;
       background-color: $color-lighter;
       border-radius: $radius-medium $radius-medium 0 0;
       display: block;
-      padding: $space0 $space1;
+      padding: $spacing-xx-small $spacing-x-small;
 
       &__title {
          display: inline-block;
@@ -31,7 +31,7 @@ $arrow-border-size: 10px;
       font-size: $font-size-small;
       font-weight: $font-weight-regular;
       line-height: $line-height-small;
-      padding: 0 $space1;
+      padding: 0 $spacing-x-small;
    }
 
    &__arrow {
