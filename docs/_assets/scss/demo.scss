@@ -13,3 +13,8 @@ div.sv-demo__modal--default {
    margin-top: 10px;
 }
 
+.example-progress > .sv-progress {
+   + .sv-progress {
+      margin-top: 10px;
+   }
+}
