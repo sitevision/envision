@@ -7,7 +7,7 @@ group: components
 
 ## Overview ##
 {% example html %}
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--default" role="alert"><strong>Hello!</strong> this is alert</div>
+<div class="{{ site.css_prefix }}-alert" role="alert"><strong>Hello!</strong> this is alert</div>
 {% endexample %}
 
 ## Variations ##
@@ -21,7 +21,7 @@ group: components
 {% endexample %}
 
 {% example html %}
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--default" role="alert">
+<div class="{{ site.css_prefix }}-alert" role="alert">
    <button type="button" class="{{ site.css_prefix }}-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
    <article class="{{ site.css_prefix }}-media">
       <div class="{{ site.css_prefix }}-media__figure">
@@ -43,5 +43,5 @@ group: components
 
 ## Links ##
 {% example html %}
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--default" role="alert"><strong>Hello!</strong> this is alert with <a href="#" class="{{ site.css_prefix }}-alert__link">link</a></div>
+<div class="{{ site.css_prefix }}-alert" role="alert"><strong>Hello!</strong> this is alert with <a href="#" class="{{ site.css_prefix }}-alert__link">link</a></div>
 {% endexample %}

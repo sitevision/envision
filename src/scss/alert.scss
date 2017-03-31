@@ -1,13 +1,11 @@
 .#{$prefix}-alert {
-   @include border-radius($radius-medium);
    border: 1px solid transparent;
    color: $font-color-lighter;
    margin: $spacing-medium;
    padding: $spacing-medium;
 
-   &--default {
-      @include alert-color-variant($color-element-bg);
-   }
+   @include alert-color-variant($color-element-bg);
+   @include border-radius($radius-medium);
 
    &--success {
       @include alert-color-variant(lighten($color-success, 20%));
