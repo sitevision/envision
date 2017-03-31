@@ -1,4 +1,4 @@
-div.sv-demo__modal--default {
+div.#{$prefix}-demo__modal--default {
    border-color: #e5e5e5 #eeeeee #eeeeee;
    border-style: solid;
    border-width: 1px 0;
@@ -13,8 +13,8 @@ div.sv-demo__modal--default {
    margin-top: 10px;
 }
 
-.example-progress > .sv-progress {
-   + .sv-progress {
+.example-progress > .#{$prefix}-progress {
+   + .#{$prefix}-progress {
       margin-top: 10px;
    }
 }
