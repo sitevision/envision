@@ -1,5 +1,6 @@
 .#{$prefix}-badge {
    border-radius: $badge-radius;
+   background-color: $color-brand;
    color: $badge-font-color;
    display: inline-block;
    font-size: $badge-font-size;
@@ -7,15 +8,14 @@
    padding: $spacing-xx-small $spacing-x-small;
    vertical-align: baseline;
 
-   &--default {
-      background-color: $color-brand;
-   }
    &--success {
       background-color: $color-success;
    }
+   
    &--warning {
       background-color: $color-warning;
    }
+   
    &--danger {
       background-color: $color-danger;
    }
