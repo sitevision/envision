@@ -9,19 +9,19 @@ group: components
 
 {% example html %}
 
-<div class="sv-modal sv-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="sv-modal__dialog">
-      <section class="sv-modal__content">
-         <header class="sv-modal__header">
-            <h3 class="sv-modal__header__title">Modal Header</h3>
+<div class="{{ site.css_prefix }}-modal {{ site.css_prefix }}-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="{{ site.css_prefix }}-modal__dialog">
+      <section class="{{ site.css_prefix }}-modal__content">
+         <header class="{{ site.css_prefix }}-modal__header">
+            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
          </header>
-         <div class="sv-modal__body">
-            <p class="sv-font sv-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="{{ site.css_prefix }}-modal__body">
+            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="sv-modal__footer">
-            <button type="button" class="sv-button sv-button--primary">Save</button>
-            <button type="button" class="sv-button sv-button--link">Cancel</button>
+         <footer class="{{ site.css_prefix }}-modal__footer">
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -31,24 +31,24 @@ group: components
 
 ### Optional sizes ###
 
-Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning footer descendents to the right.
+Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix }}-modal__footer--right` aligning footer descendents to the right.
 
 {% example html %}
-<button id="largeBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show large</button>
+<button id="largeBtn" data-toggle="modal" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
 
-<div id="example1" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="sv-modal__dialog sv-modal__dialog--large">
-      <section class="sv-modal__content">
-         <header class="sv-modal__header">
-            <h3 class="sv-modal__header__title">Modal Header</h3>
+<div id="example1" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--large">
+      <section class="{{ site.css_prefix }}-modal__content">
+         <header class="{{ site.css_prefix }}-modal__header">
+            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
          </header>
-         <div class="sv-modal__body">
-            <p class="sv-font sv-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="{{ site.css_prefix }}-modal__body">
+            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="sv-modal__footer sv-modal__footer--right">
-            <button type="button" class="sv-button sv-button--primary">Save</button>
-            <button type="button" class="sv-button sv-button--link" id="demo1">Cancel</button>
+         <footer class="{{ site.css_prefix }}-modal__footer {{ site.css_prefix }}-modal__footer--right">
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link" id="demo1">Cancel</button>
          </footer>
       </section>
    </div>
@@ -56,23 +56,23 @@ Uses `sv-modal-dialog--large` and footer `sv-modal__footer--right` aligning foot
 
 {% endexample %}
 
-Uses `sv-modal-dialog--small` 
+Uses `{{ site.css_prefix }}-modal-dialog--small` 
 {%example html %}
-<button id="smallBtn" data-toggle="modal" type="button" class="sv-button sv-button--primary sv-button--large">Show small</button>
+<button id="smallBtn" data-toggle="modal" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
 
-<div id="example2" class="sv-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="sv-modal__dialog sv-modal__dialog--small">
-      <section class="sv-modal__content">
-         <header class="sv-modal__header">
-            <h3 class="sv-modal__header__title">Modal Header</h3>
+<div id="example2" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--small">
+      <section class="{{ site.css_prefix }}-modal__content">
+         <header class="{{ site.css_prefix }}-modal__header">
+            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
          </header>
-         <div class="sv-modal__body">
-            <p class="sv-font sv-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="{{ site.css_prefix }}-modal__body">
+            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="sv-modal__footer">
-            <button type="button" class="sv-button sv-button--primary">Save</button>
-            <button type="button" class="sv-button sv-button--link" id="demo2">Cancel</button>
+         <footer class="{{ site.css_prefix }}-modal__footer">
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link" id="demo2">Cancel</button>
          </footer>
       </section>
    </div>
@@ -86,19 +86,19 @@ Uses `sv-modal-dialog--small`
    var demo2 = document.getElementById("example2");
 
    document.getElementById("largeBtn").addEventListener("click", function(event) {   
-      demo1.classList.toggle("sv-modal--show");
+      demo1.classList.toggle("{{ site.css_prefix }}-modal--show");
    }); 
 
    document.getElementById("demo1").addEventListener("click", function(event) {
-      demo1.classList.toggle("sv-modal--show");
+      demo1.classList.toggle("{{ site.css_prefix }}-modal--show");
    });
 
    document.getElementById("smallBtn").addEventListener("click", function(event) {
-      demo2.classList.toggle("sv-modal--show");
+      demo2.classList.toggle("{{ site.css_prefix }}-modal--show");
    });
 
    document.getElementById("demo2").addEventListener("click", function(event) {
-      demo2.classList.toggle("sv-modal--show");
+      demo2.classList.toggle("{{ site.css_prefix }}-modal--show");
    });
 
 </script>

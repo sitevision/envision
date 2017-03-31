@@ -11,33 +11,33 @@ group: components
 
 {% example html %}
 
-<article class="sv-news-item">
-   <div class="sv-news-item__media">
+<article class="{{ site.css_prefix }}-news-item">
+   <div class="{{ site.css_prefix }}-news-item__media">
       <img src="https://unsplash.it/467/300/?blur" />
    </div>
-   <header class="sv-news-item__headline">
-      <div class="sv-news-item__headline__title">
-         <h2 class="sv-font sv-font--title">
-            <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+   <header class="{{ site.css_prefix }}-news-item__headline">
+      <div class="{{ site.css_prefix }}-news-item__headline__title">
+         <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+            <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
          </h2>
-         <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+         <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
       </div>
    </header>
-   <section class="sv-news-item__preamble">
-      <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
+   <section class="{{ site.css_prefix }}-news-item__preamble">
+      <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
          t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage pork belly chicken hamburger,
          andouille pork loin capicola.</p>
    </section>
-   <footer class="sv-news-item__footer">
-      <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-         <li class="sv-list__item">
-            <a href="#" class="sv-link sv-link--base">Like</a>
+   <footer class="{{ site.css_prefix }}-news-item__footer">
+      <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+         <li class="{{ site.css_prefix }}-list__item">
+            <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
          </li>
-         <li class="sv-list__item">
-            <a href="#" class="sv-link sv-link--base">Reply</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
          </li>
-         <li class="sv-list__item">
-            <span class="sv-link sv-link--base">12:56</span>
+         <li class="{{ site.css_prefix }}-list__item">
+            <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
          </li>
       </ul>
    </footer>
@@ -45,102 +45,102 @@ group: components
 
 {% endexample %} 
 ### Example: Vertical list ### 
-`.sv-list`
-   <ul class="sv-list">
-      <li class="sv-list__item">
-         <article class="sv-news-item">
-            <div class="sv-news-item__media">
+`.{{ site.css_prefix }}-list`
+   <ul class="{{ site.css_prefix }}-list">
+      <li class="{{ site.css_prefix }}-list__item">
+         <article class="{{ site.css_prefix }}-news-item">
+            <div class="{{ site.css_prefix }}-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="sv-news-item__headline">
-               <div class="sv-news-item__headline__title">
-                  <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+            <header class="{{ site.css_prefix }}-news-item__headline">
+               <div class="{{ site.css_prefix }}-news-item__headline__title">
+                  <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+                  <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="sv-news-item__preamble">
-               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="{{ site.css_prefix }}-news-item__preamble">
+               <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="sv-news-item__footer">
-               <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Like</a>
+            <footer class="{{ site.css_prefix }}-news-item__footer">
+               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                   </li>
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Reply</a>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                   </li>
-                  <li class="sv-list__item">
-                     <span class="sv-link sv-link--base">12:56</span>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                   </li>
                </ul>
             </footer>
          </article>
       </li>
-      <li class="sv-list__item">
-         <article class="sv-news-item">
-            <div class="sv-news-item__media">
+      <li class="{{ site.css_prefix }}-list__item">
+         <article class="{{ site.css_prefix }}-news-item">
+            <div class="{{ site.css_prefix }}-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="sv-news-item__headline">
-               <div class="sv-news-item__headline__title">
-                  <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+            <header class="{{ site.css_prefix }}-news-item__headline">
+               <div class="{{ site.css_prefix }}-news-item__headline__title">
+                  <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+                  <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="sv-news-item__preamble">
-               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="{{ site.css_prefix }}-news-item__preamble">
+               <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="sv-news-item__footer">
-               <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Like</a>
+            <footer class="{{ site.css_prefix }}-news-item__footer">
+               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                   </li>
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Reply</a>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                   </li>
-                  <li class="sv-list__item">
-                     <span class="sv-link sv-link--base">12:56</span>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                   </li>
                </ul>
             </footer>
          </article>
       </li>
-      <li class="sv-list__item">
-         <article class="sv-news-item">
-            <div class="sv-news-item__media">
+      <li class="{{ site.css_prefix }}-list__item">
+         <article class="{{ site.css_prefix }}-news-item">
+            <div class="{{ site.css_prefix }}-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="sv-news-item__headline">
-               <div class="sv-news-item__headline__title">
-                  <h2 class="sv-font sv-font--title">
-                     <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+            <header class="{{ site.css_prefix }}-news-item__headline">
+               <div class="{{ site.css_prefix }}-news-item__headline__title">
+                  <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                   </h2>
-                  <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+                  <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="sv-news-item__preamble">
-               <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="{{ site.css_prefix }}-news-item__preamble">
+               <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="sv-news-item__footer">
-               <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Like</a>
+            <footer class="{{ site.css_prefix }}-news-item__footer">
+               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                   </li>
-                  <li class="sv-list__item">
-                     <a href="#" class="sv-link sv-link--base">Reply</a>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                   </li>
-                  <li class="sv-list__item">
-                     <span class="sv-link sv-link--base">12:56</span>
+                  <li class="{{ site.css_prefix }}-list__item">
+                     <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                   </li>
                </ul>
             </footer>
@@ -150,201 +150,201 @@ group: components
 
 
 ### Example: Horizontal list ###
-`sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--2`
-<ul class="sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--2">
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+`{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--2`
+<ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--2">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="sv-list__item">
-      <article class="sv-news-item">
-         <div class="sv-news-item__media">
+   <li class="{{ site.css_prefix }}-list__item">
+      <article class="{{ site.css_prefix }}-news-item">
+         <div class="{{ site.css_prefix }}-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="sv-news-item__headline">
-            <div class="sv-news-item__headline__title">
-               <h2 class="sv-font sv-font--title">
-                  <a href="#" class="sv-link sv-link--title">Lorem ipsum</a>
+         <header class="{{ site.css_prefix }}-news-item__headline">
+            <div class="{{ site.css_prefix }}-news-item__headline__title">
+               <h2 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title">Lorem ipsum</a>
                </h2>
-               <p class="sv-font sv-font--tagline">Eric Ericsson, aug 12 12:56</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="sv-news-item__preamble">
-            <p class="sv-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="{{ site.css_prefix }}-news-item__preamble">
+            <p class="{{ site.css_prefix }}-font">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="sv-news-item__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Like</a>
+         <footer class="{{ site.css_prefix }}-news-item__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Like</a>
                </li>
-               <li class="sv-list__item">
-                  <a href="#" class="sv-link sv-link--base">Reply</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a href="#" class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">Reply</a>
                </li>
-               <li class="sv-list__item">
-                  <span class="sv-link sv-link--base">12:56</span>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <span class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base">12:56</span>
                </li>
             </ul>
          </footer>

@@ -6,65 +6,65 @@ group: components
 ---
 ## Simple post with attached image ##
 {% example html %}
-<article class="sv-post">
-   <header class="sv-post__header sv-media">
-      <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-post">
+   <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+      <div class="{{ site.css_prefix }}-media__figure">
          <a href="#">
-            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+            <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-media__body">
-         <h3 class="sv-font sv-font--title">
-            <a class="sv-link sv-link--title" href="#">Erik</a>
-            <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="{{ site.css_prefix }}-media__body">
+         <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Erik</a>
+            <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">16:34</span>
          </h3>
-         <p class="sv-font sv-font--tagline">Design</p>
+         <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
       </div>
-      <div class="sv-media__actions">
-         <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-            <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-            <span class="sv-assistive-text">More options</span>
+      <div class="{{ site.css_prefix }}-media__actions">
+         <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+            <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+            <span class="{{ site.css_prefix }}-assistive-text">More options</span>
          </button>
       </div>
    </header>
-   <div class="sv-post__entry">
-      <p class="sv-font">
+   <div class="{{ site.css_prefix }}-post__entry">
+      <p class="{{ site.css_prefix }}-font">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
       </p>
    </div>
-   <div class="sv-post__attachment">
+   <div class="{{ site.css_prefix }}-post__attachment">
       <a href="#">
          <img src="https://placehold.it/250x250">
       </a>
    </div>
-   <footer class="sv-post__footer">
-      <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+   <footer class="{{ site.css_prefix }}-post__footer">
+      <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#comments" data-sv-collapse aria-controls="comments">Comment (0)</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments" data-{{ site.css_prefix }}-collapse aria-controls="comments">Comment (0)</a>
          </li>
       </ul>
    </footer>
-   <div class="sv-comments sv-collapse" id="comments" aria-expanded="false">
-      <div class="sv-comments__wrapper">
-         <ul class="sv-comments__list sv-list">
+   <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse" id="comments" aria-expanded="false">
+      <div class="{{ site.css_prefix }}-comments__wrapper">
+         <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
          </ul>
-         <div class="sv-comments__comment sv-media"> 
-            <div class="sv-media__figure">
+         <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-media__body">
-               <input type="text" class="sv-form-input" />
+            <div class="{{ site.css_prefix }}-media__body">
+               <input type="text" class="{{ site.css_prefix }}-form-input" />
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--primary">Comment</button>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
             </div>
          </div>
       </div>
@@ -74,36 +74,36 @@ group: components
 
 ## Comment ##
 {% example html %}
-<article class="sv-comment sv-media">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <header class="sv-comment__header">
-         <h3 class="sv-font">
-            <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <header class="{{ site.css_prefix }}-comment__header">
+         <h3 class="{{ site.css_prefix }}-font">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
          </h3>
       </header>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
       </p>
-      <footer class="sv-comment__footer">
-         <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-            <li class="sv-list__item">
-               <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+      <footer class="{{ site.css_prefix }}-comment__footer">
+         <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+            <li class="{{ site.css_prefix }}-list__item">
+               <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
             </li>
-            <li class="sv-list__item">
-               <span class="sv-font sv-font--detail-small">09:30</span>
+            <li class="{{ site.css_prefix }}-list__item">
+               <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">09:30</span>
             </li>
          </ul>
       </footer>
    </div>
-   <div class="sv-media__actions">
-      <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-         <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-         <span class="sv-assistive-text">More options</span>
+   <div class="{{ site.css_prefix }}-media__actions">
+      <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+         <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+         <span class="{{ site.css_prefix }}-assistive-text">More options</span>
       </button>
    </div>
 </article>
@@ -111,165 +111,165 @@ group: components
 
 ## Post with comments ##
 {% example html %}
-<article class="sv-post">
-   <header class="sv-post__header sv-media">
-      <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-post">
+   <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+      <div class="{{ site.css_prefix }}-media__figure">
          <a href="#">
-            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+            <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-media__body">
-         <h3 class="sv-font sv-font--title">
-            <a class="sv-link sv-link--title" href="#">Erik</a>
-            <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="{{ site.css_prefix }}-media__body">
+         <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Erik</a>
+            <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">16:34</span>
          </h3>
-         <p class="sv-font sv-font--tagline">Design</p>
+         <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
       </div>
-      <div class="sv-media__actions">
-         <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-            <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-            <span class="sv-assistive-text">More options</span>
+      <div class="{{ site.css_prefix }}-media__actions">
+         <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+            <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+            <span class="{{ site.css_prefix }}-assistive-text">More options</span>
          </button>
       </div>
    </header>
-   <div class="sv-post__entry">
-      <p class="sv-font">
+   <div class="{{ site.css_prefix }}-post__entry">
+      <p class="{{ site.css_prefix }}-font">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
       </p>
    </div>
-   <footer class="sv-post__footer">
-      <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+   <footer class="{{ site.css_prefix }}-post__footer">
+      <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#comments2" data-sv-collapse aria-controls="comments2">Comment (3)</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments2" data-{{ site.css_prefix }}-collapse aria-controls="comments2">Comment (3)</a>
          </li>
       </ul>
    </footer>
-   <div class="sv-comments sv-collapse sv-collapse--show" id="comments2" aria-expanded="true">
-      <div class="sv-comments__wrapper">
-         <ul class="sv-comments__list sv-list">
+   <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse {{ site.css_prefix }}-collapse--show" id="comments2" aria-expanded="true">
+      <div class="{{ site.css_prefix }}-comments__wrapper">
+         <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
             <li>
-               <article class="sv-comment sv-media">
-                  <div class="sv-media__figure">
+               <article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <header class="sv-comment__header">
-                        <h4 class="sv-font sv-font--title">
-                           <a class="sv-link sv-link--title" href="#">Malin</a>
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <header class="{{ site.css_prefix }}-comment__header">
+                        <h4 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                           <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Malin</a>
                         </h4>
                      </header>
-                     <p class="sv-font">
+                     <p class="{{ site.css_prefix }}-font">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet
                      </p>
-                     <footer class="sv-comment__footer">
-                        <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                           <li class="sv-list__item">
-                              <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+                     <footer class="{{ site.css_prefix }}-comment__footer">
+                        <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                            </li>
-                           <li class="sv-list__item">
-                              <span class="sv-font sv-font--detail-small">10:27</span>
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">10:27</span>
                            </li>
                         </ul>
                      </footer>
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                        <span class="sv-assistive-text">More options</span>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                      </button>
                   </div>
                </article>
             </li>
             <li>
-               <article class="sv-comment sv-media">
-                  <div class="sv-media__figure">
+               <article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <header class="sv-comment__header">
-                        <h4 class="sv-font sv-font--title">
-                           <a class="sv-link sv-link--title" href="#">Robin</a>
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <header class="{{ site.css_prefix }}-comment__header">
+                        <h4 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                           <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Robin</a>
                         </h4>
                      </header>
-                     <p class="sv-font">
+                     <p class="{{ site.css_prefix }}-font">
                         Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
                      </p>
-                     <footer class="sv-comment__footer">
-                        <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                           <li class="sv-list__item">
-                              <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+                     <footer class="{{ site.css_prefix }}-comment__footer">
+                        <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                            </li>
-                           <li class="sv-list__item">
-                              <span class="sv-font sv-font--detail-small">15:25</span>
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">15:25</span>
                            </li>
                         </ul>
                      </footer>
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                        <span class="sv-assistive-text">More options</span>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                      </button>
                   </div>
                </article>
             </li>
             <li>
-               <article class="sv-comment sv-media">
-                  <div class="sv-media__figure">
+               <article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <header class="sv-comment__header">
-                        <h3 class="sv-font">
-                           <a class="sv-link sv-link--title" href="#">Anders</a>
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <header class="{{ site.css_prefix }}-comment__header">
+                        <h3 class="{{ site.css_prefix }}-font">
+                           <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Anders</a>
                         </h3>
                      </header>
-                     <p class="sv-font">
+                     <p class="{{ site.css_prefix }}-font">
                         Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
                      </p>
-                     <footer class="sv-comment__footer">
-                        <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                           <li class="sv-list__item">
-                              <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+                     <footer class="{{ site.css_prefix }}-comment__footer">
+                        <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                            </li>
-                           <li class="sv-list__item">
-                              <span class="sv-font sv-font--detail-small">17:39</span>
+                           <li class="{{ site.css_prefix }}-list__item">
+                              <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">17:39</span>
                            </li>
                         </ul>
                      </footer>
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                        <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                        <span class="sv-assistive-text">More options</span>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                        <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                        <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                      </button>
                   </div>
                </article>
             </li>
          </ul>
-         <div class="sv-comments__comment sv-media"> 
-            <div class="sv-media__figure">
+         <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-media__body">
-               <input type="text" class="sv-form-input" />
+            <div class="{{ site.css_prefix }}-media__body">
+               <input type="text" class="{{ site.css_prefix }}-form-input" />
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--primary">Comment</button>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
             </div>
          </div>
       </div>
@@ -279,83 +279,83 @@ group: components
 
 ## Shared post ##
 {% example html %}
-<article class="sv-post">
-   <header class="sv-post__header sv-media">
-      <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-post">
+   <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+      <div class="{{ site.css_prefix }}-media__figure">
          <a href="#">
-            <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+            <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
          </a>
       </div>
-      <div class="sv-media__body">
-         <h3 class="sv-font sv-font--title">
-            <a class="sv-link sv-link--title" href="#">Erik</a> <span class="sv-font sv-font--detail-small">shared</span> <a class="sv-link sv-link--title" href="#">Malin's</a> <span class="sv-font sv-font--detail-small">post</span>
-            <span class="sv-font sv-font--detail-small">16:34</span>
+      <div class="{{ site.css_prefix }}-media__body">
+         <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Erik</a> <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">shared</span> <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Malin's</a> <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">post</span>
+            <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">16:34</span>
          </h3>
-         <p class="sv-font sv-font--tagline">Design</p>
+         <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
       </div>
-      <div class="sv-media__actions">
-         <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-            <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-            <span class="sv-assistive-text">More options</span>
+      <div class="{{ site.css_prefix }}-media__actions">
+         <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+            <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+            <span class="{{ site.css_prefix }}-assistive-text">More options</span>
          </button>
       </div>
    </header>
-   <div class="sv-post__entry">
-      <p class="sv-font">
+   <div class="{{ site.css_prefix }}-post__entry">
+      <p class="{{ site.css_prefix }}-font">
          Lorem ipsum dolor sit amet
       </p>
    </div>
-   <div class="sv-post__shared">
-      <blockquote class="sv-post">
-         <header class="sv-post__header sv-media">
-            <div class="sv-media__figure">
+   <div class="{{ site.css_prefix }}-post__shared">
+      <blockquote class="{{ site.css_prefix }}-post">
+         <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-media__body">
-               <h3 class="sv-font sv-font--title">
-                  <a class="sv-link sv-link--title" href="#">Malin</a>
-                  <span class="sv-font sv-font--detail-small">17:29</span>
+            <div class="{{ site.css_prefix }}-media__body">
+               <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Malin</a>
+                  <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">17:29</span>
                </h3>
-               <p class="sv-font sv-font--tagline">Design</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
             </div>
          </header>
-         <div class="sv-post__entry">
-            <p class="sv-font">
+         <div class="{{ site.css_prefix }}-post__entry">
+            <p class="{{ site.css_prefix }}-font">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
             </p>
          </div>
       </blockquote>
    </div>
-   <footer class="sv-post__footer">
-      <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+   <footer class="{{ site.css_prefix }}-post__footer">
+      <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
          </li>
-         <li class="sv-list__item">
-            <a class="sv-link sv-link--base" role="button" href="#comments3" data-sv-collapse aria-controls="comments3">Comment (0)</a>
+         <li class="{{ site.css_prefix }}-list__item">
+            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments3" data-{{ site.css_prefix }}-collapse aria-controls="comments3">Comment (0)</a>
          </li>
       </ul>
    </footer>
-   <div class="sv-comments sv-collapse" id="comments3" aria-expanded="false">
-      <div class="sv-comments__wrapper">
-         <ul class="sv-comments__list sv-list">
+   <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse" id="comments3" aria-expanded="false">
+      <div class="{{ site.css_prefix }}-comments__wrapper">
+         <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
          </ul>
-         <div class="sv-comments__comment sv-media"> 
-            <div class="sv-media__figure">
+         <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                </a>
             </div>
-            <div class="sv-media__body">
-               <input type="text" class="sv-form-input" />
+            <div class="{{ site.css_prefix }}-media__body">
+               <input type="text" class="{{ site.css_prefix }}-form-input" />
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--primary">Comment</button>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
             </div>
          </div>
       </div>
@@ -365,254 +365,254 @@ group: components
 
 ## Feed list ##
 {% example html %}
-<ul class="sv-feed sv-list">
-   <li class="sv-feed__item">
-      <article class="sv-post">
-         <header class="sv-post__header sv-media">
-            <div class="sv-media__figure">
+<ul class="{{ site.css_prefix }}-feed {{ site.css_prefix }}-list">
+   <li class="{{ site.css_prefix }}-feed__item">
+      <article class="{{ site.css_prefix }}-post">
+         <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-media__body">
-               <h3 class="sv-font sv-font--title">
-                  <a class="sv-link sv-link--title" href="#">Erik</a>
-                  <span class="sv-font sv-font--detail-small">16:34</span>
+            <div class="{{ site.css_prefix }}-media__body">
+               <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Erik</a>
+                  <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">16:34</span>
                </h3>
-               <p class="sv-font sv-font--tagline">Design</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                  <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                  <span class="sv-assistive-text">More options</span>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                  <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                  <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                </button>
             </div>
          </header>
-         <div class="sv-post__entry">
-            <p class="sv-font">
+         <div class="{{ site.css_prefix }}-post__entry">
+            <p class="{{ site.css_prefix }}-font">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
             </p>
          </div>
-         <footer class="sv-post__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+         <footer class="{{ site.css_prefix }}-post__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#comments4" data-sv-collapse aria-controls="comments4">Comment (2)</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments4" data-{{ site.css_prefix }}-collapse aria-controls="comments4">Comment (2)</a>
                </li>
             </ul>
          </footer>
-         <div class="sv-comments sv-collapse sv-collapse--show" id="comments4" aria-expanded="true">
-            <div class="sv-comments__wrapper">
-               <ul class="sv-comments__list sv-list">
+         <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse {{ site.css_prefix }}-collapse--show" id="comments4" aria-expanded="true">
+            <div class="{{ site.css_prefix }}-comments__wrapper">
+               <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
                   <li>
-                     <article class="sv-comment sv-media">
-                        <div class="sv-media__figure">
+                     <article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+                        <div class="{{ site.css_prefix }}-media__figure">
                            <a href="#">
-                              <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+                              <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
                            </a>
                         </div>
-                        <div class="sv-media__body">
-                           <header class="sv-comment__header">
-                              <h4 class="sv-font sv-font--title">
-                                 <a class="sv-link sv-link--title" href="#">Anders</a>
+                        <div class="{{ site.css_prefix }}-media__body">
+                           <header class="{{ site.css_prefix }}-comment__header">
+                              <h4 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                                 <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Anders</a>
                               </h4>
                            </header>
-                           <p class="sv-font">
+                           <p class="{{ site.css_prefix }}-font">
                               Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
                            </p>
-                           <footer class="sv-comment__footer">
-                              <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                                 <li class="sv-list__item">
-                                    <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+                           <footer class="{{ site.css_prefix }}-comment__footer">
+                              <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                                 <li class="{{ site.css_prefix }}-list__item">
+                                    <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                                  </li>
-                                 <li class="sv-list__item">
-                                    <span class="sv-font sv-font--detail-small">17:39</span>
+                                 <li class="{{ site.css_prefix }}-list__item">
+                                    <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">17:39</span>
                                  </li>
                               </ul>
                            </footer>
                         </div>
-                        <div class="sv-media__actions">
-                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                              <span class="sv-assistive-text">More options</span>
+                        <div class="{{ site.css_prefix }}-media__actions">
+                           <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                              <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                              <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                            </button>
                         </div>
                      </article>
                   </li>
                   <li>
-                     <article class="sv-comment sv-media">
-                        <div class="sv-media__figure">
+                     <article class="{{ site.css_prefix }}-comment {{ site.css_prefix }}-media">
+                        <div class="{{ site.css_prefix }}-media__figure">
                            <a href="#">
-                              <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+                              <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
                            </a>
                         </div>
-                        <div class="sv-media__body">
-                           <header class="sv-comment__header">
-                              <h4 class="sv-font sv-font--title">
-                                 <a class="sv-link sv-link--title" href="#">Emma</a>
+                        <div class="{{ site.css_prefix }}-media__body">
+                           <header class="{{ site.css_prefix }}-comment__header">
+                              <h4 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                                 <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
                               </h4>
                            </header>
-                           <p class="sv-font">
+                           <p class="{{ site.css_prefix }}-font">
                               Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.
                            </p>
-                           <footer class="sv-comment__footer">
-                              <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-                                 <li class="sv-list__item">
-                                    <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+                           <footer class="{{ site.css_prefix }}-comment__footer">
+                              <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+                                 <li class="{{ site.css_prefix }}-list__item">
+                                    <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                                  </li>
-                                 <li class="sv-list__item">
-                                    <span class="sv-font sv-font--detail-small">19:24</span>
+                                 <li class="{{ site.css_prefix }}-list__item">
+                                    <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">19:24</span>
                                  </li>
                               </ul>
                            </footer>
                         </div>
-                        <div class="sv-media__actions">
-                           <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                              <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                              <span class="sv-assistive-text">More options</span>
+                        <div class="{{ site.css_prefix }}-media__actions">
+                           <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                              <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                              <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                            </button>
                         </div>
                      </article>
                   </li>
                </ul>
-               <div class="sv-comments__comment sv-media"> 
-                  <div class="sv-media__figure">
+               <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <input type="text" class="sv-form-input" />
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <input type="text" class="{{ site.css_prefix }}-form-input" />
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--primary">Comment</button>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
                   </div>
                </div>
             </div>
          </div>
       </article>
    </li>
-   <li class="sv-feed__item">
-      <article class="sv-post">
-         <header class="sv-post__header sv-media">
-            <div class="sv-media__figure">
+   <li class="{{ site.css_prefix }}-feed__item">
+      <article class="{{ site.css_prefix }}-post">
+         <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-media__body">
-               <h3 class="sv-font sv-font--title">
-                  <a class="sv-link sv-link--title" href="#">Robin</a>
-                  <span class="sv-font sv-font--detail-small">17:28</span>
+            <div class="{{ site.css_prefix }}-media__body">
+               <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Robin</a>
+                  <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">17:28</span>
                </h3>
-               <p class="sv-font sv-font--tagline">Design</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                  <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                  <span class="sv-assistive-text">More options</span>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                  <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                  <span class="{{ site.css_prefix }}-assistive-text">More options</span>
                </button>
             </div>
          </header>
-         <div class="sv-post__entry">
-            <p class="sv-font">
+         <div class="{{ site.css_prefix }}-post__entry">
+            <p class="{{ site.css_prefix }}-font">
                Duis eget eros urna. Maecenas rutrum tortor eget elit mattis, pretium aliquet sapien accumsan. Nunc congue vehicula mi sit amet dictum. Aenean aliquam ex lorem, sit amet laoreet justo ultrices quis.
             </p>
          </div>
-         <footer class="sv-post__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+         <footer class="{{ site.css_prefix }}-post__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#comments5" data-sv-collapse aria-controls="comments5">Comment (0)</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments5" data-{{ site.css_prefix }}-collapse aria-controls="comments5">Comment (0)</a>
                </li>
             </ul>
          </footer>
-         <div class="sv-comments sv-collapse" id="comments5" aria-expanded="false">
-            <div class="sv-comments__wrapper">
-               <ul class="sv-comments__list sv-list">
+         <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse" id="comments5" aria-expanded="false">
+            <div class="{{ site.css_prefix }}-comments__wrapper">
+               <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
                </ul>
-               <div class="sv-comments__comment sv-media"> 
-                  <div class="sv-media__figure">
+               <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <input type="text" class="sv-form-input" />
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <input type="text" class="{{ site.css_prefix }}-form-input" />
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--primary">Comment</button>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
                   </div>
                </div>
             </div>
          </div>
       </article>
    </li>
-   <li class="sv-feed__item">
-      <article class="sv-post">
-         <header class="sv-post__header sv-media">
-            <div class="sv-media__figure">
+   <li class="{{ site.css_prefix }}-feed__item">
+      <article class="{{ site.css_prefix }}-post">
+         <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
+            <div class="{{ site.css_prefix }}-media__figure">
                <a href="#">
-                  <img class="sv-image sv-image--small" src="https://placehold.it/250x250">
+                  <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/250x250">
                </a>
             </div>
-            <div class="sv-media__body">
-               <h3 class="sv-font sv-font--title">
-                  <a class="sv-link sv-link--title" href="#">Ebba</a>
-                  <span class="sv-font sv-font--detail-small">19:05</span>
+            <div class="{{ site.css_prefix }}-media__body">
+               <h3 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Ebba</a>
+                  <span class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--detail-small">19:05</span>
                </h3>
-               <p class="sv-font sv-font--tagline">Design</p>
+               <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--tagline">Design</p>
             </div>
-            <div class="sv-media__actions">
-               <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-                  <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-                  <span class="sv-assistive-text">More post options</span>
+            <div class="{{ site.css_prefix }}-media__actions">
+               <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+                  <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+                  <span class="{{ site.css_prefix }}-assistive-text">More post options</span>
                </button>
             </div>
          </header>
-         <div class="sv-post__entry">
-            <p class="sv-font">
+         <div class="{{ site.css_prefix }}-post__entry">
+            <p class="{{ site.css_prefix }}-font">
                Nulla faucibus ultrices ullamcorper. Duis gravida malesuada commodo. Praesent ornare id nisl non suscipit. 
             </p>
          </div>
-         <footer class="sv-post__footer">
-            <ul class="sv-list sv-list--horizontal sv-list-dividers--left">
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Like (0)</a>
+         <footer class="{{ site.css_prefix }}-post__footer">
+            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Like (0)</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#">Share</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#">Share</a>
                </li>
-               <li class="sv-list__item">
-                  <a class="sv-link sv-link--base" role="button" href="#comments6" data-sv-collapse aria-controls="comments6">Comment (0)</a>
+               <li class="{{ site.css_prefix }}-list__item">
+                  <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--base" role="button" href="#comments6" data-{{ site.css_prefix }}-collapse aria-controls="comments6">Comment (0)</a>
                </li>
             </ul>
          </footer>
-         <div class="sv-comments sv-collapse" id="comments6" aria-expanded="false">
-            <div class="sv-comments__wrapper">
-               <ul class="sv-comments__list sv-list">
+         <div class="{{ site.css_prefix }}-comments {{ site.css_prefix }}-collapse" id="comments6" aria-expanded="false">
+            <div class="{{ site.css_prefix }}-comments__wrapper">
+               <ul class="{{ site.css_prefix }}-comments__list {{ site.css_prefix }}-list">
                </ul>
-               <div class="sv-comments__comment sv-media"> 
-                  <div class="sv-media__figure">
+               <div class="{{ site.css_prefix }}-comments__comment {{ site.css_prefix }}-media"> 
+                  <div class="{{ site.css_prefix }}-media__figure">
                      <a href="#">
-                        <img class="sv-image sv-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--tiny" src="https://placehold.it/400x400.png">
                      </a>
                   </div>
-                  <div class="sv-media__body">
-                     <input type="text" class="sv-form-input" />
+                  <div class="{{ site.css_prefix }}-media__body">
+                     <input type="text" class="{{ site.css_prefix }}-form-input" />
                   </div>
-                  <div class="sv-media__actions">
-                     <button type="button" class="sv-button sv-button--primary">Comment</button>
+                  <div class="{{ site.css_prefix }}-media__actions">
+                     <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Comment</button>
                   </div>
                </div>
             </div>
