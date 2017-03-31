@@ -4,6 +4,7 @@
 
 - title: Components
   pages:
+    - title: Alert
     - title: Badge
     - title: Breadcrumb
     - title: Button

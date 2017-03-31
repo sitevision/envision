@@ -1,0 +1,7 @@
+@mixin alert-color-variant($color) {
+   background-color: $color;
+
+   &:hover {
+      border-color: darken($color, 15%);
+   }
+}
