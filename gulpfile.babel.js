@@ -11,12 +11,13 @@ const eslint         = require('gulp-eslint');
 const concat         = require('gulp-concat');
 const uglify         = require('gulp-uglify');
 const pump           = require('pump');
+const packageJson    = require('./package.json');
 
 const BUILD_FOLDER = './build';
 const DIST_FOLDER = './dist';
 const DOCS_DIST_FOLDER = './docs/dist';
 
-const FILE_NAME = 'envision';
+const PROJECT_NAME = packageJson.name;
 
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
@@ -32,21 +33,22 @@ gulp.task('default', ['buildjs', 'buildcss', 'copyimages', 'copyfonts']);
 gulp.task('watch', doWatch);
 
 function doAutoprefix() {
-   return gulp.src(`${BUILD_FOLDER}/${FILE_NAME}.css`)
+   return gulp.src(`${BUILD_FOLDER}/${PROJECT_NAME}.css`)
       .pipe(autoprefixer())
       .pipe(gulp.dest('dist'));
 }
 
 function doSass() {
-   return gulp.src(`./src/scss/${FILE_NAME}.scss`)
+   return gulp.src(`./src/scss/base.scss`)
       .pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(sourcemaps.write('../dist/map'))
-      .pipe(gulp.dest(`${BUILD_FOLDER}`));
+      .pipe(rename(`${PROJECT_NAME}.css`))
+      .pipe(gulp.dest(BUILD_FOLDER));
 }
 
 function doMinifyCSS() {
-   return gulp.src(`${DIST_FOLDER}/${FILE_NAME}.css`)
+   return gulp.src(`${DIST_FOLDER}/${PROJECT_NAME}.css`)
       .pipe(rename({
          suffix: '.min'
       }))
@@ -59,7 +61,7 @@ function doBuildJS() {
    return gulp.src('src/js/**/*.js')
       .pipe(sourcemaps.init())
       .pipe(babel())
-      .pipe(concat(`${FILE_NAME}.js`))
+      .pipe(concat(`${PROJECT_NAME}.js`))
       .pipe(uglify())
       .pipe(sourcemaps.write('../dist/map'))
       .pipe(gulp.dest(DIST_FOLDER))
