@@ -1,10 +1,12 @@
 const Dropdown = (($) => {
 
-   const NAME = 'dropdown';
-   const NO_CONFLICT = $.fn[NAME];
-   const SV_DROPDOWN_OPEN = 'sv-dropdown--open';
-   const TOGGLE_DROPDOWN = '[data-sv-dropdown]';
-   const ESCAPE_KEY = 27;
+   const NAME              = 'dropdown';
+   const NO_CONFLICT       = $.fn[NAME];
+   const SV_DROPDOWN_OPEN  = 'sv-dropdown--open';
+   const TOGGLE_DROPDOWN   = '[data-sv-dropdown]';
+   const ESCAPE_KEY        = 27;
+   const SV_CLICK_EVENT    = 'click.sv-dropdown';
+
 
    class Dropdown {
 
@@ -12,15 +14,6 @@ const Dropdown = (($) => {
          this.el = element;
          this.$el = $(element);
          this._isShown = false;
-         this._bindEvents();
-      }
-
-      _bindEvents() {
-         $(document).one('click', (event) => {
-            if (!$(event.target).closest('.sv-dropdown').length || this._isShown) {
-               this.hide();
-            }
-         });
       }
 
       toggle() {
@@ -32,36 +25,59 @@ const Dropdown = (($) => {
       }
 
       show() {
+         this.$el
+               .attr('aria-expanded', 'true')
+               .addClass(SV_DROPDOWN_OPEN)
+               .focus();
+
          this._isShown = true;
-         this.$el.attr('aria-expanded', 'true');
-         this.$el.addClass(SV_DROPDOWN_OPEN);
-         this.$el.focus();
+
+         $(document)
+            .off(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`)
+            .on(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`, (event) => {
+               if ($(event.target) !== this.$el.attr('id')) {
+                  this.hide();
+               }
+            });
+
          this._setEscapeAction();
       }
 
       hide() {
-         $(':focus').blur();
-         this.$el.attr('aria-expanded', 'false');
+         this.$el
+               .attr('aria-expanded', 'false')
+               .removeClass(SV_DROPDOWN_OPEN)
+               .find('.sv-dropdown--toggle').blur();
+
          this._isShown = false;
-         this.$el.removeClass(SV_DROPDOWN_OPEN);
+
+         $(document).off(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`);
          this._setEscapeAction();
       }
 
       _setEscapeAction() {
+
          if (this._isShown) {
-            this.$el.on('keydown', (event) => {
-               if (event.which === ESCAPE_KEY) {
-                  this.hide();
-               }
-            });
-         } else if (!this._isShown) {
-            this.$el.off('keydown');
+            this.$el
+               .off(`keydown.sv-dropdown-${this.$el.attr('id')}`)
+               .one(`keydown.sv-dropdown-${this.$el.attr('id')}`, (event) => {
+                  if (event.which === ESCAPE_KEY) {
+                     this.hide();
+                  }
+               });
+         } else {
+            this.$el.off(`keydown.sv-dropdown-${this.$el.attr('id')}`);
          }
       }
 
       static _jQuery(config) {
          return this.each(function() {
-            const data = new Dropdown(this);
+            let data = $(this).data('sv.dropdown');
+
+            if (!data) {
+               data = new Dropdown(this);
+               $(this).data('sv.dropdown', data);
+            }
 
             if (typeof config === 'string') {
                if (data[config] === undefined) {
@@ -87,9 +103,9 @@ const Dropdown = (($) => {
       e.preventDefault();
 
       const $this = $(this);
-      const $parentNode = $($this[0].parentNode);
+      const $target = $($this.data('sv-target'));
 
-      $parentNode.dropdown();
+      $target.dropdown();
    });
 
    return Dropdown;
