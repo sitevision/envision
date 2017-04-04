@@ -9,7 +9,7 @@
 
    ul {
       padding-left: 0;
-      top: $space3;
+      top: $spacing-small;
    }
 
    &__menu {
@@ -21,9 +21,7 @@
       left: 0;
       list-style: none;
       min-width: 160px;
-      padding: $spacing-small;
       position: absolute;
-      right: 0;
       top: $spacing-medium;
       z-index: 1000;
 
@@ -34,7 +32,7 @@
    }
 
    &__item {
-      padding: $space1 $space2;
+      padding: $spacing-xx-small $spacing-x-small;
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);
@@ -53,7 +51,7 @@
       content: "";
       display: inline-block;
       height: 0;
-      margin-left: $space1;
+      margin-left: $spacing-xx-small;
       vertical-align: middle;
       width: 0;
    }

@@ -1,11 +1,11 @@
 const Dropdown = (($) => {
 
-   const NAME              = 'dropdown';
-   const NO_CONFLICT       = $.fn[NAME];
-   const SV_DROPDOWN_OPEN  = 'sv-dropdown--open';
-   const TOGGLE_DROPDOWN   = '[data-sv-dropdown]';
-   const ESCAPE_KEY        = 27;
-   const SV_CLICK_EVENT    = 'click.sv-dropdown';
+   const NAME = 'dropdown';
+   const NO_CONFLICT = $.fn[NAME];
+   const SV_DROPDOWN_OPEN = 'sv-dropdown--open';
+   const TOGGLE_DROPDOWN = '[data-sv-dropdown]';
+   const ESCAPE_KEY = 27;
+   const SV_CLICK_EVENT = 'click.sv-dropdown';
 
 
    class Dropdown {
@@ -26,9 +26,9 @@ const Dropdown = (($) => {
 
       show() {
          this.$el
-               .attr('aria-expanded', 'true')
-               .addClass(SV_DROPDOWN_OPEN)
-               .focus();
+            .attr('aria-expanded', 'true')
+            .addClass(SV_DROPDOWN_OPEN)
+            .focus();
 
          this._isShown = true;
 
@@ -45,9 +45,9 @@ const Dropdown = (($) => {
 
       hide() {
          this.$el
-               .attr('aria-expanded', 'false')
-               .removeClass(SV_DROPDOWN_OPEN)
-               .find('.sv-dropdown--toggle').blur();
+            .attr('aria-expanded', 'false')
+            .removeClass(SV_DROPDOWN_OPEN)
+            .find('.sv-dropdown--toggle').blur();
 
          this._isShown = false;
 
@@ -113,3 +113,4 @@ const Dropdown = (($) => {
 })(jQuery);
 
 export default Dropdown;
+
