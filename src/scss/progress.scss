@@ -1,0 +1,49 @@
+.#{$prefix}-progress {
+   background-color: $default-button-color;
+   border-radius: $radius-small;
+   display: flex;
+   font-size: $font-size-small;
+   line-height: $line-height-small;
+   overflow: hidden;
+   text-align: center;
+
+   &__bar {
+      background-color: $color-brand;
+      color: $font-color-invert;
+      height: $line-height-small;
+
+      &--success {
+         background-color: $color-success;
+      }
+
+      &--warning {
+         background-color: $color-warning;
+      }
+
+      &--danger {
+         background-color: $color-danger;
+      }
+
+      &--striped {
+         background-image: linear-gradient(-45deg, transparent 33%, rgba($font-color-invert, .15) 33%, rgba($font-color-invert, .15) 66%, transparent 66%);
+         background-size: $spacing-xx-large $spacing-large;
+
+         &--flip {
+            background-image: linear-gradient(45deg, transparent 33%, rgba($font-color-invert, .15) 33%, rgba($font-color-invert, .15) 66%, transparent 66%);
+         }
+
+         &--animated {
+            animation: #{$prefix}-progress-animation 1s linear infinite;
+         }
+      }
+   }
+}
+
+@keyframes #{$prefix}-progress-animation {
+   0% {
+      background-position: $spacing-xx-large 0;
+   }
+   100% {
+      background-position: 0 0;
+   }
+}
