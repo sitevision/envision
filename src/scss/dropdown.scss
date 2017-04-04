@@ -1,11 +1,6 @@
 .#{$prefix}-dropdown {
    position: relative;
 
-   ul {
-      padding-left: 0;
-      top: $spacing-small;
-   }
-
    &__menu {
       background-color: $font-color-invert;
       border: 1px solid rgba(0, 0, 0, .15);
@@ -14,17 +9,21 @@
       display: none;
       left: 0;
       list-style: none;
-      max-width:200px;
+      max-width: 220px;
       min-width: 160px;
+      padding-left: 0;
       position: absolute;
-      top: $spacing-medium;
+      top: $spacing-small;
       z-index: $zindex-dropdown;
    }
 
    &__item {
-      padding: $spacing-xx-small $spacing-x-small;
       display: block;
+      font-family: $font-family;
+      font-size: $font-size-medium;
       margin-bottom: $spacing-xx-small;
+      padding: $spacing-xx-small $spacing-x-small;
+      @include truncate-text();
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);

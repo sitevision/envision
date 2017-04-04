@@ -34,7 +34,7 @@ const Dropdown = (($) => {
          $(document)
             .off(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`)
             .on(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`, (event) => {
-               if ($(event.target) !== this.$el.attr('id')) {
+               if (!$(event.target).hasClass('sv-dropdown__menu')) {
                   this.hide();
                }
             });
@@ -55,7 +55,6 @@ const Dropdown = (($) => {
       }
 
       _setEscapeAction() {
-
          if (this._isShown) {
             this.$el
                .off(`keydown.sv-dropdown-${this.$el.attr('id')}`)
