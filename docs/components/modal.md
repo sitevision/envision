@@ -9,7 +9,7 @@ group: components
 
 {% example html %}
 
-<div class="{{ site.css_prefix }}-modal doc-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div class="{{ site.css_prefix }}-modal doc-demo__modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog">
       <section class="{{ site.css_prefix }}-modal__content">
          <header class="{{ site.css_prefix }}-modal__header">
