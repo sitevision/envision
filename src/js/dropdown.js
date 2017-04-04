@@ -6,13 +6,14 @@ const Dropdown = (($) => {
    const TOGGLE_DROPDOWN = '[data-sv-dropdown]';
    const ESCAPE_KEY = 27;
    const SV_CLICK_EVENT = 'click.sv-dropdown';
+   const SV_KEYDOWN_EVENT = 'keydown.sv-dropdown';
 
    class Dropdown {
 
       constructor(element) {
          this.el = element;
          this.$el = $(element);
-         this._isShown = false;
+         this._id = this.el.id;
       }
 
       toggle() {
@@ -29,17 +30,7 @@ const Dropdown = (($) => {
             .addClass(SV_DROPDOWN_OPEN)
             .focus();
 
-         this._isShown = true;
-
-         $(document)
-            .off(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`)
-            .on(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`, (event) => {
-               if (!$(event.target).hasClass('sv-dropdown__menu')) {
-                  this.hide();
-               }
-            });
-
-         this._setEscapeAction();
+         this._bindEvents();
       }
 
       hide() {
@@ -48,40 +39,50 @@ const Dropdown = (($) => {
             .removeClass(SV_DROPDOWN_OPEN)
             .find('.sv-dropdown--toggle').blur();
 
-         this._isShown = false;
-
-         $(document).off(`${SV_CLICK_EVENT}-${this.$el.attr('id')}`);
-         this._setEscapeAction();
+         this._unbindEvents();
       }
 
-      _setEscapeAction() {
-         if (this._isShown) {
-            this.$el
-               .off(`keydown.sv-dropdown-${this.$el.attr('id')}`)
-               .one(`keydown.sv-dropdown-${this.$el.attr('id')}`, (event) => {
-                  if (event.which === ESCAPE_KEY) {
-                     this.hide();
-                  }
-               });
-         } else {
-            this.$el.off(`keydown.sv-dropdown-${this.$el.attr('id')}`);
-         }
+      _bindEvents() {
+         const SV_CLICK = `${SV_CLICK_EVENT}-${this.el.id}`;
+         const SV_KEYDOWN = `${SV_KEYDOWN_EVENT}-${this.el.id}`;
+         $(document)
+            .off(SV_CLICK)
+            .on(SV_CLICK, (event) => {
+               if (!$(event.target).hasClass('sv-dropdown__menu')) {
+                  this.hide();
+               }
+            });
+
+         this.$el
+            .off(SV_KEYDOWN)
+            .one(SV_KEYDOWN, (event) => {
+               if (event.which === ESCAPE_KEY) {
+                  this.hide();
+               }
+            });
+      }
+
+      _unbindEvents() {
+         $(document).off(`${SV_CLICK_EVENT}-${this.el.id}`);
+         this.$el.off(`${SV_KEYDOWN_EVENT}-${this.el.id}`);
       }
 
       static _jQuery(config) {
          return this.each(function() {
-            let data = $(this).data('sv.dropdown');
+            const $this = $(this);
+            let data = $this.data('sv.dropdown');
 
             if (!data) {
                data = new Dropdown(this);
-               $(this).data('sv.dropdown', data);
+               $this.data('sv.dropdown', data);
             }
 
             if (typeof config === 'string') {
-               if (data[config] === undefined) {
+               const method = data[config];
+               if (method === undefined) {
                   throw new Error(`No method named "${config}"`);
                }
-               data[config]();
+               method.call(data);
                return;
             }
 
@@ -111,4 +112,3 @@ const Dropdown = (($) => {
 })(jQuery);
 
 export default Dropdown;
-
