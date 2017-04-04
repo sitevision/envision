@@ -11,29 +11,12 @@ group: components
 
 <div id='example0' class='{{ site.css_prefix }}-dropdown'>
    <button class='{{ site.css_prefix }}-button {{ site.css_prefix }}-dropdown--toggle' aria-haspopup='true' aria-expanded='false' data-sv-dropdown type='button' data-sv-target='#example0'>Dropdown</button>
-   <div class='{{ site.css_prefix }}-dropdown__menu'>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a>
-   </div>
-</div>
-
-
-{% endexample %}
-
-### Dropdown with ul/li elements ###
-{% example html %}
-
-<div id='example1' class='{{ site.css_prefix }}-dropdown'>
-   <button class='{{ site.css_prefix }}-button {{ site.css_prefix }}-dropdown--toggle' aria-haspopup='true' aria-expanded='false' data-sv-dropdown type='button' data-sv-target='#example1'>Dropdown</button>
    <ul class='{{ site.css_prefix }}-dropdown__menu'>
-      <li class='{{ site.css_prefix }}-dropdown__item'><a href='#'>Action</a></li>
-      <li class='{{ site.css_prefix }}-dropdown__item'><a href='#'>Properties</a></li>
-      <div class='{{ site.css_prefix }}-dropdown--divider'></div>
-      <li class='{{ site.css_prefix }}-dropdown__item'><a href='#'>Settings</a></li>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a></li>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a></li>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a></li>
    </ul>
 </div>
-
 
 {% endexample %}
 
@@ -43,14 +26,13 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 
 <div id='example2' class='{{ site.css_prefix }}-dropdown'>
    <button class='{{ site.css_prefix }}-button {{ site.css_prefix }}-dropdown--toggle' aria-haspopup='true' aria-expanded='false' data-sv-dropdown type='button' data-sv-target='#example2'>Dropdown</button>
-   <div class='{{ site.css_prefix }}-dropdown__menu'>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a>
-      <div class='{{ site.css_prefix }}-dropdown--divider'></div>
-      <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a>
-   </div>
+   <ul class='{{ site.css_prefix }}-dropdown__menu'>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a></li>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a></li>
+      <li class='{{ site.css_prefix }}-dropdown--divider' role="separator"></li>
+      <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a></li>
+   </ul>
 </div>
-
 
 {% endexample %}
 
@@ -65,12 +47,12 @@ Use `sv-dropdown--toggle-split--space` to create space between button and dropdo
          aria-haspopup="true" aria-expanded="false" data-sv-target='#example3'>
          <span class="{{ site.css_prefix }}-assistive-text">Toggle Dropdown Menu</span>
       </button>
-      <div class='{{ site.css_prefix }}-dropdown__menu'>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a>
-         <div class='{{ site.css_prefix }}-dropdown--divider'></div>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a>
-      </div>
+      <ul class='{{ site.css_prefix }}-dropdown__menu'>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a></li>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a></li>
+         <li class='{{ site.css_prefix }}-dropdown--divider' role="separator"></li>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a></li>
+      </ul>
    </div>
 
    <div id='example4' class='{{ site.css_prefix }}-dropdown {{ site.css_prefix }}-button-group sv-list__item'>
@@ -79,12 +61,12 @@ Use `sv-dropdown--toggle-split--space` to create space between button and dropdo
          aria-haspopup="true" aria-expanded="false" data-sv-target='#example4'>
          <span class="{{ site.css_prefix }}-assistive-text">Toggle Dropdown Menu</span>
       </button>
-      <div class='{{ site.css_prefix }}-dropdown__menu'>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a>
-         <div class='{{ site.css_prefix }}-dropdown--divider'></div>
-         <a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a>
-      </div>
+      <ul class='{{ site.css_prefix }}-dropdown__menu'>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Action</a></li>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Properties</a></li>
+         <li class='{{ site.css_prefix }}-dropdown--divider' role="separator"></li>
+         <li><a href='#' role='menuitem' class='{{ site.css_prefix }}-dropdown__item'>Settings</a></li>
+      </ul>
    </div>
 </div>
 

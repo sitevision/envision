@@ -1,12 +1,6 @@
 .#{$prefix}-dropdown {
    position: relative;
 
-   &--open {
-      .#{$prefix}-dropdown__menu {
-         display: block;
-      }
-   }
-
    ul {
       padding-left: 0;
       top: $spacing-small;
@@ -20,19 +14,17 @@
       display: none;
       left: 0;
       list-style: none;
+      max-width:200px;
       min-width: 160px;
       position: absolute;
       top: $spacing-medium;
-      z-index: 1000;
-
-      a, li {
-         display: block;
-         margin-bottom: $spacing-xx-small;
-      }
+      z-index: $zindex-dropdown;
    }
 
    &__item {
       padding: $spacing-xx-small $spacing-x-small;
+      display: block;
+      margin-bottom: $spacing-xx-small;
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);
@@ -64,6 +56,10 @@
       margin-left: 1px;
       margin-right: 1px;
    }
+}
+.#{$prefix}-is-open {
 
-   @include clearfix();
+   .#{$prefix}-dropdown__menu {
+      display: block;
+   }
 }

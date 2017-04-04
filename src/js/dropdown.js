@@ -2,11 +2,10 @@ const Dropdown = (($) => {
 
    const NAME = 'dropdown';
    const NO_CONFLICT = $.fn[NAME];
-   const SV_DROPDOWN_OPEN = 'sv-dropdown--open';
+   const SV_DROPDOWN_OPEN = 'sv-is-open';
    const TOGGLE_DROPDOWN = '[data-sv-dropdown]';
    const ESCAPE_KEY = 27;
    const SV_CLICK_EVENT = 'click.sv-dropdown';
-
 
    class Dropdown {
 
