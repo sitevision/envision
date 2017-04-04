@@ -131,7 +131,7 @@ const Modal = (($) => {
             .off(FOCUSIN)
             .on(FOCUSIN, (event) => {
                if (document !== event.target &&
-                  this.$el[0] !== event.target &&
+                  this.el !== event.target &&
                   !this.$el.has(event.target).length) {
                   this.el.focus();
                }
@@ -173,23 +173,17 @@ const Modal = (($) => {
 
       static _jQuery(action) {
          return this.each(() => {
-            const $element = $(this);
-            let data = $element.data(DATA_KEY);
+            const $this = $(this);
+            let data = $this.data(DATA_KEY);
 
             if (!data) {
                data = new Modal(this);
-               $element.data(DATA_KEY, data);
+               $this.data(DATA_KEY, data);
             }
 
             if (typeof action === 'string') {
                if (METHODS.includes(action)) {
-                  if (action === 'show') {
-                     data.show();
-                  } else if (action === 'toggle') {
-                     data.toggle();
-                  } else if (action === 'hide') {
-                     data.hide();
-                  }
+                  data[action]();
                } else {
                   throw new Error(`No method named "${action}"`);
                }
