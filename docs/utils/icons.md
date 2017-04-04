@@ -6,9 +6,9 @@ group: utils
 ---
 
 <div class="icons-demo">
-   <ul class="sv-list sv-list--horizontal--fixed sv-list--horizontal--fixed--6">
+   <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--6">
       {% for icon in site.data.icons %}
-      <li class="sv-list__item" title="{{ icon.className }}"><i class="{{ icon.className }}"></i></li>
+      <li class="{{ site.css_prefix }}-list__item" title="{{ site.css_prefix }}{{ icon.className }}"><i class="{{ site.css_prefix }}{{ icon.className }}"></i></li>
       {% endfor %}
    </ul>
 </div>

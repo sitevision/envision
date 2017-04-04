@@ -42,6 +42,10 @@ const Modal = (($) => {
       }
 
       show() {
+         if (this._isShown) {
+            return;
+         }
+
          this.$el.outerWidth();
 
          const showEvent = $.Event(EVENTS.SHOW, {});
@@ -73,6 +77,10 @@ const Modal = (($) => {
       }
 
       hide() {
+         if (!this._isShown) {
+            return;
+         }
+
          const hideModalCallback = () => {
             this.$el.removeClass(MODIFIER_BASE + SHOW);
 

@@ -13,13 +13,13 @@
          @include border-divider(border-left, 3px, $color-brand);
 
          &__entry {
-            padding: $space1;
+            padding: $spacing-x-small;
          }
       }
    }
 
    > :not(:last-child) {
-      padding: $space1;
+      padding: $spacing-x-small;
    }
 }
 
@@ -28,21 +28,21 @@
    background-color: $color-element-bg;
 
    &__wrapper {
-      padding: $space1;
+      padding: $spacing-x-small;
    }
 
    &__comment {
-      padding-top: $space1;
+      padding-top: $spacing-x-small;
    }
 }
 
 .#{$prefix}-comment {
    @include border-divider(border-bottom, 1px, $color-page-bg);
-   padding: $space1 0;
+   padding: $spacing-x-small 0;
 }
 
 .#{$prefix}-feed {
    &__item:not(:last-child) {
-      padding-bottom: $space1;
+      padding-bottom: $spacing-x-small;
    }
 }

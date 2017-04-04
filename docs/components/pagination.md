@@ -8,14 +8,14 @@ group: components
 ## Overview ##
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">4</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">5</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
+   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">4</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">5</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -24,14 +24,14 @@ group: components
 ### Disabled ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item">
-         <a class="sv-pagination__link sv-is-disabled" href="#" tabindex="-1">Previous</a>
+   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-pagination__item">
+         <a class="{{ site.css_prefix }}-pagination__link {{ site.css_prefix }}-is-disabled" href="#" tabindex="-1">Previous</a>
       </li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -39,14 +39,14 @@ group: components
 ### Active ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="sv-pagination sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
-      <li class="sv-pagination__item">
-         <a class="sv-pagination__link sv-is-active" href="#">2 <span class="sv-assistive-text">Current</span></a>
+   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item">
+         <a class="{{ site.css_prefix }}-pagination__link {{ site.css_prefix }}-is-active" href="#">2 <span class="{{ site.css_prefix }}-assistive-text">Current</span></a>
       </li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -55,12 +55,12 @@ group: components
 ### Center ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="sv-pagination sv-pagination--center sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
+   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--center {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -68,12 +68,12 @@ group: components
 ### End ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="sv-pagination sv-pagination--end sv-list sv-list--horizontal">
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Previous</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">1</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">2</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">3</a></li>
-      <li class="sv-pagination__item"><a class="sv-pagination__link" href="#">Next</a></li>
+   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--end {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}

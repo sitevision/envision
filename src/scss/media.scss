@@ -2,7 +2,7 @@
    display: flex;
 
    > :not(:last-child) {
-      margin: 0 $space1 0 0;
+      margin: 0 $spacing-x-small 0 0;
    }
 
    &__body {
@@ -21,7 +21,7 @@
       flex-direction: column;
 
       > :not(:last-child) {
-         margin: 0 0 $space1;
+         margin: 0 0 $spacing-x-small;
       }
    }
 
@@ -37,11 +37,11 @@
       flex-direction: row-reverse;
 
       > :not(:last-child) {
-         margin: 0 0 0 $space1;
+         margin: 0 0 0 $spacing-x-small;
       }
    }
 
    & & { // Nested media
-      margin-top: $space1;
+      margin-top: $spacing-x-small;
    }
 }

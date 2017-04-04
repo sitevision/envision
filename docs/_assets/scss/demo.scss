@@ -1,4 +1,4 @@
-div.sv-demo__modal--default {
+.doc-demo__modal--default {
    border-color: #e5e5e5 #eeeeee #eeeeee;
    border-style: solid;
    border-width: 1px 0;
@@ -12,7 +12,8 @@ div.sv-demo__modal--default {
    opacity: 1;
 }
 
-.example-tabs div[role="tabpanel"] {
-   margin-top: 10px;
+.example-progress > div {
+   + div {
+      margin-top: 10px;
+   }
 }
-

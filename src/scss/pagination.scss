@@ -1,6 +1,6 @@
 .#{$prefix}-pagination {
    &__item:not(:last-child) {
-      margin-right: $space;
+      margin-right: $spacing-xxx-small;
    }
 
    &__link {
