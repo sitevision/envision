@@ -4,6 +4,7 @@
 
 - title: Components
   pages:
+    - title: Alert
     - title: Badge
     - title: Breadcrumb
     - title: Button
@@ -17,6 +18,7 @@
     - title: Newsitem
     - title: Pagination
     - title: Popover
+    - title: Progress
     - title: Tab
     - title: Table
 - title: Utils

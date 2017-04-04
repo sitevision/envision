@@ -21,13 +21,15 @@
       left: 0;
       list-style: none;
       min-width: 160px;
+      padding: $spacing-small;
       position: absolute;
-      top: $space7;
+      right: 0;
+      top: $spacing-medium;
       z-index: 1000;
 
       a, li {
          display: block;
-         margin-bottom: $space0;
+         margin-bottom: $spacing-xx-small;
       }
    }
 
@@ -41,7 +43,7 @@
 
    &--divider {
       border-bottom: 1px solid rgba(0, 0, 0, .1);
-      margin: $space1 0;
+      margin: $spacing-x-small 0;
    }
 
    &--toggle::after {

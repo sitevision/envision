@@ -14,7 +14,7 @@
       font-size: $font-size-small;
       line-height: $line-height-small;
       margin: 0;
-      padding: $space0 $space2;
+      padding: $spacing-xx-small $spacing-small;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       width: 100%;
 
@@ -44,19 +44,19 @@
    }
 
    &-element {
-      margin-bottom: $space3;
+      margin-bottom: $spacing-medium;
 
       &__label {
          display: inline-block;
          font-weight: $font-weight-semibold;
-         margin-bottom: $space0;
+         margin-bottom: $spacing-xx-small;
       }
 
       &__help,
       &__feedback {
          display: block;
-         margin-bottom: $space1;
-         margin-top: $space1;
+         margin-bottom: $spacing-x-small;
+         margin-top: $spacing-x-small;
       }
 
       &__help {
@@ -85,7 +85,7 @@
    &-radio,
    &-checkbox {
       display: block;
-      margin-bottom: $space1;
+      margin-bottom: $spacing-x-small;
       position: relative;
 
       &--disabled {
@@ -128,14 +128,14 @@
       .#{$form-element} {
          align-items: center;
          display: flex;
-         margin-right: $space1;
+         margin-right: $spacing-x-small;
 
          &__label {
-            margin-right: $space1;
+            margin-right: $spacing-x-small;
          }
 
          &__help {
-            margin-left: $space0;
+            margin-left: $spacing-xx-small;
          }
       }
 
@@ -158,7 +158,7 @@
          }
 
          + .#{$form-element} {
-            margin-left: $space0;
+            margin-left: $spacing-xx-small;
          }
       }
    }

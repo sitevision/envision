@@ -49,7 +49,7 @@
       color: $font-color-lighter;
       font-size: $font-size-small;
       font-weight: $font-weight-light;
-      margin-top: $space;
+      margin-top: $spacing-xxx-small;
    }
 
    &--empty {
@@ -57,7 +57,7 @@
       font-size: $font-size-small;
       font-style: italic;
       font-weight: $font-weight-light;
-      margin: $space8 0;
+      margin: $spacing-xxx-large 0;
       text-align: center;
    }
 
@@ -65,7 +65,7 @@
       font-size: $font-size-small;
       font-weight: $font-weight-regular;
       line-height: $line-height-small;
-      margin: $space1 0;
+      margin: $spacing-x-small 0;
    }
 
    &--error-danger {

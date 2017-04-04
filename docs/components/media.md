@@ -7,17 +7,17 @@ group: components
 ## Types ##
 ### Default media object ###
 {% example html %}
-<article class="sv-media">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -27,25 +27,25 @@ group: components
 
 ### Default media object with actions menu ###
 {% example html %}
-<article class="sv-media">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
    </div>
-   <div class="sv-media__actions">
-      <button type="button" class="sv-button sv-button--dropdown sv-dropdown__toggle" aria-haspopup="true" title="More options">
-         <i class="sv-icon--dropdown-menu" aria-hidden="true"></i>
-         <span class="sv-assistive-text">More options</span>
+   <div class="{{ site.css_prefix }}-media__actions">
+      <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--dropdown {{ site.css_prefix }}-dropdown__toggle" aria-haspopup="true" title="More options">
+         <i class="{{ site.css_prefix }}-icon--dropdown-menu" aria-hidden="true"></i>
+         <span class="{{ site.css_prefix }}-assistive-text">More options</span>
       </button>
    </div>
 </article>
@@ -53,17 +53,17 @@ group: components
 
 ### Inline media object ###
 {% example html %}
-<article class="sv-media">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body sv-media__body--inline">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body {{ site.css_prefix }}-media__body--inline">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -73,17 +73,17 @@ group: components
 
 ### Column media object ###
 {% example html %}
-<article class="sv-media sv-media--column">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--column">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image" src="https://placehold.it/200x200.png">
+         <img class="{{ site.css_prefix }}-image" src="https://placehold.it/200x200.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -95,17 +95,17 @@ group: components
 
 ### Center ###
 {% example html %}
-<article class="sv-media sv-media--center">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--center">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -114,17 +114,17 @@ group: components
 {% endexample %}
 
 {% example html %}
-<article class="sv-media sv-media--column sv-media--center">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--column {{ site.css_prefix }}-media--center">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image" src="https://placehold.it/200x200.png">
+         <img class="{{ site.css_prefix }}-image" src="https://placehold.it/200x200.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -134,17 +134,17 @@ group: components
 
 ### Bottom ###
 {% example html %}
-<article class="sv-media sv-media--bottom">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--bottom">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -156,17 +156,17 @@ group: components
 
 ### Reverse ###
 {% example html %}
-<article class="sv-media sv-media--reverse">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--reverse">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
@@ -177,31 +177,31 @@ group: components
 ## Nesting ##
 
 {% example html %}
-<article class="sv-media">
-   <div class="sv-media__figure">
+<article class="{{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure">
       <a href="#">
-         <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+         <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
       </a>
    </div>
-   <div class="sv-media__body">
-      <h3 class="sv-font">
-         <a class="sv-link sv-link--title" href="#">Emma</a>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
       </h3>
-      <p class="sv-font">
+      <p class="{{ site.css_prefix }}-font">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
       </p>
-      <article class="sv-media">
-         <div class="sv-media__figure">
+      <article class="{{ site.css_prefix }}-media">
+         <div class="{{ site.css_prefix }}-media__figure">
             <a href="#">
-               <img class="sv-image sv-image--small" src="https://placehold.it/400x400.png">
+               <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/400x400.png">
             </a>
          </div>
-         <div class="sv-media__body">
-            <h3 class="sv-font">
-               <a class="sv-link sv-link--title" href="#">Emma</a>
+         <div class="{{ site.css_prefix }}-media__body">
+            <h3 class="{{ site.css_prefix }}-font">
+               <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
             </h3>
-            <p class="sv-font">
+            <p class="{{ site.css_prefix }}-font">
                Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
                Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
             </p>
