@@ -102,10 +102,10 @@ $border-color-light:       rgba(0, 0, 0, .1);
 $color-focus:              #5cb3fd;
 
 // Z-index value
-$zindex-base:              1;
 $zindex-modal:             1050;
 $zindex-popover:           1060;
 $zindex-tooltip:           1070;
+$zindex-alert:             1080;
 
 // Dialog Modal
 $modal-small:              300px;

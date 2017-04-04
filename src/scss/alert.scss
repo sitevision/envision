@@ -1,0 +1,46 @@
+.#{$prefix}-alert {
+   border: 1px solid transparent;
+   color: $font-color-lighter;
+   margin: $spacing-medium;
+   padding: $spacing-medium;
+
+   @include alert-color-variant($color-element-bg);
+   @include border-radius($radius-medium);
+
+   &--success {
+      @include alert-color-variant(lighten($color-success, 20%));
+   }
+
+   &--warning {
+      @include alert-color-variant(lighten($color-warning, 20%));
+   }
+
+   &--danger {
+      @include alert-color-variant(lighten($color-danger, 20%));
+   }
+
+   &__link {
+      color: $font-color-lighter;
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   &__close {
+      appearance: none;
+      background: 0 0;
+      border: 0;
+      color: $font-color-lighter;
+      float: right;
+      font-family: $font-family;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+      padding: $spacing-small $spacing-medium;
+      position: relative;
+      right: -$spacing-medium;
+      top: -$spacing-small;
+   }
+}
