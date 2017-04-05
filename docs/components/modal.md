@@ -48,8 +48,8 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
                and fall asleep.</p>
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer {{ site.css_prefix }}-modal__footer--right">
-            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -72,8 +72,8 @@ Uses `{{ site.css_prefix }}-modal-dialog--small`
                and fall asleep.</p>
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
-            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -93,8 +93,29 @@ Toggle
 `$('#myModal').modal('toggle')`
 
 ## Events ##
-
 `hide.sv-modal`
+```javascript
+   $('#myModal').on('hide.sv-modal', function() { 
+      // Do something... 
+   });
+```
+
 `hidden.sv-modal`
+```javascript
+   $('#myModal').on('hidden.sv-modal', function() { 
+      // Do something... 
+   });
+```
 `show.sv-modal`
+```javascript
+   $('#myModal').on('show.sv-modal', function() { 
+      // Do something... 
+   });
+```
+
 `shown.sv-modal`
+```javascript
+   $('#myModal').on('shown.sv-modal', function() { 
+      // Do something... 
+   });
+``` 

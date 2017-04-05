@@ -6,7 +6,7 @@ const Modal = (($) => {
    const DATA_KEY = 'sv.modal';
    const NO_CONFLICT = $.fn[NAME];
    const SELECTOR = '[data-sv-modal]';
-   const DISMISS_SELECTOR = '[data-sv-modal-dismiss]';
+   const DISMISS_SELECTOR = '[data-modal-dismiss]';
    const MODIFIER_BASE = 'sv-modal--';
    const BACKDROP = 'sv-modal__backdrop';
    const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
@@ -14,12 +14,6 @@ const Modal = (($) => {
    const ESCAPE_KEY = 27;
    const ANIMATION = 'sv-animation-in-progress';
    const FOCUSIN = 'focusin.sv-modal';
-
-   const METHODS = [
-      'show',
-      'hide',
-      'toggle'
-   ];
 
    const EVENTS = {
       HIDE: 'hide.sv-modal',
@@ -46,7 +40,7 @@ const Modal = (($) => {
             return;
          }
 
-         this.$el.outerWidth();
+         this.$el.outerWidth(); // Used to force reflow
 
          const showEvent = $.Event(EVENTS.SHOW, {});
 
@@ -63,7 +57,6 @@ const Modal = (($) => {
             .css('opacity', 1);
 
          this._showBackdrop();
-         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
 
          this._isShown = true;
 
@@ -72,8 +65,7 @@ const Modal = (($) => {
             this.el.focus();
          }
 
-         this._setEscapeKey();
-         this._focusModal();
+         this._bindEvents();
       }
 
       hide() {
@@ -108,10 +100,22 @@ const Modal = (($) => {
 
          this._focus = false;
          this._isShown = false;
-         this._setEscapeKey();
+         this._unbindEvents();
       }
 
-      _setEscapeKey() {
+      _bindEvents() {
+         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
+
+         $(document)
+            .off(FOCUSIN)
+            .one(FOCUSIN, (event) => {
+               if (document !== event.target &&
+                  this.el !== event.target &&
+                  !this.$el.has(event.target).length) {
+                  this.el.focus();
+               }
+            });
+
          if (this._isShown) {
             this.$el.on('keydown', (event) => {
                if (this.$backdrop.hasClass(ANIMATION)) {
@@ -121,29 +125,21 @@ const Modal = (($) => {
                   this.hide();
                }
             });
-         } else {
-            this.$el.off('keydown');
          }
       }
 
-      _focusModal() {
-         $(document)
-            .off(FOCUSIN)
-            .on(FOCUSIN, (event) => {
-               if (document !== event.target &&
-                  this.el !== event.target &&
-                  !this.$el.has(event.target).length) {
-                  this.el.focus();
-               }
-            });
+      _unbindEvents() {
+         this.$el
+               .off('click')
+               .off('keydown');
+
+         $(document).off(FOCUSIN);
       }
 
       _showBackdrop() {
          this.$backdrop = $('<div/>', {
             class: BACKDROP
          });
-
-         this.$backdrop.appendTo(document.body);
 
          this.$el.on('click', (event) => {
             if (this.$backdrop.hasClass(ANIMATION)) {
@@ -161,14 +157,15 @@ const Modal = (($) => {
             this.hide();
          });
 
+         this.$backdrop.appendTo(document.body);
+
          this.$backdrop
             .one(Util.getAnimationEndEvent(), this._removeBackdropAnimation)
             .addClass(`${BACKDROP_ANIMATION} ${ANIMATION}`);
       }
 
       _removeBackdropAnimation(e) {
-         const $target = $(e.currentTarget);
-         $target.removeClass(ANIMATION);
+         $(e.currentTarget).removeClass(ANIMATION);
       }
 
       static _jQuery(action) {
@@ -182,14 +179,14 @@ const Modal = (($) => {
             }
 
             if (typeof action === 'string') {
-               if (METHODS.includes(action)) {
-                  data[action]();
-               } else {
+               const method = data[action];
+               if (method === undefined) {
                   throw new Error(`No method named "${action}"`);
                }
-            } else {
-               data.show();
+               method.call(data);
+               return;
             }
+            data.show();
          });
       }
    }
@@ -204,8 +201,7 @@ const Modal = (($) => {
    $(document).on('click', SELECTOR, function(e) {
       e.preventDefault();
 
-      const $this = $(this);
-      const $target = $($this.data('sv-target'));
+      const $target = $($(this).data('sv-target'));
 
       $target.modal();
    });
@@ -215,4 +211,3 @@ const Modal = (($) => {
 })(jQuery);
 
 export default Modal;
-

@@ -1,10 +1,10 @@
 const Util = (() => {
 
    const TRANSITIONS = {
-      WebkitTransition: 'webkitTransitionEnd',
-      MozTransition: 'transitionend',
-      OTransition: 'oTransitionEnd otransitionend',
-      transition: 'transitionend'
+      WebkitTransition  : 'webkitTransitionEnd',
+      MozTransition     : 'transitionend',
+      OTransition       : 'oTransitionEnd otransitionend',
+      transition        : 'transitionend'
    };
 
    const ANIMATIONS = {
