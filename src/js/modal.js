@@ -6,7 +6,7 @@ const Modal = (($) => {
    const DATA_KEY = 'sv.modal';
    const NO_CONFLICT = $.fn[NAME];
    const SELECTOR = '[data-sv-modal]';
-   const DISMISS_SELECTOR = '[data-modal-dismiss]';
+   const DISMISS_SELECTOR = '[data-sv-modal-dismiss]';
    const MODIFIER_BASE = 'sv-modal--';
    const BACKDROP = 'sv-modal__backdrop';
    const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
@@ -130,8 +130,7 @@ const Modal = (($) => {
 
       _unbindEvents() {
          this.$el
-               .off('click')
-               .off('keydown');
+               .off('click keydown');
 
          $(document).off(FOCUSIN);
       }

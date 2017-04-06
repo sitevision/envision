@@ -49,7 +49,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer {{ site.css_prefix }}-modal__footer--right">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -73,7 +73,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--small`
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" data-sv-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
