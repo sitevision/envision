@@ -21,7 +21,7 @@ group: components
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -35,7 +35,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
 
 {% example html %}
 
-<button id="largeBtn" data-modal data-sv-target="#example1" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
+<button id="largeBtn" data-modal data-target="#example1" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
 
 <div id="example1" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--large">
@@ -59,7 +59,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
 
 Uses `{{ site.css_prefix }}-modal-dialog--small` 
 {%example html %}
-<button id="smallBtn" data-modal data-sv-target="#example2" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
+<button id="smallBtn" data-modal data-target="#example2" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
 
 <div id="example2" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--small">

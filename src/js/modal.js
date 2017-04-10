@@ -116,16 +116,14 @@ const Modal = (($) => {
                }
             });
 
-         if (this._isShown) {
-            this.$el.on('keydown', (event) => {
-               if (this.$backdrop.hasClass(ANIMATION)) {
-                  return;
-               }
-               if (event.which === ESCAPE_KEY) {
-                  this.hide();
-               }
-            });
-         }
+         this.$el.on('keydown', (event) => {
+            if (this.$backdrop.hasClass(ANIMATION)) {
+               return;
+            }
+            if (event.which === ESCAPE_KEY) {
+               this.hide();
+            }
+         });
       }
 
       _unbindEvents() {
@@ -200,7 +198,7 @@ const Modal = (($) => {
    $(document).on('click', SELECTOR, function(e) {
       e.preventDefault();
 
-      const $target = $($(this).data('sv-target'));
+      const $target = $($(this).data('target'));
 
       $target.modal();
    });
