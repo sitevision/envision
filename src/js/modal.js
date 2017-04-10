@@ -5,8 +5,8 @@ const Modal = (($) => {
    const NAME = 'modal';
    const DATA_KEY = 'sv.modal';
    const NO_CONFLICT = $.fn[NAME];
-   const SELECTOR = '[data-sv-modal]';
-   const DISMISS_SELECTOR = '[data-sv-modal-dismiss]';
+   const SELECTOR = '[data-modal]';
+   const DISMISS_SELECTOR = '[data-modal-dismiss]';
    const MODIFIER_BASE = 'sv-modal--';
    const BACKDROP = 'sv-modal__backdrop';
    const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
