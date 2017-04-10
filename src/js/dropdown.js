@@ -3,7 +3,7 @@ const Dropdown = (($) => {
    const NAME = 'dropdown';
    const NO_CONFLICT = $.fn[NAME];
    const SV_DROPDOWN_OPEN = 'sv-is-open';
-   const TOGGLE_DROPDOWN = '[data-sv-dropdown]';
+   const TOGGLE_DROPDOWN = '[data-dropdown]';
    const ESCAPE_KEY = 27;
    const SV_CLICK_EVENT = 'click.sv-dropdown';
    const SV_KEYDOWN_EVENT = 'keydown.sv-dropdown';
@@ -102,7 +102,7 @@ const Dropdown = (($) => {
       e.preventDefault();
 
       const $this = $(this);
-      const $target = $($this.data('sv-target'));
+      const $target = $($this.data('target'));
 
       $target.dropdown();
    });

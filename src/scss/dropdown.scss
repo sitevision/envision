@@ -47,13 +47,14 @@
       width: 0;
    }
 
-   &--toggle-split::after {
-      margin-left: 0;
-   }
-
-   &--toggle-split--space {
+   &--toggle-split {
       margin-left: 1px;
       margin-right: 1px;
+   }
+
+   &--toggle-split::after {
+      margin-left: 0;
+      margin-right: 0;
    }
 }
 .#{$prefix}-is-open {
