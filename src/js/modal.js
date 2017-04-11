@@ -2,18 +2,18 @@ import Util from './util';
 
 const Modal = (($) => {
 
-   const NAME = 'modal';
-   const DATA_KEY = 'sv.modal';
-   const NO_CONFLICT = $.fn[NAME];
-   const SELECTOR = '[data-modal]';
-   const DISMISS_SELECTOR = '[data-modal-dismiss]';
-   const MODIFIER_BASE = 'sv-modal--';
+   const ANIMATION = 'sv-animation-in-progress';
    const BACKDROP = 'sv-modal__backdrop';
    const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
-   const SHOW = 'show';
+   const DATA_KEY = 'sv.modal';
+   const DISMISS_SELECTOR = '[data-modal-dismiss]';
    const ESCAPE_KEY = 27;
-   const ANIMATION = 'sv-animation-in-progress';
    const FOCUSIN = 'focusin.sv-modal';
+   const MODIFIER_BASE = 'sv-modal--';
+   const NAME = 'modal';
+   const NO_CONFLICT = $.fn[NAME];
+   const SELECTOR = '[data-modal]';
+   const SHOW = 'show';
    const TAB_KEY = 9;
 
    const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
