@@ -14,6 +14,9 @@ const Modal = (($) => {
    const ESCAPE_KEY = 27;
    const ANIMATION = 'sv-animation-in-progress';
    const FOCUSIN = 'focusin.sv-modal';
+   const TAB_KEY = 9;
+
+   const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
    const EVENTS = {
       HIDE: 'hide.sv-modal',
@@ -116,10 +119,29 @@ const Modal = (($) => {
                }
             });
 
+         let focusableElements = this.el[0].querySelectorAll(focusableElementsString);
+         focusableElements = Array.prototype.slice.call(focusableElements);
+
+         const firstElement = focusableElements[0];
+         const lastElement = focusableElements[focusableElements.length - 1];
+
          this.$el.on('keydown', (event) => {
             if (this.$backdrop.hasClass(ANIMATION)) {
                return;
             }
+
+            if (event.keyCode === TAB_KEY) {
+               if (event.shiftKey) {
+                  if (event.target === firstElement) {
+                     event.preventDefault();
+                     lastElement.focus();
+                  }
+               } else if (event.target === lastElement) {
+                  event.preventDefault();
+                  firstElement.focus();
+               }
+            }
+
             if (event.which === ESCAPE_KEY) {
                this.hide();
             }
@@ -127,9 +149,7 @@ const Modal = (($) => {
       }
 
       _unbindEvents() {
-         this.$el
-               .off('click keydown');
-
+         this.$el.off('click keydown');
          $(document).off(FOCUSIN);
       }
 
