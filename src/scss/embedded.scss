@@ -6,6 +6,17 @@
    &--horizontal {
       display: flex;
       flex-direction: row;
+
+      &__img {
+      flex: 1;
+      height: auto;
+      order: 1;
+      width: 35%;
+
+         &--right {
+            order: 3;
+         }
+      }
    }
 
    &__title,
@@ -54,17 +65,6 @@
       display: block;
       height: auto;
       width: 100%;
-   }
-
-   &__img--horizontal {
-      flex: 1;
-      height: auto;
-      order: 1;
-      width: 35%;
-
-      &--right {
-         order: 3;
-      }
    }
 }
 
