@@ -1,0 +1,70 @@
+.#{$prefix}-embedded {
+   background-color: rgba(0, 0, 0, .1);
+   overflow: hidden;
+   position: relative;
+
+   &--horizontal {
+      display: flex;
+      flex-direction: row;
+   }
+
+   &__title,
+   &__text {
+      line-height: $line-height-medium;
+      padding-top: $spacing-x-small;
+   }
+
+   &__block {
+      flex: 3;
+      order: 2;
+      padding: $spacing-medium;
+
+      button {
+         margin-top: $spacing-medium;
+         @include border-radius($radius-medium);
+         @include button-size($spacing-x-small, $spacing-small, $font-size-medium, $line-height-small)
+      }
+   }
+
+   &__block--overlay {
+      cursor: pointer;
+      left: 15%;
+      position: absolute;
+      text-align: center;
+      top: 30%;
+      width: 70%;
+
+
+      @media screen and (max-width: 769px) {
+         left: 5%;
+         padding-bottom: $spacing-small;
+         position: relative;
+         width: 90%;
+      }
+
+      &--right {
+         text-align: right;
+      }
+
+      &--left {
+         text-align: left;
+      }
+   }
+
+   &__img {
+      display: block;
+      height: auto;
+      width: 100%;
+   }
+
+   &__img--horizontal {
+      flex: 1;
+      height: auto;
+      order: 1;
+      width: 35%;
+
+      &--right {
+         order: 3;
+      }
+   }
+}
