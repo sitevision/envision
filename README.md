@@ -21,3 +21,6 @@ Markup should comply to the [WAI-ARIA standard](https://www.w3.org/TR/wai-aria-1
 
 ## Build docs ##
 From console run `jekyll serve`
+
+## License information ##
+Code coypright 2017, SiteVision AB. Code is released under the [MIT license](http://brokenlink)
