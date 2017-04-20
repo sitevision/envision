@@ -1,3 +1,9 @@
+/**
+ * --------------------------------------------------------------------------
+ * Licensed under MIT <TODO add url>
+ * --------------------------------------------------------------------------
+ */
+
 import Util from './util';
 
 const Modal = (($) => {
@@ -16,7 +22,7 @@ const Modal = (($) => {
    const SHOW = 'show';
    const TAB_KEY = 9;
 
-   const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+   const FOCUSABLE_ELEMENTS_SELECTOR = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
    const EVENTS = {
       HIDE: 'hide.sv-modal',
@@ -31,7 +37,6 @@ const Modal = (($) => {
          this.el = element;
          this.$el = $(element);
          this._isShown = false;
-         this._focus = false;
       }
 
       toggle() {
@@ -62,11 +67,7 @@ const Modal = (($) => {
          this._showBackdrop();
 
          this._isShown = true;
-
-         if (!this._focus) {
-            this._focus = true;
-            this.el.focus();
-         }
+         this.el.focus();
 
          this._bindEvents();
       }
@@ -95,13 +96,13 @@ const Modal = (($) => {
             .one(Util.getTranstionEndEvent(), hideModalCallback)
             .attr('aria-hidden', 'true')
             .css('opacity', 0)
+            .removeClass(MODIFIER_BASE + SHOW)
             .off('click', DISMISS_SELECTOR);
 
          this.$backdrop
             .one(Util.getTranstionEndEvent(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
 
-         this._focus = false;
          this._isShown = false;
          this._unbindEvents();
       }
@@ -119,30 +120,24 @@ const Modal = (($) => {
                }
             });
 
-         let focusableElements = this.el[0].querySelectorAll(focusableElementsString);
-         focusableElements = Array.prototype.slice.call(focusableElements);
-
+         const focusableElements = this.$el.find(FOCUSABLE_ELEMENTS_SELECTOR);
          const firstElement = focusableElements[0];
          const lastElement = focusableElements[focusableElements.length - 1];
 
-         this.$el.on('keydown', (event) => {
-            if (this.$backdrop.hasClass(ANIMATION)) {
-               return;
-            }
-
-            if (event.keyCode === TAB_KEY) {
-               if (event.shiftKey) {
-                  if (event.target === firstElement) {
-                     event.preventDefault();
+         this.$el.on('keydown', (e) => {
+            if (e.which === TAB_KEY) {
+               if (e.shiftKey) {
+                  if (e.target === firstElement) {
+                     e.preventDefault();
                      lastElement.focus();
                   }
-               } else if (event.target === lastElement) {
-                  event.preventDefault();
+               } else if (e.target === lastElement) {
+                  e.preventDefault();
                   firstElement.focus();
                }
             }
 
-            if (event.which === ESCAPE_KEY) {
+            if (e.which === ESCAPE_KEY) {
                this.hide();
             }
          });

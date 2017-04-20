@@ -1,3 +1,9 @@
+/**
+ * --------------------------------------------------------------------------
+ * Licensed under MIT <TODO add url>
+ * --------------------------------------------------------------------------
+ */
+
 const Util = (() => {
 
    const TRANSITIONS = {
@@ -8,10 +14,10 @@ const Util = (() => {
    };
 
    const ANIMATIONS = {
-      animation         : 'animationend',
       OAnimation        : 'oAnimationEnd',
       MozAnimation      : 'animationend',
-      WebkitAnimation   : 'webkitAnimationEnd'
+      WebkitAnimation   : 'webkitAnimationEnd',
+      animation         : 'animationend'
    };
 
    function getEndEvent(events) {
