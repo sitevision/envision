@@ -7,11 +7,11 @@
       display: flex;
       flex-direction: row;
 
-      &__img {
-      flex: 1;
-      height: auto;
-      order: 1;
-      width: 35%;
+      .#{$prefix}-embedded__img {
+         flex: 1;
+         height: auto;
+         order: 1;
+         width: 35%;
 
          &--right {
             order: 3;

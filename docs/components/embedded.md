@@ -21,13 +21,13 @@ group: components
 
 ## Example 2 ##
 
-Uses `{{ site.css_prefix }}-embedded--horizontal` and `{{ site.css_prefix }}-embedded--horizontal__img`.
-Use `{{ site.css_prefix }}-embedded--horizontal__img--right` to align image to the right. 
+Uses `{{ site.css_prefix }}-embedded--horizontal` and `{{ site.css_prefix }}-embedded__img`.
+Use `{{ site.css_prefix }}-embedded__img--right` to align image to the right. 
 
 {% example html%}
 
 <div class="{{ site.css_prefix }}-embedded {{ site.css_prefix }}-embedded--horizontal">
-   <img class="{{ site.css_prefix }}-embedded--horizontal__img" alt="Image alternative" src="https://unsplash.it/400/180?blur">
+   <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://unsplash.it/400/180?blur">
    <div class="{{ site.css_prefix }}-embedded__block">
       <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
       <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin. Jowl pastrami drumstick pig.</p>
@@ -37,7 +37,7 @@ Use `{{ site.css_prefix }}-embedded--horizontal__img--right` to align image to t
 <br />
 
 <div class="{{ site.css_prefix }}-embedded {{ site.css_prefix }}-embedded--horizontal">
-   <img class="{{ site.css_prefix }}-embedded--horizontal__img {{ site.css_prefix }}-embedded--horizontal__img--right" alt="Image alternative"
+   <img class="{{ site.css_prefix }}-embedded__img {{ site.css_prefix }}-embedded__img--right" alt="Image alternative"
       src="https://unsplash.it/400/180?blur">
    <div class="{{ site.css_prefix }}-embedded__block">
       <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
