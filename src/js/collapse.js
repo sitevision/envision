@@ -4,6 +4,8 @@
  * --------------------------------------------------------------------------
  */
 
+import Util from './util';
+
 const Collapse = (($) => {
 
    const ARIA_EXPANDED = 'aria-expanded';
@@ -13,13 +15,6 @@ const Collapse = (($) => {
    const NAME = 'collapse';
    const NO_CONFLICT = $.fn[NAME];
    const SHOW = 'show';
-
-   const TRANSITIONS = {
-      transition        : 'transitionend',
-      OTransition       : 'oTransitionEnd',
-      MozTransition     : 'transitionend',
-      WebkitTransition  : 'webkitTransitionEnd'
-   };
 
    class Collapse {
 
@@ -39,7 +34,7 @@ const Collapse = (($) => {
       show() {
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(this._whichTransitionEvent(), this._showTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
       }
 
@@ -48,7 +43,7 @@ const Collapse = (($) => {
             .height(this.$el.height())
             .removeClass(MODIFIER_BASE + SHOW)
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(this._whichTransitionEvent(), this._hideTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
             .height(0);
       }
 
@@ -70,19 +65,6 @@ const Collapse = (($) => {
          $target
             .removeClass(MODIFIER_BASE + COLLAPSING)
             .attr(ARIA_EXPANDED, false);
-      }
-
-      _whichTransitionEvent() {
-         const el = document.createElement('fakeelement');
-         let t;
-
-         for (t in TRANSITIONS) {
-            if (el.style[t] !== undefined) {
-               return TRANSITIONS[t];
-            }
-         }
-
-         return false;
       }
 
       static _jQuery(config) {

@@ -73,13 +73,11 @@ function doMinifyCSS() {
 
 function doBuildJS() {
    return gulp.src('src/js/**/*.js')
-      .pipe(header(BANNER, {pkg: packageJson}))
       .pipe(sourcemaps.init())
       .pipe(babel())
       .pipe(concat(`${PROJECT_NAME}.js`))
       .pipe(uglify())
       .pipe(sourcemaps.write('../dist/map'))
-      .pipe(header(BANNER, {pkg: packageJson}))
       .pipe(gulp.dest(DIST_FOLDER))
       .pipe(gulp.dest(DOCS_DIST_FOLDER));
 }

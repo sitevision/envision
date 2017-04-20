@@ -9,7 +9,7 @@ group: components
 
 {% example html %}
 
-<div class="{{ site.css_prefix }}-modal {{ site.css_prefix }}-demo__modal--default" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+<div class="{{ site.css_prefix }}-modal doc-demo__modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog">
       <section class="{{ site.css_prefix }}-modal__content">
          <header class="{{ site.css_prefix }}-modal__header">
@@ -21,7 +21,7 @@ group: components
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -34,7 +34,8 @@ group: components
 Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix }}-modal__footer--right` aligning footer descendents to the right.
 
 {% example html %}
-<button id="largeBtn" data-toggle="modal" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
+
+<button id="largeBtn" data-modal data-target="#example1" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
 
 <div id="example1" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--large">
@@ -48,7 +49,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer {{ site.css_prefix }}-modal__footer--right">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link" id="demo1">Cancel</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -58,7 +59,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
 
 Uses `{{ site.css_prefix }}-modal-dialog--small` 
 {%example html %}
-<button id="smallBtn" data-toggle="modal" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
+<button id="smallBtn" data-modal data-target="#example2" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
 
 <div id="example2" class="{{ site.css_prefix }}-modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--small">
@@ -72,7 +73,7 @@ Uses `{{ site.css_prefix }}-modal-dialog--small`
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
             <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link" id="demo2">Cancel</button>
+            <button type="button" data-modal-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -80,25 +81,41 @@ Uses `{{ site.css_prefix }}-modal-dialog--small`
 
 {% endexample %}
 
-<script>
+## Methods ##
 
-   var demo1 = document.getElementById("example1");
-   var demo2 = document.getElementById("example2");
+Show  
+`$('#myModal').modal('show')`
 
-   document.getElementById("largeBtn").addEventListener("click", function(event) {   
-      demo1.classList.toggle("{{ site.css_prefix }}-modal--show");
-   }); 
+Hide   
+`$('#myModal').modal('hide')`
 
-   document.getElementById("demo1").addEventListener("click", function(event) {
-      demo1.classList.toggle("{{ site.css_prefix }}-modal--show");
+Toggle   
+`$('#myModal').modal('toggle')`
+
+## Events ##
+`hide.sv-modal`
+```javascript
+   $('#myModal').on('hide.sv-modal', function() { 
+      // Do something... 
    });
+```
 
-   document.getElementById("smallBtn").addEventListener("click", function(event) {
-      demo2.classList.toggle("{{ site.css_prefix }}-modal--show");
+`hidden.sv-modal`
+```javascript
+   $('#myModal').on('hidden.sv-modal', function() { 
+      // Do something... 
    });
-
-   document.getElementById("demo2").addEventListener("click", function(event) {
-      demo2.classList.toggle("{{ site.css_prefix }}-modal--show");
+```
+`show.sv-modal`
+```javascript
+   $('#myModal').on('show.sv-modal', function() { 
+      // Do something... 
    });
+```
 
-</script>
+`shown.sv-modal`
+```javascript
+   $('#myModal').on('shown.sv-modal', function() { 
+      // Do something... 
+   });
+``` 

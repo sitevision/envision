@@ -102,6 +102,8 @@ $border-color-light:       rgba(0, 0, 0, .1);
 $color-focus:              #5cb3fd;
 
 // Z-index value
+
+$zindex-modal-backdrop:    1040;
 $zindex-modal:             1050;
 $zindex-dropdown:          1055;
 $zindex-popover:           1060;
