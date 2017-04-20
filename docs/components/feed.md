@@ -232,9 +232,9 @@ group: components
                   </div>
                   <div class="{{ site.css_prefix }}-media__body">
                      <header class="{{ site.css_prefix }}-comment__header">
-                        <h3 class="{{ site.css_prefix }}-font">
+                        <h4 class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--title">
                            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Anders</a>
-                        </h3>
+                        </h4>
                      </header>
                      <p class="{{ site.css_prefix }}-font">
                         Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros.

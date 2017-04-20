@@ -10,7 +10,7 @@ const babel          = require('gulp-babel');
 const eslint         = require('gulp-eslint');
 const concat         = require('gulp-concat');
 const uglify         = require('gulp-uglify');
-const pump           = require('pump');
+const header         = require('gulp-header');
 const packageJson    = require('./package.json');
 
 const BUILD_FOLDER = './build';
@@ -19,6 +19,13 @@ const DOCS_DIST_FOLDER = './docs/dist';
 
 const PROJECT_NAME = packageJson.name;
 
+const BANNER = `/**
+ * <%= pkg.name %> - <%= pkg.description %>
+ * @version v<%= pkg.version %>
+ * @link <%= pkg.homepage %>
+ * @license <%= pkg.license %>
+ */\n`;
+
 gulp.task('copyimages', doCopyImages);
 gulp.task('copyfonts', doCopyFonts);
 
@@ -26,11 +33,18 @@ gulp.task('hintcss', doCSSHint);
 gulp.task('hintjs', doJSHint);
 gulp.task('sass', doSass);
 gulp.task('autoprefix', ['sass'], doAutoprefix);
-gulp.task('minifycss', ['autoprefix'], doMinifyCSS);
-gulp.task('buildcss', ['hintcss', 'sass', 'autoprefix', 'minifycss']);
+gulp.task('addcssheader', ['autoprefix'], doAddCSSHeader);
+gulp.task('minifycss', ['addcssheader'], doMinifyCSS);
+gulp.task('buildcss', ['hintcss', 'sass', 'autoprefix', 'addcssheader', 'minifycss']);
 gulp.task('buildjs', ['hintjs'], doBuildJS);
 gulp.task('default', ['buildjs', 'buildcss', 'copyimages', 'copyfonts']);
 gulp.task('watch', doWatch);
+
+function doAddCSSHeader() {
+   return gulp.src(`${DIST_FOLDER}/*.css`)
+      .pipe(header(BANNER, {pkg: packageJson}))
+      .pipe(gulp.dest(`${DIST_FOLDER}`));
+}
 
 function doAutoprefix() {
    return gulp.src(`${BUILD_FOLDER}/${PROJECT_NAME}.css`)

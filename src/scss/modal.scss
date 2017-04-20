@@ -1,8 +1,8 @@
 .#{$prefix}-modal {
-   background-color: rgba(0, 0, 0, .7);
    bottom: 0;
-   display: block;
+   display: none;
    left: 0;
+   opacity: 0;
    outline: 0;
    overflow: hidden;
    overflow-x: hidden;
@@ -10,8 +10,13 @@
    position: fixed;
    right: 0;
    top: 0;
-   visibility: hidden;
+   transition: opacity .3s linear;
    z-index: $zindex-modal;
+
+   &--show {
+      display: block;
+      opacity: 1;
+   }
 
    &__dialog {
       @media (min-width: 768px) {
@@ -45,10 +50,6 @@
       position: relative;
    }
 
-   &--show {
-      visibility: visible;
-   }
-
    &__header {
       background-color: #cccccc;
       @include border-top-radius($radius-medium);
@@ -62,6 +63,23 @@
          font-weight: $font-weight-semibold;
          line-height: $line-height-large;
          margin: 0;
+      }
+   }
+
+   &__backdrop {
+      background-color: #000000;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      transition: opacity .3s linear;
+      z-index: $zindex-modal-backdrop;
+
+      &--in {
+         animation: #{$prefix}-fade .3s;
+         opacity: .5;
       }
    }
 
@@ -81,3 +99,7 @@
    }
 }
 
+@keyframes #{$prefix}-fade {
+   from { opacity: 0; }
+   to { opacity: .5; }
+}
