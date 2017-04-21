@@ -39,7 +39,7 @@ const Util = (() => {
          return getEndEvent(ANIMATIONS);
       },
 
-      getTranstionEndEvent() {
+      getTransitionEndEvent() {
          return getEndEvent(TRANSITIONS);
       }
    };

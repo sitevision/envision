@@ -4,7 +4,7 @@ title: Feed
 description: Feed description
 group: components
 ---
-## Simple post with attached image ##
+## Simple post with embedded attachment ##
 {% example html %}
 <article class="{{ site.css_prefix }}-post">
    <header class="{{ site.css_prefix }}-post__header {{ site.css_prefix }}-media">
@@ -34,7 +34,7 @@ group: components
    </div>
    <div class="{{ site.css_prefix }}-post__attachment">
       <div class="{{ site.css_prefix }}-embedded">
-         <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://unsplash.it/400/180?blur">
+         <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/300x100.png">
          <div class="{{ site.css_prefix }}-embedded__block">
             <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold">Lorem ipsum</h4>
             <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder.</p>

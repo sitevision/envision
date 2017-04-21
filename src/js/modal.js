@@ -57,7 +57,7 @@ const Modal = (($) => {
          const shownEvent = $.Event(EVENTS.SHOWN, {});
 
          this.$el
-            .one(Util.getTranstionEndEvent(), () => {
+            .one(Util.getTransitionEndEvent(), () => {
                this.$el.trigger(shownEvent);
             })
             .addClass(MODIFIER_BASE + SHOW)
@@ -92,13 +92,13 @@ const Modal = (($) => {
          this.$el.trigger(hideEvent);
 
          this.$el
-            .one(Util.getTranstionEndEvent(), hideModalCallback)
+            .one(Util.getTransitionEndEvent(), hideModalCallback)
             .attr('aria-hidden', 'true')
             .css('opacity', 0)
             .off('click', DISMISS_SELECTOR);
 
          this.$backdrop
-            .one(Util.getTranstionEndEvent(), removeBackdropCallback)
+            .one(Util.getTransitionEndEvent(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
 
          this._isShown = false;
