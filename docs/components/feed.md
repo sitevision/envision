@@ -33,9 +33,13 @@ group: components
       </p>
    </div>
    <div class="{{ site.css_prefix }}-post__attachment">
-      <a href="#">
-         <img src="https://placehold.it/250x250">
-      </a>
+      <div class="{{ site.css_prefix }}-embedded">
+         <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://unsplash.it/400/180?blur">
+         <div class="{{ site.css_prefix }}-embedded__block">
+            <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold">Lorem ipsum</h4>
+            <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder.</p>
+         </div>
+      </div>
    </div>
    <footer class="{{ site.css_prefix }}-post__footer">
       <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
