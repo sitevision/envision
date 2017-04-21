@@ -79,7 +79,6 @@ const Modal = (($) => {
 
          const hideModalCallback = () => {
             this.$el.removeClass(MODIFIER_BASE + SHOW);
-
             const hiddenEvent = $.Event(EVENTS.HIDDEN, {});
             this.$el.trigger(hiddenEvent);
          };
@@ -96,7 +95,6 @@ const Modal = (($) => {
             .one(Util.getTranstionEndEvent(), hideModalCallback)
             .attr('aria-hidden', 'true')
             .css('opacity', 0)
-            .removeClass(MODIFIER_BASE + SHOW)
             .off('click', DISMISS_SELECTOR);
 
          this.$backdrop
@@ -198,6 +196,7 @@ const Modal = (($) => {
                method.call(data);
                return;
             }
+
             data.show();
          });
       }
