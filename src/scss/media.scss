@@ -17,6 +17,17 @@
       }
    }
 
+   &__body,
+   &__figure {
+      &--center {
+         align-self: center;
+      }
+
+      &--bottom {
+         align-self: flex-end;
+      }
+   }
+
    &--column {
       flex-direction: column;
 

@@ -132,6 +132,27 @@ group: components
 </article>
 {% endexample %}
 
+Alignment modifiers can also be applied to elements within the media container (`__figure` & `__body`)
+
+{% example html %}
+<article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--column {{ site.css_prefix }}-media">
+   <div class="{{ site.css_prefix }}-media__figure {{ site.css_prefix }}-media__figure--center">
+      <a href="#">
+         <img class="{{ site.css_prefix }}-image" src="https://placehold.it/200x200.png">
+      </a>
+   </div>
+   <div class="{{ site.css_prefix }}-media__body">
+      <h3 class="{{ site.css_prefix }}-font">
+         <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">Emma</a>
+      </h3>
+      <p class="{{ site.css_prefix }}-font">
+         Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
+         Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.
+      </p>
+   </div>
+</article>
+{% endexample %}
+
 ### Bottom ###
 {% example html %}
 <article class="{{ site.css_prefix }}-media {{ site.css_prefix }}-media--bottom">
