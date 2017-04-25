@@ -33,9 +33,9 @@ Examples
 {% example html %}
 
 <div class="example-spacing"> 
-   <div class="sv-m-left--small"></div>
-   <div class="sv-m-around--large"></div>
-   <div class="sv-p-top--medium"></div>
+   <div class="{{ site.css_prefix }}-m-left--small"></div>
+   <div class="{{ site.css_prefix }}-m-around--large"></div>
+   <div class="{{ site.css_prefix }}-p-top--medium"></div>
 </div>
 
 {% endexample %}
