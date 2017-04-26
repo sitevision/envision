@@ -21,7 +21,6 @@ Examples
 
 <div class="example-display">
    <div class="{{ site.css_prefix }}-p-around--x-small {{ site.css_prefix }}-d--inline">Inline</div>
-   <div class="{{ site.css_prefix }}-p-around--x-small {{ site.css_prefix }}-d--inline">Inline</div>
    <div class="{{ site.css_prefix }}-p-around--x-small {{ site.css_prefix }}-d--block">Block</div>
    <div class="{{ site.css_prefix }}-p-around--x-small {{ site.css_prefix }}-d--flex">Flex</div>
    <div class="{{ site.css_prefix }}-p-around--x-small {{ site.css_prefix }}-d--none">None</div>
