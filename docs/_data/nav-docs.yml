@@ -25,6 +25,7 @@
 - title: Utils
   pages:
     - title: Accessibility
+    - title: Display
     - title: Flexbox
     - title: Icons
     - title: Spacing
