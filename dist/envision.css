@@ -4,6 +4,58 @@
  * @link 
  * @license MIT
  */
+.sv-assistive-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+  .sv-assistive-text--focusable:active, .sv-assistive-text--focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto; }
+
+.sv-clearfix::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.sv-collapse {
+  display: none; }
+  .sv-collapse--collapsing {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: height 0.4s ease;
+    transition: height 0.4s ease; }
+  .sv-collapse--show {
+    display: block; }
+
+.sv-flex--row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.sv-flex--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.sv-flex--column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+
 .sv-justify-content--end {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -64,40 +116,6 @@
 .sv-align-self--baseline {
   -ms-flex-item-align: baseline;
       align-self: baseline; }
-
-.sv-assistive-text {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0; }
-  .sv-assistive-text--focusable:active, .sv-assistive-text--focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto; }
-
-.sv-clearfix::after {
-  clear: both;
-  content: "";
-  display: table; }
-
-.sv-collapse {
-  display: none; }
-  .sv-collapse--collapsing {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    position: relative;
-    -webkit-transition: height 0.4s ease;
-    transition: height 0.4s ease; }
-  .sv-collapse--show {
-    display: block; }
 
 .sv-image {
   height: auto;

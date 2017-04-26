@@ -28,7 +28,8 @@
    background-color: #eee;
 }
 
-.example-alignment-container {
+.example-alignment-container,
+.example-direction-container {
    display: flex;
    height: 70px;
    background-color: #eee;
@@ -38,4 +39,8 @@
    > div {
       border: 1px solid rgba(0,0,0,.5);
    }
+}
+
+.example-direction-container {
+   height: auto;
 }
