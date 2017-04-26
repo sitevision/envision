@@ -99,6 +99,28 @@
   .sv-collapse--show {
     display: block; }
 
+.sv-d--inline {
+  display: inline; }
+
+.sv-d--block {
+  display: block; }
+
+.sv-d--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.sv-d--inline-block {
+  display: inline-block; }
+
+.sv-d--inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+.sv-d--none {
+  display: none; }
+
 .sv-image {
   height: auto;
   max-width: 100%; }
