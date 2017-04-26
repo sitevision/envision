@@ -1,11 +1,50 @@
 ---
 layout: docs
-title: Alignment
-description: Alignment description
+title: Flexbox
+description: Flexbox description
 group: utils
 ---
+## Direction ##
 
-## Justify content ##
+Applicable to flex containers (`display: flex`) to set direction of flex items. Utility classes are named using the format: `{{ site.css_prefix }}-flex--{value}`
+
+Valid values 
+* `row-reverse`
+* `column`
+* `column-reverse`
+
+Examples
+
+{% example html %}
+
+<div class="example-direction-container"> 
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 1</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 2</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 3</div>
+</div>
+
+<div class="example-direction-container {{ site.css_prefix }}-flex--row-reverse"> 
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 1</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 2</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 3</div>
+</div>
+
+<div class="example-direction-container {{ site.css_prefix }}-flex--column"> 
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 1</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 2</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 3</div>
+</div>
+
+<div class="example-direction-container {{ site.css_prefix }}-flex--column-reverse"> 
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 1</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 2</div>
+   <div class="{{ site.css_prefix }}-p-around--x-small">Item 3</div>
+</div>
+
+{% endexample %}
+
+## Alignment ##
+### Justify content ###
 
 Applicable to flex containers (`display: flex`). Utility classes are named using the format: `{{ site.css_prefix }}-justify-content--{value}`
 
@@ -51,7 +90,7 @@ Examples
 
 {% endexample %}
 
-## Align items ##
+### Align items ###
 
 Applicable to flex containers (`display: flex`). Utility classes are named using the format: `{{ site.css_prefix }}-align-items--{value}`
 
@@ -95,7 +134,7 @@ Valid values
 
 {% endexample %}
 
-## Align self ##
+### Align self ###
 
 Applicable to flex items (items within a flex container). Utility classes are named using the format: `{{ site.css_prefix }}-align-self--{value}`
 

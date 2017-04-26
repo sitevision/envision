@@ -1,3 +1,10 @@
+$flexDirectionValues: row-reverse column column-reverse;
+@each $value in $flexDirectionValues {
+   .#{$prefix}-flex--#{$value} {
+      flex-direction: $value;
+   }
+}
+
 @function getShortValue($value) {
    $start: str-index($value, '-');
    @return if($start, str-slice($value, $start + 1), $value);
