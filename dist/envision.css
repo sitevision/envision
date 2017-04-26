@@ -4,6 +4,67 @@
  * @link 
  * @license MIT
  */
+.sv-justify-content--end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.sv-justify-content--center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.sv-justify-content--between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.sv-justify-content--around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.sv-align-items--center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.sv-align-items--start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.sv-align-items--end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+
+.sv-align-items--baseline {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
+
+.sv-align-self--stretch {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch; }
+
+.sv-align-self--center {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center; }
+
+.sv-align-self--start {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+.sv-align-self--end {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
+.sv-align-self--baseline {
+  -ms-flex-item-align: baseline;
+      align-self: baseline; }
+
 .sv-assistive-text {
   position: absolute;
   width: 1px;

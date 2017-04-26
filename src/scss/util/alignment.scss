@@ -1,0 +1,28 @@
+@function getShortValue($value) {
+   $start: str-index($value, '-');
+   @return if($start, str-slice($value, $start + 1), $value);
+}
+
+$justifyContentValues: flex-end center space-between space-around;
+@each $value in $justifyContentValues {
+   $shortValue: getShortValue($value);
+   .#{$prefix}-justify-content--#{$shortValue} {
+      justify-content: $value;
+   }
+}
+
+$alignItemsValues: center flex-start flex-end baseline;
+@each $value in $alignItemsValues {
+   $shortValue: getShortValue($value);
+   .#{$prefix}-align-items--#{$shortValue} {
+      align-items: $value;
+   }
+}
+
+$alignSelfValues: stretch center flex-start flex-end baseline;
+@each $value in $alignSelfValues {
+   $shortValue: getShortValue($value);
+   .#{$prefix}-align-self--#{$shortValue} {
+      align-self: $value;
+   }
+}

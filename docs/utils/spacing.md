@@ -4,7 +4,7 @@ title: Spacing
 description: Spacing description
 group: utils
 ---
-Padding and margin utility classes are named using this format: `{{ site.css_prefix }}-{property}-{specifier}--{size}`
+Padding and margin utility classes are named using the format: `{{ site.css_prefix }}-{property}-{specifier}--{size}`
 
 Valid values for _property_
 * `m` for `margin`
