@@ -18,6 +18,7 @@ Valid values for _specifier_
 * `around`
 
 Valid values for _size_
+* `0`
 * `xxx-small`
 * `xx-small`
 * `x-small`

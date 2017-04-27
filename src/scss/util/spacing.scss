@@ -1,6 +1,7 @@
 $properties: margin padding;
 $specifiers: top right bottom left around;
 $sizes: (
+   0: 0,
    xxx-small: $spacing-xxx-small,
    xx-small: $spacing-xx-small,
    x-small: $spacing-x-small,
@@ -17,7 +18,7 @@ $sizes: (
          $p: str-slice($property, 0, 1);
          $prop: if($specifier == around, $property, #{$property}-#{$specifier});
          .#{$prefix}-#{$p}-#{$specifier}--#{$size} {
-            #{$prop}: $value;
+            #{$prop}: $value !important;
          }
       }
    }
