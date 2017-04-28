@@ -1245,6 +1245,11 @@
         -ms-flex-preferred-size: 8.33333%;
             flex-basis: 8.33333%;
         box-sizing: border-box; }
+    .sv-list--horizontal--responsive {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap; }
   .sv-list.sv-list-dividers--top > .sv-list__item {
     border-top: 1px solid #cccccc; }
   .sv-list.sv-list-dividers--bottom > .sv-list__item {

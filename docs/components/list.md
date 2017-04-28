@@ -84,34 +84,65 @@ Apply `.{{ site.css_prefix }}-list-dividers--*` to add dividers between items. V
 </ul>
 {% endexample %}
 
-## Horizontal list with fixed number of items per row ##
+### Fixed number of items per row ###
 Use modifiers `{{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--*`. Valid values: `1-12`
  
 {% example html %}
 <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--4">
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=1">
+      <div class="example-list-item">1</div>
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=2">   
+      <div class="example-list-item">2</div>      
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=3">
+      <div class="example-list-item">3</div>   
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=4">
+      <div class="example-list-item">4</div>   
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=5">
+      <div class="example-list-item">5</div>   
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=6">   
+      <div class="example-list-item">6</div>   
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=7">
+      <div class="example-list-item">7</div>
    </li>
    <li class="{{ site.css_prefix }}-list__item">
-      <img src="https://placehold.it/100x100&text=8">
+      <div class="example-list-item">8</div>
+   </li>
+</ul>
+{% endexample %}
+
+### Responsive horizontal list ###
+
+{% example html %}
+<ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list--horizontal--responsive">
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">1</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">2</div>   
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">3</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">4</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">5</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">6</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">7</div>
+   </li>
+   <li class="{{ site.css_prefix }}-list__item">
+      <div class="example-list-item-responsive">8</div>
    </li>
 </ul>
 {% endexample %}
