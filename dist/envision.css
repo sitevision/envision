@@ -480,6 +480,21 @@
 .sv-p-around--xxx-large {
   padding: 2em !important; }
 
+.sv-m-top--a {
+  margin-top: auto !important; }
+
+.sv-m-right--a {
+  margin-right: auto !important; }
+
+.sv-m-bottom--a {
+  margin-bottom: auto !important; }
+
+.sv-m-left--a {
+  margin-left: auto !important; }
+
+.sv-m-around--a {
+  margin: auto !important; }
+
 .sv-alert {
   border: 1px solid transparent;
   color: #878787;
