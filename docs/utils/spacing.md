@@ -19,6 +19,7 @@ Valid values for _specifier_
 
 Valid values for _size_
 * `0`
+* `a` auto, only applicble to `margin`
 * `xxx-small`
 * `xx-small`
 * `x-small`

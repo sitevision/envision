@@ -23,3 +23,10 @@ $sizes: (
       }
    }
 }
+
+@each $specifier in $specifiers {
+   $prop: if($specifier == around, margin, margin-#{$specifier});
+   .#{$prefix}-m-#{$specifier}--a {
+      #{$prop}: auto !important;
+   }
+}
