@@ -1139,6 +1139,18 @@
 .sv-icon--dropdown-menu:before {
   content: "\e900"; }
 
+.sv-icon--drag:before {
+  content: "\e917"; }
+
+.sv-icon--list-big:before {
+  content: "\e918"; }
+
+.sv-icon--list-small:before {
+  content: "\e919"; }
+
+.sv-icon--list:before {
+  content: "\e91a"; }
+
 .sv-link {
   border-radius: 0.125em;
   color: #373d3f;
