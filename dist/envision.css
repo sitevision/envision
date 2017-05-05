@@ -1649,6 +1649,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+  .sv-text--link-reset {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+    line-height: inherit;
+    font-size: inherit; }
   .sv-text .sv-link--title, .sv-text--title {
     font-size: 1em;
     font-weight: 500; }
