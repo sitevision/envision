@@ -1201,6 +1201,15 @@
 .sv-icon--list:before {
   content: "\e91a"; }
 
+.sv-icon--small {
+  font-size: 1em; }
+
+.sv-icon--medium {
+  font-size: 1.5em; }
+
+.sv-icon--large {
+  font-size: 2em; }
+
 .sv-link {
   border-radius: 0.125em;
   color: #373d3f;

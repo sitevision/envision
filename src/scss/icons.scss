@@ -107,3 +107,14 @@
 .#{$prefix}-icon--list:before {
   content: "\e91a";
 }
+
+$sizes: (
+   small: $spacing-medium,
+   medium: $spacing-x-large,
+   large: $spacing-xxx-large
+);
+@each $size, $value in $sizes {
+   .#{$prefix}-icon--#{$size} {
+      font-size: $value;
+   }
+}
