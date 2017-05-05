@@ -22,7 +22,7 @@
     clip: auto; }
 
 [class^="sv-border--"] {
-  border: 1px solid #666666; }
+  border: 1px solid #999999; }
 
 .sv-border--0 {
   border: 0 !important; }
@@ -40,19 +40,19 @@
   border-left: 0 !important; }
 
 .sv-border {
-  border: 1px solid #666666 !important; }
+  border: 1px solid #999999 !important; }
 
 .sv-border-top {
-  border-top: 1px solid #666666 !important; }
+  border-top: 1px solid #999999 !important; }
 
 .sv-border-right {
-  border-right: 1px solid #666666 !important; }
+  border-right: 1px solid #999999 !important; }
 
 .sv-border-bottom {
-  border-bottom: 1px solid #666666 !important; }
+  border-bottom: 1px solid #999999 !important; }
 
 .sv-border-left {
-  border-left: 1px solid #666666 !important; }
+  border-left: 1px solid #999999 !important; }
 
 .sv-clearfix::after {
   clear: both;
