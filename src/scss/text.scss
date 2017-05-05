@@ -23,10 +23,10 @@
 
    &--link-reset {
       color: inherit;
-      text-decoration: inherit;
       cursor: pointer;
-      line-height: inherit;
       font-size: inherit;
+      line-height: inherit;
+      text-decoration: inherit;
    }
 
    .#{$prefix}-link--title,

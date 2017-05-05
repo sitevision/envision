@@ -178,3 +178,20 @@ Valid values
 </div>
 
 {% endexample %}
+
+### Flex length ###
+
+Applicable to flex items (items within a flex container). Used to specify the length of the flex item, relative to the rest of the flex items inside the same container. 
+Utility classes are named using the format: `{{ site.css_prefix }}-flex-length--{value}`
+
+Valid values `1-10`
+
+{% example html %}
+
+<div class="sv-d--flex">
+   <div class="{{ site.css_prefix }}-flex-length--1 example-list-item">Sidebar</div> 
+   <div class="{{ site.css_prefix }}-flex-length--2 example-list-item">Main</div>
+   <div class="{{ site.css_prefix }}-flex-length--1 example-list-item">Sidebar</div>
+</div>
+
+{% endexample %}

@@ -33,3 +33,9 @@ $alignSelfValues: stretch center flex-start flex-end baseline;
       align-self: $value;
    }
 }
+
+@for $i from 1 through 10 {
+   .#{$prefix}-flex-length--#{$i} {
+      flex: $i;
+   }
+}
