@@ -1,0 +1,6 @@
+$alignProperties: baseline top middle bottom text-bottom text-top;
+@each $value in $alignProperties {
+   .#{$prefix}-align--#{$value} {
+      vertical-align: $value;
+   }
+}
