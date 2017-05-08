@@ -23,9 +23,18 @@
    margin-bottom: 15px;
 }
 
-.example-spacing > div {
-   height: 25px;
+.example-sizing > div,
+.example-sizing-h > div,
+.example-sizing > div {
    background-color: #eee;
+}
+
+.example-spacing {
+   height: 25px;
+}
+
+.example-sizing-h {
+   height: 100px;
 }
 
 .example-alignment-container,
