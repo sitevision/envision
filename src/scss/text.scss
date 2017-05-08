@@ -21,6 +21,14 @@
       @include truncate-text();
    }
 
+   &--link-reset {
+      color: inherit;
+      cursor: pointer;
+      font-size: inherit;
+      line-height: inherit;
+      text-decoration: inherit;
+   }
+
    .#{$prefix}-link--title,
    &--title {
       font-size: $font-size-medium;

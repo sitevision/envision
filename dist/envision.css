@@ -22,7 +22,7 @@
     clip: auto; }
 
 [class^="sv-border--"] {
-  border: 1px solid #666666; }
+  border: 1px solid #999999; }
 
 .sv-border--0 {
   border: 0 !important; }
@@ -40,19 +40,19 @@
   border-left: 0 !important; }
 
 .sv-border {
-  border: 1px solid #666666 !important; }
+  border: 1px solid #999999 !important; }
 
 .sv-border-top {
-  border-top: 1px solid #666666 !important; }
+  border-top: 1px solid #999999 !important; }
 
 .sv-border-right {
-  border-right: 1px solid #666666 !important; }
+  border-right: 1px solid #999999 !important; }
 
 .sv-border-bottom {
-  border-bottom: 1px solid #666666 !important; }
+  border-bottom: 1px solid #999999 !important; }
 
 .sv-border-left {
-  border-left: 1px solid #666666 !important; }
+  border-left: 1px solid #999999 !important; }
 
 .sv-clearfix::after {
   clear: both;
@@ -149,6 +149,56 @@
 .sv-align-self--baseline {
   -ms-flex-item-align: baseline;
       align-self: baseline; }
+
+.sv-flex-length--1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+.sv-flex-length--2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2; }
+
+.sv-flex-length--3 {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3; }
+
+.sv-flex-length--4 {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4; }
+
+.sv-flex-length--5 {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5; }
+
+.sv-flex-length--6 {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6; }
+
+.sv-flex-length--7 {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7; }
+
+.sv-flex-length--8 {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8; }
+
+.sv-flex-length--9 {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9; }
+
+.sv-flex-length--10 {
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10; }
 
 .sv-d--inline {
   display: inline; }
@@ -1157,6 +1207,27 @@
 .sv-icon--dropdown-menu:before {
   content: "\e900"; }
 
+.sv-icon--drag:before {
+  content: "\e917"; }
+
+.sv-icon--list-big:before {
+  content: "\e918"; }
+
+.sv-icon--list-small:before {
+  content: "\e919"; }
+
+.sv-icon--list:before {
+  content: "\e91a"; }
+
+.sv-icon--small {
+  font-size: 1em; }
+
+.sv-icon--medium {
+  font-size: 1.5em; }
+
+.sv-icon--large {
+  font-size: 2em; }
+
 .sv-link {
   border-radius: 0.125em;
   color: #373d3f;
@@ -1655,6 +1726,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+  .sv-text--link-reset {
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: inherit; }
   .sv-text .sv-link--title, .sv-text--title {
     font-size: 1em;
     font-weight: 500; }

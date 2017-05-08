@@ -21,3 +21,7 @@
 - className: -icon--comment
 - className: -icon--like
 - className: -icon--dropdown-menu
+- className: -icon--drag
+- className: -icon--list-big
+- className: -icon--list-small
+- className: -icon--list

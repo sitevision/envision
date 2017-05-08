@@ -5,6 +5,8 @@ description: Icons description
 group: utils
 ---
 
+## Types ##
+
 <div class="icons-demo">
    <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--6">
       {% for icon in site.data.icons %}
@@ -12,3 +14,24 @@ group: utils
       {% endfor %}
    </ul>
 </div>
+
+## Sizes ##
+
+Icon size utility classes are named using the format: `{{ site.css_prefix }}-icon--{size}`
+
+Valid values for _size_
+* `small`
+* `medium`
+* `large`
+
+{% example html %}
+
+<div class="icons-demo">
+   <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--small"></i></li>
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--medium"></i></li>
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--large"></i></li>
+   </ul>
+</div>
+
+{% endexample %}
