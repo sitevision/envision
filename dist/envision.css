@@ -545,6 +545,24 @@
 .sv-m-around--a {
   margin: auto !important; }
 
+.sv-align--baseline {
+  vertical-align: baseline !important; }
+
+.sv-align--top {
+  vertical-align: top !important; }
+
+.sv-align--middle {
+  vertical-align: middle !important; }
+
+.sv-align--bottom {
+  vertical-align: bottom !important; }
+
+.sv-align--text-bottom {
+  vertical-align: text-bottom !important; }
+
+.sv-align--text-top {
+  vertical-align: text-top !important; }
+
 .sv-alert {
   border: 1px solid transparent;
   color: #878787;
