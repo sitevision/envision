@@ -27,4 +27,34 @@
       border: 1px solid transparent;
       box-shadow: none;
    }
+
+   &--small {
+      .#{$prefix}-pagination__link {
+         padding: $spacing-xxx-small $spacing-x-small;
+      }
+   }
+
+   &--large {
+      .#{$prefix}-pagination__link {
+         padding: $spacing-x-small $spacing-medium;
+      }
+   }
+
+   &--x-large {
+      .#{$prefix}-pagination__link {
+         padding: $spacing-small $spacing-large;
+      }
+   }
+
+   &--xx-large {
+      .#{$prefix}-pagination__link {
+         padding: $spacing-medium $spacing-x-large;
+      }
+   }
+
+   &--xxx-large {
+      .#{$prefix}-pagination__link {
+         padding: $spacing-large $spacing-xx-large;
+      }
+   }
 }

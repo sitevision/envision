@@ -1615,6 +1615,21 @@
   border: 1px solid transparent;
   box-shadow: none; }
 
+.sv-pagination--small .sv-pagination__link {
+  padding: 0.125em 0.5em; }
+
+.sv-pagination--large .sv-pagination__link {
+  padding: 0.5em 1em; }
+
+.sv-pagination--x-large .sv-pagination__link {
+  padding: 0.75em 1.25em; }
+
+.sv-pagination--xx-large .sv-pagination__link {
+  padding: 1em 1.5em; }
+
+.sv-pagination--xxx-large .sv-pagination__link {
+  padding: 1.25em 1.75em; }
+
 .sv-popover {
   background-color: #f6f5f5;
   border: 1px solid #cccccc;
