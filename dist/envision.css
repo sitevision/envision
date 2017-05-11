@@ -1249,6 +1249,24 @@
 .sv-icon--list:before {
   content: "\e91a"; }
 
+.sv-icon--dot-big:before {
+  content: "\e90e"; }
+
+.sv-icon--dot-big-selected:before {
+  content: "\e925"; }
+
+.sv-icon--arrow-left:before {
+  content: "\e91b"; }
+
+.sv-icon--arrow-right:before {
+  content: "\e91c"; }
+
+.sv-icon--arrow-up:before {
+  content: "\e91d"; }
+
+.sv-icon--arrow-down:before {
+  content: "\e91e"; }
+
 .sv-icon--small {
   font-size: 1em; }
 
