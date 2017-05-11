@@ -27,6 +27,7 @@
       align-items: center;
       bottom: 0;
       display: flex;
+      font-size: 2em;
       justify-content: center;
       opacity: .5;
       position: absolute;
@@ -79,9 +80,7 @@
       justify-content: flex-start;
       left: 0;
       list-style: none;
-      // margin-left: 30px;
-      // margin-right: 30px;
-      overflow: hidden;
+      overflow: auto;
       padding-left: 0;
       right: 0;
       z-index: 15;
@@ -115,40 +114,8 @@
       right: 0;
       z-index: 15;
 
-      li {
-         background-color: rgba(255, 255, 255, .5);
+      li span {
          cursor: pointer;
-         flex: 1 0 auto;
-         height: 3px;
-         margin-left: 3px;
-         margin-right: 3px;
-         max-width: 30px;
-         position: relative;
-         text-indent: -999px;
-
-
-         &::before {
-            content: "";
-            display: inline-block;
-            height: 10px;
-            left: 0;
-            position: absolute;
-            top: -10px;
-            width: 100%;
-         }
-         &::after {
-            bottom: -10px;
-            content: "";
-            display: inline-block;
-            height: 10px;
-            left: 0;
-            position: absolute;
-            width: 100%;
-         }
-      }
-
-      .#{$prefix}-image-slider__item--active {
-         background-color: rgba(255, 255, 255, 1);
       }
    }
 

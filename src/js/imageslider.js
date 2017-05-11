@@ -19,67 +19,71 @@ const Imageslider = (($) => {
    const TOUCHEVENT_WAIT = 500;
 
    const DEFAULTS = {
-      interval    : 2000,
-      keyboard    : true,
-      slide       : false,
-      pause       : 'hover',
-      wrap        : true
+      interval: 5000,
+      keyboard: true,
+      slide: false,
+      pause: 'hover',
+      wrap: true,
+      imageSlider: false
    };
 
    const SELECTORS = {
-      ACTIVE               : '.sv-image-slider__item--active',
-      ACTIVE_ITEM          : '.sv-image-slider__item--active.sv-image-slider__item',
-      ITEM                 : '.sv-image-slider__item',
-      NEXT_PREV            : '.sv-image-slider--next, .sv-image-slider--prev',
-      INDICATORS           : '.sv-image-slider__indicators',
-      THUMBNAILS           : '.sv-image-slider__thumbnails',
-      DATA_SLIDE           : '[data-slide], [data-slide-to]',
-      DATA_IMAGE_SLIDER    : '[data-image-slider]'
+      ACTIVE: '.sv-image-slider__item--active',
+      ACTIVE_ITEM: '.sv-image-slider__item--active.sv-image-slider__item',
+      ITEM: '.sv-image-slider__item',
+      NEXT_PREV: '.sv-image-slider--next, .sv-image-slider--prev',
+      INDICATORS: '.sv-image-slider__indicators',
+      THUMBNAILS: '.sv-image-slider__thumbnails',
+      DATA_SLIDE: '[data-slide], [data-slide-to]',
+      DATA_IMAGE_SLIDER: '[data-image-slider="cycle"]',
+      ACTIVE_DOT: '.sv-icon--dot-big-selected',
+      DOT: '.sv-icon--dot-big'
    };
 
    const ClassName = {
-      IMAGESLIDER : 'sv-image-slider',
-      ACTIVE      : 'sv-image-slider__item--active',
-      NEXT        : 'sv-image-slider__item--next',
-      RIGHT       : 'sv-image-slider__item--right',
-      PREV        : 'sv-image-slider__item--prev',
-      LEFT        : 'sv-image-slider__item--left',
-      SLIDE       : 'sv-image-slider--slide'
+      IMAGESLIDER: 'sv-image-slider',
+      ACTIVE: 'sv-image-slider__item--active',
+      NEXT: 'sv-image-slider__item--next',
+      RIGHT: 'sv-image-slider__item--right',
+      PREV: 'sv-image-slider__item--prev',
+      LEFT: 'sv-image-slider__item--left',
+      SLIDE: 'sv-image-slider--slide',
+      ACTIVE_DOT: 'sv-icon--dot-big-selected',
+      DOT: 'sv-icon--dot-big'
    };
    const Direction = {
-      NEXT     : 'next',
-      PREV     : 'prev',
-      LEFT     : 'left',
-      RIGHT    : 'right'
+      NEXT: 'next',
+      PREV: 'prev',
+      LEFT: 'left',
+      RIGHT: 'right'
    };
 
    const Events = {
-      SLID           : `slid${EVENT_KEY}`,
-      SLIDE          : `slide${EVENT_KEY}`,
-      LOAD_DATA_API  : `load${EVENT_KEY}${DATA_API_KEY}`,
-      CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`,
-      MOUSEENTER     : `mouseenter${EVENT_KEY}`,
-      MOUSELEAVE     : `mouseleave${EVENT_KEY}`,
-      TOUCHEND       : `touchend${EVENT_KEY}`,
-      KEYDOWN        : `keydown${EVENT_KEY}`
+      SLID: `slid${EVENT_KEY}`,
+      SLIDE: `slide${EVENT_KEY}`,
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
+      CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+      MOUSEENTER: `mouseenter${EVENT_KEY}`,
+      MOUSELEAVE: `mouseleave${EVENT_KEY}`,
+      TOUCHEND: `touchend${EVENT_KEY}`,
+      KEYDOWN: `keydown${EVENT_KEY}`
    };
 
    class Imageslider {
 
       constructor(element, config) {
-         this.el                 = element;
-         this.$el                = $(element);
-         this.$images            = this.$el.find(INNER_SLIDER).children();
+         this.el = element;
+         this.$el = $(element);
+         this.$images = this.$el.find(INNER_SLIDER).children();
 
-         this._isSliding         = false;
-         this._isPaused          = false;
-         this._interval          = null;
+         this._isSliding = false;
+         this._isPaused = false;
+         this._interval = null;
 
-         this._activeElement     = null;
-         this._wrap              = true;
+         this._activeElement = null;
          this._indicatorsElement = this.$el.find(SELECTORS.INDICATORS)[0];
          this._thumbnailElements = this.$el.find(SELECTORS.THUMBNAILS)[0];
-         this.config             = $.extend({}, DEFAULTS, this.$el.data(), config);
+         this.config = $.extend({}, DEFAULTS, this.$el.data(), config);
 
          this._bindEvents();
       }
@@ -161,12 +165,12 @@ const Imageslider = (($) => {
          this.$el.off(EVENT_KEY);
          $.removeData(this.el, DATA_KEY);
 
-         this.el                 = null;
-         this.$images            = null;
-         this._interval          = null;
-         this._isPaused          = null;
-         this._isSliding         = null;
-         this._activeElement     = null;
+         this.el = null;
+         this.$images = null;
+         this._interval = null;
+         this._isPaused = null;
+         this._isSliding = null;
+         this._activeElement = null;
          this._indicatorsElement = null;
          this._thumbnailElements = null;
       }
@@ -178,15 +182,15 @@ const Imageslider = (($) => {
          const lastImageIndex = this.$images.length - 1;
          const isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastImageIndex;
 
-         if (isGoingToWrap && !this._wrap) {
+         if (isGoingToWrap && !this.config.wrap) {
             return activeElement;
          }
 
-         const delta     = direction === Direction.PREV ? -1 : 1;
+         const delta = direction === Direction.PREV ? -1 : 1;
          const itemIndex = (activeIndex + delta) % this.$images.length;
 
          return itemIndex === -1 ?
-         this.$images[this.$images.length - 1] : this.$images[itemIndex];
+            this.$images[this.$images.length - 1] : this.$images[itemIndex];
       }
 
       _bindEvents() {
@@ -195,7 +199,7 @@ const Imageslider = (($) => {
                .on(Events.KEYDOWN, (event) => this._keydown(event));
          }
 
-         if (this.config.pause === 'hover') {
+         if (this.config.pause === 'hover' && this.config.imageSlider === 'cycle') {
             this.$el
                .on(Events.MOUSEENTER, (event) => this.pause(event))
                .on(Events.MOUSELEAVE, (event) => this.cycle(event));
@@ -254,13 +258,14 @@ const Imageslider = (($) => {
       _setActiveIndicatorElement(element) {
          if (this._indicatorsElement) {
             $(this._indicatorsElement)
-               .find(SELECTORS.ACTIVE)
-               .removeClass(ClassName.ACTIVE);
+               .find(SELECTORS.ACTIVE_DOT)
+               .removeClass(ClassName.ACTIVE_DOT)
+               .addClass(ClassName.DOT);
 
-            const nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
+            const nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)].firstElementChild;
 
             if (nextIndicator) {
-               $(nextIndicator).addClass(ClassName.ACTIVE);
+               $(nextIndicator).addClass(ClassName.ACTIVE_DOT);
             }
          } else if (this._thumbnailElements) {
             $(this._thumbnailElements)
@@ -366,9 +371,8 @@ const Imageslider = (($) => {
 
             const action = typeof config === 'string' ? config : _config.slide;
 
-
             if (!data) {
-               data = new Imageslider(this);
+               data = new Imageslider(this, _config);
                $(this).data(DATA_KEY, data);
             }
 
@@ -379,7 +383,7 @@ const Imageslider = (($) => {
                   throw new Error(`No method named "${action}"`);
                }
                data[action]();
-            } else if (_config.interval && _config.imageCycle) {
+            } else if (_config.interval && _config.imageSlider === 'cycle') {
                data.pause();
                data.cycle();
             }
@@ -399,7 +403,7 @@ const Imageslider = (($) => {
             return;
          }
 
-         const config     = $.extend({}, $(target).data(), $(this).data());
+         const config = $.extend({}, $(target).data(), $(this).data());
          const slideIndex = this.getAttribute('data-slide-to');
 
          if (slideIndex) {
@@ -414,7 +418,7 @@ const Imageslider = (($) => {
 
          event.preventDefault();
       }
-  }
+   }
 
    $(document)
       .on(Events.CLICK_DATA_API, SELECTORS.DATA_SLIDE, Imageslider._dataApiClickHandler);
@@ -427,9 +431,9 @@ const Imageslider = (($) => {
       });
    });
 
-   $.fn[NAME]             = Imageslider._jQueryInterface;
+   $.fn[NAME] = Imageslider._jQueryInterface;
    $.fn[NAME].Constructor = Imageslider;
-   $.fn[NAME].noConflict  = () => {
+   $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
       return Imageslider._jQueryInterface;
    };
@@ -439,3 +443,4 @@ const Imageslider = (($) => {
 })(jQuery);
 
 export default Imageslider;
+
