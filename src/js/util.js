@@ -41,6 +41,24 @@ const Util = (() => {
 
       getTransitionEndEvent() {
          return getEndEvent(TRANSITIONS);
+      },
+
+      reflow(element) {
+         return element.offsetHeight;
+      },
+
+      getSelectorFromElement(element) {
+         let selector = element.getAttribute('data-target');
+         if (!selector || selector === '#') {
+            selector = element.getAttribute('href') || '';
+         }
+
+         try {
+            const $selector = $(selector);
+            return $selector.length > 0 ? selector : null;
+         } catch (error) {
+            return null;
+         }
       }
    };
 
