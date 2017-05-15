@@ -8,24 +8,19 @@
    &--horizontal {
       display: flex;
       flex-direction: row;
+   }
 
-      &__container {
-         flex: 1;
-         order: 1;
+   &__img-container {
+      flex: 1;
+      order: 1;
 
-         &--right {
-            order: 3;
-         }
+      &--right {
+         order: 3;
 
          .#{$prefix}-embedded__img {
             float: right;
          }
       }
-   }
-
-   &__container {
-      flex: 1;
-      order: 1;
    }
 
    &__title,

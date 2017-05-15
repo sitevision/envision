@@ -9,7 +9,7 @@ group: components
 {% example html %}
 
 <div class="{{ site.css_prefix }}-embedded" style="width:20em">
-   <div class="{{ site.css_prefix }}-embedded__container">
+   <div class="{{ site.css_prefix }}-embedded__img-container">
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/640x480.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
@@ -24,12 +24,12 @@ group: components
 ## Example 2 ##
 
 Uses `{{ site.css_prefix }}-embedded--horizontal` and `{{ site.css_prefix }}-embedded__img`.
-Use `{{ site.css_prefix }}-embedded--horizontal__container--right` to align image to the right. 
+Use `{{ site.css_prefix }}-embedded__img-container--right` to align image to the right. 
 
 {% example html%}
 
 <div class="{{ site.css_prefix }}-embedded {{ site.css_prefix }}-embedded--horizontal">
-   <div class="{{ site.css_prefix }}-embedded__container">
+   <div class="{{ site.css_prefix }}-embedded__img-container">
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/270x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
@@ -41,7 +41,7 @@ Use `{{ site.css_prefix }}-embedded--horizontal__container--right` to align imag
 <br />
 
 <div class="{{ site.css_prefix }}-embedded {{ site.css_prefix }}-embedded--horizontal">
-   <div class="{{ site.css_prefix }}-embedded--horizontal__container  {{ site.css_prefix }}-embedded--horizontal__container--right">
+   <div class="{{ site.css_prefix }}-embedded__img-container {{ site.css_prefix }}-embedded__img-container--right">
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative"
          src="https://placehold.it/270x180.png">
    </div>
@@ -58,7 +58,7 @@ Use `{{ site.css_prefix }}-embedded--horizontal__container--right` to align imag
 {% example html %}
 
 <div class="{{ site.css_prefix }}-embedded">
-   <div class="{{ site.css_prefix }}-embedded__container">
+   <div class="{{ site.css_prefix }}-embedded__img-container">
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/769x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
@@ -77,7 +77,7 @@ You can align text to left or right with `{{ site.css_prefix }}-embedded__block-
 {% example html %}
 
 <div class="{{ site.css_prefix }}-embedded {{ site.css_prefix }}-embedded--cover">
-   <div class="{{ site.css_prefix }}-embedded__container">
+   <div class="{{ site.css_prefix }}-embedded__img-container">
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/769x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block--overlay">
