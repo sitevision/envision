@@ -1,5 +1,7 @@
 .#{$prefix}-embedded {
    background-color: rgba(0, 0, 0, .1);
+   display: flex;
+   flex-direction: column;
    overflow: hidden;
    position: relative;
 
@@ -7,16 +9,23 @@
       display: flex;
       flex-direction: row;
 
-      .#{$prefix}-embedded__img {
+      &__container {
          flex: 1;
-         height: auto;
          order: 1;
-         width: 35%;
 
          &--right {
             order: 3;
          }
+
+         .#{$prefix}-embedded__img {
+            float: right;
+         }
       }
+   }
+
+   &__container {
+      flex: 1;
+      order: 1;
    }
 
    &__title,
@@ -27,6 +36,7 @@
 
    &__block {
       flex: 3;
+      flex-grow: 2;
       order: 2;
       padding: $spacing-medium;
 
@@ -38,11 +48,10 @@
    }
 
    &__block--overlay {
-      cursor: pointer;
       left: 15%;
       position: absolute;
       text-align: center;
-      top: 30%;
+      top: 15%;
       width: 70%;
 
       @media screen and (max-width: 769px) {
@@ -64,7 +73,6 @@
    &__img {
       display: block;
       height: auto;
-      width: 100%;
+      max-width: 100%;
    }
 }
-
