@@ -138,7 +138,6 @@ const Imageslider = (($) => {
 
          const activeIndex = this._getItemIndex(this._activeElement);
 
-
          if (index > this.$images.length - 1 || index < 0) {
             return;
          }
@@ -162,7 +161,7 @@ const Imageslider = (($) => {
       }
 
       dispose() {
-         this.$el.off(EVENT_KEY).removeData(this.el, DATA_KEY);
+         this.$el.off(EVENT_KEY).removeData(DATA_KEY);
 
          this.el = null;
          this.$images = null;
@@ -178,17 +177,17 @@ const Imageslider = (($) => {
          const isNextDirection = direction === Direction.NEXT;
          const activeIndex = this._getItemIndex(activeElement);
          const lastImageIndex = this.$images.length - 1;
-         const isGoingToWrap = !isNextDirection && activeIndex === 0 || isNextDirection && activeIndex === lastImageIndex;
+         const isGoingToWrap = (!isNextDirection && activeIndex === 0) || (isNextDirection && activeIndex === lastImageIndex);
 
          if (isGoingToWrap && !this.config.wrap) {
             return activeElement;
          }
 
-         const delta = direction === Direction.PREV ? -1 : 1;
+         const delta = isNextDirection ? 1 : -1;
          const itemIndex = (activeIndex + delta) % this.$images.length;
 
          return itemIndex === -1 ?
-            this.$images[this.$images.length - 1] : this.$images[itemIndex];
+            this.$images[lastImageIndex] : this.$images[itemIndex];
       }
 
       _bindEvents() {
@@ -297,7 +296,9 @@ const Imageslider = (($) => {
             eventDirectionName = Direction.RIGHT;
          }
 
-         if (nextElement && $(nextElement).hasClass(ClassName.ACTIVE)) {
+         const $nextElement = $(nextElement);
+
+         if (nextElement && $nextElement.hasClass(ClassName.ACTIVE)) {
             this._isSliding = false;
             return;
          }
@@ -323,7 +324,6 @@ const Imageslider = (($) => {
             to: nextElementIndex
          });
 
-         const $nextElement = $(nextElement);
          const $activeElement = $(activeElement);
 
          if (this.$el.hasClass(ClassName.SLIDE)) {
