@@ -135,7 +135,7 @@
     "id-blacklist": "error",
     "id-length": "off",
     "id-match": "error",
-    "indent": ["error", 3, { "SwitchCase": 3 }],
+    "indent": ["error", 3, { "SwitchCase": 1 }],
     "jsx-quotes": "error",
     "key-spacing": "off",
     "keyword-spacing": "error",

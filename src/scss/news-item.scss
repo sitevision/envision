@@ -1,0 +1,24 @@
+.#{$prefix}-news-item {
+   background-color: $color-element-bg;
+   display: flex;
+   flex-direction: column;
+   margin: $spacing-xxx-small;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+
+   &__media {
+      padding: $spacing-x-small;
+   }
+
+   &__headline {
+      padding: 0 $spacing-x-small;
+   }
+
+   &__preamble {
+      padding: $spacing-x-small;
+   }
+
+   &__footer {
+      padding: $spacing-x-small;
+   }
+}
