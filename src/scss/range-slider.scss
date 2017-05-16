@@ -1,0 +1,36 @@
+.#{$prefix}-range-slider {
+   @include border-radius($radius-small);
+
+   border: 1px solid $border-color;
+   height: $spacing-small;
+   position: relative;
+
+   &__handle {
+      @include border-radius($radius-small);
+
+      background: $color-lighter;
+      border: 1px solid $border-color;
+      height: $spacing-medium;
+      margin-left: -.5em;
+      position: absolute;
+      top: -.15em;
+      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      width: $spacing-medium;
+
+      &:focus {
+         @include focus();
+      }
+   }
+
+   &__handle-value {
+      margin-left: -.5em !important;
+      position: absolute;
+      top: $spacing-large;
+   }
+
+   &__range {
+      background: $color-brand;
+      height: 100%;
+      position: absolute;
+   }
+}
