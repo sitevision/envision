@@ -1249,6 +1249,24 @@
 .sv-icon--list:before {
   content: "\e91a"; }
 
+.sv-icon--dot-big:before {
+  content: "\e90e"; }
+
+.sv-icon--dot-big-selected:before {
+  content: "\e925"; }
+
+.sv-icon--arrow-left:before {
+  content: "\e91b"; }
+
+.sv-icon--arrow-right:before {
+  content: "\e91c"; }
+
+.sv-icon--arrow-up:before {
+  content: "\e91d"; }
+
+.sv-icon--arrow-down:before {
+  content: "\e91e"; }
+
 .sv-icon--small {
   font-size: 1em; }
 
@@ -1258,10 +1276,122 @@
 .sv-icon--large {
   font-size: 2em; }
 
-.sv-icon--inactive {
-  opacity: .3; }
-  .sv-icon--inactive:hover {
-    opacity: .6; }
+.sv-image-slider {
+  position: relative; }
+  .sv-image-slider__inner {
+    overflow: hidden;
+    position: relative;
+    width: 100%; }
+  .sv-image-slider__item {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    display: none;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    position: relative;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+    width: 100%; }
+  .sv-image-slider__item--active, .sv-image-slider__item--prev, .sv-image-slider__item--next {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .sv-image-slider--next, .sv-image-slider--prev {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    opacity: .5;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 15%; }
+  .sv-image-slider--next {
+    right: 0; }
+  .sv-image-slider--prev {
+    left: 0; }
+  .sv-image-slider__item--next, .sv-image-slider__item--prev {
+    position: absolute;
+    top: 0; }
+  .sv-image-slider--next-icon, .sv-image-slider--prev-icon {
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 20%;
+    width: 20%; }
+  .sv-image-slider__item--next.sv-image-slider__item--left, .sv-image-slider__item--prev.sv-image-slider__item--right {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  .sv-image-slider__item--next, .sv-image-slider__item--active.sv-image-slider__item--right {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0); }
+  .sv-image-slider__item--prev, .sv-image-slider__item--active.sv-image-slider__item--left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0); }
+  .sv-image-slider__thumbnails {
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    left: 0;
+    list-style: none;
+    margin-top: 0.5em;
+    overflow: auto;
+    padding-left: 0;
+    right: 0;
+    z-index: 15; }
+    .sv-image-slider__thumbnails li {
+      cursor: pointer;
+      margin-right: 0.5em;
+      position: relative; }
+    .sv-image-slider__thumbnails .sv-image-slider__thumbnail {
+      max-width: 90px;
+      opacity: .4; }
+    .sv-image-slider__thumbnails .sv-image-slider__item--active {
+      opacity: 1; }
+  .sv-image-slider__indicators {
+    bottom: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 0;
+    list-style: none;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 15; }
+    .sv-image-slider__indicators li span {
+      cursor: pointer; }
+  .sv-image-slider__caption {
+    bottom: 20px;
+    color: white;
+    left: 15%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: absolute;
+    right: 15%;
+    text-align: center;
+    z-index: 15; }
 
 .sv-link {
   border-radius: 0.125em;

@@ -107,6 +107,24 @@
 .#{$prefix}-icon--list:before {
   content: "\e91a";
 }
+.#{$prefix}-icon--dot-big:before {
+  content: "\e90e";
+}
+.#{$prefix}-icon--dot-big-selected:before {
+  content: "\e925";
+}
+.#{$prefix}-icon--arrow-left:before {
+  content: "\e91b";
+}
+.#{$prefix}-icon--arrow-right:before {
+  content: "\e91c";
+}
+.#{$prefix}-icon--arrow-up:before {
+  content: "\e91d";
+}
+.#{$prefix}-icon--arrow-down:before {
+  content: "\e91e";
+}
 
 $sizes: (
    small: $spacing-medium,
