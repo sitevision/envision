@@ -1315,6 +1315,7 @@
     opacity: .5;
     position: absolute;
     text-align: center;
+    text-decoration: none;
     top: 0;
     width: 15%; }
   .sv-image-slider--next {
@@ -1986,8 +1987,10 @@
   .sv-text-size--large {
     font-size: 1.25em; }
   .sv-text-size--x-large {
+    font-size: 1.875em; }
+  .sv-text-size--xx-large {
     font-size: 2.5em; }
-  .sv-text-size--super {
+  .sv-text-size--xxx-large {
     font-size: 3.75em; }
   .sv-text-align--left {
     text-align: left; }
