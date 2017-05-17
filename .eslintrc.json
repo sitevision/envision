@@ -13,7 +13,7 @@
   },
   "rules": {
     // Possible Errors
-    "no-extra-parens": "error",
+    "no-extra-parens": 1,
     "no-prototype-builtins": "off",
     "no-template-curly-in-string": "error",
     "no-unsafe-negation": "error",
@@ -135,7 +135,7 @@
     "id-blacklist": "error",
     "id-length": "off",
     "id-match": "error",
-    "indent": ["error", 3, { "SwitchCase": 3 }],
+    "indent": ["error", 3, { "SwitchCase": 1 }],
     "jsx-quotes": "error",
     "key-spacing": "off",
     "keyword-spacing": "error",

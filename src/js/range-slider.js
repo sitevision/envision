@@ -207,17 +207,17 @@ const RangeSlider = (($) => {
 
       _initKeySlide(e) {
          switch (e.keyCode) {
-                  case KEY_UP:
-                  case KEY_DOWN:
-                  case KEY_LEFT:
-                  case KEY_RIGHT:
-                     e.preventDefault();
-                     if (!this._keySliding) {
-                        this._keySliding = true;
-                     }
-                     break;
-                  default:
-                     return;
+            case KEY_UP:
+            case KEY_DOWN:
+            case KEY_LEFT:
+            case KEY_RIGHT:
+               e.preventDefault();
+               if (!this._keySliding) {
+                  this._keySliding = true;
+               }
+               break;
+            default:
+               return;
          }
 
          const index = $(e.target).data(HANDLE_INDEX);
@@ -225,21 +225,21 @@ const RangeSlider = (($) => {
          let newVal;
 
          switch (event.keyCode) {
-                  case KEY_UP:
-                  case KEY_RIGHT:
-                     if (curVal === this.config.max) {
-                        return;
-                     }
-                     newVal = this._trimAlignValue(curVal + this.config.step);
-                     break;
-                  case KEY_DOWN:
-                  case KEY_LEFT:
-                     if (curVal === this.config.min) {
-                        return;
-                     }
-                     newVal = this._trimAlignValue(curVal - this.config.step);
-                     break;
-                  default:
+            case KEY_UP:
+            case KEY_RIGHT:
+               if (curVal === this.config.max) {
+                  return;
+               }
+               newVal = this._trimAlignValue(curVal + this.config.step);
+               break;
+            case KEY_DOWN:
+            case KEY_LEFT:
+               if (curVal === this.config.min) {
+                  return;
+               }
+               newVal = this._trimAlignValue(curVal - this.config.step);
+               break;
+            default:
          }
 
          this._slide(e, index, newVal);

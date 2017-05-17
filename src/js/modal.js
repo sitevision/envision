@@ -48,7 +48,7 @@ const Modal = (($) => {
             return;
          }
 
-         this.$el.outerWidth(); // Used to force reflow
+         Util.reflow(this.el); // Used to force reflow
 
          const showEvent = $.Event(EVENTS.SHOW, {});
 
