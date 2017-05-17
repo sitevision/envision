@@ -13,13 +13,13 @@ group: components
 <div data-image-slider="cycle" class="{{ site.css_prefix }}-image-slider {{ site.css_prefix }}-image-slider--slide">
    <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+         <img src="https://unsplash.it/800/400/" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
       </div>
    </div>
 </div>
@@ -33,20 +33,20 @@ group: components
 <div id="exampleSlider1" class="{{ site.css_prefix }}-image-slider {{ site.css_prefix }}-image-slider--slide">
    <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+         <img src="https://unsplash.it/800/400/" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
       </div>
    </div>
-   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-slide="prev" href="#exampleSlider1">
+   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-move="prev" href="#exampleSlider1">
       <span class="{{ site.css_prefix }}-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Previous</span>
    </a>
-   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-slide="next" href="#exampleSlider1">
+   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-move="next" href="#exampleSlider1">
       <span class="{{ site.css_prefix }}-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Next</span>
    </a>
@@ -60,32 +60,32 @@ group: components
 
 <div id="exampleSlider2" data-image-slider="cycle" class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
    <ol class="{{ site.css_prefix }}-image-slider__indicators">
-      <li data-target="#exampleSlider2" data-slide-to="0">
+      <li data-target="#exampleSlider2" data-move-to="0">
          <span class="{{ site.css_prefix }}-icon--dot-big-selected {{ site.css_prefix }}-icon--large"></span>
       </li>
-      <li data-target="#exampleSlider2" data-slide-to="1">
+      <li data-target="#exampleSlider2" data-move-to="1">
          <span class="{{ site.css_prefix }}-icon--dot-big {{ site.css_prefix }}-icon--large"></span>
       </li>
-      <li data-target="#exampleSlider2" data-slide-to="2">
+      <li data-target="#exampleSlider2" data-move-to="2">
          <span class="{{ site.css_prefix }}-icon--dot-big {{ site.css_prefix }}-icon--large"></span>
       </li>
    </ol>
    <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+         <img src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
       </div>
    </div>
-   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-slide="prev" href="#exampleSlider2">
+   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-move="prev" href="#exampleSlider2">
       <span class="{{ site.css_prefix }}-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Previous</span>
    </a>
-   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-slide="next" href="#exampleSlider2">
+   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-move="next" href="#exampleSlider2">
       <span class="{{ site.css_prefix }}-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Next</span>
    </a>
@@ -101,32 +101,32 @@ group: components
 <div id="exampleSlider3" class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
    <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
          <div class="{{ site.css_prefix }}-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+         <img src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
          <div class="{{ site.css_prefix }}-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
          <div class="{{ site.css_prefix }}-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
    </div>
-   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-slide="prev" href="#exampleSlider3">
+   <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-move="prev" href="#exampleSlider3">
       <span class="{{ site.css_prefix }}-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Previous</span>
    </a>
-   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-slide="next" href="#exampleSlider3">
+   <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-move="next" href="#exampleSlider3">
       <span class="{{ site.css_prefix }}-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
       <span class="{{ site.css_prefix }}-assistive-text">Next</span>
    </a>
@@ -141,35 +141,35 @@ group: components
 <div id="exampleSlider4" data-image-slider="cycle" class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
    <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+         <img src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
       </div>
       <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
       </div>
-      <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-slide="prev" href="#exampleSlider4">
+      <a class="{{ site.css_prefix }}-image-slider--prev" role="button" data-move="prev" href="#exampleSlider4">
          <span class="{{ site.css_prefix }}-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
          <span class="{{ site.css_prefix }}-assistive-text">Previous</span>
       </a>
-      <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-slide="next" href="#exampleSlider4">
+      <a class="{{ site.css_prefix }}-image-slider--next" role="button" data-move="next" href="#exampleSlider4">
          <span class="{{ site.css_prefix }}-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
          <span class="{{ site.css_prefix }}-assistive-text">Next</span>
       </a>
    </div>
    <ol class="{{ site.css_prefix }}-image-slider__thumbnails">
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail {{ site.css_prefix }}-image-slider__item--active"
-            data-slide-to="0" alt="First thumbnail">
+         <img data-target="#exampleSlider4" src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail {{ site.css_prefix }}-image-slider__item--active"
+            data-move-to="0" alt="First thumbnail">
       </li>
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/400/200" class="{{ site.css_prefix }}-image-slider__thumbnail"
-            data-slide-to="1" alt="Second thumbnail">
+         <img data-target="#exampleSlider4" src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-image-slider__thumbnail"
+            data-move-to="1" alt="Second thumbnail">
       </li>
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/400/200/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail"
-            data-slide-to="2" alt="Third thumbnail">
+         <img data-target="#exampleSlider4" src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail"
+            data-move-to="2" alt="Third thumbnail">
       </li>
    </ol>
 </div>
@@ -180,7 +180,7 @@ group: components
 
 ### Via data attributes
 
-Use data attributes to control the imageslider. `data-slide` accepts the values `prev` or `next`, which alters the imageslide position relative to its current position. You can use `data-slide-to` to pass a slide index to the imageslider `data-slide-to="1"`, which shifts the position to a particular index beginning with `0`. 
+Use data attributes to control the imageslider. `data-move` accepts the values `prev` or `next`, which alters the imageslide position relative to its current position. You can use `data-move-to` to pass a slide index to the imageslider `data-move-to="1"`, which shifts the position to a particular index beginning with `0`. 
 
 The `data-image-slider="cycle"` attribute is used to start the imageslider animation at page load. 
 
