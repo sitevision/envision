@@ -4,12 +4,15 @@
  * --------------------------------------------------------------------------
  */
 
+import Util from './util';
+
 const RangeSlider = (($) => {
 
    const HANDLE_INDEX = 'range-handle-index';
    const HANDLES_SELECTOR = '.sv-range-slider__handle';
    const HANDLE_VALUE_HOLDERS_SELECTOR = '.sv-range-slider__value';
    const RANGE_SELECTOR = '.sv-range-slider__range';
+   const TOUCH_MODIFIER = 'sv-range-slider--touch';
    const IDENTIFIER = 'sv.range-slider';
    const NAME = 'rangeSlider';
    const NO_CONFLICT = $.fn[NAME];
@@ -40,6 +43,7 @@ const RangeSlider = (($) => {
          this.$el = $(element);
          this.handles = this.$el.find(HANDLES_SELECTOR);
          this.$range = this.$el.find(RANGE_SELECTOR);
+         this.isTouch = Util.isTouch();
 
          if (this.config.visibleValues) {
             this.handleValueHolders = this.$el.find(HANDLE_VALUE_HOLDERS_SELECTOR);
@@ -57,6 +61,10 @@ const RangeSlider = (($) => {
          this._setupHandles();
          this._refreshRange();
          this._bindEvents();
+
+         if (this.isTouch) {
+            this.$el.addClass(TOUCH_MODIFIER);
+         }
       }
 
       values(values) {
@@ -66,8 +74,6 @@ const RangeSlider = (($) => {
             }
             this._refreshRange();
          }
-
-         return this._getValues();
       }
 
       _setupHandles() {
@@ -119,21 +125,20 @@ const RangeSlider = (($) => {
       }
 
       _initSlide(e) {
-         this.$document.on(`mousemove.${IDENTIFIER} touchmove.${IDENTIFIER}`, this._handleSlide.bind(this));
-         this.$document.one(`mouseup.${IDENTIFIER} touchend.${IDENTIFIER}`, this._stopSlide.bind(this));
-
-         const position = {
-            x: e.pageX,
-            y: e.pageY
-         };
+         const position = this._getPosition(e);
          const normValue = this._normValueFromMouse(position);
          let distance = this.config.max - this.config.min + 1;
          let $closestHandle;
          let index;
+         let val;
+         let thisDistance;
+
+         this.$document.on(`mousemove.${IDENTIFIER} touchmove.${IDENTIFIER}`, this._handleSlide.bind(this));
+         this.$document.one(`mouseup.${IDENTIFIER} touchend.${IDENTIFIER}`, this._stopSlide.bind(this));
 
          this.handles.each((i, handle) => {
-            const val = this._getValue(i);
-            const thisDistance = Math.abs(normValue - val);
+            val = this._getValue(i);
+            thisDistance = Math.abs(normValue - val);
             if (distance > thisDistance ||
                distance === thisDistance &&
                   (i === this._lastChangedValue || val === this.config.min)) {
@@ -150,8 +155,8 @@ const RangeSlider = (($) => {
          const offset = $closestHandle.offset();
          /* eslint-disable no-magic-numbers */
          this._clickOffset = {
-            left: event.pageX - offset.left - $closestHandle.width() / 2,
-            top: event.pageY - offset.top -
+            left: position.x - offset.left - $closestHandle.width() / 2,
+            top: position.y - offset.top -
                $closestHandle.height() / 2 -
                (parseInt($closestHandle.css('borderTopWidth'), 10) || 0) -
                (parseInt($closestHandle.css('borderBottomWidth'), 10) || 0) +
@@ -163,12 +168,7 @@ const RangeSlider = (($) => {
       }
 
       _handleSlide(e) {
-         const position = {
-            x: e.pageX,
-            y: e.pageY
-         };
-         const normValue = this._normValueFromMouse(position);
-
+         const normValue = this._normValueFromMouse(this._getPosition(e));
          this._slide(e, this._handleIndex, normValue);
 
          return false;
@@ -193,7 +193,7 @@ const RangeSlider = (($) => {
       }
 
       _stopSlide(e) {
-         this.$document.off(`mousemove.${IDENTIFIER}`);
+         this.$document.off(`mousemove.${IDENTIFIER} touchmove.${IDENTIFIER}`);
 
          this._trigger(EVENTS.STOP, e, {
             values: this._getValues()
@@ -273,6 +273,21 @@ const RangeSlider = (($) => {
          return this._trimAlignValue(valueMouse);
       }
 
+      _getPosition(e) {
+         const pos = {};
+
+         if (this.isTouch) {
+            const touches = e.originalEvent.touches[0];
+            pos.x = touches.pageX;
+            pos.y = touches.pageY;
+         } else {
+            pos.x = e.pageX;
+            pos.y = e.pageY;
+         }
+
+         return pos;
+      }
+
       _trimAlignValue(val) {
          if (val <= this.config.min) {
             return this.config.min;
@@ -330,14 +345,14 @@ const RangeSlider = (($) => {
                rangeSlider = new RangeSlider(this, config);
                $this.data(IDENTIFIER, rangeSlider);
             }
-            window.console.log(...args);
+
             if (typeof config === 'string') {
                const method = rangeSlider[config];
                if (method === undefined) {
                   throw new Error(`No method named "${config}"`);
                }
+
                method.call(rangeSlider, ...args);
-               return;
             }
 
             rangeSlider.initialize();

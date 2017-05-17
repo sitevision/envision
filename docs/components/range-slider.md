@@ -110,3 +110,13 @@ Triggered when slide is completed
       }
    });
 ```
+
+## Methods ##
+### values(values) ###
+Parameters
+* __values:__ An array of values to set
+
+Set the values for the range.
+```javascript
+   $('#my-slider').rangeSlider('values', [50, 90]);
+```

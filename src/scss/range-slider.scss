@@ -33,4 +33,18 @@
       height: 100%;
       position: absolute;
    }
+
+   &--touch {
+      $slider: #{$prefix}-range-slider;
+
+      .#{$slider}__handle {
+         height: $spacing-large;
+         top: -.25em;
+         width: $spacing-large;
+      }
+
+      .#{$slider}__value {
+         top: $spacing-x-large;
+      }
+   }
 }

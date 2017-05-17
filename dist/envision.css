@@ -1952,6 +1952,12 @@
     background: #1395ba;
     height: 100%;
     position: absolute; }
+  .sv-range-slider--touch .sv-range-slider__handle {
+    height: 1.25em;
+    top: -.25em;
+    width: 1.25em; }
+  .sv-range-slider--touch .sv-range-slider__value {
+    top: 1.5em; }
 
 .sv-text {
   color: #373d3f;
