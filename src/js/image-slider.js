@@ -33,7 +33,7 @@ const Imageslider = (($) => {
       NEXT_PREV: '.sv-image-slider--next, .sv-image-slider--prev',
       INDICATORS: '.sv-image-slider__indicators',
       THUMBNAILS: '.sv-image-slider__thumbnails',
-      DATA_SLIDE: '[data-slide], [data-slide-to]',
+      DATA_SLIDE: '[data-move], [data-move-to]',
       DATA_IMAGE_SLIDER: '[data-image-slider="cycle"]',
       ACTIVE_DOT: '.sv-icon--dot-big-selected',
       DOT: '.sv-icon--dot-big'
@@ -370,7 +370,7 @@ const Imageslider = (($) => {
                $.extend(_config, config);
             }
 
-            const action = typeof config === 'string' ? config : _config.slide;
+            const action = typeof config === 'string' ? config : _config.move;
 
             if (!data) {
                data = new Imageslider(this, _config);
@@ -406,7 +406,7 @@ const Imageslider = (($) => {
          }
 
          const config = $.extend({}, $target.data(), $(this).data());
-         const slideIndex = this.getAttribute('data-slide-to');
+         const slideIndex = this.getAttribute('data-move-to');
 
          if (slideIndex) {
             config.interval = false;
