@@ -4,4 +4,5 @@
    var x = $('.example-range-slider').rangeSlider({
       values: [20, 70]
    });
+
 }($));

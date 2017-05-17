@@ -8,7 +8,7 @@ const RangeSlider = (($) => {
 
    const HANDLE_INDEX = 'range-handle-index';
    const HANDLES_SELECTOR = '.sv-range-slider__handle';
-   const HANDLE_VALUE_HOLDERS_SELECTOR = '.sv-range-slider__handle-value';
+   const HANDLE_VALUE_HOLDERS_SELECTOR = '.sv-range-slider__value';
    const RANGE_SELECTOR = '.sv-range-slider__range';
    const IDENTIFIER = 'sv.range-slider';
    const NAME = 'rangeSlider';
@@ -47,6 +47,7 @@ const RangeSlider = (($) => {
 
          this.handleEvents = {
             mousedown: this._initSlide.bind(this),
+            touchstart: this._initSlide.bind(this),
             keydown: this._initKeySlide.bind(this),
             keyup: this._stopKeySlide.bind(this)
          };
@@ -56,6 +57,17 @@ const RangeSlider = (($) => {
          this._setupHandles();
          this._refreshRange();
          this._bindEvents();
+      }
+
+      values(values) {
+         if ($.isArray(values)) {
+            for (let i = 0; i < values.length; i += 1) {
+               this.config.values[i] = this._trimAlignValue(values[i]);
+            }
+            this._refreshRange();
+         }
+
+         return this._getValues();
       }
 
       _setupHandles() {
@@ -107,8 +119,8 @@ const RangeSlider = (($) => {
       }
 
       _initSlide(e) {
-         this.$document.on(`mousemove.${IDENTIFIER}`, this._handleSlide.bind(this));
-         this.$document.one(`mouseup.${IDENTIFIER}`, this._stopSlide.bind(this));
+         this.$document.on(`mousemove.${IDENTIFIER} touchmove.${IDENTIFIER}`, this._handleSlide.bind(this));
+         this.$document.one(`mouseup.${IDENTIFIER} touchend.${IDENTIFIER}`, this._stopSlide.bind(this));
 
          const position = {
             x: e.pageX,
@@ -242,26 +254,10 @@ const RangeSlider = (($) => {
          }
       }
 
-      _getElementOffsetLeft() {
-         if (!this.elementOffsetLeft) {
-            this.elementOffsetLeft = this.el.offset().left;
-         }
-
-         return this.elementOffsetLeft;
-      }
-
-      _getElementWidth() {
-         if (!this.elementWidth) {
-            this.elementWidth = this.el.outerWidth();
-         }
-
-         return this.elementWidth;
-      }
-
       _normValueFromMouse(position) {
-         const pixelTotal = this._getElementWidth();
+         const pixelTotal = this.el.outerWidth();
          const valueTotal = this.config.max - this.config.min;
-         const pixelMouse = position.x - this._getElementOffsetLeft() - (this._clickOffset ? this._clickOffset.left : 0);
+         const pixelMouse = position.x - this.el.offset().left - (this._clickOffset ? this._clickOffset.left : 0);
          let percentMouse = pixelMouse / pixelTotal;
 
          if (percentMouse > 1) {
@@ -325,7 +321,7 @@ const RangeSlider = (($) => {
          }
       }
 
-      static _jQuery(config) {
+      static _jQuery(config, ...args) {
          return this.each(() => {
             const $this = $(this);
             let rangeSlider = $this.data(IDENTIFIER);
@@ -333,8 +329,18 @@ const RangeSlider = (($) => {
             if (!rangeSlider) {
                rangeSlider = new RangeSlider(this, config);
                $this.data(IDENTIFIER, rangeSlider);
-               rangeSlider.initialize();
             }
+            window.console.log(...args);
+            if (typeof config === 'string') {
+               const method = rangeSlider[config];
+               if (method === undefined) {
+                  throw new Error(`No method named "${config}"`);
+               }
+               method.call(rangeSlider, ...args);
+               return;
+            }
+
+            rangeSlider.initialize();
          });
       }
    }

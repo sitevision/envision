@@ -11,8 +11,8 @@ Capture a range
       <div class="{{ site.css_prefix }}-range-slider__range"></div>
       <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
       <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
-      <span class="{{ site.css_prefix }}-range-slider__handle-value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
-      <span class="{{ site.css_prefix }}-range-slider__handle-value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
+      <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
+      <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
    </div>   
 {% endexample %}
 ```javascript
@@ -27,7 +27,7 @@ Capture a range
 * __Type:__ Array
 * __Default:__ [0, 0]
 
-Values handles should be initialized with.
+Values to initialize the slider with.
 
 ```javascript
    $('#my-slider').rangeSlider({

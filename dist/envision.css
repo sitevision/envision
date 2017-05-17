@@ -1779,7 +1779,7 @@
       border-color: #5cb3fd;
       box-shadow: 0 0 5px #5cb3fd;
       outline: 0; }
-  .sv-range-slider__handle-value {
+  .sv-range-slider__value {
     margin-left: -.5em !important;
     position: absolute;
     top: 1.25em; }
