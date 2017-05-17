@@ -28,9 +28,9 @@ Valid values for _size_
 
 <div class="icons-demo">
    <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--small"></i></li>
-      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--medium"></i></li>
-      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--large"></i></li>
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--user {{ site.css_prefix }}-icon--small"></i></li>
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--user {{ site.css_prefix }}-icon--medium"></i></li>
+      <li class="{{ site.css_prefix }}-list__item"><i class="{{ site.css_prefix }}-icon--user {{ site.css_prefix }}-icon--large"></i></li>
    </ul>
 </div>
 
@@ -43,7 +43,7 @@ An icon can be marked as inactive by adding modifier: `{{ site.css_prefix }}-ico
 {% example html %}
 
 <div class="sv-d--flex sv-justify-content--center">
-   <i class="{{ site.css_prefix }}-icon--users {{ site.css_prefix }}-icon--large {{ site.css_prefix }}-icon--inactive"></i>
+   <i class="{{ site.css_prefix }}-icon--user {{ site.css_prefix }}-icon--large {{ site.css_prefix }}-icon--inactive"></i>
 </div>
 
 {% endexample %}
