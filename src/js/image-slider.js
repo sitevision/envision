@@ -18,7 +18,7 @@ const Imageslider = (($) => {
    const TOUCHEVENT_WAIT = 500;
 
    const DEFAULTS = {
-      interval: false,
+      interval: 5000,
       keyboard: true,
       slide: false,
       pause: 'hover',
