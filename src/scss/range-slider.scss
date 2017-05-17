@@ -1,8 +1,8 @@
 .#{$prefix}-range-slider {
    @include border-radius($radius-small);
-
+   $range-height: $spacing-small;
    border: 1px solid $border-color;
-   height: $spacing-small;
+   height: $range-height;
    position: relative;
 
    &__handle {
@@ -11,9 +11,9 @@
       background: $color-lighter;
       border: 1px solid $border-color;
       height: $spacing-medium;
-      margin-left: -.5em;
+      margin-left: -($spacing-medium / 2);
       position: absolute;
-      top: -.15em;
+      top: calc(-1 * (((#{$spacing-medium} - #{$range-height}) / 2) + 1px));
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       width: $spacing-medium;
 
@@ -23,7 +23,7 @@
    }
 
    &__value {
-      margin-left: -.5em !important;
+      margin-left: -($spacing-medium / 2) !important;
       position: absolute;
       top: $spacing-large;
    }
@@ -39,11 +39,13 @@
 
       .#{$slider}__handle {
          height: $spacing-large;
-         top: -.25em;
+         margin-left: -($spacing-large / 2);
+         top: calc(-1 * (((#{$spacing-large} - #{$range-height}) / 2) + 1px));
          width: $spacing-large;
       }
 
       .#{$slider}__value {
+         margin-left: -($spacing-large / 2) !important;
          top: $spacing-x-large;
       }
    }

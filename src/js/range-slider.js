@@ -99,9 +99,9 @@ const RangeSlider = (($) => {
 
                if (this.config.visibleValues) {
                   this.handleValueHolders
-                  .eq(i)
-                  .css('left', `${valPercent}%`)
-                  .text(val);
+                     .eq(i)
+                     .css('left', `${valPercent}%`)
+                     .text(val);
                }
 
             } else {
@@ -109,9 +109,9 @@ const RangeSlider = (($) => {
 
                if (this.config.visibleValues) {
                   this.handleValueHolders
-                  .eq(i)
-                  .css('left', `${valPercent}%`)
-                  .text(val);
+                     .eq(i)
+                     .css('left', `${valPercent}%`)
+                     .text(val);
                }
             }
 
@@ -178,7 +178,7 @@ const RangeSlider = (($) => {
          const otherVal = this._getValue(index ? 0 : 1);
          const currentValue = this._getValue(index);
          const newValues = this._getValues();
-         newVal =  index === 0 ? Math.min(otherVal, newVal) : Math.max(otherVal, newVal);
+         newVal = index === 0 ? Math.min(otherVal, newVal) : Math.max(otherVal, newVal);
          newValues[index] = newVal;
 
          if (newVal === currentValue) {

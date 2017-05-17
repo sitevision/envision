@@ -177,7 +177,7 @@ const Imageslider = (($) => {
          const isNextDirection = direction === Direction.NEXT;
          const activeIndex = this._getItemIndex(activeElement);
          const lastImageIndex = this.$images.length - 1;
-         const isGoingToWrap = !isNextDirection && activeIndex === 0 || isNextDirection && activeIndex === lastImageIndex;
+         const isGoingToWrap = (!isNextDirection && activeIndex === 0) || (isNextDirection && activeIndex === lastImageIndex);
 
          if (isGoingToWrap && !this.config.wrap) {
             return activeElement;
