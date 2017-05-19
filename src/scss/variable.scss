@@ -9,7 +9,7 @@ $enable-box-shadow:        true;
 $base-font-size:           16; // Used to calculate px to em
 
 @function em($pixels, $base: $base-font-size) {
-   @return #{$pixels/$base}em;
+   @return $pixels/$base + 0em;
 }
 
 // Font family

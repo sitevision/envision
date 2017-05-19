@@ -47,6 +47,10 @@ const Util = (() => {
          return element.offsetHeight;
       },
 
+      isTouch() {
+         return 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch;
+      },
+
       getSelectorFromElement(element) {
          let selector = element.getAttribute('data-target');
          if (!selector || selector === '#') {

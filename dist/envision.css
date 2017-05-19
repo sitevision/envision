@@ -1910,6 +1910,43 @@
   100% {
     background-position: 0 0; } }
 
+.sv-range-slider {
+  border-radius: 0.125em;
+  border: 1px solid #999999;
+  height: 0.75em;
+  position: relative; }
+  .sv-range-slider__handle {
+    border-radius: 0.125em;
+    background: #cccccc;
+    border: 1px solid #999999;
+    height: 1em;
+    margin-left: -0.5em;
+    position: absolute;
+    top: calc(-1 * (((1em - 0.75em) / 2) + 1px));
+    -webkit-transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    width: 1em; }
+    .sv-range-slider__handle:focus {
+      border-color: #5cb3fd;
+      box-shadow: 0 0 5px #5cb3fd;
+      outline: 0; }
+  .sv-range-slider__value {
+    margin-left: -0.5em !important;
+    position: absolute;
+    top: 1.25em; }
+  .sv-range-slider__range {
+    background: #1395ba;
+    height: 100%;
+    position: absolute; }
+  .sv-range-slider--touch .sv-range-slider__handle {
+    height: 1.25em;
+    margin-left: -0.625em;
+    top: calc(-1 * (((1.25em - 0.75em) / 2) + 1px));
+    width: 1.25em; }
+  .sv-range-slider--touch .sv-range-slider__value {
+    margin-left: -0.625em !important;
+    top: 1.5em; }
+
 .sv-text {
   color: #373d3f;
   font-family: "Roboto", sans-serif;
