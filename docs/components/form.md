@@ -73,22 +73,25 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    <div class="{{ site.css_prefix }}-form-element">
       <span class="{{ site.css_prefix }}-form-element__label" id="checkbox-header">Checkbox</span>
       <div class="{{ site.css_prefix }}-form-element__control" role="group" aria-labelledby="checkbox-header">
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Check
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Check</span>
             </label>
          </div>
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Check 2
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb2">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb2">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Check</span>
             </label>
          </div>
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Check 3
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb3">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb3">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Check</span>
             </label>
          </div>
       </div>
@@ -127,22 +130,25 @@ The label of the element takes up 20% of the width and the `.{{ site.css_prefix 
    <div class="{{ site.css_prefix }}-form-element">
       <span class="{{ site.css_prefix }}-form-element__label" id="subjects-header">Subjects</span>
       <div class="{{ site.css_prefix }}-form-element__control" role="group" aria-labelledby="subjects-header">
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Subject
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb4">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb4">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Subject</span>
             </label>
          </div>
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Subject 2
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb5">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb5">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Subject 2</span>
             </label>
          </div>
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Subject 3
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb6">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb6">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Subject 3</span>
             </label>
          </div>
       </div>
@@ -173,10 +179,11 @@ Apply modifier `.{{ site.css_prefix }}-form--inline` to the form wrapper to disp
    </div>
    <div class="{{ site.css_prefix }}-form-element">
       <div class="{{ site.css_prefix }}-form-element__control">
-         <div class="{{ site.css_prefix }}-form-checkbox">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox">
-               Remember me
+         <div class="{{ site.css_prefix }}-checkbox">
+            <input type="checkbox" name="options" id="cb7">
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb7">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Remember me</span>
             </label>
          </div>
       </div>
@@ -255,7 +262,7 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
 ## States ##
 
 Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default cursor.
-For disabled radio buttons and checkboxes, apply modifier `.{{ site.css_prefix }}-form-radio--disabled` / `.{{ site.css_prefix }}-form-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
+For disabled radio buttons and checkboxes, apply modifier `.{{ site.css_prefix }}-form-radio--disabled` / `.{{ site.css_prefix }}-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
 
 {% example html %}
 <div class="{{ site.css_prefix }}-form">
@@ -275,10 +282,11 @@ For disabled radio buttons and checkboxes, apply modifier `.{{ site.css_prefix }
    </div>
    <div class="{{ site.css_prefix }}-form-element">
       <div class="{{ site.css_prefix }}-form-element__control">
-         <div class="{{ site.css_prefix }}-form-checkbox {{ site.css_prefix }}-form-checkbox--disabled">
-            <label class="{{ site.css_prefix }}-form-element__label">
-               <input type="checkbox" disabled>
-               Disabled checkbox
+         <div class="{{ site.css_prefix }}-checkbox {{ site.css_prefix }}-checkbox--disabled">
+            <input type="checkbox" name="options" id="cb8" disabled>
+            <label class="{{ site.css_prefix }}-form-element__label" for="cb8">
+               <span class="{{ site.css_prefix }}-checkbox__fake"></span>
+               <span class="{{ site.css_prefix }}-checkbox__label">Disabled checkbox</span>
             </label>
          </div>
       </div>
