@@ -146,3 +146,34 @@ Use modifiers `{{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix 
    </li>
 </ul>
 {% endexample %}
+
+### Definition list ###
+
+#### Default ####
+{% example html %}
+<dl class="{{ site.css_prefix }}-definition-list">
+   <dt>First item</dt>
+   <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed faucibus orci, a tincidunt dui.</dd>
+
+   <dt>Second item</dt>
+   <dd>Pellentesque bibendum augue sit amet pellentesque ultrices.</dd>
+
+   <dt>Third item</dt>
+   <dd>Proin non lorem facilisis, tincidunt mi vitae, consequat justo.</dd>
+</dl>
+{% endexample %}
+
+
+#### Horizontal ####
+{% example html %}
+<dl class="{{ site.css_prefix }}-definition-list {{ site.css_prefix }}-definition-list--horizontal">
+   <dt>First item</dt>
+   <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed faucibus orci, a tincidunt dui.</dd>
+
+   <dt>Second item</dt>
+   <dd>Pellentesque bibendum augue sit amet pellentesque ultrices.</dd>
+
+   <dt>Third item</dt>
+   <dd>Proin non lorem facilisis, tincidunt mi vitae, consequat justo.</dd>
+</dl>
+{% endexample %}
