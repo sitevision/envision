@@ -1,5 +1,5 @@
 .#{$prefix}-assistive-text {
-   @include assistive-text();
+   @include visually-hidden();
 
    &--focusable {
       @include assistive-text-focusable();

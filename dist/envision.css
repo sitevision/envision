@@ -1077,14 +1077,14 @@
   .sv-form-element[type="file"] {
     display: block; }
 
-.sv-form-radio, .sv-form-checkbox {
+.sv-form-radio {
   display: block;
   margin-bottom: 0.5em;
   position: relative; }
-  .sv-form-radio--disabled label, .sv-form-checkbox--disabled label {
+  .sv-form-radio--disabled label {
     color: #4f575a;
     cursor: not-allowed; }
-  .sv-form-radio--disabled input, .sv-form-checkbox--disabled input {
+  .sv-form-radio--disabled input {
     cursor: not-allowed; }
 
 .sv-form--horizontal .sv-form-element {
@@ -1119,7 +1119,7 @@
     .sv-form--inline .sv-form-element__help {
       margin-left: 0.25em; }
   .sv-form--inline .sv-form-radio,
-  .sv-form--inline .sv-form-checkbox {
+  .sv-form--inline .sv-checkbox {
     margin-bottom: 0; }
 
 .sv-form__row {
@@ -1156,6 +1156,51 @@
               flex: 6; }
     .sv-form__row .sv-form-element + .sv-form-element {
       margin-left: 0.25em; }
+
+.sv-checkbox {
+  display: block; }
+  .sv-checkbox [type='checkbox'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0; }
+  [type='checkbox']:checked + label .sv-checkbox__fake::after {
+    border-bottom: 2px solid #1395ba;
+    border-left: 2px solid #1395ba;
+    content: "";
+    display: block;
+    height: 0.1875em;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    width: 0.375em; }
+  [type='checkbox']:focus + label .sv-checkbox__fake {
+    border-color: #5cb3fd;
+    box-shadow: 0 0 5px #5cb3fd;
+    outline: 0; }
+  .sv-checkbox__fake {
+    border: 1px solid #cccccc;
+    border-radius: 0.125em;
+    display: inline-block;
+    height: 0.75em;
+    margin-right: 0.25em;
+    position: relative;
+    -webkit-transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    vertical-align: middle;
+    width: 0.75em; }
+  .sv-checkbox__label {
+    display: inline;
+    vertical-align: middle; }
+  .sv-checkbox--disabled label {
+    color: #4f575a;
+    cursor: not-allowed; }
 
 @font-face {
   font-family: 'sitevision-icons';
