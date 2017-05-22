@@ -74,9 +74,6 @@
 }
 
 .#{$prefix}-definition-list {
-   dt {
-      font-weight: bold;
-   }
 
    dd {
       margin: 0;
@@ -89,7 +86,6 @@
       dt {
          clear: left;
          float: left;
-         font-weight: bold;
          text-align: right;
          width: $dl-title-width;
       }
