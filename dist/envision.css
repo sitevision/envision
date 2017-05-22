@@ -66,7 +66,6 @@
     height: 0;
     overflow: hidden;
     position: relative;
-    -webkit-transition: height 0.4s ease;
     transition: height 0.4s ease; }
   .sv-collapse--show {
     display: block; }
@@ -1014,7 +1013,6 @@
   line-height: 1.25em;
   margin: 0;
   padding: 0.25em 0.75em;
-  -webkit-transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
   transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
   width: 100%; }
   .sv-form-input[disabled], .sv-form-input[readonly] {
@@ -1291,7 +1289,6 @@
     -webkit-perspective: 1000px;
             perspective: 1000px;
     position: relative;
-    -webkit-transition: -webkit-transform .5s ease;
     transition: -webkit-transform .5s ease;
     transition: transform .5s ease;
     transition: transform .5s ease, -webkit-transform .5s ease;
@@ -1552,6 +1549,24 @@
   .sv-list .sv-list-item-divider--around {
     border: 1px solid #cccccc; }
 
+.sv-definition-list dt {
+  font-weight: bold; }
+
+.sv-definition-list dd {
+  margin: 0;
+  padding: 0 0 0.75em; }
+
+.sv-definition-list--horizontal dt {
+  clear: left;
+  float: left;
+  font-weight: bold;
+  text-align: right;
+  width: 9em; }
+
+.sv-definition-list--horizontal dd {
+  margin: 0 0 0 10em;
+  padding: 0 0 0.75em; }
+
 .sv-media {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1610,7 +1625,6 @@
   position: fixed;
   right: 0;
   top: 0;
-  -webkit-transition: opacity .3s linear;
   transition: opacity .3s linear;
   z-index: 1050; }
   .sv-modal--show {
@@ -1658,7 +1672,6 @@
     position: fixed;
     right: 0;
     top: 0;
-    -webkit-transition: opacity .3s linear;
     transition: opacity .3s linear;
     z-index: 1040; }
     .sv-modal__backdrop--in {
@@ -1888,11 +1901,9 @@
     .sv-progress__bar--danger {
       background-color: #e02525; }
     .sv-progress__bar--striped {
-      background-image: -webkit-linear-gradient(135deg, transparent 33%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, transparent 66%);
       background-image: linear-gradient(-45deg, transparent 33%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, transparent 66%);
       background-size: 1.75em 1.25em; }
       .sv-progress__bar--striped--flip {
-        background-image: -webkit-linear-gradient(45deg, transparent 33%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, transparent 66%);
         background-image: linear-gradient(45deg, transparent 33%, rgba(255, 255, 255, 0.15) 33%, rgba(255, 255, 255, 0.15) 66%, transparent 66%); }
       .sv-progress__bar--striped--animated {
         -webkit-animation: sv-progress-animation 1s linear infinite;
@@ -1923,7 +1934,6 @@
     margin-left: -0.5em;
     position: absolute;
     top: calc(-1 * (((1em - 0.75em) / 2) + 1px));
-    -webkit-transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
     transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
     width: 1em; }
     .sv-range-slider__handle:focus {
