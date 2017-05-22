@@ -170,15 +170,17 @@
    }
 
    [type='checkbox']:checked + label &__fake::after {
+      $tick-position: 50%;
+
       border-bottom: 2px solid $color-brand;
       border-left: 2px solid $color-brand;
       content: "";
       display: block;
       height: $spacing-small / 4;
-      left: 50%;
+      left: $tick-position;
       position: absolute;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+      top: $tick-position;
+      transform: translate3d(-$tick-position, -$tick-position, 0) rotate(-45deg);
       width: $spacing-small / 2;
    }
 

@@ -15,7 +15,7 @@
 //
 // Credit: HTML5 Boilerplate
 
-@mixin assistive-text-focusable {
+@mixin visually-hidden-focusable {
    &:active,
    &:focus {
       position: static;

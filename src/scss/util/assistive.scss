@@ -2,6 +2,6 @@
    @include visually-hidden();
 
    &--focusable {
-      @include assistive-text-focusable();
+      @include visually-hidden-focusable();
    }
 }
