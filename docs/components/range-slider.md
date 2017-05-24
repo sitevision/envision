@@ -7,18 +7,19 @@ group: components
 
 Capture a range
 {% example html %}
-   <div class="{{ site.css_prefix }}-range-slider example-range-slider">
-      <div class="{{ site.css_prefix }}-range-slider__range"></div>
-      <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
-      <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
-      <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
-      <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--small"></span>
-   </div>   
+<div class="{{ site.css_prefix }}-range-slider example-range-slider">
+   <div class="{{ site.css_prefix }}-range-slider__range"></div>
+   <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
+   <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
+   <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text"></span>
+   <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text"></span>
+</div>
 {% endexample %}
+
 ```javascript
-   $('.example-range-slider').rangeSlider({
-      values: [20, 70]
-   });
+$('.example-range-slider').rangeSlider({
+   values: [20, 70]
+});
 ```
 
 ## Options ##
@@ -30,9 +31,9 @@ Capture a range
 Values to initialize the slider with.
 
 ```javascript
-   $('#my-slider').rangeSlider({
-      values: [20, 70]
-   });
+$('#my-slider').rangeSlider({
+   values: [20, 70]
+});
 ```
 
 ### min ###
@@ -42,9 +43,9 @@ Values to initialize the slider with.
 The minimum value of the slider.
 
 ```javascript
-   $('#my-slider').rangeSlider({
-      min: 100
-   });
+$('#my-slider').rangeSlider({
+   min: 100
+});
 ```
 
 ### max ###
@@ -54,9 +55,9 @@ The minimum value of the slider.
 The maximum value of the slider.
 
 ```javascript
-   $('#my-slider').rangeSlider({
-      max: 200
-   });
+$('#my-slider').rangeSlider({
+   max: 200
+});
 ```
 
 ### step ###
@@ -66,9 +67,9 @@ The maximum value of the slider.
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step. 
 
 ```javascript
-   $('#my-slider').rangeSlider({
-      step: 5
-   });
+$('#my-slider').rangeSlider({
+   step: 5
+});
 ```
 
 ### visibleValues ###
@@ -78,37 +79,37 @@ The size of every step between min and max. The value range (max - min) should b
 If values should be visible below the handles.
 
 ```javascript
-   $('.my-slider').rangeSlider({
-      visibleValues: false
-   });
+$('.my-slider').rangeSlider({
+   visibleValues: false
+});
 ```
 
 ## Events ##
 ### slide ###
 Triggered for every move during slide.
 ```javascript
-   $('#my-slider').on('slide', function(e, data) { 
-      // Do something... 
-   });
+$('#my-slider').on('slide', function(e, data) { 
+   // Do something... 
+});
 
-   $('#my-slider').rangeSlider({
-      slide: function(e, data) {
-         // Do something...
-      }
-   });
+$('#my-slider').rangeSlider({
+   slide: function(e, data) {
+      // Do something...
+   }
+});
 ```
 ### slidestop ###
 Triggered when slide is completed
 ```javascript
-   $('#my-slider').on('slidestop', function(e, data) { 
-      // Do something... 
-   });
+$('#my-slider').on('slidestop', function(e, data) { 
+   // Do something... 
+});
 
-   $('#my-slider').rangeSlider({
-      slidestop: function(e, data) {
-         // Do something...
-      }
-   });
+$('#my-slider').rangeSlider({
+   slidestop: function(e, data) {
+      // Do something...
+   }
+});
 ```
 
 ## Methods ##
@@ -118,5 +119,5 @@ Parameters
 
 Set the values for the range.
 ```javascript
-   $('#my-slider').rangeSlider('values', [50, 90]);
+$('#my-slider').rangeSlider('values', [50, 90]);
 ```
