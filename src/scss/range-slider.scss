@@ -1,21 +1,22 @@
 .#{$prefix}-range-slider {
    @include border-radius($radius-small);
    $range-height: $spacing-small;
+   $handle-size-desktop: $spacing-large;
+   $handle-size-touch: $spacing-x-large;
    border: 1px solid $border-color;
    height: $range-height;
    position: relative;
 
    &__handle {
       @include border-radius($radius-small);
-
       background: $color-lighter;
       border: 1px solid $border-color;
-      height: $spacing-medium;
-      margin-left: -($spacing-medium / 2);
+      height: $handle-size-desktop;
+      margin-left: -($handle-size-desktop / 2);
       position: absolute;
-      top: calc(-1 * (((#{$spacing-medium} - #{$range-height}) / 2) + 1px));
+      top: calc(-1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px));
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
-      width: $spacing-medium;
+      width: $handle-size-desktop;
 
       &:focus {
          @include focus();
@@ -23,7 +24,7 @@
    }
 
    &__value {
-      margin-left: -($spacing-medium / 2) !important;
+      margin-left: -($handle-size-desktop / 2) !important;
       position: absolute;
       top: $spacing-large;
    }
@@ -38,14 +39,14 @@
       $slider: #{$prefix}-range-slider;
 
       .#{$slider}__handle {
-         height: $spacing-large;
-         margin-left: -($spacing-large / 2);
-         top: calc(-1 * (((#{$spacing-large} - #{$range-height}) / 2) + 1px));
-         width: $spacing-large;
+         height: $handle-size-touch;
+         margin-left: -($handle-size-touch / 2);
+         top: calc(-1 * (((#{$handle-size-touch} - #{$range-height}) / 2) + 1px));
+         width: $handle-size-touch;
       }
 
       .#{$slider}__value {
-         margin-left: -($spacing-large / 2) !important;
+         margin-left: -($handle-size-touch / 2) !important;
          top: $spacing-x-large;
       }
    }
