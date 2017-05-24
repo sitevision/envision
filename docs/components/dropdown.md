@@ -51,46 +51,24 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 ### Split button dropdown ###
 Use `sv-button-group` to split buttons and add `sv-dropdown--toggle-split` to desired button.
 {% example html %}
-<div class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-   <div id="example2" class="{{ site.css_prefix }}-dropdown {{ site.css_prefix }}-button-group {{ site.css_prefix }}_list__item" role="group">
-      <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary" type="button">Dropdown</button>
-      <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-dropdown--toggle {{ site.css_prefix }}-dropdown--toggle-split" type="button" data-dropdown
-         aria-haspopup="true" aria-expanded="false" data-target="#example2">
-         <span class="{{ site.css_prefix }}-assistive-text">Toggle Dropdown Menu</span>
-      </button>
-      <ul class="{{ site.css_prefix }}-dropdown__menu">
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Action</a>
-         </li>
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Properties</a>
-         </li>
-         <li class="{{ site.css_prefix }}-dropdown--divider" role="separator"></li>
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Settings</a>
-         </li>
-      </ul>
-   </div>
-
-   <div id="example3" class="{{ site.css_prefix }}-dropdown {{ site.css_prefix }}-button-group sv-list__item" role="group">
-      <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--danger" type="button">Dropdown</button>
-      <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--danger {{ site.css_prefix }}-dropdown--toggle {{ site.css_prefix }}-dropdown--toggle-split" type="button" data-dropdown
-         aria-haspopup="true" aria-expanded="false" data-target="#example3">
-         <span class="{{ site.css_prefix }}-assistive-text">Toggle Dropdown Menu</span>
-      </button>
-      <ul class="{{ site.css_prefix }}-dropdown__menu">
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Action</a>
-         </li>
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Properties</a>
-         </li>
-         <li class="{{ site.css_prefix }}-dropdown--divider" role="separator"></li>
-         <li role="presentation">
-            <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Settings</a>
-         </li>
-      </ul>
-   </div>
+<div id="example2" class="{{ site.css_prefix }}-dropdown {{ site.css_prefix }}-button-group {{ site.css_prefix }}_list__item" role="group">
+   <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary" type="button">Dropdown</button>
+   <button class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-dropdown--toggle {{ site.css_prefix }}-dropdown--toggle-split" type="button" data-dropdown
+      aria-haspopup="true" aria-expanded="false" data-target="#example2">
+      <span class="{{ site.css_prefix }}-assistive-text">Toggle Dropdown Menu</span>
+   </button>
+   <ul class="{{ site.css_prefix }}-dropdown__menu">
+      <li role="presentation">
+         <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Action</a>
+      </li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Properties</a>
+      </li>
+      <li class="{{ site.css_prefix }}-dropdown--divider" role="separator"></li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="{{ site.css_prefix }}-dropdown__item">Settings</a>
+      </li>
+   </ul>
 </div>
 
 {% endexample %}
