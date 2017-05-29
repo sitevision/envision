@@ -601,6 +601,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+  .sv-text--strike {
+    text-decoration: line-through; }
   .sv-text-align--left {
     text-align: left; }
   .sv-text-align--center {

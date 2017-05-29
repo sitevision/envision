@@ -28,6 +28,10 @@
       @include truncate-text();
    }
 
+   &--strike {
+      text-decoration: line-through;
+   }
+
    // Text alignment
    &-align--left {
       text-align: left;

@@ -40,7 +40,7 @@ group: utils
 {% endexample %}
 
 {% example html %}
-<h3 class="{{ site.css_prefix }}-text">Fancy display heading <small>With faded secondary text</small></h3>
+<h3 class="{{ site.css_prefix }}-text">Fancy display heading <small class="sv-text--muted">With faded secondary text</small></h3>
 {% endexample %}
 
 {% example html %}
@@ -50,5 +50,7 @@ group: utils
 <p class="{{ site.css_prefix }}-text--lowercase">THIS WILL BE LOWERCASE</p>
 
 <p class="{{ site.css_prefix }}-text--capitalize">every word will start with a capital letter.</p>
+
+<p class="{{ site.css_prefix }}-text--strike">This text will be hard to read</p>
 
 {% endexample %}
