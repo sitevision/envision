@@ -30,10 +30,10 @@ group: components
          </a>
       </div>
       <div class="{{ site.css_prefix }}-media__body">
-         <h3 class="{{ site.css_prefix }}-font">
-            <a class="{{ site.css_prefix }}-link {{ site.css_prefix }}-link--title" href="#">John Doe</a>
+         <h3 class="{{ site.css_prefix }}-text">
+            <a href="#">John Doe</a>
          </h3>
-         <p class="{{ site.css_prefix }}-font">
+         <p class="{{ site.css_prefix }}-text">
             Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          </p>
       </div>

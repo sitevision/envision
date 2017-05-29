@@ -13,10 +13,10 @@ group: components
    <div class="{{ site.css_prefix }}-modal__dialog">
       <section class="{{ site.css_prefix }}-modal__content">
          <header class="{{ site.css_prefix }}-modal__header">
-            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
+            <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-modal__header__title">Modal Header</h4>
          </header>
          <div class="{{ site.css_prefix }}-modal__body">
-            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
@@ -41,10 +41,10 @@ Uses `{{ site.css_prefix }}-modal-dialog--large` and footer `{{ site.css_prefix 
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--large">
       <section class="{{ site.css_prefix }}-modal__content">
          <header class="{{ site.css_prefix }}-modal__header">
-            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
+            <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-modal__header__title">Modal Header</h4>
          </header>
          <div class="{{ site.css_prefix }}-modal__body">
-            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer {{ site.css_prefix }}-modal__footer--right">
@@ -65,10 +65,10 @@ Uses `{{ site.css_prefix }}-modal-dialog--small`
    <div class="{{ site.css_prefix }}-modal__dialog {{ site.css_prefix }}-modal__dialog--small">
       <section class="{{ site.css_prefix }}-modal__content">
          <header class="{{ site.css_prefix }}-modal__header">
-            <h3 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h3>
+            <h4 class="{{ site.css_prefix }}-modal__header__title">Modal Header</h4>
          </header>
          <div class="{{ site.css_prefix }}-modal__body">
-            <p class="{{ site.css_prefix }}-font {{ site.css_prefix }}-font--text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
          <footer class="{{ site.css_prefix }}-modal__footer">
@@ -95,27 +95,27 @@ Toggle
 ## Events ##
 `hide.sv-modal`
 ```javascript
-   $('#myModal').on('hide.sv-modal', function() { 
-      // Do something... 
-   });
+$('#myModal').on('hide.sv-modal', function() { 
+   // Do something... 
+});
 ```
 
 `hidden.sv-modal`
 ```javascript
-   $('#myModal').on('hidden.sv-modal', function() { 
-      // Do something... 
-   });
+$('#myModal').on('hidden.sv-modal', function() { 
+   // Do something... 
+});
 ```
 `show.sv-modal`
 ```javascript
-   $('#myModal').on('show.sv-modal', function() { 
-      // Do something... 
-   });
+$('#myModal').on('show.sv-modal', function() { 
+   // Do something... 
+});
 ```
 
 `shown.sv-modal`
 ```javascript
-   $('#myModal').on('shown.sv-modal', function() { 
-      // Do something... 
-   });
+$('#myModal').on('shown.sv-modal', function() { 
+   // Do something... 
+});
 ``` 
