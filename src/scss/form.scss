@@ -128,6 +128,7 @@
       .#{$form-element} {
          align-items: center;
          display: flex;
+         margin-bottom: 0;
          margin-right: $spacing-x-small;
 
          &__label {
