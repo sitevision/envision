@@ -1,4 +1,6 @@
 .#{$prefix}-form {
+   font-family: $font-family;
+
    input {
       margin: 0;
    }
@@ -126,6 +128,7 @@
       .#{$form-element} {
          align-items: center;
          display: flex;
+         margin-bottom: 0;
          margin-right: $spacing-x-small;
 
          &__label {

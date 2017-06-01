@@ -56,13 +56,8 @@
       display: block;
       padding: $spacing-xx-small $spacing-x-small;
 
-      // ######### Ska bytas till text.scss
       &__title {
-         display: inline-block;
-         font-size: $font-size-medium;
-         font-weight: $font-weight-semibold;
-         line-height: $line-height-large;
-         margin: 0;
+         margin-bottom: 0 !important;
       }
    }
 

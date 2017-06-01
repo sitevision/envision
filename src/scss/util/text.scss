@@ -1,0 +1,81 @@
+.#{$prefix}-text {
+   color: $font-color;
+   font-family: $font-family;
+   font-size: $font-size-medium;
+   font-weight: $font-weight-regular;
+
+   a {
+      @include link();
+   }
+
+   &--muted {
+      color: $font-color-lighter !important;
+   }
+
+   &--uppercase {
+      text-transform: uppercase;
+   }
+
+   &--lowercase {
+      text-transform: lowercase;
+   }
+
+   &--capitalize {
+      text-transform: capitalize;
+   }
+
+   &--truncate {
+      @include truncate-text();
+   }
+
+   &--strike {
+      text-decoration: line-through;
+   }
+
+   // Text alignment
+   &-align--left {
+      text-align: left;
+   }
+
+   &-align--center {
+      text-align: center;
+   }
+
+   &-align--right {
+      text-align: right;
+   }
+
+   // Text weight
+   &-weight--light {
+      font-weight: $font-weight-light !important;
+   }
+
+   &-weight--regular {
+      font-weight: $font-weight-regular !important;
+   }
+
+   &-weight--semi-bold {
+      font-weight: $font-weight-semibold !important;
+   }
+
+   &-weight--bold {
+      font-weight: $font-weight-bold !important;
+   }
+
+   &-weight--extra-bold {
+      font-weight: $font-weight-extrabold !important;
+   }
+}
+
+a.#{$prefix}-text {
+   @include link();
+}
+
+@include block-text-size('h1', $font-size-xxxx-large, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h2', $font-size-xxx-large, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h3', $font-size-xx-large, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h4', $font-size-x-large, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h5', $font-size-large, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h6', $font-size-medium, $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('p', $font-size-medium, $spacing-xx-small, $font-weight-regular);
+@include inline-text-size('small', .8em, $font-weight-light);
