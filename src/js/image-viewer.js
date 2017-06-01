@@ -76,7 +76,7 @@ const Imageviewer = (($) => {
          this.$el = $(element);
          this.$images = this.$el.find(SELECTORS.ITEM);
 
-         this.$popup = this.$el.clone(true);
+         this.$popup = this.$el.clone();
          this.$popupImages = this.$popup.children();
          this._isSliding = false;
 
