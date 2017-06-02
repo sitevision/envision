@@ -177,7 +177,6 @@ const Imageviewer = (($) => {
             Direction.PREV;
 
          this._slide(direction, this.$popupImages[index]);
-         return;
       }
 
       // Mobile slide
@@ -212,8 +211,8 @@ const Imageviewer = (($) => {
       endTouchSlide() {
          if (!this.moved) {
             this.$popup.find(SELECTORS.ACTIVE)
-            .children()
-            .css('transform', 'translate3d(0, 0, 0)');
+               .children()
+               .css('transform', 'translate3d(0, 0, 0)');
          }
       }
 
@@ -280,8 +279,7 @@ const Imageviewer = (($) => {
       }
 
       _getCloseButton() {
-         const html = '<span class="sv-image-viewer__close-btn sv-icon--deleted sv-icon--large"></span>';
-         return html;
+         return '<span class="sv-image-viewer__close-btn sv-icon--deleted sv-icon--large"></span>';
       }
 
       _showBackdrop() {
