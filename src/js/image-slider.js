@@ -200,8 +200,8 @@ const Imageslider = (($) => {
       endTouchSlide() {
          if (!this.moved) {
             this.$el.find(SELECTORS.ACTIVE)
-            .children()
-            .css('transform', 'translate3d(0, 0, 0)');
+               .children()
+               .css('transform', 'translate3d(0, 0, 0)');
          }
       }
 
