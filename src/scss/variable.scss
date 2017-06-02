@@ -20,9 +20,10 @@ $font-size-x-small:        em(12);
 $font-size-small:          em(14);
 $font-size-medium:         em(16);
 $font-size-large:          em(20);
-$font-size-x-large:        em(30);
-$font-size-xx-large:       em(40);
-$font-size-xxx-large:      em(60);
+$font-size-x-large:        em(24);
+$font-size-xx-large:       em(28);
+$font-size-xxx-large:      em(32);
+$font-size-xxxx-large:     em(40);
 
 // Font weight
 $font-weight-light:        300;
@@ -33,12 +34,12 @@ $font-weight-extrabold:    700;
 
 // Font Line-height
 $line-height-base:         6; // For text blocks and wrapping text
-$line-height-x-small:      em($line-height-base + 12);
-$line-height-small:        em($line-height-base + 14);
-$line-height-medium:       em($line-height-base + 16);
-$line-height-large:        em($line-height-base + 20);
-$line-height-x-large:      em($line-height-base + 40);
-$line-height-xx-large:     em($line-height-base + 60);
+$line-height-x-small:      em($line-height-base) + $font-size-x-small;
+$line-height-small:        em($line-height-base) + $font-size-small;
+$line-height-medium:       em($line-height-base) + $font-size-medium;
+$line-height-large:        em($line-height-base) + $font-size-large;
+$line-height-x-large:      em($line-height-base) + $font-size-x-large;
+$line-height-xx-large:     em($line-height-base) + $font-size-xx-large;
 
 // Size (Margin/Padding)
 $spacing-xxx-small:        em(2);
@@ -61,8 +62,8 @@ $radius-circle:            100%;
 
 // shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
-$modal-shadow:              inset 0 3px 6px rgba(0,0,0,1);
-$modal-dialog-shadow:       0 3px 9px rgba(0,0,0,.5);
+$modal-shadow:              inset 0 3px 6px rgba(0, 0, 0, 1);
+$modal-dialog-shadow:       0 3px 9px rgba(0, 0, 0, .5);
 
 // Icon Size
 $icon-size-x-small:        14px;
@@ -99,6 +100,7 @@ $color-lightest:           lighten($color-base, 100%);
 
 $default-button-color:     lighten($color-base, 95%);
 $hover-background-color:   rgba(0, 0, 0, .1);
+$focus-background-color:   rgba(0, 0, 0, .2);
 $border-color:             $color-light;
 $color-focus:              #5cb3fd;
 

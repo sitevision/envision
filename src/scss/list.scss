@@ -72,3 +72,27 @@
       }
    }
 }
+
+.#{$prefix}-definition-list {
+
+   dd {
+      margin: 0;
+      padding: 0 0 $spacing-small;
+   }
+
+   &--horizontal {
+      $dl-title-width: 9em;
+
+      dt {
+         clear: left;
+         float: left;
+         text-align: right;
+         width: $dl-title-width;
+      }
+
+      dd {
+         margin: 0 0 0 #{$dl-title-width + $spacing-medium};
+         padding: 0 0 $spacing-small;
+      }
+   }
+}

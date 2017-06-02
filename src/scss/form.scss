@@ -1,4 +1,6 @@
 .#{$prefix}-form {
+   font-family: $font-family;
+
    input {
       margin: 0;
    }
@@ -81,9 +83,7 @@
       }
    }
 
-   //Radio button & checkbox handling
-   &-radio,
-   &-checkbox {
+   &-radio {
       display: block;
       margin-bottom: $spacing-x-small;
       position: relative;
@@ -128,6 +128,7 @@
       .#{$form-element} {
          align-items: center;
          display: flex;
+         margin-bottom: 0;
          margin-right: $spacing-x-small;
 
          &__label {
@@ -140,7 +141,7 @@
       }
 
       .#{$prefix}-form-radio,
-      .#{$prefix}-form-checkbox {
+      .#{$prefix}-checkbox {
          margin-bottom: 0;
       }
    }
@@ -160,6 +161,57 @@
          + .#{$form-element} {
             margin-left: $spacing-xx-small;
          }
+      }
+   }
+}
+
+.#{$prefix}-checkbox {
+   display: block;
+
+   [type='checkbox'] {
+      @include visually-hidden();
+   }
+
+   [type='checkbox']:checked + label &__fake::after {
+      $tick-position: 50%;
+
+      border-bottom: 2px solid $color-brand;
+      border-left: 2px solid $color-brand;
+      content: "";
+      display: block;
+      height: $spacing-small / 4;
+      left: $tick-position;
+      position: absolute;
+      top: $tick-position;
+      transform: translate3d(-$tick-position, -$tick-position, 0) rotate(-45deg);
+      width: $spacing-small / 2;
+   }
+
+   [type='checkbox']:focus + label &__fake {
+      @include focus();
+   }
+
+   &__fake {
+      border: 1px solid $color-lighter;
+      border-radius: $radius-small;
+      display: inline-block;
+      height: $spacing-small;
+      margin-right: $spacing-xx-small;
+      position: relative;
+      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      vertical-align: middle;
+      width: $spacing-small;
+   }
+
+   &__label {
+      display: inline;
+      vertical-align: middle;
+   }
+
+   &--disabled {
+      label {
+         color: lighten($font-color, 10%);
+         cursor: not-allowed;
       }
    }
 }

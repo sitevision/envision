@@ -133,8 +133,13 @@ const RangeSlider = (($) => {
          let val;
          let thisDistance;
 
-         this.$document.on(`mousemove.${IDENTIFIER} touchmove.${IDENTIFIER}`, this._handleSlide.bind(this));
-         this.$document.one(`mouseup.${IDENTIFIER} touchend.${IDENTIFIER}`, this._stopSlide.bind(this));
+         if (e.type === 'touchstart') {
+            this.$document.on(`touchmove.${IDENTIFIER}`, this._handleSlide.bind(this));
+            this.$document.one(`touchend.${IDENTIFIER}`, this._stopSlide.bind(this));
+         } else {
+            this.$document.on(`mousemove.${IDENTIFIER}`, this._handleSlide.bind(this));
+            this.$document.one(`mouseup.${IDENTIFIER}`, this._stopSlide.bind(this));
+         }
 
          this.handles.each((i, handle) => {
             val = this._getValue(i);

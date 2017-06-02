@@ -13,8 +13,8 @@ group: components
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/640x480.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
-      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold">Lorem ipsum</h4>
-      <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder.</p>
+      <h4 class="{{ site.css_prefix }}-text">Lorem ipsum</h4>
+      <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder.</p>
       <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Lorem ipsum</button>
    </div>
 </div>
@@ -33,8 +33,8 @@ Use `{{ site.css_prefix }}-embedded__img-container--right` to align image to the
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/270x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
-      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
-      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
+      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
+      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
    </div>
 </div>
 
@@ -46,8 +46,8 @@ Use `{{ site.css_prefix }}-embedded__img-container--right` to align image to the
          src="https://placehold.it/270x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
-      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
-      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
+      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
+      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
    </div>
 </div>
 
@@ -62,8 +62,8 @@ Use `{{ site.css_prefix }}-embedded__img-container--right` to align image to the
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/769x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block">
-      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold">Lorem ipsum</h4>
-      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock salami.</p>
+      <h4 class="{{ site.css_prefix }}-text">Lorem ipsum</h4>
+      <p class="{{ site.css_prefix }}-embedded__text {{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock salami.</p>
    </div>
 </div>
 
@@ -81,8 +81,8 @@ You can align text to left or right with `{{ site.css_prefix }}-embedded__block-
       <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/769x180.png">
    </div>
    <div class="{{ site.css_prefix }}-embedded__block--overlay">
-      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text-size--large {{ site.css_prefix }}-text--bold {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
-      <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--tagline {{ site.css_prefix }}-text-size--medium {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
+      <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-embedded__title">Lorem ipsum</h4>
+      <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder porchetta tenderloin short loin.</p>
    </div>
 </div>
 
