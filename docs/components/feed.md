@@ -34,7 +34,7 @@ group: components
    </div>
    <div class="{{ site.css_prefix }}-post__attachment">
       <div class="{{ site.css_prefix }}-embedded">
-         <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/300x100.png">
+         <img class="{{ site.css_prefix }}-embedded__img" alt="Image alternative" src="https://placehold.it/730x100.png?text=embedded%20image">
          <div class="{{ site.css_prefix }}-embedded__block">
             <h4 class="{{ site.css_prefix }}-text">Lorem ipsum</h4>
             <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted {{ site.css_prefix }}-embedded__text">Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig drumstick chuck ball tip biltong shoulder.</p>
