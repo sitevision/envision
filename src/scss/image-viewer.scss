@@ -124,10 +124,17 @@
          opacity: .4;
       }
 
-      span.#{$prefix}-image-viewer__indicators--active {
+      .#{$prefix}-image-viewer__indicators--active {
          color: $color-focus;
          opacity: 1;
       }
+   }
+
+   &__img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      outline: none;
    }
 }
 

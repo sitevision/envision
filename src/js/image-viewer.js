@@ -25,7 +25,7 @@ const Imageviewer = (($) => {
       DATA_MOVE_TO         : '[data-move-to]',
       DATA_MOVE            : '[data-move]',
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
-      IMAGES               : '.sv-image-viewer-images',
+      IMAGES               : '.sv-image-viewer__images',
       INDICATORS           : '.sv-image-viewer__indicators',
       DATA_SLIDE_TO        : '[data-slide-to]'
    };
@@ -62,7 +62,7 @@ const Imageviewer = (($) => {
       }
 
       show(index) {
-         this.config.index = index;
+         this.config.index = Number(index);
 
          if (!this._isShown) {
 
@@ -82,8 +82,8 @@ const Imageviewer = (($) => {
             this.$btnContainer.append(this.$imgContainer);
             this.$modal.appendTo(document.body);
 
-            const $image = $(this.$images[index])[0];
-            const href = $image.getAttribute('href');
+            const image = $(this.$images[index])[0];
+            const href = image.getAttribute('href');
 
             this.$btnContainer.append(this._getIndicators());
 
@@ -104,8 +104,8 @@ const Imageviewer = (($) => {
 
          } else {
             this.$btnContainer.addClass(ClassName.HIDDEN);
-            const $image = $(this.$images[index])[0];
-            const href = $image.getAttribute('href');
+            const image = $(this.$images[index])[0];
+            const href = image.getAttribute('href');
             const $downloadingImage = this._loadImage(href);
 
             this.$imgContainer.html($downloadingImage);
@@ -134,14 +134,18 @@ const Imageviewer = (($) => {
 
       _loadImage(href) {
          const $downloadingImage = $('<img>');
-         $downloadingImage.addClass('sv-embedded__img');
-         $downloadingImage.attr('tabindex', '-1');
-         $downloadingImage.on('load', () => {
-            this.$btnContainer.removeClass(ClassName.HIDDEN);
-            this.$imgContainer.children()[0].focus();
-         });
+         $downloadingImage
+            .addClass('sv-image-viewer__img')
+            .attr({
+               tabindex: '-1',
+               src: href
+            })
+            .on('load', () => {
+               this.$btnContainer.removeClass(ClassName.HIDDEN);
+               this.$imgContainer.children()[0].focus();
+            });
 
-         return $downloadingImage.attr('src', href);
+         return $downloadingImage;
       }
 
       _bindContainerEvents() {
@@ -179,30 +183,22 @@ const Imageviewer = (($) => {
 
       _getIndicators() {
          const indicatorItems = this._getIndicatorItems();
-         const indicatorsHTML = `<ol class="sv-image-viewer__indicators">
-            ${indicatorItems}
-         </ol>`;
-
-         return indicatorsHTML;
+         return `<ol class="sv-image-viewer__indicators">
+                  ${indicatorItems}
+               </ol>`;
       }
 
       _getIndicatorItems() {
-         let html = '';
          const activeElementIndex = this.config.index;
 
-         for (let i = 0; i < this.$images.length; i++) {
-            if (activeElementIndex !== i) {
-               html += `<li data-slide-to="${i}">
-                  <span class="sv-icon--dot-small sv-icon--large"></span>
-               </li>`;
-            } else {
-               html += `<li data-slide-to="${i}">
-                  <span class="sv-image-viewer__indicators--active sv-icon--dot-small sv-icon--large"></span>
-               </li>`;
-            }
-         }
-
-         return html;
+         return this.$images.map((index) => {
+            const isActive = index === activeElementIndex;
+            return `<li data-slide-to="${index}">
+                     <span class="${isActive ? 'sv-image-viewer__indicators--active ' : ''} sv-icon--dot-small sv-icon--large"></span>
+                     </li>`;
+         })
+         .get()
+         .join('');
       }
 
       _showBackdrop() {
@@ -269,23 +265,24 @@ const Imageviewer = (($) => {
       }
 
       _getNextItemIndex() {
-         return Number(this.config.index) === this.$images.length - 1 ? 0 : parseInt(this.config.index, 10) + 1;
+         return this.config.index === this.$images.length - 1 ? 0 : this.config.index + 1;
       }
+
       _getPrevItemIndex() {
-         return Number(this.config.index) === 0 ? this.$images.length - 1 : parseInt(this.config.index, 10) - 1;
+         return this.config.index === 0 ? this.$images.length - 1 : this.config.index - 1;
       }
 
       _setActiveIndicatorElement() {
          this._indicatorsElement = this.$btnContainer.find(SELECTORS.INDICATORS)[0];
          if (this.$images.length > 0) {
-            $(this.$btnContainer)
+            this.$btnContainer
                .find(SELECTORS.ACTIVE_DOT)
                .removeClass(ClassName.ACTIVE_DOT);
 
-            const indicators = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
+            const indicator = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
 
-            if (indicators) {
-               $(indicators).children()
+            if (indicator) {
+               $(indicator).children()
                   .addClass(ClassName.ACTIVE_DOT);
             }
          }
@@ -294,7 +291,6 @@ const Imageviewer = (($) => {
       static _jQuery(config) {
          return this.each(() => {
             const $this = $(this);
-
             const _config = $this.data();
 
             if (typeof config === 'object') {
@@ -310,16 +306,15 @@ const Imageviewer = (($) => {
    $(document)
       .on(Events.CLICK_DATA_API, SELECTORS.DATA_IMAGE_VIEWER, function(e) {
          e.preventDefault();
+         const $this = $(this);
 
-         const $target = $(this);
+         $this.data().index = $(e.target).closest('[data-image]').data('image');
 
-         if (!$target) {
+         if ($this.data().index === undefined) {
             return;
          }
-         const config = $.extend({}, $target.data(), $(this).data());
-         config.index = Number(e.target.parentElement.getAttribute('data-image'));
 
-         $target.imageviewer(config);
+         $this.imageviewer($this.data());
       });
 
    $.fn[NAME] = Imageviewer._jQuery;
