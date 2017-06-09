@@ -2029,50 +2029,6 @@ small.sv-text,
     margin-left: -0.75em !important;
     top: 1.5em; }
 
-.sv-spinner {
-  font-size: 10px;
-  height: 60px;
-  margin: 100px auto;
-  text-align: center;
-  width: 50px; }
-  .sv-spinner--hide {
-    display: none; }
-  .sv-spinner > div {
-    -webkit-animation: sv-stretchdelay 1.2s infinite ease-in-out;
-            animation: sv-stretchdelay 1.2s infinite ease-in-out;
-    background-color: #5cb3fd;
-    display: inline-block;
-    height: 100%;
-    width: 6px; }
-  .sv-spinner .sv-rect2 {
-    -webkit-animation-delay: -1.1s;
-            animation-delay: -1.1s; }
-  .sv-spinner .sv-rect3 {
-    -webkit-animation-delay: -1s;
-            animation-delay: -1s; }
-  .sv-spinner .sv-rect4 {
-    -webkit-animation-delay: -.9s;
-            animation-delay: -.9s; }
-  .sv-spinner .sv-rect5 {
-    -webkit-animation-delay: -.8s;
-            animation-delay: -.8s; }
-
-@-webkit-keyframes sv-stretchdelay {
-  0%, 40%, 100% {
-    -webkit-transform: scaleY(0.4);
-            transform: scaleY(0.4); }
-  20% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1); } }
-
-@keyframes sv-stretchdelay {
-  0%, 40%, 100% {
-    -webkit-transform: scaleY(0.4);
-            transform: scaleY(0.4); }
-  20% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1); } }
-
 .sv-tabs__nav {
   background-color: #f6f5f5;
   list-style: none;
