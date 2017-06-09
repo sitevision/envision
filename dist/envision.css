@@ -1540,22 +1540,7 @@ small.sv-text,
     margin: 10% auto;
     max-width: 968px;
     position: relative; }
-  .sv-image-viewer__item {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    display: none;
-    -webkit-perspective: 1000px;
-            perspective: 1000px;
-    position: relative;
-    -webkit-transition: -webkit-transform .3s ease;
-    transition: -webkit-transform .3s ease;
-    transition: transform .3s ease;
-    transition: transform .3s ease, -webkit-transform .3s ease;
-    width: 100%; }
-  .sv-image-viewer__item--active, .sv-image-viewer__item--prev, .sv-image-viewer__item--next {
+  .sv-image-viewer__item--prev, .sv-image-viewer__item--next {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

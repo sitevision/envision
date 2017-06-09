@@ -28,18 +28,6 @@
       position: relative;
    }
 
-
-   &__item {
-      align-items: center;
-      backface-visibility: hidden;
-      display: none;
-      perspective: 1000px;
-      position: relative;
-      transition: transform .3s ease;
-      width: 100%;
-   }
-
-   &__item--active,
    &__item--prev,
    &__item--next {
       display: flex;
