@@ -6,30 +6,14 @@ group: components
 ---
 {% example html %}
 
-<div class="{{ site.css_prefix }}-spinner example-spinner"></div>
+<div class="{{ site.css_prefix }}-spinner">
+   <div class="{{ site.css_prefix }}-rect1"></div>
+   <div class="{{ site.css_prefix }}-rect2"></div>
+   <div class="{{ site.css_prefix }}-rect3"></div>
+   <div class="{{ site.css_prefix }}-rect4"></div>
+   <div class="{{ site.css_prefix }}-rect5"></div>
+</div>
 
 {% endexample %}
 
-## Required ##
-Class `sv-spinner` 
-
-```javascript
-   // Instantiate
-   $('mySpinner').spinner();
-```
-
-```javascript
-   // Destroy
-   $('mySpinner').spinner('destroy');
-```
-
-```javascript
-   // Hide
-   $('mySpinner').spinner('hide');
-```
-
-```javascript
-   // Show
-   $('mySpinner').spinner('show');
-```
-
+Use `{{ site.css_prefix }}-spinner--hide` to hide the spinner. i.e `{{ site.css_prefix }}-spinner {{ site.css_prefix }}-spinner--hide`
