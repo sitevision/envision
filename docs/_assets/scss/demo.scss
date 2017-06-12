@@ -54,6 +54,13 @@
    height: auto;
 }
 
+.example-background-color > div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50px;
+}
+
 .example-display > div {
    background-color: #eee;
    margin-top: 20px;

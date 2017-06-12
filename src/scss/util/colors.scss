@@ -1,0 +1,13 @@
+$colors: (
+   brand: $color-brand,
+   success: $color-success,
+   warning: $color-warning,
+   danger: $color-danger,
+   white: #fff
+);
+
+@each $state, $color in $colors {
+   .#{$prefix}-bg-color--#{$state} {
+      background-color: $color !important;
+   }
+}

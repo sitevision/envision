@@ -59,6 +59,21 @@
   content: "";
   display: table; }
 
+.sv-bg-color--brand {
+  background-color: #1395ba !important; }
+
+.sv-bg-color--success {
+  background-color: #5cb85c !important; }
+
+.sv-bg-color--warning {
+  background-color: #f0ad4e !important; }
+
+.sv-bg-color--danger {
+  background-color: #e02525 !important; }
+
+.sv-bg-color--white {
+  background-color: #fff !important; }
+
 .sv-collapse {
   display: none; }
   .sv-collapse--collapsing {
