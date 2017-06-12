@@ -6,14 +6,15 @@
 
 const Spinner = (($) => {
 
-   const IDENTIFIER = 'sv.spinner';
-   const NAME = 'spinner';
+   const IDENTIFIER  = 'sv.spinner';
+   const NAME        = 'spinner';
    const NO_CONFLICT = $.fn[NAME];
-   const TEMPLATE = `<div class="sv-rect1"></div>
-                     <div class="sv-rect2"></div>
-                     <div class="sv-rect3"></div>
-                     <div class="sv-rect4"></div>
-                     <div class="sv-rect5"></div>`;
+   const HIDE        = 'sv-spinner--hide';
+   const TEMPLATE    = `<div class="sv-rect1"></div>
+                        <div class="sv-rect2"></div>
+                        <div class="sv-rect3"></div>
+                        <div class="sv-rect4"></div>
+                        <div class="sv-rect5"></div>`;
 
    class Spinner {
 
@@ -23,11 +24,11 @@ const Spinner = (($) => {
       }
 
       hide() {
-         this.el.addClass('sv-spinner--hide');
+         this.el.addClass(HIDE);
       }
 
       show() {
-         this.el.removeClass('sv-spinner--hide');
+         this.el.removeClass(HIDE);
       }
 
       destroy() {
