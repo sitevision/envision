@@ -64,8 +64,15 @@ const Imageviewer = (($) => {
       show(index) {
          this.config.index = Number(index);
 
-         if (!this._isShown) {
+         if (this._isShown) {
+            this.$btnContainer.addClass(ClassName.HIDDEN);
+            const image = $(this.$images[index])[0];
+            const href = image.getAttribute('href');
+            const $downloadingImage = this._loadImage(href);
 
+            this.$imgContainer.html($downloadingImage);
+            this._setActiveIndicatorElement();
+         } else {
             this.$modal = $('<div/>', {
                class: 'sv-image-viewer__modal'
             });
@@ -101,17 +108,6 @@ const Imageviewer = (($) => {
             this._bindContainerEvents();
             this._bindEvents();
             this._showBackdrop();
-
-         } else {
-            this.$btnContainer.addClass(ClassName.HIDDEN);
-            const image = $(this.$images[index])[0];
-            const href = image.getAttribute('href');
-            const $downloadingImage = this._loadImage(href);
-
-            this.$imgContainer.html($downloadingImage);
-            this._setActiveIndicatorElement();
-
-            this._isShown = true;
          }
       }
 

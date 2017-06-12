@@ -1048,8 +1048,7 @@ small.sv-text,
   .sv-embedded__img {
     display: block;
     height: auto;
-    max-width: 100%;
-    outline: none; }
+    max-width: 100%; }
 
 .sv-post {
   border: 1px solid #f6f5f5; }
@@ -1629,9 +1628,14 @@ small.sv-text,
     .sv-image-viewer__indicators li span {
       cursor: pointer;
       opacity: .4; }
-    .sv-image-viewer__indicators span.sv-image-viewer__indicators--active {
+    .sv-image-viewer__indicators .sv-image-viewer__indicators--active {
       color: #5cb3fd;
       opacity: 1; }
+  .sv-image-viewer__img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    outline: none; }
 
 .sv-image-viewer--hidden {
   visibility: hidden; }
