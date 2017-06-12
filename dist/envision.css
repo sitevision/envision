@@ -943,7 +943,7 @@ small.sv-text,
     padding-left: 0;
     position: absolute;
     top: 0.75em;
-    z-index: 1055; }
+    z-index: 1060; }
   .sv-dropdown__item {
     display: block;
     margin-bottom: 0.25em;
@@ -1512,6 +1512,134 @@ small.sv-text,
     text-align: center;
     z-index: 15; }
 
+.sv-image-viewer {
+  position: relative; }
+  .sv-image-viewer__modal {
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    outline: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1050; }
+  .sv-image-viewer__modal-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 5%;
+    position: relative;
+    text-align: center; }
+  .sv-image-viewer__dialog {
+    background-color: white;
+    cursor: default;
+    margin: 10% auto;
+    max-width: 968px;
+    position: relative; }
+  .sv-image-viewer__item--prev, .sv-image-viewer__item--next {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .sv-image-viewer--next, .sv-image-viewer--prev {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    bottom: 0;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2em;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 33%;
+    z-index: 15; }
+  .sv-image-viewer--next {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    right: 0; }
+  .sv-image-viewer--prev {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    left: 0; }
+  .sv-image-viewer__item--next, .sv-image-viewer__item--prev {
+    position: absolute;
+    top: 0; }
+  .sv-image-viewer--next-icon, .sv-image-viewer--prev-icon {
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 20%;
+    width: 20%; }
+  .sv-image-viewer__thumbnails {
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    left: 0;
+    list-style: none;
+    margin-top: 0.5em;
+    overflow: auto;
+    padding-left: 0;
+    right: 0;
+    z-index: 15; }
+    .sv-image-viewer__thumbnails li {
+      cursor: pointer;
+      margin-right: 0.5em;
+      position: relative; }
+    .sv-image-viewer__thumbnails .sv-image-viewer__thumbnail {
+      border: 1px solid transparent;
+      max-width: 80px;
+      opacity: .9; }
+    .sv-image-viewer__thumbnails .sv-image-viewer__thumbnail:active {
+      border: 1px solid #5cb3fd;
+      opacity: 1; }
+  .sv-image-viewer__indicators {
+    bottom: 0;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding-left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 15; }
+    .sv-image-viewer__indicators li span {
+      cursor: pointer;
+      opacity: .4; }
+    .sv-image-viewer__indicators .sv-image-viewer__indicators--active {
+      color: #5cb3fd;
+      opacity: 1; }
+  .sv-image-viewer__img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    outline: none; }
+
+.sv-image-viewer--hidden {
+  visibility: hidden; }
+
 .sv-list {
   list-style: none;
   margin: 0;
@@ -1878,7 +2006,7 @@ small.sv-text,
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   max-width: 300px;
   position: relative;
-  z-index: 1060; }
+  z-index: 1070; }
   .sv-popover__header {
     background-color: #cccccc;
     border-radius: 0.25em 0.25em 0 0;

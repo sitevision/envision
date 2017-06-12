@@ -1,0 +1,143 @@
+.#{$prefix}-image-viewer {
+   position: relative;
+
+   &__modal {
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+      outline: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: $zindex-modal;
+   }
+
+   &__modal-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 5%;
+      position: relative;
+      text-align: center;
+   }
+
+   &__dialog {
+      background-color: $color-lightest;
+      cursor: default;
+      margin: 10% auto;
+      max-width: 968px;
+      position: relative;
+   }
+
+   &__item--prev,
+   &__item--next {
+      display: flex;
+      justify-content: center;
+   }
+
+   &--next,
+   &--prev {
+      align-items: center;
+      bottom: 0;
+      cursor: pointer;
+      display: flex;
+      font-size: 2em;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      top: 0;
+      width: 33%;
+      z-index:  $zindex-imageslider-indicator;
+   }
+
+   &--next {
+      justify-content: flex-end;
+      right: 0;
+   }
+
+   &--prev {
+      justify-content: flex-start;
+      left: 0;
+   }
+
+   &__item--next,
+   &__item--prev {
+      position: absolute;
+      top: 0;
+   }
+
+   &--next-icon,
+   &--prev-icon {
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+      display: inline-block;
+      height: 20%;
+      width: 20%;
+   }
+
+   &__thumbnails {
+      bottom: 0;
+      display: flex;
+      justify-content: flex-start;
+      left: 0;
+      list-style: none;
+      margin-top: $spacing-x-small;
+      overflow: auto;
+      padding-left: 0;
+      right: 0;
+      z-index: $zindex-imageslider-indicator;
+
+      li {
+         cursor: pointer;
+         margin-right: $spacing-x-small;
+         position: relative;
+      }
+
+      .#{$prefix}-image-viewer__thumbnail {
+         border: 1px solid transparent;
+         max-width: 80px;
+         opacity: .9;
+      }
+
+      .#{$prefix}-image-viewer__thumbnail:active {
+         border: 1px solid $color-focus;
+         opacity: 1;
+      }
+   }
+
+   &__indicators {
+      bottom: 0;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      list-style: none;
+      margin-bottom: 0;
+      margin-left: $spacing-x-large;
+      margin-right: $spacing-x-large;
+      padding-left: 0;
+      position: absolute;
+      right: 0;
+      z-index: $zindex-imageslider-indicator;
+
+      li span {
+         cursor: pointer;
+         opacity: .4;
+      }
+
+      .#{$prefix}-image-viewer__indicators--active {
+         color: $color-focus;
+         opacity: 1;
+      }
+   }
+
+   &__img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      outline: none;
+   }
+}
+
+.#{$prefix}-image-viewer--hidden {
+   visibility: hidden;
+}
