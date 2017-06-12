@@ -63,11 +63,12 @@ const Imageviewer = (($) => {
 
       show(index) {
          this.config.index = Number(index);
+         const image = $(this.$images[index])[0];
+         const href = image.getAttribute('href');
 
          if (this._isShown) {
             this.$btnContainer.addClass(ClassName.HIDDEN);
-            const image = $(this.$images[index])[0];
-            const href = image.getAttribute('href');
+
             const $downloadingImage = this._loadImage(href);
 
             this.$imgContainer.html($downloadingImage);
@@ -88,9 +89,6 @@ const Imageviewer = (($) => {
             this.$modal.append(this.$btnContainer);
             this.$btnContainer.append(this.$imgContainer);
             this.$modal.appendTo(document.body);
-
-            const image = $(this.$images[index])[0];
-            const href = image.getAttribute('href');
 
             this.$btnContainer.append(this._getIndicators());
 
