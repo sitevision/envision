@@ -14,6 +14,7 @@
     - title: Feed
     - title: Form
     - title: Image slider
+    - title: Image viewer
     - title: List
     - title: Media
     - title: Modal
@@ -22,6 +23,7 @@
     - title: Popover
     - title: Progress
     - title: Range slider
+    - title: Spinner
     - title: Tab
     - title: Table
 - title: Utils

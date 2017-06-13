@@ -11,6 +11,7 @@ const eslint         = require('gulp-eslint');
 const concat         = require('gulp-concat');
 const uglify         = require('gulp-uglify');
 const header         = require('gulp-header');
+const zip            = require('gulp-zip');
 const packageJson    = require('./package.json');
 
 const BUILD_FOLDER = './build';
@@ -38,6 +39,7 @@ gulp.task('minifycss', ['addcssheader'], doMinifyCSS);
 gulp.task('buildcss', ['hintcss', 'sass', 'autoprefix', 'addcssheader', 'minifycss']);
 gulp.task('buildjs', ['hintjs'], doBuildJS);
 gulp.task('default', ['buildjs', 'buildcss', 'copyimages', 'copyfonts']);
+gulp.task('zipdist', ['default'], doZip);
 gulp.task('watch', doWatch);
 
 function doAddCSSHeader() {
@@ -113,4 +115,10 @@ function doJSHint() {
       .pipe(eslint())
       .pipe(eslint.format())
       .pipe(eslint.failAfterError());
+}
+
+function doZip() {
+   return gulp.src(`${DIST_FOLDER}/**`)
+      .pipe(zip('dist.zip'))
+      .pipe(gulp.dest(DIST_FOLDER));
 }
