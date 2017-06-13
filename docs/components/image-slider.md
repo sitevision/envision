@@ -31,7 +31,7 @@ group: components
 {% example html %}
 
 <div id="exampleSlider1" data-image-slider class="{{ site.css_prefix }}-image-slider {{ site.css_prefix }}-image-slider--slide">
-   <div class="{{ site.css_prefix }}-image-slider__inner svimagepopup">
+   <div class="{{ site.css_prefix }}-image-slider__inner">
       <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
          <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
       </div>
