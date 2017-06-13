@@ -69,8 +69,8 @@ $nav-link-classname: #{$prefix}-nav__link;
       }
 
       &:hover {
-         border-bottom-color: $color-brand-light;
-         color: $color-brand-light;
+         border-bottom-color: $color-brand-dark;
+         color: $color-brand-dark;
       }
    }
 }
