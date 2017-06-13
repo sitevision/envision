@@ -117,8 +117,6 @@ const Imageviewer = (($) => {
             this.$imgContainer.remove();
          };
 
-         this.$modal.removeClass('sv-image-viewer__modal');
-
          this.$backdrop
             .one(Util.getTransitionEndEvent(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
