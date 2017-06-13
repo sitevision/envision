@@ -18,3 +18,8 @@
    border-radius: 50%;
 }
 
+@mixin reset-list() {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
