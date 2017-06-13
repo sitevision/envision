@@ -26,8 +26,7 @@ const Imageviewer = (($) => {
       DATA_MOVE            : '[data-move]',
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
       IMAGES               : '.sv-image-viewer__images',
-      INDICATORS           : '.sv-image-viewer__indicators',
-      DATA_MOVE_TO        : '[data-move-to]'
+      INDICATORS           : '.sv-image-viewer__indicators'
    };
 
    const ClassName = {
