@@ -27,7 +27,7 @@ const Imageviewer = (($) => {
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
       IMAGES               : '.sv-image-viewer__images',
       INDICATORS           : '.sv-image-viewer__indicators',
-      DATA_SLIDE_TO        : '[data-move-to]'
+      DATA_MOVE_TO        : '[data-move-to]'
    };
 
    const ClassName = {
@@ -153,7 +153,7 @@ const Imageviewer = (($) => {
             }
          });
 
-         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_SLIDE_TO, (e) => {
+         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_MOVE_TO, (e) => {
             const viewerIndex = e.currentTarget.getAttribute('data-move-to');
 
             if (viewerIndex) {
