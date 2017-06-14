@@ -6,6 +6,7 @@ $nav-link-classname: #{$prefix}-nav__link;
    &__link {
       color: $color-brand;
       display: block;
+      text-decoration: none;
       transition: background-color .25s ease,
                   color .25s ease;
 
