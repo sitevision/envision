@@ -13,6 +13,10 @@ $colors: (
 );
 
 @each $state, $color in $colors {
+   .#{$prefix}-color--#{$state} {
+      color: $color;
+   }
+
    .#{$prefix}-bg-color--#{$state} {
       background-color: $color;
    }
