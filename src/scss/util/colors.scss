@@ -14,7 +14,7 @@ $colors: (
 
 @each $state, $color in $colors {
    .#{$prefix}-color--#{$state} {
-      color: $color;
+      color: $color !important;
    }
 
    .#{$prefix}-bg-color--#{$state} {
