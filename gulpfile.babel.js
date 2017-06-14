@@ -118,7 +118,7 @@ function doJSHint() {
 }
 
 function doZip() {
-   return gulp.src(`${DIST_FOLDER}/*`)
+   return gulp.src(`${DIST_FOLDER}/**`)
       .pipe(zip('dist.zip'))
       .pipe(gulp.dest(DIST_FOLDER));
 }

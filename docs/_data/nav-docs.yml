@@ -18,6 +18,7 @@
     - title: List
     - title: Media
     - title: Modal
+    - title: Navigation
     - title: News item
     - title: Pagination
     - title: Popover
@@ -30,6 +31,7 @@
   pages:
     - title: Accessibility
     - title: Borders
+    - title: Colors
     - title: Display
     - title: Flexbox
     - title: Icons

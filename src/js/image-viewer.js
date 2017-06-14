@@ -129,8 +129,6 @@ const Imageviewer = (($) => {
             this.$imgContainer.remove();
          };
 
-         this.$modal.removeClass('sv-image-viewer__modal');
-
          this.$backdrop
             .one(Util.getTransitionEndEvent(), removeBackdropCallback)
             .removeClass(BACKDROP_ANIMATION);
@@ -167,8 +165,8 @@ const Imageviewer = (($) => {
             }
          });
 
-         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_SLIDE_TO, (e) => {
-            const viewerIndex = e.currentTarget.getAttribute('data-slide-to');
+         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_MOVE_TO, (e) => {
+            const viewerIndex = e.currentTarget.getAttribute('data-move-to');
 
             if (viewerIndex) {
                this.show(viewerIndex);
@@ -201,7 +199,7 @@ const Imageviewer = (($) => {
 
          return this.$images.map((index) => {
             const isActive = index === activeElementIndex;
-            return `<li data-slide-to="${index}">
+            return `<li data-move-to="${index}">
                      <span class="${isActive ? 'sv-image-viewer__indicators--active ' : ''} sv-icon--dot-small sv-icon--large"></span>
                      </li>`;
          })

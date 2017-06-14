@@ -13,7 +13,7 @@
   },
   "rules": {
     // Possible Errors
-    "no-extra-parens": 1,
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
     "no-prototype-builtins": "off",
     "no-template-curly-in-string": "error",
     "no-unsafe-negation": "error",

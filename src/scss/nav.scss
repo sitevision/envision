@@ -1,0 +1,79 @@
+$nav-link-classname: #{$prefix}-nav__link;
+
+.#{$prefix}-nav {
+   @include reset-list();
+
+   &__link {
+      color: $color-brand;
+      display: block;
+      transition: background-color .25s ease,
+                  color .25s ease;
+
+      &:hover {
+         color: $color-brand-dark;
+      }
+
+      &:focus {
+         @include focus();
+      }
+
+      &--active {
+         color: $color-brand-light;
+      }
+   }
+}
+
+.#{$prefix}-nav--menubar {
+   display: flex;
+
+   .#{$nav-link-classname} {
+      padding: $spacing-small;
+   }
+
+   &.#{$prefix}-nav--fill {
+      .#{$nav-link-classname} {
+         &:hover {
+            background-color: $color-brand-dark;
+            color: $font-color-invert;
+         }
+
+         &--active {
+            background-color: $color-brand-light;
+            color: $font-color-invert;
+         }
+      }
+   }
+
+   &.#{$prefix}-nav--border {
+      .#{$nav-link-classname} {
+         border-bottom: 1px solid transparent;
+
+         &:hover {
+            border-bottom-color: $color-brand-dark;
+            color: $color-brand-dark;
+         }
+
+         &--active {
+            border-bottom-color: $color-brand-light;
+            color: $color-brand-light;
+         }
+      }
+   }
+}
+
+.#{$prefix}-nav--sidenav {
+   .#{$nav-link-classname} {
+      border-bottom: 1px solid $color-lighter;
+      color: $color-normal;
+      padding: $spacing-small 0;
+
+      &--active {
+         border-left: 2px solid $color-brand;
+         padding-left: $spacing-x-small;
+      }
+
+      &:hover {
+         color: $color-brand;
+      }
+   }
+}
