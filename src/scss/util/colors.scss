@@ -3,7 +3,13 @@ $colors: (
    success: $color-success,
    warning: $color-warning,
    danger: $color-danger,
-   white: #fff
+   base: $color-base,
+   darker: $color-darker,
+   dark: $color-dark,
+   normal: $color-normal,
+   light: $color-light,
+   lighter: $color-lighter,
+   lightest: $color-lightest
 );
 
 @each $state, $color in $colors {
