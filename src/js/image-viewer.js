@@ -19,6 +19,13 @@ const Imageviewer = (($) => {
    const ESCAPE_KEY = 27;
    const ARROW_LEFT_KEYCODE = 37;
    const ARROW_RIGHT_KEYCODE = 39;
+   const SPINNER_TEMPLATE = `<div class="sv-spinner">
+                                <div class="sv-rect1"></div>
+                                <div class="sv-rect2"></div>
+                                <div class="sv-rect3"></div>
+                                <div class="sv-rect4"></div>
+                                <div class="sv-rect5"></div>
+                             </div>`;
 
    const SELECTORS = {
       ACTIVE_DOT           : '.sv-image-viewer__indicators--active',
@@ -26,12 +33,15 @@ const Imageviewer = (($) => {
       DATA_MOVE            : '[data-move]',
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
       IMAGES               : '.sv-image-viewer__images',
-      INDICATORS           : '.sv-image-viewer__indicators'
+      INDICATORS           : '.sv-image-viewer__indicators',
+      DATA_SLIDE_TO        : '[data-slide-to]',
+      SPINNER              : '.sv-spinner'
    };
 
    const ClassName = {
       ACTIVE_DOT     : 'sv-image-viewer__indicators--active',
-      HIDDEN         : 'sv-image-viewer--hidden'
+      HIDDEN         : 'sv-image-viewer--hidden',
+      SPINNER_HIDE   : 'sv-spinner--hide'
    };
 
    const Events = {
@@ -66,6 +76,7 @@ const Imageviewer = (($) => {
          const href = image.getAttribute('href');
 
          if (this._isShown) {
+            $(SELECTORS.SPINNER).removeClass(ClassName.SPINNER_HIDE);
             this.$btnContainer.addClass(ClassName.HIDDEN);
 
             const $downloadingImage = this._loadImage(href);
@@ -105,6 +116,8 @@ const Imageviewer = (($) => {
             this._bindContainerEvents();
             this._bindEvents();
             this._showBackdrop();
+
+            $(SPINNER_TEMPLATE).prependTo(this.$modal);
          }
       }
 
@@ -125,6 +138,7 @@ const Imageviewer = (($) => {
 
       _loadImage(href) {
          const $downloadingImage = $('<img>');
+
          $downloadingImage
             .addClass('sv-image-viewer__img')
             .attr({
@@ -132,6 +146,7 @@ const Imageviewer = (($) => {
                src: href
             })
             .on('load', () => {
+               $(SELECTORS.SPINNER).addClass(ClassName.SPINNER_HIDE);
                this.$btnContainer.removeClass(ClassName.HIDDEN);
                this.$imgContainer.children()[0].focus();
             });
