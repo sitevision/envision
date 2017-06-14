@@ -6,7 +6,6 @@ $nav-link-classname: #{$prefix}-nav__link;
    &__link {
       color: $color-brand;
       display: block;
-      padding: $spacing-small;
       transition: background-color .25s ease,
                   color .25s ease;
 
@@ -26,6 +25,10 @@ $nav-link-classname: #{$prefix}-nav__link;
 
 .#{$prefix}-nav--menubar {
    display: flex;
+
+   .#{$nav-link-classname} {
+      padding: $spacing-small;
+   }
 
    &.#{$prefix}-nav--fill {
       .#{$nav-link-classname} {
@@ -62,15 +65,15 @@ $nav-link-classname: #{$prefix}-nav__link;
    .#{$nav-link-classname} {
       border-bottom: 1px solid $color-lighter;
       color: $color-normal;
+      padding: $spacing-small 0;
 
       &--active {
-         border-bottom-color: $color-brand;
-         color: $color-brand;
+         border-left: 2px solid $color-brand;
+         padding-left: $spacing-x-small;
       }
 
       &:hover {
-         border-bottom-color: $color-brand-dark;
-         color: $color-brand-dark;
+         color: $color-brand;
       }
    }
 }
