@@ -39,7 +39,7 @@ $nav-link-classname: #{$prefix}-nav__link;
          }
 
          &--active {
-            background-color: $color-brand-light;
+            background-color: $color-brand;
             color: $font-color-invert;
          }
       }
@@ -55,8 +55,8 @@ $nav-link-classname: #{$prefix}-nav__link;
          }
 
          &--active {
-            border-bottom-color: $color-brand-light;
-            color: $color-brand-light;
+            border-bottom-color: $color-brand;
+            color: $color-brand;
          }
       }
    }
