@@ -6,32 +6,32 @@
 
 import Util from './util';
 
-const Modal = (($) => {
+const ModalDialog = (($) => {
 
    const ANIMATION = 'sv-animation-in-progress';
-   const BACKDROP = 'sv-modal__backdrop';
-   const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
-   const DATA_KEY = 'sv.modal';
-   const DISMISS_SELECTOR = '[data-modal-dismiss]';
+   const BACKDROP = 'sv-modal-dialog__backdrop';
+   const BACKDROP_ANIMATION = 'sv-modal-dialog__backdrop--in';
+   const DATA_KEY = 'sv.modal-dialog';
+   const DISMISS_SELECTOR = '[data-modal-dialog-dismiss]';
    const ESCAPE_KEY = 27;
-   const FOCUSIN = 'focusin.sv-modal';
-   const MODIFIER_BASE = 'sv-modal--';
-   const NAME = 'modal';
+   const FOCUSIN = 'focusin.sv-modal-dialog';
+   const MODIFIER_BASE = 'sv-modal-dialog--';
+   const NAME = 'modalDialog';
    const NO_CONFLICT = $.fn[NAME];
-   const SELECTOR = '[data-modal]';
+   const SELECTOR = '[data-modal-dialog]';
    const SHOW = 'show';
    const TAB_KEY = 9;
 
    const FOCUSABLE_ELEMENTS_SELECTOR = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
    const EVENTS = {
-      HIDE: 'hide.sv-modal',
-      HIDDEN: 'hidden.sv-modal',
-      SHOW: 'show.sv-modal',
-      SHOWN: 'shown.sv-modal'
+      HIDE: 'hide.sv-modal-dialog',
+      HIDDEN: 'hidden.sv-modal-dialog',
+      SHOW: 'show.sv-modal-dialog',
+      SHOWN: 'shown.sv-modal-dialog'
    };
 
-   class Modal {
+   class ModalDialog {
 
       constructor(element) {
          this.el = element;
@@ -184,7 +184,7 @@ const Modal = (($) => {
             let data = $this.data(DATA_KEY);
 
             if (!data) {
-               data = new Modal(this);
+               data = new ModalDialog(this);
                $this.data(DATA_KEY, data);
             }
 
@@ -202,11 +202,11 @@ const Modal = (($) => {
       }
    }
 
-   $.fn[NAME] = Modal._jQuery;
-   $.fn[NAME].Constructor = Modal;
+   $.fn[NAME] = ModalDialog._jQuery;
+   $.fn[NAME].Constructor = ModalDialog;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return Modal._jQuery;
+      return ModalDialog._jQuery;
    };
 
    $(document).on('click', SELECTOR, function(e) {
@@ -214,11 +214,11 @@ const Modal = (($) => {
 
       const $target = $($(this).data('target'));
 
-      $target.modal();
+      $target.modalDialog();
    });
 
-   return Modal;
+   return ModalDialog;
 
 })(jQuery);
 
-export default Modal;
+export default ModalDialog;
