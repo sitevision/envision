@@ -109,6 +109,9 @@ const Imageviewer = (($) => {
             this.$btnContainer.addClass(ClassName.HIDDEN);
             const $downloadingImage = this._loadImage(href);
 
+            // Get image width and height and set appropriate class
+            // $downloadingImage.addClass(this._getImageSize($downloadingImage));
+
             this.$imgContainer.html($downloadingImage);
 
             this._isShown = true;
@@ -136,6 +139,11 @@ const Imageviewer = (($) => {
          this._isShown = false;
       }
 
+      _getImageSize(image) {
+
+         return image.width() < image.height();
+      }
+
       _loadImage(href) {
          const $downloadingImage = $('<img>');
 
@@ -146,6 +154,14 @@ const Imageviewer = (($) => {
                src: href
             })
             .on('load', () => {
+
+               if (this._getImageSize($downloadingImage)) {
+                  $downloadingImage.css({
+                     'max-height': '800px',
+                     width: 'auto'
+                  });
+               }
+
                $(SELECTORS.SPINNER).addClass(ClassName.SPINNER_HIDE);
                this.$btnContainer.removeClass(ClassName.HIDDEN);
                this.$imgContainer.children()[0].focus();
