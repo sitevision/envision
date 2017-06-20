@@ -109,9 +109,6 @@ const Imageviewer = (($) => {
             this.$btnContainer.addClass(ClassName.HIDDEN);
             const $downloadingImage = this._loadImage(href);
 
-            // Get image width and height and set appropriate class
-            // $downloadingImage.addClass(this._getImageSize($downloadingImage));
-
             this.$imgContainer.html($downloadingImage);
 
             this._isShown = true;
@@ -139,8 +136,7 @@ const Imageviewer = (($) => {
          this._isShown = false;
       }
 
-      _getImageSize(image) {
-
+      _compareImageSizes(image) {
          return image.width() < image.height();
       }
 
@@ -155,7 +151,7 @@ const Imageviewer = (($) => {
             })
             .on('load', () => {
 
-               if (this._getImageSize($downloadingImage)) {
+               if (this._compareImageSizes($downloadingImage)) {
                   $downloadingImage.css({
                      'max-height': '800px',
                      width: 'auto'
