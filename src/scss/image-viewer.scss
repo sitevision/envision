@@ -18,9 +18,9 @@
       display: inline-block;
       margin: 0 auto;
       margin-top: 5%;
-      position: relative;
       max-height: 800px;
       max-width: 800px;
+      position: relative;
    }
 
    &__modal-container {
@@ -81,8 +81,13 @@
       @include border-radius(50%);
    }
 
-   &__next-icon { margin-right: $spacing-xxx-small; }
-   &__prev-icon { margin-left: $spacing-xxx-small; }
+   &__next-icon {
+      margin-right: $spacing-xxx-small;
+   }
+
+   &__prev-icon {
+      margin-left: $spacing-xxx-small;
+   }
 
    &__thumbnails {
       bottom: 0;
@@ -101,17 +106,17 @@
          margin-right: $spacing-x-small;
          position: relative;
       }
+   }
 
-      .#{$prefix}-image-viewer__thumbnail {
-         border: 1px solid transparent;
-         max-width: 80px;
-         opacity: .9;
-      }
+   .#{$prefix}-image-viewer__thumbnail {
+      border: 1px solid transparent;
+      max-width: 80px;
+      opacity: .9;
+   }
 
-      .#{$prefix}-image-viewer__thumbnail:active {
-         border: 1px solid $color-focus;
-         opacity: 1;
-      }
+   .#{$prefix}-image-viewer__thumbnail:active {
+      border: 1px solid $color-focus;
+      opacity: 1;
    }
 
    &__indicators {
@@ -135,7 +140,7 @@
          opacity: .4;
       }
 
-      .#{$prefix}-image-viewer__indicators--active {
+      &--active {
          color: $color-focus;
          opacity: 1;
       }
@@ -146,8 +151,8 @@
       max-width: 100%;
       outline: none;
    }
-}
 
-.#{$prefix}-image-viewer--hidden {
-   visibility: hidden;
+   &--hidden {
+      visibility: hidden;
+   }
 }

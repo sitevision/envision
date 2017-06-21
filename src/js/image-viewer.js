@@ -53,13 +53,13 @@ const Imageviewer = (($) => {
 
    class Imageviewer {
 
-      constructor(element, config) {
+      constructor(element, $image) {
          this.$el = $(element);
          this.$images = this.$el.find(SELECTORS.IMAGES);
-
          this._isShown = false;
 
-         this.config = $.extend({}, this.$el.data(), config);
+         this.config = $.extend({}, this.$el.data());
+         this._generateIndex($image);
       }
 
       next() {
@@ -136,8 +136,16 @@ const Imageviewer = (($) => {
          this._isShown = false;
       }
 
-      _compareImageSizes(image) {
-         return image.width() < image.height();
+      _generateIndex($image) {
+         this.$images.each(function(i) {
+            $(this).attr('data-image', i);
+         });
+
+         this.config.index = this.$images.index($image[0]);
+      }
+
+      _isHeightLargerThanWidth($image) {
+         return $image.width() < $image.height();
       }
 
       _loadImage(href) {
@@ -151,7 +159,7 @@ const Imageviewer = (($) => {
             })
             .on('load', () => {
 
-               if (this._compareImageSizes($downloadingImage)) {
+               if (this._isHeightLargerThanWidth($downloadingImage)) {
                   $downloadingImage.css({
                      'max-height': '800px',
                      width: 'auto'
@@ -306,17 +314,10 @@ const Imageviewer = (($) => {
          }
       }
 
-      static _jQuery(config) {
+      static _jQuery($image) {
          return this.each(() => {
-            const $this = $(this);
-            const _config = $this.data();
-
-            if (typeof config === 'object') {
-               $.extend(_config, config);
-            }
-
-            const data = new Imageviewer(this, _config);
-            data.show(_config.index);
+            const data = new Imageviewer(this, $image);
+            data.show(data.config.index);
          });
       }
    }
@@ -324,15 +325,13 @@ const Imageviewer = (($) => {
    $(document)
       .on(Events.CLICK_DATA_API, SELECTORS.DATA_IMAGE_VIEWER, function(e) {
          e.preventDefault();
-         const $this = $(this);
+         const $target = $(e.target);
 
-         $this.data().index = $(e.target).closest('[data-image]').data('image');
-
-         if ($this.data().index === undefined) {
+         if (!$target.is('img')) {
             return;
          }
 
-         $this.imageviewer($this.data());
+         $(this).imageviewer($target.parent());
       });
 
    $.fn[NAME] = Imageviewer._jQuery;
