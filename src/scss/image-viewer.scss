@@ -6,26 +6,27 @@
       left: 0;
       opacity: 1;
       outline: 0;
-      position: fixed;
+      position: absolute;
       right: 0;
+      text-align: center;
       top: 0;
       z-index: $zindex-modal;
    }
 
-   &__modal-container {
-      display: flex;
-      justify-content: center;
+   &__dialog {
+      cursor: default;
+      display: inline-block;
+      margin: 0 auto;
       margin-top: 5%;
+      max-height: 800px;
+      max-width: 800px;
       position: relative;
-      text-align: center;
    }
 
-   &__dialog {
-      background-color: $color-lightest;
-      cursor: default;
-      margin: 10% auto;
-      max-width: 968px;
+   &__modal-container {
+      margin: 0 auto;
       position: relative;
+      text-align: center;
    }
 
    &__item--prev,
@@ -52,11 +53,19 @@
    &--next {
       justify-content: flex-end;
       right: 0;
+
+      &:hover .#{$prefix}-image-viewer__next-icon {
+         background-color: rgba(255, 255, 255, .9);
+      }
    }
 
    &--prev {
       justify-content: flex-start;
       left: 0;
+
+      &:hover .#{$prefix}-image-viewer__prev-icon {
+         background-color: rgba(255, 255, 255, .9);
+      }
    }
 
    &__item--next,
@@ -65,23 +74,29 @@
       top: 0;
    }
 
-   &--next-icon,
-   &--prev-icon {
-      background: transparent no-repeat center center;
-      background-size: 100% 100%;
-      display: inline-block;
-      height: 20%;
-      width: 20%;
+   &__next-icon,
+   &__prev-icon {
+      background-color: rgba(255, 255, 255, .5);
+      padding: $spacing-xxx-small;
+      @include border-radius(50%);
+   }
+
+   &__next-icon {
+      margin-right: $spacing-xxx-small;
+   }
+
+   &__prev-icon {
+      margin-left: $spacing-xxx-small;
    }
 
    &__thumbnails {
       bottom: 0;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       left: 0;
       list-style: none;
       margin-top: $spacing-x-small;
-      overflow: auto;
+      overflow: hidden;
       padding-left: 0;
       right: 0;
       z-index: $zindex-imageslider-indicator;
@@ -92,13 +107,14 @@
          position: relative;
       }
 
-      .#{$prefix}-image-viewer__thumbnail {
-         border: 1px solid transparent;
-         max-width: 80px;
-         opacity: .9;
-      }
+   }
 
-      .#{$prefix}-image-viewer__thumbnail:active {
+   &__thumbnail {
+      border: 1px solid transparent;
+      max-width: 80px;
+      opacity: .9;
+
+      &:active {
          border: 1px solid $color-focus;
          opacity: 1;
       }
@@ -114,6 +130,7 @@
       margin-bottom: 0;
       margin-left: $spacing-x-large;
       margin-right: $spacing-x-large;
+      overflow: hidden;
       padding-left: 0;
       position: absolute;
       right: 0;
@@ -124,20 +141,19 @@
          opacity: .4;
       }
 
-      .#{$prefix}-image-viewer__indicators--active {
+      &--active {
          color: $color-focus;
          opacity: 1;
       }
    }
 
    &__img {
-      display: block;
       height: auto;
       max-width: 100%;
       outline: none;
    }
-}
 
-.#{$prefix}-image-viewer--hidden {
-   visibility: hidden;
+   &--hidden {
+      visibility: hidden;
+   }
 }
