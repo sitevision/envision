@@ -14,13 +14,13 @@ group: components
    <ol class="{{ site.css_prefix }}-image-viewer__thumbnails">
       <li>
          <a class="{{ site.css_prefix }}-image-viewer__images" href="//unsplash.it/800/800?blur">
-            <img src="https://unsplash.it/200/100" class="{{ site.css_prefix }}-image-viewer__thumbnail"
+            <img src="https://unsplash.it/200/100" class="{{ site.css_prefix }}-image-viewer__thumbnails__thumbnail"
                alt="First thumbnail">
          </a>
       </li>
        <li>
          <a class="{{ site.css_prefix }}-image-viewer__images" href="//unsplash.it/800/800/">
-            <img src="https://unsplash.it/200/100?blur" class="{{ site.css_prefix }}-image-viewer__thumbnail"
+            <img src="https://unsplash.it/200/100?blur" class="{{ site.css_prefix }}-image-viewer__thumbnails__thumbnail"
                alt="Second thumbnail">
          </a>
       </li>

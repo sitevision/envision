@@ -106,17 +106,17 @@
          margin-right: $spacing-x-small;
          position: relative;
       }
-   }
 
-   .#{$prefix}-image-viewer__thumbnail {
-      border: 1px solid transparent;
-      max-width: 80px;
-      opacity: .9;
-   }
+      &__thumbnail {
+         border: 1px solid transparent;
+         max-width: 80px;
+         opacity: .9;
 
-   .#{$prefix}-image-viewer__thumbnail:active {
-      border: 1px solid $color-focus;
-      opacity: 1;
+         &:active {
+            border: 1px solid $color-focus;
+            opacity: 1;
+         }
+      }
    }
 
    &__indicators {

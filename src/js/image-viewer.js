@@ -59,7 +59,7 @@ const Imageviewer = (($) => {
          this._isShown = false;
 
          this.config = $.extend({}, this.$el.data());
-         this._generateIndex($image);
+         this.config.index = this.$images.index($image[0]);
       }
 
       next() {
@@ -136,18 +136,6 @@ const Imageviewer = (($) => {
          this._isShown = false;
       }
 
-      _generateIndex($image) {
-         this.$images.each(function(i) {
-            $(this).attr('data-image', i);
-         });
-
-         this.config.index = this.$images.index($image[0]);
-      }
-
-      _isHeightLargerThanWidth($image) {
-         return $image.width() < $image.height();
-      }
-
       _loadImage(href) {
          const $downloadingImage = $('<img>');
 
@@ -159,7 +147,7 @@ const Imageviewer = (($) => {
             })
             .on('load', () => {
 
-               if (this._isHeightLargerThanWidth($downloadingImage)) {
+               if ($downloadingImage.width() < $downloadingImage.height()) {
                   $downloadingImage.css({
                      'max-height': '800px',
                      width: 'auto'
