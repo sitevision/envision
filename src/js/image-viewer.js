@@ -9,8 +9,8 @@ import Util from './util';
 const Imageviewer = (($) => {
 
    const ANIMATION = 'sv-animation-in-progress';
-   const BACKDROP = 'sv-modal__backdrop';
-   const BACKDROP_ANIMATION = 'sv-modal__backdrop--in';
+   const BACKDROP = 'sv-modal-dialog__backdrop';
+   const BACKDROP_ANIMATION = 'sv-modal-dialog__backdrop--in';
    const DATA_KEY = 'sv.image-viewer';
    const EVENT_KEY = `.${DATA_KEY}`;
    const NAME = 'imageviewer';
