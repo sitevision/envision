@@ -107,16 +107,17 @@
          position: relative;
       }
 
-      &:active {
-         border: 1px solid $color-focus;
-         opacity: 1;
-      }
    }
 
    &__thumbnail {
       border: 1px solid transparent;
       max-width: 80px;
       opacity: .9;
+
+      &:active {
+         border: 1px solid $color-focus;
+         opacity: 1;
+      }
    }
 
    &__indicators {
