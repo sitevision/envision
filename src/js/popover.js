@@ -8,7 +8,7 @@
 
 const Popover = (($) => {
 
-   const NAME = 'popover';
+   const NAME = 'thePopover';
    const IDENTIFIER = 'sv.popover';
    const EVENT_NAMESPACE = `.${IDENTIFIER}`;
    const NO_CONFLICT = $.fn[NAME];
