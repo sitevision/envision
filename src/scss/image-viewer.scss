@@ -28,6 +28,13 @@
       position: relative;
       text-align: center;
    }
+   &__backdrop {
+      @include backdrop();
+
+      &--in {
+         @include backdrop-in();
+      }
+   }
 
    &__item--prev,
    &__item--next {
