@@ -229,9 +229,7 @@ const Imageslider = (($) => {
                <span class="sv-assistive-text">Next</span>
             </a>`;
 
-         /* eslint-disable prefer-template */
-         $('#' + sliderId).find(SELECTORS.INNER).append(buttonHTML);
-         /* eslint-enable prefer-template */
+         $(`#${sliderId}`).find(SELECTORS.INNER).append(buttonHTML);
       }
 
       _getItemByDirection(direction, activeElement) {
