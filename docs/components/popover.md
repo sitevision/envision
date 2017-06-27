@@ -76,6 +76,19 @@ group: components
 {% example html %}
 
 <button 
+   class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary example-popover"
+   data-placement="top"
+   data-click-outside="true"
+   data-title="Lorem ipsum"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Close when clicking outside!
+</button>
+
+{% endexample %}
+
+{% example html %}
+
+<button 
    class="{{ site.css_prefix }}-button example-popover"
    data-placement="top"
    data-title="Lorem ipsum"
