@@ -29,6 +29,7 @@ const Popover = (($) => {
    };
 
    const DEFAULTS = {
+      clickOutside: false,
       constraints: [],
       container: 'body',
       content: '',
@@ -117,6 +118,11 @@ const Popover = (($) => {
          const $popoverElement = this.getPopoverElement();
 
          $popoverElement.detach();
+
+         if (this.config.clickOutside) {
+            $('body').off(this.config.trigger + EVENT_NAMESPACE);
+         }
+
          this.isShowing = false;
       }
 
@@ -145,6 +151,10 @@ const Popover = (($) => {
 
          this._tether.position();
 
+         if (this.config.clickOutside) {
+            $('body').on(this.config.trigger + EVENT_NAMESPACE, this.clickOutsideHandler.bind(this));
+         }
+
          this.isShowing = true;
       }
 
@@ -155,6 +165,14 @@ const Popover = (($) => {
          this._tether = undefined;
          this.isShowing = false;
          this.$el.removeData(IDENTIFIER);
+      }
+
+      clickOutsideHandler(e) {
+         const $target = $(e.target);
+
+         if (this.isShowing && !$target.is(this.$el) && !$target.closest(this.$popoverElement).length) {
+            this.hide();
+         }
       }
 
       static _jQuery(config) {
