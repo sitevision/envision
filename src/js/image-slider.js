@@ -16,63 +16,68 @@ const Imageslider = (($) => {
    const ARROW_LEFT_KEYCODE = 37;
    const ARROW_RIGHT_KEYCODE = 39;
    const TOUCHEVENT_WAIT = 500;
+   const SLIDE_WIDTH_PX = 80;
 
    const DEFAULTS = {
+      buttons: true,
+      imageSlider: false,
       interval: 5000,
       keyboard: true,
-      slide: false,
       pause: 'hover',
-      wrap: true,
-      imageSlider: false
+      slide: false,
+      swipe: true,
+      wrap: true
    };
 
    const SELECTORS = {
       ACTIVE: '.sv-image-slider__item--active',
-      ACTIVE_ITEM: '.sv-image-slider__item--active.sv-image-slider__item',
-      ITEM: '.sv-image-slider__item',
-      NEXT_PREV: '.sv-image-slider--next, .sv-image-slider--prev',
-      INDICATORS: '.sv-image-slider__indicators',
-      THUMBNAILS: '.sv-image-slider__thumbnails',
-      DATA_SLIDE: '[data-move], [data-move-to]',
-      DATA_IMAGE_SLIDER: '[data-image-slider="cycle"]',
       ACTIVE_DOT: '.sv-icon--dot-big-selected',
-      DOT: '.sv-icon--dot-big'
+      ACTIVE_ITEM: '.sv-image-slider__item--active.sv-image-slider__item',
+      DATA_SLIDE: '[data-move], [data-move-to], [data-image-slider-touch]',
+      DATA_IMAGE_SLIDER: '[data-image-slider]',
+      DOT: '.sv-icon--dot-big',
+      INDICATORS: '.sv-image-slider__indicators',
+      INNER: '.sv-image-slider__inner',
+      NEXT_PREV: '.sv-image-slider--next, .sv-image-slider--prev',
+      ITEM: '.sv-image-slider__item',
+      THUMBNAILS: '.sv-image-slider__thumbnails'
    };
 
    const ClassName = {
-      IMAGESLIDER: 'sv-image-slider',
       ACTIVE: 'sv-image-slider__item--active',
-      NEXT: 'sv-image-slider__item--next',
-      RIGHT: 'sv-image-slider__item--right',
-      PREV: 'sv-image-slider__item--prev',
-      LEFT: 'sv-image-slider__item--left',
-      SLIDE: 'sv-image-slider--slide',
       ACTIVE_DOT: 'sv-icon--dot-big-selected',
-      DOT: 'sv-icon--dot-big'
+      DOT: 'sv-icon--dot-big',
+      IMAGESLIDER: 'sv-image-slider',
+      LEFT: 'sv-image-slider__item--left',
+      NEXT: 'sv-image-slider__item--next',
+      PREV: 'sv-image-slider__item--prev',
+      RIGHT: 'sv-image-slider__item--right',
+      SLIDE: 'sv-image-slider--slide'
    };
 
    const Direction = {
+      LEFT: 'left',
       NEXT: 'next',
       PREV: 'prev',
-      LEFT: 'left',
       RIGHT: 'right'
    };
 
    const Events = {
-      SLID: `slid${EVENT_KEY}`,
-      SLIDE: `slide${EVENT_KEY}`,
-      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
       CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+      KEYDOWN: `keydown${EVENT_KEY}`,
+      LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
       MOUSEENTER: `mouseenter${EVENT_KEY}`,
       MOUSELEAVE: `mouseleave${EVENT_KEY}`,
+      SLID: `slid${EVENT_KEY}`,
+      SLIDE: `slide${EVENT_KEY}`,
       TOUCHEND: `touchend${EVENT_KEY}`,
-      KEYDOWN: `keydown${EVENT_KEY}`
+      TOUCHMOVE: `touchmove${EVENT_KEY}`,
+      TOUCHSTART: `touchstart${EVENT_KEY}`
    };
 
    class Imageslider {
 
       constructor(element, config) {
-         this.el = element;
          this.$el = $(element);
          this.$images = this.$el.find(SELECTORS.ITEM);
 
@@ -84,6 +89,10 @@ const Imageslider = (($) => {
          this._indicatorsElement = this.$el.find(SELECTORS.INDICATORS)[0];
          this._thumbnailElements = this.$el.find(SELECTORS.THUMBNAILS)[0];
          this.config = $.extend({}, DEFAULTS, this.$el.data(), config);
+
+         if (this.$images.length > 1 && config.buttons) {
+            this._addSlideButtons();
+         }
 
          this._bindEvents();
       }
@@ -160,10 +169,46 @@ const Imageslider = (($) => {
          return;
       }
 
+      startTouchSlide(event) {
+         this.touchstartx =  event.originalEvent.touches[0].pageX;
+      }
+
+      moveTouchSlide(event) {
+         this.touchmovex =  event.originalEvent.touches[0].pageX;
+
+         this.movex = -(this.touchstartx - this.touchmovex);
+
+         this.moved = false;
+         const activeItem = this.$el.find(SELECTORS.ACTIVE).children();
+         activeItem.css('transform', `translate3d(${this.movex}px, 0, 0)`);
+
+         if (this.movex > SLIDE_WIDTH_PX) {
+            this.prev();
+            this.moved = true;
+            setTimeout(() => {
+               activeItem.css('transform', 'translate3d(0, 0, 0)');
+            }, TOUCHEVENT_WAIT);
+         } else if (this.movex < -SLIDE_WIDTH_PX) {
+            this.next();
+            this.moved = true;
+            setTimeout(() => {
+               activeItem.css('transform', 'translate3d(0, 0, 0)');
+            }, TOUCHEVENT_WAIT);
+         }
+      }
+
+      endTouchSlide() {
+         if (!this.moved) {
+            this.$el.find(SELECTORS.ACTIVE)
+               .children()
+               .css('transform', 'translate3d(0, 0, 0)');
+         }
+      }
+
       dispose() {
          this.$el.off(EVENT_KEY).removeData(DATA_KEY);
 
-         this.el = null;
+         this.$el = null;
          this.$images = null;
          this._interval = null;
          this._isPaused = null;
@@ -171,6 +216,20 @@ const Imageslider = (($) => {
          this._activeElement = null;
          this._indicatorsElement = null;
          this._thumbnailElements = null;
+      }
+
+      _addSlideButtons() {
+         const sliderId = this.$el[0].id;
+         const buttonHTML = `<a class="sv-image-slider--prev" role="button" data-move="prev" href="#${sliderId}">
+               <span class="sv-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
+               <span class="sv-assistive-text">Previous</span>
+            </a>
+            <a class="sv-image-slider--next" role="button" data-move="next" href="#${sliderId}">
+               <span class="sv-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
+               <span class="sv-assistive-text">Next</span>
+            </a>`;
+
+         $(`#${sliderId}`).find(SELECTORS.INNER).append(buttonHTML);
       }
 
       _getItemByDirection(direction, activeElement) {
@@ -200,7 +259,7 @@ const Imageslider = (($) => {
             this.$el
                .on(Events.MOUSEENTER, (event) => this.pause(event))
                .on(Events.MOUSELEAVE, (event) => this.cycle(event));
-            if ('ontouchstart' in document.documentElement) {
+            if (Util.isTouch()) {
                this.$el
                   .on(Events.TOUCHEND, () => {
                      this.pause();
@@ -211,6 +270,24 @@ const Imageslider = (($) => {
                   });
             }
          }
+         if (this.config.swipe) {
+            this._bindTouchSlider();
+         }
+      }
+
+      _bindTouchSlider() {
+         const container = this.$el.find(SELECTORS.INNER);
+         container.on(Events.TOUCHSTART,  (event) => {
+            this.startTouchSlide(event);
+         });
+
+         container.on(Events.TOUCHMOVE, (event) => {
+            this.moveTouchSlide(event);
+         });
+
+         container.on(Events.TOUCHEND, () => {
+            this.endTouchSlide(event);
+         });
       }
 
       _keydown(event) {
