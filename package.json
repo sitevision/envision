@@ -4,7 +4,7 @@
   "description": "SiteVision CSS framework",
   "main": "index.js",
   "scripts": {
-    "builddocs": "gulp; cd _docs/; jekyll build"
+    "builddocs": "gulp; cd _docs/; jekyll build; touch ../docs/.nojekyll"
   },
   "repository": {
     "type": "git",
