@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.3.1"
+gem "jekyll", "~> 3.4.3"
 gem "scss_lint"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
