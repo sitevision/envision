@@ -8,14 +8,14 @@ group: components
 ## Overview ##
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">4</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">5</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
+   <ul class="env-pagination env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">4</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">5</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -24,14 +24,14 @@ group: components
 ### Disabled ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item">
-         <a class="{{ site.css_prefix }}-pagination__link {{ site.css_prefix }}-is-disabled" href="#" tabindex="-1">Previous</a>
+   <ul class="env-pagination env-list env-list--horizontal">
+      <li class="env-pagination__item">
+         <a class="env-pagination__link env-is-disabled" href="#" tabindex="-1">Previous</a>
       </li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -39,14 +39,14 @@ group: components
 ### Active ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item">
-         <a class="{{ site.css_prefix }}-pagination__link {{ site.css_prefix }}-is-active" href="#">2 <span class="{{ site.css_prefix }}-assistive-text">Current</span></a>
+   <ul class="env-pagination env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item">
+         <a class="env-pagination__link env-is-active" href="#">2 <span class="env-assistive-text">Current</span></a>
       </li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -55,12 +55,12 @@ group: components
 ### Center ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--center {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
+   <ul class="env-pagination env-pagination--center env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -68,12 +68,12 @@ group: components
 ### End ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--end {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Previous</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">Next</a></li>
+   <ul class="env-pagination env-pagination--end env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Next</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -82,10 +82,10 @@ group: components
 `--small`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--small {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--small env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -93,10 +93,10 @@ group: components
 `--large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--large {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--large env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -104,10 +104,10 @@ group: components
 `--x-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--x-large {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--x-large env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -115,10 +115,10 @@ group: components
 `--xx-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--xx-large {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--xx-large env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
    </ul>
 </nav>
 {% endexample %}
@@ -126,10 +126,10 @@ group: components
 `--xxx-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="{{ site.css_prefix }}-pagination {{ site.css_prefix }}-pagination--xxx-large {{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal">
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">1</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">2</a></li>
-      <li class="{{ site.css_prefix }}-pagination__item"><a class="{{ site.css_prefix }}-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--xxx-large env-list env-list--horizontal">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
    </ul>
 </nav>
 {% endexample %}

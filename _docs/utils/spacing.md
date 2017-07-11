@@ -4,7 +4,7 @@ title: Spacing
 description: Spacing description
 group: utils
 ---
-Padding and margin utility classes are named using the format: `{{ site.css_prefix }}-{property}-{specifier}--{size}`
+Padding and margin utility classes are named using the format: `env-{property}-{specifier}--{size}`
 
 Valid values for _property_
 * `m` for `margin`
@@ -35,9 +35,9 @@ Examples
 {% example html %}
 
 <div class="example-spacing"> 
-   <div class="{{ site.css_prefix }}-m-left--small"></div>
-   <div class="{{ site.css_prefix }}-m-around--large"></div>
-   <div class="{{ site.css_prefix }}-p-top--medium"></div>
+   <div class="env-m-left--small"></div>
+   <div class="env-m-around--large"></div>
+   <div class="env-p-top--medium"></div>
 </div>
 
 {% endexample %}

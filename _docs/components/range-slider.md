@@ -7,12 +7,12 @@ group: components
 
 Capture a range
 {% example html %}
-<div class="{{ site.css_prefix }}-range-slider example-range-slider">
-   <div class="{{ site.css_prefix }}-range-slider__range"></div>
-   <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
-   <div class="{{ site.css_prefix }}-range-slider__handle" tabindex="0"></div>
-   <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text"></span>
-   <span class="{{ site.css_prefix }}-range-slider__value {{ site.css_prefix }}-text"></span>
+<div class="env-range-slider example-range-slider">
+   <div class="env-range-slider__range"></div>
+   <div class="env-range-slider__handle" tabindex="0"></div>
+   <div class="env-range-slider__handle" tabindex="0"></div>
+   <span class="env-range-slider__value env-text"></span>
+   <span class="env-range-slider__value env-text"></span>
 </div>
 {% endexample %}
 

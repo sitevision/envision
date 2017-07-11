@@ -9,19 +9,19 @@ group: components
 
 {% example html %}
 
-<div class="{{ site.css_prefix }}-modal-dialog doc-demo__modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="{{ site.css_prefix }}-modal-dialog__dialog">
-      <section class="{{ site.css_prefix }}-modal-dialog__content">
-         <header class="{{ site.css_prefix }}-modal-dialog__header">
-            <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-modal-dialog__header__title">Modal Header</h4>
+<div class="env-modal-dialog doc-demo__modal" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="env-modal-dialog__dialog">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h4 class="env-text env-modal-dialog__header__title">Modal Header</h4>
          </header>
-         <div class="{{ site.css_prefix }}-modal-dialog__body">
-            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="env-modal-dialog__body">
+            <p class="env-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-modal-dialog__footer">
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-modal-dialog-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+         <footer class="env-modal-dialog__footer">
+            <button type="button" class="env-button env-button--primary">Save</button>
+            <button type="button" data-modal-dialog-dismiss class="env-button env-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -31,25 +31,25 @@ group: components
 
 ### Optional sizes ###
 
-Uses `{{ site.css_prefix }}-modal-dialog__dialog--large` and footer `{{ site.css_prefix }}-modal-dialog__footer--right` aligning footer descendents to the right.
+Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--right` aligning footer descendents to the right.
 
 {% example html %}
 
-<button id="largeBtn" data-modal-dialog data-target="#example1" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show large</button>
+<button id="largeBtn" data-modal-dialog data-target="#example1" type="button" class="env-button env-button--primary env-button--large">Show large</button>
 
-<div id="example1" class="{{ site.css_prefix }}-modal-dialog" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="{{ site.css_prefix }}-modal-dialog__dialog {{ site.css_prefix }}-modal-dialog__dialog--large">
-      <section class="{{ site.css_prefix }}-modal-dialog__content">
-         <header class="{{ site.css_prefix }}-modal-dialog__header">
-            <h4 class="{{ site.css_prefix }}-text {{ site.css_prefix }}-modal-dialog__header__title">Modal Header</h4>
+<div id="example1" class="env-modal-dialog" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h4 class="env-text env-modal-dialog__header__title">Modal Header</h4>
          </header>
-         <div class="{{ site.css_prefix }}-modal-dialog__body">
-            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="env-modal-dialog__body">
+            <p class="env-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-modal-dialog__footer {{ site.css_prefix }}-modal-dialog__footer--right">
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-modal-dialog-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+         <footer class="env-modal-dialog__footer env-modal-dialog__footer--right">
+            <button type="button" class="env-button env-button--primary">Save</button>
+            <button type="button" data-modal-dialog-dismiss class="env-button env-button--link">Cancel</button>
          </footer>
       </section>
    </div>
@@ -57,23 +57,23 @@ Uses `{{ site.css_prefix }}-modal-dialog__dialog--large` and footer `{{ site.css
 
 {% endexample %}
 
-Uses `{{ site.css_prefix }}-modal-dialog__dialog--small` 
+Uses `env-modal-dialog__dialog--small` 
 {%example html %}
-<button id="smallBtn" data-modal-dialog data-target="#example2" type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary {{ site.css_prefix }}-button--large">Show small</button>
+<button id="smallBtn" data-modal-dialog data-target="#example2" type="button" class="env-button env-button--primary env-button--large">Show small</button>
 
-<div id="example2" class="{{ site.css_prefix }}-modal-dialog" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
-   <div class="{{ site.css_prefix }}-modal-dialog__dialog {{ site.css_prefix }}-modal-dialog__dialog--small">
-      <section class="{{ site.css_prefix }}-modal-dialog__content">
-         <header class="{{ site.css_prefix }}-modal-dialog__header">
-            <h4 class="{{ site.css_prefix }}-modal-dialog__header__title">Modal Header</h4>
+<div id="example2" class="env-modal-dialog" role="dialog" aria-labelledby="myDialog" aria-hidden="true" tabindex="-1">
+   <div class="env-modal-dialog__dialog env-modal-dialog__dialog--small">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h4 class="env-modal-dialog__header__title">Modal Header</h4>
          </header>
-         <div class="{{ site.css_prefix }}-modal-dialog__body">
-            <p class="{{ site.css_prefix }}-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
+         <div class="env-modal-dialog__body">
+            <p class="env-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
                and fall asleep.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-modal-dialog__footer">
-            <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Save</button>
-            <button type="button" data-modal-dialog-dismiss class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--link">Cancel</button>
+         <footer class="env-modal-dialog__footer">
+            <button type="button" class="env-button env-button--primary">Save</button>
+            <button type="button" data-modal-dialog-dismiss class="env-button env-button--link">Cancel</button>
          </footer>
       </section>
    </div>

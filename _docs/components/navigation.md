@@ -10,15 +10,15 @@ group: components
 <h3>Fill</h3>
 {% example html %}
 <nav>
-   <ul class="{{ site.css_prefix }}-nav {{ site.css_prefix }}-nav--menubar {{ site.css_prefix }}-nav--fill" role="menubar">
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+   <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link {{ site.css_prefix }}-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
    </ul>
 </nav>
@@ -27,15 +27,15 @@ group: components
 <h3>Border</h3>
 {% example html %}
 <nav>
-   <ul class="{{ site.css_prefix }}-nav {{ site.css_prefix }}-nav--menubar {{ site.css_prefix }}-nav--border" role="menubar">
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+   <ul class="env-nav env-nav--menubar env-nav--border" role="menubar">
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link {{ site.css_prefix }}-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
    </ul>
 </nav>
@@ -44,15 +44,15 @@ group: components
 <h2>Sidenav</h2>
 {% example html %}
 <nav>
-   <ul class="{{ site.css_prefix }}-nav {{ site.css_prefix }}-nav--sidenav" role="menu">
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+   <ul class="env-nav env-nav--sidenav" role="menu">
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link {{ site.css_prefix }}-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
       </li>
-      <li class="{{ site.css_prefix }}-nav__item" role="none">
-         <a class="{{ site.css_prefix }}-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="none">
+         <a class="env-nav__link" role="menu-item" href="#">Item</a>
       </li>
    </ul>
 </nav>

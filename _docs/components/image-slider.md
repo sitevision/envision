@@ -10,16 +10,16 @@ group: components
 
 {% example html %}
 
-<div id="exampleSlider0" data-image-slider="cycle" data-buttons="false" class="{{ site.css_prefix }}-image-slider {{ site.css_prefix }}-image-slider--slide">
-   <div class="{{ site.css_prefix }}-image-slider__inner">
-      <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+<div id="exampleSlider0" data-image-slider="cycle" data-buttons="false" class="env-image-slider env-image-slider--slide">
+   <div class="env-image-slider__inner">
+      <div class="env-image-slider__item env-image-slider__item--active">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="First slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400/" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400/" class="env-embedded__img" alt="Second slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="Third slide">
       </div>
    </div>
 </div>
@@ -30,16 +30,16 @@ group: components
 
 {% example html %}
 
-<div id="exampleSlider1" data-image-slider class="{{ site.css_prefix }}-image-slider {{ site.css_prefix }}-image-slider--slide">
-   <div class="{{ site.css_prefix }}-image-slider__inner">
-      <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+<div id="exampleSlider1" data-image-slider class="env-image-slider env-image-slider--slide">
+   <div class="env-image-slider__inner">
+      <div class="env-image-slider__item env-image-slider__item--active">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="First slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400" class="env-embedded__img" alt="First slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="First slide">
       </div>
    </div>
 </div>
@@ -50,28 +50,28 @@ group: components
 
 {% example html %}
 
-<div id="exampleSlider2" data-image-slider="cycle" class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
+<div id="exampleSlider2" data-image-slider="cycle" class="env-image-slider--slide env-image-slider">
 
-   <div class="{{ site.css_prefix }}-image-slider__inner">
-      <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+   <div class="env-image-slider__inner">
+      <div class="env-image-slider__item env-image-slider__item--active">
+         <img src="https://unsplash.it/800/400/?blur" class="env-embedded__img" alt="First slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/800/400" class="env-embedded__img" alt="Second slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/800/400/?blur" class="env-embedded__img" alt="Third slide">
       </div>
    </div>
-      <ol class="{{ site.css_prefix }}-image-slider__indicators">
+      <ol class="env-image-slider__indicators">
       <li data-target="#exampleSlider2" data-move-to="0">
-         <span class="{{ site.css_prefix }}-icon--dot-big-selected {{ site.css_prefix }}-icon--large"></span>
+         <span class="env-icon--dot-big-selected env-icon--large"></span>
       </li>
       <li data-target="#exampleSlider2" data-move-to="1">
-         <span class="{{ site.css_prefix }}-icon--dot-big {{ site.css_prefix }}-icon--large"></span>
+         <span class="env-icon--dot-big env-icon--large"></span>
       </li>
       <li data-target="#exampleSlider2" data-move-to="2">
-         <span class="{{ site.css_prefix }}-icon--dot-big {{ site.css_prefix }}-icon--large"></span>
+         <span class="env-icon--dot-big env-icon--large"></span>
       </li>
    </ol>
 </div>
@@ -83,25 +83,25 @@ group: components
 
 {% example html %}
 
-<div id="exampleSlider3" data-image-slider class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
-   <div class="{{ site.css_prefix }}-image-slider__inner">
-      <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
-         <div class="{{ site.css_prefix }}-image-slider__caption">
+<div id="exampleSlider3" data-image-slider class="env-image-slider--slide env-image-slider">
+   <div class="env-image-slider__inner">
+      <div class="env-image-slider__item env-image-slider__item--active">
+         <img src="https://unsplash.it/800/400/?blur" class="env-embedded__img" alt="First slide">
+         <div class="env-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
-         <div class="{{ site.css_prefix }}-image-slider__caption">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/800/400" class="env-embedded__img" alt="Second slide">
+         <div class="env-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
-         <div class="{{ site.css_prefix }}-image-slider__caption">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/800/400/?blur" class="env-embedded__img" alt="Third slide">
+         <div class="env-image-slider__caption">
             <h3>Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
@@ -115,29 +115,29 @@ group: components
 
 {% example html %}
 
-<div id="exampleSlider4" data-image-slider="cycle" class="{{ site.css_prefix }}-image-slider--slide {{ site.css_prefix }}-image-slider">
-   <div class="{{ site.css_prefix }}-image-slider__inner">
-      <div class="{{ site.css_prefix }}-image-slider__item {{ site.css_prefix }}-image-slider__item--active">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="First slide">
+<div id="exampleSlider4" data-image-slider="cycle" class="env-image-slider--slide env-image-slider">
+   <div class="env-image-slider__inner">
+      <div class="env-image-slider__item env-image-slider__item--active">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="First slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400" class="{{ site.css_prefix }}-embedded__img" alt="Second slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400" class="env-embedded__img" alt="Second slide">
       </div>
-      <div class="{{ site.css_prefix }}-image-slider__item">
-         <img src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-embedded__img" alt="Third slide">
+      <div class="env-image-slider__item">
+         <img src="https://unsplash.it/g/800/400/?blur" class="env-embedded__img" alt="Third slide">
       </div>
    </div>
-   <ol class="{{ site.css_prefix }}-image-slider__thumbnails">
+   <ol class="env-image-slider__thumbnails">
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail {{ site.css_prefix }}-image-slider__item--active"
+         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400/?blur" class="env-image-slider__thumbnail env-image-slider__item--active"
             data-move-to="0" alt="First thumbnail">
       </li>
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400" class="{{ site.css_prefix }}-image-slider__thumbnail"
+         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400" class="env-image-slider__thumbnail"
             data-move-to="1" alt="Second thumbnail">
       </li>
       <li data-target="#exampleSlider4">
-         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400/?blur" class="{{ site.css_prefix }}-image-slider__thumbnail"
+         <img data-target="#exampleSlider4" src="https://unsplash.it/g/800/400/?blur" class="env-image-slider__thumbnail"
             data-move-to="2" alt="Third thumbnail">
       </li>
    </ol>

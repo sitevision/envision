@@ -21,7 +21,6 @@ twitter_username: sitevision
 github_username: sitevision
 
 project_name: Envision
-css_prefix: env
 
 # Build settings
 markdown: kramdown

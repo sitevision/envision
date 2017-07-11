@@ -7,12 +7,12 @@ group: components
 
 ## Types ##
 {% example html %}
-<div class="{{ site.css_prefix }}-button-group" role="group">
-   <button type="button" class="{{ site.css_prefix }}-button">Default</button>
+<div class="env-button-group" role="group">
+   <button type="button" class="env-button">Default</button>
 
-   <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--primary">Primary</button>
+   <button type="button" class="env-button env-button--primary">Primary</button>
 
-   <button type="button" class="{{ site.css_prefix }}-button {{ site.css_prefix }}-button--danger">Secondary</button>
+   <button type="button" class="env-button env-button--danger">Secondary</button>
 </div>
 
 {% endexample %}

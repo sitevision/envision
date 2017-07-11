@@ -9,20 +9,20 @@ group: utils
 
 {% example html %}
    <div class="example-border-util">
-      <span class="{{ site.css_prefix }}-border--0"></span>
-      <span class="{{ site.css_prefix }}-border--t-0"></span>
-      <span class="{{ site.css_prefix }}-border--r-0"></span>
-      <span class="{{ site.css_prefix }}-border--b-0"></span>
-      <span class="{{ site.css_prefix }}-border--l-0"></span>
+      <span class="env-border--0"></span>
+      <span class="env-border--t-0"></span>
+      <span class="env-border--r-0"></span>
+      <span class="env-border--b-0"></span>
+      <span class="env-border--l-0"></span>
    </div>
 {% endexample %}
 
 {% example html %}
    <div class="example-border-util">
-      <span class="{{ site.css_prefix }}-border"></span>
-      <span class="{{ site.css_prefix }}-border-top"></span>
-      <span class="{{ site.css_prefix }}-border-right"></span>
-      <span class="{{ site.css_prefix }}-border-bottom"></span>
-      <span class="{{ site.css_prefix }}-border-left"></span>
+      <span class="env-border"></span>
+      <span class="env-border-top"></span>
+      <span class="env-border-right"></span>
+      <span class="env-border-bottom"></span>
+      <span class="env-border-left"></span>
    </div>
 {% endexample %}

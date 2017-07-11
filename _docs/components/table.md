@@ -8,7 +8,7 @@ group: components
 ### Default ###
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table">
+<table class="env-table">
    <thead>
       <tr>
          <th>Name</th>
@@ -50,7 +50,7 @@ group: components
 ### Zebra ###
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table {{ site.css_prefix }}-table--zebra">
+<table class="env-table env-table--zebra">
    <thead>
       <tr>
          <th>Name</th>
@@ -90,10 +90,10 @@ group: components
 {% endexample %}
 
 ## Borders ##
-`{{ site.css_prefix }}-table--borders-*` Valid values `around`, `right`, `bottom`, `left`
+`env-table--borders-*` Valid values `around`, `right`, `bottom`, `left`
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table {{ site.css_prefix }}-table--borders-around">
+<table class="env-table env-table--borders-around">
    <thead>
       <tr>
          <th>Name</th>
@@ -124,7 +124,7 @@ group: components
 ### Small ###
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table {{ site.css_prefix }}-table--small">
+<table class="env-table env-table--small">
    <thead>
       <tr>
          <th>Name</th>
@@ -154,7 +154,7 @@ group: components
 ### Large ###
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table {{ site.css_prefix }}-table--large">
+<table class="env-table env-table--large">
    <thead>
       <tr>
          <th>Name</th>
@@ -185,7 +185,7 @@ group: components
 ### Hover effect ###
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table {{ site.css_prefix }}-table--hover">
+<table class="env-table env-table--hover">
    <thead>
       <tr>
          <th>Name</th>
@@ -225,7 +225,7 @@ group: components
 {% endexample %}
 
 ### Colors ###
-Apply to row (`{{ site.css_prefix }}-table__row--*`) or indivdual cell (`{{ site.css_prefix }}-table__cell--*`).
+Apply to row (`env-table__row--*`) or indivdual cell (`env-table__cell--*`).
 
 Valid values:
 
@@ -236,7 +236,7 @@ Valid values:
 `warning` <br/>
 {% example html %}
 
-<table class="{{ site.css_prefix }}-table">
+<table class="env-table">
    <thead>
       <tr>
          <th>Name</th>
@@ -246,41 +246,41 @@ Valid values:
       </tr>
    </thead>
    <tbody>
-      <tr class="{{ site.css_prefix }}-table__row--active">
+      <tr class="env-table__row--active">
          <td>John Doe</td>
          <td>johdoe</td>
          <td>Development</td>
          <td>john@doe.com</td>
       </tr>
-      <tr class="{{ site.css_prefix }}-table__row--info">
+      <tr class="env-table__row--info">
          <td>Jane Doe</td>
          <td>jandoe</td>
          <td>Development</td>
          <td>jane@doe.com</td>
       </tr>
-      <tr class="{{ site.css_prefix }}-table__row--success">
+      <tr class="env-table__row--success">
          <td>John Smith</td>
          <td>johsmi</td>
          <td>Marketing</td>
          <td>john@smith.com</td>
       </tr>
-      <tr class="{{ site.css_prefix }}-table__row--danger">
+      <tr class="env-table__row--danger">
          <td>Jane Smith</td>
          <td>jansmi</td>
          <td>Marketing</td>
          <td>jane@smith.com</td>
       </tr>
-      <tr class="{{ site.css_prefix }}-table__row--warning">
+      <tr class="env-table__row--warning">
          <td>Peggy Sue</td>
          <td>pegsue</td>
          <td>Design</td>
          <td>peggy@sue.com</td>
       </tr>
       <tr>
-         <td class="{{ site.css_prefix }}-table__cell--active">Penny Lane</td>
-         <td class="{{ site.css_prefix }}-table__cell--info">penlan</td>
-         <td class="{{ site.css_prefix }}-table__cell--success">Finance</td>
-         <td class="{{ site.css_prefix }}-table__cell--danger">penny@lane.com</td>
+         <td class="env-table__cell--active">Penny Lane</td>
+         <td class="env-table__cell--info">penlan</td>
+         <td class="env-table__cell--success">Finance</td>
+         <td class="env-table__cell--danger">penny@lane.com</td>
       </tr>        
    </tbody>
 </table>

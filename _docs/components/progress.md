@@ -8,14 +8,14 @@ group: components
 ## Types ##
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 </div>
 {% endexample %}
@@ -24,30 +24,30 @@ group: components
 ### Labels ###
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+   <div class="env-progress">
+      <div class="env-progress__bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
    </div>
 </div>
 {% endexample %}
 
 ### Colors ###
-Use modifiers `--success`, `--warning` or `--danger` to change background color of `{{ site.css_prefix }}-progress__bar`
+Use modifiers `--success`, `--warning` or `--danger` to change background color of `env-progress__bar`
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 </div>
 {% endexample %}
@@ -56,12 +56,12 @@ Use modifiers `--success`, `--warning` or `--danger` to change background color 
 Apply modifier `--striped` to enhance the progress bar with stripes
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--success {{ site.css_prefix }}-progress__bar--striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--success env-progress__bar--striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 </div>
 {% endexample %}
@@ -69,8 +69,8 @@ Apply modifier `--striped` to enhance the progress bar with stripes
 Apply `--striped--flip` to flip stripes alignment
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--striped {{ site.css_prefix }}-progress__bar--striped--flip" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--striped env-progress__bar--striped--flip" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 </div>
 {% endexample %}
@@ -79,8 +79,8 @@ Apply `--striped--flip` to flip stripes alignment
 Add `--striped--animated` to animate the stripes
 {% example html %}
 <div class="example-progress">
-   <div class="{{ site.css_prefix }}-progress">
-      <div class="{{ site.css_prefix }}-progress__bar {{ site.css_prefix }}-progress__bar--striped {{ site.css_prefix }}-progress__bar--striped--animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+   <div class="env-progress">
+      <div class="env-progress__bar env-progress__bar--striped env-progress__bar--striped--animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
    </div>
 </div>
 {% endexample %}

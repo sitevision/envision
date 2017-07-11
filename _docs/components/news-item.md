@@ -11,33 +11,33 @@ group: components
 
 {% example html %}
 
-<article class="{{ site.css_prefix }}-news-item">
-   <div class="{{ site.css_prefix }}-news-item__media">
+<article class="env-news-item">
+   <div class="env-news-item__media">
       <img src="https://unsplash.it/467/300/?blur" />
    </div>
-   <header class="{{ site.css_prefix }}-news-item__headline">
-      <div class="{{ site.css_prefix }}-news-item__headline__title">
-         <h2 class="{{ site.css_prefix }}-text">
+   <header class="env-news-item__headline">
+      <div class="env-news-item__headline__title">
+         <h2 class="env-text">
             <a href="#">Lorem ipsum</a>
          </h2>
-         <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+         <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
       </div>
    </header>
-   <section class="{{ site.css_prefix }}-news-item__preamble">
-      <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
+   <section class="env-news-item__preamble">
+      <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank, salami turkey
          t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage pork belly chicken hamburger,
          andouille pork loin capicola.</p>
    </section>
-   <footer class="{{ site.css_prefix }}-news-item__footer">
-      <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-         <li class="{{ site.css_prefix }}-list__item">
-            <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+   <footer class="env-news-item__footer">
+      <ul class="env-list env-list--horizontal env-list-dividers--left">
+         <li class="env-list__item">
+            <a href="#" class="env-text">Like</a>
          </li>
-         <li class="{{ site.css_prefix }}-list__item">
-            <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+         <li class="env-list__item">
+            <a href="#" class="env-text">Reply</a>
          </li>
-         <li class="{{ site.css_prefix }}-list__item">
-            <span class="{{ site.css_prefix }}-text">12:56</span>
+         <li class="env-list__item">
+            <span class="env-text">12:56</span>
          </li>
       </ul>
    </footer>
@@ -45,102 +45,102 @@ group: components
 
 {% endexample %} 
 ### Example: Vertical list ### 
-`.{{ site.css_prefix }}-list`
-   <ul class="{{ site.css_prefix }}-list">
-      <li class="{{ site.css_prefix }}-list__item">
-         <article class="{{ site.css_prefix }}-news-item">
-            <div class="{{ site.css_prefix }}-news-item__media">
+`.env-list`
+   <ul class="env-list">
+      <li class="env-list__item">
+         <article class="env-news-item">
+            <div class="env-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="{{ site.css_prefix }}-news-item__headline">
-               <div class="{{ site.css_prefix }}-news-item__headline__title">
-                  <h2 class="{{ site.css_prefix }}-text">
+            <header class="env-news-item__headline">
+               <div class="env-news-item__headline__title">
+                  <h2 class="env-text">
                      <a href="#">Lorem ipsum</a>
                   </h2>
-                  <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+                  <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="{{ site.css_prefix }}-news-item__preamble">
-               <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="env-news-item__preamble">
+               <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="{{ site.css_prefix }}-news-item__footer">
-               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+            <footer class="env-news-item__footer">
+               <ul class="env-list env-list--horizontal env-list-dividers--left">
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Like</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Reply</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <span class="{{ site.css_prefix }}-text">12:56</span>
+                  <li class="env-list__item">
+                     <span class="env-text">12:56</span>
                   </li>
                </ul>
             </footer>
          </article>
       </li>
-      <li class="{{ site.css_prefix }}-list__item">
-         <article class="{{ site.css_prefix }}-news-item">
-            <div class="{{ site.css_prefix }}-news-item__media">
+      <li class="env-list__item">
+         <article class="env-news-item">
+            <div class="env-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="{{ site.css_prefix }}-news-item__headline">
-               <div class="{{ site.css_prefix }}-news-item__headline__title">
-                  <h2 class="{{ site.css_prefix }}-text">
+            <header class="env-news-item__headline">
+               <div class="env-news-item__headline__title">
+                  <h2 class="env-text">
                      <a href="#">Lorem ipsum</a>
                   </h2>
-                  <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+                  <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="{{ site.css_prefix }}-news-item__preamble">
-               <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="env-news-item__preamble">
+               <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="{{ site.css_prefix }}-news-item__footer">
-               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+            <footer class="env-news-item__footer">
+               <ul class="env-list env-list--horizontal env-list-dividers--left">
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Like</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Reply</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <span class="{{ site.css_prefix }}-text">12:56</span>
+                  <li class="env-list__item">
+                     <span class="env-text">12:56</span>
                   </li>
                </ul>
             </footer>
          </article>
       </li>
-      <li class="{{ site.css_prefix }}-list__item">
-         <article class="{{ site.css_prefix }}-news-item">
-            <div class="{{ site.css_prefix }}-news-item__media">
+      <li class="env-list__item">
+         <article class="env-news-item">
+            <div class="env-news-item__media">
                <img src="https://unsplash.it/467/300/?blur" />
             </div>
-            <header class="{{ site.css_prefix }}-news-item__headline">
-               <div class="{{ site.css_prefix }}-news-item__headline__title">
-                  <h2 class="{{ site.css_prefix }}-text">
+            <header class="env-news-item__headline">
+               <div class="env-news-item__headline__title">
+                  <h2 class="env-text">
                      <a href="#">Lorem ipsum</a>
                   </h2>
-                  <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+                  <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
                </div>
             </header>
-            <div class="{{ site.css_prefix }}-news-item__preamble">
-               <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+            <div class="env-news-item__preamble">
+               <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                   salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                   pork belly chicken hamburger, andouille pork loin capicola.</p>
             </div>
-            <footer class="{{ site.css_prefix }}-news-item__footer">
-               <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+            <footer class="env-news-item__footer">
+               <ul class="env-list env-list--horizontal env-list-dividers--left">
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Like</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+                  <li class="env-list__item">
+                     <a href="#" class="env-text">Reply</a>
                   </li>
-                  <li class="{{ site.css_prefix }}-list__item">
-                     <span class="{{ site.css_prefix }}-text">12:56</span>
+                  <li class="env-list__item">
+                     <span class="env-text">12:56</span>
                   </li>
                </ul>
             </footer>
@@ -150,201 +150,201 @@ group: components
 
 
 ### Example: Horizontal list ###
-`{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--2`
-<ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal--fixed {{ site.css_prefix }}-list--horizontal--fixed--2">
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+`env-list env-list--horizontal--fixed env-list--horizontal--fixed--2`
+<ul class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--2">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>
       </article>
    </li>
-   <li class="{{ site.css_prefix }}-list__item">
-      <article class="{{ site.css_prefix }}-news-item">
-         <div class="{{ site.css_prefix }}-news-item__media">
+   <li class="env-list__item">
+      <article class="env-news-item">
+         <div class="env-news-item__media">
             <img src="https://unsplash.it/300/100/?blur" />
          </div>
-         <header class="{{ site.css_prefix }}-news-item__headline">
-            <div class="{{ site.css_prefix }}-news-item__headline__title">
-               <h2 class="{{ site.css_prefix }}-text">
+         <header class="env-news-item__headline">
+            <div class="env-news-item__headline__title">
+               <h2 class="env-text">
                   <a href="#">Lorem ipsum</a>
                </h2>
-               <p class="{{ site.css_prefix }}-text {{ site.css_prefix }}-text--muted">Eric Ericsson, aug 12 12:56</p>
+               <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
             </div>
          </header>
-         <div class="{{ site.css_prefix }}-news-item__preamble">
-            <p class="{{ site.css_prefix }}-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
+         <div class="env-news-item__preamble">
+            <p class="env-text">Bacon ipsum dolor amet leberkas jowl tail, cow rump pork loin pancetta corned beef. Drumstick pork shank,
                salami turkey t-bone jerky corned beef picanha jowl brisket frankfurter shankle. Meatball jowl sausage
                pork belly chicken hamburger, andouille pork loin capicola.</p>
          </div>
-         <footer class="{{ site.css_prefix }}-news-item__footer">
-            <ul class="{{ site.css_prefix }}-list {{ site.css_prefix }}-list--horizontal {{ site.css_prefix }}-list-dividers--left">
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Like</a>
+         <footer class="env-news-item__footer">
+            <ul class="env-list env-list--horizontal env-list-dividers--left">
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Like</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <a href="#" class="{{ site.css_prefix }}-text">Reply</a>
+               <li class="env-list__item">
+                  <a href="#" class="env-text">Reply</a>
                </li>
-               <li class="{{ site.css_prefix }}-list__item">
-                  <span class="{{ site.css_prefix }}-text">12:56</span>
+               <li class="env-list__item">
+                  <span class="env-text">12:56</span>
                </li>
             </ul>
          </footer>

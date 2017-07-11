@@ -7,33 +7,33 @@ group: components
 
 ## Overview ##
 {% example html %}
-<div class="{{ site.css_prefix }}-alert" role="alert"><strong>Hello!</strong> this is alert</div>
+<div class="env-alert" role="alert"><strong>Hello!</strong> this is alert</div>
 {% endexample %}
 
 ## Variations ##
 {% example html %}
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--success" role="alert">
+<div class="env-alert env-alert--success" role="alert">
    <strong>Hello!</strong> this is successful alert 
-   <button type="button" class="{{ site.css_prefix }}-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
+   <button type="button" class="env-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
 </div>
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--warning" role="alert"><strong>Hello!</strong> this is warning alert</div>
-<div class="{{ site.css_prefix }}-alert {{ site.css_prefix }}-alert--danger" role="alert"><strong>Hello!</strong> this is danger alert</div>
+<div class="env-alert env-alert--warning" role="alert"><strong>Hello!</strong> this is warning alert</div>
+<div class="env-alert env-alert--danger" role="alert"><strong>Hello!</strong> this is danger alert</div>
 {% endexample %}
 
 {% example html %}
-<div class="{{ site.css_prefix }}-alert" role="alert">
-   <button type="button" class="{{ site.css_prefix }}-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
-   <article class="{{ site.css_prefix }}-media">
-      <div class="{{ site.css_prefix }}-media__figure">
+<div class="env-alert" role="alert">
+   <button type="button" class="env-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
+   <article class="env-media">
+      <div class="env-media__figure">
          <a href="#">
-            <img class="{{ site.css_prefix }}-image {{ site.css_prefix }}-image--small" src="https://placehold.it/100x100.png">
+            <img class="env-image env-image--small" src="https://placehold.it/100x100.png">
          </a>
       </div>
-      <div class="{{ site.css_prefix }}-media__body">
-         <h3 class="{{ site.css_prefix }}-text">
+      <div class="env-media__body">
+         <h3 class="env-text">
             <a href="#">John Doe</a>
          </h3>
-         <p class="{{ site.css_prefix }}-text">
+         <p class="env-text">
             Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros.
          </p>
       </div>
@@ -43,5 +43,5 @@ group: components
 
 ## Links ##
 {% example html %}
-<div class="{{ site.css_prefix }}-alert" role="alert"><strong>Hello!</strong> this is alert with <a href="#" class="{{ site.css_prefix }}-alert__link">link</a></div>
+<div class="env-alert" role="alert"><strong>Hello!</strong> this is alert with <a href="#" class="env-alert__link">link</a></div>
 {% endexample %}

@@ -7,14 +7,14 @@ group: components
 
 ## Overview ##
 {% example html %}
-<h1 class="{{ site.css_prefix }}-text">Hello <span class="{{ site.css_prefix }}-badge">New</span></h1>
-<h2 class="{{ site.css_prefix }}-text">Hello <span class="{{ site.css_prefix }}-badge">New</span></h2>
+<h1 class="env-text">Hello <span class="env-badge">New</span></h1>
+<h2 class="env-text">Hello <span class="env-badge">New</span></h2>
 {% endexample %}
 
 ## Variations ##
 {% example html %}
-<span class="{{ site.css_prefix }}-badge">Default</span>
-<span class="{{ site.css_prefix }}-badge {{ site.css_prefix }}-badge--success">Success</span>
-<span class="{{ site.css_prefix }}-badge {{ site.css_prefix }}-badge--warning">Warning</span>
-<span class="{{ site.css_prefix }}-badge {{ site.css_prefix }}-badge--danger">Danger</span>
+<span class="env-badge">Default</span>
+<span class="env-badge env-badge--success">Success</span>
+<span class="env-badge env-badge--warning">Warning</span>
+<span class="env-badge env-badge--danger">Danger</span>
 {% endexample %}
