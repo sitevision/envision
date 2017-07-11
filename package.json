@@ -1,16 +1,17 @@
 {
   "name": "envision",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "SiteVision CSS framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "builddocs": "gulp; cd _docs/; jekyll build"
   },
   "repository": {
     "type": "git",
-    "url": "http://git.sitevision.net:7990/scm/sv/css-framework.git"
+    "url": "https://github.com/sitevision/envision.git"
   },
   "keywords": [
+    "Envision",
     "CSS",
     "SiteVision",
     "SDK"
