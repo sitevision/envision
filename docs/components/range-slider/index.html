@@ -565,7 +565,7 @@
    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__value env-text"</span><span class="nt">&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.example-range-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.example-range-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span>
 <span class="p">});</span>
 </code></pre>
@@ -581,7 +581,7 @@
 
 <p>Values to initialize the slider with.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">values</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span>
 <span class="p">});</span>
 </code></pre>
@@ -595,7 +595,7 @@
 
 <p>The minimum value of the slider.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">min</span><span class="p">:</span> <span class="mi">100</span>
 <span class="p">});</span>
 </code></pre>
@@ -609,7 +609,7 @@
 
 <p>The maximum value of the slider.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">max</span><span class="p">:</span> <span class="mi">200</span>
 <span class="p">});</span>
 </code></pre>
@@ -623,7 +623,7 @@
 
 <p>The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">step</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">});</span>
 </code></pre>
@@ -637,7 +637,7 @@
 
 <p>If values should be visible below the handles.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">visibleValues</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">});</span>
 </code></pre>
@@ -650,7 +650,7 @@
    <span class="c1">// Do something... </span>
 <span class="p">});</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">slide</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// Do something...</span>
    <span class="p">}</span>
@@ -663,7 +663,7 @@
    <span class="c1">// Do something... </span>
 <span class="p">});</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">({</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>
    <span class="na">slidestop</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// Do something...</span>
    <span class="p">}</span>
@@ -679,7 +679,7 @@
 </ul>
 
 <p>Set the values for the range.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">rangeSlider</span><span class="p">(</span><span class="s1">'values'</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">]);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">(</span><span class="s1">'values'</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">]);</span>
 </code></pre>
 </div>
 

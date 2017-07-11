@@ -8,9 +8,9 @@ import Util from './util';
 
 const Imageslider = (($) => {
 
-   const DATA_KEY = 'sv.image-slider';
+   const DATA_KEY = 'env.image-slider';
    const EVENT_KEY = `.${DATA_KEY}`;
-   const NAME = 'imageslider';
+   const NAME = 'envImageslider';
    const DATA_API_KEY = '.data-api';
    const NO_CONFLICT = $.fn[NAME];
    const ARROW_LEFT_KEYCODE = 37;
@@ -30,29 +30,29 @@ const Imageslider = (($) => {
    };
 
    const SELECTORS = {
-      ACTIVE: '.sv-image-slider__item--active',
-      ACTIVE_DOT: '.sv-icon--dot-big-selected',
-      ACTIVE_ITEM: '.sv-image-slider__item--active.sv-image-slider__item',
+      ACTIVE: '.env-image-slider__item--active',
+      ACTIVE_DOT: '.env-icon--dot-big-selected',
+      ACTIVE_ITEM: '.env-image-slider__item--active.env-image-slider__item',
       DATA_SLIDE: '[data-move], [data-move-to], [data-image-slider-touch]',
       DATA_IMAGE_SLIDER: '[data-image-slider]',
-      DOT: '.sv-icon--dot-big',
-      INDICATORS: '.sv-image-slider__indicators',
-      INNER: '.sv-image-slider__inner',
-      NEXT_PREV: '.sv-image-slider--next, .sv-image-slider--prev',
-      ITEM: '.sv-image-slider__item',
-      THUMBNAILS: '.sv-image-slider__thumbnails'
+      DOT: '.env-icon--dot-big',
+      INDICATORS: '.env-image-slider__indicators',
+      INNER: '.env-image-slider__inner',
+      NEXT_PREV: '.env-image-slider--next, .env-image-slider--prev',
+      ITEM: '.env-image-slider__item',
+      THUMBNAILS: '.env-image-slider__thumbnails'
    };
 
    const ClassName = {
-      ACTIVE: 'sv-image-slider__item--active',
-      ACTIVE_DOT: 'sv-icon--dot-big-selected',
-      DOT: 'sv-icon--dot-big',
-      IMAGESLIDER: 'sv-image-slider',
-      LEFT: 'sv-image-slider__item--left',
-      NEXT: 'sv-image-slider__item--next',
-      PREV: 'sv-image-slider__item--prev',
-      RIGHT: 'sv-image-slider__item--right',
-      SLIDE: 'sv-image-slider--slide'
+      ACTIVE: 'env-image-slider__item--active',
+      ACTIVE_DOT: 'env-icon--dot-big-selected',
+      DOT: 'env-icon--dot-big',
+      IMAGESLIDER: 'env-image-slider',
+      LEFT: 'env-image-slider__item--left',
+      NEXT: 'env-image-slider__item--next',
+      PREV: 'env-image-slider__item--prev',
+      RIGHT: 'env-image-slider__item--right',
+      SLIDE: 'env-image-slider--slide'
    };
 
    const Direction = {
@@ -220,13 +220,13 @@ const Imageslider = (($) => {
 
       _addSlideButtons() {
          const sliderId = this.$el[0].id;
-         const buttonHTML = `<a class="sv-image-slider--prev" role="button" data-move="prev" href="#${sliderId}">
-               <span class="sv-image-slider__prev-icon sv-icon--arrow-left sv-icon--large" aria-hidden="true"></span>
-               <span class="sv-assistive-text">Previous</span>
+         const buttonHTML = `<a class="env-image-slider--prev" role="button" data-move="prev" href="#${sliderId}">
+               <span class="env-image-slider__prev-icon env-icon--arrow-left env-icon--large" aria-hidden="true"></span>
+               <span class="env-assistive-text">Previous</span>
             </a>
-            <a class="sv-image-slider--next" role="button" data-move="next" href="#${sliderId}">
-               <span class="sv-image-slider__next-icon sv-icon--arrow-right sv-icon--large" aria-hidden="true"></span>
-               <span class="sv-assistive-text">Next</span>
+            <a class="env-image-slider--next" role="button" data-move="next" href="#${sliderId}">
+               <span class="env-image-slider__next-icon env-icon--arrow-right env-icon--large" aria-hidden="true"></span>
+               <span class="env-assistive-text">Next</span>
             </a>`;
 
          $(`#${sliderId}`).find(SELECTORS.INNER).append(buttonHTML);

@@ -6,13 +6,13 @@
 
 const Dropdown = (($) => {
 
-   const NAME = 'dropdown';
+   const NAME = 'envDopdown';
    const NO_CONFLICT = $.fn[NAME];
-   const SV_DROPDOWN_OPEN = 'sv-is-open';
+   const ENV_DROPDOWN_OPEN = 'env-is-open';
    const TOGGLE_DROPDOWN = '[data-dropdown]';
    const ESCAPE_KEY = 27;
-   const SV_CLICK_EVENT = 'click.sv-dropdown';
-   const SV_KEYDOWN_EVENT = 'keydown.sv-dropdown';
+   const ENV_CLICK_EVENT = 'click.env-dropdown';
+   const ENV_KEYDOWN_EVENT = 'keydown.env-dropdown';
 
    class Dropdown {
 
@@ -23,7 +23,7 @@ const Dropdown = (($) => {
       }
 
       toggle() {
-         if (this.$el.hasClass(SV_DROPDOWN_OPEN)) {
+         if (this.$el.hasClass(ENV_DROPDOWN_OPEN)) {
             this.hide();
          } else {
             this.show();
@@ -33,7 +33,7 @@ const Dropdown = (($) => {
       show() {
          this.$el
             .attr('aria-expanded', 'true')
-            .addClass(SV_DROPDOWN_OPEN)
+            .addClass(ENV_DROPDOWN_OPEN)
             .focus();
 
          this._bindEvents();
@@ -42,26 +42,26 @@ const Dropdown = (($) => {
       hide() {
          this.$el
             .attr('aria-expanded', 'false')
-            .removeClass(SV_DROPDOWN_OPEN)
-            .find('.sv-dropdown--toggle').blur();
+            .removeClass(ENV_DROPDOWN_OPEN)
+            .find('.env-dropdown--toggle').blur();
 
          this._unbindEvents();
       }
 
       _bindEvents() {
-         const SV_CLICK = `${SV_CLICK_EVENT}-${this.el.id}`;
-         const SV_KEYDOWN = `${SV_KEYDOWN_EVENT}-${this.el.id}`;
+         const ENV_CLICK = `${ENV_CLICK_EVENT}-${this.el.id}`;
+         const ENV_KEYDOWN = `${ENV_KEYDOWN_EVENT}-${this.el.id}`;
          $(document)
-            .off(SV_CLICK)
-            .on(SV_CLICK, (event) => {
-               if (!$(event.target).hasClass('sv-dropdown__menu')) {
+            .off(ENV_CLICK)
+            .on(ENV_CLICK, (event) => {
+               if (!$(event.target).hasClass('env-dropdown__menu')) {
                   this.hide();
                }
             });
 
          this.$el
-            .off(SV_KEYDOWN)
-            .one(SV_KEYDOWN, (event) => {
+            .off(ENV_KEYDOWN)
+            .one(ENV_KEYDOWN, (event) => {
                if (event.which === ESCAPE_KEY) {
                   this.hide();
                }
@@ -69,18 +69,18 @@ const Dropdown = (($) => {
       }
 
       _unbindEvents() {
-         $(document).off(`${SV_CLICK_EVENT}-${this.el.id}`);
-         this.$el.off(`${SV_KEYDOWN_EVENT}-${this.el.id}`);
+         $(document).off(`${ENV_CLICK_EVENT}-${this.el.id}`);
+         this.$el.off(`${ENV_KEYDOWN_EVENT}-${this.el.id}`);
       }
 
       static _jQuery(config) {
          return this.each(function() {
             const $this = $(this);
-            let data = $this.data('sv.dropdown');
+            let data = $this.data('env.dropdown');
 
             if (!data) {
                data = new Dropdown(this);
-               $this.data('sv.dropdown', data);
+               $this.data('env.dropdown', data);
             }
 
             if (typeof config === 'string') {

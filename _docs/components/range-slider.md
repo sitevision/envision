@@ -17,7 +17,7 @@ Capture a range
 {% endexample %}
 
 ```javascript
-$('.example-range-slider').rangeSlider({
+$('.example-range-slider').envRangeSlider({
    values: [20, 70]
 });
 ```
@@ -31,7 +31,7 @@ $('.example-range-slider').rangeSlider({
 Values to initialize the slider with.
 
 ```javascript
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    values: [20, 70]
 });
 ```
@@ -43,7 +43,7 @@ $('#my-slider').rangeSlider({
 The minimum value of the slider.
 
 ```javascript
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    min: 100
 });
 ```
@@ -55,7 +55,7 @@ $('#my-slider').rangeSlider({
 The maximum value of the slider.
 
 ```javascript
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    max: 200
 });
 ```
@@ -67,7 +67,7 @@ $('#my-slider').rangeSlider({
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step. 
 
 ```javascript
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    step: 5
 });
 ```
@@ -79,7 +79,7 @@ $('#my-slider').rangeSlider({
 If values should be visible below the handles.
 
 ```javascript
-$('.my-slider').rangeSlider({
+$('.my-slider').envRangeSlider({
    visibleValues: false
 });
 ```
@@ -92,7 +92,7 @@ $('#my-slider').on('slide', function(e, data) {
    // Do something... 
 });
 
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    slide: function(e, data) {
       // Do something...
    }
@@ -105,7 +105,7 @@ $('#my-slider').on('slidestop', function(e, data) {
    // Do something... 
 });
 
-$('#my-slider').rangeSlider({
+$('#my-slider').envRangeSlider({
    slidestop: function(e, data) {
       // Do something...
    }
@@ -119,5 +119,5 @@ Parameters
 
 Set the values for the range.
 ```javascript
-$('#my-slider').rangeSlider('values', [50, 90]);
+$('#my-slider').envRangeSlider('values', [50, 90]);
 ```

@@ -8,11 +8,11 @@
 
 const Popover = (($) => {
 
-   const NAME = 'thePopover';
-   const IDENTIFIER = 'sv.popover';
+   const NAME = 'envPopover';
+   const IDENTIFIER = 'env.popover';
    const EVENT_NAMESPACE = `.${IDENTIFIER}`;
    const NO_CONFLICT = $.fn[NAME];
-   const CLASS_PREFIX = 'sv-tether';
+   const CLASS_PREFIX = 'env-tether';
 
    const attachmentMapping = {
       top: 'bottom center',
@@ -36,12 +36,12 @@ const Popover = (($) => {
       escapeContent: true,
       customOffset: undefined,
       placement: 'top',
-      template: `<div class="sv-popover" role="tooltip">
-                  <div class="sv-popover__arrow"></div>
-                  <div class="sv-popover__header">
-                     <h3 class="sv-popover__header__title"></h3>
+      template: `<div class="env-popover" role="tooltip">
+                  <div class="env-popover__arrow"></div>
+                  <div class="env-popover__header">
+                     <h3 class="env-popover__header__title"></h3>
                   </div>
-                  <div class="sv-popover__content"></div>
+                  <div class="env-popover__content"></div>
                </div>`,
       title: '',
       trigger: 'click'
@@ -98,16 +98,16 @@ const Popover = (($) => {
       }
 
       setTitle($popoverElement) {
-         this.setText($popoverElement, '.sv-popover__header__title', this.config.title);
+         this.setText($popoverElement, '.env-popover__header__title', this.config.title);
       }
 
       setContent($popoverElement) {
-         this.setText($popoverElement, '.sv-popover__content', this.config.content);
+         this.setText($popoverElement, '.env-popover__content', this.config.content);
       }
 
       setArrowPosition($popoverElement) {
-         $popoverElement.find('.sv-popover__arrow')
-            .addClass(`sv-popover__arrow--${this.config.placement}`);
+         $popoverElement.find('.env-popover__arrow')
+            .addClass(`env-popover__arrow--${this.config.placement}`);
       }
 
       _getOffset() {

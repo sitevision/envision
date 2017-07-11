@@ -9,12 +9,12 @@ import Util from './util';
 const RangeSlider = (($) => {
 
    const HANDLE_INDEX = 'range-handle-index';
-   const HANDLES_SELECTOR = '.sv-range-slider__handle';
-   const HANDLE_VALUE_HOLDERS_SELECTOR = '.sv-range-slider__value';
-   const RANGE_SELECTOR = '.sv-range-slider__range';
-   const TOUCH_MODIFIER = 'sv-range-slider--touch';
-   const IDENTIFIER = 'sv.range-slider';
-   const NAME = 'rangeSlider';
+   const HANDLES_SELECTOR = '.env-range-slider__handle';
+   const HANDLE_VALUE_HOLDERS_SELECTOR = '.env-range-slider__value';
+   const RANGE_SELECTOR = '.env-range-slider__range';
+   const TOUCH_MODIFIER = 'env-range-slider--touch';
+   const IDENTIFIER = 'env.range-slider';
+   const NAME = 'envRangeSlider';
    const NO_CONFLICT = $.fn[NAME];
    const KEY_RIGHT = 39;
    const KEY_LEFT = 37;

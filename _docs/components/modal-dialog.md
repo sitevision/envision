@@ -84,38 +84,38 @@ Uses `env-modal-dialog__dialog--small`
 ## Methods ##
 
 Show  
-`$('#myModal').modalDialog('show')`
+`$('#myModal').envModalDialog('show')`
 
 Hide   
-`$('#myModal').modalDialog('hide')`
+`$('#myModal').envModalDialog('hide')`
 
 Toggle   
-`$('#myModal').modalDialog('toggle')`
+`$('#myModal').envModalDialog('toggle')`
 
 ## Events ##
-`hide.sv-modal-dialog`
+`hide.env-modal-dialog`
 ```javascript
-$('#myModal').on('hide.sv-modal-dialog', function() { 
+$('#myModal').on('hide.env-modal-dialog', function() { 
    // Do something... 
 });
 ```
 
-`hidden.sv-modal-dialog`
+`hidden.env-modal-dialog`
 ```javascript
-$('#myModal').on('hidden.sv-modal-dialog', function() { 
+$('#myModal').on('hidden.env-modal-dialog', function() { 
    // Do something... 
 });
 ```
-`show.sv-modal-dialog`
+`show.envsv-modal-dialog`
 ```javascript
-$('#myModal').on('show.sv-modal-dialog', function() { 
+$('#myModal').on('show.env-modal-dialog', function() { 
    // Do something... 
 });
 ```
 
-`shown.sv-modal-dialog`
+`shown.env-modal-dialog`
 ```javascript
-$('#myModal').on('shown.sv-modal-dialog', function() { 
+$('#myModal').on('shown.env-modal-dialog', function() { 
    // Do something... 
 });
 ``` 

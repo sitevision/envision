@@ -1,7 +1,7 @@
 (function($) {
-   $('.example-popover').thePopover();
-   $('.example-tabs').tabs();
-   $('.example-range-slider').rangeSlider({
+   $('.example-popover').envPopover();
+   $('.example-tabs').envTabs();
+   $('.example-range-slider').envRangeSlider({
       values: [20, 70]
    });
 }($));

@@ -9,11 +9,11 @@ const Tabs = (($) => {
    const ARIA_SELECTED = 'aria-selected';
    const ARIA_HIDDEN = 'aria-hidden';
    const ENTER_KEY = 13;
-   const IDENTIFIER = 'sv.tabs';
-   const IS_ACTIVE = 'sv-is-active';
-   const NAME = 'tabs';
+   const IDENTIFIER = 'env.tabs';
+   const IS_ACTIVE = 'env-is-active';
+   const NAME = 'envTabs';
    const NO_CONFLICT = $.fn[NAME];
-   const TAB_SELECTOR = '.sv-tabs__nav__link';
+   const TAB_SELECTOR = '.env-tabs__nav__link';
 
    const DEFAULTS = {
       active: 0

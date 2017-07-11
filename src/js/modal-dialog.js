@@ -8,15 +8,15 @@ import Util from './util';
 
 const ModalDialog = (($) => {
 
-   const ANIMATION = 'sv-animation-in-progress';
-   const BACKDROP = 'sv-modal-dialog__backdrop';
-   const BACKDROP_ANIMATION = 'sv-modal-dialog__backdrop--in';
-   const DATA_KEY = 'sv.modal-dialog';
+   const ANIMATION = 'env-animation-in-progress';
+   const BACKDROP = 'env-modal-dialog__backdrop';
+   const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
+   const DATA_KEY = 'env.modal-dialog';
    const DISMISS_SELECTOR = '[data-modal-dialog-dismiss]';
    const ESCAPE_KEY = 27;
-   const FOCUSIN = 'focusin.sv-modal-dialog';
-   const MODIFIER_BASE = 'sv-modal-dialog--';
-   const NAME = 'modalDialog';
+   const FOCUSIN = 'focusin.env-modal-dialog';
+   const MODIFIER_BASE = 'env-modal-dialog--';
+   const NAME = 'envDialog';
    const NO_CONFLICT = $.fn[NAME];
    const SELECTOR = '[data-modal-dialog]';
    const SHOW = 'show';
@@ -25,10 +25,10 @@ const ModalDialog = (($) => {
    const FOCUSABLE_ELEMENTS_SELECTOR = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
    const EVENTS = {
-      HIDE: 'hide.sv-modal-dialog',
-      HIDDEN: 'hidden.sv-modal-dialog',
-      SHOW: 'show.sv-modal-dialog',
-      SHOWN: 'shown.sv-modal-dialog'
+      HIDE: 'hide.env-modal-dialog',
+      HIDDEN: 'hidden.env-modal-dialog',
+      SHOW: 'show.env-modal-dialog',
+      SHOWN: 'shown.env-modal-dialog'
    };
 
    class ModalDialog {

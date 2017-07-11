@@ -161,7 +161,7 @@ Use data attributes to control the imageslider. `data-move` accepts the values `
 
 To make image slider cycle through items you can call:
 ```javascript
-   $('#myImageSlider').imageslider({ imageSlider : 'cycle' })
+   $('#myImageSlider').envImageslider({ imageSlider : 'cycle' })
 ```
 
 
@@ -184,24 +184,24 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 Initialize the imageslider with an optional `object` and starts cycling through slides.
 ```javascript
-   $('#myImageSlider').imageslider({
+   $('#myImageSlider').envImageslider({
       interval: 2000
    });
 ```
 
-`.imageslider('cycle')`
+`.envImageslider('cycle')`
 Cycles through the imageslider
 
-`.imageslider('pause')`
+`.envImageslider('pause')`
 Pauses the imageslider
 
-`.imageslider('next')`
+`.envImageslider('next')`
 Cycles to the next item
 
-`.imageslider('prev')`
+`.envImageslider('prev')`
 Cycles to the previous item
 
-`.imageslider('number')`
+`.envImageslider('number')`
 Cycles the imageslider to a particular slide.
 
 
@@ -212,11 +212,11 @@ Slid - Fires when slider transition is finished.
 Slide - Fires before slider transition starts.
 
 ```javascript
-   $('#myImageslider').on('slid.sv.image-slider', () => {
+   $('#myImageslider').on('slid.env.image-slider', () => {
       // do something...
    });
 
-   $('#myImageslider').on('slide.sv.image-slider', () => {
+   $('#myImageslider').on('slide.env.image-slider', () => {
       // do something...
    });
 ```

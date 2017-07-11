@@ -11,8 +11,8 @@ const Collapse = (($) => {
    const ARIA_EXPANDED = 'aria-expanded';
    const AUTO = 'auto';
    const COLLAPSING = 'collapsing';
-   const MODIFIER_BASE = 'sv-collapse--';
-   const NAME = 'collapse';
+   const MODIFIER_BASE = 'env-collapse--';
+   const NAME = 'envCollapse';
    const NO_CONFLICT = $.fn[NAME];
    const SHOW = 'show';
 
@@ -92,7 +92,7 @@ const Collapse = (($) => {
    };
 
 
-   $(document).on('click', '[data-sv-collapse]', function(e) {
+   $(document).on('click', '[data-env-collapse]', function(e) {
       e.preventDefault();
 
       const $this = $(this);

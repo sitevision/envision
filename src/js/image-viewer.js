@@ -8,40 +8,40 @@ import Util from './util';
 
 const Imageviewer = (($) => {
 
-   const ANIMATION = 'sv-animation-in-progress';
-   const BACKDROP = 'sv-image-viewer__backdrop';
-   const BACKDROP_ANIMATION = 'sv-image-viewer__backdrop--in';
-   const DATA_KEY = 'sv.image-viewer';
+   const ANIMATION = 'env-animation-in-progress';
+   const BACKDROP = 'env-image-viewer__backdrop';
+   const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
+   const DATA_KEY = 'env.image-viewer';
    const EVENT_KEY = `.${DATA_KEY}`;
-   const NAME = 'imageviewer';
+   const NAME = 'envImageviewer';
    const DATA_API_KEY = '.data-api';
    const NO_CONFLICT = $.fn[NAME];
    const ESCAPE_KEY = 27;
    const ARROW_LEFT_KEYCODE = 37;
    const ARROW_RIGHT_KEYCODE = 39;
-   const SPINNER_TEMPLATE = `<div class="sv-spinner">
-                                <div class="sv-rect1"></div>
-                                <div class="sv-rect2"></div>
-                                <div class="sv-rect3"></div>
-                                <div class="sv-rect4"></div>
-                                <div class="sv-rect5"></div>
+   const SPINNER_TEMPLATE = `<div class="env-spinner">
+                                <div class="env-rect1"></div>
+                                <div class="env-rect2"></div>
+                                <div class="env-rect3"></div>
+                                <div class="env-rect4"></div>
+                                <div class="env-rect5"></div>
                              </div>`;
 
    const SELECTORS = {
-      ACTIVE_DOT           : '.sv-image-viewer__indicators--active',
+      ACTIVE_DOT           : '.env-image-viewer__indicators--active',
       DATA_MOVE_TO         : '[data-move-to]',
       DATA_MOVE            : '[data-move]',
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
-      IMAGES               : '.sv-image-viewer__images',
-      INDICATORS           : '.sv-image-viewer__indicators',
+      IMAGES               : '.env-image-viewer__images',
+      INDICATORS           : '.env-image-viewer__indicators',
       DATA_SLIDE_TO        : '[data-slide-to]',
-      SPINNER              : '.sv-spinner'
+      SPINNER              : '.env-spinner'
    };
 
    const ClassName = {
-      ACTIVE_DOT     : 'sv-image-viewer__indicators--active',
-      HIDDEN         : 'sv-image-viewer--hidden',
-      SPINNER_HIDE   : 'sv-spinner--hide'
+      ACTIVE_DOT     : 'env-image-viewer__indicators--active',
+      HIDDEN         : 'env-image-viewer--hidden',
+      SPINNER_HIDE   : 'env-spinner--hide'
    };
 
    const Events = {
@@ -85,15 +85,15 @@ const Imageviewer = (($) => {
             this._setActiveIndicatorElement();
          } else {
             this.$modal = $('<div/>', {
-               class: 'sv-image-viewer__modal'
+               class: 'env-image-viewer__modal'
             });
 
             this.$btnContainer = $('<div/>', {
-               class: 'sv-image-viewer__dialog'
+               class: 'env-image-viewer__dialog'
             });
 
             this.$imgContainer = $('<div/>', {
-               class: 'sv-image-viewer__modal-container'
+               class: 'env-image-viewer__modal-container'
             });
 
             this.$modal.append(this.$btnContainer);
@@ -140,7 +140,7 @@ const Imageviewer = (($) => {
          const $downloadingImage = $('<img>');
 
          $downloadingImage
-            .addClass('sv-image-viewer__img')
+            .addClass('env-image-viewer__img')
             .attr({
                tabindex: '-1',
                src: href
@@ -183,13 +183,13 @@ const Imageviewer = (($) => {
       }
 
       _getButtons() {
-         const buttonHTML = `<a class="sv-image-viewer--prev" role="button" data-move="prev">
-               <span class="sv-image-viewer__prev-icon sv-icon--arrow-left"></span>
-               <span class="sv-assistive-text">Previous</span>
+         const buttonHTML = `<a class="env-image-viewer--prev" role="button" data-move="prev">
+               <span class="env-image-viewer__prev-icon env-icon--arrow-left"></span>
+               <span class="env-assistive-text">Previous</span>
             </a>
-            <a class="sv-image-viewer--next" role="button" data-move="next">
-               <span class="sv-image-viewer__next-icon sv-icon--arrow-right"></span>
-               <span class="sv-assistive-text">Next</span>
+            <a class="env-image-viewer--next" role="button" data-move="next">
+               <span class="env-image-viewer__next-icon env-icon--arrow-right"></span>
+               <span class="env-assistive-text">Next</span>
             </a>`;
 
          return buttonHTML;
@@ -197,7 +197,7 @@ const Imageviewer = (($) => {
 
       _getIndicators() {
          const indicatorItems = this._getIndicatorItems();
-         return `<ol class="sv-image-viewer__indicators">
+         return `<ol class="env-image-viewer__indicators">
                   ${indicatorItems}
                </ol>`;
       }
@@ -208,7 +208,7 @@ const Imageviewer = (($) => {
          return this.$images.map((index) => {
             const isActive = index === activeElementIndex;
             return `<li data-move-to="${index}">
-                     <span class="${isActive ? 'sv-image-viewer__indicators--active ' : ''} sv-icon--dot-small sv-icon--large"></span>
+                     <span class="${isActive ? 'env-image-viewer__indicators--active ' : ''} env-icon--dot-small env-icon--large"></span>
                      </li>`;
          })
          .get()

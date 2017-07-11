@@ -789,7 +789,7 @@
 <h3 id="via-javascript">Via JavaScript</h3>
 
 <p>To make image slider cycle through items you can call:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageSlider'</span><span class="p">).</span><span class="nx">imageslider</span><span class="p">({</span> <span class="na">imageSlider</span> <span class="p">:</span> <span class="s1">'cycle'</span> <span class="p">})</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageSlider'</span><span class="p">).</span><span class="nx">envImageslider</span><span class="p">({</span> <span class="na">imageSlider</span> <span class="p">:</span> <span class="s1">'cycle'</span> <span class="p">})</span>
 </code></pre>
 </div>
 
@@ -811,25 +811,25 @@
 <h2 id="methods">Methods</h2>
 
 <p>Initialize the imageslider with an optional <code class="highlighter-rouge">object</code> and starts cycling through slides.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageSlider'</span><span class="p">).</span><span class="nx">imageslider</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageSlider'</span><span class="p">).</span><span class="nx">envImageslider</span><span class="p">({</span>
       <span class="na">interval</span><span class="p">:</span> <span class="mi">2000</span>
    <span class="p">});</span>
 </code></pre>
 </div>
 
-<p><code class="highlighter-rouge">.imageslider('cycle')</code>
+<p><code class="highlighter-rouge">.envImageslider('cycle')</code>
 Cycles through the imageslider</p>
 
-<p><code class="highlighter-rouge">.imageslider('pause')</code>
+<p><code class="highlighter-rouge">.envImageslider('pause')</code>
 Pauses the imageslider</p>
 
-<p><code class="highlighter-rouge">.imageslider('next')</code>
+<p><code class="highlighter-rouge">.envImageslider('next')</code>
 Cycles to the next item</p>
 
-<p><code class="highlighter-rouge">.imageslider('prev')</code>
+<p><code class="highlighter-rouge">.envImageslider('prev')</code>
 Cycles to the previous item</p>
 
-<p><code class="highlighter-rouge">.imageslider('number')</code>
+<p><code class="highlighter-rouge">.envImageslider('number')</code>
 Cycles the imageslider to a particular slide.</p>
 
 <h2 id="events">Events</h2>
@@ -838,11 +838,11 @@ Cycles the imageslider to a particular slide.</p>
 
 <p>Slide - Fires before slider transition starts.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageslider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slid.sv.image-slider'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageslider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slid.env.image-slider'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="c1">// do something...</span>
    <span class="p">});</span>
 
-   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageslider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slide.sv.image-slider'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">$</span><span class="p">(</span><span class="s1">'#myImageslider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slide.env.image-slider'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="c1">// do something...</span>
    <span class="p">});</span>
 </code></pre>
