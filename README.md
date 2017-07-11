@@ -20,8 +20,11 @@ Markup should comply to the [WAI-ARIA standard](https://www.w3.org/TR/wai-aria-1
 
 A [.editorconfig](http://editorconfig.org/) is provided in the project root.
 
-## Build docs ##
-From console run `jekyll serve`
+## Docs ##
+To run docs website locally:
+`cd` into `_docs`-folder and run `jekyll serve`
+
+To build docs run `npm run builddocs`
 
 ## License information ##
 Code coypright 2017, SiteVision AB. Code is released under the [MIT license](http://brokenlink)
