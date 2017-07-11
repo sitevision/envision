@@ -7,3 +7,4 @@ _gh_pages
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+dist
