@@ -21,4 +21,4 @@ To run docs website locally:
 To build docs run `npm run builddocs`
 
 ## License information ##
-Code coypright 2017, SiteVision AB. Code is released under the [MIT license](http://brokenlink)
+Code coypright 2017, SiteVision AB. Code is released under the [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)

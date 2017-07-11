@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Licensed under MIT <TODO add url>
+ * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
 
