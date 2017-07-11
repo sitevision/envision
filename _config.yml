@@ -29,6 +29,7 @@ css_prefix: env
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 exclude:
   - Gemfile
   - Gemfile.lock
