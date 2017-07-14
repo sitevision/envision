@@ -34,8 +34,8 @@ source:           .
 destination:      ../docs
 host:             0.0.0.0
 port:             9001
-baseurl:          "/envision"
-url:              https://sitevision.github.io/
+baseurl:          "/"
+url:              http://envisionui.io/
 encoding:         UTF-8
 exclude:          [assets/scss/]
 
