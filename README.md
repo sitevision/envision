@@ -1,5 +1,5 @@
 # Envision by SiteVision #
-An open source UI Library for [SiteVision](https://www.sitevision.se/). You can watch the documentation and examples grow at [https://sitevision.github.com/envision/](https://sitevision.github.com/envision/)
+An open source UI Library for [SiteVision](https://www.sitevision.se/). You can watch the documentation and examples grow at [http://envisionui.io/](http://envisionui.io/)
 
 ## Getting started ##
 1. Clone repository
