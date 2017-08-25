@@ -6,7 +6,7 @@
    &__item {
       display: inline-block;
 
-      & + &::before {
+      &:nth-child(1n+2)::before {
          color: $breadcrumb-divider-color;
          content: "#{$breadcrumb-divider}";
          display: inline-block;
