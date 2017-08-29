@@ -16,7 +16,7 @@ const packageJson    = require('./package.json');
 
 const BUILD_FOLDER = './build';
 const DIST_FOLDER = './dist';
-const DOCS_DIST_FOLDER = './_docs/assets';
+const DOCS_DIST_FOLDER = './_docs/assets/dist';
 
 const PROJECT_NAME = packageJson.name;
 
