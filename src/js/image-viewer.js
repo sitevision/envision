@@ -319,7 +319,7 @@ const Imageviewer = (($) => {
             return;
          }
 
-         $(this).imageviewer($target.parent());
+         $(this).envImageviewer($target.parent());
       });
 
    $.fn[NAME] = Imageviewer._jQuery;
