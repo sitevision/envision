@@ -38,7 +38,9 @@
 }
 
 @keyframes #{$prefix}-stretchdelay {
-   0%, 40%, 100% {
+   0%,
+   40%,
+   100% {
       transform: scaleY(.4);
    }  20% {
       transform: scaleY(1);
