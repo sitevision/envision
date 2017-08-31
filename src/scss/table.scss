@@ -8,7 +8,8 @@
       text-align: left;
    }
 
-   th, td {
+   th,
+   td {
       @include border-divider(border-top);
       padding: $spacing-x-small;
       vertical-align: top;
@@ -21,7 +22,8 @@
    }
 
    &--borders-around {
-      th, td {
+      th,
+      td {
          @include border-divider(border);
       }
    }
@@ -29,7 +31,8 @@
    $border-directions: right bottom left;
    @each $direction in $border-directions {
       &--borders-#{$direction} {
-         th, td {
+         th,
+         td {
             border-top: 0;
             @include border-divider(border-#{$direction});
          }
@@ -37,13 +40,15 @@
    }
 
    &--small {
-      th, td {
+      th,
+      td {
          padding: $spacing-xx-small;
       }
    }
 
    &--large {
-      th, td {
+      th,
+      td {
          padding: $spacing-small;
       }
    }

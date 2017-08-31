@@ -4,7 +4,12 @@
   "description": "SiteVision CSS framework",
   "main": "index.js",
   "scripts": {
-    "builddocs": "gulp; cd _docs/; jekyll build; touch ../docs/.nojekyll"
+    "build-docs": "cd _docs/; jekyll build; touch ../docs/.nojekyll",
+    "build-docs-js": "./node_modules/.bin/webpack --config webpack.config.dev.js",
+    "build-dist": "./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build": "npm-run-all build-docs-js build-docs build-dist",
+    "watch": "./node_modules/.bin/webpack --config webpack.config.dev.js --watch",
+    "zip-dist": "rm dist/dist.zip; zip dist.zip dist/; mv dist.zip dist/;"
   },
   "repository": {
     "type": "git",
@@ -19,23 +24,23 @@
   "author": "SiteVision AB",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-es2015-modules-strip": "^0.1.0",
-    "babel-preset-es2015": "^6.22.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
     "eslint": "^3.17.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-clean-css": "^3.6.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-debug": "^3.0.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-header": "^1.8.8",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-scss-lint": "^0.4.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.1",
-    "gulp-zip": "^4.0.0"
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "tether": "^1.4.0"
   }
 }

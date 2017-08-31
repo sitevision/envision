@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
-/* global Tether */
+import Tether from 'tether';
 
 const Popover = (($) => {
 
