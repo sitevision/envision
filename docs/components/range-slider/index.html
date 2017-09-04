@@ -553,16 +553,24 @@
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
-   <span class="env-range-slider__value env-text"></span>
-   <span class="env-range-slider__value env-text"></span>
+
+   <div class="env-range-slider__values">
+      <span class="env-range-slider__values__value env-range-slider__values__value--from env-text"></span>
+      <span class="env-range-slider__values__separator env-text">-</span>
+      <span class="env-range-slider__values__value env-text"></span>
+   </div>
 </div>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-range-slider example-range-slider"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-range-slider__range"</span><span class="nt">&gt;&lt;/div&gt;</span>
    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-range-slider__handle"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/div&gt;</span>
    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-range-slider__handle"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/div&gt;</span>
-   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__value env-text"</span><span class="nt">&gt;&lt;/span&gt;</span>
-   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__value env-text"</span><span class="nt">&gt;&lt;/span&gt;</span>
+
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-range-slider__values"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__values__value env-range-slider__values__value--from env-text"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__values__separator env-text"</span><span class="nt">&gt;</span>-<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-range-slider__values__value env-text"</span><span class="nt">&gt;&lt;/span&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.example-range-slider'</span><span class="p">).</span><span class="nx">envRangeSlider</span><span class="p">({</span>

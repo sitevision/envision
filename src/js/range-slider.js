@@ -10,7 +10,7 @@ const RangeSlider = (($) => {
 
    const HANDLE_INDEX = 'range-handle-index';
    const HANDLES_SELECTOR = '.env-range-slider__handle';
-   const HANDLE_VALUE_HOLDERS_SELECTOR = '.env-range-slider__value';
+   const VALUE_HOLDERS_SELECTOR = '.env-range-slider__values__value';
    const RANGE_SELECTOR = '.env-range-slider__range';
    const TOUCH_MODIFIER = 'env-range-slider--touch';
    const IDENTIFIER = 'env.range-slider';
@@ -46,7 +46,7 @@ const RangeSlider = (($) => {
          this.isTouch = Util.isTouch();
 
          if (this.config.visibleValues) {
-            this.handleValueHolders = this.$el.find(HANDLE_VALUE_HOLDERS_SELECTOR);
+            this.valueHolders = this.$el.find(VALUE_HOLDERS_SELECTOR);
          }
 
          this.handleEvents = {
@@ -98,9 +98,8 @@ const RangeSlider = (($) => {
                this.$range.css('left', `${valPercent}%`);
 
                if (this.config.visibleValues) {
-                  this.handleValueHolders
+                  this.valueHolders
                      .eq(i)
-                     .css('left', `${valPercent}%`)
                      .text(val);
                }
 
@@ -108,9 +107,8 @@ const RangeSlider = (($) => {
                this.$range.css('width', `${valPercent - lastValPercent}%`);
 
                if (this.config.visibleValues) {
-                  this.handleValueHolders
+                  this.valueHolders
                      .eq(i)
-                     .css('left', `${valPercent}%`)
                      .text(val);
                }
             }

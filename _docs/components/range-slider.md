@@ -11,8 +11,12 @@ Capture a range
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
-   <span class="env-range-slider__value env-text"></span>
-   <span class="env-range-slider__value env-text"></span>
+
+   <div class="env-range-slider__values">
+      <span class="env-range-slider__values__value env-range-slider__values__value--from env-text"></span>
+      <span class="env-range-slider__values__separator env-text">-</span>
+      <span class="env-range-slider__values__value env-text"></span>
+   </div>
 </div>
 {% endexample %}
 
