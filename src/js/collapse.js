@@ -103,7 +103,7 @@ const Collapse = (($) => {
          return;
       }
 
-      $target.collapse();
+      $target[NAME]();
    });
 
    return Collapse;

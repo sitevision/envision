@@ -6,7 +6,7 @@
 
 const Dropdown = (($) => {
 
-   const NAME = 'envDopdown';
+   const NAME = 'envDropdown';
    const NO_CONFLICT = $.fn[NAME];
    const ENV_DROPDOWN_OPEN = 'env-is-open';
    const TOGGLE_DROPDOWN = '[data-dropdown]';
@@ -110,7 +110,7 @@ const Dropdown = (($) => {
       const $this = $(this);
       const $target = $($this.data('target'));
 
-      $target.dropdown();
+      $target[NAME]();
    });
 
    return Dropdown;
