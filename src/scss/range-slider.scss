@@ -23,10 +23,25 @@
       }
    }
 
-   &__value {
-      margin-left: -($handle-size-desktop / 2) !important;
-      position: absolute;
-      top: $spacing-large;
+   &__values {
+      display: flex;
+      margin-top: $spacing-large;
+      position: relative;
+
+      &__value {
+         flex-basis: 45%;
+
+         &--from {
+            display: flex;
+            justify-content: flex-end;
+         }
+      }
+
+      &__separator {
+         display: flex;
+         flex-basis: 10%;
+         justify-content: center;
+      }
    }
 
    &__range {

@@ -8,3 +8,4 @@ _gh_pages
 .jekyll-metadata
 Gemfile.lock
 dist
+_docs/assets/envision
