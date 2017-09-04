@@ -110,7 +110,7 @@ const Dropdown = (($) => {
       const $this = $(this);
       const $target = $($this.data('target'));
 
-      $target.envDropdown();
+      $target[NAME]();
    });
 
    return Dropdown;
