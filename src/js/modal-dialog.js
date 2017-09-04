@@ -214,7 +214,7 @@ const ModalDialog = (($) => {
 
       const $target = $($(this).data('target'));
 
-      $target.modalDialog();
+      $target.envDialog();
    });
 
    return ModalDialog;
