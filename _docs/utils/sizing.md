@@ -34,10 +34,10 @@ Examples `height`
 {% example html %}
 
 <div class="example-sizing-h"> 
-   <div class="env-h--25 env-p-around--x-small env-m-right--small sv-d--inline-block">25%</div>
-   <div class="env-h--50 env-p-around--x-small env-m-right--small sv-d--inline-block">50%</div>
-   <div class="env-h--75 env-p-around--x-small env-m-right--small sv-d--inline-block">75%</div>
-   <div class="env-h--100 env-p-around--x-small sv-d--inline-block">100%</div>
+   <div class="env-h--25 env-p-around--x-small env-m-right--small env-d--inline-block">25%</div>
+   <div class="env-h--50 env-p-around--x-small env-m-right--small env-d--inline-block">50%</div>
+   <div class="env-h--75 env-p-around--x-small env-m-right--small env-d--inline-block">75%</div>
+   <div class="env-h--100 env-p-around--x-small env-d--inline-block">100%</div>
 </div>
 
 {% endexample %}
