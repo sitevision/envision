@@ -10,6 +10,7 @@ module.exports = {
       './src/js/collapse.js',
       './src/js/dropdown.js',
       './src/js/image-slider.js',
+      './src/js/image-viewer.js',
       './src/js/modal-dialog.js',
       './src/js/popover.js',
       './src/js/range-slider.js',
