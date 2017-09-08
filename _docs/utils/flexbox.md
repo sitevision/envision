@@ -94,7 +94,8 @@ Examples
 
 Applicable to flex containers (`display: flex`). Utility classes are named using the format: `env-align-items--{value}`
 
-Valid values 
+Valid values
+* `stretch` 
 * `start`
 * `end`
 * `center`
@@ -102,7 +103,7 @@ Valid values
 
 {% example html %}
 
-<div class="example-alignment-container"> 
+<div class="example-alignment-container env-align-items--stretch"> 
    <div class="env-p-around--x-small">Item</div>
    <div class="env-p-around--x-small">Item</div>
    <div class="env-p-around--x-small">Item</div>
@@ -179,19 +180,19 @@ Valid values
 
 {% endexample %}
 
-### Flex length ###
+### Flex grow ###
 
 Applicable to flex items (items within a flex container). Used to specify the length of the flex item, relative to the rest of the flex items inside the same container. 
-Utility classes are named using the format: `env-flex-length--{value}`
+Utility classes are named using the format: `env-flex-grow--{value}`
 
 Valid values `1-10`
 
 {% example html %}
 
-<div class="sv-d--flex">
-   <div class="env-flex-length--1 example-list-item">Sidebar</div> 
-   <div class="env-flex-length--2 example-list-item">Main</div>
-   <div class="env-flex-length--1 example-list-item">Sidebar</div>
+<div class="env-d--flex">
+   <div class="env-flex-grow--1 example-list-item">Sidebar</div> 
+   <div class="env-flex-grow--2 example-list-item">Main</div>
+   <div class="env-flex-grow--1 example-list-item">Sidebar</div>
 </div>
 
 {% endexample %}
