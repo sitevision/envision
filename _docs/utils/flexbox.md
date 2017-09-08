@@ -180,9 +180,26 @@ Valid values
 
 {% endexample %}
 
-### Flex grow ###
+### Flex length (`flex` property) ###
 
 Applicable to flex items (items within a flex container). Used to specify the length of the flex item, relative to the rest of the flex items inside the same container. 
+Utility classes are named using the format: `env-flex-length--{value}`
+
+Valid values `1-10`
+
+{% example html %}
+
+<div class="env-d--flex">
+   <div class="env-flex-length--1 example-list-item">Sidebar</div> 
+   <div class="env-flex-length--2 example-list-item">Main</div>
+   <div class="env-flex-length--1 example-list-item">Sidebar</div>
+</div>
+
+{% endexample %}
+
+### Flex grow (`flex-grow` property) ###
+
+Applicable to flex items (items within a flex container). Used to specify how much the item will grow relative to the rest flex items inside the same container.   
 Utility classes are named using the format: `env-flex-grow--{value}`
 
 Valid values `1-10`
@@ -190,9 +207,9 @@ Valid values `1-10`
 {% example html %}
 
 <div class="env-d--flex">
-   <div class="env-flex-grow--1 example-list-item">Sidebar</div> 
-   <div class="env-flex-grow--2 example-list-item">Main</div>
-   <div class="env-flex-grow--1 example-list-item">Sidebar</div>
+   <div class="example-list-item">Item</div> 
+   <div class=" example-list-item">Item</div>
+   <div class="env-flex-grow--1 example-list-item">Item</div>
 </div>
 
 {% endexample %}
