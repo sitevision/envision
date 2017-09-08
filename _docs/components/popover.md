@@ -12,8 +12,8 @@ group: components
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.
+   <div class="env-popover__content">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.</p>
    </div>
 </div>
 
@@ -26,8 +26,8 @@ group: components
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.
+   <div class="env-popover__content">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.</p>
    </div>
 </div>
 
@@ -41,7 +41,7 @@ group: components
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
    <div class="env-popover__content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.</p>
    </div>
 </div>
 
@@ -55,7 +55,7 @@ group: components
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
    <div class="env-popover__content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis pretium magna. Donec sollicitudin lorem eget imperdiet auctor.</p>
    </div>
 </div>
 
