@@ -18,7 +18,7 @@ $justifyContentValues: flex-end center space-between space-around;
    }
 }
 
-$alignItemsValues: center flex-start flex-end baseline;
+$alignItemsValues: stretch center flex-start flex-end baseline;
 @each $value in $alignItemsValues {
    $shortValue: getShortValue($value);
    .#{$prefix}-align-items--#{$shortValue} {
@@ -35,7 +35,7 @@ $alignSelfValues: stretch center flex-start flex-end baseline;
 }
 
 @for $i from 1 through 10 {
-   .#{$prefix}-flex-length--#{$i} {
-      flex: $i;
+   .#{$prefix}-flex-grow--#{$i} {
+      flex-grow: $i;
    }
 }
