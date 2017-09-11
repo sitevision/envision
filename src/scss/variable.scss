@@ -77,15 +77,18 @@ $icon-size-xx-large:       60px;
 $color-page-bg:            #ffffff;
 $color-element-bg:         #f6f5f5;
 
-$color-brand:              #1395ba;
+$color-hover:              #f7f7f7;
+
+$color-brand:              #6892d5;
 $color-brand-light:        lighten($color-brand, 10%);
 $color-brand-dark:         darken($color-brand, 10%);
 
 $color-danger:             #e02525;
-$color-success:            #5cb85c;
-$color-warning:            #f0ad4e;
+$color-success:            #79d179;
+$color-info:               #67d3de;
+$color-warning:            #e9bb4e;
 
-$font-color:               #373d3f;
+$font-color:               #202330;
 $font-color-light:         #333333;
 $font-color-lighter:       #878787;
 $font-color-invert:        #ffffff;

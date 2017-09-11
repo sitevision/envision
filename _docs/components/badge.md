@@ -17,4 +17,5 @@ group: components
 <span class="env-badge env-badge--success">Success</span>
 <span class="env-badge env-badge--warning">Warning</span>
 <span class="env-badge env-badge--danger">Danger</span>
+<span class="env-badge env-badge--info">Info</span>
 {% endexample %}

@@ -11,8 +11,10 @@ group: utils
 <div class="example-color">
    <div class="env-bg-color--brand">Brand</div>
    <div class="env-bg-color--success">Success</div>
+   <div class="env-bg-color--info">Info</div>
    <div class="env-bg-color--warning">Warning</div>
    <div class="env-bg-color--danger">Danger</div>
+   <div class="env-bg-color--hover">Hover</div>
    <div class="env-bg-color--base env-color--lighter">Base</div>
    <div class="env-bg-color--darker env-color--lighter">Darker</div>
    <div class="env-bg-color--dark">Dark</div>
@@ -28,8 +30,10 @@ group: utils
 <div class="example-color">
    <p class="env-text env-color--brand">Brand</p>
    <p class="env-text env-color--success">Success</p>
+   <p class="env-text env-color--info">Info</p>
    <p class="env-text env-color--warning">Warning</p>
    <p class="env-text env-color--danger">Danger</p>
+   <p class="env-text env-color--hover">Hover</p>
    <p class="env-text env-color--base">Base</p>
    <p class="env-text env-color--darker">Darker</p>
    <p class="env-text env-color--dark">Dark</p>
