@@ -2,6 +2,7 @@ $colors: (
    brand: $color-brand,
    success: $color-success,
    warning: $color-warning,
+   info: $color-info,
    danger: $color-danger,
    base: $color-base,
    darker: $color-darker,
@@ -9,7 +10,8 @@ $colors: (
    normal: $color-normal,
    light: $color-light,
    lighter: $color-lighter,
-   lightest: $color-lightest
+   lightest: $color-lightest,
+   hover: $color-hover
 );
 
 @each $state, $color in $colors {

@@ -19,6 +19,10 @@
       @include alert-color-variant(lighten($color-danger, 20%));
    }
 
+   &--info {
+      @include alert-color-variant(lighten($color-info, 20%));
+   }
+
    &__link {
       color: $font-color-lighter;
       font-weight: $font-weight-bold;
