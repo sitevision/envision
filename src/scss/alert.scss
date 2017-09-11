@@ -4,7 +4,6 @@
    margin: $spacing-medium;
    padding: $spacing-medium;
 
-   @include alert-color-variant($color-element-bg);
    @include border-radius($radius-medium);
 
    &--success {

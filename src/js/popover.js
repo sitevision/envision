@@ -41,7 +41,7 @@ const Popover = (($) => {
                   <div class="env-popover__header">
                      <h3 class="env-popover__header__title"></h3>
                   </div>
-                  <div class="env-popover__content env-text"></div>
+                  <div class="env-popover__content env-text env-p-around--small"></div>
                </div>`,
       title: '',
       trigger: 'click'
