@@ -24,10 +24,10 @@
    text-decoration: none;
 
    &:hover {
-      background-color: $hover-background-color;
+      background-color: $color-hover;
    }
 
    &:focus {
-      background-color: $focus-background-color
+      background-color: $color-hover;
    }
 }
