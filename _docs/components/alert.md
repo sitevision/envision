@@ -5,11 +5,6 @@ description: Alert description
 group: components
 ---
 
-## Overview ##
-{% example html %}
-<div class="env-alert" role="alert"><strong>Hello!</strong> this is alert</div>
-{% endexample %}
-
 ## Variations ##
 {% example html %}
 <div class="env-alert env-alert--success" role="alert">
@@ -22,7 +17,7 @@ group: components
 {% endexample %}
 
 {% example html %}
-<div class="env-alert" role="alert">
+<div class="env-alert env-alert--info" role="alert">
    <button type="button" class="env-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
    <article class="env-media">
       <div class="env-media__figure">
