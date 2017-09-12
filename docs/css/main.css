@@ -104,8 +104,17 @@ pre code {
 .example-progress > div + div {
   margin-top: 10px; }
 
-.example-tabs ul {
+.example-tabs,
+.example-tabs2 {
   margin-bottom: 15px; }
+
+.example-panel {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  background-color: #eee; }
 
 .example-sizing > div,
 .example-sizing-h > div,

@@ -10,10 +10,10 @@ const Tabs = (($) => {
    const ARIA_HIDDEN = 'aria-hidden';
    const ENTER_KEY = 13;
    const IDENTIFIER = 'env.tabs';
-   const IS_ACTIVE = 'env-is-active';
+   const IS_ACTIVE = 'env-tabs__link--active';
    const NAME = 'envTabs';
    const NO_CONFLICT = $.fn[NAME];
-   const TAB_SELECTOR = '.env-tabs__nav__link';
+   const TAB_SELECTOR = '.env-tabs__link';
 
    const DEFAULTS = {
       active: 0
@@ -36,7 +36,7 @@ const Tabs = (($) => {
          this.$tabs
             .each((i, tab) => {
                const $tab = $(tab);
-               const $panel = this.$el.find($tab.attr('href'));
+               const $panel = $($tab.attr('href'));
                this.$panels[$tab.attr('id')] = $panel;
 
                $tab
