@@ -1,0 +1,30 @@
+@mixin filled-nav-states() {
+   &:hover {
+      background-color: $color-brand-dark;
+      color: $font-color-invert;
+   }
+
+   &--active {
+      background-color: $color-brand;
+      color: $font-color-invert;
+   }
+}
+
+@mixin nav-link() {
+   color: $color-brand;
+   display: block;
+   text-decoration: none;
+   transition: background-color .25s ease, color .25s ease;
+
+   &:hover {
+      color: $color-brand-dark;
+   }
+
+   &:focus {
+      @include focus();
+   }
+
+   &--active {
+      color: $color-brand-light;
+   }
+}

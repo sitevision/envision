@@ -1,22 +1,30 @@
-.#{$prefix}-tabs {
+$link-classname: #{$prefix}-tabs__link;
 
+.#{$prefix}-tabs {
    &__nav {
       background-color: $color-element-bg;
-      list-style: none;
-      margin: 0;
-      padding: $spacing-x-small $spacing-x-small 0;
+      display: flex;
+      @include reset-list();
+   }
 
-      &__item {
-         display: inline;
-      }
+   &__link {
+      @include nav-link();
+      padding: $spacing-x-small $spacing-medium;
 
-      &__link {
-         @include button-base(0);
-         @include border-top-radius($button-border-radius);
+      &--active {
+         background-color: $color-brand;
+         color: $color-element-bg;
 
-         &.#{$prefix}-is-active {
-            @include is-active();
+         &:hover {
+            color: $color-element-bg;
          }
+      }
+   }
+
+   &--hover-fill {
+      .#{$link-classname}  {
+         @include nav-link();
+         @include filled-nav-states();
       }
    }
 }

@@ -22,12 +22,5 @@
    color: $font-color;
    font-weight: $font-weight-semibold;
    text-decoration: none;
-
-   &:hover {
-      background-color: $color-hover;
-   }
-
-   &:focus {
-      background-color: $color-hover;
-   }
+   background-color: transparent;
 }
