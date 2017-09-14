@@ -31,7 +31,7 @@ const Imageslider = (($) => {
 
    const SELECTORS = {
       ACTIVE: '.env-image-slider__item--active',
-      ACTIVE_DOT: '.env-icon--dot-big-selected',
+      ACTIVE_DOT: '.env-icon--dot-big-fill',
       ACTIVE_ITEM: '.env-image-slider__item--active.env-image-slider__item',
       DATA_SLIDE: '[data-move], [data-move-to], [data-image-slider-touch]',
       DATA_IMAGE_SLIDER: '[data-image-slider]',
@@ -45,7 +45,7 @@ const Imageslider = (($) => {
 
    const ClassName = {
       ACTIVE: 'env-image-slider__item--active',
-      ACTIVE_DOT: 'env-icon--dot-big-selected',
+      ACTIVE_DOT: 'env-icon--dot-big-fill',
       DOT: 'env-icon--dot-big',
       IMAGESLIDER: 'env-image-slider',
       LEFT: 'env-image-slider__item--left',

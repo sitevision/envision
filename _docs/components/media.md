@@ -44,7 +44,7 @@ group: components
    </div>
    <div class="env-media__actions">
       <button type="button" class="env-button env-button--dropdown env-dropdown__toggle" aria-haspopup="true" title="More options">
-         <i class="env-icon--dropdown-menu" aria-hidden="true"></i>
+         <i class="env-icon--arrow-down" aria-hidden="true"></i>
          <span class="env-assistive-text">More options</span>
       </button>
    </div>

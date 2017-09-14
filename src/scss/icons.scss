@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'envision-icons';
-  src:  url('../fonts/envision-icons.eot?87fzv1');
-  src:  url('../fonts/envision-icons.eot?87fzv1#iefix') format('embedded-opentype'),
-    url('../fonts/envision-icons.woff2?87fzv1') format('woff2'),
-    url('../fonts/envision-icons.ttf?87fzv1') format('truetype'),
-    url('../fonts/envision-icons.woff?87fzv1') format('woff'),
-    url('../fonts/envision-icons.svg?87fzv1#envision-icons') format('svg');
+  src:  url('../fonts/envision-icons.eot?821gem');
+  src:  url('../fonts/envision-icons.eot?821gem#iefix') format('embedded-opentype'),
+    url('../fonts/envision-icons.woff2?821gem') format('woff2'),
+    url('../fonts/envision-icons.ttf?821gem') format('truetype'),
+    url('../fonts/envision-icons.woff?821gem') format('woff'),
+    url('../fonts/envision-icons.svg?821gem#envision-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,6 +25,69 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.#{$prefix}-icon--plus:before {
+  content: "\e910";
+}
+.#{$prefix}-icon--minus:before {
+  content: "\e911";
+}
+.#{$prefix}-icon--cart:before {
+  content: "\e912";
+}
+.#{$prefix}-icon--shipping:before {
+  content: "\e913";
+}
+.#{$prefix}-icon--user:before {
+  content: "\e914";
+}
+.#{$prefix}-icon--pay:before {
+  content: "\e915";
+}
+.#{$prefix}-icon--arrow-fill-left .path1:before {
+  content: "\e916";
+  color: rgb(0, 0, 0);
+}
+.#{$prefix}-icon--arrow-fill-left .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(2, 2, 3);
+}
+.#{$prefix}-icon--arrow-fill-right .path1:before {
+  content: "\e918";
+  color: rgb(0, 0, 0);
+}
+.#{$prefix}-icon--arrow-fill-right .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(2, 2, 3);
+}
+.#{$prefix}-icon--arrow-fill-up .path1:before {
+  content: "\e91a";
+  color: rgb(0, 0, 0);
+}
+.#{$prefix}-icon--arrow-fill-up .path2:before {
+  content: "\e927";
+  margin-left: -1em;
+  color: rgb(2, 2, 3);
+}
+.#{$prefix}-icon--arrow-fill-down .path1:before {
+  content: "\e928";
+  color: rgb(0, 0, 0);
+}
+.#{$prefix}-icon--arrow-fill-down .path2:before {
+  content: "\e929";
+  margin-left: -1em;
+  color: rgb(2, 2, 3);
+}
+.#{$prefix}-icon--star:before {
+  content: "\e92a";
+}
+.#{$prefix}-icon--star-haf:before {
+  content: "\e92b";
+}
+.#{$prefix}-icon--menu-line:before {
+  content: "\e92c";
+}
 .#{$prefix}-icon--phone:before {
   content: "\e900";
 }
@@ -52,13 +115,13 @@
 .#{$prefix}-icon--user-group:before {
   content: "\e908";
 }
-.#{$prefix}-icon--user:before {
+.#{$prefix}-icon--user-fill:before {
   content: "\e909";
 }
 .#{$prefix}-icon--thumb-up:before {
   content: "\e90a";
 }
-.#{$prefix}-icon--notis:before {
+.#{$prefix}-icon--bell:before {
   content: "\e90b";
 }
 .#{$prefix}-icon--arrow-left:before {
@@ -73,7 +136,7 @@
 .#{$prefix}-icon--arrow-down:before {
   content: "\e91e";
 }
-.#{$prefix}-icon--deleted:before {
+.#{$prefix}-icon--delete:before {
   content: "\e91f";
 }
 .#{$prefix}-icon--check-line:before {
@@ -88,7 +151,7 @@
 .#{$prefix}-icon--dot-big:before {
   content: "\e90e";
 }
-.#{$prefix}-icon--dot-big-selected:before {
+.#{$prefix}-icon--dot-big-fill:before {
   content: "\e925";
 }
 .#{$prefix}-icon--dot-small:before {
@@ -103,7 +166,7 @@
 .#{$prefix}-icon--grid-small:before {
   content: "\e923";
 }
-.#{$prefix}-icon--menu-line:before {
+.#{$prefix}-icon--list:before {
   content: "\e924";
 }
 .#{$prefix}-icon--menu-dots:before {
