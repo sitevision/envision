@@ -65,7 +65,7 @@ group: components
    </div>
       <ol class="env-image-slider__indicators">
       <li data-target="#exampleSlider2" data-move-to="0">
-         <span class="env-icon--dot-big-selected env-icon--large"></span>
+         <span class="env-icon--dot-big-fill env-icon--large"></span>
       </li>
       <li data-target="#exampleSlider2" data-move-to="1">
          <span class="env-icon--dot-big env-icon--large"></span>
