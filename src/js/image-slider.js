@@ -330,8 +330,7 @@ const Imageslider = (($) => {
          if (this._indicatorsElement) {
             $(this._indicatorsElement)
                .find(SELECTORS.ACTIVE_DOT)
-               .removeClass(ClassName.ACTIVE_DOT)
-               .addClass(ClassName.DOT);
+               .removeClass(ClassName.ACTIVE_DOT);
 
             const nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
