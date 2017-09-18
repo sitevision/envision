@@ -31,11 +31,10 @@ const Imageslider = (($) => {
 
    const SELECTORS = {
       ACTIVE: '.env-image-slider__item--active',
-      ACTIVE_DOT: '.env-icon--dot-big-fill',
+      ACTIVE_DOT: '.env-is-active',
       ACTIVE_ITEM: '.env-image-slider__item--active.env-image-slider__item',
       DATA_SLIDE: '[data-move], [data-move-to], [data-image-slider-touch]',
       DATA_IMAGE_SLIDER: '[data-image-slider]',
-      DOT: '.env-icon--dot-big',
       INDICATORS: '.env-image-slider__indicators',
       INNER: '.env-image-slider__inner',
       NEXT_PREV: '.env-image-slider--next, .env-image-slider--prev',
@@ -45,8 +44,7 @@ const Imageslider = (($) => {
 
    const ClassName = {
       ACTIVE: 'env-image-slider__item--active',
-      ACTIVE_DOT: 'env-icon--dot-big-fill',
-      DOT: 'env-icon--dot-big',
+      ACTIVE_DOT: 'env-is-active',
       IMAGESLIDER: 'env-image-slider',
       LEFT: 'env-image-slider__item--left',
       NEXT: 'env-image-slider__item--next',
@@ -221,11 +219,11 @@ const Imageslider = (($) => {
       _addSlideButtons() {
          const sliderId = this.$el[0].id;
          const buttonHTML = `<a class="env-image-slider--prev" role="button" data-move="prev" href="#${sliderId}">
-               <span class="env-image-slider__prev-icon env-icon--arrow-left env-icon--large" aria-hidden="true"></span>
+               <i class="env-image-slider__previous-icon"></i>
                <span class="env-assistive-text">Previous</span>
             </a>
             <a class="env-image-slider--next" role="button" data-move="next" href="#${sliderId}">
-               <span class="env-image-slider__next-icon env-icon--arrow-right env-icon--large" aria-hidden="true"></span>
+               <i class="env-image-slider__next-icon"></i>
                <span class="env-assistive-text">Next</span>
             </a>`;
 
@@ -335,7 +333,7 @@ const Imageslider = (($) => {
                .removeClass(ClassName.ACTIVE_DOT)
                .addClass(ClassName.DOT);
 
-            const nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)].firstElementChild;
+            const nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
             if (nextIndicator) {
                $(nextIndicator).addClass(ClassName.ACTIVE_DOT);

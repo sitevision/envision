@@ -62,19 +62,11 @@
    &--next {
       justify-content: flex-end;
       right: 0;
-
-      &:hover .#{$prefix}-image-viewer__next-icon {
-         background-color: rgba(255, 255, 255, .9);
-      }
    }
 
    &--prev {
       justify-content: flex-start;
       left: 0;
-
-      &:hover .#{$prefix}-image-viewer__prev-icon {
-         background-color: rgba(255, 255, 255, .9);
-      }
    }
 
    &__item--next,
@@ -83,11 +75,21 @@
       top: 0;
    }
 
-   &__next-icon,
+   &__prev-icon,
+   &__next-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+   }
+
    &__prev-icon {
-      background-color: rgba(255, 255, 255, .5);
-      padding: $spacing-xxx-small;
-      @include border-radius(50%);
+      background-image: $image-control-prev-icon-bg;
+   }
+
+   &__next-icon {
+      background-image: $image-control-next-icon-bg;
    }
 
    &__next-icon {

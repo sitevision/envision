@@ -63,16 +63,10 @@ group: components
          <img src="https://unsplash.it/800/400/?blur" class="env-embedded__img" alt="Third slide">
       </div>
    </div>
-      <ol class="env-image-slider__indicators">
-      <li data-target="#exampleSlider2" data-move-to="0">
-         <span class="env-icon--dot-big-fill env-icon--large"></span>
-      </li>
-      <li data-target="#exampleSlider2" data-move-to="1">
-         <span class="env-icon--dot-big env-icon--large"></span>
-      </li>
-      <li data-target="#exampleSlider2" data-move-to="2">
-         <span class="env-icon--dot-big env-icon--large"></span>
-      </li>
+   <ol class="env-image-slider__indicators">
+      <li data-target="#exampleSlider2" data-move-to="0"></li>
+      <li data-target="#exampleSlider2" data-move-to="1"></li>
+      <li data-target="#exampleSlider2" data-move-to="2"></li>
    </ol>
 </div>
 

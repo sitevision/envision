@@ -184,11 +184,11 @@ const Imageviewer = (($) => {
 
       _getButtons() {
          const buttonHTML = `<a class="env-image-viewer--prev" role="button" data-move="prev">
-               <span class="env-image-viewer__prev-icon env-icon--arrow-left"></span>
+               <i class="env-image-viewer__prev-icon"></i>
                <span class="env-assistive-text">Previous</span>
             </a>
             <a class="env-image-viewer--next" role="button" data-move="next">
-               <span class="env-image-viewer__next-icon env-icon--arrow-right"></span>
+               <i class="env-image-viewer__next-icon"></i>
                <span class="env-assistive-text">Next</span>
             </a>`;
 
@@ -208,7 +208,9 @@ const Imageviewer = (($) => {
          return this.$images.map((index) => {
             const isActive = index === activeElementIndex;
             return `<li data-move-to="${index}">
-                     <span class="${isActive ? 'env-image-viewer__indicators--active ' : ''} env-icon--dot-small env-icon--large"></span>
+                     <svg class="${isActive ? 'env-image-viewer__indicators--active ' : ''} env-icon--dot-small env-icon--large">
+                        <use xlink:href=""></use>
+                     </svg>
                      </li>`;
          })
          .get()
