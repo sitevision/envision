@@ -28,7 +28,7 @@ const Imageviewer = (($) => {
                              </div>`;
 
    const SELECTORS = {
-      ACTIVE_DOT           : '.env-image-viewer__indicators--active',
+      ACTIVE_DOT           : '.env-is-active',
       DATA_MOVE_TO         : '[data-move-to]',
       DATA_MOVE            : '[data-move]',
       DATA_IMAGE_VIEWER    : '[data-image-viewer]',
@@ -39,7 +39,7 @@ const Imageviewer = (($) => {
    };
 
    const ClassName = {
-      ACTIVE_DOT     : 'env-image-viewer__indicators--active',
+      ACTIVE_DOT     : 'env-is-active',
       HIDDEN         : 'env-image-viewer--hidden',
       SPINNER_HIDE   : 'env-spinner--hide'
    };
@@ -207,11 +207,7 @@ const Imageviewer = (($) => {
 
          return this.$images.map((index) => {
             const isActive = index === activeElementIndex;
-            return `<li data-move-to="${index}">
-                     <svg class="${isActive ? 'env-image-viewer__indicators--active ' : ''} env-icon--dot-small env-icon--large">
-                        <use xlink:href=""></use>
-                     </svg>
-                     </li>`;
+            return `<li data-move-to="${index}" class="${isActive ? 'env-is-active' : ''}"></li>`;
          })
          .get()
          .join('');
@@ -298,7 +294,7 @@ const Imageviewer = (($) => {
             const indicator = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
 
             if (indicator) {
-               $(indicator).children()
+               $(indicator)
                   .addClass(ClassName.ACTIVE_DOT);
             }
          }
