@@ -44,7 +44,9 @@ group: components
    </div>
    <div class="env-media__actions">
       <button type="button" class="env-button env-button--dropdown env-dropdown__toggle" aria-haspopup="true" title="More options">
-         <i class="env-icon--arrow-down" aria-hidden="true"></i>
+         <svg class="env-icon">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-arrow-down"></use>
+         </svg>
          <span class="env-assistive-text">More options</span>
       </button>
    </div>

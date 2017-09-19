@@ -10,7 +10,11 @@ group: utils
 <div class="icons-demo">
    <ul class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
       {% for icon in site.data.icons %}
-      <li class="env-list__item" title="env{{ icon.className }}"><i class="env{{ icon.className }}"></i></li>
+      <li class="env-list__item" title="env{{ icon.className }}">
+         <svg class="env-icon">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#{{ icon.className }}"></use>
+         </svg>
+      </li>
       {% endfor %}
    </ul>
 </div>
@@ -28,9 +32,36 @@ Valid values for _size_
 
 <div class="icons-demo">
    <ul class="env-list env-list--horizontal">
-      <li class="env-list__item"><i class="env-icon--user env-icon--small"></i></li>
-      <li class="env-list__item"><i class="env-icon--user env-icon--medium"></i></li>
-      <li class="env-list__item"><i class="env-icon--user env-icon--large"></i></li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--x-small">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--small">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--medium">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--large">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--x-large">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--xx-large">
+            <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
    </ul>
 </div>
 
@@ -43,7 +74,9 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 {% example html %}
 
 <div class="sv-d--flex sv-justify-content--center">
-   <i class="env-icon--user env-icon--large env-icon--inactive"></i>
+   <svg class="env-icon env-icon--xx-large env-icon--inactive">
+      <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
+   </svg>
 </div>
 
 {% endexample %}

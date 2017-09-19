@@ -137,3 +137,8 @@ $toggle-duration:          .4s;
 $badge-radius:             .2em;
 $badge-font-color:         $font-color-invert;
 $badge-font-size:          75%;
+
+$image-control-color: $color-element-bg;
+$image-control-color-inactive: $font-color-lighter;
+$image-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M20.391 27.609l-11.61-11.609 11.61-11.609 1.884 1.884-9.723 9.724 9.723 9.724z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$image-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M11.609 27.609l-1.884-1.884 9.723-9.724-9.723-9.724 1.884-1.884 11.61 11.609z'/%3E%3C/svg%3E"), "#", "%23") !default;
