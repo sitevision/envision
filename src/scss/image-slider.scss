@@ -113,52 +113,7 @@
    }
 
    &__indicators {
-      position: absolute;
-      right: 0;
-      bottom: 10px;
-      left: 0;
-      z-index: 15;
-      display: flex;
-      justify-content: center;
-      padding-left: 0;
-      margin-right: 15%;
-      margin-left: 15%;
-      list-style: none;
-
-      li {
-         cursor: pointer;
-         position: relative;
-         flex: 0 1 auto;
-         width: 30px;
-         height: 3px;
-         margin-right: 3px;
-         margin-left: 3px;
-         text-indent: -999px;
-         background-color: $image-control-color-inactive;
-
-         &.#{$prefix}-is-active {
-            background-color: $image-control-color;
-         }
-
-         :after,
-         :before {
-            position: absolute;
-            top: -10px;
-            left: 0;
-            display: inline-block;
-            width: 100%;
-            height: 10px;
-            content: "";
-         }
-
-         :before {
-            top: -10px;
-         }
-
-         :after {
-            bottom: -10px;
-         }
-      }
+      @include slide-indicator;
    }
 
    &__caption {
