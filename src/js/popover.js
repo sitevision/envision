@@ -158,7 +158,7 @@ const Popover = (($) => {
                   this._handlePopperPlacementChange(data);
                }
             },
-            onUpdate : (data) => {
+            onUpdate: (data) => {
                this._handlePopperPlacementChange(data);
             }
          });
