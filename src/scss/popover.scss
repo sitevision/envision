@@ -7,6 +7,7 @@ $arrow-border-size: 10px;
    border: 1px solid $color-lighter;
    border-radius: $radius-medium;
    box-shadow: $popover-shadow;
+   margin: $arrow-border-size;
    max-width: $popover-width;
    position: relative;
    z-index: $zindex-popover;
