@@ -14,7 +14,9 @@ module.exports = {
       './src/js/modal-dialog.js',
       './src/js/popover.js',
       './src/js/range-slider.js',
+      './src/js/shims.js',
       './src/js/tabs.js',
+
       './src/scss/base.scss',
       './src/icons/envision-icons.svg'
    ],
