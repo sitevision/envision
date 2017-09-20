@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
-import Tether from 'tether';
+import Popper from 'popper.js';
 
 const Popover = (($) => {
 
@@ -12,20 +12,12 @@ const Popover = (($) => {
    const IDENTIFIER = 'env.popover';
    const EVENT_NAMESPACE = `.${IDENTIFIER}`;
    const NO_CONFLICT = $.fn[NAME];
-   const CLASS_PREFIX = 'env-tether';
 
    const attachmentMapping = {
-      top: 'bottom center',
-      bottom: 'top center',
-      left: 'middle right',
-      right: 'middle left'
-   };
-
-   const offsetMapping = {
-      top: '10 0',
-      bottom: '-10 0',
-      left: '0 10',
-      right: '0 -10'
+      top: 'top',
+      bottom: 'bottom',
+      left: 'left',
+      right: 'right'
    };
 
    const DEFAULTS = {
@@ -34,7 +26,6 @@ const Popover = (($) => {
       container: 'body',
       content: '',
       escapeContent: true,
-      customOffset: undefined,
       placement: 'top',
       template: `<div class="env-popover" role="tooltip">
                   <div class="env-popover__arrow"></div>
@@ -110,10 +101,6 @@ const Popover = (($) => {
             .addClass(`env-popover__arrow--${this.config.placement}`);
       }
 
-      _getOffset() {
-         return this.config.customOffset || offsetMapping[this.config.placement];
-      }
-
       hide() {
          const $popoverElement = this.getPopoverElement();
 
@@ -126,6 +113,27 @@ const Popover = (($) => {
          this.isShowing = false;
       }
 
+      _cleanTipClass() {
+         this.$popoverElement
+            .find('.env-popover__arrow')
+            .removeClass((index, oldClassNames) => {
+               const modifier = oldClassNames.replace(/env-popover__arrow/g, '').trim();
+
+               return `env-popover__arrow${modifier}`;
+            });
+      }
+
+      _handlePopperPlacementChange(data) {
+         this._cleanTipClass();
+         this._addAttachmentClass(attachmentMapping[data.placement]);
+      }
+
+      _addAttachmentClass(className) {
+         this.$popoverElement
+            .find('.env-popover__arrow')
+            .addClass(`env-popover__arrow--${className}`);
+      }
+
       show() {
          const $popoverElement = this.getPopoverElement();
 
@@ -135,21 +143,27 @@ const Popover = (($) => {
 
          $('body').append($popoverElement);
 
-         this._tether = new Tether({
-            attachment        : attachmentMapping[this.config.placement],
-            element           : $popoverElement,
-            target            : this.el,
-            classes           : {
-               element: false,
-               enabled: false
+         this._popper = new Popper(this.el, $popoverElement[0], {
+            placement         : attachmentMapping[this.config.placement],
+            modifiers         : {
+               flip: {
+                  behavior: 'flip'
+               },
+               arrow: {
+                  element: '.env-popover__arrow'
+               }
             },
-            classPrefix       : CLASS_PREFIX,
-            offset            : this._getOffset(),
-            constraints       : this.config.constraints,
-            addTargetClasses  : false
+            onCreate: (data) => {
+               if (data.originalPlacement !== data.placement) {
+                  this._handlePopperPlacementChange(data);
+               }
+            },
+            onUpdate : (data) => {
+               this._handlePopperPlacementChange(data);
+            }
          });
 
-         this._tether.position();
+         this._popper.update();
 
          if (this.config.clickOutside) {
             $('body').on(this.config.trigger + EVENT_NAMESPACE, this.clickOutsideHandler.bind(this));
@@ -161,8 +175,12 @@ const Popover = (($) => {
       destroy() {
          this.hide();
 
+         if (this._popper !== null) {
+            this._popper.destroy();
+         }
+
          this.$popoverElement = undefined;
-         this._tether = undefined;
+         this._popper = undefined;
          this.isShowing = false;
          this.$el.removeData(IDENTIFIER);
       }

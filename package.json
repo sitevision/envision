@@ -41,6 +41,6 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "tether": "^1.4.0"
+    "popper.js": "^1.12.5"
   }
 }
