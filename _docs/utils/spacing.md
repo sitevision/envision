@@ -29,15 +29,3 @@ Valid values for _size_
 * `x-large`
 * `xx-large`
 * `xxx-large`
-
-Examples
-
-{% example html %}
-
-<div class="example-spacing"> 
-   <div class="env-m-left--small"></div>
-   <div class="env-m-around--large"></div>
-   <div class="env-p-top--medium"></div>
-</div>
-
-{% endexample %}
