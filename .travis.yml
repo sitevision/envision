@@ -5,3 +5,5 @@ os: linux
 cache:
   directories:
     node_modules
+script:
+  npm run build
