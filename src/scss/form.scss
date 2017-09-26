@@ -45,6 +45,10 @@
       }
    }
 
+   select:not([multiple]) {
+      height: calc(#{$spacing-xx-small + $spacing-xx-small + $line-height-small} + 2px);
+   }
+
    &-element {
       margin-bottom: $spacing-medium;
 
