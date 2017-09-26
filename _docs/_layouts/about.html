@@ -7,7 +7,7 @@
       {% include nav-top.html %}
 
       <div class="main-container">
-         {% include nav-docs.html %}
+         {% include nav-side.html pages=site.data.nav-about %}
          <main>
             <h1 id="content">{{ page.title }}</h1>
             {{ content }}

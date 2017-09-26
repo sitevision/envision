@@ -9,9 +9,9 @@
 </header>
 <nav class="nav-top">
 
-   <h1>{{ site.project_name }}</h1>
+   <h1><a href="/">{{ site.project_name }}</a></h1>
 
-   <ul>
+   <ul class="nav-top__menu">
       <li>
          <a class="{% if page.layout == "home" %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
       </li>
