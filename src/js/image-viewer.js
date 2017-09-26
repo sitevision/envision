@@ -113,6 +113,8 @@ const Imageviewer = (($) => {
 
             this._isShown = true;
 
+            $('body').css('overflow', 'hidden');
+
             this._bindContainerEvents();
             this._bindEvents();
             this._showBackdrop();
@@ -127,11 +129,12 @@ const Imageviewer = (($) => {
             this.$modal.remove();
             this.$btnContainer.remove();
             this.$imgContainer.remove();
+            $('body').css('overflow', 'scroll');
          };
 
          this.$backdrop
-            .one(Util.getTransitionEndEvent(), removeBackdropCallback)
-            .removeClass(BACKDROP_ANIMATION);
+         .one(Util.getTransitionEndEvent(), removeBackdropCallback)
+         .removeClass(BACKDROP_ANIMATION);
 
          this._isShown = false;
       }
@@ -147,10 +150,13 @@ const Imageviewer = (($) => {
             })
             .on('load', () => {
 
-               if ($downloadingImage.width() < $downloadingImage.height()) {
+               const imageHeight = $downloadingImage.height();
+               const windowHeight = window.innerHeight;
+               const heightModifier = 0.8;
+
+               if (windowHeight < imageHeight) {
                   $downloadingImage.css({
-                     'max-height': '800px',
-                     width: 'auto'
+                     'max-height': windowHeight * heightModifier
                   });
                }
 
