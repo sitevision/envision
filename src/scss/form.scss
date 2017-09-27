@@ -8,7 +8,7 @@
    &-input {
       background-color: $font-color-invert;
       background-image: none;
-      border: 1px solid $color-lighter;
+      border: $border-light;
       border-radius: $radius-small;
       box-sizing: border-box;
       color: $font-color;
@@ -46,7 +46,7 @@
    }
 
    select:not([multiple]) {
-      height: calc(#{$spacing-xx-small + $spacing-xx-small + $line-height-small} + 2px);
+      height: calc(#{$spacing-xx-small + $spacing-xx-small + $line-height-small} + #{$border-width * 2});
    }
 
    &-element {
@@ -197,7 +197,7 @@
    }
 
    &__fake {
-      border: 1px solid $color-lighter;
+      border: $border-light;
       border-radius: $radius-small;
       display: inline-block;
       height: $spacing-small;

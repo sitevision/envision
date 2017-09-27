@@ -24,7 +24,7 @@
    }
 
    [tabindex="-1"]:focus {
-      border: 1px solid transparent;
+      border: $border-width $border-style transparent;
       box-shadow: none;
    }
 

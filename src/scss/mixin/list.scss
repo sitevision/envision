@@ -3,7 +3,7 @@
 }
 
 @mixin border-divider($property, $thickness: 1px, $border-color: $color-lighter) {
-   #{$property}: $thickness solid $border-color;
+   #{$property}: $thickness $border-style $border-color;
 }
 
 @mixin dot-divider() {

@@ -43,7 +43,7 @@
    &__content {
       background-clip: padding-box;
       background-color: $color-element-bg;
-      border: 1px solid #999999;
+      border: $default-border;
       @include border-radius($radius-medium);
       @include box-shadow($modal-dialog-shadow);
       outline: 0;

@@ -1,6 +1,6 @@
 @mixin button-base($border-radius: $button-border-radius) {
    appearance: none;
-   border: 1px solid;
+   border: $border-width $border-style;
    box-sizing: border-box;
    cursor: pointer;
    display: inline-block;
