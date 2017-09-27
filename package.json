@@ -41,6 +41,7 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "popper.js": "^1.12.5"
+    "popper.js": "^1.12.5",
+    "svgxuse": "^1.2.4"
   }
 }

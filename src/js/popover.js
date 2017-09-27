@@ -175,7 +175,7 @@ const Popover = (($) => {
       destroy() {
          this.hide();
 
-         if (this._popper !== null) {
+         if (this._popper) {
             this._popper.destroy();
          }
 
