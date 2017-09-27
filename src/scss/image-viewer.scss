@@ -119,12 +119,12 @@
    }
 
    &__thumbnail {
-      border: 1px solid transparent;
+      border: $border-width $border-style transparent;
       max-width: 80px;
       opacity: .9;
 
       &:active {
-         border: 1px solid $color-focus;
+         border: $border-width $border-style $color-focus;
          opacity: 1;
       }
    }

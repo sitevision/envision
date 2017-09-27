@@ -60,7 +60,7 @@ $radius-large:             em(8);
 $radius-rounded-corners:   em(50);
 $radius-circle:            100%;
 
-// shadow
+// Shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
 $modal-shadow:              inset 0 3px 6px rgba(0, 0, 0, 1);
 $modal-dialog-shadow:       0 3px 9px rgba(0, 0, 0, .5);
@@ -103,11 +103,18 @@ $color-lightest:           lighten($color-base, 100%);
 
 $default-button-color:     lighten($color-base, 95%);
 $focus-background-color:   rgba(0, 0, 0, .2);
-$border-color:             $color-light;
 $color-focus:              #5cb3fd;
 $default-spinner-color:    #5cb3fd;
-// Z-index value
 
+// Border
+$border-width:             1px;
+$border-style:             solid;
+$border-color:             $color-light;
+$border-color-light:       $color-lighter;
+$default-border:           $border-width $border-style $border-color;
+$border-light:             $border-width $border-style $border-color-light;
+
+// Z-index value
 $zindex-imageslider-indicator:   15;
 $zindex-modal-backdrop:          1040;
 $zindex-modal:                   1050;

@@ -1,5 +1,5 @@
 [class^="#{$prefix}-border--"] {
-   border: 1px solid $border-color;
+   border: $default-border;
 }
 
 .#{$prefix}-border--0 { border: 0 !important; }
@@ -8,8 +8,8 @@
 .#{$prefix}-border--b-0 { border-bottom: 0 !important; }
 .#{$prefix}-border--l-0 { border-left: 0 !important; }
 
-.#{$prefix}-border { border: 1px solid $border-color !important; }
-.#{$prefix}-border-top { border-top: 1px solid $border-color !important; }
-.#{$prefix}-border-right { border-right: 1px solid $border-color !important; }
-.#{$prefix}-border-bottom { border-bottom: 1px solid $border-color !important; }
-.#{$prefix}-border-left { border-left: 1px solid $border-color !important; }
+.#{$prefix}-border { border: $default-border !important; }
+.#{$prefix}-border-top { border-top: $default-border !important; }
+.#{$prefix}-border-right { border-right: $default-border !important; }
+.#{$prefix}-border-bottom { border-bottom: $default-border !important; }
+.#{$prefix}-border-left { border-left: $default-border !important; }

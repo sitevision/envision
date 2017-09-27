@@ -1,5 +1,5 @@
 .#{$prefix}-alert {
-   border: 1px solid transparent;
+   border: $border-width $border-style transparent;
    color: $font-color-lighter;
    margin: $spacing-medium;
    padding: $spacing-medium;

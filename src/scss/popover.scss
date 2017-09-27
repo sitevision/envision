@@ -4,7 +4,7 @@ $arrow-border-size: 10px;
 
 .#{$prefix}-popover {
    background-color: $color-element-bg;
-   border: 1px solid $color-lighter;
+   border: $border-light;
    border-radius: $radius-medium;
    box-shadow: $popover-shadow;
    margin: $arrow-border-size;
@@ -29,7 +29,7 @@ $arrow-border-size: 10px;
 
    &__arrow {
       border-color: transparent;
-      border-style: solid;
+      border-style: $border-style;
       border-width: $arrow-border-size + 1;
       display: block;
       height: 0;
@@ -38,7 +38,7 @@ $arrow-border-size: 10px;
 
       &::after {
          border-color: transparent;
-         border-style: solid;
+         border-style: $border-style;
          border-width: $arrow-border-size;
          content: "";
          display: block;

@@ -3,14 +3,14 @@
    $range-height: $spacing-small;
    $handle-size-desktop: $spacing-large;
    $handle-size-touch: $spacing-x-large;
-   border: 1px solid $border-color;
+   border: $default-border;
    height: $range-height;
    position: relative;
 
    &__handle {
       @include border-radius($radius-small);
       background: $color-lighter;
-      border: 1px solid $border-color;
+      border: $default-border;
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop / 2);
       position: absolute;
