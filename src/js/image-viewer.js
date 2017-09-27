@@ -133,8 +133,8 @@ const Imageviewer = (($) => {
          };
 
          this.$backdrop
-         .one(Util.getTransitionEndEvent(), removeBackdropCallback)
-         .removeClass(BACKDROP_ANIMATION);
+            .one(Util.getTransitionEndEvent(), removeBackdropCallback)
+            .removeClass(BACKDROP_ANIMATION);
 
          this._isShown = false;
       }
