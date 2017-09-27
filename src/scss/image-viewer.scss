@@ -3,11 +3,14 @@
    text-align: center;
 
    &__modal {
+      display: block;
       bottom: 0;
       left: 0;
+      margin: 0 auto;
       opacity: 1;
       outline: 0;
-      position: absolute;
+      margin: 3% 0;
+      position: fixed;
       right: 0;
       text-align: center;
       top: 0;
@@ -17,17 +20,13 @@
    &__dialog {
       cursor: default;
       display: inline-block;
-      margin: 0 auto;
-      margin-top: 5%;
-      max-height: 800px;
-      max-width: 800px;
       position: relative;
    }
 
    &__modal-container {
-      margin: 0 auto;
       position: relative;
       text-align: center;
+      margin: 0 auto;
    }
 
    &__backdrop {
@@ -134,8 +133,7 @@
       @include slide-indicator;
    }
 
-   &__img {
-      height: auto;
+   &__img {   
       max-width: 100%;
       outline: none;
    }
