@@ -2,6 +2,7 @@ $nav-link-classname: #{$prefix}-nav__link;
 
 .#{$prefix}-nav {
    @include reset-list();
+   font-family: $font-family;
 
    &__link {
       @include nav-link();
