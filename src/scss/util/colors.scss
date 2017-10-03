@@ -31,10 +31,10 @@ $transparency: (
       background-color: $color;
    }
 
-   @each $opacity, $level in $transparency {
+   @each $opacity, $value in $transparency {
       .#{$prefix}-bg-color--#{$state}-#{$opacity} {
          background-color: $color;
-         opacity: $level;
+         opacity: $value;
       }
    }
 
