@@ -14,6 +14,14 @@ $colors: (
    hover: $color-hover
 );
 
+$transparency: (
+   80: .8,
+   60: .6,
+   40: .4,
+   20: .2,
+   10: .1
+);
+
 @each $state, $color in $colors {
    .#{$prefix}-color--#{$state} {
       color: $color !important;
@@ -22,4 +30,14 @@ $colors: (
    .#{$prefix}-bg-color--#{$state} {
       background-color: $color;
    }
+
+   @each $opacity, $level in $transparency {
+      .#{$prefix}-bg-color--#{$state}-#{$opacity} {
+         background-color: $color;
+         opacity: $level;
+      }
+   }
+
 }
+
+
