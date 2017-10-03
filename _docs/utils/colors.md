@@ -43,3 +43,63 @@ group: utils
    <p class="env-text env-color--lightest env-bg-color--dark">Lightest</p>
 </div>
 {% endexample %}
+
+
+## Background color - Darker / Lighter ##
+
+`env-bg-color--{color}--{value}`
+
+Valid values for _value_ (%)
+* `80`
+* `60`
+* `40`
+* `20`
+* `10`
+
+{% example html %}
+<div class="example-color env-list--horizontal--fixed env-list--horizontal--fixed--6">
+   <div class="env-list__item">
+      <div class="env-bg-color--brand example-color-size-large"></div>
+      <div class="env-bg-color--brand--80 example-color-size"></div>
+      <div class="env-bg-color--brand--60 example-color-size"></div>
+      <div class="env-bg-color--brand--40 example-color-size"></div>
+      <div class="env-bg-color--brand--20 example-color-size"></div>
+   </div>
+   <div class="env-list__item">
+      <div class="env-bg-color--success example-color-size-large"></div>
+      <div class="env-bg-color--success--80 example-color-size"></div>
+      <div class="env-bg-color--success--60 example-color-size"></div>
+      <div class="env-bg-color--success--40 example-color-size"></div>
+      <div class="env-bg-color--success--20 example-color-size"></div>
+   </div>
+   <div class="env-list__item">
+      <div class="env-bg-color--info example-color-size-large"></div>
+      <div class="env-bg-color--info--80 example-color-size"></div>
+      <div class="env-bg-color--info--60 example-color-size"></div>
+      <div class="env-bg-color--info--40 example-color-size"></div>
+      <div class="env-bg-color--info--20 example-color-size"></div>
+   </div>
+   <div class="env-list__item">
+      <div class="env-bg-color--warning example-color-size-large"></div>
+      <div class="env-bg-color--warning--80 example-color-size"></div>
+      <div class="env-bg-color--warning--60 example-color-size"></div>
+      <div class="env-bg-color--warning--40 example-color-size"></div>
+      <div class="env-bg-color--warning--20 example-color-size"></div>
+   </div>
+   <div class="env-list__item">
+      <div class="env-bg-color--danger example-color-size-large"></div>
+      <div class="env-bg-color--danger--80 example-color-size"></div>
+      <div class="env-bg-color--danger--60 example-color-size"></div>
+      <div class="env-bg-color--danger--40 example-color-size"></div>
+      <div class="env-bg-color--danger--20 example-color-size"></div>
+   </div>
+   <div class="env-list__item">
+      <div class="env-bg-color--dark example-color-size-large"></div>
+      <div class="env-bg-color--dark--80 example-color-size"></div>
+      <div class="env-bg-color--dark--60 example-color-size"></div>
+      <div class="env-bg-color--dark--40 example-color-size"></div>
+      <div class="env-bg-color--dark--20 example-color-size"></div>
+      <div class="env-bg-color--dark--10 example-color-size"></div>
+   </div>
+</div>
+{% endexample %}
