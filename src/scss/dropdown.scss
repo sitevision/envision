@@ -3,7 +3,7 @@
 
    &__menu {
       background-color: $font-color-invert;
-      border: $border-width $border-style rgba(0, 0, 0, .15);
+      border: $border-light;
       border-radius: $radius-small;
       box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
       display: none;
@@ -39,7 +39,7 @@
    }
 
    &--divider {
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      border-bottom: $border-light;
       margin: $spacing-xx-small 0;
    }
 
