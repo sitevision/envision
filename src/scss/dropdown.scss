@@ -3,7 +3,7 @@
 
    &__menu {
       background-color: $font-color-invert;
-      border: $border-width $border-style rgba(0, 0, 0, .15);
+      border: $border-light;
       border-radius: $radius-small;
       box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
       display: none;
@@ -11,18 +11,22 @@
       font-size: $font-size-medium;
       left: 0;
       list-style: none;
-      max-width: 220px;
-      min-width: 160px;
+      max-width: 240px;
+      min-width: 180px;
       padding-left: 0;
+      padding-top: $spacing-xx-small;
       position: absolute;
-      top: $spacing-small;
+      top: $spacing-medium;
       z-index: $zindex-dropdown;
+
+      &--large {
+         top: $spacing-xxx-large;
+      }
    }
 
    &__item {
       display: block;
-      margin-bottom: $spacing-xx-small;
-      padding: $spacing-xx-small $spacing-x-small;
+      padding: $spacing-x-small;
       @include truncate-text();
 
       &:hover {
@@ -30,21 +34,13 @@
       }
    }
 
-   &--divider {
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
-      margin: $spacing-x-small 0;
+   &__item:last-child {
+      margin-bottom: $spacing-xx-small;
    }
 
-   &--toggle::after {
-      border-left: .3em solid transparent;
-      border-right: .3em solid transparent;
-      border-top: .3em solid;
-      content: "";
-      display: inline-block;
-      height: 0;
-      margin-left: $spacing-xx-small;
-      vertical-align: middle;
-      width: 0;
+   &--divider {
+      border-bottom: $border-light;
+      margin: $spacing-xx-small 0;
    }
 
    &--toggle-split {
@@ -55,6 +51,10 @@
    &--toggle-split::after {
       margin-left: 0;
       margin-right: 0;
+   }
+
+   &-icon {
+      vertical-align: middle;
    }
 }
 .#{$prefix}-is-open {

@@ -10,8 +10,12 @@ group: components
 {% example html %}
 
 <div id="example0" class="env-dropdown">
-   <button class="env-button env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example0">Dropdown</button>
-   <ul class="env-dropdown__menu">
+   <button class="env-button env-button--primary env-button--large env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example0">Dropdown
+      <svg class="env-icon env-icon--small env-dropdown-icon">
+         <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-arrow-down"></use>
+      </svg>
+   </button>
+   <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
       </li>
@@ -31,8 +35,8 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 {% example html %}
 
 <div id="example1" class="env-dropdown">
-   <button class="env-button env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example1">Dropdown</button>
-   <ul class="env-dropdown__menu">
+   <button class="env-button env-button--large env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example1">Dropdown</button>
+   <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
       </li>
@@ -52,9 +56,12 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 Use `sv-button-group` to split buttons and add `sv-dropdown--toggle-split` to desired button.
 {% example html %}
 <div id="example2" class="env-dropdown env-button-group env_list__item" role="group">
-   <button class="env-button env-button--primary" type="button">Dropdown</button>
+   <button class="env-button env-button--primary" type="button">Button</button>
    <button class="env-button env-button--primary env-dropdown--toggle env-dropdown--toggle-split" type="button" data-dropdown
       aria-haspopup="true" aria-expanded="false" data-target="#example2">
+      <svg class="env-icon env-dropdown-icon">
+         <use xlink:href="/assets/envision/envision-icons.svg#icon-arrow-down"></use>
+      </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
    <ul class="env-dropdown__menu">
