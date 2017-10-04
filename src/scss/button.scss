@@ -20,7 +20,7 @@
 
    // Sizes
    &--large {
-      @include button-size($spacing-xx-small, $spacing-medium, $font-size-large, $line-height-large);
+      @include button-size($spacing-xx-small, $spacing-x-small, $font-size-large, $line-height-large);
    }
 
    &--small {
