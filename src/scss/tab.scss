@@ -2,14 +2,29 @@ $link-classname: #{$prefix}-tabs__link;
 
 .#{$prefix}-tabs {
    &__nav {
+      @include reset-list();
       background-color: $color-element-bg;
       display: flex;
-      @include reset-list();
+      border-bottom: $tab-bottom-width $border-style $color-brand;
+
+      :first-child > a {
+         margin-left: 0;
+      }
+
+      :last-child > a {
+         margin-right: 0;
+      }
    }
 
    &__link {
       @include nav-link();
+      @include border-top-radius($radius-medium);
+
+      background-color: $default-button-color;
+      color: $font-color;
+      margin: 0 $spacing-xxx-small;
       padding: $spacing-x-small $spacing-medium;
+      outline: 0;
 
       &--active {
          background-color: $color-brand;
@@ -17,6 +32,46 @@ $link-classname: #{$prefix}-tabs__link;
 
          &:hover {
             color: $color-element-bg;
+         }
+      }
+
+      &:focus {
+         border-color: $color-brand;
+         box-shadow: none;
+         outline: 0;
+      }
+   }
+
+   &__nav--clean {
+      @include reset-list();
+      background-color: $color-element-bg;
+      display: flex;
+
+      &__bottom-line {
+         border-bottom: $tab-bottom-width $border-style $color-brand;
+      }
+
+      .#{$prefix}-tabs__link {
+         background-color: $color-element-bg;
+         color: $font-color;
+         margin: 0 $spacing-xx-small;
+         padding: $spacing-x-small $spacing-x-small;
+         outline: 0;
+
+         &--active {
+            border-bottom: $tab-bottom-width $border-style $color-brand;
+            color: $font-color;
+         }
+
+         &:hover {
+            border-bottom: $tab-bottom-width $border-style $color-brand;
+            color: $font-color;
+         }
+
+         &:focus {
+            border-color: $color-brand;
+            box-shadow: none;
+            outline: 0;
          }
       }
    }
