@@ -27,7 +27,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    </div>
    <div class="env-form-element">
       <label for="select" class="env-form-element__label">Select</label>
-      <div class="env-form-element__control">
+      <div class="env-form-element__control env-form-single-select">
          <select class="env-form-input" id="select">
             <option>Item</option>
             <option>Item 2</option>
@@ -38,7 +38,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    </div>
    <div class="env-form-element">
       <label for="multiple-select" class="env-form-element__label">Multiple select</label>
-      <div class="env-form-element__control">
+      <div class="env-form-element__control env-form-multiple-select">
          <select class="env-form-input" id="multiple-select" multiple>
             <option>Item</option>
             <option>Item 2</option>
@@ -51,21 +51,24 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       <span class="env-form-element__label" id="radio-header">Radio button</span>
       <div class="env-form-element__control" role="radiogroup" aria-labelledby="radio-header">
          <div class="env-form-radio">
+            <input type="radio" name="radios" checked>
             <label class="env-form-element__label">
-               <input type="radio" name="radios" checked>
-               Alternative
+               <span class="env-form-radio__fake"></span>
+               <span class="env-form-radio__label">Alternative</span>
             </label>
          </div>
          <div class="env-form-radio">
+            <input type="radio" name="radios">
             <label class="env-form-element__label">
-               <input type="radio" name="radios">
-               Alternative 2
+               <span class="env-form-radio__fake"></span>
+               <span class="env-form-radio__label">Alternative 2</span>
             </label>
          </div>
          <div class="env-form-radio">
+            <input type="radio" name="radios">
             <label class="env-form-element__label">
-               <input type="radio" name="radios">
-               Alternative 3
+               <span class="env-form-radio__fake"></span>
+               <span class="env-form-radio__label">Alternative 3</span>
             </label>
          </div>
       </div>
