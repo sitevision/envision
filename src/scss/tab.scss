@@ -5,7 +5,10 @@ $link-classname: #{$prefix}-tabs__link;
       @include reset-list();
       background-color: $color-element-bg;
       display: flex;
-      border-bottom: $tab-bottom-width $border-style $color-brand;
+
+      &--border-bottom {
+         border-bottom: $tab-bottom-width $border-style $color-brand;
+      }
 
       :first-child > a {
          margin-left: 0;
@@ -42,21 +45,19 @@ $link-classname: #{$prefix}-tabs__link;
       }
    }
 
-   &__nav--clean {
+   &--simple {
       @include reset-list();
       background-color: $color-element-bg;
       display: flex;
 
-      &__bottom-line {
-         border-bottom: $tab-bottom-width $border-style $color-brand;
-      }
-
       .#{$prefix}-tabs__link {
          background-color: $color-element-bg;
+         border-color: transparent;
          color: $font-color;
          margin: 0 $spacing-xx-small;
          padding: $spacing-x-small $spacing-x-small;
          outline: 0;
+         transition: border-color .5s ease;
 
          &--active {
             border-bottom: $tab-bottom-width $border-style $color-brand;

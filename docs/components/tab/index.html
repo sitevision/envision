@@ -550,7 +550,7 @@
 
 <div class="code-example" data-example-id="">
 <div class="env-tabs example-tabs">
-   <ul class="env-tabs__nav" role="tablist">
+   <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
       <li class="env-tabs__item" role="presentation"><a id="tab1" class="env-tabs__link env-tabs__link--active" href="#panel1" role="tab" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab2" class="env-tabs__link" href="#panel2" role="tab" aria-controls="panel2" aria-selected="false" tabindex="0">Tab 2</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab3" class="env-tabs__link" href="#panel3" role="tab" aria-controls="panel3" aria-selected="false" tabindex="0">Tab 3</a></li>
@@ -568,7 +568,7 @@
 </div>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-tabs example-tabs"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"env-tabs__nav"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"env-tabs__nav env-tabs__nav--border-bottom"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab1"</span> <span class="na">class=</span><span class="s">"env-tabs__link env-tabs__link--active"</span> <span class="na">href=</span><span class="s">"#panel1"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel1"</span> <span class="na">aria-selected=</span><span class="s">"true"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab2"</span> <span class="na">class=</span><span class="s">"env-tabs__link"</span> <span class="na">href=</span><span class="s">"#panel2"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel2"</span> <span class="na">aria-selected=</span><span class="s">"false"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab3"</span> <span class="na">class=</span><span class="s">"env-tabs__link"</span> <span class="na">href=</span><span class="s">"#panel3"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel3"</span> <span class="na">aria-selected=</span><span class="s">"false"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -589,11 +589,11 @@
 </code></pre>
 </div>
 
-<h2 id="clean-tab">Clean Tab</h2>
+<h2 id="simple-tab">Simple Tab</h2>
 
 <div class="code-example" data-example-id="">
-<div class="env-tabs example-tabs1">
-   <ul class="env-tabs__nav--clean" role="tablist">
+<div class="env-tabs env-tabs--simple example-tabs1">
+   <ul class="env-tabs__nav" role="tablist">
       <li class="env-tabs__item" role="presentation"><a id="tab1" class="env-tabs__link env-tabs__link--active" href="#panel4" role="tab" aria-controls="panel4" aria-selected="true" tabindex="0">Tab 4</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab2" class="env-tabs__link" href="#panel5" role="tab" aria-controls="panel5" aria-selected="false" tabindex="0">Tab 5</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab3" class="env-tabs__link" href="#panel6" role="tab" aria-controls="panel6" aria-selected="false" tabindex="0">Tab 6</a></li>
@@ -610,8 +610,8 @@
    6
 </div>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-tabs example-tabs1"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"env-tabs__nav--clean"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-tabs env-tabs--simple example-tabs1"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"env-tabs__nav"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab1"</span> <span class="na">class=</span><span class="s">"env-tabs__link env-tabs__link--active"</span> <span class="na">href=</span><span class="s">"#panel4"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel4"</span> <span class="na">aria-selected=</span><span class="s">"true"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab2"</span> <span class="na">class=</span><span class="s">"env-tabs__link"</span> <span class="na">href=</span><span class="s">"#panel5"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel5"</span> <span class="na">aria-selected=</span><span class="s">"false"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
       <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"env-tabs__item"</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">id=</span><span class="s">"tab3"</span> <span class="na">class=</span><span class="s">"env-tabs__link"</span> <span class="na">href=</span><span class="s">"#panel6"</span> <span class="na">role=</span><span class="s">"tab"</span> <span class="na">aria-controls=</span><span class="s">"panel6"</span> <span class="na">aria-selected=</span><span class="s">"false"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Tab 6<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>

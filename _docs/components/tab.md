@@ -10,7 +10,7 @@ group: components
 {% example html %}
 
 <div class="env-tabs example-tabs">
-   <ul class="env-tabs__nav" role="tablist">
+   <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
       <li class="env-tabs__item" role="presentation"><a id="tab1" class="env-tabs__link env-tabs__link--active" href="#panel1" role="tab" aria-controls="panel1" aria-selected="true" tabindex="0">Tab 1</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab2" class="env-tabs__link" href="#panel2" role="tab" aria-controls="panel2" aria-selected="false" tabindex="0">Tab 2</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab3" class="env-tabs__link" href="#panel3" role="tab" aria-controls="panel3" aria-selected="false" tabindex="0">Tab 3</a></li>
@@ -33,12 +33,12 @@ group: components
 $('.example-tabs').envTabs();
 ```
 
-## Clean Tab ##
+## Simple Tab ##
 
 {% example html %}
 
-<div class="env-tabs example-tabs1">
-   <ul class="env-tabs__nav--clean" role="tablist">
+<div class="env-tabs env-tabs--simple example-tabs1">
+   <ul class="env-tabs__nav" role="tablist">
       <li class="env-tabs__item" role="presentation"><a id="tab1" class="env-tabs__link env-tabs__link--active" href="#panel4" role="tab" aria-controls="panel4" aria-selected="true" tabindex="0">Tab 4</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab2" class="env-tabs__link" href="#panel5" role="tab" aria-controls="panel5" aria-selected="false" tabindex="0">Tab 5</a></li>
       <li class="env-tabs__item" role="presentation"><a id="tab3" class="env-tabs__link" href="#panel6" role="tab" aria-controls="panel6" aria-selected="false" tabindex="0">Tab 6</a></li>
