@@ -140,8 +140,8 @@
 
       label &__fake:after {
          content:'';
-         width: 20px;
-         height: 20px;
+         width: $radiobutton-active-size;
+         height: $radiobutton-active-size;
          border: 1px solid $color-lighter;
          position: absolute;
          left: 0;
@@ -152,21 +152,21 @@
 
       [type="radio"] {
          cursor: pointer;
-         position:absolute;
-         width:100%;
-         height:100%;
+         position: absolute;
+         width: 100%;
+         height: 100%;
          z-index: 1;
          opacity: 0;
        }
 
       [type="radio"]:checked + label &__fake:before{
-         border: $radio-button-border;
-         border-radius:100%;
-         content:'';
-         height: 10px;
+         border: $radiobutton-border;
+         border-radius: 100%;
+         content: '';
+         height: $radiobutton-size;
          left: -1px;
-         position:absolute;
-         width: 10px;
+         position: absolute;
+         width: $radiobutton-size;
          z-index: $zindex-radio-button;
       }
 
@@ -186,7 +186,6 @@
          }
       }
    }
-
 
    $form-element: #{$prefix}-form-element;
    //Variants
@@ -267,12 +266,12 @@
       border-left: 2px solid $font-color-invert;
       content: "";
       display: block;
-      height: $spacing-medium / 2;
+      height: $checkbox-tick-height;
       left: $tick-position;
       position: absolute;
       top: 40%;
       transform: translate3d(-$tick-position, -$tick-position, 0) rotate(-45deg);
-      width: $spacing-xx-large / 2;
+      width: $checkbox-tick-width;
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -283,12 +282,12 @@
       border: $border-light;
       border-radius: $radius-small;
       display: inline-block;
-      height: $spacing-large;
+      height: $checkbox-size;
       margin-right: $spacing-xx-small;
       position: relative;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       vertical-align: middle;
-      width: $spacing-large;
+      width: $checkbox-size;
    }
 
    [type='checkbox']:checked + label &__fake {
@@ -297,7 +296,7 @@
 
    &__label {
       display: inline;
-      vertical-align: sub;
+      vertical-align: bottom;
    }
 
    &--disabled {
