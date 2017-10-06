@@ -51,13 +51,15 @@
    }
 
    &__header {
-      background-color: #cccccc;
+      background-color: $color-brand;
       @include border-top-radius($radius-medium);
       display: block;
       padding: $spacing-xx-small $spacing-x-small;
 
       &__title {
+         color: $font-color-invert;
          margin-bottom: 0 !important;
+         padding: $spacing-xx-small;
       }
    }
 
@@ -76,7 +78,7 @@
    &__footer {
       background-color: $color-element-bg;
       @include border-bottom-radius($radius-medium $radius-medium);
-      padding: $spacing-xx-small;
+      padding: $spacing-small;
       text-align: left;
 
       &--right {
