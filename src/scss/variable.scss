@@ -117,6 +117,7 @@ $tab-bottom-width:         3px;
 
 // Z-index value
 $zindex-imageslider-indicator:   15;
+$zindex-radio-button:            100;
 $zindex-modal-backdrop:          1040;
 $zindex-modal:                   1050;
 $zindex-modal-close-btn:         1055;
@@ -150,3 +151,13 @@ $image-control-color: $color-element-bg;
 $image-control-color-inactive: $font-color-lighter;
 $image-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M20.391 27.609l-11.61-11.609 11.61-11.609 1.884 1.884-9.723 9.724 9.723 9.724z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $image-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M11.609 27.609l-1.884-1.884 9.723-9.724-9.723-9.724 1.884-1.884 11.61 11.609z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Radio button
+$radiobutton-size:         em(10);
+$radiobutton-active-size:  em(20);
+$radiobutton-border:       6px solid $color-brand;
+
+// Checkbox
+$checkbox-size:            em(20);
+$checkbox-tick-height:     em(8);
+$checkbox-tick-width:      em(14);
