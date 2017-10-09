@@ -46,7 +46,7 @@
    }
 
    select:not([multiple]) {
-      height: calc(#{$spacing-small + $spacing-x-small + $line-height-small} + #{$border-width * 2});
+      height: calc(#{$spacing-x-small + $spacing-x-small + $line-height-small} + #{$border-width * 2});
    }
 
    &-element {
@@ -117,7 +117,6 @@
       display: block;
       margin-bottom: $spacing-x-small;
       position: relative;
-      font-size:15px;
 
       &__fake {
          position: relative;
