@@ -153,11 +153,11 @@ $image-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3
 $image-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M11.609 27.609l-1.884-1.884 9.723-9.724-9.723-9.724 1.884-1.884 11.61 11.609z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 // Radio button
-$radiobutton-size:         10px;
-$radiobutton-active-size:  20px;
+$radiobutton-size:         em(10);
+$radiobutton-active-size:  em(20);
 $radiobutton-border:       6px solid $color-brand;
 
 // Checkbox
 $checkbox-size:            em(20);
-$checkbox-tick-height:     .5em;
-$checkbox-tick-width:      .875em;
+$checkbox-tick-height:     em(8);
+$checkbox-tick-width:      em(14);

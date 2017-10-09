@@ -27,7 +27,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    </div>
    <div class="env-form-element">
       <label for="select" class="env-form-element__label">Select</label>
-      <div class="env-form-element__control env-form-single-select">
+      <div class="env-form-element__control">
          <select class="env-form-input" id="select">
             <option>Item</option>
             <option>Item 2</option>

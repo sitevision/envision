@@ -9,14 +9,14 @@
       background-color: $font-color-invert;
       background-image: none;
       border: $border-light;
-      border-radius: $radius-small;
+      border-radius: $radius-medium;
       box-sizing: border-box;
       color: $font-color;
       display: block;
       font-size: $font-size-small;
       line-height: $line-height-small;
       margin: 0;
-      padding: $spacing-xx-small $spacing-small;
+      padding: $spacing-x-small $spacing-x-small;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       width: 100%;
 
@@ -33,13 +33,6 @@
 
       &:focus {
          @include focus();
-      }
-
-      &[type="text"],
-      &[type="tel"],
-      &[type="password"] {
-         border-radius: $radius-medium;
-         padding: $spacing-x-small $spacing-x-small;
       }
 
       &[type="search"] {
@@ -101,12 +94,6 @@
       }
    }
 
-   &-single-select {
-      select {
-         height: 40px;
-      }
-   }
-
    &-multiple-select {
 
       select[multiple] {
@@ -142,7 +129,7 @@
          content:'';
          width: $radiobutton-active-size;
          height: $radiobutton-active-size;
-         border: 1px solid $color-lighter;
+         border: $border-light;
          position: absolute;
          left: 0;
          top: 1px;
