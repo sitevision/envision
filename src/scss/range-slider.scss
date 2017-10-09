@@ -1,7 +1,7 @@
 .#{$prefix}-range-slider {
    @include border-radius($radius-small);
    $range-height: $spacing-small;
-   $handle-size-desktop: $spacing-large;
+   $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
    border: $default-border;
    height: $range-height;

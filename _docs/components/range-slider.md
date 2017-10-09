@@ -68,7 +68,7 @@ $('#my-slider').envRangeSlider({
 * __Type:__ Number
 * __Default:__ 1
 
-The size of every step between min and max. The value range (max - min) should be evenly divisible by the step. 
+The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.
 
 ```javascript
 $('#my-slider').envRangeSlider({
@@ -92,8 +92,8 @@ $('.my-slider').envRangeSlider({
 ### slide ###
 Triggered for every move during slide.
 ```javascript
-$('#my-slider').on('slide', function(e, data) { 
-   // Do something... 
+$('#my-slider').on('slide', function(e, data) {
+   // Do something...
 });
 
 $('#my-slider').envRangeSlider({
@@ -105,8 +105,8 @@ $('#my-slider').envRangeSlider({
 ### slidestop ###
 Triggered when slide is completed
 ```javascript
-$('#my-slider').on('slidestop', function(e, data) { 
-   // Do something... 
+$('#my-slider').on('slidestop', function(e, data) {
+   // Do something...
 });
 
 $('#my-slider').envRangeSlider({

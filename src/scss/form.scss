@@ -9,14 +9,14 @@
       background-color: $font-color-invert;
       background-image: none;
       border: $border-light;
-      border-radius: $radius-small;
+      border-radius: $radius-medium;
       box-sizing: border-box;
       color: $font-color;
       display: block;
-      font-size: $font-size-small;
+      font-size: $font-size-medium;
       line-height: $line-height-small;
       margin: 0;
-      padding: $spacing-xx-small $spacing-small;
+      padding: $spacing-x-small $spacing-x-small;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       width: 100%;
 
@@ -46,7 +46,7 @@
    }
 
    select:not([multiple]) {
-      height: calc(#{$spacing-xx-small + $spacing-xx-small + $line-height-small} + #{$border-width * 2});
+      height: calc(#{$spacing-x-small + $spacing-x-small + $line-height-small} + #{$border-width * 2});
    }
 
    &-element {
@@ -61,6 +61,8 @@
       &__help,
       &__feedback {
          display: block;
+         font-size: $font-size-small;
+         font-style: italic;
          margin-bottom: $spacing-x-small;
          margin-top: $spacing-x-small;
       }
@@ -85,12 +87,79 @@
       &[type="file"] {
          display: block;
       }
+
+      textarea {
+         border-radius: $radius-medium;
+         padding: $spacing-x-small $spacing-x-small;
+      }
+   }
+
+   &-multiple-select {
+
+      select[multiple] {
+         padding: $spacing-xx-small;
+      }
+
+      select[multiple] > option {
+         padding: $spacing-x-small $spacing-x-small;
+         font-family: $font-family;
+      }
+
+      option:hover,
+      option:focus,
+      option:checked {
+         color: $font-color-invert;
+         background: linear-gradient($color-brand, $color-brand);
+      }
    }
 
    &-radio {
       display: block;
       margin-bottom: $spacing-x-small;
       position: relative;
+
+      &__fake {
+         position: relative;
+         padding-left: 20px;
+         margin-right: $spacing-x-small;
+      }
+
+      label &__fake:after {
+         content:'';
+         width: $radiobutton-active-size;
+         height: $radiobutton-active-size;
+         border: $border-light;
+         position: absolute;
+         left: 0;
+         top: 1px;
+         border-radius: 100%;
+         box-sizing: border-box;
+      }
+
+      [type="radio"] {
+         cursor: pointer;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         opacity: 0;
+       }
+
+      [type="radio"]:checked + label &__fake:before{
+         border: $radiobutton-border;
+         border-radius: 100%;
+         content: '';
+         height: $radiobutton-size;
+         left: -1px;
+         position: absolute;
+         width: $radiobutton-size;
+         z-index: $zindex-radio-button;
+      }
+
+      &__label {
+         display: inline;
+         vertical-align: sub;
+      }
 
       &--disabled {
          label {
@@ -103,7 +172,6 @@
          }
       }
    }
-
 
    $form-element: #{$prefix}-form-element;
    //Variants
@@ -180,16 +248,16 @@
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
 
-      border-bottom: 2px solid $color-brand;
-      border-left: 2px solid $color-brand;
+      border-bottom: 2px solid $font-color-invert;
+      border-left: 2px solid $font-color-invert;
       content: "";
       display: block;
-      height: $spacing-small / 4;
+      height: $checkbox-tick-height;
       left: $tick-position;
       position: absolute;
-      top: $tick-position;
+      top: 40%;
       transform: translate3d(-$tick-position, -$tick-position, 0) rotate(-45deg);
-      width: $spacing-small / 2;
+      width: $checkbox-tick-width;
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -200,17 +268,21 @@
       border: $border-light;
       border-radius: $radius-small;
       display: inline-block;
-      height: $spacing-small;
+      height: $checkbox-size;
       margin-right: $spacing-xx-small;
       position: relative;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
       vertical-align: middle;
-      width: $spacing-small;
+      width: $checkbox-size;
+   }
+
+   [type='checkbox']:checked + label &__fake {
+      background-color: $color-brand;
    }
 
    &__label {
       display: inline;
-      vertical-align: middle;
+      vertical-align: bottom;
    }
 
    &--disabled {
