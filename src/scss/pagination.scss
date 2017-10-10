@@ -1,18 +1,29 @@
 .#{$prefix}-pagination {
-   &__item:not(:last-child) {
-      margin-right: $spacing-xxx-small;
+   &__item:last-child a {
+      border-right: $default-border;
    }
 
    &__link {
       @include button-base(0);
+      background-color: $color-lightest;
+      border: $default-border;
+      border-right: $border-width $border-style transparent;
 
       &.#{$prefix}-is-active {
          @include is-active();
+         border: $border-width $border-style $color-brand;
       }
 
       &.#{$prefix}-is-disabled {
          @include is-disabled();
       }
+   }
+
+   &__link:hover {
+      background-color: $color-brand;
+      border: $border-width $border-style $color-brand;
+      border-right: $border-width $border-style transparent;
+      color: $font-color-invert;
    }
 
    &--center {
