@@ -13,12 +13,13 @@ $arrow-border-size: 10px;
    z-index: $zindex-popover;
 
    &__header {
-      background-color: $color-lighter;
+      background-color: $color-brand;
       border-radius: $radius-medium $radius-medium 0 0;
       display: block;
       padding: $spacing-xx-small $spacing-x-small;
 
       &__title {
+         color: $font-color-invert;
          margin-bottom: 0 !important;
       }
    }
@@ -58,11 +59,11 @@ $arrow-border-size: 10px;
       }
 
       &--bottom {
-         border-bottom-color: $color-lighter;
+         border-bottom-color: $color-brand;
          top: $arrow-position;
 
          &::after {
-            border-bottom-color: $color-lighter;
+            border-bottom-color: $color-brand;
             border-top-width: 0;
             top: 1px;
          }

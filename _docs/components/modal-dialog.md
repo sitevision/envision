@@ -41,7 +41,7 @@ Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--rig
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h4 class="env-text env-modal-dialog__header__title">Modal Header</h4>
+            <h5 class="env-text env-modal-dialog__header__title">Modal Header</h5>
          </header>
          <div class="env-modal-dialog__body">
             <p class="env-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
@@ -65,7 +65,7 @@ Uses `env-modal-dialog__dialog--small`
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--small">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h4 class="env-modal-dialog__header__title">Modal Header</h4>
+            <h6 class="env-text env-modal-dialog__header__title">Modal Header</h6>
          </header>
          <div class="env-modal-dialog__body">
             <p class="env-text">Caticus cuteicus wake up wander around the house making large amounts of noise jump on top of your human's bed
