@@ -30,7 +30,7 @@ const Popover = (($) => {
       template: `<div class="env-popover" role="tooltip">
                   <div class="env-popover__arrow"></div>
                   <div class="env-popover__header">
-                     <h3 class="env-popover__header__title"></h3>
+                     <h4 class="env-text env-popover__header__title"></h4>
                   </div>
                   <div class="env-popover__content env-text env-p-around--small"></div>
                </div>`,
