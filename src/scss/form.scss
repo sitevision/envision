@@ -105,7 +105,10 @@
          font-family: $font-family;
       }
 
-      option:hover,
+      option:hover {
+         background: linear-gradient($color-lighter, $color-lighter);
+      }
+
       option:focus,
       option:checked {
          color: $font-color-invert;
