@@ -256,8 +256,11 @@ h5.sv-home__subheader {
 p.sv-home-media__text {
   color: #212333;
   font-size: .75em;
-  line-height: 1em;
+  line-height: 1.3em;
   margin: .125em 0; }
+
+.sv-button__link--white-font {
+  color: #ffffff; }
 
 button.sv-home-button__size {
   border-radius: .2em;

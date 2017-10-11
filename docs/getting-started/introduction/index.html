@@ -20,8 +20,8 @@
    <body>
       <div class="header-wrapper">
    <header class="header env-p-top--small env-p-bottom--small">
-      <div class="logo"><a href="https://www.sitevision.se"><img src="/assets/img/sitevision_logo.png" }}></a></div>
-      <nav class="header-nav">
+      <div class="logo env-m-left--medium"><a href="https://www.sitevision.se"><img src="/assets/img/sitevision_logo.png" }}></a></div>
+      <nav class="header-nav env-m-right--medium">
          <ul>
             <li>
                <a class="header-nav__link " href="/">Start</a>
@@ -540,6 +540,29 @@
          <main>
             <h1 id="content">Introduction</h1>
             <h2 id="how-to-get-started">How to get started</h2>
+
+<ol>
+  <li><a href="https://github.com/sitevision/envision">Clone repository</a></li>
+  <li><a href="https://www.ruby-lang.org/en/documentation/installation/">Install Ruby</a></li>
+  <li>Install <a href="http://bundler.io/">Bundler</a> with <code class="highlighter-rouge">gem install bundler</code></li>
+  <li>Run <code class="highlighter-rouge">bundler install</code>. This will install all Ruby dependencies, such as Jekyll and plugins.</li>
+  <li>Run <code class="highlighter-rouge">npm install</code> to install dependencies</li>
+</ol>
+
+<h2 id="to-build">To build</h2>
+<p>Run <code class="highlighter-rouge">npm run build</code></p>
+
+<p>To build continously when a file is saved. Start <code class="highlighter-rouge">npm run watch</code></p>
+
+<h2 id="docs">Docs</h2>
+<p>To run docs website locally:
+<code class="highlighter-rouge">cd</code> into <code class="highlighter-rouge">_docs</code>-folder and run <code class="highlighter-rouge">jekyll serve</code></p>
+
+<h2 id="before-checking-in">Before checking in</h2>
+<p>Run <code class="highlighter-rouge">npm run build</code></p>
+
+<h2 id="license-information">License information</h2>
+<p>Code copyright 2017, SiteVision AB. Code is released under the <a href="https://github.com/sitevision/envision/blob/master/LICENSE">MIT license</a></p>
 
          </main>
       </div>
