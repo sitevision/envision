@@ -6,7 +6,7 @@
 @import "icons";
 
 body {
-   background-color: #ffffff;
+   background-color: #F6F6F6;
    font-family: Roboto, sans-serif;
    padding: 0;
    margin: 0;
@@ -23,6 +23,50 @@ main {
    max-width: 1000px;
    display: flex;
    margin: 0 auto;
+}
+
+.sv-home__content {
+   margin-top: 8%;
+}
+
+.sv-home__item {
+   flex-basis: 35%;
+}
+
+p.sv-home__text {
+   color: #212333;
+   line-height:1.375em;
+   font-weight: 300;
+   margin: 0;
+}
+
+.sv-home__env-logo {
+   margin-top: 12%;
+}
+
+.sv-home__title {
+   letter-spacing: 3px;
+   margin-bottom: 5px;
+}
+
+h5.sv-home__subheader {
+   font-size: 1.125em;
+   font-weight: 400;
+   margin: 0;
+}
+
+p.sv-home-media__text {
+   color: #212333;
+   font-size: .75em;
+   line-height: 1em;
+   margin: .125em 0;
+}
+
+button.sv-home-button__size {
+   border-radius: .2em;
+   font-size: 1em;
+   line-height: 1.625em;
+   padding: .25em .5em;
 }
 
 h1 {
