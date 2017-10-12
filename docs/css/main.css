@@ -64,10 +64,21 @@ pre code {
   .nav-top .active {
     background-color: #fff; }
 
+.footer-wrapper {
+  background-color: #202332;
+  bottom: 0px;
+  height: 2.5em;
+  position: fixed;
+  width: 100%; }
+
 .footer {
   max-width: 1000px;
   display: flex;
-  margin: 50px auto 20px; }
+  margin: 10px auto; }
+
+.footer a {
+  color: #ffffff;
+  font-size: 14px; }
 
 .header {
   max-width: 1000px;
@@ -86,6 +97,14 @@ pre code {
     .header .header-nav ul li {
       display: inline-block;
       margin-left: 10px; }
+      .header .header-nav ul li a {
+        padding: .25em;
+        outline: 0; }
+      .header .header-nav ul li a:hover {
+        border-bottom: 2px solid #6892d5; }
+  .header .active {
+    font-weight: 500;
+    border-bottom: 2px solid #6892d5; }
 
 .env-modal-dialog.doc-demo__modal {
   border-color: #e5e5e5 #eeeeee #eeeeee;
@@ -189,8 +208,43 @@ pre code {
   .icons-demo li:hover {
     background-color: rgba(0, 0, 0, 0.1); }
 
+.sv-home__content {
+  margin-top: 8%; }
+
+.sv-home__item {
+  flex-basis: 35%; }
+
+p.sv-home__text {
+  color: #212333;
+  line-height: 1.375em;
+  font-weight: 300;
+  margin: 0; }
+
+.sv-home__env-logo {
+  margin-top: 12%; }
+
+.sv-home__title {
+  letter-spacing: 3px; }
+
+h5.sv-home__subheader {
+  font-size: 1.125em;
+  font-weight: 400;
+  margin: 0; }
+
+p.sv-home-media__text {
+  color: #212333;
+  font-size: .75em;
+  line-height: 1.3em;
+  margin: .125em 0; }
+
+button.sv-home-button__size {
+  border-radius: .2em;
+  font-size: 1em;
+  line-height: 1.625em;
+  padding: .25em .5em; }
+
 body {
-  background-color: #ffffff;
+  background-color: #F6F6F6;
   font-family: Roboto, sans-serif;
   padding: 0;
   margin: 0;

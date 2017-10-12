@@ -1,5 +1,18 @@
+.footer-wrapper {
+   background-color: #202332;
+   bottom: 0px;
+   height: 2.5em;
+   position: fixed;
+   width: 100%;
+}
+
 .footer {
    max-width: 1000px;
    display: flex;
-   margin: 50px auto 20px;
+   margin: 10px auto;
+}
+
+.footer a {
+   color: #ffffff;
+   font-size: 14px;
 }

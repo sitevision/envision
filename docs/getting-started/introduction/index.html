@@ -18,31 +18,26 @@
 
    </head>
    <body>
-      <header class="header">
-   <div class="logo"><svg class="icon icon-logo"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo"></use></svg></div>
-   <nav class="header-nav">
-      <ul>
-         <li>Sitevision</li>
-         <li>Product</li>
-      </ul>
-   </nav>
-</header>
-<nav class="nav-top">
+      <div class="env-w-100 env-border-bottom">
+   <header class="header env-p-top--small env-p-bottom--small">
+      <div class="logo env-m-left--medium"><a href="https://www.sitevision.se"><img src="/assets/img/sitevision_logo.png" }}></a></div>
+        <nav class="header-nav env-m-right--medium">
+            <ul class="env-nav env-nav--menubar env-nav--border" role="menubar">
+               <li class="env-nav__item" role="none">
+                  <a class="" href="/">Start</a>
+               </li>
+               <li class="env-nav__item" role="none">
+                  <a class="active" href="/getting-started/introduction/">Documentation</a>
+               </li>
+               <li class="env-nav__item" role="none">
+                  <a href="https://github.com/sitevision/envision" tabindex="0">GitHub</a>
+               </li>
+            </ul>
+         </nav>
+   </header>
+</div>
 
-   <h1><a href="/">Envision</a></h1>
 
-   <ul class="nav-top__menu">
-      <li>
-         <a class="" href="/">Home</a>
-      </li>
-      <li>
-         <a class="active" href="/documentation/">Documentation</a>
-      </li>
-      <li>
-         <a class="" href="/about/">About</a>
-      </li>
-   </ul>
-</nav>
 
 
       <div class="main-container">
@@ -548,12 +543,37 @@
             <h1 id="content">Introduction</h1>
             <h2 id="how-to-get-started">How to get started</h2>
 
+<ol>
+  <li><a href="https://github.com/sitevision/envision">Clone repository</a></li>
+  <li><a href="https://www.ruby-lang.org/en/documentation/installation/">Install Ruby</a></li>
+  <li>Install <a href="http://bundler.io/">Bundler</a> with <code class="highlighter-rouge">gem install bundler</code></li>
+  <li>Run <code class="highlighter-rouge">bundler install</code>. This will install all Ruby dependencies, such as Jekyll and plugins.</li>
+  <li>Run <code class="highlighter-rouge">npm install</code> to install dependencies</li>
+</ol>
+
+<h2 id="to-build">To build</h2>
+<p>Run <code class="highlighter-rouge">npm run build</code></p>
+
+<p>To build continously when a file is saved. Start <code class="highlighter-rouge">npm run watch</code></p>
+
+<h2 id="docs">Docs</h2>
+<p>To run docs website locally:
+<code class="highlighter-rouge">cd</code> into <code class="highlighter-rouge">_docs</code>-folder and run <code class="highlighter-rouge">jekyll serve</code></p>
+
+<h2 id="before-checking-in">Before checking in</h2>
+<p>Run <code class="highlighter-rouge">npm run build</code></p>
+
+<h2 id="license-information">License information</h2>
+<p>Code copyright 2017, SiteVision AB. Code is released under the <a href="https://github.com/sitevision/envision/blob/master/LICENSE">MIT license</a></p>
+
          </main>
       </div>
 
-      <footer class="footer">
-   <a href="https://www.sitevision.se/">© SiteVision</a>
-</footer>
+      <div class="footer-wrapper">
+   <footer class="footer">
+      <a href="https://www.sitevision.se/">© SiteVision</a>
+   </footer>
+</div>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.slim.js"

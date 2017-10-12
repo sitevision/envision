@@ -18,31 +18,26 @@
 
    </head>
    <body>
-      <header class="header">
-   <div class="logo"><svg class="icon icon-logo"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo"></use></svg></div>
-   <nav class="header-nav">
-      <ul>
-         <li>Sitevision</li>
-         <li>Product</li>
-      </ul>
-   </nav>
-</header>
-<nav class="nav-top">
+      <div class="env-w-100 env-border-bottom">
+   <header class="header env-p-top--small env-p-bottom--small">
+      <div class="logo env-m-left--medium"><a href="https://www.sitevision.se"><img src="/assets/img/sitevision_logo.png" }}></a></div>
+        <nav class="header-nav env-m-right--medium">
+            <ul class="env-nav env-nav--menubar env-nav--border" role="menubar">
+               <li class="env-nav__item" role="none">
+                  <a class="" href="/">Start</a>
+               </li>
+               <li class="env-nav__item" role="none">
+                  <a class="active" href="/getting-started/introduction/">Documentation</a>
+               </li>
+               <li class="env-nav__item" role="none">
+                  <a href="https://github.com/sitevision/envision" tabindex="0">GitHub</a>
+               </li>
+            </ul>
+         </nav>
+   </header>
+</div>
 
-   <h1><a href="/">Envision</a></h1>
 
-   <ul class="nav-top__menu">
-      <li>
-         <a class="" href="/">Home</a>
-      </li>
-      <li>
-         <a class="active" href="/documentation/">Documentation</a>
-      </li>
-      <li>
-         <a class="" href="/about/">About</a>
-      </li>
-   </ul>
-</nav>
 
 
       <div class="main-container">
@@ -632,9 +627,11 @@
          </main>
       </div>
 
-      <footer class="footer">
-   <a href="https://www.sitevision.se/">© SiteVision</a>
-</footer>
+      <div class="footer-wrapper">
+   <footer class="footer">
+      <a href="https://www.sitevision.se/">© SiteVision</a>
+   </footer>
+</div>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.slim.js"
