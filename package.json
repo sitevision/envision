@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-docs": "cd _docs/; jekyll build; touch ../docs/.nojekyll",
-    "build-docs-js": "./node_modules/.bin/webpack --config webpack.config.dev.js",
-    "build-dist": "./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build-docs-js": "webpack --config webpack.config.dev.js",
+    "build-dist": "webpack --config webpack.config.prod.js",
     "build": "npm-run-all build-docs-js build-docs build-dist",
-    "watch": "./node_modules/.bin/webpack --config webpack.config.dev.js --watch"
+    "watch": "webpack --config webpack.config.dev.js --watch"
   },
   "repository": {
     "type": "git",
