@@ -80,10 +80,6 @@ pre code {
   color: #ffffff;
   font-size: 14px; }
 
-.header-wrapper {
-  width: 100%;
-  border-bottom: 1px solid #a3a2a2; }
-
 .header {
   max-width: 1000px;
   display: flex;
@@ -212,23 +208,6 @@ pre code {
   .icons-demo li:hover {
     background-color: rgba(0, 0, 0, 0.1); }
 
-body {
-  background-color: #F6F6F6;
-  font-family: Roboto, sans-serif;
-  padding: 0;
-  margin: 0;
-  color: #040404; }
-
-main {
-  max-width: 1000px;
-  display: flex;
-  margin: 0 auto; }
-
-.main-container {
-  max-width: 1000px;
-  display: flex;
-  margin: 0 auto; }
-
 .sv-home__content {
   margin-top: 8%; }
 
@@ -245,8 +224,7 @@ p.sv-home__text {
   margin-top: 12%; }
 
 .sv-home__title {
-  letter-spacing: 3px;
-  margin-bottom: 5px; }
+  letter-spacing: 3px; }
 
 h5.sv-home__subheader {
   font-size: 1.125em;
@@ -259,14 +237,28 @@ p.sv-home-media__text {
   line-height: 1.3em;
   margin: .125em 0; }
 
-.sv-button__link--white-font {
-  color: #ffffff; }
-
 button.sv-home-button__size {
   border-radius: .2em;
   font-size: 1em;
   line-height: 1.625em;
   padding: .25em .5em; }
+
+body {
+  background-color: #F6F6F6;
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  color: #040404; }
+
+main {
+  max-width: 1000px;
+  display: flex;
+  margin: 0 auto; }
+
+.main-container {
+  max-width: 1000px;
+  display: flex;
+  margin: 0 auto; }
 
 h1 {
   font-size: 46px;
