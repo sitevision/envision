@@ -69,7 +69,8 @@ pre code {
   bottom: 0px;
   height: 2.5em;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 2000; }
 
 .footer {
   max-width: 1000px;
