@@ -1,10 +1,11 @@
 .footer-wrapper {
-   background-color: #202332;
-   bottom: 0px;
-   height: 2.5em;
-   position: fixed;
    width: 100%;
-   z-index: 2000;
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: #202332;
+   text-align: center;
 }
 
 .footer {

@@ -65,12 +65,13 @@ pre code {
     background-color: #fff; }
 
 .footer-wrapper {
-  background-color: #202332;
-  bottom: 0px;
-  height: 2.5em;
-  position: fixed;
   width: 100%;
-  z-index: 2000; }
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #202332;
+  text-align: center; }
 
 .footer {
   max-width: 1000px;
@@ -80,6 +81,15 @@ pre code {
 .footer a {
   color: #ffffff;
   font-size: 14px; }
+
+.sv-header {
+  overflow: hidden;
+  background-color: #F6F6F6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #d3d3d3;
+  z-index: 2000; }
 
 .header {
   max-width: 1000px;
@@ -99,7 +109,7 @@ pre code {
       display: inline-block;
       margin-left: 10px; }
       .header .header-nav ul li a {
-        padding: .25em;
+        margin: .25em;
         outline: 0; }
       .header .header-nav ul li a:hover {
         border-bottom: 2px solid #6892d5; }
@@ -225,6 +235,7 @@ p.sv-home__text {
   margin-top: 12%; }
 
 .sv-home__title {
+  font-weight: bold;
   letter-spacing: 3px; }
 
 h5.sv-home__subheader {
@@ -245,16 +256,18 @@ button.sv-home-button__size {
   padding: .25em .5em; }
 
 body {
-  background-color: #F6F6F6;
+  background-color: #FFFFFF;
+  color: #040404;
   font-family: Roboto, sans-serif;
   padding: 0;
   margin: 0;
-  color: #040404; }
+  min-height: 100%;
+  position: relative; }
 
 main {
   max-width: 1000px;
   display: flex;
-  margin: 0 auto; }
+  margin: 40px auto 80px auto; }
 
 .main-container {
   max-width: 1000px;
@@ -305,7 +318,7 @@ main {
 
 .sidenav {
   flex: 1;
-  margin-top: 38px; }
+  margin-top: 80px; }
   .sidenav > div {
     margin-bottom: 10px; }
     .sidenav > div > a {
