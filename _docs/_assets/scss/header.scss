@@ -1,3 +1,13 @@
+.sv-header {
+   overflow: hidden;
+   background-color: #F6F6F6;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   border-bottom: 1px solid #d3d3d3;
+   z-index: 2000;
+}
+
 .header {
    max-width: 1000px;
    display: flex;
@@ -23,7 +33,7 @@
             margin-left: 10px;
 
             a {
-               padding: .25em;
+               margin: .25em;
                outline: 0;
             }
 

@@ -7,17 +7,19 @@
 @import "home";
 
 body {
-   background-color: #F6F6F6;
+   background-color: #FFFFFF;
+   color: #040404;
    font-family: Roboto, sans-serif;
    padding: 0;
    margin: 0;
-   color: #040404;
+   min-height: 100%;
+   position: relative;
 }
 
 main {
    max-width: 1000px;
    display: flex;
-   margin: 0 auto;
+   margin: 40px auto 80px auto;
 }
 
 .main-container {
@@ -80,7 +82,7 @@ main {
 
 .sidenav {
    flex: 1;
-   margin-top: 38px;
+   margin-top: 80px;
 
    > div {
       margin-bottom: 10px;
