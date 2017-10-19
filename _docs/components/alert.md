@@ -22,7 +22,7 @@ group: components
    <article class="env-media">
       <div class="env-media__figure">
          <a href="#">
-            <img class="env-image env-image--small" src="https://placehold.it/100x100.png">
+            <img class="env-image env-image--small" src="https://placehold.it/100x100.png" alt="">
          </a>
       </div>
       <div class="env-media__body">
