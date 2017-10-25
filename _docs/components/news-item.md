@@ -13,7 +13,7 @@ group: components
 
 <article class="env-news-item">
    <div class="env-news-item__media">
-      <img src="https://unsplash.it/467/300/?blur" />
+      <img src="https://unsplash.it/467/300/?blur" alt="" />
    </div>
    <header class="env-news-item__headline">
       <div class="env-news-item__headline__title">
@@ -50,7 +50,7 @@ group: components
       <li class="env-list__item">
          <article class="env-news-item">
             <div class="env-news-item__media">
-               <img src="https://unsplash.it/467/300/?blur" />
+               <img src="https://unsplash.it/467/300/?blur" alt="" />
             </div>
             <header class="env-news-item__headline">
                <div class="env-news-item__headline__title">
@@ -83,7 +83,7 @@ group: components
       <li class="env-list__item">
          <article class="env-news-item">
             <div class="env-news-item__media">
-               <img src="https://unsplash.it/467/300/?blur" />
+               <img src="https://unsplash.it/467/300/?blur" alt="" />
             </div>
             <header class="env-news-item__headline">
                <div class="env-news-item__headline__title">
@@ -116,7 +116,7 @@ group: components
       <li class="env-list__item">
          <article class="env-news-item">
             <div class="env-news-item__media">
-               <img src="https://unsplash.it/467/300/?blur" />
+               <img src="https://unsplash.it/467/300/?blur" alt="" />
             </div>
             <header class="env-news-item__headline">
                <div class="env-news-item__headline__title">
@@ -155,7 +155,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
@@ -188,7 +188,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
@@ -221,7 +221,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
@@ -254,7 +254,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
@@ -287,7 +287,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
@@ -320,7 +320,7 @@ group: components
    <li class="env-list__item">
       <article class="env-news-item">
          <div class="env-news-item__media">
-            <img src="https://unsplash.it/300/100/?blur" />
+            <img src="https://unsplash.it/300/100/?blur" alt="" />
          </div>
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">

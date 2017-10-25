@@ -10,7 +10,7 @@ group: components
    <header class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
-            <img class="env-image env-image--small" src="https://placehold.it/250x250">
+            <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
       <div class="env-media__body">
@@ -63,7 +63,7 @@ group: components
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -83,7 +83,7 @@ group: components
 <article class="env-comment env-media">
    <div class="env-media__figure">
       <a href="#">
-         <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+         <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
    <div class="env-media__body">
@@ -123,7 +123,7 @@ group: components
    <header class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
-            <img class="env-image env-image--small" src="https://placehold.it/250x250">
+            <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
       <div class="env-media__body">
@@ -167,7 +167,7 @@ group: components
                <article class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
@@ -204,7 +204,7 @@ group: components
                <article class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
@@ -241,7 +241,7 @@ group: components
                <article class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
@@ -278,7 +278,7 @@ group: components
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -299,7 +299,7 @@ group: components
    <header class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
-            <img class="env-image env-image--small" src="https://placehold.it/250x250">
+            <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
       <div class="env-media__body">
@@ -328,7 +328,7 @@ group: components
          <header class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--small" src="https://placehold.it/250x250">
+                  <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -366,7 +366,7 @@ group: components
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                  <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -389,7 +389,7 @@ group: components
          <header class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--small" src="https://placehold.it/250x250">
+                  <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -433,7 +433,7 @@ group: components
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
                            <a href="#">
-                              <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+                              <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                            </a>
                         </div>
                         <div class="env-media__body">
@@ -470,7 +470,7 @@ group: components
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
                            <a href="#">
-                              <img class="env-image env-image--small" src="https://placehold.it/400x400.png">
+                              <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                            </a>
                         </div>
                         <div class="env-media__body">
@@ -507,7 +507,7 @@ group: components
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
@@ -526,7 +526,7 @@ group: components
          <header class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--small" src="https://placehold.it/250x250">
+                  <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -570,7 +570,7 @@ group: components
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
@@ -589,7 +589,7 @@ group: components
          <header class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
-                  <img class="env-image env-image--small" src="https://placehold.it/250x250">
+                  <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
             <div class="env-media__body">
@@ -633,7 +633,7 @@ group: components
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
                      <a href="#">
-                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png">
+                        <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
