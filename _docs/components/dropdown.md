@@ -31,7 +31,7 @@ group: components
 {% endexample %}
 
 ### Dropdown divider ###
-Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
+Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 {% example html %}
 
 <div id="example1" class="env-dropdown">
@@ -53,7 +53,7 @@ Add a `<div>` element to menu list with the class `sv-dropdown--divider`.
 {% endexample %}
 
 ### Split button dropdown ###
-Use `sv-button-group` to split buttons and add `sv-dropdown--toggle-split` to desired button.
+Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to desired button.
 {% example html %}
 <div id="example2" class="env-dropdown env-button-group env_list__item" role="group">
    <button class="env-button env-button--primary" type="button">Button</button>

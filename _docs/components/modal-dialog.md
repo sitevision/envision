@@ -106,7 +106,7 @@ $('#myModal').on('hidden.env-modal-dialog', function() {
    // Do something... 
 });
 ```
-`show.envsv-modal-dialog`
+`show.env-modal-dialog`
 ```javascript
 $('#myModal').on('show.env-modal-dialog', function() { 
    // Do something... 

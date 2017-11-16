@@ -76,7 +76,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 
 {% example html %}
 
-<div class="sv-d--flex sv-justify-content--center">
+<div class="env-d--flex env-justify-content--center">
    <svg class="env-icon env-icon--xx-large env-icon--inactive">
       <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-user"></use>
    </svg>

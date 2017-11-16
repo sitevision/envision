@@ -22,7 +22,7 @@ group: utils
 {% endexample %}
 
 {% example html %}
-<section class="sv-text">
+<section class="env-text">
 
 <h1>Heading 1</h1>
 
@@ -40,7 +40,7 @@ group: utils
 {% endexample %}
 
 {% example html %}
-<h3 class="env-text">Fancy display heading <small class="sv-text--muted">With faded secondary text</small></h3>
+<h3 class="env-text">Fancy display heading <small class="env-text--muted">With faded secondary text</small></h3>
 {% endexample %}
 
 {% example html %}
