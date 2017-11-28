@@ -69,6 +69,8 @@ const ModalDialog = (($) => {
          this._isShown = true;
          this.el.focus();
 
+         $('body').css('overflow', 'hidden');
+
          this._bindEvents();
       }
 
@@ -85,6 +87,7 @@ const ModalDialog = (($) => {
 
          const removeBackdropCallback = () => {
             this.$backdrop.remove();
+            $('body').css('overflow', '');
          };
 
          const hideEvent = $.Event(EVENTS.HIDE, {});
