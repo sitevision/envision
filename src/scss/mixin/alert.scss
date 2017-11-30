@@ -5,3 +5,7 @@
       border-color: darken($color, 15%);
    }
 }
+
+@mixin alert-border-left($color) {
+   border-left: 6px solid $color;
+}
