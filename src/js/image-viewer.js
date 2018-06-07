@@ -303,6 +303,7 @@ const Imageviewer = (($) => {
          if (this.$images.length > 0) {
             this.$btnContainer
                .find(SELECTORS.ACTIVE_DOT)
+
                .removeClass(ClassName.ACTIVE_DOT);
 
             const indicator = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
