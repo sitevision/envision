@@ -25,6 +25,8 @@ const Popover = (($) => {
       constraints: [],
       container: 'body',
       content: '',
+      delayShow: 300,
+      delayHide: 500,
       escapeContent: true,
       placement: 'top',
       template: `<div class="env-popover" role="tooltip">
@@ -66,16 +68,22 @@ const Popover = (($) => {
                const outEvent = hoverTrigger ? 'mouseleave' : 'focusout';
 
                this.$el
-                  .on(inEvent + EVENT_NAMESPACE, () => {
-                     if (!this.isShowing) {
+               .on(inEvent + EVENT_NAMESPACE, () => {
+                  if (!this.isShowing) {
+                     setTimeout(() => {
                         this.show();
-                     }
-                  })
-                  .on(outEvent + EVENT_NAMESPACE, () => {
-                     if (this.isShowing) {
+                     },
+                     this.config.delayShow);
+                  }
+               })
+               .on(outEvent + EVENT_NAMESPACE, () => {
+                  if (this.isShowing) {
+                     setTimeout(() => {
                         this.hide();
-                     }
-                  });
+                     },
+                     this.config.delayHide);
+                  }
+               });
             }
          });
       }
