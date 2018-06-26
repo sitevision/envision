@@ -160,3 +160,19 @@ group: components
 </button>
 
 {% endexample %}
+
+To keep the popover alive when being hovered it requires a slight delay to function properly. Use `data-delay="{amount}"`.
+
+{% example html %}
+
+<button 
+   class="env-button env-button--primary example-popover"
+   data-placement="top"
+   data-trigger="hover"
+   data-title="Lorem ipsum"
+   data-delay="500"
+   data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget.">
+   Hover with delay!
+</button>
+
+{% endexample %}
