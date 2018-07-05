@@ -161,7 +161,7 @@ group: components
 
 {% endexample %}
 
-To keep the popover alive when being hovered it requires a slight delay to function properly. Use `data-delay="{amount}"`.
+To keep the popover alive when being hovered it requires a delay to function properly. Use `data-delay="{amount}"`.
 
 {% example html %}
 
