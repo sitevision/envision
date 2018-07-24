@@ -100,10 +100,9 @@ const Imageviewer = (($) => {
             this.$btnContainer.append(this.$imgContainer);
             this.$modal.appendTo(document.body);
 
-            this.$btnContainer.append(this._getIndicators());
-
             if (this.$images.length > 1) {
                this.$btnContainer.append(this._getButtons());
+               this.$btnContainer.append(this._getIndicators());
             }
 
             this.$btnContainer.addClass(ClassName.HIDDEN);
@@ -141,6 +140,7 @@ const Imageviewer = (($) => {
 
       _loadImage(href) {
          const $downloadingImage = $('<img>');
+         const $imageModal = $('.env-image-viewer__dialog');
 
          $downloadingImage
             .addClass('env-image-viewer__img')
@@ -149,10 +149,17 @@ const Imageviewer = (($) => {
                src: href
             })
             .on('load', () => {
-
                const imageHeight = $downloadingImage.height();
+               const imageWidth = $downloadingImage.width();
                const windowHeight = window.innerHeight;
                const heightModifier = 0.8;
+               const defaultWidth = 800;
+
+               if (imageWidth > defaultWidth) {
+                  $imageModal.css({
+                     'max-width': '80%'
+                  });
+               }
 
                if (windowHeight < imageHeight) {
                   $downloadingImage.css({
@@ -338,4 +345,3 @@ const Imageviewer = (($) => {
 })(jQuery);
 
 export default Imageviewer;
-

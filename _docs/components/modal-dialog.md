@@ -84,13 +84,13 @@ Uses `env-modal-dialog__dialog--small`
 ## Methods ##
 
 Show  
-`$('#myModal').envModalDialog('show')`
+`$('#myModal').envDialog('show')`
 
 Hide   
-`$('#myModal').envModalDialog('hide')`
+`$('#myModal').envDialog('hide')`
 
 Toggle   
-`$('#myModal').envModalDialog('toggle')`
+`$('#myModal').envDialog('toggle')`
 
 ## Events ##
 `hide.env-modal-dialog`
