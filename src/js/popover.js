@@ -25,8 +25,7 @@ const Popover = (($) => {
       constraints: [],
       container: 'body',
       content: '',
-      delayShow: 300,
-      delayHide: 500,
+      delay: 0,
       escapeContent: true,
       placement: 'top',
       template: `<div class="env-popover" role="tooltip">
@@ -69,23 +68,75 @@ const Popover = (($) => {
 
                this.$el
                .on(inEvent + EVENT_NAMESPACE, () => {
-                  if (!this.isShowing) {
-                     setTimeout(() => {
-                        this.show();
-                     },
-                     this.config.delayShow);
+                  if (this.config.delay > 0) {
+                     if (this.hidetimeout) {
+                        clearTimeout(this.hidetimeout);
+                     }
+                     if (this.showtimeout) {
+                        clearTimeout(this.showtimeout);
+                     }
+                     if (!this.isShowing) {
+                        this.showtimeout = setTimeout(() => {
+                           this.show();
+                        },
+                        this.config.delay);
+                     }
+                  } else if (!this.isShowing) {
+                     this.show();
                   }
                })
                .on(outEvent + EVENT_NAMESPACE, () => {
-                  if (this.isShowing) {
-                     setTimeout(() => {
-                        this.hide();
-                     },
-                     this.config.delayHide);
+                  if (this.config.delay > 0) {
+                     this.hoverPopover();
+                     if (this.showtimeout) {
+                        clearTimeout(this.showtimeout);
+                     }
+                     if (this.isShowing) {
+                        this.hidetimeout = setTimeout(() => {
+                           this.hide();
+                        },
+                        this.config.delay);
+                     }
+                  } else if (this.isShowing) {
+                     this.hide();
                   }
                });
             }
          });
+      }
+
+      hoverPopover() {
+         const $popoverElement = this.getPopoverElement();
+
+         $popoverElement
+               .off('mouseenter')
+               .on('mouseenter', () => {
+                  if (this.hidetimeout) {
+                     clearTimeout(this.hidetimeout);
+                  }
+                  if (this.showtimeout) {
+                     clearTimeout(this.showtimeout);
+                  }
+                  if (!this.isShowing) {
+                     this.showtimeout = setTimeout(() => {
+                        this.show();
+                     },
+                     this.config.delay);
+                  }
+               });
+         $popoverElement
+               .off('mouseleave')
+               .on('mouseleave', () => {
+                  if (this.showtimeout) {
+                     clearTimeout(this.showtimeout);
+                  }
+                  if (this.isShowing) {
+                     this.hidetimeout = setTimeout(() => {
+                        this.hide();
+                     },
+                     this.config.delay);
+                  }
+               });
       }
 
       getPopoverElement() {
@@ -102,6 +153,19 @@ const Popover = (($) => {
 
       setContent($popoverElement) {
          this.setText($popoverElement, '.env-popover__content', this.config.content);
+      }
+
+      updateConfig(config) {
+         Object.assign(this.config, config);
+         return this;
+      }
+
+      render() {
+         const $popoverElement = this.getPopoverElement();
+
+         this.setTitle($popoverElement);
+         this.setContent($popoverElement);
+         this.setArrowPosition($popoverElement);
       }
 
       setArrowPosition($popoverElement) {
@@ -143,11 +207,9 @@ const Popover = (($) => {
       }
 
       show() {
-         const $popoverElement = this.getPopoverElement();
+         this.render();
 
-         this.setTitle($popoverElement);
-         this.setContent($popoverElement);
-         this.setArrowPosition($popoverElement);
+         const $popoverElement = this.getPopoverElement();
 
          $('body').append($popoverElement);
 
@@ -190,6 +252,7 @@ const Popover = (($) => {
          this.$popoverElement = undefined;
          this._popper = undefined;
          this.isShowing = false;
+         this.$el.off();
          this.$el.removeData(IDENTIFIER);
       }
 
