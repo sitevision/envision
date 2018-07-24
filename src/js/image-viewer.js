@@ -149,14 +149,13 @@ const Imageviewer = (($) => {
                src: href
             })
             .on('load', () => {
-
                const imageHeight = $downloadingImage.height();
                const imageWidth = $downloadingImage.width();
                const windowHeight = window.innerHeight;
                const heightModifier = 0.8;
                const defaultWidth = 800;
 
-               if (imageWidth > defaultWidth || imageWidth > imageHeight) {
+               if (imageWidth > defaultWidth) {
                   $imageModal.css({
                      'max-width': '80%'
                   });
@@ -303,7 +302,6 @@ const Imageviewer = (($) => {
          if (this.$images.length > 0) {
             this.$btnContainer
                .find(SELECTORS.ACTIVE_DOT)
-
                .removeClass(ClassName.ACTIVE_DOT);
 
             const indicator = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
@@ -347,4 +345,3 @@ const Imageviewer = (($) => {
 })(jQuery);
 
 export default Imageviewer;
-
