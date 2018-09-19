@@ -1,0 +1,15 @@
+.#{$prefix}-accordion {
+   display: none;
+
+   &--collapsing {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      position: relative;
+      transition: height $toggle-duration ease;
+   }
+
+   &--show {
+      display: block;
+   }
+}
