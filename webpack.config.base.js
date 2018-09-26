@@ -7,6 +7,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
    entry: [
+      './src/js/accordion.js',
       './src/js/collapse.js',
       './src/js/dropdown.js',
       './src/js/image-slider.js',

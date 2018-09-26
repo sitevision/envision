@@ -4,6 +4,7 @@
 
 - title: Components
   pages:
+    - title: Accordion
     - title: Alert
     - title: Badge
     - title: Breadcrumb

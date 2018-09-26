@@ -6,7 +6,7 @@
 
 <title>
   
-    Button &middot; Envision by SiteVision
+    Accordion &middot; Envision by SiteVision
   
 </title>
 
@@ -95,7 +95,7 @@
 
           
 
-          <li class="">
+          <li class="active">
             <a href="/components/accordion/">
               Accordion
             </a>
@@ -147,7 +147,7 @@
 
           
 
-          <li class="active">
+          <li class="">
             <a href="/components/button/">
               Button
             </a>
@@ -555,105 +555,35 @@
 </nav>
 
          <main>
-            <h1 id="content">Button</h1>
-            <h2 id="types">Types</h2>
+            <h1 id="content">Accordion</h1>
+            <h2 id="overview">Overview</h2>
 
 <div class="code-example" data-example-id="">
-<button type="button" class="env-button">Default</button>
-
-<button type="button" class="env-button env-button--primary">Primary</button>
-
-<button type="button" class="env-button env-button--danger">Secondary</button>
-
-<button type="button" class="env-button env-button--invert">Invert</button>
-
-<button type="button" class="env-button env-button--link">Link</button>
+<h1 class="env-text" href="#accordionExample1" data-env-accordion="">Example 1</h1>
+<div class="env-accordion env-accordion--show" id="accordionExample1">
+    <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--danger"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--invert"</span><span class="nt">&gt;</span>Invert<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre></div>
-
-<h2 id="sizes">Sizes</h2>
-
-<div class="code-example" data-example-id="">
-<p>
-   <button type="button" class="env-button env-button--primary env-button--large">Large</button>
-   <button type="button" class="env-button env-button--large">Large</button>
-</p>
-
-<p>
-   <button type="button" class="env-button env-button--primary">Default</button>
-   <button type="button" class="env-button">Default</button>
-</p>
-
-<p>
-   <button type="button" class="env-button env-button--primary env-button--small">Small</button>
-   <button type="button" class="env-button env-button--small">Small</button>
-</p>
+<h1 class="env-text" href="#accordionExample2" data-env-accordion="">Example 2</h1>
+<div class="env-accordion" id="accordionExample2">
+    <p class="env-text">Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.</p>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary env-button--large"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--large"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary env-button--small"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--small"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<h3 id="block">Block</h3>
-
-<div class="code-example" data-example-id="">
-<p>
-   <button type="button" class="env-button env-button--primary env-button--large env-button--block">Large</button>
-   <button type="button" class="env-button env-button--large env-button--block">Large</button>
-</p>
-
-<p>
-   <button type="button" class="env-button env-button--primary env-button--block">Default</button>
-   <button type="button" class="env-button env-button--block">Default</button>
-</p>
-
-<p>
-   <button type="button" class="env-button env-button--primary env-button--small env-button--block">Small</button>
-   <button type="button" class="env-button env-button--small env-button--block">Small</button>
-</p>
+<h1 class="env-text" href="#accordionExample3" data-env-accordion="">Example 3</h1>
+<div class="env-accordion" id="accordionExample3">
+    <p class="env-text">Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros. </p>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary env-button--large env-button--block"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--large env-button--block"</span><span class="nt">&gt;</span>Large<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary env-button--block"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--block"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;p&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--primary env-button--small env-button--block"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
-   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button env-button--small env-button--block"</span><span class="nt">&gt;</span>Small<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<h2 id="state">State</h2>
-
-<h3 id="disabled">Disabled</h3>
-
-<div class="code-example" data-example-id="">
-<button type="button" class="env-button" disabled="">Disabled</button>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"env-button"</span> <span class="na">disabled</span><span class="nt">&gt;</span>Disabled<span class="nt">&lt;/button&gt;</span></code></pre></div>
-
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample1"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 1<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion env-accordion--show"</span> <span class="na">id=</span><span class="s">"accordionExample1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample2"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 2<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">id=</span><span class="s">"accordionExample2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample3"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 3<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">id=</span><span class="s">"accordionExample3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros. <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
          </main>
       </div>
