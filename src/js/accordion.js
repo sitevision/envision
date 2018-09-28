@@ -38,7 +38,7 @@ const Accordion = (($) => {
             .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
 
-         const $hide = $(this.$el.attr(PARENT)).find('.env-accordion--show');
+         const $hide = $(this.$el.attr(PARENT)).find(MODIFIER_BASE + SHOW);
          $hide
             .height($hide.height())
             .removeClass(MODIFIER_BASE + SHOW)
