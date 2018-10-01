@@ -38,7 +38,8 @@ const Accordion = (($) => {
             .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
 
-         const $hide = $(this.$el.attr(PARENT)).find(MODIFIER_BASE + SHOW);
+         const $hide = $(this.$el.attr(PARENT)).find(`.${MODIFIER_BASE + SHOW}`);
+
          $hide
             .height($hide.height())
             .removeClass(MODIFIER_BASE + SHOW)
@@ -67,7 +68,7 @@ const Accordion = (($) => {
       }
 
       _hideTransitionComplete() {
-         const $target = $('.env-accordion--collapsing');
+         const $target = $(`.${MODIFIER_BASE + COLLAPSING}`);
 
          $target
             .removeClass(MODIFIER_BASE + COLLAPSING)
@@ -105,7 +106,7 @@ const Accordion = (($) => {
       const target = $this.attr('href') || $this.attr('data-target');
       const $target = $(target);
 
-      if ($target.hasClass(MODIFIER_BASE + COLLAPSING)) {
+      if ($($target.attr(PARENT)).find(`.${MODIFIER_BASE + COLLAPSING}`).length) {
          return;
       }
 

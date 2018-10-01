@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-docs": "cd _docs/; jekyll build; touch ../docs/.nojekyll",
-    "build-docs-js": "webpack --config webpack.config.dev.js",
-    "build-dist": "webpack --config webpack.config.prod.js",
+    "build-docs-js": "webpack --config webpack.docs.js",
+    "build-dist": "webpack --config webpack.dist.js",
     "build": "npm-run-all build-docs-js build-docs build-dist",
-    "watch": "webpack --config webpack.config.dev.js --watch"
+    "watch": "webpack --config webpack.docs.js --watch"
   },
   "repository": {
     "type": "git",
@@ -23,26 +23,29 @@
   "author": "SiteVision AB",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^7.1.3",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^0.28.7",
-    "eslint": "^3.17.1",
-    "eslint-loader": "^1.9.0",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^0.11.2",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.6.1",
+    "eslint-loader": "^2.1.1",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
-    "npm-run-all": "^4.1.1",
-    "postcss-loader": "^2.0.6",
-    "sass-loader": "^6.0.6",
-    "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.5.5"
+    "npm-run-all": "^4.1.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "popper.js": "^1.12.5",
-    "svgxuse": "^1.2.4"
+    "popper.js": "^1.14.4",
+    "svgxuse": "^1.2.6"
   },
   "browserslist": [
     "Chrome >= 45",
