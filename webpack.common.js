@@ -1,11 +1,11 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-   filename: "envision.css"
-});
+const path = require('path');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin  = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+   mode: 'production',
+   devtool: 'source-map',
    entry: [
       './src/js/accordion.js',
       './src/js/collapse.js',
@@ -21,23 +21,31 @@ module.exports = {
       './src/scss/base.scss',
       './src/icons/envision-icons.svg'
    ],
-   devtool: 'source-map',
+   optimization: {
+      minimizer: [
+         new OptimizeCSSAssetsPlugin(),
+         new TerserWebpackPlugin({
+            cache: true,
+            sourceMap: true,
+            parallel: true
+         })
+      ]
+   },
    plugins: [
-      new UglifyJSPlugin({
-         sourceMap: true
-      }),
-      extractSass
+      new MiniCssExtractPlugin({
+         filename: 'envision.css'
+      })
    ],
    module: {
       rules: [
          {
             test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
+            include: path.resolve(__dirname, 'js'),
             use: [
                {
                   loader: 'babel-loader',
                   options: {
-                     presets: ['env']
+                     presets: ['@babel/preset-env']
                   }
                },
                {
@@ -47,23 +55,12 @@ module.exports = {
          },
          {
             test: /\.scss$/,
-            use: extractSass.extract({
-               use: [{
-                  loader: "css-loader",
-                  options: {
-                     minimize: true
-                  }
-               }, {
-                  loader: "postcss-loader",
-                  options: {
-                     config: {
-                        path: 'postcss.config.js'
-                     }
-                  }
-               }, {
-                  loader: "sass-loader"
-               }]
-            })
+            use: [
+               MiniCssExtractPlugin.loader,
+               'css-loader',
+               'postcss-loader',
+               'sass-loader'
+            ]
          },
          {
             test: /\.(eot|svg|ttf|woff|woff2)$/,

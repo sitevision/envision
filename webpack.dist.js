@@ -1,7 +1,8 @@
 const path = require('path');
-const base = require('./webpack.config.base');
+const common = require('./webpack.common');
+const merge = require('webpack-merge');
 
-module.exports = Object.assign({}, base, {
+module.exports = merge(common, {
    output: {
       filename: 'envision.js',
       path: path.resolve(__dirname, 'dist')
