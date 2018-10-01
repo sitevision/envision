@@ -15,6 +15,7 @@ const Accordion = (($) => {
    const NAME = 'envAccordion';
    const NO_CONFLICT = $.fn[NAME];
    const SHOW = 'show';
+   const PARENT = 'data-parent';
 
    class Accordion {
 
@@ -36,8 +37,8 @@ const Accordion = (($) => {
             .addClass(MODIFIER_BASE + COLLAPSING)
             .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
             .height(this.el.scrollHeight);
-         const $hide = $('.env-accordion--show');
 
+         const $hide = $(this.$el.attr(PARENT)).find(MODIFIER_BASE + SHOW);
          $hide
             .height($hide.height())
             .removeClass(MODIFIER_BASE + SHOW)
@@ -45,6 +46,7 @@ const Accordion = (($) => {
             .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
             .height(0);
       }
+
       hide() {
          this.$el
             .height(this.$el.height())
@@ -53,8 +55,6 @@ const Accordion = (($) => {
             .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
             .height(0);
       }
-
-      // Private
 
       _showTransitionComplete(e) {
          const $target = $(e.currentTarget);
@@ -97,7 +97,6 @@ const Accordion = (($) => {
       $.fn[NAME] = NO_CONFLICT;
       return Accordion._jQuery;
    };
-
 
    $(document).on('click', '[data-env-accordion]', function(e) {
       e.preventDefault();

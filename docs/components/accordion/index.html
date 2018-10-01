@@ -559,31 +559,117 @@
             <h2 id="overview">Overview</h2>
 
 <div class="code-example" data-example-id="">
-<h1 class="env-text" href="#accordionExample1" data-env-accordion="">Example 1</h1>
-<div class="env-accordion env-accordion--show" id="accordionExample1">
-    <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+<div id="accordionExample">
+   <div id="heading1">
+      <h1 class="env-text">
+         <a href="#container1" data-env-accordion="" aria-controls="container1">
+            Example 1
+         </a>
+      </h1>
+   </div>
+   <div id="container1" class="env-accordion env-accordion--show" aria-expanded="true" aria-labelledby="heading1" data-parent="#accordionExample">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   </div>
+
+   <div id="heading2">
+      <h1 class="env-text">
+         <a href="#container2" data-env-accordion="" aria-controls="container2">
+            Example 2
+         </a>
+      </h1>
+   </div>
+   <div id="container2" class="env-accordion" aria-expanded="false" aria-labelledby="heading2" data-parent="#accordionExample">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   </div>
+
+   <div id="heading3">
+      <h1 class="env-text">
+         <a href="#container3" data-env-accordion="" aria-controls="container3">
+            Example 3
+         </a>
+      </h1>
+   </div>
+   <div id="container3" class="env-accordion" aria-expanded="false" aria-labelledby="heading3" data-parent="#accordionExample">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   </div>
 </div>
-<h1 class="env-text" href="#accordionExample2" data-env-accordion="">Example 2</h1>
-<div class="env-accordion" id="accordionExample2">
-    <p class="env-text">Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.</p>
 </div>
-<h1 class="env-text" href="#accordionExample3" data-env-accordion="">Example 3</h1>
-<div class="env-accordion" id="accordionExample3">
-    <p class="env-text">Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros. </p>
-</div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample1"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 1<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion env-accordion--show"</span> <span class="na">id=</span><span class="s">"accordionExample1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample2"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 2<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">id=</span><span class="s">"accordionExample2"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae scelerisque.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span> <span class="na">href=</span><span class="s">"#accordionExample3"</span> <span class="na">data-env-accordion</span><span class="nt">&gt;</span>Example 3<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">id=</span><span class="s">"accordionExample3"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Aenean aliquet sem eget velit tincidunt ullamcorper. Donec aliquet, quam vitae cursus aliquet, lorem nunc efficitur nulla, ullamcorper placerat dui massa at eros. <span class="nt">&lt;/p&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"accordionExample"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"heading1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#container1"</span> <span class="na">data-env-accordion</span> <span class="na">aria-controls=</span><span class="s">"container1"</span><span class="nt">&gt;</span>
+            Example 1
+         <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container1"</span> <span class="na">class=</span><span class="s">"env-accordion env-accordion--show"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-labelledby=</span><span class="s">"heading1"</span> <span class="na">data-parent=</span><span class="s">"#accordionExample"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"heading2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#container2"</span> <span class="na">data-env-accordion</span> <span class="na">aria-controls=</span><span class="s">"container2"</span><span class="nt">&gt;</span>
+            Example 2
+         <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container2"</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-labelledby=</span><span class="s">"heading2"</span> <span class="na">data-parent=</span><span class="s">"#accordionExample"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"heading3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#container3"</span> <span class="na">data-env-accordion</span> <span class="na">aria-controls=</span><span class="s">"container3"</span><span class="nt">&gt;</span>
+            Example 3
+         <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container3"</span> <span class="na">class=</span><span class="s">"env-accordion"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-labelledby=</span><span class="s">"heading3"</span> <span class="na">data-parent=</span><span class="s">"#accordionExample"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h3 id="data-target">data-target</h3>
+<p>You can also use attribute <code class="highlighter-rouge">data-target="#container4"</code></p>
+
+<div class="code-example" data-example-id="">
+<div id="accordionExample2">
+   <div id="heading4">
+      <h1 class="env-text">
+         <a data-target="#container4" data-env-accordion="" aria-controls="container4">
+            Example 4
+         </a>
+      </h1>
+   </div>
+   <div id="container4" class="env-accordion env-accordion--show" aria-expanded="true" aria-labelledby="heading4" data-parent="#accordionExample2">
+      <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   </div>
+</div>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"accordionExample2"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"heading4"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">data-target=</span><span class="s">"#container4"</span> <span class="na">data-env-accordion</span> <span class="na">aria-controls=</span><span class="s">"container4"</span><span class="nt">&gt;</span>
+            Example 4
+         <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container4"</span> <span class="na">class=</span><span class="s">"env-accordion env-accordion--show"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-labelledby=</span><span class="s">"heading4"</span> <span class="na">data-parent=</span><span class="s">"#accordionExample2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"env-text"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<h2 id="methods">Methods</h2>
+<p>You can <code class="highlighter-rouge">show</code>, <code class="highlighter-rouge">hide</code> and <code class="highlighter-rouge">toggle</code> on available collapsible elements.</p>
+
+<p>Show
+<code class="highlighter-rouge">$('#container1').show()</code></p>
+
+<p>Hide
+<code class="highlighter-rouge">$('#container1').hide()</code></p>
+
+<p>Toggle
+<code class="highlighter-rouge">$('#container1').toggle()</code></p>
 
          </main>
       </div>
