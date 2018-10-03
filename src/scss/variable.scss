@@ -1,160 +1,160 @@
 // Base
-$prefix:                   env;
-$grid-columns:             12;
-$page-width:               700px;
-$inner-page-width:         600px;
-$popover-width:            300px;
-$enable-rounded-corners:   true;
-$enable-box-shadow:        true;
+$prefix:                   env !default;
+$grid-columns:             12 !default;
+$page-width:               700px !default;
+$inner-page-width:         600px !default;
+$popover-width:            300px !default;
+$enable-rounded-corners:   true !default;
+$enable-box-shadow:        true !default;
 
 // Font family
-$font-family:              "Roboto", sans-serif;
+$font-family:              "Roboto", sans-serif !default;
 
 // Font Size
-$font-size-base:           1em;
-$font-size-x-small:        $font-size-base * .75;
-$font-size-small:          $font-size-base * .875;
-$font-size-medium:         $font-size-base;
-$font-size-large:          $font-size-base * 1.25;
-$font-size-x-large:        $font-size-base * 1.5;
-$font-size-xx-large:       $font-size-base * 1.75;
-$font-size-xxx-large:      $font-size-base * 2;
-$font-size-xxxx-large:     $font-size-base * 2.5;
+$font-size-base:           1em !default;
+$font-size-x-small:        $font-size-base * .75 !default;
+$font-size-small:          $font-size-base * .875 !default;
+$font-size-medium:         $font-size-base !default;
+$font-size-large:          $font-size-base * 1.25 !default;
+$font-size-x-large:        $font-size-base * 1.5 !default;
+$font-size-xx-large:       $font-size-base * 1.75 !default;
+$font-size-xxx-large:      $font-size-base * 2 !default;
+$font-size-xxxx-large:     $font-size-base * 2.5 !default;
 
 // Font weight
-$font-weight-light:        300;
-$font-weight-regular:      400;
-$font-weight-semibold:     500;
-$font-weight-bold:         600;
-$font-weight-extrabold:    700;
+$font-weight-light:        300 !default;
+$font-weight-regular:      400 !default;
+$font-weight-semibold:     500 !default;
+$font-weight-bold:         600 !default;
+$font-weight-extrabold:    700 !default;
 
 // Line height
-$line-height-small:        1.25;
-$line-height-medium:       1.4;
-$button-line-height:       $line-height-medium;
-$form-input-line-height:   $line-height-medium;
+$line-height-small:        1.25 !default;
+$line-height-medium:       1.4 !default;
+$button-line-height:       $line-height-medium !default;
+$form-input-line-height:   $line-height-medium !default;
 
 // Size (Margin/Padding)
 $spacing-base:             1em;
-$spacing-xxx-small:        $spacing-base * .125;
-$spacing-xx-small:         $spacing-base * .25;
-$spacing-x-small:          $spacing-base * .5;
-$spacing-small:            $spacing-base * .75;
-$spacing-medium:           $spacing-base;
-$spacing-large:            $spacing-base * 1.25;
-$spacing-x-large:          $spacing-base * 1.5;
-$spacing-xx-large:         $spacing-base * 1.75;
-$spacing-xxx-large:        $spacing-base * 2;
+$spacing-xxx-small:        $spacing-base * .125 !default;
+$spacing-xx-small:         $spacing-base * .25 !default;
+$spacing-x-small:          $spacing-base * .5 !default;
+$spacing-small:            $spacing-base * .75 !default;
+$spacing-medium:           $spacing-base !default;
+$spacing-large:            $spacing-base * 1.25 !default;
+$spacing-x-large:          $spacing-base * 1.5 !default;
+$spacing-xx-large:         $spacing-base * 1.75 !default;
+$spacing-xxx-large:        $spacing-base * 2 !default;
 
 // Radius
-$radius-base:              .25em;
-$radius-small:             $radius-base * .5;
-$radius-medium:            $radius-base;
-$radius-large:             $radius-base * 1.5;
-$button-border-radius:     $radius-small;
+$radius-base:              .25em !default;
+$radius-small:             $radius-base * .5 !default;
+$radius-medium:            $radius-base !default;
+$radius-large:             $radius-base * 1.5 !default;
+$button-border-radius:     $radius-small !default;
 
 // Shadow
-$popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
-$modal-shadow:              inset 0 3px 6px rgba(0, 0, 0, 1);
-$modal-dialog-shadow:       0 3px 9px rgba(0, 0, 0, .5);
+$popover-shadow:            0 6px 12px rgba(0, 0, 0, .175) !default;
+$modal-shadow:              inset 0 3px 6px rgba(0, 0, 0, 1) !default;
+$modal-dialog-shadow:       0 3px 9px rgba(0, 0, 0, .5) !default;
 
 // Icon Size
-$icon-size-x-small:        14px;
-$icon-size-small:          20px;
-$icon-size-medium:         30px;
-$icon-size-large:          40px;
-$icon-size-x-large:        50px;
-$icon-size-xx-large:       60px;
+$icon-size-x-small:        14px !default;
+$icon-size-small:          20px !default;
+$icon-size-medium:         30px !default;
+$icon-size-large:          40px !default;
+$icon-size-x-large:        50px !default;
+$icon-size-xx-large:       60px !default;
 
 // Color
-$color-page-bg:            #ffffff;
-$color-element-bg:         #ffffff;
+$color-page-bg:            #ffffff !default;
+$color-element-bg:         #ffffff !default;
 
-$color-hover:              #f7f7f7;
+$color-hover:              #f7f7f7 !default;
 
-$color-brand:              #6892d5;
-$color-brand-light:        lighten($color-brand, 10%);
-$color-brand-dark:         darken($color-brand, 10%);
+$color-brand:              #6892d5 !default;
+$color-brand-light:        lighten($color-brand, 10%) !default;
+$color-brand-dark:         darken($color-brand, 10%) !default;
 
-$color-danger:             #e02525;
-$color-success:            #79d179;
-$color-info:               #67d3de;
-$color-warning:            #e9bb4e;
+$color-danger:             #e02525 !default;
+$color-success:            #79d179 !default;
+$color-info:               #67d3de !default;
+$color-warning:            #e9bb4e !default;
 
-$font-color:               #202330;
-$font-color-light:         #333333;
-$font-color-lighter:       #878787;
-$font-color-invert:        #ffffff;
+$font-color:               #202330 !default;
+$font-color-light:         #333333 !default;
+$font-color-lighter:       #878787 !default;
+$font-color-invert:        #ffffff !default;
 
-$color-base:               #000000;
-$color-darker:             lighten($color-base, 5%);
-$color-dark:               lighten($color-base, 20%);
-$color-normal:             lighten($color-base, 40%);
-$color-light:              lighten($color-base, 60%);
-$color-lighter:            lighten($color-base, 80%);
-$color-lightest:           lighten($color-base, 100%);
+$color-base:               #000000 !default;
+$color-darker:             lighten($color-base, 5%) !default;
+$color-dark:               lighten($color-base, 20%) !default;
+$color-normal:             lighten($color-base, 40%) !default;
+$color-light:              lighten($color-base, 60%) !default;
+$color-lighter:            lighten($color-base, 80%) !default;
+$color-lightest:           lighten($color-base, 100%) !default;
 
-$default-button-color:     lighten($color-base, 95%);
-$focus-background-color:   rgba(0, 0, 0, .2);
-$color-focus:              #5cb3fd;
-$default-spinner-color:    #5cb3fd;
+$default-button-color:     lighten($color-base, 95%) !default;
+$focus-background-color:   rgba(0, 0, 0, .2) !default;
+$color-focus:              #5cb3fd !default;
+$default-spinner-color:    #5cb3fd !default;
 
 // Border
-$border-width:             1px;
-$border-style:             solid;
-$border-color:             $color-light;
-$border-color-light:       $color-lighter;
-$default-border:           $border-width $border-style $border-color;
-$border-light:             $border-width $border-style $border-color-light;
-$tab-bottom-width:         3px;
+$border-width:             1px !default;
+$border-style:             solid !default;
+$border-color:             $color-light !default;
+$border-color-light:       $color-lighter !default;
+$default-border:           $border-width $border-style $border-color !default;
+$border-light:             $border-width $border-style $border-color-light !default;
+$tab-bottom-width:         3px !default;
 
 // Z-index value
-$zindex-imageslider-indicator:   15;
-$zindex-radio-button:            100;
-$zindex-popover:                 1030;
-$zindex-modal-backdrop:          1040;
-$zindex-modal:                   1050;
-$zindex-modal-close-btn:         1055;
-$zindex-dropdown:                1060;
-$zindex-tooltip:                 1080;
-$zindex-alert:                   1090;
+$zindex-imageslider-indicator:   15 !default;
+$zindex-radio-button:            100 !default;
+$zindex-popover:                 1030 !default;
+$zindex-modal-backdrop:          1040 !default;
+$zindex-modal:                   1050 !default;
+$zindex-modal-close-btn:         1055 !default;
+$zindex-dropdown:                1060 !default;
+$zindex-tooltip:                 1080 !default;
+$zindex-alert:                   1090 !default;
 
 // Dialog Modal
-$modal-small:              300px;
-$modal-medium:             450px;
-$modal-large:              900px;
+$modal-small:              300px !default;
+$modal-medium:             450px !default;
+$modal-large:              900px !default;
 
 // Table
-$table-zebra-color:        $default-button-color;
-$table-active-color:       $table-zebra-color;
+$table-zebra-color:        $default-button-color !default;
+$table-active-color:       $table-zebra-color !default;
 
 // Breadcrumb
-$breadcrumb-divider-color: $color-light;
-$breadcrumb-divider:       '/';
+$breadcrumb-divider-color: $color-light !default;
+$breadcrumb-divider:       '/' !default;
 
 // Animation
-$toggle-duration:          .4s;
+$toggle-duration:          .4s !default;
 
 // Badge
-$badge-radius:             .2em;
-$badge-font-color:         $font-color-invert;
-$badge-font-size:          75%;
+$badge-radius:             .2em !default;
+$badge-font-color:         $font-color-invert !default;
+$badge-font-size:          75% !default;
 
-$image-control-color: $color-element-bg;
-$image-control-color-inactive: $font-color-lighter;
+$image-control-color: $color-element-bg !default;
+$image-control-color-inactive: $font-color-lighter !default;
 $image-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M20.391 27.609l-11.61-11.609 11.61-11.609 1.884 1.884-9.723 9.724 9.723 9.724z'/%3E%3C/svg%3E"), "#", "%23") !default;
 $image-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M11.609 27.609l-1.884-1.884 9.723-9.724-9.723-9.724 1.884-1.884 11.61 11.609z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 // Radio button
-$radiobutton-base:         .625em;
-$radiobutton-checked-size: $radiobutton-base;
-$radiobutton-size:         $radiobutton-base * 2;
-$radiobutton-border:       6px solid $color-brand;
+$radiobutton-base:         .625em !default;
+$radiobutton-checked-size: $radiobutton-base !default;
+$radiobutton-size:         $radiobutton-base * 2 !default;
+$radiobutton-border:       6px solid $color-brand !default;
 
 // Checkbox
-$checkbox-size:            1.25em;
-$checkbox-tick-height:     $checkbox-size * 0.4;
-$checkbox-tick-width:      $checkbox-size * 0.7;
+$checkbox-size:            1.25em !default;
+$checkbox-tick-height:     $checkbox-size * 0.4 !default;
+$checkbox-tick-width:      $checkbox-size * 0.7 !default;
 
 // Progress bar
-$progress-bar-height:      1.25em;
+$progress-bar-height:      1.25em !default;
