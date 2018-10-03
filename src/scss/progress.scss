@@ -4,14 +4,13 @@
    display: flex;
    font-family: $font-family;
    font-size: $font-size-small;
-   line-height: $line-height-small;
    overflow: hidden;
    text-align: center;
 
    &__bar {
       background-color: $color-brand;
       color: $font-color-invert;
-      height: $line-height-small;
+      height: $progress-bar-height;
 
       &--success {
          background-color: $color-success;
