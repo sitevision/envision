@@ -6,24 +6,20 @@ $inner-page-width:         600px;
 $popover-width:            300px;
 $enable-rounded-corners:   true;
 $enable-box-shadow:        true;
-$base-font-size:           16; // Used to calculate px to em
-
-@function em($pixels, $base: $base-font-size) {
-   @return $pixels/$base + 0em;
-}
 
 // Font family
 $font-family:              "Roboto", sans-serif;
 
 // Font Size
-$font-size-x-small:        em(12);
-$font-size-small:          em(14);
-$font-size-medium:         em(16);
-$font-size-large:          em(20);
-$font-size-x-large:        em(24);
-$font-size-xx-large:       em(28);
-$font-size-xxx-large:      em(32);
-$font-size-xxxx-large:     em(40);
+$font-size-base:           1em;
+$font-size-x-small:        $font-size-base * .75;
+$font-size-small:          $font-size-base * .875;
+$font-size-medium:         $font-size-base;
+$font-size-large:          $font-size-base * 1.25;
+$font-size-x-large:        $font-size-base * 1.5;
+$font-size-xx-large:       $font-size-base * 1.75;
+$font-size-xxx-large:      $font-size-base * 2;
+$font-size-xxxx-large:     $font-size-base * 2.5;
 
 // Font weight
 $font-weight-light:        300;
@@ -32,33 +28,30 @@ $font-weight-semibold:     500;
 $font-weight-bold:         600;
 $font-weight-extrabold:    700;
 
-// Font Line-height
-$line-height-base:         6; // For text blocks and wrapping text
-$line-height-x-small:      em($line-height-base) + $font-size-x-small;
-$line-height-small:        em($line-height-base) + $font-size-small;
-$line-height-medium:       em($line-height-base) + $font-size-medium;
-$line-height-large:        em($line-height-base) + $font-size-large;
-$line-height-x-large:      em($line-height-base) + $font-size-x-large;
-$line-height-xx-large:     em($line-height-base) + $font-size-xx-large;
+// Line height
+$line-height-small:        1.25;
+$line-height-medium:       1.4;
+$button-line-height:       $line-height-medium;
+$form-input-line-height:   $line-height-medium;
 
 // Size (Margin/Padding)
-$spacing-xxx-small:        em(2);
-$spacing-xx-small:         em(4);
-$spacing-x-small:          em(8);
-$spacing-small:            em(12);
-$spacing-medium:           em(16);
-$spacing-large:            em(20);
-$spacing-x-large:          em(24);
-$spacing-xx-large:         em(28);
-$spacing-xxx-large:        em(32);
+$spacing-base:             1em;
+$spacing-xxx-small:        $spacing-base * .125;
+$spacing-xx-small:         $spacing-base * .25;
+$spacing-x-small:          $spacing-base * .5;
+$spacing-small:            $spacing-base * .75;
+$spacing-medium:           $spacing-base;
+$spacing-large:            $spacing-base * 1.25;
+$spacing-x-large:          $spacing-base * 1.5;
+$spacing-xx-large:         $spacing-base * 1.75;
+$spacing-xxx-large:        $spacing-base * 2;
 
 // Radius
-$button-border-radius:     em(2);
-$radius-small:             em(2);
-$radius-medium:            em(4);
-$radius-large:             em(8);
-$radius-rounded-corners:   em(50);
-$radius-circle:            100%;
+$radius-base:              .25em;
+$radius-small:             $radius-base * .5;
+$radius-medium:            $radius-base;
+$radius-large:             $radius-base * 1.5;
+$button-border-radius:     $radius-small;
 
 // Shadow
 $popover-shadow:            0 6px 12px rgba(0, 0, 0, .175);
@@ -153,11 +146,15 @@ $image-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3
 $image-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$image-control-color}' viewBox='0 0 32 32'%3E%3Cpath d='M11.609 27.609l-1.884-1.884 9.723-9.724-9.723-9.724 1.884-1.884 11.61 11.609z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 // Radio button
-$radiobutton-size:         em(10);
-$radiobutton-active-size:  em(20);
+$radiobutton-base:         .625em;
+$radiobutton-checked-size: $radiobutton-base;
+$radiobutton-size:         $radiobutton-base * 2;
 $radiobutton-border:       6px solid $color-brand;
 
 // Checkbox
-$checkbox-size:            em(20);
-$checkbox-tick-height:     em(8);
-$checkbox-tick-width:      em(14);
+$checkbox-size:            1.25em;
+$checkbox-tick-height:     $checkbox-size * 0.4;
+$checkbox-tick-width:      $checkbox-size * 0.7;
+
+// Progress bar
+$progress-bar-height:      1.25em;

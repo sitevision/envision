@@ -25,7 +25,6 @@
 
    &__title,
    &__text {
-      line-height: $line-height-medium;
       padding-top: $spacing-x-small;
    }
 
@@ -38,7 +37,7 @@
       button {
          margin-top: $spacing-medium;
          @include border-radius($radius-medium);
-         @include button-size($spacing-x-small, $spacing-small, $font-size-medium, $line-height-small)
+         @include button-size($spacing-x-small, $spacing-small, $font-size-medium, $button-line-height)
       }
    }
 

@@ -14,7 +14,7 @@
       color: $font-color;
       display: block;
       font-size: $font-size-medium;
-      line-height: $line-height-small;
+      line-height: $form-input-line-height;
       margin: 0;
       padding: $spacing-x-small $spacing-x-small;
       transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -46,7 +46,7 @@
    }
 
    select:not([multiple]) {
-      height: calc(#{$spacing-x-small + $spacing-x-small + $line-height-small} + #{$border-width * 2});
+      height: calc(#{$spacing-x-small + $spacing-x-small + $form-input-line-height} + #{$border-width * 2});
    }
 
    &-element {
@@ -129,8 +129,8 @@
 
       label &__fake:after {
          content:'';
-         width: $radiobutton-active-size;
-         height: $radiobutton-active-size;
+         width: $radiobutton-size;
+         height: $radiobutton-size;
          border: $border-light;
          position: absolute;
          left: 0;
@@ -152,10 +152,10 @@
          border: $radiobutton-border;
          border-radius: 100%;
          content: '';
-         height: $radiobutton-size;
+         height: $radiobutton-checked-size;
          left: -1px;
          position: absolute;
-         width: $radiobutton-size;
+         width: $radiobutton-checked-size;
          z-index: $zindex-radio-button;
       }
 

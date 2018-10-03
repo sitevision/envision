@@ -16,7 +16,7 @@
 
    @include button-color-variant($font-color, $default-button-color, transparent);
 
-   @include button-size($spacing-xx-small, $spacing-small, $font-size-small, $line-height-small);
+   @include button-size($spacing-xx-small, $spacing-small, $font-size-medium, $button-line-height);
 }
 
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
