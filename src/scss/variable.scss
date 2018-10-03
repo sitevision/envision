@@ -35,7 +35,7 @@ $button-line-height:       $line-height-medium !default;
 $form-input-line-height:   $line-height-medium !default;
 
 // Size (Margin/Padding)
-$spacing-base:             1em;
+$spacing-base:             1em !default;
 $spacing-xxx-small:        $spacing-base * .125 !default;
 $spacing-xx-small:         $spacing-base * .25 !default;
 $spacing-x-small:          $spacing-base * .5 !default;
@@ -70,8 +70,6 @@ $icon-size-xx-large:       60px !default;
 $color-page-bg:            #ffffff !default;
 $color-element-bg:         #ffffff !default;
 
-$color-hover:              #f7f7f7 !default;
-
 $color-brand:              #6892d5 !default;
 $color-brand-light:        lighten($color-brand, 10%) !default;
 $color-brand-dark:         darken($color-brand, 10%) !default;
@@ -80,10 +78,11 @@ $color-danger:             #e02525 !default;
 $color-success:            #79d179 !default;
 $color-info:               #67d3de !default;
 $color-warning:            #e9bb4e !default;
+$color-hover:              #f7f7f7 !default;
 
 $font-color:               #202330 !default;
-$font-color-light:         #333333 !default;
-$font-color-lighter:       #878787 !default;
+$font-color-light:         lighten($font-color, 10%) !default;
+$font-color-lighter:       lighten($font-color, 20%) !default;
 $font-color-invert:        #ffffff !default;
 
 $color-base:               #000000 !default;
@@ -96,8 +95,8 @@ $color-lightest:           lighten($color-base, 100%) !default;
 
 $default-button-color:     lighten($color-base, 95%) !default;
 $focus-background-color:   rgba(0, 0, 0, .2) !default;
-$color-focus:              #5cb3fd !default;
-$default-spinner-color:    #5cb3fd !default;
+$focus-color:              #5cb3fd !default;
+$spinner-color:            #5cb3fd !default;
 
 // Border
 $border-width:             1px !default;

@@ -124,7 +124,7 @@
       opacity: .9;
 
       &:active {
-         border: $border-width $border-style $color-focus;
+         border: $border-width $border-style $focus-color;
          opacity: 1;
       }
    }
