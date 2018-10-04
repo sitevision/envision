@@ -1,4 +1,4 @@
-@mixin focus($border-color: $color-focus, $box-shadow-color: $color-focus) {
+@mixin focus($border-color: $focus-color, $box-shadow-color: $focus-color) {
    border-color: $border-color;
    box-shadow: 0 0 5px $box-shadow-color;
    outline: 0;

@@ -14,7 +14,7 @@
 
    > div {
       animation: #{$prefix}-stretchdelay 1.2s infinite ease-in-out;
-      background-color: $default-spinner-color;
+      background-color: $spinner-color;
       display: inline-block;
       height: 100%;
       width: 6px;
