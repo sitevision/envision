@@ -109,7 +109,7 @@ const ModalDialog = (($) => {
       }
 
       _bindEvents() {
-         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
+         this.$el.on('click', DISMISS_SELECTOR, event => this.hide(event));
 
          $(document)
             .off(FOCUSIN)

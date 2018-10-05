@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
- /**
-  * Make use of external svgs possible in IE 11
-  */
+/**
+ * Make use of external svgs possible in IE 11
+ */
 import 'svgxuse';
