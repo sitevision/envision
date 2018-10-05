@@ -67,40 +67,40 @@ const Popover = (($) => {
                const outEvent = hoverTrigger ? 'mouseleave' : 'focusout';
 
                this.$el
-               .on(inEvent + EVENT_NAMESPACE, () => {
-                  if (this.config.delay > 0) {
-                     if (this.hidetimeout) {
-                        clearTimeout(this.hidetimeout);
+                  .on(inEvent + EVENT_NAMESPACE, () => {
+                     if (this.config.delay > 0) {
+                        if (this.hidetimeout) {
+                           clearTimeout(this.hidetimeout);
+                        }
+                        if (this.showtimeout) {
+                           clearTimeout(this.showtimeout);
+                        }
+                        if (!this.isShowing) {
+                           this.showtimeout = setTimeout(() => {
+                              this.show();
+                           },
+                           this.config.delay);
+                        }
+                     } else if (!this.isShowing) {
+                        this.show();
                      }
-                     if (this.showtimeout) {
-                        clearTimeout(this.showtimeout);
+                  })
+                  .on(outEvent + EVENT_NAMESPACE, () => {
+                     if (this.config.delay > 0) {
+                        this.hoverPopover();
+                        if (this.showtimeout) {
+                           clearTimeout(this.showtimeout);
+                        }
+                        if (this.isShowing) {
+                           this.hidetimeout = setTimeout(() => {
+                              this.hide();
+                           },
+                           this.config.delay);
+                        }
+                     } else if (this.isShowing) {
+                        this.hide();
                      }
-                     if (!this.isShowing) {
-                        this.showtimeout = setTimeout(() => {
-                           this.show();
-                        },
-                        this.config.delay);
-                     }
-                  } else if (!this.isShowing) {
-                     this.show();
-                  }
-               })
-               .on(outEvent + EVENT_NAMESPACE, () => {
-                  if (this.config.delay > 0) {
-                     this.hoverPopover();
-                     if (this.showtimeout) {
-                        clearTimeout(this.showtimeout);
-                     }
-                     if (this.isShowing) {
-                        this.hidetimeout = setTimeout(() => {
-                           this.hide();
-                        },
-                        this.config.delay);
-                     }
-                  } else if (this.isShowing) {
-                     this.hide();
-                  }
-               });
+                  });
             }
          });
       }
@@ -109,34 +109,34 @@ const Popover = (($) => {
          const $popoverElement = this.getPopoverElement();
 
          $popoverElement
-               .off('mouseenter')
-               .on('mouseenter', () => {
-                  if (this.hidetimeout) {
-                     clearTimeout(this.hidetimeout);
-                  }
-                  if (this.showtimeout) {
-                     clearTimeout(this.showtimeout);
-                  }
-                  if (!this.isShowing) {
-                     this.showtimeout = setTimeout(() => {
-                        this.show();
-                     },
-                     this.config.delay);
-                  }
-               });
+            .off('mouseenter')
+            .on('mouseenter', () => {
+               if (this.hidetimeout) {
+                  clearTimeout(this.hidetimeout);
+               }
+               if (this.showtimeout) {
+                  clearTimeout(this.showtimeout);
+               }
+               if (!this.isShowing) {
+                  this.showtimeout = setTimeout(() => {
+                     this.show();
+                  },
+                  this.config.delay);
+               }
+            });
          $popoverElement
-               .off('mouseleave')
-               .on('mouseleave', () => {
-                  if (this.showtimeout) {
-                     clearTimeout(this.showtimeout);
-                  }
-                  if (this.isShowing) {
-                     this.hidetimeout = setTimeout(() => {
-                        this.hide();
-                     },
-                     this.config.delay);
-                  }
-               });
+            .off('mouseleave')
+            .on('mouseleave', () => {
+               if (this.showtimeout) {
+                  clearTimeout(this.showtimeout);
+               }
+               if (this.isShowing) {
+                  this.hidetimeout = setTimeout(() => {
+                     this.hide();
+                  },
+                  this.config.delay);
+               }
+            });
       }
 
       getPopoverElement() {

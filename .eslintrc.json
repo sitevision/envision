@@ -203,7 +203,7 @@
 
     // ECMAScript 6
     "arrow-body-style": "off",
-    "arrow-parens": "error",
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
     "arrow-spacing": "error",
     "generator-star-spacing": "error",
     "no-confusing-arrow": "error",

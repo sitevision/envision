@@ -217,13 +217,14 @@ const Imageviewer = (($) => {
 
       _getIndicatorItems() {
          const activeElementIndex = this.config.index;
+         let items = '';
 
-         return this.$images.map((index) => {
+         this.$images.each((index) => {
             const isActive = index === activeElementIndex;
-            return `<li data-move-to="${index}" class="${isActive ? 'env-is-active' : ''}"></li>`;
-         })
-         .get()
-         .join('');
+            items += `<li data-move-to="${index}" class="${isActive ? 'env-is-active' : ''}"></li>`;
+         });
+
+         return items;
       }
 
       _showBackdrop() {
@@ -261,7 +262,7 @@ const Imageviewer = (($) => {
 
       _bindEvents() {
          this.$imgContainer
-            .on('keydown', (event) => this._keydown(event));
+            .on('keydown', event => this._keydown(event));
       }
 
       _keydown(event) {

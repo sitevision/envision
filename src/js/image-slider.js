@@ -250,13 +250,13 @@ const Imageslider = (($) => {
       _bindEvents() {
          if (this.config.keyboard) {
             this.$el
-               .on(Events.KEYDOWN, (event) => this._keydown(event));
+               .on(Events.KEYDOWN, event => this._keydown(event));
          }
 
          if (this.config.pause === 'hover' && this.config.imageSlider === 'cycle') {
             this.$el
-               .on(Events.MOUSEENTER, (event) => this.pause(event))
-               .on(Events.MOUSELEAVE, (event) => this.cycle(event));
+               .on(Events.MOUSEENTER, event => this.pause(event))
+               .on(Events.MOUSELEAVE, event => this.cycle(event));
             if (Util.isTouch()) {
                this.$el
                   .on(Events.TOUCHEND, () => {
@@ -264,7 +264,7 @@ const Imageslider = (($) => {
                      if (this.touchTimeout) {
                         clearTimeout(this.touchTimeout);
                      }
-                     this.touchTimeout = setTimeout((event) => this.cycle(event), TOUCHEVENT_WAIT, this.config.interval);
+                     this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_WAIT, this.config.interval);
                   });
             }
          }
@@ -275,7 +275,7 @@ const Imageslider = (($) => {
 
       _bindTouchSlider() {
          const container = this.$el.find(SELECTORS.INNER);
-         container.on(Events.TOUCHSTART,  (event) => {
+         container.on(Events.TOUCHSTART, (event) => {
             this.startTouchSlide(event);
          });
 
