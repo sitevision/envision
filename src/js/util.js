@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
-const Util = (() => {
+const Util = (($) => {
 
    const TRANSITIONS = {
       WebkitTransition  : 'webkitTransitionEnd',
@@ -67,6 +67,6 @@ const Util = (() => {
 
    return Util;
 
-})();
+})(jQuery);
 
 export default Util;
