@@ -10,7 +10,7 @@ group: components
 {% example html %}
 
 <div id="example0" class="env-dropdown">
-   <button class="env-button env-button--primary env-button--large env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example0">Dropdown
+   <button class="env-button env-button--primary env-button--large env-dropdown--toggle" aria-haspopup="true" data-dropdown type="button" data-target="#example0">Dropdown
       <svg class="env-icon env-icon--small env-dropdown-icon">
          <use xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
@@ -35,7 +35,7 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 {% example html %}
 
 <div id="example1" class="env-dropdown">
-   <button class="env-button env-button--large env-dropdown--toggle" aria-haspopup="true" aria-expanded="false" data-dropdown type="button" data-target="#example1">Dropdown</button>
+   <button class="env-button env-button--primary env-button--large env-dropdown--toggle" aria-haspopup="true" data-dropdown type="button" data-target="#example1">Dropdown</button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
@@ -58,7 +58,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
 <div id="example2" class="env-dropdown env-button-group env_list__item" role="group">
    <button class="env-button env-button--primary" type="button">Button</button>
    <button class="env-button env-button--primary env-dropdown--toggle env-dropdown--toggle-split" type="button" data-dropdown
-      aria-haspopup="true" aria-expanded="false" data-target="#example2">
+      aria-haspopup="true" data-target="#example2">
       <svg class="env-icon env-dropdown-icon">
          <use xlink:href="/assets/envision/envision-icons.svg#icon-arrow-down"></use>
       </svg>

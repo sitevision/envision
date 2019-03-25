@@ -32,19 +32,19 @@ const Dropdown = (($) => {
 
       show() {
          this.$el
-            .attr('aria-expanded', 'true')
             .addClass(ENV_DROPDOWN_OPEN)
             .focus();
 
+         this.$el.find(TOGGLE_DROPDOWN).attr('aria-expanded', 'true');
          this._bindEvents();
       }
 
       hide() {
          this.$el
-            .attr('aria-expanded', 'false')
             .removeClass(ENV_DROPDOWN_OPEN)
-            .find('.env-dropdown--toggle').blur();
+            .blur();
 
+         this.$el.find(TOGGLE_DROPDOWN).attr('aria-expanded', 'false');
          this._unbindEvents();
       }
 
