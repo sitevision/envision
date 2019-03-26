@@ -31,20 +31,22 @@ const Dropdown = (($) => {
       }
 
       show() {
-         this.$el
-            .addClass(ENV_DROPDOWN_OPEN)
+         this.$el.addClass(ENV_DROPDOWN_OPEN);
+
+         this.$el.find(TOGGLE_DROPDOWN)
+            .attr('aria-expanded', 'true')
             .focus();
 
-         this.$el.find(TOGGLE_DROPDOWN).attr('aria-expanded', 'true');
          this._bindEvents();
       }
 
       hide() {
-         this.$el
-            .removeClass(ENV_DROPDOWN_OPEN)
+         this.$el.removeClass(ENV_DROPDOWN_OPEN);
+
+         this.$el.find(TOGGLE_DROPDOWN)
+            .attr('aria-expanded', 'false')
             .blur();
 
-         this.$el.find(TOGGLE_DROPDOWN).attr('aria-expanded', 'false');
          this._unbindEvents();
       }
 
