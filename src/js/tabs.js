@@ -84,7 +84,7 @@ const Tabs = (($) => {
          $tab
             .addClass(IS_ACTIVE)
             .attr(ARIA_SELECTED, true)
-            .focus();
+            .trigger('focus');
 
          this._getPanelForTab($tab)
             .attr(ARIA_HIDDEN, false)

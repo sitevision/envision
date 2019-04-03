@@ -35,7 +35,7 @@ const Dropdown = (($) => {
 
          this.$el.find(TOGGLE_DROPDOWN)
             .attr('aria-expanded', 'true')
-            .focus();
+            .trigger('focus');
 
          this._bindEvents();
       }
@@ -45,7 +45,7 @@ const Dropdown = (($) => {
 
          this.$el.find(TOGGLE_DROPDOWN)
             .attr('aria-expanded', 'false')
-            .blur();
+            .trigger('blur');
 
          this._unbindEvents();
       }
