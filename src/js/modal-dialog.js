@@ -67,7 +67,7 @@ const ModalDialog = (($) => {
          this._showBackdrop();
 
          this._isShown = true;
-         this.el.focus();
+         this.el.trigger('focus');
 
          $('body').css('overflow', 'hidden');
 
@@ -117,7 +117,7 @@ const ModalDialog = (($) => {
                if (document !== event.target &&
                   this.el !== event.target &&
                   !this.$el.has(event.target).length) {
-                  this.el.focus();
+                  this.el.trigger('focus');
                }
             });
 
@@ -130,11 +130,11 @@ const ModalDialog = (($) => {
                if (e.shiftKey) {
                   if (e.target === firstElement) {
                      e.preventDefault();
-                     lastElement.focus();
+                     lastElement.trigger('focus');
                   }
                } else if (e.target === lastElement) {
                   e.preventDefault();
-                  firstElement.focus();
+                  firstElement.trigger('focus');
                }
             }
 
