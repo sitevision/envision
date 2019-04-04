@@ -169,7 +169,7 @@ const Imageviewer = (($) => {
 
                $(SELECTORS.SPINNER).addClass(ClassName.SPINNER_HIDE);
                this.$btnContainer.removeClass(ClassName.HIDDEN);
-               this.$imgContainer.children()[0].trigger('focus');
+               this.$imgContainer.children().eq(0).trigger('focus');
             });
 
          return $downloadingImage;
