@@ -24,4 +24,4 @@ To run docs website locally:
 Run `npm run build`
 
 ## License information ##
-Code copyright 2017, SiteVision AB. Code is released under the [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
+Code copyright 2019, SiteVision AB. Code is released under the [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
