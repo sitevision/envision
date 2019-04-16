@@ -1,5 +1,5 @@
 @mixin basis-value($i) {
-   flex-basis: percentage($i/10);
+   flex-basis: percentage(1/$i);
 }
 
 @mixin border-divider($property, $thickness: 1px, $border-color: $color-lighter) {
