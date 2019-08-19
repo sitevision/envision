@@ -109,7 +109,7 @@ const ModalDialog = (($) => {
       }
 
       _bindEvents() {
-         this.$el.on('click', DISMISS_SELECTOR, event => this.hide(event));
+         this.$el.on('mousedown', DISMISS_SELECTOR, event => this.hide(event));
 
          $(document)
             .off(FOCUSIN)
@@ -154,7 +154,7 @@ const ModalDialog = (($) => {
             class: BACKDROP
          });
 
-         this.$el.on('click', (event) => {
+         this.$el.on('mousedown', (event) => {
             if (this.$backdrop.hasClass(ANIMATION)) {
                return;
             }
