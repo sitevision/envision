@@ -48,11 +48,11 @@ const Tabs = (($) => {
                   .hide();
             });
 
-         this._setActive(this.$tabs.eq(this.config.active));
+         this._setActive(this.$tabs.eq(this.config.active), false);
       }
 
       activate(index) {
-         this._setActive(this.$tabs.eq(index));
+         this._setActive(this.$tabs.eq(index), true);
       }
 
       destroy() {
@@ -68,23 +68,26 @@ const Tabs = (($) => {
       _bindEvents() {
          this.$tabs.on('click', (e) => {
             e.preventDefault();
-            this._setActive($(e.currentTarget));
+            this._setActive($(e.currentTarget), true);
          });
 
          this.$tabs.on('keydown', (e) => {
             if (e.which === ENTER_KEY) {
-               this._setActive($(e.currentTarget));
+               this._setActive($(e.currentTarget), true);
             }
          });
       }
 
-      _setActive($tab) {
+      _setActive($tab, initialized) {
          this._resetActive();
 
          $tab
             .addClass(IS_ACTIVE)
-            .attr(ARIA_SELECTED, true)
-            .trigger('focus');
+            .attr(ARIA_SELECTED, true);
+
+         if (initialized) {
+            $tab.trigger('focus');
+         }
 
          this._getPanelForTab($tab)
             .attr(ARIA_HIDDEN, false)

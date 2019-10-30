@@ -39,9 +39,7 @@ $link-classname: #{$prefix}-tabs__link;
       }
 
       &:focus {
-         border-color: $color-brand;
-         box-shadow: none;
-         outline: 0;
+         @include focus();
       }
    }
 
@@ -67,12 +65,6 @@ $link-classname: #{$prefix}-tabs__link;
          &:hover {
             border-bottom: $tab-bottom-width $border-style $color-brand;
             color: $font-color;
-         }
-
-         &:focus {
-            border-color: $color-brand;
-            box-shadow: none;
-            outline: 0;
          }
       }
    }

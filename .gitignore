@@ -9,3 +9,4 @@ _gh_pages
 Gemfile.lock
 dist
 _docs/assets/envision
+.vscode
