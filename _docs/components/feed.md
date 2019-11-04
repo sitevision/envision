@@ -9,7 +9,7 @@ group: components
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#">
+         <a href="#" aria-label="Example image">
             <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
@@ -62,12 +62,13 @@ group: components
          </ul>
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
-               <input type="text" class="env-form-input" />
+               <label class="env-assistive-text" for="#example-input1">Example input</label>
+               <input type="text" id="example-input1" class="env-form-input" />
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -82,7 +83,7 @@ group: components
 {% example html %}
 <article class="env-comment env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -122,7 +123,7 @@ group: components
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#">
+         <a href="#" aria-label="Example image">
             <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
@@ -166,7 +167,7 @@ group: components
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
@@ -203,7 +204,7 @@ group: components
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
@@ -240,7 +241,7 @@ group: components
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
@@ -277,12 +278,13 @@ group: components
          </ul>
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
-               <input type="text" class="env-form-input" />
+               <label for="example-input2" class="env-assistive-text">Example input</label>
+               <input type="text" id="example-input2" class="env-form-input" />
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -298,7 +300,7 @@ group: components
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#">
+         <a href="#" aria-label="Example image">
             <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
          </a>
       </div>
@@ -327,7 +329,7 @@ group: components
       <blockquote class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
@@ -365,12 +367,13 @@ group: components
          </ul>
          <div class="env-comments__comment env-media"> 
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                </a>
             </div>
             <div class="env-media__body">
-               <input type="text" class="env-form-input" />
+               <label class="env-assistive-text" for="#example-input3">Example input</label>
+               <input type="text" id="example-input3" class="env-form-input" />
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -388,7 +391,7 @@ group: components
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
@@ -432,7 +435,7 @@ group: components
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#">
+                           <a href="#" aria-label="Example image">
                               <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                            </a>
                         </div>
@@ -469,7 +472,7 @@ group: components
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#">
+                           <a href="#" aria-label="Example image">
                               <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
                            </a>
                         </div>
@@ -506,12 +509,13 @@ group: components
                </ul>
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <input type="text" class="env-form-input" />
+                     <label for="example-input4" class="env-assistive-text">Example input</label>
+                     <input type="text" id="example-input4" class="env-form-input" />
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>
@@ -525,7 +529,7 @@ group: components
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
@@ -569,12 +573,13 @@ group: components
                </ul>
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <input type="text" class="env-form-input" />
+                     <label class="env-assistive-text" for="#example-input5">Example input</label>
+                     <input type="text" id="example-input5" class="env-form-input" />
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>
@@ -588,7 +593,7 @@ group: components
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#">
+               <a href="#" aria-label="Example image">
                   <img class="env-image env-image--small" src="https://placehold.it/250x250" alt="">
                </a>
             </div>
@@ -632,12 +637,13 @@ group: components
                </ul>
                <div class="env-comments__comment env-media"> 
                   <div class="env-media__figure">
-                     <a href="#">
+                     <a href="#" aria-label="Example image">
                         <img class="env-image env-image--tiny" src="https://placehold.it/400x400.png" alt="">
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <input type="text" class="env-form-input" />
+                     <label class="env-assistive-text" for="#example-input6">Example input</label>
+                     <input type="text" id="example-input6" class="env-form-input" />
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>

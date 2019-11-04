@@ -9,7 +9,7 @@ group: components
 {% example html %}
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -29,7 +29,7 @@ group: components
 {% example html %}
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -57,7 +57,7 @@ group: components
 {% example html %}
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -77,7 +77,7 @@ group: components
 {% example html %}
 <article class="env-media env-media--column">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image" src="https://placehold.it/200x200.png" alt="">
       </a>
    </div>
@@ -99,7 +99,7 @@ group: components
 {% example html %}
 <article class="env-media env-media--center">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -118,7 +118,7 @@ group: components
 {% example html %}
 <article class="env-media env-media--column env-media--center">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image" src="https://placehold.it/200x200.png" alt="">
       </a>
    </div>
@@ -139,7 +139,7 @@ Alignment modifiers can also be applied to elements within the media container (
 {% example html %}
 <article class="env-media env-media--column env-media">
    <div class="env-media__figure env-media__figure--center">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image" src="https://placehold.it/200x200.png" alt="">
       </a>
    </div>
@@ -159,7 +159,7 @@ Alignment modifiers can also be applied to elements within the media container (
 {% example html %}
 <article class="env-media env-media--bottom">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -181,7 +181,7 @@ Alignment modifiers can also be applied to elements within the media container (
 {% example html %}
 <article class="env-media env-media--reverse">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -202,7 +202,7 @@ Alignment modifiers can also be applied to elements within the media container (
 {% example html %}
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-label="Example image">
          <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
       </a>
    </div>
@@ -216,7 +216,7 @@ Alignment modifiers can also be applied to elements within the media container (
       </p>
       <article class="env-media">
          <div class="env-media__figure">
-            <a href="#">
+            <a href="#" aria-label="Example image">
                <img class="env-image env-image--small" src="https://placehold.it/400x400.png" alt="">
             </a>
          </div>

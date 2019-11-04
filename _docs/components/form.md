@@ -51,22 +51,22 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       <span class="env-form-element__label" id="radio-header">Radio button</span>
       <div class="env-form-element__control" role="radiogroup" aria-labelledby="radio-header">
          <div class="env-form-radio">
-            <input type="radio" name="radios" checked>
-            <label class="env-form-element__label">
+            <input id="radio1" type="radio" name="radios" checked>
+            <label for="radio1" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative</span>
             </label>
          </div>
          <div class="env-form-radio">
-            <input type="radio" name="radios">
-            <label class="env-form-element__label">
+            <input id="radio2" type="radio" name="radios">
+            <label for="radio2" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative 2</span>
             </label>
          </div>
          <div class="env-form-radio">
-            <input type="radio" name="radios">
-            <label class="env-form-element__label">
+            <input id="radio3" type="radio" name="radios">
+            <label for="radio3" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative 3</span>
             </label>
@@ -324,7 +324,7 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
    <div class="env-form-element env-form-element--success">
       <label for="success" class="env-form-element__label">Success</label>
       <div class="env-form-element__control">
-         <input type="text" class="env-form-input" id="success" aria-describedby="sucess-feedback">
+         <input type="text" class="env-form-input" id="success">
       </div>
       <span id="success-feedback" class="env-form-element__feedback">Success feedback</span>
    </div>

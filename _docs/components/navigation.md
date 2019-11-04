@@ -11,14 +11,14 @@ group: components
 {% example html %}
 <nav>
    <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>
 </nav>
@@ -28,14 +28,14 @@ group: components
 {% example html %}
 <nav>
    <ul class="env-nav env-nav--menubar env-nav--border" role="menubar">
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>
 </nav>
@@ -45,14 +45,14 @@ group: components
 {% example html %}
 <nav>
    <ul class="env-nav env-nav--sidenav" role="menu">
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link env-nav__link--active" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="none">
-         <a class="env-nav__link" role="menu-item" href="#">Item</a>
+      <li class="env-nav__item" role="menuitem">
+         <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>
 </nav>

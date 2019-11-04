@@ -9,16 +9,16 @@ group: utils
 
 {% example html %}
 <div class="example-color">
-   <div class="env-bg-color--brand">Brand</div>
-   <div class="env-bg-color--success">Success</div>
-   <div class="env-bg-color--info">Info</div>
+   <div class="env-bg-color--brand env-color--lightest">Brand</div>
+   <div class="env-bg-color--success env-color--lightest">Success</div>
+   <div class="env-bg-color--info env-color--lightest">Info</div>
    <div class="env-bg-color--warning">Warning</div>
-   <div class="env-bg-color--danger">Danger</div>
+   <div class="env-bg-color--danger env-color--lightest">Danger</div>
    <div class="env-bg-color--hover">Hover</div>
    <div class="env-bg-color--base env-color--lighter">Base</div>
    <div class="env-bg-color--darker env-color--lighter">Darker</div>
-   <div class="env-bg-color--dark">Dark</div>
-   <div class="env-bg-color--normal">Normal</div>
+   <div class="env-bg-color--dark env-color--lightest">Dark</div>
+   <div class="env-bg-color--normal env-color--lightest">Normal</div>
    <div class="env-bg-color--light">Light</div>
    <div class="env-bg-color--lighter">Lighter</div>
    <div class="env-bg-color--lightest">Lightest</div>
@@ -31,14 +31,14 @@ group: utils
    <p class="env-text env-color--brand">Brand</p>
    <p class="env-text env-color--success">Success</p>
    <p class="env-text env-color--info">Info</p>
-   <p class="env-text env-color--warning">Warning</p>
+   <p class="env-text env-color--warning env-bg-color--dark">Warning</p>
    <p class="env-text env-color--danger">Danger</p>
-   <p class="env-text env-color--hover">Hover</p>
+   <p class="env-text env-color--hover env-bg-color--dark">Hover</p>
    <p class="env-text env-color--base">Base</p>
    <p class="env-text env-color--darker">Darker</p>
    <p class="env-text env-color--dark">Dark</p>
    <p class="env-text env-color--normal">Normal</p>
-   <p class="env-text env-color--light">Light</p>
+   <p class="env-text env-color--light env-bg-color--darker">Light</p>
    <p class="env-text env-color--lighter env-bg-color--dark">Lighter</p>
    <p class="env-text env-color--lightest env-bg-color--dark">Lightest</p>
 </div>
