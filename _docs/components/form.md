@@ -324,7 +324,7 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
    <div class="env-form-element env-form-element--success">
       <label for="success" class="env-form-element__label">Success</label>
       <div class="env-form-element__control">
-         <input type="text" class="env-form-input" id="success">
+         <input type="text" class="env-form-input" id="success" aria-describedby="success-feedback">
       </div>
       <span id="success-feedback" class="env-form-element__feedback">Success feedback</span>
    </div>

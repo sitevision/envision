@@ -68,7 +68,7 @@ group: components
             </div>
             <div class="env-media__body">
                <label class="env-assistive-text" for="#example-input1">Example input</label>
-               <input type="text" id="example-input1" class="env-form-input" />
+               <input type="text" id="example-input1" class="env-form-input">
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -284,7 +284,7 @@ group: components
             </div>
             <div class="env-media__body">
                <label for="example-input2" class="env-assistive-text">Example input</label>
-               <input type="text" id="example-input2" class="env-form-input" />
+               <input type="text" id="example-input2" class="env-form-input">
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -373,7 +373,7 @@ group: components
             </div>
             <div class="env-media__body">
                <label class="env-assistive-text" for="#example-input3">Example input</label>
-               <input type="text" id="example-input3" class="env-form-input" />
+               <input type="text" id="example-input3" class="env-form-input">
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">Comment</button>
@@ -515,7 +515,7 @@ group: components
                   </div>
                   <div class="env-media__body">
                      <label for="example-input4" class="env-assistive-text">Example input</label>
-                     <input type="text" id="example-input4" class="env-form-input" />
+                     <input type="text" id="example-input4" class="env-form-input">
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>
@@ -579,7 +579,7 @@ group: components
                   </div>
                   <div class="env-media__body">
                      <label class="env-assistive-text" for="#example-input5">Example input</label>
-                     <input type="text" id="example-input5" class="env-form-input" />
+                     <input type="text" id="example-input5" class="env-form-input">
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>
@@ -643,7 +643,7 @@ group: components
                   </div>
                   <div class="env-media__body">
                      <label class="env-assistive-text" for="#example-input6">Example input</label>
-                     <input type="text" id="example-input6" class="env-form-input" />
+                     <input type="text" id="example-input6" class="env-form-input">
                   </div>
                   <div class="env-media__actions">
                      <button type="button" class="env-button env-button--primary">Comment</button>
