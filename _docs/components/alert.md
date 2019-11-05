@@ -21,7 +21,7 @@ group: components
    <button type="button" class="env-alert__close" data-dismiss="alert" aria-label="Close">&times;</button>
    <article class="env-media">
       <div class="env-media__figure">
-         <a href="#">
+         <a href="#" aria-label="Example image">
             <img class="env-image env-image--small" src="https://placehold.it/100x100.png" alt="">
          </a>
       </div>

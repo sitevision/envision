@@ -11,7 +11,7 @@
 }
 
 @mixin nav-link() {
-   color: $color-brand;
+   color: $color-brand-dark;
    display: block;
    text-decoration: none;
    transition: background-color .25s ease, color .25s ease;

@@ -1,11 +1,11 @@
 .s {
-  color: #d44950; }
+  color: #D13D44; }
 
 .na {
-  color: #4f9fcf; }
+  color: #2A7098; }
 
 .nt {
-  color: #2f6f9f; }
+  color: #20496A; }
 
 pre {
   border-radius: 4px;
@@ -172,7 +172,8 @@ pre code {
 .example-color {
   text-align: center; }
   .example-color > * {
-    padding: .5em; }
+    padding: 1em 0 1em 1em;
+    margin-bottom: .5em; }
 
 .example-display > div {
   background-color: #eee;
@@ -311,8 +312,7 @@ main {
   background-color: rgba(0, 0, 0, 0.02);
   border: 4px solid transparent;
   padding: 20px;
-  border-radius: 0 0 3px 3px;
-  margin-bottom: 40px; }
+  border-radius: 0 0 3px 3px; }
   .highlight pre {
     line-height: 1.4;
     font-size: 14px; }
@@ -334,8 +334,7 @@ main {
     .sidenav ul li {
       padding: 0 0 10px 0; }
       .sidenav ul li a {
-        color: #99979c;
         font-weight: 300;
         font-size: 16px; }
       .sidenav ul li.active a {
-        color: #040404; }
+        border-bottom: 2px solid #6892d5; }

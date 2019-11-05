@@ -77,7 +77,7 @@
       }
 
       &--warning {
-         @include input-validation-state($color-warning);
+         @include input-validation-state($color-warning-dark);
       }
 
       &--danger {

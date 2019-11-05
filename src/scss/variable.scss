@@ -70,14 +70,16 @@ $icon-size-xx-large:       60px !default;
 $color-page-bg:            #ffffff !default;
 $color-element-bg:         #ffffff !default;
 
-$color-brand:              #6892d5 !default;
+$color-brand:              #006DFF !default;
 $color-brand-light:        lighten($color-brand, 10%) !default;
 $color-brand-dark:         darken($color-brand, 10%) !default;
 
-$color-danger:             #e02525 !default;
-$color-success:            #79d179 !default;
-$color-info:               #67d3de !default;
-$color-warning:            #e9bb4e !default;
+$color-warning:            #c59219 !default;
+$color-warning-dark:       darken($color-warning, 10%) !default;
+
+$color-danger:             #E22C2C !default;
+$color-success:            #318731 !default;
+$color-info:               #1D818B !default;
 $color-hover:              #f7f7f7 !default;
 
 $font-color:               #202330 !default;
