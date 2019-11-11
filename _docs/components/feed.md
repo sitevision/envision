@@ -52,11 +52,11 @@ group: components
             <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small env-text--muted" role="button" href="#comments" data-env-collapse aria-controls="comments">Comment (0)</a>
+            <a class="env-text env-text--small env-text--muted" role="button" href="#comments" data-env-collapse aria-expanded="false" aria-controls="comments">Comment (0)</a>
          </li>
       </ul>
    </footer>
-   <div class="env-comments env-collapse" id="comments" aria-expanded="false">
+   <div class="env-comments env-collapse" id="comments">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list">
          </ul>
@@ -157,11 +157,11 @@ group: components
             <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small env-text--muted" role="button" href="#comments2" data-env-collapse aria-controls="comments2">Comment (3)</a>
+            <a class="env-text env-text--small env-text--muted" role="button" href="#comments2" data-env-collapse aria-expanded="true" aria-controls="comments2">Comment (3)</a>
          </li>
       </ul>
    </footer>
-   <div class="env-comments env-collapse env-collapse--show" id="comments2" aria-expanded="true">
+   <div class="env-comments env-collapse env-collapse--show" id="comments2">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list">
             <li>
@@ -357,11 +357,11 @@ group: components
             <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small env-text--muted" role="button" href="#comments3" data-env-collapse aria-controls="comments3">Comment (0)</a>
+            <a class="env-text env-text--small env-text--muted" role="button" href="#comments3" data-env-collapse aria-expanded="false" aria-controls="comments3">Comment (0)</a>
          </li>
       </ul>
    </footer>
-   <div class="env-comments env-collapse" id="comments3" aria-expanded="false">
+   <div class="env-comments env-collapse" id="comments3">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list">
          </ul>
@@ -425,11 +425,11 @@ group: components
                   <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments4" data-env-collapse aria-controls="comments4">Comment (2)</a>
+                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments4" data-env-collapse aria-expanded="true" aria-controls="comments4">Comment (2)</a>
                </li>
             </ul>
          </footer>
-         <div class="env-comments env-collapse env-collapse--show" id="comments4" aria-expanded="true">
+         <div class="env-comments env-collapse env-collapse--show" id="comments4">
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list">
                   <li>
@@ -563,11 +563,11 @@ group: components
                   <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments5" data-env-collapse aria-controls="comments5">Comment (0)</a>
+                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments5" data-env-collapse aria-expanded="false" aria-controls="comments5">Comment (0)</a>
                </li>
             </ul>
          </footer>
-         <div class="env-comments env-collapse" id="comments5" aria-expanded="false">
+         <div class="env-comments env-collapse" id="comments5">
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list">
                </ul>
@@ -627,11 +627,11 @@ group: components
                   <a class="env-text env-text--small env-text--muted" role="button" href="#">Share</a>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments6" data-env-collapse aria-controls="comments6">Comment (0)</a>
+                  <a class="env-text env-text--small env-text--muted" role="button" href="#comments6" data-env-collapse aria-expanded="false" aria-controls="comments6">Comment (0)</a>
                </li>
             </ul>
          </footer>
-         <div class="env-comments env-collapse" id="comments6" aria-expanded="false">
+         <div class="env-comments env-collapse" id="comments6">
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list">
                </ul>

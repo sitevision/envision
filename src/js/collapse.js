@@ -21,6 +21,7 @@ const Collapse = (($) => {
       constructor(element) {
          this.el = element;
          this.$el = $(element);
+         this.$trigger = $(`[data-env-collapse][href="#${element.id}"],[data-env-collapse][data-target="#${element.id}"]`);
       }
 
       toggle() {
@@ -34,7 +35,7 @@ const Collapse = (($) => {
       show() {
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._showTransitionComplete.bind(this))
             .height(this.el.scrollHeight);
       }
 
@@ -43,28 +44,27 @@ const Collapse = (($) => {
             .height(this.$el.height())
             .removeClass(MODIFIER_BASE + SHOW)
             .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
+            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete.bind(this))
             .height(0);
       }
 
-      // Private
-
-      _showTransitionComplete(e) {
-         const $target = $(e.currentTarget);
-
-         $target
+      _showTransitionComplete() {
+         this.$el
             .removeClass(MODIFIER_BASE + COLLAPSING)
             .addClass(MODIFIER_BASE + SHOW)
-            .height(AUTO)
-            .attr(ARIA_EXPANDED, true);
+            .height(AUTO);
+
+         if (this.$trigger.length) {
+            this.$trigger.attr(ARIA_EXPANDED, true);
+         }
       }
 
-      _hideTransitionComplete(e) {
-         const $target = $(e.currentTarget);
+      _hideTransitionComplete() {
+         this.$el.removeClass(MODIFIER_BASE + COLLAPSING);
 
-         $target
-            .removeClass(MODIFIER_BASE + COLLAPSING)
-            .attr(ARIA_EXPANDED, false);
+         if (this.$trigger.length) {
+            this.$trigger.attr(ARIA_EXPANDED, false);
+         }
       }
 
       static _jQuery(config) {
