@@ -161,9 +161,9 @@ $checkbox-tick-width:      $checkbox-size * 0.7 !default;
 $progress-bar-height:      1.25em !default;
 
 // Collapse
-$collapse-plus-icon:                     '\2795' !default; /* Plus sign */
-$collapse-minus-icon:                    '\2796' !default; /* Minus sign */
-$collapse-heading-bg-color:              lighten($color-lighter, 15%) !default;
-$collapse-heading-bg-color-expanded:        lighten($color-lighter, 10%) !default; 
-$collapse-heading-border:       $border-width $border-style $collapse-heading-bg-color-expanded !default;
-$collapse-heading-border-expanded: $border-width $border-style lighten($color-light, 10%) !default;
+$collapse-plus-icon:                   '\2795' !default; /* Plus sign */
+$collapse-minus-icon:                  '\2796' !default; /* Minus sign */
+$collapse-heading-bg-color:            lighten($color-lighter, 15%) !default;
+$collapse-heading-bg-color-expanded:   lighten($color-lighter, 10%) !default; 
+$collapse-heading-border:              $border-width $border-style $collapse-heading-bg-color-expanded !default;
+$collapse-heading-border-expanded:     $border-width $border-style lighten($color-light, 10%) !default;

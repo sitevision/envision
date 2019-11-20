@@ -42,3 +42,14 @@ group: components
 </div>
 
 {% endexample %}
+
+## Methods ##
+
+Show  
+`$('#myCollapse').envCollapse('show')`
+
+Hide   
+`$('#myCollapse').envCollapse('hide')`
+
+Toggle   
+`$('#myCollapse').envCollapse('toggle')`
