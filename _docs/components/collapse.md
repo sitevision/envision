@@ -8,13 +8,11 @@ group: components
 <h2>Collapsible content</h2>
 
 {% example html %}
-<div id="heading1">
-   <h4 class="env-text">
-      <a role="button" class="env-button env-button--link" href="#container1" data-env-collapse aria-expanded="false" aria-controls="container1">
-         Example 1
-      </a>
-   </h4>
-</div>
+<h4 class="env-text">
+   <a role="button" class="env-button env-button--link" href="#container1" data-env-collapse aria-expanded="false" aria-controls="container1">
+      Example 1
+   </a>
+</h4>
 
 <div class="env-collapse" id="container1">
    <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
