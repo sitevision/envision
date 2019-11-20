@@ -36,7 +36,7 @@ const Collapse = (($) => {
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
             .one(Util.getTransitionEndEvent(), this._showTransitionComplete.bind(this))
-            .height(this.el.scrollHeight);
+            .css('height', this.el.scrollHeight);
       }
 
       hide() {
@@ -52,7 +52,7 @@ const Collapse = (($) => {
          this.$el
             .removeClass(MODIFIER_BASE + COLLAPSING)
             .addClass(MODIFIER_BASE + SHOW)
-            .height(AUTO);
+            .css('height', AUTO);
 
          if (this.$trigger.length) {
             this.$trigger.attr(ARIA_EXPANDED, true);
