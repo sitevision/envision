@@ -1,3 +1,5 @@
+@import "mixin/_to-css-vars";
+
 // Base
 $prefix:                   env !default;
 $grid-columns:             12 !default;
@@ -100,6 +102,8 @@ $focus-background-color:   rgba(0, 0, 0, .2) !default;
 $focus-color:              #5cb3fd !default;
 $spinner-color:            #5cb3fd !default;
 
+
+
 // Border
 $border-width:             1px !default;
 $border-style:             solid !default;
@@ -167,3 +171,42 @@ $collapse-heading-bg-color:            lighten($color-lighter, 15%) !default;
 $collapse-heading-bg-color-expanded:   lighten($color-lighter, 10%) !default; 
 $collapse-heading-border:              $border-width $border-style $collapse-heading-bg-color-expanded !default;
 $collapse-heading-border-expanded:     $border-width $border-style lighten($color-light, 10%) !default;
+
+@include to-css-vars((
+  "font-family": $font-family,
+  "font-size-base": $font-size-base,
+  "font-size-x-small": $font-size-x-small,        
+  "font-size-small": $font-size-small,        
+  "font-size-medium": $font-size-medium,        
+  "font-size-large": $font-size-large,          
+  "font-size-x-large": $font-size-x-large,        
+  "font-size-xx-large": $font-size-xx-large,     
+  "font-size-xxx-large": $font-size-xxx-large,   
+  "font-size-xxxx-large": $font-size-xxxx-large,
+  "color-page-bg": $color-page-bg,
+  "color-element-bg": $color-element-bg,
+  "color-brand": $color-brand, 
+  "color-brand-light": $color-brand-light, 
+  "color-brand-dark": $color-brand-dark,
+  "color-warning": $color-warning,
+  "color-warning-dark": $color-warning-dark,
+  "color-danger": $color-danger,
+  "color-success": $color-success,
+  "color-info": $color-info,
+  "color-hover": $color-hover,
+  "font-color": $font-color,
+  "font-color-light": $font-color-light,
+  "font-color-lighter": $font-color-lighter,
+  "font-color-invert": $font-color-invert,
+  "color-base": $color-base,
+  "color-darker": $color-darker,
+  "color-dark": $color-dark,
+  "color-normal": $color-normal,
+  "color-light": $color-light,
+  "color-lighter": $color-lighter,
+  "color-lightest": $color-lightest,
+  "default-button-color": $default-button-color,
+  "focus-background-color": $focus-background-color,
+  "focus-color": $focus-color,
+  "spinner-color": $spinner-color
+))

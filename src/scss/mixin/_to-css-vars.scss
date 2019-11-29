@@ -1,0 +1,7 @@
+@mixin to-css-vars($colors) {
+  :root { 
+    @each $var, $color in $colors {
+      --#{$prefix}-#{$var}:#{$color};
+    }
+  }
+}
