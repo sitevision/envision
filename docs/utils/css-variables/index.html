@@ -6,7 +6,7 @@
 
 <title>
   
-    Display &middot; Envision by SiteVision
+    CSS variables &middot; Envision by SiteVision
   
 </title>
 
@@ -476,7 +476,7 @@
 
           
 
-          <li class="">
+          <li class="active">
             <a href="/utils/css-variables/" class="env-text">
               CSS variables
             </a>
@@ -489,7 +489,7 @@
 
           
 
-          <li class="active">
+          <li class="">
             <a href="/utils/display/" class="env-text">
               Display
             </a>
@@ -581,35 +581,70 @@
 </nav>
 
          <main>
-            <h1 id="content">Display</h1>
-            <p>Use this utility to set an element’s display property. Utility classes are named using the format: <code class="highlighter-rouge">env-d--{value}</code></p>
+            <h1 id="content">CSS variables</h1>
+            <p>Sass variables affected directly by settings in SiteVision are available as CSS variables in the format: <code class="highlighter-rouge">--env-{variable}</code></p>
 
-<p>Valid values</p>
-<ul>
-  <li><code class="highlighter-rouge">inline</code></li>
-  <li><code class="highlighter-rouge">block</code></li>
-  <li><code class="highlighter-rouge">flex</code></li>
-  <li><code class="highlighter-rouge">inline-block</code></li>
-  <li><code class="highlighter-rouge">inline-flex</code></li>
-  <li><code class="highlighter-rouge">none</code></li>
-</ul>
+<p>Only works in browsers that support CSS variables. <br />
+<a href="https://caniuse.com/#feat=css-variables">https://caniuse.com/#feat=css-variables</a></p>
 
 <p>Examples</p>
 
 <div class="code-example" data-example-id="">
-<div class="example-display">
-   <div class="env-p-around--x-small env-d--inline">Inline</div>
-   <div class="env-p-around--x-small env-d--block">Block</div>
-   <div class="env-p-around--x-small env-d--flex">Flex</div>
-   <div class="env-p-around--x-small env-d--none">None</div>
+<div class="example-css-variables my-external-class"></div>
+
+<style>
+.my-external-class {
+  background-color: var(--env-color-brand);
+}
+</style>
 </div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-display"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--inline"</span><span class="nt">&gt;</span>Inline<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--block"</span><span class="nt">&gt;</span>Block<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--flex"</span><span class="nt">&gt;</span>Flex<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--none"</span><span class="nt">&gt;</span>None<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s1">"example-css-variables my-external-class"</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+<span class="nc">.my-external-class</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-brand</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span></code></pre></div>
+
+<p>Available variables</p>
+<ul>
+  <li><code class="highlighter-rouge">--env-font-family</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-base</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-x-small</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-small</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-medium</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-large</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-x-large</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-xx-large</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-xxx-large</code></li>
+  <li><code class="highlighter-rouge">--env-font-size-xxxx-large</code></li>
+  <li><code class="highlighter-rouge">--env-color-page-bg</code></li>
+  <li><code class="highlighter-rouge">--env-color-element-bg</code></li>
+  <li><code class="highlighter-rouge">--env-color-brand</code></li>
+  <li><code class="highlighter-rouge">--env-color-brand-light</code></li>
+  <li><code class="highlighter-rouge">--env-color-brand-dark</code></li>
+  <li><code class="highlighter-rouge">--env-color-warning</code></li>
+  <li><code class="highlighter-rouge">--env-color-warning-dark</code></li>
+  <li><code class="highlighter-rouge">--env-color-danger</code></li>
+  <li><code class="highlighter-rouge">--env-color-success</code></li>
+  <li><code class="highlighter-rouge">--env-color-info</code></li>
+  <li><code class="highlighter-rouge">--env-color-hover</code></li>
+  <li><code class="highlighter-rouge">--env-font-color</code></li>
+  <li><code class="highlighter-rouge">--env-font-color-light</code></li>
+  <li><code class="highlighter-rouge">--env-font-color-lighter</code></li>
+  <li><code class="highlighter-rouge">--env-font-color-invert</code></li>
+  <li><code class="highlighter-rouge">--env-color-base</code></li>
+  <li><code class="highlighter-rouge">--env-color-darker</code></li>
+  <li><code class="highlighter-rouge">--env-color-dark</code></li>
+  <li><code class="highlighter-rouge">--env-color-normal</code></li>
+  <li><code class="highlighter-rouge">--env-color-light</code></li>
+  <li><code class="highlighter-rouge">--env-color-lighter</code></li>
+  <li><code class="highlighter-rouge">--env-color-lightest</code></li>
+  <li><code class="highlighter-rouge">--env-default-button-color</code></li>
+  <li><code class="highlighter-rouge">--env-focus-background-color</code></li>
+  <li><code class="highlighter-rouge">--env-focus-color</code></li>
+  <li><code class="highlighter-rouge">--env-spinner-color</code></li>
+</ul>
 
 
          </main>
