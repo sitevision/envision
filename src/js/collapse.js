@@ -12,6 +12,7 @@ const Collapse = (($) => {
    const AUTO = 'auto';
    const HEIGHT = 'height';
    const COLLAPSING = 'collapsing';
+   const COLLAPSED = 'collapsed';
    const MODIFIER_BASE = 'env-collapse--';
    const NAME = 'envCollapse';
    const NO_CONFLICT = $.fn[NAME];
@@ -34,6 +35,10 @@ const Collapse = (($) => {
       }
 
       show() {
+         if (this.$trigger.length) {
+            this.$trigger.removeClass(MODIFIER_BASE + COLLAPSED);
+         }
+
          this.$el
             .addClass(MODIFIER_BASE + COLLAPSING)
             .one(Util.getTransitionEndEvent(), this._showTransitionComplete.bind(this))
@@ -41,6 +46,10 @@ const Collapse = (($) => {
       }
 
       hide() {
+         if (this.$trigger.length) {
+            this.$trigger.addClass(MODIFIER_BASE + COLLAPSED);
+         }
+
          this.$el
             .height(this.$el.height())
             .removeClass(MODIFIER_BASE + SHOW)
@@ -91,7 +100,6 @@ const Collapse = (($) => {
       $.fn[NAME] = NO_CONFLICT;
       return Collapse._jQuery;
    };
-
 
    $(document).on('click', '[data-env-collapse]', function(e) {
       e.preventDefault();
