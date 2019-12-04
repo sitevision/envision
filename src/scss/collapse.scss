@@ -31,12 +31,12 @@
          right: $collapse-icon-right;
          width: $collapse-icon-width;
          height: $collapse-icon-height;
-         transition: transform 0.25s ease-out;
+         transition: transform $collapse-toggle-duration ease-out;
          position: absolute;
-         background-color: $font-color;
+         background-color: $collapse-icon-color;
       }
       
-      &.#{$prefix}-collapse--collapsed {
+      &:not(.#{$prefix}-collapse--expanded) {
          &::before {
             transform: rotate(-90deg);
          }

@@ -12,7 +12,7 @@ const Collapse = (($) => {
    const AUTO = 'auto';
    const HEIGHT = 'height';
    const COLLAPSING = 'collapsing';
-   const COLLAPSED = 'collapsed';
+   const EXPANDED = 'expanded';
    const MODIFIER_BASE = 'env-collapse--';
    const NAME = 'envCollapse';
    const NO_CONFLICT = $.fn[NAME];
@@ -36,7 +36,7 @@ const Collapse = (($) => {
 
       show() {
          if (this.$trigger.length) {
-            this.$trigger.removeClass(MODIFIER_BASE + COLLAPSED);
+            this.$trigger.addClass(MODIFIER_BASE + EXPANDED);
          }
 
          this.$el
@@ -47,7 +47,7 @@ const Collapse = (($) => {
 
       hide() {
          if (this.$trigger.length) {
-            this.$trigger.addClass(MODIFIER_BASE + COLLAPSED);
+            this.$trigger.removeClass(MODIFIER_BASE + EXPANDED);
          }
 
          this.$el
