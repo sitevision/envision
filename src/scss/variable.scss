@@ -166,14 +166,14 @@ $collapse-icon-width:                  15px !default;
 $collapse-icon-top:                    50% !default;
 $collapse-icon-right:                  15px !default;
 $collapse-heading-min-height:          30px !default;
-$collapse-toggle-duration:             .4s !default;
+$collapse-toggle-duration:             $toggle-duration !default;
 
 // Collapse colors
-$collapse-icon-color:                  #202330 !default;
-$collapse-heading-bg-color:            lighten(#ccc, 15%) !default;
-$collapse-heading-bg-color-expanded:   lighten(#ccc, 10%) !default;
-$collapse-border-color:                lighten(#ccc, 10%) !default;
-$collapse-border-color-expanded:       lighten(#999, 10%) !default;
+$collapse-icon-color:                  $font-color !default;
+$collapse-heading-bg-color:            lighten($color-lighter, 15%) !default;
+$collapse-heading-bg-color-expanded:   lighten($color-lighter, 10%) !default;
+$collapse-border-color:                lighten($color-lighter, 10%) !default;
+$collapse-border-color-expanded:       lighten($color-light, 10%) !default;
 
 // Collapse border
 $collapse-heading-border-size:         1px !default;
