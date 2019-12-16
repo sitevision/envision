@@ -3,7 +3,7 @@
 
    // Variants
    &--primary {
-      @include button-color-variant($button-primary-color, $button-primary, $button-primary);
+      @include button-color-variant($button-primary-font-color, $button-primary-color, $button-primary-color);
    }
 
    &--invert {
@@ -11,11 +11,11 @@
    }
 
    &--success {
-      @include button-color-variant($button-success-color, $button-success, $button-success);
+      @include button-color-variant($button-success-font-color, $button-success-color, $button-success-color);
    }
 
    &--danger {
-      @include button-color-variant($button-danger-color, $button-danger, $button-danger);
+      @include button-color-variant($button-danger-font-color, $button-danger-color, $button-danger-color);
    }
 
    &--link {
