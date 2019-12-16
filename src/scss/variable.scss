@@ -133,9 +133,6 @@ $table-active-color:       $table-zebra-color !default;
 $breadcrumb-divider-color: $color-light !default;
 $breadcrumb-divider:       '/' !default;
 
-// Animation
-$toggle-duration:          .4s !default;
-
 // Badge
 $badge-radius:             .2em !default;
 $badge-font-color:         $font-color-invert !default;
@@ -160,7 +157,18 @@ $checkbox-tick-width:      $checkbox-size * 0.7 !default;
 // Progress bar
 $progress-bar-height:      1.25em !default;
 
+//Button
+$button-base:           $default-button-color !default;
+$button-primary:        $color-brand !default;
+$button-success:        $color-success !default;
+$button-danger:         $color-danger !default;
+$button-base-color:     $font-color !default;
+$button-primary-color:  $font-color-invert !default;
+$button-success-color:  $font-color-invert !default;
+$button-danger-color:   $font-color-invert !default;
+
 // Collapse
+$toggle-duration:                      .4s !default;
 $collapse-icon-height:                 3px !default;
 $collapse-icon-width:                  15px !default;
 $collapse-icon-top:                    50% !default;
