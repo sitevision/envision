@@ -13,7 +13,7 @@
 
    @include border-radius($border-radius);
 
-   @include button-color-variant($font-color, $default-button-color, transparent);
+   @include button-color-variant($button-default-font-color, $button-default-color, transparent);
 
    @include button-size($spacing-xx-small, $spacing-small, $font-size-medium, $button-line-height);
 }

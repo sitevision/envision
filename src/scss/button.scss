@@ -3,15 +3,19 @@
 
    // Variants
    &--primary {
-      @include button-color-variant($font-color-invert, $color-brand, $color-brand);
+      @include button-color-variant($button-primary-font-color, $button-primary-color, $button-primary-color);
    }
 
    &--invert {
       @include button-color-variant($color-brand, $font-color-invert, $font-color-invert);
    }
 
+   &--success {
+      @include button-color-variant($button-success-font-color, $button-success-color, $button-success-color);
+   }
+
    &--danger {
-      @include button-color-variant($font-color-invert, $color-danger, $color-danger);
+      @include button-color-variant($button-danger-font-color, $button-danger-color, $button-danger-color);
    }
 
    &--link {
