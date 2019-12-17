@@ -6,7 +6,7 @@
       height: 0;
       overflow: hidden;
       position: relative;
-      transition: height $toggle-duration ease;
+      transition: height $collapse-toggle-duration ease;
    }
 
    &--show {
