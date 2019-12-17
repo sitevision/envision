@@ -12,7 +12,9 @@ group: components
 
    <button type="button" class="env-button env-button--primary">Primary</button>
 
-   <button type="button" class="env-button env-button--danger">Secondary</button>
+   <button type="button" class="env-button env-button--success">Success</button>
+
+   <button type="button" class="env-button env-button--danger">Danger</button>
 </div>
 
 {% endexample %}
