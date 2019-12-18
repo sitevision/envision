@@ -1,13 +1,18 @@
 .#{$prefix}-pagination {
-   &__item:last-child a {
-      border-right: $default-border;
-   }
+   display: flex;
+   flex-wrap: wrap;
 
    &__link {
       @include button-base(0);
       background-color: $color-lightest;
       border: $default-border;
-      border-right: $border-width $border-style transparent;
+      margin-top: -$border-width;
+      margin-left: -$border-width;
+      position: relative;
+
+      &:focus {
+         z-index: 3;
+      }
 
       &.#{$prefix}-is-active {
          @include is-active();
@@ -22,8 +27,8 @@
    &__link:hover {
       background-color: $color-brand;
       border: $border-width $border-style $color-brand;
-      border-right: $border-width $border-style transparent;
       color: $font-color-invert;
+      z-index: 2;
    }
 
    &--center {

@@ -8,7 +8,7 @@ group: components
 ## Overview ##
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list env-list--horizontal">
+   <ul class="env-pagination env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
@@ -24,7 +24,7 @@ group: components
 ### Disabled ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list env-list--horizontal">
+   <ul class="env-pagination env-list">
       <li class="env-pagination__item">
          <a class="env-pagination__link env-is-disabled" href="#" tabindex="-1">Previous</a>
       </li>
@@ -39,7 +39,7 @@ group: components
 ### Active ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list env-list--horizontal">
+   <ul class="env-pagination env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item">
@@ -55,7 +55,7 @@ group: components
 ### Center ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--center env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--center env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
@@ -68,7 +68,7 @@ group: components
 ### End ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--end env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--end env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
@@ -82,7 +82,7 @@ group: components
 `--small`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--small env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--small env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -93,7 +93,7 @@ group: components
 `--large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--large env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--large env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -104,7 +104,7 @@ group: components
 `--x-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--x-large env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--x-large env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -115,7 +115,7 @@ group: components
 `--xx-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--xx-large env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--xx-large env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -126,7 +126,7 @@ group: components
 `--xxx-large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--xxx-large env-list env-list--horizontal">
+   <ul class="env-pagination env-pagination--xxx-large env-list">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
