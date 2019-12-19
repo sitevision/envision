@@ -79,6 +79,14 @@ main {
    }
 }
 
+.doc-link {
+   color: #006dff;
+   text-decoration: none;
+   &:hover {
+      text-decoration: underline;
+   }
+}
+
 .sidenav {
    flex: 1;
    margin-top: 80px;

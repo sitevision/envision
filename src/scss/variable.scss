@@ -170,6 +170,7 @@ $button-default-font-color:      $font-color !default;
 $button-primary-font-color:      $font-color-invert !default;
 $button-success-font-color:      $font-color-invert !default;
 $button-danger-font-color:       $font-color-invert !default;
+$button-link-font-color:         $font-color !default;
 
 // Collapse
 $collapse-icon-height:                 3px !default;
@@ -187,7 +188,27 @@ $collapse-border-color:                lighten($color-lighter, 10%) !default;
 $collapse-border-color-expanded:       lighten($color-light, 10%) !default;
 
 // Collapse border
-$collapse-heading-border-size:         1px !default;
-$collapse-heading-border-style:        solid !default;
+$collapse-heading-border-size:         $border-width !default;
+$collapse-heading-border-style:        $border-style !default;
 $collapse-heading-border:              $collapse-heading-border-size $collapse-heading-border-style $collapse-border-color !default;
 $collapse-heading-border-expanded:     $collapse-heading-border-size $collapse-heading-border-style $collapse-border-color-expanded !default;
+
+// Pagination
+$pagination-font:                $font-family !default;
+
+$pagination-font-color:          $font-color !default;
+$pagination-font-color-active:   $font-color-invert !default;
+$pagination-font-color-hover:    $font-color-invert !default;
+
+$pagination-bg-color:            $color-lightest !default;
+$pagination-bg-color-hover:      $color-brand !default;
+$pagination-bg-color-active:     $color-brand !default;
+
+$pagination-border-color:        $border-color !default;
+$pagination-border-color-active: $color-brand !default; 
+$pagination-border-color-hover:  $color-brand !default; 
+$pagination-border-width:        $border-width !default;
+$pagination-border-style:        $border-style !default;
+$pagination-border:              $pagination-border-width $pagination-border-style $pagination-border-color !default;
+$pagination-border-active:       $pagination-border-width $pagination-border-style $pagination-border-color-active !default;
+$pagination-border-hover:        $pagination-border-width $pagination-border-style $pagination-border-color-hover !default;

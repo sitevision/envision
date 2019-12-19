@@ -208,8 +208,43 @@ Valid values `1-10`
 
 <div class="env-d--flex">
    <div class="example-list-item">Item</div> 
-   <div class=" example-list-item">Item</div>
+   <div class="example-list-item">Item</div>
    <div class="env-flex-grow--1 example-list-item">Item</div>
+</div>
+
+{% endexample %}
+
+### Flex wrap (`flex-wrap` property) ###
+
+Applicable to flex containers (`display: flex`). Used to specify whether flex items should wrap onto multiple lines.
+Utility classes are named using the format: `env-flex-wrap--{value}`
+
+Valid values 
+* `nowrap`
+* `wrap`
+* `wrap-reverse`
+
+{% example html %}
+
+<div class="env-d--flex env-flex-wrap--nowrap env-m-bottom--small">
+   <div class="example-list-item env-w--50">1</div> 
+   <div class="example-list-item env-w--50">2</div>
+   <div class="example-list-item env-w--50">3</div>
+   <div class="example-list-item env-w--50">4</div>
+</div>
+
+<div class="env-d--flex env-flex-wrap--wrap env-m-bottom--small">
+   <div class="example-list-item env-w--50">1</div> 
+   <div class="example-list-item env-w--50">2</div>
+   <div class="example-list-item env-w--50">3</div>
+   <div class="example-list-item env-w--50">4</div>
+</div>
+
+<div class="env-d--flex env-flex-wrap--wrap-reverse">
+   <div class="example-list-item env-w--50">1</div> 
+   <div class="example-list-item env-w--50">2</div>
+   <div class="example-list-item env-w--50">3</div>
+   <div class="example-list-item env-w--50">4</div>
 </div>
 
 {% endexample %}

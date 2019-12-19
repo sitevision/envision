@@ -1,22 +1,28 @@
 .#{$prefix}-pagination {
+   @include reset-list();
    display: flex;
-   flex-wrap: wrap;
 
    &__link {
-      @include button-base(0);
-      background-color: $color-lightest;
-      border: $default-border;
-      margin-top: -$border-width;
-      margin-left: -$border-width;
+      @include pagination-size($spacing-xx-small, $spacing-small, $font-size-medium);
+      background-color: $pagination-bg-color;
+      border: $pagination-border;
+      color: $pagination-font-color;
+      cursor: pointer;
+      display: inline-block;
+      font-family: $pagination-font;
+      margin-top: -$pagination-border-width;
+      margin-left: -$pagination-border-width;
       position: relative;
+      text-decoration: none;
 
       &:focus {
+         @include focus();
          z-index: 3;
       }
 
       &.#{$prefix}-is-active {
-         @include is-active();
-         border: $border-width $border-style $color-brand;
+         @include is-active($pagination-bg-color-active, $pagination-font-color-active);
+         border: $pagination-border-active;
       }
 
       &.#{$prefix}-is-disabled {
@@ -25,9 +31,9 @@
    }
 
    &__link:hover {
-      background-color: $color-brand;
-      border: $border-width $border-style $color-brand;
-      color: $font-color-invert;
+      background-color: $pagination-bg-color-hover;
+      border: $pagination-border-hover;
+      color: $pagination-font-color-hover;
       z-index: 2;
    }
 
@@ -40,37 +46,19 @@
    }
 
    [tabindex="-1"]:focus {
-      border: $border-width $border-style transparent;
+      border: $pagination-border-width $pagination-border-style transparent;
       box-shadow: none;
    }
 
    &--small {
       .#{$prefix}-pagination__link {
-         padding: $spacing-xxx-small $spacing-x-small;
+         @include pagination-size($spacing-xxx-small, $spacing-x-small, $font-size-small);
       }
    }
 
    &--large {
       .#{$prefix}-pagination__link {
-         padding: $spacing-x-small $spacing-medium;
-      }
-   }
-
-   &--x-large {
-      .#{$prefix}-pagination__link {
-         padding: $spacing-small $spacing-large;
-      }
-   }
-
-   &--xx-large {
-      .#{$prefix}-pagination__link {
-         padding: $spacing-medium $spacing-x-large;
-      }
-   }
-
-   &--xxx-large {
-      .#{$prefix}-pagination__link {
-         padding: $spacing-large $spacing-xx-large;
+         @include pagination-size($spacing-x-small, $spacing-medium, $font-size-large);
       }
    }
 }
