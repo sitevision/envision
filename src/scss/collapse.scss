@@ -25,6 +25,11 @@
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
 
+   &:hover {
+      background-color: $collapse-heading-bg-color-expanded;
+      border: $collapse-heading-border-expanded;
+   }
+
    &.#{$prefix}-collapse--expanded {
       background-color: $collapse-heading-bg-color-expanded;
       border: $collapse-heading-border-expanded;
@@ -50,11 +55,6 @@
          &::before {
             transform: rotate(-90deg);
          }
-      }
-    
-      &:hover {
-         background-color: $collapse-heading-bg-color-expanded;
-         border: $collapse-heading-border-expanded;
       }
    }
 }
