@@ -45,3 +45,10 @@ $alignSelfValues: stretch center flex-start flex-end baseline;
       flex-grow: $i;
    }
 }
+
+$flexWrapValues: nowrap wrap wrap-reverse;
+@each $value in $flexWrapValues {
+   .#{$prefix}-flex-wrap--#{$value} {
+      flex-wrap: $value;
+   }
+}

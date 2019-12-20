@@ -164,7 +164,9 @@ pre code {
   border: 1px solid rgba(0, 0, 0, 0.1); }
   .example-alignment-container > div,
   .example-direction-container > div {
-    border: 1px solid rgba(0, 0, 0, 0.5); }
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-top: -1px;
+    margin-left: -1px; }
 
 .example-direction-container {
   height: auto; }
@@ -182,6 +184,9 @@ pre code {
 .example-list-item {
   background-color: #eee;
   border: 1px solid #666;
+  box-sizing: border-box;
+  margin-top: -1px;
+  margin-left: -1px;
   padding: 1em;
   text-align: center; }
 
@@ -190,6 +195,8 @@ pre code {
   border: 1px solid #666;
   height: 100px;
   line-height: 100px;
+  margin-top: -1px;
+  margin-left: -1px;
   padding: 1em;
   text-align: center;
   width: 150px; }
@@ -316,6 +323,12 @@ main {
   .highlight pre {
     line-height: 1.4;
     font-size: 14px; }
+
+.doc-link {
+  color: #006dff;
+  text-decoration: none; }
+  .doc-link:hover {
+    text-decoration: underline; }
 
 .sidenav {
   flex: 1;

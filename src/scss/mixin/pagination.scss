@@ -1,0 +1,5 @@
+@mixin pagination-size($padding-y, $padding-x, $font-size) {
+   font-size: $font-size;
+   line-height: $line-height-medium;
+   padding: $padding-y $padding-x;
+}

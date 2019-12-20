@@ -8,7 +8,7 @@ group: components
 ## Overview ##
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list">
+   <ul class="env-pagination">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
@@ -24,7 +24,7 @@ group: components
 ### Disabled ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list">
+   <ul class="env-pagination">
       <li class="env-pagination__item">
          <a class="env-pagination__link env-is-disabled" href="#" tabindex="-1">Previous</a>
       </li>
@@ -39,7 +39,7 @@ group: components
 ### Active ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-list">
+   <ul class="env-pagination">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item">
@@ -68,7 +68,7 @@ group: components
 ### End ###
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--end env-list">
+   <ul class="env-pagination env-pagination--end">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">Previous</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
@@ -82,7 +82,7 @@ group: components
 `--small`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--small env-list">
+   <ul class="env-pagination env-pagination--small">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -93,7 +93,7 @@ group: components
 `--large`
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--large env-list">
+   <ul class="env-pagination env-pagination--large">
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
       <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
@@ -101,37 +101,18 @@ group: components
 </nav>
 {% endexample %}
 
-`--x-large`
+## Wrap ##
+
+When working with large number of items, utilize <a class="doc-link" href="/utils/flexbox/#flex-wrap-flex-wrap-property">flex-wrap</a> to make the items wrap onto multiple lines
+
 {% example html %}
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--x-large env-list">
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
+   <ul class="env-pagination env-pagination--large env-flex-wrap--wrap">
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Lorem ipsum dolor</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Lorem ipsum dolor</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Lorem ipsum dolor</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Lorem ipsum dolor</a></li>
+      <li class="env-pagination__item"><a class="env-pagination__link" href="#">Lorem ipsum dolor</a></li>
    </ul>
 </nav>
 {% endexample %}
-
-`--xx-large`
-{% example html %}
-<nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--xx-large env-list">
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
-   </ul>
-</nav>
-{% endexample %}
-
-`--xxx-large`
-{% example html %}
-<nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--xxx-large env-list">
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">1</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">2</a></li>
-      <li class="env-pagination__item"><a class="env-pagination__link" href="#">3</a></li>
-   </ul>
-</nav>
-{% endexample %}
- 
-
