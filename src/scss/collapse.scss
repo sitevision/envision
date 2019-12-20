@@ -15,7 +15,6 @@
 }
 
 .#{$prefix}-collapse-header {
-   text-align: left;
    width: 100%;
    padding: $spacing-x-small;
    margin-bottom: $spacing-xx-small;
@@ -24,6 +23,11 @@
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
+
+   &:hover {
+      background-color: $collapse-heading-bg-color-expanded;
+      border: $collapse-heading-border-expanded;
+   }
 
    &.#{$prefix}-collapse--expanded {
       background-color: $collapse-heading-bg-color-expanded;
@@ -50,11 +54,6 @@
          &::before {
             transform: rotate(-90deg);
          }
-      }
-    
-      &:hover {
-         background-color: $collapse-heading-bg-color-expanded;
-         border: $collapse-heading-border-expanded;
       }
    }
 }
