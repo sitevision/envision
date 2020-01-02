@@ -4,22 +4,42 @@
    // Variants
    &--primary {
       @include button-color-variant($button-primary-font-color, $button-primary-color, $button-primary-color);
+
+      &:focus {
+         @include focus(darken($button-primary-color, 12%), darken($button-primary-color, 10%))
+      }
    }
 
    &--invert {
       @include button-color-variant($color-brand, $font-color-invert, $font-color-invert);
+
+      &:focus {
+         @include focus(darken($font-color-invert, 12%), darken($font-color-invert, 10%))
+      }
    }
 
    &--success {
       @include button-color-variant($button-success-font-color, $button-success-color, $button-success-color);
+
+      &:focus {
+         @include focus(darken($button-success-color, 12%), darken($button-success-color, 10%))
+      }
    }
 
    &--danger {
       @include button-color-variant($button-danger-font-color, $button-danger-color, $button-danger-color);
+
+      &:focus {
+         @include focus(darken($button-danger-color, 12%), darken($button-danger-color, 10%))
+      }
    }
 
    &--link {
       @include button-color-variant($button-link-font-color, transparent, transparent);
+
+      &:focus {
+         @include focus();
+      }
    }
 
    // Sizes

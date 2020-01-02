@@ -16,6 +16,10 @@
    @include button-color-variant($button-default-font-color, $button-default-color, transparent);
 
    @include button-size($spacing-xx-small, $spacing-small, $font-size-medium, $button-line-height);
+
+   &:focus {
+      @include focus(darken($button-default-color, 10%), darken($button-default-color, 40%));
+   }
 }
 
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
@@ -46,6 +50,5 @@
 
    &:focus {
       background-color: $active-background-color;
-      @include focus();
    }
 }
