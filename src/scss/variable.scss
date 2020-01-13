@@ -212,3 +212,20 @@ $pagination-border-style:        $border-style !default;
 $pagination-border:              $pagination-border-width $pagination-border-style $pagination-border-color !default;
 $pagination-border-active:       $pagination-border-width $pagination-border-style $pagination-border-color-active !default;
 $pagination-border-hover:        $pagination-border-width $pagination-border-style $pagination-border-color-hover !default;
+
+// Alert
+$alert-success-bg-color:      $color-success !default;
+$alert-warning-bg-color:      $color-warning !default;
+$alert-danger-bg-color:       $color-danger !default;
+$alert-info-bg-color:         $color-info !default;
+
+$alert-success-border-color:  $color-success !default;
+$alert-warning-border-color:  $color-warning !default;
+$alert-danger-border-color:   $color-danger !default;
+$alert-info-border-color:     $color-info !default;
+
+$alert-font-family:           $font-family !default;
+$alert-success-font-color:    $font-color !default;
+$alert-warning-font-color:    $font-color !default;
+$alert-danger-font-color:     $font-color !default;
+$alert-info-font-color:       $font-color !default;
