@@ -1,29 +1,25 @@
 .#{$prefix}-alert {
    border: $border-width $border-style transparent;
-   color: $font-color;
    margin: $spacing-medium;
    padding: $spacing-medium;
+   font-family: $alert-font-family;
 
    @include border-radius($radius-medium);
 
    &--success {
-      @include alert-color-variant(lighten($color-success, 20%));
-      @include alert-border-left($color-success);
+      @include alert-color-variant($alert-success-bg-color, $alert-success-border-color, $alert-success-font-color);
    }
 
    &--warning {
-      @include alert-color-variant(lighten($color-warning, 20%));
-      @include alert-border-left($color-warning);
+      @include alert-color-variant($alert-warning-bg-color, $alert-warning-border-color, $alert-warning-font-color);
    }
 
    &--danger {
-      @include alert-color-variant(lighten($color-danger, 20%));
-      @include alert-border-left($color-danger);
+      @include alert-color-variant($alert-danger-bg-color, $alert-danger-border-color, $alert-danger-font-color);
    }
 
    &--info {
-      @include alert-color-variant(lighten($color-info, 20%));
-      @include alert-border-left($color-info);
+      @include alert-color-variant($alert-info-bg-color, $alert-info-border-color, $alert-info-font-color);
    }
 
    &__link {
@@ -40,7 +36,6 @@
       appearance: none;
       background: 0 0;
       border: 0;
-      color: $font-color;
       float: right;
       font-family: $font-family;
       font-size: $font-size-medium;
