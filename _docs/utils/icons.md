@@ -70,6 +70,21 @@ Valid values for _size_
 
 {% endexample %}
 
+## Access envision icons in SiteVision ##
+<p>To access envision icons within SiteVision use <i>"/sitevision/envision-icons.svg#icon-"</i></p>
+
+{% example html %}
+
+<svg class="env-icon">
+   <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+</svg>
+
+<svg class="env-icon">
+   <use xlink:href="/sitevision/envision-icons.svg#icon-user-fill"></use>
+</svg>
+
+{% endexample %}
+
 ## Inactive ##
 
 An icon can be marked as inactive by adding modifier: `env-icon--inactive` which will lower opacity and add a hover effect.
