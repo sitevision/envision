@@ -1,28 +1,31 @@
 .#{$prefix}-badge {
-   background-color: $color-brand;
-   border-radius: $badge-radius;
-   color: $badge-font-color;
+   background-color: $badge-default-background-color;
+   border-radius: $badge-border-radius;
+   color: $badge-default-font-color;
    display: inline-block;
-   font-family: $font-family;
+   font-family: $badge-font-family;
    font-size: $badge-font-size;
    font-weight: $font-weight-bold;
    padding: $spacing-xx-small $spacing-x-small;
    vertical-align: baseline;
 
    &--success {
-      background-color: $color-success;
+      background-color: $badge-success-background-color;
+      color: $badge-success-font-color;
    }
 
    &--warning {
-      background-color: $color-warning;
-      color: $font-color;
+      background-color: $badge-warning-background-color;
+      color: $badge-warning-font-color;
    }
 
    &--danger {
-      background-color: $color-danger;
+      background-color: $badge-danger-background-color;
+      color: $badge-danger-font-color;
    }
 
    &--info {
-      background-color: $color-info;
+      background-color: $badge-info-background-color;
+      color: $badge-info-font-color;
    }
 }
