@@ -1,0 +1,4 @@
+@mixin badge-color-variant($font-color: $badge-default-font-color, $background-color: $badge-default-background-color) {
+   color: $font-color;
+   background-color: $background-color;
+}
