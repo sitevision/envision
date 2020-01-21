@@ -137,9 +137,21 @@ $breadcrumb-divider:       '/' !default;
 $toggle-duration:          .4s !default;
 
 // Badge
-$badge-radius:             .2em !default;
-$badge-font-color:         $font-color-invert !default;
-$badge-font-size:          75% !default;
+$badge-border-radius:            .2em !default;
+$badge-font-size:                75% !default;
+$badge-font-family:              $font-family !default;
+
+$badge-default-font-color:       $font-color-invert !default;
+$badge-success-font-color:       $font-color-invert !default;
+$badge-info-font-color:          $font-color-invert !default;
+$badge-warning-font-color:       $font-color !default;
+$badge-danger-font-color:        $font-color-invert !default;
+
+$badge-default-background-color:    $color-brand !default;
+$badge-success-background-color:    $color-success !default;
+$badge-warning-background-color:    $color-warning !default;
+$badge-danger-background-color:     $color-danger !default;
+$badge-info-background-color:       $color-info !default;
 
 $image-control-color: $color-element-bg !default;
 $image-control-color-inactive: $font-color-lighter !default;
