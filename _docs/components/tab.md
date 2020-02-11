@@ -29,10 +29,6 @@ group: components
 
 {% endexample %}
 
-```javascript
-$('.example-tabs').envTabs();
-```
-
 ## Simple Tab ##
 
 {% example html %}
@@ -56,10 +52,6 @@ $('.example-tabs').envTabs();
 </div>
 
 {% endexample %}
-
-```javascript
-$('.example-tabs1').envTabs();
-```
 
 ## Hover fill ##
 
@@ -85,6 +77,42 @@ $('.example-tabs1').envTabs();
 
 {% endexample %}
 
+## Responsive ##
+
+Add class modifier `env-tabs--column` to tab stack container to make tabs vertical.
+
+{% example html %}
+
+<div class="env-tabs example-tabs3">
+   <ul class="env-tabs__nav env-tabs--column" role="tablist">
+      <li class="env-tabs__item" role="presentation"><a id="tab10" class="env-tabs__link env-tabs__link--active" href="#panel10" role="tab" aria-controls="panel10" aria-selected="true" tabindex="0">Tab 10</a></li>
+      <li class="env-tabs__item" role="presentation"><a id="tab11" class="env-tabs__link" href="#panel11" role="tab" aria-controls="panel11" aria-selected="false" tabindex="0">Tab 11</a></li>
+      <li class="env-tabs__item" role="presentation"><a id="tab12" class="env-tabs__link" href="#panel12" role="tab" aria-controls="panel12" aria-selected="false" tabindex="0">Tab 12</a></li>
+      <li class="env-tabs__item" role="presentation"><a id="tab13" class="env-tabs__link" href="#panel13" role="tab" aria-controls="panel13" aria-selected="false" tabindex="0">Tab 13</a></li>
+      <li class="env-tabs__item" role="presentation"><a id="tab14" class="env-tabs__link" href="#panel14" role="tab" aria-controls="panel14" aria-selected="false" tabindex="0">Tab 14</a></li>
+   </ul>
+</div>
+
+<div id="panel10" class="example-panel" aria-labelledby="tab10" role="tabpanel" aria-hidden="false">
+   10
+</div>
+<div id="panel11" class="example-panel" aria-labelledby="tab11" role="tabpanel" aria-hidden="true">
+   11
+</div>
+<div id="panel12" class="example-panel" aria-labelledby="tab12" role="tabpanel" aria-hidden="true">
+   12
+</div>
+<div id="panel13" class="example-panel" aria-labelledby="tab13" role="tabpanel" aria-hidden="true">
+   13
+</div>
+<div id="panel14" class="example-panel" aria-labelledby="tab14" role="tabpanel" aria-hidden="true">
+   14
+</div>
+
+{% endexample %}
+
+## Instantiation ##
+
 ```javascript
-$('.example-tabs2').envTabs();
+$('.example-tabs').envTabs();
 ```
