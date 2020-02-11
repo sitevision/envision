@@ -1,5 +1,4 @@
 .#{$prefix}-form {
-   font-family: $font-family;
 
    input {
       margin: 0;
@@ -102,7 +101,6 @@
 
       select[multiple] > option {
          padding: $spacing-x-small $spacing-x-small;
-         font-family: $font-family;
       }
 
       option:hover {
