@@ -162,8 +162,9 @@
          vertical-align: sub;
       }
 
+      // Workaround for Safari
       & [type="radio"] ~ label:hover &__fake {
-         background-color: #ccc;
+         background-color: transparent;
       }
 
       &--disabled {
