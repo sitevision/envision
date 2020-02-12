@@ -1,5 +1,11 @@
 .#{$prefix}-form {
 
+   input,
+   select,
+   textarea {
+      font-family: inherit;
+   }
+
    input {
       margin: 0;
    }
