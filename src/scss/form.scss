@@ -162,6 +162,10 @@
          vertical-align: sub;
       }
 
+      & [type="radio"] ~ label:hover &__fake {
+         background-color: #ccc;
+      }
+
       &--disabled {
          label {
             color: lighten($font-color, 10%);
