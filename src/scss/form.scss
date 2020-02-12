@@ -162,6 +162,11 @@
          vertical-align: sub;
       }
 
+      // Workaround for Safari
+      & [type="radio"] ~ label:hover &__fake {
+         background-color: transparent;
+      }
+
       &--disabled {
          label {
             color: lighten($font-color, 10%);
