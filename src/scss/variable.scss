@@ -8,7 +8,7 @@ $enable-rounded-corners:   true !default;
 $enable-box-shadow:        true !default;
 
 // Font family
-$font-family:              "Roboto", sans-serif !default;
+$font-family:              inherit !default;
 
 // Font Size
 $font-size-base:           1em !default;
@@ -217,8 +217,8 @@ $pagination-bg-color-hover:      $color-brand !default;
 $pagination-bg-color-active:     $color-brand !default;
 
 $pagination-border-color:        $border-color !default;
-$pagination-border-color-active: $color-brand !default; 
-$pagination-border-color-hover:  $color-brand !default; 
+$pagination-border-color-active: $color-brand !default;
+$pagination-border-color-hover:  $color-brand !default;
 $pagination-border-width:        $border-width !default;
 $pagination-border-style:        $border-style !default;
 $pagination-border:              $pagination-border-width $pagination-border-style $pagination-border-color !default;
