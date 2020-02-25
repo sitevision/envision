@@ -571,7 +571,7 @@
             <h1 id="content">Form</h1>
             <h2 id="elements">Elements</h2>
 
-<p>Related elements (radio buttons and checkboxes in this example) should have a <code class="highlighter-rouge">role="radiogroup"</code> / <code class="highlighter-rouge">role="group"</code> 
+<p>Related elements (radio buttons and checkboxes in this example) should have a <code class="highlighter-rouge">role="radiogroup"</code> / <code class="highlighter-rouge">role="group"</code>
 applied to its container to indicate group membership of the contained elements.</p>
 
 <p>The <code class="highlighter-rouge">aria-labelledby</code> is used to reference the <code class="highlighter-rouge">ID</code> of the text that labels the group.</p>
@@ -642,10 +642,10 @@ applied to its container to indicate group membership of the contained elements.
       <span class="env-form-element__label" id="checkbox-header">Checkbox</span>
       <div class="env-form-element__control" role="group" aria-labelledby="checkbox-header">
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb" />
+            <input type="checkbox" checked="" name="options" id="cb" />
             <label class="env-form-element__label" for="cb">
                <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check</span>
+               <span class="env-checkbox__label">Checked</span>
             </label>
          </div>
          <div class="env-checkbox">
@@ -656,10 +656,17 @@ applied to its container to indicate group membership of the contained elements.
             </label>
          </div>
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb3" />
+            <input type="checkbox" checked="" disabled="" name="options" id="cb3" />
             <label class="env-form-element__label" for="cb3">
                <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check</span>
+               <span class="env-checkbox__label">Checked disabled</span>
+            </label>
+         </div>
+         <div class="env-checkbox">
+            <input type="checkbox" disabled="" name="options" id="cb4" />
+            <label class="env-form-element__label" for="cb4">
+               <span class="env-checkbox__fake"></span>
+               <span class="env-checkbox__label">Check disabled</span>
             </label>
          </div>
       </div>
@@ -740,10 +747,10 @@ applied to its container to indicate group membership of the contained elements.
       <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-form-element__label"</span> <span class="na">id=</span><span class="s">"checkbox-header"</span><span class="nt">&gt;</span>Checkbox<span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-form-element__control"</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"checkbox-header"</span><span class="nt">&gt;</span>
          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-checkbox"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"cb"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"cb"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"env-form-element__label"</span> <span class="na">for=</span><span class="s">"cb"</span><span class="nt">&gt;</span>
                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__fake"</span><span class="nt">&gt;&lt;/span&gt;</span>
-               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__label"</span><span class="nt">&gt;</span>Check<span class="nt">&lt;/span&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__label"</span><span class="nt">&gt;</span>Checked<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/label&gt;</span>
          <span class="nt">&lt;/div&gt;</span>
          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-checkbox"</span><span class="nt">&gt;</span>
@@ -754,10 +761,17 @@ applied to its container to indicate group membership of the contained elements.
             <span class="nt">&lt;/label&gt;</span>
          <span class="nt">&lt;/div&gt;</span>
          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-checkbox"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"cb3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked</span> <span class="na">disabled</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"cb3"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"env-form-element__label"</span> <span class="na">for=</span><span class="s">"cb3"</span><span class="nt">&gt;</span>
                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__fake"</span><span class="nt">&gt;&lt;/span&gt;</span>
-               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__label"</span><span class="nt">&gt;</span>Check<span class="nt">&lt;/span&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__label"</span><span class="nt">&gt;</span>Checked disabled<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/label&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-checkbox"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">disabled</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">id=</span><span class="s">"cb4"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"env-form-element__label"</span> <span class="na">for=</span><span class="s">"cb4"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__fake"</span><span class="nt">&gt;&lt;/span&gt;</span>
+               <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"env-checkbox__label"</span><span class="nt">&gt;</span>Check disabled<span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/label&gt;</span>
          <span class="nt">&lt;/div&gt;</span>
       <span class="nt">&lt;/div&gt;</span>

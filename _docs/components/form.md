@@ -6,8 +6,8 @@ group: components
 ---
 ## Elements ##
 
-Related elements (radio buttons and checkboxes in this example) should have a `role="radiogroup"` / `role="group"` 
-applied to its container to indicate group membership of the contained elements. 
+Related elements (radio buttons and checkboxes in this example) should have a `role="radiogroup"` / `role="group"`
+applied to its container to indicate group membership of the contained elements.
 
 The `aria-labelledby` is used to reference the `ID` of the text that labels the group.
 
@@ -77,10 +77,10 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       <span class="env-form-element__label" id="checkbox-header">Checkbox</span>
       <div class="env-form-element__control" role="group" aria-labelledby="checkbox-header">
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb">
+            <input type="checkbox" checked name="options" id="cb">
             <label class="env-form-element__label" for="cb">
                <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check</span>
+               <span class="env-checkbox__label">Checked</span>
             </label>
          </div>
          <div class="env-checkbox">
@@ -91,10 +91,17 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
             </label>
          </div>
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb3">
+            <input type="checkbox" checked disabled name="options" id="cb3">
             <label class="env-form-element__label" for="cb3">
                <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check</span>
+               <span class="env-checkbox__label">Checked disabled</span>
+            </label>
+         </div>
+         <div class="env-checkbox">
+            <input type="checkbox" disabled name="options" id="cb4">
+            <label class="env-form-element__label" for="cb4">
+               <span class="env-checkbox__fake"></span>
+               <span class="env-checkbox__label">Check disabled</span>
             </label>
          </div>
       </div>
@@ -159,7 +166,7 @@ The label of the element takes up 20% of the width and the `.env-form-element__c
    <div class="env-form-element">
       <button type="submit" class="env-button env-button--primary">Submit</button>
    </div>
-</div>  
+</div>
 {% endexample %}
 
 ## Inline ##
@@ -194,7 +201,7 @@ Apply modifier `.env-form--inline` to the form wrapper to display elements inlin
    <div class="env-form-element">
       <button type="submit" class="env-button env-button--primary">Submit</button>
    </div>
-</div>  
+</div>
 {% endexample %}
 
 ## Hybrid ##
@@ -241,7 +248,7 @@ Use modifer `.env-form-element--*` to specify the length of an element, relative
    <div class="env-form-element">
       <button type="submit" class="env-button env-button--primary">Submit</button>
    </div>
-</div>  
+</div>
 {% endexample %}
 
 ## Help text ##
@@ -259,7 +266,7 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
       </div>
       <span id="password-help" class="env-form-element__help">Enter a secure password</span>
    </div>
-</div>  
+</div>
 {% endexample %}
 
 ## States ##
@@ -310,7 +317,7 @@ For disabled radio buttons and checkboxes, apply modifier `.env-form-radio--disa
          <input type="text" class="env-form-input" id="readonly" placeholder="Readonly" readonly>
       </div>
    </div>
-</div>  
+</div>
 {% endexample %}
 
 ## Validation ##
@@ -342,5 +349,5 @@ The `aria-describedby` attribute should be used to reference the `ID` of the tex
       </div>
       <span id="danger-feedback" class="env-form-element__feedback">Danger feedback</span>
    </div>
-</div>  
+</div>
 {% endexample %}
