@@ -272,6 +272,10 @@
       width: $checkbox-tick-width;
    }
 
+   [type='checkbox']:disabled + label &__fake {
+      background-color: $checkbox-disabled-color !important;
+   }
+
    [type='checkbox']:focus + label &__fake {
       @include focus();
    }

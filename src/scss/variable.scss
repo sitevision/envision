@@ -165,9 +165,10 @@ $radiobutton-size:         $radiobutton-base * 2 !default;
 $radiobutton-border:       6px solid $color-brand !default;
 
 // Checkbox
-$checkbox-size:            1.25em !default;
-$checkbox-tick-height:     $checkbox-size * 0.4 !default;
-$checkbox-tick-width:      $checkbox-size * 0.7 !default;
+$checkbox-size:               1.25em !default;
+$checkbox-tick-height:        $checkbox-size * 0.4 !default;
+$checkbox-tick-width:         $checkbox-size * 0.7 !default;
+$checkbox-disabled-color:     $color-lighter !default;
 
 // Progress bar
 $progress-bar-height:      1.25em !default;
