@@ -37,7 +37,7 @@ group: components
 </h4>
 
 <div class="env-collapse" id="container2">
-   <p class="env-text env-p--top-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
 </div>
 
 {% endexample %}

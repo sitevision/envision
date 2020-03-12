@@ -12,12 +12,15 @@
    &--show {
       display: block;
    }
+
+   :first-child {
+      padding-top: $spacing-xx-small;
+   }
 }
 
 .#{$prefix}-collapse-header {
    width: 100%;
    padding: $spacing-x-small;
-   margin-bottom: $spacing-xx-small;
    cursor: pointer;
    display: inline-block;
    box-sizing: border-box;
