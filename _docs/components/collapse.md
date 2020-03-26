@@ -33,7 +33,7 @@ group: components
    <a class="env-collapse-header env-d--flex env-justify-content--between" role="button" href="#container2"
       data-env-collapse aria-expanded="false" aria-controls="container2">
       <span class="env-m-right--x-large">
-         Exempel 2
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metu
       </span>
       <span class="env-collapse-header--icons"></span>
    </a>
