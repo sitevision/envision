@@ -22,7 +22,6 @@
    width: 100%;
    padding: $spacing-x-small;
    cursor: pointer;
-   display: inline-block;
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
@@ -40,27 +39,32 @@
       background-color: $collapse-heading-bg-color-expanded;
       border: $collapse-heading-border-expanded;
    }
+}
 
-   &.#{$prefix}-collapse-header--icons {
-      min-height: $collapse-heading-min-height;
-      position: relative;
-
-      &::before,
-      &::after {
-         content: "";
-         top: $collapse-icon-top;
-         right: $collapse-icon-right;
-         width: $collapse-icon-width;
-         height: $collapse-icon-height;
-         transition: transform $collapse-toggle-duration ease-out;
-         position: absolute;
-         background-color: $collapse-icon-color;
-      }
-      
-      &:not(.#{$prefix}-collapse--expanded) {
+[data-#{$prefix}-collapse] {
+   &:not(.#{$prefix}-collapse--expanded) {
+      .#{$prefix}-collapse-header--icons {
          &::before {
             transform: rotate(-90deg);
          }
       }
+   }
+}
+
+.#{$prefix}-collapse-header--icons {
+   margin-left: $collapse-icon-width;
+   min-height: $collapse-heading-min-height;
+   position: relative;
+
+   &::before,
+   &::after {
+      content: "";
+      top: $collapse-icon-top;
+      right: $collapse-icon-right;
+      width: $collapse-icon-width;
+      height: $collapse-icon-height;
+      transition: transform $collapse-toggle-duration ease-out;
+      position: absolute;
+      background-color: $collapse-icon-color;
    }
 }
