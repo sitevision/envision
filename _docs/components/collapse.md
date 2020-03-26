@@ -30,9 +30,12 @@ group: components
 
 {% example html %}
 <h4 class="env-text">
-<a class="env-collapse-header env-collapse-header--icons" role="button" href="#container2"
-   data-env-collapse aria-expanded="false" aria-controls="container2">
-      Example 2
+   <a class="env-collapse-header env-d--flex env-justify-content--between" role="button" href="#container2"
+      data-env-collapse aria-expanded="false" aria-controls="container2">
+      <span class="env-m-right--x-large">
+         Exempel 2
+      </span>
+      <span class="env-collapse-header--icons"></span>
    </a>
 </h4>
 
