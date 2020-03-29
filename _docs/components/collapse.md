@@ -30,14 +30,17 @@ group: components
 
 {% example html %}
 <h4 class="env-text">
-<a class="env-collapse-header env-collapse-header--icons" role="button" href="#container2"
-   data-env-collapse aria-expanded="false" aria-controls="container2">
-      Example 2
+   <a class="env-collapse-header env-d--flex env-align-items--center env-justify-content--between" role="button" href="#container2"
+      data-env-collapse aria-expanded="false" aria-controls="container2">
+      <span class="env-m-right--x-large">
+         Example 2
+      </span>
+      <span class="env-collapse-header--icons"></span>
    </a>
 </h4>
 
 <div class="env-collapse" id="container2">
-   <p class="env-text env-p--top-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
+   <p class="env-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.</p>
 </div>
 
 {% endexample %}
