@@ -25,7 +25,7 @@
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
-   word-break: break-word;
+   word-break: break-all;
 
    &:focus {
       @include focus();
