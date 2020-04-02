@@ -33,11 +33,9 @@ $transparency: (
 
    @each $opacity, $value in $transparency {
       .#{$prefix}-bg-color--#{$state}--#{$opacity} {
-         background-color: $color;
-         opacity: $value;
+         background-color: fade-out($color, (1-$value));
       }
    }
-
 }
 
 
