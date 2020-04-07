@@ -246,6 +246,19 @@ $alert-danger-font-color:     $font-color !default;
 $alert-info-font-color:       $font-color !default;
 
 @include to-css-variables ((
+   // Fonts
+   "font-family": $font-family,
+   "font-size-base": $font-size-base,
+   "font-size-x-small": $font-size-x-small,        
+   "font-size-small": $font-size-small,        
+   "font-size-medium": $font-size-medium,        
+   "font-size-large": $font-size-large,          
+   "font-size-x-large": $font-size-x-large,        
+   "font-size-xx-large": $font-size-xx-large,     
+   "font-size-xxx-large": $font-size-xxx-large,   
+   "font-size-xxxx-large": $font-size-xxxx-large,
+
+   // Colors
    "color-page-bg": $color-page-bg,
    "color-element-bg": $color-element-bg,
    "color-brand": $color-brand,

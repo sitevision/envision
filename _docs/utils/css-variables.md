@@ -49,6 +49,16 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 {% endexample %}
 
 Available CSS variables
+* `--font-family`
+* `--font-size-base`
+* `--font-size-x-small`
+* `--font-size-small`
+* `--font-size-medium`
+* `--font-size-large`
+* `--font-size-x-large`
+* `--font-size-xx-large`
+* `--font-size-xxx-large`
+* `--font-size-xxxx-large`
 * `--color-page-bg`
 * `--color-element-bg`
 * `--color-brand`
