@@ -1,3 +1,5 @@
+@import "mixin/css-variables";
+
 // Base
 $prefix:                   env !default;
 $grid-columns:             12 !default;
@@ -242,3 +244,32 @@ $alert-success-font-color:    $font-color !default;
 $alert-warning-font-color:    $font-color !default;
 $alert-danger-font-color:     $font-color !default;
 $alert-info-font-color:       $font-color !default;
+
+@include to-css-variables ((
+   "color-page-bg": $color-page-bg,
+   "color-element-bg": $color-element-bg,
+   "color-brand": $color-brand,
+   "color-brand-light": $color-brand-light,
+   "color-brand-dark": $color-brand-dark,
+   "color-warning": $color-warning,
+   "color-warning-dark": $color-warning-dark,
+   "color-danger": $color-danger,
+   "color-success": $color-success,
+   "color-info": $color-info,
+   "color-hover": $color-hover,
+   "font-color": $font-color,
+   "font-color-light": $font-color-light,
+   "font-color-lighter": $font-color-lighter,
+   "font-color-invert": $font-color-invert,
+   "color-base": $color-base,
+   "color-darker": $color-darker,
+   "color-dark": $color-dark,
+   "color-normal": $color-normal,
+   "color-light": $color-light,
+   "color-lighter": $color-lighter,
+   "color-lightest": $color-lightest,
+   "default-button-color": $default-button-color,
+   "focus-background-color": $focus-background-color,
+   "focus-color": $focus-color,
+   "spinner-color": $spinner-color
+));
