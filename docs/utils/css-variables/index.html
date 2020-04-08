@@ -6,7 +6,7 @@
 
 <title>
   
-    Display &middot; Envision by SiteVision
+    CSS variables &middot; Envision by SiteVision
   
 </title>
 
@@ -476,7 +476,7 @@
 
           
 
-          <li class="">
+          <li class="active">
             <a href="/utils/css-variables/" class="env-text">
               CSS variables
             </a>
@@ -489,7 +489,7 @@
 
           
 
-          <li class="active">
+          <li class="">
             <a href="/utils/display/" class="env-text">
               Display
             </a>
@@ -581,36 +581,125 @@
 </nav>
 
          <main>
-            <h1 id="content">Display</h1>
-            <p>Use this utility to set an element’s display property. Utility classes are named using the format: <code class="highlighter-rouge">env-d--{value}</code></p>
+            <h1 id="content">CSS variables</h1>
+            <p>CSS variables are available with the format: <code class="highlighter-rouge">--env-{variable}</code></p>
 
-<p>Valid values</p>
-<ul>
-  <li><code class="highlighter-rouge">inline</code></li>
-  <li><code class="highlighter-rouge">block</code></li>
-  <li><code class="highlighter-rouge">flex</code></li>
-  <li><code class="highlighter-rouge">inline-block</code></li>
-  <li><code class="highlighter-rouge">inline-flex</code></li>
-  <li><code class="highlighter-rouge">none</code></li>
-</ul>
+<p>Only works in browsers that support <a class="doc-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a></p>
 
-<p>Examples</p>
+<h2 id="examples">Examples</h2>
 
 <div class="code-example" data-example-id="">
-<div class="example-display">
-   <div class="env-p-around--x-small env-d--inline">Inline</div>
-   <div class="env-p-around--x-small env-d--block">Block</div>
-   <div class="env-p-around--x-small env-d--flex">Flex</div>
-   <div class="env-p-around--x-small env-d--none">None</div>
+<div class="example-color">
+   <div class="example-css-variables-brand">Brand</div>
+   <div class="example-css-variables-success">Success</div>
+   <div class="example-css-variables-info">Info</div>
+   <div class="example-css-variables-warning">Warning</div>
+   <div class="example-css-variables-danger">Danger</div>
 </div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-display"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--inline"</span><span class="nt">&gt;</span>Inline<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--block"</span><span class="nt">&gt;</span>Block<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--flex"</span><span class="nt">&gt;</span>Flex<span class="nt">&lt;/div&gt;</span>
-   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"env-p-around--x-small env-d--none"</span><span class="nt">&gt;</span>None<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<style>
+
+.example-css-variables-brand {
+   background-color: var(--env-color-brand);
+   color: var(--env-color-lightest);
+}
+
+.example-css-variables-success {
+   background-color: var(--env-color-success);
+   color: var(--env-color-lightest);
+}
+
+.example-css-variables-info {
+   background-color: var(--env-color-info);
+   color: var(--env-color-lightest);
+}
+
+.example-css-variables-warning {
+   background-color: var(--env-color-warning);
+}
+
+.example-css-variables-danger {
+   background-color: var(--env-color-danger);
+   color: var(--env-color-lightest);
+}
+
+</style>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-color"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-css-variables-brand"</span><span class="nt">&gt;</span>Brand<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-css-variables-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-css-variables-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-css-variables-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"example-css-variables-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+
+<span class="nc">.example-css-variables-brand</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-brand</span><span class="p">);</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-lightest</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.example-css-variables-success</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-success</span><span class="p">);</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-lightest</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.example-css-variables-info</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-info</span><span class="p">);</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-lightest</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.example-css-variables-warning</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-warning</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.example-css-variables-danger</span> <span class="p">{</span>
+   <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-danger</span><span class="p">);</span>
+   <span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--env-color-lightest</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span></code></pre></div>
+
+<p>Available CSS variables</p>
+<ul>
+  <li><code class="highlighter-rouge">--font-family</code></li>
+  <li><code class="highlighter-rouge">--font-size-base</code></li>
+  <li><code class="highlighter-rouge">--font-size-x-small</code></li>
+  <li><code class="highlighter-rouge">--font-size-small</code></li>
+  <li><code class="highlighter-rouge">--font-size-medium</code></li>
+  <li><code class="highlighter-rouge">--font-size-large</code></li>
+  <li><code class="highlighter-rouge">--font-size-x-large</code></li>
+  <li><code class="highlighter-rouge">--font-size-xx-large</code></li>
+  <li><code class="highlighter-rouge">--font-size-xxx-large</code></li>
+  <li><code class="highlighter-rouge">--font-size-xxxx-large</code></li>
+  <li><code class="highlighter-rouge">--color-page-bg</code></li>
+  <li><code class="highlighter-rouge">--color-element-bg</code></li>
+  <li><code class="highlighter-rouge">--color-brand</code></li>
+  <li><code class="highlighter-rouge">--color-brand-light</code></li>
+  <li><code class="highlighter-rouge">--color-brand-dark</code></li>
+  <li><code class="highlighter-rouge">--color-warning</code></li>
+  <li><code class="highlighter-rouge">--color-warning-dark</code></li>
+  <li><code class="highlighter-rouge">--color-danger</code></li>
+  <li><code class="highlighter-rouge">--color-success</code></li>
+  <li><code class="highlighter-rouge">--color-info</code></li>
+  <li><code class="highlighter-rouge">--color-hover</code></li>
+  <li><code class="highlighter-rouge">--font-color</code></li>
+  <li><code class="highlighter-rouge">--font-color-light</code></li>
+  <li><code class="highlighter-rouge">--font-color-lighter</code></li>
+  <li><code class="highlighter-rouge">--font-color-invert</code></li>
+  <li><code class="highlighter-rouge">--color-base</code></li>
+  <li><code class="highlighter-rouge">--color-darker</code></li>
+  <li><code class="highlighter-rouge">--color-dark</code></li>
+  <li><code class="highlighter-rouge">--color-normal</code></li>
+  <li><code class="highlighter-rouge">--color-light</code></li>
+  <li><code class="highlighter-rouge">--color-lighter</code></li>
+  <li><code class="highlighter-rouge">--color-lightest</code></li>
+  <li><code class="highlighter-rouge">--default-button-color</code></li>
+  <li><code class="highlighter-rouge">--focus-background-color</code></li>
+  <li><code class="highlighter-rouge">--focus-color</code></li>
+  <li><code class="highlighter-rouge">--spinner-color</code></li>
+</ul>
 
          </main>
       </div>
