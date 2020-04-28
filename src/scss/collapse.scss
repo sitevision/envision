@@ -13,7 +13,7 @@
       display: block;
    }
 
-   :first-child {
+   > :first-child {
       padding-top: $spacing-xx-small;
    }
 }
