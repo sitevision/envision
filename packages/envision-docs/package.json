@@ -1,0 +1,40 @@
+{
+   "name": "envision-docs",
+   "version": "0.0.1",
+   "description": "SiteVision CSS framework documentation",
+   "scripts": {
+      "build": "node scripts/copyIcons.js && gatsby build",
+      "dev": "node scripts/copyIcons.js && gatsby develop"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/sitevision/envision.git"
+   },
+   "author": "SiteVision AB",
+   "license": "MIT",
+   "devDependencies": {
+      "eslint": "^6.6.0",
+      "eslint-plugin-react": "^7.20.0",
+      "gatsby": "^2.20.6",
+      "gatsby-image": "^2.2.39",
+      "gatsby-plugin-manifest": "^2.3.2",
+      "gatsby-plugin-offline": "^3.0.32",
+      "gatsby-plugin-react-helmet": "^3.1.22",
+      "gatsby-plugin-sass": "^2.1.30",
+      "gatsby-plugin-sharp": "^2.5.3",
+      "gatsby-remark-prismjs": "^3.3.32",
+      "gatsby-source-filesystem": "^2.1.46",
+      "gatsby-transformer-remark": "^2.6.53",
+      "gatsby-transformer-sharp": "^2.4.2",
+      "node-sass": "^4.14.1"
+   },
+   "dependencies": {
+      "envision": "0.0.1",
+      "jquery": "^3.5.1",
+      "prismjs": "^1.19.0",
+      "prop-types": "^15.7.2",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0",
+      "react-helmet": "^5.2.1"
+   }
+}
