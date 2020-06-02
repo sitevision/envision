@@ -20,7 +20,7 @@ title: Button
 
 ## Sizes
 
-````html
+```html
 <p>
    <button
       type="button"
@@ -45,7 +45,11 @@ title: Button
    </button>
    <button type="button" class="env-button env-button--small">Small</button>
 </p>
-``` ### Block ### ```html
+```
+
+### Block
+
+```html
 <p>
    <button
       type="button"
@@ -79,7 +83,7 @@ title: Button
       Small
    </button>
 </p>
-````
+```
 
 ## State
 
