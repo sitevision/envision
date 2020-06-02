@@ -44,6 +44,12 @@ jobs:
           yarn
           yarn build
           
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: packages/envision/dist
+          
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.5.3
         with:
