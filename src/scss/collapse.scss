@@ -13,7 +13,7 @@
       display: block;
    }
 
-   :first-child {
+   > :first-child {
       padding-top: $spacing-xx-small;
    }
 }
@@ -25,6 +25,7 @@
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
+   word-break: break-all;
 
    &:focus {
       @include focus();

@@ -7,7 +7,6 @@
 import Util from './util';
 
 const ModalDialog = (($) => {
-
    const ANIMATION = 'env-animation-in-progress';
    const BACKDROP = 'env-modal-dialog__backdrop';
    const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
@@ -22,17 +21,17 @@ const ModalDialog = (($) => {
    const SHOW = 'show';
    const TAB_KEY = 9;
 
-   const FOCUSABLE_ELEMENTS_SELECTOR = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+   const FOCUSABLE_ELEMENTS_SELECTOR =
+      'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
    const EVENTS = {
       HIDE: 'hide.env-modal-dialog',
       HIDDEN: 'hidden.env-modal-dialog',
       SHOW: 'show.env-modal-dialog',
-      SHOWN: 'shown.env-modal-dialog'
+      SHOWN: 'shown.env-modal-dialog',
    };
 
    class ModalDialog {
-
       constructor(element) {
          this.el = element;
          this.$el = $(element);
@@ -109,14 +108,16 @@ const ModalDialog = (($) => {
       }
 
       _bindEvents() {
-         this.$el.on('mousedown', DISMISS_SELECTOR, event => this.hide(event));
+         this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
 
          $(document)
             .off(FOCUSIN)
             .one(FOCUSIN, (event) => {
-               if (document !== event.target &&
+               if (
+                  document !== event.target &&
                   this.el !== event.target &&
-                  !this.$el.has(event.target).length) {
+                  !this.$el.has(event.target).length
+               ) {
                   this.$el.trigger('focus');
                }
             });
@@ -151,7 +152,7 @@ const ModalDialog = (($) => {
 
       _showBackdrop() {
          this.$backdrop = $('<div/>', {
-            class: BACKDROP
+            class: BACKDROP,
          });
 
          this.$el.on('mousedown', (event) => {
@@ -212,7 +213,7 @@ const ModalDialog = (($) => {
       return ModalDialog._jQuery;
    };
 
-   $(document).on('click', SELECTOR, function(e) {
+   $(document).on('click', SELECTOR, function (e) {
       e.preventDefault();
 
       const $target = $($(this).data('target'));
@@ -221,7 +222,6 @@ const ModalDialog = (($) => {
    });
 
    return ModalDialog;
-
 })(jQuery);
 
 export default ModalDialog;
