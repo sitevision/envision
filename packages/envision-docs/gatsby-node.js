@@ -58,11 +58,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
    }
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-   const { setWebpackConfig } = actions;
-   setWebpackConfig({
-      externals: {
-         jquery: 'jQuery',
-      },
-   });
-};
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//    const { setWebpackConfig } = actions;
+//    setWebpackConfig({
+//       externals: {
+//          jquery: 'jQuery',
+//       },
+//    });
+// };
