@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import $ from 'jquery';
 
 export const useCopyExample = (content) => {
    useEffect(() => {
@@ -12,6 +11,8 @@ export const useCopyExample = (content) => {
             element.parentNode.insertBefore(example, element);
          });
 
+      // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
+      const $ = window.jQuery;
       $('.example-popover').envPopover();
       $('.example-tabs').envTabs();
       $('.example-tabs1').envTabs();
