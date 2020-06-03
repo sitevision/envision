@@ -7,6 +7,7 @@ const Header = ({ title, menuItems }) => {
    return (
       <>
          <Helmet>
+            <html lang="en" />
             <meta charset="utf-8" />
             <meta
                name="viewport"

@@ -47,11 +47,7 @@ export default function Template({
             ></Sidenav>
             <main>
                <h1>{frontmatter.title}</h1>
-               <div
-                  ref={content}
-                  className="blog-post-content"
-                  dangerouslySetInnerHTML={{ __html: html }}
-               />
+               <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
             </main>
          </div>
          <Footer />
