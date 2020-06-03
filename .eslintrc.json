@@ -2,14 +2,13 @@
    "root": true,
    "parser": "babel-eslint",
    "env": {
-      "node": true,
       "browser": true,
       "es6": true,
       "jquery": true
    },
    "extends": "eslint:recommended",
    "parserOptions": {
-      "ecmaVersion": 8,
+      "ecmaVersion": 11,
       "sourceType": "module"
    }
 }
