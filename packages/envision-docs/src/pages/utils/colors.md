@@ -46,7 +46,13 @@ title: Colors
 
 `env-bg-color--{color}--{value}`
 
-Valid values for _value_ (%) _ `80` _ `60` _ `40` _ `20` \* `10`
+Valid values for _value_ (%)
+
+-  `80`
+-  `60`
+-  `40`
+-  `20`
+-  `10`
 
 ```html
 <div

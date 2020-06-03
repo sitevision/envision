@@ -16,9 +16,7 @@ title: Dropdown
    >
       Dropdown
       <svg class="env-icon env-icon--small env-dropdown-icon">
-         <use
-            xlink:href="{{ site.baseurl }}/assets/envision/envision-icons.svg#icon-arrow-down"
-         ></use>
+         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
