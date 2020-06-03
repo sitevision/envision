@@ -1,4 +1,4 @@
-# Envision by SiteVision [![Build Status](https://travis-ci.org/sitevision/envision.svg?branch=master)](https://travis-ci.org/sitevision/envision)
+# Envision by SiteVision ![Build Envision and Docs](https://github.com/sitevision/envision/workflows/Build%20Envision%20and%20Docs/badge.svg)
 
 An open source UI Library for [SiteVision](https://www.sitevision.se/). You can watch the documentation and examples grow at [http://envisionui.io/](http://envisionui.io/)
 
