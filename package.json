@@ -8,7 +8,7 @@
       "packages/**"
    ],
    "scripts": {
-      "dev": "yarn workspace envision dev & yarn workspace envision-docs dev",
+      "dev": "concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
       "build": "yarn workspace envision build && yarn workspace envision-docs build && yarn run copy-docs",
       "copy-docs": "node scripts/copyDocs.js"
    },
@@ -24,5 +24,7 @@
    ],
    "author": "SiteVision AB",
    "license": "MIT",
-   "devDependencies": {}
+   "devDependencies": {
+      "concurrently": "^5.2.0"
+   }
 }
