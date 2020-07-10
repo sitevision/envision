@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{w2l6:function(n,e,l){"use strict";l.r(e);var o=l("ERkP"),t=l.n(o);e.default=function(){return t.a.createElement("div",null,"Hello, World!")}}}]);
+//# sourceMappingURL=component---src-pages-404-js-6e11c7416a3888969f12.js.map

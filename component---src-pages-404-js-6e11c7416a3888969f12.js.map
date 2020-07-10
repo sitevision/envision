@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["FourOFour"],"mappings":"2FAAA,gCAMeA,UAJG,WACf,OAAO","file":"component---src-pages-404-js-6e11c7416a3888969f12.js","sourcesContent":["import React from 'react';\n\nconst FourOFour = () => {\n   return <div>Hello, World!</div>;\n};\n\nexport default FourOFour;\n"],"sourceRoot":""}
