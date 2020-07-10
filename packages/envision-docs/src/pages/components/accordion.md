@@ -71,7 +71,9 @@ title: Accordion
 </div>
 ```
 
-### data-target ### You can also use attribute `data-target="#container4"`
+### data-target
+
+You can also use attribute `data-target="#container4"`
 
 ```html
 <div id="accordionExample2">
