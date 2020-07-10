@@ -1,5 +1,49 @@
 ---
 title: Icons
+template: icons
+extra:
+   icons:
+      - icon-arrow-down
+      - icon-arrow-left
+      - icon-arrow-right
+      - icon-arrow-up
+      - icon-arrow-fill-down
+      - icon-arrow-fill-left
+      - icon-arrow-fill-right
+      - icon-arrow-fill-up
+      - icon-bell
+      - icon-cart
+      - icon-chat
+      - icon-check-blank
+      - icon-check-done
+      - icon-check-line
+      - icon-delete
+      - icon-dot-big
+      - icon-dot-big-fill
+      - icon-dot-small
+      - icon-file
+      - icon-files
+      - icon-grid-big
+      - icon-grid-small
+      - icon-history
+      - icon-image
+      - icon-images
+      - icon-list
+      - icon-menu-dots
+      - icon-menu-line
+      - icon-minus
+      - icon-module
+      - icon-pay
+      - icon-phone
+      - icon-plus
+      - icon-search
+      - icon-shipping
+      - icon-star
+      - icon-star-half
+      - icon-thumb-up
+      - icon-user
+      - icon-user-fill
+      - icon-user-group
 ---
 
 ## Sizes

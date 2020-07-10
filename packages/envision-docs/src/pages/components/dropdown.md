@@ -86,9 +86,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       data-target="#example2"
    >
       <svg class="env-icon env-dropdown-icon">
-         <use
-            xlink:href="/assets/envision/envision-icons.svg#icon-arrow-down"
-         ></use>
+         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
