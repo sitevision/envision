@@ -258,9 +258,10 @@ const Popover = (($) => {
       }
 
       clickOutsideHandler(e) {
-         const $target = $(e.target);
+         const target = e.target;
+         const $target = $(target);
 
-         if (this.isShowing && !$target.is(this.$el) && !$target.closest(this.$popoverElement).length) {
+         if (this.isShowing && !this.el.contains(target) && !$target.closest(this.$popoverElement).length) {
             this.hide();
          }
       }
