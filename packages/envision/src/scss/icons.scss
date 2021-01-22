@@ -6,6 +6,10 @@
    stroke: currentColor;
    //fill: currentColor;
    fill:  var(--env-color-text);
+
+   &--invert {
+      fill:  var(--env-color-text-invert);
+   }
 }
 
 $sizes: (
