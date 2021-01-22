@@ -1,24 +1,30 @@
 .#{$prefix}-news-item {
-   background-color: $color-element-bg;
+   //background-color: $color-element-bg;
+   background-color: var(--env-color-element-bg);
    display: flex;
    flex-direction: column;
-   margin: $spacing-xxx-small;
+   //margin: $spacing-xxx-small;
+   margin: 0 0 var(--env-spacing-xxx-small) 0;
    overflow-wrap: break-word;
    word-wrap: break-word;
 
    &__media {
-      padding: $spacing-x-small;
+      //padding: $spacing-x-small;
+      padding: var(--env-spacing-x-small);
    }
 
    &__headline {
-      padding: 0 $spacing-x-small;
+      //padding: 0 $spacing-x-small;
+      padding: 0 var(--env-spacing-x-small);
    }
 
    &__preamble {
-      padding: $spacing-x-small;
+      //padding: $spacing-x-small;
+      padding: var(--env-spacing-x-small);
    }
 
    &__footer {
-      padding: $spacing-x-small;
+      //padding: $spacing-x-small;
+      padding: var(--env-spacing-x-small);
    }
 }

@@ -2,12 +2,13 @@
    flex-basis: percentage(1/$i);
 }
 
-@mixin border-divider($property, $thickness: 1px, $border-color: $color-lighter) {
+@mixin border-divider($property, $thickness: 1px, $border-color: var(--env-color-border-light)) {
    #{$property}: $thickness $border-style $border-color;
 }
 
 @mixin dot-divider() {
-   background-color: $color-dark;
+   //background-color: $color-dark;
+   background-color: var(--env-color-text);
    content: "";
    display: inline-block;
    height: $spacing-xxx-small;

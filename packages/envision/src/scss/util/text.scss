@@ -1,5 +1,8 @@
 .#{$prefix}-text {
-   color: $font-color;
+
+   // color: $font-color;
+   color: var(--env-color-text);
+
    font-family: $font-family;
    font-size: $font-size-medium;
    font-weight: $font-weight-regular;
@@ -9,7 +12,8 @@
    }
 
    &--muted {
-      color: $font-color-lighter !important;
+      //color: $font-color-lighter !important;
+      opacity: 0.8;
    }
 
    &--uppercase {
@@ -71,11 +75,58 @@ a.#{$prefix}-text {
    @include link();
 }
 
-@include block-text-size('h1', $font-size-xxxx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h2', $font-size-xxx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h3', $font-size-xx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h4', $font-size-x-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h5', $font-size-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h6', $font-size-medium, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('p', $font-size-medium, $spacing-xx-small, $font-weight-regular);
-@include inline-text-size('small', .8em, $font-weight-light);
+//@mixin block-text-size($element, $font-size, $margin-bottom, $font-weight) {
+//   #{$element}.#{$prefix}-text,
+//   .#{$prefix}-text #{$element},
+//   .#{$prefix}-text--#{$element} {
+//      font-size: $font-size;
+//      font-weight: $font-weight;
+//      margin: 0 0 $margin-bottom;
+//   }
+//}
+//@mixin inline-text-size($element, $font-size, $font-weight) {
+//   #{$element}.#{$prefix}-text,
+//   .#{$prefix}-text #{$element},
+//   .#{$prefix}-text--#{$element} {
+//      font-size: $font-size;
+//      font-weight: $font-weight;
+//   }
+//}
+
+@mixin block-text-class($className, $font-size, $margin-bottom, $font-weight) {
+   .#{$prefix}-text-#{$className} {
+      color: var(--env-color-text);
+      font-size: $font-size;
+      font-weight: $font-weight;
+      margin: 0 0 $margin-bottom;
+   }
+}
+
+@mixin inline-text-class($className, $font-size, $font-weight) {
+   .#{$prefix}-text-#{$className} {
+      font-size: $font-size;
+      font-weight: $font-weight;
+   }
+}
+
+
+@include block-text-size('h1', var(--env-font-size-xxxx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h2', var(--env-font-size-xxx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h3', var(--env-font-size-xx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h4', var(--env-font-size-x-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h5', var(--env-font-size-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('h6', var(--env-font-size-medium), $spacing-xx-small, $font-weight-semibold);
+@include block-text-size('p', var(--env-font-size-medium), $spacing-xx-small, $font-weight-regular);
+//@include inline-text-size('small', .8em, $font-weight-light);
+@include inline-text-size('small', var(--env-font-size-small), $font-weight-light);
+
+
+@include block-text-class('h1', var(--env-font-size-xxxx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('h2', var(--env-font-size-xxx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('h3', var(--env-font-size-xx-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('h4', var(--env-font-size-x-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('h5', var(--env-font-size-large), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('h6', var(--env-font-size-medium), $spacing-xx-small, $font-weight-semibold);
+@include block-text-class('lead', var(--env-font-size-large), $spacing-xx-small, $font-weight-light);
+@include block-text-class('p', var(--env-font-size-medium), $spacing-xx-small, $font-weight-regular);
+@include inline-text-class('small', var(--env-font-size-small), $font-weight-light);

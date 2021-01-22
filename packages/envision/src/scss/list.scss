@@ -1,6 +1,6 @@
 .#{$prefix}-list {
    @include reset-list();
-
+   color: var(--env-color-text);
    $item: #{$prefix}-list__item;
 
    &--horizontal {
@@ -72,6 +72,7 @@
 }
 
 .#{$prefix}-definition-list {
+   color: var(--env-color-text);
 
    dd {
       margin: 0;
@@ -79,7 +80,7 @@
    }
 
    &--horizontal {
-      $dl-title-width: 9em;
+      $dl-title-width: 9rem;
 
       dt {
          clear: left;

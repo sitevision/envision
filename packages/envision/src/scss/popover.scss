@@ -3,8 +3,10 @@ $arrow-position: -22px;
 $arrow-border-size: 10px;
 
 .#{$prefix}-popover {
-   background-color: $color-element-bg;
-   border: $border-light;
+   //background-color: $color-element-bg;
+   background-color: var(--env-color-element-bg);
+   //border: $border-light;
+   border: 1px solid var(--env-color-border);
    border-radius: $radius-medium;
    box-shadow: $popover-shadow;
    margin: $arrow-border-size;
@@ -13,19 +15,26 @@ $arrow-border-size: 10px;
    z-index: $zindex-popover;
 
    &__header {
-      background-color: $color-brand;
+      //background-color: $color-brand;
       border-radius: $radius-medium $radius-medium 0 0;
       display: block;
-      padding: $spacing-xx-small $spacing-x-small;
+      //padding: $spacing-xx-small $spacing-x-small;
+      padding: var(--env-spacing-x-small) var(--env-spacing-small);
+      @include border-divider(border-bottom);
 
       &__title {
-         color: $font-color-invert;
+         //color: $font-color-invert;
          margin-bottom: 0 !important;
       }
    }
 
    &__content {
       display: block;
+      padding: var(--env-spacing-small);
+
+      &--fill {
+         padding: 0;
+      }
    }
 
    &__arrow {
@@ -59,23 +68,27 @@ $arrow-border-size: 10px;
       }
 
       &--bottom {
-         border-bottom-color: $color-brand;
+         //border-bottom-color: $color-brand;
+         border-bottom-color: var(--env-color-border);
          top: $arrow-position;
 
          &::after {
-            border-bottom-color: $color-brand;
+            //border-bottom-color: $color-brand;
+            border-bottom-color: var(--env-color-element-bg);
             border-top-width: 0;
             top: 1px;
          }
       }
 
       &--top {
-         border-top-color: $color-lighter;
+         //border-top-color: $color-lighter;
+         border-top-color: var(--env-color-border);
          bottom: $arrow-position;
 
          &::after {
             border-bottom-width: 0;
-            border-top-color: $color-element-bg;
+            //border-top-color: $color-element-bg;
+            border-top-color: var(--env-color-element-bg);
             bottom: 1px;
          }
       }
@@ -91,23 +104,27 @@ $arrow-border-size: 10px;
       }
 
       &--left {
-         border-left-color: $color-lighter;
+         //border-left-color: $color-lighter;
+         border-left-color: var(--env-color-border);
          right: $arrow-position;
 
          &::after {
-            border-left-color: $color-element-bg;
+            //border-left-color: $color-element-bg;
+            border-left-color: var(--env-color-element-bg);
             border-right-width: 0;
             right: 1px;
          }
       }
 
       &--right {
-         border-right-color: $color-lighter;
+         //border-right-color: $color-lighter;
+         border-right-color:  var(--env-color-border);
          left: $arrow-position;
 
          &::after {
             border-left-width: 0;
-            border-right-color: $color-element-bg;
+            //border-right-color: $color-element-bg;
+            border-right-color: var(--env-color-element-bg);
             left: 1px;
          }
       }

@@ -2,7 +2,8 @@
    position: relative;
 
    &__menu {
-      background-color: $font-color-invert;
+      //background-color: $font-color-invert;
+      background-color: var(--env-color-element-bg);
       border: $border-light;
       border-radius: $radius-small;
       box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
@@ -26,6 +27,7 @@
 
    &__item {
       display: block;
+      color: var(--env-color-text);
       padding: $spacing-x-small;
       @include truncate-text();
 

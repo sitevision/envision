@@ -3,7 +3,7 @@ $link-classname: #{$prefix}-tabs__link;
 .#{$prefix}-tabs {
    &__nav {
       @include reset-list();
-      background-color: $color-element-bg;
+      //background-color: $color-element-bg;
       display: flex;
 
       &--border-bottom {
@@ -45,7 +45,7 @@ $link-classname: #{$prefix}-tabs__link;
 
    &--simple {
       @include reset-list();
-      background-color: $color-element-bg;
+      //background-color: $color-element-bg;
       display: flex;
 
       .#{$prefix}-tabs__link {

@@ -448,7 +448,7 @@ title: Feed
                <label for="example-input2" class="env-assistive-text"
                   >Example input</label
                >
-               <input type="text" id="example-input2" class="env-form-input" />
+               <input type="text" id="example-input2" class="env-form-input" placeholder="Comment" />
             </div>
             <div class="env-media__actions">
                <button type="button" class="env-button env-button--primary">
@@ -584,7 +584,7 @@ title: Feed
                <input type="text" id="example-input3" class="env-form-input" />
             </div>
             <div class="env-media__actions">
-               <button type="button" class="env-button env-button--primary">
+               <button placeholder="Comment" type="button" class="env-button env-button--primary">
                   Comment
                </button>
             </div>

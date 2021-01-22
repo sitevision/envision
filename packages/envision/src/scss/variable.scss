@@ -37,7 +37,7 @@ $button-line-height:       $line-height-medium !default;
 $form-input-line-height:   $line-height-medium !default;
 
 // Size (Margin/Padding)
-$spacing-base:             1em !default;
+$spacing-base:             1rem !default; // SWITCH EM TO REM FOR CONSISTENCY
 $spacing-xxx-small:        $spacing-base * .125 !default;
 $spacing-xx-small:         $spacing-base * .25 !default;
 $spacing-x-small:          $spacing-base * .5 !default;
@@ -75,6 +75,15 @@ $color-element-bg:         #ffffff !default;
 $color-brand:              #006DFF !default;
 $color-brand-light:        lighten($color-brand, 10%) !default;
 $color-brand-dark:         darken($color-brand, 10%) !default;
+
+// ADDED FOR CLARITY
+$color-primary:              $color-brand !default;
+$color-primary-light:        $color-brand-light !default;
+$color-primary-dark:         $color-brand-dark !default;
+$color-secondary:            #6c757d !default;
+$color-secondary-light:      lighten($color-secondary, 10%) !default;
+$color-secondary-dark:       darken($color-secondary, 10%) !default;
+
 
 $color-warning:            #c59219 !default;
 $color-warning-dark:       darken($color-warning, 10%) !default;
@@ -245,35 +254,99 @@ $alert-warning-font-color:    $font-color !default;
 $alert-danger-font-color:     $font-color !default;
 $alert-info-font-color:       $font-color !default;
 
-@include to-css-variables ((
+@mixin to-css-variables2 ($properties) {
+   :root {
+      @each $propertyName, $property in $properties {
+         --#{$prefix}-#{$propertyName}:#{$property};
+      }
+   }
+}
+
+@include to-css-variables2 ((
+
    // Fonts
    "font-family": $font-family,
    "font-size-base": $font-size-base,
-   "font-size-x-small": $font-size-x-small,        
-   "font-size-small": $font-size-small,        
-   "font-size-medium": $font-size-medium,        
-   "font-size-large": $font-size-large,          
-   "font-size-x-large": $font-size-x-large,        
-   "font-size-xx-large": $font-size-xx-large,     
-   "font-size-xxx-large": $font-size-xxx-large,   
+   "font-size-x-small": $font-size-x-small,
+   "font-size-small": $font-size-small,
+   "font-size-medium": $font-size-medium,
+   "font-size-large": $font-size-large,
+   "font-size-x-large": $font-size-x-large,
+   "font-size-xx-large": $font-size-xx-large,
+   "font-size-xxx-large": $font-size-xxx-large,
    "font-size-xxxx-large": $font-size-xxxx-large,
 
    // Colors
+
+   //
+   //$theme-colors: (
+   //   "primary":    $primary,
+   //   "secondary":  $secondary,
+   //   "success":    $success,
+   //   "info":       $info,
+   //   "warning":    $warning,
+   //   "danger":     $danger,
+   //   "light":      $light,
+   //   "dark":       $dark
+   //);
+
+   //--bs-primary: #0d6efd;
+   //--bs-secondary: #6c757d;
+   //--bs-success: #198754;
+   //--bs-info: #0dcaf0;
+   //--bs-warning: #ffc107;
+   //--bs-danger: #dc3545;
+   //--bs-light: #f8f9fa;
+   //--bs-dark: #212529;
+   //
+   //$grid-breakpoints: (
+   //   xs: 0,
+   //   sm: 576px,
+   //   md: 768px,
+   //   lg: 992px,
+   //   xl: 1200px,
+   //   xxl: 1400px
+   //);
+
+
+   "font-color": $font-color, // RENAME TO color-text
+   "font-color-light": $font-color-light, // RENAME TO color-text
+   "font-color-lighter": $font-color-lighter, // RENAME TO color-text
+   "font-color-invert": $font-color-invert, // RENAME TO color-text
+
+   "color-text": $font-color, // RENAMED
+   "color-text-light": $font-color-light, // RENAMED
+   "color-text-lighter": $font-color-lighter, // RENAMED
+   "color-text-invert": $font-color-invert, // RENAMED
+   "color-text-warning": $font-color,
+   "color-text-danger": $font-color,
+   "color-text-success": $font-color,
+   "color-text-info": $font-color,
+
    "color-page-bg": $color-page-bg,
    "color-element-bg": $color-element-bg,
-   "color-brand": $color-brand,
-   "color-brand-light": $color-brand-light,
-   "color-brand-dark": $color-brand-dark,
+
+
+   "color-brand": $color-brand, // KEEP FOR BACK.COMPAT?
+   "color-brand-light": $color-brand-light, // KEEP FOR BACK.COMPAT?
+   "color-brand-dark": $color-brand-dark, // KEEP FOR BACK.COMPAT?
+
+   "color-primary": $color-brand, // NEW
+   "color-primary-light": $color-brand-light, // NEW
+   "color-primary-dark": $color-brand-dark, // NEW
+
+   "color-secondary": $color-secondary, // NEW
+   "color-secondary-light": $color-secondary-light, // NEW
+   "color-secondary-dark": $color-secondary-dark, // NEW
+
    "color-warning": $color-warning,
    "color-warning-dark": $color-warning-dark,
    "color-danger": $color-danger,
    "color-success": $color-success,
    "color-info": $color-info,
-   "color-hover": $color-hover,
-   "font-color": $font-color,
-   "font-color-light": $font-color-light,
-   "font-color-lighter": $font-color-lighter,
-   "font-color-invert": $font-color-invert,
+
+   "color-hover": $color-hover, // REMOVE THIS?
+
    "color-base": $color-base,
    "color-darker": $color-darker,
    "color-dark": $color-dark,
@@ -281,8 +354,50 @@ $alert-info-font-color:       $font-color !default;
    "color-light": $color-light,
    "color-lighter": $color-lighter,
    "color-lightest": $color-lightest,
+
    "default-button-color": $default-button-color,
    "focus-background-color": $focus-background-color,
    "focus-color": $focus-color,
-   "spinner-color": $spinner-color
+   "spinner-color": $spinner-color,
+
+   "color-border": $color-lighter, // NEW
+   "color-border-primary": $color-primary, // $color-lighter, // NEW
+   "color-border-secondary": $color-secondary, // NEW
+   "color-border-warning": lighten($color-warning, 5%), // NEW
+   "color-border-danger": lighten($color-danger, 5%), // NEW
+   "color-border-success": lighten($color-success, 5%), // NEW
+   "color-border-info": lighten($color-info, 5%),
+   "color-border-dark": $color-dark, // NEW
+   "color-border-light": $color-lighter, // NEW
+
+   "color-bg-primary": lighten($color-primary, 48%), //$color-lightest, // NEW
+   "color-bg-secondary": lighten($color-secondary, 48%), // NEW
+   "color-bg-warning": lighten($color-warning, 20%), // NEW
+   "color-bg-danger": lighten($color-danger, 20%), // NEW
+   "color-bg-success": lighten($color-success, 20%), // NEW
+   "color-bg-info": lighten($color-info, 20%),
+   "color-bg-dark": lighten($color-dark, 20%), // NEW
+   "color-bg-light": $color-lightest, // NEW
+
+   "spacing-base": $spacing-base,
+   "spacing-xxx-small": $spacing-xxx-small,
+   "spacing-xx-small": $spacing-xx-small,
+   "spacing-x-small": $spacing-x-small,
+   "spacing-small": $spacing-small,
+   "spacing-medium": $spacing-medium,
+   "spacing-large": $spacing-large,
+   "spacing-x-large": $spacing-x-large,
+   "spacing-xx-large": $spacing-xx-large,
+   "spacing-xxx-large": $spacing-xxx-large,
+
+//$spacing-xxx-small:        $spacing-base * .125 !default;
+//$spacing-xx-small:         $spacing-base * .25 !default;
+//$spacing-x-small:          $spacing-base * .5 !default;
+//$spacing-small:            $spacing-base * .75 !default;
+//$spacing-medium:           $spacing-base !default;
+//$spacing-large:            $spacing-base * 1.25 !default;
+//$spacing-x-large:          $spacing-base * 1.5 !default;
+//$spacing-xx-large:         $spacing-base * 1.75 !default;
+//$spacing-xxx-large:        $spacing-base * 2 !default;
+
 ));

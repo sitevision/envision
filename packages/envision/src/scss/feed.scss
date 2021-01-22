@@ -1,16 +1,20 @@
 .#{$prefix}-post {
-   @include border-divider(border, 1px, $color-element-bg);
+   background-color: var(--env-color-element-bg);
+   //@include border-divider(border, 1px, $color-element-bg);
+   @include border-divider(border, 1px, var(--env-color-border));
 
    &__header,
    &__entry,
    &__attachment,
    &__shared {
-      @include border-divider(border-bottom, 1px, $color-element-bg);
+      //@include border-divider(border-bottom, 1px, $color-element-bg);
+      @include border-divider(border-bottom, 1px, var(--env-color-border));
    }
 
    &__shared {
       .#{$prefix}-post {
-         @include border-divider(border-left, 3px, $color-brand);
+         //@include border-divider(border-left, 3px, $color-brand);
+         @include border-divider(border-left, 3px, var(--env-color-brand));
 
          &__entry {
             padding: $spacing-x-small;
@@ -24,8 +28,10 @@
 }
 
 .#{$prefix}-comments {
-   @include border-divider(border-top, 1px, $color-element-bg);
-   background-color: $color-element-bg;
+   //@include border-divider(border-top, 1px, $color-element-bg);
+   @include border-divider(border-top, 1px, var(--env-color-border));
+   //background-color: $color-element-bg;
+   //background-color: var(--env-color-element-bg);
 
    &__wrapper {
       padding: $spacing-x-small;
@@ -38,7 +44,8 @@
 }
 
 .#{$prefix}-comment {
-   @include border-divider(border-bottom, 1px, $color-page-bg);
+   //@include border-divider(border-bottom, 1px, $color-page-bg);
+   @include border-divider(border-bottom, 1px, var(--env-color-page-bg));
    padding: $spacing-x-small 0;
 }
 

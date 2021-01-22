@@ -13,11 +13,13 @@
       @include border-divider(border-top);
       padding: $spacing-x-small;
       vertical-align: top;
+      color: var(--env-color-text);
    }
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         background-color: $table-zebra-color;
+         // background-color: $table-zebra-color;
+         background-color: var(--env-color-bg-primary);
       }
    }
 

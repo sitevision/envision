@@ -35,7 +35,7 @@
    }
 
    &--link {
-      @include button-color-variant($button-link-font-color, transparent, transparent);
+      @include button-color-variant(var(--env-color-text), transparent, transparent);
 
       &:focus {
          @include focus();

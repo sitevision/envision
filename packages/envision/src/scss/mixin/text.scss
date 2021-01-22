@@ -1,3 +1,4 @@
+
 @mixin block-text-size($element, $font-size, $margin-bottom, $font-weight) {
    #{$element}.#{$prefix}-text,
    .#{$prefix}-text #{$element},
@@ -19,7 +20,8 @@
 
 @mixin link() {
    border-radius: $radius-small;
-   color: $font-color;
+   //color: $font-color;
+   color: var(--env-color-text);
    font-weight: $font-weight-semibold;
    text-decoration: none;
 }

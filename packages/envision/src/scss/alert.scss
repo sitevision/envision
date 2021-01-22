@@ -6,20 +6,48 @@
 
    @include border-radius($radius-medium);
 
+
+   //@mixin alert-color-variant($color, $border-color, $font-color) {
+   @mixin alert-color-variant2($variableName) {
+      //background-color: lighten($color, 20%);
+      //color: $font-color;
+      //border-left: 6px solid $border-color;
+      background-color: var(--env-color-bg-#{$variableName});
+      color: var(--env-text-color-#{$variableName});
+      border-left: 6px solid var(--env-color-border-#{$variableName});
+
+      &:hover {
+         //border-color: lighten($border-color, 5%);
+         border-color: var(--env-color-#{$variableName});
+      }
+
+      .#{$prefix}-alert__close {
+         //color: $font-color;
+         color: var(--env-color-#{$variableName});
+      }
+   }
+
+
+   @include alert-color-variant2("secondary");
+
    &--success {
-      @include alert-color-variant($alert-success-bg-color, $alert-success-border-color, $alert-success-font-color);
+      //@include alert-color-variant($alert-success-bg-color, $alert-success-border-color, $alert-success-font-color);
+      @include alert-color-variant2("success");
    }
 
    &--warning {
-      @include alert-color-variant($alert-warning-bg-color, $alert-warning-border-color, $alert-warning-font-color);
+      //@include alert-color-variant($alert-warning-bg-color, $alert-warning-border-color, $alert-warning-font-color);
+      @include alert-color-variant2("warning");
    }
 
    &--danger {
-      @include alert-color-variant($alert-danger-bg-color, $alert-danger-border-color, $alert-danger-font-color);
+      //@include alert-color-variant($alert-danger-bg-color, $alert-danger-border-color, $alert-danger-font-color);
+      @include alert-color-variant2("danger");
    }
 
    &--info {
-      @include alert-color-variant($alert-info-bg-color, $alert-info-border-color, $alert-info-font-color);
+      //@include alert-color-variant($alert-info-bg-color, $alert-info-border-color, $alert-info-font-color);
+      @include alert-color-variant2("info");
    }
 
    &__link {
