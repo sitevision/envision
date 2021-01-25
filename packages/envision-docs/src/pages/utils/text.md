@@ -37,7 +37,7 @@ title: Text
 
 <div class="env-text-small">Text styled as small</div>
 ```
-
+ 
 ```html
 <section class="env-text">
    <h1>Heading 1</h1>

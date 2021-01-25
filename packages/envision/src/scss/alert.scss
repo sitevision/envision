@@ -13,7 +13,7 @@
       //color: $font-color;
       //border-left: 6px solid $border-color;
       background-color: var(--env-color-bg-#{$variableName});
-      color: var(--env-text-color-#{$variableName});
+      color: var(--env-color-text-#{$variableName});
       border-left: 6px solid var(--env-color-border-#{$variableName});
 
       &:hover {
