@@ -19,6 +19,9 @@
    }
 
    &__dialog {
+      overflow-wrap: anywhere;
+      word-break: normal;
+
       @media (min-width: 768px) {
          margin: 10% auto;
          max-width: $modal-medium;

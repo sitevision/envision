@@ -11,6 +11,8 @@ $arrow-border-size: 10px;
    max-width: $popover-width;
    position: relative;
    z-index: $zindex-popover;
+   overflow-wrap: anywhere;
+   word-break: normal;
 
    &__header {
       background-color: $color-brand;
@@ -41,7 +43,7 @@ $arrow-border-size: 10px;
          border-color: transparent;
          border-style: $border-style;
          border-width: $arrow-border-size;
-         content: "";
+         content: '';
          display: block;
          height: 0;
          position: absolute;
