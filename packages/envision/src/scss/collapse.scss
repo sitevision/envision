@@ -1,5 +1,7 @@
 .#{$prefix}-collapse {
    display: none;
+   overflow-wrap: anywhere;
+   word-break: normal;
 
    &--collapsing {
       display: block;
@@ -25,7 +27,8 @@
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
-   word-break: break-all;
+   overflow-wrap: anywhere;
+   word-break: normal;
 
    &:focus {
       @include focus();
@@ -59,7 +62,7 @@
 
    &::before,
    &::after {
-      content: "";
+      content: '';
       top: $collapse-icon-top;
       right: $collapse-icon-right;
       width: $collapse-icon-width;
