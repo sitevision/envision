@@ -35,21 +35,21 @@ title: Text
 ```
 
 ```html
-<div class="env-text--h1">Looks like heading 1</div>
+<div class="env-text-h1">Looks like heading 1</div>
 
-<div class="env-text--h2">Looks like heading 2</div>
+<div class="env-text-h2">Looks like heading 2</div>
 
-<div class="env-text--h3">Looks like heading 3</div>
+<div class="env-text-h3">Looks like heading 3</div>
 
-<div class="env-text--h4">Looks like heading 4</div>
+<div class="env-text-h4">Looks like heading 4</div>
 
-<div class="env-text--h5">Looks like heading 5</div>
+<div class="env-text-h5">Looks like heading 5</div>
 
-<div class="env-text--h6">Looks like heading 6</div>
+<div class="env-text-h6">Looks like heading 6</div>
 
-<div class="env-text--p">Looks like paragraph</div>
+<div class="env-text-p">Looks like paragraph</div>
 
-<div class="env-text--small">Looks like small</div>
+<div class="env-text-small">Looks like small</div>
 ```
 
 ```html
