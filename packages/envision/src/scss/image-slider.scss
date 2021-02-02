@@ -59,14 +59,7 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-   }
-
-   &__previous-icon {
-      background-image: $image-control-prev-icon-bg;
-   }
-
-   &__next-icon {
-      background-image: $image-control-next-icon-bg;
+      fill: css-var("image-control-color");
    }
 
    &__item--next.#{$prefix}-image-slider__item--left,
@@ -90,7 +83,7 @@
       justify-content: flex-start;
       left: 0;
       list-style: none;
-      margin-top: $spacing-x-small;
+      margin-top: css-var("spacing-x-small");
       overflow: auto;
       padding-left: 0;
       right: 0;
@@ -98,7 +91,7 @@
 
       li {
          cursor: pointer;
-         margin-right: $spacing-x-small;
+         margin-right: css-var("spacing-x-small");
          position: relative;
       }
 
@@ -117,11 +110,11 @@
    }
 
    &__caption {
-      bottom: $spacing-large;
+      bottom: css-var("spacing-large");
       color: rgba(255, 255, 255, 1);
       left: ((100% - 70%) / 2);
-      padding-bottom: $spacing-large;
-      padding-top: $spacing-large;
+      padding-bottom: css-var("spacing-large");
+      padding-top: css-var("spacing-large");
       position: absolute;
       right: ((100% - 70%) / 2);
       text-align: center;

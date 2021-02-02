@@ -7,11 +7,11 @@
       display: inline-block;
 
       &:nth-child(1n+2)::before {
-         color: $breadcrumb-divider-color;
+         color: css-var("breadcrumb-divider-color");
          content: "#{$breadcrumb-divider}";
          display: inline-block;
-         padding-left: $spacing-x-small;
-         padding-right: $spacing-x-small;
+         padding-left: css-var("spacing-x-small");
+         padding-right: css-var("spacing-x-small");
       }
    }
 }

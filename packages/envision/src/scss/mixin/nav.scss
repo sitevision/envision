@@ -1,23 +1,23 @@
 @mixin filled-nav-states() {
    &:hover {
-      background-color: $color-brand-dark;
-      color: $font-color-invert;
+      background-color: css-var("color-primary-dark");
+      color: css-var("font-color-invert");
    }
 
    &--active {
-      background-color: $color-brand;
-      color: $font-color-invert;
+      background-color: css-var("color-primary");;
+      color: css-var("font-color-invert");
    }
 }
 
 @mixin nav-link() {
-   color: $color-brand-dark;
+   color: css-var("color-primary-dark");
    display: block;
    text-decoration: none;
    transition: background-color .25s ease, color .25s ease;
 
    &:hover {
-      color: $color-brand-dark;
+      color: css-var("color-primary-dark");
    }
 
    &:focus {
@@ -25,6 +25,6 @@
    }
 
    &--active {
-      color: $color-brand-light;
+      color: css-var("color-primary-light");
    }
 }

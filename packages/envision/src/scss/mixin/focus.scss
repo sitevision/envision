@@ -1,5 +1,8 @@
-@mixin focus($border-color: $focus-color, $box-shadow-color: $focus-color) {
-   border-color: $border-color;
-   box-shadow: 0 0 5px $box-shadow-color;
+
+@mixin focus($border-color: "focus-color", $box-shadow-color: "focus-color") {
+   border-color: css-var($border-color);
+   box-shadow: 0 0 5px css-var($box-shadow-color);
    outline: 0;
 }
+
+

@@ -2,33 +2,32 @@
    position: relative;
 
    &__menu {
-      //background-color: $font-color-invert;
-      background-color: var(--env-color-element-bg);
-      border: $border-light;
-      border-radius: $radius-small;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+      background-color: css-var("element-background-color");
+      border: css-var("border-light");
+      border-radius: css-var("border-radius-small");
+      box-shadow: css-var("popover-box-shadow");
       display: none;
-      font-family: $font-family;
-      font-size: $font-size-medium;
+
+      font-family: css-var("font-family");
+      font-size: css-var("font-size-medium");
       left: 0;
       list-style: none;
       max-width: 240px;
       min-width: 180px;
       padding-left: 0;
-      padding-top: $spacing-xx-small;
+      padding-top: css-var("spacing-xx-small");
       position: absolute;
-      top: $spacing-medium;
+      top: css-var("spacing-medium");
       z-index: $zindex-dropdown;
 
       &--large {
-         top: $spacing-xxx-large;
+         top: css-var("spacing-xxx-large");
       }
    }
 
    &__item {
       display: block;
-      color: var(--env-color-text);
-      padding: $spacing-x-small;
+      padding: css-var("spacing-x-small");
       @include truncate-text();
 
       &:hover {
@@ -37,12 +36,12 @@
    }
 
    &__item:last-child {
-      margin-bottom: $spacing-xx-small;
+      margin-bottom: css-var("spacing-xx-small");
    }
 
    &--divider {
-      border-bottom: $border-light;
-      margin: $spacing-xx-small 0;
+      border-bottom: css-var("border-light");
+      margin: css-var("spacing-xx-small") 0;
    }
 
    &--toggle-split {

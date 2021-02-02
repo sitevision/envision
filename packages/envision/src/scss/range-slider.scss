@@ -1,16 +1,16 @@
 .#{$prefix}-range-slider {
-   @include border-radius($radius-small);
    $range-height: $spacing-small;
    $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
-   border: $default-border;
+   border: css-var("border-default");
+   border-radius: css-var("border-radius-small");
    height: $range-height;
    position: relative;
 
    &__handle {
-      @include border-radius($radius-small);
+      border-radius: css-var("border-radius-small");
       background: $color-lighter;
-      border: $default-border;
+      border: css-var("border-default");
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop / 2);
       position: absolute;
@@ -25,7 +25,7 @@
 
    &__values {
       display: flex;
-      margin-top: $spacing-large;
+      margin-top: $spacing-large; // Keep
       position: relative;
 
       &__value {
@@ -45,7 +45,7 @@
    }
 
    &__range {
-      background: $color-brand;
+      background: css-var("color-primary");
       height: 100%;
       position: absolute;
    }
@@ -62,7 +62,7 @@
 
       .#{$slider}__value {
          margin-left: -($handle-size-touch / 2) !important;
-         top: $spacing-x-large;
+         top: $spacing-x-large; // Keep
       }
    }
 }

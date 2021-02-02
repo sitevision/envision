@@ -4,12 +4,7 @@
    height: $icon-size-x-small;
    stroke-width: 0;
    stroke: currentColor;
-   //fill: currentColor;
-   fill:  var(--env-color-text);
-
-   &--invert {
-      fill:  var(--env-color-text-invert);
-   }
+   fill: currentColor;
 }
 
 $sizes: (

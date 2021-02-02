@@ -6,7 +6,7 @@
       height: 0;
       overflow: hidden;
       position: relative;
-      transition: height $collapse-toggle-duration ease;
+      transition: height css-var("collapse-toggle-duration") ease;
    }
 
    &--show {
@@ -14,17 +14,17 @@
    }
 
    > :first-child {
-      padding-top: $spacing-xx-small;
+      padding-top: css-var("spacing-xx-small");
    }
 }
 
 .#{$prefix}-collapse-header {
    width: 100%;
-   padding: $spacing-x-small;
+   padding: css-var("spacing-x-small");
    cursor: pointer;
    box-sizing: border-box;
-   border: $collapse-heading-border;
-   background-color: $collapse-heading-bg-color;
+   border: css-var("collapse-border");
+   background-color: css-var("collapse-background-color");
    word-break: break-all;
 
    &:focus {
@@ -32,13 +32,13 @@
    }
 
    &:hover {
-      background-color: $collapse-heading-bg-color-expanded;
-      border: $collapse-heading-border-expanded;
+      background-color: css-var("collapse-expanded-background-color"); //$collapse-heading-bg-color-expanded;
+      border: css-var("collapse-expanded-border");
    }
 
    &.#{$prefix}-collapse--expanded {
-      background-color: $collapse-heading-bg-color-expanded;
-      border: $collapse-heading-border-expanded;
+      background-color: css-var("collapse-expanded-background-color");
+      border: css-var("collapse-expanded-border");
    }
 }
 
@@ -62,10 +62,10 @@
       content: "";
       top: $collapse-icon-top;
       right: $collapse-icon-right;
-      width: $collapse-icon-width;
-      height: $collapse-icon-height;
-      transition: transform $collapse-toggle-duration ease-out;
+      width: css-var("collapse-icon-width");
+      height: css-var("collapse-icon-height");
+      transition: transform css-var("collapse-toggle-duration") ease-out;
       position: absolute;
-      background-color: $collapse-icon-color;
+      background-color: css-var("collapse-icon-color");
    }
 }

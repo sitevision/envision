@@ -1,56 +1,49 @@
 .#{$prefix}-post {
-   background-color: var(--env-color-element-bg);
-   //@include border-divider(border, 1px, $color-element-bg);
-   @include border-divider(border, 1px, var(--env-color-border));
+   border: 1px solid css-var("element-background-color");
 
    &__header,
    &__entry,
    &__attachment,
    &__shared {
-      //@include border-divider(border-bottom, 1px, $color-element-bg);
-      @include border-divider(border-bottom, 1px, var(--env-color-border));
+      border-bottom: 1px solid css-var("element-background-color");
    }
 
    &__shared {
       .#{$prefix}-post {
-         //@include border-divider(border-left, 3px, $color-brand);
-         @include border-divider(border-left, 3px, var(--env-color-brand));
+         border-left: 3px solid css-var("color-primary");
 
          &__entry {
-            padding: $spacing-x-small;
+            padding: css-var("spacing-x-small");
          }
       }
    }
 
    > :not(:last-child) {
-      padding: $spacing-x-small;
+      padding: css-var("spacing-x-small");
    }
 }
 
 .#{$prefix}-comments {
-   //@include border-divider(border-top, 1px, $color-element-bg);
-   @include border-divider(border-top, 1px, var(--env-color-border));
-   //background-color: $color-element-bg;
-   //background-color: var(--env-color-element-bg);
+   border-top: 1px solid css-var("element-background-color");
+   background-color: css-var("element-background-color");
 
    &__wrapper {
-      padding: $spacing-x-small;
+      padding: css-var("spacing-x-small");
    }
 
    &__comment {
       align-items: center;
-      padding-top: $spacing-x-small;
+      padding-top: css-var("spacing-x-small");
    }
 }
 
 .#{$prefix}-comment {
-   //@include border-divider(border-bottom, 1px, $color-page-bg);
-   @include border-divider(border-bottom, 1px, var(--env-color-page-bg));
-   padding: $spacing-x-small 0;
+   border-bottom: 1px solid css-var("page-background-color");
+   padding: css-var("spacing-x-small") 0;
 }
 
 .#{$prefix}-feed {
    &__item:not(:last-child) {
-      padding-bottom: $spacing-x-small;
+      padding-bottom: css-var("spacing-x-small");
    }
 }

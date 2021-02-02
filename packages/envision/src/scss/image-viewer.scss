@@ -81,22 +81,15 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-   }
-
-   &__prev-icon {
-      background-image: $image-control-prev-icon-bg;
+      fill: css-var("image-control-color");
    }
 
    &__next-icon {
-      background-image: $image-control-next-icon-bg;
-   }
-
-   &__next-icon {
-      margin-right: $spacing-xxx-small;
+      margin-right: css-var("spacing-xxx-small");
    }
 
    &__prev-icon {
-      margin-left: $spacing-xxx-small;
+      margin-left: css-var("spacing-xxx-small");
    }
 
    &__thumbnails {
@@ -105,7 +98,7 @@
       justify-content: center;
       left: 0;
       list-style: none;
-      margin-top: $spacing-x-small;
+      margin-top: css-var("spacing-x-small");
       overflow: hidden;
       padding-left: 0;
       right: 0;
@@ -113,7 +106,7 @@
 
       li {
          cursor: pointer;
-         margin-right: $spacing-x-small;
+         margin-right: css-var("spacing-x-small");
          position: relative;
       }
    }
@@ -133,7 +126,7 @@
       @include slide-indicator;
    }
 
-   &__img {   
+   &__img {
       max-width: 100%;
       outline: none;
    }

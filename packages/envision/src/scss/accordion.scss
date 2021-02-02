@@ -6,7 +6,7 @@
       height: 0;
       overflow: hidden;
       position: relative;
-      transition: height $toggle-duration ease;
+      transition: height css-var("collapse-toggle-duration") ease;
    }
 
    &--show {

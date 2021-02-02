@@ -1,5 +1,5 @@
 [class^="#{$prefix}-border--"] {
-   border: $default-border;
+   border: css-var("border-default");
 }
 
 .#{$prefix}-border--0 { border: 0 !important; }
@@ -8,8 +8,8 @@
 .#{$prefix}-border--b-0 { border-bottom: 0 !important; }
 .#{$prefix}-border--l-0 { border-left: 0 !important; }
 
-.#{$prefix}-border { border: $default-border !important; }
-.#{$prefix}-border-top { border-top: $default-border !important; }
-.#{$prefix}-border-right { border-right: $default-border !important; }
-.#{$prefix}-border-bottom { border-bottom: $default-border !important; }
-.#{$prefix}-border-left { border-left: $default-border !important; }
+.#{$prefix}-border { border: css-var("border-default") !important; }
+.#{$prefix}-border-top { border-top: css-var("border-default") !important; }
+.#{$prefix}-border-right { border-right: css-var("border-default") !important; }
+.#{$prefix}-border-bottom { border-bottom: css-var("border-default") !important; }
+.#{$prefix}-border-left { border-left: css-var("border-default") !important; }

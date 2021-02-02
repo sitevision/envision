@@ -3,15 +3,19 @@
    display: flex;
 
    &__link {
-      @include pagination-size($spacing-xx-small, $spacing-small, $font-size-medium);
-      background-color: $pagination-bg-color;
-      border: $pagination-border;
-      color: $pagination-font-color;
+      @include pagination-size("spacing-xx-small", "spacing-small", "font-size-medium");
+      background-color: css-var("pagination-background-color");
+      border: {
+         style: css-var("pagination-border-style");
+         width: css-var("pagination-border-width");
+         color: css-var("pagination-border-color");
+      }
+      color: css-var("pagination-font-color");
       cursor: pointer;
       display: inline-block;
-      font-family: $pagination-font;
-      margin-top: -$pagination-border-width;
-      margin-left: -$pagination-border-width;
+      font-family: css-var("pagination-font-family");
+      margin-top: css-var("pagination-border-width", -1);
+      margin-left: css-var("pagination-border-width", -1);
       position: relative;
       text-decoration: none;
 
@@ -21,8 +25,9 @@
       }
 
       &.#{$prefix}-is-active {
-         @include is-active($pagination-bg-color-active, $pagination-font-color-active);
-         border: $pagination-border-active;
+         background-color: css-var("pagination-active-background-color");
+         color: css-var("pagination-active-font-color");;
+         border-color: css-var("pagination-active-border-color");
       }
 
       &.#{$prefix}-is-disabled {
@@ -31,9 +36,9 @@
    }
 
    &__link:hover {
-      background-color: $pagination-bg-color-hover;
-      border: $pagination-border-hover;
-      color: $pagination-font-color-hover;
+      background-color: css-var("pagination-hover-background-color");
+      border-color: css-var("pagination-hover-border-color");
+      color: css-var("pagination-hover-font-color");
       z-index: 2;
    }
 
@@ -46,19 +51,19 @@
    }
 
    [tabindex="-1"]:focus {
-      border: $pagination-border-width $pagination-border-style transparent;
+      border: css-var("pagination-border-width") css-var("pagination-border-style") transparent;
       box-shadow: none;
    }
 
    &--small {
       .#{$prefix}-pagination__link {
-         @include pagination-size($spacing-xxx-small, $spacing-x-small, $font-size-small);
+         @include pagination-size("spacing-xxx-small", "spacing-x-small", "font-size-small");
       }
    }
 
    &--large {
       .#{$prefix}-pagination__link {
-         @include pagination-size($spacing-x-small, $spacing-medium, $font-size-large);
+         @include pagination-size("spacing-x-small", "spacing-medium", "font-size-large");
       }
    }
 }

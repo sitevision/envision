@@ -1,57 +1,31 @@
+
 .#{$prefix}-alert {
    border: $border-width $border-style transparent;
-   margin: $spacing-medium;
-   padding: $spacing-medium;
-   font-family: $alert-font-family;
+   margin: css-var("spacing-medium");
+   padding: css-var("spacing-medium");
+   font-family: css-var("alert-font-family");
+   border-radius: css-var("alert-border-radius");
 
-   @include border-radius($radius-medium);
+   $variableNames: "success", "warning", "danger", "info";
 
+   @each $name in $variableNames {
+      &--#{$name} {
+         background-color: css-var("alert-#{$name}-background-color");
+         color: css-var("alert-#{$name}-font-color");
+         border-left: 6px solid css-var("alert-#{$name}-border-color");
 
-   //@mixin alert-color-variant($color, $border-color, $font-color) {
-   @mixin alert-color-variant2($variableName) {
-      //background-color: lighten($color, 20%);
-      //color: $font-color;
-      //border-left: 6px solid $border-color;
-      background-color: var(--env-color-bg-#{$variableName});
-      color: var(--env-color-text-#{$variableName});
-      border-left: 6px solid var(--env-color-border-#{$variableName});
+         //&:hover {
+         //   border-color: lighten($border-color, 5%);
+         //}
 
-      &:hover {
-         //border-color: lighten($border-color, 5%);
-         border-color: var(--env-color-#{$variableName});
+         .#{$prefix}-alert__close {
+            color: css-var("alert-#{$name}-font-color");
+         }
       }
-
-      .#{$prefix}-alert__close {
-         //color: $font-color;
-         color: var(--env-color-#{$variableName});
-      }
-   }
-
-
-   @include alert-color-variant2("secondary");
-
-   &--success {
-      //@include alert-color-variant($alert-success-bg-color, $alert-success-border-color, $alert-success-font-color);
-      @include alert-color-variant2("success");
-   }
-
-   &--warning {
-      //@include alert-color-variant($alert-warning-bg-color, $alert-warning-border-color, $alert-warning-font-color);
-      @include alert-color-variant2("warning");
-   }
-
-   &--danger {
-      //@include alert-color-variant($alert-danger-bg-color, $alert-danger-border-color, $alert-danger-font-color);
-      @include alert-color-variant2("danger");
-   }
-
-   &--info {
-      //@include alert-color-variant($alert-info-bg-color, $alert-info-border-color, $alert-info-font-color);
-      @include alert-color-variant2("info");
    }
 
    &__link {
-      color: $font-color-lighter;
+      color: css-var("font-color-lighter");
       font-weight: $font-weight-bold;
       text-decoration: none;
 
@@ -65,12 +39,12 @@
       background: 0 0;
       border: 0;
       float: right;
-      font-family: $alert-font-family;
-      font-size: $font-size-medium;
+      font-family: css-var("alert-font-family");
+      font-size: css-var("font-size-medium");
       font-weight: $font-weight-bold;
-      padding: $spacing-small $spacing-medium;
+      padding: css-var("spacing-small") css-var("spacing-medium");
       position: relative;
-      right: -$spacing-medium;
-      top: -$spacing-small;
+      right: css-var("spacing-medium", -1);
+      top: css-var("spacing-small", -1);
    }
 }
