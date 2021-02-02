@@ -77,7 +77,7 @@
       }
 
       &__help {
-         color: $font-color-lighter;
+         color: css-var("font-color-lighter");
          font-size: css-var("font-size-small");
       }
 

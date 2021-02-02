@@ -1,7 +1,3 @@
-@mixin badge-color-variant2($font-color: $badge-default-font-color, $background-color: $badge-default-background-color) {
-   color: $font-color;
-   background-color: $background-color;
-}
 
 .#{$prefix}-badge {
    border-radius: css-var("badge-border-radius");
