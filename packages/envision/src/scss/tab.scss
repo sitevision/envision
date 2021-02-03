@@ -3,7 +3,6 @@ $link-classname: #{$prefix}-tabs__link;
 .#{$prefix}-tabs {
    &__nav {
       @include reset-list();
-      //background-color: $color-element-bg;
       display: flex;
 
       &--border-bottom {
@@ -22,7 +21,7 @@ $link-classname: #{$prefix}-tabs__link;
    &__link {
       @include nav-link();
       border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
-      background-color: css-var("element-background-color"); // $default-button-color;
+      background-color: css-var("element-background-color");
       color: css-var("font-color");
       margin: 0 css-var("spacing-xxx-small");
       padding: css-var("spacing-x-small") css-var("spacing-medium");
@@ -44,7 +43,6 @@ $link-classname: #{$prefix}-tabs__link;
 
    &--simple {
       @include reset-list();
-      //background-color: css-var("element-background-color");
       display: flex;
 
       .#{$prefix}-tabs__link {

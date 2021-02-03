@@ -11,8 +11,7 @@
    }
 
    &-input {
-      // background-color: $font-color-invert;
-      background-color: css-var("element-background-color");
+      background-color: css-var("font-color-invert");
       background-image: none;
       border: css-var("border-light");
       border-radius: css-var("form-input-border-radius");
@@ -28,9 +27,7 @@
 
       &[disabled],
       &[readonly] {
-         //background-color: lighten($color-lighter, 10%);
          background-color: css-var("color-lightest");
-         //border-color: $color-lighter;
          border-color: css-var("color-lighter");
       }
 
@@ -54,7 +51,6 @@
    }
 
    select:not([multiple]) {
-      // height: calc(#{$spacing-x-small + $spacing-x-small + $form-input-line-height} + #{$border-width * 2});
       height: calc(#{css-var("spacing-x-small")} * 2 + #{$form-input-line-height * 1em} + #{$border-width * 2});
    }
 
@@ -121,7 +117,6 @@
       option:focus,
       option:checked {
          color: css-var("font-color-invert");
-         // background: linear-gradient($color-brand, $color-brand);
          background: linear-gradient(#{css-var("color-primary")}, #{css-var("color-primary")});
       }
    }

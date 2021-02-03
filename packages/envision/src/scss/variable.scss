@@ -164,6 +164,9 @@ $focus-color: #5cb3fd !default;
    "color-light": $color-light,
    "color-lighter": $color-lighter,
    "color-lightest": $color-lightest,
+   "color-focus": $focus-color,
+   "focus-color": css-var("focus-color"), // DEPRECATE
+   "focus-background-color": $focus-background-color, // DEPRECATE, NOT USED!
 ));
 
 
@@ -392,8 +395,8 @@ $button-link-font-color: css-var("font-color") !default;
    "button-link-border-color": transparent,
    "button-link-hover-background-color": transparent,
    "button-link-hover-border-color": transparent,
-   "button-link-focus-border-color": css-var("focus-color"),
-   "button-link-focus-box-shadow-color": css-var("focus-color"),
+   "button-link-focus-border-color": css-var("color-focus"),
+   "button-link-focus-box-shadow-color": css-var("color-focus"),
    "default-button-color": css-var("button-background-color"), // DEPRECATE
 ));
 

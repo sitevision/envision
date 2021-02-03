@@ -19,26 +19,6 @@ title: Text
 ```
 
 ```html
-<div class="env-text-h1">Text styled as Heading 1</div>
-
-<div class="env-text-h2">Text styled as Heading 2</div>
-
-<div class="env-text-h3">Text styled as Heading 3</div>
-
-<div class="env-text-h4">Text styled as Heading 4</div>
-
-<div class="env-text-h5">Text styled as Heading 5</div>
-
-<div class="env-text-h6">Text styled as Heading 6</div>
-
-<div class="env-text-lead">Text styled as lead</div>
-
-<div class="env-text-p">Text styled as P (body / normal)</div>
-
-<div class="env-text-small">Text styled as small</div>
-```
- 
-```html
 <section class="env-text">
    <h1>Heading 1</h1>
 

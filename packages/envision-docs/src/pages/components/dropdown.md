@@ -15,7 +15,7 @@ title: Dropdown
       data-target="#example0"
    >
       Dropdown
-      <svg class="env-icon env-icon--small env-icon--invert env-dropdown-icon">
+      <svg class="env-icon env-icon--small env-dropdown-icon">
          <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
@@ -85,7 +85,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       aria-haspopup="true"
       data-target="#example2"
    >
-      <svg class="env-icon env-icon--invert env-dropdown-icon">
+      <svg class="env-icon env-dropdown-icon">
          <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>

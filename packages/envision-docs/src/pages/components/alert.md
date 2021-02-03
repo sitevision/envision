@@ -5,17 +5,6 @@ title: Alert
 ## Variations
 
 ```html
-<div class="env-alert" role="alert">
-   <strong>Hello!</strong> this is neutral alert
-   <button
-      type="button"
-      class="env-alert__close"
-      data-dismiss="alert"
-      aria-label="Close"
-   >
-      &times;
-   </button>
-</div>
 <div class="env-alert env-alert--success" role="alert">
    <strong>Hello!</strong> this is successful alert
    <button

@@ -14,10 +14,6 @@
          color: css-var("alert-#{$name}-font-color");
          border-left: 6px solid css-var("alert-#{$name}-border-color");
 
-         //&:hover {
-         //   border-color: lighten($border-color, 5%);
-         //}
-
          .#{$prefix}-alert__close {
             color: css-var("alert-#{$name}-font-color");
          }

@@ -6,9 +6,6 @@
 }
 
 @mixin button-color-variant($color, $background-color, $border-color, $active-background-color, $active-border-color) {
-   //$active-background-color: darken($background-color, 10%);
-   //$active-border-color: darken($border-color, 12%);
-
    background-color: css-var($background-color);
    border-color: css-var($border-color);
    color: css-var($color);
