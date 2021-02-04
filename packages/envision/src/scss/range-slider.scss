@@ -2,7 +2,7 @@
    $range-height: $spacing-small;
    $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
-   border: css-var("border-default");
+   border: $border-width $border-style css-var("border-color");
    border-radius: css-var("border-radius-small");
    height: $range-height;
    position: relative;
@@ -10,7 +10,7 @@
    &__handle {
       border-radius: css-var("border-radius-small");
       background: $color-lighter;
-      border: css-var("border-default");
+      border: $border-width $border-style css-var("border-color");
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop / 2);
       position: absolute;

@@ -23,7 +23,11 @@
    padding: css-var("spacing-x-small");
    cursor: pointer;
    box-sizing: border-box;
-   border: css-var("collapse-border");
+   border: {
+      style: css-var("collapse-border-style");
+      width: css-var("collapse-border-width");
+      color: css-var("collapse-border-color");
+   }
    background-color: css-var("collapse-background-color");
    word-break: break-all;
 
@@ -33,12 +37,12 @@
 
    &:hover {
       background-color: css-var("collapse-expanded-background-color");
-      border: css-var("collapse-expanded-border");
+      border-color: css-var("collapse-expanded-border-color");
    }
 
    &.#{$prefix}-collapse--expanded {
       background-color: css-var("collapse-expanded-background-color");
-      border: css-var("collapse-expanded-border");
+      border-color: css-var("collapse-expanded-border-color");
    }
 }
 

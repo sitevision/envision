@@ -10,7 +10,7 @@
 
    th,
    td {
-      border-top: css-var("border-light");
+      border-top: $border-width $border-style css-var("border-color-light");
       padding: css-var("spacing-x-small");
       vertical-align: top;
    }
@@ -24,7 +24,7 @@
    &--borders-around {
       th,
       td {
-         border: css-var("border-light");;
+         border: $border-width $border-style css-var("border-color-light");
       }
    }
 
@@ -34,7 +34,7 @@
          th,
          td {
             border-top: 0;
-            border-#{$direction}: css-var("border-light");
+            border-#{$direction}: $border-width $border-style css-var("border-color-light");
          }
       }
    }

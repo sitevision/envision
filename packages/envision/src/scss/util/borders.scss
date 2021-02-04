@@ -1,5 +1,5 @@
 [class^="#{$prefix}-border--"] {
-   border: css-var("border-default");
+   border: $border-width $border-style css-var("border-color");
 }
 
 .#{$prefix}-border--0 { border: 0 !important; }
@@ -8,8 +8,8 @@
 .#{$prefix}-border--b-0 { border-bottom: 0 !important; }
 .#{$prefix}-border--l-0 { border-left: 0 !important; }
 
-.#{$prefix}-border { border: css-var("border-default") !important; }
-.#{$prefix}-border-top { border-top: css-var("border-default") !important; }
-.#{$prefix}-border-right { border-right: css-var("border-default") !important; }
-.#{$prefix}-border-bottom { border-bottom: css-var("border-default") !important; }
-.#{$prefix}-border-left { border-left: css-var("border-default") !important; }
+.#{$prefix}-border { border: $border-width $border-style css-var("border-color") !important; }
+.#{$prefix}-border-top { border-top: $border-width $border-style css-var("border-color") !important; }
+.#{$prefix}-border-right { border-right: $border-width $border-style css-var("border-color") !important; }
+.#{$prefix}-border-bottom { border-bottom: $border-width $border-style css-var("border-color") !important; }
+.#{$prefix}-border-left { border-left: $border-width $border-style css-var("border-color") !important; }

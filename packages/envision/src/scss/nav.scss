@@ -43,7 +43,7 @@ $nav-link-classname: #{$prefix}-nav__link;
 
 .#{$prefix}-nav--sidenav {
    .#{$nav-link-classname} {
-      border-bottom: css-var("border-light");
+      border-bottom: $border-width $border-style css-var("border-color-light");
       color: css-var("color-normal");
       padding: css-var("spacing-small") 0;
 

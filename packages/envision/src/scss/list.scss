@@ -45,13 +45,13 @@
 
    &.#{$prefix}-list-dividers {
       &--top > .#{$item} {
-         border-top: css-var("border-light");
+         border-top: $border-width $border-style css-var("border-color-light");
       }
       &--bottom > .#{$item} {
-         border-bottom: css-var("border-light");;
+         border-bottom: $border-width $border-style css-var("border-color-light");
       }
       &--around > .#{$item} {
-         border: css-var("border-light");;
+         border: $border-width $border-style css-var("border-color-light");
          + .#{$item} {
             margin-top: css-var("spacing-xxx-small");
          }
@@ -60,13 +60,13 @@
 
    .#{$prefix}-list-item-divider {
       &--top {
-         border-top: css-var("border-light");;
+         border-top: $border-width $border-style css-var("border-color-light");
       }
       &--bottom {
-         border-bottom: css-var("border-light");;
+         border-bottom: $border-width $border-style css-var("border-color-light");
       }
       &--around {
-         border: css-var("border-light");;
+         border: $border-width $border-style css-var("border-color-light");
       }
    }
 }

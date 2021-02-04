@@ -13,7 +13,7 @@
    &-input {
       background-color: css-var("font-color-invert");
       background-image: none;
-      border: css-var("border-light");
+      border: $border-width $border-style css-var("border-color-light");
       border-radius: css-var("form-input-border-radius");
       box-sizing: border-box;
       color: css-var("font-color");
@@ -136,7 +136,7 @@
          content:'';
          width: $radiobutton-size;
          height: $radiobutton-size;
-         border: css-var("border-light");
+         border: $border-width $border-style css-var("border-color-light");
          position: absolute;
          left: 0;
          top: 1px;
@@ -282,7 +282,7 @@
    }
 
    &__fake {
-      border: css-var("border-light");
+      border: $border-width $border-style css-var("border-color-light");
       border-radius: css-var("border-radius-small");
       display: inline-block;
       height: $checkbox-size;

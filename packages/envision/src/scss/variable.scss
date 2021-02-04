@@ -215,13 +215,9 @@ $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: $color-light !default;
 $border-color-light: $color-lighter !default;
-$default-border: $border-width $border-style css-var("border-color") !default;
-$border-light: $border-width $border-style css-var("border-color-light") !default;
 $tab-bottom-width: 3px !default;
 
 @include to-css-custom-property((
-   "border-default": $default-border,
-   "border-light": $border-light,
    "border-color": $border-color,
    "border-color-light": $border-color-light,
    "border-success-color": $color-success,
@@ -350,13 +346,16 @@ $button-link-font-color: css-var("font-color") !default;
 @include to-css-custom-property((
    "button-font-family": css-var("font-family"),
    "button-border-radius": $radius-small,
+
    "button-font-color": css-var("font-color"), // $button-default-font-color,
    "button-background-color": $default-button-color,
+
    "button-border-color": transparent,
    "button-hover-background-color": darken($default-button-color, 10%),
    "button-hover-border-color": transparent,
    "button-focus-border-color": darken($button-default-color, 10%),
    "button-focus-box-shadow-color": darken($button-default-color, 40%),
+
    // primary
    "button-primary-font-color": $button-primary-font-color,
    "button-primary-background-color": $button-primary-color,
@@ -365,6 +364,7 @@ $button-link-font-color: css-var("font-color") !default;
    "button-primary-hover-border-color": darken($button-primary-color, 12%),
    "button-primary-focus-border-color": darken($button-primary-color, 12%),
    "button-primary-focus-box-shadow-color": darken($button-primary-color, 10%),
+
    // success
    "button-success-font-color": $button-success-font-color,
    "button-success-background-color": $button-success-color,
@@ -457,16 +457,16 @@ $collapse-border-color: lighten($color-lighter, 10%) !default;
 $collapse-border-color-expanded: lighten($color-light, 10%) !default;
 
 // Collapse border
-$collapse-heading-border-size: $border-width !default;
-$collapse-heading-border-style: $border-style !default;
-$collapse-heading-border: $collapse-heading-border-size $collapse-heading-border-style $collapse-border-color !default;
-$collapse-heading-border-expanded: $collapse-heading-border-size $collapse-heading-border-style $collapse-border-color-expanded !default;
+$collapse-border-width: $border-width !default;
+$collapse-border-style: $border-style !default;
 
 
 @include to-css-custom-property((
-   "collapse-border": $collapse-heading-border,
+   "collapse-border-style": $collapse-border-style,
+   "collapse-border-width": $collapse-border-width,
+   "collapse-border-color": $collapse-border-color,
    "collapse-background-color": $collapse-heading-bg-color,
-   "collapse-expanded-border": $collapse-heading-border-expanded,
+   "collapse-expanded-border-color": $collapse-border-color-expanded,
    "collapse-expanded-background-color": $collapse-heading-bg-color-expanded,
    "collapse-icon-color": $collapse-icon-color,
    "collapse-icon-width": $collapse-icon-width,

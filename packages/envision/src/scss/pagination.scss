@@ -26,7 +26,7 @@
 
       &.#{$prefix}-is-active {
          background-color: css-var("pagination-active-background-color");
-         color: css-var("pagination-active-font-color");;
+         color: css-var("pagination-active-font-color");
          border-color: css-var("pagination-active-border-color");
       }
 
@@ -51,7 +51,7 @@
    }
 
    [tabindex="-1"]:focus {
-      border: css-var("pagination-border-width") css-var("pagination-border-style") transparent;
+      border-color: transparent;
       box-shadow: none;
    }
 
