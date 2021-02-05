@@ -11,6 +11,7 @@ $arrow-border-size: 10px;
    max-width: $popover-width;
    position: relative;
    z-index: $zindex-popover;
+   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
 

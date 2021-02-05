@@ -1,5 +1,6 @@
 .#{$prefix}-post {
    @include border-divider(border, 1px, $color-element-bg);
+   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
 

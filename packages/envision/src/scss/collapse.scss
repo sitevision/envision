@@ -1,5 +1,6 @@
 .#{$prefix}-collapse {
    display: none;
+   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
 
@@ -27,6 +28,7 @@
    box-sizing: border-box;
    border: $collapse-heading-border;
    background-color: $collapse-heading-bg-color;
+   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
 
