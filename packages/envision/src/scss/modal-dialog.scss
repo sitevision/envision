@@ -10,7 +10,7 @@
    position: fixed;
    right: 0;
    top: 0;
-   transition: opacity .3s linear;
+   transition: opacity 0.3s linear;
    z-index: $zindex-modal;
 
    &--show {
@@ -19,6 +19,10 @@
    }
 
    &__dialog {
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      word-break: normal;
+
       @media (min-width: 768px) {
          margin: 10% auto;
          max-width: css-var("modal-medium-width");
@@ -87,6 +91,10 @@
 }
 
 @keyframes #{$prefix}-fade {
-   from { opacity: 0; }
-   to { opacity: .5; }
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 0.5;
+   }
 }

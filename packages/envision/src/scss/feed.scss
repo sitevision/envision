@@ -1,5 +1,8 @@
 .#{$prefix}-post {
    border: 1px solid css-var("element-background-color");
+   word-wrap: break-word;
+   overflow-wrap: anywhere;
+   word-break: normal;
 
    &__header,
    &__entry,

@@ -11,6 +11,9 @@ $arrow-border-size: 10px;
    max-width: css-var("popover-width");
    position: relative;
    z-index: $zindex-popover;
+   word-wrap: break-word;
+   overflow-wrap: anywhere;
+   word-break: normal;
 
    &__header {
       border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
@@ -41,7 +44,7 @@ $arrow-border-size: 10px;
          border-color: transparent;
          border-style: $border-style;
          border-width: $arrow-border-size;
-         content: "";
+         content: '';
          display: block;
          height: 0;
          position: absolute;
