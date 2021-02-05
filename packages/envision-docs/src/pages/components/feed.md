@@ -584,7 +584,7 @@ title: Feed
                <input type="text" id="example-input3" class="env-form-input" />
             </div>
             <div class="env-media__actions">
-               <button placeholder="Comment" type="button" class="env-button env-button--primary">
+               <button type="button" class="env-button env-button--primary">
                   Comment
                </button>
             </div>
