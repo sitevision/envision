@@ -13,8 +13,7 @@
       list-style: none;
       max-width: 240px;
       min-width: 180px;
-      padding-left: 0;
-      padding-top: $spacing-xx-small;
+      padding: $spacing-xx-small 0;
       position: absolute;
       top: $spacing-medium;
       z-index: $zindex-dropdown;
@@ -32,10 +31,6 @@
       &:hover {
          background-color: rgba(0, 0, 0, .1);
       }
-   }
-
-   &__item:last-child {
-      margin-bottom: $spacing-xx-small;
    }
 
    &--divider {
