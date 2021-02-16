@@ -1,54 +1,59 @@
+
 .#{$prefix}-button {
-   @include button-base($button-border-radius);
+   appearance: none;
+   border: $border-width $border-style;
+   box-sizing: border-box;
+   cursor: pointer;
+   display: inline-block;
+   font-family: css-var("button-font-family");
+   margin: 0;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   vertical-align: middle;
+   border-radius: css-var("button-border-radius");
+
+   @include button-size("spacing-xx-small", "spacing-small", "font-size-medium", $button-line-height);
+
+
+   @include button-color-variant(
+         "button-font-color",
+         "button-background-color",
+         "button-border-color",
+         "button-hover-background-color",
+         "button-hover-border-color",
+   );
+
+   &:focus {
+      @include focus("button-focus-border-color", "button-focus-box-shadow-color");
+   }
 
    // Variants
-   &--primary {
-      @include button-color-variant($button-primary-font-color, $button-primary-color, $button-primary-color);
 
-      &:focus {
-         @include focus(darken($button-primary-color, 12%), darken($button-primary-color, 10%))
-      }
-   }
+   $buttonNames: "primary", "success", "danger", "invert", "link";
 
-   &--invert {
-      @include button-color-variant($color-brand, $font-color-invert, $font-color-invert);
-
-      &:focus {
-         @include focus(darken($font-color-invert, 12%), darken($font-color-invert, 10%))
-      }
-   }
-
-   &--success {
-      @include button-color-variant($button-success-font-color, $button-success-color, $button-success-color);
-
-      &:focus {
-         @include focus(darken($button-success-color, 12%), darken($button-success-color, 10%))
-      }
-   }
-
-   &--danger {
-      @include button-color-variant($button-danger-font-color, $button-danger-color, $button-danger-color);
-
-      &:focus {
-         @include focus(darken($button-danger-color, 12%), darken($button-danger-color, 10%))
-      }
-   }
-
-   &--link {
-      @include button-color-variant($button-link-font-color, transparent, transparent);
-
-      &:focus {
-         @include focus();
+   @each $name in $buttonNames {
+      &--#{$name} {
+         @include button-color-variant(
+               "button-#{$name}-font-color",
+               "button-#{$name}-background-color",
+               "button-#{$name}-border-color",
+               "button-#{$name}-hover-background-color",
+               "button-#{$name}-hover-border-color",
+         );
+         &:focus {
+            @include focus("button-#{$name}-focus-border-color", "button-#{$name}-focus-box-shadow-color");
+         }
       }
    }
 
    // Sizes
    &--large {
-      @include button-size($spacing-x-small, $spacing-small, $font-size-large, $button-line-height);
+      @include button-size("spacing-x-small", "spacing-small", "font-size-large", $button-line-height);
    }
 
    &--small {
-      @include button-size($spacing-xx-small, $spacing-xx-small, $font-size-small, $button-line-height);
+      @include button-size("spacing-xx-small", "spacing-xx-small", "font-size-small", $button-line-height);
    }
 
    &--block {
@@ -67,9 +72,9 @@
       background-color: transparent;
       border-color: transparent;
       color: #1d1d1b;
-      height: $spacing-xxx-large;
+      height: css-var("font-size-xxx-large");
       padding: 0;
-      width: $spacing-xxx-large;
+      width: css-var("font-size-xxx-large");
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);

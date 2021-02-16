@@ -10,7 +10,7 @@
    position: fixed;
    right: 0;
    top: 0;
-   transition: opacity .3s linear;
+   transition: opacity 0.3s linear;
    z-index: $zindex-modal;
 
    &--show {
@@ -19,47 +19,50 @@
    }
 
    &__dialog {
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      word-break: normal;
+
       @media (min-width: 768px) {
          margin: 10% auto;
-         max-width: $modal-medium;
+         max-width: css-var("modal-medium-width");
       }
       position: relative;
 
       &--large {
          @media (min-width: 768px) {
             margin: 10% auto;
-            max-width: $modal-large;
+            max-width: css-var("modal-large-width");
          }
       }
 
       &--small {
          @media (min-width: 768px) {
             margin: 10% auto;
-            max-width: $modal-small;
+            max-width: css-var("modal-small-width");
          }
       }
    }
 
    &__content {
       background-clip: padding-box;
-      background-color: $color-element-bg;
-      border: $default-border;
-      @include border-radius($radius-medium);
-      @include box-shadow($modal-dialog-shadow);
+      background-color: css-var("element-background-color");
+      border: $border-width $border-style css-var("border-color");
+      border-radius: css-var("border-radius-medium");
+      box-shadow: css-var("modal-dialog-box-shadow");
       outline: 0;
       position: relative;
    }
 
    &__header {
-      background-color: $color-brand;
-      @include border-top-radius($radius-medium);
+      border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
+      border-bottom: $border-width $border-style css-var("border-color-light");
       display: block;
-      padding: $spacing-xx-small $spacing-x-small;
+      padding: css-var("spacing-xx-small") css-var("spacing-x-small");
 
       &__title {
-         color: $font-color-invert;
          margin-bottom: 0 !important;
-         padding: $spacing-xx-small;
+         padding: css-var("spacing-xx-small");
       }
    }
 
@@ -72,13 +75,13 @@
    }
 
    &__body {
-      padding: $spacing-x-small;
+      padding: css-var("spacing-x-small") css-var("spacing-small");
    }
 
    &__footer {
-      background-color: $color-element-bg;
-      @include border-bottom-radius($radius-medium $radius-medium);
-      padding: $spacing-small;
+      border-radius: 0 0 css-var("border-radius-medium") css-var("border-radius-medium");
+      border-top: $border-width $border-style css-var("border-color-light");
+      padding: css-var("spacing-small");
       text-align: left;
 
       &--right {
@@ -88,6 +91,10 @@
 }
 
 @keyframes #{$prefix}-fade {
-   from { opacity: 0; }
-   to { opacity: .5; }
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 0.5;
+   }
 }

@@ -9,7 +9,7 @@
 
    > div {
       animation: #{$prefix}-stretchdelay 1.2s infinite ease-in-out;
-      background-color: $spinner-color;
+      background-color: css-var("spinner-color");
       display: inline-block;
       height: 100%;
       width: 6px;
