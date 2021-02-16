@@ -28,6 +28,7 @@
       display: block;
       padding: css-var("spacing-x-small");
       @include truncate-text();
+      text-decoration: none;
 
       &:hover {
          background-color: rgba(0, 0, 0, .1);
