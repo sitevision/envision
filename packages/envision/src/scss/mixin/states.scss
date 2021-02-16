@@ -1,10 +1,6 @@
-@mixin is-active($background-color: $color-brand, $color: $font-color-invert) {
-   background-color: $background-color;
-   color: $color;
-}
 
-@mixin is-disabled($background-color: $default-button-color) {
-   background-color: $background-color;
+@mixin is-disabled($background-color: "button-background-color") {
+   background-color: css-var($background-color);
    cursor: not-allowed;
    opacity: .55;
    pointer-events: none;

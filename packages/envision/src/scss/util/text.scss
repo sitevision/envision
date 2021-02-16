@@ -1,7 +1,7 @@
 .#{$prefix}-text {
-   color: $font-color;
-   font-family: $font-family;
-   font-size: $font-size-medium;
+   color: css-var("font-color");
+   font-family: css-var("font-family");
+   font-size: css-var("font-size-medium");
    font-weight: $font-weight-regular;
 
    a {
@@ -9,7 +9,7 @@
    }
 
    &--muted {
-      color: $font-color-lighter !important;
+      color: css-var("font-color-lighter") !important;
    }
 
    &--uppercase {
@@ -71,11 +71,11 @@ a.#{$prefix}-text {
    @include link();
 }
 
-@include block-text-size('h1', $font-size-xxxx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h2', $font-size-xxx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h3', $font-size-xx-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h4', $font-size-x-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h5', $font-size-large, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('h6', $font-size-medium, $spacing-xx-small, $font-weight-semibold);
-@include block-text-size('p', $font-size-medium, $spacing-xx-small, $font-weight-regular);
+@include block-text-size('h1', "font-size-xxxx-large", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('h2', "font-size-xxx-large", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('h3', "font-size-xx-large", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('h4', "font-size-x-large", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('h5', "font-size-large", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('h6', "font-size-medium", "spacing-xx-small", $font-weight-semibold);
+@include block-text-size('p', "font-size-medium", "spacing-xx-small", $font-weight-regular);
 @include inline-text-size('small', .8em, $font-weight-light);

@@ -1,19 +1,16 @@
 .#{$prefix}-button-group {
    position: relative;
+   display: flex;
 
    .#{$prefix}-button {
       border-radius: 0;
-      float: left;
-   }
 
-   &:first-child {
-      border-radius: $radius-small 0 0 $radius-small;
-      margin-right: 1px;
-   }
+      &:first-child {
+         border-radius: css-var("button-border-radius") 0 0 css-var("button-border-radius");
+      }
 
-   &:nth-child(2) {
-      border-radius: 0 $radius-small $radius-small 0;
+      &:last-child {
+         border-radius: 0 css-var("button-border-radius") css-var("button-border-radius") 0;
+      }
    }
-
-   @include clearfix();
 }

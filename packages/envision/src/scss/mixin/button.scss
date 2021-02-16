@@ -1,54 +1,28 @@
-@mixin button-base($border-radius: $button-border-radius) {
-   appearance: none;
-   border: $border-width $border-style;
-   box-sizing: border-box;
-   cursor: pointer;
-   display: inline-block;
-   font-family: $button-font-family;
-   margin: 0;
-   text-align: center;
-   text-decoration: none;
-   user-select: none;
-   vertical-align: middle;
-
-   @include border-radius($border-radius);
-
-   @include button-color-variant($button-default-font-color, $button-default-color, transparent);
-
-   @include button-size($spacing-xx-small, $spacing-small, $font-size-medium, $button-line-height);
-
-   &:focus {
-      @include focus(darken($button-default-color, 10%), darken($button-default-color, 40%));
-   }
-}
 
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
-   font-size: $font-size;
+   font-size: css-var($font-size);
    line-height: $line-height;
-   padding: $padding-y $padding-x;
+   padding: css-var($padding-y) css-var($padding-x);
 }
 
-@mixin button-color-variant($color, $background-color, $border-color) {
-   $active-background-color: darken($background-color, 10%);
-   $active-border-color: darken($border-color, 12%);
+@mixin button-color-variant($color, $background-color, $border-color, $active-background-color, $active-border-color) {
+   background-color: css-var($background-color);
+   border-color: css-var($border-color);
+   color: css-var($color);
 
-   background-color: $background-color;
-   border-color: $border-color;
-   color: $color;
+   &:hover,
+   &:active,
+   &:focus {
+      background-color: css-var($active-background-color);
+   }
 
-   &:hover {
-      background-color: $active-background-color;
-      border-color: $active-border-color;
+   &:hover,
+   &:active {
+      border-color: css-var($active-border-color);
    }
 
    &:active {
-      background-color: $active-background-color;
-      border-color: $active-border-color;
-
       box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, .3);
    }
 
-   &:focus {
-      background-color: $active-background-color;
-   }
 }

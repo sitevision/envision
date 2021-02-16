@@ -1,27 +1,33 @@
-.#{$prefix}-badge {
-   border-radius: $badge-border-radius;
-   display: inline-block;
-   font-family: $badge-font-family;
-   font-size: $badge-font-size;
-   font-weight: $font-weight-bold;
-   padding: $spacing-xx-small $spacing-x-small;
-   vertical-align: baseline;
 
-   @include badge-color-variant();
+.#{$prefix}-badge {
+   border-radius: css-var("badge-border-radius");
+   display: inline-block;
+   font-family: css-var("badge-font-family");
+   font-size: css-var("badge-font-size");
+   font-weight: $font-weight-bold;
+   padding: css-var("spacing-xx-small") css-var("spacing-x-small");
+   vertical-align: baseline;
+   color: css-var("badge-font-color");
+   background-color: css-var("badge-background-color");
+
 
    &--success {
-      @include badge-color-variant($badge-success-font-color, $badge-success-background-color);
+      color: css-var("badge-success-font-color");
+      background-color: css-var("badge-success-background-color");
    }
 
    &--warning {
-      @include badge-color-variant($badge-warning-font-color, $badge-warning-background-color);
+      color: css-var("badge-warning-font-color");
+      background-color: css-var("badge-warning-background-color");
    }
 
    &--danger {
-      @include badge-color-variant($badge-danger-font-color, $badge-danger-background-color);
+      color: css-var("badge-danger-font-color");
+      background-color: css-var("badge-danger-background-color");
    }
 
    &--info {
-      @include badge-color-variant($badge-info-font-color, $badge-info-background-color);
+      color: css-var("badge-info-font-color");
+      background-color: css-var("badge-info-background-color");
    }
 }
