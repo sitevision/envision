@@ -220,11 +220,15 @@ const Imageslider = (($) => {
       _addSlideButtons() {
          const sliderId = this.$el[0].id;
          const buttonHTML = `<a class="env-image-slider--prev" role="button" data-move="prev" href="#${sliderId}">
-               <i class="env-image-slider__previous-icon"></i>
+               <svg class="env-image-slider__previous-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-left"></use>
+               </svg>
                <span class="env-assistive-text">Previous</span>
             </a>
             <a class="env-image-slider--next" role="button" data-move="next" href="#${sliderId}">
-               <i class="env-image-slider__next-icon"></i>
+               <svg class="env-image-slider__next-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-right"></use>
+               </svg>
                <span class="env-assistive-text">Next</span>
             </a>`;
 

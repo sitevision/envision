@@ -45,28 +45,28 @@
 
    &.#{$prefix}-list-dividers {
       &--top > .#{$item} {
-         @include border-divider(border-top);
+         border-top: $border-width $border-style css-var("border-color-light");
       }
       &--bottom > .#{$item} {
-         @include border-divider(border-bottom);
+         border-bottom: $border-width $border-style css-var("border-color-light");
       }
       &--around > .#{$item} {
-         @include border-divider(border);
+         border: $border-width $border-style css-var("border-color-light");
          + .#{$item} {
-            margin-top: $spacing-xxx-small;
+            margin-top: css-var("spacing-xxx-small");
          }
       }
    }
 
    .#{$prefix}-list-item-divider {
       &--top {
-         @include border-divider(border-top);
+         border-top: $border-width $border-style css-var("border-color-light");
       }
       &--bottom {
-         @include border-divider(border-bottom);
+         border-bottom: $border-width $border-style css-var("border-color-light");
       }
       &--around {
-         @include border-divider(border);
+         border: $border-width $border-style css-var("border-color-light");
       }
    }
 }
@@ -75,7 +75,7 @@
 
    dd {
       margin: 0;
-      padding: 0 0 $spacing-small;
+      padding: 0 0 css-var("spacing-small");
    }
 
    &--horizontal {
@@ -89,8 +89,8 @@
       }
 
       dd {
-         margin: 0 0 0 #{$dl-title-width + $spacing-medium};
-         padding: 0 0 $spacing-small;
+         margin: 0 0 0 #{$dl-title-width + $spacing-medium}; // Keep
+         padding: 0 0 css-var("spacing-small");
       }
    }
 }

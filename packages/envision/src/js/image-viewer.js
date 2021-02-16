@@ -198,11 +198,15 @@ const Imageviewer = (($) => {
 
       _getButtons() {
          const buttonHTML = `<a class="env-image-viewer--prev" role="button" data-move="prev">
-               <i class="env-image-viewer__prev-icon"></i>
+               <svg class="env-image-viewer__prev-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-left"></use>
+               </svg>
                <span class="env-assistive-text">Previous</span>
             </a>
             <a class="env-image-viewer--next" role="button" data-move="next">
-               <i class="env-image-viewer__next-icon"></i>
+               <svg class="env-image-viewer__next-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-right"></use>
+               </svg>
                <span class="env-assistive-text">Next</span>
             </a>`;
 

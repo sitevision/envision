@@ -3,11 +3,10 @@ $link-classname: #{$prefix}-tabs__link;
 .#{$prefix}-tabs {
    &__nav {
       @include reset-list();
-      background-color: $color-element-bg;
       display: flex;
 
       &--border-bottom {
-         border-bottom: $tab-bottom-width $border-style $color-brand;
+         border-bottom: $tab-bottom-width $border-style css-var("color-primary");
       }
 
       :first-child > a {
@@ -21,20 +20,19 @@ $link-classname: #{$prefix}-tabs__link;
 
    &__link {
       @include nav-link();
-      @include border-top-radius($radius-medium);
-
-      background-color: $default-button-color;
-      color: $font-color;
-      margin: 0 $spacing-xxx-small;
-      padding: $spacing-x-small $spacing-medium;
+      border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
+      background-color: css-var("element-background-color");
+      color: css-var("font-color");
+      margin: 0 css-var("spacing-xxx-small");
+      padding: css-var("spacing-x-small") css-var("spacing-medium");
       outline: 0;
 
       &--active {
-         background-color: $color-brand;
-         color: $color-element-bg;
+         background-color: css-var("button-primary-background-color");
+         color: css-var("button-primary-font-color");
 
          &:hover {
-            color: $color-element-bg;
+            color: css-var("element-background-color");
          }
       }
 
@@ -45,26 +43,25 @@ $link-classname: #{$prefix}-tabs__link;
 
    &--simple {
       @include reset-list();
-      background-color: $color-element-bg;
       display: flex;
 
       .#{$prefix}-tabs__link {
-         background-color: $color-element-bg;
+         background-color: css-var("element-background-color");
          border-color: transparent;
-         color: $font-color;
-         margin: 0 $spacing-xx-small;
-         padding: $spacing-x-small $spacing-x-small;
+         color: css-var("font-color");
+         margin: 0 css-var("spacing-xx-small");
+         padding: css-var("spacing-x-small") css-var("spacing-x-small");
          outline: 0;
          transition: border-color .5s ease;
 
          &--active {
-            border-bottom: $tab-bottom-width $border-style $color-brand;
-            color: $font-color;
+            border-bottom: $tab-bottom-width $border-style css-var("color-primary");
+            color: css-var("font-color");
          }
 
          &:hover {
-            border-bottom: $tab-bottom-width $border-style $color-brand;
-            color: $font-color;
+            border-bottom: $tab-bottom-width $border-style css-var("color-primary");
+            color: css-var("font-color");
          }
       }
    }

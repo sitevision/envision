@@ -10,21 +10,21 @@
 
    th,
    td {
-      @include border-divider(border-top);
-      padding: $spacing-x-small;
+      border-top: $border-width $border-style css-var("border-color-light");
+      padding: css-var("spacing-x-small");
       vertical-align: top;
    }
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         background-color: $table-zebra-color;
+         background-color: css-var("table-zebra-background-color");
       }
    }
 
    &--borders-around {
       th,
       td {
-         @include border-divider(border);
+         border: $border-width $border-style css-var("border-color-light");
       }
    }
 
@@ -34,7 +34,7 @@
          th,
          td {
             border-top: 0;
-            @include border-divider(border-#{$direction});
+            border-#{$direction}: $border-width $border-style css-var("border-color-light");
          }
       }
    }
@@ -42,36 +42,37 @@
    &--small {
       th,
       td {
-         padding: $spacing-xx-small;
+         padding: css-var("spacing-xx-small");
       }
    }
 
    &--large {
       th,
       td {
-         padding: $spacing-small;
+         padding: css-var("spacing-small");
       }
    }
 
    &--hover {
       tbody tr:hover {
-         background-color: $table-active-color;
+         background-color: css-var("table-active-background-color");
       }
    }
 
    $colors: (
-      active: $table-active-color,
-      info: $color-brand,
-      success: $color-success,
-      warning: $color-warning,
-      danger: $color-danger
+      active: "table-active-background-color",
+      info: "color-brand",
+      success: "color-success",
+      warning: "color-warning",
+      danger: "color-danger"
    );
    $blocks: row cell;
    @each $state, $color in $colors {
       @each $block in $blocks {
          .#{$prefix}-table__#{$block}--#{$state} {
-            background-color: $color;
+            background-color: css-var($color);
          }
       }
    }
+
 }

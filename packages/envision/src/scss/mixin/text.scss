@@ -4,9 +4,9 @@
    .#{$prefix}-text-#{$element},
    // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .#{$prefix}-text--#{$element} {
-      font-size: $font-size;
+      font-size: css-var($font-size);
       font-weight: $font-weight;
-      margin: 0 0 $margin-bottom;
+      margin: 0 0 css-var($margin-bottom);
    }
 }
 
@@ -21,9 +21,8 @@
    }
 }
 
-@mixin link() {
-   border-radius: $radius-small;
-   color: $font-color;
+@mixin link($font-color: "font-color") {
+   color: css-var($font-color);
    font-weight: $font-weight-semibold;
    text-decoration: none;
 }

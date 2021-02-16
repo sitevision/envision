@@ -8,7 +8,7 @@ title: Popover
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-p-around--small">
+   <div class="env-popover__content">
       <p class="env-text">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum
          nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum
@@ -26,7 +26,7 @@ title: Popover
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-p-around--small">
+   <div class="env-popover__content">
       <p class="env-text">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum
          nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum
@@ -44,7 +44,7 @@ title: Popover
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-p-around--small">
+   <div class="env-popover__content">
       <p class="env-text">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum
          nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum
@@ -62,7 +62,7 @@ title: Popover
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
-   <div class="env-popover__content env-p-around--small">
+   <div class="env-popover__content">
       <p class="env-text">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum
          nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum

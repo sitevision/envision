@@ -13,3 +13,11 @@
 
    @return $string;
 }
+
+@function css-var ($variableName, $multiplyBy: 1) {
+   @if ($multiplyBy == 1) {
+      @return var(--#{$prefix}-#{$variableName});
+   } @else {
+      @return #{"calc("}var(--#{$prefix}-#{$variableName})#{" * "}#{$multiplyBy}#{")"};
+   }
+}

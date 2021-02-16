@@ -1,29 +1,27 @@
+
 .#{$prefix}-alert {
    border: $border-width $border-style transparent;
-   margin: $spacing-medium;
-   padding: $spacing-medium;
-   font-family: $alert-font-family;
+   margin: css-var("spacing-medium");
+   padding: css-var("spacing-medium");
+   font-family: css-var("alert-font-family");
+   border-radius: css-var("alert-border-radius");
 
-   @include border-radius($radius-medium);
+   $variableNames: "success", "warning", "danger", "info";
 
-   &--success {
-      @include alert-color-variant($alert-success-bg-color, $alert-success-border-color, $alert-success-font-color);
-   }
+   @each $name in $variableNames {
+      &--#{$name} {
+         background-color: css-var("alert-#{$name}-background-color");
+         color: css-var("alert-#{$name}-font-color");
+         border-left: 6px solid css-var("alert-#{$name}-border-color");
 
-   &--warning {
-      @include alert-color-variant($alert-warning-bg-color, $alert-warning-border-color, $alert-warning-font-color);
-   }
-
-   &--danger {
-      @include alert-color-variant($alert-danger-bg-color, $alert-danger-border-color, $alert-danger-font-color);
-   }
-
-   &--info {
-      @include alert-color-variant($alert-info-bg-color, $alert-info-border-color, $alert-info-font-color);
+         .#{$prefix}-alert__close {
+            color: css-var("alert-#{$name}-font-color");
+         }
+      }
    }
 
    &__link {
-      color: $font-color-lighter;
+      color: css-var("font-color-lighter");
       font-weight: $font-weight-bold;
       text-decoration: none;
 
@@ -37,12 +35,12 @@
       background: 0 0;
       border: 0;
       float: right;
-      font-family: $alert-font-family;
-      font-size: $font-size-medium;
+      font-family: css-var("alert-font-family");
+      font-size: css-var("font-size-medium");
       font-weight: $font-weight-bold;
-      padding: $spacing-small $spacing-medium;
+      padding: css-var("spacing-small") css-var("spacing-medium");
       position: relative;
-      right: -$spacing-medium;
-      top: -$spacing-small;
+      right: css-var("spacing-medium", -1);
+      top: css-var("spacing-small", -1);
    }
 }

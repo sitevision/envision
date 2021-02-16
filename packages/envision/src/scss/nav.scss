@@ -2,8 +2,8 @@ $nav-link-classname: #{$prefix}-nav__link;
 
 .#{$prefix}-nav {
    @include reset-list();
-   font-family: $font-family;
-   font-size: $font-size-medium;
+   font-family: css-var("font-family");
+   font-size: css-var("font-size-medium");
    font-weight: $font-weight-regular;
 
    &__link {
@@ -15,7 +15,7 @@ $nav-link-classname: #{$prefix}-nav__link;
    display: flex;
 
    .#{$nav-link-classname} {
-      padding: $spacing-small;
+      padding: css-var("spacing-small");
    }
 
    &.#{$prefix}-nav--fill {
@@ -29,13 +29,13 @@ $nav-link-classname: #{$prefix}-nav__link;
          border-bottom: $border-width $border-style transparent;
 
          &:hover {
-            border-bottom-color: $color-brand-dark;
-            color: $color-brand-dark;
+            border-bottom-color: css-var("color-primary-dark");
+            color: css-var("color-primary-dark");
          }
 
          &--active {
-            border-bottom-color: $color-brand;
-            color: $color-brand;
+            border-bottom-color: css-var("color-primary");
+            color: css-var("color-primary");
          }
       }
    }
@@ -43,17 +43,17 @@ $nav-link-classname: #{$prefix}-nav__link;
 
 .#{$prefix}-nav--sidenav {
    .#{$nav-link-classname} {
-      border-bottom: $border-light;
-      color: $color-normal;
-      padding: $spacing-small 0;
+      border-bottom: $border-width $border-style css-var("border-color-light");
+      color: css-var("color-normal");
+      padding: css-var("spacing-small") 0;
 
       &--active {
-         border-left: 2px $border-style $color-brand;
-         padding-left: $spacing-x-small;
+         border-left: 2px $border-style css-var("color-primary");
+         padding-left: css-var("spacing-x-small");
       }
 
       &:hover {
-         color: $color-brand;
+         color: css-var("color-primary");
       }
    }
 }
