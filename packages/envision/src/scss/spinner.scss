@@ -1,12 +1,7 @@
 .#{$prefix}-spinner {
    font-size: 10px;
    height: 60px;
-   left: 0;
-   margin: 15% auto;
-   position: relative;
-   right: 0;
    text-align: center;
-   width: 50px;
 
    &--hide {
       display: none;
@@ -29,11 +24,11 @@
    }
 
    .#{$prefix}-rect4 {
-      animation-delay: -.9s;
+      animation-delay: -0.9s;
    }
 
    .#{$prefix}-rect5 {
-      animation-delay: -.8s;
+      animation-delay: -0.8s;
    }
 }
 
@@ -41,8 +36,9 @@
    0%,
    40%,
    100% {
-      transform: scaleY(.4);
-   }  20% {
+      transform: scaleY(0.4);
+   }
+   20% {
       transform: scaleY(1);
    }
 }
