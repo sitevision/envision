@@ -1,0 +1,30 @@
+.#{$prefix}-buddyicon {
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   max-width: 100%;
+   border-radius: css-var('buddyicon-border-radius');
+
+   &--large {
+      width: 200px;
+      height: 200px;
+      border-radius: css-var('buddyicon-large-border-radius');
+   }
+
+   &--medium {
+      // Default size
+      border-radius: css-var('buddyicon-medium-border-radius');
+   }
+
+   &--small {
+      width: 48px;
+      height: 48px;
+      border-radius: css-var('buddyicon-small-border-radius');
+   }
+
+   &--x-small {
+      width: 36px;
+      height: 36px;
+      border-radius: css-var('buddyicon-x-small-border-radius');
+   }
+}

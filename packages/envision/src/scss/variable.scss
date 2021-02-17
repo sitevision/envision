@@ -549,4 +549,17 @@ $alert-info-font-color: $font-color !default;
    "alert-info-border-color": $alert-info-border-color,
 ));
 
+// ----- BUDDY ICON -----
+
+$buddyicon-radius: 0 !default;
+
+@include to-css-custom-property((
+   "buddyicon-border-radius": $buddyicon-radius,
+   "buddyicon-large-border-radius": css-var('buddyicon-border-radius'),
+   "buddyicon-medium-border-radius": css-var('buddyicon-border-radius'),
+   "buddyicon-small-border-radius": css-var('buddyicon-border-radius'),
+   "buddyicon-x-small-border-radius": css-var('buddyicon-border-radius'),
+));
+
+
 
