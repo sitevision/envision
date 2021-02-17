@@ -1,5 +1,4 @@
 .#{$prefix}-post {
-   border: 1px solid css-var("element-background-color");
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -8,7 +7,7 @@
    &__entry,
    &__attachment,
    &__shared {
-      border-bottom: 1px solid css-var("element-background-color");
+      border-bottom: 1px solid transparent;
    }
 
    &__shared {
@@ -27,7 +26,7 @@
 }
 
 .#{$prefix}-comments {
-   border-top: 1px solid css-var("element-background-color");
+   border-top: 1px solid transparent;
    background-color: css-var("element-background-color");
 
    &__wrapper {
@@ -41,7 +40,7 @@
 }
 
 .#{$prefix}-comment {
-   border-bottom: 1px solid css-var("page-background-color");
+   border-bottom: 1px solid transparent;
    padding: css-var("spacing-x-small") 0;
 }
 
