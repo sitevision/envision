@@ -1,7 +1,7 @@
 {
    "name": "envision",
    "version": "0.0.1",
-   "description": "SiteVision CSS framework",
+   "description": "Sitevision CSS framework",
    "main": "dist/envision.js",
    "scripts": {
       "build": "webpack --config webpack.config.js",
@@ -14,10 +14,10 @@
    "keywords": [
       "Envision",
       "CSS",
-      "SiteVision",
+      "Sitevision",
       "SDK"
    ],
-   "author": "SiteVision AB",
+   "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
       "@babel/core": "^7.6.4",

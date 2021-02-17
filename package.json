@@ -2,7 +2,7 @@
    "private": true,
    "name": "envision-repo",
    "version": "0.0.1",
-   "description": "SiteVision CSS framework",
+   "description": "Sitevision CSS framework",
    "main": "index.js",
    "workspaces": [
       "packages/**"
@@ -19,10 +19,10 @@
    "keywords": [
       "Envision",
       "CSS",
-      "SiteVision",
+      "Sitvvision",
       "SDK"
    ],
-   "author": "SiteVision AB",
+   "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
       "concurrently": "^5.2.0"

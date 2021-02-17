@@ -6,7 +6,7 @@ const Footer = () => {
       <>
          <div className="footer-wrapper">
             <footer className="footer">
-               <a href="https://www.sitevision.se/">© SiteVision</a>
+               <a href="https://www.sitevision.se/">© Sitevision</a>
             </footer>
          </div>
          <Helmet>

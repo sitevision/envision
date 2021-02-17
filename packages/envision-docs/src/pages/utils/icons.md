@@ -96,9 +96,9 @@ Valid values for _size_
 </div>
 ```
 
-## Access envision icons in SiteVision
+## Access envision icons in Sitevision
 
-To access envision icons within SiteVision use _"/sitevision/envision-icons.svg#icon-"_
+To access envision icons within Sitevision use _"/sitevision/envision-icons.svg#icon-"_
 
 ```html
 <svg class="env-icon">
