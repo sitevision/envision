@@ -58,11 +58,11 @@
       border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
       border-bottom: $border-width $border-style css-var("border-color-light");
       display: block;
-      padding: css-var("spacing-xx-small") css-var("spacing-x-small");
+      padding: css-var("spacing-xx-small") css-var("spacing-small");
 
       &__title {
          margin-bottom: 0 !important;
-         padding: css-var("spacing-xx-small");
+         padding: css-var("spacing-xx-small") 0;
       }
    }
 
