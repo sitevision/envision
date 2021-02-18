@@ -27,4 +27,8 @@
       height: 36px;
       border-radius: css-var('buddyicon-x-small-border-radius');
    }
+
+   &--round {
+      border-radius: 50% 50% !important;
+   }
 }
