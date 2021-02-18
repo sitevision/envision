@@ -12,4 +12,12 @@ title: Spinner
 </div>
 ```
 
+```html
+<div class="env-spinner-bounce">
+   <div class="env-bounce1"></div>
+   <div class="env-bounce2"></div>
+   <div class="env-bounce3"></div>
+</div>
+```
+
 Use `env-spinner--hide` to hide the spinner. i.e `env-spinner env-spinner--hide`
