@@ -430,6 +430,9 @@ $checkbox-disabled-color: $color-lighter !default;
 @include to-css-custom-property((
    "form-font-family": css-var("font-family"),
    "form-input-border-radius": $radius-medium,
+   "form-input-font-color": css-var("font-color"),
+   "form-input-border-color": css-var("border-color-light"),
+   "form-input-background-color": #fff,
 ));
 
 
