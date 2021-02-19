@@ -26,6 +26,21 @@
 
    &__item {
       display: block;
+      box-sizing: border-box;
+      appearance: none;
+      border: {
+         style: none;
+         width: 0;
+         radius: 0;
+      }
+      box-shadow: none;
+      text-shadow: none;
+      text-decoration: none;
+      background-color: transparent;
+      font-size: inherit;
+      margin: 0;
+      width: 100%;
+      text-align: left;
       padding: css-var("spacing-x-small");
       @include truncate-text();
       text-decoration: none;
