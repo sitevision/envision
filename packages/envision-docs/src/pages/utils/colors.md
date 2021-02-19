@@ -2,6 +2,38 @@
 title: Colors
 ---
 
+## Color Combo Blocks
+
+```html
+<div class="example-color">
+   
+   <div class="env-block-primary">
+      <p class="env-text-p">Color Combo Block - Primary <span class="env-text-small">asdasd</span></p>
+   </div>
+   
+   <div class="env-block-secondary">
+      <p class="env-text-p">Color Combo Block - Secondary <span class="env-text-small">asdasd</span></p>
+   </div>
+   
+   <div class="env-block-tertiary">
+      <p class="env-text env-text-p">Color Combo Block - Tertiary <span class="env-text-small">asdasd</span></p>
+   </div>
+
+   <div class="env-block-primary env-block--border">
+      <p class="env-text-p">Color Combo Block w. border - Primary <span class="env-text-small">asdasd</span></p>
+   </div>
+
+   <div class="env-block-secondary env-block--border">
+      <p class="env-text-p">Color Combo Block w. border - Secondary <span class="env-text-small">asdasd</span></p>
+   </div>
+
+   <div class="env-block-tertiary env-block--border">
+      <p class="env-text-p">Color Combo Block w. border - Tertiary <span class="env-text-small">asdasd</span></p>
+   </div>
+   
+</div>
+```
+
 ## Background color
 
 ```html

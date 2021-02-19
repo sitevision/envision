@@ -94,6 +94,26 @@ $font-color-invert: #ffffff !default;
 ));
 
 
+// ----- POC NEW COLORS -----
+
+@include to-css-custom-property((
+
+   "font-color-primary": $font-color,
+   "font-color-secondary": $font-color,
+   "font-color-tertiary": $font-color-invert,
+
+   "background-color-primary": #c8e4fb,
+   "background-color-secondary": #eee,
+   "background-color-tertiary": #4d575f,
+
+   "border-color-primary": #a7bed0,
+   "border-color-secondary": #bfbfbf,
+   "border-color-tertiary": #24292d,
+
+));
+
+
+
 // ----- GENERAL COLORS -----
 
 // Color

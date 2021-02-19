@@ -11,15 +11,15 @@ $colors: (
    light: $color-light,
    lighter: $color-lighter,
    lightest: $color-lightest,
-   hover: $color-hover
+   hover: $color-hover,
 );
 
 $transparency: (
-   80: .8,
-   60: .6,
-   40: .4,
-   20: .2,
-   10: .1
+   80: 0.8,
+   60: 0.6,
+   40: 0.4,
+   20: 0.2,
+   10: 0.1,
 );
 
 @each $state, $color in $colors {
@@ -38,4 +38,40 @@ $transparency: (
    }
 }
 
+.env-block,
+.env-block-primary {
+   &,
+   .env-text {
+      color: css-var('font-color-primary');
+   }
 
+   background-color: css-var('background-color-primary');
+   border-color: css-var('border-color-primary');
+}
+
+.env-block-secondary {
+   &,
+   .env-text {
+      color: css-var('font-color-secondary');
+   }
+
+   background-color: css-var('background-color-secondary');
+   border-color: css-var('border-color-secondary');
+}
+
+.env-block-tertiary {
+   &,
+   .env-text {
+      color: css-var('font-color-tertiary');
+   }
+
+   background-color: css-var('background-color-tertiary');
+   border-color: css-var('border-color-tertiary');
+}
+
+.env-block--border {
+   border: {
+      style: solid;
+      width: 1px;
+   }
+}
