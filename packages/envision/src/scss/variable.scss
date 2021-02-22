@@ -171,6 +171,12 @@ $focus-color: #5cb3fd !default;
       'color-lightest': $color-lightest,
       'color-focus': $focus-color,
       'focus-color': css-var('focus-color'),
+   )
+);
+
+// DEPRECATED PROPERTIES
+@include to-css-custom-property(
+   (
       'focus-background-color': $focus-background-color,
    )
 );
