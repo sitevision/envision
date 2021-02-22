@@ -25,38 +25,39 @@
 
       @media (min-width: 768px) {
          margin: 10% auto;
-         max-width: css-var("modal-medium-width");
+         max-width: css-var('modal-medium-width');
       }
       position: relative;
 
       &--large {
          @media (min-width: 768px) {
             margin: 10% auto;
-            max-width: css-var("modal-large-width");
+            max-width: css-var('modal-large-width');
          }
       }
 
       &--small {
          @media (min-width: 768px) {
             margin: 10% auto;
-            max-width: css-var("modal-small-width");
+            max-width: css-var('modal-small-width');
          }
       }
    }
 
    &__content {
       background-clip: padding-box;
-      background-color: css-var("element-background-color");
-      border: $border-width $border-style css-var("border-color");
-      border-radius: css-var("border-radius-medium");
-      box-shadow: css-var("modal-dialog-box-shadow");
+      background-color: css-var('element-background-color');
+      border: $border-width $border-style css-var('border-color');
+      border-radius: css-var('border-radius-medium');
+      box-shadow: css-var('modal-dialog-box-shadow');
       outline: 0;
       position: relative;
    }
 
    &__header {
-      border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
-      border-bottom: $border-width $border-style css-var("border-color-light");
+      border-radius: css-var('border-radius-medium')
+         css-var('border-radius-medium') 0 0;
+      border-bottom: $border-width $border-style css-var('border-color-light');
       display: block;
       padding: css-var("spacing-xx-small") css-var("spacing-small");
 
@@ -75,13 +76,14 @@
    }
 
    &__body {
-      padding: css-var("spacing-x-small") css-var("spacing-small");
+      padding: css-var('spacing-x-small') css-var('spacing-small');
    }
 
    &__footer {
-      border-radius: 0 0 css-var("border-radius-medium") css-var("border-radius-medium");
-      border-top: $border-width $border-style css-var("border-color-light");
-      padding: css-var("spacing-small");
+      border-radius: 0 0 css-var('border-radius-medium')
+         css-var('border-radius-medium');
+      border-top: $border-width $border-style css-var('border-color-light');
+      padding: css-var('spacing-small');
       text-align: left;
 
       &--right {

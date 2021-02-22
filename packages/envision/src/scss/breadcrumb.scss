@@ -6,12 +6,12 @@
    &__item {
       display: inline-block;
 
-      &:nth-child(1n+2)::before {
-         color: css-var("breadcrumb-divider-color");
-         content: "#{$breadcrumb-divider}";
+      &:nth-child(1n + 2)::before {
+         color: css-var('breadcrumb-divider-color');
+         content: '#{$breadcrumb-divider}';
          display: inline-block;
-         padding-left: css-var("spacing-x-small");
-         padding-right: css-var("spacing-x-small");
+         padding-left: css-var('spacing-x-small');
+         padding-right: css-var('spacing-x-small');
       }
    }
 }

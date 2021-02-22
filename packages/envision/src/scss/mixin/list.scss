@@ -1,16 +1,16 @@
 @mixin basis-value($i) {
-   flex-basis: percentage(1/$i);
+   flex-basis: percentage(1 / $i);
 }
 
 @mixin dot-divider() {
    background-color: $color-dark;
-   content: "";
+   content: '';
    display: inline-block;
-   height: css-var("spacing-xxx-small");
+   height: css-var('spacing-xxx-small');
    vertical-align: middle;
-   width: css-var("spacing-xxx-small");
-   margin-left: css-var("spacing-x-small");
-   margin-right: css-var("spacing-x-small");
+   width: css-var('spacing-xxx-small');
+   margin-left: css-var('spacing-x-small');
+   margin-right: css-var('spacing-x-small');
    border-radius: 50%;
 }
 

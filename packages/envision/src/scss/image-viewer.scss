@@ -81,15 +81,15 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-      fill: css-var("image-control-color");
+      fill: css-var('image-control-color');
    }
 
    &__next-icon {
-      margin-right: css-var("spacing-xxx-small");
+      margin-right: css-var('spacing-xxx-small');
    }
 
    &__prev-icon {
-      margin-left: css-var("spacing-xxx-small");
+      margin-left: css-var('spacing-xxx-small');
    }
 
    &__thumbnails {
@@ -98,7 +98,7 @@
       justify-content: center;
       left: 0;
       list-style: none;
-      margin-top: css-var("spacing-x-small");
+      margin-top: css-var('spacing-x-small');
       overflow: hidden;
       padding-left: 0;
       right: 0;
@@ -106,7 +106,7 @@
 
       li {
          cursor: pointer;
-         margin-right: css-var("spacing-x-small");
+         margin-right: css-var('spacing-x-small');
          position: relative;
       }
    }
@@ -114,10 +114,10 @@
    &__thumbnail {
       border: $border-width $border-style transparent;
       max-width: 80px;
-      opacity: .9;
+      opacity: 0.9;
 
       &:active {
-         border: $border-width $border-style css-var("color-focus");
+         border: $border-width $border-style css-var('color-focus');
          opacity: 1;
       }
    }

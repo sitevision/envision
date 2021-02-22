@@ -5,7 +5,7 @@
       border-color: css-var($border-color);
 
       &:focus {
-          @include focus($border-color, $border-color);
+         @include focus($border-color, $border-color);
       }
    }
 }

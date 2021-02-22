@@ -13,7 +13,7 @@ $sizes: (
    medium: $icon-size-medium,
    large: $icon-size-large,
    x-large: $icon-size-x-large,
-   xx-large: $icon-size-xx-large
+   xx-large: $icon-size-xx-large,
 );
 @each $size, $value in $sizes {
    .#{$prefix}-icon--#{$size} {
@@ -23,9 +23,9 @@ $sizes: (
 }
 
 .#{$prefix}-icon--inactive {
-   opacity: .3;
+   opacity: 0.3;
 
    &:hover {
-      opacity: .6;
+      opacity: 0.6;
    }
 }

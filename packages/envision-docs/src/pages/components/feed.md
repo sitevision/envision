@@ -500,9 +500,7 @@ title: Feed
       </div>
    </header>
    <div class="env-post__entry">
-      <p class="env-text">
-         Lorem ipsum dolor sit amet
-      </p>
+      <p class="env-text">Lorem ipsum dolor sit amet</p>
    </div>
    <div class="env-post__shared">
       <blockquote class="env-post">

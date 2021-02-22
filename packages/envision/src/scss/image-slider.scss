@@ -13,7 +13,7 @@
       display: none;
       perspective: 1000px;
       position: relative;
-      transition: transform .5s ease;
+      transition: transform 0.5s ease;
       width: 100%;
    }
 
@@ -30,7 +30,7 @@
       display: flex;
       font-size: 2em;
       justify-content: center;
-      opacity: .5;
+      opacity: 0.5;
       position: absolute;
       text-align: center;
       text-decoration: none;
@@ -59,7 +59,7 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-      fill: css-var("image-control-color");
+      fill: css-var('image-control-color');
    }
 
    &__item--next.#{$prefix}-image-slider__item--left,
@@ -83,7 +83,7 @@
       justify-content: flex-start;
       left: 0;
       list-style: none;
-      margin-top: css-var("spacing-x-small");
+      margin-top: css-var('spacing-x-small');
       overflow: auto;
       padding-left: 0;
       right: 0;
@@ -91,13 +91,13 @@
 
       li {
          cursor: pointer;
-         margin-right: css-var("spacing-x-small");
+         margin-right: css-var('spacing-x-small');
          position: relative;
       }
 
       .#{$prefix}-image-slider__thumbnail {
          max-width: 90px;
-         opacity: .4;
+         opacity: 0.4;
       }
 
       .#{$prefix}-image-slider__item--active {
@@ -110,11 +110,11 @@
    }
 
    &__caption {
-      bottom: css-var("spacing-large");
+      bottom: css-var('spacing-large');
       color: rgba(255, 255, 255, 1);
       left: ((100% - 70%) / 2);
-      padding-bottom: css-var("spacing-large");
-      padding-top: css-var("spacing-large");
+      padding-bottom: css-var('spacing-large');
+      padding-top: css-var('spacing-large');
       position: absolute;
       right: ((100% - 70%) / 2);
       text-align: center;
