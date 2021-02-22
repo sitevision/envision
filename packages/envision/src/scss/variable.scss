@@ -105,10 +105,8 @@ $color-element-bg: #ffffff !default;
 @include to-css-custom-property(
    (
       'color-page-bg': $color-page-bg,
-          // DEPRE
       'page-background-color': $color-page-bg,
       'color-element-bg': $color-element-bg,
-          // DEPRE
       'element-background-color': $color-element-bg,
    )
 );
@@ -173,9 +171,7 @@ $focus-color: #5cb3fd !default;
       'color-lightest': $color-lightest,
       'color-focus': $focus-color,
       'focus-color': css-var('focus-color'),
-          // DEPRE
       'focus-background-color': $focus-background-color,
-          // DEPRECATE, NOT U
    )
 );
 
@@ -219,11 +215,8 @@ $radius-large: $radius-base * 1.5 !default;
    (
       'border-radius': $radius-base,
       'border-radius-small': calc(#{css-var('border-radius')} * 0.5),
-          // $radius-sm
       'border-radius-medium': #{css-var('border-radius')},
-          // $radius-med
       'border-radius-large': calc(#{css-var('border-radius')} * 1.5),
-          // $radius-la
    )
 );
 
@@ -369,14 +362,12 @@ $button-link-font-color: css-var('font-color') !default;
       'button-font-family': css-var('font-family'),
       'button-border-radius': $radius-small,
       'button-font-color': css-var('font-color'),
-          // $button-default-font-co
       'button-background-color': $default-button-color,
       'button-border-color': transparent,
       'button-hover-background-color': darken($default-button-color, 10%),
       'button-hover-border-color': transparent,
       'button-focus-border-color': darken($button-default-color, 10%),
       'button-focus-box-shadow-color': darken($button-default-color, 40%),
-          // pri
       'button-primary-font-color': $button-primary-font-color,
       'button-primary-background-color': $button-primary-color,
       'button-primary-border-color': $button-primary-color,
@@ -386,7 +377,6 @@ $button-link-font-color: css-var('font-color') !default;
       'button-primary-focus-border-color': darken($button-primary-color, 12%),
       'button-primary-focus-box-shadow-color':
          darken($button-primary-color, 10%),
-          // suc
       'button-success-font-color': $button-success-font-color,
       'button-success-background-color': $button-success-color,
       'button-success-border-color': $button-success-color,
@@ -396,7 +386,6 @@ $button-link-font-color: css-var('font-color') !default;
       'button-success-focus-border-color': darken($button-success-color, 12%),
       'button-success-focus-box-shadow-color':
          darken($button-success-color, 10%),
-          // da
       'button-danger-font-color': $button-danger-font-color,
       'button-danger-background-color': $button-danger-color,
       'button-danger-border-color': $button-danger-color,
@@ -404,7 +393,6 @@ $button-link-font-color: css-var('font-color') !default;
       'button-danger-hover-border-color': darken($button-danger-color, 12%),
       'button-danger-focus-border-color': darken($button-danger-color, 12%),
       'button-danger-focus-box-shadow-color': darken($button-danger-color, 10%),
-          // in
       'button-invert-font-color': $color-primary,
       'button-invert-background-color': $font-color-invert,
       'button-invert-border-color': $font-color-invert,
@@ -412,7 +400,6 @@ $button-link-font-color: css-var('font-color') !default;
       'button-invert-hover-border-color': darken($font-color-invert, 12%),
       'button-invert-focus-border-color': darken($font-color-invert, 12%),
       'button-invert-focus-box-shadow-color': darken($font-color-invert, 10%),
-          //
       'button-link-font-color': $button-link-font-color,
       'button-link-background-color': transparent,
       'button-link-border-color': transparent,
@@ -421,7 +408,6 @@ $button-link-font-color: css-var('font-color') !default;
       'button-link-focus-border-color': css-var('color-focus'),
       'button-link-focus-box-shadow-color': css-var('color-focus'),
       'default-button-color': css-var('button-background-color'),
-          // DEPRE
    )
 );
 
