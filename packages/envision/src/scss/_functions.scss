@@ -8,16 +8,21 @@
    $index: str-index($string, $search);
 
    @if $index {
-     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+      @return str-slice($string, 1, $index - 1) + $replace +
+         str-replace(
+            str-slice($string, $index + str-length($search)),
+            $search,
+            $replace
+         );
    }
 
    @return $string;
 }
 
-@function css-var ($variableName, $multiplyBy: 1) {
+@function css-var($variableName, $multiplyBy: 1) {
    @if ($multiplyBy == 1) {
       @return var(--#{$prefix}-#{$variableName});
    } @else {
-      @return #{"calc("}var(--#{$prefix}-#{$variableName})#{" * "}#{$multiplyBy}#{")"};
+      @return #{'calc('}var(--#{$prefix}-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
    }
 }

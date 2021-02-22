@@ -2,7 +2,7 @@
    display: flex;
 
    > :not(:last-child) {
-      margin: 0 css-var("spacing-x-small") 0 0;
+      margin: 0 css-var('spacing-x-small') 0 0;
    }
 
    &__body {
@@ -36,7 +36,7 @@
       flex-direction: column;
 
       > :not(:last-child) {
-         margin: 0 0 css-var("spacing-x-small");
+         margin: 0 0 css-var('spacing-x-small');
       }
    }
 
@@ -52,11 +52,12 @@
       flex-direction: row-reverse;
 
       > :not(:last-child) {
-         margin: 0 0 0 css-var("spacing-x-small");
+         margin: 0 0 0 css-var('spacing-x-small');
       }
    }
 
-   & & { // Nested media
-      margin-top: css-var("spacing-x-small");
+   & & {
+      // Nested media
+      margin-top: css-var('spacing-x-small');
    }
 }

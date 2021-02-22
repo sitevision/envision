@@ -21,7 +21,7 @@
    }
 }
 
-@mixin link($font-color: "font-color") {
+@mixin link($font-color: 'font-color') {
    color: css-var($font-color);
    font-weight: $font-weight-semibold;
    text-decoration: none;

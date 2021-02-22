@@ -74,9 +74,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    class="env-dropdown env-button-group env_list__item"
    role="group"
 >
-   <button class="env-button env-button--primary" type="button">
-      Button
-   </button>
+   <button class="env-button env-button--primary" type="button">Button</button>
    <button
       class="env-button env-button--primary env-dropdown--toggle env-dropdown--toggle-split"
       type="button"

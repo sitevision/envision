@@ -10,15 +10,9 @@ title: List
 
 ```html
 <ul class="env-list">
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
 </ul>
 ```
 
@@ -28,15 +22,9 @@ Apply `.env-list-dividers--*` to add dividers between items. Valid values: `top`
 
 ```html
 <ul class="env-list env-list-dividers--top">
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
 </ul>
 ```
 
@@ -44,15 +32,9 @@ For a divider on a specific item, apply `.env-list-item-divider--*`. Valid value
 
 ```html
 <ul class="env-list">
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item env-list-item-divider--bottom">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item env-list-item-divider--bottom">Item</li>
+   <li class="env-list__item">Item</li>
 </ul>
 ```
 
@@ -60,15 +42,9 @@ For a divider on a specific item, apply `.env-list-item-divider--*`. Valid value
 
 ```html
 <ul class="env-list env-list--horizontal">
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
 </ul>
 ```
 
@@ -78,15 +54,9 @@ Apply `.env-list-dividers--*` to add dividers between items. Valid values: `righ
 
 ```html
 <ul class="env-list env-list--horizontal env-list-dividers--left">
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
-   <li class="env-list__item">
-      Item
-   </li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
+   <li class="env-list__item">Item</li>
 </ul>
 ```
 

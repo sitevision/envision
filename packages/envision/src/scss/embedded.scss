@@ -1,5 +1,5 @@
 .#{$prefix}-embedded {
-   background-color: rgba(0, 0, 0, .1);
+   background-color: rgba(0, 0, 0, 0.1);
    display: flex;
    flex-direction: column;
    overflow: hidden;
@@ -25,19 +25,24 @@
 
    &__title,
    &__text {
-      padding-top: css-var("spacing-x-small");
+      padding-top: css-var('spacing-x-small');
    }
 
    &__block {
       flex: 3;
       flex-grow: 2;
       order: 2;
-      padding: css-var("spacing-medium");
+      padding: css-var('spacing-medium');
 
       button {
-         margin-top: css-var("spacing-medium");
-         border-radius: css-var("button-border-radius");
-         @include button-size("spacing-x-small", "spacing-small", "font-size-medium", $button-line-height)
+         margin-top: css-var('spacing-medium');
+         border-radius: css-var('button-border-radius');
+         @include button-size(
+            'spacing-x-small',
+            'spacing-small',
+            'font-size-medium',
+            $button-line-height
+         );
       }
    }
 
@@ -50,7 +55,7 @@
 
       @media screen and (max-width: 769px) {
          left: 5%;
-         padding-bottom: css-var("spacing-small");
+         padding-bottom: css-var('spacing-small');
          position: relative;
          width: 90%;
       }
