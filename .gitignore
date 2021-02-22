@@ -10,3 +10,4 @@ dist
 public
 .cache
 docs
+.eslintcache
