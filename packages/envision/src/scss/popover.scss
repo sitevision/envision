@@ -3,12 +3,12 @@ $arrow-position: -22px;
 $arrow-border-size: 10px;
 
 .#{$prefix}-popover {
-   background-color: css-var("element-background-color");
-   border: $border-width $border-style css-var("border-color-light");
-   border-radius: css-var("border-radius-medium");
-   box-shadow: css-var("popover-box-shadow");
+   background-color: css-var('element-background-color');
+   border: $border-width $border-style css-var('border-color-light');
+   border-radius: css-var('border-radius-medium');
+   box-shadow: css-var('popover-box-shadow');
    margin: $arrow-border-size;
-   max-width: css-var("popover-width");
+   max-width: css-var('popover-width');
    position: relative;
    z-index: $zindex-popover;
    word-wrap: break-word;
@@ -16,10 +16,11 @@ $arrow-border-size: 10px;
    word-break: normal;
 
    &__header {
-      border-radius: css-var("border-radius-medium") css-var("border-radius-medium") 0 0;
+      border-radius: css-var('border-radius-medium')
+         css-var('border-radius-medium') 0 0;
       display: block;
-      padding: css-var("spacing-x-small") css-var("spacing-small");
-      border-bottom: $border-width $border-style css-var("border-color-light");
+      padding: css-var('spacing-x-small') css-var('spacing-small');
+      border-bottom: $border-width $border-style css-var('border-color-light');
 
       &__title {
          margin-bottom: 0 !important;
@@ -28,7 +29,7 @@ $arrow-border-size: 10px;
 
    &__content {
       display: block;
-      padding: css-var("spacing-small");
+      padding: css-var('spacing-small');
    }
 
    &__arrow {
@@ -62,23 +63,23 @@ $arrow-border-size: 10px;
       }
 
       &--bottom {
-         border-bottom-color: css-var("border-color-light");
+         border-bottom-color: css-var('border-color-light');
          top: $arrow-position;
 
          &::after {
-            border-bottom-color: css-var("element-background-color");
+            border-bottom-color: css-var('element-background-color');
             border-top-width: 0;
             top: 1px;
          }
       }
 
       &--top {
-         border-top-color: css-var("border-color-light");
+         border-top-color: css-var('border-color-light');
          bottom: $arrow-position;
 
          &::after {
             border-bottom-width: 0;
-            border-top-color: css-var("element-background-color");
+            border-top-color: css-var('element-background-color');
             bottom: 1px;
          }
       }
@@ -94,23 +95,23 @@ $arrow-border-size: 10px;
       }
 
       &--left {
-         border-left-color: css-var("border-color-light");
+         border-left-color: css-var('border-color-light');
          right: $arrow-position;
 
          &::after {
-            border-left-color: css-var("element-background-color");
+            border-left-color: css-var('element-background-color');
             border-right-width: 0;
             right: 1px;
          }
       }
 
       &--right {
-         border-right-color: css-var("border-color-light");
+         border-right-color: css-var('border-color-light');
          left: $arrow-position;
 
          &::after {
             border-left-width: 0;
-            border-right-color: css-var("element-background-color");
+            border-right-color: css-var('element-background-color');
             left: 1px;
          }
       }

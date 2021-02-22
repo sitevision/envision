@@ -12,40 +12,40 @@
 
    &__shared {
       .#{$prefix}-post {
-         border-left: 3px solid css-var("color-primary");
+         border-left: 3px solid css-var('color-primary');
 
          &__entry {
-            padding: css-var("spacing-x-small");
+            padding: css-var('spacing-x-small');
          }
       }
    }
 
    > :not(:last-child) {
-      padding: css-var("spacing-x-small");
+      padding: css-var('spacing-x-small');
    }
 }
 
 .#{$prefix}-comments {
    border-top: 1px solid transparent;
-   background-color: css-var("element-background-color");
+   background-color: css-var('element-background-color');
 
    &__wrapper {
-      padding: css-var("spacing-x-small");
+      padding: css-var('spacing-x-small');
    }
 
    &__comment {
       align-items: center;
-      padding-top: css-var("spacing-x-small");
+      padding-top: css-var('spacing-x-small');
    }
 }
 
 .#{$prefix}-comment {
    border-bottom: 1px solid transparent;
-   padding: css-var("spacing-x-small") 0;
+   padding: css-var('spacing-x-small') 0;
 }
 
 .#{$prefix}-feed {
    &__item:not(:last-child) {
-      padding-bottom: css-var("spacing-x-small");
+      padding-bottom: css-var('spacing-x-small');
    }
 }

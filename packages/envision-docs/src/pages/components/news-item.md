@@ -43,7 +43,7 @@ title: News item
 </article>
 ```
 
-### Example: Vertical list ### 
+### Example: Vertical list
 
 `.env-list`
 
@@ -169,7 +169,7 @@ title: News item
 </ul>
 ```
 
-### Example: Horizontal list ### 
+### Example: Horizontal list
 
 `env-list env-list--horizontal--fixed env-list--horizontal--fixed--2`
 
