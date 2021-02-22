@@ -24,10 +24,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build using yarn
+      - name: Install dependencies
         run: |
           yarn
-          yarn build
+
+      - name: Lint
+        run: |
+          yarn lint
+
+      - name: Build
+        run: |
+          yarn workspace envision run build
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
