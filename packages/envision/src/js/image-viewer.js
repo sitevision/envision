@@ -19,12 +19,12 @@ const Imageviewer = (($) => {
    const ESCAPE_KEY = 27;
    const ARROW_LEFT_KEYCODE = 37;
    const ARROW_RIGHT_KEYCODE = 39;
-   const SPINNER_TEMPLATE = `<div class='env-spinner'>
-                                <div class='env-rect1'></div>
-                                <div class='env-rect2'></div>
-                                <div class='env-rect3'></div>
-                                <div class='env-rect4'></div>
-                                <div class='env-rect5'></div>
+   const SPINNER_TEMPLATE = `<div class="env-spinner">
+                                <div class="env-rect1"></div>
+                                <div class="env-rect2"></div>
+                                <div class="env-rect3"></div>
+                                <div class="env-rect4"></div>
+                                <div class="env-rect5"></div>
                              </div>`;
 
    const SELECTORS = {
@@ -203,17 +203,17 @@ const Imageviewer = (($) => {
       }
 
       _getButtons() {
-         const buttonHTML = `<a class='env-image-viewer--prev' role='button' data-move='prev'>
-               <svg class='env-image-viewer__prev-icon env-icon env-icon-small'>
-               <use xlink:href='/images/envision-icons.svg#icon-arrow-left'></use>
+         const buttonHTML = `<a class="env-image-viewer--prev" role="button" data-move="prev">
+               <svg class="env-image-viewer__prev-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-left"></use>
                </svg>
-               <span class='env-assistive-text'>Previous</span>
+               <span class="env-assistive-text">Previous</span>
             </a>
-            <a class='env-image-viewer--next' role='button' data-move='next'>
-               <svg class='env-image-viewer__next-icon env-icon env-icon-small'>
-               <use xlink:href='/images/envision-icons.svg#icon-arrow-right'></use>
+            <a class="env-image-viewer--next" role="button" data-move="next">
+               <svg class="env-image-viewer__next-icon env-icon env-icon-small">
+               <use xlink:href="/images/envision-icons.svg#icon-arrow-right"></use>
                </svg>
-               <span class='env-assistive-text'>Next</span>
+               <span class="env-assistive-text">Next</span>
             </a>`;
 
          return buttonHTML;
@@ -221,7 +221,7 @@ const Imageviewer = (($) => {
 
       _getIndicators() {
          const indicatorItems = this._getIndicatorItems();
-         return `<ol class='env-image-viewer__indicators'>
+         return `<ol class="env-image-viewer__indicators">
                   ${indicatorItems}
                </ol>`;
       }
@@ -232,9 +232,9 @@ const Imageviewer = (($) => {
 
          this.$images.each((index) => {
             const isActive = index === activeElementIndex;
-            items += `<li data-move-to='${index}' class='${
+            items += `<li data-move-to="${index}" class="${
                isActive ? 'env-is-active' : ''
-            }'></li>`;
+            }"></li>`;
          });
 
          return items;
@@ -340,18 +340,20 @@ const Imageviewer = (($) => {
       }
    }
 
-   $(document).on(Events.CLICK_DATA_API, SELECTORS.DATA_IMAGE_VIEWER, function (
-      e
-   ) {
-      e.preventDefault();
-      const $target = $(e.target);
+   $(document).on(
+      Events.CLICK_DATA_API,
+      SELECTORS.DATA_IMAGE_VIEWER,
+      function (e) {
+         e.preventDefault();
+         const $target = $(e.target);
 
-      if (!$target.is('img')) {
-         return;
+         if (!$target.is('img')) {
+            return;
+         }
+
+         $(this).envImageviewer($target.parent());
       }
-
-      $(this).envImageviewer($target.parent());
-   });
+   );
 
    $.fn[NAME] = Imageviewer._jQuery;
    $.fn[NAME].Constructor = Imageviewer;
