@@ -2,7 +2,9 @@
 title: Colors
 ---
 
-## Color Combo Blocks
+## Color combo blocks
+
+Preset color combinations to use with any block in your site that
 
 ```html
 <div class="example-color">
@@ -38,7 +40,7 @@ title: Colors
 
 ```html
 <div class="example-color">
-   <div class="env-bg-color--brand env-color--lightest">Brand</div>
+   <div class="env-bg-color--primary env-color--lightest">Primary</div>
    <div class="env-bg-color--success env-color--lightest">Success</div>
    <div class="env-bg-color--info env-color--lightest">Info</div>
    <div class="env-bg-color--warning">Warning</div>
@@ -58,7 +60,7 @@ title: Colors
 
 ```html
 <div class="example-color">
-   <p class="env-text env-color--brand">Brand</p>
+   <p class="env-text env-color--primary">Primary</p>
    <p class="env-text env-color--success">Success</p>
    <p class="env-text env-color--info">Info</p>
    <p class="env-text env-color--warning env-bg-color--dark">Warning</p>
@@ -74,7 +76,7 @@ title: Colors
 </div>
 ```
 
-## Background color - Darker / Lighter
+## Background color - Darker / Lighter 
 
 `env-bg-color--{color}--{value}`
 
@@ -91,11 +93,12 @@ Valid values for _value_ (%)
    class="example-color env-list--horizontal--fixed env-list--horizontal--fixed--6"
 >
    <div class="env-list__item">
-      <div class="env-bg-color--brand example-color-size-large"></div>
-      <div class="env-bg-color--brand--80 example-color-size"></div>
-      <div class="env-bg-color--brand--60 example-color-size"></div>
-      <div class="env-bg-color--brand--40 example-color-size"></div>
-      <div class="env-bg-color--brand--20 example-color-size"></div>
+      <div class="env-bg-color--primary example-color-size-large"></div>
+      <div class="env-bg-color--primary--80 example-color-size"></div>
+      <div class="env-bg-color--primary--60 example-color-size"></div>
+      <div class="env-bg-color--primary--40 example-color-size"></div>
+      <div class="env-bg-color--primary--20 example-color-size"></div>
+      <div class="env-bg-color--primary--10 example-color-size"></div>
    </div>
    <div class="env-list__item">
       <div class="env-bg-color--success example-color-size-large"></div>
@@ -103,6 +106,7 @@ Valid values for _value_ (%)
       <div class="env-bg-color--success--60 example-color-size"></div>
       <div class="env-bg-color--success--40 example-color-size"></div>
       <div class="env-bg-color--success--20 example-color-size"></div>
+      <div class="env-bg-color--success--10 example-color-size"></div>
    </div>
    <div class="env-list__item">
       <div class="env-bg-color--info example-color-size-large"></div>
@@ -110,6 +114,7 @@ Valid values for _value_ (%)
       <div class="env-bg-color--info--60 example-color-size"></div>
       <div class="env-bg-color--info--40 example-color-size"></div>
       <div class="env-bg-color--info--20 example-color-size"></div>
+      <div class="env-bg-color--info--10 example-color-size"></div>
    </div>
    <div class="env-list__item">
       <div class="env-bg-color--warning example-color-size-large"></div>
@@ -117,6 +122,7 @@ Valid values for _value_ (%)
       <div class="env-bg-color--warning--60 example-color-size"></div>
       <div class="env-bg-color--warning--40 example-color-size"></div>
       <div class="env-bg-color--warning--20 example-color-size"></div>
+      <div class="env-bg-color--warning--10 example-color-size"></div>
    </div>
    <div class="env-list__item">
       <div class="env-bg-color--danger example-color-size-large"></div>
@@ -124,6 +130,7 @@ Valid values for _value_ (%)
       <div class="env-bg-color--danger--60 example-color-size"></div>
       <div class="env-bg-color--danger--40 example-color-size"></div>
       <div class="env-bg-color--danger--20 example-color-size"></div>
+      <div class="env-bg-color--danger--10 example-color-size"></div>
    </div>
    <div class="env-list__item">
       <div class="env-bg-color--dark example-color-size-large"></div>
