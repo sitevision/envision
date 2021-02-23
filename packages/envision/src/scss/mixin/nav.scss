@@ -1,23 +1,23 @@
 @mixin filled-nav-states() {
    &:hover {
-      background-color: css-var("color-primary-dark");
-      color: css-var("font-color-invert");
+      background-color: css-var('color-primary-dark');
+      color: css-var('font-color-invert');
    }
 
    &--active {
-      background-color: css-var("color-primary");
-      color: css-var("font-color-invert");
+      background-color: css-var('color-primary');
+      color: css-var('font-color-invert');
    }
 }
 
 @mixin nav-link() {
-   color: css-var("color-primary-dark");
+   color: css-var('color-primary-dark');
    display: block;
    text-decoration: none;
-   transition: background-color .25s ease, color .25s ease;
+   transition: background-color 0.25s ease, color 0.25s ease;
 
    &:hover {
-      color: css-var("color-primary-dark");
+      color: css-var('color-primary-dark');
    }
 
    &:focus {
@@ -25,6 +25,6 @@
    }
 
    &--active {
-      color: css-var("color-primary-light");
+      color: css-var('color-primary-light');
    }
 }

@@ -6,11 +6,11 @@
    position: fixed;
    right: 0;
    top: 0;
-   transition: opacity .3s linear;
+   transition: opacity 0.3s linear;
    z-index: $zindex-modal-backdrop;
 }
 
 @mixin backdrop-in {
-   animation: #{$prefix}-fade .3s;
-   opacity: .5;
+   animation: #{$prefix}-fade 0.3s;
+   opacity: 0.5;
 }

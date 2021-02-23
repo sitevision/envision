@@ -10,7 +10,7 @@ $sizes: (
    large: $spacing-large,
    x-large: $spacing-x-large,
    xx-large: $spacing-xx-large,
-   xxx-large: $spacing-xxx-large
+   xxx-large: $spacing-xxx-large,
 );
 @each $size, $value in $sizes {
    @each $specifier in $specifiers {

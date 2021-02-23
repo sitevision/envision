@@ -45,37 +45,38 @@
 
    &.#{$prefix}-list-dividers {
       &--top > .#{$item} {
-         border-top: $border-width $border-style css-var("border-color-light");
+         border-top: $border-width $border-style css-var('border-color-light');
       }
       &--bottom > .#{$item} {
-         border-bottom: $border-width $border-style css-var("border-color-light");
+         border-bottom: $border-width $border-style
+            css-var('border-color-light');
       }
       &--around > .#{$item} {
-         border: $border-width $border-style css-var("border-color-light");
+         border: $border-width $border-style css-var('border-color-light');
          + .#{$item} {
-            margin-top: css-var("spacing-xxx-small");
+            margin-top: css-var('spacing-xxx-small');
          }
       }
    }
 
    .#{$prefix}-list-item-divider {
       &--top {
-         border-top: $border-width $border-style css-var("border-color-light");
+         border-top: $border-width $border-style css-var('border-color-light');
       }
       &--bottom {
-         border-bottom: $border-width $border-style css-var("border-color-light");
+         border-bottom: $border-width $border-style
+            css-var('border-color-light');
       }
       &--around {
-         border: $border-width $border-style css-var("border-color-light");
+         border: $border-width $border-style css-var('border-color-light');
       }
    }
 }
 
 .#{$prefix}-definition-list {
-
    dd {
       margin: 0;
-      padding: 0 0 css-var("spacing-small");
+      padding: 0 0 css-var('spacing-small');
    }
 
    &--horizontal {
@@ -90,7 +91,7 @@
 
       dd {
          margin: 0 0 0 #{$dl-title-width + $spacing-medium}; // Keep
-         padding: 0 0 css-var("spacing-small");
+         padding: 0 0 css-var('spacing-small');
       }
    }
 }

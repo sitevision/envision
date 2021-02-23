@@ -1,14 +1,14 @@
-@mixin to-css-variables ($colors) {
-  :root {
-    @each $var, $color in $colors {
-      --#{$prefix}-#{$var}:#{$color};
-    }
-  }
+@mixin to-css-variables($colors) {
+   :root {
+      @each $var, $color in $colors {
+         --#{$prefix}-#{$var}: #{$color};
+      }
+   }
 }
 
-@mixin to-css-custom-property ($variables) {
+@mixin to-css-custom-property($variables) {
    :root {
-      @each $name, $value  in $variables {
+      @each $name, $value in $variables {
          --#{$prefix}-#{$name}: #{$value};
       }
    }
