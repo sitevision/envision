@@ -1,0 +1,8 @@
+@mixin color-block($blockName) {
+   &,
+   .env-text {
+      color: css-var('font-color-#{$blockName}');
+   }
+   background-color: css-var('background-color-#{$blockName}');
+   border-color: css-var('border-color-#{$blockName}');
+}

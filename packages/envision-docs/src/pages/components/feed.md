@@ -54,8 +54,8 @@ title: Feed
             src="https://placehold.it/730x100.png?text=embedded%20image"
          />
          <div class="env-embedded__block">
-            <h4 class="env-text">Lorem ipsum</h4>
-            <p class="env-text env-text--muted env-embedded__text">
+            <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
+            <p class="env-embedded__text env-text env-text--muted">
                Bacon ipsum dolor amet beef cupim brisket pork turducken salami
                pig drumstick chuck ball tip biltong shoulder.
             </p>

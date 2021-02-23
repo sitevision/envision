@@ -1,5 +1,6 @@
 $colors: (
-   brand: $color-brand,
+   brand: $color-primary,
+   primary: $color-primary,
    success: $color-success,
    warning: $color-warning,
    info: $color-info,
@@ -40,33 +41,15 @@ $transparency: (
 
 .env-block,
 .env-block-primary {
-   &,
-   .env-text {
-      color: css-var('font-color-primary');
-   }
-
-   background-color: css-var('background-color-primary');
-   border-color: css-var('border-color-primary');
+   @include color-block('primary');
 }
 
 .env-block-secondary {
-   &,
-   .env-text {
-      color: css-var('font-color-secondary');
-   }
-
-   background-color: css-var('background-color-secondary');
-   border-color: css-var('border-color-secondary');
+   @include color-block('secondary');
 }
 
 .env-block-tertiary {
-   &,
-   .env-text {
-      color: css-var('font-color-tertiary');
-   }
-
-   background-color: css-var('background-color-tertiary');
-   border-color: css-var('border-color-tertiary');
+   @include color-block('tertiary');
 }
 
 .env-block--border {

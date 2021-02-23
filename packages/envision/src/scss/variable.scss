@@ -96,22 +96,6 @@ $font-color-invert: #ffffff !default;
    )
 );
 
-// ----- POC NEW COLORS -----
-
-@include to-css-custom-property(
-   (
-      'font-color-primary': $font-color,
-      'font-color-secondary': $font-color,
-      'font-color-tertiary': $font-color-invert,
-      'background-color-primary': #c8e4fb,
-      'background-color-secondary': #eee,
-      'background-color-tertiary': #4d575f,
-      'border-color-primary': #a7bed0,
-      'border-color-secondary': #bfbfbf,
-      'border-color-tertiary': #24292d,
-   )
-);
-
 // ----- GENERAL COLORS -----
 
 // Color
@@ -186,7 +170,7 @@ $focus-color: #5cb3fd !default;
       'color-lighter': $color-lighter,
       'color-lightest': $color-lightest,
       'color-focus': $focus-color,
-      'focus-color': css-var('focus-color'),
+      'focus-color': css-var('color-focus'),
    )
 );
 
@@ -194,6 +178,22 @@ $focus-color: #5cb3fd !default;
 @include to-css-custom-property(
    (
       'focus-background-color': $focus-background-color,
+   )
+);
+
+// ----- COLOR COMBO BLOCKS -----
+
+@include to-css-custom-property(
+   (
+      'font-color-primary': $font-color,
+      'font-color-secondary': $font-color,
+      'font-color-tertiary': $font-color-invert,
+      'background-color-primary': #e5f1ff,
+      'background-color-secondary': #f4f4f4,
+      'background-color-tertiary': #00214d,
+      'border-color-primary': #a7bed0,
+      'border-color-secondary': #bfbfbf,
+      'border-color-tertiary': #000b1a,
    )
 );
 

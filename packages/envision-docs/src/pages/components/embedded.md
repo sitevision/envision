@@ -14,8 +14,8 @@ title: Embedded
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-text">Lorem ipsum</h4>
-      <p class="env-text env-text--muted env-embedded__text">
+      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
+      <p class="env-embedded__text env-text env-text--muted">
          Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
          drumstick chuck ball tip biltong shoulder.
       </p>
@@ -40,7 +40,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-text env-embedded__title">Lorem ipsum</h4>
+      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
       <p class="env-embedded__text env-text env-text--muted">
          Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
          drumstick chuck ball tip biltong shoulder porchetta tenderloin short
@@ -60,7 +60,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-text env-embedded__title">Lorem ipsum</h4>
+      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
       <p class="env-embedded__text env-text env-text--muted">
          Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
          drumstick chuck ball tip biltong shoulder porchetta tenderloin short
@@ -82,7 +82,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-text">Lorem ipsum</h4>
+      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
       <p class="env-embedded__text env-text env-text--muted">
          Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
          drumstick chuck ball tip biltong shoulder porchetta tenderloin short
@@ -106,8 +106,8 @@ Uses `env-embedded__block--overlay` to position text on top of image. You can al
       />
    </div>
    <div class="env-embedded__block--overlay">
-      <h4 class="env-text env-embedded__title">Lorem ipsum</h4>
-      <p class="env-text env-text--muted env-embedded__text">
+      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
+      <p class="env-embedded__text env-text env-text--muted">
          Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
          drumstick chuck ball tip biltong shoulder porchetta tenderloin short
          loin.
