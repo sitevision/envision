@@ -1,27 +1,26 @@
-
 .#{$prefix}-alert {
    border: $border-width $border-style transparent;
-   margin: css-var("spacing-medium");
-   padding: css-var("spacing-medium");
-   font-family: css-var("alert-font-family");
-   border-radius: css-var("alert-border-radius");
+   margin: css-var('spacing-medium');
+   padding: css-var('spacing-medium');
+   font-family: css-var('alert-font-family');
+   border-radius: css-var('alert-border-radius');
 
-   $variableNames: "success", "warning", "danger", "info";
+   $variableNames: 'success', 'warning', 'danger', 'info';
 
    @each $name in $variableNames {
       &--#{$name} {
-         background-color: css-var("alert-#{$name}-background-color");
-         color: css-var("alert-#{$name}-font-color");
-         border-left: 6px solid css-var("alert-#{$name}-border-color");
+         background-color: css-var('alert-#{$name}-background-color');
+         color: css-var('alert-#{$name}-font-color');
+         border-left: 6px solid css-var('alert-#{$name}-border-color');
 
          .#{$prefix}-alert__close {
-            color: css-var("alert-#{$name}-font-color");
+            color: css-var('alert-#{$name}-font-color');
          }
       }
    }
 
    &__link {
-      color: css-var("font-color-lighter");
+      color: css-var('font-color-lighter');
       font-weight: $font-weight-bold;
       text-decoration: none;
 
@@ -35,12 +34,12 @@
       background: 0 0;
       border: 0;
       float: right;
-      font-family: css-var("alert-font-family");
-      font-size: css-var("font-size-medium");
+      font-family: css-var('alert-font-family');
+      font-size: css-var('font-size-medium');
       font-weight: $font-weight-bold;
-      padding: css-var("spacing-small") css-var("spacing-medium");
+      padding: css-var('spacing-small') css-var('spacing-medium');
       position: relative;
-      right: css-var("spacing-medium", -1);
-      top: css-var("spacing-small", -1);
+      right: css-var('spacing-medium', -1);
+      top: css-var('spacing-small', -1);
    }
 }

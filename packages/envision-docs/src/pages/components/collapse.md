@@ -44,9 +44,7 @@ Add `env-collapse-header--icons` to add icons
       aria-expanded="false"
       aria-controls="container2"
    >
-      <span class="env-m-right--x-large">
-         Example 2
-      </span>
+      <span class="env-m-right--x-large"> Example 2 </span>
       <span class="env-collapse-header--icons"></span>
    </a>
 </h4>

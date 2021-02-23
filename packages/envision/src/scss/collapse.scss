@@ -9,7 +9,7 @@
       height: 0;
       overflow: hidden;
       position: relative;
-      transition: height css-var("collapse-toggle-duration") ease;
+      transition: height css-var('collapse-toggle-duration') ease;
    }
 
    &--show {
@@ -17,21 +17,21 @@
    }
 
    > :first-child {
-      padding-top: css-var("spacing-xx-small");
+      padding-top: css-var('spacing-xx-small');
    }
 }
 
 .#{$prefix}-collapse-header {
    width: 100%;
-   padding: css-var("spacing-x-small");
+   padding: css-var('spacing-x-small');
    cursor: pointer;
    box-sizing: border-box;
    border: {
-      style: css-var("collapse-border-style");
-      width: css-var("collapse-border-width");
-      color: css-var("collapse-border-color");
+      style: css-var('collapse-border-style');
+      width: css-var('collapse-border-width');
+      color: css-var('collapse-border-color');
    }
-   background-color: css-var("collapse-background-color");
+   background-color: css-var('collapse-background-color');
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -41,13 +41,13 @@
    }
 
    &:hover {
-      background-color: css-var("collapse-expanded-background-color");
-      border-color: css-var("collapse-expanded-border-color");
+      background-color: css-var('collapse-expanded-background-color');
+      border-color: css-var('collapse-expanded-border-color');
    }
 
    &.#{$prefix}-collapse--expanded {
-      background-color: css-var("collapse-expanded-background-color");
-      border-color: css-var("collapse-expanded-border-color");
+      background-color: css-var('collapse-expanded-background-color');
+      border-color: css-var('collapse-expanded-border-color');
    }
 }
 
@@ -71,10 +71,10 @@
       content: '';
       top: $collapse-icon-top;
       right: $collapse-icon-right;
-      width: css-var("collapse-icon-width");
-      height: css-var("collapse-icon-height");
-      transition: transform css-var("collapse-toggle-duration") ease-out;
+      width: css-var('collapse-icon-width');
+      height: css-var('collapse-icon-height');
+      transition: transform css-var('collapse-toggle-duration') ease-out;
       position: absolute;
-      background-color: css-var("collapse-icon-color");
+      background-color: css-var('collapse-icon-color');
    }
 }
