@@ -1,3 +1,11 @@
+/* */
+
+//div[contenteditable=true] {
+//   border: 1px dashed #AAA;
+//   width: 290px;
+//   padding: 5px;
+//}
+
 .#{$prefix}-form {
    input,
    select,
@@ -26,12 +34,12 @@
 
       @include placeholder {
          color: css-var('form-input-font-color');
-         filter: opacity(0.75);
+         filter: opacity(0.5);
       }
 
       &[disabled],
       &[readonly] {
-         filter: opacity(0.7) grayscale(90%);
+         @include disabled;
       }
 
       &[disabled] {
@@ -45,6 +53,13 @@
 
       &[type='search'] {
          appearance: none;
+      }
+
+      &[contenteditable=''],
+      &[contenteditable='true'] {
+         height: 88px;
+         overflow: auto;
+         resize: vertical;
       }
 
       &::-webkit-search-decoration,
@@ -108,6 +123,7 @@
       textarea {
          border-radius: css-var('form-input-border-radius');
          padding: css-var('spacing-x-small');
+         resize: vertical;
       }
    }
 
@@ -136,7 +152,8 @@
          content: '';
          width: $radiobutton-size;
          height: $radiobutton-size;
-         border: $border-width $border-style css-var('border-color-light');
+         background-color: css-var('form-input-background-color');
+         border: $border-width $border-style css-var('form-input-border-color');
          position: absolute;
          left: 0;
          top: 1px;
@@ -154,7 +171,8 @@
       }
 
       [type='radio']:checked + label &__fake:before {
-         border: $radiobutton-border;
+         background-color: css-var('button-primary-font-color');
+         border: 6px solid #{css-var('button-primary-background-color')};
          border-radius: 100%;
          content: '';
          height: $radiobutton-checked-size;
@@ -162,6 +180,10 @@
          position: absolute;
          width: $radiobutton-checked-size;
          z-index: $zindex-radio-button;
+      }
+
+      [type='radio']:focus + label &__fake:before {
+         @include focus-shadow();
       }
 
       &__label {
@@ -260,9 +282,9 @@
 
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
-
-      border-bottom: 2px solid $font-color-invert;
-      border-left: 2px solid $font-color-invert;
+      background-color: transparent;
+      border-bottom: 2px solid css-var('button-primary-font-color');
+      border-left: 2px solid css-var('button-primary-font-color');
       content: '';
       display: block;
       height: $checkbox-tick-height;
@@ -273,8 +295,9 @@
       width: $checkbox-tick-width;
    }
 
-   [type='checkbox']:disabled + label &__fake {
-      background-color: css-var('color-lighter') !important;
+   [type='checkbox']:disabled + label &__fake,
+   [type='checkbox']:disabled + label &__label {
+      @include disabled;
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -282,7 +305,8 @@
    }
 
    &__fake {
-      border: $border-width $border-style css-var('border-color-light');
+      background-color: css-var('form-input-background-color');
+      border: $border-width $border-style css-var('form-input-border-color');
       border-radius: css-var('border-radius-small');
       display: inline-block;
       height: $checkbox-size;
@@ -294,7 +318,7 @@
    }
 
    [type='checkbox']:checked + label &__fake {
-      background-color: css-var('color-primary');
+      background-color: css-var('button-primary-background-color');
    }
 
    &__label {

@@ -14,13 +14,36 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    <div class="env-form-element">
       <label for="text" class="env-form-element__label">Input text</label>
       <div class="env-form-element__control">
-         <input type="text" class="env-form-input" id="text" />
+         <input
+            type="text"
+            class="env-form-input"
+            placeholder="Placeholder text"
+            id="text"
+         />
       </div>
    </div>
    <div class="env-form-element">
       <label for="textarea" class="env-form-element__label">Textarea</label>
       <div class="env-form-element__control">
-         <textarea class="env-form-input" id="textarea" rows="3"></textarea>
+         <textarea
+            class="env-form-input"
+            placeholder="Placeholder text"
+            id="textarea"
+            rows="3"
+         ></textarea>
+      </div>
+   </div>
+   <div class="env-form-element">
+      <div class="env-form-element__label" id="contenteditable-header">
+         Contenteditable
+      </div>
+      <div class="env-form-element__control">
+         <div
+            class="env-form-input"
+            data-placeholder="Placeholder text"
+            aria-labelledby="contenteditable-header"
+            contenteditable
+         ></div>
       </div>
    </div>
    <div class="env-form-element">
@@ -87,8 +110,8 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          aria-labelledby="checkbox-header"
       >
          <div class="env-checkbox">
-            <input type="checkbox" checked name="options" id="cb" />
-            <label class="env-form-element__label" for="cb">
+            <input type="checkbox" checked name="options" id="cb1" />
+            <label class="env-form-element__label" for="cb1">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Checked</span>
             </label>
@@ -158,22 +181,22 @@ To create a horizontal form (horizontally align labels with input), apply modifi
          aria-labelledby="subjects-header"
       >
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb4" />
-            <label class="env-form-element__label" for="cb4">
+            <input type="checkbox" name="options" id="cb5" />
+            <label class="env-form-element__label" for="cb5">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Subject</span>
             </label>
          </div>
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb5" />
-            <label class="env-form-element__label" for="cb5">
+            <input type="checkbox" name="options" id="cb6" />
+            <label class="env-form-element__label" for="cb6">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Subject 2</span>
             </label>
          </div>
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb6" />
-            <label class="env-form-element__label" for="cb6">
+            <input type="checkbox" name="options" id="cb7" />
+            <label class="env-form-element__label" for="cb7">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Subject 3</span>
             </label>
@@ -209,8 +232,8 @@ Apply modifier `.env-form--inline` to the form wrapper to display elements inlin
    <div class="env-form-element">
       <div class="env-form-element__control">
          <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb7" />
-            <label class="env-form-element__label" for="cb7">
+            <input type="checkbox" name="options" id="cb8" />
+            <label class="env-form-element__label" for="cb8">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Remember me</span>
             </label>
@@ -333,8 +356,8 @@ Elements with the `disabled` attribute recieve a `not-allowed` cursor while `rea
    <div class="env-form-element">
       <div class="env-form-element__control">
          <div class="env-checkbox env-checkbox--disabled">
-            <input type="checkbox" name="options" id="cb8" disabled />
-            <label class="env-form-element__label" for="cb8">
+            <input type="checkbox" name="options" id="cb9" disabled />
+            <label class="env-form-element__label" for="cb9">
                <span class="env-checkbox__fake"></span>
                <span class="env-checkbox__label">Disabled checkbox</span>
             </label>
