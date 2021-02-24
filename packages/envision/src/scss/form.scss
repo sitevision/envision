@@ -10,12 +10,12 @@
    }
 
    &-input {
-      background-color: css-var('font-color-invert');
+      background-color: css-var('form-input-background-color');
       background-image: none;
-      border: $border-width $border-style css-var('border-color-light');
+      border: $border-width $border-style css-var('form-input-border-color');
       border-radius: css-var('form-input-border-radius');
       box-sizing: border-box;
-      color: css-var('font-color');
+      color: css-var('form-input-font-color');
       display: block;
       font-size: css-var('font-size-medium');
       line-height: $form-input-line-height;
@@ -24,10 +24,14 @@
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
 
+      @include placeholder {
+         color: css-var('form-input-font-color');
+         filter: opacity(0.5);
+      }
+
       &[disabled],
       &[readonly] {
-         background-color: css-var('color-lightest');
-         border-color: css-var('color-lighter');
+         @include disabled;
       }
 
       &[disabled] {
@@ -41,6 +45,13 @@
 
       &[type='search'] {
          appearance: none;
+      }
+
+      &[contenteditable=''],
+      &[contenteditable='true'] {
+         height: 88px;
+         overflow: auto;
+         resize: vertical;
       }
 
       &::-webkit-search-decoration,
@@ -104,6 +115,7 @@
       textarea {
          border-radius: css-var('form-input-border-radius');
          padding: css-var('spacing-x-small');
+         resize: vertical;
       }
    }
 
@@ -114,19 +126,6 @@
 
       select[multiple] > option {
          padding: css-var('spacing-x-small');
-      }
-
-      option:hover {
-         background: linear-gradient($color-lighter, $color-lighter);
-      }
-
-      option:focus,
-      option:checked {
-         color: css-var('font-color-invert');
-         background: linear-gradient(
-            #{css-var('color-primary')},
-            #{css-var('color-primary')}
-         );
       }
    }
 
@@ -145,7 +144,8 @@
          content: '';
          width: $radiobutton-size;
          height: $radiobutton-size;
-         border: $border-width $border-style css-var('border-color-light');
+         background-color: css-var('form-input-background-color');
+         border: $border-width $border-style css-var('form-input-border-color');
          position: absolute;
          left: 0;
          top: 1px;
@@ -163,7 +163,8 @@
       }
 
       [type='radio']:checked + label &__fake:before {
-         border: $radiobutton-border;
+         background-color: css-var('button-primary-font-color');
+         border: 6px solid #{css-var('button-primary-background-color')};
          border-radius: 100%;
          content: '';
          height: $radiobutton-checked-size;
@@ -171,6 +172,10 @@
          position: absolute;
          width: $radiobutton-checked-size;
          z-index: $zindex-radio-button;
+      }
+
+      [type='radio']:focus + label &__fake:before {
+         @include focus-shadow();
       }
 
       &__label {
@@ -269,9 +274,9 @@
 
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
-
-      border-bottom: 2px solid $font-color-invert;
-      border-left: 2px solid $font-color-invert;
+      background-color: transparent;
+      border-bottom: 2px solid css-var('button-primary-font-color');
+      border-left: 2px solid css-var('button-primary-font-color');
       content: '';
       display: block;
       height: $checkbox-tick-height;
@@ -282,8 +287,9 @@
       width: $checkbox-tick-width;
    }
 
-   [type='checkbox']:disabled + label &__fake {
-      background-color: css-var('color-lighter') !important;
+   [type='checkbox']:disabled + label &__fake,
+   [type='checkbox']:disabled + label &__label {
+      @include disabled;
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -291,7 +297,8 @@
    }
 
    &__fake {
-      border: $border-width $border-style css-var('border-color-light');
+      background-color: css-var('form-input-background-color');
+      border: $border-width $border-style css-var('form-input-border-color');
       border-radius: css-var('border-radius-small');
       display: inline-block;
       height: $checkbox-size;
@@ -303,7 +310,7 @@
    }
 
    [type='checkbox']:checked + label &__fake {
-      background-color: css-var('color-primary');
+      background-color: css-var('button-primary-background-color');
    }
 
    &__label {

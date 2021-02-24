@@ -435,7 +435,6 @@ $table-zebra-color: $default-button-color !default;
 $radiobutton-base: 0.625em !default;
 $radiobutton-checked-size: $radiobutton-base !default;
 $radiobutton-size: $radiobutton-base * 2 !default;
-$radiobutton-border: 6px solid #{css-var('color-primary')} !default;
 
 // Checkbox
 $checkbox-size: 1.25em !default;
@@ -447,6 +446,9 @@ $checkbox-disabled-color: $color-lighter !default;
    (
       'form-font-family': css-var('font-family'),
       'form-input-border-radius': $radius-medium,
+      'form-input-font-color': css-var('font-color'),
+      'form-input-border-color': css-var('border-color-light'),
+      'form-input-background-color': #fff,
    )
 );
 

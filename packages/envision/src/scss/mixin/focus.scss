@@ -3,3 +3,8 @@
    box-shadow: 0 0 5px css-var($box-shadow-color);
    outline: 0;
 }
+
+@mixin focus-shadow($box-shadow-color: 'color-focus') {
+   box-shadow: 0 0 5px css-var($box-shadow-color);
+   outline: 0;
+}
