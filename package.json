@@ -14,7 +14,7 @@
       "dev": "concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
       "build": "yarn workspace envision build && yarn workspace envision-docs build && yarn run copy-docs",
       "copy-docs": "node scripts/copyDocs.js",
-      "publish:docker": "yarn build && docker build -t docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD) . && docker push -f docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD)"
+      "publish:docker": "yarn build && docker build -t docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD) . && docker push docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD)"
    },
    "repository": {
       "type": "git",
