@@ -94,13 +94,13 @@ title: Button
 ```html
 <button type="button" class="env-button">
    Default with icon right
-   <svg class="env-icon env-m-left--xx-small">
+   <svg class="env-icon env-icon--small env-m-left--xx-small">
       <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
 <button type="button" class="env-button env-button--primary">
-   <svg class="env-icon env-m-right--xx-small">
+   <svg class="env-icon env-icon--small env-m-right--xx-small">
       <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
    </svg>
    Primary with icon left

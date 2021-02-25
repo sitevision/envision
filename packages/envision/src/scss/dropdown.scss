@@ -7,7 +7,6 @@
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('popover-box-shadow');
       display: none;
-
       font-family: css-var('font-family');
       font-size: css-var('font-size-medium');
       left: 0;
@@ -25,7 +24,8 @@
    }
 
    &__item {
-      display: block;
+      display: flex;
+      align-items: center;
       box-sizing: border-box;
       appearance: none;
       border: {
@@ -38,6 +38,7 @@
       text-decoration: none;
       background-color: transparent;
       font-size: inherit;
+      line-height: 1.125;
       margin: 0;
       width: 100%;
       text-align: left;

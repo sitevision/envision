@@ -5,6 +5,7 @@
    cursor: pointer;
    display: inline-flex;
    align-items: center;
+   justify-content: center;
    font-family: css-var('button-font-family');
    margin: 0;
    text-align: center;
@@ -12,11 +13,6 @@
    user-select: none;
    vertical-align: middle;
    border-radius: css-var('button-border-radius');
-
-   .env-icon {
-      width: $button-line-height * 1em;
-      height: $button-line-height * 1em;
-   }
 
    @include button-size(
       'spacing-xx-small',

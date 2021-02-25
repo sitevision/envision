@@ -52,6 +52,7 @@ Icon size utility classes are named using the format: `env-icon--{size}`
 
 Valid values for _size_
 
+-  `xx-small`
 -  `x-small`
 -  `small`
 -  `medium`
@@ -62,6 +63,11 @@ Valid values for _size_
 ```html
 <div class="icons-demo">
    <ul class="env-list env-list--horizontal">
+      <li class="env-list__item">
+         <svg class="env-icon env-icon--xx-small">
+            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+         </svg>
+      </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-small">
             <use xlink:href="/images/envision-icons.svg#icon-user"></use>
