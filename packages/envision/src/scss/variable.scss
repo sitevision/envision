@@ -59,26 +59,18 @@ $font-family: inherit !default;
 
 // Font Size
 $font-size-base: 1em !default;
-$font-size-x-small: $font-size-base * 0.75 !default;
-$font-size-small: $font-size-base * 0.875 !default;
-$font-size-medium: $font-size-base !default;
-$font-size-large: $font-size-base * 1.25 !default;
-$font-size-x-large: $font-size-base * 1.5 !default;
-$font-size-xx-large: $font-size-base * 1.75 !default;
-$font-size-xxx-large: $font-size-base * 2 !default;
-$font-size-xxxx-large: $font-size-base * 2.5 !default;
 
 @include to-css-custom-property(
    (
       'font-size-base': $font-size-base,
-      'font-size-x-small': $font-size-x-small,
-      'font-size-small': $font-size-small,
-      'font-size-medium': $font-size-medium,
-      'font-size-large': $font-size-large,
-      'font-size-x-large': $font-size-x-large,
-      'font-size-xx-large': $font-size-xx-large,
-      'font-size-xxx-large': $font-size-xxx-large,
-      'font-size-xxxx-large': $font-size-xxxx-large,
+      'font-size-x-small': calc(var(--env-font-size-base) * 0.75),
+      'font-size-small': calc(var(--env-font-size-base) * 0.875),
+      'font-size-medium': var(--env-font-size-base),
+      'font-size-large': calc(var(--env-font-size-base) * 1.25),
+      'font-size-x-large': calc(var(--env-font-size-base) * 1.5),
+      'font-size-xx-large': calc(var(--env-font-size-base) * 1.75),
+      'font-size-xxx-large': calc(var(--env-font-size-base) * 2),
+      'font-size-xxxx-large': calc(var(--env-font-size-base) * 2.5),
    )
 );
 

@@ -11,3 +11,4 @@ public
 .cache
 docs
 .eslintcache
+.DS_Store
