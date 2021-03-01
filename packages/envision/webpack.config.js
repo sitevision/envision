@@ -66,6 +66,7 @@ module.exports = {
             use: [
                MiniCssExtractPlugin.loader,
                'css-loader',
+               'css-vars-to-json',
                'postcss-loader',
                'sass-loader',
             ],
