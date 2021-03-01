@@ -11,8 +11,8 @@
       font-size: css-var('font-size-medium');
       left: 0;
       list-style: none;
-      max-width: 240px;
-      min-width: 180px;
+      max-width: (240 / 16 * 1em);
+      min-width: (180 / 16 * 1em);
       padding: css-var('spacing-xx-small') 0;
       position: absolute;
       top: css-var('spacing-medium');
