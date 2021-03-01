@@ -9,3 +9,33 @@
       }
    }
 }
+
+@mixin disabled {
+   filter: opacity(0.5) grayscale(100%);
+}
+
+@mixin placeholder() {
+   &[contenteditable='']:empty:before,
+   &[contenteditable='true']:empty:before {
+      content: attr(data-placeholder);
+      pointer-events: none;
+      display: block; /* For Firefox */
+      @content;
+   }
+   &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      @content;
+   }
+   &::-moz-placeholder {
+      /* Firefox 19+ */
+      @content;
+   }
+   &:-ms-input-placeholder {
+      /* IE 10+ */
+      @content;
+   }
+   &:-moz-placeholder {
+      /* Firefox 18- */
+      @content;
+   }
+}
