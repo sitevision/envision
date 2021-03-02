@@ -66,7 +66,12 @@ module.exports = {
             use: [
                MiniCssExtractPlugin.loader,
                'css-loader',
-               'css-vars-to-json',
+               {
+                  loader: 'css-vars-to-json',
+                  options: {
+                     filename: 'envision-css-vars.json',
+                  },
+               },
                'postcss-loader',
                'sass-loader',
             ],
