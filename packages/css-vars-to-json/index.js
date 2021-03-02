@@ -1,6 +1,8 @@
 const cssTree = require('css-tree');
+const loaderUtils = require('loader-utils');
 
 module.exports = function (content) {
+   const options = loaderUtils.getOptions(this);
    const tree = cssTree.parse(content);
 
    const emitFile = this.emitFile;
@@ -11,7 +13,7 @@ module.exports = function (content) {
          cssVars[node.property] = node.value.value;
       }
    });
-   emitFile('css-vars.json', JSON.stringify(cssVars, null, 2));
+   emitFile(options.filename, JSON.stringify(cssVars, null, 2));
 
    return content;
 };
