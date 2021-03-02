@@ -1,0 +1,11 @@
+{
+   "name": "css-vars-to-json",
+   "version": "1.0.0",
+   "main": "index.js",
+   "author": "Sitevision AB",
+   "license": "MIT",
+   "dependencies": {
+      "css-tree": "1.1.2",
+      "loader-utils": "2.0.0"
+   }
+}

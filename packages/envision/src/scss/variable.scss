@@ -35,12 +35,14 @@ $button-line-height: $line-height-medium !default;
 $form-input-line-height: $line-height-medium !default;
 
 // Icon Size
-$icon-size-x-small: 14px !default;
-$icon-size-small: 20px !default;
-$icon-size-medium: 30px !default;
-$icon-size-large: 40px !default;
-$icon-size-x-large: 50px !default;
-$icon-size-xx-large: 60px !default;
+// Decimal value used to calculate size relative to font-size-base
+$icon-size-xx-small: (11 / 16) !default;
+$icon-size-x-small: (14 / 16) !default;
+$icon-size-small: (20 / 16) !default;
+$icon-size-medium: (30 / 16) !default;
+$icon-size-large: (40 / 16) !default;
+$icon-size-x-large: (50 / 16) !default;
+$icon-size-xx-large: (60 / 16) !default;
 
 // =============================
 // CSS CUSTOM PROPERTY VARIABLES

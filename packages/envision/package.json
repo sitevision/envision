@@ -37,7 +37,8 @@
       "terser-webpack-plugin": "^2.3.0",
       "webpack": "^4.41.2",
       "webpack-cli": "^3.3.9",
-      "webpack-merge": "^4.2.2"
+      "webpack-merge": "^4.2.2",
+      "css-vars-to-json": "1.0.0"
    },
    "dependencies": {
       "jquery": "^3.5.1",
