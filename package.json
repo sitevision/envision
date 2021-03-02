@@ -30,6 +30,7 @@
    "license": "MIT",
    "devDependencies": {
       "concurrently": "^5.2.0",
+      "css-tree": "^1.1.2",
       "eslint": "^7.20.0",
       "eslint-plugin-react": "^7.22.0",
       "eslint-plugin-react-hooks": "^4.2.0",

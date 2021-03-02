@@ -1,0 +1,6 @@
+{
+   "env": {
+      "commonjs": true
+   },
+   "extends": ["eslint:recommended"]
+}
