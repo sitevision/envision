@@ -3,7 +3,9 @@
    border: $border-width $border-style;
    box-sizing: border-box;
    cursor: pointer;
-   display: inline-block;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
    font-family: css-var('button-font-family');
    margin: 0;
    text-align: center;

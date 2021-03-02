@@ -11,6 +11,10 @@ title: Button
 
 <button type="button" class="env-button env-button--success">Success</button>
 
+<button type="button" class="env-button">Default</button>
+
+<button type="button" class="env-button env-button--primary">Primary</button>
+
 <button type="button" class="env-button env-button--danger">Danger</button>
 
 <button type="button" class="env-button env-button--invert">Invert</button>
@@ -83,6 +87,24 @@ title: Button
       Small
    </button>
 </p>
+```
+
+## Using icons
+
+```html
+<button type="button" class="env-button">
+   Default with icon right
+   <svg class="env-icon env-icon--small env-m-left--xx-small">
+      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+</button>
+
+<button type="button" class="env-button env-button--primary">
+   <svg class="env-icon env-icon--small env-m-right--xx-small">
+      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+   Primary with icon left
+</button>
 ```
 
 ## State

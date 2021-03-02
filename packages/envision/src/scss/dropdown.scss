@@ -7,13 +7,12 @@
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('popover-box-shadow');
       display: none;
-
       font-family: css-var('font-family');
       font-size: css-var('font-size-medium');
       left: 0;
       list-style: none;
-      max-width: 240px;
-      min-width: 180px;
+      max-width: (240 / 16 * 1em);
+      min-width: (180 / 16 * 1em);
       padding: css-var('spacing-xx-small') 0;
       position: absolute;
       top: css-var('spacing-medium');
@@ -25,7 +24,8 @@
    }
 
    &__item {
-      display: block;
+      display: flex;
+      align-items: center;
       box-sizing: border-box;
       appearance: none;
       border: {
@@ -38,6 +38,7 @@
       text-decoration: none;
       background-color: transparent;
       font-size: inherit;
+      line-height: 1.125;
       margin: 0;
       width: 100%;
       text-align: left;
