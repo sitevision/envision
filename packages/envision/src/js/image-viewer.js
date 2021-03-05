@@ -8,7 +8,6 @@ import jQuery from 'jquery';
 import Util from './util';
 
 const Imageviewer = (($) => {
-
    const ANIMATION = 'env-animation-in-progress';
    const BACKDROP = 'env-image-viewer__backdrop';
    const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
@@ -29,31 +28,30 @@ const Imageviewer = (($) => {
                              </div>`;
 
    const SELECTORS = {
-      ACTIVE_DOT           : '.env-is-active',
-      DATA_MOVE_TO         : '[data-move-to]',
-      DATA_MOVE            : '[data-move]',
-      DATA_IMAGE_VIEWER    : '[data-image-viewer]',
-      IMAGES               : '.env-image-viewer__images',
-      INDICATORS           : '.env-image-viewer__indicators',
-      DATA_SLIDE_TO        : '[data-slide-to]',
-      SPINNER              : '.env-spinner'
+      ACTIVE_DOT: '.env-is-active',
+      DATA_MOVE_TO: '[data-move-to]',
+      DATA_MOVE: '[data-move]',
+      DATA_IMAGE_VIEWER: '[data-image-viewer]',
+      IMAGES: '.env-image-viewer__images',
+      INDICATORS: '.env-image-viewer__indicators',
+      DATA_SLIDE_TO: '[data-slide-to]',
+      SPINNER: '.env-spinner',
    };
 
    const ClassName = {
-      ACTIVE_DOT     : 'env-is-active',
-      HIDDEN         : 'env-image-viewer--hidden',
-      SPINNER_HIDE   : 'env-spinner--hide'
+      ACTIVE_DOT: 'env-is-active',
+      HIDDEN: 'env-image-viewer--hidden',
+      SPINNER_HIDE: 'env-spinner--hide',
    };
 
    const Events = {
-      CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`,
-      TOUCHEND       : `touchend${EVENT_KEY}`,
-      TOUCHMOVE      : `touchmove${EVENT_KEY}`,
-      TOUCHSTART     : `touchstart${EVENT_KEY}`
+      CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
+      TOUCHEND: `touchend${EVENT_KEY}`,
+      TOUCHMOVE: `touchmove${EVENT_KEY}`,
+      TOUCHSTART: `touchstart${EVENT_KEY}`,
    };
 
    class Imageviewer {
-
       constructor(element, $image) {
          this.$el = $(element);
          this.$images = this.$el.find(SELECTORS.IMAGES);
@@ -86,15 +84,15 @@ const Imageviewer = (($) => {
             this._setActiveIndicatorElement();
          } else {
             this.$modal = $('<div/>', {
-               class: 'env-image-viewer__modal'
+               class: 'env-image-viewer__modal',
             });
 
             this.$btnContainer = $('<div/>', {
-               class: 'env-image-viewer__dialog'
+               class: 'env-image-viewer__dialog',
             });
 
             this.$imgContainer = $('<div/>', {
-               class: 'env-image-viewer__modal-container'
+               class: 'env-image-viewer__modal-container',
             });
 
             this.$modal.append(this.$btnContainer);
@@ -147,7 +145,7 @@ const Imageviewer = (($) => {
             .addClass('env-image-viewer__img')
             .attr({
                tabindex: '-1',
-               src: href
+               src: href,
             })
             .on('load', () => {
                const imageHeight = $downloadingImage.height();
@@ -158,13 +156,13 @@ const Imageviewer = (($) => {
 
                if (imageWidth > defaultWidth) {
                   $imageModal.css({
-                     'max-width': '80%'
+                     'max-width': '80%',
                   });
                }
 
                if (windowHeight < imageHeight) {
                   $downloadingImage.css({
-                     'max-height': windowHeight * heightModifier
+                     'max-height': windowHeight * heightModifier,
                   });
                }
 
@@ -177,23 +175,31 @@ const Imageviewer = (($) => {
       }
 
       _bindContainerEvents() {
-         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_MOVE, (e) => {
-            e.preventDefault();
+         this.$btnContainer.on(
+            Events.CLICK_DATA_API,
+            SELECTORS.DATA_MOVE,
+            (e) => {
+               e.preventDefault();
 
-            if ($(e.currentTarget).data('move') === 'next') {
-               this.next();
-            } else {
-               this.prev();
+               if ($(e.currentTarget).data('move') === 'next') {
+                  this.next();
+               } else {
+                  this.prev();
+               }
             }
-         });
+         );
 
-         this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_MOVE_TO, (e) => {
-            const viewerIndex = e.currentTarget.getAttribute('data-move-to');
+         this.$btnContainer.on(
+            Events.CLICK_DATA_API,
+            SELECTORS.DATA_MOVE_TO,
+            (e) => {
+               const viewerIndex = e.currentTarget.getAttribute('data-move-to');
 
-            if (viewerIndex) {
-               this.show(viewerIndex);
+               if (viewerIndex) {
+                  this.show(viewerIndex);
+               }
             }
-         });
+         );
       }
 
       _getButtons() {
@@ -226,7 +232,9 @@ const Imageviewer = (($) => {
 
          this.$images.each((index) => {
             const isActive = index === activeElementIndex;
-            items += `<li data-move-to="${index}" class="${isActive ? 'env-is-active' : ''}"></li>`;
+            items += `<li data-move-to="${index}" class="${
+               isActive ? 'env-is-active' : ''
+            }"></li>`;
          });
 
          return items;
@@ -234,11 +242,10 @@ const Imageviewer = (($) => {
 
       _showBackdrop() {
          this.$backdrop = $('<div/>', {
-            class: BACKDROP
+            class: BACKDROP,
          });
 
          this.$modal.on(Events.CLICK_DATA_API, (event) => {
-
             if (this.$backdrop.hasClass(ANIMATION)) {
                return;
             }
@@ -266,8 +273,7 @@ const Imageviewer = (($) => {
       }
 
       _bindEvents() {
-         this.$imgContainer
-            .on('keydown', event => this._keydown(event));
+         this.$imgContainer.on('keydown', (event) => this._keydown(event));
       }
 
       _keydown(event) {
@@ -296,25 +302,32 @@ const Imageviewer = (($) => {
       }
 
       _getNextItemIndex() {
-         return this.config.index === this.$images.length - 1 ? 0 : this.config.index + 1;
+         return this.config.index === this.$images.length - 1
+            ? 0
+            : this.config.index + 1;
       }
 
       _getPrevItemIndex() {
-         return this.config.index === 0 ? this.$images.length - 1 : this.config.index - 1;
+         return this.config.index === 0
+            ? this.$images.length - 1
+            : this.config.index - 1;
       }
 
       _setActiveIndicatorElement() {
-         this._indicatorsElement = this.$btnContainer.find(SELECTORS.INDICATORS)[0];
+         this._indicatorsElement = this.$btnContainer.find(
+            SELECTORS.INDICATORS
+         )[0];
          if (this.$images.length > 0) {
             this.$btnContainer
                .find(SELECTORS.ACTIVE_DOT)
                .removeClass(ClassName.ACTIVE_DOT);
 
-            const indicator = this.$btnContainer.find(SELECTORS.INDICATORS).children()[this.config.index];
+            const indicator = this.$btnContainer
+               .find(SELECTORS.INDICATORS)
+               .children()[this.config.index];
 
             if (indicator) {
-               $(indicator)
-                  .addClass(ClassName.ACTIVE_DOT);
+               $(indicator).addClass(ClassName.ACTIVE_DOT);
             }
          }
       }
@@ -327,8 +340,10 @@ const Imageviewer = (($) => {
       }
    }
 
-   $(document)
-      .on(Events.CLICK_DATA_API, SELECTORS.DATA_IMAGE_VIEWER, function(e) {
+   $(document).on(
+      Events.CLICK_DATA_API,
+      SELECTORS.DATA_IMAGE_VIEWER,
+      function (e) {
          e.preventDefault();
          const $target = $(e.target);
 
@@ -337,7 +352,8 @@ const Imageviewer = (($) => {
          }
 
          $(this).envImageviewer($target.parent());
-      });
+      }
+   );
 
    $.fn[NAME] = Imageviewer._jQuery;
    $.fn[NAME].Constructor = Imageviewer;
@@ -347,7 +363,6 @@ const Imageviewer = (($) => {
    };
 
    return Imageviewer;
-
 })(jQuery);
 
 export default Imageviewer;

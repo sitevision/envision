@@ -2,20 +2,22 @@
    $range-height: $spacing-small;
    $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
-   border: $border-width $border-style css-var("border-color");
-   border-radius: css-var("border-radius-small");
+   border: $border-width $border-style css-var('border-color');
+   border-radius: css-var('border-radius-small');
    height: $range-height;
    position: relative;
 
    &__handle {
-      border-radius: css-var("border-radius-small");
+      border-radius: css-var('border-radius-small');
       background: $color-lighter;
-      border: $border-width $border-style css-var("border-color");
+      border: $border-width $border-style css-var('border-color');
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop / 2);
       position: absolute;
-      top: calc(-1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px));
-      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      top: calc(
+         -1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px)
+      );
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: $handle-size-desktop;
 
       &:focus {
@@ -45,7 +47,7 @@
    }
 
    &__range {
-      background: css-var("color-primary");
+      background: css-var('color-primary');
       height: 100%;
       position: absolute;
    }
@@ -56,7 +58,9 @@
       .#{$slider}__handle {
          height: $handle-size-touch;
          margin-left: -($handle-size-touch / 2);
-         top: calc(-1 * (((#{$handle-size-touch} - #{$range-height}) / 2) + 1px));
+         top: calc(
+            -1 * (((#{$handle-size-touch} - #{$range-height}) / 2) + 1px)
+         );
          width: $handle-size-touch;
       }
 

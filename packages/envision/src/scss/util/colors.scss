@@ -11,15 +11,15 @@ $colors: (
    light: $color-light,
    lighter: $color-lighter,
    lightest: $color-lightest,
-   hover: $color-hover
+   hover: $color-hover,
 );
 
 $transparency: (
-   80: .8,
-   60: .6,
-   40: .4,
-   20: .2,
-   10: .1
+   80: 0.8,
+   60: 0.6,
+   40: 0.4,
+   20: 0.2,
+   10: 0.1,
 );
 
 @each $state, $color in $colors {
@@ -37,5 +37,3 @@ $transparency: (
       }
    }
 }
-
-

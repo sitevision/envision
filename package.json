@@ -2,15 +2,19 @@
    "private": true,
    "name": "envision-repo",
    "version": "0.0.1",
-   "description": "SiteVision CSS framework",
+   "description": "Sitevision CSS framework",
    "main": "index.js",
    "workspaces": [
       "packages/**"
    ],
    "scripts": {
+      "postinstall": "husky install",
+      "precommit": "lint-staged",
+      "lint": "prettier -c . && eslint .",
       "dev": "concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
       "build": "yarn workspace envision build && yarn workspace envision-docs build && yarn run copy-docs",
-      "copy-docs": "node scripts/copyDocs.js"
+      "copy-docs": "node scripts/copyDocs.js",
+      "publish:docker": "yarn build && docker build -t docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD) . && docker push docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD)"
    },
    "repository": {
       "type": "git",
@@ -19,12 +23,24 @@
    "keywords": [
       "Envision",
       "CSS",
-      "SiteVision",
+      "Sitvvision",
       "SDK"
    ],
-   "author": "SiteVision AB",
+   "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
-      "concurrently": "^5.2.0"
+      "concurrently": "^5.2.0",
+      "css-tree": "^1.1.2",
+      "eslint": "^7.20.0",
+      "eslint-plugin-react": "^7.22.0",
+      "eslint-plugin-react-hooks": "^4.2.0",
+      "husky": "^5.1.0",
+      "lint-staged": "^10.5.4",
+      "prettier": "^2.2.1"
+   },
+   "lint-staged": {
+      "*.js": "eslint --cache --fix",
+      "*.{js,scss,css,md,json}": "prettier --write",
+      ".{eslintrc,babelrc}": "prettier --write"
    }
 }

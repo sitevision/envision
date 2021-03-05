@@ -1,20 +1,22 @@
 .#{$prefix}-icon {
    display: inline-block;
-   width: $icon-size-x-small;
-   height: $icon-size-x-small;
+   width: calc(var(--env-font-size-base) * #{$icon-size-x-small});
+   height: calc(var(--env-font-size-base) * #{$icon-size-x-small});
    stroke-width: 0;
    stroke: currentColor;
    fill: currentColor;
 }
 
 $sizes: (
-   x-small: $icon-size-x-small,
-   small: $icon-size-small,
-   medium: $icon-size-medium,
-   large: $icon-size-large,
-   x-large: $icon-size-x-large,
-   xx-large: $icon-size-xx-large
+   xx-small: calc(var(--env-font-size-base) * #{$icon-size-xx-small}),
+   x-small: calc(var(--env-font-size-base) * #{$icon-size-x-small}),
+   small: calc(var(--env-font-size-base) * #{$icon-size-small}),
+   medium: calc(var(--env-font-size-base) * #{$icon-size-medium}),
+   large: calc(var(--env-font-size-base) * #{$icon-size-large}),
+   x-large: calc(var(--env-font-size-base) * #{$icon-size-x-large}),
+   xx-large: calc(var(--env-font-size-base) * #{$icon-size-xx-large}),
 );
+
 @each $size, $value in $sizes {
    .#{$prefix}-icon--#{$size} {
       width: $value;
@@ -23,9 +25,9 @@ $sizes: (
 }
 
 .#{$prefix}-icon--inactive {
-   opacity: .3;
+   opacity: 0.3;
 
    &:hover {
-      opacity: .6;
+      opacity: 0.6;
    }
 }

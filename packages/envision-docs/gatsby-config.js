@@ -7,8 +7,8 @@ const topMenuItems = [
 ];
 module.exports = {
    siteMetadata: {
-      title: 'SiteVision Envision',
-      description: 'UI library by SiteVision',
+      title: 'Sitevision Envision',
+      description: 'UI library by Sitevision',
       author: '@sitevision',
       topMenuItems: topMenuItems,
       menuCategories: [

@@ -1,7 +1,7 @@
 {
    "name": "envision-docs",
    "version": "0.0.1",
-   "description": "SiteVision CSS framework documentation",
+   "description": "Sitevision CSS framework documentation",
    "scripts": {
       "build": "node scripts/copyIcons.js && gatsby build",
       "dev": "node scripts/copyIcons.js && gatsby develop"
@@ -10,7 +10,7 @@
       "type": "git",
       "url": "https://github.com/sitevision/envision.git"
    },
-   "author": "SiteVision AB",
+   "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
       "eslint": "^6.6.0",

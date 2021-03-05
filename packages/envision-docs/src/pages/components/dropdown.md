@@ -74,9 +74,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    class="env-dropdown env-button-group env_list__item"
    role="group"
 >
-   <button class="env-button env-button--primary" type="button">
-      Button
-   </button>
+   <button class="env-button env-button--primary" type="button">Button</button>
    <button
       class="env-button env-button--primary env-dropdown--toggle env-dropdown--toggle-split"
       type="button"
@@ -100,6 +98,55 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li class="env-dropdown--divider" role="separator"></li>
       <li role="presentation">
          <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      </li>
+   </ul>
+</div>
+```
+
+### Dropdown with menu icons
+
+```html
+<div id="example3" class="env-dropdown">
+   <button
+      class="env-button env-button--primary env-button--large env-dropdown--toggle"
+      aria-expanded="false"
+      aria-haspopup="true"
+      data-dropdown
+      type="button"
+      data-target="#example3"
+   >
+      Dropdown
+      <svg class="env-icon env-icon--small env-dropdown-icon">
+         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+      </svg>
+   </button>
+   <ul class="env-dropdown__menu env-dropdown__menu--large">
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-dropdown__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use
+                  xlink:href="/images/envision-icons.svg#icon-grid-small"
+               ></use>
+            </svg>
+            Action
+         </button>
+      </li>
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-dropdown__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use xlink:href="/images/envision-icons.svg#icon-grid-big"></use>
+            </svg>
+            Properties
+         </button>
+      </li>
+      <li class="env-dropdown--divider" role="separator"></li>
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-dropdown__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use xlink:href="/images/envision-icons.svg#icon-list"></use>
+            </svg>
+            Settings
+         </button>
       </li>
    </ul>
 </div>

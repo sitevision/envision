@@ -8,7 +8,6 @@ import jQuery from 'jquery';
 import Popper from 'popper.js';
 
 const Popover = (($) => {
-
    const NAME = 'envPopover';
    const IDENTIFIER = 'env.popover';
    const EVENT_NAMESPACE = `.${IDENTIFIER}`;
@@ -18,7 +17,7 @@ const Popover = (($) => {
       top: 'top',
       bottom: 'bottom',
       left: 'left',
-      right: 'right'
+      right: 'right',
    };
 
    const DEFAULTS = {
@@ -37,11 +36,10 @@ const Popover = (($) => {
                   <div class="env-popover__content"></div>
                </div>`,
       title: '',
-      trigger: 'click'
+      trigger: 'click',
    };
 
    class Popover {
-
       constructor(element, config) {
          this.el = element;
          this.$el = $(this.el);
@@ -79,8 +77,7 @@ const Popover = (($) => {
                         if (!this.isShowing) {
                            this.showtimeout = setTimeout(() => {
                               this.show();
-                           },
-                           this.config.delay);
+                           }, this.config.delay);
                         }
                      } else if (!this.isShowing) {
                         this.show();
@@ -95,8 +92,7 @@ const Popover = (($) => {
                         if (this.isShowing) {
                            this.hidetimeout = setTimeout(() => {
                               this.hide();
-                           },
-                           this.config.delay);
+                           }, this.config.delay);
                         }
                      } else if (this.isShowing) {
                         this.hide();
@@ -109,51 +105,56 @@ const Popover = (($) => {
       hoverPopover() {
          const $popoverElement = this.getPopoverElement();
 
-         $popoverElement
-            .off('mouseenter')
-            .on('mouseenter', () => {
-               if (this.hidetimeout) {
-                  clearTimeout(this.hidetimeout);
-               }
-               if (this.showtimeout) {
-                  clearTimeout(this.showtimeout);
-               }
-               if (!this.isShowing) {
-                  this.showtimeout = setTimeout(() => {
-                     this.show();
-                  },
-                  this.config.delay);
-               }
-            });
-         $popoverElement
-            .off('mouseleave')
-            .on('mouseleave', () => {
-               if (this.showtimeout) {
-                  clearTimeout(this.showtimeout);
-               }
-               if (this.isShowing) {
-                  this.hidetimeout = setTimeout(() => {
-                     this.hide();
-                  },
-                  this.config.delay);
-               }
-            });
+         $popoverElement.off('mouseenter').on('mouseenter', () => {
+            if (this.hidetimeout) {
+               clearTimeout(this.hidetimeout);
+            }
+            if (this.showtimeout) {
+               clearTimeout(this.showtimeout);
+            }
+            if (!this.isShowing) {
+               this.showtimeout = setTimeout(() => {
+                  this.show();
+               }, this.config.delay);
+            }
+         });
+         $popoverElement.off('mouseleave').on('mouseleave', () => {
+            if (this.showtimeout) {
+               clearTimeout(this.showtimeout);
+            }
+            if (this.isShowing) {
+               this.hidetimeout = setTimeout(() => {
+                  this.hide();
+               }, this.config.delay);
+            }
+         });
       }
 
       getPopoverElement() {
-         return this.$popoverElement = this.$popoverElement || $(this.config.template);
+         return (this.$popoverElement =
+            this.$popoverElement || $(this.config.template));
       }
 
       setText($popoverElement, selector, text) {
-         $popoverElement.find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
+         // prettier-ignore
+         $popoverElement
+            .find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
       }
 
       setTitle($popoverElement) {
-         this.setText($popoverElement, '.env-popover__header__title', this.config.title);
+         this.setText(
+            $popoverElement,
+            '.env-popover__header__title',
+            this.config.title
+         );
       }
 
       setContent($popoverElement) {
-         this.setText($popoverElement, '.env-popover__content', this.config.content);
+         this.setText(
+            $popoverElement,
+            '.env-popover__content',
+            this.config.content
+         );
       }
 
       updateConfig(config) {
@@ -170,7 +171,8 @@ const Popover = (($) => {
       }
 
       setArrowPosition($popoverElement) {
-         $popoverElement.find('.env-popover__arrow')
+         $popoverElement
+            .find('.env-popover__arrow')
             .addClass(`env-popover__arrow--${this.config.placement}`);
       }
 
@@ -190,7 +192,9 @@ const Popover = (($) => {
          this.$popoverElement
             .find('.env-popover__arrow')
             .removeClass((index, oldClassNames) => {
-               const modifier = oldClassNames.replace(/env-popover__arrow/g, '').trim();
+               const modifier = oldClassNames
+                  .replace(/env-popover__arrow/g, '')
+                  .trim();
 
                return `env-popover__arrow${modifier}`;
             });
@@ -215,14 +219,14 @@ const Popover = (($) => {
          $('body').append($popoverElement);
 
          this._popper = new Popper(this.el, $popoverElement[0], {
-            placement         : attachmentMapping[this.config.placement],
-            modifiers         : {
+            placement: attachmentMapping[this.config.placement],
+            modifiers: {
                flip: {
-                  behavior: 'flip'
+                  behavior: 'flip',
                },
                arrow: {
-                  element: '.env-popover__arrow'
-               }
+                  element: '.env-popover__arrow',
+               },
             },
             onCreate: (data) => {
                if (data.originalPlacement !== data.placement) {
@@ -231,13 +235,16 @@ const Popover = (($) => {
             },
             onUpdate: (data) => {
                this._handlePopperPlacementChange(data);
-            }
+            },
          });
 
          this._popper.update();
 
          if (this.config.clickOutside) {
-            $('body').on(this.config.trigger + EVENT_NAMESPACE, this.clickOutsideHandler.bind(this));
+            $('body').on(
+               this.config.trigger + EVENT_NAMESPACE,
+               this.clickOutsideHandler.bind(this)
+            );
          }
 
          this.isShowing = true;
@@ -261,13 +268,17 @@ const Popover = (($) => {
          const target = e.target;
          const $target = $(target);
 
-         if (this.isShowing && !this.el.contains(target) && !$target.closest(this.$popoverElement).length) {
+         if (
+            this.isShowing &&
+            !this.el.contains(target) &&
+            !$target.closest(this.$popoverElement).length
+         ) {
             this.hide();
          }
       }
 
       static _jQuery(config) {
-         return this.each(function() {
+         return this.each(function () {
             const $this = $(this);
             let data = $this.data(IDENTIFIER);
 
@@ -276,7 +287,10 @@ const Popover = (($) => {
             }
 
             if (!data) {
-               data = new Popover(this, typeof config === 'object' ? config : null);
+               data = new Popover(
+                  this,
+                  typeof config === 'object' ? config : null
+               );
                $this.data(IDENTIFIER, data);
             }
 
@@ -301,7 +315,6 @@ const Popover = (($) => {
    };
 
    return Popover;
-
 })(jQuery);
 
 export default Popover;

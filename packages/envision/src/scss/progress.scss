@@ -1,35 +1,47 @@
 .#{$prefix}-progress {
-   background-color: css-var("button-background-color");
-   border-radius: css-var("border-radius-small");
+   background-color: css-var('button-background-color');
+   border-radius: css-var('border-radius-small');
    display: flex;
-   font-family: css-var("font-family");
-   font-size: css-var("font-size-small");
+   font-family: css-var('font-family');
+   font-size: css-var('font-size-small');
    overflow: hidden;
    text-align: center;
 
    &__bar {
-      background-color: css-var("color-primary");
-      color: css-var("font-color-invert");
+      background-color: css-var('color-primary');
+      color: css-var('font-color-invert');
       height: $progress-bar-height;
 
       &--success {
-         background-color: css-var("color-success");
+         background-color: css-var('color-success');
       }
 
       &--warning {
-         background-color: css-var("color-warning");
+         background-color: css-var('color-warning');
       }
 
       &--danger {
-         background-color: css-var("color-danger");
+         background-color: css-var('color-danger');
       }
 
       &--striped {
-         background-image: linear-gradient(-45deg, transparent 33%, rgba($font-color-invert, .15) 33%, rgba($font-color-invert, .15) 66%, transparent 66%);
+         background-image: linear-gradient(
+            -45deg,
+            transparent 33%,
+            rgba($font-color-invert, 0.15) 33%,
+            rgba($font-color-invert, 0.15) 66%,
+            transparent 66%
+         );
          background-size: $spacing-xx-large $spacing-large; // Keep
 
          &--flip {
-            background-image: linear-gradient(45deg, transparent 33%, rgba($font-color-invert, .15) 33%, rgba($font-color-invert, .15) 66%, transparent 66%);
+            background-image: linear-gradient(
+               45deg,
+               transparent 33%,
+               rgba($font-color-invert, 0.15) 33%,
+               rgba($font-color-invert, 0.15) 66%,
+               transparent 66%
+            );
          }
 
          &--animated {

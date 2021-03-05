@@ -1,5 +1,4 @@
 .#{$prefix}-form {
-
    input,
    select,
    textarea {
@@ -11,24 +10,28 @@
    }
 
    &-input {
-      background-color: css-var("font-color-invert");
+      background-color: css-var('form-input-background-color');
       background-image: none;
-      border: $border-width $border-style css-var("border-color-light");
-      border-radius: css-var("form-input-border-radius");
+      border: $border-width $border-style css-var('form-input-border-color');
+      border-radius: css-var('form-input-border-radius');
       box-sizing: border-box;
-      color: css-var("font-color");
+      color: css-var('form-input-font-color');
       display: block;
-      font-size: css-var("font-size-medium");
+      font-size: css-var('font-size-medium');
       line-height: $form-input-line-height;
       margin: 0;
-      padding: css-var("spacing-x-small");
-      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      padding: css-var('spacing-x-small');
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
+
+      @include placeholder {
+         color: css-var('form-input-font-color');
+         filter: opacity(0.5);
+      }
 
       &[disabled],
       &[readonly] {
-         background-color: css-var("color-lightest");
-         border-color: css-var("color-lighter");
+         @include disabled;
       }
 
       &[disabled] {
@@ -40,8 +43,15 @@
          @include focus();
       }
 
-      &[type="search"] {
+      &[type='search'] {
          appearance: none;
+      }
+
+      &[contenteditable=''],
+      &[contenteditable='true'] {
+         height: 88px;
+         overflow: auto;
+         resize: vertical;
       }
 
       &::-webkit-search-decoration,
@@ -51,92 +61,91 @@
    }
 
    select:not([multiple]) {
-      height: calc(#{css-var("spacing-x-small")} * 2 + #{$form-input-line-height * 1em} + #{$border-width * 2});
+      height: calc(
+         #{css-var('spacing-x-small')} * 2 + #{$form-input-line-height * 1em} +
+            #{$border-width * 2}
+      );
    }
 
    &-element {
-      margin-bottom: css-var("spacing-medium");
+      margin-bottom: css-var('spacing-medium');
 
       &__label {
          display: inline-block;
          font-weight: $font-weight-semibold;
-         margin-bottom: css-var("spacing-xx-small");
+         margin-bottom: css-var('spacing-xx-small');
       }
 
       &__help,
       &__feedback {
          display: block;
-         font-size: css-var("font-size-small");
+         font-size: css-var('font-size-small');
          font-style: italic;
-         margin-bottom: css-var("spacing-x-small");
-         margin-top: css-var("spacing-x-small");
+         margin-bottom: css-var('spacing-x-small');
+         margin-top: css-var('spacing-x-small');
       }
 
       &__help {
-         color: css-var("font-color-lighter");
-         font-size: css-var("font-size-small");
+         color: css-var('font-color-lighter');
+         font-size: css-var('font-size-small');
       }
 
       &--success {
-         @include input-validation-state("color-success", "border-success-color");
+         @include input-validation-state(
+            'color-success',
+            'border-success-color'
+         );
       }
 
       &--warning {
-         @include input-validation-state("color-warning-dark", "border-warning-color");
+         @include input-validation-state(
+            'color-warning-dark',
+            'border-warning-color'
+         );
       }
 
       &--danger {
-         @include input-validation-state("color-danger", "border-danger-color");
+         @include input-validation-state('color-danger', 'border-danger-color');
       }
 
-
-      &[type="file"] {
+      &[type='file'] {
          display: block;
       }
 
       textarea {
-         border-radius: css-var("form-input-border-radius");
-         padding: css-var("spacing-x-small");
+         border-radius: css-var('form-input-border-radius');
+         padding: css-var('spacing-x-small');
+         resize: vertical;
       }
    }
 
    &-multiple-select {
-
       select[multiple] {
-         padding: css-var("spacing-xx-small");
+         padding: css-var('spacing-xx-small');
       }
 
       select[multiple] > option {
-         padding: css-var("spacing-x-small");
-      }
-
-      option:hover {
-         background: linear-gradient($color-lighter, $color-lighter);
-      }
-
-      option:focus,
-      option:checked {
-         color: css-var("font-color-invert");
-         background: linear-gradient(#{css-var("color-primary")}, #{css-var("color-primary")});
+         padding: css-var('spacing-x-small');
       }
    }
 
    &-radio {
       display: block;
-      margin-bottom: css-var("spacing-x-small");
+      margin-bottom: css-var('spacing-x-small');
       position: relative;
 
       &__fake {
          position: relative;
          padding-left: 20px;
-         margin-right: css-var("spacing-x-small");
+         margin-right: css-var('spacing-x-small');
       }
 
       label &__fake:after {
-         content:'';
+         content: '';
          width: $radiobutton-size;
          height: $radiobutton-size;
-         border: $border-width $border-style css-var("border-color-light");
+         background-color: css-var('form-input-background-color');
+         border: $border-width $border-style css-var('form-input-border-color');
          position: absolute;
          left: 0;
          top: 1px;
@@ -144,17 +153,18 @@
          box-sizing: border-box;
       }
 
-      [type="radio"] {
+      [type='radio'] {
          cursor: pointer;
          position: absolute;
          width: 100%;
          height: 100%;
          z-index: 1;
          opacity: 0;
-       }
+      }
 
-      [type="radio"]:checked + label &__fake:before{
-         border: $radiobutton-border;
+      [type='radio']:checked + label &__fake:before {
+         background-color: css-var('button-primary-font-color');
+         border: 6px solid #{css-var('button-primary-background-color')};
          border-radius: 100%;
          content: '';
          height: $radiobutton-checked-size;
@@ -164,19 +174,23 @@
          z-index: $zindex-radio-button;
       }
 
+      [type='radio']:focus + label &__fake:before {
+         @include focus-shadow();
+      }
+
       &__label {
          display: inline;
          vertical-align: sub;
       }
 
       // Workaround for Safari
-      & [type="radio"] ~ label:hover &__fake {
+      & [type='radio'] ~ label:hover &__fake {
          background-color: transparent;
       }
 
       &--disabled {
          label {
-            color: css-var("font-color-light");
+            color: css-var('font-color-light');
             cursor: not-allowed;
          }
 
@@ -214,15 +228,15 @@
          align-items: center;
          display: flex;
          margin-bottom: 0;
-         margin-right: css-var("spacing-x-small");
+         margin-right: css-var('spacing-x-small');
 
          &__label {
             margin-bottom: 0;
-            margin-right: css-var("spacing-x-small");
+            margin-right: css-var('spacing-x-small');
          }
 
          &__help {
-            margin-left: css-var("spacing-xx-small");
+            margin-left: css-var('spacing-xx-small');
          }
       }
 
@@ -245,7 +259,7 @@
          }
 
          + .#{$form-element} {
-            margin-left: css-var("spacing-xx-small");
+            margin-left: css-var('spacing-xx-small');
          }
       }
    }
@@ -260,10 +274,10 @@
 
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
-
-      border-bottom: 2px solid $font-color-invert;
-      border-left: 2px solid $font-color-invert;
-      content: "";
+      background-color: transparent;
+      border-bottom: 2px solid css-var('button-primary-font-color');
+      border-left: 2px solid css-var('button-primary-font-color');
+      content: '';
       display: block;
       height: $checkbox-tick-height;
       left: $tick-position;
@@ -273,8 +287,9 @@
       width: $checkbox-tick-width;
    }
 
-   [type='checkbox']:disabled + label &__fake {
-      background-color: css-var("color-lighter") !important;
+   [type='checkbox']:disabled + label &__fake,
+   [type='checkbox']:disabled + label &__label {
+      @include disabled;
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -282,19 +297,20 @@
    }
 
    &__fake {
-      border: $border-width $border-style css-var("border-color-light");
-      border-radius: css-var("border-radius-small");
+      background-color: css-var('form-input-background-color');
+      border: $border-width $border-style css-var('form-input-border-color');
+      border-radius: css-var('border-radius-small');
       display: inline-block;
       height: $checkbox-size;
-      margin-right: css-var("spacing-xx-small");
+      margin-right: css-var('spacing-xx-small');
       position: relative;
-      transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       vertical-align: middle;
       width: $checkbox-size;
    }
 
    [type='checkbox']:checked + label &__fake {
-      background-color: css-var("color-primary");
+      background-color: css-var('button-primary-background-color');
    }
 
    &__label {
@@ -304,7 +320,7 @@
 
    &--disabled {
       label {
-         color: css-var("font-color-light");
+         color: css-var('font-color-light');
          cursor: not-allowed;
       }
    }

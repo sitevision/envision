@@ -13,7 +13,7 @@ const Header = ({ title, menuItems }) => {
                name="viewport"
                content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
-            <title>{`${title} \u00B7 Envision by SiteVision`}</title>
+            <title>{`${title} \u00B7 Envision by Sitevision`}</title>
 
             <link
                rel="icon"
@@ -24,9 +24,9 @@ const Header = ({ title, menuItems }) => {
          </Helmet>
          <div className="env-w-100 sv-header">
             <header className="header env-p-top--small env-p-bottom--small">
-               <div className="logo env-m-left--medium">
+               <div className="logo">
                   <a href="https://www.sitevision.se">
-                     <img src="/images/sitevision_logo.png" alt="SiteVision" />
+                     <img src="/images/sitevision-logo.svg" alt="Sitevision" />
                   </a>
                </div>
                <nav className="header-nav env-m-right--medium">
