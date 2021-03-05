@@ -11,10 +11,6 @@ title: Button
 
 <button type="button" class="env-button env-button--success">Success</button>
 
-<button type="button" class="env-button">Default</button>
-
-<button type="button" class="env-button env-button--primary">Primary</button>
-
 <button type="button" class="env-button env-button--danger">Danger</button>
 
 <button type="button" class="env-button env-button--invert">Invert</button>
