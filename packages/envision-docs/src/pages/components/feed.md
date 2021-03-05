@@ -8,10 +8,10 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example buddy icon">
+         <a href="#" aria-label="Example profile image">
             <img
-               class="env-buddyicon env-buddyicon--small"
-               src="https://placehold.it/48x48"
+               class="env-profile-image env-profile-image--x-small"
+               src="https://placehold.it/48x48.png/ccc/000?text=XS"
                alt=""
             />
          </a>
@@ -98,10 +98,10 @@ title: Feed
          <ul class="env-comments__list env-list"></ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--x-small"
-                     src="https://placehold.it/36x36"
+                     class="env-profile-image env-profile-image--xx-small"
+                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                      alt=""
                   />
                </a>
@@ -128,10 +128,10 @@ title: Feed
 ```html
 <article class="env-comment env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example buddy icon">
+      <a href="#" aria-label="Example profile image">
          <img
-            class="env-buddyicon env-buddyicon--small"
-            src="https://placehold.it/48x48"
+            class="env-profile-image env-profile-image--x-small"
+            src="https://placehold.it/48x48.png/ccc/000?text=XS"
             alt=""
          />
       </a>
@@ -184,10 +184,10 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example buddy icon">
+         <a href="#" aria-label="Example profile image">
             <img
-               class="env-buddyicon env-buddyicon--small"
-               src="https://placehold.it/48x48"
+               class="env-profile-image env-profile-image--x-small"
+               src="https://placehold.it/48x48.png/ccc/000?text=XS"
                alt=""
             />
          </a>
@@ -259,10 +259,10 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--small"
-                           src="https://placehold.it/48x48"
+                           class="env-profile-image env-profile-image--x-small"
+                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
                            alt=""
                         />
                      </a>
@@ -318,10 +318,10 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--small"
-                           src="https://placehold.it/48x48"
+                           class="env-profile-image env-profile-image--x-small"
+                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
                            alt=""
                         />
                      </a>
@@ -377,10 +377,10 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--small"
-                           src="https://placehold.it/48x48"
+                           class="env-profile-image env-profile-image--x-small"
+                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
                            alt=""
                         />
                      </a>
@@ -436,10 +436,10 @@ title: Feed
          </ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--x-small"
-                     src="https://placehold.it/36x36"
+                     class="env-profile-image env-profile-image--xx-small"
+                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                      alt=""
                   />
                </a>
@@ -467,10 +467,10 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example buddy icon">
+         <a href="#" aria-label="Example profile image">
             <img
-               class="env-buddyicon env-buddyicon--small"
-               src="https://placehold.it/48x48"
+               class="env-profile-image env-profile-image--x-small"
+               src="https://placehold.it/48x48.png/ccc/000?text=XS"
                alt=""
             />
          </a>
@@ -506,10 +506,10 @@ title: Feed
       <blockquote class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--small"
-                     src="https://placehold.it/48x48"
+                     class="env-profile-image env-profile-image--x-small"
+                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
                      alt=""
                   />
                </a>
@@ -567,10 +567,10 @@ title: Feed
          <ul class="env-comments__list env-list"></ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--x-small"
-                     src="https://placehold.it/36x36"
+                     class="env-profile-image env-profile-image--xx-small"
+                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                      alt=""
                   />
                </a>
@@ -600,10 +600,10 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--small"
-                     src="https://placehold.it/48x48"
+                     class="env-profile-image env-profile-image--x-small"
+                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
                      alt=""
                   />
                </a>
@@ -678,10 +678,10 @@ title: Feed
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#" aria-label="Example buddy icon">
+                           <a href="#" aria-label="Example profile image">
                               <img
-                                 class="env-buddyicon env-buddyicon--small"
-                                 src="https://placehold.it/48x48"
+                                 class="env-profile-image env-profile-image--x-small"
+                                 src="https://placehold.it/48x48.png/ccc/000?text=XS"
                                  alt=""
                               />
                            </a>
@@ -740,10 +740,10 @@ title: Feed
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#" aria-label="Example buddy icon">
+                           <a href="#" aria-label="Example profile image">
                               <img
-                                 class="env-buddyicon env-buddyicon--small"
-                                 src="https://placehold.it/48x48"
+                                 class="env-profile-image env-profile-image--x-small"
+                                 src="https://placehold.it/48x48.png/ccc/000?text=XS"
                                  alt=""
                               />
                            </a>
@@ -802,10 +802,10 @@ title: Feed
                </ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--x-small"
-                           src="https://placehold.it/36x36"
+                           class="env-profile-image env-profile-image--xx-small"
+                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                            alt=""
                         />
                      </a>
@@ -837,10 +837,10 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--small"
-                     src="https://placehold.it/48x48"
+                     class="env-profile-image env-profile-image--x-small"
+                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
                      alt=""
                   />
                </a>
@@ -912,10 +912,10 @@ title: Feed
                <ul class="env-comments__list env-list"></ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--x-small"
-                           src="https://placehold.it/36x36"
+                           class="env-profile-image env-profile-image--xx-small"
+                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                            alt=""
                         />
                      </a>
@@ -947,10 +947,10 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example buddy icon">
+               <a href="#" aria-label="Example profile image">
                   <img
-                     class="env-buddyicon env-buddyicon--small"
-                     src="https://placehold.it/48x48"
+                     class="env-profile-image env-profile-image--x-small"
+                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
                      alt=""
                   />
                </a>
@@ -1020,10 +1020,10 @@ title: Feed
                <ul class="env-comments__list env-list"></ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example buddy icon">
+                     <a href="#" aria-label="Example profile image">
                         <img
-                           class="env-buddyicon env-buddyicon--x-small"
-                           src="https://placehold.it/36x36"
+                           class="env-profile-image env-profile-image--xx-small"
+                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
                            alt=""
                         />
                      </a>

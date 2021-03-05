@@ -563,16 +563,12 @@ $alert-info-font-color: $font-color !default;
    )
 );
 
-// ----- BUDDY ICON -----
+// ----- PROFILE IMAGE -----
 
-$buddyicon-radius: 0 !default;
+$profile-image-radius: 0 !default;
 
 @include to-css-custom-property(
    (
-      'buddyicon-border-radius': $buddyicon-radius,
-      'buddyicon-large-border-radius': css-var('buddyicon-border-radius'),
-      'buddyicon-medium-border-radius': css-var('buddyicon-border-radius'),
-      'buddyicon-small-border-radius': css-var('buddyicon-border-radius'),
-      'buddyicon-x-small-border-radius': css-var('buddyicon-border-radius'),
+      'profile-image-border-radius': $profile-image-radius,
    )
 );

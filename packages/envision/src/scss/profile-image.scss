@@ -1,0 +1,44 @@
+@mixin image-size($s) {
+   width: $s;
+   height: $s;
+}
+
+.#{$prefix}-profile-image {
+   display: block;
+   @include image-size(96px);
+   object-fit: cover;
+   max-width: 100%;
+   border-radius: css-var('profile-image-border-radius');
+
+   &--xx-large {
+      @include image-size(256px);
+   }
+
+   &--x-large {
+      @include image-size(224px);
+   }
+
+   &--large {
+      @include image-size(128px);
+   }
+
+   &--medium {
+      // Default size, 96 x 96
+   }
+
+   &--small {
+      @include image-size(64px);
+   }
+
+   &--x-small {
+      @include image-size(48px);
+   }
+
+   &--xx-small {
+      @include image-size(32px);
+   }
+
+   &--round {
+      border-radius: 50% 50% !important;
+   }
+}
