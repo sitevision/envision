@@ -180,6 +180,19 @@
             ($xl + $l + $m + $s + $xs + $xxs) / 4;
       }
    }
+
+   [data-demo-size] {
+      &:after {
+         position: absolute;
+         bottom: -14px;
+         left: 0;
+         right: 0;
+         text-align: center;
+         font-size: 10px;
+         color: #666;
+         content: attr(data-demo-size);
+      }
+   }
 }
 
 .example-blocks,
