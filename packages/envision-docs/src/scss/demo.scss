@@ -122,3 +122,78 @@
    margin-top: 0.75em !important;
    margin-bottom: 0.75em !important;
 }
+
+.example-profile-images {
+   height: 260px;
+   position: relative;
+
+   img {
+      border: 1px solid #aaa;
+   }
+
+   a {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+
+      $xxl: 256px;
+      $xl: 224px;
+      $l: 128px;
+      $m: 96px;
+      $s: 64px;
+      $xs: 48px;
+      $xxs: 32px;
+
+      &:nth-child(1) {
+         top: 0;
+         left: 0;
+      }
+
+      &:nth-child(2) {
+         top: ($xxl - $xl);
+         left: $xxl - $xl / 4;
+      }
+
+      &:nth-child(3) {
+         top: ($xxl - $l);
+         left: $xxl + $xl - ($xl + $l) / 4;
+      }
+
+      &:nth-child(4) {
+         top: ($xxl - $m);
+         left: $xxl + $xl + $l - ($xl + $l + $m) / 4;
+      }
+
+      &:nth-child(5) {
+         top: ($xxl - $s);
+         left: $xxl + $xl + $l + $m - ($xl + $l + $m + $s) / 4;
+      }
+
+      &:nth-child(6) {
+         top: ($xxl - $xs);
+         left: $xxl + $xl + $l + $m + $s - ($xl + $l + $m + $s + $xs) / 4;
+      }
+
+      &:nth-child(7) {
+         top: ($xxl - $xxs);
+         left: $xxl + $xl + $l + $m + $s + $xs -
+            ($xl + $l + $m + $s + $xs + $xxs) / 4;
+      }
+   }
+}
+
+.example-table {
+   border-collapse: collapse;
+   margin: 1em 0 2em;
+
+   th,
+   td {
+      border: 1px solid #ccc;
+      padding: 0.25em 0.5em;
+      text-align: left;
+
+      &.right {
+         text-align: right;
+      }
+   }
+}
