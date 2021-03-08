@@ -163,8 +163,8 @@
       }
 
       [type='radio']:checked + label &__fake:before {
-         background-color: css-var('button-primary-font-color');
-         border: 6px solid #{css-var('button-primary-background-color')};
+         background-color: css-var('atom-primary-font-color');
+         border: 6px solid #{css-var('atom-primary-background-color')};
          border-radius: 100%;
          content: '';
          height: $radiobutton-checked-size;
@@ -275,8 +275,8 @@
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
       background-color: transparent;
-      border-bottom: 2px solid css-var('button-primary-font-color');
-      border-left: 2px solid css-var('button-primary-font-color');
+      border-bottom: 2px solid css-var('atom-primary-font-color');
+      border-left: 2px solid css-var('atom-primary-font-color');
       content: '';
       display: block;
       height: $checkbox-tick-height;
@@ -310,7 +310,7 @@
    }
 
    [type='checkbox']:checked + label &__fake {
-      background-color: css-var('button-primary-background-color');
+      background-color: css-var('atom-primary-background-color');
    }
 
    &__label {

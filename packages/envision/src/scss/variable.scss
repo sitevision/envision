@@ -94,14 +94,16 @@ $font-color-invert: #ffffff !default;
 
 // Color
 $color-page-bg: #ffffff !default;
-$color-element-bg: #ffffff !default;
+$color-section-bg: #ffffff !default;
 
 @include to-css-custom-property(
    (
       'color-page-bg': $color-page-bg,
+      bg, // TODO: REMOVE, UN
       'page-background-color': $color-page-bg,
-      'color-element-bg': $color-element-bg,
-      'element-background-color': $color-element-bg,
+      bg, // TODO: REMOVE, UN
+      'color-element-bg': $color-section-bg,
+      'section-background-color': $color-section-bg,
    )
 );
 
@@ -177,17 +179,72 @@ $focus-color: #5cb3fd !default;
 
 // ----- COLOR COMBO BLOCKS -----
 
+// Used by popover, dropdown, color-block
+$box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
+
+$default-button-color: lighten($color-base, 95%) !default;
+
+$atom-default-color: $default-button-color !default;
+$atom-primary-color: $color-primary !default;
+$atom-success-color: $color-success !default;
+$atom-danger-color: $color-danger !default;
+
+$atom-default-font-color: $font-color !default;
+$atom-primary-font-color: $font-color-invert !default;
+$atom-success-font-color: $font-color-invert !default;
+$atom-danger-font-color: $font-color-invert !default;
+
 @include to-css-custom-property(
    (
       'font-color-primary': $font-color,
       'font-color-secondary': $font-color,
       'font-color-tertiary': $font-color-invert,
       'background-color-primary': #e5f1ff,
+      'background-color-primary-light': lighten(#e5f1ff, 3%),
+      'background-color-primary-dark': darken(#e5f1ff, 3%),
       'background-color-secondary': #f4f4f4,
+      'background-color-secondary-light': lighten(#f4f4f4, 3%),
+      'background-color-secondary-dark': darken(#f4f4f4, 3%),
       'background-color-tertiary': #00214d,
+      'background-color-tertiary-light': lighten(#00214d, 3%),
+      'background-color-tertiary-dark': darken(#00214d, 3%),
       'border-color-primary': #a7bed0,
       'border-color-secondary': #bfbfbf,
       'border-color-tertiary': #000b1a,
+      'box-shadow': $box-shadow,
+          // TODO: Rename element.. to something else, and use here ins
+      'atom-primary-font-color': $font-color-invert,
+      'atom-primary-background-color': $color-primary,
+      ry, // lighten($color-base, 9
+      'atom-primary-background-color-dark': $color-primary-dark,
+      rk, // darken(#e5f1ff, 1
+      'atom-primary-background-color-light': $color-primary-light,
+      ht, // darken(#e5f1ff, 1
+      'atom-secondary-font-color': $font-color,
+      'atom-secondary-background-color': #f2f2f2,
+      f2, // lighten($color-base, 9
+      'atom-secondary-background-color-dark': darken(#f2f2f2, 10%),
+      'atom-secondary-background-color-light': lighten(#f2f2f2, 10%),
+      'atom-success-font-color': $font-color-invert,
+      'atom-success-background-color': $color-success,
+      ss, // lighten($color-base, 9
+      'atom-success-background-color-dark': darken($color-success, 10%),
+      'atom-success-background-color-light': lighten($color-success, 10%),
+      'atom-warning-font-color': $font-color,
+      'atom-warning-background-color': $color-warning,
+      ng, // lighten($color-base, 9
+      'atom-warning-background-color-dark': darken($color-warning, 10%),
+      'atom-warning-background-color-light': lighten($color-warning, 10%),
+      'atom-danger-font-color': $font-color-invert,
+      'atom-danger-background-color': $color-danger,
+      er, // lighten($color-base, 9
+      'atom-danger-background-color-dark': darken($color-danger, 10%),
+      'atom-danger-background-color-light': lighten($color-danger, 10%),
+      'atom-info-font-color': $font-color-invert,
+      'atom-info-background-color': $color-info,
+      fo, // lighten($color-base, 9
+      'atom-info-background-color-dark': darken($color-info, 10%),
+      'atom-info-background-color-light': lighten($color-info, 10%),
    )
 );
 
@@ -268,14 +325,12 @@ $spinner-color: #5cb3fd !default;
 
 // ----- POPOVER -----
 
-// Popover (shadow used by dropdown also)
+// Popover
 $popover-width: 300px !default;
-$popover-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
 
 @include to-css-custom-property(
    (
       'popover-width': $popover-width,
-      'popover-box-shadow': $popover-box-shadow,
    )
 );
 
@@ -312,39 +367,17 @@ $badge-border-radius: 0.2em !default;
 $badge-font-size: 75% !default;
 $badge-font-family: $font-family !default;
 
-$badge-default-font-color: $font-color-invert !default;
-$badge-success-font-color: $font-color-invert !default;
-$badge-info-font-color: $font-color-invert !default;
-$badge-warning-font-color: $font-color !default;
-$badge-danger-font-color: $font-color-invert !default;
-
-$badge-default-background-color: $color-brand !default;
-$badge-success-background-color: $color-success !default;
-$badge-warning-background-color: $color-warning !default;
-$badge-danger-background-color: $color-danger !default;
-$badge-info-background-color: $color-info !default;
-
 @include to-css-custom-property(
    (
       'badge-font-family': css-var('font-family'),
       'badge-font-size': $badge-font-size,
       'badge-border-radius': $badge-border-radius,
-      'badge-font-color': css-var('font-color-invert'),
-      'badge-background-color': css-var('color-primary'),
-      'badge-success-font-color': css-var('font-color-invert'),
-      'badge-success-background-color': css-var('color-success'),
-      'badge-warning-font-color': css-var('font-color'),
-      'badge-warning-background-color': css-var('color-warning'),
-      'badge-danger-font-color': css-var('font-color-invert'),
-      'badge-danger-background-color': css-var('color-danger'),
-      'badge-info-font-color': css-var('font-color-invert'),
-      'badge-info-background-color': css-var('color-info'),
    )
 );
 
 // ----- IMAGE CONTROL -----
 
-$image-control-color: $color-element-bg !default;
+$image-control-color: $color-section-bg !default;
 $image-control-color-inactive: $font-color-lighter !default;
 
 @include to-css-custom-property(
@@ -356,86 +389,10 @@ $image-control-color-inactive: $font-color-lighter !default;
 
 // ----- BUTTONS -----
 
-$default-button-color: lighten($color-base, 95%) !default;
-
-//Button
-$button-font-family: $font-family !default;
-/// TA BORT
-$button-default-color: $default-button-color !default;
-$button-primary-color: $color-primary !default;
-$button-success-color: $color-success !default;
-$button-danger-color: $color-danger !default;
-
-$button-default-font-color: $font-color !default;
-$button-primary-font-color: $font-color-invert !default;
-$button-success-font-color: $font-color-invert !default;
-$button-danger-font-color: $font-color-invert !default;
-
-$button-link-font-color: css-var('font-color') !default;
-
 @include to-css-custom-property(
    (
       'button-font-family': css-var('font-family'),
       'button-border-radius': $radius-small,
-      'button-font-color': css-var('font-color'),
-      'button-background-color': $default-button-color,
-      'button-border-color': transparent,
-      'button-hover-background-color': darken($default-button-color, 10%),
-      'button-hover-border-color': transparent,
-      'button-focus-border-color': darken($button-default-color, 10%),
-      'button-focus-box-shadow-color': darken($button-default-color, 40%),
-      'button-primary-font-color': $button-primary-font-color,
-      'button-primary-background-color': $button-primary-color,
-      'button-primary-border-color': $button-primary-color,
-      'button-primary-hover-background-color':
-         darken($button-primary-color, 10%),
-      'button-primary-hover-border-color': darken($button-primary-color, 12%),
-      'button-primary-focus-border-color': darken($button-primary-color, 12%),
-      'button-primary-focus-box-shadow-color':
-         darken($button-primary-color, 10%),
-      'button-success-font-color': $button-success-font-color,
-      'button-success-background-color': $button-success-color,
-      'button-success-border-color': $button-success-color,
-      'button-success-hover-background-color':
-         darken($button-success-color, 10%),
-      'button-success-hover-border-color': darken($button-success-color, 12%),
-      'button-success-focus-border-color': darken($button-success-color, 12%),
-      'button-success-focus-box-shadow-color':
-         darken($button-success-color, 10%),
-      'button-danger-font-color': $button-danger-font-color,
-      'button-danger-background-color': $button-danger-color,
-      'button-danger-border-color': $button-danger-color,
-      'button-danger-hover-background-color': darken($button-danger-color, 10%),
-      'button-danger-hover-border-color': darken($button-danger-color, 12%),
-      'button-danger-focus-border-color': darken($button-danger-color, 12%),
-      'button-danger-focus-box-shadow-color': darken($button-danger-color, 10%),
-      'button-invert-font-color': $color-primary,
-      'button-invert-background-color': $font-color-invert,
-      'button-invert-border-color': $font-color-invert,
-      'button-invert-hover-background-color': darken($font-color-invert, 10%),
-      'button-invert-hover-border-color': darken($font-color-invert, 12%),
-      'button-invert-focus-border-color': darken($font-color-invert, 12%),
-      'button-invert-focus-box-shadow-color': darken($font-color-invert, 10%),
-      'button-link-font-color': $button-link-font-color,
-      'button-link-background-color': transparent,
-      'button-link-border-color': transparent,
-      'button-link-hover-background-color': transparent,
-      'button-link-hover-border-color': transparent,
-      'button-link-focus-border-color': css-var('color-focus'),
-      'button-link-focus-box-shadow-color': css-var('color-focus'),
-      'default-button-color': css-var('button-background-color'),
-   )
-);
-
-// ----- TABLE -----
-
-$table-zebra-color: $default-button-color !default;
-// $table-active-color:       $table-zebra-color !default;
-
-@include to-css-custom-property(
-   (
-      'table-zebra-background-color': $table-zebra-color,
-      'table-active-background-color': $table-zebra-color,
    )
 );
 
@@ -507,18 +464,6 @@ $collapse-border-style: $border-style !default;
 
 // Pagination
 $pagination-font: $font-family !default;
-
-$pagination-font-color: $font-color !default;
-$pagination-font-color-active: $font-color-invert !default;
-$pagination-font-color-hover: $font-color-invert !default;
-
-$pagination-bg-color: $color-element-bg !default;
-$pagination-bg-color-hover: $color-brand !default;
-$pagination-bg-color-active: $color-brand !default;
-
-$pagination-border-color: $border-color !default;
-$pagination-border-color-active: $color-brand !default;
-$pagination-border-color-hover: $color-brand !default;
 $pagination-border-width: $border-width !default;
 $pagination-border-style: $border-style !default;
 
@@ -527,15 +472,6 @@ $pagination-border-style: $border-style !default;
       'pagination-font-family': css-var('font-family'),
       'pagination-border-width': $pagination-border-width,
       'pagination-border-style': $pagination-border-style,
-      'pagination-font-color': $pagination-font-color,
-      'pagination-background-color': $pagination-bg-color,
-      'pagination-border-color': $pagination-border-color,
-      'pagination-active-font-color': $pagination-font-color-active,
-      'pagination-active-background-color': $pagination-bg-color-active,
-      'pagination-active-border-color': $pagination-border-color-active,
-      'pagination-hover-font-color': $pagination-font-color-hover,
-      'pagination-hover-background-color': $pagination-bg-color-hover,
-      'pagination-hover-border-color': $pagination-border-color-hover,
    )
 );
 
@@ -544,38 +480,10 @@ $pagination-border-style: $border-style !default;
 // Alert
 $alert-font-family: $font-family !default;
 
-$alert-success-bg-color: lighten($color-success, 20%) !default;
-$alert-success-border-color: $color-success !default;
-$alert-success-font-color: $font-color !default;
-
-$alert-warning-bg-color: lighten($color-warning, 20%) !default;
-$alert-warning-border-color: $color-warning !default;
-$alert-warning-font-color: $font-color !default;
-
-$alert-danger-bg-color: lighten($color-danger, 20%) !default;
-$alert-danger-border-color: $color-danger !default;
-$alert-danger-font-color: $font-color !default;
-
-$alert-info-bg-color: lighten($color-info, 20%) !default;
-$alert-info-border-color: $color-info !default;
-$alert-info-font-color: $font-color !default;
-
 @include to-css-custom-property(
    (
       'alert-font-family': css-var('font-family'),
       'alert-border-radius': #{css-var('border-radius')},
-      'alert-success-font-color': $alert-success-font-color,
-      'alert-success-background-color': $alert-success-bg-color,
-      'alert-success-border-color': $alert-success-border-color,
-      'alert-warning-font-color': $alert-warning-font-color,
-      'alert-warning-background-color': $alert-warning-bg-color,
-      'alert-warning-border-color': $alert-warning-border-color,
-      'alert-danger-font-color': $alert-danger-font-color,
-      'alert-danger-background-color': $alert-danger-bg-color,
-      'alert-danger-border-color': $alert-danger-border-color,
-      'alert-info-font-color': $alert-info-font-color,
-      'alert-info-background-color': $alert-info-bg-color,
-      'alert-info-border-color': $alert-info-border-color,
    )
 );
 

@@ -15,6 +15,18 @@
    border-color: css-var($border-color);
    color: css-var($color);
 
+   &.env-button--ghost {
+      background-color: transparent;
+      color: css-var($active-background-color);
+      border-color: css-var($active-background-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+         color: css-var($color);
+      }
+   }
+
    &:hover,
    &:active,
    &:focus {

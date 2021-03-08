@@ -36,8 +36,16 @@
 @import 'tab';
 @import 'table';
 
-// DARK THEME FOR TESTING
+// COLOR CONTRAST THEME FOR TESTING
 
+//body {
+//   --env-atom-primary-background-color: hsl(300, 100%, 50%);
+//   --env-atom-primary-background-color-dark: hsl(300, 100%, 40%);
+//   --env-atom-primary-background-color-light: hsl(300, 100%, 80%);
+//}
+
+// DARK THEME FOR TESTING
+//
 //body {
 //   background: var(--env-page-background-color);
 //   color: var(--env-font-color);
@@ -49,7 +57,7 @@
 //
 //:root {
 //   --env-page-background-color: #161616;
-//   --env-element-background-color: #555555;
+//   --env-section-background-color: #555555;
 //   --env-font-color: #fff;
 //   --env-font-color-lighter: #ddd;
 //   --env-button-font-color: #222;

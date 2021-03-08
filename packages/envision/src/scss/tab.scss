@@ -6,7 +6,8 @@ $link-classname: #{$prefix}-tabs__link;
       display: flex;
 
       &--border-bottom {
-         border-bottom: $tab-bottom-width $border-style css-var('color-primary');
+         border-bottom: $tab-bottom-width $border-style
+            css-var('atom-primary-background-color');
       }
 
       :first-child > a {
@@ -19,26 +20,24 @@ $link-classname: #{$prefix}-tabs__link;
    }
 
    &__link {
-      @include nav-link();
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.25s ease, color 0.25s ease;
       border-radius: css-var('border-radius-medium')
          css-var('border-radius-medium') 0 0;
-      background-color: css-var('element-background-color');
+      background-color: transparent;
       color: css-var('font-color');
       margin: 0 css-var('spacing-xxx-small');
       padding: css-var('spacing-x-small') css-var('spacing-medium');
       outline: 0;
 
       &--active {
-         background-color: css-var('button-primary-background-color');
-         color: css-var('button-primary-font-color');
-
-         &:hover {
-            color: css-var('element-background-color');
-         }
+         background-color: css-var('atom-primary-background-color');
+         color: css-var('atom-primary-font-color');
       }
 
       &:focus {
-         @include focus();
+         @include focus-shadow();
       }
    }
 
@@ -47,7 +46,7 @@ $link-classname: #{$prefix}-tabs__link;
       display: flex;
 
       .#{$prefix}-tabs__link {
-         background-color: css-var('element-background-color');
+         background-color: transparent;
          border-color: transparent;
          color: css-var('font-color');
          margin: 0 css-var('spacing-xx-small');
@@ -57,14 +56,12 @@ $link-classname: #{$prefix}-tabs__link;
 
          &--active {
             border-bottom: $tab-bottom-width $border-style
-               css-var('color-primary');
-            color: css-var('font-color');
+               css-var('atom-primary-background-color');
          }
 
          &:hover {
             border-bottom: $tab-bottom-width $border-style
-               css-var('color-primary');
-            color: css-var('font-color');
+               css-var('atom-primary-background-color');
          }
       }
    }

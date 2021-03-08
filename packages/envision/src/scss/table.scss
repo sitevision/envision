@@ -10,21 +10,21 @@
 
    th,
    td {
-      border-top: $border-width $border-style css-var('border-color-light');
+      border-top: $border-width $border-style css-var('border-color-secondary');
       padding: css-var('spacing-x-small');
       vertical-align: top;
    }
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         background-color: css-var('table-zebra-background-color');
+         background-color: css-var('background-color-secondary');
       }
    }
 
    &--borders-around {
       th,
       td {
-         border: $border-width $border-style css-var('border-color-light');
+         border: $border-width $border-style css-var('border-color-secondary');
       }
    }
 
@@ -36,7 +36,7 @@
             border-top: 0;
             border-#{$direction}: $border-width
                $border-style
-               css-var('border-color-light');
+               css-var('border-color-secondary');
          }
       }
    }
@@ -57,12 +57,12 @@
 
    &--hover {
       tbody tr:hover {
-         background-color: css-var('table-active-background-color');
+         background-color: css-var('background-color-secondary');
       }
    }
 
    $colors: (
-      active: 'table-active-background-color',
+      active: 'background-color-secondary',
       info: 'color-brand',
       success: 'color-success',
       warning: 'color-warning',

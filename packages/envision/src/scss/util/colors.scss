@@ -58,3 +58,7 @@ $transparency: (
       width: 1px;
    }
 }
+
+.env-block--shadow {
+   box-shadow: css-var('box-shadow');
+}

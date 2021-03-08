@@ -3,10 +3,10 @@ $arrow-position: -22px;
 $arrow-border-size: 10px;
 
 .#{$prefix}-popover {
-   background-color: css-var('element-background-color');
+   background-color: css-var('section-background-color');
    border: $border-width $border-style css-var('border-color-light');
    border-radius: css-var('border-radius-medium');
-   box-shadow: css-var('popover-box-shadow');
+   box-shadow: css-var('box-shadow');
    margin: $arrow-border-size;
    max-width: css-var('popover-width');
    position: relative;
@@ -67,7 +67,7 @@ $arrow-border-size: 10px;
          top: $arrow-position;
 
          &::after {
-            border-bottom-color: css-var('element-background-color');
+            border-bottom-color: css-var('section-background-color');
             border-top-width: 0;
             top: 1px;
          }
@@ -79,7 +79,7 @@ $arrow-border-size: 10px;
 
          &::after {
             border-bottom-width: 0;
-            border-top-color: css-var('element-background-color');
+            border-top-color: css-var('section-background-color');
             bottom: 1px;
          }
       }
@@ -99,7 +99,7 @@ $arrow-border-size: 10px;
          right: $arrow-position;
 
          &::after {
-            border-left-color: css-var('element-background-color');
+            border-left-color: css-var('section-background-color');
             border-right-width: 0;
             right: 1px;
          }
@@ -111,7 +111,7 @@ $arrow-border-size: 10px;
 
          &::after {
             border-left-width: 0;
-            border-right-color: css-var('element-background-color');
+            border-right-color: css-var('section-background-color');
             left: 1px;
          }
       }

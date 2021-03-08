@@ -182,18 +182,114 @@
    }
 }
 
-.example-table {
-   border-collapse: collapse;
-   margin: 1em 0 2em;
+.example-blocks,
+.example-elements,
+.example-atom-colors,
+.example-atom-color-variants,
+.example-block-variants {
+   display: flex;
+   margin: 0 -1em;
 
-   th,
-   td {
-      border: 1px solid #ccc;
-      padding: 0.25em 0.5em;
-      text-align: left;
+   &,
+   * {
+      box-sizing: border-box;
+   }
+}
 
-      &.right {
-         text-align: right;
+.example-elements {
+   flex-wrap: wrap;
+   margin: 0;
+}
+
+.example-block {
+   flex: 1 1 33%;
+   max-width: 33%;
+   margin: 1em;
+   padding: 0 1em;
+}
+
+.example-element-wrapper {
+   flex: 1 1 49%;
+   max-width: 49%;
+   margin: 0 0 1em;
+   padding: 1em;
+   text-align: center;
+   border: 1px solid #ccc;
+
+   &--full {
+      flex: 1 1 100%;
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      h2 {
+         flex: 1 1 100%;
+      }
+
+      .example-element {
+         flex: 1 1 49%;
+         max-width: 49%;
+         padding: 0 1em;
+      }
+   }
+}
+
+.example-block-variant,
+.example-atom-color-variant {
+   flex: 1 1 50%;
+   padding: 1em;
+   text-align: center;
+}
+
+.example-element {
+   margin: 2em 0;
+
+   .env-nav,
+   .env-pagination {
+      justify-content: center;
+   }
+}
+
+.example-element-label {
+   font-weight: bold;
+   margin: 0 0 0.5em;
+}
+
+.example-atom-colors {
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.example-atom-color {
+   flex: 1 1 25%;
+   margin: 1em;
+   box-shadow: var(--env-box-shadow);
+}
+
+.example-atom-color p {
+   padding: 1em;
+   margin: 0;
+   text-align: center;
+   font-weight: bold;
+}
+
+.example-atom-color-variants {
+   margin: 0;
+   font-weight: bold;
+}
+
+$variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
+
+@each $name in $variableNames {
+   .example-atom-color--#{$name} {
+      color: var(--env-atom-#{$name}-font-color);
+      background-color: var(--env-atom-#{$name}-background-color);
+
+      .example-atom-color-variant--light {
+         background-color: var(--env-atom-#{$name}-background-color-light);
+      }
+      .example-atom-color-variant--dark {
+         background-color: var(--env-atom-#{$name}-background-color-dark);
       }
    }
 }

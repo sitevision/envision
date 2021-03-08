@@ -22,11 +22,11 @@
    );
 
    @include button-color-variant(
-      'button-font-color',
-      'button-background-color',
-      'button-border-color',
-      'button-hover-background-color',
-      'button-hover-border-color'
+      'atom-secondary-font-color',
+      'atom-secondary-background-color',
+      'atom-secondary-background-color',
+      'atom-secondary-background-color-dark',
+      'atom-secondary-background-color-dark'
    );
 
    &:focus {
@@ -38,23 +38,71 @@
 
    // Variants
 
-   $buttonNames: 'primary', 'success', 'danger', 'invert', 'link';
+   $buttonNames: 'primary', 'success', 'danger';
 
    @each $name in $buttonNames {
       &--#{$name} {
          @include button-color-variant(
-            'button-#{$name}-font-color',
-            'button-#{$name}-background-color',
-            'button-#{$name}-border-color',
-            'button-#{$name}-hover-background-color',
-            'button-#{$name}-hover-border-color'
+            'atom-#{$name}-font-color',
+            'atom-#{$name}-background-color',
+            'atom-#{$name}-background-color',
+            'atom-#{$name}-background-color-dark',
+            'atom-#{$name}-background-color-dark'
          );
+
          &:focus {
             @include focus(
-               'button-#{$name}-focus-border-color',
-               'button-#{$name}-focus-box-shadow-color'
+               'atom-#{$name}-background-color-dark',
+               'atom-#{$name}-background-color-dark'
             );
          }
+      }
+   }
+
+   &--invert,
+   &--link {
+      background-color: transparent;
+      border-color: transparent;
+   }
+
+   &--invert {
+      color: css-var('atom-primary-background-color');
+
+      &:hover,
+      &:active,
+      &:focus {
+         background-color: css-var('atom-secondary-background-color-dark');
+         border-color: css-var('atom-secondary-background-color-dark');
+      }
+
+      &:active {
+         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      &:focus {
+         @include focus(
+            'atom-secondary-background-color-dark',
+            'atom-secondary-background-color-dark'
+         );
+      }
+   }
+
+   &--link {
+      color: css-var('font-color');
+
+      &:hover,
+      &:active,
+      &:focus {
+         background-color: transparent;
+         border-color: transparent;
+      }
+
+      &:active {
+         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      &:focus {
+         @include focus-shadow('atom-primary-background-color');
       }
    }
 

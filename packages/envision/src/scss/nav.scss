@@ -29,13 +29,13 @@ $nav-link-classname: #{$prefix}-nav__link;
          border-bottom: $border-width $border-style transparent;
 
          &:hover {
-            border-bottom-color: css-var('color-primary-dark');
-            color: css-var('color-primary-dark');
+            border-bottom-color: css-var('atom-primary-background-color-dark');
+            color: css-var('atom-primary-background-color-dark');
          }
 
          &--active {
-            border-bottom-color: css-var('color-primary');
-            color: css-var('color-primary');
+            border-bottom-color: css-var('atom-primary-background-color');
+            color: css-var('atom-primary-background-color');
          }
       }
    }
@@ -44,16 +44,16 @@ $nav-link-classname: #{$prefix}-nav__link;
 .#{$prefix}-nav--sidenav {
    .#{$nav-link-classname} {
       border-bottom: $border-width $border-style css-var('border-color-light');
-      color: css-var('color-normal');
+      color: css-var('font-color');
       padding: css-var('spacing-small') 0;
 
       &--active {
-         border-left: 2px $border-style css-var('color-primary');
+         border-left: 2px $border-style css-var('atom-primary-background-color');
          padding-left: css-var('spacing-x-small');
       }
 
       &:hover {
-         color: css-var('color-primary');
+         color: css-var('atom-primary-background-color-dark');
       }
    }
 }

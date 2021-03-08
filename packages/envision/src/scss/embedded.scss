@@ -1,6 +1,6 @@
 .#{$prefix}-embedded {
-   color: css-var('embedded-font-color');
-   background-color: css-var('embedded-background-color');
+   color: css-var('font-color-secondary');
+   background-color: css-var('background-color-secondary-dark');
    display: flex;
    flex-direction: column;
    overflow: hidden;

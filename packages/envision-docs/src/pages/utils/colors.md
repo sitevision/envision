@@ -2,34 +2,384 @@
 title: Colors
 ---
 
-## Color combo blocks
+## Color combo blocks 2.0
 
 Preset color combinations to use with any block in your site that
 
 ```html
-<div class="example-color">
-   <div class="env-block-primary">
-      <p class="env-text-p">Primary</p>
+<div class="example-blocks">
+   <div
+      class="example-block env-block-primary env-block--border env-block--shadow"
+   >
+      <h2>Primary</h2>
+      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+      <div class="example-block-variants">
+         <div
+            class="example-block-variant env-block-primary env-block-primary--light"
+         >
+            Light
+         </div>
+         <div
+            class="example-block-variant env-block-primary env-block-primary--dark"
+         >
+            Dark
+         </div>
+      </div>
    </div>
 
-   <div class="env-block-secondary">
-      <p class="env-text-p">Secondary</p>
+   <div
+      class="example-block env-block-secondary env-block--border env-block--shadow"
+   >
+      <h2>Secondary</h2>
+      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+      <div class="example-block-variants">
+         <div
+            class="example-block-variant env-block-secondary env-block-secondary--dark"
+         >
+            Dark
+         </div>
+         <div
+            class="example-block-variant env-block-secondary env-block-secondary--light"
+         >
+            Light
+         </div>
+      </div>
    </div>
 
-   <div class="env-block-tertiary">
-      <p class="env-text env-text-p">Tertiary</p>
+   <div
+      class="example-block env-block-tertiary env-block--border env-block--shadow"
+   >
+      <h2>Tertiary</h2>
+      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+      <div class="example-block-variants">
+         <div
+            class="example-block-variant env-block-tertiary env-block-tertiary--dark"
+         >
+            Dark
+         </div>
+         <div
+            class="example-block-variant env-block-tertiary env-block-tertiary--light"
+         >
+            Light
+         </div>
+      </div>
+   </div>
+</div>
+```
+
+## Element colors
+
+<div class="example-atom-colors"> 
+   <div class="example-atom-color example-atom-color--primary">
+      <p>Primary</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+<div class="example-atom-color example-atom-color--secondary">
+      <p>Secondary</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+<div class="example-atom-color example-atom-color--success">
+      <p>Success</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+<div class="example-atom-color example-atom-color--warning">
+      <p>Warning</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+<div class="example-atom-color example-atom-color--danger">
+      <p>Danger</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+<div class="example-atom-color example-atom-color--info">
+      <p>Info</p>
+      <div class="example-atom-color-variants">
+         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
+         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      </div>
+   </div>
+</div>
+
+```html
+<div class="example-elements">
+   <div class="example-element-wrapper example-element-wrapper--full">
+      <h2>Primary & secondary</h2>
+
+      <div class="example-element">
+         <div class="example-element-label">Buttons:</div>
+         <button type="button" class="env-button">Secondary</button>
+         <button type="button" class="env-button env-button--primary">
+            Primary
+         </button>
+         <button
+            type="button"
+            class="env-button env-button--primary env-button--ghost"
+         >
+            Ghost
+         </button>
+         <br />
+         <br />
+         <button type="button" class="env-button env-button--invert">
+            Invert
+         </button>
+         <button type="button" class="env-button env-button--link">Link</button>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Badge:</div>
+         <span class="env-badge">Default</span>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Radio button:</div>
+         <div class="env-form-radio">
+            <input id="radio1" type="radio" name="radios" checked />
+            <label for="radio1" class="env-form-element__label">
+               <span class="env-form-radio__fake"></span>
+               <span class="env-form-radio__label">Alternative</span>
+            </label>
+         </div>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Checkbox:</div>
+         <div class="env-checkbox">
+            <input type="checkbox" checked name="options" id="cb1" />
+            <label class="env-form-element__label" for="cb1">
+               <span class="env-checkbox__fake"></span>
+               <span class="env-checkbox__label">Checked</span>
+            </label>
+         </div>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Menu:</div>
+         <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
+            <li class="env-nav__item" role="menuitem">
+               <a class="env-nav__link" href="#">Item</a>
+            </li>
+            <li class="env-nav__item" role="menuitem">
+               <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+            </li>
+            <li class="env-nav__item" role="menuitem">
+               <a class="env-nav__link" href="#">Item</a>
+            </li>
+         </ul>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Pagination:</div>
+         <nav aria-label="Pagination example">
+            <ul class="env-pagination">
+               <li class="env-pagination__item">
+                  <a class="env-pagination__link" href="#">Previous</a>
+               </li>
+               <li class="env-pagination__item">
+                  <a class="env-pagination__link" href="#">1</a>
+               </li>
+               <li class="env-pagination__item">
+                  <a class="env-pagination__link env-is-active" href="#"
+                     >2 <span class="env-assistive-text">Current</span></a
+                  >
+               </li>
+               <li class="env-pagination__item">
+                  <a class="env-pagination__link" href="#">3</a>
+               </li>
+               <li class="env-pagination__item">
+                  <a class="env-pagination__link" href="#">Next</a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Progress bar:</div>
+         <div class="example-progress">
+            <div class="env-progress">
+               <div
+                  class="env-progress__bar"
+                  role="progressbar"
+                  style="width: 25%"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+               >
+                  25%
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Tabs:</div>
+         <div class="env-tabs example-tabs">
+            <ul
+               class="env-tabs__nav env-tabs__nav--border-bottom"
+               role="tablist"
+            >
+               <li class="env-tabs__item" role="presentation">
+                  <a
+                     id="tab1"
+                     class="env-tabs__link env-tabs__link--active"
+                     href="#panel1"
+                     role="tab"
+                     aria-controls="panel1"
+                     aria-selected="true"
+                     tabindex="0"
+                     >Tab 1</a
+                  >
+               </li>
+               <li class="env-tabs__item" role="presentation">
+                  <a
+                     id="tab2"
+                     class="env-tabs__link"
+                     href="#panel2"
+                     role="tab"
+                     aria-controls="panel2"
+                     aria-selected="false"
+                     tabindex="0"
+                     >Tab 2</a
+                  >
+               </li>
+            </ul>
+         </div>
+      </div>
    </div>
 
-   <div class="env-block-primary env-block--border">
-      <p class="env-text-p">Primary</p>
+   <div class="example-element-wrapper">
+      <h2>Success</h2>
+
+      <div class="example-element">
+         <div class="example-element-label">Button:</div>
+         <button type="button" class="env-button env-button--success">
+            Success
+         </button>
+         <button
+            type="button"
+            class="env-button env-button--success env-button--ghost"
+         >
+            Ghost
+         </button>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Badge:</div>
+         <span class="env-badge env-badge--success">Success</span>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Alert:</div>
+         <div class="env-alert env-alert--success" role="alert">
+            <strong>Hello!</strong> this is successful alert
+            <button
+               type="button"
+               class="env-alert__close"
+               data-dismiss="alert"
+               aria-label="Close"
+            >
+               &times;
+            </button>
+         </div>
+      </div>
    </div>
 
-   <div class="env-block-secondary env-block--border">
-      <p class="env-text-p">Secondary</p>
+   <div class="example-element-wrapper">
+      <h2>Warning</h2>
+
+      <div class="example-element">
+         <div class="example-element-label">Badge:</div>
+         <span class="env-badge env-badge--warning">warning</span>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Alert:</div>
+         <div class="env-alert env-alert--warning" role="alert">
+            <strong>Hello!</strong> this is warning alert
+            <button
+               type="button"
+               class="env-alert__close"
+               data-dismiss="alert"
+               aria-label="Close"
+            >
+               &times;
+            </button>
+         </div>
+      </div>
    </div>
 
-   <div class="env-block-tertiary env-block--border">
-      <p class="env-text-p">Tertiary</p>
+   <div class="example-element-wrapper">
+      <h2>danger</h2>
+
+      <div class="example-element">
+         <div class="example-element-label">Button:</div>
+         <button type="button" class="env-button env-button--danger">
+            danger
+         </button>
+         <button
+            type="button"
+            class="env-button env-button--danger env-button--ghost"
+         >
+            danger
+         </button>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Badge:</div>
+         <span class="env-badge env-badge--danger">danger</span>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Alert:</div>
+         <div class="env-alert env-alert--danger" role="alert">
+            <strong>Hello!</strong> this is danger alert
+            <button
+               type="button"
+               class="env-alert__close"
+               data-dismiss="alert"
+               aria-label="Close"
+            >
+               &times;
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <div class="example-element-wrapper">
+      <h2>info</h2>
+
+      <div class="example-element">
+         <div class="example-element-label">Badge:</div>
+         <span class="env-badge env-badge--info">info</span>
+      </div>
+
+      <div class="example-element">
+         <div class="example-element-label">Alert:</div>
+         <div class="env-alert env-alert--info" role="alert">
+            <strong>Hello!</strong> this is info alert
+            <button
+               type="button"
+               class="env-alert__close"
+               data-dismiss="alert"
+               aria-label="Close"
+            >
+               &times;
+            </button>
+         </div>
+      </div>
    </div>
 </div>
 ```
