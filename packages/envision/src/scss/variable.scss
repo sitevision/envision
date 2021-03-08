@@ -562,3 +562,13 @@ $alert-info-font-color: $font-color !default;
       'alert-info-border-color': $alert-info-border-color,
    )
 );
+
+// ----- PROFILE IMAGE -----
+
+$profile-image-radius: 0 !default;
+
+@include to-css-custom-property(
+   (
+      'profile-image-border-radius': $profile-image-radius,
+   )
+);
