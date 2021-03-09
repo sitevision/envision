@@ -361,12 +361,13 @@
       cursor: pointer;
       top: 0;
       left: 0;
-      flex: 0 0 2.625em;
-      width: 2.625em;
-      height: 1.375em;
-      border-radius: 0.6875em;
-      background-color: #ccc;
-      transition: 0.4s;
+      flex: 0 0 2.375em;
+      width: 2.375em;
+      height: 1.25em;
+      border-radius: 0.75em;
+      border: 0.125em solid css-var('button-focus-box-shadow-color');
+      background-color: css-var('button-hover-background-color');
+      transition: 0.3s;
 
       .#{$prefix}-switch__text + & {
          margin-left: css-var('spacing-small');
@@ -375,21 +376,22 @@
       &:before {
          position: absolute;
          content: '';
-         height: 1.125em;
-         width: 1.125em;
+         height: 1.25em;
+         width: 1.25em;
          border-radius: 50%;
-         left: 0.125em;
-         top: 0.125em;
-         background-color: white;
+         left: 0;
+         top: 0;
+         background-color: css-var('button-primary-font-color');
          transition: 0.3s;
 
          input:checked ~ & {
-            transform: translateX(1.25em);
+            transform: translateX(1.125em);
          }
       }
 
       input:checked ~ & {
-         background-color: css-var('color-primary');
+         background-color: css-var('button-primary-background-color');
+         border-color: css-var('button-primary-border-color');
       }
 
       input:focus ~ & {
