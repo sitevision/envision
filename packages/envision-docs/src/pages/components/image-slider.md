@@ -223,13 +223,13 @@ title: Image slider
 
 ## Usage
 
-Attribute `data-image-slider` is required to instantiate a image
+Attribute `data-image-slider` is required to initiate a image
 slider and if there is more then one image, buttons will be generated to move
 the image slider to the next or previous item. Automatic genereted buttons can
 be prevented by using attribute `data-buttons="false"`.
 
 The `data-image-slider="cycle"` attribute is used to start the imageslider animation
-at page load. `data-image-slider` attribute will instantiate a image slider with
+at page load. `data-image-slider` attribute will initiate a image slider with
 no automatic.
 
 ### Via data attributes
