@@ -257,6 +257,10 @@
 .example-element {
    margin: 2em 0;
 
+   &--left > :not(.example-element-label) {
+      text-align: left;
+   }
+
    .env-nav,
    .env-pagination {
       justify-content: center;

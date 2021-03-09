@@ -12,7 +12,7 @@
 
    &__shared {
       .#{$prefix}-post {
-         border-left: 3px solid css-var('color-primary');
+         border-left: 3px solid css-var('element-primary-background-color');
 
          &__entry {
             padding: css-var('spacing-x-small');

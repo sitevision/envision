@@ -365,8 +365,8 @@
       width: 2.375em;
       height: 1.25em;
       border-radius: 0.75em;
-      border: 0.125em solid css-var('button-focus-box-shadow-color');
-      background-color: css-var('button-hover-background-color');
+      border: 0.125em solid css-var('element-secondary-background-color-dark');
+      background-color: css-var('element-secondary-background-color');
       transition: 0.3s;
 
       .#{$prefix}-switch__text + & {
@@ -381,7 +381,7 @@
          border-radius: 50%;
          left: 0;
          top: 0;
-         background-color: css-var('button-primary-font-color');
+         background-color: css-var('element-primary-font-color');
          transition: 0.3s;
 
          input:checked ~ & {
@@ -390,8 +390,8 @@
       }
 
       input:checked ~ & {
-         background-color: css-var('button-primary-background-color');
-         border-color: css-var('button-primary-border-color');
+         background-color: css-var('element-primary-background-color');
+         border-color: css-var('element-primary-background-color');
       }
 
       input:focus ~ & {

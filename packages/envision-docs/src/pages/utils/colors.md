@@ -254,6 +254,24 @@ Element colors are used for elements and components.
             </ul>
          </div>
       </div>
+
+      <div class="example-element example-element--left">
+         <div class="example-element-label">Collapse:</div>
+         <a
+            class="env-collapse-header env-d--flex env-align-items--center env-justify-content--between"
+            role="button"
+            href="#container2"
+            data-env-collapse
+            aria-expanded="false"
+            aria-controls="container2"
+         >
+            <span class="env-m-right--x-large">Collapse</span>
+            <span class="env-collapse-header--icons"></span>
+         </a>
+         <div class="env-collapse" id="container2">
+            <p class="env-text">Lorem ipsum dolor.</p>
+         </div>
+      </div>
    </div>
 
    <div class="example-element-wrapper">
