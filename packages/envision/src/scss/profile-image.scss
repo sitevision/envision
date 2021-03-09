@@ -37,8 +37,4 @@
    &--xx-small {
       @include image-size(32px);
    }
-
-   &--round {
-      border-radius: 50% 50% !important;
-   }
 }
