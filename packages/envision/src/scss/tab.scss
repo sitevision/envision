@@ -7,7 +7,7 @@ $link-classname: #{$prefix}-tabs__link;
 
       &--border-bottom {
          border-bottom: $tab-bottom-width $border-style
-            css-var('atom-primary-background-color');
+            css-var('element-primary-background-color');
       }
 
       :first-child > a {
@@ -32,8 +32,8 @@ $link-classname: #{$prefix}-tabs__link;
       outline: 0;
 
       &--active {
-         background-color: css-var('atom-primary-background-color');
-         color: css-var('atom-primary-font-color');
+         background-color: css-var('element-primary-background-color');
+         color: css-var('element-primary-font-color');
       }
 
       &:focus {
@@ -56,12 +56,12 @@ $link-classname: #{$prefix}-tabs__link;
 
          &--active {
             border-bottom: $tab-bottom-width $border-style
-               css-var('atom-primary-background-color');
+               css-var('element-primary-background-color');
          }
 
          &:hover {
             border-bottom: $tab-bottom-width $border-style
-               css-var('atom-primary-background-color');
+               css-var('element-primary-background-color');
          }
       }
    }

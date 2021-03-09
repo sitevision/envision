@@ -197,8 +197,8 @@
 
 .example-blocks,
 .example-elements,
-.example-atom-colors,
-.example-atom-color-variants,
+.example-element-colors,
+.example-element-color-variants,
 .example-block-variants {
    display: flex;
    margin: 0 -1em;
@@ -222,9 +222,9 @@
 }
 
 .example-element-wrapper {
-   flex: 1 1 49%;
-   max-width: 49%;
-   margin: 0 0 1em;
+   flex: 1 1 47%;
+   max-width: 47%;
+   margin: 0 1.5% 1em;
    padding: 1em;
    text-align: center;
    border: 1px solid #ccc;
@@ -248,7 +248,7 @@
 }
 
 .example-block-variant,
-.example-atom-color-variant {
+.example-element-color-variant {
    flex: 1 1 50%;
    padding: 1em;
    text-align: center;
@@ -268,25 +268,25 @@
    margin: 0 0 0.5em;
 }
 
-.example-atom-colors {
+.example-element-colors {
    flex-wrap: wrap;
    justify-content: space-between;
 }
 
-.example-atom-color {
+.example-element-color {
    flex: 1 1 25%;
    margin: 1em;
    box-shadow: var(--env-box-shadow);
 }
 
-.example-atom-color p {
+.example-element-color p {
    padding: 1em;
    margin: 0;
    text-align: center;
    font-weight: bold;
 }
 
-.example-atom-color-variants {
+.example-element-color-variants {
    margin: 0;
    font-weight: bold;
 }
@@ -294,15 +294,15 @@
 $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 
 @each $name in $variableNames {
-   .example-atom-color--#{$name} {
-      color: var(--env-atom-#{$name}-font-color);
-      background-color: var(--env-atom-#{$name}-background-color);
+   .example-element-color--#{$name} {
+      color: var(--env-element-#{$name}-font-color);
+      background-color: var(--env-element-#{$name}-background-color);
 
-      .example-atom-color-variant--light {
-         background-color: var(--env-atom-#{$name}-background-color-light);
+      .example-element-color-variant--light {
+         background-color: var(--env-element-#{$name}-background-color-light);
       }
-      .example-atom-color-variant--dark {
-         background-color: var(--env-atom-#{$name}-background-color-dark);
+      .example-element-color-variant--dark {
+         background-color: var(--env-element-#{$name}-background-color-dark);
       }
    }
 }

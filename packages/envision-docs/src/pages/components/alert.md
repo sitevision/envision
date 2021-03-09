@@ -41,7 +41,7 @@ title: Alert
       <div class="env-media__figure">
          <a href="#" aria-label="Example image">
             <img
-               class="env-image env-image--small"
+               class="env-profile-image env-profile-image--x-small"
                src="https://placehold.it/100x100.png"
                alt=""
             />

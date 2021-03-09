@@ -2,15 +2,13 @@
 title: Colors
 ---
 
-## Color combo blocks 2.0
+## Block colors
 
-Preset color combinations to use with any block in your site that
+Preset color combinations, use for larger blocks oc content.
 
 ```html
 <div class="example-blocks">
-   <div
-      class="example-block env-block-primary env-block--border env-block--shadow"
-   >
+   <div class="example-block env-block-primary env-block--border">
       <h2>Primary</h2>
       <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
       <div class="example-block-variants">
@@ -27,9 +25,7 @@ Preset color combinations to use with any block in your site that
       </div>
    </div>
 
-   <div
-      class="example-block env-block-secondary env-block--border env-block--shadow"
-   >
+   <div class="example-block env-block-secondary env-block--border">
       <h2>Secondary</h2>
       <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
       <div class="example-block-variants">
@@ -46,9 +42,7 @@ Preset color combinations to use with any block in your site that
       </div>
    </div>
 
-   <div
-      class="example-block env-block-tertiary env-block--border env-block--shadow"
-   >
+   <div class="example-block env-block-tertiary env-block--border">
       <h2>Tertiary</h2>
       <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
       <div class="example-block-variants">
@@ -69,47 +63,49 @@ Preset color combinations to use with any block in your site that
 
 ## Element colors
 
-<div class="example-atom-colors"> 
-   <div class="example-atom-color example-atom-color--primary">
+Element colors are used for elements and components.
+
+<div class="example-element-colors"> 
+   <div class="example-element-color example-element-color--primary">
       <p>Primary</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
-<div class="example-atom-color example-atom-color--secondary">
+<div class="example-element-color example-element-color--secondary">
       <p>Secondary</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
-<div class="example-atom-color example-atom-color--success">
+<div class="example-element-color example-element-color--success">
       <p>Success</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
-<div class="example-atom-color example-atom-color--warning">
+<div class="example-element-color example-element-color--warning">
       <p>Warning</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
-<div class="example-atom-color example-atom-color--danger">
+<div class="example-element-color example-element-color--danger">
       <p>Danger</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
-<div class="example-atom-color example-atom-color--info">
+<div class="example-element-color example-element-color--info">
       <p>Info</p>
-      <div class="example-atom-color-variants">
-         <div class="example-atom-color-variant example-atom-color-variant--light">Light</div>
-         <div class="example-atom-color-variant example-atom-color-variant--dark">Dark</div>
+      <div class="example-element-color-variants">
+         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
    </div>
 </div>

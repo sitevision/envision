@@ -1,33 +1,33 @@
 @mixin filled-nav-states() {
    &:hover {
-      background-color: css-var('atom-primary-background-color-dark');
-      color: css-var('atom-primary-font-color');
+      background-color: css-var('element-primary-background-color-dark');
+      color: css-var('element-primary-font-color');
    }
 
    &--active {
-      background-color: css-var('atom-primary-background-color');
-      color: css-var('atom-primary-font-color');
+      background-color: css-var('element-primary-background-color');
+      color: css-var('element-primary-font-color');
    }
 }
 
 @mixin nav-link() {
-   color: css-var('atom-primary-background-color-dark');
+   color: css-var('element-primary-background-color-dark');
    display: block;
    text-decoration: none;
    transition: background-color 0.25s ease, color 0.25s ease;
 
    &:hover {
-      color: css-var('atom-primary-background-color-dark');
+      color: css-var('element-primary-background-color-dark');
    }
 
    &:focus {
       @include focus(
-         'atom-primary-background-color',
-         'atom-primary-background-color'
+         'element-primary-background-color',
+         'element-primary-background-color'
       );
    }
 
    &--active {
-      color: css-var('atom-primary-background-color-light');
+      color: css-var('element-primary-background-color-light');
    }
 }

@@ -29,13 +29,15 @@ $nav-link-classname: #{$prefix}-nav__link;
          border-bottom: $border-width $border-style transparent;
 
          &:hover {
-            border-bottom-color: css-var('atom-primary-background-color-dark');
-            color: css-var('atom-primary-background-color-dark');
+            border-bottom-color: css-var(
+               'element-primary-background-color-dark'
+            );
+            color: css-var('element-primary-background-color-dark');
          }
 
          &--active {
-            border-bottom-color: css-var('atom-primary-background-color');
-            color: css-var('atom-primary-background-color');
+            border-bottom-color: css-var('element-primary-background-color');
+            color: css-var('element-primary-background-color');
          }
       }
    }
@@ -48,12 +50,13 @@ $nav-link-classname: #{$prefix}-nav__link;
       padding: css-var('spacing-small') 0;
 
       &--active {
-         border-left: 2px $border-style css-var('atom-primary-background-color');
+         border-left: 2px $border-style
+            css-var('element-primary-background-color');
          padding-left: css-var('spacing-x-small');
       }
 
       &:hover {
-         color: css-var('atom-primary-background-color-dark');
+         color: css-var('element-primary-background-color-dark');
       }
    }
 }

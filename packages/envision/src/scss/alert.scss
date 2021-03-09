@@ -9,10 +9,14 @@
 
    @each $name in $variableNames {
       &--#{$name} {
-         background-color: css-var('atom-#{$name}-background-color-light');
-         color: css-var('atom-#{$name}-font-color');
-         border-left: 6px solid css-var('atom-#{$name}-background-color-dark');
+         background-color: css-var('element-#{$name}-background-color-light');
+         color: css-var('element-#{$name}-font-color');
+         border-left: 6px
+            solid
+            css-var('element-#{$name}-background-color-dark');
 
+         .env-text,
+         .env-text a,
          .#{$prefix}-alert__close {
             color: css-var('alert-#{$name}-font-color');
          }

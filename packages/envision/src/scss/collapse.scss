@@ -29,9 +29,16 @@
    border: {
       style: css-var('collapse-border-style');
       width: css-var('collapse-border-width');
-      color: css-var('collapse-border-color');
+      color: css-var('border-color-secondary');
    }
-   background-color: css-var('collapse-background-color');
+
+   &,
+   .env-text &,
+   .env-text & a {
+      color: css-var('font-color-secondary');
+   }
+
+   background-color: css-var('background-color-secondary');
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -41,13 +48,11 @@
    }
 
    &:hover {
-      background-color: css-var('collapse-expanded-background-color');
-      border-color: css-var('collapse-expanded-border-color');
+      background-color: css-var('background-color-secondary-dark');
    }
 
    &.#{$prefix}-collapse--expanded {
-      background-color: css-var('collapse-expanded-background-color');
-      border-color: css-var('collapse-expanded-border-color');
+      background-color: css-var('background-color-secondary-dark');
    }
 }
 
@@ -75,6 +80,6 @@
       height: css-var('collapse-icon-height');
       transition: transform css-var('collapse-toggle-duration') ease-out;
       position: absolute;
-      background-color: css-var('collapse-icon-color');
+      background-color: css-var('font-color-secondary');
    }
 }

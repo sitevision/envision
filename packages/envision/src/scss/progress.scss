@@ -1,5 +1,5 @@
 .#{$prefix}-progress {
-   background-color: css-var('atom-secondary-background-color');
+   background-color: css-var('element-secondary-background-color');
    border-radius: css-var('border-radius-small');
    display: flex;
    font-family: css-var('font-family');
@@ -8,8 +8,8 @@
    text-align: center;
 
    &__bar {
-      background-color: css-var('atom-primary-background-color');
-      color: css-var('atom-primary-font-color');
+      background-color: css-var('element-primary-background-color');
+      color: css-var('element-primary-font-color');
       height: $progress-bar-height;
 
       &--success {

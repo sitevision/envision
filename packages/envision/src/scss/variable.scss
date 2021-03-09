@@ -96,12 +96,11 @@ $font-color-invert: #ffffff !default;
 $color-page-bg: #ffffff !default;
 $color-section-bg: #ffffff !default;
 
+// TODO: Remove color-page-bg, color-element-bg. Deprecated.
 @include to-css-custom-property(
    (
       'color-page-bg': $color-page-bg,
-      bg, // TODO: REMOVE, UN
       'page-background-color': $color-page-bg,
-      bg, // TODO: REMOVE, UN
       'color-element-bg': $color-section-bg,
       'section-background-color': $color-section-bg,
    )
@@ -184,15 +183,15 @@ $box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
 
 $default-button-color: lighten($color-base, 95%) !default;
 
-$atom-default-color: $default-button-color !default;
-$atom-primary-color: $color-primary !default;
-$atom-success-color: $color-success !default;
-$atom-danger-color: $color-danger !default;
+$element-default-color: $default-button-color !default;
+$element-primary-color: $color-primary !default;
+$element-success-color: $color-success !default;
+$element-danger-color: $color-danger !default;
 
-$atom-default-font-color: $font-color !default;
-$atom-primary-font-color: $font-color-invert !default;
-$atom-success-font-color: $font-color-invert !default;
-$atom-danger-font-color: $font-color-invert !default;
+$element-default-font-color: $font-color !default;
+$element-primary-font-color: $font-color-invert !default;
+$element-success-font-color: $font-color-invert !default;
+$element-danger-font-color: $font-color-invert !default;
 
 @include to-css-custom-property(
    (
@@ -212,39 +211,30 @@ $atom-danger-font-color: $font-color-invert !default;
       'border-color-secondary': #bfbfbf,
       'border-color-tertiary': #000b1a,
       'box-shadow': $box-shadow,
-          // TODO: Rename element.. to something else, and use here ins
-      'atom-primary-font-color': $font-color-invert,
-      'atom-primary-background-color': $color-primary,
-      ry, // lighten($color-base, 9
-      'atom-primary-background-color-dark': $color-primary-dark,
-      rk, // darken(#e5f1ff, 1
-      'atom-primary-background-color-light': $color-primary-light,
-      ht, // darken(#e5f1ff, 1
-      'atom-secondary-font-color': $font-color,
-      'atom-secondary-background-color': #f2f2f2,
-      f2, // lighten($color-base, 9
-      'atom-secondary-background-color-dark': darken(#f2f2f2, 10%),
-      'atom-secondary-background-color-light': lighten(#f2f2f2, 10%),
-      'atom-success-font-color': $font-color-invert,
-      'atom-success-background-color': $color-success,
-      ss, // lighten($color-base, 9
-      'atom-success-background-color-dark': darken($color-success, 10%),
-      'atom-success-background-color-light': lighten($color-success, 10%),
-      'atom-warning-font-color': $font-color,
-      'atom-warning-background-color': $color-warning,
-      ng, // lighten($color-base, 9
-      'atom-warning-background-color-dark': darken($color-warning, 10%),
-      'atom-warning-background-color-light': lighten($color-warning, 10%),
-      'atom-danger-font-color': $font-color-invert,
-      'atom-danger-background-color': $color-danger,
-      er, // lighten($color-base, 9
-      'atom-danger-background-color-dark': darken($color-danger, 10%),
-      'atom-danger-background-color-light': lighten($color-danger, 10%),
-      'atom-info-font-color': $font-color-invert,
-      'atom-info-background-color': $color-info,
-      fo, // lighten($color-base, 9
-      'atom-info-background-color-dark': darken($color-info, 10%),
-      'atom-info-background-color-light': lighten($color-info, 10%),
+      'element-primary-font-color': $font-color-invert,
+      'element-primary-background-color': $color-primary,
+      'element-primary-background-color-dark': $color-primary-dark,
+      'element-primary-background-color-light': $color-primary-light,
+      'element-secondary-font-color': $font-color,
+      'element-secondary-background-color': #f2f2f2,
+      'element-secondary-background-color-dark': darken(#f2f2f2, 10%),
+      'element-secondary-background-color-light': lighten(#f2f2f2, 10%),
+      'element-success-font-color': $font-color-invert,
+      'element-success-background-color': $color-success,
+      'element-success-background-color-dark': darken($color-success, 10%),
+      'element-success-background-color-light': lighten($color-success, 10%),
+      'element-warning-font-color': $font-color,
+      'element-warning-background-color': $color-warning,
+      'element-warning-background-color-dark': darken($color-warning, 10%),
+      'element-warning-background-color-light': lighten($color-warning, 10%),
+      'element-danger-font-color': $font-color-invert,
+      'element-danger-background-color': $color-danger,
+      'element-danger-background-color-dark': darken($color-danger, 10%),
+      'element-danger-background-color-light': lighten($color-danger, 10%),
+      'element-info-font-color': $font-color-invert,
+      'element-info-background-color': $color-info,
+      'element-info-background-color-dark': darken($color-info, 10%),
+      'element-info-background-color-light': lighten($color-info, 10%),
    )
 );
 
@@ -434,13 +424,6 @@ $collapse-icon-right: 15px !default;
 $collapse-heading-min-height: 30px !default;
 $collapse-toggle-duration: $toggle-duration !default;
 
-// Collapse colors
-$collapse-icon-color: $font-color !default;
-$collapse-heading-bg-color: lighten($color-lighter, 15%) !default;
-$collapse-heading-bg-color-expanded: lighten($color-lighter, 10%) !default;
-$collapse-border-color: lighten($color-lighter, 10%) !default;
-$collapse-border-color-expanded: lighten($color-light, 10%) !default;
-
 // Collapse border
 $collapse-border-width: $border-width !default;
 $collapse-border-style: $border-style !default;
@@ -449,11 +432,6 @@ $collapse-border-style: $border-style !default;
    (
       'collapse-border-style': $collapse-border-style,
       'collapse-border-width': $collapse-border-width,
-      'collapse-border-color': $collapse-border-color,
-      'collapse-background-color': $collapse-heading-bg-color,
-      'collapse-expanded-border-color': $collapse-border-color-expanded,
-      'collapse-expanded-background-color': $collapse-heading-bg-color-expanded,
-      'collapse-icon-color': $collapse-icon-color,
       'collapse-icon-width': $collapse-icon-width,
       'collapse-icon-height': $collapse-icon-height,
       'collapse-toggle-duration': $collapse-toggle-duration,
