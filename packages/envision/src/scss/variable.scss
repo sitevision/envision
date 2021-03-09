@@ -467,7 +467,7 @@ $alert-font-family: $font-family !default;
 
 // ----- PROFILE IMAGE -----
 
-$profile-image-radius: 0 !default;
+$profile-image-radius: 50% !default;
 
 @include to-css-custom-property(
    (
