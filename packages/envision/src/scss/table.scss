@@ -58,6 +58,7 @@
 
    &--hover {
       tbody tr:hover {
+         color: css-var('font-color-secondary');
          background-color: css-var('background-color-secondary');
       }
    }
