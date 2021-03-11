@@ -6,6 +6,12 @@
    background-color: css-var('background-color-#{$blockName}');
    border-color: css-var('border-color-#{$blockName}');
 
+   &--border {
+      border: {
+         style: solid;
+         width: 1px;
+      }
+   }
    &--light {
       background-color: css-var('background-color-#{$blockName}-light');
    }

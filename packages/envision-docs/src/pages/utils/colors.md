@@ -4,57 +4,67 @@ title: Colors
 
 ## Block colors
 
-Preset color combinations, use for larger blocks oc content.
+Preset color combinations, use for larger blocks of content.
 
 ```html
-<div class="example-blocks">
-   <div class="example-block env-block-primary env-block--border">
-      <h2>Primary</h2>
-      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-      <div class="example-block-variants">
-         <div
-            class="example-block-variant env-block-primary env-block-primary--light"
-         >
-            Light
+<div class="example-grid">
+   <div class="example-grid__col example-grid__col--33">
+      <div class="env-block-primary env-block-primary--border">
+         <div class="example-variant">
+            <h2>Primary</h2>
+            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
          </div>
-         <div
-            class="example-block-variant env-block-primary env-block-primary--dark"
-         >
-            Dark
-         </div>
-      </div>
-   </div>
-
-   <div class="example-block env-block-secondary env-block--border">
-      <h2>Secondary</h2>
-      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-      <div class="example-block-variants">
-         <div
-            class="example-block-variant env-block-secondary env-block-secondary--dark"
-         >
-            Dark
-         </div>
-         <div
-            class="example-block-variant env-block-secondary env-block-secondary--light"
-         >
-            Light
+         <div class="example-variants">
+            <div
+               class="example-variant env-block-primary env-block-primary--light"
+            >
+               Light
+            </div>
+            <div
+               class="example-variant env-block-primary env-block-primary--dark"
+            >
+               Dark
+            </div>
          </div>
       </div>
    </div>
-
-   <div class="example-block env-block-tertiary env-block--border">
-      <h2>Tertiary</h2>
-      <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-      <div class="example-block-variants">
-         <div
-            class="example-block-variant env-block-tertiary env-block-tertiary--dark"
-         >
-            Dark
+   <div class="example-grid__col example-grid__col--33">
+      <div class="env-block-secondary env-block-secondary--border">
+         <div class="example-variant">
+            <h2>Secondary</h2>
+            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
          </div>
-         <div
-            class="example-block-variant env-block-tertiary env-block-tertiary--light"
-         >
-            Light
+         <div class="example-variants">
+            <div
+               class="example-variant env-block-secondary env-block-secondary--light"
+            >
+               Light
+            </div>
+            <div
+               class="example-variant env-block-secondary env-block-secondary--dark"
+            >
+               Dark
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="example-grid__col example-grid__col--33">
+      <div class="env-block-tertiary env-block-tertiary--border">
+         <div class="example-variant">
+            <h2>Tertiary</h2>
+            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+         </div>
+         <div class="example-variants">
+            <div
+               class="example-variant env-block-tertiary env-block-tertiary--light"
+            >
+               Light
+            </div>
+            <div
+               class="example-variant env-block-tertiary env-block-tertiary--dark"
+            >
+               Dark
+            </div>
          </div>
       </div>
    </div>
@@ -63,342 +73,362 @@ Preset color combinations, use for larger blocks oc content.
 
 ## Element colors
 
-Element colors are used for elements and components.
+Element colors are used for elements and components. See usage examples below.
 
-<div class="example-element-colors"> 
-   <div class="example-element-color example-element-color--primary">
+<div class="example-grid">
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--primary">
       <p>Primary</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
-<div class="example-element-color example-element-color--secondary">
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--secondary">
       <p>Secondary</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
-<div class="example-element-color example-element-color--success">
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--success">
       <p>Success</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
-<div class="example-element-color example-element-color--warning">
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--warning">
       <p>Warning</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
-<div class="example-element-color example-element-color--danger">
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--danger">
       <p>Danger</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
-<div class="example-element-color example-element-color--info">
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--33">
+    <div class="example-element-color example-element-color--info">
       <p>Info</p>
       <div class="example-element-color-variants">
-         <div class="example-element-color-variant example-element-color-variant--light">Light</div>
-         <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
       </div>
-   </div>
+    </div>
+  </div>
 </div>
-
-```html
-<div class="example-elements">
-   <div class="example-element-wrapper example-element-wrapper--full">
-      <h2>Primary & secondary</h2>
-
-      <div class="example-element">
-         <div class="example-element-label">Buttons:</div>
-         <button type="button" class="env-button">Secondary</button>
-         <button type="button" class="env-button env-button--primary">
+<div class="example-grid">
+  <div class="example-grid__col example-grid__col--100">
+    <div class="example-grid__box example-grid">
+      <div class="example-element-header example-grid__col example-grid__col--100">
+        <h2>Primary & secondary</h2>
+        <p>All elements bla bla bla.</p>
+      </div>
+      <div class="example-grid__col example-grid__col--50">
+        <div class="example-element">
+          <div class="example-element-label">Buttons:</div>
+          <button type="button" class="env-button">Secondary</button>
+          <button type="button" class="env-button env-button--primary">
             Primary
-         </button>
-         <button
+          </button>
+          <button
             type="button"
             class="env-button env-button--primary env-button--ghost"
-         >
+          >
             Ghost
-         </button>
-         <br />
-         <br />
-         <button type="button" class="env-button env-button--invert">
+          </button>
+          <br />
+          <br />
+          <button type="button" class="env-button env-button--invert">
             Invert
-         </button>
-         <button type="button" class="env-button env-button--link">Link</button>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Badge:</div>
-         <span class="env-badge">Default</span>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Radio button:</div>
-         <div class="env-form-radio">
+          </button>
+          <button type="button" class="env-button env-button--link">Link</button>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Badge:</div>
+          <span class="env-badge">Default</span>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Radio button:</div>
+          <div class="env-form-radio">
             <input id="radio1" type="radio" name="radios" checked />
             <label for="radio1" class="env-form-element__label">
-               <span class="env-form-radio__fake"></span>
-               <span class="env-form-radio__label">Alternative</span>
+              <span class="env-form-radio__fake"></span>
+              <span class="env-form-radio__label">Alternative</span>
             </label>
-         </div>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Checkbox:</div>
-         <div class="env-checkbox">
+          </div>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Checkbox:</div>
+          <div class="env-checkbox">
             <input type="checkbox" checked name="options" id="cb1" />
             <label class="env-form-element__label" for="cb1">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Checked</span>
+              <span class="env-checkbox__fake"></span>
+              <span class="env-checkbox__label">Checked</span>
+            </label>
+          </div>
+        </div>
+        <div class="example-element">
+         <div class="env-switch">
+            <label class="env-switch__label">
+               <input type="checkbox" />
+               <span class="env-switch__text">Off</span>
+               <span class="env-switch__slider"></span>
             </label>
          </div>
+        </div>
       </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Menu:</div>
-         <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
+      <div class="example-grid__col example-grid__col--50">
+        <div class="example-element">
+          <div class="example-element-label">Menu:</div>
+          <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
             <li class="env-nav__item" role="menuitem">
-               <a class="env-nav__link" href="#">Item</a>
+              <a class="env-nav__link" href="#">Item</a>
             </li>
             <li class="env-nav__item" role="menuitem">
-               <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+              <a class="env-nav__link env-nav__link--active" href="#">Item</a>
             </li>
             <li class="env-nav__item" role="menuitem">
-               <a class="env-nav__link" href="#">Item</a>
+              <a class="env-nav__link" href="#">Item</a>
             </li>
-         </ul>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Pagination:</div>
-         <nav aria-label="Pagination example">
+          </ul>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Pagination:</div>
+          <nav aria-label="Pagination example">
             <ul class="env-pagination">
-               <li class="env-pagination__item">
-                  <a class="env-pagination__link" href="#">Previous</a>
-               </li>
-               <li class="env-pagination__item">
-                  <a class="env-pagination__link" href="#">1</a>
-               </li>
-               <li class="env-pagination__item">
-                  <a class="env-pagination__link env-is-active" href="#"
-                     >2 <span class="env-assistive-text">Current</span></a
-                  >
-               </li>
-               <li class="env-pagination__item">
-                  <a class="env-pagination__link" href="#">3</a>
-               </li>
-               <li class="env-pagination__item">
-                  <a class="env-pagination__link" href="#">Next</a>
-               </li>
+              <li class="env-pagination__item">
+                <a class="env-pagination__link" href="#">Previous</a>
+              </li>
+              <li class="env-pagination__item">
+                <a class="env-pagination__link" href="#">1</a>
+              </li>
+              <li class="env-pagination__item">
+                <a class="env-pagination__link env-is-active" href="#"
+                >2 <span class="env-assistive-text">Current</span></a
+                >
+              </li>
+              <li class="env-pagination__item">
+                <a class="env-pagination__link" href="#">3</a>
+              </li>
+              <li class="env-pagination__item">
+                <a class="env-pagination__link" href="#">Next</a>
+              </li>
             </ul>
-         </nav>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Progress bar:</div>
-         <div class="example-progress">
+          </nav>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Progress bar:</div>
+          <div class="example-progress">
             <div class="env-progress">
-               <div
-                  class="env-progress__bar"
-                  role="progressbar"
-                  style="width: 25%"
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-               >
-                  25%
+              <div
+                class="env-progress__bar"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                25%
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-element">
+          <div class="example-element-label">Tabs:</div>
+          <div class="env-tabs example-tabs">
+            <ul
+              class="env-tabs__nav env-tabs__nav--border-bottom"
+              role="tablist"
+            >
+              <li class="env-tabs__item" role="presentation">
+                <a
+                  id="tab1"
+                  class="env-tabs__link env-tabs__link--active"
+                  href="#panel1"
+                  role="tab"
+                  aria-controls="panel1"
+                  aria-selected="true"
+                  tabindex="0"
+                >Tab 1</a
+                >
+              </li>
+              <li class="env-tabs__item" role="presentation">
+                <a
+                  id="tab2"
+                  class="env-tabs__link"
+                  href="#panel2"
+                  role="tab"
+                  aria-controls="panel2"
+                  aria-selected="false"
+                  tabindex="0"
+                >Tab 2</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="example-element example-element--left">
+          <div class="example-element-label">Range slider:</div>
+             <div class="env-range-slider example-range-slider">
+               <div class="env-range-slider__range"></div>
+               <div class="env-range-slider__handle" tabindex="0"></div>
+               <div class="env-range-slider__handle" tabindex="0"></div>
+               <div class="env-range-slider__values">
+                  <span
+                     class="env-range-slider__values__value env-range-slider__values__value--from env-text"
+                  ></span>
+                  <span class="env-range-slider__values__separator env-text">-</span>
+                  <span class="env-range-slider__values__value env-text"></span>
                </div>
             </div>
-         </div>
+        </div>
       </div>
-
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--50">
+    <div class="example-grid__box">
+      <div class="example-element-header">
+        <h2>Success</h2>
+      </div>
       <div class="example-element">
-         <div class="example-element-label">Tabs:</div>
-         <div class="env-tabs example-tabs">
-            <ul
-               class="env-tabs__nav env-tabs__nav--border-bottom"
-               role="tablist"
-            >
-               <li class="env-tabs__item" role="presentation">
-                  <a
-                     id="tab1"
-                     class="env-tabs__link env-tabs__link--active"
-                     href="#panel1"
-                     role="tab"
-                     aria-controls="panel1"
-                     aria-selected="true"
-                     tabindex="0"
-                     >Tab 1</a
-                  >
-               </li>
-               <li class="env-tabs__item" role="presentation">
-                  <a
-                     id="tab2"
-                     class="env-tabs__link"
-                     href="#panel2"
-                     role="tab"
-                     aria-controls="panel2"
-                     aria-selected="false"
-                     tabindex="0"
-                     >Tab 2</a
-                  >
-               </li>
-            </ul>
-         </div>
+        <div class="example-element-label">Button:</div>
+        <button type="button" class="env-button env-button--success">
+          Success
+        </button>
+        <button
+          type="button"
+          class="env-button env-button--success env-button--ghost"
+        >
+          Ghost
+        </button>
       </div>
-
-      <div class="example-element example-element--left">
-         <div class="example-element-label">Collapse:</div>
-         <a
-            class="env-collapse-header env-d--flex env-align-items--center env-justify-content--between"
-            role="button"
-            href="#container2"
-            data-env-collapse
-            aria-expanded="false"
-            aria-controls="container2"
-         >
-            <span class="env-m-right--x-large">Collapse</span>
-            <span class="env-collapse-header--icons"></span>
-         </a>
-         <div class="env-collapse" id="container2">
-            <p class="env-text">Lorem ipsum dolor.</p>
-         </div>
-      </div>
-   </div>
-
-   <div class="example-element-wrapper">
-      <h2>Success</h2>
-
       <div class="example-element">
-         <div class="example-element-label">Button:</div>
-         <button type="button" class="env-button env-button--success">
-            Success
-         </button>
-         <button
+        <div class="example-element-label">Badge:</div>
+        <span class="env-badge env-badge--success">Success</span>
+      </div>
+      <div class="example-element">
+        <div class="example-element-label">Alert:</div>
+        <div class="env-alert env-alert--success" role="alert">
+          <strong>Hello!</strong> this is successful alert
+          <button
             type="button"
-            class="env-button env-button--success env-button--ghost"
-         >
-            Ghost
-         </button>
+            class="env-alert__close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
       </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Badge:</div>
-         <span class="env-badge env-badge--success">Success</span>
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--50">
+    <div class="example-grid__box">
+      <div class="example-element-header">
+        <h2>Warning</h2>
       </div>
-
       <div class="example-element">
-         <div class="example-element-label">Alert:</div>
-         <div class="env-alert env-alert--success" role="alert">
-            <strong>Hello!</strong> this is successful alert
-            <button
-               type="button"
-               class="env-alert__close"
-               data-dismiss="alert"
-               aria-label="Close"
-            >
-               &times;
-            </button>
-         </div>
+        <div class="example-element-label">Badge:</div>
+        <span class="env-badge env-badge--warning">warning</span>
       </div>
-   </div>
-
-   <div class="example-element-wrapper">
-      <h2>Warning</h2>
-
       <div class="example-element">
-         <div class="example-element-label">Badge:</div>
-         <span class="env-badge env-badge--warning">warning</span>
-      </div>
-
-      <div class="example-element">
-         <div class="example-element-label">Alert:</div>
-         <div class="env-alert env-alert--warning" role="alert">
-            <strong>Hello!</strong> this is warning alert
-            <button
-               type="button"
-               class="env-alert__close"
-               data-dismiss="alert"
-               aria-label="Close"
-            >
-               &times;
-            </button>
-         </div>
-      </div>
-   </div>
-
-   <div class="example-element-wrapper">
-      <h2>danger</h2>
-
-      <div class="example-element">
-         <div class="example-element-label">Button:</div>
-         <button type="button" class="env-button env-button--danger">
-            danger
-         </button>
-         <button
+        <div class="example-element-label">Alert:</div>
+        <div class="env-alert env-alert--warning" role="alert">
+          <strong>Hello!</strong> this is warning alert
+          <button
             type="button"
-            class="env-button env-button--danger env-button--ghost"
-         >
-            danger
-         </button>
+            class="env-alert__close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
       </div>
-
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--50">
+    <div class="example-grid__box">
+      <div class="example-element-header">
+        <h2>Danger</h2>
+      </div>
       <div class="example-element">
-         <div class="example-element-label">Badge:</div>
-         <span class="env-badge env-badge--danger">danger</span>
+        <div class="example-element-label">Button:</div>
+        <button type="button" class="env-button env-button--danger">
+          Danger
+        </button>
+        <button
+          type="button"
+          class="env-button env-button--danger env-button--ghost"
+        >
+          Danger
+        </button>
       </div>
-
       <div class="example-element">
-         <div class="example-element-label">Alert:</div>
-         <div class="env-alert env-alert--danger" role="alert">
-            <strong>Hello!</strong> this is danger alert
-            <button
-               type="button"
-               class="env-alert__close"
-               data-dismiss="alert"
-               aria-label="Close"
-            >
-               &times;
-            </button>
-         </div>
+        <div class="example-element-label">Badge:</div>
+        <span class="env-badge env-badge--danger">danger</span>
       </div>
-   </div>
-
-   <div class="example-element-wrapper">
-      <h2>info</h2>
-
       <div class="example-element">
-         <div class="example-element-label">Badge:</div>
-         <span class="env-badge env-badge--info">info</span>
+        <div class="example-element-label">Alert:</div>
+        <div class="env-alert env-alert--danger" role="alert">
+          <strong>Hello!</strong> this is danger alert
+          <button
+            type="button"
+            class="env-alert__close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
       </div>
-
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--50">
+    <div class="example-grid__box">
+      <div class="example-element-header">
+        <h2>Info</h2>
+      </div>
       <div class="example-element">
-         <div class="example-element-label">Alert:</div>
-         <div class="env-alert env-alert--info" role="alert">
-            <strong>Hello!</strong> this is info alert
-            <button
-               type="button"
-               class="env-alert__close"
-               data-dismiss="alert"
-               aria-label="Close"
-            >
-               &times;
-            </button>
-         </div>
+        <div class="example-element-label">Badge:</div>
+        <span class="env-badge env-badge--info">info</span>
       </div>
-   </div>
+      <div class="example-element">
+        <div class="example-element-label">Alert:</div>
+        <div class="env-alert env-alert--info" role="alert">
+          <strong>Hello!</strong> this is info alert
+          <button
+            type="button"
+            class="env-alert__close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-```
 
-## Background color
+## Background color <span class="env-badge env-badge--danger">Deprecated</span>
+
+Since Sitevision 8.2 Background color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
@@ -418,7 +448,9 @@ Element colors are used for elements and components.
 </div>
 ```
 
-## Color
+## Color <span class="env-badge env-badge--danger">Deprecated</span>
+
+Since Sitevision 8.2 Color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
@@ -438,69 +470,9 @@ Element colors are used for elements and components.
 </div>
 ```
 
-## Background color - Darker / Lighter
+## Background color - Darker / Lighter <span class="env-badge env-badge--danger">Removed</span>
+
+Since Sitevision 8.2 Background color - Darker / Lighter is no longer
+included in Envision. Please use Block and Element colors.
 
 `env-bg-color--{color}--{value}`
-
-Valid values for _value_ (%)
-
--  `80`
--  `60`
--  `40`
--  `20`
--  `10`
-
-```html
-<div
-   class="example-color env-list--horizontal--fixed env-list--horizontal--fixed--6"
->
-   <div class="env-list__item">
-      <div class="env-bg-color--primary example-color-size-large"></div>
-      <div class="env-bg-color--primary--80 example-color-size"></div>
-      <div class="env-bg-color--primary--60 example-color-size"></div>
-      <div class="env-bg-color--primary--40 example-color-size"></div>
-      <div class="env-bg-color--primary--20 example-color-size"></div>
-      <div class="env-bg-color--primary--10 example-color-size"></div>
-   </div>
-   <div class="env-list__item">
-      <div class="env-bg-color--success example-color-size-large"></div>
-      <div class="env-bg-color--success--80 example-color-size"></div>
-      <div class="env-bg-color--success--60 example-color-size"></div>
-      <div class="env-bg-color--success--40 example-color-size"></div>
-      <div class="env-bg-color--success--20 example-color-size"></div>
-      <div class="env-bg-color--success--10 example-color-size"></div>
-   </div>
-   <div class="env-list__item">
-      <div class="env-bg-color--info example-color-size-large"></div>
-      <div class="env-bg-color--info--80 example-color-size"></div>
-      <div class="env-bg-color--info--60 example-color-size"></div>
-      <div class="env-bg-color--info--40 example-color-size"></div>
-      <div class="env-bg-color--info--20 example-color-size"></div>
-      <div class="env-bg-color--info--10 example-color-size"></div>
-   </div>
-   <div class="env-list__item">
-      <div class="env-bg-color--warning example-color-size-large"></div>
-      <div class="env-bg-color--warning--80 example-color-size"></div>
-      <div class="env-bg-color--warning--60 example-color-size"></div>
-      <div class="env-bg-color--warning--40 example-color-size"></div>
-      <div class="env-bg-color--warning--20 example-color-size"></div>
-      <div class="env-bg-color--warning--10 example-color-size"></div>
-   </div>
-   <div class="env-list__item">
-      <div class="env-bg-color--danger example-color-size-large"></div>
-      <div class="env-bg-color--danger--80 example-color-size"></div>
-      <div class="env-bg-color--danger--60 example-color-size"></div>
-      <div class="env-bg-color--danger--40 example-color-size"></div>
-      <div class="env-bg-color--danger--20 example-color-size"></div>
-      <div class="env-bg-color--danger--10 example-color-size"></div>
-   </div>
-   <div class="env-list__item">
-      <div class="env-bg-color--dark example-color-size-large"></div>
-      <div class="env-bg-color--dark--80 example-color-size"></div>
-      <div class="env-bg-color--dark--60 example-color-size"></div>
-      <div class="env-bg-color--dark--40 example-color-size"></div>
-      <div class="env-bg-color--dark--20 example-color-size"></div>
-      <div class="env-bg-color--dark--10 example-color-size"></div>
-   </div>
-</div>
-```

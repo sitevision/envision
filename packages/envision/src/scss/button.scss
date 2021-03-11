@@ -24,16 +24,11 @@
    @include button-color-variant(
       'element-secondary-font-color',
       'element-secondary-background-color',
-      'element-secondary-background-color',
-      'element-secondary-background-color-dark',
       'element-secondary-background-color-dark'
    );
 
    &:focus {
-      @include focus(
-         'button-focus-border-color',
-         'button-focus-box-shadow-color'
-      );
+      @include focus('element-secondary-background-color');
    }
 
    // Variants
@@ -45,16 +40,11 @@
          @include button-color-variant(
             'element-#{$name}-font-color',
             'element-#{$name}-background-color',
-            'element-#{$name}-background-color',
-            'element-#{$name}-background-color-dark',
             'element-#{$name}-background-color-dark'
          );
 
          &:focus {
-            @include focus(
-               'element-#{$name}-background-color-dark',
-               'element-#{$name}-background-color-dark'
-            );
+            @include focus('element-#{$name}-background-color');
          }
       }
    }
@@ -66,13 +56,13 @@
    }
 
    &--invert {
-      color: css-var('element-primary-background-color');
+      color: css-var('element-primary-background-color-dark');
 
       &:hover,
       &:active,
       &:focus {
-         background-color: css-var('element-secondary-background-color-dark');
-         border-color: css-var('element-secondary-background-color-dark');
+         background-color: css-var('element-common-background-color');
+         border-color: css-var('element-common-background-color');
       }
 
       &:active {
@@ -80,10 +70,7 @@
       }
 
       &:focus {
-         @include focus(
-            'element-secondary-background-color-dark',
-            'element-secondary-background-color-dark'
-         );
+         @include focus('element-common-background-color');
       }
    }
 

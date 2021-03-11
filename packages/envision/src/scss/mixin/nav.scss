@@ -21,10 +21,7 @@
    }
 
    &:focus {
-      @include focus(
-         'element-primary-background-color',
-         'element-primary-background-color'
-      );
+      @include focus('element-primary-background-color');
    }
 
    &--active {

@@ -164,8 +164,7 @@ $focus-color: #5cb3fd !default;
       'color-light': $color-light,
       'color-lighter': $color-lighter,
       'color-lightest': $color-lightest,
-      'color-focus': $focus-color,
-      'focus-color': css-var('color-focus'),
+      'focus-color': $focus-color,
    )
 );
 
@@ -181,44 +180,47 @@ $focus-color: #5cb3fd !default;
 // Used by popover, dropdown, color-block
 $box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
 
-$default-button-color: lighten($color-base, 95%) !default;
+$background-color-primary: #e5f1ff;
+$background-color-secondary: #f4f4f4;
+$background-color-tertiary: #00214d;
 
-$element-default-color: $default-button-color !default;
-$element-primary-color: $color-primary !default;
-$element-success-color: $color-success !default;
-$element-danger-color: $color-danger !default;
+$border-color-primary: #a7bed0;
+$border-color-secondary: #bfbfbf;
+$border-color-tertiary: #000b1a;
 
-$element-default-font-color: $font-color !default;
-$element-primary-font-color: $font-color-invert !default;
-$element-success-font-color: $font-color-invert !default;
-$element-danger-font-color: $font-color-invert !default;
+$element-secondary-background-color: #f2f2f2;
+
+$element-common-background-color: #f2f2f2;
 
 @include to-css-custom-property(
    (
       'font-color-primary': $font-color,
+      'background-color-primary': $background-color-primary,
+      'background-color-primary-light': lighten($background-color-primary, 3%),
+      'background-color-primary-dark': darken($background-color-primary, 3%),
+      'border-color-primary': $border-color-primary,
       'font-color-secondary': $font-color,
+      'background-color-secondary': $background-color-secondary,
+      'background-color-secondary-light':
+         lighten($background-color-secondary, 3%),
+      'background-color-secondary-dark': darken($background-color-secondary, 3%),
+      'border-color-secondary': $border-color-secondary,
       'font-color-tertiary': $font-color-invert,
-      'background-color-primary': #e5f1ff,
-      'background-color-primary-light': lighten(#e5f1ff, 3%),
-      'background-color-primary-dark': darken(#e5f1ff, 3%),
-      'background-color-secondary': #f4f4f4,
-      'background-color-secondary-light': lighten(#f4f4f4, 3%),
-      'background-color-secondary-dark': darken(#f4f4f4, 3%),
-      'background-color-tertiary': #00214d,
-      'background-color-tertiary-light': lighten(#00214d, 3%),
-      'background-color-tertiary-dark': darken(#00214d, 3%),
-      'border-color-primary': #a7bed0,
-      'border-color-secondary': #bfbfbf,
-      'border-color-tertiary': #000b1a,
+      'background-color-tertiary': $background-color-tertiary,
+      'background-color-tertiary-light': lighten($background-color-tertiary, 3%),
+      'background-color-tertiary-dark': darken($background-color-tertiary, 3%),
+      'border-color-tertiary': $border-color-tertiary,
       'box-shadow': $box-shadow,
       'element-primary-font-color': $font-color-invert,
       'element-primary-background-color': $color-primary,
       'element-primary-background-color-dark': $color-primary-dark,
       'element-primary-background-color-light': $color-primary-light,
       'element-secondary-font-color': $font-color,
-      'element-secondary-background-color': #f2f2f2,
-      'element-secondary-background-color-dark': darken(#f2f2f2, 10%),
-      'element-secondary-background-color-light': lighten(#f2f2f2, 10%),
+      'element-secondary-background-color': $element-secondary-background-color,
+      'element-secondary-background-color-dark':
+         darken($element-secondary-background-color, 10%),
+      'element-secondary-background-color-light':
+         lighten($element-secondary-background-color, 10%),
       'element-success-font-color': $font-color-invert,
       'element-success-background-color': $color-success,
       'element-success-background-color-dark': darken($color-success, 10%),
@@ -230,11 +232,14 @@ $element-danger-font-color: $font-color-invert !default;
       'element-danger-font-color': $font-color-invert,
       'element-danger-background-color': $color-danger,
       'element-danger-background-color-dark': darken($color-danger, 10%),
-      'element-danger-background-color-light': lighten($color-danger, 10%),
+      'element-danger-background-color-light': lighten($color-danger, 20%),
       'element-info-font-color': $font-color-invert,
       'element-info-background-color': $color-info,
       'element-info-background-color-dark': darken($color-info, 10%),
       'element-info-background-color-light': lighten($color-info, 10%),
+      'element-common-background-color': $element-common-background-color,
+      'element-common-background-color-dark':
+         darken($element-common-background-color, 10%),
    )
 );
 
@@ -457,11 +462,16 @@ $pagination-border-style: $border-style !default;
 
 // Alert
 $alert-font-family: $font-family !default;
+$alert-border-radius: 0;
+
+// Todo: Discuss if we want this in config
+$alert-background-color: #fff;
 
 @include to-css-custom-property(
    (
       'alert-font-family': css-var('font-family'),
-      'alert-border-radius': #{css-var('border-radius')},
+      'alert-border-radius': $alert-border-radius,
+      'alert-background-color': $alert-background-color,
    )
 );
 
