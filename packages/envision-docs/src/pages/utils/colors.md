@@ -183,10 +183,11 @@ Element colors are used for elements and components. See usage examples below.
           </div>
         </div>
         <div class="example-element">
+         <div class="example-element-label">Switch:</div>
          <div class="env-switch">
             <label class="env-switch__label">
-               <input type="checkbox" />
-               <span class="env-switch__text">Off</span>
+               <input type="checkbox" checked />
+               <span class="env-switch__text">On</span>
                <span class="env-switch__slider"></span>
             </label>
          </div>
