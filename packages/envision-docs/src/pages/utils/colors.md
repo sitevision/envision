@@ -198,13 +198,13 @@ Element colors are used for elements and components. See usage examples below.
           <div class="example-element-label">Menu:</div>
           <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
             <li class="env-nav__item" role="menuitem">
-              <a class="env-nav__link" href="#">Item</a>
+              <a class="env-nav__link" href="javascript:void(0)">Item</a>
             </li>
             <li class="env-nav__item" role="menuitem">
-              <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+              <a class="env-nav__link env-nav__link--active" href="javascript:void(0)">Item</a>
             </li>
             <li class="env-nav__item" role="menuitem">
-              <a class="env-nav__link" href="#">Item</a>
+              <a class="env-nav__link" href="javascript:void(0)">Item</a>
             </li>
           </ul>
         </div>
@@ -213,21 +213,21 @@ Element colors are used for elements and components. See usage examples below.
           <nav aria-label="Pagination example">
             <ul class="env-pagination">
               <li class="env-pagination__item">
-                <a class="env-pagination__link" href="#">Previous</a>
+                <a class="env-pagination__link" href="javascript:void(0)">Previous</a>
               </li>
               <li class="env-pagination__item">
-                <a class="env-pagination__link" href="#">1</a>
+                <a class="env-pagination__link" href="javascript:void(0)">1</a>
               </li>
               <li class="env-pagination__item">
-                <a class="env-pagination__link env-is-active" href="#"
+                <a class="env-pagination__link env-is-active" href="javascript:void(0)"
                 >2 <span class="env-assistive-text">Current</span></a
                 >
               </li>
               <li class="env-pagination__item">
-                <a class="env-pagination__link" href="#">3</a>
+                <a class="env-pagination__link" href="javascript:void(0)">3</a>
               </li>
               <li class="env-pagination__item">
-                <a class="env-pagination__link" href="#">Next</a>
+                <a class="env-pagination__link" href="javascript:void(0)">Next</a>
               </li>
             </ul>
           </nav>
