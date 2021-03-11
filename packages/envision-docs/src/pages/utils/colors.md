@@ -136,7 +136,7 @@ Element colors are used for elements and components. See usage examples below.
     <div class="example-grid__box example-grid">
       <div class="example-element-header example-grid__col example-grid__col--100">
         <h2>Primary & secondary</h2>
-        <p>All elements bla bla bla.</p>
+        <p>All elements use the same color setting.</p>
       </div>
       <div class="example-grid__col example-grid__col--50">
         <div class="example-element">
@@ -315,7 +315,7 @@ Element colors are used for elements and components. See usage examples below.
           type="button"
           class="env-button env-button--success env-button--ghost"
         >
-          Ghost
+          Success
         </button>
       </div>
       <div class="example-element">

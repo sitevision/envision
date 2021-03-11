@@ -13,6 +13,10 @@ title: Button
 
 <button type="button" class="env-button env-button--danger">Danger</button>
 
+<button type="button" class="env-button env-button--primary env-button--ghost">
+   Ghost
+</button>
+
 <button type="button" class="env-button env-button--invert">Invert</button>
 
 <button type="button" class="env-button env-button--link">Link</button>
