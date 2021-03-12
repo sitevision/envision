@@ -84,9 +84,6 @@ $font-color-invert: #ffffff !default;
 @include to-css-custom-property(
    (
       'font-color': $font-color,
-      'font-color-light': $font-color-light,
-      'font-color-lighter': $font-color-lighter,
-      'font-color-invert': $font-color-invert,
    )
 );
 
@@ -96,12 +93,9 @@ $font-color-invert: #ffffff !default;
 $color-page-bg: #ffffff !default;
 $color-section-bg: #ffffff !default;
 
-// TODO: Remove color-page-bg, color-element-bg. Deprecated.
 @include to-css-custom-property(
    (
-      'color-page-bg': $color-page-bg,
       'page-background-color': $color-page-bg,
-      'color-element-bg': $color-section-bg,
       'section-background-color': $color-section-bg,
    )
 );
@@ -109,15 +103,6 @@ $color-section-bg: #ffffff !default;
 $color-primary: #006dff !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
-
-// DEPRECATE
-$color-brand: $color-primary;
-$color-brand-light: $color-primary-light;
-$color-brand-dark: $color-primary-dark;
-
-$color-secondary: #6c757d !default;
-$color-secondary-light: lighten($color-secondary, 10%) !default;
-$color-secondary-dark: darken($color-secondary, 10%) !default;
 
 $color-warning: #c59219 !default;
 $color-warning-dark: darken($color-warning, 10%) !default;
@@ -128,7 +113,6 @@ $color-info: #1d818b !default;
 
 $color-hover: #f7f7f7 !default;
 
-// DEPRECATE?
 $color-base: #000000 !default;
 $color-darker: lighten($color-base, 5%) !default;
 $color-dark: lighten($color-base, 20%) !default;
@@ -137,45 +121,7 @@ $color-light: lighten($color-base, 60%) !default;
 $color-lighter: lighten($color-base, 80%) !default;
 $color-lightest: lighten($color-lighter, 10%) !default;
 
-$focus-background-color: rgba(0, 0, 0, 0.2) !default;
-$focus-color: #5cb3fd !default;
-
-@include to-css-custom-property(
-   (
-      'color-primary': $color-primary,
-      'color-primary-light': $color-primary-light,
-      'color-primary-dark': $color-primary-dark,
-      'color-secondary': $color-secondary,
-      'color-secondary-light': $color-secondary-light,
-      'color-secondary-dark': $color-secondary-dark,
-      'color-brand': css-var('color-primary'),
-      'color-brand-light': css-var('color-primary-light'),
-      'color-brand-dark': css-var('color-primary-dark'),
-      'color-warning': $color-warning,
-      'color-warning-dark': $color-warning-dark,
-      'color-danger': $color-danger,
-      'color-success': $color-success,
-      'color-info': $color-info,
-      'color-hover': $color-hover,
-      'color-base': $color-base,
-      'color-darker': $color-darker,
-      'color-dark': $color-dark,
-      'color-normal': $color-normal,
-      'color-light': $color-light,
-      'color-lighter': $color-lighter,
-      'color-lightest': $color-lightest,
-      'focus-color': $focus-color,
-   )
-);
-
-// DEPRECATED PROPERTIES
-@include to-css-custom-property(
-   (
-      'focus-background-color': $focus-background-color,
-   )
-);
-
-// ----- COLOR COMBO BLOCKS -----
+// ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
 // Used by popover, dropdown, color-block
 $box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
@@ -188,7 +134,9 @@ $border-color-primary: #a7bed0;
 $border-color-secondary: #bfbfbf;
 $border-color-tertiary: #000b1a;
 
-$element-secondary-background-color: #f2f2f2;
+$element-default-background-color: #f2f2f2;
+$element-secondary-background-color: #4f5153;
+$element-secondary-font-color: #fff;
 
 $element-common-background-color: #f2f2f2;
 
@@ -211,35 +159,39 @@ $element-common-background-color: #f2f2f2;
       'background-color-tertiary-dark': darken($background-color-tertiary, 3%),
       'border-color-tertiary': $border-color-tertiary,
       'box-shadow': $box-shadow,
+      'element-font-color': $font-color,
+      'element-background-color': $element-default-background-color,
+      'element-background-color-dark':
+         darken($element-default-background-color, 5%),
+      'element-background-color-light':
+         lighten($element-default-background-color, 3%),
       'element-primary-font-color': $font-color-invert,
       'element-primary-background-color': $color-primary,
       'element-primary-background-color-dark': $color-primary-dark,
       'element-primary-background-color-light': $color-primary-light,
-      'element-secondary-font-color': $font-color,
+      'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
       'element-secondary-background-color-dark':
-         darken($element-secondary-background-color, 10%),
+         darken($element-secondary-background-color, 5%),
       'element-secondary-background-color-light':
-         lighten($element-secondary-background-color, 10%),
+         lighten($element-secondary-background-color, 3%),
       'element-success-font-color': $font-color-invert,
       'element-success-background-color': $color-success,
-      'element-success-background-color-dark': darken($color-success, 10%),
-      'element-success-background-color-light': lighten($color-success, 10%),
+      'element-success-background-color-dark': darken($color-success, 5%),
+      'element-success-background-color-light': lighten($color-success, 3%),
       'element-warning-font-color': $font-color,
       'element-warning-background-color': $color-warning,
-      'element-warning-background-color-dark': darken($color-warning, 10%),
-      'element-warning-background-color-light': lighten($color-warning, 10%),
+      'element-warning-background-color-dark': darken($color-warning, 5%),
+      'element-warning-background-color-light': lighten($color-warning, 3%),
       'element-danger-font-color': $font-color-invert,
       'element-danger-background-color': $color-danger,
-      'element-danger-background-color-dark': darken($color-danger, 10%),
-      'element-danger-background-color-light': lighten($color-danger, 20%),
+      'element-danger-background-color-dark': darken($color-danger, 5%),
+      'element-danger-background-color-light': lighten($color-danger, 3%),
       'element-info-font-color': $font-color-invert,
       'element-info-background-color': $color-info,
-      'element-info-background-color-dark': darken($color-info, 10%),
-      'element-info-background-color-light': lighten($color-info, 10%),
+      'element-info-background-color-dark': darken($color-info, 5%),
+      'element-info-background-color-light': lighten($color-info, 3%),
       'element-common-background-color': $element-common-background-color,
-      'element-common-background-color-dark':
-         darken($element-common-background-color, 10%),
    )
 );
 
@@ -482,5 +434,71 @@ $profile-image-radius: 50% !default;
 @include to-css-custom-property(
    (
       'profile-image-border-radius': $profile-image-radius,
+   )
+);
+
+// ----- DEPRECATED -----
+
+// All variables below this line are deprecated. To be removed later.
+// ------------------------------------------------------------------
+
+@include to-css-custom-property(
+   (
+      'font-color-light': $font-color-light,
+      'font-color-lighter': $font-color-lighter,
+      'font-color-invert': $font-color-invert,
+   )
+);
+
+@include to-css-custom-property(
+   (
+      'color-page-bg': $color-page-bg,
+      'color-element-bg': $color-section-bg,
+   )
+);
+
+$color-brand: $color-primary;
+$color-brand-light: $color-primary-light;
+$color-brand-dark: $color-primary-dark;
+
+$color-secondary: #6c757d !default;
+$color-secondary-light: lighten($color-secondary, 10%) !default;
+$color-secondary-dark: darken($color-secondary, 10%) !default;
+
+$focus-color: #5cb3fd !default;
+
+@include to-css-custom-property(
+   (
+      'color-primary': $color-primary,
+      'color-primary-light': $color-primary-light,
+      'color-primary-dark': $color-primary-dark,
+      'color-secondary': $color-secondary,
+      'color-secondary-light': $color-secondary-light,
+      'color-secondary-dark': $color-secondary-dark,
+      'color-brand': css-var('color-primary'),
+      'color-brand-light': css-var('color-primary-light'),
+      'color-brand-dark': css-var('color-primary-dark'),
+      'color-warning': $color-warning,
+      'color-warning-dark': $color-warning-dark,
+      'color-danger': $color-danger,
+      'color-success': $color-success,
+      'color-info': $color-info,
+      'color-hover': $color-hover,
+      'color-base': $color-base,
+      'color-darker': $color-darker,
+      'color-dark': $color-dark,
+      'color-normal': $color-normal,
+      'color-light': $color-light,
+      'color-lighter': $color-lighter,
+      'color-lightest': $color-lightest,
+      'focus-color': $focus-color,
+   )
+);
+
+$focus-background-color: rgba(0, 0, 0, 0.2) !default;
+
+@include to-css-custom-property(
+   (
+      'focus-background-color': $focus-background-color,
    )
 );

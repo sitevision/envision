@@ -249,6 +249,19 @@
 
 $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 
+.example-element-color {
+   color: var(--env-element-font-color);
+   background-color: var(--env-element-background-color);
+
+   .example-element-color-variant--light {
+      background-color: var(--env-element-background-color-light);
+   }
+
+   .example-element-color-variant--dark {
+      background-color: var(--env-element-background-color-dark);
+   }
+}
+
 @each $name in $variableNames {
    .example-element-color--#{$name} {
       color: var(--env-element-#{$name}-font-color);

@@ -76,7 +76,16 @@ Preset color combinations, use for larger blocks of content.
 Element colors are used for elements and components. See usage examples below.
 
 <div class="example-grid">
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
+    <div class="example-element-color example-element-color--default">
+      <p>Default</p>
+      <div class="example-element-color-variants">
+        <div class="example-element-color-variant example-element-color-variant--light">Light</div>
+        <div class="example-element-color-variant example-element-color-variant--dark">Dark</div>
+      </div>
+    </div>
+  </div>
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--primary">
       <p>Primary</p>
       <div class="example-element-color-variants">
@@ -85,7 +94,7 @@ Element colors are used for elements and components. See usage examples below.
       </div>
     </div>
   </div>
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--secondary">
       <p>Secondary</p>
       <div class="example-element-color-variants">
@@ -94,7 +103,7 @@ Element colors are used for elements and components. See usage examples below.
       </div>
     </div>
   </div>
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--success">
       <p>Success</p>
       <div class="example-element-color-variants">
@@ -103,7 +112,7 @@ Element colors are used for elements and components. See usage examples below.
       </div>
     </div>
   </div>
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--warning">
       <p>Warning</p>
       <div class="example-element-color-variants">
@@ -112,7 +121,7 @@ Element colors are used for elements and components. See usage examples below.
       </div>
     </div>
   </div>
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--danger">
       <p>Danger</p>
       <div class="example-element-color-variants">
@@ -121,7 +130,7 @@ Element colors are used for elements and components. See usage examples below.
       </div>
     </div>
   </div>
-  <div class="example-grid__col example-grid__col--33">
+  <div class="example-grid__col example-grid__col--25">
     <div class="example-element-color example-element-color--info">
       <p>Info</p>
       <div class="example-element-color-variants">
@@ -135,13 +144,13 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--100">
     <div class="example-grid__box example-grid">
       <div class="example-element-header example-grid__col example-grid__col--100">
-        <h2>Primary & secondary</h2>
+        <h2>Primary & default</h2>
         <p>All elements use the same color setting.</p>
       </div>
       <div class="example-grid__col example-grid__col--50">
         <div class="example-element">
           <div class="example-element-label">Buttons:</div>
-          <button type="button" class="env-button">Secondary</button>
+          <button type="button" class="env-button">Default</button>
           <button type="button" class="env-button env-button--primary">
             Primary
           </button>

@@ -22,13 +22,13 @@
    );
 
    @include button-color-variant(
-      'element-secondary-font-color',
-      'element-secondary-background-color',
-      'element-secondary-background-color-dark'
+      'element-font-color',
+      'element-background-color',
+      'element-background-color-dark'
    );
 
    &:focus {
-      @include focus('element-secondary-background-color');
+      @include focus('element-background-color');
    }
 
    // Variants
