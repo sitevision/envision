@@ -338,7 +338,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
 </div>
 ```
 
-## Instantiation
+## Initiation
 
 ```javascript
 $('.example-tabs').envTabs();
