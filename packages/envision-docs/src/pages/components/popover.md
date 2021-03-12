@@ -185,3 +185,9 @@ To keep the popover alive when being hovered it requires a delay to function pro
    Hover with delay!
 </button>
 ```
+
+## Initiation
+
+```javascript
+$('.example-popover').envPopover();
+```
