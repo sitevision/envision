@@ -3,11 +3,15 @@
    height: $s;
 }
 
-.#{$prefix}-profile-image {
+@mixin container-size($s) {
+   width: $s;
+   padding: 100% 0 0 0;
+}
+
+img.#{$prefix}-profile-image {
    display: block;
    @include image-size(96px);
    object-fit: cover;
-   max-width: 100%;
    border-radius: css-var('profile-image-border-radius');
 
    &--xx-large {
@@ -36,5 +40,52 @@
 
    &--xx-small {
       @include image-size(32px);
+   }
+}
+
+div.#{$prefix}-profile-image {
+   display: block;
+   position: relative;
+   @include container-size(96px);
+   max-width: 100%;
+
+   img {
+      display: block;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      max-width: 100%;
+      border-radius: css-var('profile-image-border-radius');
+   }
+
+   &--xx-large {
+      @include container-size(256px);
+   }
+
+   &--x-large {
+      @include container-size(224px);
+   }
+
+   &--large {
+      @include container-size(128px);
+   }
+
+   &--medium {
+      // Default size, 96 x 96
+   }
+
+   &--small {
+      @include container-size(64px);
+   }
+
+   &--x-small {
+      @include container-size(48px);
+   }
+
+   &--xx-small {
+      @include container-size(32px);
    }
 }
