@@ -9,10 +9,14 @@
 
    @each $name in $variableNames {
       &--#{$name} {
-         background-color: css-var('alert-#{$name}-background-color');
-         color: css-var('alert-#{$name}-font-color');
-         border-left: 6px solid css-var('alert-#{$name}-border-color');
+         background-color: css-var('alert-background-color');
+         color: css-var('element-#{$name}-background-color');
+         border: 2px solid css-var('element-#{$name}-background-color');
 
+         border-left: 10px solid css-var('element-#{$name}-background-color');
+
+         .env-text,
+         .env-text a,
          .#{$prefix}-alert__close {
             color: css-var('alert-#{$name}-font-color');
          }
@@ -20,7 +24,7 @@
    }
 
    &__link {
-      color: css-var('font-color-lighter');
+      color: css-var('font-color');
       font-weight: $font-weight-bold;
       text-decoration: none;
 

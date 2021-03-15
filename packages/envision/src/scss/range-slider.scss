@@ -9,7 +9,7 @@
 
    &__handle {
       border-radius: css-var('border-radius-small');
-      background: $color-lighter;
+      background-color: css-var('element-common-background-color');
       border: $border-width $border-style css-var('border-color');
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop / 2);
@@ -47,7 +47,7 @@
    }
 
    &__range {
-      background: css-var('color-primary');
+      background: css-var('element-primary-background-color');
       height: 100%;
       position: absolute;
    }

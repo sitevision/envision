@@ -1,5 +1,6 @@
 .#{$prefix}-embedded {
-   background-color: rgba(0, 0, 0, 0.1);
+   color: css-var('font-color-secondary');
+   background-color: css-var('background-color-secondary-dark');
    display: flex;
    flex-direction: column;
    overflow: hidden;
@@ -25,6 +26,7 @@
 
    &__title,
    &__text {
+      color: css-var('embedded-font-color');
       padding-top: css-var('spacing-x-small');
    }
 

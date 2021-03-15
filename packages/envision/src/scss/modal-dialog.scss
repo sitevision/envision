@@ -46,7 +46,7 @@
 
    &__content {
       background-clip: padding-box;
-      background-color: css-var('element-background-color');
+      background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color');
       border-radius: css-var('border-radius-medium');
       box-shadow: css-var('modal-dialog-box-shadow');

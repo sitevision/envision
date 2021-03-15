@@ -9,7 +9,7 @@
    }
 
    &--muted {
-      color: css-var('font-color-lighter') !important;
+      filter: opacity(0.8);
    }
 
    &--uppercase {

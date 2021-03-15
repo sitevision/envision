@@ -117,7 +117,7 @@
       opacity: 0.9;
 
       &:active {
-         border: $border-width $border-style css-var('color-focus');
+         border: $border-width $border-style css-var('color-primary-light');
          opacity: 1;
       }
    }

@@ -1,18 +1,5 @@
-$colors: (
-   brand: $color-brand,
-   success: $color-success,
-   warning: $color-warning,
-   info: $color-info,
-   danger: $color-danger,
-   base: $color-base,
-   darker: $color-darker,
-   dark: $color-dark,
-   normal: $color-normal,
-   light: $color-light,
-   lighter: $color-lighter,
-   lightest: $color-lightest,
-   hover: $color-hover,
-);
+$variableNames: 'brand', 'primary', 'success', 'warning', 'danger', 'info',
+   'base', 'darker', 'dark', 'normal', 'light', 'lighter', 'lightest', 'hover';
 
 $transparency: (
    80: 0.8,
@@ -22,18 +9,31 @@ $transparency: (
    10: 0.1,
 );
 
-@each $state, $color in $colors {
-   .#{$prefix}-color--#{$state} {
-      color: $color !important;
+@each $name in $variableNames {
+   .#{$prefix}-color--#{$name} {
+      color: css-var('color-#{$name}') !important;
+   }
+   .#{$prefix}-bg-color--#{$name} {
+      background-color: css-var('color-#{$name}');
    }
 
-   .#{$prefix}-bg-color--#{$state} {
-      background-color: $color;
-   }
-
+   // TODO: Remove?
    @each $opacity, $value in $transparency {
-      .#{$prefix}-bg-color--#{$state}--#{$opacity} {
-         background-color: fade-out($color, (1-$value));
+      .#{$prefix}-bg-color--#{$name}--#{$opacity} {
+         background-color: css-var('element-#{$name}-background-color-light');
       }
    }
+}
+
+.env-block,
+.env-block-primary {
+   @include color-block('primary');
+}
+
+.env-block-secondary {
+   @include color-block('secondary');
+}
+
+.env-block-tertiary {
+   @include color-block('tertiary');
 }

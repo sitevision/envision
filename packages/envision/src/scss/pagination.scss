@@ -8,13 +8,13 @@
          'spacing-small',
          'font-size-medium'
       );
-      background-color: css-var('pagination-background-color');
+      background-color: transparent;
       border: {
          style: css-var('pagination-border-style');
          width: css-var('pagination-border-width');
-         color: css-var('pagination-border-color');
+         color: css-var('border-color');
       }
-      color: css-var('pagination-font-color');
+      color: css-var('font-color');
       cursor: pointer;
       display: inline-block;
       font-family: css-var('pagination-font-family');
@@ -29,9 +29,9 @@
       }
 
       &.#{$prefix}-is-active {
-         background-color: css-var('pagination-active-background-color');
-         color: css-var('pagination-active-font-color');
-         border-color: css-var('pagination-active-border-color');
+         background-color: css-var('element-primary-background-color');
+         color: css-var('element-primary-font-color');
+         border-color: css-var('element-primary-background-color');
       }
 
       &.#{$prefix}-is-disabled {
@@ -40,9 +40,9 @@
    }
 
    &__link:hover {
-      background-color: css-var('pagination-hover-background-color');
-      border-color: css-var('pagination-hover-border-color');
-      color: css-var('pagination-hover-font-color');
+      background-color: css-var('element-primary-background-color');
+      border-color: css-var('element-primary-background-color');
+      color: css-var('element-primary-font-color');
       z-index: 2;
    }
 

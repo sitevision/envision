@@ -1,4 +1,4 @@
-@mixin is-disabled($background-color: 'button-background-color') {
+@mixin is-disabled($background-color: 'element-background-color') {
    background-color: css-var($background-color);
    cursor: not-allowed;
    opacity: 0.55;

@@ -163,8 +163,8 @@
       }
 
       [type='radio']:checked + label &__fake:before {
-         background-color: css-var('button-primary-font-color');
-         border: 6px solid #{css-var('button-primary-background-color')};
+         background-color: css-var('element-primary-font-color');
+         border: 6px solid #{css-var('element-primary-background-color')};
          border-radius: 100%;
          content: '';
          height: $radiobutton-checked-size;
@@ -275,8 +275,8 @@
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
       background-color: transparent;
-      border-bottom: 2px solid css-var('button-primary-font-color');
-      border-left: 2px solid css-var('button-primary-font-color');
+      border-bottom: 2px solid css-var('element-primary-font-color');
+      border-left: 2px solid css-var('element-primary-font-color');
       content: '';
       display: block;
       height: $checkbox-tick-height;
@@ -310,7 +310,7 @@
    }
 
    [type='checkbox']:checked + label &__fake {
-      background-color: css-var('button-primary-background-color');
+      background-color: css-var('element-primary-background-color');
    }
 
    &__label {
@@ -365,8 +365,8 @@
       width: 2.375em;
       height: 1.25em;
       border-radius: 0.75em;
-      border: 0.125em solid css-var('button-focus-box-shadow-color');
-      background-color: css-var('button-hover-background-color');
+      border: 0.125em solid css-var('element-background-color-dark');
+      background-color: css-var('element-background-color');
       transition: 0.3s;
 
       .#{$prefix}-switch__text + & {
@@ -381,7 +381,7 @@
          border-radius: 50%;
          left: 0;
          top: 0;
-         background-color: css-var('button-primary-font-color');
+         background-color: css-var('element-primary-font-color');
          transition: 0.3s;
 
          input:checked ~ & {
@@ -390,8 +390,8 @@
       }
 
       input:checked ~ & {
-         background-color: css-var('button-primary-background-color');
-         border-color: css-var('button-primary-border-color');
+         background-color: css-var('element-primary-background-color');
+         border-color: css-var('element-primary-background-color');
       }
 
       input:focus ~ & {

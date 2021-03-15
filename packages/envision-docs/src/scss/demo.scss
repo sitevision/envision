@@ -1,10 +1,11 @@
 .env-modal-dialog.doc-demo__modal {
-   border-color: #e5e5e5 #eeeeee #eeeeee;
+   background-color: var(--env-element-common-background-color);
+   border-color: var(--env-border-color) var(--env-border-color-light)
+      var(--env-border-color-light);
    border-style: solid;
    border-width: 1px 0;
    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 1);
    max-width: 900px;
-   background-color: rgba(0, 0, 0, 0.5);
    display: block;
    visibility: visible;
    padding: 45px 15px;
@@ -32,12 +33,12 @@
    justify-content: center;
    height: 200px;
    width: 200px;
-   background-color: #eee;
+   background-color: var(--env-element-common-background-color);
 }
 
 .example-sizing > div,
 .example-sizing-h > div {
-   background-color: #eee;
+   background-color: var(--env-element-common-background-color);
 }
 
 .example-sizing-h {
@@ -48,12 +49,12 @@
 .example-direction-container {
    display: flex;
    height: 70px;
-   background-color: #eee;
+   background-color: var(--env-element-common-background-color);
+   border: 1px solid var(--env-border-color-light);
    margin-bottom: 10px;
-   border: 1px solid rgba(0, 0, 0, 0.1);
 
    > div {
-      border: 1px solid rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--env-border-color);
       margin-top: -1px;
       margin-left: -1px;
    }
@@ -73,13 +74,13 @@
 }
 
 .example-display > div {
-   background-color: #eee;
+   background-color: var(--env-element-common-background-color);
    margin-top: 20px;
 }
 
 .example-list-item {
-   background-color: #eee;
-   border: 1px solid #666;
+   background-color: var(--env-element-common-background-color);
+   border: 1px solid var(--env-border-color);
    box-sizing: border-box;
    margin-top: -1px;
    margin-left: -1px;
@@ -88,8 +89,8 @@
 }
 
 .example-list-item-responsive {
-   background-color: #eee;
-   border: 1px solid #666;
+   background-color: var(--env-element-common-background-color);
+   border: 1px solid var(--env-border-color);
    height: 100px;
    line-height: 100px;
    margin-top: -1px;
@@ -103,7 +104,7 @@
    display: inline-block;
    width: 6rem;
    height: 6rem;
-   background-color: #f2f2f2;
+   background-color: var(--env-element-common-background-color);
    margin: 5px;
 }
 
@@ -195,18 +196,124 @@
    }
 }
 
-.example-table {
-   border-collapse: collapse;
-   margin: 1em 0 2em;
+.example-element-color-variants,
+.example-variants {
+   display: flex;
+}
 
-   th,
-   td {
-      border: 1px solid #ccc;
-      padding: 0.25em 0.5em;
+.example-element-color-variant,
+.example-variant {
+   flex: 1 1 50%;
+   padding: 1em;
+   text-align: center;
+
+   h2,
+   p {
+      margin: 0 0 0.5em;
+   }
+}
+
+.example-element-color p {
+   padding: 1em;
+   margin: 0;
+   text-align: center;
+}
+
+.example-element-header {
+   text-align: center;
+
+   h2 {
+      margin: 0;
+   }
+}
+
+.example-element {
+   margin: 2em 0;
+   text-align: center;
+
+   &--left > :not(.example-element-label) {
       text-align: left;
+   }
 
-      &.right {
-         text-align: right;
+   .env-nav,
+   .env-pagination {
+      justify-content: center;
+   }
+}
+
+.example-element-label {
+   font-weight: bold;
+   text-align: center;
+   margin: 0 0 0.5em;
+}
+
+$variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
+
+.example-element-color {
+   color: var(--env-element-font-color);
+   background-color: var(--env-element-background-color);
+
+   .example-element-color-variant--light {
+      background-color: var(--env-element-background-color-light);
+   }
+
+   .example-element-color-variant--dark {
+      background-color: var(--env-element-background-color-dark);
+   }
+}
+
+@each $name in $variableNames {
+   .example-element-color--#{$name} {
+      color: var(--env-element-#{$name}-font-color);
+      background-color: var(--env-element-#{$name}-background-color);
+
+      .example-element-color-variant--light {
+         background-color: var(--env-element-#{$name}-background-color-light);
       }
+
+      .example-element-color-variant--dark {
+         background-color: var(--env-element-#{$name}-background-color-dark);
+      }
+   }
+}
+
+.example-grid {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 2em -0.5em;
+   box-sizing: border-box;
+
+   .code-example > &,
+   .example-grid {
+      margin: 0;
+   }
+
+   &__col {
+      box-sizing: border-box;
+      max-width: 25%;
+      flex: 1 1 25%;
+      padding: 0.5em;
+
+      &--33 {
+         max-width: 33.3333%;
+         flex: 1 1 33.3333%;
+      }
+
+      &--50 {
+         max-width: 50%;
+         flex: 1 1 50%;
+      }
+
+      &--100 {
+         max-width: 100%;
+         flex: 1 1 100%;
+      }
+   }
+
+   &__box {
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      padding: 1em;
+      height: 100%;
    }
 }

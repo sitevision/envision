@@ -2,10 +2,10 @@
    position: relative;
 
    &__menu {
-      background-color: css-var('element-background-color');
+      background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color-light');
       border-radius: css-var('border-radius-small');
-      box-shadow: css-var('popover-box-shadow');
+      box-shadow: css-var('box-shadow');
       display: none;
       font-family: css-var('font-family');
       font-size: css-var('font-size-medium');
@@ -36,6 +36,7 @@
       box-shadow: none;
       text-shadow: none;
       text-decoration: none;
+      color: css-var('font-color');
       background-color: transparent;
       font-size: inherit;
       line-height: 1.125;

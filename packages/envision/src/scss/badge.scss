@@ -6,26 +6,26 @@
    font-weight: $font-weight-bold;
    padding: css-var('spacing-xx-small') css-var('spacing-x-small');
    vertical-align: baseline;
-   color: css-var('badge-font-color');
-   background-color: css-var('badge-background-color');
+   color: css-var('element-primary-font-color');
+   background-color: css-var('element-primary-background-color');
 
    &--success {
-      color: css-var('badge-success-font-color');
-      background-color: css-var('badge-success-background-color');
+      color: css-var('element-success-font-color');
+      background-color: css-var('element-success-background-color');
    }
 
    &--warning {
-      color: css-var('badge-warning-font-color');
-      background-color: css-var('badge-warning-background-color');
+      color: css-var('element-warning-font-color');
+      background-color: css-var('element-warning-background-color');
    }
 
    &--danger {
-      color: css-var('badge-danger-font-color');
-      background-color: css-var('badge-danger-background-color');
+      color: css-var('element-danger-font-color');
+      background-color: css-var('element-danger-background-color');
    }
 
    &--info {
-      color: css-var('badge-info-font-color');
-      background-color: css-var('badge-info-background-color');
+      color: css-var('element-info-font-color');
+      background-color: css-var('element-info-background-color');
    }
 }
