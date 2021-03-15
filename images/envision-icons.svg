@@ -38,23 +38,23 @@
 </symbol>
 <symbol id="icon-arrow-fill-left" viewBox="0 0 32 32">
 <title>arrow-fill-left</title>
-<path fill="#000" style="fill: var(--color1, #000)" d="M19.333 9.333l-6.667 6.667 6.667 6.667z"></path>
-<path fill="#020203" style="fill: var(--color2, #020203)" d="M20.667 25.886l-9.886-9.886 9.886-9.886v19.772zM14.553 16l3.447 3.447v-6.895l-3.447 3.447z"></path>
+<path d="M19.333 9.333l-6.667 6.667 6.667 6.667z"></path>
+<path d="M20.667 25.886l-9.886-9.886 9.886-9.886v19.772zM14.553 16l3.447 3.447v-6.895l-3.447 3.447z"></path>
 </symbol>
 <symbol id="icon-arrow-fill-right" viewBox="0 0 32 32">
 <title>arrow-fill-right</title>
-<path fill="#000" style="fill: var(--color1, #000)" d="M12.667 22.667l6.667-6.667-6.667-6.667z"></path>
-<path fill="#020203" style="fill: var(--color2, #020203)" d="M11.333 25.886v-19.772l9.886 9.886-9.886 9.886zM14 12.553v6.895l3.447-3.447-3.447-3.447z"></path>
+<path d="M12.667 22.667l6.667-6.667-6.667-6.667z"></path>
+<path d="M11.333 25.886v-19.772l9.886 9.886-9.886 9.886zM14 12.553v6.895l3.447-3.447-3.447-3.447z"></path>
 </symbol>
 <symbol id="icon-arrow-fill-up" viewBox="0 0 32 32">
 <title>arrow-fill-up</title>
-<path fill="#000" style="fill: var(--color1, #000)" d="M22.667 19.333l-6.667-6.667-6.667 6.667z"></path>
-<path fill="#020203" style="fill: var(--color2, #020203)" d="M25.886 20.667h-19.772l9.886-9.886 9.886 9.886zM12.553 18h6.895l-3.447-3.447-3.447 3.447z"></path>
+<path d="M22.667 19.333l-6.667-6.667-6.667 6.667z"></path>
+<path d="M25.886 20.667h-19.772l9.886-9.886 9.886 9.886zM12.553 18h6.895l-3.447-3.447-3.447 3.447z"></path>
 </symbol>
 <symbol id="icon-arrow-fill-down" viewBox="0 0 32 32">
 <title>arrow-fill-down</title>
-<path fill="#000" style="fill: var(--color1, #000)" d="M9.333 12.667l6.667 6.667 6.667-6.667z"></path>
-<path fill="#020203" style="fill: var(--color2, #020203)" d="M16 21.219l-9.886-9.886h19.772l-9.886 9.886zM12.553 14l3.447 3.447 3.447-3.447h-6.895z"></path>
+<path d="M9.333 12.667l6.667 6.667 6.667-6.667z"></path>
+<path d="M16 21.219l-9.886-9.886h19.772l-9.886 9.886zM12.553 14l3.447 3.447 3.447-3.447h-6.895z"></path>
 </symbol>
 <symbol id="icon-collapse" viewBox="0 0 32 32">
 <title>icon-collapse</title>
