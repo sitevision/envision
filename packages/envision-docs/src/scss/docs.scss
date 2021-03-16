@@ -7,8 +7,8 @@
 @import 'home';
 
 body {
-   background-color: #ffffff;
-   color: #040404;
+   background: var(--env-page-background-color);
+   color: var(--env-font-color);
    font-family: Roboto, sans-serif;
    padding: 0;
    margin: 0;
@@ -44,7 +44,7 @@ p {
 
 a {
    text-decoration: none;
-   color: #040404;
+   color: var(--env-font-color);
 }
 
 main {
@@ -78,6 +78,10 @@ main {
    &:hover {
       text-decoration: underline;
    }
+}
+
+.header-nav a {
+   color: #040404;
 }
 
 .sidenav {
