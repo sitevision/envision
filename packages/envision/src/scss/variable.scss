@@ -103,14 +103,11 @@ $color-section-bg: #ffffff !default;
 $color-primary: #006dff !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
-
 $color-warning: #c59219 !default;
 $color-warning-dark: darken($color-warning, 10%) !default;
-
 $color-danger: #e22c2c !default;
 $color-success: #318731 !default;
 $color-info: #1d818b !default;
-
 $color-hover: #f7f7f7 !default;
 
 $color-base: #000000 !default;
@@ -123,9 +120,6 @@ $color-lightest: lighten($color-lighter, 10%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
-// Used by popover, dropdown, color-block
-$box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175) !default;
-
 $background-color-primary: #e5f1ff;
 $background-color-secondary: #f4f4f4;
 $background-color-tertiary: #00214d;
@@ -135,8 +129,9 @@ $border-color-secondary: #bfbfbf;
 $border-color-tertiary: #000b1a;
 
 $element-default-background-color: #f2f2f2;
-$element-secondary-background-color: #4f5153;
+
 $element-secondary-font-color: #fff;
+$element-secondary-background-color: #4f5153;
 
 $element-common-background-color: #f2f2f2;
 
@@ -158,7 +153,6 @@ $element-common-background-color: #f2f2f2;
       'background-color-tertiary-light': lighten($background-color-tertiary, 3%),
       'background-color-tertiary-dark': darken($background-color-tertiary, 3%),
       'border-color-tertiary': $border-color-tertiary,
-      'box-shadow': $box-shadow,
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
       'element-background-color-dark':
@@ -167,8 +161,8 @@ $element-common-background-color: #f2f2f2;
          lighten($element-default-background-color, 3%),
       'element-primary-font-color': $font-color-invert,
       'element-primary-background-color': $color-primary,
-      'element-primary-background-color-dark': $color-primary-dark,
-      'element-primary-background-color-light': $color-primary-light,
+      'element-primary-background-color-dark': darken($color-primary, 5%),
+      'element-primary-background-color-light': lighten($color-primary, 3%),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
       'element-secondary-background-color-dark':
@@ -220,6 +214,20 @@ $spacing-xxx-large: $spacing-base * 2 !default;
       'spacing-x-large': $spacing-x-large,
       'spacing-xx-large': $spacing-xx-large,
       'spacing-xxx-large': $spacing-xxx-large,
+   )
+);
+
+// ----- SHADOWS -----
+
+$box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15) !default;
+$box-shadow-small: 0 0.125em 0.25em rgba(0, 0, 0, 0.075) !default;
+$box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175) !default;
+
+@include to-css-custom-property(
+   (
+      'box-shadow': $box-shadow,
+      'box-shadow-large': $box-shadow-large,
+      'box-shadow-small': $box-shadow-small,
    )
 );
 
@@ -286,14 +294,12 @@ $popover-width: 300px !default;
 $modal-small: 300px !default;
 $modal-medium: 450px !default;
 $modal-large: 900px !default;
-$modal-dialog-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5) !default;
 
 @include to-css-custom-property(
    (
       'modal-small-width': $modal-small,
       'modal-medium-width': $modal-medium,
       'modal-large-width': $modal-large,
-      'modal-dialog-box-shadow': $modal-dialog-box-shadow,
    )
 );
 
