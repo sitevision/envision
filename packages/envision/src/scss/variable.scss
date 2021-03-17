@@ -103,14 +103,11 @@ $color-section-bg: #ffffff !default;
 $color-primary: #006dff !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
-
 $color-warning: #c59219 !default;
 $color-warning-dark: darken($color-warning, 10%) !default;
-
 $color-danger: #e22c2c !default;
 $color-success: #318731 !default;
 $color-info: #1d818b !default;
-
 $color-hover: #f7f7f7 !default;
 
 $color-base: #000000 !default;
@@ -132,8 +129,9 @@ $border-color-secondary: #bfbfbf;
 $border-color-tertiary: #000b1a;
 
 $element-default-background-color: #f2f2f2;
-$element-secondary-background-color: #4f5153;
+
 $element-secondary-font-color: #fff;
+$element-secondary-background-color: #4f5153;
 
 $element-common-background-color: #f2f2f2;
 
@@ -163,8 +161,8 @@ $element-common-background-color: #f2f2f2;
          lighten($element-default-background-color, 3%),
       'element-primary-font-color': $font-color-invert,
       'element-primary-background-color': $color-primary,
-      'element-primary-background-color-dark': $color-primary-dark,
-      'element-primary-background-color-light': $color-primary-light,
+      'element-primary-background-color-dark': darken($color-primary, 5%),
+      'element-primary-background-color-light': lighten($color-primary, 3%),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
       'element-secondary-background-color-dark':
