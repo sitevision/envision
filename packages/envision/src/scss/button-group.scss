@@ -5,14 +5,18 @@
    .#{$prefix}-button {
       border-radius: 0;
 
-      &:first-child {
+      &:first-of-type {
          border-radius: css-var('button-border-radius') 0 0
             css-var('button-border-radius');
       }
 
-      &:last-child {
+      &:last-of-type {
          border-radius: 0 css-var('button-border-radius')
             css-var('button-border-radius') 0;
+      }
+
+      &--ghost:last-of-type {
+         margin-left: -1px;
       }
    }
 }
