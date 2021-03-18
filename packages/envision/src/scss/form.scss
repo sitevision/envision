@@ -72,6 +72,7 @@
 
       &__label {
          display: inline-block;
+         font-size: css-var('font-size-medium');
          font-weight: $font-weight-semibold;
          margin-bottom: css-var('spacing-xx-small');
       }
@@ -132,24 +133,34 @@
    &-radio {
       display: block;
       margin-bottom: css-var('spacing-x-small');
+      padding-left: 1.875em;
       position: relative;
+      font-size: css-var('font-size-medium');
 
       &__fake {
-         position: relative;
-         padding-left: 20px;
-         margin-right: css-var('spacing-x-small');
-      }
-
-      label &__fake:after {
          content: '';
+         position: absolute;
+         left: 0;
+         top: 0;
          width: $radiobutton-size;
          height: $radiobutton-size;
          background-color: css-var('form-input-background-color');
          border: $border-width $border-style css-var('form-input-border-color');
+         border-radius: 50%;
+         box-sizing: border-box;
+      }
+
+      label &__fake:after {
+         $scale: ($radiobutton-checked-size / $radiobutton-size);
+         content: '';
+         width: $radiobutton-size * $scale;
+         height: $radiobutton-size * $scale;
+         background-color: css-var('element-primary-background-color');
          position: absolute;
-         left: 0;
-         top: 1px;
-         border-radius: 100%;
+         display: none;
+         left: calc(50% - #{$radiobutton-size * $scale / 2});
+         top: calc(50% - #{$radiobutton-size * $scale / 2});
+         border-radius: 50%;
          box-sizing: border-box;
       }
 
@@ -162,19 +173,15 @@
          opacity: 0;
       }
 
-      [type='radio']:checked + label &__fake:before {
-         background-color: css-var('element-primary-font-color');
-         border: 6px solid #{css-var('element-primary-background-color')};
-         border-radius: 100%;
-         content: '';
-         height: $radiobutton-checked-size;
-         left: -1px;
-         position: absolute;
-         width: $radiobutton-checked-size;
-         z-index: $zindex-radio-button;
+      [type='radio']:checked + label &__fake {
+         border-color: css-var('element-primary-background-color');
+
+         &:after {
+            display: block;
+         }
       }
 
-      [type='radio']:focus + label &__fake:before {
+      [type='radio']:focus + label &__fake {
          @include focus-shadow();
       }
 
@@ -190,7 +197,7 @@
 
       &--disabled {
          label {
-            color: css-var('font-color-light');
+            @include disabled;
             cursor: not-allowed;
          }
 
@@ -267,6 +274,7 @@
 
 .#{$prefix}-checkbox {
    display: block;
+   font-size: css-var('font-size-medium');
 
    [type='checkbox'] {
       @include visually-hidden();
@@ -274,22 +282,26 @@
 
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 40%;
+      left: $tick-position;
+      width: $checkbox-size * 0.7;
+      height: $checkbox-size * 0.25;
       background-color: transparent;
       border-bottom: 2px solid css-var('element-primary-font-color');
       border-left: 2px solid css-var('element-primary-font-color');
-      content: '';
-      display: block;
-      height: $checkbox-tick-height;
-      left: $tick-position;
-      position: absolute;
-      top: 40%;
-      transform: translate3d(-$tick-position, -$tick-position, 0) rotate(-45deg);
-      width: $checkbox-tick-width;
+      transform: translate3d(-49%, -45%, 0) rotate(-50deg);
    }
 
    [type='checkbox']:disabled + label &__fake,
    [type='checkbox']:disabled + label &__label {
       @include disabled;
+
+      &:after {
+         opacity: 0.7;
+      }
    }
 
    [type='checkbox']:focus + label &__fake {
@@ -299,7 +311,7 @@
    &__fake {
       background-color: css-var('form-input-background-color');
       border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: css-var('border-radius-small');
+      border-radius: css-var('border-radius');
       display: inline-block;
       height: $checkbox-size;
       margin-right: css-var('spacing-xx-small');
