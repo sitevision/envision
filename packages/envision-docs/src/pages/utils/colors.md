@@ -7,24 +7,20 @@ title: Colors
 Preset color combinations, use for larger blocks of content.
 
 ```html
-<div class="example-grid">
+<div class="example-grid doc-demo__modal">
+   <div class="example-grid__col example-grid__col--33">
+      <div class="env-block env-block--border">
+         <div class="example-variant">
+            <h2>Default</h2>
+            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+         </div>
+      </div>
+   </div>
    <div class="example-grid__col example-grid__col--33">
       <div class="env-block-primary env-block-primary--border">
          <div class="example-variant">
             <h2>Primary</h2>
             <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-         </div>
-         <div class="example-variants">
-            <div
-               class="example-variant env-block-primary env-block-primary--light"
-            >
-               Light
-            </div>
-            <div
-               class="example-variant env-block-primary env-block-primary--dark"
-            >
-               Dark
-            </div>
          </div>
       </div>
    </div>
@@ -33,38 +29,6 @@ Preset color combinations, use for larger blocks of content.
          <div class="example-variant">
             <h2>Secondary</h2>
             <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-         </div>
-         <div class="example-variants">
-            <div
-               class="example-variant env-block-secondary env-block-secondary--light"
-            >
-               Light
-            </div>
-            <div
-               class="example-variant env-block-secondary env-block-secondary--dark"
-            >
-               Dark
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="example-grid__col example-grid__col--33">
-      <div class="env-block-tertiary env-block-tertiary--border">
-         <div class="example-variant">
-            <h2>Tertiary</h2>
-            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
-         </div>
-         <div class="example-variants">
-            <div
-               class="example-variant env-block-tertiary env-block-tertiary--light"
-            >
-               Light
-            </div>
-            <div
-               class="example-variant env-block-tertiary env-block-tertiary--dark"
-            >
-               Dark
-            </div>
          </div>
       </div>
    </div>

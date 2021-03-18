@@ -1,21 +1,20 @@
-@mixin color-block($blockName) {
-   &,
-   .env-text {
-      color: css-var('font-color-#{$blockName}');
+@mixin color-block($blockName: '') {
+   @if ($blockName != '') {
+      // Add slash if name is set, Otherwise it's default with no name and no slash.
+      $blockName: '#{$blockName}-';
    }
-   background-color: css-var('background-color-#{$blockName}');
-   border-color: css-var('border-color-#{$blockName}');
+   &,
+   *,
+   .env-text {
+      color: css-var('block-#{$blockName}font-color');
+   }
+   background-color: css-var('block-#{$blockName}background-color');
+   border-color: css-var('block-#{$blockName}border-color');
 
    &--border {
       border: {
          style: solid;
          width: 1px;
       }
-   }
-   &--light {
-      background-color: css-var('background-color-#{$blockName}-light');
-   }
-   &--dark {
-      background-color: css-var('background-color-#{$blockName}-dark');
    }
 }
