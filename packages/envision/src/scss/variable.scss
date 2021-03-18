@@ -300,6 +300,8 @@ $modal-large: 900px !default;
       'modal-small-width': $modal-small,
       'modal-medium-width': $modal-medium,
       'modal-large-width': $modal-large,
+      'modal-backdrop-background-color': #000,
+      'modal-backdrop-opacity': 0.5,
    )
 );
 
