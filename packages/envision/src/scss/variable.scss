@@ -134,6 +134,7 @@ $element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
 
 $element-common-background-color: #f2f2f2;
+$element-common-background-color-dark: #909090;
 
 @include to-css-custom-property(
    (
@@ -186,6 +187,8 @@ $element-common-background-color: #f2f2f2;
       'element-info-background-color-dark': darken($color-info, 5%),
       'element-info-background-color-light': lighten($color-info, 3%),
       'element-common-background-color': $element-common-background-color,
+      'element-common-background-color-dark':
+         $element-common-background-color-dark,
    )
 );
 
