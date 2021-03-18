@@ -391,6 +391,10 @@ $collapse-border-style: $border-style !default;
       'collapse-icon-width': $collapse-icon-width,
       'collapse-icon-height': $collapse-icon-height,
       'collapse-toggle-duration': $collapse-toggle-duration,
+      'collapse-background-color': css-var('element-background-color-light'),
+      'collapse-border-color': css-var('element-background-color'),
+      'collapse-expanded-background-color': css-var('element-background-color'),
+      'collapse-expanded-border-color': css-var('element-background-color-dark'),
    )
 );
 
