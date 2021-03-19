@@ -10,22 +10,22 @@
 
    th,
    td {
-      border-top: $border-width $border-style css-var('border-color-secondary');
+      border-top: $border-width $border-style css-var('border-color');
       padding: css-var('spacing-x-small');
       vertical-align: top;
    }
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         color: css-var('font-color-secondary');
-         background-color: css-var('background-color-secondary');
+         color: css-var('block-primary-font-color');
+         background-color: css-var('block-primary-background-color');
       }
    }
 
    &--borders-around {
       th,
       td {
-         border: $border-width $border-style css-var('border-color-secondary');
+         border: $border-width $border-style css-var('border-color');
       }
    }
 
@@ -37,7 +37,7 @@
             border-top: 0;
             border-#{$direction}: $border-width
                $border-style
-               css-var('border-color-secondary');
+               css-var('border-color');
          }
       }
    }
@@ -58,13 +58,13 @@
 
    &--hover {
       tbody tr:hover {
-         color: css-var('font-color-secondary');
-         background-color: css-var('background-color-secondary');
+         color: css-var('block-primary-font-color');
+         background-color: css-var('block-primary-background-color');
       }
    }
 
    $colors: (
-      active: 'background-color-secondary',
+      active: 'block-primary-background-color',
       info: 'color-brand',
       success: 'color-success',
       warning: 'color-warning',
