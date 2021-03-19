@@ -31,14 +31,6 @@
       width: css-var('collapse-border-width');
       color: css-var('collapse-border-color');
    }
-
-   &,
-   & *,
-   .env-text &,
-   .env-text & * {
-      color: css-var('element-font-color');
-   }
-
    background-color: css-var('collapse-background-color');
    word-wrap: break-word;
    overflow-wrap: anywhere;
@@ -79,6 +71,6 @@
       height: css-var('collapse-icon-height');
       transition: transform css-var('collapse-toggle-duration') ease-out;
       position: absolute;
-      background-color: css-var('element-font-color');
+      background-color: css-var('collapse-icon-color');
    }
 }

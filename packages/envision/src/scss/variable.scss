@@ -373,6 +373,7 @@ $progress-bar-height: 1.25em !default;
 // ----- COLLAPSE -----
 
 // Collapse
+$collapse-icon-color: #f0f;
 $collapse-icon-height: 3px !default;
 $collapse-icon-width: 15px !default;
 $collapse-icon-top: 50% !default;
@@ -388,6 +389,7 @@ $collapse-border-style: $border-style !default;
    (
       'collapse-border-style': $collapse-border-style,
       'collapse-border-width': $collapse-border-width,
+      'collapse-icon-color': css-var('font-color'),
       'collapse-icon-width': $collapse-icon-width,
       'collapse-icon-height': $collapse-icon-height,
       'collapse-toggle-duration': $collapse-toggle-duration,
