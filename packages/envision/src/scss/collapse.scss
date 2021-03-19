@@ -29,16 +29,9 @@
    border: {
       style: css-var('collapse-border-style');
       width: css-var('collapse-border-width');
-      color: css-var('border-color-secondary');
+      color: css-var('collapse-border-color');
    }
-
-   &,
-   .env-text &,
-   .env-text & a {
-      color: css-var('font-color-secondary');
-   }
-
-   background-color: css-var('background-color-secondary');
+   background-color: css-var('collapse-background-color');
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -47,12 +40,10 @@
       @include focus();
    }
 
-   &:hover {
-      background-color: css-var('background-color-secondary-dark');
-   }
-
+   &:hover,
    &.#{$prefix}-collapse--expanded {
-      background-color: css-var('background-color-secondary-dark');
+      background-color: css-var('collapse-expanded-background-color');
+      border-color: css-var('collapse-expanded-border-color');
    }
 }
 
@@ -80,6 +71,6 @@
       height: css-var('collapse-icon-height');
       transition: transform css-var('collapse-toggle-duration') ease-out;
       position: absolute;
-      background-color: css-var('font-color-secondary');
+      background-color: css-var('collapse-icon-color');
    }
 }

@@ -365,8 +365,8 @@
       width: 2.375em;
       height: 1.25em;
       border-radius: 0.75em;
-      border: 0.125em solid css-var('element-background-color-dark');
-      background-color: css-var('element-background-color');
+      border: 0.125em solid css-var('element-common-background-color-dark');
+      background-color: css-var('element-common-background-color-dark');
       transition: 0.3s;
 
       .#{$prefix}-switch__text + & {
@@ -400,6 +400,10 @@
 
       input:disabled ~ & {
          @include disabled;
+
+         &:before {
+            opacity: 0.5;
+         }
       }
    }
 }

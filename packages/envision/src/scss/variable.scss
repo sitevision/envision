@@ -120,13 +120,13 @@ $color-lightest: lighten($color-lighter, 10%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
-$background-color-primary: #e5f1ff;
-$background-color-secondary: #f4f4f4;
-$background-color-tertiary: #00214d;
+$block-default-background-color: #fff;
+$block-primary-background-color: #f7f7f7;
+$block-secondary-background-color: #e7f1ff;
 
-$border-color-primary: #a7bed0;
-$border-color-secondary: #bfbfbf;
-$border-color-tertiary: #000b1a;
+$block-default-border-color: #e7e7e7;
+$block-primary-border-color: #ccc;
+$block-secondary-border-color: #a7bed0;
 
 $element-default-background-color: #f2f2f2;
 
@@ -134,25 +134,19 @@ $element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
 
 $element-common-background-color: #f2f2f2;
+$element-common-background-color-dark: #909090;
 
 @include to-css-custom-property(
    (
-      'font-color-primary': $font-color,
-      'background-color-primary': $background-color-primary,
-      'background-color-primary-light': lighten($background-color-primary, 3%),
-      'background-color-primary-dark': darken($background-color-primary, 3%),
-      'border-color-primary': $border-color-primary,
-      'font-color-secondary': $font-color,
-      'background-color-secondary': $background-color-secondary,
-      'background-color-secondary-light':
-         lighten($background-color-secondary, 3%),
-      'background-color-secondary-dark': darken($background-color-secondary, 3%),
-      'border-color-secondary': $border-color-secondary,
-      'font-color-tertiary': $font-color-invert,
-      'background-color-tertiary': $background-color-tertiary,
-      'background-color-tertiary-light': lighten($background-color-tertiary, 3%),
-      'background-color-tertiary-dark': darken($background-color-tertiary, 3%),
-      'border-color-tertiary': $border-color-tertiary,
+      'block-font-color': $font-color,
+      'block-background-color': $block-default-background-color,
+      'block-border-color': $block-default-border-color,
+      'block-primary-font-color': $font-color,
+      'block-primary-background-color': $block-primary-background-color,
+      'block-primary-border-color': $block-primary-border-color,
+      'block-secondary-font-color': $font-color,
+      'block-secondary-background-color': $block-secondary-background-color,
+      'block-secondary-border-color': $block-secondary-border-color,
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
       'element-background-color-dark':
@@ -186,6 +180,8 @@ $element-common-background-color: #f2f2f2;
       'element-info-background-color-dark': darken($color-info, 5%),
       'element-info-background-color-light': lighten($color-info, 3%),
       'element-common-background-color': $element-common-background-color,
+      'element-common-background-color-dark':
+         $element-common-background-color-dark,
    )
 );
 
@@ -250,8 +246,8 @@ $radius-large: $radius-base * 1.5 !default;
 
 $border-width: 1px !default;
 $border-style: solid !default;
-$border-color: $color-light !default;
-$border-color-light: $color-lighter !default;
+$border-color: #ccc !default;
+$border-color-light: #e7e7e7 !default;
 $tab-bottom-width: 3px !default;
 
 @include to-css-custom-property(
@@ -395,9 +391,14 @@ $collapse-border-style: $border-style !default;
    (
       'collapse-border-style': $collapse-border-style,
       'collapse-border-width': $collapse-border-width,
+      'collapse-icon-color': css-var('font-color'),
       'collapse-icon-width': $collapse-icon-width,
       'collapse-icon-height': $collapse-icon-height,
       'collapse-toggle-duration': $collapse-toggle-duration,
+      'collapse-background-color': css-var('element-background-color-light'),
+      'collapse-border-color': css-var('element-background-color'),
+      'collapse-expanded-background-color': css-var('element-background-color'),
+      'collapse-expanded-border-color': css-var('element-background-color-dark'),
    )
 );
 
