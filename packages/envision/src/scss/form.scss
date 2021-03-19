@@ -133,9 +133,12 @@
    &-radio {
       display: block;
       margin-bottom: css-var('spacing-x-small');
-      padding-left: 1.875em;
-      position: relative;
       font-size: css-var('font-size-medium');
+
+      label {
+         padding-left: 1.875em;
+         position: relative;
+      }
 
       &__fake {
          content: '';
