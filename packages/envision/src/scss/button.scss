@@ -44,7 +44,7 @@
          );
 
          &:focus {
-            @include focus('element-#{$name}-background-color');
+            @include focus('element-#{$name}-background-color-light');
          }
       }
    }
@@ -89,7 +89,7 @@
       }
 
       &:focus {
-         @include focus-shadow('element-primary-background-color');
+         @include focus-shadow('element-primary-background-color-light');
       }
    }
 

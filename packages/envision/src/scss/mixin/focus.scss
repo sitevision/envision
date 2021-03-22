@@ -1,10 +1,10 @@
-@mixin focus($color: 'color-primary-light') {
+@mixin focus($color: 'element-primary-background-color-light') {
    border-color: css-var($color);
    box-shadow: 0 0 5px css-var($color);
    outline: 0;
 }
 
-@mixin focus-shadow($color: 'color-primary-light') {
+@mixin focus-shadow($color: 'element-primary-background-color-light') {
    box-shadow: 0 0 5px css-var($color);
    outline: 0;
 }
