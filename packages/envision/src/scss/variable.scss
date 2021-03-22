@@ -476,15 +476,9 @@ $focus-color: #5cb3fd !default;
 
 @include to-css-custom-property(
    (
-      'color-primary': $color-primary,
-      'color-primary-light': $color-primary-light,
-      'color-primary-dark': $color-primary-dark,
-      'color-secondary': $color-secondary,
-      'color-secondary-light': $color-secondary-light,
-      'color-secondary-dark': $color-secondary-dark,
-      'color-brand': css-var('color-primary'),
-      'color-brand-light': css-var('color-primary-light'),
-      'color-brand-dark': css-var('color-primary-dark'),
+      'color-brand': $color-primary,
+      'color-brand-light': $color-primary-light,
+      'color-brand-dark': $color-primary-dark,
       'color-warning': $color-warning,
       'color-warning-dark': $color-warning-dark,
       'color-danger': $color-danger,

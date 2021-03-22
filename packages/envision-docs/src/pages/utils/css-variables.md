@@ -9,40 +9,24 @@ CSS variables are available with the format: `--env-{variable}`
 
 Only works in browsers that support <a class="doc-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a>
 
-## Examples
+## Example
 
 ```html
-<div class="example-color">
-   <div class="example-css-variables-brand">Brand</div>
-   <div class="example-css-variables-success">Success</div>
-   <div class="example-css-variables-info">Info</div>
-   <div class="example-css-variables-warning">Warning</div>
-   <div class="example-css-variables-danger">Danger</div>
+<div class="example-variables">
+   <div class="example-custom-css">Example</div>
 </div>
 
 <style>
-   .example-css-variables-brand {
-      background-color: var(--env-color-brand);
-      color: var(--env-color-lightest);
-   }
-
-   .example-css-variables-success {
-      background-color: var(--env-color-success);
-      color: var(--env-color-lightest);
-   }
-
-   .example-css-variables-info {
-      background-color: var(--env-color-info);
-      color: var(--env-color-lightest);
-   }
-
-   .example-css-variables-warning {
-      background-color: var(--env-color-warning);
-   }
-
-   .example-css-variables-danger {
-      background-color: var(--env-color-danger);
-      color: var(--env-color-lightest);
+   .example-custom-css {
+      margin: var(--env-spacing-medium) var(--env-spacing-xx-large);
+      padding: var(--env-spacing-x-large);
+      box-shadow: var(--env-box-shadow);
+      background-color: var(--env-block-secondary-background-color);
+      color: var(--env-block-secondary-font-color);
+      border: 2px dashed var(--env-block-secondary-border-color);
+      border-radius: var(--env-border-radius-large);
+      font-size: var(--env-font-size-large);
+      text-align: center;
    }
 </style>
 ```
@@ -65,7 +49,7 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-font-size-xxx-large`
 -  `--env-font-size-xxxx-large`
 
-#### Spacing
+#### Spacing <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-spacing-xxx-small`
 -  `--env-spacing-xx-small`
@@ -77,13 +61,13 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-spacing-xx-large`
 -  `--env-spacing-xxx-large`
 
-#### Shadows
+#### Shadows <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-box-shadow`
 -  `--env-box-shadow-large`
 -  `--env-box-shadow-small`
 
-#### Borders
+#### Borders <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-border-radius`
 -  `--env-border-radius-small`
@@ -159,25 +143,40 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 
 ### Components
 
--  `--env-popover-width`
+#### Alert <span class="env-badge env-badge--info">8.2</span>
 
--  `--env-modal-small-width`
--  `--env-modal-medium-width`
--  `--env-modal-large-width`
--  `--env-modal-backdrop-background-color`
--  `--env-modal-backdrop-opacity`
+-  `--env-alert-font-family`
+-  `--env-alert-border-radius`
+-  `--env-alert-background-color`
 
--  `--env-breadcrumb-divider-color`
+#### Badge <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-badge-font-family`
 -  `--env-badge-font-size`
 -  `--env-badge-border-radius`
 
--  `--env-image-control-color`
--  `--env-image-control-inactive-color`
+#### Breadcrumbs <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-breadcrumb-divider-color`
+
+#### Buttons <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-button-font-family`
 -  `--env-button-border-radius`
+
+#### Collapse <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-collapse-border-style`
+-  `--env-collapse-border-width`
+-  `--env-collapse-icon-width`
+-  `--env-collapse-icon-height`
+-  `--env-collapse-toggle-duration`
+-  `--env-collapse-background-color`
+-  `--env-collapse-border-color`
+-  `--env-collapse-expanded-background-color`
+-  `--env-collapse-expanded-border-color`
+
+#### Form <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-form-font-family`
 -  `--env-form-input-border-radius`
@@ -185,24 +184,38 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-form-input-border-color`
 -  `--env-form-input-background-color`
 
--  `--env-collapse-border-style`
--  `--env-collapse-border-width`
--  `--env-collapse-icon-width`
--  `--env-collapse-icon-height`
--  `--env-collapse-toggle-duration`
+#### Image viewer/slider controls <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-image-control-color`
+-  `--env-image-control-inactive-color`
+
+#### Modal <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-modal-small-width`
+-  `--env-modal-medium-width`
+-  `--env-modal-large-width`
+-  `--env-modal-backdrop-background-color`
+-  `--env-modal-backdrop-opacity`
+
+#### Pagination <span class="env-badge env-badge--info">8.2</span>
+
 -  `--env-pagination-font-family`
 -  `--env-pagination-border-width`
 -  `--env-pagination-border-style`
--  `--env-alert-font-family`
--  `--env-alert-border-radius`
--  `--env-alert-background-color`
+
+#### Popover <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-popover-width`
+
+#### Profile image <span class="env-badge env-badge--info">8.2</span>
+
 -  `--env-profile-image-border-radius`
 
 #### Spinner
 
 -  `--env-spinner-color`
 
-## <span class="env-badge env-badge--danger">Deprecated</span>
+## Legacy variables <span class="env-badge env-badge--danger">Deprecated</span>
 
 -  `--env-color-page-bg`
 -  `--env-color-element-bg`
@@ -225,40 +238,9 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-color-light`
 -  `--env-color-lighter`
 -  `--env-color-lightest`
--  `--env-default-button-color`
 -  `--env-focus-background-color`
 -  `--env-focus-color`
 
-## New variables <span class="env-badge env-badge--info">Since 8.2</span>
+### Removed
 
-### Base
-
--  `--env-font-color-light`
--  `--env-font-color-lighter`
--  `--env-font-color-invert`
--  `--env-color-page-bg`
--  `--env-color-element-bg`
--  `--env-color-primary`
--  `--env-color-primary-light`
--  `--env-color-primary-dark`
--  `--env-color-secondary`
--  `--env-color-secondary-light`
--  `--env-color-secondary-dark`
--  `--env-color-brand`
--  `--env-color-brand-light`
--  `--env-color-brand-dark`
--  `--env-color-warning`
--  `--env-color-warning-dark`
--  `--env-color-danger`
--  `--env-color-success`
--  `--env-color-info`
--  `--env-color-hover`
--  `--env-color-base`
--  `--env-color-darker`
--  `--env-color-dark`
--  `--env-color-normal`
--  `--env-color-light`
--  `--env-color-lighter`
--  `--env-color-lightest`
--  `--env-focus-color`
--  `--env-focus-background-color`
+-  `--env-default-button-color` <span class="env-badge env-badge--danger">8.2</span>
