@@ -34,29 +34,34 @@ class ThemePicker extends Component {
       --env-section-background-color: #555555;
       --env-element-common-background-color: #333;
       --env-collapse-background-color: #333;
+      --env-collapse-border-color: #666;
+      --env-collapse-font-color: #fff;
+      --env-collapse-expanded-background-color: #555;
+      --env-collapse-expanded-border-color: #999;
+      --env-collapse-expanded-font-color: #fff;
       --env-font-color: #fff;
       --env-font-color-lighter: #ddd;
       --env-border-color: #999;
       --env-border-color-light: #666;
       --env-form-input-background-color: #333;
       --env-form-input-border-color: #999;
-      }`;
+      --env-box-shadow: 0 0.5em 1em rgba(255, 255, 255, 0.15);
+      --env-box-shadow-small: 0 0.125em 0.25em rgba(255, 255, 255, 0.075);
+      --env-box-shadow-large: 0 1em 3em rgba(255, 255, 255, 0.175);
+      }
+      :not(pre) > code[class*="language-"] {
+      background-color: var(--env-section-background-color);
+      color: var(--env-font-color);
+      }
+      `;
       return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
    }
 
    defaultThemeStyle() {
       let theme = `:root {
-      --env-page-background-color: #fff;
-      --env-section-background-color: #fff;
-      --env-element-common-background-color: #f2f2f2;
       --env-collapse-background-color: var(--env-element-background-color-light);
-      --env-font-color: #202330;
-      --env-font-color-lighter: #49506d;
-      --env-border-color: #ccc;
-      --env-border-color-light: #e7e7e7;
       --env-form-input-font-color: var(--env-font-color);
       --env-form-input-border-color: var(--env-border-color-light);
-      --env-form-input-background-color: #fff;
       }`;
       return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
    }
