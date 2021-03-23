@@ -6,6 +6,10 @@
 @import 'icons';
 @import 'home';
 
+html {
+   font-family: Helvetica, Arial, sans-serif;
+}
+
 body {
    background: var(--env-page-background-color);
    color: var(--env-font-color);
