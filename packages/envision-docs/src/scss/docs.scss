@@ -1,3 +1,4 @@
+@import 'webfonts';
 @import 'highlight';
 @import 'nav-top';
 @import 'footer';
@@ -6,31 +7,57 @@
 @import 'icons';
 @import 'home';
 
+html {
+   font-family: Helvetica, Arial, sans-serif;
+}
+
 body {
    background: var(--env-page-background-color);
    color: var(--env-font-color);
-   font-family: Roboto, sans-serif;
    padding: 0;
    margin: 0;
    min-height: 100%;
    position: relative;
+   transition: all 0.3s;
+}
+
+body {
+   font-family: var(--env-font-family);
+
+   &.font-roboto {
+      --env-font-family: Roboto, Helvetica, Arial, sans-serif;
+   }
+
+   &.font-source-sans {
+      --env-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+   }
+
+   &.font-open-sans {
+      --env-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+   }
 }
 
 main {
    max-width: 800px;
    display: flex;
-   margin: 40px auto 80px auto;
+   margin: 0 auto 80px auto;
 }
 
 .main-container {
    max-width: 1000px;
    display: flex;
    margin: 0 auto;
+   padding: 120px 0;
 }
 
 h1 {
    font-size: 46px;
    font-weight: 500;
+
+   &.main-heading {
+      margin: 0;
+      line-height: 1;
+   }
 }
 
 h2 {
@@ -75,18 +102,21 @@ main {
 .doc-link {
    color: #006dff;
    text-decoration: none;
+
    &:hover {
       text-decoration: underline;
    }
 }
 
-.header-nav a {
-   color: #040404;
+.theme-picker {
+   border-top: 1px solid var(--env-border-color);
+   margin: 1em 0;
+   padding: 1em 0;
 }
 
 .sidenav {
    flex: 1;
-   margin-top: 80px;
+   padding: 0 1em 0 0;
 
    > div {
       margin-bottom: 10px;
@@ -106,15 +136,32 @@ main {
 
       li {
          padding: 0 0 10px 0;
-
-         a {
-            font-weight: 300;
-            font-size: 16px;
-
-            &.active {
-               border-bottom: 2px solid #6892d5;
-            }
-         }
       }
+   }
+
+   .env-form-element {
+      margin: 0.25em 0 1em;
+   }
+
+   .env-form-element__label,
+   .env-switch__label,
+   ul li a {
+      font-weight: 300;
+      font-size: 16px;
+
+      &.active {
+         border-bottom: 2px solid #6892d5;
+      }
+   }
+
+   select {
+      font-family: var(--env-font-family);
+      font-size: 14px;
+   }
+
+   .env-switch__label {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
    }
 }
