@@ -8,6 +8,9 @@ title: Table
 
 ```html
 <table class="env-table">
+   <caption>
+      Default table
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -49,6 +52,9 @@ title: Table
 
 ```html
 <table class="env-table env-table--zebra">
+   <caption>
+      Zebra table
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -92,6 +98,9 @@ title: Table
 
 ```html
 <table class="env-table env-table--borders-around">
+   <caption>
+      Table with borders
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -123,6 +132,9 @@ title: Table
 
 ```html
 <table class="env-table env-table--small">
+   <caption>
+      Small table
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -152,6 +164,9 @@ title: Table
 
 ```html
 <table class="env-table env-table--large">
+   <caption>
+      Large table
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -183,6 +198,9 @@ title: Table
 
 ```html
 <table class="env-table env-table--hover">
+   <caption>
+      Table with hover effect
+   </caption>
    <thead>
       <tr>
          <th>Name</th>
@@ -233,6 +251,9 @@ Valid values:
 
 ```html
 <table class="env-table">
+   <caption>
+      Table with colored rows and cells
+   </caption>
    <thead>
       <tr>
          <th>Name</th>

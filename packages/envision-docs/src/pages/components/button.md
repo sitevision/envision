@@ -93,7 +93,7 @@ title: Button
 
 ```html
 <button type="button" class="env-button">
-   Default with icon right
+   Default
    <svg class="env-icon env-icon--small env-m-left--xx-small">
       <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
    </svg>
@@ -103,7 +103,14 @@ title: Button
    <svg class="env-icon env-icon--small env-m-right--xx-small">
       <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
    </svg>
-   Primary with icon left
+   Primary
+</button>
+
+<button type="button" class="env-button env-button--primary env-button--ghost">
+   <svg class="env-icon env-icon--small env-m-right--xx-small">
+      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+   Ghost
 </button>
 ```
 

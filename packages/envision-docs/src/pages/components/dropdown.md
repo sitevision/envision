@@ -15,7 +15,9 @@ title: Dropdown
       data-target="#example0"
    >
       Dropdown
-      <svg class="env-icon env-icon--small env-dropdown-icon">
+      <svg
+         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
+      >
          <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
@@ -74,9 +76,14 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    class="env-dropdown env-button-group env_list__item"
    role="group"
 >
-   <button class="env-button env-button--primary" type="button">Button</button>
    <button
-      class="env-button env-button--primary env-dropdown--toggle env-dropdown--toggle-split"
+      class="env-button env-button--ghost env-button--primary"
+      type="button"
+   >
+      Button
+   </button>
+   <button
+      class="env-button env-button--primary env-button--ghost env-dropdown--toggle env-dropdown--toggle-split"
       type="button"
       data-dropdown
       aria-expanded="false"
@@ -116,7 +123,9 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       data-target="#example3"
    >
       Dropdown
-      <svg class="env-icon env-icon--small env-dropdown-icon">
+      <svg
+         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
+      >
          <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
