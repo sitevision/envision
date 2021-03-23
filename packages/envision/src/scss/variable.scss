@@ -348,9 +348,9 @@ $image-control-color-inactive: $font-color-lighter !default;
 // ----- FORM ELEMENTS -----
 
 // Radio button
-$radiobutton-base: 0.625em !default;
-$radiobutton-checked-size: $radiobutton-base !default;
-$radiobutton-size: $radiobutton-base * 2 !default;
+
+$radiobutton-size: 1.5em !default;
+$radiobutton-checked-size: 0.875em !default;
 
 // Checkbox
 $checkbox-size: 1.25em !default;
