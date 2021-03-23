@@ -229,7 +229,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 <div class="env-form">
    <div class="env-form__row">
       <div class="env-form-element">
-         <label for="search2" class="env-form-element__label"
+         <label for="search3" class="env-form-element__label"
             >Input search with cancel button + icon left</label
          >
          <div class="env-form-element__control env-form-element__control--icon">
@@ -240,7 +240,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
                type="search"
                class="env-form-input env-form-input--search"
                placeholder="Placeholder text"
-               id="search2"
+               id="search3"
             />
          </div>
       </div>
