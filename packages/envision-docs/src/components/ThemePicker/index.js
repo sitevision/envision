@@ -9,13 +9,16 @@ class ThemePicker extends Component {
          darkMode: window.localStorage.getItem('env-darkmode') === 'true',
          font: window.localStorage.getItem('env-font') || '',
       };
-      if (this.state.darkMode) {
-         this.setDarkTheme();
-      }
+   }
+
+   componentDidMount() {
       this.onThemeChange = this.onThemeChange.bind(this);
       this.onFontChange = this.onFontChange.bind(this);
       this.setDarkTheme = this.setDarkTheme.bind(this);
       this.setFont = this.setFont.bind(this);
+      if (this.state.darkMode) {
+         this.setDarkTheme();
+      }
       this.setFont(this.state.font);
    }
 
@@ -49,6 +52,7 @@ class ThemePicker extends Component {
       --env-box-shadow-small: 0 0.125em 0.25em rgba(255, 255, 255, 0.075);
       --env-box-shadow-large: 0 1em 3em rgba(255, 255, 255, 0.175);
       }
+      .gatsby-highlight { opacity: 0.85; }
       :not(pre) > code[class*="language-"] {
       background-color: var(--env-section-background-color);
       color: var(--env-font-color);
@@ -104,8 +108,8 @@ class ThemePicker extends Component {
 
    render() {
       return (
-         <div className={'theme-picker'}>
-            <span>Site theme</span>
+         <div className="theme-picker">
+            <span>Test drive</span>
             <div className="env-form-element">
                <div className="env-switch">
                   <label className="env-switch__label">
@@ -121,7 +125,7 @@ class ThemePicker extends Component {
             </div>
             <div className="env-form-element">
                <label htmlFor="selectFont" className="env-form-element__label">
-                  Site font
+                  Font family
                </label>
                <div className="env-form-element__control">
                   <select
@@ -137,6 +141,11 @@ class ThemePicker extends Component {
                   </select>
                </div>
             </div>
+            <p className="env-text">
+               <span className="env-text--small">
+                  How Envision components *might* look with custom styling.
+               </span>
+            </p>
          </div>
       );
    }

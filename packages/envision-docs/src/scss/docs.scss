@@ -70,7 +70,7 @@ h2 {
 }
 
 p {
-   line-height: 25px;
+   line-height: 1.375;
 }
 
 a {
@@ -140,27 +140,31 @@ main {
 
       li {
          padding: 0 0 10px 0;
+
+         a {
+            font-weight: 300;
+            font-size: 16px;
+
+            &.active {
+               border-bottom: 2px solid #6892d5;
+            }
+         }
       }
    }
 
    .env-form-element {
-      margin: 0.25em 0 1em;
+      margin: 0.5em 0 1em;
    }
 
    .env-form-element__label,
-   .env-switch__label,
-   ul li a {
+   .env-switch__label {
       font-weight: 300;
-      font-size: 16px;
-
-      &.active {
-         border-bottom: 2px solid #6892d5;
-      }
+      font-size: 14px;
    }
 
    select {
       font-family: var(--env-font-family);
-      font-size: 14px;
+      font-size: 13px;
    }
 
    .env-switch__label {
