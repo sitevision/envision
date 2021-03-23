@@ -8,7 +8,7 @@
             Create Sitevision like components and modules the easy way!
          </h2>
          <p class="env-p-top--large sv-home__text env-m-bottom--large">
-            Envision is a easy to use, open source, CSS and component framework 
+            Envision is an easy to use, open source, CSS and component framework 
             for developing with HTML, CSS, and JS. Envision uses Block, Element, 
             Modifier methodology, BEM is a popular naming convention for classes 
             in HTML and CSS. Find out more about <a href="https://en.bem.info/methodology/quick-start/">BEM here.</a>
