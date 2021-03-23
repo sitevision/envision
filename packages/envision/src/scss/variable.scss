@@ -296,6 +296,8 @@ $modal-large: 900px !default;
       'modal-small-width': $modal-small,
       'modal-medium-width': $modal-medium,
       'modal-large-width': $modal-large,
+      'modal-backdrop-background-color': #000,
+      'modal-backdrop-opacity': 0.5,
    )
 );
 
@@ -348,9 +350,9 @@ $image-control-color-inactive: $font-color-lighter !default;
 // ----- FORM ELEMENTS -----
 
 // Radio button
-$radiobutton-base: 0.625em !default;
-$radiobutton-checked-size: $radiobutton-base !default;
-$radiobutton-size: $radiobutton-base * 2 !default;
+
+$radiobutton-size: 1.5em !default;
+$radiobutton-checked-size: 0.875em !default;
 
 // Checkbox
 $checkbox-size: 1.25em !default;
@@ -476,15 +478,9 @@ $focus-color: #5cb3fd !default;
 
 @include to-css-custom-property(
    (
-      'color-primary': $color-primary,
-      'color-primary-light': $color-primary-light,
-      'color-primary-dark': $color-primary-dark,
-      'color-secondary': $color-secondary,
-      'color-secondary-light': $color-secondary-light,
-      'color-secondary-dark': $color-secondary-dark,
-      'color-brand': css-var('color-primary'),
-      'color-brand-light': css-var('color-primary-light'),
-      'color-brand-dark': css-var('color-primary-dark'),
+      'color-brand': $color-primary,
+      'color-brand-light': $color-primary-light,
+      'color-brand-dark': $color-primary-dark,
       'color-warning': $color-warning,
       'color-warning-dark': $color-warning-dark,
       'color-danger': $color-danger,

@@ -1,5 +1,5 @@
 @mixin backdrop {
-   background-color: #000000;
+   background-color: css-var('modal-backdrop-background-color');
    bottom: 0;
    left: 0;
    opacity: 0;
@@ -12,5 +12,5 @@
 
 @mixin backdrop-in {
    animation: #{$prefix}-fade 0.3s;
-   opacity: 0.5;
+   opacity: css-var('modal-backdrop-opacity');
 }

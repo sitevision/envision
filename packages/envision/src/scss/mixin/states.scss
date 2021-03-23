@@ -1,6 +1,9 @@
-@mixin is-disabled($background-color: 'element-background-color') {
+@mixin is-disabled(
+   $color: 'element-font-color',
+   $background-color: 'element-background-color'
+) {
    background-color: css-var($background-color);
-   cursor: not-allowed;
-   opacity: 0.55;
+   color: css-var($color);
    pointer-events: none;
+   filter: opacity(0.5) grayscale(100%);
 }

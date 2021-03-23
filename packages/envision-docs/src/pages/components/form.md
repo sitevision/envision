@@ -22,6 +22,34 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          />
       </div>
    </div>
+   <div class="env-form__row">
+      <div class="env-form-element">
+         <label for="search1" class="env-form-element__label"
+            >Input search</label
+         >
+         <div class="env-form-element__control">
+            <input
+               type="search"
+               class="env-form-input"
+               placeholder="Placeholder text"
+               id="search1"
+            />
+         </div>
+      </div>
+      <div class="env-form-element">
+         <label for="search2" class="env-form-element__label"
+            >Input search with cancel button</label
+         >
+         <div class="env-form-element__control">
+            <input
+               type="search"
+               class="env-form-input env-form-input--search"
+               placeholder="Placeholder text"
+               id="search2"
+            />
+         </div>
+      </div>
+   </div>
    <div class="env-form-element">
       <label for="textarea" class="env-form-element__label">Textarea</label>
       <div class="env-form-element__control">
@@ -191,6 +219,47 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       <button type="submit" class="env-button env-button--primary">
          Submit
       </button>
+   </div>
+</div>
+```
+
+## Icons in input fields
+
+```html
+<div class="env-form">
+   <div class="env-form__row">
+      <div class="env-form-element">
+         <label for="search3" class="env-form-element__label"
+            >Input search with cancel button + icon left</label
+         >
+         <div class="env-form-element__control env-form-element__control--icon">
+            <svg class="env-icon">
+               <use xlink:href="/images/envision-icons.svg#icon-search"></use>
+            </svg>
+            <input
+               type="search"
+               class="env-form-input env-form-input--search"
+               placeholder="Placeholder text"
+               id="search3"
+            />
+         </div>
+      </div>
+      <div class="env-form-element">
+         <label for="text" class="env-form-element__label"
+            >Input text + icon right</label
+         >
+         <div class="env-form-element__control env-form-element__control--icon">
+            <input
+               type="text"
+               class="env-form-input"
+               placeholder="Placeholder text"
+               id="text"
+            />
+            <svg class="env-icon">
+               <use xlink:href="/images/envision-icons.svg#icon-star"></use>
+            </svg>
+         </div>
+      </div>
    </div>
 </div>
 ```
