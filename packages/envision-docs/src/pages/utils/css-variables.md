@@ -168,6 +168,7 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 
 -  `--env-collapse-border-style`
 -  `--env-collapse-border-width`
+-  `--env-collapse-icon-color`
 -  `--env-collapse-icon-width`
 -  `--env-collapse-icon-height`
 -  `--env-collapse-toggle-duration`
