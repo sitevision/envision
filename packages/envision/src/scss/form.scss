@@ -174,48 +174,45 @@
 
    &-radio {
       display: block;
-      margin-bottom: css-var('spacing-x-small');
       font-size: css-var('font-size-medium');
 
+      [type='radio'] {
+         @include visually-hidden;
+      }
+
       label {
-         padding-left: 1.875em;
-         position: relative;
+         margin-bottom: css-var('spacing-x-small');
       }
 
       &__fake {
-         content: '';
-         position: absolute;
-         left: 0;
-         top: 0;
+         display: inline-block;
+         position: relative;
          width: $radiobutton-size;
          height: $radiobutton-size;
+         margin-right: css-var('spacing-xx-small');
          background-color: css-var('form-input-background-color');
          border: $border-width $border-style css-var('form-input-border-color');
          border-radius: 50%;
-         box-sizing: border-box;
+         transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+         vertical-align: middle;
+
+         &:after {
+            content: '';
+            display: none;
+            width: $radiobutton-checked-size;
+            height: $radiobutton-checked-size;
+            background-color: css-var('element-primary-background-color');
+            position: absolute;
+            top: (50% - $radiobutton-checked-size / 2);
+            left: (50% - $radiobutton-checked-size / 2);
+            border-radius: 50%;
+            box-sizing: border-box;
+         }
       }
 
-      label &__fake:after {
-         $scale: ($radiobutton-checked-size / $radiobutton-size);
-         content: '';
-         width: $radiobutton-size * $scale;
-         height: $radiobutton-size * $scale;
-         background-color: css-var('element-primary-background-color');
-         position: absolute;
-         display: none;
-         left: calc(50% - #{$radiobutton-size * $scale / 2});
-         top: calc(50% - #{$radiobutton-size * $scale / 2});
-         border-radius: 50%;
-         box-sizing: border-box;
-      }
-
-      [type='radio'] {
-         cursor: pointer;
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         z-index: 1;
-         opacity: 0;
+      &__label {
+         display: inline;
+         vertical-align: bottom;
       }
 
       [type='radio']:checked + label &__fake {
@@ -230,24 +227,9 @@
          @include focus-shadow();
       }
 
-      &__label {
-         display: inline;
-         vertical-align: sub;
-      }
-
-      // Workaround for Safari
-      & [type='radio'] ~ label:hover &__fake {
-         background-color: transparent;
-      }
-
       &--disabled {
          label {
             @include disabled;
-            cursor: not-allowed;
-         }
-
-         input {
-            cursor: not-allowed;
          }
       }
    }
@@ -325,6 +307,10 @@
       @include visually-hidden();
    }
 
+   label {
+      margin-bottom: css-var('spacing-x-small');
+   }
+
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
       content: '';
@@ -335,8 +321,10 @@
       width: $checkbox-size * 0.7;
       height: $checkbox-size * 0.25;
       background-color: transparent;
-      border-bottom: 2px solid css-var('element-primary-font-color');
-      border-left: 2px solid css-var('element-primary-font-color');
+      border-bottom: ($checkbox-size / 10) solid
+         css-var('element-primary-font-color');
+      border-left: ($checkbox-size / 10) solid
+         css-var('element-primary-font-color');
       transform: translate3d(-49%, -45%, 0) rotate(-50deg);
    }
 
