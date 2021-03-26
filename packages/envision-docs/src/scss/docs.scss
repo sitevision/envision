@@ -13,7 +13,6 @@ html {
 body {
    background: var(--env-page-background-color);
    color: var(--env-font-color);
-   font-family: Roboto, sans-serif;
    padding: 0;
    margin: 0;
    min-height: 100%;
@@ -100,6 +99,7 @@ main {
 .doc-link {
    color: #006dff;
    text-decoration: none;
+
    &:hover {
       text-decoration: underline;
    }
@@ -110,6 +110,8 @@ main {
 }
 
 .sidenav {
+   --env-link-secondary-hover-text-decoration: none;
+
    flex: 1;
    margin-top: 80px;
 

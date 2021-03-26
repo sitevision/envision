@@ -87,6 +87,22 @@ $font-color-invert: #ffffff !default;
    )
 );
 
+$link-color: #2e62ff !default;
+$link-text-decoration: none !default;
+$link-hover-text-decoration: underline !default;
+
+@include to-css-custom-property(
+   (
+      'link-font-color': $link-color,
+      'link-text-decoration': $link-text-decoration,
+      'link-hover-text-decoration': $link-hover-text-decoration,
+      'link-secondary-font-color': css-var('font-color'),
+      'link-secondary-text-decoration': css-var('link-text-decoration'),
+      'link-secondary-hover-text-decoration':
+         css-var('link-hover-text-decoration'),
+   )
+);
+
 // ----- GENERAL COLORS -----
 
 // Color
@@ -100,7 +116,7 @@ $color-section-bg: #ffffff !default;
    )
 );
 
-$color-primary: #006dff !default;
+$color-primary: #2e62ff !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
 $color-warning: #c59219 !default;
