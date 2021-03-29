@@ -49,6 +49,16 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-font-size-xxx-large`
 -  `--env-font-size-xxxx-large`
 
+#### Links <span class="env-badge env-badge--info">8.2</span>
+
+-  `--env-link-font-color`
+-  `--env-link-text-decoration`
+-  `--env-link-hover-text-decoration`
+   <br><br>
+-  `--env-link-secondary-font-color`
+-  `--env-link-secondary-text-decoration`
+-  `--env-link-secondary-hover-text-decoration`
+
 #### Spacing <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-spacing-xxx-small`

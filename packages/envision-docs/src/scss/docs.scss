@@ -119,6 +119,8 @@ main {
 }
 
 .sidenav {
+   --env-link-secondary-hover-text-decoration: none;
+
    flex: 1;
    padding: 0 1em 0 0;
 

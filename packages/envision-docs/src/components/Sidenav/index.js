@@ -14,7 +14,7 @@ const Sidenav = ({ categories, menuItems }) => {
                      <li key={id}>
                         <Link
                            to={slug}
-                           className="env-text"
+                           className="env-link-secondary"
                            activeClassName="active"
                         >
                            {title}
