@@ -143,6 +143,8 @@ $block-secondary-background-color: #e7f1ff;
 $block-default-border-color: #e7e7e7;
 $block-primary-border-color: #ccc;
 $block-secondary-border-color: #a7bed0;
+$block-secondary-border-color: #a7bed0;
+$block-secondary-link-font-color: #2e62e9;
 
 $element-default-background-color: #f2f2f2;
 
@@ -155,12 +157,15 @@ $element-common-background-color-dark: #909090;
 @include to-css-custom-property(
    (
       'block-font-color': $font-color,
+      'block-link-font-color': $link-color,
       'block-background-color': $block-default-background-color,
       'block-border-color': $block-default-border-color,
       'block-primary-font-color': $font-color,
+      'block-primary-link-font-color': $link-color,
       'block-primary-background-color': $block-primary-background-color,
       'block-primary-border-color': $block-primary-border-color,
       'block-secondary-font-color': $font-color,
+      'block-secondary-link-font-color': $block-secondary-link-font-color,
       'block-secondary-background-color': $block-secondary-background-color,
       'block-secondary-border-color': $block-secondary-border-color,
       'element-font-color': $font-color,

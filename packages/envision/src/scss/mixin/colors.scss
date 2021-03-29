@@ -3,11 +3,23 @@
       // Add slash if name is set, Otherwise it's default with no name and no slash.
       $blockName: '#{$blockName}-';
    }
+
+   a,
+   .env-link {
+      @include link(
+         'block-#{$blockName}link-font-color',
+         'link-text-decoration',
+         'link-hover-text-decoration'
+      );
+   }
+
    &,
-   *,
+   *:not(a),
+   .env-link-secondary,
    .env-text {
       color: css-var('block-#{$blockName}font-color');
    }
+
    background-color: css-var('block-#{$blockName}background-color');
    border-color: css-var('block-#{$blockName}border-color');
 
