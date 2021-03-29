@@ -5,7 +5,8 @@
    font-weight: $font-weight-regular;
 
    &--muted {
-      filter: opacity(0.8);
+      filter: opacity(0.625);
+      font-weight: $font-weight-regular;
    }
 
    &--uppercase {
@@ -104,4 +105,4 @@ a.#{$prefix}-text,
    'spacing-xx-small',
    $font-weight-regular
 );
-@include inline-text-size('small', 'font-size-small', $font-weight-regular);
+@include inline-text-size('small', smaller);
