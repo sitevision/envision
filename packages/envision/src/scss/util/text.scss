@@ -4,10 +4,6 @@
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
 
-   a {
-      @include link();
-   }
-
    &--muted {
       filter: opacity(0.8);
    }
@@ -67,8 +63,24 @@
    }
 }
 
-a.#{$prefix}-text {
-   @include link();
+.#{$prefix}-link,
+a.#{$prefix}-text,
+.#{$prefix}-text a {
+   @include link(
+      'link-font-color',
+      'link-text-decoration',
+      'link-hover-text-decoration'
+   );
+}
+
+.#{$prefix}-text .#{$prefix}-link-secondary,
+.#{$prefix}-link-secondary {
+   @include link(
+      'link-secondary-font-color',
+      'link-secondary-text-decoration',
+      'link-secondary-hover-text-decoration'
+   );
+   font-weight: $font-weight-semibold;
 }
 
 @include block-text-size(

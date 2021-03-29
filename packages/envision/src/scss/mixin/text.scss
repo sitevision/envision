@@ -2,7 +2,7 @@
    #{$element}.#{$prefix}-text,
    .#{$prefix}-text #{$element},
    .#{$prefix}-text-#{$element},
-   // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
+      // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .#{$prefix}-text--#{$element} {
       font-size: css-var($font-size);
       font-weight: $font-weight;
@@ -14,15 +14,26 @@
    #{$element}.#{$prefix}-text,
    .#{$prefix}-text #{$element},
    .#{$prefix}-text-#{$element},
-   // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
+      // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .#{$prefix}-text--#{$element} {
       font-size: $font-size;
       font-weight: $font-weight;
    }
 }
 
-@mixin link($font-color: 'font-color') {
+@mixin link(
+   $font-color: 'font-color',
+   $text-decoration: false,
+   $hover-text-decoration: false
+) {
    color: css-var($font-color);
-   font-weight: $font-weight-semibold;
-   text-decoration: none;
+
+   @if ($text-decoration) {
+      text-decoration: css-var($text-decoration);
+   }
+   @if ($hover-text-decoration) {
+      &:hover {
+         text-decoration: css-var($hover-text-decoration);
+      }
+   }
 }

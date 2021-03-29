@@ -68,3 +68,21 @@ title: Text
 
 <p class="env-text--strike">This text will be hard to read</p>
 ```
+
+## Links
+
+<div id="links"></div>
+
+```html
+<div class="example-link">
+   <a href="#links" class="env-link">A standalone link</a>
+</div>
+
+<div class="example-link">
+   <a href="#links" class="env-link-secondary">A secondary link</a>
+</div>
+
+<div class="example-link">
+   <div class="env-text">Text with <a href="#links">a link</a> inside.</div>
+</div>
+```
