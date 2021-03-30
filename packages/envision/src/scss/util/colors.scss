@@ -1,33 +1,24 @@
-$variableNames: 'brand', 'primary', 'success', 'warning', 'danger', 'info',
-   'base', 'darker', 'dark', 'normal', 'light', 'lighter', 'lightest', 'hover';
-
-$transparency: (
-   80: 0.8,
-   60: 0.6,
-   40: 0.4,
-   20: 0.2,
-   10: 0.1,
-);
+$variableNames: 'brand', 'success', 'warning', 'danger', 'info', 'base',
+   'darker', 'dark', 'normal', 'light', 'lighter', 'lightest', 'hover';
 
 @each $name in $variableNames {
    .#{$prefix}-color--#{$name} {
       color: css-var('color-#{$name}') !important;
    }
-   .#{$prefix}-bg-color--#{$name} {
+   .#{$prefix}-bg-color--#{$name},
+   .#{$prefix}-bg-color--#{$name}--80,
+   .#{$prefix}-bg-color--#{$name}--60,
+   .#{$prefix}-bg-color--#{$name}--40,
+   .#{$prefix}-bg-color--#{$name}--20,
+   .#{$prefix}-bg-color--#{$name}--10 {
       background-color: css-var('color-#{$name}');
-   }
-
-   // TODO: Remove?
-   @each $opacity, $value in $transparency {
-      .#{$prefix}-bg-color--#{$name}--#{$opacity} {
-         background-color: css-var('element-#{$name}-background-color-light');
-      }
    }
 }
 
 .env-block {
    @include color-block();
 }
+
 .env-block-primary {
    @include color-block('primary');
 }
