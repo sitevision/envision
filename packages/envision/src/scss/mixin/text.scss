@@ -10,14 +10,13 @@
    }
 }
 
-@mixin inline-text-size($element, $font-size, $font-weight) {
+@mixin inline-text-size($element, $font-size) {
    #{$element}.#{$prefix}-text,
    .#{$prefix}-text #{$element},
    .#{$prefix}-text-#{$element},
       // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .#{$prefix}-text--#{$element} {
       font-size: $font-size;
-      font-weight: $font-weight;
    }
 }
 
