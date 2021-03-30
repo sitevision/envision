@@ -18,10 +18,10 @@ title: Feed
       </div>
       <div class="env-media__body">
          <h3 class="env-text">
-            <a href="#">Erik</a>
-            <small class="env-text--muted">16:34</small>
+            <a href="#" class="env-link-secondary">Erik</a>
+            <small>16:34</small>
          </h3>
-         <p class="env-text env-text--muted">Design</p>
+         <p class="env-text">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -55,7 +55,7 @@ title: Feed
          />
          <div class="env-embedded__block">
             <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-            <p class="env-embedded__text env-text env-text--muted">
+            <p class="env-embedded__text env-text">
                Bacon ipsum dolor amet beef cupim brisket pork turducken salami
                pig drumstick chuck ball tip biltong shoulder.
             </p>
@@ -65,24 +65,16 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
+            <a class="env-text env-text--small" role="button" href="#"
                >Like (0)</a
             >
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
-               >Share</a
-            >
+            <a class="env-text env-text--small" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
             <a
-               class="env-text env-text--small env-text--muted"
+               class="env-text env-text--small"
                role="button"
                href="#comments"
                data-env-collapse
@@ -139,7 +131,7 @@ title: Feed
    <div class="env-media__body">
       <header class="env-comment__header">
          <h3 class="env-text">
-            <a href="#">Emma</a>
+            <a href="#" class="env-link-secondary">Emma</a>
          </h3>
       </header>
       <p class="env-text">
@@ -149,15 +141,12 @@ title: Feed
       <footer class="env-comment__footer">
          <ul class="env-list env-list--horizontal env-list-dividers--left">
             <li class="env-list__item">
-               <a
-                  class="env-text env-text--small env-text--muted"
-                  role="button"
-                  href="#"
+               <a class="env-text env-text--small" role="button" href="#"
                   >Like (0)</a
                >
             </li>
             <li class="env-list__item">
-               <small class="env-text--muted">09:30</small>
+               <small>09:30</small>
             </li>
          </ul>
       </footer>
@@ -194,10 +183,10 @@ title: Feed
       </div>
       <div class="env-media__body">
          <h3 class="env-text">
-            <a href="#">Erik</a>
-            <small class="env-text--muted">16:34</small>
+            <a href="#" class="env-link-secondary">Erik</a>
+            <small>16:34</small>
          </h3>
-         <p class="env-text env-text--muted">Design</p>
+         <p class="env-text">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -225,24 +214,16 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
+            <a class="env-text env-text--small" role="button" href="#"
                >Like (0)</a
             >
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
-               >Share</a
-            >
+            <a class="env-text env-text--small" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
             <a
-               class="env-text env-text--small env-text--muted"
+               class="env-text env-text--small"
                role="button"
                href="#comments2"
                data-env-collapse
@@ -270,7 +251,7 @@ title: Feed
                   <div class="env-media__body">
                      <header class="env-comment__header">
                         <h4 class="env-text">
-                           <a href="#">Malin</a>
+                           <a href="#" class="env-link-secondary">Malin</a>
                         </h4>
                      </header>
                      <p class="env-text">
@@ -284,16 +265,14 @@ title: Feed
                         >
                            <li class="env-list__item">
                               <a
-                                 class="env-text env-text--small env-text--muted"
+                                 class="env-text env-text--small"
                                  role="button"
                                  href="#"
                                  >Like (0)</a
                               >
                            </li>
                            <li class="env-list__item">
-                              <small class="env-text env-text--muted"
-                                 >10:27</small
-                              >
+                              <small class="env-text">10:27</small>
                            </li>
                         </ul>
                      </footer>
@@ -329,7 +308,7 @@ title: Feed
                   <div class="env-media__body">
                      <header class="env-comment__header">
                         <h4 class="env-text">
-                           <a href="#">Robin</a>
+                           <a href="#" class="env-link-secondary">Robin</a>
                         </h4>
                      </header>
                      <p class="env-text">
@@ -343,16 +322,14 @@ title: Feed
                         >
                            <li class="env-list__item">
                               <a
-                                 class="env-text env-text--small env-text--muted"
+                                 class="env-text env-text--small"
                                  role="button"
                                  href="#"
                                  >Like (0)</a
                               >
                            </li>
                            <li class="env-list__item">
-                              <small class="env-text env-text--muted"
-                                 >15:25</small
-                              >
+                              <small class="env-text">15:25</small>
                            </li>
                         </ul>
                      </footer>
@@ -388,7 +365,7 @@ title: Feed
                   <div class="env-media__body">
                      <header class="env-comment__header">
                         <h4 class="env-text">
-                           <a href="#">Anders</a>
+                           <a href="#" class="env-link-secondary">Anders</a>
                         </h4>
                      </header>
                      <p class="env-text">
@@ -402,16 +379,14 @@ title: Feed
                         >
                            <li class="env-list__item">
                               <a
-                                 class="env-text env-text--small env-text--muted"
+                                 class="env-text env-text--small"
                                  role="button"
                                  href="#"
                                  >Like (0)</a
                               >
                            </li>
                            <li class="env-list__item">
-                              <small class="env-text env-text--muted"
-                                 >17:39</small
-                              >
+                              <small class="env-text">17:39</small>
                            </li>
                         </ul>
                      </footer>
@@ -477,11 +452,13 @@ title: Feed
       </div>
       <div class="env-media__body">
          <h3 class="env-text">
-            <a href="#">Erik</a> <small class="env-text--muted">shared</small>
-            <a href="#">Malin's</a> <small class="env-text--muted">post</small>
-            <small class="env-text--muted">16:34</small>
+            <a href="#" class="env-link-secondary">Erik</a>
+            <small>shared</small>
+            <a href="#" class="env-link-secondary">Malin's</a>
+            <small>post</small>
+            <small>16:34</small>
          </h3>
-         <p class="env-text env-text--muted">Design</p>
+         <p class="env-text">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -516,10 +493,10 @@ title: Feed
             </div>
             <div class="env-media__body">
                <h3 class="env-text">
-                  <a href="#">Malin</a>
-                  <small class="env-text--muted">17:29</small>
+                  <a href="#" class="env-link-secondary">Malin</a>
+                  <small>17:29</small>
                </h3>
-               <p class="env-text env-text--muted">Design</p>
+               <p class="env-text">Design</p>
             </div>
          </header>
          <div class="env-post__entry">
@@ -534,24 +511,16 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
+            <a class="env-text env-text--small" role="button" href="#"
                >Like (0)</a
             >
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small env-text--muted"
-               role="button"
-               href="#"
-               >Share</a
-            >
+            <a class="env-text env-text--small" role="button" href="#">Share</a>
          </li>
          <li class="env-list__item">
             <a
-               class="env-text env-text--small env-text--muted"
+               class="env-text env-text--small"
                role="button"
                href="#comments3"
                data-env-collapse
@@ -610,10 +579,10 @@ title: Feed
             </div>
             <div class="env-media__body">
                <h3 class="env-text">
-                  <a href="#">Erik</a>
-                  <small class="env-text--muted">16:34</small>
+                  <a href="#" class="env-link-secondary">Erik</a>
+                  <small>16:34</small>
                </h3>
-               <p class="env-text env-text--muted">Design</p>
+               <p class="env-text">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -641,24 +610,18 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Like (0)</a
                   >
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Share</a
                   >
                </li>
                <li class="env-list__item">
                   <a
-                     class="env-text env-text--small env-text--muted"
+                     class="env-text env-text--small"
                      role="button"
                      href="#comments4"
                      data-env-collapse
@@ -689,7 +652,9 @@ title: Feed
                         <div class="env-media__body">
                            <header class="env-comment__header">
                               <h4 class="env-text">
-                                 <a href="#">Anders</a>
+                                 <a href="#" class="env-link-secondary"
+                                    >Anders</a
+                                 >
                               </h4>
                            </header>
                            <p class="env-text">
@@ -704,16 +669,14 @@ title: Feed
                               >
                                  <li class="env-list__item">
                                     <a
-                                       class="env-text env-text--small env-text--muted"
+                                       class="env-text env-text--small"
                                        role="button"
                                        href="#"
                                        >Like (0)</a
                                     >
                                  </li>
                                  <li class="env-list__item">
-                                    <small class="env-text env-text--muted"
-                                       >17:39</small
-                                    >
+                                    <small class="env-text">17:39</small>
                                  </li>
                               </ul>
                            </footer>
@@ -751,7 +714,7 @@ title: Feed
                         <div class="env-media__body">
                            <header class="env-comment__header">
                               <h4 class="env-text">
-                                 <a href="#">Emma</a>
+                                 <a href="#" class="env-link-secondary">Emma</a>
                               </h4>
                            </header>
                            <p class="env-text">
@@ -766,16 +729,14 @@ title: Feed
                               >
                                  <li class="env-list__item">
                                     <a
-                                       class="env-text env-text--small env-text--muted"
+                                       class="env-text env-text--small"
                                        role="button"
                                        href="#"
                                        >Like (0)</a
                                     >
                                  </li>
                                  <li class="env-list__item">
-                                    <small class="env-text env-text--muted"
-                                       >19:24</small
-                                    >
+                                    <small class="env-text">19:24</small>
                                  </li>
                               </ul>
                            </footer>
@@ -847,10 +808,10 @@ title: Feed
             </div>
             <div class="env-media__body">
                <h3 class="env-text">
-                  <a href="#">Robin</a>
-                  <small class="env-text env-text--muted">17:28</small>
+                  <a href="#" class="env-link-secondary">Robin</a>
+                  <small class="env-text">17:28</small>
                </h3>
-               <p class="env-text env-text--muted">Design</p>
+               <p class="env-text">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -879,24 +840,18 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Like (0)</a
                   >
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Share</a
                   >
                </li>
                <li class="env-list__item">
                   <a
-                     class="env-text env-text--small env-text--muted"
+                     class="env-text env-text--small"
                      role="button"
                      href="#comments5"
                      data-env-collapse
@@ -957,10 +912,10 @@ title: Feed
             </div>
             <div class="env-media__body">
                <h3 class="env-text">
-                  <a href="#">Ebba</a>
-                  <small class="env-text env-text--muted">19:05</small>
+                  <a href="#" class="env-link-secondary">Ebba</a>
+                  <small class="env-text">19:05</small>
                </h3>
-               <p class="env-text env-text--muted">Design</p>
+               <p class="env-text">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -987,24 +942,18 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Like (0)</a
                   >
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small env-text--muted"
-                     role="button"
-                     href="#"
+                  <a class="env-text env-text--small" role="button" href="#"
                      >Share</a
                   >
                </li>
                <li class="env-list__item">
                   <a
-                     class="env-text env-text--small env-text--muted"
+                     class="env-text env-text--small"
                      role="button"
                      href="#comments6"
                      data-env-collapse
