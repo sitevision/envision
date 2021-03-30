@@ -1,5 +1,7 @@
 .#{$prefix}-collapse {
-   display: none;
+   html:not(.sv-no-js) & {
+      display: none;
+   }
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
