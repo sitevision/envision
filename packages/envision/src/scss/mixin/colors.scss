@@ -4,8 +4,9 @@
       $blockName: '#{$blockName}-';
    }
 
-   a,
-   .env-link {
+   a:not([class^='#{$prefix}-']),
+   a:not([class*=' #{$prefix}-']),
+   .#{$prefix}-link {
       @include link(
          'block-#{$blockName}link-font-color',
          'link-text-decoration',
@@ -16,6 +17,7 @@
    &,
    *:not(a),
    .env-link-secondary,
+   a.env-link-secondary,
    .env-text {
       color: css-var('block-#{$blockName}font-color');
    }
