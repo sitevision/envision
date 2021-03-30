@@ -39,7 +39,7 @@ const BaseTemplate = ({
                menuItems={filterMenuItems(menuItems)}
             ></Sidenav>
             <main>
-               <h1>{title}</h1>
+               <h1 className="main-heading">{title}</h1>
                {children}
             </main>
          </div>
