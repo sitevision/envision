@@ -53,10 +53,12 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 
 -  `--env-link-font-color`
 -  `--env-link-text-decoration`
+-  `--env-link-hover-font-color`
 -  `--env-link-hover-text-decoration`
    <br><br>
 -  `--env-link-secondary-font-color`
 -  `--env-link-secondary-text-decoration`
+-  `--env-link-secondary-hover-font-color`
 -  `--env-link-secondary-hover-text-decoration`
 
 #### Spacing <span class="env-badge env-badge--info">8.2</span>
