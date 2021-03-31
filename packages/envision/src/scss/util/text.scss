@@ -50,6 +50,7 @@ a.#{$prefix}-text,
    @include link(
       'link-font-color',
       'link-text-decoration',
+      'link-hover-font-color',
       'link-hover-text-decoration'
    );
 }
@@ -60,6 +61,7 @@ a.#{$prefix}-text,
    @include link(
       'link-secondary-font-color',
       'link-secondary-text-decoration',
+      'link-secondary-hover-font-color',
       'link-secondary-hover-text-decoration'
    );
    font-weight: $font-weight-semibold;
