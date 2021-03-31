@@ -2,7 +2,7 @@
 title: Colors
 ---
 
-## Block colors
+## Block colors <span class="env-badge env-badge--info">8.2</span>
 
 Preset color combinations, use for larger blocks of content.
 
@@ -35,7 +35,7 @@ Preset color combinations, use for larger blocks of content.
 </div>
 ```
 
-## Element colors
+## Element colors <span class="env-badge env-badge--info">8.2</span>
 
 Element colors are used for elements and components. See usage examples below.
 
