@@ -13,7 +13,7 @@
 @mixin link(
    $font-color: 'font-color',
    $text-decoration: false,
-   $hover-font-color: 'font-color',
+   $hover-font-color: false,
    $hover-text-decoration: false
 ) {
    color: css-var($font-color);
