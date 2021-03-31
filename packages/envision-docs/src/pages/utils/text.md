@@ -69,7 +69,7 @@ title: Text
 <p class="env-text--strike">This text will be hard to read</p>
 ```
 
-## Links
+## Links <span class="env-badge env-badge--info">8.2</span>
 
 <div id="links"></div>
 
