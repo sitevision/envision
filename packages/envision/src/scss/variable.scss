@@ -94,9 +94,11 @@ $link-hover-text-decoration: underline !default;
    (
       'link-font-color': $link-color,
       'link-text-decoration': $link-text-decoration,
+      'link-hover-font-color': css-var('link-font-color'),
       'link-hover-text-decoration': $link-hover-text-decoration,
       'link-secondary-font-color': css-var('font-color'),
       'link-secondary-text-decoration': css-var('link-text-decoration'),
+      'link-secondary-hover-font-color': css-var('link-font-color'),
       'link-secondary-hover-text-decoration':
          css-var('link-hover-text-decoration'),
    )
@@ -493,14 +495,14 @@ $focus-color: #5cb3fd !default;
 
 @include to-css-custom-property(
    (
-      'color-brand': $color-primary,
-      'color-brand-light': $color-primary-light,
-      'color-brand-dark': $color-primary-dark,
-      'color-warning': $color-warning,
-      'color-warning-dark': $color-warning-dark,
-      'color-danger': $color-danger,
-      'color-success': $color-success,
-      'color-info': $color-info,
+      'color-brand': css-var('element-primary-background-color'),
+      'color-brand-light': css-var('element-primary-background-color-light'),
+      'color-brand-dark': css-var('element-primary-background-color-dark'),
+      'color-warning': css-var('element-warning-background-color'),
+      'color-warning-dark': css-var('element-warning-background-color-dark'),
+      'color-danger': css-var('element-danger-background-color'),
+      'color-success': css-var('element-success-background-color'),
+      'color-info': css-var('element-info-background-color'),
       'color-hover': $color-hover,
       'color-base': $color-base,
       'color-darker': $color-darker,

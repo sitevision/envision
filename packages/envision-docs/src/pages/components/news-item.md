@@ -14,7 +14,7 @@ title: News item
    <header class="env-news-item__headline">
       <div class="env-news-item__headline__title">
          <h2 class="env-text">
-            <a href="#">Lorem ipsum</a>
+            <a href="#" class="env-link-secondary">Lorem ipsum</a>
          </h2>
          <p class="env-text env-text--muted">Eric Ericsson, aug 12 12:56</p>
       </div>
@@ -57,7 +57,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -96,7 +96,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -135,7 +135,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -183,7 +183,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -222,7 +222,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -261,7 +261,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -300,7 +300,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -339,7 +339,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56
@@ -378,7 +378,7 @@ title: News item
          <header class="env-news-item__headline">
             <div class="env-news-item__headline__title">
                <h2 class="env-text">
-                  <a href="#">Lorem ipsum</a>
+                  <a href="#" class="env-link-secondary">Lorem ipsum</a>
                </h2>
                <p class="env-text env-text--muted">
                   Eric Ericsson, aug 12 12:56

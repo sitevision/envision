@@ -119,6 +119,7 @@ main {
 }
 
 .sidenav {
+   --env-link-secondary-hover-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-text-decoration: none;
 
    flex: 1;

@@ -2,7 +2,7 @@
 title: Colors
 ---
 
-## Block colors
+## Block colors <span class="env-badge env-badge--info">8.2</span>
 
 Preset color combinations, use for larger blocks of content.
 
@@ -35,7 +35,7 @@ Preset color combinations, use for larger blocks of content.
 </div>
 ```
 
-## Element colors
+## Element colors <span class="env-badge env-badge--info">8.2</span>
 
 Element colors are used for elements and components. See usage examples below.
 
@@ -406,7 +406,7 @@ Since Sitevision 8.2 Background color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
-   <div class="env-bg-color--primary env-color--lightest">Primary</div>
+   <div class="env-bg-color--brand env-color--lightest">Brand</div>
    <div class="env-bg-color--success env-color--lightest">Success</div>
    <div class="env-bg-color--info env-color--lightest">Info</div>
    <div class="env-bg-color--warning">Warning</div>
@@ -428,7 +428,7 @@ Since Sitevision 8.2 Color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
-   <p class="env-text env-color--primary">Primary</p>
+   <p class="env-text env-color--brand">Brand</p>
    <p class="env-text env-color--success">Success</p>
    <p class="env-text env-color--info">Info</p>
    <p class="env-text env-color--warning env-bg-color--dark">Warning</p>
