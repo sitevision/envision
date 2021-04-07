@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import Link from '../Link';
+import Theme from '../Theme';
 
 const Header = ({ title, menuItems }) => {
    return (
@@ -21,6 +22,7 @@ const Header = ({ title, menuItems }) => {
                sizes="32x32"
             />
          </Helmet>
+         <Theme></Theme>
          <div className="env-w-100 sv-header">
             <header className="header env-p-top--small env-p-bottom--small">
                <div className="logo">

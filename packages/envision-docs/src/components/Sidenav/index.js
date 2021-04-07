@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link';
-import ThemePicker from '../ThemePicker';
 
 const Sidenav = ({ categories, menuItems }) => {
    return (
@@ -24,7 +23,11 @@ const Sidenav = ({ categories, menuItems }) => {
                </ul>
             </div>
          ))}
-         <ThemePicker></ThemePicker>
+         <div className="theme-picker env-text">
+            <a href="/theme/settings/" className="env-link-secondary">
+               Site theme settings
+            </a>
+         </div>
       </nav>
    );
 };

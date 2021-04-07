@@ -7,6 +7,13 @@
 @import 'icons';
 @import 'home';
 
+$helvetica: Helvetica, Arial, sans-serif;
+$georgia: Georgia, serif;
+$frank-ruhl: 'Frank Ruhl Libre', serif;
+$roboto: Roboto, sans-serif;
+$source-sans: 'Source Sans Pro', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
 html {
    font-family: Helvetica, Arial, sans-serif;
 }
@@ -28,17 +35,35 @@ body {
 body {
    font-family: var(--env-font-family);
 
+   &.font-georgia {
+      --env-font-family: #{$georgia};
+   }
+
    &.font-roboto {
-      --env-font-family: Roboto, Helvetica, Arial, sans-serif;
+      --env-font-family: #{$roboto};
    }
 
    &.font-source-sans {
-      --env-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+      --env-font-family: #{$source-sans};
    }
 
    &.font-open-sans {
-      --env-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      --env-font-family: #{$open-sans};
    }
+
+   &.font-frank-ruhl {
+      --env-font-family: #{$frank-ruhl};
+   }
+}
+
+main > div > h2,
+.docs-text,
+.sidenav,
+.sidenav *,
+.sv-header *,
+.footer-wrapper {
+   font-family: $roboto;
+   --env-font-family: #{$roboto};
 }
 
 main {
@@ -59,6 +84,7 @@ h1 {
    font-weight: 500;
 
    &.main-heading {
+      font-family: $roboto;
       margin: 0;
       line-height: 1;
    }
