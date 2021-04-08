@@ -2,7 +2,6 @@
    appearance: none;
    border: $border-width $border-style;
    box-sizing: border-box;
-   cursor: pointer;
    display: inline-flex;
    align-items: center;
    justify-content: center;
@@ -120,7 +119,6 @@
 
    &--disabled,
    &[disabled] {
-      cursor: not-allowed;
       opacity: 0.55;
    }
 
@@ -145,7 +143,6 @@
 
    &--divider {
       background-color: transparent;
-      cursor: default;
 
       &:hover,
       &:active,
