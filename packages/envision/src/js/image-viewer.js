@@ -370,11 +370,11 @@ const Imageviewer = (($) => {
          e.preventDefault();
          const $target = $(e.target);
 
-         if (!$target.is('img')) {
-            return;
+         if ($target.is('img')) {
+            $(this).envImageviewer($target.parent());
+         } else if ($target.is('a.env-image-viewer__images')) {
+            $(this).envImageviewer($target);
          }
-
-         $(this).envImageviewer($target.parent());
       }
    );
 
