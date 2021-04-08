@@ -64,16 +64,6 @@
       }
    }
 
-   &--invert {
-      background: css-var('element-secondary-font-color');
-      box-shadow: 0px 5px 10px -8px css-var('color-normal');
-      color: css-var('element-secondary-background-color');
-
-      button {
-         color: css-var('element-secondary-background-color');
-      }
-   }
-
    &--visible {
       bottom: 0;
       margin-top: 10px;

@@ -42,13 +42,4 @@ title: Toast
       </svg>
    </button>
 </div>
-
-<div class="env-toast env-toast--invert env-toast--visible">
-   <div class="env-toast__content">Hello, World! This is a Toast message.</div>
-   <button class="env-toast__close-button env-m-left--a">
-      <svg class="env-icon env-icon--medium">
-         <use xlink:href="/images/envision-icons.svg#icon-delete"></use>
-      </svg>
-   </button>
-</div>
 ```
