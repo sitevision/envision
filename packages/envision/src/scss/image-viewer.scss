@@ -51,11 +51,15 @@
       display: flex;
       font-size: 2em;
       position: absolute;
-      text-align: center;
-      text-decoration: none;
       top: 0;
       width: 33%;
       z-index: $zindex-imageslider-indicator;
+      border: none;
+      background: transparent;
+
+      &:focus:not(:focus-visible) {
+         outline: none;
+      }
    }
 
    &--next {
