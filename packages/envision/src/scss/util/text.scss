@@ -50,15 +50,18 @@ a.#{$prefix}-text,
    @include link(
       'link-font-color',
       'link-text-decoration',
+      'link-hover-font-color',
       'link-hover-text-decoration'
    );
 }
 
 .#{$prefix}-text .#{$prefix}-link-secondary,
+.#{$prefix}-text a.#{$prefix}-link-secondary,
 .#{$prefix}-link-secondary {
    @include link(
       'link-secondary-font-color',
       'link-secondary-text-decoration',
+      'link-secondary-hover-font-color',
       'link-secondary-hover-text-decoration'
    );
    font-weight: $font-weight-semibold;
@@ -106,4 +109,19 @@ a.#{$prefix}-text,
    'spacing-xx-small',
    $font-weight-regular
 );
-@include inline-text-size('small', smaller);
+
+// .env-text--small is not following BEM standards and have
+// never been documented. Kept for backwards compatibility.
+small.#{$prefix}-text,
+.#{$prefix}-text small,
+.#{$prefix}-text-small,
+.#{$prefix}-text--small {
+   font-size: smaller;
+}
+
+// Since we set .env-text to font-weight 400,
+// We need to set it back to bold for strong and b.
+b.#{$prefix}-text,
+strong.#{$prefix}-text {
+   font-weight: $font-weight-bold;
+}

@@ -63,7 +63,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    </div>
    <div class="env-form-element">
       <div class="env-form-element__label" id="contenteditable-header">
-         Contenteditable
+         Contenteditable <span class="env-badge env-badge--info">8.2</span>
       </div>
       <div class="env-form-element__control">
          <div
@@ -168,7 +168,9 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       </div>
    </div>
    <div class="env-form-element">
-      <span class="env-form-element__label" id="switch-header">Switch</span>
+      <span class="env-form-element__label" id="switch-header"
+         >Switch <span class="env-badge env-badge--info">8.2</span></span
+      >
       <div
          class="env-form-element__control"
          role="group"
@@ -223,7 +225,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 </div>
 ```
 
-## Icons in input fields
+## Icons in input fields <span class="env-badge env-badge--info">8.2</span>
 
 ```html
 <div class="env-form">

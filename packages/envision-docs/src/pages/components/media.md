@@ -19,7 +19,7 @@ title: Media
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -47,7 +47,7 @@ title: Media
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -88,7 +88,7 @@ title: Media
    </div>
    <div class="env-media__body env-media__body--inline">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -112,7 +112,7 @@ title: Media
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -142,7 +142,7 @@ title: Media
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -164,7 +164,7 @@ title: Media
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -188,7 +188,7 @@ Alignment modifiers can also be applied to elements within the media container (
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -216,7 +216,7 @@ Alignment modifiers can also be applied to elements within the media container (
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -246,7 +246,7 @@ Alignment modifiers can also be applied to elements within the media container (
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -274,7 +274,7 @@ Alignment modifiers can also be applied to elements within the media container (
    </div>
    <div class="env-media__body">
       <h3 class="env-text">
-         <a href="#">Emma</a>
+         <a href="#" class="env-link-secondary">Emma</a>
       </h3>
       <p class="env-text">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
@@ -295,7 +295,7 @@ Alignment modifiers can also be applied to elements within the media container (
          </div>
          <div class="env-media__body">
             <h3 class="env-text">
-               <a href="#">Emma</a>
+               <a href="#" class="env-link-secondary">Emma</a>
             </h3>
             <p class="env-text">
                Cras varius, felis a accumsan accumsan, tellus elit maximus
