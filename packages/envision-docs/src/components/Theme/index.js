@@ -3,14 +3,18 @@ import React, { Component } from 'react';
 class Theme extends Component {
    constructor(props) {
       super(props);
-      this.createStylesheet();
       this.state = {
-         darkMode: window.localStorage.getItem('env-darkmode') === 'true',
-         font: window.localStorage.getItem('env-font') || '',
+         darkMode: false,
+         font: '',
       };
    }
 
    componentDidMount() {
+      this.createStylesheet();
+      this.setState({
+         darkMode: window.localStorage.getItem('env-darkmode') === 'true',
+         font: window.localStorage.getItem('env-font') || '',
+      });
       if (this.state.darkMode) {
          this.setDarkTheme();
       }
