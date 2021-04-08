@@ -145,6 +145,7 @@ main {
 }
 
 .sidenav {
+   --env-link-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-text-decoration: none;
 
@@ -169,15 +170,21 @@ main {
 
       li {
          padding: 0 0 10px 0;
+      }
+   }
 
-         a {
-            font-weight: 300;
-            font-size: 16px;
+   ul li a,
+   .theme-picker .env-link-secondary {
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--env-link-secondary-font-color);
 
-            &.active {
-               border-bottom: 2px solid #6892d5;
-            }
-         }
+      &:hover {
+         color: var(--env-link-secondary-font-color);
+      }
+
+      &.active {
+         border-bottom: 2px solid #6892d5;
       }
    }
 
