@@ -1,7 +1,8 @@
 .#{$prefix}-form {
    input,
    select,
-   textarea {
+   textarea,
+   &-input {
       font-family: inherit;
    }
 
