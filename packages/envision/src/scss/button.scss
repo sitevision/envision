@@ -120,7 +120,6 @@
 
    &--disabled,
    &[disabled] {
-      cursor: not-allowed;
       opacity: 0.55;
    }
 
@@ -145,7 +144,6 @@
 
    &--divider {
       background-color: transparent;
-      cursor: default;
 
       &:hover,
       &:active,
