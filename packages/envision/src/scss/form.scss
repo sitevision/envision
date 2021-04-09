@@ -36,7 +36,6 @@
       }
 
       &[disabled] {
-         cursor: not-allowed;
          user-select: none;
       }
 
@@ -367,7 +366,6 @@
    &--disabled {
       label {
          color: css-var('font-color-light');
-         cursor: not-allowed;
       }
    }
 }
@@ -404,7 +402,6 @@
    &__slider {
       display: inline-block;
       position: relative;
-      cursor: pointer;
       top: 0;
       left: 0;
       flex: 0 0 2.375em;
