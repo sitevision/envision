@@ -109,7 +109,7 @@
 
             input + .env-icon {
                left: auto;
-               right: 0.5em;
+               right: css-var('spacing-x-small');
             }
 
             .env-icon + input {
