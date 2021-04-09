@@ -4,22 +4,23 @@
       $blockName: '#{$blockName}-';
    }
 
-   a:not([class^='#{$prefix}-']),
-   a:not([class*=' #{$prefix}-']),
-   .#{$prefix}-link {
+   &,
+   *:not(a),
+   .#{$prefix}-link-secondary,
+   a.#{$prefix}-link-secondary,
+   .env-text {
+      color: css-var('block-#{$blockName}font-color');
+   }
+
+   .#{$prefix}-link,
+   a.#{$prefix}-text,
+   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
       @include link(
          'block-#{$blockName}link-font-color',
          'link-text-decoration',
+         'block-#{$blockName}link-hover-font-color',
          'link-hover-text-decoration'
       );
-   }
-
-   &,
-   *:not(a),
-   .env-link-secondary,
-   a.env-link-secondary,
-   .env-text {
-      color: css-var('block-#{$blockName}font-color');
    }
 
    background-color: css-var('block-#{$blockName}background-color');
