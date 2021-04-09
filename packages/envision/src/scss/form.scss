@@ -88,26 +88,36 @@
          &--icon {
             position: relative;
 
+            $iconSize: 1.25em;
+
             .env-icon {
                position: absolute;
                top: 50%;
-               left: 0.5em;
-               margin-top: -0.75em;
-               width: 1.5em;
-               height: 1.5em;
+               left: css-var('spacing-x-small');
+               margin-top: ($iconSize / 2 * -1);
+               width: $iconSize;
+               height: $iconSize;
             }
 
             input:first-child {
-               padding-right: calc(2em + #{css-var('spacing-xx-small')});
+               padding-right: calc(
+                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
+                        'spacing-xx-small'
+                     )}
+               );
             }
 
             input + .env-icon {
                left: auto;
-               right: 0.5em;
+               right: css-var('spacing-x-small');
             }
 
             .env-icon + input {
-               padding-left: calc(2em + #{css-var('spacing-xx-small')});
+               padding-left: calc(
+                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
+                        'spacing-xx-small'
+                     )}
+               );
             }
          }
       }
