@@ -138,12 +138,12 @@ $color-lightest: lighten($color-lighter, 10%) !default;
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
 $block-default-background-color: #fff;
-$block-primary-background-color: #f7f7f7;
-$block-secondary-background-color: #e7f1ff;
-
 $block-default-border-color: #e7e7e7;
+
+$block-primary-background-color: #f7f7f7;
 $block-primary-border-color: #ccc;
-$block-secondary-border-color: #a7bed0;
+
+$block-secondary-background-color: #e7f1ff;
 $block-secondary-border-color: #a7bed0;
 $block-secondary-link-font-color: #2e62e9;
 
