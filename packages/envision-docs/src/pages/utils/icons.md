@@ -65,55 +65,41 @@ Valid values for _size_
    <ul class="env-list env-list--horizontal">
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-small">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-small">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--small">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--medium">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--large">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-large">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-large">
-            <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
    </ul>
 </div>
-```
-
-## Access envision icons in Sitevision
-
-To access envision icons within Sitevision use _"/sitevision/envision-icons.svg#icon-"_
-
-```html
-<svg class="env-icon">
-   <use xlink:href="/images/envision-icons.svg#icon-user"></use>
-</svg>
-
-<svg class="env-icon">
-   <use xlink:href="/images/envision-icons.svg#icon-user-fill"></use>
-</svg>
 ```
 
 ## Inactive
@@ -123,7 +109,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 ```html
 <div class="env-d--flex env-justify-content--center">
    <svg class="env-icon env-icon--xx-large env-icon--inactive">
-      <use xlink:href="/images/envision-icons.svg#icon-user"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
    </svg>
 </div>
 ```

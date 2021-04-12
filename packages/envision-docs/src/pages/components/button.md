@@ -97,20 +97,20 @@ title: Button
 <button type="button" class="env-button">
    Default
    <svg class="env-icon env-icon--small env-m-left--xx-small">
-      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
 <button type="button" class="env-button env-button--primary">
    <svg class="env-icon env-icon--small env-m-right--xx-small">
-      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
    Primary
 </button>
 
 <button type="button" class="env-button env-button--primary env-button--ghost">
    <svg class="env-icon env-icon--small env-m-right--xx-small">
-      <use xlink:href="/images/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
    Ghost
 </button>
