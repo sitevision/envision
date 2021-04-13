@@ -45,8 +45,7 @@
 
 .#{$prefix}-link,
 a.#{$prefix}-text,
-.#{$prefix}-text a:not([class^='#{$prefix}-']),
-.#{$prefix}-text a:not([class*=' #{$prefix}-']) {
+.#{$prefix}-text a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
    @include link(
       'link-font-color',
       'link-text-decoration',
