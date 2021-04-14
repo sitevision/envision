@@ -25,6 +25,9 @@
 
    &--next,
    &--prev {
+      appearance: none;
+      border: none;
+      background: transparent;
       align-items: center;
       bottom: 0;
       display: flex;
@@ -36,6 +39,10 @@
       text-decoration: none;
       top: 0;
       width: 15%;
+
+      &:focus:not(:focus-visible) {
+         outline: none;
+      }
    }
 
    &--next {

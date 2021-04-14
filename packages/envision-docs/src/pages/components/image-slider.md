@@ -106,16 +106,19 @@ title: Image slider
    </div>
    <div class="env-image-slider__indicators">
       <button
+         type="button"
          title="Move to image 1"
          data-target="#exampleSlider2"
          data-move-to="0"
       ></button>
       <button
+         type="button"
          title="Move to image 2"
          data-target="#exampleSlider2"
          data-move-to="1"
       ></button>
       <button
+         type="button"
          title="Move to image 3"
          data-target="#exampleSlider2"
          data-move-to="2"

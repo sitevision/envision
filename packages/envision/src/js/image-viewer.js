@@ -204,13 +204,13 @@ const Imageviewer = (($) => {
       }
 
       _getButtons() {
-         const buttonHTML = `<button class="env-image-viewer--prev" role="button" data-move="prev">
+         const buttonHTML = `<button type="button" class="env-image-viewer--prev" data-move="prev">
                <svg class="env-image-viewer__prev-icon env-icon env-icon-small">
                <use xlink:href="/images/envision-icons.svg#icon-arrow-left"></use>
                </svg>
                <span class="env-assistive-text">Previous</span>
             </button>
-            <button class="env-image-viewer--next" role="button" data-move="next">
+            <button type="button" class="env-image-viewer--next" data-move="next">
                <svg class="env-image-viewer__next-icon env-icon env-icon-small">
                <use xlink:href="/images/envision-icons.svg#icon-arrow-right"></use>
                </svg>
@@ -233,7 +233,7 @@ const Imageviewer = (($) => {
 
          this.$images.each((index) => {
             const isActive = index === activeElementIndex;
-            items += `<button title="Move to image ${
+            items += `<button type="button" title="Move to image ${
                index + 1
             }" data-move-to="${index}" class="${
                isActive ? 'env-is-active' : ''
