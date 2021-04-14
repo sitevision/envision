@@ -1,0 +1,82 @@
+.#{$prefix}-toast {
+   align-items: center;
+   align-self: flex-start;
+   background: css-var('element-secondary-background-color');
+   border-radius: 5px;
+   box-shadow: 0px 5px 10px -8px css-var('element-secondary-background-color');
+   color: css-var('element-secondary-font-color');
+   display: flex;
+   margin: 0;
+   min-width: 300px;
+   max-height: 0;
+   max-width: 600px;
+   opacity: 0;
+   padding: 0;
+   position: relative;
+   transform: translate3d(0, 0, 0);
+   transition-duration: 300ms;
+   transition-timing-function: ease;
+
+   &__check {
+      display: flex;
+      margin: 0 0 0 css-var('spacing-medium');
+   }
+
+   &__content {
+      flex: 1 1 100%;
+      margin-right: css-var('spacing-medium');
+      overflow-wrap: anywhere;
+      padding: css-var('spacing-medium');
+      word-break: normal;
+   }
+
+   &__content a {
+      word-break: break-all;
+   }
+
+   &__close {
+      background: transparent;
+      border: 0;
+      color: css-var('element-secondary-font-color');
+      cursor: pointer;
+      display: flex;
+      margin-left: auto;
+      margin-right: css-var('spacing-medium');
+   }
+
+   &--success {
+      background: css-var('element-success-background-color');
+      box-shadow: 0px 5px 10px -8px css-var('element-success-background-color');
+      color: css-var('element-success-font-color');
+
+      .#{$prefix}-toast__close {
+         color: css-var('element-success-font-color');
+      }
+   }
+
+   &--primary {
+      background: css-var('element-primary-background-color');
+      box-shadow: 0px 5px 10px -8px css-var('element-primary-background-color');
+      color: css-var('element-primary-font-color');
+
+      .#{$prefix}-toast__close {
+         color: css-var('element-primary-font-color');
+      }
+   }
+
+   &--visible {
+      bottom: 0;
+      margin-top: css-var('spacing-small');
+      max-height: 100%;
+      opacity: 1;
+      transition-duration: 200ms;
+      transition-timing-function: ease;
+   }
+
+   &--hide {
+      margin: 0;
+      max-height: 0;
+      transition-duration: 200ms;
+      transition-timing-function: ease;
+   }
+}

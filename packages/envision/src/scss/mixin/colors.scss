@@ -3,11 +3,26 @@
       // Add slash if name is set, Otherwise it's default with no name and no slash.
       $blockName: '#{$blockName}-';
    }
+
    &,
-   *,
+   *:not(a),
+   .#{$prefix}-link-secondary,
+   a.#{$prefix}-link-secondary,
    .env-text {
       color: css-var('block-#{$blockName}font-color');
    }
+
+   .#{$prefix}-link,
+   a.#{$prefix}-text,
+   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
+      @include link(
+         'block-#{$blockName}link-font-color',
+         'link-text-decoration',
+         'block-#{$blockName}link-hover-font-color',
+         'link-hover-text-decoration'
+      );
+   }
+
    background-color: css-var('block-#{$blockName}background-color');
    border-color: css-var('block-#{$blockName}border-color');
 
