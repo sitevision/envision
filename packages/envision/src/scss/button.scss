@@ -33,7 +33,7 @@
 
    // Variants
 
-   $buttonNames: 'primary', 'success', 'danger';
+   $buttonNames: 'primary', 'secondary', 'success', 'danger';
 
    @each $name in $buttonNames {
       &--#{$name} {

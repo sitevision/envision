@@ -19,6 +19,7 @@ const Imageviewer = (($) => {
    const ESCAPE_KEY = 27;
    const ARROW_LEFT_KEYCODE = 37;
    const ARROW_RIGHT_KEYCODE = 39;
+   const TAB_KEY = 9;
    const SPINNER_TEMPLATE = `<div class="env-spinner">
                                 <div class="env-rect1"></div>
                                 <div class="env-rect2"></div>
@@ -203,27 +204,27 @@ const Imageviewer = (($) => {
       }
 
       _getButtons() {
-         const buttonHTML = `<a class="env-image-viewer--prev" role="button" data-move="prev">
+         const buttonHTML = `<button type="button" class="env-image-viewer--prev" data-move="prev">
                <svg class="env-image-viewer__prev-icon env-icon env-icon-small">
                <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use>
                </svg>
                <span class="env-assistive-text">Previous</span>
-            </a>
-            <a class="env-image-viewer--next" role="button" data-move="next">
+            </button>
+            <button type="button" class="env-image-viewer--next" data-move="next">
                <svg class="env-image-viewer__next-icon env-icon env-icon-small">
                <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use>
                </svg>
                <span class="env-assistive-text">Next</span>
-            </a>`;
+            </button>`;
 
          return buttonHTML;
       }
 
       _getIndicators() {
          const indicatorItems = this._getIndicatorItems();
-         return `<ol class="env-image-viewer__indicators">
+         return `<div class="env-image-viewer__indicators">
                   ${indicatorItems}
-               </ol>`;
+               </div>`;
       }
 
       _getIndicatorItems() {
@@ -232,9 +233,11 @@ const Imageviewer = (($) => {
 
          this.$images.each((index) => {
             const isActive = index === activeElementIndex;
-            items += `<li data-move-to="${index}" class="${
+            items += `<button type="button" title="Move to image ${
+               index + 1
+            }" data-move-to="${index}" class="${
                isActive ? 'env-is-active' : ''
-            }"></li>`;
+            }"></button>`;
          });
 
          return items;
@@ -273,10 +276,16 @@ const Imageviewer = (($) => {
       }
 
       _bindEvents() {
-         this.$imgContainer.on('keydown', (event) => this._keydown(event));
+         const focusableElements = this.$modal.find('button');
+         const firstElement = focusableElements[0];
+         const lastElement = focusableElements[focusableElements.length - 1];
+
+         this.$modal.on('keydown', (event) =>
+            this._keydown(event, firstElement, lastElement)
+         );
       }
 
-      _keydown(event) {
+      _keydown(event, firstElement, lastElement) {
          if (/input|textarea/i.test(event.target.tagName)) {
             return;
          }
@@ -294,6 +303,20 @@ const Imageviewer = (($) => {
                event.preventDefault();
                if (!this.$backdrop.hasClass(ANIMATION)) {
                   this.hide();
+               }
+               break;
+            case TAB_KEY:
+               if (event.target.tagName === 'IMG') {
+                  event.preventDefault();
+                  firstElement.focus();
+               } else if (event.shiftKey) {
+                  if (event.target === firstElement) {
+                     event.preventDefault();
+                     lastElement.focus();
+                  }
+               } else if (event.target === lastElement) {
+                  event.preventDefault();
+                  firstElement.focus();
                }
                break;
             default:
@@ -347,11 +370,11 @@ const Imageviewer = (($) => {
          e.preventDefault();
          const $target = $(e.target);
 
-         if (!$target.is('img')) {
-            return;
+         if ($target.is('img')) {
+            $(this).envImageviewer($target.parent());
+         } else if ($target.is('a.env-image-viewer__images')) {
+            $(this).envImageviewer($target);
          }
-
-         $(this).envImageviewer($target.parent());
       }
    );
 
