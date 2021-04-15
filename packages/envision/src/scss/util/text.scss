@@ -3,6 +3,7 @@
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
+   text-size-adjust: none;
 
    &--muted {
       filter: opacity(0.625);
@@ -41,6 +42,17 @@
    &-align--right {
       text-align: right;
    }
+}
+
+button.#{$prefix}-link {
+   appearance: none;
+   display: inline;
+   border: none;
+   font-size: 1em !important;
+   margin: 0;
+   padding: 0;
+   background-color: transparent;
+   white-space: normal;
 }
 
 .#{$prefix}-link,
