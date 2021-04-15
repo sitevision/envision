@@ -9,10 +9,7 @@ const Header = ({ title, menuItems }) => {
          <Helmet>
             <html lang="en" className="sv-js" />
             <meta charset="utf-8" />
-            <meta
-               name="viewport"
-               content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
+            <meta name="viewport" content="width=1050" />
             <title>{`${title} \u00B7 Envision by Sitevision`}</title>
             <link
                rel="icon"
