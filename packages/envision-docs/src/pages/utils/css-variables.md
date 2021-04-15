@@ -53,10 +53,12 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 
 -  `--env-link-font-color`
 -  `--env-link-text-decoration`
+-  `--env-link-hover-font-color`
 -  `--env-link-hover-text-decoration`
    <br><br>
 -  `--env-link-secondary-font-color`
 -  `--env-link-secondary-text-decoration`
+-  `--env-link-secondary-hover-font-color`
 -  `--env-link-secondary-hover-text-decoration`
 
 #### Spacing <span class="env-badge env-badge--info">8.2</span>
@@ -102,14 +104,23 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-block-font-color`
 -  `--env-block-background-color`
 -  `--env-block-border-color`
+   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
+-  `--env-block-link-font-color`
+-  `--env-block-link-hover-font-color`
    <br><br>
 -  `--env-block-primary-font-color`
 -  `--env-block-primary-background-color`
 -  `--env-block-primary-border-color`
+   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
+-  `--env-block-primary-link-font-color`
+-  `--env-block-primary-link-hover-font-color`
    <br><br>
 -  `--env-block-secondary-font-color`
 -  `--env-block-secondary-background-color`
 -  `--env-block-secondary-border-color`
+   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
+-  `--env-block-secondary-link-font-color`
+-  `--env-block-secondary-link-hover-font-color`
 
 ### Elements <span class="env-badge env-badge--info">8.2</span>
 

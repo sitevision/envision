@@ -94,9 +94,11 @@ $link-hover-text-decoration: underline !default;
    (
       'link-font-color': $link-color,
       'link-text-decoration': $link-text-decoration,
+      'link-hover-font-color': css-var('link-font-color'),
       'link-hover-text-decoration': $link-hover-text-decoration,
       'link-secondary-font-color': css-var('font-color'),
       'link-secondary-text-decoration': css-var('link-text-decoration'),
+      'link-secondary-hover-font-color': css-var('link-font-color'),
       'link-secondary-hover-text-decoration':
          css-var('link-hover-text-decoration'),
    )
@@ -136,12 +138,14 @@ $color-lightest: lighten($color-lighter, 10%) !default;
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
 $block-default-background-color: #fff;
-$block-primary-background-color: #f7f7f7;
-$block-secondary-background-color: #e7f1ff;
-
 $block-default-border-color: #e7e7e7;
+
+$block-primary-background-color: #f7f7f7;
 $block-primary-border-color: #ccc;
+
+$block-secondary-background-color: #e7f1ff;
 $block-secondary-border-color: #a7bed0;
+$block-secondary-link-font-color: #2e62e9;
 
 $element-default-background-color: #f2f2f2;
 
@@ -154,12 +158,18 @@ $element-common-background-color-dark: #909090;
 @include to-css-custom-property(
    (
       'block-font-color': $font-color,
+      'block-link-font-color': css-var('link-font-color'),
+      'block-link-hover-font-color': css-var('link-hover-font-color'),
       'block-background-color': $block-default-background-color,
       'block-border-color': $block-default-border-color,
       'block-primary-font-color': $font-color,
+      'block-primary-link-font-color': css-var('link-font-color'),
+      'block-primary-link-hover-font-color': css-var('link-hover-font-color'),
       'block-primary-background-color': $block-primary-background-color,
       'block-primary-border-color': $block-primary-border-color,
       'block-secondary-font-color': $font-color,
+      'block-secondary-link-font-color': css-var('link-font-color'),
+      'block-secondary-link-hover-font-color': css-var('link-hover-font-color'),
       'block-secondary-background-color': $block-secondary-background-color,
       'block-secondary-border-color': $block-secondary-border-color,
       'element-font-color': $font-color,

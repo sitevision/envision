@@ -4,10 +4,16 @@ title: Button
 
 ## Types
 
+<span class="env-badge env-badge--info">Ghost button added in 8.2</span>
+
 ```html
 <button type="button" class="env-button">Default</button>
 
 <button type="button" class="env-button env-button--primary">Primary</button>
+
+<button type="button" class="env-button env-button--secondary">
+   Secondary
+</button>
 
 <button type="button" class="env-button env-button--success">Success</button>
 
@@ -89,7 +95,7 @@ title: Button
 </p>
 ```
 
-## Using icons
+## Icons <span class="env-badge env-badge--info">8.2</span>
 
 ```html
 <button type="button" class="env-button">

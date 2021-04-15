@@ -6,43 +6,26 @@
    z-index: 15;
    display: flex;
    justify-content: center;
-   padding-left: 0;
-   margin-right: 15%;
-   margin-left: 15%;
-   list-style: none;
+   margin: 0;
+   list-style: none; // keep, legacy image slider <ol>
+   padding: 15px;
 
-   li {
+   li, // keep, legacy image slider
+   button {
       cursor: pointer;
-      position: relative;
-      flex: 0 1 auto;
       width: 30px;
       height: 3px;
       margin-right: 3px;
       margin-left: 3px;
-      text-indent: -999px;
       background-color: $image-control-color-inactive;
+      border: none;
 
       &.#{$prefix}-is-active {
          background-color: $image-control-color;
       }
+   }
 
-      :after,
-      :before {
-         position: absolute;
-         top: -10px;
-         left: 0;
-         display: inline-block;
-         width: 100%;
-         height: 10px;
-         content: '';
-      }
-
-      :before {
-         top: -10px;
-      }
-
-      :after {
-         bottom: -10px;
-      }
+   button:focus:not(:focus-visible) {
+      outline: none;
    }
 }

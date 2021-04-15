@@ -2,17 +2,21 @@
 title: Colors
 ---
 
-## Block colors
+## Block colors <span class="env-badge env-badge--info">8.2</span>
 
 Preset color combinations, use for larger blocks of content.
 
 ```html
-<div class="example-grid doc-demo__modal">
+<div class="example-grid doc-demo__modal" id="blocks">
    <div class="example-grid__col example-grid__col--33">
       <div class="env-block env-block--border">
          <div class="example-variant">
             <h2>Default</h2>
-            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+            <p>
+               Bacon <a href="#block" class="env-link">ipsum</a> dolor
+               <a href="#blocks">amet beef</a> cupim brisket pork
+               <a href="#block" class="env-link-secondary">turducken</a>.
+            </p>
          </div>
       </div>
    </div>
@@ -20,7 +24,11 @@ Preset color combinations, use for larger blocks of content.
       <div class="env-block-primary env-block-primary--border">
          <div class="example-variant">
             <h2>Primary</h2>
-            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+            <p>
+               Bacon <a href="#block" class="env-link">ipsum</a> dolor
+               <a href="#blocks">amet beef</a> cupim brisket pork
+               <a href="#block" class="env-link-secondary">turducken</a>.
+            </p>
          </div>
       </div>
    </div>
@@ -28,14 +36,18 @@ Preset color combinations, use for larger blocks of content.
       <div class="env-block-secondary env-block-secondary--border">
          <div class="example-variant">
             <h2>Secondary</h2>
-            <p>Bacon ipsum dolor amet beef cupim brisket pork turducken.</p>
+            <p>
+               Bacon <span href="#block" class="env-link">ipsum</span> dolor
+               <a href="#blocks">amet beef</a> cupim brisket pork
+               <a href="#block" class="env-link-secondary">turducken</a>.
+            </p>
          </div>
       </div>
    </div>
 </div>
 ```
 
-## Element colors
+## Element colors <span class="env-badge env-badge--info">8.2</span>
 
 Element colors are used for elements and components. See usage examples below.
 

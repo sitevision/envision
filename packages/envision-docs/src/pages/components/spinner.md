@@ -2,6 +2,8 @@
 title: Spinner
 ---
 
+## Standard
+
 ```html
 <div class="env-spinner">
    <div class="env-rect1"></div>
@@ -11,6 +13,8 @@ title: Spinner
    <div class="env-rect5"></div>
 </div>
 ```
+
+## Bounce <span class="env-badge env-badge--info">8.2</span>
 
 ```html
 <div class="env-spinner-bounce">
