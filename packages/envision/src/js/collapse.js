@@ -5,6 +5,7 @@
  */
 
 import jQuery from 'jquery';
+import Util from './util';
 
 const Collapse = (($) => {
    const ARIA_EXPANDED = 'aria-expanded';
@@ -22,29 +23,10 @@ const Collapse = (($) => {
          this.$trigger = $(
             `[data-env-collapse][href="#${element.id}"], [data-env-collapse][data-target="#${element.id}"]`
          );
-         this.speed = this.getToggleSpeed(this.$trigger);
-      }
-
-      getToggleSpeed($trigger) {
-         let speed = 300,
-            duration;
-         if (this.$trigger.length) {
-            duration = getComputedStyle($trigger[0]).getPropertyValue(
-               DURATION_CUSTOM_PROP
-            );
-         } else {
-            duration = getComputedStyle(
-               document.documentElement
-            ).getPropertyValue(DURATION_CUSTOM_PROP);
-         }
-         if (duration && parseFloat(duration) > 0) {
-            if (duration.includes('ms')) {
-               speed = parseInt(duration, 10);
-            } else if (duration.includes('s')) {
-               speed = parseFloat(duration) * 1000;
-            }
-         }
-         return speed;
+         this.speed = Util.getToggleSpeed(
+            this.$trigger[0],
+            DURATION_CUSTOM_PROP
+         );
       }
 
       toggle() {
@@ -99,10 +81,6 @@ const Collapse = (($) => {
       const $this = $(this);
       const target = $this.attr('href') || $this.attr('data-target');
       const $target = $(target);
-
-      // if ($target.hasClass(MODIFIER_BASE + COLLAPSING)) {
-      //    return;
-      // }
 
       $target[NAME]();
    });

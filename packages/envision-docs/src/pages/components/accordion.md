@@ -103,11 +103,3 @@ You can also use attribute `data-target="#container4"`
    </div>
 </div>
 ```
-
-## Methods
-
-You can `show`, `hide` and `toggle` on available collapsible elements.
-
-Show `$('#container1').show()`
-Hide `$('#container1').hide()`
-Toggle `$('#container1').toggle()`
