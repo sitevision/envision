@@ -148,6 +148,255 @@ Uses `env-modal-dialog__dialog--small`
 </div>
 ```
 
+### Optional outer/inner scrolling
+
+Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling to inside the modal (`env-modal-dialog__body`).
+
+```html
+<button
+   id="outerBtn"
+   data-modal-dialog
+   data-target="#example3"
+   type="button"
+   class="env-button env-button--primary"
+>
+   Scroll outer scroll
+</button>
+
+<button
+   id="innerBtn"
+   data-modal-dialog
+   data-target="#example4"
+   type="button"
+   class="env-button env-button--primary"
+>
+   Show inner scroll
+</button>
+
+<div
+   id="example3"
+   class="env-modal-dialog"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-dialog__dialog">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h5 class="env-text env-modal-dialog__header__title">
+               Outer scroll
+            </h5>
+         </header>
+         <div class="env-modal-dialog__body">
+            <p class="env-text">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+               sapien turpis, aliquam nec porta ultrices, auctor ut mauris. Ut
+               volutpat ornare consectetur. Phasellus nec nisi non tellus
+               gravida porttitor a in arcu. Aliquam erat volutpat. Phasellus
+               laoreet urna sem. In dui arcu, facilisis sed mollis at, bibendum
+               vel purus. In sagittis lobortis tellus, sit amet egestas est
+               dignissim vel. Vivamus a consequat nunc. Vestibulum eleifend
+               malesuada quam id lacinia. Duis porta mauris et justo vehicula,
+               sit amet malesuada tellus sollicitudin. Etiam convallis, ipsum
+               non ultrices auctor, elit orci blandit est, vel finibus arcu
+               massa eu lorem. Fusce sit amet est non tellus vulputate semper in
+               eget est. In tincidunt ligula nec mauris tristique sagittis.
+               Pellentesque interdum eleifend eros a viverra. Ut volutpat ut
+               nisi nec gravida. Duis non sollicitudin ligula, ac vehicula
+               turpis.
+            </p>
+            <p class="env-text">
+               Duis eget lacus nec neque semper commodo. Nullam nisi nibh,
+               vehicula eget condimentum sed, dictum vulputate erat. Quisque ut
+               gravida magna. Cras eleifend maximus odio, quis tincidunt enim
+               consectetur eu. Sed nec arcu auctor, porttitor eros malesuada,
+               feugiat justo. Nulla ante augue, ultricies eu blandit et,
+               vulputate sed nibh. Suspendisse in dapibus sapien. Fusce
+               pulvinar, ligula vitae dapibus convallis, urna lectus viverra
+               diam, a lobortis magna diam id libero. Duis et venenatis dolor,
+               ac semper eros. Nunc tincidunt tempor enim.
+            </p>
+            <p class="env-text">
+               Vivamus eget sagittis velit. Quisque magna libero, egestas a
+               rutrum ac, imperdiet ac augue. Fusce nibh magna, sollicitudin sit
+               amet massa in, iaculis tempus quam. Ut sodales commodo ante, in
+               rutrum nunc semper quis. Vestibulum sed sollicitudin est. Etiam
+               posuere id velit sit amet dictum. Nam semper placerat ultrices.
+               Suspendisse in massa porttitor, faucibus neque sed, convallis
+               velit. Nulla luctus ipsum a feugiat porta.
+            </p>
+            <p class="env-text">
+               Duis ultricies gravida nunc, vitae fringilla sapien convallis ac.
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+               fermentum pellentesque euismod. Cras dictum feugiat nisi,
+               tincidunt imperdiet nunc pharetra vitae. Nunc ut neque in metus
+               tristique bibendum. Vivamus nec lorem odio. Vestibulum
+               pellentesque cursus diam in tempor.
+            </p>
+            <p class="env-text">
+               Praesent id diam elementum, consequat nisl vitae, congue turpis.
+               Sed sit amet cursus quam, vitae sagittis lorem. Morbi erat
+               lectus, tempus eget interdum ac, blandit sit amet ante. Praesent
+               scelerisque bibendum quam ut ornare. Duis ipsum ex, tincidunt vel
+               volutpat eget, bibendum eget odio. Duis vitae tristique eros.
+               Praesent at dui et velit porttitor malesuada sit amet a elit.
+            </p>
+            <p class="env-text">
+               Donec at augue quis dolor porta rutrum. Nullam fringilla lobortis
+               sapien ac cursus. Ut id egestas odio, mattis ornare dui. Etiam
+               interdum venenatis quam id lobortis. Nunc id enim luctus, porta
+               leo vitae, tristique lectus. In vel tortor nec lacus facilisis
+               euismod vitae porttitor ligula. Vivamus ut mauris id urna dictum
+               vestibulum.
+            </p>
+            <p class="env-text">
+               Mauris interdum fermentum turpis, at ullamcorper sapien accumsan
+               sit amet. Phasellus vitae augue volutpat, convallis elit sed,
+               eleifend nisl. Sed at lorem dui. Nunc scelerisque nisi sapien,
+               non sollicitudin tellus luctus vitae. Vivamus molestie turpis eu
+               enim blandit, rutrum egestas nisl hendrerit. Mauris pharetra
+               commodo malesuada. Proin at nisl nec turpis lacinia hendrerit non
+               non orci. Cras tempor quam a mauris placerat lacinia. Donec eget
+               sem ac tellus porttitor hendrerit. Duis congue risus non eros
+               pharetra, ut facilisis risus ullamcorper. Vivamus fringilla
+               suscipit lorem eu fermentum. Orci varius natoque penatibus et
+               magnis dis parturient montes, nascetur ridiculus mus. Mauris
+               tristique, leo et laoreet imperdiet, leo ligula egestas nibh, at
+               accumsan lorem nibh ut nulla. Vivamus vitae ornare est.
+               Suspendisse convallis tortor et nulla porttitor dictum.
+            </p>
+         </div>
+         <footer
+            class="env-modal-dialog__footer env-modal-dialog__footer--right"
+         >
+            <button type="button" class="env-button env-button--primary">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </section>
+   </div>
+</div>
+<div
+   id="example4"
+   class="env-modal-dialog env-modal-dialog--inner-scroll"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-dialog__dialog">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h5 class="env-text env-modal-dialog__header__title">
+               Inner scroll
+            </h5>
+         </header>
+         <div class="env-modal-dialog__body">
+            <p class="env-text">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+               sapien turpis, aliquam nec porta ultrices, auctor ut mauris. Ut
+               volutpat ornare consectetur. Phasellus nec nisi non tellus
+               gravida porttitor a in arcu. Aliquam erat volutpat. Phasellus
+               laoreet urna sem. In dui arcu, facilisis sed mollis at, bibendum
+               vel purus. In sagittis lobortis tellus, sit amet egestas est
+               dignissim vel. Vivamus a consequat nunc. Vestibulum eleifend
+               malesuada quam id lacinia. Duis porta mauris et justo vehicula,
+               sit amet malesuada tellus sollicitudin. Etiam convallis, ipsum
+               non ultrices auctor, elit orci blandit est, vel finibus arcu
+               massa eu lorem. Fusce sit amet est non tellus vulputate semper in
+               eget est. In tincidunt ligula nec mauris tristique sagittis.
+               Pellentesque interdum eleifend eros a viverra. Ut volutpat ut
+               nisi nec gravida. Duis non sollicitudin ligula, ac vehicula
+               turpis.
+            </p>
+            <p class="env-text">
+               Duis eget lacus nec neque semper commodo. Nullam nisi nibh,
+               vehicula eget condimentum sed, dictum vulputate erat. Quisque ut
+               gravida magna. Cras eleifend maximus odio, quis tincidunt enim
+               consectetur eu. Sed nec arcu auctor, porttitor eros malesuada,
+               feugiat justo. Nulla ante augue, ultricies eu blandit et,
+               vulputate sed nibh. Suspendisse in dapibus sapien. Fusce
+               pulvinar, ligula vitae dapibus convallis, urna lectus viverra
+               diam, a lobortis magna diam id libero. Duis et venenatis dolor,
+               ac semper eros. Nunc tincidunt tempor enim.
+            </p>
+            <p class="env-text">
+               Vivamus eget sagittis velit. Quisque magna libero, egestas a
+               rutrum ac, imperdiet ac augue. Fusce nibh magna, sollicitudin sit
+               amet massa in, iaculis tempus quam. Ut sodales commodo ante, in
+               rutrum nunc semper quis. Vestibulum sed sollicitudin est. Etiam
+               posuere id velit sit amet dictum. Nam semper placerat ultrices.
+               Suspendisse in massa porttitor, faucibus neque sed, convallis
+               velit. Nulla luctus ipsum a feugiat porta.
+            </p>
+            <p class="env-text">
+               Duis ultricies gravida nunc, vitae fringilla sapien convallis ac.
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+               fermentum pellentesque euismod. Cras dictum feugiat nisi,
+               tincidunt imperdiet nunc pharetra vitae. Nunc ut neque in metus
+               tristique bibendum. Vivamus nec lorem odio. Vestibulum
+               pellentesque cursus diam in tempor.
+            </p>
+            <p class="env-text">
+               Praesent id diam elementum, consequat nisl vitae, congue turpis.
+               Sed sit amet cursus quam, vitae sagittis lorem. Morbi erat
+               lectus, tempus eget interdum ac, blandit sit amet ante. Praesent
+               scelerisque bibendum quam ut ornare. Duis ipsum ex, tincidunt vel
+               volutpat eget, bibendum eget odio. Duis vitae tristique eros.
+               Praesent at dui et velit porttitor malesuada sit amet a elit.
+            </p>
+            <p class="env-text">
+               Donec at augue quis dolor porta rutrum. Nullam fringilla lobortis
+               sapien ac cursus. Ut id egestas odio, mattis ornare dui. Etiam
+               interdum venenatis quam id lobortis. Nunc id enim luctus, porta
+               leo vitae, tristique lectus. In vel tortor nec lacus facilisis
+               euismod vitae porttitor ligula. Vivamus ut mauris id urna dictum
+               vestibulum.
+            </p>
+            <p class="env-text">
+               Mauris interdum fermentum turpis, at ullamcorper sapien accumsan
+               sit amet. Phasellus vitae augue volutpat, convallis elit sed,
+               eleifend nisl. Sed at lorem dui. Nunc scelerisque nisi sapien,
+               non sollicitudin tellus luctus vitae. Vivamus molestie turpis eu
+               enim blandit, rutrum egestas nisl hendrerit. Mauris pharetra
+               commodo malesuada. Proin at nisl nec turpis lacinia hendrerit non
+               non orci. Cras tempor quam a mauris placerat lacinia. Donec eget
+               sem ac tellus porttitor hendrerit. Duis congue risus non eros
+               pharetra, ut facilisis risus ullamcorper. Vivamus fringilla
+               suscipit lorem eu fermentum. Orci varius natoque penatibus et
+               magnis dis parturient montes, nascetur ridiculus mus. Mauris
+               tristique, leo et laoreet imperdiet, leo ligula egestas nibh, at
+               accumsan lorem nibh ut nulla. Vivamus vitae ornare est.
+               Suspendisse convallis tortor et nulla porttitor dictum.
+            </p>
+         </div>
+         <footer
+            class="env-modal-dialog__footer env-modal-dialog__footer--right"
+         >
+            <button type="button" class="env-button env-button--primary">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </section>
+   </div>
+</div>
+```
+
 ## Methods
 
 Show `$('#myModal').envDialog('show')`
