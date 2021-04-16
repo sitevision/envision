@@ -64,11 +64,12 @@ main > div > h2,
    box-sizing: border-box;
    max-width: $site-width;
    margin: 0 auto;
-   padding: 120px $site-padding;
+   padding: 60px $site-padding;
 
    @include desktop {
       display: flex;
       justify-content: space-between;
+      padding: 120px $site-padding;
    }
 }
 
