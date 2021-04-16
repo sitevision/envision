@@ -17,6 +17,10 @@
    align-items: center;
    justify-content: space-between;
 
+   @include mobile-and-tablet {
+      padding: $site-padding / 2 $site-padding;
+   }
+
    ul {
       margin: 0 -5px;
       padding: 0;

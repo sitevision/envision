@@ -17,12 +17,21 @@
    align-items: center;
    justify-content: space-between;
 
+   @include mobile-and-tablet {
+      padding: $site-padding / 2 $site-padding;
+      height: auto;
+   }
+
    .logo {
       display: inherit;
 
       img {
          width: 175px;
          height: auto;
+
+         @include mobile-and-tablet {
+            width: 120px;
+         }
       }
    }
 
