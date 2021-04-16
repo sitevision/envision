@@ -236,7 +236,9 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          >
          <div class="env-form-element__control env-form-element__control--icon">
             <svg class="env-icon">
-               <use xlink:href="/images/envision-icons.svg#icon-search"></use>
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-search"
+               ></use>
             </svg>
             <input
                type="search"
@@ -258,7 +260,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
                id="text"
             />
             <svg class="env-icon">
-               <use xlink:href="/images/envision-icons.svg#icon-star"></use>
+               <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
             </svg>
          </div>
       </div>
