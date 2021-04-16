@@ -11,5 +11,5 @@ fs.copyFileSync(
       'dist',
       'envision-icons.svg'
    ),
-   path.resolve(__dirname, '..', 'static', 'images', 'envision-icons.svg')
+   path.resolve(__dirname, '..', 'static', 'sitevision', 'envision-icons.svg')
 );

@@ -27,7 +27,7 @@ export default function Template({
                      <li key={icon} className="env-list__item" title={icon}>
                         <svg className="env-icon">
                            <use
-                              xlinkHref={`/images/envision-icons.svg#${icon}`}
+                              xlinkHref={`/sitevision/envision-icons.svg#${icon}`}
                            ></use>
                         </svg>
                      </li>

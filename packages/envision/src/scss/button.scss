@@ -11,7 +11,7 @@
    text-align: center;
    text-decoration: none;
    user-select: none;
-   vertical-align: middle;
+   vertical-align: baseline;
    border-radius: css-var('button-border-radius');
 
    @include button-size(
@@ -121,6 +121,7 @@
    &--disabled,
    &[disabled] {
       opacity: 0.55;
+      pointer-events: none;
    }
 
    &--dropdown {
