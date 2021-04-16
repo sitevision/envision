@@ -161,10 +161,6 @@ const Dropdown = (($) => {
             ) {
                return;
             }
-
-            if (/input|select|textarea|form/i.test(event.target.tagName)) {
-               return;
-            }
          }
 
          const $toggles = $(TOGGLE_DROPDOWN);
