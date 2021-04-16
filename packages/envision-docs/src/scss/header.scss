@@ -9,15 +9,17 @@
 }
 
 .header {
-   max-width: 1000px;
+   max-width: $site-width;
    display: flex;
    margin: 0 auto;
+   padding: $site-padding;
    height: 40px;
    align-items: center;
    justify-content: space-between;
 
    .logo {
       display: inherit;
+
       img {
          width: 175px;
          height: auto;
@@ -26,21 +28,29 @@
 
    .header-nav {
       ul {
-         margin: 0;
+         margin: 0 -5px;
          padding: 0;
          list-style: none;
 
          li {
             display: inline-block;
-            margin-left: 10px;
+            margin: 0 5px;
 
             a {
+               color: var(--env-font-color);
                margin: 0.25em;
                outline: 0;
+               text-decoration: none;
             }
 
             a:hover {
                border-bottom: 2px solid #6892d5;
+            }
+
+            &:not(:first-child) {
+               @include mobile-and-tablet {
+                  display: none;
+               }
             }
          }
       }

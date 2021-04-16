@@ -1,3 +1,4 @@
+@import 'variables';
 @import 'highlight';
 @import 'nav-top';
 @import 'footer';
@@ -28,37 +29,117 @@ body {
 body {
    font-family: var(--env-font-family);
 
+   &.font-georgia {
+      --env-font-family: #{$georgia};
+   }
+
    &.font-roboto {
-      --env-font-family: Roboto, Helvetica, Arial, sans-serif;
+      --env-font-family: #{$roboto};
    }
 
    &.font-source-sans {
-      --env-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+      --env-font-family: #{$source-sans};
    }
 
    &.font-open-sans {
-      --env-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      --env-font-family: #{$open-sans};
+   }
+
+   &.font-frank-ruhl {
+      --env-font-family: #{$frank-ruhl};
+   }
+}
+
+main > div > h2,
+.docs-text,
+.sidenav,
+.sidenav *,
+.sv-header *,
+.footer-wrapper {
+   font-family: $roboto;
+   --env-font-family: #{$roboto};
+}
+
+.main-container {
+   box-sizing: border-box;
+   max-width: $site-width;
+   margin: 0 auto;
+   padding: 120px $site-padding;
+
+   @include desktop {
+      display: flex;
+      justify-content: space-between;
    }
 }
 
 main {
+   display: block;
    max-width: 800px;
-   display: flex;
-   margin: 0 auto 80px auto;
+
+   @include mobile-and-tablet {
+      margin: 0 auto $site-padding * 4;
+   }
+
+   @include desktop {
+      flex: 1 1 74%;
+      width: 74%;
+      margin: 0 auto 0 0;
+      padding: 0 0 $site-padding 0;
+   }
 }
 
-.main-container {
-   max-width: 1000px;
-   display: flex;
-   margin: 0 auto;
-   padding: 120px 0;
+.sidenav {
+   flex: 1;
+
+   @include desktop {
+      max-width: 200px;
+   }
+
+   @include mobile-and-tablet {
+      padding-top: $site-padding * 2;
+
+      border-top: 1px solid var(--env-border-color);
+
+      > div {
+         padding: $site-padding;
+
+         > ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            margin: 0 $site-padding * -1;
+
+            li {
+               box-sizing: border-box;
+               flex: 1 1 33%;
+               width: 33%;
+               padding: $site-padding;
+            }
+         }
+      }
+   }
+
+   @include mobile {
+      > div > ul li {
+         flex: 1 1 50%;
+         width: 50%;
+      }
+   }
+}
+
+img {
+   display: block;
+   max-width: 100%;
 }
 
 h1 {
    font-size: 46px;
+   font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
    font-weight: 500;
 
    &.main-heading {
+      font-family: $roboto;
+      font-family: $helvetica;
       margin: 0;
       line-height: 1;
    }
@@ -67,6 +148,12 @@ h1 {
 h2 {
    font-weight: 500;
    font-size: 26px;
+   font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
+}
+
+h3 {
+   font-size: 24px;
+   font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
 }
 
 p {
@@ -76,11 +163,6 @@ p {
 a {
    text-decoration: none;
    color: var(--env-font-color);
-}
-
-main {
-   flex: 4;
-   display: block;
 }
 
 .highlighter-rouge {
@@ -112,18 +194,11 @@ main {
    }
 }
 
-.theme-picker {
-   border-top: 1px solid var(--env-border-color);
-   margin: 1em 0;
-   padding: 1em 0;
-}
-
 .sidenav {
+   --env-link-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-text-decoration: none;
-
    flex: 1;
-   padding: 0 1em 0 0;
 
    > div {
       margin-bottom: 10px;
@@ -143,36 +218,20 @@ main {
 
       li {
          padding: 0 0 10px 0;
-
-         a {
-            font-weight: 300;
-            font-size: 16px;
-
-            &.active {
-               border-bottom: 2px solid #6892d5;
-            }
-         }
       }
    }
 
-   .env-form-element {
-      margin: 0.5em 0 1em;
-   }
-
-   .env-form-element__label,
-   .env-switch__label {
+   ul li a {
       font-weight: 300;
-      font-size: 14px;
-   }
+      font-size: 16px;
+      color: var(--env-link-secondary-font-color);
 
-   select {
-      font-family: var(--env-font-family);
-      font-size: 13px;
-   }
+      &:hover {
+         color: var(--env-link-secondary-font-color);
+      }
 
-   .env-switch__label {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
+      &.active {
+         border-bottom: 2px solid #6892d5;
+      }
    }
 }

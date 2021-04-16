@@ -10,9 +10,26 @@
 }
 
 .footer {
-   max-width: 1000px;
+   max-width: $site-width;
    display: flex;
-   margin: 10px auto;
+   margin: 0 auto;
+   padding: $site-padding;
+   align-items: center;
+   justify-content: space-between;
+
+   ul {
+      margin: 0 -5px;
+      padding: 0;
+      list-style: none;
+   }
+
+   li {
+      margin: 0 5px;
+
+      &:first-child {
+         display: none;
+      }
+   }
 }
 
 .footer a {

@@ -34,16 +34,16 @@ const BaseTemplate = ({
       <>
          <Header title={title} menuItems={topMenuItems} />
          <div className="main-container">
-            <Sidenav
-               categories={menuCategories}
-               menuItems={filterMenuItems(menuItems)}
-            ></Sidenav>
             <main>
                <h1 className="main-heading">{title}</h1>
                {children}
             </main>
+            <Sidenav
+               categories={menuCategories}
+               menuItems={filterMenuItems(menuItems)}
+            ></Sidenav>
          </div>
-         <Footer />
+         <Footer menuItems={topMenuItems} />
       </>
    );
 };
