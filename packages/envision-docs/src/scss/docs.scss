@@ -92,7 +92,8 @@ main {
    flex: 1;
 
    @include desktop {
-      max-width: 200px;
+      max-width: 232px;
+      padding-left: $site-padding * 2;
    }
 
    @include mobile-and-tablet {
@@ -225,6 +226,10 @@ a {
       font-weight: 300;
       font-size: 16px;
       color: var(--env-link-secondary-font-color);
+
+      @include desktop {
+         white-space: nowrap;
+      }
 
       &:hover {
          color: var(--env-link-secondary-font-color);
