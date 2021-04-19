@@ -1,4 +1,4 @@
-<main>
+<main class="docs-text">
    <div class="env-d--flex env-justify-content--center sv-home__content">
       <div class="sv-home__item">
          <div class="sv-home__env-logo">

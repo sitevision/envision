@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'webfonts';
 @import 'highlight';
 @import 'nav-top';
 @import 'footer';
@@ -48,6 +49,16 @@ body {
    &.font-frank-ruhl {
       --env-font-family: #{$frank-ruhl};
    }
+}
+
+main > div > h2,
+.docs-text,
+.sidenav,
+.sidenav *,
+.sv-header *,
+.footer-wrapper {
+   font-family: $roboto;
+   --env-font-family: #{$roboto};
 }
 
 main > div > h2,
@@ -141,7 +152,6 @@ h1 {
 
    &.main-heading {
       font-family: $roboto;
-      font-family: $helvetica;
       margin: 0;
       line-height: 1;
    }
@@ -223,7 +233,8 @@ a {
       }
    }
 
-   ul li a {
+   ul li a,
+   .theme-picker .env-link-secondary {
       font-weight: 300;
       font-size: 16px;
       color: var(--env-link-secondary-font-color);
@@ -240,4 +251,10 @@ a {
          border-bottom: 2px solid #6892d5;
       }
    }
+}
+
+.theme-picker {
+   border-top: 1px solid var(--env-border-color);
+   margin: 1em 0;
+   padding: 1em 0;
 }
