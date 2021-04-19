@@ -1,37 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Theme extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         darkMode: false,
-         font: '',
-      };
-   }
+const ThemeContext = React.createContext();
+const useTheme = () => React.useContext(ThemeContext);
 
-   componentDidMount() {
-      this.createStylesheet();
-      this.setState({
-         darkMode: window.localStorage.getItem('env-darkmode') === 'true',
-         font: window.localStorage.getItem('env-font') || '',
-      });
-      if (this.state.darkMode) {
-         this.setDarkTheme();
+const ThemeProvider = ({ children }) => {
+   const [darkMode, setDarkMode] = React.useState(false);
+   const [font, setFont] = React.useState(null);
+
+   React.useEffect(() => {
+      setDarkMode(window.localStorage.getItem('env-darkmode') === 'true');
+      setFont(window.localStorage.getItem('env-font') || '');
+   }, []);
+
+   React.useEffect(() => {
+      let stylesheet = getStylesheet();
+      if (darkMode) {
+         stylesheet.setAttribute('href', darkThemeStyle());
+      } else {
+         stylesheet.setAttribute('href', defaultThemeStyle());
       }
-      this.setFont(this.state.font);
-   }
+      window.localStorage.setItem('env-darkmode', darkMode);
+   }, [darkMode]);
 
-   createStylesheet() {
-      let stylesheet = document.createElement('link');
-      stylesheet.setAttribute('rel', 'stylesheet');
-      stylesheet.setAttribute('property', 'stylesheet');
-      stylesheet.setAttribute('id', 'env-font');
-      stylesheet.setAttribute('href', 'data:text/css;charset=UTF-8,');
-      document.head.append(stylesheet);
-   }
+   React.useEffect(() => {
+      let oldFont = window.localStorage.getItem('env-font');
+      document.body.classList.remove('font-' + oldFont);
+      document.body.classList.add('font-' + font);
+      window.localStorage.setItem('env-font', font);
+   }, [font]);
 
-   darkThemeStyle() {
-      let theme = `:root {
+   const toggleDarkMode = () => setDarkMode(!darkMode);
+
+   return (
+      <ThemeContext.Provider
+         value={{ toggleDarkMode, darkMode, setFont, font }}
+      >
+         {children}
+      </ThemeContext.Provider>
+   );
+};
+
+const darkThemeStyle = () => {
+   let theme = `:root {
       --env-page-background-color: #161616;
       --env-section-background-color: #555555;
       --env-element-common-background-color: #333;
@@ -58,48 +69,33 @@ class Theme extends Component {
       color: var(--env-font-color);
       }
       `;
-      return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
-   }
+   return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
+};
 
-   defaultThemeStyle() {
-      let theme = `:root {
+const defaultThemeStyle = () => {
+   let theme = `:root {
       --env-collapse-background-color: var(--env-element-background-color-light);
       --env-form-input-font-color: var(--env-font-color);
       --env-form-input-border-color: var(--env-border-color-light);
       }`;
-      return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
-   }
+   return `data:text/css;charset=UTF-8,${encodeURIComponent(theme)}`;
+};
 
-   setDarkTheme() {
-      let stylesheet = document.getElementById('env-font');
-      stylesheet.setAttribute('href', this.darkThemeStyle());
-      this.setState({
-         darkMode: true,
-      });
-      window.localStorage.setItem('env-darkmode', 'true');
+const getStylesheet = () => {
+   let stylesheet = document.getElementById('env-theme');
+   if (!stylesheet) {
+      stylesheet = document.createElement('link');
+      stylesheet.setAttribute('rel', 'stylesheet');
+      stylesheet.setAttribute('property', 'stylesheet');
+      stylesheet.setAttribute('id', 'env-theme');
+      stylesheet.setAttribute('href', 'data:text/css;charset=UTF-8,');
+      document.head.append(stylesheet);
    }
+   return stylesheet;
+};
 
-   setDefaultTheme() {
-      let stylesheet = document.getElementById('env-font');
-      stylesheet.setAttribute('href', this.defaultThemeStyle());
-      this.setState({
-         darkMode: false,
-      });
-      window.localStorage.setItem('env-darkmode', 'false');
-   }
+ThemeProvider.propTypes = {
+   children: PropTypes.node,
+};
 
-   setFont(f) {
-      document.body.classList.remove('font-' + this.state.font);
-      document.body.classList.add('font-' + f);
-      this.setState({
-         font: f,
-      });
-      window.localStorage.setItem('env-font', f);
-   }
-
-   render() {
-      return <></>;
-   }
-}
-
-export default Theme;
+export { ThemeProvider, useTheme };
