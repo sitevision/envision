@@ -32,7 +32,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -159,7 +159,9 @@ title: Feed
          title="More options"
       >
          <svg class="env-icon">
-            <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+            <use
+               xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
+            ></use>
          </svg>
          <span class="env-assistive-text">More options</span>
       </button>
@@ -197,7 +199,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -286,7 +288,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -343,7 +345,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -400,7 +402,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -469,7 +471,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -593,7 +595,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More options</span>
@@ -690,7 +692,7 @@ title: Feed
                            >
                               <svg class="env-icon">
                                  <use
-                                    xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                                    xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                                  ></use>
                               </svg>
                               <span class="env-assistive-text"
@@ -750,7 +752,7 @@ title: Feed
                            >
                               <svg class="env-icon">
                                  <use
-                                    xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                                    xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                                  ></use>
                               </svg>
                               <span class="env-assistive-text"
@@ -822,7 +824,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More options</span>
@@ -926,7 +928,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More post options</span>

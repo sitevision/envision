@@ -3,6 +3,7 @@
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
+   text-size-adjust: none;
 
    &--muted {
       filter: opacity(0.625);
@@ -43,10 +44,20 @@
    }
 }
 
+button.#{$prefix}-link {
+   appearance: none;
+   display: inline;
+   border: none;
+   font-size: 1em !important;
+   margin: 0;
+   padding: 0;
+   background-color: transparent;
+   white-space: normal;
+}
+
 .#{$prefix}-link,
 a.#{$prefix}-text,
-.#{$prefix}-text a:not([class^='#{$prefix}-']),
-.#{$prefix}-text a:not([class*=' #{$prefix}-']) {
+.#{$prefix}-text a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
    @include link(
       'link-font-color',
       'link-text-decoration',

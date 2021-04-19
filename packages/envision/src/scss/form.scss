@@ -1,7 +1,10 @@
 .#{$prefix}-form {
+   text-size-adjust: none;
+
    input,
    select,
-   textarea {
+   textarea,
+   &-input {
       font-family: inherit;
    }
 
@@ -35,7 +38,6 @@
       }
 
       &[disabled] {
-         cursor: not-allowed;
          user-select: none;
       }
 
@@ -88,26 +90,36 @@
          &--icon {
             position: relative;
 
+            $iconSize: 1.25em;
+
             .env-icon {
                position: absolute;
                top: 50%;
-               left: 0.5em;
-               margin-top: -0.75em;
-               width: 1.5em;
-               height: 1.5em;
+               left: css-var('spacing-x-small');
+               margin-top: ($iconSize / 2 * -1);
+               width: $iconSize;
+               height: $iconSize;
             }
 
             input:first-child {
-               padding-right: calc(2em + #{css-var('spacing-xx-small')});
+               padding-right: calc(
+                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
+                        'spacing-xx-small'
+                     )}
+               );
             }
 
             input + .env-icon {
                left: auto;
-               right: 0.5em;
+               right: css-var('spacing-x-small');
             }
 
             .env-icon + input {
-               padding-left: calc(2em + #{css-var('spacing-xx-small')});
+               padding-left: calc(
+                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
+                        'spacing-xx-small'
+                     )}
+               );
             }
          }
       }
@@ -366,7 +378,6 @@
    &--disabled {
       label {
          color: css-var('font-color-light');
-         cursor: not-allowed;
       }
    }
 }
@@ -403,7 +414,6 @@
    &__slider {
       display: inline-block;
       position: relative;
-      cursor: pointer;
       top: 0;
       left: 0;
       flex: 0 0 2.375em;
