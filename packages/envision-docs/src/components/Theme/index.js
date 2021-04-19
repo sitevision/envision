@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThemeContext = React.createContext();
+const ThemeContext = React.createContext({ font: '', darkMode: false });
 const useTheme = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
