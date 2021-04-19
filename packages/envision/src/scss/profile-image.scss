@@ -4,7 +4,9 @@
 }
 
 @mixin container-size($s) {
-   width: $s;
+   width: 100%;
+   max-width: $s;
+   height: 0;
    padding: 100% 0 0 0;
 }
 

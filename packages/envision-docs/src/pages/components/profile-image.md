@@ -22,7 +22,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="256px">
       <img
          class="env-profile-image env-profile-image--xx-large"
-         src="https://placehold.it/256x256.png/ccc/000?text=XXL"
+         src="https://placehold.jp/ccc/000/256x256.png?text=XXL"
          alt="Example profile image"
       />
    </div>
@@ -30,7 +30,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="224px">
       <img
          class="env-profile-image env-profile-image--x-large"
-         src="https://placehold.it/224x224.png/ccc/000?text=XL"
+         src="https://placehold.jp/ccc/000/224x224.png?text=XL"
          alt="Example profile image"
       />
    </div>
@@ -38,7 +38,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="128px">
       <img
          class="env-profile-image env-profile-image--large"
-         src="https://placehold.it/128x128.png/ccc/000?text=L"
+         src="https://placehold.jp/ccc/000/128x128.png?text=L"
          alt="Example profile image"
       />
    </div>
@@ -46,7 +46,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="96px">
       <img
          class="env-profile-image env-profile-image--medium"
-         src="https://placehold.it/96x96.png/ccc/000?text=M"
+         src="https://placehold.jp/ccc/000/96x96.png?text=M"
          alt="Example profile image"
       />
    </div>
@@ -54,7 +54,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="64px">
       <img
          class="env-profile-image env-profile-image--small"
-         src="https://placehold.it/64x64.png/ccc/000?text=S"
+         src="https://placehold.jp/ccc/000/64x64.png?text=S"
          alt="Example profile image"
       />
    </div>
@@ -62,7 +62,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="48px">
       <img
          class="env-profile-image env-profile-image--x-small"
-         src="https://placehold.it/48x48.png/ccc/000?text=XS"
+         src="https://placehold.jp/ccc/000/48x48.png?text=XS"
          alt="Example profile image"
       />
    </div>
@@ -70,7 +70,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="32px">
       <img
          class="env-profile-image env-profile-image--xx-small"
-         src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+         src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
          alt="Example profile image"
       />
    </div>
@@ -83,72 +83,14 @@ Using a wrapper element will make the image resize if the element containing
 the image is smaller than the image.
 
 ```html
-<div class="example-profile-images">
+<div class="example-profile-images example-profile-images--resizeable">
    <div
       class="env-profile-image env-profile-image--xx-large"
+      data-demo-size-inside
       data-demo-size="256px"
    >
       <img
-         src="https://placehold.it/256x256.png/ccc/000?text=XXL"
-         alt="Example profile image"
-      />
-   </div>
-   <div
-      class="env-profile-image env-profile-image--x-large"
-      data-demo-size="224px"
-   >
-      <img
-         src="https://placehold.it/224x224.png/ccc/000?text=XL"
-         alt="Example profile image"
-      />
-   </div>
-
-   <div
-      class="env-profile-image env-profile-image--large"
-      data-demo-size="128px"
-   >
-      <img
-         src="https://placehold.it/128x128.png/ccc/000?text=L"
-         alt="Example profile image"
-      />
-   </div>
-
-   <div
-      class="env-profile-image env-profile-image--medium"
-      data-demo-size="96px"
-   >
-      <img
-         src="https://placehold.it/96x96.png/ccc/000?text=M"
-         alt="Example profile image"
-      />
-   </div>
-
-   <div
-      class="env-profile-image env-profile-image--small"
-      data-demo-size="64px"
-   >
-      <img
-         src="https://placehold.it/64x64.png/ccc/000?text=S"
-         alt="Example profile image"
-      />
-   </div>
-
-   <div
-      class="env-profile-image env-profile-image--x-small"
-      data-demo-size="48px"
-   >
-      <img
-         src="https://placehold.it/48x48.png/ccc/000?text=XS"
-         alt="Example profile image"
-      />
-   </div>
-
-   <div
-      class="env-profile-image env-profile-image--xx-small"
-      data-demo-size="32px"
-   >
-      <img
-         src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+         src="https://placehold.jp/ccc/000/256x256.png?text=XXL"
          alt="Example profile image"
       />
    </div>
