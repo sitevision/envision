@@ -11,7 +11,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.it/48x48.png/ccc/000?text=XS"
+               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                alt=""
             />
          </a>
@@ -32,7 +32,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -51,7 +51,7 @@ title: Feed
          <img
             class="env-embedded__img"
             alt="Image alternative"
-            src="https://placehold.it/730x100.png?text=embedded%20image"
+            src="https://placehold.jp/730x100.png?text=embedded%20image"
          />
          <div class="env-embedded__block">
             <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
@@ -93,7 +93,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                      alt=""
                   />
                </a>
@@ -123,7 +123,7 @@ title: Feed
       <a href="#" aria-label="Example profile image">
          <img
             class="env-profile-image env-profile-image--x-small"
-            src="https://placehold.it/48x48.png/ccc/000?text=XS"
+            src="https://placehold.jp/ccc/000/48x48.png?text=XS"
             alt=""
          />
       </a>
@@ -159,7 +159,9 @@ title: Feed
          title="More options"
       >
          <svg class="env-icon">
-            <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+            <use
+               xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
+            ></use>
          </svg>
          <span class="env-assistive-text">More options</span>
       </button>
@@ -176,7 +178,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.it/48x48.png/ccc/000?text=XS"
+               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                alt=""
             />
          </a>
@@ -197,7 +199,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -243,7 +245,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                            alt=""
                         />
                      </a>
@@ -286,7 +288,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -300,7 +302,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                            alt=""
                         />
                      </a>
@@ -343,7 +345,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -357,7 +359,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                            alt=""
                         />
                      </a>
@@ -400,7 +402,7 @@ title: Feed
                      >
                         <svg class="env-icon">
                            <use
-                              xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                              xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                            ></use>
                         </svg>
                         <span class="env-assistive-text">More options</span>
@@ -414,7 +416,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                      alt=""
                   />
                </a>
@@ -445,7 +447,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.it/48x48.png/ccc/000?text=XS"
+               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                alt=""
             />
          </a>
@@ -469,7 +471,7 @@ title: Feed
          >
             <svg class="env-icon">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                  xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                ></use>
             </svg>
             <span class="env-assistive-text">More options</span>
@@ -486,7 +488,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                      alt=""
                   />
                </a>
@@ -539,7 +541,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                      alt=""
                   />
                </a>
@@ -572,7 +574,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                      alt=""
                   />
                </a>
@@ -593,7 +595,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More options</span>
@@ -644,7 +646,7 @@ title: Feed
                            <a href="#" aria-label="Example profile image">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
-                                 src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                                 src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                                  alt=""
                               />
                            </a>
@@ -690,7 +692,7 @@ title: Feed
                            >
                               <svg class="env-icon">
                                  <use
-                                    xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                                    xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                                  ></use>
                               </svg>
                               <span class="env-assistive-text"
@@ -706,7 +708,7 @@ title: Feed
                            <a href="#" aria-label="Example profile image">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
-                                 src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                                 src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                                  alt=""
                               />
                            </a>
@@ -750,7 +752,7 @@ title: Feed
                            >
                               <svg class="env-icon">
                                  <use
-                                    xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                                    xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                                  ></use>
                               </svg>
                               <span class="env-assistive-text"
@@ -766,7 +768,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                            alt=""
                         />
                      </a>
@@ -801,7 +803,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                      alt=""
                   />
                </a>
@@ -822,7 +824,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More options</span>
@@ -870,7 +872,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                            alt=""
                         />
                      </a>
@@ -905,7 +907,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.it/48x48.png/ccc/000?text=XS"
+                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
                      alt=""
                   />
                </a>
@@ -926,7 +928,7 @@ title: Feed
                >
                   <svg class="env-icon">
                      <use
-                        xlink:href="/images/envision-icons.svg#icon-arrow-down"
+                        xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
                      ></use>
                   </svg>
                   <span class="env-assistive-text">More post options</span>
@@ -972,7 +974,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.it/32x32.png/ccc/000?text=XXS"
+                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
                            alt=""
                         />
                      </a>

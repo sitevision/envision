@@ -18,7 +18,7 @@ title: Dropdown
       <svg
          class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
       >
-         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
@@ -91,7 +91,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       data-target="#example2"
    >
       <svg class="env-icon env-dropdown-icon">
-         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
@@ -126,7 +126,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <svg
          class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
       >
-         <use xlink:href="/images/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
@@ -134,7 +134,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
          <button type="button" role="menuitem" class="env-dropdown__item">
             <svg class="env-icon env-icon--x-small env-m-right--xx-small">
                <use
-                  xlink:href="/images/envision-icons.svg#icon-grid-small"
+                  xlink:href="/sitevision/envision-icons.svg#icon-grid-small"
                ></use>
             </svg>
             Action
@@ -143,7 +143,9 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
             <svg class="env-icon env-icon--x-small env-m-right--xx-small">
-               <use xlink:href="/images/envision-icons.svg#icon-grid-big"></use>
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-grid-big"
+               ></use>
             </svg>
             Properties
          </button>
@@ -152,7 +154,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
             <svg class="env-icon env-icon--x-small env-m-right--xx-small">
-               <use xlink:href="/images/envision-icons.svg#icon-list"></use>
+               <use xlink:href="/sitevision/envision-icons.svg#icon-list"></use>
             </svg>
             Settings
          </button>

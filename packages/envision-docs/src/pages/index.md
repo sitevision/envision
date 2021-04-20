@@ -1,4 +1,4 @@
-<main>
+<main class="docs-text">
    <div class="env-d--flex env-justify-content--center sv-home__content">
       <div class="env-p-around--xxx-large sv-home__item">
          <h1 class="sv-home__title env-m-bottom--xxx-small">
