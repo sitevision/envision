@@ -148,6 +148,14 @@
    height: 260px;
    position: relative;
 
+   &--resizeable {
+      width: 260px;
+      max-width: 260px;
+      border: 1px dashed var(--env-border-color);
+      resize: horizontal;
+      overflow: hidden;
+   }
+
    img {
       border: 1px solid #aaa;
    }
@@ -212,6 +220,13 @@
          font-size: 10px;
          color: #666;
          content: attr(data-demo-size);
+      }
+   }
+
+   [data-demo-size][data-demo-size-inside] {
+      &:after {
+         bottom: 14px;
+         color: #000;
       }
    }
 }
