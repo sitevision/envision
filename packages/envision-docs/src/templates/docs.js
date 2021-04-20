@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useCopyExample } from '../hooks/copyExample';
+import { useExpandCode } from '../hooks/expandCode';
 import BaseTemplate from './BaseTemplate';
 
 export default function Template({
@@ -11,6 +12,7 @@ export default function Template({
    const { frontmatter, html } = markdownRemark;
    const content = useRef(null);
    useCopyExample(content);
+   useExpandCode(content);
 
    return (
       <BaseTemplate
