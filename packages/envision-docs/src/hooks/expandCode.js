@@ -29,6 +29,12 @@ export const useExpandCode = (content) => {
                      e.target.getAttribute('aria-expanded') === 'true';
                   if (expanded) {
                      element.classList.add(EXPANDABLE);
+                     setTimeout(() => {
+                        element.scrollIntoView({
+                           behavior: 'auto',
+                           block: 'center',
+                        });
+                     }, 1);
                      button.textContent = MORE;
                   } else {
                      element.classList.remove(EXPANDABLE);
