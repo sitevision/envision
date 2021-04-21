@@ -3,6 +3,12 @@ $arrow-position: -22px;
 $arrow-border-size: 10px;
 
 .#{$prefix}-popover {
+   position: relative;
+
+   //@extend %popout-menu;
+}
+
+.#{$prefix}-popover {
    background-color: css-var('section-background-color');
    border: $border-width $border-style css-var('border-color-light');
    border-radius: css-var('border-radius-medium');
@@ -30,6 +36,12 @@ $arrow-border-size: 10px;
    &__content {
       display: block;
       padding: css-var('spacing-small');
+   }
+
+   @include popout-menu;
+
+   &__menu {
+      padding: css-var('spacing-x-small') 0;
    }
 
    &__arrow {

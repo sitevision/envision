@@ -186,6 +186,48 @@ To keep the popover alive when being hovered it requires a delay to function pro
 </button>
 ```
 
+## Popover menu <span class="env-badge env-badge--info">9.0</span>
+
+```html
+<div class="env-popover">
+   <div class="env-popover__arrow env-popover__arrow--top"></div>
+   <div class="env-popover__header">
+      <h4 class="env-text env-popover__header__title">Popover menu</h4>
+   </div>
+   <ul class="env-popover__menu">
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-popover__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-grid-small"
+               ></use>
+            </svg>
+            Action
+         </button>
+      </li>
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-popover__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-grid-big"
+               ></use>
+            </svg>
+            Properties
+         </button>
+      </li>
+      <li class="env-popover--divider" role="separator"></li>
+      <li role="presentation">
+         <button type="button" role="menuitem" class="env-popover__item">
+            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-list"></use>
+            </svg>
+            Settings
+         </button>
+      </li>
+   </ul>
+</div>
+```
+
 ## Initiation
 
 ```javascript
