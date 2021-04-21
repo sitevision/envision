@@ -118,6 +118,89 @@
       white-space: normal;
    }
 
+   &--icon-only {
+      $small: 1.75em;
+      $medium: 2em;
+      $large: 3.125em;
+      $iconScale: 0.8;
+
+      @mixin square-icon-size($small) {
+         width: $small;
+         height: $small;
+
+         .env-icon {
+            width: $small * $iconScale;
+            height: $small * $iconScale;
+            margin: ($small * $iconScale / -2) 0 0 ($small * $iconScale / -2);
+         }
+      }
+
+      display: inline-block;
+      position: relative;
+      font-size: 1em;
+      line-height: 0;
+      padding: 0;
+      width: $medium;
+      height: $medium;
+
+      .env-icon {
+         position: absolute;
+         width: $medium * $iconScale;
+         height: $medium * $iconScale;
+         top: 50%;
+         left: 50%;
+         margin: ($medium * $iconScale / -2) 0 0 ($medium * $iconScale / -2);
+      }
+      // 1.75
+      // 2
+      // 3,125
+
+      //@include button-size(
+      //      'spacing-xx-small',
+      //      'spacing-xx-small',
+      //      'font-size-medium',
+      //      $button-line-height
+      //);
+
+      &.#{$prefix}-button--small {
+         width: $small;
+         height: $small;
+
+         .env-icon {
+            width: $small * $iconScale;
+            height: $small * $iconScale;
+            margin: ($small * $iconScale / -2) 0 0 ($small * $iconScale / -2);
+         }
+      }
+      &.#{$prefix}-button--large {
+         //padding: css-var('spacing-x-small');
+         //font-size: 3.125em;
+         width: 3.125em;
+         height: 3.125em;
+         //line-height: 3.125em;
+      }
+
+      //.#{$prefix}-button--small & {
+      //   padding: css-var('spacing-xx-small');
+      //}
+      //   @include button-size(
+      //         'spacing-x-small',
+      //         'spacing-small',
+      //         'font-size-large',
+      //         $button-line-height
+      //   );
+      //}
+      //
+      //&--small {
+      //   @include button-size(
+      //         'spacing-xx-small',
+      //         'spacing-xx-small',
+      //         'font-size-small',
+      //         $button-line-height
+      //   );
+      //}
+   }
+
    &--disabled,
    &[disabled] {
       opacity: 0.55;

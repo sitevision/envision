@@ -120,6 +120,40 @@ title: Button
 </button>
 ```
 
+### Icon only (square size) <span class="env-badge env-badge--info">9.0</span>
+
+```html
+<button
+   type="button"
+   class="env-button env-button--small env-button--icon-only"
+>
+   <span class="env-assistive-text">Assistive text</span>
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon-only"
+>
+   <span class="env-assistive-text">Assistive text</span>
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--large env-button--secondary env-button--icon-only"
+>
+   <span class="env-assistive-text">Assistive text</span>
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+```
+
 ## State
 
 ### Disabled
