@@ -1,10 +1,25 @@
+@mixin toast-color($colorName: 'secondary') {
+   background-color: css-var('element-#{$colorName}-background-color');
+   box-shadow: 0px 5px 10px -8px css-var('element-#{$colorName}-background-color');
+   color: css-var('element-#{$colorName}-font-color');
+
+   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
+   a.env-text,
+   .env-text a {
+      color: css-var('element-#{$colorName}-font-color');
+      text-decoration: underline;
+   }
+
+   .#{$prefix}-toast__close {
+      color: css-var('element-#{$colorName}-font-color');
+   }
+}
+
 .#{$prefix}-toast {
+   @include toast-color();
    align-items: center;
    align-self: flex-start;
-   background: css-var('element-secondary-background-color');
    border-radius: 5px;
-   box-shadow: 0px 5px 10px -8px css-var('element-secondary-background-color');
-   color: css-var('element-secondary-font-color');
    display: flex;
    margin: 0;
    min-width: 300px;
@@ -35,9 +50,8 @@
    }
 
    &__close {
-      background: transparent;
+      background-color: transparent;
       border: 0;
-      color: css-var('element-secondary-font-color');
       cursor: pointer;
       display: flex;
       margin-left: auto;
@@ -45,23 +59,11 @@
    }
 
    &--success {
-      background: css-var('element-success-background-color');
-      box-shadow: 0px 5px 10px -8px css-var('element-success-background-color');
-      color: css-var('element-success-font-color');
-
-      .#{$prefix}-toast__close {
-         color: css-var('element-success-font-color');
-      }
+      @include toast-color('success');
    }
 
    &--primary {
-      background: css-var('element-primary-background-color');
-      box-shadow: 0px 5px 10px -8px css-var('element-primary-background-color');
-      color: css-var('element-primary-font-color');
-
-      .#{$prefix}-toast__close {
-         color: css-var('element-primary-font-color');
-      }
+      @include toast-color('primary');
    }
 
    &--visible {

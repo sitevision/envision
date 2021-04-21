@@ -15,11 +15,21 @@
 
          border-left: 10px solid css-var('element-#{$name}-background-color');
 
+         a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
+         a.env-text,
+         .env-text a {
+            color: css-var('alert-#{$name}-font-color');
+            text-decoration: underline;
+         }
+
          .env-text,
-         .env-text a,
          .#{$prefix}-alert__close {
             color: css-var('alert-#{$name}-font-color');
          }
+
+         //a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
+         //
+         //}
       }
    }
 
