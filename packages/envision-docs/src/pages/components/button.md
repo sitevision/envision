@@ -120,7 +120,7 @@ title: Button
 </button>
 ```
 
-### Icon only (square size) <span class="env-badge env-badge--info">9.0</span>
+### Icon only <span class="env-badge env-badge--info">9.0</span>
 
 ```html
 <button
@@ -155,7 +155,7 @@ title: Button
 
 <button
    type="button"
-   class="env-button env-button--large env-button--primary env-button--ghost env-button--icon-only"
+   class="env-button env-button--primary env-button--ghost env-button--icon-only"
 >
    <span class="env-assistive-text">Assistive text</span>
    <svg class="env-icon">
@@ -163,10 +163,7 @@ title: Button
    </svg>
 </button>
 
-<button
-   type="button"
-   class="env-button env-button--large env-button--link env-button--icon-only"
->
+<button type="button" class="env-button env-button--link env-button--icon-only">
    <span class="env-assistive-text">Assistive text</span>
    <svg class="env-icon">
       <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>

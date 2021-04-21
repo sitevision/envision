@@ -119,25 +119,13 @@
    }
 
    &--icon-only {
-      $small: 1.75em;
-      $medium: 2em;
-      $large: 3.125em;
-      $iconScale: 0.6;
+      // Sizes are set so button will be the same size as "regular" button
+      $small: 1.75;
+      $medium: 2;
+      $large: 3.125;
 
-      @mixin square-icon-size($size) {
-         width: $size;
-         height: $size;
-
-         .env-icon {
-            width: $size * $iconScale;
-            height: $size * $iconScale;
-            margin: ($size * $iconScale / -2) 0 0 ($size * $iconScale / -2);
-         }
-      }
-
-      display: inline-block;
       position: relative;
-      font-size: 1em;
+      font-size: #{css-var('font-size-base')};
       line-height: 0;
       padding: 0;
       overflow: hidden;
@@ -146,25 +134,14 @@
          position: absolute;
          top: 50%;
          left: 50%;
-         background-color: rgba(255, 0, 255, 0.3);
       }
 
       @include square-icon-size($medium);
 
-      // 1.75
-      // 2
-      // 3,125
-
-      //@include button-size(
-      //      'spacing-xx-small',
-      //      'spacing-xx-small',
-      //      'font-size-medium',
-      //      $button-line-height
-      //);
-
       &.#{$prefix}-button--small {
          @include square-icon-size($small);
       }
+
       &.#{$prefix}-button--large {
          @include square-icon-size($large);
       }

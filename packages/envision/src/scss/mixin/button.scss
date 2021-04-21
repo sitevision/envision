@@ -4,6 +4,22 @@
    padding: css-var($padding-y) css-var($padding-x);
 }
 
+@mixin square-icon-size($size) {
+   $iconScale: 0.6;
+   width: calc(#{$size} * #{css-var('font-size-base')});
+   height: calc(#{$size} * #{css-var('font-size-base')});
+
+   .env-icon {
+      $iconSize: $size * $iconScale;
+      width: $iconSize;
+      width: calc(#{$iconSize} * #{css-var('font-size-base')});
+      height: $iconSize;
+      height: calc(#{$iconSize} * #{css-var('font-size-base')});
+      margin: calc(#{($iconSize / -2)} * #{css-var('font-size-base')}) 0 0
+         calc(#{($iconSize / -2)} * #{css-var('font-size-base')});
+   }
+}
+
 @mixin button-color-variant(
    $color,
    $background-color,
