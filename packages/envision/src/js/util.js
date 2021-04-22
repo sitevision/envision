@@ -69,8 +69,6 @@ const Util = (($) => {
       getToggleSpeed(el, durationCustomProperty) {
          let speed = 300,
             duration;
-         console.log(el);
-         console.log(durationCustomProperty);
          if (el) {
             duration = getComputedStyle(el).getPropertyValue(
                durationCustomProperty
@@ -87,8 +85,6 @@ const Util = (($) => {
                speed = parseFloat(duration) * 1000;
             }
          }
-         console.log(speed);
-         console.log('---');
          return speed;
       },
    };
