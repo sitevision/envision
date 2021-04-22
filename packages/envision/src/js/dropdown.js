@@ -171,7 +171,7 @@ const Dropdown = (($) => {
       }
    }
 
-   function KeydownHandler(event) {
+   function keydownHandler(event) {
       if (!REGEXP_KEYDOWN.test(event.key)) {
          return;
       }
@@ -234,9 +234,9 @@ const Dropdown = (($) => {
       $target[NAME]();
    });
 
-   $(document).on(ENV_KEYDOWN_EVENT, TOGGLE_DROPDOWN, KeydownHandler);
+   $(document).on(ENV_KEYDOWN_EVENT, TOGGLE_DROPDOWN, keydownHandler);
 
-   $(document).on(ENV_KEYDOWN_EVENT, ENV_DROPDOWN_MENU, KeydownHandler);
+   $(document).on(ENV_KEYDOWN_EVENT, ENV_DROPDOWN_MENU, keydownHandler);
 
    $(document).on(ENV_KEYUP_EVENT, clearMenus);
 
