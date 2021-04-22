@@ -51,7 +51,7 @@ body {
    }
 }
 
-main > div > h2,
+.main-body > h2,
 .docs-text,
 .sidenav,
 .sidenav *,
@@ -61,7 +61,7 @@ main > div > h2,
    --env-font-family: #{$roboto};
 }
 
-main > div > h2,
+.main-body > h2,
 .docs-text,
 .sidenav,
 .sidenav *,
@@ -146,10 +146,18 @@ img {
    max-width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: 500;
+}
+
 h1 {
    font-size: 46px;
    font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
-   font-weight: 500;
 
    &.main-heading {
       font-family: $roboto;
@@ -158,19 +166,29 @@ h1 {
    }
 }
 
-h2 {
-   font-weight: 500;
-   font-size: 26px;
-   font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
+.main-body {
+   > h1 {
+      font-size: 46px;
+      font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
+      font-weight: 500;
+   }
+
+   > h2 {
+      font-weight: 500;
+      font-size: 26px;
+      font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
+   }
+
+   > h3 {
+      font-size: 24px;
+      font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
+   }
 }
 
-h3 {
-   font-size: 24px;
-   font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
-}
-
-p {
-   line-height: 1.375;
+:not(.code-example) {
+   > p {
+      line-height: 1.375;
+   }
 }
 
 a {
