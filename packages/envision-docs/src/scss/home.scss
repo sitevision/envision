@@ -1,9 +1,11 @@
-.sv-home__content {
-   margin-top: 8%;
-}
-
 .sv-home__item {
-   flex-basis: 35%;
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 3em 1em;
+
+   @include mobile {
+      padding: 0 1em;
+   }
 }
 
 p.sv-home__text {
@@ -13,30 +15,30 @@ p.sv-home__text {
 }
 
 .sv-home__env-logo {
-   margin-top: 12%;
+   float: right;
+   width: 50%;
+   max-width: 268px;
+   padding: 0;
+   margin: 50px -120px 15px 15px;
+
+   @include mobile-and-tablet {
+      width: auto;
+      max-width: 35%;
+      margin: 0 0 15px 15px;
+   }
 }
 
 .sv-home__title {
    font-weight: bold;
-   letter-spacing: 3px;
+   margin: 0 0 0.25em;
 }
 
 .sv-home__subheader {
    font-size: 1.125em;
    font-weight: 400;
-   margin: 0;
+   margin: 0 0 2em;
 }
 
-p.sv-home-media__text {
-   color: #212333;
-   font-size: 0.75em;
-   line-height: 1.3em;
-   margin: 0.125em 0;
-}
-
-.sv-home-button__size {
-   border-radius: 0.2em;
-   font-size: 1em;
-   line-height: 1.625em;
-   padding: 0.25em 0.5em;
+p.sv-home__text {
+   margin: 2em 0;
 }
