@@ -1,19 +1,19 @@
 .#{$prefix}-dropdown {
    position: relative;
 
+   @include popout-menu;
+
    &__menu {
       background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color-light');
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('box-shadow');
       display: none;
-      font-family: css-var('font-family');
-      font-size: css-var('font-size-medium');
       left: 0;
-      list-style: none;
       max-width: (240 / 16 * 1em);
       min-width: (180 / 16 * 1em);
       padding: css-var('spacing-xx-small') 0;
+      margin: 1em 0;
       position: absolute;
       top: css-var('spacing-medium');
       z-index: $zindex-dropdown;
@@ -21,39 +21,6 @@
       &--large {
          top: css-var('spacing-xxx-large');
       }
-   }
-
-   &__item {
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      appearance: none;
-      border: {
-         style: none;
-         width: 0;
-         radius: 0;
-      }
-      box-shadow: none;
-      text-shadow: none;
-      text-decoration: none;
-      color: css-var('font-color');
-      background-color: transparent;
-      font-size: inherit;
-      line-height: 1.125;
-      margin: 0;
-      width: 100%;
-      text-align: left;
-      padding: css-var('spacing-x-small');
-      @include truncate-text();
-
-      &:hover {
-         background-color: rgba(0, 0, 0, 0.1);
-      }
-   }
-
-   &--divider {
-      border-bottom: $border-width $border-style css-var('border-color-light');
-      margin: css-var('spacing-xx-small') 0;
    }
 
    &--toggle-split {
@@ -70,6 +37,7 @@
       vertical-align: middle;
    }
 }
+
 .#{$prefix}-is-open {
    .#{$prefix}-dropdown__menu {
       display: block;

@@ -222,13 +222,13 @@ const Imageslider = (($) => {
          const sliderId = this.$el[0].id;
          const buttonHTML = `<button type='button' class='env-image-slider--prev' data-move='prev' data-target='#${sliderId}'>
                <svg class='env-image-slider__previous-icon env-icon env-icon-small'>
-               <use xlink:href='/images/envision-icons.svg#icon-arrow-left'></use>
+               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-left'></use>
                </svg>
                <span class='env-assistive-text'>Previous</span>
             </button>
             <button type='button' class='env-image-slider--next' data-move='next' data-target='#${sliderId}'>
                <svg class='env-image-slider__next-icon env-icon env-icon-small'>
-               <use xlink:href='/images/envision-icons.svg#icon-arrow-right'></use>
+               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-right'></use>
                </svg>
                <span class='env-assistive-text'>Next</span>
             </button>`;

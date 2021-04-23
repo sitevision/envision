@@ -1,15 +1,5 @@
 .#{$prefix}-accordion {
-   display: none;
-
-   &--collapsing {
-      display: block;
-      height: 0;
-      overflow: hidden;
-      position: relative;
-      transition: height css-var('collapse-toggle-duration') ease;
-   }
-
-   &--show {
-      display: block;
+   html:not(.sv-no-js) &:not(.#{$prefix}-accordion--show) {
+      display: none;
    }
 }

@@ -1,12 +1,32 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import Link from '../Link';
 
-const Footer = () => {
+const Footer = ({ menuItems }) => {
    return (
       <>
          <div className="footer-wrapper">
             <footer className="footer">
                <a href="https://www.sitevision.se/">© Sitevision</a>
+               <nav className="footer-nav">
+                  <ul
+                     className="env-nav env-nav--menubar env-nav--border"
+                     role="menubar"
+                  >
+                     {menuItems.map(({ label, to }) => (
+                        <li
+                           className="env-nav__item"
+                           key={label}
+                           role="menuitem"
+                        >
+                           <Link to={to} activeClassName="active">
+                              {label}
+                           </Link>
+                        </li>
+                     ))}
+                  </ul>
+               </nav>
             </footer>
          </div>
          <Helmet>
@@ -27,6 +47,10 @@ const Footer = () => {
          </Helmet>
       </>
    );
+};
+
+Footer.propTypes = {
+   menuItems: PropTypes.array,
 };
 
 export default Footer;
