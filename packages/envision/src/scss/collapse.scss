@@ -1,20 +1,11 @@
 .#{$prefix}-collapse {
-   display: none;
+   html:not(.sv-no-js) & {
+      display: none;
+   }
+
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
-
-   &--collapsing {
-      display: block;
-      height: 0;
-      overflow: hidden;
-      position: relative;
-      transition: height css-var('collapse-toggle-duration') ease;
-   }
-
-   &--show {
-      display: block;
-   }
 
    > :first-child {
       padding-top: css-var('spacing-xx-small');
