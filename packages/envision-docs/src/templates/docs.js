@@ -21,7 +21,11 @@ export default function Template({
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
       >
-         <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
+         <div
+            className="main-body"
+            ref={content}
+            dangerouslySetInnerHTML={{ __html: html }}
+         />
       </BaseTemplate>
    );
 }
