@@ -317,6 +317,10 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    flex-wrap: wrap;
    margin: 2em -0.5em;
    box-sizing: border-box;
+   align-content: stretch;
+   justify-content: center;
+   align-items: stretch;
+   justify-items: stretch;
 
    .code-example > &,
    .example-grid {
@@ -325,22 +329,19 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 
    &__col {
       box-sizing: border-box;
-      max-width: 25%;
+      min-width: 250px;
       flex: 1 1 25%;
       padding: 0.5em;
 
       &--33 {
-         max-width: 33.3333%;
          flex: 1 1 33.3333%;
       }
 
       &--50 {
-         max-width: 50%;
          flex: 1 1 50%;
       }
 
       &--100 {
-         max-width: 100%;
          flex: 1 1 100%;
       }
    }
