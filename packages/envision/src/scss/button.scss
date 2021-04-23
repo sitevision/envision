@@ -118,16 +118,11 @@
       white-space: normal;
    }
 
-   &--icon-only {
-      // Sizes are set so button will be the same size as "regular" button
-      $small: 1.75;
-      $medium: 2;
-      $large: 3.125;
-
+   &--icon {
       position: relative;
+      display: inline-block;
       font-size: #{css-var('font-size-base')};
-      line-height: 0;
-      padding: 0;
+      line-height: 1;
       overflow: hidden;
 
       .env-icon {
@@ -136,14 +131,14 @@
          left: 50%;
       }
 
-      @include square-icon-size($medium);
+      @include square-icon-size();
 
       &.#{$prefix}-button--small {
-         @include square-icon-size($small);
+         @include square-icon-size('small');
       }
 
       &.#{$prefix}-button--large {
-         @include square-icon-size($large);
+         @include square-icon-size('large');
       }
    }
 
