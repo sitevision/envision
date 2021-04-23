@@ -339,7 +339,7 @@ $breadcrumb-divider: '/' !default;
 
 // ----- BADGE -----
 
-$badge-border-radius: 0.2em !default;
+$badge-border-radius: $radius-medium !default;
 $badge-font-size: 75% !default;
 $badge-font-family: $font-family !default;
 
@@ -448,7 +448,7 @@ $pagination-border-style: $border-style !default;
 
 // Alert
 $alert-font-family: $font-family !default;
-$alert-border-radius: 0;
+$alert-border-radius: $radius-small;
 
 // Todo: Discuss if we want this in config
 $alert-background-color: #fff;
