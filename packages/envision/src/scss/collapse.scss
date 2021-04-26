@@ -1,5 +1,5 @@
 .#{$prefix}-collapse {
-   html:not(.sv-no-js) & {
+   html:not(.sv-no-js) &:not(.#{$prefix}-collapse--show) {
       display: none;
    }
 
