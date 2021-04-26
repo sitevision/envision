@@ -30,6 +30,8 @@
       padding: css-var('spacing-x-small');
       @include truncate-text();
 
+      &:active,
+      &:focus,
       &:hover {
          background-color: rgba(0, 0, 0, 0.1);
       }
