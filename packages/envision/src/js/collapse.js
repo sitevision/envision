@@ -30,7 +30,9 @@ const Collapse = (($) => {
       }
 
       toggle() {
-         if (this.$el.hasClass(SHOW)) {
+         if (this.$el.is(':animated')) {
+            return;
+         } else if (this.$el.hasClass(SHOW)) {
             this.hide();
          } else {
             this.show();
@@ -81,6 +83,10 @@ const Collapse = (($) => {
       const $this = $(this);
       const target = $this.attr('href') || $this.attr('data-target');
       const $target = $(target);
+
+      if ($target.is(':animated')) {
+         return;
+      }
 
       $target[NAME]();
    });
