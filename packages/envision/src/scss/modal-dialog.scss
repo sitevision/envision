@@ -43,14 +43,15 @@
       // Optimized for Chrome, shoudn't matter too much in other browsers.
       margin: 1em 14px 1em 10px;
       white-space: normal;
-      max-width: css-var('modal-medium-width');
+      width: css-var('modal-medium-width');
+      max-width: calc(100% - 30px);
 
       &--large {
-         max-width: css-var('modal-large-width');
+         width: css-var('modal-large-width');
       }
 
       &--small {
-         max-width: css-var('modal-small-width');
+         width: css-var('modal-small-width');
       }
    }
 
