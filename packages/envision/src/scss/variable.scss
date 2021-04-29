@@ -339,7 +339,6 @@ $breadcrumb-divider: '/' !default;
 
 // ----- BADGE -----
 
-$badge-border-radius: 0.2em !default;
 $badge-font-size: 75% !default;
 $badge-font-family: $font-family !default;
 
@@ -347,7 +346,7 @@ $badge-font-family: $font-family !default;
    (
       'badge-font-family': css-var('font-family'),
       'badge-font-size': $badge-font-size,
-      'badge-border-radius': $badge-border-radius,
+      'badge-border-radius': css-var('border-radius-medium'),
    )
 );
 
@@ -368,7 +367,7 @@ $image-control-color-inactive: $font-color-lighter !default;
 @include to-css-custom-property(
    (
       'button-font-family': css-var('font-family'),
-      'button-border-radius': $radius-small,
+      'button-border-radius': css-var('border-radius-small'),
    )
 );
 
@@ -388,7 +387,7 @@ $checkbox-disabled-color: $color-lighter !default;
 @include to-css-custom-property(
    (
       'form-font-family': css-var('font-family'),
-      'form-input-border-radius': $radius-medium,
+      'form-input-border-radius': css-var('border-radius-medium'),
       'form-input-font-color': css-var('font-color'),
       'form-input-border-color': css-var('border-color'),
       'form-input-background-color': #fff,
@@ -448,7 +447,6 @@ $pagination-border-style: $border-style !default;
 
 // Alert
 $alert-font-family: $font-family !default;
-$alert-border-radius: 0;
 
 // Todo: Discuss if we want this in config
 $alert-background-color: #fff;
@@ -456,7 +454,7 @@ $alert-background-color: #fff;
 @include to-css-custom-property(
    (
       'alert-font-family': css-var('font-family'),
-      'alert-border-radius': $alert-border-radius,
+      'alert-border-radius': css-var('border-radius-small'),
       'alert-background-color': $alert-background-color,
    )
 );
