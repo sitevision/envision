@@ -5,7 +5,7 @@
    }
 
    &,
-   *:not(a),
+   *:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']):not(a),
    .#{$prefix}-link-secondary,
    a.#{$prefix}-link-secondary,
    .env-text {
