@@ -85,8 +85,6 @@
       margin-bottom: css-var('spacing-medium');
 
       &__control {
-         color: css-var('form-input-font-color');
-
          &--icon {
             position: relative;
 
@@ -99,6 +97,7 @@
                margin-top: ($iconSize / 2 * -1);
                width: $iconSize;
                height: $iconSize;
+               color: css-var('form-input-font-color');
             }
 
             input:first-child {
