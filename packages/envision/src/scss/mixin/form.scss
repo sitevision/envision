@@ -1,8 +1,13 @@
 @mixin input-validation-state($color, $border-color) {
-   color: css-var($color);
+   &,
+   .#{$prefix}-form-element__help {
+      color: css-var($color);
+   }
 
-   .#{$prefix}-form-input {
-      border-color: css-var($border-color);
+   .#{$prefix}-form-input,
+   .#{$prefix}-checkbox__fake,
+   .#{$prefix}-form-radio__fake {
+      border-color: css-var($border-color) !important;
 
       &:focus {
          @include focus($border-color);
