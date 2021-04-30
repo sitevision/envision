@@ -12,7 +12,7 @@ title: Badge
 ## Variations
 
 ```html
-<span class="env-badge">Default</span>
+<span class="env-badge">Primary</span>
 <span class="env-badge env-badge--success">Success</span>
 <span class="env-badge env-badge--warning">Warning</span>
 <span class="env-badge env-badge--danger">Danger</span>
