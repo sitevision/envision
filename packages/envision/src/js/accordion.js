@@ -8,22 +8,25 @@ import Util from './util';
 
 const Accordion = (($) => {
    const ARIA_EXPANDED = 'aria-expanded';
-   const AUTO = 'auto';
-   const COLLAPSING = 'collapsing';
+   const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
    const MODIFIER_BASE = 'env-accordion--';
    const NAME = 'envAccordion';
    const NO_CONFLICT = $.fn[NAME];
-   const SHOW = 'show';
+   const SHOW = MODIFIER_BASE + 'show';
    const PARENT = 'data-parent';
 
    class Accordion {
       constructor(element) {
          this.el = element;
          this.$el = $(element);
+         if (this.$el.hasClass(SHOW)) {
+            this.$el.removeClass(SHOW).show();
+         }
+         this.speed = Util.getToggleSpeed(this.$el[0], DURATION_CUSTOM_PROP);
       }
 
       toggle() {
-         if (this.$el.hasClass(MODIFIER_BASE + SHOW)) {
+         if (this.$el.attr(ARIA_EXPANDED) === 'true') {
             this.hide();
          } else {
             this.show();
@@ -31,48 +34,26 @@ const Accordion = (($) => {
       }
 
       show() {
-         this.$el
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.getTransitionEndEvent(), this._showTransitionComplete)
-            .height(this.el.scrollHeight);
-
-         const $hide = $(this.$el.attr(PARENT)).find(
-            `.${MODIFIER_BASE + SHOW}`
-         );
-
-         $hide
-            .height($hide.height())
-            .removeClass(MODIFIER_BASE + SHOW)
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
-            .height(0);
+         $(this.$el.attr(PARENT))
+            .find(`[${ARIA_EXPANDED}="true"]`)
+            .each(
+               ((i, el) => {
+                  this._hide($(el), this.speed);
+               }).bind(this)
+            );
+         this.$el.attr(ARIA_EXPANDED, true).stop().slideDown(this.speed);
       }
 
       hide() {
-         this.$el
-            .height(this.$el.height())
-            .removeClass(MODIFIER_BASE + SHOW)
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(Util.getTransitionEndEvent(), this._hideTransitionComplete)
-            .height(0);
+         this._hide(this.$el, this.speed);
       }
 
-      _showTransitionComplete(e) {
-         const $target = $(e.currentTarget);
-
-         $target
-            .removeClass(MODIFIER_BASE + COLLAPSING)
-            .addClass(MODIFIER_BASE + SHOW)
-            .height(AUTO)
-            .attr(ARIA_EXPANDED, true);
-      }
-
-      _hideTransitionComplete() {
-         const $target = $(`.${MODIFIER_BASE + COLLAPSING}`);
-
-         $target
-            .removeClass(MODIFIER_BASE + COLLAPSING)
-            .attr(ARIA_EXPANDED, false);
+      _hide($el, speed) {
+         $el.attr(ARIA_EXPANDED, false)
+            .stop()
+            .slideUp(speed, () => {
+               $el.removeClass(SHOW);
+            });
       }
 
       static _jQuery(config) {
@@ -105,12 +86,6 @@ const Accordion = (($) => {
       const $this = $(this);
       const target = $this.attr('href') || $this.attr('data-target');
       const $target = $(target);
-
-      if (
-         $($target.attr(PARENT)).find(`.${MODIFIER_BASE + COLLAPSING}`).length
-      ) {
-         return;
-      }
 
       $target[NAME]();
    });

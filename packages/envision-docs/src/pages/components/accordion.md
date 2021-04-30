@@ -108,6 +108,6 @@ You can also use attribute `data-target="#container4"`
 
 You can `show`, `hide` and `toggle` on available collapsible elements.
 
-Show `$('#container1').show()`
-Hide `$('#container1').hide()`
-Toggle `$('#container1').toggle()`
+Show `$('#container1').envAccordion('show')`
+Hide `$('#container1').envAccordion('hide')`
+Toggle `$('#container1').envAccordion('toggle')`

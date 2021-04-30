@@ -9,26 +9,30 @@ import Util from './util';
 
 const Collapse = (($) => {
    const ARIA_EXPANDED = 'aria-expanded';
-   const AUTO = 'auto';
-   const HEIGHT = 'height';
-   const COLLAPSING = 'collapsing';
-   const EXPANDED = 'expanded';
    const MODIFIER_BASE = 'env-collapse--';
+   const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
    const NAME = 'envCollapse';
    const NO_CONFLICT = $.fn[NAME];
-   const SHOW = 'show';
+   const EXPANDED = MODIFIER_BASE + 'expanded';
+   const SHOW = MODIFIER_BASE + 'show';
 
    class Collapse {
       constructor(element) {
          this.el = element;
          this.$el = $(element);
          this.$trigger = $(
-            `[data-env-collapse][href="#${element.id}"],[data-env-collapse][data-target="#${element.id}"]`
+            `[data-env-collapse][href="#${element.id}"], [data-env-collapse][data-target="#${element.id}"]`
+         );
+         this.speed = Util.getToggleSpeed(
+            this.$trigger[0],
+            DURATION_CUSTOM_PROP
          );
       }
 
       toggle() {
-         if (this.$el.hasClass(MODIFIER_BASE + SHOW)) {
+         if (this.$el.is(':animated')) {
+            return;
+         } else if (this.$el.hasClass(SHOW)) {
             this.hide();
          } else {
             this.show();
@@ -37,51 +41,16 @@ const Collapse = (($) => {
 
       show() {
          if (this.$trigger.length) {
-            this.$trigger.addClass(MODIFIER_BASE + EXPANDED);
+            this.$trigger.addClass(EXPANDED).attr(ARIA_EXPANDED, true);
          }
-
-         this.$el
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(
-               Util.getTransitionEndEvent(),
-               this._showTransitionComplete.bind(this)
-            )
-            .css(HEIGHT, this.el.scrollHeight);
+         this.$el.stop().slideDown(this.speed).addClass(SHOW);
       }
 
       hide() {
          if (this.$trigger.length) {
-            this.$trigger.removeClass(MODIFIER_BASE + EXPANDED);
+            this.$trigger.removeClass(EXPANDED).attr(ARIA_EXPANDED, false);
          }
-
-         this.$el
-            .height(this.$el.height())
-            .removeClass(MODIFIER_BASE + SHOW)
-            .addClass(MODIFIER_BASE + COLLAPSING)
-            .one(
-               Util.getTransitionEndEvent(),
-               this._hideTransitionComplete.bind(this)
-            )
-            .height(0);
-      }
-
-      _showTransitionComplete() {
-         this.$el
-            .removeClass(MODIFIER_BASE + COLLAPSING)
-            .addClass(MODIFIER_BASE + SHOW)
-            .css(HEIGHT, AUTO);
-
-         if (this.$trigger.length) {
-            this.$trigger.attr(ARIA_EXPANDED, true);
-         }
-      }
-
-      _hideTransitionComplete() {
-         this.$el.removeClass(MODIFIER_BASE + COLLAPSING);
-
-         if (this.$trigger.length) {
-            this.$trigger.attr(ARIA_EXPANDED, false);
-         }
+         this.$el.stop().slideUp(this.speed).removeClass(SHOW);
       }
 
       static _jQuery(config) {
@@ -115,7 +84,7 @@ const Collapse = (($) => {
       const target = $this.attr('href') || $this.attr('data-target');
       const $target = $(target);
 
-      if ($target.hasClass(MODIFIER_BASE + COLLAPSING)) {
+      if ($target.is(':animated')) {
          return;
       }
 

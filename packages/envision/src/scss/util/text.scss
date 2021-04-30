@@ -48,6 +48,7 @@ button.#{$prefix}-link {
    appearance: none;
    display: inline;
    border: none;
+   font-family: css-var('font-family');
    font-size: 1em !important;
    margin: 0;
    padding: 0;

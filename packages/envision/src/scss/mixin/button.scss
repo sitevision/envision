@@ -4,6 +4,34 @@
    padding: css-var($padding-y) css-var($padding-x);
 }
 
+@mixin square-icon-size($size: 'medium') {
+   // Button sizes: 28, 32, 50 with default font size.
+   // Decimal value used to calculate size relative to font-size-base.
+   // Icon sizes set to nice proportion relative to button.
+   $buttonSizes: (
+      small: calc(#{css-var('font-size-base')} * (28 / 16)),
+      medium: calc(#{css-var('font-size-base')} * (32 / 16)),
+      large: calc(#{css-var('font-size-base')} * (50 / 16)),
+   );
+   $iconSizes: (
+      small: calc(var(--env-font-size-base) * (18 / 16)),
+      medium: calc(var(--env-font-size-base) * (21 / 16)),
+      large: calc(var(--env-font-size-base) * (32 / 16)),
+   );
+   $buttonSize: map-get($buttonSizes, $size);
+   $iconSize: map-get($iconSizes, $size);
+
+   width: $buttonSize;
+   height: 0;
+   padding: calc(#{$buttonSize} - 2px) 0 0;
+
+   .env-icon {
+      width: $iconSize;
+      height: $iconSize;
+      margin: calc(#{($iconSize / -2)}) 0 0 calc(#{($iconSize / -2)});
+   }
+}
+
 @mixin button-color-variant(
    $color,
    $background-color,

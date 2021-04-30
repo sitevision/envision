@@ -118,6 +118,30 @@
       white-space: normal;
    }
 
+   &--icon {
+      position: relative;
+      display: inline-block;
+      font-size: #{css-var('font-size-base')};
+      line-height: 1;
+      overflow: hidden;
+
+      .env-icon {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+      }
+
+      @include square-icon-size();
+
+      &.#{$prefix}-button--small {
+         @include square-icon-size('small');
+      }
+
+      &.#{$prefix}-button--large {
+         @include square-icon-size('large');
+      }
+   }
+
    &--disabled,
    &[disabled] {
       opacity: 0.55;

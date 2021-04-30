@@ -9,7 +9,10 @@ const Header = ({ title, menuItems }) => {
          <Helmet>
             <html lang="en" className="sv-js" />
             <meta charset="utf-8" />
-            <meta name="viewport" content="width=1050" />
+            <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1"
+            />
             <title>{`${title} \u00B7 Envision by Sitevision`}</title>
             <link
                rel="icon"
@@ -18,14 +21,14 @@ const Header = ({ title, menuItems }) => {
                sizes="32x32"
             />
          </Helmet>
-         <div className="env-w-100 sv-header">
-            <header className="header env-p-top--small env-p-bottom--small">
+         <div className="sv-header">
+            <header className="header">
                <div className="logo">
                   <a href="https://www.sitevision.se">
                      <img src="/images/sitevision-logo.svg" alt="Sitevision" />
                   </a>
                </div>
-               <nav className="header-nav env-m-right--medium">
+               <nav className="header-nav">
                   <ul
                      className="env-nav env-nav--menubar env-nav--border"
                      role="menubar"

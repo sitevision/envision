@@ -120,6 +120,72 @@ title: Button
 </button>
 ```
 
+### Icon only <span class="env-badge env-badge--info">9.0</span>
+
+A button with hidden text and equal width/height. All standard button classes for size and style apply.
+The button should have text for accessibility reasons. The text will be hidden for the eye but visible to a screenreader.
+
+```html
+<h4>Icon button types</h4>
+
+<button type="button" class="env-button env-button--icon">
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button type="button" class="env-button env-button--primary env-button--icon">
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--ghost env-button--icon"
+>
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button type="button" class="env-button env-button--link env-button--icon">
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<h4>Icon button sizes</h4>
+
+<button type="button" class="env-button env-button--small env-button--icon">
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button type="button" class="env-button env-button--primary env-button--icon">
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--large env-button--secondary env-button--icon"
+>
+   Assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+   </svg>
+</button>
+```
+
 ## State
 
 ### Disabled

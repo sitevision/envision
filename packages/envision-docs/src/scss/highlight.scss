@@ -1,5 +1,23 @@
-.gatsby-highlight pre {
-   border: 0;
-   white-space: nowrap;
-   word-break: normal;
+.gatsby-highlight {
+   position: relative;
+   text-align: right;
+
+   pre {
+      //box-sizing: border-box !important;
+      font-size: 0.8rem;
+      border: 0;
+      white-space: nowrap;
+      word-break: normal;
+      max-width: 100%;
+
+      @include mobile-and-tablet {
+         font-size: 0.7rem;
+      }
+   }
+
+   &--expandable pre {
+      overflow: hidden;
+      max-height: 15vh;
+      box-shadow: inset 0 -16px 16px -10px rgba(0, 0, 0, 0.2);
+   }
 }
