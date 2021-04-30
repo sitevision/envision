@@ -12,7 +12,6 @@
          background-color: css-var('alert-background-color');
          color: css-var('element-#{$name}-background-color');
          border: 2px solid css-var('element-#{$name}-background-color');
-
          border-left: 10px solid css-var('element-#{$name}-background-color');
 
          a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
@@ -26,10 +25,6 @@
          .#{$prefix}-alert__close {
             color: css-var('alert-#{$name}-font-color');
          }
-
-         //a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
-         //
-         //}
       }
    }
 

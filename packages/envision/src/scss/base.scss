@@ -41,24 +41,10 @@
 // ====================
 
 :root {
-   // A dark theme
-   // ------------
-   //--env-page-background-color: #161616;
-   //--env-section-background-color: #555555;
-   //--env-element-common-background-color: #333;
-   //--env-collapse-background-color: #333;
-   //--env-font-color: #fff;
-   //--env-font-color-lighter: #ddd;
-   //--env-border-color: #999;
-   //--env-border-color-light: #666;
-   //--env-form-input-background-color: #333;
-   //--env-form-input-border-color: #999;
-
-   //Changing an element
-   //-------------------
-
-   //--env-element-background-color: #666;
-   //--env-element-background-color-light: #888;
-   //--env-element-background-color-dark: #222;
-   //--env-element-font-color: #fff;
+   /* Alternative secondary block colors */
+   /* ---------------------------------- */
+   //--env-block-font-color: #fff;
+   //--env-block-background-color: #666;
+   //--env-block-border-color: #111;
+   //--env-block-link-font-color: #67bdf6;
 }

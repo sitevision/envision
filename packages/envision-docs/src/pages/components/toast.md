@@ -6,11 +6,7 @@ title: Toast
 
 ```html
 <div class="env-toast env-toast--visible">
-   <div class="env-toast__content">
-      Hello, World! <a href="#">normal</a>
-      <a class="env-text" href="#">env-text</a>
-      <a class="env-link" href="#">envision</a> This is a Toast message.
-   </div>
+   <div class="env-toast__content">Hello, World! This is a Toast message.</div>
    <button class="env-toast__close">
       <svg class="env-icon env-icon--medium">
          <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
@@ -24,11 +20,7 @@ title: Toast
          <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
       </svg>
    </div>
-   <div class="env-toast__content">
-      Hello, World! <a href="#">normal</a>
-      <a class="env-text" href="#">env-text</a>
-      <a class="env-link" href="#">envision</a> This is a Toast message.
-   </div>
+   <div class="env-toast__content">Hello, World! This is a Toast message.</div>
    <button class="env-toast__close">
       <svg class="env-icon env-icon--medium">
          <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
@@ -43,27 +35,13 @@ title: Toast
       </svg>
    </div>
    <div class="env-toast__content">
-      Hello, World! <a href="#">normal</a>
-      <a class="env-text" href="#">env-text</a>
-      <a class="env-link" href="#">envision</a> This is a Toast message. This
-      Toast has several lines of toasty content!
+      Hello, World! This is a Toast message. This Toast has several lines of
+      toasty content!
    </div>
    <button class="env-toast__close">
       <svg class="env-icon env-icon--medium">
          <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </button>
-</div>
-
-<div class="example-link">
-   <a href="#links" class="env-link">A standalone link</a>
-</div>
-
-<div class="example-link">
-   <a href="#links" class="env-link-secondary">A secondary link</a>
-</div>
-
-<div class="example-link">
-   <div class="env-text">Text with <a href="#links">a link</a> inside.</div>
 </div>
 ```
