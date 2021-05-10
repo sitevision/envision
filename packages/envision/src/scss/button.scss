@@ -13,35 +13,27 @@
    user-select: none;
    vertical-align: middle;
    border-radius: css-var('button-border-radius');
+   line-height: $button-line-height;
 
-   @include button-size(
-      'spacing-xx-small',
-      'spacing-small',
-      'font-size-medium',
-      $button-line-height
-   );
+   // Reset inner elements in apps
+   > span:not([class]):not([style]),
+   > div:not([class]):not([style]) {
+      line-height: 1;
+   }
 
-   @include button-color-variant(
-      'element-font-color',
-      'element-background-color',
-      'element-background-color-dark'
-   );
+   // ----- BUTTON COLORS & TYPES -----
+
+   @include button-color-variant();
 
    &:focus {
       @include focus('element-background-color');
    }
 
-   // Variants
-
    $buttonNames: 'primary', 'secondary', 'success', 'danger';
 
    @each $name in $buttonNames {
       &--#{$name} {
-         @include button-color-variant(
-            'element-#{$name}-font-color',
-            'element-#{$name}-background-color',
-            'element-#{$name}-background-color-dark'
-         );
+         @include button-color-variant($name);
 
          &:focus {
             @include focus('element-#{$name}-background-color-light');
@@ -49,13 +41,9 @@
       }
    }
 
-   &--invert,
-   &--link {
+   &--invert {
       background-color: transparent;
       border-color: transparent;
-   }
-
-   &--invert {
       color: css-var('element-primary-background-color-dark');
 
       &:hover,
@@ -75,6 +63,8 @@
    }
 
    &--link {
+      background-color: transparent;
+      border-color: transparent;
       color: css-var('font-color');
 
       &:hover,
@@ -93,25 +83,6 @@
       }
    }
 
-   // Sizes
-   &--large {
-      @include button-size(
-         'spacing-x-small',
-         'spacing-small',
-         'font-size-large',
-         $button-line-height
-      );
-   }
-
-   &--small {
-      @include button-size(
-         'spacing-xx-small',
-         'spacing-xx-small',
-         'font-size-small',
-         $button-line-height
-      );
-   }
-
    &--block {
       display: block;
       width: 100%;
@@ -120,25 +91,21 @@
 
    &--icon {
       position: relative;
-      display: inline-block;
-      font-size: #{css-var('font-size-base')};
-      line-height: 1;
-      overflow: hidden;
 
       .env-icon {
          position: absolute;
          top: 50%;
+      }
+   }
+
+   @include squareIconButton {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      overflow: hidden;
+
+      .env-icon {
          left: 50%;
-      }
-
-      @include square-icon-size();
-
-      &.#{$prefix}-button--small {
-         @include square-icon-size('small');
-      }
-
-      &.#{$prefix}-button--large {
-         @include square-icon-size('large');
       }
    }
 
@@ -176,5 +143,17 @@
          background: transparent;
          box-shadow: initial;
       }
+   }
+
+   // ----- BUTTON & ICON SIZING -----
+
+   @include button-size('medium');
+
+   &--large {
+      @include button-size('large');
+   }
+
+   &--small {
+      @include button-size('small');
    }
 }
