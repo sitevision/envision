@@ -453,7 +453,7 @@
       }
 
       input:disabled ~ & {
-         @include disabled;
+         @include disabled(false);
 
          &:before {
             opacity: 0.5;
