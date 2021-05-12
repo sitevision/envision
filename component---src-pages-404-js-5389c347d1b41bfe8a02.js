@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{w2l6:function(e,a,t){"use strict";t.r(a);var n=t("ERkP"),s=t.n(n);a.default=function(){return s.a.createElement("div",{className:"env-p-around--large"},s.a.createElement("h1",{className:"env-text"},"404 - Page not found"),s.a.createElement("p",{className:"env-text"},"Oops! That page does not exist. ",s.a.createElement("a",{href:"/"},"Home")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-5389c347d1b41bfe8a02.js.map
