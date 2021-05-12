@@ -1,3 +1,4 @@
+.doc-demo-dark,
 .env-modal-dialog.doc-demo__modal {
    background-color: var(--env-element-common-background-color);
    border-color: var(--env-border-color) var(--env-border-color-light)
@@ -352,4 +353,23 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       padding: 1em;
       height: 100%;
    }
+}
+
+.example-card {
+   margin: 0 auto 2em;
+   max-width: 400px;
+
+   &:last-child {
+      margin: 0 auto;
+   }
+}
+
+.example-cardholder {
+   //&--resizeable {
+   //   width: 260px;
+   //   max-width: 260px;
+   //   border: 1px dashed var(--env-border-color);
+   //   resize: horizontal;
+   //   overflow: hidden;
+   //}
 }

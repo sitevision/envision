@@ -1,0 +1,153 @@
+.#{$prefix}-card {
+   $secondary-opacity: 0.75;
+
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   height: 100%;
+   box-shadow: css-var('box-shadow-small');
+   border-radius: css-var('border-radius-small');
+
+   &__header {
+      order: 1;
+   }
+
+   &__body {
+      order: 2;
+   }
+
+   &__footer {
+      order: 3;
+   }
+
+   &__header {
+      padding: css-var('spacing-large') css-var('spacing-large')
+         css-var('spacing-x-small');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+   }
+
+   &__body {
+      flex: 1 1 100%;
+      padding: css-var('spacing-large');
+
+      .#{$prefix}-card__header ~ & {
+         padding-top: 0;
+      }
+
+      a {
+         word-break: break-all;
+      }
+   }
+
+   &__footer {
+      padding: 0 css-var('spacing-large') css-var('spacing-large');
+      padding: css-var('spacing-x-small') css-var('spacing-large')
+         css-var('spacing-large');
+
+      .#{$prefix}-card__body ~ & {
+         margin-top: calc(#{css-var('spacing-large')} * -1);
+      }
+   }
+
+   &__text {
+      margin: css-var('spacing-xx-small') 0;
+
+      &--title {
+         margin: 0;
+         font: {
+            size: css-var('font-size-large');
+            weight: $font-weight-semibold;
+         }
+      }
+
+      &--secondary {
+         filter: opacity($secondary-opacity);
+      }
+   }
+
+   &__image,
+   .#{$prefix}-media {
+      margin: css-var('spacing-medium') 0;
+
+      &:first-child {
+         margin-top: 0;
+      }
+   }
+}
+
+.#{$prefix}-cardholder {
+   display: flex;
+   flex-wrap: wrap;
+   align-content: stretch;
+   justify-content: center;
+   align-items: stretch;
+   justify-items: stretch;
+   margin: 0 calc(#{css-var('spacing-x-small')} * -1);
+
+   &--start {
+      justify-content: flex-start;
+   }
+
+   &__slot {
+      box-sizing: border-box;
+      padding: css-var('spacing-x-small');
+      flex: 1 1 100%;
+      min-width: css-var('cardholder-column-min-width');
+
+      .#{$prefix}-cardholder--8 & {
+         flex: 1 1 12.5%;
+      }
+
+      .#{$prefix}-cardholder--6 & {
+         flex: 1 1 16.6667%;
+      }
+
+      .#{$prefix}-cardholder--5 & {
+         flex: 1 1 20%;
+      }
+
+      .#{$prefix}-cardholder--4 & {
+         flex: 1 1 25%;
+      }
+
+      .#{$prefix}-cardholder--3 & {
+         flex: 1 1 33.3333%;
+      }
+
+      .#{$prefix}-cardholder--2 & {
+         flex: 1 1 50%;
+      }
+
+      .#{$prefix}-cardholder--max & {
+         max-width: css-var('cardholder-column-max-width');
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--8 & {
+         max-width: 12.5%;
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--6 & {
+         max-width: 16.6667%;
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--5 & {
+         max-width: 20%;
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--4 & {
+         max-width: 25%;
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--3 & {
+         max-width: 33.3333%;
+      }
+
+      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--2 & {
+         max-width: 50%;
+      }
+   }
+}
