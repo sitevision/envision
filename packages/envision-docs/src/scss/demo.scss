@@ -355,7 +355,8 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
-.example-card {
+.example-card,
+.example-card-parts {
    margin: 0 auto 2em;
    max-width: 400px;
 
@@ -364,12 +365,55 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
-.example-cardholder {
-   //&--resizeable {
-   //   width: 260px;
-   //   max-width: 260px;
-   //   border: 1px dashed var(--env-border-color);
-   //   resize: horizontal;
-   //   overflow: hidden;
-   //}
+.example-card-parts {
+   header,
+   footer,
+   div {
+      border: 1px dashed #ccc;
+      margin: 0 0.5em 0.5em !important;
+      padding: 0.25em 1em !important;
+   }
+
+   header {
+      margin: 0.5em !important;
+   }
+}
+
+.demo-responsive-cards {
+   --env-cardholder-column-min-width: 48px;
+   --env-cardholder-column-max-width: 80px;
+
+   h4 {
+      font-weight: bold;
+      margin: 1em 0 0.25em;
+   }
+
+   p {
+      margin: 0 0 0.5em;
+      font-size: 0.7em;
+   }
+
+   .env-cardholder {
+      margin: 0 -5px;
+   }
+
+   .env-cardholder__slot {
+      padding: 5px;
+   }
+
+   .env-card {
+      height: 20px;
+      background-color: #eee;
+      border: 1px dashed #ccc;
+   }
+
+   &__resizeable {
+      width: 320px;
+      max-width: 100%;
+      padding: 0.25em 0.5em;
+      //max-width: 260px;
+      border: 1px dashed var(--env-border-color);
+      resize: horizontal;
+      overflow: hidden;
+   }
 }

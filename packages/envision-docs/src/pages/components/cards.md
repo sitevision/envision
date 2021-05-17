@@ -12,15 +12,7 @@ it's own colors, so combine with `env-block` classes to set colors.
 If used inside a Cardholder (see further down this page) the Card will stretch
 its width and height to make a nice aligned grid of cards.
 
-<div class="demo-responsive-cards">
-   <div class="env-cardholder">
-      <div class="env-card"></div>
-   </div>
-</div>
-
-### Cards
-
-Usage examples
+## Cards
 
 ```html
 <div class="doc-demo-dark">
@@ -116,7 +108,7 @@ vertically, the body will be the element that stretches.
 
 ```html
 <div class="doc-demo-dark">
-   <article class="example-card env-card env-block">
+   <article class="example-card-parts env-card env-block">
       <header class="env-card__header">Header</header>
       <div class="env-card__body">Body</div>
       <footer class="env-card__footer">Footer</footer>
@@ -124,10 +116,10 @@ vertically, the body will be the element that stretches.
 </div>
 ```
 
-### Cardholder
+## Cardholder
 
 A Cardholder will make a nice grid of Cards that adapt to the given space.
-See configuration options below.
+Use one `env-cardholder__slot` to hold each card. See configuration options below.
 
 ```html
 <div class="doc-demo-dark">
@@ -270,3 +262,96 @@ See configuration options below.
    </div>
 </div>
 ```
+
+### Cardholder examples
+
+There are several modifiers for the cardholder that controls the cardholder slots:
+
+`.env-cardholder--N` - where N is a number that controls how many slots
+the cardholder should display at most in one row.
+Possible values for N is 2, 3, 4, 5, 6, 8.
+
+`.env-cardholder--max` - By default, slots have no max-width. This modifier sets a max width.
+Slots will be centered in the last row and may not align to the columns. On small screens, the slots
+may not fill the entire screen width.
+
+`.env-cardholder--start` - Must be combined with `.env-cardholder--max`. Will align slots left.
+
+To control the size of the columns there are two CSS variables that may be set:
+
+```CSS
+.your-cardholder-container {
+   /*
+   min-width is always used. Will control when breaks occur.
+   max-width is only used when modifier env-cardholder--max is set.
+   */
+   --env-cardholder-column-min-width: 240px;
+   --env-cardholder-column-max-width: 400px;
+}
+```
+
+Below are a few examples that you may resize and see how the columns adapt to the given space.
+
+<div class="demo-responsive-cards">
+   <h4>Three columns</h4>
+   <p><code class="language-text">.env-cardholder.env-cardholder--3</code></p>
+   <div class="demo-responsive-cards__resizeable">   
+   <div class="env-cardholder env-cardholder--3">
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+   </div>
+   </div>
+</div>
+
+<div class="demo-responsive-cards">
+   <h4>Five columns</h4>
+   <p><code class="language-text">.env-cardholder.env-cardholder--5</code></p>
+   <div class="demo-responsive-cards__resizeable">   
+   <div class="env-cardholder env-cardholder--5">
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+   </div>
+   </div>
+</div>
+
+<div class="demo-responsive-cards">
+   <h4>Five columns, slot max width</h4>
+   <p><code class="language-text">.env-cardholder.env-cardholder--5.env-cardholder--max</code></p>
+   <div class="demo-responsive-cards__resizeable">   
+   <div class="env-cardholder env-cardholder--5 env-cardholder--max">
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+   </div>
+   </div>
+</div>
+
+<div class="demo-responsive-cards">
+   <h4>Five columns, slot max width, aligned left</h4>
+   <p><code class="language-text">.env-cardholder.env-cardholder--53.env-cardholder--max.env-cardholder--start</code></p>
+   <div class="demo-responsive-cards__resizeable">   
+   <div class="env-cardholder env-cardholder--5 env-cardholder--max env-cardholder--start">
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+      <div class="env-cardholder__slot"><div class="env-card"></div></div>
+   </div>
+   </div>
+</div>
