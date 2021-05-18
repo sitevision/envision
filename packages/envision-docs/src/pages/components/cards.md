@@ -2,12 +2,14 @@
 title: Cards
 ---
 
+<span class="env-badge env-badge--info">Added in 9.0.1</span>
+
 ## Cards & Cardholders
 
 Use Cards for displaying information about for example a page, a group or a user.
 
 A Card is a simple container that may have a header and a footer. A Card does not have
-it's own colors, so combine with `env-block` classes to set colors.
+it's own colors, so combine with `env-block` classes to set colors and `env-shadow` to set box shadow.
 
 If used inside a Cardholder (see further down this page) the Card will stretch
 its width and height to make a nice aligned grid of cards.
@@ -16,12 +18,12 @@ its width and height to make a nice aligned grid of cards.
 
 ```html
 <div class="doc-demo-dark">
-   <article class="example-card env-card env-block">
+   <article class="example-card env-card env-block env-shadow-small">
       <header class="env-card__header">
          <h2 class="env-card__text env-card__text--title">Lorem Ipsumsson</h2>
       </header>
       <div class="env-card__body">
-         <p class="env-card__text env-card__text--secondary">Utvecklare</p>
+         <p class="env-card__text env-card__text--secondary">Web Developer</p>
          <p class="env-card__text env-card__text--secondary">
             <a href="#" class="env-link env-link-secondary">lorem@domain.com</a>
          </p>
@@ -30,12 +32,12 @@ its width and height to make a nice aligned grid of cards.
          </p>
       </div>
       <footer class="env-card__footer">
-         <a href="#" class="env-link">Kontakt</a>
+         <a href="#" class="env-link">Contact</a>
       </footer>
    </article>
 
    <article
-      class="example-card env-card env-block-primary env-block-primary--border"
+      class="example-card env-card env-block-primary env-block-primary--border env-shadow-small"
    >
       <div class="env-card__body">
          <img
@@ -44,7 +46,7 @@ its width and height to make a nice aligned grid of cards.
             alt="Example profile image"
          />
          <h2 class="env-card__text env-card__text--title">Lorem Ipsumsson</h2>
-         <p class="env-card__text env-card__text--secondary">Utvecklare</p>
+         <p class="env-card__text env-card__text--secondary">Job Title</p>
          <p class="env-card__text env-card__text--secondary">
             <a href="#" class="env-link env-link-secondary">lorem@domain.com</a>
          </p>
@@ -55,7 +57,7 @@ its width and height to make a nice aligned grid of cards.
    </article>
 
    <article
-      class="example-card env-card  env-block-secondary env-block-secondary--border"
+      class="example-card env-card  env-block-secondary env-block-secondary--border env-shadow-small"
    >
       <header class="env-card__header">
          <article class="env-media env-media--center">
@@ -69,19 +71,17 @@ its width and height to make a nice aligned grid of cards.
                </a>
             </div>
             <div class="env-media__body env-text--small">
-               <p class="env-card__text">Öppen grupp &bull; 29 medlemmar</p>
-               <p class="env-card__text">Senaste aktivitet för 3 tim sedan</p>
+               <p class="env-card__text">Open group &bull; 29 members</p>
+               <p class="env-card__text">Latest activity 3 hours ago</p>
             </div>
          </article>
 
-         <h2 class="env-card__text env-card__text--title">
-            Snygga bilar från Sveg
-         </h2>
+         <h2 class="env-card__text env-card__text--title">Lorem ipsum dolor</h2>
       </header>
       <div class="env-card__body">
          <p class="env-card__text env-card__text--secondary">
-            We use Cookies to give you the best possible service. By continuing
-            to browse our site you are agreeing to our use of Cookies.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            eget lobortis dui, in accumsan augue.
          </p>
       </div>
       <footer class="env-card__footer env-text--small">
@@ -91,7 +91,7 @@ its width and height to make a nice aligned grid of cards.
                   xlink:href="/sitevision/envision-icons.svg#icon-phone"
                ></use>
             </svg>
-            Administratör
+            Administrator
          </a>
       </footer>
    </article>
@@ -108,7 +108,7 @@ vertically, the body will be the element that stretches.
 
 ```html
 <div class="doc-demo-dark">
-   <article class="example-card-parts env-card env-block">
+   <article class="example-card-parts env-card env-block env-shadow-small">
       <header class="env-card__header">Header</header>
       <div class="env-card__body">Body</div>
       <footer class="env-card__footer">Footer</footer>
@@ -125,7 +125,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
 <div class="doc-demo-dark">
    <div class="env-cardholder env-cardholder--3">
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -153,7 +153,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
          </article>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -172,7 +172,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
          </article>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -194,7 +194,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
          </article>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -211,7 +211,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
          </article>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -233,7 +233,7 @@ Use one `env-cardholder__slot` to hold each card. See configuration options belo
          </article>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block">
+         <article class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -342,7 +342,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 
 <div class="demo-responsive-cards">
    <h4>Five columns, slot max width, aligned left</h4>
-   <p><code class="language-text">.env-cardholder.env-cardholder--53.env-cardholder--max.env-cardholder--start</code></p>
+   <p><code class="language-text">.env-cardholder.env-cardholder--5.env-cardholder--max.env-cardholder--start</code></p>
    <div class="demo-responsive-cards__resizeable">   
    <div class="env-cardholder env-cardholder--5 env-cardholder--max env-cardholder--start">
       <div class="env-cardholder__slot"><div class="env-card"></div></div>
