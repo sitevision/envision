@@ -8,8 +8,9 @@ title: Cards
 
 Use Cards to display information about, for example, a page, a group or a user.
 
-A Card is a simple container that may have a header and a footer. A Card does not have
-it's own colors, so combine with `env-block` classes to set colors and `env-shadow` to set box shadow.
+A Card is a simple container that may have a header and a footer.
+A Card has no colors or shadows of its own. To add colors and shadows
+you may instead combine the `env-block` and `env-shadow` classes.
 
 If used inside a Cardholder (see further down this page) the Card will stretch
 its width and height to make a nice aligned grid of cards.
@@ -102,7 +103,7 @@ its width and height to make a nice aligned grid of cards.
 
 A Card may have a header, a body and a footer: `.env-card__header`, `.env-card__body`, `.env-card__footer`.
 
-No matter source order, header will always display first and footer last. The footer
+No matter HTML source order, header will always display first and footer last. The footer
 will always stick to the bottom of the Card. Inside a Cardholder, if the Card needs to stretch
 vertically, the body of the Card will be the element that stretches.
 
@@ -269,9 +270,9 @@ There are several modifiers for the Cardholder that controls the Cardholder slot
 
 `.env-cardholder--N` - where N is a number that controls how many slots
 the Cardholder can display at most in one row.
-Possible values for N is 2, 3, 4, 5, 6, 8.
+Possible values for N is `2`, `3`, `4`, `5`, `6`, `8`.
 
-`.env-cardholder--max` - By default, slots have no max-width. This modifier sets a max width.
+`.env-cardholder--max` - By default, slots have no max width. This modifier sets a max width.
 Slots will be centered in the last row and may not align to the columns. On small screens, the slots
 may not fill the entire screen width.
 
@@ -282,7 +283,7 @@ To control the size of the columns there are two CSS variables that may be set:
 ```CSS
 .your-cardholder-container {
    /*
-   min-width is always used. Will control when breaks occur.
+   min-width is used to control when column count breakpoints occur.
    max-width is only used when modifier env-cardholder--max is set.
    */
    --env-cardholder-column-min-width: 240px;
