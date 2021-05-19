@@ -265,7 +265,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
 
 ### Cardholder examples
 
-There are several modifiers for the cardholder that controls the cardholder slots:
+There are several modifiers for the Cardholder that controls the Cardholder slots:
 
 `.env-cardholder--N` - where N is a number that controls how many slots
 the cardholder should display at most in one row.
