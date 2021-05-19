@@ -275,7 +275,7 @@ Possible values for N is 2, 3, 4, 5, 6, 8.
 Slots will be centered in the last row and may not align to the columns. On small screens, the slots
 may not fill the entire screen width.
 
-`.env-cardholder--start` - Must be combined with `.env-cardholder--max`. Will align slots left.
+`.env-cardholder--start` - Must be combined with `.env-cardholder--max`. Will align slots to the left.
 
 To control the size of the columns there are two CSS variables that may be set:
 
