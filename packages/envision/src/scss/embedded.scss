@@ -39,12 +39,6 @@
       button {
          margin-top: css-var('spacing-medium');
          border-radius: css-var('button-border-radius');
-         @include button-size(
-            'spacing-x-small',
-            'spacing-small',
-            'font-size-medium',
-            $button-line-height
-         );
       }
    }
 

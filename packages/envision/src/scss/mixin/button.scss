@@ -1,42 +1,16 @@
-@mixin button-size($padding-y, $padding-x, $font-size, $line-height) {
-   font-size: css-var($font-size);
-   line-height: $line-height;
-   padding: css-var($padding-y) css-var($padding-x);
-}
-
-@mixin square-icon-size($size: 'medium') {
-   // Button sizes: 28, 32, 50 with default font size.
-   // Decimal value used to calculate size relative to font-size-base.
-   // Icon sizes set to nice proportion relative to button.
-   $buttonSizes: (
-      small: calc(#{css-var('font-size-base')} * (28 / 16)),
-      medium: calc(#{css-var('font-size-base')} * (32 / 16)),
-      large: calc(#{css-var('font-size-base')} * (50 / 16)),
-   );
-   $iconSizes: (
-      small: calc(var(--env-font-size-base) * (18 / 16)),
-      medium: calc(var(--env-font-size-base) * (21 / 16)),
-      large: calc(var(--env-font-size-base) * (32 / 16)),
-   );
-   $buttonSize: map-get($buttonSizes, $size);
-   $iconSize: map-get($iconSizes, $size);
-
-   width: $buttonSize;
-   height: 0;
-   padding: calc(#{$buttonSize} - 2px) 0 0;
-
-   .env-icon {
-      width: $iconSize;
-      height: $iconSize;
-      margin: calc(#{($iconSize / -2)}) 0 0 calc(#{($iconSize / -2)});
+@mixin squareIconButton {
+   &.#{$prefix}-button--icon:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before) {
+      @content;
    }
 }
 
-@mixin button-color-variant(
-   $color,
-   $background-color,
-   $active-background-color
-) {
+@mixin button-color-variant($name: '') {
+   @if ($name != '') {
+      $name: '-#{$name}';
+   }
+   $color: 'element#{$name}-font-color';
+   $background-color: 'element#{$name}-background-color';
+   $active-background-color: 'element#{$name}-background-color-dark';
    background-color: css-var($background-color);
    border-color: css-var($background-color);
    color: css-var($color);
@@ -66,5 +40,68 @@
 
    &:active {
       box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+   }
+}
+
+@mixin button-size($size) {
+   $paddingsX: (
+      small: 'spacing-xx-small',
+      medium: 'spacing-small',
+      large: 'spacing-small',
+   );
+   $paddingsY: (
+      small: 'spacing-xx-small',
+      medium: 'spacing-xx-small',
+      large: 'spacing-x-small',
+   );
+   // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
+   $iconSizes: (
+      small: 1em / 0.875 * 18 / 16,
+      medium: 1em / 1 * 21 / 16,
+      large: 1em / 1.25 * 32 / 16,
+   );
+
+   $padding-x: map-get($paddingsX, $size);
+   $padding-y: map-get($paddingsY, $size);
+   $icon-size: map-get($iconSizes, $size);
+
+   font-size: css-var('font-size-#{$size}');
+   padding: css-var($padding-y) css-var($padding-x);
+
+   @include squareIconButton {
+      height: 0;
+      width: calc(#{css-var($padding-y)} * 2 + 1.4em + 2px);
+      padding: calc(#{css-var($padding-y)} * 2 + 1.4em) 0 0;
+   }
+
+   &.#{$prefix}-button--icon .env-icon {
+      width: #{$icon-size};
+      height: #{$icon-size};
+      margin: #{($icon-size / -2)} 0 0 0;
+   }
+
+   &.#{$prefix}-button--icon-before {
+      padding-left: calc(
+         #{css-var($padding-y)} + #{$icon-size} + #{css-var('spacing-xx-small')}
+      );
+
+      .env-icon {
+         left: css-var($padding-y);
+      }
+   }
+   &.#{$prefix}-button--icon-after {
+      padding-right: calc(
+         #{css-var($padding-y)} + #{$icon-size} + #{css-var('spacing-xx-small')}
+      );
+
+      .env-icon {
+         right: css-var($padding-y);
+      }
+   }
+
+   @include squareIconButton {
+      .env-icon {
+         margin: #{($icon-size / -2)} 0 0 #{($icon-size / -2)};
+      }
    }
 }
