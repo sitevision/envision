@@ -6,7 +6,7 @@ title: Cards
 
 ## Cards & Cardholders
 
-Use Cards for displaying information about for example a page, a group or a user.
+Use Cards to display information about, for example, a page, a group or a user.
 
 A Card is a simple container that may have a header and a footer. A Card does not have
 it's own colors, so combine with `env-block` classes to set colors and `env-shadow` to set box shadow.
