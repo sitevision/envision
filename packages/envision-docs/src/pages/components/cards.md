@@ -104,7 +104,7 @@ A Card may have a header, a body and a footer: `.env-card__header`, `.env-card__
 
 No matter source order, header will always display first and footer last. The footer
 will always stick to the bottom of the Card. Inside a Cardholder, if the Card needs to stretch
-vertically, the body will be the element that stretches.
+vertically, the body of the Card will be the element that stretches.
 
 ```html
 <div class="doc-demo-dark">
