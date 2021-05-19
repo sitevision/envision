@@ -268,7 +268,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
 There are several modifiers for the Cardholder that controls the Cardholder slots:
 
 `.env-cardholder--N` - where N is a number that controls how many slots
-the cardholder should display at most in one row.
+the Cardholder can display at most in one row.
 Possible values for N is 2, 3, 4, 5, 6, 8.
 
 `.env-cardholder--max` - By default, slots have no max-width. This modifier sets a max width.
