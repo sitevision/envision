@@ -100,7 +100,7 @@ its width and height to make a nice aligned grid of cards.
 
 ### Card anatomy
 
-A card may have a header, a body and a footer: `.env-card__header`, `.env-card__body`, `.env-card__footer`.
+A Card may have a header, a body and a footer: `.env-card__header`, `.env-card__body`, `.env-card__footer`.
 
 No matter source order, header will always display first and footer last. The footer
 will always stick to the bottom of the card. Inside a Cardholder, if the card needs to stretch
