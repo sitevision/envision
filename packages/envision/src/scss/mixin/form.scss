@@ -15,8 +15,12 @@
    }
 }
 
-@mixin disabled {
-   filter: opacity(0.5) grayscale(100%);
+@mixin disabled($grayscale: true) {
+   @if ($grayscale) {
+      filter: opacity(0.5) grayscale(100%);
+   } @else {
+      filter: opacity(0.5);
+   }
 }
 
 @mixin placeholder() {
