@@ -119,7 +119,7 @@ vertically, the body of the Card will be the element that stretches.
 ## Cardholder
 
 A Cardholder will make a nice grid of Cards that adapt to the given space.
-Use one `env-cardholder__slot` to hold each card. See configuration options below.
+Use one `env-cardholder__slot` to hold each Card. See configuration options below.
 
 ```html
 <div class="doc-demo-dark">
