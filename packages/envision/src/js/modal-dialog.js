@@ -16,9 +16,13 @@ const ModalDialog = (($) => {
    const ESCAPE_KEY = 27;
    const FOCUSIN = 'focusin.env-modal-dialog';
    const MODIFIER_BASE = 'env-modal-dialog--';
+   const ALERT_MODIFIER_BASE = 'env-modal-alert--';
    const NAME = 'envDialog';
    const NO_CONFLICT = $.fn[NAME];
-   const SELECTOR = '[data-modal-dialog]';
+   const SELECTORS = {
+      MODAL_DIALOG: '[data-modal-dialog]',
+      MODAL_ALERT: '[data-modal-alert]',
+   };
    const SHOW = 'show';
    const TAB_KEY = 9;
 
@@ -60,7 +64,7 @@ const ModalDialog = (($) => {
             .one(Util.getTransitionEndEvent(), () => {
                this.$el.trigger(shownEvent);
             })
-            .addClass(MODIFIER_BASE + SHOW)
+            .addClass(this._getModifierBase() + SHOW)
             .removeAttr('aria-hidden')
             .css('opacity', 1);
 
@@ -80,7 +84,7 @@ const ModalDialog = (($) => {
          }
 
          const hideModalCallback = () => {
-            this.$el.removeClass(MODIFIER_BASE + SHOW);
+            this.$el.removeClass(this._getModifierBase() + SHOW);
             const hiddenEvent = $.Event(EVENTS.HIDDEN, {});
             this.$el.trigger(hiddenEvent);
          };
@@ -144,6 +148,12 @@ const ModalDialog = (($) => {
                this.hide();
             }
          });
+      }
+
+      _getModifierBase() {
+         return this.$el.hasClass('env-modal-alert')
+            ? ALERT_MODIFIER_BASE
+            : MODIFIER_BASE;
       }
 
       _unbindEvents() {
@@ -214,13 +224,17 @@ const ModalDialog = (($) => {
       return ModalDialog._jQuery;
    };
 
-   $(document).on('click', SELECTOR, function (e) {
-      e.preventDefault();
+   $(document).on(
+      'click',
+      SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
+      function (e) {
+         e.preventDefault();
 
-      const $target = $($(this).data('target'));
+         const $target = $($(this).data('target'));
 
-      $target[NAME]();
-   });
+         $target[NAME]();
+      }
+   );
 
    return ModalDialog;
 })(jQuery);

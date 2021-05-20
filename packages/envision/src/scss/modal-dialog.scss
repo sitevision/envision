@@ -113,3 +113,103 @@
       opacity: 0.5;
    }
 }
+
+.#{$prefix}-modal-alert {
+   position: fixed;
+   display: none;
+   opacity: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   outline: 0;
+   overflow-x: hidden;
+   transition: opacity 0.3s linear;
+   z-index: $zindex-modal;
+   white-space: nowrap;
+   text-align: center;
+
+   &--show {
+      display: block;
+      opacity: 1;
+   }
+
+   &__dialog {
+      background-color: css-var('section-background-color');
+      border-top: 6px $border-style css-var('element-primary-background-color');
+      border-radius: 0;
+      box-shadow: css-var('box-shadow');
+      display: inline-block;
+      max-width: calc(100% - 30px);
+      // Inline-block styling needs some left/right margin compensation.
+      // Optimized for Chrome, shoudn't matter too much in other browsers.
+      margin: 1em 14px 1em 10px;
+      overflow-wrap: anywhere;
+      padding: css-var('spacing-small') css-var('spacing-xx-large');
+      position: relative;
+      text-align: left;
+      vertical-align: middle;
+      white-space: normal;
+      width: css-var('modal-medium-width');
+      word-break: normal;
+      word-wrap: break-word;
+   }
+
+   &__icon {
+      color: css-var('element-primary-background-color');
+      padding-bottom: 1em;
+      text-align: center;
+   }
+
+   &__header {
+      padding-top: css-var('spacing-small');
+   }
+
+   &__body {
+      padding-top: css-var('spacing-medium');
+   }
+
+   &__footer {
+      padding: css-var('spacing-xxx-large') 0 css-var('spacing-small');
+
+      &--right {
+         text-align: right;
+      }
+
+      button {
+         padding-top: css-var('spacing-x-small');
+         padding-bottom: css-var('spacing-x-small');
+      }
+
+      button:first-child {
+         color: css-var('element-primary-font-color');
+         background-color: css-var('element-primary-background-color');
+      }
+
+      button:only-child {
+         display: block;
+         width: 100%;
+         white-space: normal;
+      }
+   }
+
+   $variableNames: 'secondary', 'success', 'warning', 'danger', 'info';
+
+   @each $name in $variableNames {
+      &.#{$prefix}-modal-alert--#{$name} {
+         .#{$prefix}-modal-alert__dialog {
+            border-top-color: css-var('element-#{$name}-background-color');
+         }
+         .#{$prefix}-modal-alert__icon {
+            color: css-var('element-#{$name}-background-color');
+         }
+
+         .#{$prefix}-modal-alert__footer {
+            button:first-child {
+               color: css-var('element-#{$name}-font-color');
+               background-color: css-var('element-#{$name}-background-color');
+            }
+         }
+      }
+   }
+}
