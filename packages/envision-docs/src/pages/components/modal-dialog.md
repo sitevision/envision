@@ -403,13 +403,13 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 
 ```html
 <button
-   id="defaultAlertBtn"
+   id="primaryAlertBtn"
    data-modal-alert
    data-target="#example5"
    type="button"
    class="env-button env-button--primary"
 >
-   Default Alert Modal
+   Primary Alert Modal
 </button>
 
 <button
@@ -430,6 +430,16 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    class="env-button env-button--danger"
 >
    Danger Alert Modal
+</button>
+
+<button
+   id="infoAlertBtn"
+   data-modal-alert
+   data-target="#example8"
+   type="button"
+   class="env-button env-button--info"
+>
+   Info Alert Modal
 </button>
 
 <div
@@ -458,7 +468,9 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
          </p>
       </div>
       <footer class="env-modal-alert__footer">
-         <button type="button" class="env-button">Save</button>
+         <button type="button" class="env-button env-button--primary">
+            Save
+         </button>
          <button
             type="button"
             data-modal-dialog-dismiss
@@ -496,7 +508,9 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
          </p>
       </div>
       <footer class="env-modal-alert__footer env-modal-alert__footer--right">
-         <button type="button" class="env-button">Save</button>
+         <button type="button" class="env-button env-button--success">
+            Save
+         </button>
          <button
             type="button"
             data-modal-dialog-dismiss
@@ -534,6 +548,44 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
          </p>
       </div>
       <footer class="env-modal-alert__footer">
+         <button
+            type="button"
+            data-modal-dialog-dismiss
+            class="env-button env-button--danger env-button--block"
+         >
+            Cancel
+         </button>
+      </footer>
+   </div>
+</div>
+
+<div
+   id="example8"
+   class="env-modal-alert env-modal-alert--info"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-alert__dialog">
+      <header class="env-modal-alert__header">
+         <div class="env-modal-alert__icon">
+            <svg class="env-icon env-icon--xx-large">
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-user-group"
+               ></use>
+            </svg>
+         </div>
+         <h5 class="env-text env-modal-alert__header__title">Modal Header</h5>
+      </header>
+      <div class="env-modal-alert__body">
+         <p class="env-text">
+            Caticus cuteicus wake up wander around the house making large
+            amounts of noise jump top bed and fall asleep.
+         </p>
+      </div>
+      <footer class="env-modal-alert__footer">
+         <button type="button" class="env-button env-button--info">OK</button>
          <button type="button" data-modal-dialog-dismiss class="env-button">
             Cancel
          </button>

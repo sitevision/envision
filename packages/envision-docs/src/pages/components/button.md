@@ -19,6 +19,10 @@ title: Button
 
 <button type="button" class="env-button env-button--danger">Danger</button>
 
+<button type="button" class="env-button env-button--info">Info</button>
+
+<button type="button" class="env-button env-button--warning">Warning</button>
+
 <button type="button" class="env-button env-button--primary env-button--ghost">
    Ghost
 </button>
