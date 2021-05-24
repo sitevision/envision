@@ -6,3 +6,8 @@ fs.copySync(
    path.resolve('packages', 'envision-docs', 'public'),
    path.resolve('docs')
 );
+
+fs.copySync(
+   path.resolve('packages', 'envision', 'dist'),
+   path.resolve('docs', 'dist')
+);
