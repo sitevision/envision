@@ -329,6 +329,18 @@ Element colors are used for elements and components. See usage examples below.
         <h2>Warning</h2>
       </div>
       <div class="example-element">
+        <div class="example-element-label">Button:</div>
+        <button type="button" class="env-button env-button--warning">
+          Warning
+        </button>
+        <button
+          type="button"
+          class="env-button env-button--warning env-button--ghost"
+        >
+          Warning
+        </button>
+      </div>
+      <div class="example-element">
         <div class="example-element-label">Badge:</div>
         <span class="env-badge env-badge--warning">Warning</span>
       </div>
@@ -389,6 +401,18 @@ Element colors are used for elements and components. See usage examples below.
     <div class="example-grid__box">
       <div class="example-element-header">
         <h2>Info</h2>
+      </div>
+      <div class="example-element">
+        <div class="example-element-label">Button:</div>
+        <button type="button" class="env-button env-button--info">
+          Info
+        </button>
+        <button
+          type="button"
+          class="env-button env-button--info env-button--ghost"
+        >
+          Info
+        </button>
       </div>
       <div class="example-element">
         <div class="example-element-label">Badge:</div>

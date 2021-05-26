@@ -451,34 +451,38 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <header class="env-modal-alert__header">
-         <div class="env-modal-alert__icon">
-            <svg class="env-icon env-icon--xx-large">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-check-line"
-               ></use>
-            </svg>
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-check-line"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump on top of your human's bed and fall asleep.
+            </p>
          </div>
-         <h5 class="env-text env-modal-alert__header__title">Modal Header</h5>
-      </header>
-      <div class="env-modal-alert__body">
-         <p class="env-text">
-            Caticus cuteicus wake up wander around the house making large
-            amounts of noise jump on top of your human's bed and fall asleep.
-         </p>
-      </div>
-      <footer class="env-modal-alert__footer">
-         <button type="button" class="env-button env-button--primary">
-            Save
-         </button>
-         <button
-            type="button"
-            data-modal-dialog-dismiss
-            class="env-button env-button--link"
-         >
-            Cancel
-         </button>
-      </footer>
+         <footer class="env-modal-alert__footer">
+            <button type="button" class="env-button env-button--primary">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
    </div>
 </div>
 
@@ -491,34 +495,38 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <header class="env-modal-alert__header">
-         <div class="env-modal-alert__icon">
-            <svg class="env-icon env-icon--xx-large">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"
-               ></use>
-            </svg>
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump on top of your human's bed and fall asleep.
+            </p>
          </div>
-         <h5 class="env-text env-modal-alert__header__title">Modal Header</h5>
-      </header>
-      <div class="env-modal-alert__body">
-         <p class="env-text">
-            Caticus cuteicus wake up wander around the house making large
-            amounts of noise jump on top of your human's bed and fall asleep.
-         </p>
-      </div>
-      <footer class="env-modal-alert__footer env-modal-alert__footer--right">
-         <button type="button" class="env-button env-button--success">
-            Save
-         </button>
-         <button
-            type="button"
-            data-modal-dialog-dismiss
-            class="env-button env-button--link"
-         >
-            Cancel
-         </button>
-      </footer>
+         <footer class="env-modal-alert__footer env-modal-alert__footer--right">
+            <button type="button" class="env-button env-button--success">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
    </div>
 </div>
 
@@ -531,31 +539,35 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <header class="env-modal-alert__header">
-         <div class="env-modal-alert__icon">
-            <svg class="env-icon env-icon--xx-large">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-delete"
-               ></use>
-            </svg>
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-delete"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump top bed and fall asleep.
+            </p>
          </div>
-         <h5 class="env-text env-modal-alert__header__title">Modal Header</h5>
-      </header>
-      <div class="env-modal-alert__body">
-         <p class="env-text">
-            Caticus cuteicus wake up wander around the house making large
-            amounts of noise jump top bed and fall asleep.
-         </p>
-      </div>
-      <footer class="env-modal-alert__footer">
-         <button
-            type="button"
-            data-modal-dialog-dismiss
-            class="env-button env-button--danger env-button--block"
-         >
-            Cancel
-         </button>
-      </footer>
+         <footer class="env-modal-alert__footer">
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--danger env-button--block"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
    </div>
 </div>
 
@@ -568,28 +580,34 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <header class="env-modal-alert__header">
-         <div class="env-modal-alert__icon">
-            <svg class="env-icon env-icon--xx-large">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-user-group"
-               ></use>
-            </svg>
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-user-group"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump top bed and fall asleep.
+            </p>
          </div>
-         <h5 class="env-text env-modal-alert__header__title">Modal Header</h5>
-      </header>
-      <div class="env-modal-alert__body">
-         <p class="env-text">
-            Caticus cuteicus wake up wander around the house making large
-            amounts of noise jump top bed and fall asleep.
-         </p>
-      </div>
-      <footer class="env-modal-alert__footer">
-         <button type="button" class="env-button env-button--info">OK</button>
-         <button type="button" data-modal-dialog-dismiss class="env-button">
-            Cancel
-         </button>
-      </footer>
+         <footer class="env-modal-alert__footer">
+            <button type="button" class="env-button env-button--info">
+               OK
+            </button>
+            <button type="button" data-modal-dialog-dismiss class="env-button">
+               Cancel
+            </button>
+         </footer>
+      </article>
    </div>
 </div>
 ```
