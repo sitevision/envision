@@ -6,6 +6,7 @@
 
    &,
    *:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']):not(a),
+   .#{$prefix}-button--link,
    .#{$prefix}-link-secondary,
    a.#{$prefix}-link-secondary,
    .env-text {

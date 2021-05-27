@@ -183,6 +183,10 @@ h1 {
       font-size: 24px;
       font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
    }
+
+   > h4 {
+      font-size: 20px;
+   }
 }
 
 :not(.code-example) {

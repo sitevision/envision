@@ -106,93 +106,100 @@ title: Button
 </p>
 ```
 
-## Icons <span class="env-badge env-badge--info">8.2</span>
+## Icons <span class="env-badge env-badge--info">9.01</span>
 
-```html
-<button type="button" class="env-button">
-   Default
-   <svg class="env-icon env-icon--small env-m-left--xx-small">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
-   </svg>
-</button>
+Support for icons in buttons were added in Envision released with Sitevision 8.2.
+Square icon-only button was added with Sitevision 9.0.
+Method of adding icons have since been updated as examples below.
 
-<button type="button" class="env-button env-button--primary">
-   <svg class="env-icon env-icon--small env-m-right--xx-small">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
-   </svg>
-   Primary
-</button>
-
-<button type="button" class="env-button env-button--primary env-button--ghost">
-   <svg class="env-icon env-icon--small env-m-right--xx-small">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
-   </svg>
-   Ghost
-</button>
-```
-
-### Icon only <span class="env-badge env-badge--info">9.0</span>
-
-A button with hidden text and equal width/height. All standard button classes for size and style apply.
-The button should have text for accessibility reasons. The text will be hidden for the eye but visible to a screenreader.
+All button types and sizes are available.
 
 ```html
 <h4>Icon button types</h4>
 
-<button type="button" class="env-button env-button--icon">
-   Assistive text
-   <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
-   </svg>
-</button>
-
 <button type="button" class="env-button env-button--primary env-button--icon">
-   Assistive text
+   Icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
 <button
    type="button"
-   class="env-button env-button--primary env-button--ghost env-button--icon"
+   class="env-button env-button--primary env-button--ghost env-button--icon env-button--icon-before"
 >
-   Assistive text
+   Icon left
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
-<button type="button" class="env-button env-button--link env-button--icon">
-   Assistive text
+<button
+   type="button"
+   class="env-button env-button--secondary env-button--icon env-button--icon-after"
+>
+   Icon right
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
 <h4>Icon button sizes</h4>
 
-<button type="button" class="env-button env-button--small env-button--icon">
-   Assistive text
+<button
+   type="button"
+   class="env-button env-button--small env-button--primary env-button--icon"
+>
+   Size small, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
-   </svg>
-</button>
-
-<button type="button" class="env-button env-button--primary env-button--icon">
-   Assistive text
-   <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 
 <button
    type="button"
-   class="env-button env-button--large env-button--secondary env-button--icon"
+   class="env-button env-button--small env-button--primary env-button--icon env-button--icon-before"
 >
-   Assistive text
+   Small
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-check-done"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+</button>
+
+<button type="button" class="env-button env-button--primary env-button--icon">
+   Size medium, icon only, assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-before"
+>
+   Medium
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--large env-button--primary env-button--icon"
+>
+   Size large, icon only, assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--large env-button--primary env-button--icon env-button--icon-before"
+>
+   Large
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
    </svg>
 </button>
 ```

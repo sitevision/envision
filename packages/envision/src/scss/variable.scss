@@ -469,6 +469,15 @@ $profile-image-radius: 50% !default;
    )
 );
 
+// ----- CARDHOLDER -----
+
+@include to-css-custom-property(
+   (
+      'cardholder-column-min-width': 240px,
+      'cardholder-column-max-width': 400px,
+   )
+);
+
 // ----- DEPRECATED -----
 
 // All variables below this line are deprecated. To be removed later.
