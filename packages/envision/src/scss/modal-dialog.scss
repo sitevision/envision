@@ -1,4 +1,14 @@
-.#{$prefix}-modal-dialog {
+@keyframes #{$prefix}-fade {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 0.5;
+   }
+}
+
+.#{$prefix}-modal-dialog,
+.#{$prefix}-modal-alert {
    position: fixed;
    display: none;
    opacity: 0;
@@ -12,10 +22,6 @@
    z-index: $zindex-modal;
    white-space: nowrap;
    text-align: center;
-
-   &--inner-scroll {
-      overflow-y: hidden;
-   }
 
    &:before {
       content: '';
@@ -43,7 +49,22 @@
       white-space: normal;
       width: css-var('modal-medium-width');
       max-width: calc(100% - 30px);
+   }
 
+   &__content {
+      position: relative;
+      background-color: css-var('section-background-color');
+      box-shadow: css-var('box-shadow');
+      outline: 0;
+   }
+}
+
+.#{$prefix}-modal-dialog {
+   &--inner-scroll {
+      overflow-y: hidden;
+   }
+
+   &__dialog {
       &--large {
          width: css-var('modal-large-width');
       }
@@ -54,12 +75,8 @@
    }
 
    &__content {
-      position: relative;
-      background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color');
       border-radius: css-var('border-radius-medium');
-      box-shadow: css-var('box-shadow');
-      outline: 0;
    }
 
    &__header {
@@ -105,11 +122,40 @@
    }
 }
 
-@keyframes #{$prefix}-fade {
-   from {
-      opacity: 0;
+.#{$prefix}-modal-alert {
+   &__content {
+      border-top: 6px $border-style css-var('element-primary-background-color');
+      padding: css-var('spacing-large') css-var('spacing-xx-large')
+         css-var('spacing-xx-large');
    }
-   to {
-      opacity: 0.5;
+
+   &__icon {
+      color: css-var('element-primary-background-color');
+      margin-bottom: 1em;
+      text-align: center;
+   }
+
+   &__body {
+      margin: css-var('spacing-large') 0 css-var('spacing-xxx-large');
+   }
+
+   &__footer {
+      &--right {
+         text-align: right;
+      }
+   }
+
+   $variableNames: 'secondary', 'success', 'warning', 'danger', 'info';
+
+   @each $name in $variableNames {
+      &.#{$prefix}-modal-alert--#{$name} {
+         .#{$prefix}-modal-alert__content {
+            border-top-color: css-var('element-#{$name}-background-color');
+         }
+
+         .#{$prefix}-modal-alert__icon {
+            color: css-var('element-#{$name}-background-color');
+         }
+      }
    }
 }

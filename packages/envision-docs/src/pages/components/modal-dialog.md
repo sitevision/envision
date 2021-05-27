@@ -397,6 +397,221 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
 </div>
 ```
 
+## Modal Alerts
+
+Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning', 'danger', 'info'`
+
+```html
+<button
+   id="primaryAlertBtn"
+   data-modal-alert
+   data-target="#example5"
+   type="button"
+   class="env-button env-button--primary"
+>
+   Primary Alert Modal
+</button>
+
+<button
+   id="successAlertBtn"
+   data-modal-alert
+   data-target="#example6"
+   type="button"
+   class="env-button env-button--success"
+>
+   Success Alert Modal
+</button>
+
+<button
+   id="dangerAlertBtn"
+   data-modal-alert
+   data-target="#example7"
+   type="button"
+   class="env-button env-button--danger"
+>
+   Danger Alert Modal
+</button>
+
+<button
+   id="infoAlertBtn"
+   data-modal-alert
+   data-target="#example8"
+   type="button"
+   class="env-button env-button--info"
+>
+   Info Alert Modal
+</button>
+
+<div
+   id="example5"
+   class="env-modal-alert"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-alert__dialog">
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-check-line"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump on top of your human's bed and fall asleep.
+            </p>
+         </div>
+         <footer class="env-modal-alert__footer">
+            <button type="button" class="env-button env-button--primary">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
+   </div>
+</div>
+
+<div
+   id="example6"
+   class="env-modal-alert env-modal-alert--success"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-alert__dialog">
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump on top of your human's bed and fall asleep.
+            </p>
+         </div>
+         <footer class="env-modal-alert__footer env-modal-alert__footer--right">
+            <button type="button" class="env-button env-button--success">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
+   </div>
+</div>
+
+<div
+   id="example7"
+   class="env-modal-alert env-modal-alert--danger"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-alert__dialog">
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-delete"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump top bed and fall asleep.
+            </p>
+         </div>
+         <footer class="env-modal-alert__footer">
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--danger env-button--block"
+            >
+               Cancel
+            </button>
+         </footer>
+      </article>
+   </div>
+</div>
+
+<div
+   id="example8"
+   class="env-modal-alert env-modal-alert--info"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+>
+   <div class="env-modal-alert__dialog">
+      <article class="env-modal-alert__content">
+         <header class="env-modal-alert__header">
+            <div class="env-modal-alert__icon">
+               <svg class="env-icon env-icon--xx-large">
+                  <use
+                     xlink:href="/sitevision/envision-icons.svg#icon-user-group"
+                  ></use>
+               </svg>
+            </div>
+            <h5 class="env-text env-modal-alert__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-alert__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump top bed and fall asleep.
+            </p>
+         </div>
+         <footer class="env-modal-alert__footer">
+            <button type="button" class="env-button env-button--info">
+               OK
+            </button>
+            <button type="button" data-modal-dialog-dismiss class="env-button">
+               Cancel
+            </button>
+         </footer>
+      </article>
+   </div>
+</div>
+```
+
 ## Methods
 
 Show `$('#myModal').envDialog('show')`
@@ -406,6 +621,8 @@ Hide `$('#myModal').envDialog('hide')`
 Toggle `$('#myModal').envDialog('toggle')`
 
 ## Events
+
+Events are only applicable to `modal dialogs` and not `modal alerts`.
 
 `hide.env-modal-dialog`
 

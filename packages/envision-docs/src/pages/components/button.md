@@ -7,25 +7,36 @@ title: Button
 <span class="env-badge env-badge--info">Ghost button added in 8.2</span>
 
 ```html
-<button type="button" class="env-button">Default</button>
+<p>
+   <button type="button" class="env-button">Default</button>
 
-<button type="button" class="env-button env-button--primary">Primary</button>
+   <button type="button" class="env-button env-button--primary">Primary</button>
 
-<button type="button" class="env-button env-button--secondary">
-   Secondary
-</button>
+   <button type="button" class="env-button env-button--secondary">
+      Secondary
+   </button>
+</p>
+<p>
+   <button type="button" class="env-button env-button--success">Success</button>
 
-<button type="button" class="env-button env-button--success">Success</button>
+   <button type="button" class="env-button env-button--danger">Danger</button>
 
-<button type="button" class="env-button env-button--danger">Danger</button>
+   <button type="button" class="env-button env-button--info">Info</button>
 
-<button type="button" class="env-button env-button--primary env-button--ghost">
-   Ghost
-</button>
+   <button type="button" class="env-button env-button--warning">Warning</button>
+</p>
+<p>
+   <button
+      type="button"
+      class="env-button env-button--primary env-button--ghost"
+   >
+      Ghost
+   </button>
 
-<button type="button" class="env-button env-button--invert">Invert</button>
+   <button type="button" class="env-button env-button--invert">Invert</button>
 
-<button type="button" class="env-button env-button--link">Link</button>
+   <button type="button" class="env-button env-button--link">Link</button>
+</p>
 ```
 
 ## Sizes

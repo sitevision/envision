@@ -29,7 +29,8 @@
       @include focus('element-background-color');
    }
 
-   $buttonNames: 'primary', 'secondary', 'success', 'danger';
+   // Variants
+   $buttonNames: 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
 
    @each $name in $buttonNames {
       &--#{$name} {
