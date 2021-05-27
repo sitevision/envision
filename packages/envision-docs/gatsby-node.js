@@ -69,3 +69,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       });
    }
 };
+
+exports.onCreateWebpackConfig = (options) => {
+   options.actions.setWebpackConfig({
+      externals: [
+         {
+            jquery: 'jQuery',
+            jQuery: 'jQuery',
+         },
+      ],
+   });
+};

@@ -7,34 +7,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
    mode: 'production',
    devtool: 'source-map',
-   entry: [
-      './src/js/accordion.js',
-      './src/js/collapse.js',
-      './src/js/dropdown.js',
-      './src/js/image-slider.js',
-      './src/js/image-viewer.js',
-      './src/js/modal-dialog.js',
-      './src/js/popover.js',
-      './src/js/range-slider.js',
-      './src/js/shims.js',
-      './src/js/tabs.js',
-
-      './src/scss/base.scss',
-      './src/icons/envision-icons.svg',
-   ],
+   entry: './src/js/envision.js',
    output: {
       filename: 'envision.js',
       path: path.resolve(__dirname, 'dist'),
+      library: {
+         name: 'envision',
+         type: 'umd',
+      },
    },
    optimization: {
-      minimizer: [
-         new OptimizeCSSAssetsPlugin(),
-         new TerserWebpackPlugin({
-            cache: true,
-            sourceMap: true,
-            parallel: true,
-         }),
-      ],
+      minimizer: [new OptimizeCSSAssetsPlugin(), new TerserWebpackPlugin()],
    },
    plugins: [
       new MiniCssExtractPlugin({
