@@ -1,6 +1,7 @@
 /*! Envision JS */
 import '../scss/base.scss';
 import '../icons/envision-icons.svg';
+
 export { default as select } from './select';
 import './accordion';
 import './collapse';
@@ -13,7 +14,3 @@ import './range-slider';
 import './shims';
 import './tabs';
 import './tabs';
-// window.envision = {
-//    version: '0.1',
-//    envision: true,
-// };

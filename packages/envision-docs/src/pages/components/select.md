@@ -33,26 +33,43 @@ Initialize from script:
 var tagSelect = envision.select('#example-tag-select-1');
 ```
 
+**Note:** `envision.select` will always return an array of Tag Select objects.
+To access individual controls you will have to use it's array index.
+
+```javascript
+tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
+```
+
 ## Options
 
 -  `maxItems` _number_
    -  The max number of items the user can select.
    -  Default value: `null` (unlimited)
 -  `create` _boolean_
+
    -  Allow adding new tags
    -  Default value: `false`
+
 -  `clearButton` _boolean_
+
    -  Show clear all button
    -  Default value: `false`
+
 -  `placeholder` _'string'_
+
    -  Use a custom placeholder.
    -  Default: Will try to use option with empty value or placeholder attribute from HTML.
+
 -  `data` _[{ value, text }]_
+
    -  Create a Tag select from custom dataset
    -  By default this is populated from the original element.
+
 -  `items` _['value']_
+
    -  An array of the initial selected values.
    -  By default this is populated from the original element.
+
 -  `onEventName`
    -  See Event handlers and Advanced example
 
@@ -148,7 +165,9 @@ document
    -  Invoked when an item is deselected.
 
 -  `onClear` _function() { ... }_
+
    -  Invoked when the control is manually cleared via the clear() method.
+
 -  `onOptionAdd` _function(value, data) { ... }_
 
    -  Invoked when a new option is added to the available options list.
@@ -186,33 +205,53 @@ Instances of Tag Select may be controlled by the methods described below.
 
 ```javascript
 var tagSelect = envision.select('#tag-select');
-tagSelect.addOption({ value: 'test' });
-tagSelect.addItem('test');
+tagSelect[0].addOption({ value: 'test' });
+tagSelect[0].addItem('test');
 ```
 
 ### Options
 
--  `addOption(data) { ... }`
+-  `addOptions(data)`
+
    -  Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
--  `getOption(value) { ... }`
+
+-  `setOptions(data)`
+
+   -  Clear all selected items and replace all options with new data.
+
+-  `getOption(value)`
+
    -  Retrieves the dom element for the option identified by the given value.
--  `updateOption(value, data) { ... }`
+
+-  `updateOption(value, data)`
+
    -  Updates an option available for selection. If it is visible in the selected items or options dropdown, it will be re-rendered automatically.
--  `removeOption(value) { ... }`
+
+-  `removeOption(value)`
+
    -  Removes the option identified by the given value.
--  `refreshOptions(triggerDropdown) { ... }`
+
+-  `refreshOptions(triggerDropdown)`
    -  Refreshes the list of available options shown in the autocomplete dropdown menu.
 
 ### Items
 
--  `getItem(value) { ... }`
+-  `getItem(value)`
+
    -  Returns the dom element of the item matching the given value.
--  `addItem(value, silent) { ... }`
+
+-  `addItem(value, silent)`
    -  "Selects" an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.
 
 ### Other
 
--  `getValue() { ... }`
+-  `getValue()`
+
    -  Returns the value of the control. If multiple items can be selected with a "select" input tag (e.g. `<select multiple>`), this returns an array. Otherwise, returns a string (separated by delimiter if "multiple").
--  `setValue(value, silent) { ... }`
+
+-  `setValue(value, silent)`
+
    -  Resets the selected items to the given value.
+
+-  `destroy()`
+   -  Destroys the control and unbinds event listeners so that it can be garbage collected.

@@ -121,7 +121,13 @@ export default (elements, options) => {
       let select = new TomSelect(this.el, this.settings);
 
       // API
-      this.addOption = function (data) {
+      this.addOptions = function (data) {
+         select.addOption(data);
+      };
+
+      this.setOptions = function (data) {
+         select.clear();
+         select.clearOptions();
          select.addOption(data);
       };
 
@@ -155,6 +161,16 @@ export default (elements, options) => {
 
       this.setValue = function (value, silent) {
          select.setValue(value, silent);
+      };
+
+      this.destroy = function () {
+         select.destroy();
+         for (let key in this) {
+            if (Object.prototype.hasOwnProperty.call(this, key)) {
+               delete this[key];
+            }
+         }
+         select = null;
       };
 
       return this;
