@@ -14,7 +14,6 @@ const DATA_KEY = 'env.image-viewer';
 const EVENT_KEY = `.${DATA_KEY}`;
 const NAME = 'envImageviewer';
 const DATA_API_KEY = '.data-api';
-const NO_CONFLICT = $.fn[NAME];
 const ESCAPE_KEY = 27;
 const ARROW_LEFT_KEYCODE = 37;
 const ARROW_RIGHT_KEYCODE = 39;
@@ -358,26 +357,29 @@ class Imageviewer {
    }
 }
 
-$(document).on(
-   Events.CLICK_DATA_API,
-   SELECTORS.DATA_IMAGE_VIEWER,
-   function (e) {
-      e.preventDefault();
-      const $target = $(e.target);
+if (typeof document !== 'undefined') {
+   $(document).on(
+      Events.CLICK_DATA_API,
+      SELECTORS.DATA_IMAGE_VIEWER,
+      function (e) {
+         e.preventDefault();
+         const $target = $(e.target);
 
-      if ($target.is('img')) {
-         $(this).envImageviewer($target.parent());
-      } else if ($target.is('a.env-image-viewer__images')) {
-         $(this).envImageviewer($target);
+         if ($target.is('img')) {
+            $(this).envImageviewer($target.parent());
+         } else if ($target.is('a.env-image-viewer__images')) {
+            $(this).envImageviewer($target);
+         }
       }
-   }
-);
+   );
 
-$.fn[NAME] = Imageviewer._jQuery;
-$.fn[NAME].Constructor = Imageviewer;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Imageviewer._jQuery;
-};
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Imageviewer._jQuery;
+   $.fn[NAME].Constructor = Imageviewer;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Imageviewer._jQuery;
+   };
+}
 
 export default Imageviewer;

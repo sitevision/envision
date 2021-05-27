@@ -70,13 +70,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
    }
 };
 
-exports.onCreateWebpackConfig = (options) => {
-   options.actions.setWebpackConfig({
-      externals: [
-         {
-            jquery: 'jQuery',
-            jQuery: 'jQuery',
-         },
-      ],
-   });
-};
+// exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+//    if (stage === 'build-html') {
+//       actions.setWebpackConfig({
+//          module: {
+//             rules: [
+//                {
+//                   test: /envision/,
+//                   use: loaders.null(),
+//                },
+//             ],
+//          },
+//       });
+//    }
+// };

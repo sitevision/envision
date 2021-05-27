@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import * as envision from 'envision';
 import { useEffect } from 'react';
 
@@ -15,7 +16,6 @@ export const useCopyExample = (content) => {
 
       // Initialize jQuery plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
-      const $ = window.jQuery;
       $('.example-popover').envPopover();
       $('.example-tabs').envTabs();
       $('.example-tabs1').envTabs();

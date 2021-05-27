@@ -11,7 +11,6 @@ const DATA_KEY = 'env.image-slider';
 const EVENT_KEY = `.${DATA_KEY}`;
 const NAME = 'envImageslider';
 const DATA_API_KEY = '.data-api';
-const NO_CONFLICT = $.fn[NAME];
 const ARROW_LEFT_KEYCODE = 37;
 const ARROW_RIGHT_KEYCODE = 39;
 const TOUCHEVENT_WAIT = 500;
@@ -514,25 +513,28 @@ class Imageslider {
    }
 }
 
-$(document).on(
-   Events.CLICK_DATA_API,
-   SELECTORS.DATA_SLIDE,
-   Imageslider._dataApiClickHandler
-);
+if (typeof document !== 'undefined') {
+   $(document).on(
+      Events.CLICK_DATA_API,
+      SELECTORS.DATA_SLIDE,
+      Imageslider._dataApiClickHandler
+   );
 
-$(window).on(Events.LOAD_DATA_API, () => {
-   const $imageSliders = $(SELECTORS.DATA_IMAGE_SLIDER);
-   $imageSliders.each((i, slider) => {
-      const $slider = $(slider);
-      Imageslider._jQueryInterface.call($slider, $slider.data());
+   $(window).on(Events.LOAD_DATA_API, () => {
+      const $imageSliders = $(SELECTORS.DATA_IMAGE_SLIDER);
+      $imageSliders.each((i, slider) => {
+         const $slider = $(slider);
+         Imageslider._jQueryInterface.call($slider, $slider.data());
+      });
    });
-});
 
-$.fn[NAME] = Imageslider._jQueryInterface;
-$.fn[NAME].Constructor = Imageslider;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Imageslider._jQueryInterface;
-};
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Imageslider._jQueryInterface;
+   $.fn[NAME].Constructor = Imageslider;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Imageslider._jQueryInterface;
+   };
+}
 
 export default Imageslider;

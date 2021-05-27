@@ -11,7 +11,6 @@ const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const NAME = 'envCollapse';
-const NO_CONFLICT = $.fn[NAME];
 const EXPANDED = MODIFIER_BASE + 'expanded';
 const SHOW = MODIFIER_BASE + 'show';
 
@@ -66,25 +65,28 @@ class Collapse {
    }
 }
 
-$.fn[NAME] = Collapse._jQuery;
-$.fn[NAME].Constructor = Collapse;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Collapse._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Collapse._jQuery;
+   $.fn[NAME].Constructor = Collapse;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Collapse._jQuery;
+   };
 
-$(document).on('click', '[data-env-collapse]', function (e) {
-   e.preventDefault();
+   $(document).on('click', '[data-env-collapse]', function (e) {
+      e.preventDefault();
 
-   const $this = $(this);
-   const target = $this.attr('href') || $this.attr('data-target');
-   const $target = $(target);
+      const $this = $(this);
+      const target = $this.attr('href') || $this.attr('data-target');
+      const $target = $(target);
 
-   if ($target.is(':animated')) {
-      return;
-   }
+      if ($target.is(':animated')) {
+         return;
+      }
 
-   $target[NAME]();
-});
+      $target[NAME]();
+   });
+}
 
 export default Collapse;

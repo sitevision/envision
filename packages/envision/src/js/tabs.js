@@ -12,7 +12,6 @@ const ENTER_KEY = 13;
 const IDENTIFIER = 'env.tabs';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
-const NO_CONFLICT = $.fn[NAME];
 const TAB_SELECTOR = '.env-tabs__link';
 
 const DEFAULTS = {
@@ -120,11 +119,14 @@ class Tabs {
    }
 }
 
-$.fn[NAME] = Tabs._jQuery;
-$.fn[NAME].Constructor = Tabs;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Tabs._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Tabs._jQuery;
+   $.fn[NAME].Constructor = Tabs;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Tabs._jQuery;
+   };
+}
 
 export default Tabs;

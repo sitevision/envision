@@ -10,7 +10,6 @@ const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const MODIFIER_BASE = 'env-accordion--';
 const NAME = 'envAccordion';
-const NO_CONFLICT = $.fn[NAME];
 const SHOW = MODIFIER_BASE + 'show';
 const PARENT = 'data-parent';
 
@@ -72,21 +71,24 @@ class Accordion {
    }
 }
 
-$.fn[NAME] = Accordion._jQuery;
-$.fn[NAME].Constructor = Accordion;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Accordion._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Accordion._jQuery;
+   $.fn[NAME].Constructor = Accordion;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Accordion._jQuery;
+   };
 
-$(document).on('click', '[data-env-accordion]', function (e) {
-   e.preventDefault();
+   $(document).on('click', '[data-env-accordion]', function (e) {
+      e.preventDefault();
 
-   const $this = $(this);
-   const target = $this.attr('href') || $this.attr('data-target');
-   const $target = $(target);
+      const $this = $(this);
+      const target = $this.attr('href') || $this.attr('data-target');
+      const $target = $(target);
 
-   $target[NAME]();
-});
+      $target[NAME]();
+   });
+}
 
 export default Accordion;

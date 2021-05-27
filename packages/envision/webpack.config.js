@@ -15,6 +15,8 @@ module.exports = {
          name: 'envision',
          type: 'umd',
       },
+      globalObject: 'this',
+      publicPath: '',
    },
    optimization: {
       minimizer: [new OptimizeCSSAssetsPlugin(), new TerserWebpackPlugin()],
@@ -25,7 +27,12 @@ module.exports = {
       }),
    ],
    externals: {
-      jquery: 'jQuery',
+      jquery: {
+         commonjs: 'jquery',
+         commonjs2: 'jquery',
+         amd: 'jquery',
+         root: 'jQuery',
+      },
    },
    module: {
       rules: [

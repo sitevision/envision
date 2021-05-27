@@ -17,7 +17,6 @@ const FOCUSIN = 'focusin.env-modal-dialog';
 const MODIFIER_BASE = 'env-modal-dialog--';
 const ALERT_MODIFIER_BASE = 'env-modal-alert--';
 const NAME = 'envDialog';
-const NO_CONFLICT = $.fn[NAME];
 const SELECTORS = {
    MODAL_DIALOG: '[data-modal-dialog]',
    MODAL_ALERT: '[data-modal-alert]',
@@ -216,23 +215,26 @@ class ModalDialog {
    }
 }
 
-$.fn[NAME] = ModalDialog._jQuery;
-$.fn[NAME].Constructor = ModalDialog;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return ModalDialog._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = ModalDialog._jQuery;
+   $.fn[NAME].Constructor = ModalDialog;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return ModalDialog._jQuery;
+   };
 
-$(document).on(
-   'click',
-   SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
-   function (e) {
-      e.preventDefault();
+   $(document).on(
+      'click',
+      SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
+      function (e) {
+         e.preventDefault();
 
-      const $target = $($(this).data('target'));
+         const $target = $($(this).data('target'));
 
-      $target[NAME]();
-   }
-);
+         $target[NAME]();
+      }
+   );
+}
 
 export default ModalDialog;

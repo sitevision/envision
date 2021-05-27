@@ -14,7 +14,6 @@ const RANGE_SELECTOR = '.env-range-slider__range';
 const TOUCH_MODIFIER = 'env-range-slider--touch';
 const IDENTIFIER = 'env.range-slider';
 const NAME = 'envRangeSlider';
-const NO_CONFLICT = $.fn[NAME];
 const KEY_RIGHT = 39;
 const KEY_LEFT = 37;
 const KEY_DOWN = 40;
@@ -378,11 +377,14 @@ class RangeSlider {
    }
 }
 
-$.fn[NAME] = RangeSlider._jQuery;
-$.fn[NAME].Constructor = RangeSlider;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return RangeSlider._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = RangeSlider._jQuery;
+   $.fn[NAME].Constructor = RangeSlider;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return RangeSlider._jQuery;
+   };
+}
 
 export default RangeSlider;

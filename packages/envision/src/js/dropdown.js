@@ -7,7 +7,6 @@
 import $ from 'jquery';
 
 const NAME = 'envDropdown';
-const NO_CONFLICT = $.fn[NAME];
 const ENV_DROPDOWN_OPEN = 'env-is-open';
 const TOGGLE_DROPDOWN = '[data-dropdown]';
 const ENV_DROPDOWN = '.env-dropdown';
@@ -215,26 +214,29 @@ function keydownHandler(event) {
    selectMenuItem(event, $dropdown.find('.env-dropdown__item'));
 }
 
-$.fn[NAME] = Dropdown._jQuery;
-$.fn[NAME].Constructor = Dropdown;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Dropdown._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Dropdown._jQuery;
+   $.fn[NAME].Constructor = Dropdown;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Dropdown._jQuery;
+   };
 
-$(document).on('click', TOGGLE_DROPDOWN, function (e) {
-   e.preventDefault();
+   $(document).on('click', TOGGLE_DROPDOWN, function (e) {
+      e.preventDefault();
 
-   const $this = $(this);
-   const $target = $($this.data('target'));
+      const $this = $(this);
+      const $target = $($this.data('target'));
 
-   $target[NAME]();
-});
+      $target[NAME]();
+   });
 
-$(document).on(ENV_KEYDOWN_EVENT, TOGGLE_DROPDOWN, keydownHandler);
+   $(document).on(ENV_KEYDOWN_EVENT, TOGGLE_DROPDOWN, keydownHandler);
 
-$(document).on(ENV_KEYDOWN_EVENT, ENV_DROPDOWN_MENU, keydownHandler);
+   $(document).on(ENV_KEYDOWN_EVENT, ENV_DROPDOWN_MENU, keydownHandler);
 
-$(document).on(ENV_KEYUP_EVENT, clearMenus);
+   $(document).on(ENV_KEYUP_EVENT, clearMenus);
+}
 
 export default Dropdown;

@@ -10,7 +10,6 @@ import Popper from 'popper.js';
 const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
 const EVENT_NAMESPACE = `.${IDENTIFIER}`;
-const NO_CONFLICT = $.fn[NAME];
 
 const attachmentMapping = {
    top: 'top',
@@ -306,11 +305,14 @@ class Popover {
    }
 }
 
-$.fn[NAME] = Popover._jQuery;
-$.fn[NAME].Constructor = Popover;
-$.fn[NAME].noConflict = () => {
-   $.fn[NAME] = NO_CONFLICT;
-   return Popover._jQuery;
-};
+if (typeof document !== 'undefined') {
+   const NO_CONFLICT = $.fn[NAME];
+   $.fn[NAME] = Popover._jQuery;
+   $.fn[NAME].Constructor = Popover;
+   $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = NO_CONFLICT;
+      return Popover._jQuery;
+   };
+}
 
 export default Popover;
