@@ -1,5 +1,6 @@
 .#{$prefix}-news-item {
    background-color: css-var('section-background-color');
+   color: css-var('font-color');
    display: flex;
    flex-direction: column;
    margin: css-var('spacing-xxx-small');
