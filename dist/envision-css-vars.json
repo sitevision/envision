@@ -82,7 +82,7 @@
   "--env-border-radius-medium": "var(--env-border-radius)",
   "--env-border-radius-large": "calc(var(--env-border-radius) * 1.5)",
   "--env-border-color": "#ccc",
-  "--env-border-color-light": "#e7e7e7",
+  "--env-border-color-light": "#e6e6e6",
   "--env-border-success-color": "#318731",
   "--env-border-warning-color": "#987013",
   "--env-border-danger-color": "#e22c2c",
