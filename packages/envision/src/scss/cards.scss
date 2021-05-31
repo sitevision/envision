@@ -85,7 +85,7 @@
    justify-content: center;
    align-items: stretch;
    justify-items: stretch;
-   margin: 0 calc(#{css-var('spacing-x-small')} * -1);
+   margin: 0 calc(#{css-var('cardholder-column-spacing')} / -2);
 
    &--start {
       justify-content: flex-start;
@@ -93,7 +93,7 @@
 
    &__slot {
       box-sizing: border-box;
-      padding: css-var('spacing-x-small');
+      padding: calc(#{css-var('cardholder-column-spacing')} / 2);
       flex: 1 1 100%;
       min-width: css-var('cardholder-column-min-width');
 

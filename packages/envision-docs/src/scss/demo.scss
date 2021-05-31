@@ -382,6 +382,7 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 .demo-responsive-cards {
    --env-cardholder-column-min-width: 48px;
    --env-cardholder-column-max-width: 80px;
+   --env-cardholder-column-spacing: 6px;
 
    h4 {
       font-weight: bold;
@@ -391,14 +392,6 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    p {
       margin: 0 0 0.5em;
       font-size: 0.7em;
-   }
-
-   .env-cardholder {
-      margin: 0 -5px;
-   }
-
-   .env-cardholder__slot {
-      padding: 5px;
    }
 
    .env-card {
