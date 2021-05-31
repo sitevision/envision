@@ -125,6 +125,7 @@
   "--env-profile-image-border-radius": "50%",
   "--env-cardholder-column-min-width": "240px",
   "--env-cardholder-column-max-width": "400px",
+  "--env-cardholder-column-spacing": "var(--env-spacing-medium)",
   "--env-font-color-light": "#34394f",
   "--env-font-color-lighter": "#49506d",
   "--env-font-color-invert": "#fff",
