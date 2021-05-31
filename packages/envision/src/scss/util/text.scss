@@ -4,6 +4,7 @@
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
    text-size-adjust: none;
+   text-align: left;
 
    &--muted {
       filter: opacity(0.625);
@@ -31,16 +32,16 @@
    }
 
    // Text alignment
-   &-align--left {
-      text-align: left;
-   }
-
    &-align--center {
       text-align: center;
    }
 
    &-align--right {
       text-align: right;
+   }
+
+   &--rtl {
+      direction: rtl;
    }
 }
 
