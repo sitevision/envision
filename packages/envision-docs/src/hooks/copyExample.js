@@ -34,24 +34,25 @@ export const useCopyExample = (content) => {
          envision.select(exampleSelects, {
             maxItems: 6,
             create: true,
-            clearButton: true,
+            i18n: 'en',
          });
       }
 
       const simpleSelectEl = document.querySelector('#example-tag-select-1');
       if (simpleSelectEl) {
-         envision.select(simpleSelectEl);
+         envision.select(simpleSelectEl, { i18n: 'en' });
       }
 
       const advancedSelectEl = document.querySelector('#example-tag-select-2');
       if (advancedSelectEl) {
          const advancedSelect = envision.select(advancedSelectEl, {
             maxItems: 5,
-            create: true,
             clearButton: true,
+            create: true,
             placeholder: 'Select or add tags...',
             items: ['fruit01'],
-            data: [
+            i18n: 'en',
+            options: [
                {
                   value: 'fruit01',
                   text: 'Apple',
@@ -73,12 +74,11 @@ export const useCopyExample = (content) => {
                   text: 'Pear',
                },
             ],
+
             onOptionAdd: function (value, data) {
-               alert('Tag "' + value + '" was added.');
                console.log('Added:', value, data);
             },
          });
-
          document
             .getElementById('example-tag-select-2-add')
             .addEventListener('click', function () {
@@ -90,6 +90,39 @@ export const useCopyExample = (content) => {
                });
                advancedSelect[0].addItem(val);
             });
+
+         const remoteDataSelectEl = document.querySelector(
+            '#example-tag-select-3'
+         );
+         if (remoteDataSelectEl) {
+            envision.select(remoteDataSelectEl, {
+               maxItems: 5,
+               placeholder: 'Select a Github repository...',
+               i18n: 'en',
+               valueField: 'url',
+               labelField: 'name',
+               searchField: ['name'],
+               preload: true,
+               load: function (query, callback) {
+                  query = query || 'sitevision';
+                  var url =
+                     'https://api.github.com/search/repositories?q=' +
+                     encodeURIComponent(query);
+                  fetch(url)
+                     .then((response) => response.json())
+                     .then((json) => {
+                        console.log(json);
+                        callback(json.items);
+                     })
+                     .catch(() => {
+                        callback();
+                     });
+               },
+               onLoad: function (data) {
+                  console.log('Loaded data:', data);
+               },
+            });
+         }
       }
    }, [content]);
 };

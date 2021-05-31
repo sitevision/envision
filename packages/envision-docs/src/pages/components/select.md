@@ -27,14 +27,14 @@ By default, Tag select will use the HTML markup to generate the data.
 </div>
 ```
 
-Initialize from script:
+Initialize from script. You may pass any selector as a string, a DOM node or node list.
 
 ```javascript
 var tagSelect = envision.select('#example-tag-select-1');
 ```
 
 **Note:** `envision.select` will always return an array of Tag Select objects.
-To access individual controls you will have to use it's array index.
+To access individual controls you must use its array index.
 
 ```javascript
 tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
@@ -50,17 +50,21 @@ tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
    -  Allow adding new tags
    -  Default value: `false`
 
+-  `createFilter` _RegExp_ | _'string' _ | _function(input)_
+
+   -  Specifies a RegExp or a string containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
+
 -  `clearButton` _boolean_
 
    -  Show clear all button
-   -  Default value: `false`
+   -  Default value: `true`
 
 -  `placeholder` _'string'_
 
    -  Use a custom placeholder.
    -  Default: Will try to use option with empty value or placeholder attribute from HTML.
 
--  `data` _[{ value, text }]_
+-  `options` _[{ value, text }]_
 
    -  Create a Tag select from custom dataset
    -  By default this is populated from the original element.
@@ -70,13 +74,42 @@ tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
    -  An array of the initial selected values.
    -  By default this is populated from the original element.
 
--  `onEventName`
+-  `i18n` _'sv'_ | _'en'_ | _{ add, no_results, remove_button, clear_button }_
+
+   -  Translation of remove button, clear button, add item and no results.
+      Use predefined strings for swedish or english or write your own translation.
+
+-  `load` _function(query, callback)_
+
+   -  Loads options by invoking the provided function. The function should accept two arguments (query, callback)
+      and will invoke the callback with the results once they are available.
+
+-  `preload` _boolean_ | _'string'_
+
+   -  If true, the load function will be called upon control initialization with an empty search. Alternatively it can be set to 'focus' to call the load function when control receives focus.
+
+-  `labelField` _'string'_
+
+   -  The name of the property to render as an option / item label when loading remote data.
+
+-  `valueField` _'string'_
+
+   -  The name of the property to use as the value when loading remote data.
+
+-  `searchField` _'string'_ | _['string']_
+
+   -  A string or an array of property names to analyze when filtering options in remote data.
+
+-  <code class="language-text">on<i>EventName</i></code> _function()_
    -  See Event handlers and Advanced example
 
-## Advanced example
+## Advanced examples
+
+### Options from JavaScript config
+
+This example sets the options from the config. It will allow adding tags from the Tag Select itself, or from a separate input using the API.
 
 ```HTML
-
 <div class="env-form-element">
    <label for="example-tag-select-2" class="env-form-element__label">Advanced select</label>
    <div class="env-form-element__control">
@@ -102,11 +135,11 @@ tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
 ```javascript
 var advancedSelect = envision.select('#example-tag-select-2', {
    maxItems: 5,
-   create: true,
-   clearButton: true,
    placeholder: 'Select or add tags...',
-   items: ['fruit01'],
+   create: true, // Allow creating tags
+   items: ['fruit01'], // Preselect one existing option
    data: [
+      // Populate options
       {
          value: 'fruit01',
          text: 'Apple',
@@ -129,6 +162,7 @@ var advancedSelect = envision.select('#example-tag-select-2', {
       },
    ],
    onOptionAdd: function (value, data) {
+      // Event handler, runs when option is added
       alert('Tag "' + value + '" was added.');
       console.log('Added:', value, data);
    },
@@ -138,12 +172,53 @@ document
    .getElementById('example-tag-select-2-add')
    .addEventListener('click', function () {
       var val = document.getElementById('example-tag-select-2-tag').value;
-      advancedSelect[0].addOption({
+      advancedSelect[0].addOptions({
          value: val,
          text: val,
       });
       advancedSelect[0].addItem(val);
    });
+```
+
+### Options from remote data API
+
+This example fetches repository names from github. It will preload some popular names on page load.
+The data does not follow the Tag Select naming standards so value-/label-/searchField must be defined.
+
+```HTML
+<div class="env-form-element">
+   <label for="example-tag-select-3" class="env-form-element__label">Remote data</label>
+   <div class="env-form-element__control">
+      <input class="env-form-input" id="example-tag-select-3" />
+   </div>
+</div>
+```
+
+```javascript
+envision.select('#example-tag-select-3', {
+   maxItems: 5,
+   placeholder: 'Select a Github repository...',
+   i18n: 'en',
+   valueField: 'url',
+   labelField: 'name',
+   searchField: ['name'],
+   preload: true,
+   load: function (query, callback) {
+      query = query || 'sitevision';
+      var url =
+         'https://api.github.com/search/repositories?q=' +
+         encodeURIComponent(query);
+      fetch(url)
+         .then((response) => response.json())
+         .then((json) => {
+            console.log(json);
+            callback(json.items);
+         })
+         .catch(() => {
+            callback();
+         });
+   },
+});
 ```
 
 ## Event handlers
@@ -197,7 +272,11 @@ document
    -  Invoked when the control gains focus.
 
 -  `onBlur` _function() { ... }_
+
    -  Invoked when the control loses focus.
+
+-  `onLoad` _function() { ... }_
+   -  Invoked when new options have been loaded and added to the control via the load option.
 
 ## API functions
 
@@ -205,7 +284,7 @@ Instances of Tag Select may be controlled by the methods described below.
 
 ```javascript
 var tagSelect = envision.select('#tag-select');
-tagSelect[0].addOption({ value: 'test' });
+tagSelect[0].addOptions({ value: 'test' });
 tagSelect[0].addItem('test');
 ```
 
@@ -214,10 +293,6 @@ tagSelect[0].addItem('test');
 -  `addOptions(data)`
 
    -  Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
-
--  `setOptions(data)`
-
-   -  Clear all selected items and replace all options with new data.
 
 -  `getOption(value)`
 
@@ -232,7 +307,12 @@ tagSelect[0].addItem('test');
    -  Removes the option identified by the given value.
 
 -  `refreshOptions(triggerDropdown)`
+
    -  Refreshes the list of available options shown in the autocomplete dropdown menu.
+
+-  `load(query)`
+
+   -  Invoked when new options should be loaded from the server. Called with the current query string.
 
 ### Items
 
