@@ -2,7 +2,7 @@
 title: Tag Select
 ---
 
-## Tag Select
+<span class="env-badge env-badge--info">Added in 9.1</span>
 
 Tag select is a JS alternative to `<select>` that allows you to create a nice looking multi-select with cross browser
 styling. Tag Select offers an API for creating interacting with the component.

@@ -99,7 +99,9 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       </div>
    </div>
    <div class="env-form-element">
-      <label for="tag-select" class="env-form-element__label">Tag select</label>
+      <label for="tag-select" class="env-form-element__label">
+         Tag select <span class="env-badge env-badge--info">9.1</span>
+      </label>
       <div class="env-form-element__control">
          <select
             class="env-form-input example-tag-select"
