@@ -138,7 +138,7 @@ var advancedSelect = envision.select('#example-tag-select-2', {
    placeholder: 'Select or add tags...',
    create: true, // Allow creating tags
    items: ['fruit01'], // Preselect one existing option
-   data: [
+   options: [
       // Populate options
       {
          value: 'fruit01',
