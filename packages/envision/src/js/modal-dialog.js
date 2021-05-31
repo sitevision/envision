@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import Util from './util/util';
+import CssUtil from './util/css-util';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
@@ -50,7 +50,7 @@ class ModalDialog {
          return;
       }
 
-      Util.reflow(this.el); // Used to force reflow
+      CssUtil.reflow(this.el); // Used to force reflow
 
       const showEvent = $.Event(EVENTS.SHOW, {});
 
@@ -59,7 +59,7 @@ class ModalDialog {
       const shownEvent = $.Event(EVENTS.SHOWN, {});
 
       this.$el
-         .one(Util.getTransitionEndEvent(), () => {
+         .one('transitionend', () => {
             this.$el.trigger(shownEvent);
          })
          .addClass(this._getModifierBase() + SHOW)
@@ -97,13 +97,13 @@ class ModalDialog {
       this.$el.trigger(hideEvent);
 
       this.$el
-         .one(Util.getTransitionEndEvent(), hideModalCallback)
+         .one('transitionend', hideModalCallback)
          .attr('aria-hidden', 'true')
          .css('opacity', 0)
          .off('click', DISMISS_SELECTOR);
 
       this.$backdrop
-         .one(Util.getTransitionEndEvent(), removeBackdropCallback)
+         .one('transitionend', removeBackdropCallback)
          .removeClass(BACKDROP_ANIMATION);
 
       this._isShown = false;
@@ -183,7 +183,7 @@ class ModalDialog {
       this.$backdrop.appendTo(document.body);
 
       this.$backdrop
-         .one(Util.getAnimationEndEvent(), this._removeBackdropAnimation)
+         .one('animationend', this._removeBackdropAnimation)
          .addClass(`${BACKDROP_ANIMATION} ${ANIMATION}`);
    }
 

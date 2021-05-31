@@ -5,6 +5,7 @@
  */
 
 import $ from 'jquery';
+import CssUtil from './util/css-util';
 import Util from './util/util';
 
 const DATA_KEY = 'env.image-slider';
@@ -263,7 +264,7 @@ class Imageslider {
          this.$el
             .on(Events.MOUSEENTER, (event) => this.pause(event))
             .on(Events.MOUSELEAVE, (event) => this.cycle(event));
-         if (Util.isTouch()) {
+         if (CssUtil.isTouch()) {
             this.$el.on(Events.TOUCHEND, () => {
                this.pause();
                if (this.touchTimeout) {
@@ -423,12 +424,12 @@ class Imageslider {
       if (this.$el.hasClass(ClassName.SLIDE)) {
          $nextElement.addClass(orderClassName);
 
-         Util.reflow(nextElement);
+         CssUtil.reflow(nextElement);
 
          $activeElement.addClass(directionalClassName);
          $nextElement.addClass(directionalClassName);
 
-         $activeElement.one(Util.getTransitionEndEvent(), () => {
+         $activeElement.one('transitionend', () => {
             $nextElement
                .removeClass(`${directionalClassName} ${orderClassName}`)
                .addClass(ClassName.ACTIVE);

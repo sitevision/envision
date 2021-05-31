@@ -5,7 +5,6 @@
  */
 
 import $ from 'jquery';
-import Util from './util/util';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
@@ -130,7 +129,7 @@ class Imageviewer {
       };
 
       this.$backdrop
-         .one(Util.getTransitionEndEvent(), removeBackdropCallback)
+         .one('transitionend', removeBackdropCallback)
          .removeClass(BACKDROP_ANIMATION);
 
       this._isShown = false;
@@ -261,7 +260,7 @@ class Imageviewer {
       this.$backdrop.appendTo(document.body);
 
       this.$backdrop
-         .one(Util.getAnimationEndEvent(), this._removeBackdropAnimation)
+         .one('animationend', this._removeBackdropAnimation)
          .addClass(`${BACKDROP_ANIMATION} ${ANIMATION}`);
    }
 

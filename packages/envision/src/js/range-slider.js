@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import Util from './util/util';
+import CssUtil from './util/css-util';
 
 const HANDLE_INDEX = 'range-handle-index';
 const HANDLES_SELECTOR = '.env-range-slider__handle';
@@ -40,7 +40,7 @@ class RangeSlider {
       this.$el = $(element);
       this.handles = this.$el.find(HANDLES_SELECTOR);
       this.$range = this.$el.find(RANGE_SELECTOR);
-      this.isTouch = Util.isTouch();
+      this.isTouch = CssUtil.isTouch();
 
       if (this.config.visibleValues) {
          this.valueHolders = this.$el.find(VALUE_HOLDERS_SELECTOR);

@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 import $ from 'jquery';
-import Util from './util/util';
+import CssUtil from './util/css-util';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
@@ -20,7 +20,7 @@ class Accordion {
       if (this.$el.hasClass(SHOW)) {
          this.$el.removeClass(SHOW).show();
       }
-      this.speed = Util.getToggleSpeed(this.$el[0], DURATION_CUSTOM_PROP);
+      this.speed = CssUtil.getToggleSpeed(this.$el[0], DURATION_CUSTOM_PROP);
    }
 
    toggle() {

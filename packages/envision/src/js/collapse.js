@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import Util from './util/util';
+import CssUtil from './util/css-util';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
@@ -21,7 +21,10 @@ class Collapse {
       this.$trigger = $(
          `[data-env-collapse][href="#${element.id}"], [data-env-collapse][data-target="#${element.id}"]`
       );
-      this.speed = Util.getToggleSpeed(this.$trigger[0], DURATION_CUSTOM_PROP);
+      this.speed = CssUtil.getToggleSpeed(
+         this.$trigger[0],
+         DURATION_CUSTOM_PROP
+      );
    }
 
    toggle() {
