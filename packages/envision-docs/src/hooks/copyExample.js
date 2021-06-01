@@ -111,15 +111,11 @@ export const useCopyExample = (content) => {
                   fetch(url)
                      .then((response) => response.json())
                      .then((json) => {
-                        console.log(json);
                         callback(json.items);
                      })
                      .catch(() => {
                         callback();
                      });
-               },
-               onLoad: function (data) {
-                  console.log('Loaded data:', data);
                },
             });
          }

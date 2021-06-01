@@ -163,7 +163,6 @@ var advancedSelect = envision.select('#example-tag-select-2', {
    ],
    onOptionAdd: function (value, data) {
       // Event handler, runs when option is added
-      alert('Tag "' + value + '" was added.');
       console.log('Added:', value, data);
    },
 });
@@ -211,7 +210,6 @@ envision.select('#example-tag-select-3', {
       fetch(url)
          .then((response) => response.json())
          .then((json) => {
-            console.log(json);
             callback(json.items);
          })
          .catch(() => {
