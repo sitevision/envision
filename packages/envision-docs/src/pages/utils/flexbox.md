@@ -182,7 +182,7 @@ Applicable to flex items (items within a flex container). Used to specify the le
 Valid values `1-10`
 
 ```html
-<div class="env-d--flex">
+<div class="env-d-flex">
    <div class="env-flex-length--1 example-list-item">Sidebar</div>
    <div class="env-flex-length--2 example-list-item">Main</div>
    <div class="env-flex-length--1 example-list-item">Sidebar</div>
@@ -196,7 +196,7 @@ Applicable to flex items (items within a flex container). Used to specify how mu
 Valid values `1-10`
 
 ```html
-<div class="env-d--flex">
+<div class="env-d-flex">
    <div class="example-list-item">Item</div>
    <div class="example-list-item">Item</div>
    <div class="env-flex-grow--1 example-list-item">Item</div>
@@ -215,21 +215,21 @@ Valid values
 -  `wrap-reverse`
 
 ```html
-<div class="env-d--flex env-flex-wrap--nowrap env-m-bottom--small">
+<div class="env-d-flex env-flex-wrap--nowrap env-m-bottom--small">
    <div class="example-list-item env-w--50">1</div>
    <div class="example-list-item env-w--50">2</div>
    <div class="example-list-item env-w--50">3</div>
    <div class="example-list-item env-w--50">4</div>
 </div>
 
-<div class="env-d--flex env-flex-wrap--wrap env-m-bottom--small">
+<div class="env-d-flex env-flex-wrap--wrap env-m-bottom--small">
    <div class="example-list-item env-w--50">1</div>
    <div class="example-list-item env-w--50">2</div>
    <div class="example-list-item env-w--50">3</div>
    <div class="example-list-item env-w--50">4</div>
 </div>
 
-<div class="env-d--flex env-flex-wrap--wrap-reverse">
+<div class="env-d-flex env-flex-wrap--wrap-reverse">
    <div class="example-list-item env-w--50">1</div>
    <div class="example-list-item env-w--50">2</div>
    <div class="example-list-item env-w--50">3</div>
