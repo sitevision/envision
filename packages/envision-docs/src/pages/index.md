@@ -1,5 +1,5 @@
 <main class="docs-text">
-   <div class="env-d--flex env-justify-content--center sv-home__content">
+   <div class="env-d-flex env-justify-content--center sv-home__content">
       <div class="sv-home__item">
          <div class="sv-home__env-logo">
             <img class="env-image" src="/images/envision_logo.png" alt="">

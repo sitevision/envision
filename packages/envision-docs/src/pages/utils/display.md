@@ -2,7 +2,7 @@
 title: Display
 ---
 
-Use this utility to set an element's display property. Utility classes are named using the format: `env-d--{value}`
+Use this utility to set an element's display property. Utility classes are named using the format: `env-d-{value}`
 
 Valid values
 
@@ -17,9 +17,13 @@ Examples
 
 ```html
 <div class="example-display">
-   <div class="env-p-around--x-small env-d--inline">Inline</div>
-   <div class="env-p-around--x-small env-d--block">Block</div>
-   <div class="env-p-around--x-small env-d--flex">Flex</div>
-   <div class="env-p-around--x-small env-d--none">None</div>
+   <div class="env-p-around--x-small env-d-inline">Inline</div>
+   <div class="env-p-around--x-small env-d-block">Block</div>
+   <div class="env-p-around--x-small env-d-flex">Flex</div>
+   <div class="env-p-around--x-small env-d-none">None</div>
 </div>
 ```
+
+Previous naming format <span class="env-badge env-badge--danger">Deprecated</span>
+
+`env-d--{value}`

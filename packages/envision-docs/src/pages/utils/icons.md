@@ -107,7 +107,7 @@ Valid values for _size_
 An icon can be marked as inactive by adding modifier: `env-icon--inactive` which will lower opacity and add a hover effect.
 
 ```html
-<div class="env-d--flex env-justify-content--center">
+<div class="env-d-flex env-justify-content--center">
    <svg class="env-icon env-icon--xx-large env-icon--inactive">
       <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
    </svg>

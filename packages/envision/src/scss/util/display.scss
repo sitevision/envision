@@ -1,5 +1,6 @@
 $displayProperties: inline block flex inline-block inline-flex none;
 @each $value in $displayProperties {
+   .#{$prefix}-d-#{$value},
    .#{$prefix}-d--#{$value} {
       display: $value;
    }

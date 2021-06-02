@@ -37,7 +37,7 @@ Add `env-collapse-header--icons` to add icons
 ```html
 <h4 class="env-text">
    <a
-      class="env-collapse-header env-d--flex env-align-items--center env-justify-content--between"
+      class="env-collapse-header env-d-flex env-align-items--center env-justify-content--between"
       role="button"
       href="#container2"
       data-env-collapse
