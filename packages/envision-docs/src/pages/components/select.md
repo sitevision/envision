@@ -82,7 +82,7 @@ tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
 -  `load` _function(query, callback)_
 
    -  Loads options by invoking the provided function. The function should accept two arguments (query, callback)
-      and will invoke the callback with the results once they are available.
+      and should invoke the callback with the results once they are available.
 
 -  `preload` _boolean_ | _'string'_
 
