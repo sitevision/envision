@@ -2,6 +2,8 @@
 title: Flexbox
 ---
 
+<span class="env-badge env-badge--info">New naming format since 9.1</span>
+
 ## Flex Container
 
 ### Direction
@@ -64,7 +66,7 @@ Examples
 </div>
 
 <div
-   class="example-flex example-flex--align env-flex env-flex--justify-content--center"
+   class="example-flex example-flex--align env-flex env-flex--justify-content-center"
 >
    <div class="env-flex__item">Item</div>
    <div class="env-flex__item">Item</div>
