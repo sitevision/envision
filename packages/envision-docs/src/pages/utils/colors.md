@@ -436,6 +436,21 @@ Element colors are used for elements and components. See usage examples below.
   </div>
 </div>
 
+## General colors
+
+There are a few general colors that is used for
+larger sections or less defined parts of components.
+For example, `--env-section-background-color`
+is used as background color for Modal dialogs.
+
+-  `--env-font-color` - Generic text color
+-  `--env-link-font-color` - Generic link color
+-  `--env-link-hover-font-color` - Generic link:hover color
+-  `--env-border-color` - Generic border color
+-  `--env-border-color-light` - Calculated from `--env-border-color`
+-  `--env-page-background-color` - Not used at the moment
+-  `--env-section-background-color` - Used for larger sections
+
 ## Background color <span class="env-badge env-badge--danger">Deprecated</span>
 
 Since Sitevision 8.2 Background color is deprecated. Please use Block colors.
@@ -485,4 +500,4 @@ Since Sitevision 8.2 Color is deprecated. Please use Block colors.
 Since Sitevision 8.2 Background color - Darker / Lighter is no longer
 included in Envision. Please use Block and Element colors.
 
-`env-bg-color--{color}--{value}`
+`--env-bg-color--{color}--{value}`
