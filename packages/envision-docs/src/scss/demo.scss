@@ -407,3 +407,9 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       overflow: hidden;
    }
 }
+
+.example-input-group {
+   .env-form-element {
+      max-width: 400px;
+   }
+}
