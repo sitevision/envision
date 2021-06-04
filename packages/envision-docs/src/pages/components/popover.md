@@ -231,5 +231,9 @@ To keep the popover alive when being hovered it requires a delay to function pro
 ## Initiation
 
 ```javascript
+// Since Sitevision 9.1
+envision.popover('.example-popover');
+
+// Deprecated since Sitevision 9.1
 $('.example-popover').envPopover();
 ```

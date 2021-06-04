@@ -4,7 +4,6 @@
  * --------------------------------------------------------------------------
  */
 
-import TomSelect from 'tom-select';
 import Util from './util/util';
 import { getNodes } from './util/nodes';
 
@@ -98,7 +97,7 @@ const defaults = {
    },
 };
 
-const SelectPlugin = function (el, settings) {
+const SelectPlugin = function (el, settings, TomSelect) {
    this.el = el;
    this.settings = settings;
 
@@ -186,14 +185,15 @@ const getSettings = (settings) => {
 };
 
 // Plugin / extension for envision library
-export default (elements, settings) => {
+export default async (elements, settings) => {
    const nodes = getNodes(elements);
    settings = getSettings(settings);
 
    if (nodes.length > 0) {
+      const { default: TomSelect } = await import('tom-select');
       const selects = nodes
          .filter((node) => !node.classList.contains('tomselected'))
-         .map((node) => new SelectPlugin(node, settings));
+         .map((node) => new SelectPlugin(node, settings, TomSelect));
       return selects;
    }
 };

@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import Popper from 'popper.js';
+import { getNodes } from './util/nodes';
 
 const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
@@ -37,11 +37,22 @@ const DEFAULTS = {
    trigger: 'click',
 };
 
+let Popper;
+const getPopper = async () => {
+   if (Popper) {
+      return Popper;
+   }
+
+   const { default: DynamicPopper } = await import('popper.js');
+   Popper = DynamicPopper;
+   return Popper;
+};
+
 class Popover {
    constructor(element, config) {
       this.el = element;
       this.$el = $(this.el);
-      this.config = $.extend({}, DEFAULTS, this.$el.data(), config);
+      this.config = { ...DEFAULTS, ...this.$el.data(), ...config };
 
       this.bindEvents();
    }
@@ -216,36 +227,38 @@ class Popover {
 
       $('body').append($popoverElement);
 
-      this._popper = new Popper(this.el, $popoverElement[0], {
-         placement: attachmentMapping[this.config.placement],
-         modifiers: {
-            flip: {
-               behavior: 'flip',
+      getPopper().then((Popper) => {
+         this._popper = new Popper(this.el, $popoverElement[0], {
+            placement: attachmentMapping[this.config.placement],
+            modifiers: {
+               flip: {
+                  behavior: 'flip',
+               },
+               arrow: {
+                  element: '.env-popover__arrow',
+               },
             },
-            arrow: {
-               element: '.env-popover__arrow',
+            onCreate: (data) => {
+               if (data.originalPlacement !== data.placement) {
+                  this._handlePopperPlacementChange(data);
+               }
             },
-         },
-         onCreate: (data) => {
-            if (data.originalPlacement !== data.placement) {
+            onUpdate: (data) => {
                this._handlePopperPlacementChange(data);
-            }
-         },
-         onUpdate: (data) => {
-            this._handlePopperPlacementChange(data);
-         },
+            },
+         });
+
+         this._popper.update();
+
+         if (this.config.clickOutside) {
+            $('body').on(
+               this.config.trigger + EVENT_NAMESPACE,
+               this.clickOutsideHandler.bind(this)
+            );
+         }
+
+         this.isShowing = true;
       });
-
-      this._popper.update();
-
-      if (this.config.clickOutside) {
-         $('body').on(
-            this.config.trigger + EVENT_NAMESPACE,
-            this.clickOutsideHandler.bind(this)
-         );
-      }
-
-      this.isShowing = true;
    }
 
    destroy() {
@@ -274,40 +287,37 @@ class Popover {
          this.hide();
       }
    }
+}
 
-   static _jQuery(config) {
-      return this.each(function () {
-         const $this = $(this);
-         let data = $this.data(IDENTIFIER);
+function _jQuery(config) {
+   return this.each(function () {
+      const $this = $(this);
+      let data = $this.data(IDENTIFIER);
 
-         if (!data && /destroy|hide/.test(config)) {
-            return;
+      if (!data && /destroy|hide/.test(config)) {
+         return;
+      }
+
+      if (!data) {
+         data = new Popover(this, typeof config === 'object' ? config : null);
+         $this.data(IDENTIFIER, data);
+      }
+
+      if (typeof config === 'string') {
+         const method = data[config];
+
+         if (!method) {
+            throw new Error(`Invalid method name "${config}"`);
          }
 
-         if (!data) {
-            data = new Popover(
-               this,
-               typeof config === 'object' ? config : null
-            );
-            $this.data(IDENTIFIER, data);
-         }
-
-         if (typeof config === 'string') {
-            const method = data[config];
-
-            if (!method) {
-               throw new Error(`Invalid method name "${config}"`);
-            }
-
-            method.call(data);
-         }
-      });
-   }
+         method.call(data);
+      }
+   });
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = Popover._jQuery;
+   $.fn[NAME] = _jQuery;
    $.fn[NAME].Constructor = Popover;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
@@ -315,4 +325,11 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default Popover;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+   if (nodes.length > 0) {
+      await getPopper();
+      const popovers = nodes.map((node) => new Popover(node, settings));
+      return popovers;
+   }
+};

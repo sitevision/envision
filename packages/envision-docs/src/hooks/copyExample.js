@@ -1,9 +1,7 @@
-import $ from 'jquery';
-import * as envision from 'envision';
-import { useEffect } from 'react';
+import * as React from 'react';
 
 export const useCopyExample = (content) => {
-   useEffect(() => {
+   React.useEffect(() => {
       // Initialize Code Highlighter
       content.current
          .querySelectorAll('.gatsby-highlight[data-language=html]')
@@ -14,9 +12,13 @@ export const useCopyExample = (content) => {
             element.parentNode.insertBefore(example, element);
          });
 
+      const $ = window.$;
+      const envision = window.envision;
+
       // Initialize jQuery plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
-      $('.example-popover').envPopover();
+      envision.popover('.example-popover');
+      // $('.example-popover').envPopover();
       $('.example-tabs').envTabs();
       $('.example-tabs1').envTabs();
       $('.example-tabs2').envTabs();
@@ -45,50 +47,54 @@ export const useCopyExample = (content) => {
 
       const advancedSelectEl = document.querySelector('#example-tag-select-2');
       if (advancedSelectEl) {
-         const advancedSelect = envision.select(advancedSelectEl, {
-            maxItems: 5,
-            clearButton: true,
-            create: true,
-            placeholder: 'Select or add tags...',
-            items: ['fruit01'],
-            i18n: 'en',
-            options: [
-               {
-                  value: 'fruit01',
-                  text: 'Apple',
-               },
-               {
-                  value: 'fruit02',
-                  text: 'Banana',
-               },
-               {
-                  value: 'fruit03',
-                  text: 'Grapefruit',
-               },
-               {
-                  value: 'fruit04',
-                  text: 'Lemon',
-               },
-               {
-                  value: 'fruit05',
-                  text: 'Pear',
-               },
-            ],
+         envision
+            .select(advancedSelectEl, {
+               maxItems: 5,
+               clearButton: true,
+               create: true,
+               placeholder: 'Select or add tags...',
+               items: ['fruit01'],
+               i18n: 'en',
+               options: [
+                  {
+                     value: 'fruit01',
+                     text: 'Apple',
+                  },
+                  {
+                     value: 'fruit02',
+                     text: 'Banana',
+                  },
+                  {
+                     value: 'fruit03',
+                     text: 'Grapefruit',
+                  },
+                  {
+                     value: 'fruit04',
+                     text: 'Lemon',
+                  },
+                  {
+                     value: 'fruit05',
+                     text: 'Pear',
+                  },
+               ],
 
-            onOptionAdd: function (value, data) {
-               console.log('Added:', value, data);
-            },
-         });
-         document
-            .getElementById('example-tag-select-2-add')
-            .addEventListener('click', function () {
-               const val = document.getElementById('example-tag-select-2-tag')
-                  .value;
-               advancedSelect[0].addOptions({
-                  value: val,
-                  text: val,
-               });
-               advancedSelect[0].addItem(val);
+               onOptionAdd: function (value, data) {
+                  console.log('Added:', value, data);
+               },
+            })
+            .then((selects) => {
+               document
+                  .getElementById('example-tag-select-2-add')
+                  .addEventListener('click', function () {
+                     const val = document.getElementById(
+                        'example-tag-select-2-tag'
+                     ).value;
+                     selects[0].addOptions({
+                        value: val,
+                        text: val,
+                     });
+                     selects[0].addItem(val);
+                  });
             });
 
          const remoteDataSelectEl = document.querySelector(
