@@ -13,7 +13,7 @@ export const useExpandCode = (content) => {
          LESS = '- Show less';
 
       content.current
-         .querySelectorAll('.gatsby-highlight[data-language=html]')
+         .querySelectorAll('.gatsby-highlight[data-language]')
          .forEach((element) => {
             const pre = element.querySelector('pre');
             if (pre && pre.clientHeight > window.innerHeight * 0.25) {
