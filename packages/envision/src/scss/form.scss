@@ -250,6 +250,7 @@
    &--horizontal {
       .#{$form-element} {
          display: flex;
+         align-items: baseline;
          flex-wrap: wrap;
 
          & > .#{$form-element}__label {
