@@ -238,6 +238,9 @@ class Popover {
                   element: '.env-popover__arrow',
                },
             },
+            arrow: {
+               element: '.env-popover__arrow',
+            },
             onCreate: (data) => {
                if (data.originalPlacement !== data.placement) {
                   this._handlePopperPlacementChange(data);

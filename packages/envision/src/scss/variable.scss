@@ -272,7 +272,7 @@ $radius-large: $radius-base * 1.5 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: #ccc !default;
-$border-color-light: #e7e7e7 !default;
+$border-color-light: #e6e6e6 !default;
 $tab-bottom-width: 3px !default;
 
 @include to-css-custom-property(
@@ -475,6 +475,7 @@ $profile-image-radius: 50% !default;
    (
       'cardholder-column-min-width': 240px,
       'cardholder-column-max-width': 400px,
+      'cardholder-column-spacing': css-var('spacing-medium'),
    )
 );
 

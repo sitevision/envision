@@ -278,7 +278,7 @@ may not fill the entire screen width.
 
 `.env-cardholder--start` - Must be combined with `.env-cardholder--max`. Will align slots to the left.
 
-To control the size of the columns there are two CSS variables that may be set:
+To control the size and spacing of the columns there are three CSS variables that may be set:
 
 ```CSS
 .your-cardholder-container {
@@ -288,6 +288,7 @@ To control the size of the columns there are two CSS variables that may be set:
    */
    --env-cardholder-column-min-width: 240px;
    --env-cardholder-column-max-width: 400px;
+   --env-cardholder-column-spacing: var(--env-spacing-medium);
 }
 ```
 
