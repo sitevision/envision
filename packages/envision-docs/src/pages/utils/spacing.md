@@ -15,12 +15,14 @@ Valid values for _specifier_
 -  `right`
 -  `bottom`
 -  `left`
+-  `horizontal` <span class="env-badge env-badge--info">9.1</span>
+-  `vertical` <span class="env-badge env-badge--info">9.1</span>
 -  `around`
 
 Valid values for _size_
 
 -  `0`
--  `a` auto, only applicble to `margin`
+-  `a` auto, only applicable to `margin`
 -  `xxx-small`
 -  `xx-small`
 -  `x-small`
@@ -30,3 +32,7 @@ Valid values for _size_
 -  `x-large`
 -  `xx-large`
 -  `xxx-large`
+
+Invert values for margin by adding the negative modifier <span class="env-badge env-badge--info">9.1</span>
+
+-  `env-m-{specifier}--negative`

@@ -20,6 +20,33 @@ $sizes: (
          .#{$prefix}-#{$p}-#{$specifier}--#{$size} {
             #{$prop}: $value !important;
          }
+         @if ($property == margin and $size != 0) {
+            .#{$prefix}-#{$p}-#{$specifier}--negative.#{$prefix}-#{$p}-#{$specifier}--#{$size} {
+               #{$prop}: $value * -1 !important;
+            }
+         }
+      }
+   }
+   @if ($size != 0) {
+      .#{$prefix}-m-horizontal--#{$size} {
+         margin-right: $value !important;
+         margin-left: $value !important;
+      }
+      .#{$prefix}-m-horizontal--negative.#{$prefix}-m-horizontal--#{$size} {
+         margin-right: $value * -1 !important;
+         margin-left: $value * -1 !important;
+      }
+      .#{$prefix}-m-vertical--#{$size} {
+         margin-top: $value !important;
+         margin-bottom: $value !important;
+      }
+      .#{$prefix}-m-vertical--negative.#{$prefix}-m-horizontal--#{$size} {
+         margin-top: $value * -1 !important;
+         margin-bottom: $value * -1 !important;
+      }
+      .#{$prefix}-p-horizontal--#{$size} {
+         padding-right: $value !important;
+         padding-left: $value !important;
       }
    }
 }
@@ -29,4 +56,14 @@ $sizes: (
    .#{$prefix}-m-#{$specifier}--a {
       #{$prop}: auto !important;
    }
+}
+
+.#{$prefix}-m-horizontal--a {
+   margin-right: auto !important;
+   margin-left: auto !important;
+}
+
+.#{$prefix}-m-vertical--a {
+   margin-top: auto !important;
+   margin-bottom: auto !important;
 }
