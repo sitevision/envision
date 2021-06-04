@@ -26,3 +26,8 @@
       @return #{'calc('}var(--#{$prefix}-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
    }
 }
+
+@function em($px, $base: 16px) {
+   $em: ($px / $base) * 1em;
+   @return $em;
+}

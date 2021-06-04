@@ -185,6 +185,12 @@ Only works in browsers that support <a class="doc-link" href="https://caniuse.co
 -  `--env-button-font-family`
 -  `--env-button-border-radius`
 
+#### Cardholder <span class="env-badge env-badge--info">9.0.1</span>
+
+-  `--env-cardholder-column-min-width`
+-  `--env-cardholder-column-max-width`
+-  `--env-cardholder-column-spacing`
+
 #### Collapse <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-collapse-border-style`

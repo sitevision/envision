@@ -12,13 +12,13 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 ```html
 <div class="env-form">
    <div class="env-form-element">
-      <label for="text" class="env-form-element__label">Input text</label>
+      <label for="text-1" class="env-form-element__label">Input text</label>
       <div class="env-form-element__control">
          <input
             type="text"
             class="env-form-input"
             placeholder="Placeholder text"
-            id="text"
+            id="text-1"
          />
       </div>
    </div>
@@ -97,6 +97,27 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
             <option>Item 4</option>
          </select>
       </div>
+   </div>
+   <div class="env-form-element">
+      <label for="tag-select" class="env-form-element__label">
+         Tag select <span class="env-badge env-badge--info">9.1</span>
+      </label>
+      <div class="env-form-element__control">
+         <select
+            class="env-form-input example-tag-select"
+            id="tag-select"
+            multiple
+         >
+            <option value="">Select an item...</option>
+            <option value="item1" selected>Item</option>
+            <option value="item2">Item 2</option>
+            <option value="item3">Item 3</option>
+            <option value="item4">Item 4</option>
+         </select>
+      </div>
+      <p class="env-form-element__help">
+         See <a class="env-link" href="../select/">Tag select documentation</a>
+      </p>
    </div>
    <div class="env-form-element">
       <span class="env-form-element__label" id="radio-header"
@@ -249,7 +270,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          </div>
       </div>
       <div class="env-form-element">
-         <label for="text" class="env-form-element__label"
+         <label for="text-2" class="env-form-element__label"
             >Input text + icon right</label
          >
          <div class="env-form-element__control env-form-element__control--icon">
@@ -257,7 +278,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
                type="text"
                class="env-form-input"
                placeholder="Placeholder text"
-               id="text"
+               id="text-2"
             />
             <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
@@ -270,7 +291,9 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 
 ## Horizontal
 
-To create a horizontal form (horizontally align labels with input), apply modifier `.env-form--horizontal` to the form wrapper. The label of the element takes up 20% of the width and the `.env-form-element__control` uses the remaining width.
+To create a horizontal form (horizontally align labels with input), apply modifier `.env-form--horizontal` to the form
+wrapper. The label of the element takes up 20% of the width and the `.env-form-element__control` uses the remaining
+width.
 
 ```html
 <div class="env-form env-form--horizontal">
@@ -363,7 +386,9 @@ Apply modifier `.env-form--inline` to the form wrapper to display elements inlin
 
 ## Hybrid
 
-To position multiple elements on a row, wrap target elements (`.env-form-element`) with a `.env-form__row` container. Use modifer `.env-form-element--*` to specify the length of an element, relative to other elements on the row. Valid values `1-6`. Default is `1`
+To position multiple elements on a row, wrap target elements (`.env-form-element`) with a `.env-form__row` container.
+Use modifer `.env-form-element--*` to specify the length of an element, relative to other elements on the row. Valid
+values `1-6`. Default is `1`
 
 ```html
 <div class="env-form">
@@ -415,7 +440,8 @@ To position multiple elements on a row, wrap target elements (`.env-form-element
 
 ## Help text
 
-Use `.env-form-element__help` for help texts associated with a form element. The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
+Use `.env-form-element__help` for help texts associated with a form element. The `aria-describedby` attribute should be
+used to reference the `ID` of the text that describes the element.
 
 ```html
 <div class="env-form">
@@ -438,7 +464,9 @@ Use `.env-form-element__help` for help texts associated with a form element. The
 
 ## States
 
-Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-radio--disabled` / `.env-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
+Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default
+cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-radio--disabled`
+/ `.env-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
 
 ```html
 <div class="env-form">
@@ -506,7 +534,9 @@ Elements with the `disabled` attribute recieve a `not-allowed` cursor while `rea
 
 ## Validation
 
-Add modifiers `.env-form-element--success`, `.env-form-element--warning` or `.env-form-element--danger` to define a validation state. The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
+Add modifiers `.env-form-element--success`, `.env-form-element--warning` or `.env-form-element--danger` to define a
+validation state. The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the
+element.
 
 ```html
 <div class="env-form">

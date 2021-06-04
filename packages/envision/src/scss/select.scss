@@ -1,0 +1,170 @@
+$select-ns: '#{$prefix}-select';
+
+.#{$select-ns} {
+   position: relative;
+
+   // Hide original input/select
+   &[hidden] {
+      @include visually-hidden;
+   }
+
+   &__input {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: inherit;
+      background-color: css-var('form-input-background-color');
+      background-image: none;
+      border: $border-width $border-style css-var('form-input-border-color');
+      border-radius: css-var('form-input-border-radius');
+      box-sizing: border-box;
+      color: css-var('form-input-font-color');
+      font-size: css-var('font-size-medium');
+      line-height: 1; //$form-input-line-height;
+      margin: 0;
+      padding: css-var('spacing-xx-small') css-var('spacing-x-small');
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      width: 100%;
+      cursor: text;
+      overflow: hidden;
+
+      &.has-items {
+         padding: css-var('spacing-xx-small') css-var('spacing-x-small') 0
+            css-var('spacing-xx-small');
+      }
+
+      .plugin-clear_button & {
+         padding-right: css-var('spacing-x-large');
+      }
+
+      > * {
+         vertical-align: baseline;
+         display: inline-flex;
+      }
+
+      > input {
+         background: none;
+         border: 0;
+         box-shadow: none;
+         display: inline-block;
+         flex: 1 1 auto;
+         font-size: css-var('font-size-medium');
+         line-height: (30 / 16);
+         margin: 0;
+         max-height: none;
+         max-width: 100%;
+         min-height: 0;
+         min-width: 7rem;
+         padding: 0;
+         text-indent: 0;
+         user-select: auto;
+
+         &:focus {
+            outline: none;
+         }
+      }
+
+      &.full > input,
+      &.input-hidden > input {
+         left: -10000px;
+         opacity: 0;
+         position: absolute;
+      }
+
+      &.has-items > input {
+         margin: 0 0 css-var('spacing-xx-small') css-var('spacing-xx-small');
+      }
+
+      &.focus {
+         @include focus();
+      }
+
+      &__clear {
+         display: none;
+         cursor: pointer;
+         position: absolute;
+         top: calc(#{css-var('spacing-xx-small')} + 1px);
+         right: css-var('spacing-xxx-small');
+         color: css-var('form-input-font-color');
+         width: 1.4em;
+         height: 1.9em;
+         line-height: 1.9;
+         text-align: center;
+      }
+
+      &.has-items:hover .#{$select-ns}__input__clear,
+      &.has-items:focus .#{$select-ns}__input__clear,
+      &.has-items.focus .#{$select-ns}__input__clear {
+         display: block;
+      }
+   }
+
+   &__item {
+      cursor: pointer;
+      margin: 0 css-var('spacing-xx-small') css-var('spacing-xx-small') 0;
+      align-items: center;
+      display: flex;
+      border-radius: css-var('border-radius-small');
+      font-size: em(14px);
+      line-height: 1;
+      padding: 0.58em em(8px, 14px) 0.6em;
+      color: css-var('element-primary-font-color');
+      background-color: css-var('element-primary-background-color');
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .plugin-remove_button & {
+         line-height: (1 / (14 / 16));
+         padding: 0 0 0 em(8px, 14px); // em(8px, 14px);
+      }
+
+      &__remove {
+         color: css-var('element-primary-font-color');
+         padding: 0.5em;
+      }
+   }
+
+   &__dropdown {
+      display: none;
+      background-color: css-var('section-background-color');
+      border: $border-width $border-style css-var('border-color-light');
+      border-radius: css-var('border-radius-small');
+      box-shadow: css-var('box-shadow-small');
+      position: absolute;
+      top: calc(100% + 1px);
+      right: 0;
+      left: 0;
+      z-index: $zindex-popover;
+
+      &__content {
+         padding: css-var('spacing-x-small') 0;
+         overflow-scrolling: touch;
+         max-height: 200px;
+         overflow-x: hidden;
+         overflow-y: auto;
+         scroll-behavior: smooth;
+      }
+
+      .create,
+      .no-results,
+      &__option {
+         padding: css-var('spacing-x-small');
+      }
+
+      .create,
+      &__option {
+         &:hover,
+         &.active {
+            color: css-var('element-font-color');
+            background-color: css-var('element-background-color');
+         }
+      }
+   }
+
+   &__spinner {
+      display: inline-block;
+      margin: css-var('spacing-small') auto 0 0;
+      padding: 0 0 0 css-var('spacing-x-small');
+   }
+}
