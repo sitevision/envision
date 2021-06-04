@@ -247,6 +247,45 @@
 
    $form-element: #{$prefix}-form-element;
    //Variants
+   .#{$form-element}--floating {
+      .#{$form-element}__control {
+         position: relative;
+
+         > .#{$form-element}__label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: css-var('form-input-font-color');
+            font-size: css-var('font-size-medium');
+            line-height: $form-input-line-height;
+            margin: 1px;
+            padding: css-var('spacing-x-small');
+            transition: all 0.2s ease-in-out;
+            pointer-events: none;
+         }
+      }
+
+      .#{$prefix}-form-input {
+         padding: css-var('spacing-medium') css-var('spacing-x-small')
+            css-var('spacing-xx-small');
+         line-height: 1;
+
+         @include placeholder {
+            opacity: 0;
+         }
+
+         &:not(:placeholder-shown) ~ label,
+         &:focus ~ .#{$form-element}__label {
+            filter: opacity(0.5);
+            font-size: 0.7em;
+            padding: 0;
+            top: 0.3em;
+            left: 0.7em;
+            line-height: 1;
+         }
+      }
+   }
+
    &--horizontal {
       .#{$form-element} {
          display: flex;

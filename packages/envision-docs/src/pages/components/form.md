@@ -246,6 +246,70 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 </div>
 ```
 
+## Floating labels <span class="env-badge env-badge--info">9.1</span>
+
+Create forms with labels that float over your input fields by adding
+modifier `env-form-element--floating` to `env-form-element`.
+
+`<label>` Must be placed _inside_ `env-form-element__control` and _after_ the `env-form-input` element.
+
+Use with `<input>`, `<textarea>` or `<select>`.
+
+```html
+<div class="env-form">
+   <div class="env-form__row">
+      <div class="env-form-element env-form-element--floating">
+         <div class="env-form-element__control">
+            <input
+               type="search"
+               class="env-form-input"
+               placeholder="Placeholder text"
+               id="search1"
+            />
+            <label for="search1" class="env-form-element__label"
+               >Input search</label
+            >
+         </div>
+      </div>
+      <div class="env-form-element env-form-element--floating">
+         <div class="env-form-element__control">
+            <input
+               type="search"
+               class="env-form-input env-form-input--search"
+               placeholder="Placeholder text"
+               id="search2"
+            />
+            <label for="search2" class="env-form-element__label"
+               >Input search with cancel button</label
+            >
+         </div>
+      </div>
+   </div>
+   <div class="env-form-element env-form-element--floating">
+      <div class="env-form-element__control">
+         <textarea
+            class="env-form-input"
+            placeholder="Placeholder text"
+            id="textarea"
+            rows="3"
+         ></textarea>
+         <label for="textarea" class="env-form-element__label">Textarea</label>
+      </div>
+   </div>
+   <div class="env-form-element env-form-element--floating">
+      <div class="env-form-element__control">
+         <select class="env-form-input" id="select">
+            <option>Item</option>
+            <option>Item 2</option>
+            <option>Item 3</option>
+            <option>Item 4</option>
+         </select>
+         <label for="select" class="env-form-element__label">Select</label>
+      </div>
+   </div>
+</div>
+```
+
 ## Icons in input fields <span class="env-badge env-badge--info">8.2</span>
 
 ```html
