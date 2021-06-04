@@ -1,3 +1,9 @@
+@function getShortValue($value) {
+   $start: str-index($value, '-');
+   @return if($start, str-slice($value, $start + 1), $value);
+}
+
+// Deprecated, 9.1
 $flexDirectionValues: row-reverse column column-reverse;
 @each $value in $flexDirectionValues {
    .#{$prefix}-flex--#{$value} {
@@ -5,11 +11,7 @@ $flexDirectionValues: row-reverse column column-reverse;
    }
 }
 
-@function getShortValue($value) {
-   $start: str-index($value, '-');
-   @return if($start, str-slice($value, $start + 1), $value);
-}
-
+// Deprecated, 9.1
 $justifyContentValues: flex-end center space-between space-around;
 @each $value in $justifyContentValues {
    $shortValue: getShortValue($value);
@@ -18,6 +20,7 @@ $justifyContentValues: flex-end center space-between space-around;
    }
 }
 
+// Deprecated, 9.1
 $alignItemsValues: stretch center flex-start flex-end baseline;
 @each $value in $alignItemsValues {
    $shortValue: getShortValue($value);
@@ -26,6 +29,7 @@ $alignItemsValues: stretch center flex-start flex-end baseline;
    }
 }
 
+// Deprecated, 9.1
 $alignSelfValues: stretch center flex-start flex-end baseline;
 @each $value in $alignSelfValues {
    $shortValue: getShortValue($value);
@@ -34,21 +38,83 @@ $alignSelfValues: stretch center flex-start flex-end baseline;
    }
 }
 
+// Deprecated, 9.1
 @for $i from 1 through 10 {
    .#{$prefix}-flex-length--#{$i} {
       flex: $i;
    }
 }
 
+// Deprecated, 9.1
 @for $i from 1 through 10 {
    .#{$prefix}-flex-grow--#{$i} {
       flex-grow: $i;
    }
 }
 
+// Deprecated, 9.1
 $flexWrapValues: nowrap wrap wrap-reverse;
 @each $value in $flexWrapValues {
    .#{$prefix}-flex-wrap--#{$value} {
       flex-wrap: $value;
+   }
+}
+
+// New version (Sitevision 9.1)
+.#{$prefix}-flex {
+   display: flex;
+
+   $flexDirectionValues: row-reverse column column-reverse;
+   @each $value in $flexDirectionValues {
+      &--direction-#{$value} {
+         flex-direction: $value;
+      }
+   }
+
+   $justifyContentValues: flex-end center space-between space-around;
+   @each $value in $justifyContentValues {
+      $shortValue: getShortValue($value);
+      &--justify-content-#{$shortValue} {
+         justify-content: $value;
+      }
+   }
+
+   $flexWrapValues: wrap wrap-reverse;
+   @each $value in $flexWrapValues {
+      &--#{$value} {
+         flex-wrap: $value;
+      }
+   }
+
+   $alignItemsValues: stretch center flex-start flex-end baseline;
+   @each $value in $alignItemsValues {
+      $shortValue: getShortValue($value);
+      &--align-items-#{$shortValue} {
+         align-items: $value;
+      }
+   }
+
+   &__item {
+      box-sizing: border-box;
+
+      $alignSelfValues: stretch center flex-start flex-end baseline;
+      @each $value in $alignSelfValues {
+         $shortValue: getShortValue($value);
+         &--align-#{$shortValue} {
+            align-self: $value;
+         }
+      }
+
+      @for $i from 1 through 10 {
+         &--length-#{$i} {
+            flex: $i;
+         }
+      }
+
+      @for $i from 1 through 10 {
+         &--grow-#{$i} {
+            flex-grow: $i;
+         }
+      }
    }
 }

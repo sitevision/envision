@@ -46,23 +46,21 @@
    height: 100px;
 }
 
-.example-alignment-container,
-.example-direction-container {
-   display: flex;
-   height: 70px;
+.example-flex {
    background-color: var(--env-element-common-background-color);
-   border: 1px solid var(--env-border-color-light);
    margin-bottom: 10px;
 
-   > div {
+   .env-flex__item {
       border: 1px solid var(--env-border-color);
       margin-top: -1px;
       margin-left: -1px;
+      padding: 0.5em;
+      text-align: center;
    }
-}
 
-.example-direction-container {
-   height: auto;
+   &--align {
+      height: 70px;
+   }
 }
 
 .example-link {
