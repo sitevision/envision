@@ -120,6 +120,7 @@ $select-ns: '#{$prefix}-select';
       }
 
       &__remove {
+         text-decoration: none !important;
          color: css-var('element-primary-font-color');
          padding: 0.5em;
       }

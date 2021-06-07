@@ -23,6 +23,14 @@ body {
    transition: all 0.3s;
 }
 
+body a {
+   // This here to avoid issues in Sitevision
+   // by making sure we add the CSS needed for
+   // misc components.
+   color: #000000;
+   text-decoration: underline;
+}
+
 :not(pre) > code[class*='language-'] {
    text-shadow: none;
 }
