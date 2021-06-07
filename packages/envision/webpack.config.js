@@ -24,7 +24,7 @@ module.exports = {
       },
       globalObject: 'this',
       publicPath: 'auto',
-      chunkFilename: '[name]-[hash].js',
+      chunkFilename: '[name]-[contenthash].js',
    },
    optimization: {
       minimizer: [new OptimizeCSSAssetsPlugin(), new TerserWebpackPlugin()],
