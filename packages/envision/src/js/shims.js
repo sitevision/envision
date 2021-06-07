@@ -6,5 +6,6 @@
 
 /**
  * Make use of external svgs possible in IE 11
+ * TODO: Remove when IE is no longer supported
  */
 import 'svgxuse';

@@ -133,49 +133,51 @@ This example sets the options from the config. It will allow adding tags from th
 ```
 
 ```javascript
-var advancedSelect = envision.select('#example-tag-select-2', {
-   maxItems: 5,
-   placeholder: 'Select or add tags...',
-   create: true, // Allow creating tags
-   items: ['fruit01'], // Preselect one existing option
-   options: [
-      // Populate options
-      {
-         value: 'fruit01',
-         text: 'Apple',
+envision
+   .select('#example-tag-select-2', {
+      maxItems: 5,
+      placeholder: 'Select or add tags...',
+      create: true, // Allow creating tags
+      items: ['fruit01'], // Preselect one existing option
+      options: [
+         // Populate options
+         {
+            value: 'fruit01',
+            text: 'Apple',
+         },
+         {
+            value: 'fruit02',
+            text: 'Banana',
+         },
+         {
+            value: 'fruit03',
+            text: 'Grapefruit',
+         },
+         {
+            value: 'fruit04',
+            text: 'Lemon',
+         },
+         {
+            value: 'fruit05',
+            text: 'Pear',
+         },
+      ],
+      onOptionAdd: function (value, data) {
+         // Event handler, runs when option is added
+         console.log('Added:', value, data);
       },
-      {
-         value: 'fruit02',
-         text: 'Banana',
-      },
-      {
-         value: 'fruit03',
-         text: 'Grapefruit',
-      },
-      {
-         value: 'fruit04',
-         text: 'Lemon',
-      },
-      {
-         value: 'fruit05',
-         text: 'Pear',
-      },
-   ],
-   onOptionAdd: function (value, data) {
-      // Event handler, runs when option is added
-      console.log('Added:', value, data);
-   },
-});
-
-document
-   .getElementById('example-tag-select-2-add')
-   .addEventListener('click', function () {
-      var val = document.getElementById('example-tag-select-2-tag').value;
-      advancedSelect[0].addOptions({
-         value: val,
-         text: val,
-      });
-      advancedSelect[0].addItem(val);
+   })
+   .then((selects) => {
+      document
+         .getElementById('example-tag-select-2-add')
+         .addEventListener('click', function () {
+            var val = document.getElementById('example-tag-select-2-tag').value;
+            selects[0].addOptions({
+               value: val,
+               text: val,
+            });
+            selects[0].addItem(val);
+         });
    });
 ```
 
