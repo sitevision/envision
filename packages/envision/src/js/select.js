@@ -190,7 +190,9 @@ export default async (elements, settings) => {
    settings = getSettings(settings);
 
    if (nodes.length > 0) {
-      const { default: TomSelect } = await import('tom-select');
+      const { default: TomSelect } = await import(
+         /* webpackChunkName: "tom-select" */ 'tom-select'
+      );
       const selects = nodes
          .filter((node) => !node.classList.contains('tomselected'))
          .map((node) => new SelectPlugin(node, settings, TomSelect));

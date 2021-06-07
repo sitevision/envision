@@ -43,7 +43,9 @@ const getPopper = async () => {
       return Popper;
    }
 
-   const { default: DynamicPopper } = await import('popper.js');
+   const { default: DynamicPopper } = await import(
+      /* webpackChunkName: "popper" */ 'popper.js'
+   );
    Popper = DynamicPopper;
    return Popper;
 };
