@@ -438,7 +438,7 @@ Element colors are used for elements and components. See usage examples below.
 
 ## General colors
 
-There are a few general colors that is used for
+There are a few general colors that are used for
 larger sections or less defined parts of components.
 For example, `--env-section-background-color`
 is used as background color for Modal dialogs.
