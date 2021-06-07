@@ -4,5 +4,3 @@
  *            See https://github.com/Keyamoon/svgxuse
  * @version   1.2.6
  */
-
-/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
