@@ -333,5 +333,21 @@ tagSelect[0].addItem('test');
 
    -  Resets the selected items to the given value.
 
+-  `lock()`
+
+   -  Disables user input on the control. The control can still receive focus.
+
+-  `unlock()`
+
+   -  Re-enables user input on the control.
+
+-  `disable()`
+
+   -  Disables user input on the control. The control can not receive focus.
+
+-  `enable()`
+
+   -  Re-enables the control.
+
 -  `destroy()`
    -  Destroys the control and unbinds event listeners so that it can be garbage collected.

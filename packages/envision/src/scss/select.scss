@@ -1,6 +1,6 @@
-$select-ns: '#{$prefix}-select';
+$prefix-select: '#{$prefix}-select';
 
-.#{$select-ns} {
+.#{$prefix-select} {
    position: relative;
 
    // Hide original input/select
@@ -76,7 +76,31 @@ $select-ns: '#{$prefix}-select';
       }
 
       &.focus {
-         @include focus();
+         @include focus;
+      }
+
+      &.disabled,
+      &.locked {
+         @include disabled;
+
+         .#{$prefix-select}__input__clear {
+            display: none !important;
+         }
+      }
+
+      &.locked {
+         &,
+         .#{$prefix-select}__item,
+         a,
+         button {
+            cursor: default !important;
+         }
+      }
+
+      &.disabled {
+         * {
+            cursor: default !important;
+         }
       }
 
       &__clear {
@@ -92,9 +116,9 @@ $select-ns: '#{$prefix}-select';
          text-align: center;
       }
 
-      &.has-items:hover .#{$select-ns}__input__clear,
-      &.has-items:focus .#{$select-ns}__input__clear,
-      &.has-items.focus .#{$select-ns}__input__clear {
+      &.has-items:hover .#{$prefix-select}__input__clear,
+      &.has-items:focus .#{$prefix-select}__input__clear,
+      &.has-items.focus .#{$prefix-select}__input__clear {
          display: block;
       }
    }
@@ -129,6 +153,7 @@ $select-ns: '#{$prefix}-select';
    &__dropdown {
       display: none;
       background-color: css-var('section-background-color');
+      color: css-var('font-color');
       border: $border-width $border-style css-var('border-color-light');
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('box-shadow-small');
@@ -136,7 +161,7 @@ $select-ns: '#{$prefix}-select';
       top: calc(100% + 1px);
       right: 0;
       left: 0;
-      z-index: $zindex-popover;
+      z-index: $zindex-tagselect;
 
       &__content {
          padding: css-var('spacing-x-small') 0;
