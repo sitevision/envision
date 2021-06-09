@@ -66,6 +66,7 @@ const defaults = {
       valueField: 'value',
       labelField: 'text',
       searchField: ['text'],
+      dropdownParent: null,
       maxItems: null,
       options: null,
       items: null,
