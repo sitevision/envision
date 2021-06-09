@@ -145,21 +145,15 @@
       }
 
       &--success {
-         @include input-validation-state(
-            'color-success',
-            'border-success-color'
-         );
+         @include input-validation-state('success');
       }
 
       &--warning {
-         @include input-validation-state(
-            'color-warning-dark',
-            'border-warning-color'
-         );
+         @include input-validation-state('warning');
       }
 
       &--danger {
-         @include input-validation-state('color-danger', 'border-danger-color');
+         @include input-validation-state('danger');
       }
 
       &[type='file'] {
