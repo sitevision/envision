@@ -451,3 +451,9 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       border: 1px solid #80868b;
    }
 }
+
+.example-input-group {
+   .env-form-element {
+      max-width: 400px;
+   }
+}
