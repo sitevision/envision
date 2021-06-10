@@ -142,7 +142,6 @@ const SelectPlugin = function (el, settings, TomSelect) {
       }
       select = null;
    };
-
    // Locked is similar to readonly
    if (
       this.el.classList.contains('env-select--locked') ||
