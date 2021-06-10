@@ -115,8 +115,22 @@ const SelectPlugin = function (el, settings, TomSelect) {
    this.refreshOptions = select.refreshOptions.bind(select);
    this.getValue = select.getValue.bind(select);
    this.setValue = select.setValue.bind(select);
-   this.lock = select.lock.bind(select);
-   this.unlock = select.unlock.bind(select);
+   this.lock = function () {
+      select.lock();
+      if (select.input.tagName === 'SELECT') {
+         select.input.disabled = true;
+      }
+      select.input.readOnly = true;
+      select.control_input.readOnly = true;
+   };
+   this.unlock = function () {
+      select.unlock();
+      if (select.input.tagName === 'SELECT') {
+         select.input.disabled = false;
+      }
+      select.input.readOnly = false;
+      select.control_input.readOnly = false;
+   };
    this.disable = select.disable.bind(select);
    this.enable = select.enable.bind(select);
    this.destroy = function () {
@@ -128,16 +142,15 @@ const SelectPlugin = function (el, settings, TomSelect) {
       }
       select = null;
    };
+
    // Locked is similar to readonly
-   if (this.el.classList.contains('env-select--locked')) {
-      this.el.classList.remove('env-select--locked');
+   if (
+      this.el.classList.contains('env-select--locked') ||
+      this.el.getAttribute('readonly') !== null
+   ) {
+      select.control_input.classList.remove('env-select--locked');
       select.input.classList.remove('env-select--locked');
       this.lock();
-   }
-   if (this.el.classList.contains('env-select--disabled')) {
-      this.el.classList.remove('env-select--disabled');
-      select.input.classList.remove('env-select--disabled');
-      this.disable();
    }
    return this;
 };
