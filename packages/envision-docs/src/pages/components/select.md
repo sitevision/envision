@@ -226,6 +226,76 @@ envision.select('#example-tag-select-3', {
 });
 ```
 
+## States
+
+### Disabled
+
+A Tag Select may be disabled by adding the `disabled` attribute in the HTML.
+When disabled, the control can not receive focus.
+
+```html
+<div class="env-form-element">
+   <label for="example-tag-select-4" class="env-form-element__label">
+      Disabled
+   </label>
+   <div class="env-form-element__control">
+      <select
+         class="env-form-input example-tag-select"
+         id="example-tag-select-4"
+         multiple
+         disabled
+      >
+         <option value="">Select an item...</option>
+         <option value="item1" selected>Item</option>
+         <option value="item2">Item 2</option>
+      </select>
+   </div>
+</div>
+```
+
+### Locked
+
+A Tag Select may be locked by adding the class `env-select--locked` to the `<input>` or `<select>`,
+or by using functions described in the API section.
+
+Locked disables user input on the control, but the control can still receive focus.
+
+_Note: The `readonly` attribute is not supported or relevant to the Tag Select component. An input with the `readonly` attribute will be locked._
+
+```html
+<div class="env-form-element">
+   <label for="example-tag-select-6" class="env-form-element__label">
+      Locked
+   </label>
+   <div class="env-form-element__control">
+      <select
+         class="env-select--locked env-form-input example-tag-select"
+         id="example-tag-select-6"
+         multiple
+      >
+         <option value="">Select an item...</option>
+         <option value="item1" selected>Item</option>
+         <option value="item2">Item 2</option>
+      </select>
+   </div>
+</div>
+
+<div class="env-form-element">
+   <label for="example-tag-select-5" class="env-form-element__label">
+      Locked (readonly)
+   </label>
+   <div class="env-form-element__control">
+      <input
+         class="example-tag-select env-form-input"
+         id="example-tag-select-5"
+         value="Item"
+         placeholder="Select an item..."
+         readonly
+      />
+   </div>
+</div>
+```
+
 ## Event handlers
 
 -  `onInitialize` _function() { ... }_

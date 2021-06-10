@@ -29,9 +29,7 @@ export const useCopyExample = (content) => {
 
       // Initialize Envision plugins
 
-      const exampleSelects = document.querySelector(
-         '.env-form .example-tag-select'
-      );
+      const exampleSelects = document.querySelectorAll('.example-tag-select');
       for (let i = 0; exampleSelects && i < exampleSelects.length; i++) {
          envision.select(exampleSelects, {
             maxItems: 6,

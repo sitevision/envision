@@ -289,6 +289,45 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 </div>
 ```
 
+## Input group <span class="env-badge env-badge--info">9.1</span>
+
+Join text, input and button with `env-form-input-group`.
+
+```html
+<div class="env-form example-input-group">
+   <div class="env-form-element">
+      <label for="email" class="env-form-element__label">Subscribe</label>
+      <div class="env-form-element__control env-form-input-group">
+         <label for="email" class="env-form-input-group__label">@</label>
+         <input
+            type="email"
+            class="env-form-input"
+            placeholder="example@domain.com"
+            id="email"
+         />
+         <button type="submit" class="env-button">Submit</button>
+      </div>
+   </div>
+   <div class="env-form-element">
+      <label for="search4" class="env-form-element__label">Search</label>
+      <div class="env-form-element__control env-form-input-group">
+         <input
+            type="search"
+            class="env-form-input env-form-input--search"
+            placeholder="Search this site"
+            id="search4"
+         />
+         <button
+            type="submit"
+            class="env-button env-button--primary env-button--ghost"
+         >
+            Go!
+         </button>
+      </div>
+   </div>
+</div>
+```
+
 ## Horizontal
 
 To create a horizontal form (horizontally align labels with input), apply modifier `.env-form--horizontal` to the form
