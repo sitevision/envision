@@ -64,6 +64,11 @@ tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
    -  Use a custom placeholder.
    -  Default: Will try to use option with empty value or placeholder attribute from HTML.
 
+-  `dropdownParent` _'string'_
+
+   -  The element the dropdown menu is appended to.
+   -  Default: Will be appended as a child of the control.
+
 -  `options` _[{ value, text }]_
 
    -  Create a Tag select from custom dataset
