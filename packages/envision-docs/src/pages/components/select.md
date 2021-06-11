@@ -33,11 +33,12 @@ Initialize from script. You may pass any selector as a string, a DOM node or nod
 var tagSelect = envision.select('#example-tag-select-1');
 ```
 
-**Note:** `envision.select` will always return an array of Tag Select objects.
-To access individual controls you must use its array index.
+**Note:** `envision.select` will return a Promise. Use the instance method `.then()` to access individual controls.
 
 ```javascript
-tagSelect[0].addOptions({ value: 'newOption', text: 'New option' });
+tagSelect.then(function (selects) {
+   selects[0].addOptions({ value: 'newOption', text: 'New option' });
+});
 ```
 
 ## Options
@@ -358,9 +359,10 @@ _Note: The `readonly` attribute is not supported or relevant to the Tag Select c
 Instances of Tag Select may be controlled by the methods described below.
 
 ```javascript
-var tagSelect = envision.select('#tag-select');
-tagSelect[0].addOptions({ value: 'test' });
-tagSelect[0].addItem('test');
+envision.select('#tag-select').then(function (selects) {
+   selects[0].addOptions({ value: 'test' });
+   selects[0].addItem('test');
+});
 ```
 
 ### Options
