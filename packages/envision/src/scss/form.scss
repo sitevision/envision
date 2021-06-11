@@ -81,6 +81,54 @@
       );
    }
 
+   &-input-group {
+      display: flex;
+      align-items: stretch;
+
+      &__label,
+      .#{$prefix}-button,
+      .#{$prefix}-form-input {
+         position: relative;
+         z-index: 1;
+         border-radius: 0;
+         margin-right: -1px;
+
+         &:first-child {
+            border-radius: css-var('form-input-border-radius') 0 0
+               css-var('form-input-border-radius');
+         }
+
+         &:last-child {
+            margin-right: 0;
+            border-radius: 0 css-var('form-input-border-radius')
+               css-var('form-input-border-radius') 0;
+         }
+      }
+
+      .#{$prefix}-button {
+         // No matter the order of elements,
+         // button border should be on top of
+         // input and label borders.
+         z-index: 2;
+      }
+
+      .#{$prefix}-form-input:focus {
+         // When focused, move input to top
+         z-index: 3;
+      }
+
+      &__label {
+         display: flex;
+         align-items: center;
+         border: $border-width $border-style css-var('form-input-border-color');
+         box-sizing: border-box;
+         color: css-var('form-input-font-color');
+         font-size: css-var('font-size-medium');
+         line-height: $form-input-line-height;
+         padding: css-var('spacing-x-small');
+      }
+   }
+
    &-element {
       margin-bottom: css-var('spacing-medium');
 
@@ -145,21 +193,15 @@
       }
 
       &--success {
-         @include input-validation-state(
-            'color-success',
-            'border-success-color'
-         );
+         @include input-validation-state('success');
       }
 
       &--warning {
-         @include input-validation-state(
-            'color-warning-dark',
-            'border-warning-color'
-         );
+         @include input-validation-state('warning');
       }
 
       &--danger {
-         @include input-validation-state('color-danger', 'border-danger-color');
+         @include input-validation-state('danger');
       }
 
       &[type='file'] {
@@ -289,6 +331,7 @@
    &--horizontal {
       .#{$form-element} {
          display: flex;
+         align-items: baseline;
          flex-wrap: wrap;
 
          & > .#{$form-element}__label {

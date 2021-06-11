@@ -4,7 +4,6 @@
  * --------------------------------------------------------------------------
  */
 
-import TomSelect from 'tom-select';
 import Util from './util/util';
 import { getNodes } from './util/nodes';
 
@@ -67,6 +66,7 @@ const defaults = {
       valueField: 'value',
       labelField: 'text',
       searchField: ['text'],
+      dropdownParent: null,
       maxItems: null,
       options: null,
       items: null,
@@ -78,7 +78,6 @@ const defaults = {
          return !(input in this.options);
       },
       preload: false,
-
       load: null, // function() { ... }
       onInitialize: null, // function() { ... }
       onChange: null, // function(value) { ... }
@@ -98,7 +97,7 @@ const defaults = {
    },
 };
 
-const SelectPlugin = function (el, settings) {
+const SelectPlugin = function (el, settings, TomSelect) {
    this.el = el;
    this.settings = settings;
 
@@ -117,6 +116,24 @@ const SelectPlugin = function (el, settings) {
    this.refreshOptions = select.refreshOptions.bind(select);
    this.getValue = select.getValue.bind(select);
    this.setValue = select.setValue.bind(select);
+   this.lock = function () {
+      select.lock();
+      if (select.input.tagName === 'SELECT') {
+         select.input.disabled = true;
+      }
+      select.input.readOnly = true;
+      select.control_input.readOnly = true;
+   };
+   this.unlock = function () {
+      select.unlock();
+      if (select.input.tagName === 'SELECT') {
+         select.input.disabled = false;
+      }
+      select.input.readOnly = false;
+      select.control_input.readOnly = false;
+   };
+   this.disable = select.disable.bind(select);
+   this.enable = select.enable.bind(select);
    this.destroy = function () {
       select.destroy();
       for (let key in this) {
@@ -126,7 +143,15 @@ const SelectPlugin = function (el, settings) {
       }
       select = null;
    };
-
+   // Locked is similar to readonly
+   if (
+      this.el.classList.contains('env-select--locked') ||
+      this.el.getAttribute('readonly') !== null
+   ) {
+      select.control_input.classList.remove('env-select--locked');
+      select.input.classList.remove('env-select--locked');
+      this.lock();
+   }
    return this;
 };
 
@@ -186,14 +211,17 @@ const getSettings = (settings) => {
 };
 
 // Plugin / extension for envision library
-export default (elements, settings) => {
+export default async (elements, settings) => {
    const nodes = getNodes(elements);
    settings = getSettings(settings);
 
    if (nodes.length > 0) {
+      const { default: TomSelect } = await import(
+         /* webpackChunkName: "tom-select" */ 'tom-select'
+      );
       const selects = nodes
          .filter((node) => !node.classList.contains('tomselected'))
-         .map((node) => new SelectPlugin(node, settings));
+         .map((node) => new SelectPlugin(node, settings, TomSelect));
       return selects;
    }
 };

@@ -407,3 +407,53 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       overflow: hidden;
    }
 }
+
+.example-spacing {
+   color: #000;
+   border: 1px dotted #5f6368;
+   margin: 2em 0;
+   padding: 2em;
+
+   &__margin {
+      position: relative;
+      background-color: #f9cc9d;
+      border: 1px dashed #303942;
+
+      &:before {
+         content: 'margin';
+         position: absolute;
+         top: 1px;
+         left: 1px;
+         font-size: 9px;
+      }
+   }
+
+   &__padding {
+      position: relative;
+      line-height: 1;
+      background-color: #c3d08a;
+      border: 1px dashed #80868b;
+
+      &:before {
+         content: 'padding';
+         position: absolute;
+         top: 1px;
+         left: 1px;
+         font-size: 9px;
+      }
+   }
+
+   &__content {
+      line-height: 1;
+      font-size: 12px;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      background-color: #8cb6c0;
+      border: 1px solid #80868b;
+   }
+}
+
+.example-input-group {
+   .env-form-element {
+      max-width: 400px;
+   }
+}

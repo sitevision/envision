@@ -1,69 +1,116 @@
 $properties: margin padding;
-$specifiers: top right bottom left around;
+$specifiers: top right bottom left;
 $sizes: (
-   0: 0,
-   xxx-small: $spacing-xxx-small,
-   xx-small: $spacing-xx-small,
-   x-small: $spacing-x-small,
-   small: $spacing-small,
-   medium: $spacing-medium,
-   large: $spacing-large,
-   x-large: $spacing-x-large,
-   xx-large: $spacing-xx-large,
-   xxx-large: $spacing-xxx-large,
+   xxx-small: 'spacing-xxx-small',
+   xx-small: 'spacing-xx-small',
+   x-small: 'spacing-x-small',
+   small: 'spacing-small',
+   medium: 'spacing-medium',
+   large: 'spacing-large',
+   x-large: 'spacing-x-large',
+   xx-large: 'spacing-xx-large',
+   xxx-large: 'spacing-xxx-large',
 );
-@each $size, $value in $sizes {
+
+.#{$prefix} {
    @each $specifier in $specifiers {
-      @each $property in $properties {
-         $p: str-slice($property, 0, 1);
-         $prop: if($specifier == around, $property, #{$property}-#{$specifier});
-         .#{$prefix}-#{$p}-#{$specifier}--#{$size} {
-            #{$prop}: $value !important;
+      &-m-#{$specifier}--0 {
+         margin-#{$specifier}: 0 !important;
+      }
+      &-m-#{$specifier}--a {
+         margin-#{$specifier}: auto !important;
+      }
+      &-p-#{$specifier}--0 {
+         padding-#{$specifier}: 0 !important;
+      }
+   }
+
+   &-m-around--0 {
+      margin: 0 !important;
+   }
+
+   &-m-around--a {
+      margin: auto !important;
+   }
+
+   &-m-horizontal--0 {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+   }
+
+   &-m-horizontal--a {
+      margin-right: auto !important;
+      margin-left: auto !important;
+   }
+
+   &-m-vertical--0 {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+   }
+
+   &-m-vertical--a {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+   }
+
+   &-p-around--0 {
+      padding: 0 !important;
+   }
+
+   &-p-horizontal--0 {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+   }
+
+   &-p-vertical--0 {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+   }
+
+   @each $size, $variableName in $sizes {
+      @each $specifier in $specifiers {
+         &-m-#{$specifier}--#{$size} {
+            margin-#{$specifier}: css-var($variableName) !important;
          }
-         @if ($property == margin and $size != 0) {
-            .#{$prefix}-#{$p}-#{$specifier}--negative.#{$prefix}-#{$p}-#{$specifier}--#{$size} {
-               #{$prop}: $value * -1 !important;
-            }
+         &-m-#{$specifier}--#{$size}.#{$prefix}-m-#{$specifier}--negative {
+            margin-#{$specifier}: css-var($variableName, -1) !important;
+         }
+         &-p-#{$specifier}--#{$size} {
+            padding-#{$specifier}: css-var($variableName) !important;
          }
       }
+      &-m-around--#{$size} {
+         margin: css-var($variableName) !important;
+      }
+      &-m-around--#{$size}.#{$prefix}-m-around--negative {
+         margin: css-var($variableName, -1) !important;
+      }
+      &-p-around--#{$size} {
+         padding: css-var($variableName) !important;
+      }
+      &-m-horizontal--#{$size} {
+         margin-right: css-var($variableName) !important;
+         margin-left: css-var($variableName) !important;
+      }
+      &-m-horizontal--negative.#{$prefix}-m-horizontal--#{$size} {
+         margin-right: css-var($variableName, -1) !important;
+         margin-left: css-var($variableName, -1) !important;
+      }
+      &-m-vertical--#{$size} {
+         margin-top: css-var($variableName) !important;
+         margin-bottom: css-var($variableName) !important;
+      }
+      &-m-vertical--negative.#{$prefix}-m-horizontal--#{$size} {
+         margin-top: css-var($variableName, -1) !important;
+         margin-bottom: css-var($variableName, -1) !important;
+      }
+      &-p-horizontal--#{$size} {
+         padding-right: css-var($variableName) !important;
+         padding-left: css-var($variableName) !important;
+      }
+      &-p-vertical--#{$size} {
+         padding-top: css-var($variableName) !important;
+         padding-bottom: css-var($variableName) !important;
+      }
    }
-   @if ($size != 0) {
-      .#{$prefix}-m-horizontal--#{$size} {
-         margin-right: $value !important;
-         margin-left: $value !important;
-      }
-      .#{$prefix}-m-horizontal--negative.#{$prefix}-m-horizontal--#{$size} {
-         margin-right: $value * -1 !important;
-         margin-left: $value * -1 !important;
-      }
-      .#{$prefix}-m-vertical--#{$size} {
-         margin-top: $value !important;
-         margin-bottom: $value !important;
-      }
-      .#{$prefix}-m-vertical--negative.#{$prefix}-m-horizontal--#{$size} {
-         margin-top: $value * -1 !important;
-         margin-bottom: $value * -1 !important;
-      }
-      .#{$prefix}-p-horizontal--#{$size} {
-         padding-right: $value !important;
-         padding-left: $value !important;
-      }
-   }
-}
-
-@each $specifier in $specifiers {
-   $prop: if($specifier == around, margin, margin-#{$specifier});
-   .#{$prefix}-m-#{$specifier}--a {
-      #{$prop}: auto !important;
-   }
-}
-
-.#{$prefix}-m-horizontal--a {
-   margin-right: auto !important;
-   margin-left: auto !important;
-}
-
-.#{$prefix}-m-vertical--a {
-   margin-top: auto !important;
-   margin-bottom: auto !important;
 }

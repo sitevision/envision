@@ -1,22 +1,30 @@
 /* globals require:false, module:false, __dirname:false */
 const path = require('path');
+const process = require('process');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const dev = process.env.NODE_ENV === 'development';
+
+console.log('Running dev mode', dev);
+
 module.exports = {
-   mode: 'production',
+   mode: dev ? 'development' : 'production',
    devtool: 'source-map',
    entry: './src/js/envision.js',
    output: {
       filename: 'envision.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: dev
+         ? path.resolve(__dirname, '..', 'envision-docs', 'public', 'dist')
+         : path.resolve(__dirname, 'dist'),
       library: {
          name: 'envision',
          type: 'umd',
       },
       globalObject: 'this',
-      publicPath: '',
+      publicPath: 'auto',
+      chunkFilename: '[name]-[contenthash].js',
    },
    optimization: {
       minimizer: [new OptimizeCSSAssetsPlugin(), new TerserWebpackPlugin()],
@@ -43,7 +51,15 @@ module.exports = {
                {
                   loader: 'babel-loader',
                   options: {
-                     presets: ['@babel/preset-env'],
+                     presets: [
+                        [
+                           '@babel/preset-env',
+                           {
+                              corejs: { version: '3' },
+                              useBuiltIns: 'usage',
+                           },
+                        ],
+                     ],
                   },
                },
                {
