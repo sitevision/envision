@@ -27,6 +27,10 @@
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
 
+      * {
+         box-sizing: border-box;
+      }
+
       @include placeholder {
          color: css-var('form-input-font-color');
          filter: opacity(0.5);
@@ -290,44 +294,124 @@
    $form-element: #{$prefix}-form-element;
    //Variants
    .#{$form-element}--floating {
+      $height: calc(1em);
+      $new-input-line-height: 1; //.125; // 18px
+      $new-input-padding: (
+         'vertical': calc(1em - 1px),
+         //15px,
+         'verticalTopFocused': calc(1.5em - 1px),
+         //15px,
+         'verticalBottomFocused': calc(0.5em - 1px),
+         //15px,
+         'horizontal': 0.75em,
+      );
+
       .#{$form-element}__control {
          position: relative;
 
          > .#{$form-element}__label {
+            display: block;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 1px;
+            right: 1px;
+            left: 1px;
             color: css-var('form-input-font-color');
             font-size: css-var('font-size-medium');
-            line-height: $form-input-line-height;
-            margin: 1px;
-            padding: css-var('spacing-x-small');
+            line-height: $new-input-line-height; // 18 px // $form-input-line-height;
+            margin: map-get($new-input-padding, 'vertical')
+               map-get($new-input-padding, 'horizontal');
+            //padding: css-var('spacing-x-small');
+            //padding: css-var('spacing-medium');
+            //max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             transition: all 0.2s ease-in-out;
             pointer-events: none;
+
+            ///********
          }
       }
 
       .#{$prefix}-form-input {
-         padding: css-var('spacing-medium') css-var('spacing-x-small')
-            css-var('spacing-xx-small');
-         line-height: 1;
+         //background-color: css-var('form-input-background-color');
+         //background-image: none;
+         //border: $border-width $border-style css-var('form-input-border-color');
+         //border-radius: css-var('form-input-border-radius');
+         //box-sizing: border-box;
+         //color: css-var('form-input-font-color');
+         //display: block;
+         font-size: css-var('font-size-medium');
+         //line-height: $form-input-line-height;
+         //margin: 0;
+         //padding: css-var('spacing-x-small');
+         //transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+         //width: 100%;
+
+         //padding: css-var('spacing-medium') css-var('spacing-x-small')
+         //   css-var('spacing-xx-small');
+         //padding: css-var('spacing-large') css-var('spacing-x-small');
+         line-height: $new-input-line-height;
+         padding: map-get($new-input-padding, 'vertical')
+            map-get($new-input-padding, 'horizontal');
+
+         ///********
+         padding-top: map-get($new-input-padding, 'verticalTopFocused');
+         padding-bottom: map-get($new-input-padding, 'verticalBottomFocused');
 
          @include placeholder {
             opacity: 0;
          }
 
-         &:not(:placeholder-shown) ~ label,
+         &[contenteditable]:not(:empty) ~ .#{$form-element}__label,
+         &:not([contenteditable]):not(:placeholder-shown)
+            ~ .#{$form-element}__label,
          &:focus ~ .#{$form-element}__label {
+            //filter: opacity(0.5);
+            //font-size: 0.7em;
+            //top: 50%;
+            //left: 0.7em;
+            //padding: 0;
+            //margin: -0.5em 0 0;
+            //line-height: 1;
+
             filter: opacity(0.5);
-            font-size: 0.7em;
-            padding: 0;
-            top: 0.3em;
-            left: 0.7em;
-            line-height: 1;
+            font-size: 0.8em;
+            //font-size: css-var('font-size-x-small');
+            //top: 0;
+            //left: 0.7em;
+            margin: 0.6em 0 0
+               calc(#{map-get($new-input-padding, 'horizontal')} / 0.8);
+            //margin: -0.5em 0 0;
          }
+      }
+      select:not([multiple]) {
+         //height: calc(
+         //   #{css-var('spacing-x-small')} * 2 + #{$form-input-line-height * 1em} +
+         //   #{$border-width * 2}
+         //);
+         height: auto;
+         padding-left: calc(
+            #{map-get($new-input-padding, 'horizontal')} - 0.25em
+         );
       }
    }
 
+   [contenteditable] {
+      display: block;
+      width: 100%;
+      height: auto !important;
+      overflow: hidden;
+   }
+   [contenteditable],
+   textarea {
+      min-height: calc(
+         #{css-var('font-size-medium')} + #{css-var('spacing-medium')} * 2 + 2px
+      );
+   }
+   textarea {
+      height: 6em;
+   }
    &--horizontal {
       .#{$form-element} {
          display: flex;
