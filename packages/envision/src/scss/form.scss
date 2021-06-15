@@ -418,14 +418,6 @@
          align-items: baseline;
          flex-wrap: wrap;
 
-         & > .#{$form-element}__label,
-         & > .#{$form-element}__control {
-            // align-items in Firefox needs inline children for baseline to work.
-            // This fixes the issue without messing things up in Chrome et.al.
-            display: inline-flex;
-            flex-direction: column;
-         }
-
          & > .#{$form-element}__label {
             flex-basis: 20%;
          }
