@@ -12,9 +12,11 @@ const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
 const IDENTIFIER = 'env-tabs';
 const DATA_INITITALIZED = 'data-env-tabs';
+const DATA_INDEX = 'data-env-tabs-index';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
 const TAB_SELECTOR = '.env-tabs__link';
+const STACKED_SELECTOR = '.env-tabs--column';
 
 const DEFAULTS = {
    active: 0,
@@ -36,11 +38,14 @@ class Tabs {
    }
 
    initialize() {
-      this.tabs.forEach((tab) => {
+      this.tabs.forEach((tab, i) => {
          const panel = document.querySelector(tab.getAttribute('href'));
          this.panels[tab.getAttribute('id')] = panel;
          tab.classList.remove(IS_ACTIVE);
          tab.setAttribute(ARIA_SELECTED, false);
+         tab.setAttribute(DATA_INDEX, i);
+         tab.setAttribute('tabindex', '-1');
+         panel.setAttribute('tabindex', '0');
          panel.setAttribute(ARIA_HIDDEN, true);
          hide(panel);
       });
@@ -58,6 +63,7 @@ class Tabs {
          const tab = this.tabs[i];
          tab.removeEventListener('click');
          tab.removeEventListener('keydown');
+         tab.removeAttribute(DATA_INDEX);
       }
       this.tabs = null;
       this.panels = null;
@@ -78,15 +84,35 @@ class Tabs {
          });
 
          tab.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
+            const stacked = this.el.querySelector(STACKED_SELECTOR);
+            if (e.key === 'Enter' || e.key === ' ') {
                e.preventDefault();
                this._setActive(e.currentTarget, true);
+            } else if (
+               (stacked && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) ||
+               (!stacked && (e.key === 'ArrowLeft' || e.key === 'ArrowRight'))
+            ) {
+               e.preventDefault();
+               const targetIndex = this._getIndex(e.currentTarget);
+               let focusTab =
+                  targetIndex +
+                  (e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 1);
+               if (focusTab > this.tabs.length - 1) {
+                  focusTab = 0;
+               } else if (focusTab < 0) {
+                  focusTab = this.tabs.length - 1;
+               }
+               this._setFocus(this.tabs[focusTab]);
             }
          });
       }
    }
 
    _setFocus(tab) {
+      for (let i = 0; i < this.tabs.length; i++) {
+         this.tabs[i].setAttribute('tabindex', '-1');
+      }
+      tab.setAttribute('tabindex', '0');
       tab.focus();
    }
 
@@ -104,6 +130,10 @@ class Tabs {
       panel.setAttribute(ARIA_HIDDEN, false);
       unhide(panel);
       this.activeTab = tab;
+   }
+
+   _getIndex(tab) {
+      return parseInt(tab.getAttribute(DATA_INDEX), 10);
    }
 
    _getPanelForTab(tab) {
