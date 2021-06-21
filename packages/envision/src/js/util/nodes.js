@@ -21,3 +21,19 @@ export const getNodes = function (elements) {
    }
    return nodes;
 };
+
+export const hide = function (elements) {
+   const nodes = getNodes(elements);
+   for (let i = 0; i < nodes.length; i++) {
+      let node = nodes[i];
+      node.style.setProperty('display', 'none', 'important');
+   }
+};
+
+export const unhide = function (elements) {
+   const nodes = getNodes(elements);
+   for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      node.style.removeProperty('display');
+   }
+};

@@ -5,11 +5,13 @@
  */
 
 import $ from 'jquery';
+import Util from './util/util';
+import { hide, unhide, getNodes } from './util/nodes';
 
 const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
-const ENTER_KEY = 13;
-const IDENTIFIER = 'env.tabs';
+const IDENTIFIER = 'env-tabs';
+const DATA_INITITALIZED = 'data-env-tabs';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
 const TAB_SELECTOR = '.env-tabs__link';
@@ -21,79 +23,100 @@ const DEFAULTS = {
 class Tabs {
    constructor(element, config) {
       this.el = element;
-      this.$el = $(element);
-      this.$tabs = this.$el.find(TAB_SELECTOR);
-      this.config = $.extend({}, DEFAULTS, config);
-      this.$panels = {};
-      this.$activeTab = undefined;
+      this.tabs = getNodes(this.el.querySelectorAll(TAB_SELECTOR));
+      this.panels = {};
+      this.activeTab = undefined;
 
+      this.config = Object.assign(
+         {},
+         DEFAULTS,
+         Util.normalizeOptions(config, DEFAULTS)
+      );
       this._bindEvents();
    }
 
    initialize() {
-      this.$tabs.each((i, tab) => {
-         const $tab = $(tab);
-         const $panel = $($tab.attr('href'));
-         this.$panels[$tab.attr('id')] = $panel;
-
-         $tab.removeClass(IS_ACTIVE).attr(ARIA_SELECTED, false);
-
-         $panel.attr(ARIA_HIDDEN, true).hide();
+      this.tabs.forEach((tab) => {
+         const panel = document.querySelector(tab.getAttribute('href'));
+         this.panels[tab.getAttribute('id')] = panel;
+         tab.classList.remove(IS_ACTIVE);
+         tab.setAttribute(ARIA_SELECTED, false);
+         panel.setAttribute(ARIA_HIDDEN, true);
+         hide(panel);
       });
-
-      this._setActive(this.$tabs.eq(this.config.active), false);
+      this._setActive(this.tabs[this.config.active], false);
    }
 
    activate(index) {
-      this._setActive(this.$tabs.eq(index), true);
+      if (index >= 0 && index < this.tabs.length) {
+         this._setActive(this.tabs[index], true);
+      }
    }
 
    destroy() {
-      this.$tabs.off('click keydown');
-      this.$activeTab = undefined;
-      this.$tabs = undefined;
-      this.$panels = undefined;
-      this.$el.removeData(IDENTIFIER);
+      for (let i = 0; i < this.tabs.length; i++) {
+         const tab = this.tabs[i];
+         tab.removeEventListener('click');
+         tab.removeEventListener('keydown');
+      }
+      this.tabs = null;
+      this.panels = null;
+      this.activeTab = null;
+      this.config = null;
+      this.el.removeAttribute(DATA_INITITALIZED);
+      this.el = null;
    }
 
    // Private
 
    _bindEvents() {
-      this.$tabs.on('click', (e) => {
-         e.preventDefault();
-         this._setActive($(e.currentTarget), true);
-      });
+      for (let i = 0; i < this.tabs.length; i++) {
+         const tab = this.tabs[i];
+         tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            this._setActive(e.currentTarget, true);
+         });
 
-      this.$tabs.on('keydown', (e) => {
-         if (e.which === ENTER_KEY) {
-            this._setActive($(e.currentTarget), true);
-         }
-      });
+         tab.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+               e.preventDefault();
+               this._setActive(e.currentTarget, true);
+            }
+         });
+      }
    }
 
-   _setActive($tab, initialized) {
+   _setFocus(tab) {
+      tab.focus();
+   }
+
+   _setActive(tab, initialized) {
       this._resetActive();
 
-      $tab.addClass(IS_ACTIVE).attr(ARIA_SELECTED, true);
+      tab.classList.add(IS_ACTIVE);
+      tab.setAttribute(ARIA_SELECTED, true);
 
       if (initialized) {
-         $tab.trigger('focus');
+         this._setFocus(tab);
       }
 
-      this._getPanelForTab($tab).attr(ARIA_HIDDEN, false).show();
-
-      this.$activeTab = $tab;
+      const panel = this._getPanelForTab(tab);
+      panel.setAttribute(ARIA_HIDDEN, false);
+      unhide(panel);
+      this.activeTab = tab;
    }
 
-   _getPanelForTab($tab) {
-      return this.$panels[$tab.attr('id')];
+   _getPanelForTab(tab) {
+      return this.panels[tab.getAttribute('id')];
    }
 
    _resetActive() {
-      if (this.$activeTab) {
-         this.$activeTab.removeClass(IS_ACTIVE).attr(ARIA_SELECTED, false);
-
-         this._getPanelForTab(this.$activeTab).attr(ARIA_HIDDEN, true).hide();
+      if (this.activeTab) {
+         this.activeTab.classList.remove(IS_ACTIVE);
+         this.activeTab.setAttribute(ARIA_SELECTED, false);
+         const panel = this._getPanelForTab(this.activeTab);
+         panel.setAttribute(ARIA_HIDDEN, true);
+         hide(panel);
       }
    }
 
@@ -103,9 +126,15 @@ class Tabs {
          let tabs = $this.data(IDENTIFIER);
 
          if (!tabs) {
-            tabs = new Tabs(this, config);
             $this.data(IDENTIFIER, tabs);
-            tabs.initialize();
+            for (let i = 0; i < this.length; i++) {
+               let el = this[i];
+               if (el.getAttribute(DATA_INITITALIZED) !== 'true') {
+                  let tabs = new Tabs(el, config);
+                  el.setAttribute(DATA_INITITALIZED, 'true');
+                  tabs.initialize();
+               }
+            }
          } else if (typeof config === 'string') {
             const method = tabs[config];
 
@@ -129,4 +158,18 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default Tabs;
+// Plugin / extension for envision library
+export default (elements, settings) => {
+   const nodes = getNodes(elements);
+   if (nodes.length > 0) {
+      const tabs = nodes
+         .filter((node) => !node.getAttribute(DATA_INITITALIZED) !== 'true')
+         .map((node) => {
+            let tabs = new Tabs(node, settings);
+            node.setAttribute(DATA_INITITALIZED, 'true');
+            tabs.initialize();
+            return tabs;
+         });
+      return tabs;
+   }
+};
