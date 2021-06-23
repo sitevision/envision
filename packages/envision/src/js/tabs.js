@@ -102,6 +102,17 @@ class Tabs {
       panel.setAttribute(ARIA_HIDDEN, false);
       unhide(panel);
       this.activeTab = tab;
+
+      this.activeTab.dispatchEvent(
+         new CustomEvent('envision.tabs.selected', {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+               tab: this.activeTab,
+               panel: this._getPanelForTab(this.activeTab),
+            },
+         })
+      );
    }
 
    _getPanelForTab(tab) {
