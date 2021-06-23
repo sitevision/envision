@@ -104,7 +104,7 @@ class Tabs {
       this.activeTab = tab;
 
       this.activeTab.dispatchEvent(
-         new CustomEvent('envision.tabs.selected', {
+         new CustomEvent('envision.tabs.activated', {
             bubbles: true,
             cancelable: true,
             detail: {
