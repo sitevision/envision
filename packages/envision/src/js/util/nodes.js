@@ -23,17 +23,13 @@ export const getNodes = function (elements) {
 };
 
 export const hide = function (elements) {
-   const nodes = getNodes(elements);
-   for (let i = 0; i < nodes.length; i++) {
-      let node = nodes[i];
+   getNodes(elements).forEach((node) => {
       node.style.setProperty('display', 'none', 'important');
-   }
+   });
 };
 
 export const unhide = function (elements) {
-   const nodes = getNodes(elements);
-   for (let i = 0; i < nodes.length; i++) {
-      const node = nodes[i];
+   getNodes(elements).forEach((node) => {
       node.style.removeProperty('display');
-   }
+   });
 };
