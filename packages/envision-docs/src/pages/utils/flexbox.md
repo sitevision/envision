@@ -153,16 +153,14 @@ Valid values
 </div>
 ```
 
-### Flex wrap (`flex-wrap` property)
+### Flex wrap
 
-Applicable to direct children within a flex container (`env-flex__item`).
-Used to specify whether flex items should wrap onto multiple lines.
-Modifier classes are named using the format: `env-flex__item--wrap-{value}`
+Modifiers applicable to flex containers (`env-flex`).
 
-Valid values
+Valid modifiers:
 
--  `wrap`
--  `wrap-reverse`
+-  `env-flex--wrap`
+-  `env-flex--wrap-reverse`
 
 ```html
 <div class="example-flex env-flex">

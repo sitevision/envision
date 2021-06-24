@@ -106,12 +106,12 @@ class Tabs {
       });
    }
 
-   _setFocus(tab) {
-      for (let i = 0; i < this.tabs.length; i++) {
-         this.tabs[i].setAttribute('tabindex', '-1');
-      }
-      tab.setAttribute('tabindex', '0');
-      tab.focus();
+   _setFocus(focusTab) {
+      this.tabs.forEach((tab) => {
+         tab.setAttribute('tabindex', '-1');
+      });
+      focusTab.setAttribute('tabindex', '0');
+      focusTab.focus();
    }
 
    _setActive(tab, initialized) {
