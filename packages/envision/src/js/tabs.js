@@ -76,6 +76,7 @@ class Tabs {
          panel.setAttribute(ARIA_HIDDEN, true);
          hide(panel);
       });
+      this.tabs[this.config.active].setAttribute('tabindex', '0');
       this._setActive(this.tabs[this.config.active], false);
    }
 
