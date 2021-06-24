@@ -16,7 +16,7 @@ title: Dropdown
    >
       Dropdown
       <svg
-         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
+         class="env-icon env-icon--x-small env-m-left--xx-small env-dropdown-icon"
       >
          <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
@@ -124,7 +124,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    >
       Dropdown
       <svg
-         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
+         class="env-icon env-icon--x-small env-m-left--xx-small env-dropdown-icon"
       >
          <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
