@@ -341,5 +341,9 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
 ## Initiation
 
 ```javascript
+// Since Sitevision 9.1
+envision.tabs('.example-tabs');
+
+// Deprecated since Sitevision 9.1
 $('.example-tabs').envTabs();
 ```

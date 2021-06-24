@@ -18,11 +18,12 @@ export const useCopyExample = (content) => {
       // Initialize jQuery plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
       envision.popover('.example-popover');
-      // $('.example-popover').envPopover();
-      $('.example-tabs').envTabs();
-      $('.example-tabs1').envTabs();
-      $('.example-tabs2').envTabs();
-      $('.example-tabs3').envTabs();
+
+      // New version initiation
+      envision.tabs('.example-tabs');
+      // Legacy version initiation (deprecated)
+      $('.example-tabs1, .example-tabs2, .example-tabs3').envTabs();
+
       $('.example-range-slider').envRangeSlider({
          values: [20, 70],
       });
