@@ -45,20 +45,20 @@
 
 @mixin button-size($size) {
    $paddingsX: (
-      small: 'spacing-xx-small',
-      medium: 'spacing-small',
-      large: 'spacing-small',
-   );
-   $paddingsY: (
       small: 'spacing-x-small',
       medium: 'spacing-x-small',
       large: 'spacing-small',
    );
+   $paddingsY: (
+      small: 'spacing-xx-small',
+      medium: 'spacing-xx-small',
+      large: 'spacing-x-small',
+   );
    // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
    $iconSizes: (
-      small: 1em / 0.875 * 16 / 16,
-      medium: 1em / 1 * 18 / 16,
-      large: 1em / 1.25 * 22 / 16,
+      small: 1em / 0.875 * 13 / 16,
+      medium: 1em / 1 * 15 / 16,
+      large: 1em / 1.25 * 21 / 16,
    );
 
    $padding-x: map-get($paddingsX, $size);
@@ -82,20 +82,21 @@
 
    &.#{$prefix}-button--icon-before {
       padding-left: calc(
-         #{css-var($padding-y)} + #{$icon-size} + #{css-var('spacing-x-small')}
+         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
       );
 
       .env-icon {
-         left: css-var($padding-y);
+         left: calc(#{css-var($padding-x)});
       }
    }
+
    &.#{$prefix}-button--icon-after {
       padding-right: calc(
-         #{css-var($padding-y)} + #{$icon-size} + #{css-var('spacing-x-small')}
+         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
       );
 
       .env-icon {
-         right: css-var($padding-y);
+         right: calc(#{css-var($padding-x)});
       }
    }
 
