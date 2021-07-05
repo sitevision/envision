@@ -21,3 +21,15 @@ export const getNodes = function (elements) {
    }
    return nodes;
 };
+
+export const hide = function (elements) {
+   getNodes(elements).forEach((node) => {
+      node.style.setProperty('display', 'none', 'important');
+   });
+};
+
+export const unhide = function (elements) {
+   getNodes(elements).forEach((node) => {
+      node.style.removeProperty('display');
+   });
+};

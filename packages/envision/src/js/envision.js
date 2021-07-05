@@ -4,6 +4,8 @@ import '../icons/envision-icons.svg';
 
 export { default as popover } from './popover';
 export { default as select } from './select';
+export { default as tabs } from './tabs';
+
 import './accordion';
 import './collapse';
 import './dropdown';
@@ -13,5 +15,3 @@ import './modal-dialog';
 import './popover';
 import './range-slider';
 import './shims';
-import './tabs';
-import './tabs';
