@@ -614,11 +614,32 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 
 ## Methods
 
-Show `$('#myModal').envDialog('show')`
+Show
 
-Hide `$('#myModal').envDialog('hide')`
+```javascript
+envision.modaldialog('#myModal', 'show');
 
-Toggle `$('#myModal').envDialog('toggle')`
+// Deprecated Sitevision 9.1
+$('#myModal').envDialog('show');
+```
+
+Hide
+
+```javascript
+envision.modaldialog('#myModal', 'hide');
+
+// Deprecated Sitevision 9.1
+$('#myModal').envDialog('hide');
+```
+
+Toggle
+
+```javascript
+envision.modaldialog('#myModal', 'toggle');
+
+// Deprecated Sitevision 9.1
+$('#myModal').envDialog('toggle');
+```
 
 ## Events
 

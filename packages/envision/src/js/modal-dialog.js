@@ -6,6 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
+import { getNodes } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
@@ -33,6 +34,8 @@ const EVENTS = {
    SHOW: 'show.env-modal-dialog',
    SHOWN: 'shown.env-modal-dialog',
 };
+
+const modalDialogMap = new Map();
 
 class ModalDialog {
    constructor(element) {
@@ -197,8 +200,12 @@ class ModalDialog {
          let data = $this.data(DATA_KEY);
 
          if (!data) {
-            data = new ModalDialog(this);
-            $this.data(DATA_KEY, data);
+            if (modalDialogMap.has($this.id)) {
+               data = modalDialogMap.get($this.id);
+            } else {
+               data = new ModalDialog(this);
+               $this.data(DATA_KEY, data);
+            }
          }
 
          if (typeof action === 'string') {
@@ -237,4 +244,28 @@ if (typeof document !== 'undefined') {
    );
 }
 
-export default ModalDialog;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+
+   if (nodes.length > 0) {
+      let modal;
+      const element = nodes[0];
+      if (modalDialogMap.has(element.id)) {
+         modal = modalDialogMap.get(element.id);
+      } else {
+         modal = new ModalDialog(element);
+         modalDialogMap.set(element.id, modal);
+      }
+
+      if (typeof settings === 'string') {
+         const method = modal[settings];
+         if (method === undefined) {
+            throw new Error(`No method named "${settings}"`);
+         }
+         method.call(modal);
+         return;
+      }
+
+      modal.show();
+   }
+};

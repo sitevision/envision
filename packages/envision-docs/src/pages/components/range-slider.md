@@ -5,7 +5,7 @@ title: Range slider
 Capture a range
 
 ```html
-<div class="env-range-slider example-range-slider">
+<div id="my-slider" class="env-range-slider example-range-slider">
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
@@ -21,7 +21,10 @@ Capture a range
 ```
 
 ```javascript
-$('.example-range-slider').envRangeSlider({ values: [20, 70] });
+envision.rangeslider('#my-slider', object);
+
+// Deprecated Sitevision 9.1
+$('#my-slider').envRangeSlider({ values: [20, 70] });
 ```
 
 ## Options
@@ -34,6 +37,11 @@ $('.example-range-slider').envRangeSlider({ values: [20, 70] });
 Values to initialize the slider with.
 
 ```javascript
+envision.rangeslider('#my-slider', {
+   values: [20, 70],
+});
+
+// Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider({
    values: [20, 70],
 });
@@ -47,6 +55,11 @@ $('#my-slider').envRangeSlider({
 The minimum value of the slider.
 
 ```javascript
+envision.rangeslider('#my-slider', {
+   min: 100,
+});
+
+// Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider({
    min: 100,
 });
@@ -60,6 +73,11 @@ $('#my-slider').envRangeSlider({
 The maximum value of the slider.
 
 ```javascript
+envision.rangeslider('#my-slider', {
+   max: 200,
+});
+
+// Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider({
    max: 200,
 });
@@ -73,6 +91,11 @@ $('#my-slider').envRangeSlider({
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.
 
 ```javascript
+envision.rangeslider('#my-slider', {
+   step: 5,
+});
+
+// Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider({
    step: 5,
 });
@@ -86,9 +109,12 @@ $('#my-slider').envRangeSlider({
 If values should be visible below the handles.
 
 ```javascript
-$('.my-slider').envRangeSlider({
+envision.rangeslider('#my-slider', {
    visibleValues: false,
 });
+
+// Deprecated Sitevision 9.1
+$('.my-slider').envRangeSlider({});
 ```
 
 ## Events
@@ -136,5 +162,8 @@ Parameters
 Set the values for the range.
 
 ```javascript
+envision.rangeslider('#my-slider', 'values', [50, 90]);
+
+// Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider('values', [50, 90]);
 ```

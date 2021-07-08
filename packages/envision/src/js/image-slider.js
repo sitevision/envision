@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import Util from './util/util';
+import { getNodes } from './util/nodes';
 
 const DATA_KEY = 'env.image-slider';
 const EVENT_KEY = `.${DATA_KEY}`;
@@ -71,6 +72,8 @@ const Events = {
    TOUCHMOVE: `touchmove${EVENT_KEY}`,
    TOUCHSTART: `touchstart${EVENT_KEY}`,
 };
+
+const imageSliderMap = new Map();
 
 class Imageslider {
    constructor(element, config) {
@@ -456,6 +459,12 @@ class Imageslider {
          const $this = $(this);
          let data = $this.data(DATA_KEY);
 
+         if (!data) {
+            if (imageSliderMap.has($this[0].id)) {
+               data = imageSliderMap.get($this[0].id);
+            }
+         }
+
          const _config = $.extend({}, DEFAULTS, $this.data());
 
          if (typeof config === 'object') {
@@ -538,4 +547,39 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default Imageslider;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+   if (nodes.length > 0) {
+      let config;
+
+      const sliderElement = nodes[0];
+      if (typeof settings === 'object') {
+         config = { ...DEFAULTS, ...sliderElement.dataset, ...settings };
+      } else {
+         config = { ...DEFAULTS, ...sliderElement.dataset };
+      }
+
+      const action = typeof settings === 'string' ? settings : undefined;
+
+      let slider;
+      const sliderId = sliderElement.id;
+      if (imageSliderMap.has(sliderId)) {
+         slider = imageSliderMap.get(sliderId);
+      } else {
+         slider = new Imageslider(sliderElement, config);
+         imageSliderMap.set(sliderId, slider);
+      }
+
+      if (typeof settings === 'number') {
+         slider.goTo(settings);
+      } else if (typeof action === 'string') {
+         if (slider[action] === undefined) {
+            throw new Error(`No method named "${action}"`);
+         }
+         slider[action]();
+      } else if (config.interval && config.imageSlider === 'cycle') {
+         slider.pause();
+         slider.cycle();
+      }
+   }
+};

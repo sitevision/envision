@@ -79,7 +79,7 @@ title: Image slider
 <div
    id="exampleSlider2"
    data-image-slider="cycle"
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -133,7 +133,7 @@ title: Image slider
 <div
    id="exampleSlider3"
    data-image-slider
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -179,7 +179,7 @@ title: Image slider
 <div
    id="exampleSlider4"
    data-image-slider="cycle"
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -259,6 +259,9 @@ position to a particular index beginning with `0`.
 To make image slider cycle through items you can call:
 
 ```javascript
+envision.imageslider('#myImageSlider', { imageSlider: 'cycle' });
+
+// Deprecated
 $('#myImageSlider').envImageslider({ imageSlider: 'cycle' });
 ```
 
@@ -283,25 +286,69 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 Initialize the imageslider with an optional `object` and starts cycling through slides.
 
 ```javascript
+envision.imageslider('#myImageSlider', {
+   interval: 2000,
+   imageSlider: 'cycle',
+   buttons: false,
+});
+
+// Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider({
    interval: 2000,
+   imageSlider: 'cycle',
+   buttons: false,
 });
 ```
 
-`.envImageslider('cycle')`
 Cycles through the imageslider
 
-`.envImageslider('pause')`
+```javascript
+envision
+   .imageslider('#myImageSlider', 'cycle')
+
+   // Deprecated Sitevision 9.1
+   .envImageslider('cycle');
+```
+
 Pauses the imageslider
 
-`.envImageslider('next')`
+```javascript
+envision
+   .imageslider('#myImageSlider', 'pause')
+
+   // Deprecated Sitevision 9.1
+   .envImageslider('pause');
+```
+
 Cycles to the next item
 
-`.envImageslider('prev')`
+```javascript
+envision
+   .imageslider('#myImageSlider', 'next')
+
+   // Deprecated Sitevision 9.1
+   .envImageslider('next');
+```
+
 Cycles to the previous item
 
-`.envImageslider('number')`
+```javascript
+envision
+   .imageslider('#myImageSlider', 'prev')
+
+   // Deprecated Sitevision 9.1
+   .envImageslider('prev');
+```
+
 Cycles the imageslider to a particular slide.
+
+```javascript
+envision
+   .imageslider('#myImageSlider', 2)
+
+   // Deprecated Sitevision 9.1
+   .envImageslider('number');
+```
 
 ## Events
 
