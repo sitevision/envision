@@ -9,6 +9,7 @@ export { default as imageviewer } from './image-viewer';
 export { default as rangeslider } from './range-slider';
 export { default as modaldialog } from './modal-dialog';
 export { default as imageslider } from './image-slider';
+export { default as accordion } from './accordion';
 
 import './accordion';
 import './collapse';

@@ -5,6 +5,7 @@
  */
 import $ from 'jquery';
 import CssUtil from './util/css-util';
+import { getNodes } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
@@ -12,6 +13,8 @@ const MODIFIER_BASE = 'env-accordion--';
 const NAME = 'envAccordion';
 const SHOW = MODIFIER_BASE + 'show';
 const PARENT = 'data-parent';
+
+const accordionMap = new Map();
 
 class Accordion {
    constructor(element) {
@@ -91,4 +94,25 @@ if (typeof document !== 'undefined') {
    });
 }
 
-export default Accordion;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+
+   let accordion;
+   const accordionId = nodes[0].id;
+   if (accordionMap.has(accordionId)) {
+      accordion = accordionMap.get(accordionId);
+   } else {
+      accordion = new Accordion(nodes[0]);
+      accordionMap.set(accordionId, accordion);
+   }
+
+   if (typeof settings === 'string') {
+      if (accordion[settings] === undefined) {
+         throw new Error(`No method named "${settings}"`);
+      }
+      accordion[settings]();
+      return;
+   }
+
+   accordion.toggle();
+};
