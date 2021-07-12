@@ -93,7 +93,7 @@
    &--icon {
       position: relative;
 
-      .env-icon {
+      .#{$prefix}-icon {
          position: absolute;
          top: 50%;
       }
@@ -105,7 +105,7 @@
       line-height: 1;
       overflow: hidden;
 
-      .env-icon {
+      .#{$prefix}-icon {
          left: 50%;
       }
    }
