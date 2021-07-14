@@ -136,7 +136,7 @@
          &--icon {
             position: relative;
 
-            $iconSize: 1.25em;
+            $iconSize: 1em;
 
             .env-icon {
                position: absolute;
@@ -151,7 +151,7 @@
             input:first-child {
                padding-right: calc(
                   #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
-                        'spacing-xx-small'
+                        'spacing-x-small'
                      )}
                );
             }
@@ -164,7 +164,7 @@
             .env-icon + input {
                padding-left: calc(
                   #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
-                        'spacing-xx-small'
+                        'spacing-x-small'
                      )}
                );
             }

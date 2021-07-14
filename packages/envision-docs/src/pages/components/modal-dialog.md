@@ -454,7 +454,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
       <article class="env-modal-alert__content">
          <header class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
-               <svg class="env-icon env-icon--xx-large">
+               <svg class="env-icon env-icon--large">
                   <use
                      xlink:href="/sitevision/envision-icons.svg#icon-check-line"
                   ></use>
@@ -498,7 +498,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
       <article class="env-modal-alert__content">
          <header class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
-               <svg class="env-icon env-icon--xx-large">
+               <svg class="env-icon env-icon--large">
                   <use
                      xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"
                   ></use>
@@ -542,7 +542,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
       <article class="env-modal-alert__content">
          <header class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
-               <svg class="env-icon env-icon--xx-large">
+               <svg class="env-icon env-icon--large">
                   <use
                      xlink:href="/sitevision/envision-icons.svg#icon-delete"
                   ></use>
@@ -583,7 +583,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
       <article class="env-modal-alert__content">
          <header class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
-               <svg class="env-icon env-icon--xx-large">
+               <svg class="env-icon env-icon--large">
                   <use
                      xlink:href="/sitevision/envision-icons.svg#icon-user-group"
                   ></use>

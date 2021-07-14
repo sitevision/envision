@@ -46,6 +46,24 @@ extra:
       - icon-user-group
 ---
 
+<span class="env-badge env-badge--info">Changes in 9.1</span>
+
+The SVG viewport has been changed. Previously there has been whitespace inside the visible area of all icons.
+The viewport has been adjusted so the icon now will fill up the available space. The result is icons that appear
+larger even though they're not. Usage of icons in Envision components and code examples has been adjusted accordingly.
+
+<div class="env-icon env-icon--xx-large demo-icon-change" data-demo-text="Before">
+<svg viewBox="0 0 32 32">
+<path d="M16 23.901l-7.799 4.099 1.49-8.683-6.31-6.15 8.719-1.267 3.899-7.901 3.899 7.901 8.719 1.267-6.31 6.15 1.49 8.683z"></path>
+</svg>
+</div>
+
+<div class="env-icon env-icon--xx-large demo-icon-change" data-demo-text="After">
+<svg viewBox="3.5 3.5 25 25">
+<path d="M16 23.901l-7.799 4.099 1.49-8.683-6.31-6.15 8.719-1.267 3.899-7.901 3.899 7.901 8.719 1.267-6.31 6.15 1.49 8.683z"></path>
+</svg>
+</div>
+
 ## Sizes
 
 Icon size utility classes are named using the format: `env-icon--{size}`
