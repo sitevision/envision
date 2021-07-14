@@ -60,8 +60,32 @@ Add `env-collapse-header--icons` to add icons
 
 ## Methods
 
-Show `$('#myCollapse').envCollapse('show')`
+Show
 
-Hide `$('#myCollapse').envCollapse('hide')`
+```javascript
+// Since Sitevision 9.1
+envision.collapse('#myCollapse', 'show');
 
-Toggle `$('#myCollapse').envCollapse('toggle')`
+// Deprecated since Sitevision 9.1
+$('#myCollapse').envCollapse('show');
+```
+
+Hide
+
+```javascript
+// Since Sitevision 9.1
+envision.collapse('#myCollapse', 'hide');
+
+// Deprecated since Sitevision 9.1
+$('#myCollapse').envCollapse('hide');
+```
+
+Toggle
+
+```javascript
+// Since Sitevision 9.1
+envision.collapse('#myCollapse', 'toggle');
+
+// Deprecated since Sitevision 9.1
+$('#myCollapse').envCollapse('toggle');
+```

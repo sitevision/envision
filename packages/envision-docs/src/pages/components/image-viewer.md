@@ -48,9 +48,9 @@ title: Image viewer
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageviewer('#image-viewer');
+envision.imageViewer('#image-viewer');
 
-envision.imageviewer('#image-viewer', object);
+envision.imageViewer('#image-viewer', object);
 ```
 
 ### Default object properties

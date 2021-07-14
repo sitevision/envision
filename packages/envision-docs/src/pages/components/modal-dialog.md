@@ -617,7 +617,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 Show
 
 ```javascript
-envision.modaldialog('#myModal', 'show');
+// Since Sitevision 9.1
+envision.dialog('#myModal', 'show');
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('show');
@@ -626,7 +627,8 @@ $('#myModal').envDialog('show');
 Hide
 
 ```javascript
-envision.modaldialog('#myModal', 'hide');
+// Since Sitevision 9.1
+envision.dialog('#myModal', 'hide');
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('hide');
@@ -635,7 +637,8 @@ $('#myModal').envDialog('hide');
 Toggle
 
 ```javascript
-envision.modaldialog('#myModal', 'toggle');
+// Since Sitevision 9.1
+envision.dialog('#myModal', 'toggle');
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('toggle');

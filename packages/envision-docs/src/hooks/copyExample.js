@@ -24,24 +24,24 @@ export const useCopyExample = (content) => {
       // Legacy version initiation (deprecated)
       $('.example-tabs1, .example-tabs2, .example-tabs3').envTabs();
 
-      envision.rangeslider('#my-slider', { values: [20, 70] });
+      envision.rangeSlider('#my-slider', { values: [20, 70] });
 
       // Initialize Image slider examples, load method does not work in gatsby.
 
-      envision.imageslider('#exampleSlider0', {
+      envision.imageSlider('#exampleSlider0', {
          imageSlider: 'cycle',
          buttons: false,
       });
 
-      envision.imageslider('#exampleSlider1');
+      envision.imageSlider('#exampleSlider1');
 
-      envision.imageslider('#exampleSlider2', {
+      envision.imageSlider('#exampleSlider2', {
          imageSlider: 'cycle',
       });
 
-      envision.imageslider('#exampleSlider3');
+      envision.imageSlider('#exampleSlider3');
 
-      envision.imageslider('#exampleSlider4', {
+      envision.imageSlider('#exampleSlider4', {
          imageSlider: 'cycle',
       });
 

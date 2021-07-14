@@ -21,7 +21,8 @@ Capture a range
 ```
 
 ```javascript
-envision.rangeslider('#my-slider', object);
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', object);
 
 // Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider({ values: [20, 70] });
@@ -37,7 +38,8 @@ $('#my-slider').envRangeSlider({ values: [20, 70] });
 Values to initialize the slider with.
 
 ```javascript
-envision.rangeslider('#my-slider', {
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', {
    values: [20, 70],
 });
 
@@ -55,7 +57,8 @@ $('#my-slider').envRangeSlider({
 The minimum value of the slider.
 
 ```javascript
-envision.rangeslider('#my-slider', {
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', {
    min: 100,
 });
 
@@ -73,7 +76,8 @@ $('#my-slider').envRangeSlider({
 The maximum value of the slider.
 
 ```javascript
-envision.rangeslider('#my-slider', {
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', {
    max: 200,
 });
 
@@ -91,7 +95,8 @@ $('#my-slider').envRangeSlider({
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.
 
 ```javascript
-envision.rangeslider('#my-slider', {
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', {
    step: 5,
 });
 
@@ -109,12 +114,13 @@ $('#my-slider').envRangeSlider({
 If values should be visible below the handles.
 
 ```javascript
-envision.rangeslider('#my-slider', {
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', {
    visibleValues: false,
 });
 
 // Deprecated Sitevision 9.1
-$('.my-slider').envRangeSlider({});
+$('.my-slider').envRangeSlider({ visibleValues: false });
 ```
 
 ## Events
@@ -162,7 +168,8 @@ Parameters
 Set the values for the range.
 
 ```javascript
-envision.rangeslider('#my-slider', 'values', [50, 90]);
+// Since Sitevision 9.1
+envision.rangeSlider('#my-slider', 'values', [50, 90]);
 
 // Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider('values', [50, 90]);

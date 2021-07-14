@@ -114,7 +114,7 @@ Show
 // Since Sitevision 9.1
 envision.accordion('#container1', 'show');
 
-// Deprecated
+// Deprecated since Sitevision 9.1
 $('#container1').envAccordion('show');
 ```
 
@@ -124,7 +124,7 @@ Hide
 // Since Sitevision 9.1
 envision.accordion('#container1', 'hide');
 
-// Deprecated
+// Deprecated since Sitevision 9.1
 $('#container1').envAccordion('hide');
 ```
 
@@ -134,6 +134,6 @@ Toggle
 // Since Sitevision 9.1
 envision.accordion('#container1', 'toggle');
 
-// Deprecated
+// Deprecated since Sitevision 9.1
 $('#container1').envAccordion('toggle');
 ```
