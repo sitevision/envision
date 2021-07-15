@@ -5,13 +5,12 @@
  */
 
 import $ from 'jquery';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
 const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
-const DATA_KEY = 'env.image-viewer';
-const EVENT_KEY = `.${DATA_KEY}`;
+const EVENT_KEY = `.env.image-viewer`;
 const NAME = 'envImageviewer';
 const DATA_API_KEY = '.data-api';
 const ESCAPE_KEY = 27;
@@ -80,6 +79,7 @@ class Imageviewer {
    }
 
    show(index) {
+      index = index || 0;
       this.config.index = Number(index);
       const image = $(this.$images[index])[0];
       const href = image.getAttribute('href');
@@ -378,7 +378,6 @@ if (typeof document !== 'undefined') {
          const $images = $target
             .closest('[data-image-viewer]')
             .find(SELECTORS.IMAGES);
-
          const index = $images.index($target.parent());
          if ($target.is('img')) {
             $(this).envImageviewer({ index: index });
@@ -397,18 +396,18 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default async (elements, settings) => {
+export default async (elements) => {
    const nodes = getNodes(elements);
-
-   if (nodes.length > 0) {
-      if (imageViewerMap.has(nodes[0].id)) {
-         const imageViewer = imageViewerMap.get(nodes[0].id);
-         const index = settings && settings.index ? settings.index : 0;
-         imageViewer.show(index);
+   let imageViewers = [];
+   nodes.forEach((node) => {
+      uniqueId(node);
+      if (imageViewerMap.has(node.id)) {
+         imageViewers.push(imageViewerMap.get(node.id));
       } else {
-         const imageViewer = new Imageviewer(nodes, settings);
-         imageViewer.show(imageViewer.config.index);
-         imageViewerMap.set(nodes[0].id, imageViewer);
+         const imageViewer = new Imageviewer(node);
+         imageViewers.push(imageViewer);
+         imageViewerMap.set(node.id, imageViewer);
       }
-   }
+   });
+   return imageViewers;
 };

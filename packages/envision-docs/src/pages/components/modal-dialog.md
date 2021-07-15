@@ -618,7 +618,9 @@ Show
 
 ```javascript
 // Since Sitevision 9.1
-envision.dialog('#myModal', 'show');
+envision.dialog('#myModal').then(function (dialogs) {
+   dialogs[0].show();
+});
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('show');
@@ -628,7 +630,9 @@ Hide
 
 ```javascript
 // Since Sitevision 9.1
-envision.dialog('#myModal', 'hide');
+envision.dialog('#myModal').then(function (dialogs) {
+   dialogs[0].hide();
+});
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('hide');
@@ -638,7 +642,9 @@ Toggle
 
 ```javascript
 // Since Sitevision 9.1
-envision.dialog('#myModal', 'toggle');
+envision.dialog('#myModal').then(function (dialogs) {
+   dialogs[0].toggle();
+});
 
 // Deprecated Sitevision 9.1
 $('#myModal').envDialog('toggle');

@@ -7,7 +7,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import Util from './util/util';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 
 const DATA_KEY = 'env.image-slider';
 const EVENT_KEY = `.${DATA_KEY}`;
@@ -220,17 +220,17 @@ class Imageslider {
 
    _addSlideButtons() {
       const sliderId = this.$el[0].id;
-      const buttonHTML = `<button type='button' class='env-image-slider--prev' data-move='prev' data-target='#${sliderId}'>
-               <svg class='env-image-slider__previous-icon env-icon env-icon-small'>
-               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-left'></use>
+      const buttonHTML = `<button type="button" class="env-image-slider--prev" data-move="prev" data-target="#${sliderId}">
+               <svg class="env-image-slider__previous-icon env-icon env-icon-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use>
                </svg>
-               <span class='env-assistive-text'>Previous</span>
+               <span class="env-assistive-text">Previous</span>
             </button>
-            <button type='button' class='env-image-slider--next' data-move='next' data-target='#${sliderId}'>
-               <svg class='env-image-slider__next-icon env-icon env-icon-small'>
-               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-right'></use>
+            <button type="button" class="env-image-slider--next" data-move="next" data-target="#${sliderId}">
+               <svg class="env-image-slider__next-icon env-icon env-icon-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use>
                </svg>
-               <span class='env-assistive-text'>Next</span>
+               <span class="env-assistive-text">Next</span>
             </button>`;
       $(`#${sliderId}`).find(SELECTORS.INNER).append(buttonHTML);
    }
@@ -549,37 +549,28 @@ if (typeof document !== 'undefined') {
 
 export default async (elements, settings) => {
    const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      let config;
-
-      const sliderElement = nodes[0];
+   let sliders = [];
+   nodes.forEach((node) => {
+      uniqueId(node);
+      let config, slider;
       if (typeof settings === 'object') {
-         config = { ...DEFAULTS, ...sliderElement.dataset, ...settings };
+         config = { ...DEFAULTS, ...node.dataset, ...settings };
       } else {
-         config = { ...DEFAULTS, ...sliderElement.dataset };
+         config = { ...DEFAULTS, ...node.dataset };
       }
-
-      const action = typeof settings === 'string' ? settings : undefined;
-
-      let slider;
-      const sliderId = sliderElement.id;
-      if (imageSliderMap.has(sliderId)) {
-         slider = imageSliderMap.get(sliderId);
+      if (imageSliderMap.has(node.id)) {
+         slider = imageSliderMap.get(node.id);
       } else {
-         slider = new Imageslider(sliderElement, config);
-         imageSliderMap.set(sliderId, slider);
+         slider = new Imageslider(node, config);
+         imageSliderMap.set(node.id, slider);
       }
+      sliders.push(slider);
 
-      if (typeof settings === 'number') {
-         slider.goTo(settings);
-      } else if (typeof action === 'string') {
-         if (slider[action] === undefined) {
-            throw new Error(`No method named "${action}"`);
-         }
-         slider[action]();
-      } else if (config.interval && config.imageSlider === 'cycle') {
+      if (config.interval && config.imageSlider === 'cycle') {
          slider.pause();
          slider.cycle();
       }
-   }
+
+      return sliders;
+   });
 };
