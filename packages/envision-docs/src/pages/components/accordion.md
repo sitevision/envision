@@ -112,7 +112,9 @@ Show
 
 ```javascript
 // Since Sitevision 9.1
-envision.accordion('#container1', 'show');
+envision.accordion('#container1').then(function (accordions) {
+   accordions[0].show();
+});
 
 // Deprecated since Sitevision 9.1
 $('#container1').envAccordion('show');
@@ -122,7 +124,9 @@ Hide
 
 ```javascript
 // Since Sitevision 9.1
-envision.accordion('#container1', 'hide');
+envision.accordion('#container1').then(function (accordions) {
+   accordions[0].hide();
+});
 
 // Deprecated since Sitevision 9.1
 $('#container1').envAccordion('hide');
@@ -132,7 +136,9 @@ Toggle
 
 ```javascript
 // Since Sitevision 9.1
-envision.accordion('#container1', 'toggle');
+envision.accordion('#container1').then(function (accordions) {
+   accordions[0].toggle();
+});
 
 // Deprecated since Sitevision 9.1
 $('#container1').envAccordion('toggle');

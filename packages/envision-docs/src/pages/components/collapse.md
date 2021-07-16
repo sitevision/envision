@@ -64,7 +64,9 @@ Show
 
 ```javascript
 // Since Sitevision 9.1
-envision.collapse('#myCollapse', 'show');
+envision.collapse('#myCollapse').then(function (collapses) {
+   collapses[0].show();
+});
 
 // Deprecated since Sitevision 9.1
 $('#myCollapse').envCollapse('show');
@@ -74,7 +76,9 @@ Hide
 
 ```javascript
 // Since Sitevision 9.1
-envision.collapse('#myCollapse', 'hide');
+envision.collapse('#myCollapse').then(function (collapses) {
+   collapses[0].hide();
+});
 
 // Deprecated since Sitevision 9.1
 $('#myCollapse').envCollapse('hide');
@@ -84,7 +88,9 @@ Toggle
 
 ```javascript
 // Since Sitevision 9.1
-envision.collapse('#myCollapse', 'toggle');
+envision.collapse('#myCollapse').then(function (collapses) {
+   collapses[0].toggle();
+});
 
 // Deprecated since Sitevision 9.1
 $('#myCollapse').envCollapse('toggle');

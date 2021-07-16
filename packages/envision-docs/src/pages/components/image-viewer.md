@@ -42,21 +42,26 @@ title: Image viewer
 </div>
 ```
 
-## Initiation
+## Usage from script
 
 <span class="env-badge env-badge--info">Added in 9.1</span>
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageViewer('#image-viewer');
+envision.imageViewer('#image-viewer').then(function (viewers) {
+   // Show Image viewer
+   viewers[0].show();
 
-envision.imageViewer('#image-viewer', object);
-```
+   // Show Image viewer starting at selected index
+   viewers[0].show(2);
 
-### Default object properties
+   // Hide Image viewer
+   viewers[0].hide();
 
-```javascript
-{
-   index: 0, // Image viewer starting position.
-}
+   // Move viewer to next image
+   viewers[0].next();
+
+   // Move viewer to previous image
+   viewers[0].prev();
+});
 ```

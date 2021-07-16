@@ -169,7 +169,9 @@ Set the values for the range.
 
 ```javascript
 // Since Sitevision 9.1
-envision.rangeSlider('#my-slider', 'values', [50, 90]);
+envision.rangeSlider('#my-slider').then(function (sliders) {
+   sliders[0].values([50, 90]);
+});
 
 // Deprecated Sitevision 9.1
 $('#my-slider').envRangeSlider('values', [50, 90]);

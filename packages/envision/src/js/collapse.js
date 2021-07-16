@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
@@ -24,6 +24,10 @@ class Collapse {
       this.$trigger = $(
          `[data-env-collapse][href="#${element.id}"], [data-env-collapse][data-target="#${element.id}"]`
       );
+      if (this.$el.hasClass(SHOW)) {
+         this.$el.show();
+         this.$trigger.addClass(EXPANDED).attr(ARIA_EXPANDED, true);
+      }
       this.speed = CssUtil.getToggleSpeed(
          this.$trigger[0],
          DURATION_CUSTOM_PROP
@@ -51,7 +55,12 @@ class Collapse {
       if (this.$trigger.length) {
          this.$trigger.removeClass(EXPANDED).attr(ARIA_EXPANDED, false);
       }
-      this.$el.stop().slideUp(this.speed).removeClass(SHOW);
+      this.$el.stop().slideUp(
+         this.speed,
+         function () {
+            this.$el.removeClass(SHOW);
+         }.bind(this)
+      );
    }
 
    static _jQuery(config) {
@@ -95,25 +104,18 @@ if (typeof document !== 'undefined') {
    });
 }
 
-export default async (elements, settings) => {
+export default async (elements) => {
    const nodes = getNodes(elements);
-
-   let collapse;
-   const collapseId = nodes[0].id;
-   if (collapseMap.has(collapseId)) {
-      collapse = collapseMap.get(collapseId);
-   } else {
-      collapse = new Collapse(nodes[0]);
-      collapseMap.set(collapseId, collapse);
-   }
-
-   if (typeof settings === 'string') {
-      if (collapse[settings] === undefined) {
-         throw new Error(`No method named "${settings}"`);
+   let collapses = [];
+   nodes.forEach((node) => {
+      uniqueId(node);
+      if (collapseMap.has(node.id)) {
+         collapses.push(collapseMap.get(node.id));
+      } else {
+         const collapse = new Collapse(node);
+         collapses.push(collapse);
+         collapseMap.set(node.id, collapse);
       }
-      collapse[settings]();
-      return;
-   }
-
-   collapse.toggle();
+   });
+   return collapses;
 };

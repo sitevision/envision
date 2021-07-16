@@ -19,7 +19,13 @@ export const getNodes = function (elements) {
          }
       }
    }
+   // Returns an array of 0-n nodes
    return nodes;
+};
+
+export const getNode = function (elements) {
+   // Returns a node or undefined
+   return getNodes(elements)[0];
 };
 
 export const hide = function (elements) {
@@ -31,5 +37,24 @@ export const hide = function (elements) {
 export const unhide = function (elements) {
    getNodes(elements).forEach((node) => {
       node.style.removeProperty('display');
+   });
+};
+
+export const uniqueId = function (elements) {
+   let i = 0;
+
+   function getId() {
+      i++;
+      return 'env-id-' + i;
+   }
+
+   getNodes(elements).forEach((node) => {
+      if (!node.id) {
+         let id = getId();
+         while (document.getElementById(id)) {
+            id = getId();
+         }
+         node.id = id;
+      }
    });
 };

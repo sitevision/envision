@@ -305,7 +305,9 @@ Cycles through the imageSlider
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageSlider('#myImageSlider', 'cycle');
+envision.imageSlider('#myImageSlider').then(function (sliders) {
+   sliders[0].cycle();
+});
 
 // Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider('cycle');
@@ -315,7 +317,9 @@ Pauses the imageslider
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageSlider('#myImageSlider', 'pause');
+envision.imageSlider('#myImageSlider').then(function (sliders) {
+   sliders[0].pause();
+});
 
 // Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider('pause');
@@ -325,7 +329,9 @@ Cycles to the next item
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageSlider('#myImageSlider', 'next');
+envision.imageSlider('#myImageSlider').then(function (sliders) {
+   sliders[0].next();
+});
 
 // Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider('next');
@@ -335,7 +341,9 @@ Cycles to the previous item
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageSlider('#myImageSlider', 'prev');
+envision.imageSlider('#myImageSlider').then(function (sliders) {
+   sliders[0].prev();
+});
 
 // Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider('prev');
@@ -345,10 +353,12 @@ Cycles the imageSlider to a particular slide.
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageSlider('#myImageSlider', 2);
+envision.imageSlider('#myImageSlider').then(function (sliders) {
+   sliders[0].goTo(2);
+});
 
 // Deprecated Sitevision 9.1
-$('#myImageSlider').envImageslider('number');
+$('#myImageSlider').envImageslider(2);
 ```
 
 ## Events

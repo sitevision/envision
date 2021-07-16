@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 
 const HANDLE_INDEX = 'range-handle-index';
 const HANDLES_SELECTOR = '.env-range-slider__handle';
@@ -394,28 +394,20 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default async (elements, settings, args) => {
+export default async (elements, settings) => {
    const nodes = getNodes(elements);
-
-   if (nodes.length > 0) {
-      const slider = nodes[0];
+   let rangeSliders = [];
+   nodes.forEach((node) => {
+      uniqueId(node);
       let rangeSlider;
-      if (rangeSliderMap.has(slider.id)) {
-         rangeSlider = rangeSliderMap.get(slider.id);
+      if (rangeSliderMap.has(node.id)) {
+         rangeSlider = rangeSliderMap.get(node.id);
       } else {
-         rangeSlider = new RangeSlider(slider, settings);
-         rangeSliderMap.set(slider.id, rangeSlider);
+         rangeSlider = new RangeSlider(node, settings);
+         rangeSliderMap.set(node.id, rangeSlider);
       }
-
-      if (typeof settings === 'string') {
-         const method = rangeSlider[settings];
-         if (method === undefined) {
-            throw new Error(`No method named "${settings}"`);
-         }
-
-         method.call(rangeSlider, args);
-      }
-
+      rangeSliders.push(rangeSlider);
       rangeSlider.initialize();
-   }
+   });
+   return rangeSliders;
 };

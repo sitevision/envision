@@ -5,7 +5,7 @@
  */
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
@@ -21,7 +21,7 @@ class Accordion {
       this.el = element;
       this.$el = $(element);
       if (this.$el.hasClass(SHOW)) {
-         this.$el.removeClass(SHOW).show();
+         this.$el.removeClass(SHOW).attr(ARIA_EXPANDED, 'true').show();
       }
       this.speed = CssUtil.getToggleSpeed(this.$el[0], DURATION_CUSTOM_PROP);
    }
@@ -94,25 +94,18 @@ if (typeof document !== 'undefined') {
    });
 }
 
-export default async (elements, settings) => {
+export default async (elements) => {
    const nodes = getNodes(elements);
-
-   let accordion;
-   const accordionId = nodes[0].id;
-   if (accordionMap.has(accordionId)) {
-      accordion = accordionMap.get(accordionId);
-   } else {
-      accordion = new Accordion(nodes[0]);
-      accordionMap.set(accordionId, accordion);
-   }
-
-   if (typeof settings === 'string') {
-      if (accordion[settings] === undefined) {
-         throw new Error(`No method named "${settings}"`);
+   let accordions = [];
+   nodes.forEach((node) => {
+      uniqueId(node);
+      if (accordionMap.has(node.id)) {
+         accordions.push(accordionMap.get(node.id));
+      } else {
+         const accordion = new Accordion(node);
+         accordions.push(accordion);
+         accordionMap.set(node.id, accordion);
       }
-      accordion[settings]();
-      return;
-   }
-
-   accordion.toggle();
+   });
+   return accordions;
 };
