@@ -12,9 +12,11 @@ const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
 const IDENTIFIER = 'env-tabs';
 const DATA_INITIALIZED = 'data-env-tabs';
+const DATA_INDEX = 'data-env-tabs-index';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
 const TAB_SELECTOR = '.env-tabs__link';
+const STACKED_SELECTOR = '.env-tabs--column';
 
 const DEFAULTS = {
    active: 0,
@@ -37,24 +39,44 @@ class Tabs {
          this._setActive(e.currentTarget, true);
       }).bind(this);
 
-      this._keyupHandler = ((e) => {
-         if (e.key === 'Enter') {
+      this._keydownHandler = ((e) => {
+         const stacked = this.el.querySelector(STACKED_SELECTOR);
+         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             this._setActive(e.currentTarget, true);
+         } else if (
+            (stacked && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) ||
+            (!stacked && (e.key === 'ArrowLeft' || e.key === 'ArrowRight'))
+         ) {
+            e.preventDefault();
+            const targetIndex = this._getIndex(e.currentTarget);
+            let focusTab =
+               targetIndex +
+               (e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 1);
+            if (focusTab > this.tabs.length - 1) {
+               focusTab = 0;
+            } else if (focusTab < 0) {
+               focusTab = this.tabs.length - 1;
+            }
+            this._setFocus(this.tabs[focusTab]);
          }
       }).bind(this);
       this._bindEvents();
    }
 
    initialize() {
-      this.tabs.forEach((tab) => {
+      this.tabs.forEach((tab, i) => {
          const panel = document.querySelector(tab.getAttribute('href'));
          this.panels[tab.getAttribute('id')] = panel;
          tab.classList.remove(IS_ACTIVE);
          tab.setAttribute(ARIA_SELECTED, false);
+         tab.setAttribute(DATA_INDEX, i);
+         tab.setAttribute('tabindex', '-1');
+         panel.setAttribute('tabindex', '0');
          panel.setAttribute(ARIA_HIDDEN, true);
          hide(panel);
       });
+      this.tabs[this.config.active].setAttribute('tabindex', '0');
       this._setActive(this.tabs[this.config.active], false);
    }
 
@@ -67,7 +89,8 @@ class Tabs {
    destroy() {
       this.tabs.forEach((tab) => {
          tab.removeEventListener('click', this._clickHandler, false);
-         tab.removeEventListener('keydown', this._keyupHandler, false);
+         tab.removeEventListener('keydown', this._keydownHandler, false);
+         tab.removeAttribute(DATA_INDEX);
       });
       this.el.removeAttribute(DATA_INITIALIZED);
       for (let key in this) {
@@ -80,12 +103,16 @@ class Tabs {
    _bindEvents() {
       this.tabs.forEach((tab) => {
          tab.addEventListener('click', this._clickHandler, false);
-         tab.addEventListener('keydown', this._keyupHandler, false);
+         tab.addEventListener('keydown', this._keydownHandler, false);
       });
    }
 
-   _setFocus(tab) {
-      tab.focus();
+   _setFocus(focusTab) {
+      this.tabs.forEach((tab) => {
+         tab.setAttribute('tabindex', '-1');
+      });
+      focusTab.setAttribute('tabindex', '0');
+      focusTab.focus();
    }
 
    _setActive(tab, initialized) {
@@ -113,6 +140,10 @@ class Tabs {
             },
          })
       );
+   }
+
+   _getIndex(tab) {
+      return parseInt(tab.getAttribute(DATA_INDEX), 10);
    }
 
    _getPanelForTab(tab) {

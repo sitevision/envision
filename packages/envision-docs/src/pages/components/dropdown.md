@@ -7,7 +7,7 @@ title: Dropdown
 ```html
 <div id="example0" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-dropdown--toggle"
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -15,9 +15,7 @@ title: Dropdown
       data-target="#example0"
    >
       Dropdown
-      <svg
-         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
-      >
+      <svg class="env-icon">
          <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
@@ -42,7 +40,7 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 ```html
 <div id="example1" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-dropdown--toggle"
+      class="env-button env-button--primary env-button--large"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -83,14 +81,14 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       Button
    </button>
    <button
-      class="env-button env-button--primary env-button--ghost env-dropdown--toggle env-dropdown--toggle-split"
+      class="env-button env-button--primary env-button--ghost env-button--ghost-split"
       type="button"
       data-dropdown
       aria-expanded="false"
       aria-haspopup="true"
       data-target="#example2"
    >
-      <svg class="env-icon env-dropdown-icon">
+      <svg class="env-icon">
          <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
@@ -115,7 +113,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
 ```html
 <div id="example3" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-dropdown--toggle"
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -123,16 +121,14 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       data-target="#example3"
    >
       Dropdown
-      <svg
-         class="env-icon env-icon--small env-m-left--xx-small env-dropdown-icon"
-      >
+      <svg class="env-icon">
          <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-grid-small"
                ></use>
@@ -142,7 +138,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       </li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-grid-big"
                ></use>
@@ -153,7 +149,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li class="env-dropdown--divider" role="separator"></li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--x-small env-m-right--xx-small">
+            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
                <use xlink:href="/sitevision/envision-icons.svg#icon-list"></use>
             </svg>
             Settings

@@ -15,7 +15,6 @@ title: Tab
             role="tab"
             aria-controls="panel1"
             aria-selected="true"
-            tabindex="0"
             >Tab 1</a
          >
       </li>
@@ -27,7 +26,6 @@ title: Tab
             role="tab"
             aria-controls="panel2"
             aria-selected="false"
-            tabindex="0"
             >Tab 2</a
          >
       </li>
@@ -39,14 +37,13 @@ title: Tab
             role="tab"
             aria-controls="panel3"
             aria-selected="false"
-            tabindex="0"
             >Tab 3</a
          >
       </li>
    </ul>
 </div>
-
-<div
+<a
+   href="#"
    id="panel1"
    class="example-panel"
    aria-labelledby="tab1"
@@ -54,8 +51,9 @@ title: Tab
    aria-hidden="false"
 >
    1
-</div>
-<div
+</a>
+<a
+   href="#"
    id="panel2"
    class="example-panel"
    aria-labelledby="tab2"
@@ -63,8 +61,9 @@ title: Tab
    aria-hidden="true"
 >
    2
-</div>
-<div
+</a>
+<a
+   href="#"
    id="panel3"
    class="example-panel"
    aria-labelledby="tab3"
@@ -72,7 +71,7 @@ title: Tab
    aria-hidden="true"
 >
    3
-</div>
+</a>
 ```
 
 ## Simple Tab
@@ -88,7 +87,6 @@ title: Tab
             role="tab"
             aria-controls="panel4"
             aria-selected="true"
-            tabindex="0"
             >Tab 4</a
          >
       </li>
@@ -100,7 +98,6 @@ title: Tab
             role="tab"
             aria-controls="panel5"
             aria-selected="false"
-            tabindex="0"
             >Tab 5</a
          >
       </li>
@@ -112,7 +109,6 @@ title: Tab
             role="tab"
             aria-controls="panel6"
             aria-selected="false"
-            tabindex="0"
             >Tab 6</a
          >
       </li>
@@ -161,7 +157,6 @@ title: Tab
             role="tab"
             aria-controls="panel7"
             aria-selected="true"
-            tabindex="0"
             >Tab 7</a
          >
       </li>
@@ -173,7 +168,6 @@ title: Tab
             role="tab"
             aria-controls="panel8"
             aria-selected="false"
-            tabindex="0"
             >Tab 8</a
          >
       </li>
@@ -185,7 +179,6 @@ title: Tab
             role="tab"
             aria-controls="panel9"
             aria-selected="false"
-            tabindex="0"
             >Tab 9</a
          >
       </li>
@@ -236,7 +229,6 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel10"
             aria-selected="true"
-            tabindex="0"
             >Tab 10</a
          >
       </li>
@@ -248,7 +240,6 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel11"
             aria-selected="false"
-            tabindex="0"
             >Tab 11</a
          >
       </li>
@@ -260,7 +251,6 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel12"
             aria-selected="false"
-            tabindex="0"
             >Tab 12</a
          >
       </li>
@@ -272,7 +262,6 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel13"
             aria-selected="false"
-            tabindex="0"
             >Tab 13</a
          >
       </li>
@@ -284,7 +273,6 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel14"
             aria-selected="false"
-            tabindex="0"
             >Tab 14</a
          >
       </li>
