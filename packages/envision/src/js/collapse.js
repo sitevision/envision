@@ -6,6 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
+import { getNodes } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
@@ -13,6 +14,8 @@ const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const NAME = 'envCollapse';
 const EXPANDED = MODIFIER_BASE + 'expanded';
 const SHOW = MODIFIER_BASE + 'show';
+
+const collapseMap = new Map();
 
 class Collapse {
    constructor(element) {
@@ -92,4 +95,25 @@ if (typeof document !== 'undefined') {
    });
 }
 
-export default Collapse;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+
+   let collapse;
+   const collapseId = nodes[0].id;
+   if (collapseMap.has(collapseId)) {
+      collapse = collapseMap.get(collapseId);
+   } else {
+      collapse = new Collapse(nodes[0]);
+      collapseMap.set(collapseId, collapse);
+   }
+
+   if (typeof settings === 'string') {
+      if (collapse[settings] === undefined) {
+         throw new Error(`No method named "${settings}"`);
+      }
+      collapse[settings]();
+      return;
+   }
+
+   collapse.toggle();
+};

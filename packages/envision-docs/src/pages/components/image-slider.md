@@ -2,7 +2,7 @@
 title: Image slider
 ---
 
-## Imageslider
+## Image Slider
 
 ### Slides only
 
@@ -79,7 +79,7 @@ title: Image slider
 <div
    id="exampleSlider2"
    data-image-slider="cycle"
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -133,7 +133,7 @@ title: Image slider
 <div
    id="exampleSlider3"
    data-image-slider
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -179,7 +179,7 @@ title: Image slider
 <div
    id="exampleSlider4"
    data-image-slider="cycle"
-   class="env-image-slider--slide env-image-slider"
+   class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
@@ -243,15 +243,15 @@ slider and if there is more then one image, buttons will be generated to move
 the image slider to the next or previous item. Automatic genereted buttons can
 be prevented by using attribute `data-buttons="false"`.
 
-The `data-image-slider="cycle"` attribute is used to start the imageslider animation
+The `data-image-slider="cycle"` attribute is used to start the imageSlider animation
 at page load. `data-image-slider` attribute will initiate a image slider with
 no automatic.
 
 ### Via data attributes
 
-Use data attributes to control the imageslider. `data-move` accepts the values `prev` or `next`, which alters the
+Use data attributes to control the imageSlider. `data-move` accepts the values `prev` or `next`, which alters the
 imageslide position relative to its current position. You can use `data-move-to`
-to pass a slide index to the imageslider `data-move-to="1"`, which shifts the
+to pass a slide index to the imageSlider `data-move-to="1"`, which shifts the
 position to a particular index beginning with `0`.
 
 ### Via JavaScript
@@ -259,6 +259,9 @@ position to a particular index beginning with `0`.
 To make image slider cycle through items you can call:
 
 ```javascript
+envision.imageSlider('#myImageSlider', { imageSlider: 'cycle' });
+
+// Deprecated
 $('#myImageSlider').envImageslider({ imageSlider: 'cycle' });
 ```
 
@@ -268,11 +271,11 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `interval = 5000` The amount of delay between automatically cycling through slides.
 
-`keyboard = false` Whether the imageslider should react to keyboard events.
+`keyboard = false` Whether the imageSlider should react to keyboard events.
 
-`pause = 'hover'` If set to `hover`, pauses the cycling of the imageslider on `mouseenter` and resumes on `mouseleave`. If set to `null`, hovering wont pause the imageslider.
+`pause = 'hover'` If set to `hover`, pauses the cycling of the imageSlider on `mouseenter` and resumes on `mouseleave`. If set to `null`, hovering wont pause the imageSlider.
 
-`wrap = true` Whether the imageslider should cycle continuously or have hard stops.
+`wrap = true` Whether the imageSlider should cycle continuously or have hard stops.
 
 `buttons = true` Will generate `slide` buttons even if there is only one image in the image slider.
 
@@ -280,28 +283,73 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 ## Methods
 
-Initialize the imageslider with an optional `object` and starts cycling through slides.
+Initialize the imageSlider with an optional `object` and starts cycling through slides.
 
 ```javascript
+// Since Sitevision 9.1
+envision.imageslider('#myImageSlider', {
+   interval: 2000,
+   imageSlider: 'cycle',
+   buttons: false,
+});
+
+// Deprecated Sitevision 9.1
 $('#myImageSlider').envImageslider({
    interval: 2000,
+   imageSlider: 'cycle',
+   buttons: false,
 });
 ```
 
-`.envImageslider('cycle')`
-Cycles through the imageslider
+Cycles through the imageSlider
 
-`.envImageslider('pause')`
+```javascript
+// Since Sitevision 9.1
+envision.imageSlider('#myImageSlider', 'cycle');
+
+// Deprecated Sitevision 9.1
+$('#myImageSlider').envImageslider('cycle');
+```
+
 Pauses the imageslider
 
-`.envImageslider('next')`
+```javascript
+// Since Sitevision 9.1
+envision.imageSlider('#myImageSlider', 'pause');
+
+// Deprecated Sitevision 9.1
+$('#myImageSlider').envImageslider('pause');
+```
+
 Cycles to the next item
 
-`.envImageslider('prev')`
+```javascript
+// Since Sitevision 9.1
+envision.imageSlider('#myImageSlider', 'next');
+
+// Deprecated Sitevision 9.1
+$('#myImageSlider').envImageslider('next');
+```
+
 Cycles to the previous item
 
-`.envImageslider('number')`
-Cycles the imageslider to a particular slide.
+```javascript
+// Since Sitevision 9.1
+envision.imageSlider('#myImageSlider', 'prev');
+
+// Deprecated Sitevision 9.1
+$('#myImageSlider').envImageslider('prev');
+```
+
+Cycles the imageSlider to a particular slide.
+
+```javascript
+// Since Sitevision 9.1
+envision.imageSlider('#myImageSlider', 2);
+
+// Deprecated Sitevision 9.1
+$('#myImageSlider').envImageslider('number');
+```
 
 ## Events
 

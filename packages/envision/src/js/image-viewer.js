@@ -5,6 +5,7 @@
  */
 
 import $ from 'jquery';
+import { getNodes } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
@@ -49,14 +50,25 @@ const Events = {
    TOUCHSTART: `touchstart${EVENT_KEY}`,
 };
 
+const BASE_SETTINGS = {
+   index: 0,
+};
+
+const imageViewerMap = new Map();
+
 class Imageviewer {
-   constructor(element, $image) {
+   constructor(element, settings) {
       this.$el = $(element);
       this.$images = this.$el.find(SELECTORS.IMAGES);
       this._isShown = false;
 
       this.config = $.extend({}, this.$el.data());
-      this.config.index = this.$images.index($image[0]);
+
+      const index =
+         settings && this.$images.length > settings.index
+            ? settings.index
+            : BASE_SETTINGS.index;
+      this.config.index = index;
    }
 
    next() {
@@ -348,9 +360,9 @@ class Imageviewer {
       }
    }
 
-   static _jQuery($image) {
+   static _jQuery(settings) {
       return this.each(() => {
-         const data = new Imageviewer(this, $image);
+         const data = new Imageviewer(this, settings);
          data.show(data.config.index);
       });
    }
@@ -363,11 +375,15 @@ if (typeof document !== 'undefined') {
       function (e) {
          e.preventDefault();
          const $target = $(e.target);
+         const $images = $target
+            .closest('[data-image-viewer]')
+            .find(SELECTORS.IMAGES);
 
+         const index = $images.index($target.parent());
          if ($target.is('img')) {
-            $(this).envImageviewer($target.parent());
+            $(this).envImageviewer({ index: index });
          } else if ($target.is('a.env-image-viewer__images')) {
-            $(this).envImageviewer($target);
+            $(this).envImageviewer({ index: index });
          }
       }
    );
@@ -381,4 +397,18 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default Imageviewer;
+export default async (elements, settings) => {
+   const nodes = getNodes(elements);
+
+   if (nodes.length > 0) {
+      if (imageViewerMap.has(nodes[0].id)) {
+         const imageViewer = imageViewerMap.get(nodes[0].id);
+         const index = settings && settings.index ? settings.index : 0;
+         imageViewer.show(index);
+      } else {
+         const imageViewer = new Imageviewer(nodes, settings);
+         imageViewer.show(imageViewer.config.index);
+         imageViewerMap.set(nodes[0].id, imageViewer);
+      }
+   }
+};

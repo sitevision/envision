@@ -6,6 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
+import { getNodes } from './util/nodes';
 
 const HANDLE_INDEX = 'range-handle-index';
 const HANDLES_SELECTOR = '.env-range-slider__handle';
@@ -31,6 +32,8 @@ const DEFAULTS = {
    values: [0, 0],
    visibleValues: true,
 };
+
+const rangeSliderMap = new Map();
 
 class RangeSlider {
    constructor(element, config) {
@@ -269,11 +272,11 @@ class RangeSlider {
    }
 
    _normValueFromMouse(position) {
-      const pixelTotal = this.el.outerWidth();
+      const pixelTotal = this.$el.outerWidth();
       const valueTotal = this.config.max - this.config.min;
       const pixelMouse =
          position.x -
-         this.el.offset().left -
+         this.$el.offset().left -
          (this._clickOffset ? this._clickOffset.left : 0);
       let percentMouse = pixelMouse / pixelTotal;
 
@@ -359,8 +362,12 @@ class RangeSlider {
          let rangeSlider = $this.data(IDENTIFIER);
 
          if (!rangeSlider) {
-            rangeSlider = new RangeSlider(this, config);
-            $this.data(IDENTIFIER, rangeSlider);
+            if (rangeSliderMap.has($this.id)) {
+               rangeSlider = rangeSliderMap.get($this.id);
+            } else {
+               rangeSlider = new RangeSlider(this, config);
+               $this.data(IDENTIFIER, rangeSlider);
+            }
          }
 
          if (typeof config === 'string') {
@@ -387,4 +394,28 @@ if (typeof document !== 'undefined') {
    };
 }
 
-export default RangeSlider;
+export default async (elements, settings, args) => {
+   const nodes = getNodes(elements);
+
+   if (nodes.length > 0) {
+      const slider = nodes[0];
+      let rangeSlider;
+      if (rangeSliderMap.has(slider.id)) {
+         rangeSlider = rangeSliderMap.get(slider.id);
+      } else {
+         rangeSlider = new RangeSlider(slider, settings);
+         rangeSliderMap.set(slider.id, rangeSlider);
+      }
+
+      if (typeof settings === 'string') {
+         const method = rangeSlider[settings];
+         if (method === undefined) {
+            throw new Error(`No method named "${settings}"`);
+         }
+
+         method.call(rangeSlider, args);
+      }
+
+      rangeSlider.initialize();
+   }
+};

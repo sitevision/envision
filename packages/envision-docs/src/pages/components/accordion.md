@@ -108,6 +108,32 @@ You can also use attribute `data-target="#container4"`
 
 You can `show`, `hide` and `toggle` on available collapsible elements.
 
-Show `$('#container1').envAccordion('show')`
-Hide `$('#container1').envAccordion('hide')`
-Toggle `$('#container1').envAccordion('toggle')`
+Show
+
+```javascript
+// Since Sitevision 9.1
+envision.accordion('#container1', 'show');
+
+// Deprecated since Sitevision 9.1
+$('#container1').envAccordion('show');
+```
+
+Hide
+
+```javascript
+// Since Sitevision 9.1
+envision.accordion('#container1', 'hide');
+
+// Deprecated since Sitevision 9.1
+$('#container1').envAccordion('hide');
+```
+
+Toggle
+
+```javascript
+// Since Sitevision 9.1
+envision.accordion('#container1', 'toggle');
+
+// Deprecated since Sitevision 9.1
+$('#container1').envAccordion('toggle');
+```
