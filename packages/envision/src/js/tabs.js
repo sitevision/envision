@@ -209,12 +209,12 @@ export default async (elements, settings) => {
    const nodes = getNodes(elements);
    if (nodes.length > 0) {
       const tabs = nodes
-         .filter((node) => !node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
          .map((node) => {
-            let tabs = new Tabs(node, settings);
+            let tab = new Tabs(node, settings);
             node.setAttribute(DATA_INITIALIZED, 'true');
-            tabs.initialize();
-            return tabs;
+            tab.initialize();
+            return tab;
          });
       return tabs;
    }

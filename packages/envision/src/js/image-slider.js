@@ -7,11 +7,12 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import Util from './util/util';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const DATA_KEY = 'env.image-slider';
 const EVENT_KEY = `.${DATA_KEY}`;
 const NAME = 'envImageslider';
+const DATA_INITIALIZED = 'data-env-image-slider';
 const DATA_API_KEY = '.data-api';
 const ARROW_LEFT_KEYCODE = 37;
 const ARROW_RIGHT_KEYCODE = 39;
@@ -72,8 +73,6 @@ const Events = {
    TOUCHMOVE: `touchmove${EVENT_KEY}`,
    TOUCHSTART: `touchstart${EVENT_KEY}`,
 };
-
-const imageSliderMap = new Map();
 
 class Imageslider {
    constructor(element, config) {
@@ -459,12 +458,6 @@ class Imageslider {
          const $this = $(this);
          let data = $this.data(DATA_KEY);
 
-         if (!data) {
-            if (imageSliderMap.has($this[0].id)) {
-               data = imageSliderMap.get($this[0].id);
-            }
-         }
-
          const _config = $.extend({}, DEFAULTS, $this.data());
 
          if (typeof config === 'object') {
@@ -549,28 +542,25 @@ if (typeof document !== 'undefined') {
 
 export default async (elements, settings) => {
    const nodes = getNodes(elements);
-   let sliders = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      let config, slider;
-      if (typeof settings === 'object') {
-         config = { ...DEFAULTS, ...node.dataset, ...settings };
-      } else {
-         config = { ...DEFAULTS, ...node.dataset };
-      }
-      if (imageSliderMap.has(node.id)) {
-         slider = imageSliderMap.get(node.id);
-      } else {
-         slider = new Imageslider(node, config);
-         imageSliderMap.set(node.id, slider);
-      }
-      sliders.push(slider);
 
-      if (config.interval && config.imageSlider === 'cycle') {
-         slider.pause();
-         slider.cycle();
-      }
-
+   if (nodes.length > 0) {
+      const sliders = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            let config;
+            if (typeof settings === 'object') {
+               config = { ...DEFAULTS, ...node.dataset, ...settings };
+            } else {
+               config = { ...DEFAULTS, ...node.dataset };
+            }
+            const slider = new Imageslider(node, config);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            if (config.interval && config.imageSlider === 'cycle') {
+               slider.pause();
+               slider.cycle();
+            }
+            return slider;
+         });
       return sliders;
-   });
+   }
 };

@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const HANDLE_INDEX = 'range-handle-index';
 const HANDLES_SELECTOR = '.env-range-slider__handle';
@@ -14,6 +14,7 @@ const VALUE_HOLDERS_SELECTOR = '.env-range-slider__values__value';
 const RANGE_SELECTOR = '.env-range-slider__range';
 const TOUCH_MODIFIER = 'env-range-slider--touch';
 const IDENTIFIER = 'env.range-slider';
+const DATA_INITIALIZED = 'data-env-range-slider';
 const NAME = 'envRangeSlider';
 const KEY_RIGHT = 39;
 const KEY_LEFT = 37;
@@ -33,10 +34,9 @@ const DEFAULTS = {
    visibleValues: true,
 };
 
-const rangeSliderMap = new Map();
-
 class RangeSlider {
    constructor(element, config) {
+      console.log('CONSTRUCTOR', this);
       this.config = $.extend({}, DEFAULTS, config);
       this.$document = $(document);
       this.el = element;
@@ -58,6 +58,7 @@ class RangeSlider {
    }
 
    initialize() {
+      console.log('INIT', this);
       this._setupHandles();
       this._refreshRange();
       this._bindEvents();
@@ -87,8 +88,12 @@ class RangeSlider {
       let valPercent;
       let val;
 
+      console.log('refresh', this);
+
       this.handles.each((i, handle) => {
          val = this._getValue(i);
+         console.log('handle', handle);
+         console.log('val', val);
          /* eslint-disable no-magic-numbers */
          valPercent =
             ((val - this.config.min) / (this.config.max - this.config.min)) *
@@ -362,12 +367,8 @@ class RangeSlider {
          let rangeSlider = $this.data(IDENTIFIER);
 
          if (!rangeSlider) {
-            if (rangeSliderMap.has($this.id)) {
-               rangeSlider = rangeSliderMap.get($this.id);
-            } else {
-               rangeSlider = new RangeSlider(this, config);
-               $this.data(IDENTIFIER, rangeSlider);
-            }
+            rangeSlider = new RangeSlider(this, config);
+            $this.data(IDENTIFIER, rangeSlider);
          }
 
          if (typeof config === 'string') {
@@ -396,18 +397,15 @@ if (typeof document !== 'undefined') {
 
 export default async (elements, settings) => {
    const nodes = getNodes(elements);
-   let rangeSliders = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      let rangeSlider;
-      if (rangeSliderMap.has(node.id)) {
-         rangeSlider = rangeSliderMap.get(node.id);
-      } else {
-         rangeSlider = new RangeSlider(node, settings);
-         rangeSliderMap.set(node.id, rangeSlider);
-      }
-      rangeSliders.push(rangeSlider);
-      rangeSlider.initialize();
-   });
-   return rangeSliders;
+   if (nodes.length > 0) {
+      const rangeSliders = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            let slider = new RangeSlider(node, settings);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            slider.initialize();
+            return slider;
+         });
+      return rangeSliders;
+   }
 };

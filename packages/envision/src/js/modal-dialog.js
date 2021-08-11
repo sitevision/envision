@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
@@ -18,6 +18,7 @@ const FOCUSIN = 'focusin.env-modal-dialog';
 const MODIFIER_BASE = 'env-modal-dialog--';
 const ALERT_MODIFIER_BASE = 'env-modal-alert--';
 const NAME = 'envDialog';
+const DATA_INITIALIZED = 'data-env-modal-dialog';
 const SELECTORS = {
    MODAL_DIALOG: '[data-modal-dialog]',
    MODAL_ALERT: '[data-modal-alert]',
@@ -34,8 +35,6 @@ const EVENTS = {
    SHOW: 'show.env-modal-dialog',
    SHOWN: 'shown.env-modal-dialog',
 };
-
-const modalDialogMap = new Map();
 
 class ModalDialog {
    constructor(element) {
@@ -200,12 +199,8 @@ class ModalDialog {
          let data = $this.data(DATA_KEY);
 
          if (!data) {
-            if (modalDialogMap.has($this.id)) {
-               data = modalDialogMap.get($this.id);
-            } else {
-               data = new ModalDialog(this);
-               $this.data(DATA_KEY, data);
-            }
+            data = new ModalDialog(this);
+            $this.data(DATA_KEY, data);
          }
 
          if (typeof action === 'string') {
@@ -246,16 +241,14 @@ if (typeof document !== 'undefined') {
 
 export default async (elements) => {
    const nodes = getNodes(elements);
-   let modals = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      if (modalDialogMap.has(node.id)) {
-         modals.push(modalDialogMap.get(node.id));
-      } else {
-         const modal = new ModalDialog(node);
-         modals.push(modal);
-         modalDialogMap.set(node.id, modal);
-      }
-   });
-   return modals;
+   if (nodes.length > 0) {
+      const modals = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            const modal = new ModalDialog(node);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            return modal;
+         });
+      return modals;
+   }
 };

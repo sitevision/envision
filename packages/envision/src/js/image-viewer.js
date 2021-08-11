@@ -5,13 +5,14 @@
  */
 
 import $ from 'jquery';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
 const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
 const EVENT_KEY = `.env.image-viewer`;
 const NAME = 'envImageviewer';
+const DATA_INITIALIZED = 'data-env-image-viewer';
 const DATA_API_KEY = '.data-api';
 const ESCAPE_KEY = 27;
 const ARROW_LEFT_KEYCODE = 37;
@@ -52,8 +53,6 @@ const Events = {
 const BASE_SETTINGS = {
    index: 0,
 };
-
-const imageViewerMap = new Map();
 
 class Imageviewer {
    constructor(element, settings) {
@@ -398,16 +397,15 @@ if (typeof document !== 'undefined') {
 
 export default async (elements) => {
    const nodes = getNodes(elements);
-   let imageViewers = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      if (imageViewerMap.has(node.id)) {
-         imageViewers.push(imageViewerMap.get(node.id));
-      } else {
-         const imageViewer = new Imageviewer(node);
-         imageViewers.push(imageViewer);
-         imageViewerMap.set(node.id, imageViewer);
-      }
-   });
-   return imageViewers;
+   if (nodes.length > 0) {
+      const imageViewers = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            let viewer = new Imageviewer(node);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            viewer.initialize();
+            return viewer;
+         });
+      return imageViewers;
+   }
 };

@@ -5,16 +5,15 @@
  */
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const MODIFIER_BASE = 'env-accordion--';
 const NAME = 'envAccordion';
+const DATA_INITIALIZED = 'data-env-accordion';
 const SHOW = MODIFIER_BASE + 'show';
 const PARENT = 'data-parent';
-
-const accordionMap = new Map();
 
 class Accordion {
    constructor(element) {
@@ -96,16 +95,14 @@ if (typeof document !== 'undefined') {
 
 export default async (elements) => {
    const nodes = getNodes(elements);
-   let accordions = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      if (accordionMap.has(node.id)) {
-         accordions.push(accordionMap.get(node.id));
-      } else {
-         const accordion = new Accordion(node);
-         accordions.push(accordion);
-         accordionMap.set(node.id, accordion);
-      }
-   });
-   return accordions;
+   if (nodes.length > 0) {
+      const accordions = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            let accordion = new Accordion(node);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            return accordion;
+         });
+      return accordions;
+   }
 };

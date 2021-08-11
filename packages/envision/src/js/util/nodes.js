@@ -39,22 +39,3 @@ export const unhide = function (elements) {
       node.style.removeProperty('display');
    });
 };
-
-export const uniqueId = function (elements) {
-   let i = 0;
-
-   function getId() {
-      i++;
-      return 'env-id-' + i;
-   }
-
-   getNodes(elements).forEach((node) => {
-      if (!node.id) {
-         let id = getId();
-         while (document.getElementById(id)) {
-            id = getId();
-         }
-         node.id = id;
-      }
-   });
-};
