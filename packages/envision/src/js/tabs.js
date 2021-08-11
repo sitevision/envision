@@ -72,9 +72,11 @@ class Tabs {
          tab.setAttribute(ARIA_SELECTED, false);
          tab.setAttribute(DATA_INDEX, i);
          tab.setAttribute('tabindex', '-1');
-         panel.setAttribute('tabindex', '0');
-         panel.setAttribute(ARIA_HIDDEN, true);
-         hide(panel);
+         if (panel) {
+            panel.setAttribute('tabindex', '0');
+            panel.setAttribute(ARIA_HIDDEN, true);
+            hide(panel);
+         }
       });
       this.tabs[this.config.active].setAttribute('tabindex', '0');
       this._setActive(this.tabs[this.config.active], false);
@@ -126,8 +128,10 @@ class Tabs {
       }
 
       const panel = this._getPanelForTab(tab);
-      panel.setAttribute(ARIA_HIDDEN, false);
-      unhide(panel);
+      if (panel) {
+         panel.setAttribute(ARIA_HIDDEN, false);
+         unhide(panel);
+      }
       this.activeTab = tab;
 
       this.activeTab.dispatchEvent(
@@ -155,8 +159,10 @@ class Tabs {
          this.activeTab.classList.remove(IS_ACTIVE);
          this.activeTab.setAttribute(ARIA_SELECTED, false);
          const panel = this._getPanelForTab(this.activeTab);
-         panel.setAttribute(ARIA_HIDDEN, true);
-         hide(panel);
+         if (panel) {
+            panel.setAttribute(ARIA_HIDDEN, true);
+            hide(panel);
+         }
       }
    }
 
