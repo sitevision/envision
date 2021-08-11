@@ -6,16 +6,15 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes, uniqueId } from './util/nodes';
+import { getNodes } from './util/nodes';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const NAME = 'envCollapse';
+const DATA_INITIALIZED = 'data-env-collapse';
 const EXPANDED = MODIFIER_BASE + 'expanded';
 const SHOW = MODIFIER_BASE + 'show';
-
-const collapseMap = new Map();
 
 class Collapse {
    constructor(element) {
@@ -106,16 +105,14 @@ if (typeof document !== 'undefined') {
 
 export default async (elements) => {
    const nodes = getNodes(elements);
-   let collapses = [];
-   nodes.forEach((node) => {
-      uniqueId(node);
-      if (collapseMap.has(node.id)) {
-         collapses.push(collapseMap.get(node.id));
-      } else {
-         const collapse = new Collapse(node);
-         collapses.push(collapse);
-         collapseMap.set(node.id, collapse);
-      }
-   });
-   return collapses;
+   if (nodes.length > 0) {
+      const collapses = nodes
+         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
+         .map((node) => {
+            const collapse = new Collapse(node);
+            node.setAttribute(DATA_INITIALIZED, 'true');
+            return collapse;
+         });
+      return collapses;
+   }
 };
