@@ -24,7 +24,7 @@ export const useCopyExample = (content) => {
       // Legacy version initiation (deprecated)
       $('.example-tabs1, .example-tabs2, .example-tabs3').envTabs();
 
-      envision.rangeSlider('#my-slider', { values: [20, 70] });
+      envision.rangeSlider('.example-range-slider', { values: [20, 70] });
 
       // Initialize Image slider examples, load method does not work in gatsby.
 
