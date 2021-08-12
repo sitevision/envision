@@ -228,6 +228,7 @@
    &-radio {
       display: block;
       font-size: css-var('font-size-medium');
+      box-sizing: content-box;
 
       [type='radio'] {
          @include visually-hidden;
@@ -364,6 +365,7 @@
 .#{$prefix}-checkbox {
    display: block;
    font-size: css-var('font-size-medium');
+   box-sizing: content-box;
 
    [type='checkbox'] {
       @include visually-hidden();
@@ -436,6 +438,7 @@
    position: relative;
    margin-bottom: css-var('spacing-x-small');
    font-size: css-var('font-size-medium');
+   box-sizing: content-box;
 
    input {
       @include visually-hidden;
