@@ -243,6 +243,10 @@ a {
    --env-link-secondary-hover-text-decoration: none;
    flex: 1;
 
+   a {
+      color: var(--env-font-color);
+   }
+
    > div {
       margin-bottom: 10px;
 
