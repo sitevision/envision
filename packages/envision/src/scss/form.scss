@@ -188,7 +188,7 @@
       }
 
       &__help {
-         color: css-var('font-color-lighter');
+         filter: opacity(0.625);
          font-size: css-var('font-size-small');
       }
 
