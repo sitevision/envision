@@ -105,7 +105,7 @@
   "--env-form-input-border-radius": "var(--env-border-radius-medium)",
   "--env-form-input-font-color": "var(--env-font-color)",
   "--env-form-input-border-color": "var(--env-border-color)",
-  "--env-form-input-background-color": "#fff",
+  "--env-form-input-background-color": "var(--env-section-background-color)",
   "--env-collapse-border-style": "solid",
   "--env-collapse-border-width": "1px",
   "--env-collapse-icon-color": "var(--env-font-color)",
