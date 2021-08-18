@@ -391,7 +391,7 @@ $checkbox-disabled-color: $color-lighter !default;
       'form-input-border-radius': css-var('border-radius-medium'),
       'form-input-font-color': css-var('font-color'),
       'form-input-border-color': css-var('border-color'),
-      'form-input-background-color': #fff,
+      'form-input-background-color': css-var('section-background-color'),
    )
 );
 
