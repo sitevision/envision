@@ -228,15 +228,6 @@ a {
    border-radius: 0 0 3px 3px;
 }
 
-.doc-link {
-   color: #006dff;
-   text-decoration: none;
-
-   &:hover {
-      text-decoration: underline;
-   }
-}
-
 .sidenav {
    --env-link-font-color: var(--env-link-secondary-font-color);
    --env-link-secondary-hover-font-color: var(--env-link-secondary-font-color);

@@ -7,7 +7,7 @@ group: utils
 
 CSS variables are available with the format: `--env-{variable}`
 
-Only works in browsers that support <a class="doc-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a>
+Only works in browsers that support <a class="env-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a>
 
 ## Example
 

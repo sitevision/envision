@@ -14,7 +14,7 @@
             Envision is an easy to use, open source, CSS and component framework 
             for developing with HTML, CSS, and JS. Envision uses Block, Element, 
             Modifier methodology, BEM is a popular naming convention for classes 
-            in HTML and CSS. Find out more about <a href="https://en.bem.info/methodology/quick-start/">BEM here.</a>
+            in HTML and CSS. <a class="env-link" href="https://en.bem.info/methodology/quick-start/">Find out more about BEM</a>.
          </p>
          <div class="sv-home__buttons">
             <a class="env-button env-button--primary env-m-right--x-small" href="/getting-started/introduction/">
