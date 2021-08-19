@@ -83,7 +83,7 @@ body {
    box-sizing: border-box;
    max-width: $site-width;
    margin: 0 auto;
-   padding: 60px $site-padding;
+   padding: 90px $site-padding;
 
    @include desktop {
       display: flex;

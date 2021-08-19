@@ -23,11 +23,9 @@ const Header = ({ title, menuItems }) => {
          </Helmet>
          <div className="sv-header">
             <header className="header">
-               <div className="logo">
-                  <a href="https://www.sitevision.se">
-                     <img src="/images/sitevision-logo.svg" alt="Sitevision" />
-                  </a>
-               </div>
+               <a className="logo" href="/">
+                  Envision
+               </a>
                <nav className="header-nav">
                   <ul
                      className="env-nav env-nav--menubar env-nav--border"

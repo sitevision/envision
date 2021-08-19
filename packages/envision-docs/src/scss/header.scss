@@ -24,14 +24,14 @@
 
    .logo {
       display: inherit;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-size: 2.5em;
+      letter-spacing: -0.05em;
 
-      img {
-         width: 175px;
-         height: auto;
-
-         @include mobile-and-tablet {
-            width: 120px;
-         }
+      @include mobile-and-tablet {
+         font-size: 2em;
       }
    }
 
@@ -56,10 +56,8 @@
                border-bottom: 2px solid #6892d5;
             }
 
-            &:not(:first-child) {
-               @include mobile-and-tablet {
-                  display: none;
-               }
+            @include mobile-and-tablet {
+               display: none;
             }
          }
       }

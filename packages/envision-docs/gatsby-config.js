@@ -1,9 +1,9 @@
 /* globals module:false, __dirname:false */
 const createMenuItem = (label, to) => ({ label, to });
 const topMenuItems = [
-   createMenuItem('Start', '/'),
    createMenuItem('Documentation', '/getting-started/introduction/'),
    createMenuItem('GitHub', 'https://github.com/sitevision/envision'),
+   createMenuItem('Sitevision', 'https://www.sitevision.se/'),
 ];
 module.exports = {
    siteMetadata: {

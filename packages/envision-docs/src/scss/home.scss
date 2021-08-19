@@ -3,8 +3,8 @@
    margin: 0 auto;
    padding: 3em 1em;
 
-   @include mobile {
-      padding: 0 1em;
+   @include mobile-and-tablet {
+      padding: 2em 1em;
    }
 }
 
@@ -29,8 +29,11 @@ p.sv-home__text {
 }
 
 .sv-home__title {
-   font-weight: bold;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 700;
+   letter-spacing: -0.05em;
    margin: 0 0 0.25em;
+   font-size: 2.25em;
 }
 
 .sv-home__subheader {
