@@ -108,13 +108,13 @@ $link-hover-text-decoration: underline !default;
 // ----- GENERAL COLORS -----
 
 // Color
-$color-page-bg: #ffffff !default;
-$color-section-bg: #ffffff !default;
+$page-background-color: initial !default;
+$section-background-color: #ffffff !default;
 
 @include to-css-custom-property(
    (
-      'page-background-color': $color-page-bg,
-      'section-background-color': $color-section-bg,
+      'page-background-color': $page-background-color,
+      'section-background-color': $section-background-color,
    )
 );
 
@@ -353,7 +353,7 @@ $badge-font-family: $font-family !default;
 
 // ----- IMAGE CONTROL -----
 
-$image-control-color: $color-section-bg !default;
+$image-control-color: $section-background-color !default;
 $image-control-color-inactive: $font-color-lighter !default;
 
 @include to-css-custom-property(
@@ -492,6 +492,9 @@ $profile-image-radius: 50% !default;
       'font-color-invert': $font-color-invert,
    )
 );
+
+$color-page-bg: #ffffff !default;
+$color-section-bg: #ffffff !default;
 
 @include to-css-custom-property(
    (

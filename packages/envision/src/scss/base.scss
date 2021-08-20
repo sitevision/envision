@@ -2,6 +2,11 @@
 
 @import 'variable';
 
+// Set body to use Envision variable as background
+body {
+   background-color: var(--env-page-background-color);
+}
+
 // Partials
 @import 'mixin/base';
 
@@ -38,15 +43,3 @@
 @import 'tab';
 @import 'table';
 @import 'toast';
-
-// CSS VARS FOR TESTING
-// ====================
-
-:root {
-   /* Alternative secondary block colors */
-   /* ---------------------------------- */
-   //--env-block-font-color: #fff;
-   //--env-block-background-color: #666;
-   //--env-block-border-color: #111;
-   //--env-block-link-font-color: #67bdf6;
-}
