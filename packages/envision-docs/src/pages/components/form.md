@@ -188,6 +188,33 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          </div>
       </div>
    </div>
+   <div class="env-form__row">
+      <div class="env-form-element">
+         <span class="env-form-element__label" for="r1">Range</span>
+         <div class="env-form-element__control">
+            <input
+               type="range"
+               class="env-form-range"
+               id="r1"
+               max="100"
+               value="50"
+            />
+         </div>
+      </div>
+      <div class="env-form-element">
+         <span class="env-form-element__label" for="r1">Range disabled</span>
+         <div class="env-form-element__control">
+            <input
+               type="range"
+               class="env-form-range"
+               id="r1"
+               max="100"
+               value="50"
+               disabled
+            />
+         </div>
+      </div>
+   </div>
    <div class="env-form-element">
       <span class="env-form-element__label" id="switch-header"
          >Switch <span class="env-badge env-badge--info">8.2</span></span
