@@ -2,11 +2,6 @@
 
 @import 'variable';
 
-// Set body to use Envision variable as background
-body {
-   background-color: var(--env-background-color);
-}
-
 // Partials
 @import 'mixin/base';
 
