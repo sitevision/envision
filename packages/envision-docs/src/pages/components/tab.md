@@ -4,6 +4,8 @@ title: Tab
 
 ## Default Tab
 
+Note: All examples below require tabs to be [initialized from JavaScript](#init).
+
 ```html
 <div class="env-tabs example-tabs">
    <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
@@ -325,6 +327,8 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    14
 </div>
 ```
+
+<div id="init"></div>
 
 ## Initiation
 
