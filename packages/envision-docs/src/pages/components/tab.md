@@ -4,7 +4,7 @@ title: Tab
 
 ## Default Tab
 
-Note: All examples below require tabs to be [initialized from JavaScript](#init).
+Note: All examples below require tabs to be <a href="#init">initialized from JavaScript</a>.
 
 ```html
 <div class="env-tabs example-tabs">
