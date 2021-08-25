@@ -43,7 +43,7 @@ const ThemeProvider = ({ children }) => {
 
 const darkThemeStyle = () => {
    let theme = `:root {
-      --env-page-background-color: #161616;
+      --env-background-color: #161616;
       --env-section-background-color: #555555;
       --env-element-common-background-color: #333;
       --env-collapse-background-color: #333;

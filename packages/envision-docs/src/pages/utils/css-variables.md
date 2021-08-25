@@ -94,10 +94,10 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 ### Colors
 
-#### Base <span class="env-badge env-badge--info">8.2</span>
+#### Base
 
--  `--env-page-background-color`
--  `--env-section-background-color`
+-  `--env-background-color` <span class="env-badge env-badge--info">9.2</span>
+-  `--env-section-background-color` <span class="env-badge env-badge--info">8.2</span>
 
 #### Blocks <span class="env-badge env-badge--info">8.2</span>
 
@@ -271,4 +271,5 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 ### Removed
 
+-  `--env-page-background-color` <span class="env-badge env-badge--danger">9.2</span>
 -  `--env-default-button-color` <span class="env-badge env-badge--danger">8.2</span>

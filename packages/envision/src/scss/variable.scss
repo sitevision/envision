@@ -108,12 +108,12 @@ $link-hover-text-decoration: underline !default;
 // ----- GENERAL COLORS -----
 
 // Color
-$page-background-color: initial !default;
+$background-color: initial !default;
 $section-background-color: #ffffff !default;
 
 @include to-css-custom-property(
    (
-      'page-background-color': $page-background-color,
+      'background-color': $background-color,
       'section-background-color': $section-background-color,
    )
 );
