@@ -18,7 +18,7 @@
   "--env-link-secondary-text-decoration": "var(--env-link-text-decoration)",
   "--env-link-secondary-hover-font-color": "var(--env-link-font-color)",
   "--env-link-secondary-hover-text-decoration": "var(--env-link-hover-text-decoration)",
-  "--env-page-background-color": "#fff",
+  "--env-background-color": "initial",
   "--env-section-background-color": "#fff",
   "--env-block-font-color": "#202330",
   "--env-block-link-font-color": "var(--env-link-font-color)",
