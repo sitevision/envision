@@ -443,12 +443,12 @@ larger sections or less defined parts of components.
 For example, `--env-section-background-color`
 is used as background color for Modal dialogs.
 
+-  `--env-background-color` - Theme background color <span class="env-badge env-badge--info">9.2</span>
 -  `--env-font-color` - Generic text color
 -  `--env-link-font-color` - Generic link color
 -  `--env-link-hover-font-color` - Generic link:hover color
 -  `--env-border-color` - Generic border color
 -  `--env-border-color-light` - Calculated from `--env-border-color`
--  `--env-page-background-color` - Not used at the moment
 -  `--env-section-background-color` - Used for larger sections
 
 ## Background color <span class="env-badge env-badge--danger">Deprecated</span>
