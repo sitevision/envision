@@ -49,6 +49,68 @@
          }
       }
    }
+
+   &-poll {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 3.25em;
+      margin-bottom: css-var('spacing-x-small');
+      line-height: 1;
+      background-color: css-var('element-background-color-light');
+      color: css-var('element-font-color');
+      padding: 0 css-var('spacing-x-small');
+
+      &,
+      * {
+         box-sizing: border-box;
+      }
+
+      &__bar {
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         background-color: css-var('element-background-color-dark');
+         border-radius: css-var('border-radius-small');
+      }
+
+      &--highlighted .#{$prefix}-progress-poll__bar {
+         background-color: css-var('progress-bar-poll-highlight-color');
+      }
+
+      &__label,
+      &__value {
+         position: relative;
+         z-index: 2;
+         box-sizing: border-box;
+         padding: 0 css-var('spacing-x-small');
+      }
+
+      &__label {
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         text-align: left;
+      }
+
+      &__value {
+         text-align: right;
+         white-space: nowrap;
+      }
+
+      &__icon {
+         flex: 0 0 1.25em;
+         width: 1.25em;
+         height: 1.25em;
+         margin: 0 css-var('spacing-xx-small');
+         stroke-width: 0;
+         stroke: currentColor;
+         fill: currentColor;
+      }
+   }
 }
 
 @keyframes #{$prefix}-progress-animation {

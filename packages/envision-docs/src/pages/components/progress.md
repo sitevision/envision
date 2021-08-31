@@ -187,3 +187,67 @@ Add `--striped--animated` to animate the stripes
    </div>
 </div>
 ```
+
+## Poll
+
+<span class="env-badge env-badge--info">Added in 9.2</span>
+
+```html
+<div class="example-progress">
+   <p class="env-text env-m-bottom--large">
+      Lorem ipsum lectus molestie vivamus?
+   </p>
+   <div class="env-progress-poll" title="Antal röster: 5">
+      <div
+         class="env-progress-poll__bar"
+         role="progressbar"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="10"
+         style="width: 10%;"
+      ></div>
+      <div class="env-progress-poll__label">Pellentesque rutrum duis</div>
+      <div class="env-progress-poll__value">10 %</div>
+   </div>
+   <div
+      class="env-progress-poll env-progress-poll--highlighted"
+      title="Antal röster: 29"
+   >
+      <div
+         class="env-progress-poll__bar"
+         role="progressbar"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="58"
+         style="width: 58%;"
+      ></div>
+      <div class="env-progress-poll__label">
+         Diam bibendum
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="env-progress-poll__icon"
+         >
+            <use
+               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+            ></use>
+         </svg>
+      </div>
+      <div class="env-progress-poll__value">60 %</div>
+   </div>
+   <div class="env-progress-poll" title="Antal röster: 16">
+      <div
+         class="env-progress-poll__bar"
+         role="progressbar"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         aria-valuenow="32"
+         style="width: 32%;"
+      ></div>
+      <div class="env-progress-poll__label">
+         Nibh urna eu vitae sem donec in sem tellus ipsum
+      </div>
+      <div class="env-progress-poll__value">30 %</div>
+   </div>
+</div>
+```

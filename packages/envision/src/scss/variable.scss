@@ -400,6 +400,14 @@ $checkbox-disabled-color: $color-lighter !default;
 // Progress bar
 $progress-bar-height: 1.25em !default;
 
+// Poll
+$progress-bar-poll-highlight-color: #4bc5f5 !default;
+@include to-css-custom-property(
+   (
+      'progress-bar-poll-highlight-color': $progress-bar-poll-highlight-color,
+   )
+);
+
 // ----- COLLAPSE -----
 
 // Collapse

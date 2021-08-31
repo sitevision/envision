@@ -5,7 +5,7 @@ description: CSS variables
 group: utils
 ---
 
-CSS variables are available with the format: `--env-{variable}`
+CSS variables (<a class="env-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener">CSS custom properties</a>) are available with the format: `--env-{variable}`
 
 Only works in browsers that support <a class="env-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a>
 
@@ -234,6 +234,10 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 #### Popover <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-popover-width`
+
+#### Progress indicator
+
+-  `--env-progress-bar-poll-highlight-color` <span class="env-badge env-badge--info">9.2</span>
 
 #### Profile image <span class="env-badge env-badge--info">8.2</span>
 
