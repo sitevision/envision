@@ -197,20 +197,16 @@ To keep the popover alive when being hovered it requires a delay to function pro
    <ul class="env-popover__menu">
       <li role="presentation">
          <button type="button" role="menuitem" class="env-popover__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--x-small">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-grid-small"
-               ></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
          </button>
       </li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-popover__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--x-small">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-grid-big"
-               ></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
             Properties
          </button>
@@ -218,8 +214,10 @@ To keep the popover alive when being hovered it requires a delay to function pro
       <li class="env-popover--divider" role="separator"></li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-popover__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--x-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-list"></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+               ></use>
             </svg>
             Settings
          </button>
