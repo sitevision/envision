@@ -142,5 +142,87 @@ export const useCopyExample = (content) => {
             });
          }
       }
+
+      (() => {
+         'use strict';
+         const editor = document.querySelector('.theme-editor');
+         const inputs = document.querySelectorAll(
+            '.theme-editor-controls input'
+         );
+         // const colors = document.querySelectorAll(
+         //    '.theme-editor-controls [type=color]'
+         // );
+         // const sizes = document.querySelectorAll(
+         //    '.theme-editor-controls [type=number]'
+         // );
+         const defaults = {
+            'background-color': '#ffffff',
+            'section-background-color': '#ffffff',
+            'font-color': '#202330',
+            'element-background-color': '#f2f2f2',
+            'element-font-color': '#202330',
+            'element-primary-background-color': '#2e62ff',
+            'element-primary-font-color': '#ffffff',
+            'element-secondary-background-color': '#4f5153',
+            'element-secondary-font-color': '#ffffff',
+            'block-background-color': '#ffffff',
+            'block-font-color': '#202330',
+            'block-border-color': '#e7e7e7',
+            'block-primary-background-color': '#f7f7f7',
+            'block-primary-font-color': '#202330',
+            'block-primary-border-color': '#cccccc',
+            'block-secondary-background-color': '#e7f1ff',
+            'block-secondary-font-color': '#202330',
+            'block-secondary-border-color': '#a7bed0',
+            'font-size-base': 1.0,
+         };
+
+         const setVariable = (name, value) => {
+            settings[name] = value;
+            editor.style.setProperty('--env-' + name, value);
+            localStorage.setItem('poc-theme', JSON.stringify(settings));
+            if (name === 'font-size-base') {
+               editor.style.setProperty('font-size', value + 'em');
+            }
+         };
+
+         const reset = () => {
+            inputs.forEach((input) => {
+               const name = input.name;
+               if (Object.prototype.hasOwnProperty.call(defaults, name)) {
+                  input.value = defaults[name];
+                  setVariable(name, defaults[name]);
+               }
+            });
+         };
+
+         const handleChange = (e) => {
+            const el = e.target;
+            setVariable(el.name, el.value);
+         };
+         let savedSettings = localStorage.getItem('poc-theme');
+         let settings;
+         if (savedSettings) {
+            settings = JSON.parse(savedSettings);
+         } else {
+            settings = Object.assign({}, defaults);
+         }
+         if (!editor) {
+            return;
+         }
+         inputs.forEach((input) => {
+            const name = input.name;
+            if (Object.prototype.hasOwnProperty.call(settings, name)) {
+               input.value = settings[name];
+               setVariable(name, settings[name]);
+            }
+            input.addEventListener('input', handleChange);
+         });
+         document.getElementById('reset').addEventListener('click', () => {
+            if (confirm('Reset theme settings?')) {
+               reset();
+            }
+         });
+      })();
    }, [content]);
 };
