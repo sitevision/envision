@@ -20,7 +20,7 @@ export const useCopyExample = (content) => {
       envision.popover('.example-popover');
 
       // New version initiation
-      envision.tabs('.example-tabs');
+      envision.tabs('.example-tabs, .example-tabs4');
       // Legacy version initiation (deprecated)
       $('.example-tabs1, .example-tabs2, .example-tabs3').envTabs();
 

@@ -218,6 +218,8 @@ Note: All examples below require tabs to be <a class="env-link" href="#init">ini
 
 ## Responsive
 
+### Stacked
+
 Add class modifier `env-tabs--column` to tab stack container to make tabs vertical.
 
 ```html
@@ -325,6 +327,120 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    aria-hidden="true"
 >
    14
+</div>
+```
+
+### Scroll <span class="env-badge env-badge--info">Added in 9.2</span>
+
+Add class modifier `env-tabs--scroll` to make tabs scroll horizontally if they don't fit the page.
+
+```html
+<div class="example-tabs4">
+   <div class="env-tabs">
+      <ul class="env-tabs__nav env-tabs--scroll" role="tablist">
+         <li class="env-tabs__item" role="presentation">
+            <a
+               id="tab15"
+               class="env-tabs__link env-tabs__link--active"
+               href="#panel15"
+               role="tab"
+               aria-controls="panel15"
+               aria-selected="true"
+               >Tab 15</a
+            >
+         </li>
+         <li class="env-tabs__item" role="presentation">
+            <a
+               id="tab16"
+               class="env-tabs__link"
+               href="#panel16"
+               role="tab"
+               aria-controls="panel16"
+               aria-selected="false"
+               >Tab 16</a
+            >
+         </li>
+         <li class="env-tabs__item" role="presentation">
+            <a
+               id="tab17"
+               class="env-tabs__link"
+               href="#panel17"
+               role="tab"
+               aria-controls="panel17"
+               aria-selected="false"
+               >Tab 17</a
+            >
+         </li>
+         <li class="env-tabs__item" role="presentation">
+            <a
+               id="tab18"
+               class="env-tabs__link"
+               href="#panel18"
+               role="tab"
+               aria-controls="panel18"
+               aria-selected="false"
+               >Tab 18</a
+            >
+         </li>
+         <li class="env-tabs__item" role="presentation">
+            <a
+               id="tab19"
+               class="env-tabs__link"
+               href="#panel19"
+               role="tab"
+               aria-controls="panel19"
+               aria-selected="false"
+               >Tab 19</a
+            >
+         </li>
+      </ul>
+   </div>
+
+   <div
+      id="panel15"
+      class="example-panel"
+      aria-labelledby="tab15"
+      role="tabpanel"
+      aria-hidden="false"
+   >
+      15
+   </div>
+   <div
+      id="panel16"
+      class="example-panel"
+      aria-labelledby="tab16"
+      role="tabpanel"
+      aria-hidden="true"
+   >
+      16
+   </div>
+   <div
+      id="panel17"
+      class="example-panel"
+      aria-labelledby="tab17"
+      role="tabpanel"
+      aria-hidden="true"
+   >
+      17
+   </div>
+   <div
+      id="panel18"
+      class="example-panel"
+      aria-labelledby="tab18"
+      role="tabpanel"
+      aria-hidden="true"
+   >
+      18
+   </div>
+   <div
+      id="panel19"
+      class="example-panel"
+      aria-labelledby="tab19"
+      role="tabpanel"
+      aria-hidden="true"
+   >
+      19
+   </div>
 </div>
 ```
 

@@ -24,8 +24,17 @@
 .example-tabs,
 .example-tabs1,
 .example-tabs2,
-.example-tabs3 {
+.example-tabs3,
+.example-tabs4 {
    margin-bottom: 15px;
+}
+
+.example-tabs4 {
+   border: 1px solid var(--env-border-color);
+   border-radius: var(--env-border-radius-medium);
+   width: 200px;
+   height: 250px;
+   padding: 10px;
 }
 
 .example-panel {

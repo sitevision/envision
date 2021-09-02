@@ -84,4 +84,12 @@ $link-classname: #{$prefix}-tabs__link;
          margin: 0;
       }
    }
+
+   &--scroll {
+      overflow: auto;
+   }
+
+   &--scroll > &__item {
+      white-space: nowrap;
+   }
 }
