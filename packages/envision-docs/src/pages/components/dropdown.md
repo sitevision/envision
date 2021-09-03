@@ -128,20 +128,16 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-grid-small"
-               ></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
          </button>
       </li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-grid-big"
-               ></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
             Properties
          </button>
@@ -149,8 +145,10 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li class="env-dropdown--divider" role="separator"></li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--xx-small env-m-right--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-list"></use>
+            <svg class="env-icon env-icon--small env-m-right--small">
+               <use
+                  xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+               ></use>
             </svg>
             Settings
          </button>

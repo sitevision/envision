@@ -9,7 +9,7 @@
 
    &__item {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       box-sizing: border-box;
       appearance: none;
       border: {
@@ -22,9 +22,9 @@
       text-decoration: none;
       color: css-var('font-color');
       background-color: transparent;
-      font-family: inherit;
-      font-size: inherit;
-      line-height: 1.125;
+      font-family: css-var('font-family');
+      font-size: css-var('font-size-medium');
+      line-height: normal;
       margin: 0;
       width: 100%;
       text-align: left;
