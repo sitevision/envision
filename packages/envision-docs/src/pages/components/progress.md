@@ -197,7 +197,7 @@ Add `--striped--animated` to animate the stripes
    <p class="env-text env-m-bottom--large">
       Lorem ipsum lectus molestie vivamus?
    </p>
-   <div class="env-progress-poll" title="Antal röster: 5">
+   <div class="env-progress-poll" title="Number of votes: 5">
       <div
          class="env-progress-poll__bar"
          role="progressbar"
@@ -211,7 +211,7 @@ Add `--striped--animated` to animate the stripes
    </div>
    <div
       class="env-progress-poll env-progress-poll--highlighted"
-      title="Antal röster: 29"
+      title="Number of votes: 29"
    >
       <div
          class="env-progress-poll__bar"
@@ -235,7 +235,7 @@ Add `--striped--animated` to animate the stripes
       </div>
       <div class="env-progress-poll__value">60 %</div>
    </div>
-   <div class="env-progress-poll" title="Antal röster: 16">
+   <div class="env-progress-poll" title="Number of votes: 16">
       <div
          class="env-progress-poll__bar"
          role="progressbar"
