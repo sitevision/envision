@@ -2,6 +2,22 @@
 title: Icons
 template: icons
 extra:
+   icons2:
+      - icon-add
+      - icon-alert-triangle
+      - icon-arrow-down
+      - icon-arrow-reply
+      - icon-arrow-right
+      - icon-arrow-up
+      - icon-article
+      - icon-attachment
+      - icon-bell
+      - icon-bookmark
+      - icon-calendar
+      - icon-cogwheel
+      - icon-comment
+      - icon-download
+      - icon-like
    icons:
       - icon-arrow-down
       - icon-arrow-left

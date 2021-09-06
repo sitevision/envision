@@ -10,6 +10,7 @@ export default function Template({
    const { markdownRemark, site, allMarkdownRemark } = data;
    const { frontmatter, html } = markdownRemark;
    const icons = frontmatter.extra.icons;
+   const icons2 = frontmatter.extra.icons2;
    const content = useRef(null);
    useCopyExample(content);
 
@@ -23,6 +24,19 @@ export default function Template({
          <>
             <div className="icons-demo">
                <ul className="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
+                  {icons2.map((icon) => (
+                     <li key={icon} className="env-list__item" title={icon}>
+                        <svg className="env-icon env-icon--2">
+                           <use
+                              xlinkHref={`/sitevision/envision-icons.svg#${icon}`}
+                           ></use>
+                        </svg>
+                     </li>
+                  ))}
+               </ul>
+            </div>
+            <div className="icons-demo">
+               <ul className="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
                   {icons.map((icon) => (
                      <li key={icon} className="env-list__item" title={icon}>
                         <svg className="env-icon">
@@ -34,7 +48,6 @@ export default function Template({
                   ))}
                </ul>
             </div>
-
             <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
          </>
       </BaseTemplate>
@@ -61,6 +74,7 @@ export const pageQuery = graphql`
             title
             extra {
                icons
+               icons2
             }
          }
       }

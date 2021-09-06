@@ -5,6 +5,22 @@
    stroke-width: 0;
    stroke: currentColor;
    fill: currentColor;
+
+   &--2 {
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.5px;
+      fill: none;
+      // Todo: Add modifier for
+      // fill: currentColor;
+      // ??
+      //&.#{$prefix}-icon--fill {
+      //   fill: currentColor;
+      //}
+      // Todo: Add modifier for
+      // stroke-width: 0;
+   }
 }
 
 $sizes: (
