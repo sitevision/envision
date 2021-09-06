@@ -106,6 +106,7 @@
   "--env-form-input-font-color": "var(--env-font-color)",
   "--env-form-input-border-color": "var(--env-border-color)",
   "--env-form-input-background-color": "var(--env-section-background-color)",
+  "--env-progress-bar-poll-highlight-color": "#4bc5f5",
   "--env-collapse-border-style": "solid",
   "--env-collapse-border-width": "1px",
   "--env-collapse-icon-color": "var(--env-font-color)",
