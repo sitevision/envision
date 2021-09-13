@@ -1,6 +1,7 @@
 /*! Envision JS */
 import '../scss/base.scss';
 import '../icons/envision-icons.svg';
+import '../icons/envision-icons-2.svg';
 
 export { default as popover } from './popover';
 export { default as select } from './select';

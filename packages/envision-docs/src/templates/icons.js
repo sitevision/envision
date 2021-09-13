@@ -22,19 +22,23 @@ export default function Template({
          menuCategories={site.siteMetadata.menuCategories}
       >
          <>
+            <p>
+               <span className="env-badge env-badge--info">Added in 9.2</span>
+            </p>
             <div className="icons-demo">
                <ul className="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
                   {icons2.map((icon) => (
                      <li key={icon} className="env-list__item" title={icon}>
-                        <svg className="env-icon env-icon--2">
+                        <svg className="env-icon-2">
                            <use
-                              xlinkHref={`/sitevision/envision-icons.svg#${icon}`}
+                              xlinkHref={`/sitevision/envision-icons-2.svg#${icon}`}
                            ></use>
                         </svg>
                      </li>
                   ))}
                </ul>
             </div>
+            <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
             <div className="icons-demo">
                <ul className="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
                   {icons.map((icon) => (
@@ -48,7 +52,6 @@ export default function Template({
                   ))}
                </ul>
             </div>
-            <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
          </>
       </BaseTemplate>
    );

@@ -1,3 +1,41 @@
+.#{$prefix}-icon-2 {
+   display: inline-block;
+   width: calc(var(--env-font-size-base) * #{$icon-size-x-small});
+   height: calc(var(--env-font-size-base) * #{$icon-size-x-small});
+   stroke: currentColor;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   stroke-width: 1.5px;
+   fill: none;
+
+   //
+   //.defaultStyles {
+   //stroke: currentColor;
+   //stroke-linecap: round;
+   //stroke-linejoin: round;
+   //stroke-width: 1.5px;
+   //}
+   //
+   //.fillCurrentColor {
+   //fill: currentColor;
+   //}
+   //
+   //.fillNone {
+   //fill: none;
+   //}
+   //
+   //.fillEvenOdd {
+   //fill-rule: evenodd;
+   //}
+   //
+   //.strokeWidthZero {
+   //stroke-width: 0;
+   //}
+   //
+   //.strokeWidthOne {
+   //stroke-width: 1px;
+   //}
+}
 .#{$prefix}-icon {
    display: inline-block;
    width: calc(var(--env-font-size-base) * #{$icon-size-x-small});
@@ -5,22 +43,6 @@
    stroke-width: 0;
    stroke: currentColor;
    fill: currentColor;
-
-   &--2 {
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.5px;
-      fill: none;
-      // Todo: Add modifier for
-      // fill: currentColor;
-      // ??
-      //&.#{$prefix}-icon--fill {
-      //   fill: currentColor;
-      //}
-      // Todo: Add modifier for
-      // stroke-width: 0;
-   }
 }
 
 $sizes: (
@@ -34,13 +56,15 @@ $sizes: (
 );
 
 @each $size, $value in $sizes {
-   .#{$prefix}-icon--#{$size} {
+   .#{$prefix}-icon--#{$size},
+   .#{$prefix}-icon-2--#{$size} {
       width: $value;
       height: $value;
    }
 }
 
-.#{$prefix}-icon--inactive {
+.#{$prefix}-icon--inactive,
+.#{$prefix}-icon-2--inactive {
    opacity: 0.3;
 
    &:hover {
