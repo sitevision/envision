@@ -54,7 +54,7 @@
 
    > div {
       padding: 9px;
-      background-color: $spinner-color;
+      background-color: css-var('spinner-color');
       border-radius: 100%;
       display: inline-block;
       animation: env-loader 1.4s infinite ease-in-out both;
