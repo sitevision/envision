@@ -77,8 +77,12 @@
          border-radius: css-var('border-radius-small');
       }
 
-      &--highlighted .#{$prefix}-progress-poll__bar {
-         background-color: css-var('progress-bar-poll-highlight-color');
+      &--highlighted {
+         font-weight: bold;
+
+         .#{$prefix}-progress-poll__bar {
+            background-color: css-var('progress-bar-poll-highlight-color');
+         }
       }
 
       &__label,
