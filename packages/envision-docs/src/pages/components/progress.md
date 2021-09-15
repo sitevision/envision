@@ -221,18 +221,7 @@ Add `--striped--animated` to animate the stripes
          aria-valuenow="58"
          style="width: 58%;"
       ></div>
-      <div class="env-progress-poll__label">
-         Diam bibendum
-         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            class="env-progress-poll__icon"
-         >
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
-            ></use>
-         </svg>
-      </div>
+      <div class="env-progress-poll__label">Diam bibendum</div>
       <div class="env-progress-poll__value">60 %</div>
    </div>
    <div class="env-progress-poll" title="Number of votes: 16">
@@ -246,6 +235,16 @@ Add `--striped--animated` to animate the stripes
       ></div>
       <div class="env-progress-poll__label">
          Nibh urna eu vitae sem donec in sem tellus ipsum
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="env-progress-poll__icon"
+         >
+            <title>Your vote</title>
+            <use
+               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+            ></use>
+         </svg>
       </div>
       <div class="env-progress-poll__value">30 %</div>
    </div>
