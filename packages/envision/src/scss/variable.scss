@@ -353,13 +353,11 @@ $badge-font-family: $font-family !default;
 
 // ----- IMAGE CONTROL -----
 
-$image-control-color: $section-background-color !default;
-$image-control-color-inactive: $font-color-lighter !default;
+$image-control-color: #fff !default;
 
 @include to-css-custom-property(
    (
       'image-control-color': $image-control-color,
-      'image-control-inactive-color': $image-control-color,
    )
 );
 
