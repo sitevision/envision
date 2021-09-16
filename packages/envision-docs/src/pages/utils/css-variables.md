@@ -39,6 +39,7 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 -  `--env-font-family`
 -  `--env-font-color`
+-  `--env-font-color`
 -  `--env-font-size-base`
 -  `--env-font-size-x-small`
 -  `--env-font-size-small`
@@ -215,7 +216,6 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 #### Image viewer/slider controls <span class="env-badge env-badge--info">8.2</span>
 
 -  `--env-image-control-color`
--  `--env-image-control-inactive-color`
 
 #### Modal <span class="env-badge env-badge--info">8.2</span>
 
@@ -277,3 +277,4 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 -  `--env-page-background-color` <span class="env-badge env-badge--danger">9.2</span>
 -  `--env-default-button-color` <span class="env-badge env-badge--danger">8.2</span>
+-  `--env-image-control-inactive-color`<span class="env-badge env-badge--danger">9.2</span>
