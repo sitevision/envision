@@ -71,6 +71,21 @@
          height: 88px;
          overflow: auto;
          resize: vertical;
+
+         ~ .#{$prefix}-form-element__contenteditable-placeholder {
+            display: none;
+            position: absolute;
+            top: calc(#{css-var('spacing-x-small')} + 1px);
+            left: calc(#{css-var('spacing-x-small')} + 1px);
+            pointer-events: none;
+            speak: never;
+            color: css-var('form-input-font-color');
+            filter: opacity(0.5);
+         }
+
+         &:empty ~ .#{$prefix}-form-element__contenteditable-placeholder {
+            display: block;
+         }
       }
    }
 
@@ -133,9 +148,9 @@
       margin-bottom: css-var('spacing-medium');
 
       &__control {
-         &--icon {
-            position: relative;
+         position: relative;
 
+         &--icon {
             $iconSize: 1em;
 
             .env-icon {

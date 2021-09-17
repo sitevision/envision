@@ -68,10 +68,12 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
       <div class="env-form-element__control">
          <div
             class="env-form-input"
-            data-placeholder="Placeholder text"
             aria-labelledby="contenteditable-header"
             contenteditable
          ></div>
+         <div class="env-form-element__contenteditable-placeholder">
+            Placeholder text
+         </div>
       </div>
    </div>
    <div class="env-form-element">
