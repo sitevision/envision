@@ -50,11 +50,8 @@ class Dropdown {
 
          if (e.key === 'Escape') {
             this.hide();
-         } else if (this.button.contains(el)) {
-            if (
-               ((e.key === 'Tab' && !e.shiftKey) || e.key === 'ArrowDown') &&
-               menuItemCount > 0
-            ) {
+         } else if (this.button.contains(el) && menuItemCount > 0) {
+            if ((e.key === 'Tab' && !e.shiftKey) || e.key === 'ArrowDown') {
                this.menuitems[0].focus();
                e.preventDefault();
             }
@@ -68,24 +65,20 @@ class Dropdown {
                this.button.focus();
                this.hide();
             } else if (e.key === 'Tab' && e.shiftKey && current === 0) {
-               this.button.focus();
                e.preventDefault();
+               this.button.focus();
             } else if (e.key === 'ArrowUp') {
                e.preventDefault();
                const prev = this.menu.querySelector(
                   '[' + INDEX_ATTR + '="' + (current - 1) + '"]'
                );
-               if (prev) {
-                  prev.focus();
-               }
+               prev && prev.focus();
             } else if (e.key === 'ArrowDown') {
                e.preventDefault();
                const next = this.menu.querySelector(
                   '[' + INDEX_ATTR + '="' + (current + 1) + '"]'
                );
-               if (next) {
-                  next.focus();
-               }
+               next && next.focus();
             }
          }
       }).bind(this);
