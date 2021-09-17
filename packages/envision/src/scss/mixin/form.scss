@@ -42,13 +42,6 @@
 }
 
 @mixin placeholder() {
-   &[contenteditable='']:empty:before,
-   &[contenteditable='true']:empty:before {
-      content: attr(data-placeholder);
-      pointer-events: none;
-      display: block; /* For Firefox */
-      @content;
-   }
    &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       @content;
