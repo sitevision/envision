@@ -14,9 +14,13 @@
       min-width: (180 / 16 * 1em);
       padding: css-var('spacing-xx-small') 0;
       margin: 0;
-      position: absolute;
+      position: fixed;
       top: 100%;
       z-index: $zindex-dropdown;
+
+      &[data-env-dropdown] {
+         display: block;
+      }
    }
 
    &--toggle-split {
@@ -31,11 +35,5 @@
 
    &-icon {
       vertical-align: middle;
-   }
-}
-
-.#{$prefix}-is-open {
-   .#{$prefix}-dropdown__menu {
-      display: block;
    }
 }
