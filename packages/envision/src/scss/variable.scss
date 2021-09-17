@@ -11,13 +11,14 @@ $prefix: env !default;
 $zindex-imageslider-indicator: 15 !default;
 $zindex-radio-button: 100 !default;
 $zindex-popover: 1030 !default;
-$zindex-modal-backdrop: 1040 !default;
-$zindex-modal: 1050 !default;
-$zindex-modal-close-btn: 1055 !default;
 $zindex-dropdown: 1060 !default;
 $zindex-tagselect: 1070 !default;
 $zindex-tooltip: 1080 !default;
 $zindex-alert: 1090 !default;
+// Docs Site Header z-index: 10000;
+$zindex-modal-backdrop: 10010 !default;
+$zindex-modal: 10020 !default;
+$zindex-modal-close-btn: 10030 !default;
 
 //Animation
 $toggle-duration: 300ms !default;
