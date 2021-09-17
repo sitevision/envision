@@ -49,7 +49,7 @@ const ThemePicker = () => {
                            checked={darkMode}
                            onChange={onThemeChange}
                         />
-                        <span className="env-switch__text">Dark Mode</span>
+                        <span className="env-switch__text">Dark Theme</span>
                         <span className="env-switch__slider"></span>
                      </label>
                   </div>
