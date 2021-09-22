@@ -165,7 +165,6 @@ $prefix-select: '#{$prefix}-select';
 
       &__content {
          padding: css-var('spacing-x-small') 0;
-         overflow-scrolling: touch;
          max-height: 200px;
          overflow-x: hidden;
          overflow-y: auto;

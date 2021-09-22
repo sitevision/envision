@@ -86,7 +86,8 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-      fill: css-var('image-control-color');
+      color: css-var('image-control-color');
+      fill: currentColor;
    }
 
    &__next-icon {
