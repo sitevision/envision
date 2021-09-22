@@ -98,7 +98,6 @@
   "--env-badge-font-size": "75%",
   "--env-badge-border-radius": "var(--env-border-radius-medium)",
   "--env-image-control-color": "#fff",
-  "--env-image-control-inactive-color": "#fff",
   "--env-button-font-family": "var(--env-font-family)",
   "--env-button-border-radius": "var(--env-border-radius-small)",
   "--env-form-font-family": "var(--env-font-family)",
