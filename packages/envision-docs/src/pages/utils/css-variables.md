@@ -39,7 +39,6 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 -  `--env-font-family`
 -  `--env-font-color`
--  `--env-font-color`
 -  `--env-font-size-base`
 -  `--env-font-size-x-small`
 -  `--env-font-size-small`
