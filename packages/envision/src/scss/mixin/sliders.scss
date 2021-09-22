@@ -17,11 +17,12 @@
       height: 3px;
       margin-right: 3px;
       margin-left: 3px;
-      background-color: $image-control-color-inactive;
       border: none;
+      background-color: css-var('image-control-color');
+      filter: opacity(0.5);
 
       &.#{$prefix}-is-active {
-         background-color: $image-control-color;
+         filter: opacity(1);
       }
    }
 
