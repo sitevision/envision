@@ -6,6 +6,7 @@
 
 import $ from 'jquery';
 import { getNodes } from './util/nodes';
+import { getPopper } from './util/popper';
 
 const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
@@ -35,19 +36,6 @@ const DEFAULTS = {
                </div>`,
    title: '',
    trigger: 'click',
-};
-
-let Popper;
-const getPopper = async () => {
-   if (Popper) {
-      return Popper;
-   }
-
-   const { default: DynamicPopper } = await import(
-      /* webpackChunkName: "popper" */ 'popper.js'
-   );
-   Popper = DynamicPopper;
-   return Popper;
 };
 
 class Popover {
@@ -149,7 +137,7 @@ class Popover {
    setText($popoverElement, selector, text) {
       // prettier-ignore
       $popoverElement
-            .find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
+         .find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
    }
 
    setTitle($popoverElement) {
