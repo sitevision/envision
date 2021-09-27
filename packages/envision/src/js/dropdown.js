@@ -70,13 +70,13 @@ class Dropdown {
             } else if (e.key === 'ArrowUp') {
                e.preventDefault();
                const prev = this.menu.querySelector(
-                  '[' + INDEX_ATTR + '="' + (current - 1) + '"]'
+                  `[${INDEX_ATTR} ="${(current - 1)}"]`
                );
                prev && prev.focus();
             } else if (e.key === 'ArrowDown') {
                e.preventDefault();
                const next = this.menu.querySelector(
-                  '[' + INDEX_ATTR + '="' + (current + 1) + '"]'
+                  `[${INDEX_ATTR} ="${(current + 1)}"]`
                );
                next && next.focus();
             }
