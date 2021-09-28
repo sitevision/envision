@@ -40,7 +40,10 @@ class ModalDialog {
    constructor(element) {
       this.el = element;
       this.$el = $(element);
+      this.$body = $(document.body);
+      this.$placeholder = $('<span />');
       this._isShown = false;
+      this.$el.after(this.$placeholder);
    }
 
    toggle() {
@@ -55,6 +58,8 @@ class ModalDialog {
       CssUtil.reflow(this.el); // Used to force reflow
 
       const showEvent = $.Event(EVENTS.SHOW, {});
+
+      this.$body.css('overflow', 'hidden').append(this.$el);
 
       this.$el.trigger(showEvent);
 
@@ -73,8 +78,6 @@ class ModalDialog {
       this._isShown = true;
       this.$el.trigger('focus');
 
-      $('body').css('overflow', 'hidden');
-
       this._bindEvents();
    }
 
@@ -91,7 +94,8 @@ class ModalDialog {
 
       const removeBackdropCallback = () => {
          this.$backdrop.remove();
-         $('body').css('overflow', '');
+         this.$body.css('overflow', '');
+         this.$placeholder.before(this.$el);
       };
 
       const hideEvent = $.Event(EVENTS.HIDE, {});
