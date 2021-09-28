@@ -23,15 +23,16 @@
    }
 
    .logo {
-      display: inherit;
-      text-decoration: none;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      font-size: 2.5em;
-      letter-spacing: -0.05em;
+      display: block;
 
-      @include mobile-and-tablet {
-         font-size: 2em;
+      &__img {
+         display: block;
+         width: 160px;
+         height: auto;
+
+         @include mobile-and-tablet {
+            width: 120px;
+         }
       }
    }
 

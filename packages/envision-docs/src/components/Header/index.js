@@ -24,7 +24,11 @@ const Header = ({ title, menuItems }) => {
          <div className="sv-header">
             <header className="header">
                <a className="logo" href="/">
-                  Envision
+                  <img
+                     className="logo__img"
+                     src="/images/sitevision-envision-logo.svg"
+                     alt="Envision"
+                  />
                </a>
                <nav className="header-nav">
                   <ul
