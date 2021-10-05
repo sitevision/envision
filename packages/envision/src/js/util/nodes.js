@@ -35,8 +35,11 @@ export const resetStyle = function (node, prop) {
    // Restore style for an element set by setStyle
    const prevVal = node.getAttribute(`${PREV_ATTR}-${prop}-val`);
    if (prevVal) {
-      const prevPrio = node.getAttribute(`${PREV_ATTR}-${prop}-prio`);
-      node.style.setProperty(prop, prevVal, prevPrio);
+      node.style.setProperty(
+         prop,
+         prevVal,
+         node.getAttribute(`${PREV_ATTR}-${prop}-prio`)
+      );
    } else {
       node.style.removeProperty(prop);
    }
