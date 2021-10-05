@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNodes, lockScroll, unlockScroll } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
@@ -59,7 +59,9 @@ class ModalDialog {
 
       const showEvent = $.Event(EVENTS.SHOW, {});
 
-      this.$body.css('overflow', 'hidden').append(this.$el);
+      lockScroll();
+
+      this.$body.append(this.$el);
 
       this.$el.trigger(showEvent);
 
@@ -94,7 +96,7 @@ class ModalDialog {
 
       const removeBackdropCallback = () => {
          this.$backdrop.remove();
-         this.$body.css('overflow', '');
+         unlockScroll();
          this.$placeholder.before(this.$el);
       };
 
