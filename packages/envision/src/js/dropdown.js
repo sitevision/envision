@@ -10,6 +10,7 @@ const ENV_DROPDOWN_OPEN = 'env-is-open';
 const TOGGLE_DROPDOWN = '[data-dropdown]';
 const TARGET_ATTR = 'data-target';
 const INDEX_ATTR = 'data-env-dropdown-index';
+const PLACEMENT_BODY_ATTR = 'data-dropdown-placement-body';
 const ENV_DROPDOWN_MENU = '.env-dropdown__menu';
 const DATA_INITIALIZED = 'data-env-dropdown';
 
@@ -23,14 +24,15 @@ class Dropdown {
       this.menu = menu;
       this.menuitems = getNodes('.env-dropdown__item', this.menu);
       this.menu.insertAdjacentElement('beforebegin', this.placeholder);
+      this.placementBody = this.button.hasAttribute(PLACEMENT_BODY_ATTR);
 
       this.menuitems.forEach((el, i) => {
          el.setAttribute(INDEX_ATTR, i);
       });
 
-      this.handleClick = handleClick.bind(this);
-      this.handleKeyDown = handleKeyDown.bind(this);
-      this.handleKeyUp = handleKeyUp.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      this.handleKeyDown = this.handleKeyDown.bind(this);
+      this.handleKeyUp = this.handleKeyUp.bind(this);
    }
 
    toggle() {
@@ -44,7 +46,9 @@ class Dropdown {
    show() {
       this.container.classList.add(ENV_DROPDOWN_OPEN);
       this.button.setAttribute('aria-expanded', 'true');
-      document.body.appendChild(this.menu);
+      if (this.placementBody) {
+         document.body.appendChild(this.menu);
+      }
       unhide(this.menu);
       this._bindEvents();
       getPopper().then((Popper) => {
@@ -65,7 +69,9 @@ class Dropdown {
       this.button.setAttribute('aria-expanded', 'false');
       this._unbindEvents();
       hide(this.menu);
-      this.placeholder.insertAdjacentElement('afterend', this.menu);
+      if (this.placementBody) {
+         this.placeholder.insertAdjacentElement('afterend', this.menu);
+      }
    }
 
    _bindEvents() {
@@ -80,53 +86,53 @@ class Dropdown {
       document.removeEventListener('keydown', this.handleKeyDown);
       document.removeEventListener('keyup', this.handleKeyUp);
    }
-}
 
-const handleClick = () => {
-   this.hide();
-};
-
-const handleKeyUp = (e) => {
-   const el = e.target;
-   if (!this.button.contains(el) && !this.menu.contains(el)) {
+   handleClick() {
       this.hide();
    }
-};
 
-const handleKeyDown = (e) => {
-   const el = e.target;
-   const menuItemCount = this.menuitems.length;
-
-   if (e.key === 'Escape') {
-      this.hide();
-   } else if (this.button.contains(el) && menuItemCount > 0) {
-      if ((e.key === 'Tab' && !e.shiftKey) || e.key === 'ArrowDown') {
-         this.menuitems[0].focus();
-         e.preventDefault();
-      }
-   } else if (this.menu.contains(el) && menuItemCount > 0) {
-      const current = parseInt(el.getAttribute(INDEX_ATTR), 10);
-      if (e.key === 'Tab' && !e.shiftKey && current === menuItemCount - 1) {
-         this.button.focus();
+   handleKeyUp(e) {
+      const el = e.target;
+      if (!this.button.contains(el) && !this.menu.contains(el)) {
          this.hide();
-      } else if (e.key === 'Tab' && e.shiftKey && current === 0) {
-         e.preventDefault();
-         this.button.focus();
-      } else if (e.key === 'ArrowUp') {
-         e.preventDefault();
-         const prev = this.menu.querySelector(
-            `[${INDEX_ATTR} ="${current - 1}"]`
-         );
-         prev && prev.focus();
-      } else if (e.key === 'ArrowDown') {
-         e.preventDefault();
-         const next = this.menu.querySelector(
-            `[${INDEX_ATTR} ="${current + 1}"]`
-         );
-         next && next.focus();
       }
    }
-};
+
+   handleKeyDown(e) {
+      const el = e.target;
+      const menuItemCount = this.menuitems.length;
+
+      if (e.key === 'Escape') {
+         this.hide();
+      } else if (this.button.contains(el) && menuItemCount > 0) {
+         if ((e.key === 'Tab' && !e.shiftKey) || e.key === 'ArrowDown') {
+            this.menuitems[0].focus();
+            e.preventDefault();
+         }
+      } else if (this.menu.contains(el) && menuItemCount > 0) {
+         const current = parseInt(el.getAttribute(INDEX_ATTR), 10);
+         if (e.key === 'Tab' && !e.shiftKey && current === menuItemCount - 1) {
+            this.button.focus();
+            this.hide();
+         } else if (e.key === 'Tab' && e.shiftKey && current === 0) {
+            e.preventDefault();
+            this.button.focus();
+         } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = this.menu.querySelector(
+               `[${INDEX_ATTR} ="${current - 1}"]`
+            );
+            prev && prev.focus();
+         } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = this.menu.querySelector(
+               `[${INDEX_ATTR} ="${current + 1}"]`
+            );
+            next && next.focus();
+         }
+      }
+   }
+}
 
 const initialize = async (e) => {
    const button = e.target.closest(TOGGLE_DROPDOWN);

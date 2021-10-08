@@ -156,3 +156,38 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    </ul>
 </div>
 ```
+
+### Optional placement
+
+Use `data-dropdown-placement-body` attribute on `<button>` element
+to open dropdown in `<body>`.
+
+```html
+<div id="example4" class="env-dropdown">
+   <button
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
+      aria-expanded="false"
+      aria-haspopup="true"
+      data-dropdown
+      data-dropdown-placement-body
+      type="button"
+      data-target="#example4"
+   >
+      Dropdown in body
+      <svg class="env-icon">
+         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
+      </svg>
+   </button>
+   <ul class="env-dropdown__menu env-dropdown__menu--large">
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+      </li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      </li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      </li>
+   </ul>
+</div>
+```
