@@ -397,6 +397,63 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
 </div>
 ```
 
+### Optional placement
+
+Use `data-modal-dialog-placement-body` attribute on container element
+to open dialog window in `<body>`.
+
+```html
+<button
+   id="largeBtn"
+   data-modal-dialog
+   data-target="#example5"
+   type="button"
+   class="env-button env-button--primary env-button--large"
+>
+   Show in body
+</button>
+
+<div
+   id="example5"
+   class="env-modal-dialog"
+   role="dialog"
+   aria-labelledby="myDialog"
+   aria-hidden="true"
+   tabindex="-1"
+   data-modal-dialog-placement-body
+>
+   <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
+      <section class="env-modal-dialog__content">
+         <header class="env-modal-dialog__header">
+            <h5 class="env-text env-modal-dialog__header__title">
+               Modal Header
+            </h5>
+         </header>
+         <div class="env-modal-dialog__body">
+            <p class="env-text">
+               Caticus cuteicus wake up wander around the house making large
+               amounts of noise jump on top of your human's bed and fall asleep.
+            </p>
+         </div>
+         <footer
+            class="env-modal-dialog__footer env-modal-dialog__footer--right"
+         >
+            <button type="button" class="env-button env-button--primary">
+               Save
+            </button>
+            <button
+               type="button"
+               data-modal-dialog-dismiss
+               class="env-button env-button--link"
+            >
+               Cancel
+            </button>
+         </footer>
+      </section>
+   </div>
+</div>
+```
+
 ## Modal Alerts
 
 Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning', 'danger', 'info'`
@@ -405,7 +462,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 <button
    id="primaryAlertBtn"
    data-modal-alert
-   data-target="#example5"
+   data-target="#example6"
    type="button"
    class="env-button env-button--primary"
 >
@@ -415,7 +472,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 <button
    id="successAlertBtn"
    data-modal-alert
-   data-target="#example6"
+   data-target="#example7"
    type="button"
    class="env-button env-button--success"
 >
@@ -425,7 +482,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 <button
    id="dangerAlertBtn"
    data-modal-alert
-   data-target="#example7"
+   data-target="#example8"
    type="button"
    class="env-button env-button--danger"
 >
@@ -435,7 +492,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 <button
    id="infoAlertBtn"
    data-modal-alert
-   data-target="#example8"
+   data-target="#example9"
    type="button"
    class="env-button env-button--info"
 >
@@ -443,7 +500,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 </button>
 
 <div
-   id="example5"
+   id="example6"
    class="env-modal-alert"
    role="dialog"
    aria-labelledby="myDialog"
@@ -487,7 +544,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 </div>
 
 <div
-   id="example6"
+   id="example7"
    class="env-modal-alert env-modal-alert--success"
    role="dialog"
    aria-labelledby="myDialog"
@@ -531,7 +588,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 </div>
 
 <div
-   id="example7"
+   id="example8"
    class="env-modal-alert env-modal-alert--danger"
    role="dialog"
    aria-labelledby="myDialog"
@@ -572,7 +629,7 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 </div>
 
 <div
-   id="example8"
+   id="example9"
    class="env-modal-alert env-modal-alert--info"
    role="dialog"
    aria-labelledby="myDialog"
