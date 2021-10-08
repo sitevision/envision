@@ -44,7 +44,8 @@
       "jquery": "^3.5.1",
       "popper.js": "^1.16.0",
       "tom-select": "^1.7.0",
-      "svgxuse": "^1.2.6"
+      "svgxuse": "^1.2.6",
+      "dom-closest": "^0.2.0"
    },
    "browserslist": [
       ">0.5%",
