@@ -160,7 +160,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
 ### Optional placement
 
 Use `data-dropdown-placement-body` attribute on `<button>` element
-to open dropdown in `<body>`.
+to open dropdown as an immediate child of `<body>`.
 
 ```html
 <div id="example4" class="env-dropdown">
