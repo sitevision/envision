@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import { getNodes } from './util/nodes';
+import { getNodes, lockScroll, unlockScroll } from './util/nodes';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
@@ -120,7 +120,7 @@ class Imageviewer {
 
          this._isShown = true;
 
-         $('body').css('overflow', 'hidden');
+         lockScroll();
 
          this._bindContainerEvents();
          this._bindEvents();
@@ -136,7 +136,7 @@ class Imageviewer {
          this.$modal.remove();
          this.$btnContainer.remove();
          this.$imgContainer.remove();
-         $('body').css('overflow', 'scroll');
+         unlockScroll();
       };
 
       this.$backdrop
