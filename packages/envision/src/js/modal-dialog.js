@@ -13,6 +13,7 @@ const BACKDROP = 'env-modal-dialog__backdrop';
 const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
 const DATA_KEY = 'env.modal-dialog';
 const DISMISS_SELECTOR = '[data-modal-dialog-dismiss]';
+const PLACEMENT_BODY_ATTR = 'data-modal-dialog-placement-body';
 const ESCAPE_KEY = 27;
 const FOCUSIN = 'focusin.env-modal-dialog';
 const MODIFIER_BASE = 'env-modal-dialog--';
@@ -38,11 +39,12 @@ const EVENTS = {
 
 class ModalDialog {
    constructor(element) {
-      this.el = element;
       this.$el = $(element);
+      this.el = this.$el.get(0);
       this.$body = $(document.body);
       this.$placeholder = $('<span />');
       this._isShown = false;
+      this.placementBody = this.el.hasAttribute(PLACEMENT_BODY_ATTR);
       this.$el.after(this.$placeholder);
    }
 
@@ -61,7 +63,9 @@ class ModalDialog {
 
       lockScroll();
 
-      this.$body.append(this.$el);
+      if (this.placementBody) {
+         this.$body.append(this.$el);
+      }
 
       this.$el.trigger(showEvent);
 
@@ -97,7 +101,9 @@ class ModalDialog {
       const removeBackdropCallback = () => {
          this.$backdrop.remove();
          unlockScroll();
-         this.$placeholder.before(this.$el);
+         if (this.placementBody) {
+            this.$placeholder.before(this.$el);
+         }
       };
 
       const hideEvent = $.Event(EVENTS.HIDE, {});
