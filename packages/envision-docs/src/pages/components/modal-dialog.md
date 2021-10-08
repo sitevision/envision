@@ -397,7 +397,7 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
 </div>
 ```
 
-### Optional placement
+### Optional placement <span class="env-badge env-badge--info">9.2</span>
 
 Use `data-modal-dialog-placement-body` attribute on container element
 to open dialog window as an immediate child of `<body>`.
