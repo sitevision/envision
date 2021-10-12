@@ -9,4 +9,4 @@
  * TODO: Remove when IE is no longer supported
  */
 import 'svgxuse';
-import 'dom-closest';
+import 'element-closest-polyfill';
