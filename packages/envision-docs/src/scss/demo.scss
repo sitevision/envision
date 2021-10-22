@@ -6,7 +6,6 @@
    border-style: solid;
    border-width: 1px 0;
    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
-   max-width: 900px;
    display: block;
    visibility: visible;
    padding: 45px 15px;
@@ -377,11 +376,8 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
-.demo-responsive-cards {
-   --env-cardholder-column-min-width: 48px;
-   --env-cardholder-column-max-width: 80px;
-   --env-cardholder-column-spacing: 6px;
-
+.demo-cardholder-grid,
+.demo-cardholder-flex {
    h4 {
       font-weight: bold;
       margin: 1em 0 0.25em;
@@ -399,12 +395,29 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 
    &__resizeable {
+      box-sizing: border-box;
       width: 320px;
       max-width: 100%;
-      padding: 0.25em 0.5em;
       border: 1px dashed var(--env-border-color);
       resize: horizontal;
       overflow: hidden;
+   }
+}
+
+.demo-cardholder-flex {
+   --env-cardholder-column-min-width: 48px;
+   --env-cardholder-column-max-width: 80px;
+   --env-cardholder-column-spacing: 6px;
+
+   &__resizeable {
+      padding: 4px 8px;
+   }
+}
+
+.demo-cardholder-grid {
+   &__resizeable {
+      font-size: 0.1815em; // (font-size controls column width and gap scale)
+      padding: 8px;
    }
 }
 

@@ -43,7 +43,6 @@
    }
 
    &__footer {
-      padding: 0 css-var('spacing-large') css-var('spacing-large');
       padding: css-var('spacing-x-small') css-var('spacing-large')
          css-var('spacing-large');
 
@@ -148,5 +147,63 @@
       .#{$prefix}-cardholder--max.#{$prefix}-cardholder--2 & {
          max-width: 50%;
       }
+   }
+}
+
+.#{$prefix}-cardholder-grid {
+   --#{$prefix}-ch-col-w: #{css-var('cardholder-grid-column-width')};
+   --#{$prefix}-ch-g: #{css-var('cardholder-grid-gap')};
+   display: grid;
+   grid-template-columns: repeat(
+      auto-fill,
+      minmax(#{css-var('ch-col-w')}, 1fr)
+   );
+   grid-auto-rows: 1fr;
+   gap: #{css-var('ch-g')};
+   margin: 0 auto;
+
+   &--gap-none {
+      --#{$prefix}-ch-g: 0;
+   }
+
+   &--gap-small {
+      --#{$prefix}-ch-g: calc(0.5 * #{css-var('cardholder-grid-gap')});
+   }
+
+   &--gap-large {
+      --#{$prefix}-ch-g: calc(2 * #{css-var('cardholder-grid-gap')});
+   }
+
+   &--column-small {
+      --#{$prefix}-ch-col-w: calc(
+         0.75 * #{css-var('cardholder-grid-column-width')}
+      );
+   }
+
+   &--column-large {
+      --#{$prefix}-ch-col-w: calc(
+         1.25 * #{css-var('cardholder-grid-column-width')}
+      );
+   }
+
+   $buttonNames: 2, 3, 4, 5, 6, 8;
+
+   @each $name in $buttonNames {
+      &--#{$name} {
+         max-width: calc(
+            #{css-var('ch-col-w')} *
+               #{$name +
+               1} +
+               #{css-var('ch-g')} *
+               #{$name} -
+               1px
+         );
+      }
+   }
+
+   .#{$prefix}-cardholder__slot {
+      min-width: 0;
+      max-width: none;
+      padding: 0;
    }
 }
