@@ -484,6 +484,8 @@ $profile-image-radius: 50% !default;
       'cardholder-column-min-width': 240px,
       'cardholder-column-max-width': 400px,
       'cardholder-column-spacing': css-var('spacing-medium'),
+      'cardholder-grid-column-width': 20em,
+      'cardholder-grid-gap': css-var('spacing-medium'),
    )
 );
 
