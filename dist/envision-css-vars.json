@@ -126,6 +126,8 @@
   "--env-cardholder-column-min-width": "240px",
   "--env-cardholder-column-max-width": "400px",
   "--env-cardholder-column-spacing": "var(--env-spacing-medium)",
+  "--env-cardholder-grid-column-width": "20em",
+  "--env-cardholder-grid-gap": "var(--env-spacing-medium)",
   "--env-font-color-light": "#34394f",
   "--env-font-color-lighter": "#49506d",
   "--env-font-color-invert": "#fff",
@@ -148,5 +150,7 @@
   "--env-color-lighter": "#ccc",
   "--env-color-lightest": "#e6e6e6",
   "--env-focus-color": "#5cb3fd",
-  "--env-focus-background-color": "rgba(0,0,0,0.2)"
+  "--env-focus-background-color": "rgba(0,0,0,0.2)",
+  "--env-ch-col-w": "calc(\n         1.25 * var(--env-cardholder-grid-column-width)\n      )",
+  "--env-ch-g": "calc(2 * var(--env-cardholder-grid-gap))"
 }
