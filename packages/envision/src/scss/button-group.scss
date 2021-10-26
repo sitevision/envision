@@ -3,7 +3,15 @@
    display: flex;
 
    .#{$prefix}-button {
+      position: relative;
+      z-index: 1;
       border-radius: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+         z-index: 2;
+      }
 
       &:first-of-type {
          border-radius: css-var('button-border-radius') 0 0

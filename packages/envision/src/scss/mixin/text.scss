@@ -31,4 +31,8 @@
          text-decoration: css-var($hover-text-decoration);
       }
    }
+
+   &:focus-visible {
+      @include focus-outline();
+   }
 }

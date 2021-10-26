@@ -8,3 +8,9 @@
    box-shadow: 0 0 5px css-var($color);
    outline: 0;
 }
+
+@mixin focus-outline() {
+   box-shadow: 0 0 0 2px css-var('section-background-color'),
+      0 0 0 4px css-var('font-color');
+   outline: 0;
+}

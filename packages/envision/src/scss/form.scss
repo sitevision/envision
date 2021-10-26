@@ -42,7 +42,8 @@
       }
 
       &:focus {
-         @include focus();
+         //&:focus-visible {
+         @include focus-outline();
       }
 
       &[type='search'] {
@@ -293,7 +294,8 @@
       }
 
       [type='radio']:focus + label &__fake {
-         @include focus-shadow();
+         //@include focus-shadow();
+         @include focus-outline();
       }
 
       &--disabled {
@@ -417,7 +419,8 @@
    }
 
    [type='checkbox']:focus + label &__fake {
-      @include focus();
+      //@include focus();
+      @include focus-outline();
    }
 
    &__fake {
@@ -518,7 +521,8 @@
       }
 
       input:focus ~ & {
-         @include focus();
+         //@include focus();
+         @include focus-outline();
       }
 
       input:disabled ~ & {
