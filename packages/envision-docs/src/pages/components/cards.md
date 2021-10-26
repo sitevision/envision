@@ -333,7 +333,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 
 ## Cardholder Grid
 
-<span class="env-badge env-badge--warning">Beta available in 10.0</span>
+<span class="env-badge env-badge--warning">Beta since 10.0</span>
 
 Cardholder Grid uses CSS Grid. Cardholder slots are _not_ required.
 Columns will always be equal width and aligned.
