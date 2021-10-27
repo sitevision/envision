@@ -10,7 +10,6 @@
 }
 
 @mixin focus-outline() {
-   box-shadow: 0 0 0 2px css-var('section-background-color'),
-      0 0 0 4px css-var('font-color');
-   outline: 0;
+   box-shadow: css-var('focus-box-shadow');
+   outline: css-var('focus-outline');
 }

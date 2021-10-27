@@ -30,6 +30,11 @@ body a {
    // misc components.
    color: #000000;
    text-decoration: underline;
+
+   &:focus-visible {
+      box-shadow: var(--env-focus-box-shadow);
+      outline: var(--env-focus-outline);
+   }
 }
 
 :not(pre) > code[class*='language-'] {
