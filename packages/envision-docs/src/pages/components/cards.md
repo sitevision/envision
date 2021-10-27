@@ -243,7 +243,7 @@ There are several modifiers for the Cardholder that controls the Cardholder slot
 
 `.env-cardholder--N` - where N is a number that controls how many slots
 the Cardholder can display at most in one row.
-Possible values for N is `2`, `3`, `4`, `5`, `6`, `8`.
+Possible values for N are `2`, `3`, `4`, `5`, `6`, `8`.
 
 `.env-cardholder--max` - By default, slots have no max width. This modifier sets a max width.
 Slots will be centered in the last row and may not align to the columns. On small screens, the slots
@@ -419,7 +419,7 @@ There are several modifiers for the Cardholder Grid that controls the Cardholder
 
 `.env-cardholder-grid--N` - where N is a number that controls how many slots
 the Cardholder will display at most in one row.
-Possible values for N is `2`, `3`, `4`, `5`, `6`, `8`.
+Possible values for N are `2`, `3`, `4`, `5`, `6`, `8`.
 
 `.env-cardholder-grid--column-large` - Larger columns (&times;1.25)
 
