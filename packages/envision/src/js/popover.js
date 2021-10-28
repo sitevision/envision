@@ -14,10 +14,16 @@ const EVENT_NAMESPACE = `.${IDENTIFIER}`;
 
 const attachmentMapping = {
    top: 'top',
+   right: 'right',
    bottom: 'bottom',
    left: 'left',
-   right: 'right',
 };
+
+const allAttachmentClassNames = Object.values(attachmentMapping).map(
+   (location) => {
+      return `env-popover__arrow--${location}`;
+   }
+);
 
 const DEFAULTS = {
    clickOutside: false,
@@ -163,16 +169,10 @@ class Popover {
 
    render() {
       const $popoverElement = this.getPopoverElement();
-
+      this.arrowEl = this.$popoverElement.find('.env-popover__arrow')[0];
       this.setTitle($popoverElement);
       this.setContent($popoverElement);
-      this.setArrowPosition($popoverElement);
-   }
-
-   setArrowPosition($popoverElement) {
-      $popoverElement
-         .find('.env-popover__arrow')
-         .addClass(`env-popover__arrow--${this.config.placement}`);
+      this._setAttachmentClass(attachmentMapping[this.config.placement]);
    }
 
    hide() {
@@ -187,27 +187,9 @@ class Popover {
       this.isShowing = false;
    }
 
-   _cleanTipClass() {
-      this.$popoverElement
-         .find('.env-popover__arrow')
-         .removeClass((index, oldClassNames) => {
-            const modifier = oldClassNames
-               .replace(/env-popover__arrow/g, '')
-               .trim();
-
-            return `env-popover__arrow${modifier}`;
-         });
-   }
-
-   _handlePopperPlacementChange(data) {
-      this._cleanTipClass();
-      this._addAttachmentClass(attachmentMapping[data.placement]);
-   }
-
-   _addAttachmentClass(className) {
-      this.$popoverElement
-         .find('.env-popover__arrow')
-         .addClass(`env-popover__arrow--${className}`);
+   _setAttachmentClass(className) {
+      this.arrowEl.classList.remove(...allAttachmentClassNames);
+      this.arrowEl.classList.add(`env-popover__arrow--${className}`);
    }
 
    show() {
@@ -233,11 +215,11 @@ class Popover {
             },
             onCreate: (data) => {
                if (data.originalPlacement !== data.placement) {
-                  this._handlePopperPlacementChange(data);
+                  this._setAttachmentClass(attachmentMapping[data.placement]);
                }
             },
             onUpdate: (data) => {
-               this._handlePopperPlacementChange(data);
+               this._setAttachmentClass(attachmentMapping[data.placement]);
             },
          });
 
