@@ -15,6 +15,7 @@ const DATA_INITIALIZED = 'data-env-tabs';
 const DATA_INDEX = 'data-env-tabs-index';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
+const TAB_PANEL_CLASS = 'env-tabs__panel';
 const TAB_SELECTOR = '.env-tabs__link';
 const STACKED_SELECTOR = '.env-tabs--column';
 
@@ -75,6 +76,7 @@ class Tabs {
          if (panel) {
             panel.setAttribute('tabindex', '0');
             panel.setAttribute(ARIA_HIDDEN, true);
+            panel.classList.add(TAB_PANEL_CLASS);
             hide(panel);
          }
       });

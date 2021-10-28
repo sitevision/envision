@@ -41,10 +41,7 @@
          user-select: none;
       }
 
-      &:focus {
-         //&:focus-visible {
-         @include focus-outline();
-      }
+      @include focus-visible;
 
       &[type='search'] {
          appearance: none;
@@ -294,7 +291,6 @@
       }
 
       [type='radio']:focus + label &__fake {
-         //@include focus-shadow();
          @include focus-outline();
       }
 
@@ -419,7 +415,6 @@
    }
 
    [type='checkbox']:focus + label &__fake {
-      //@include focus();
       @include focus-outline();
    }
 
@@ -521,7 +516,6 @@
       }
 
       input:focus ~ & {
-         //@include focus();
          @include focus-outline();
       }
 

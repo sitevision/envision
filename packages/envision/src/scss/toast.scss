@@ -1,4 +1,5 @@
 .#{$prefix}-toast {
+   box-sizing: border-box;
    @include toast-color();
    align-items: center;
    align-self: flex-start;
@@ -36,12 +37,18 @@
    }
 
    &__close {
+      display: block;
+      box-sizing: border-box;
       background-color: transparent;
       border: 0;
       cursor: pointer;
-      display: flex;
-      margin-left: auto;
-      margin-right: css-var('spacing-medium');
+      margin: 0 css-var('spacing-xx-small') 0 auto;
+      padding: 0;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+
+      @include focus-visible;
    }
 
    &--success {

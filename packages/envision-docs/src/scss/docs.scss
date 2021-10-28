@@ -30,11 +30,6 @@ body a {
    // misc components.
    color: #000000;
    text-decoration: underline;
-
-   &:focus-visible {
-      box-shadow: var(--env-focus-box-shadow);
-      outline: var(--env-focus-outline);
-   }
 }
 
 :not(pre) > code[class*='language-'] {
@@ -209,11 +204,6 @@ h1 {
    }
 }
 
-a {
-   text-decoration: none;
-   color: var(--env-font-color);
-}
-
 .highlighter-rouge {
    background-color: rgba(0, 0, 0, 0.05);
    padding: 4px 8px;
@@ -242,6 +232,8 @@ a {
 
    a {
       color: var(--env-font-color);
+
+      @include focus-visible;
    }
 
    > div {

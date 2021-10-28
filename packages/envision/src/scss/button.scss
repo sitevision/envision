@@ -25,18 +25,7 @@
 
    @include button-color-variant();
 
-   //&:focus {
-   //@include focus('element-background-color');
-   //}
-
-   //&:focus-visible {
-   //   @include focus-outline();
-   //}
-
-   //&:active {
-   //   background-color: transparent;
-   //   border-color: transparent;
-   //}
+   @include focus-visible;
 
    // Variants
    $buttonNames: 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
@@ -44,10 +33,6 @@
    @each $name in $buttonNames {
       &--#{$name} {
          @include button-color-variant($name);
-
-         //&:focus {
-         //   @include focus('element-#{$name}-background-color-light');
-         //}
       }
    }
 
@@ -66,31 +51,18 @@
       &:active {
          border-color: css-var('element-common-background-color-dark');
       }
-
-      //&:focus {
-      //   @include focus('element-common-background-color');
-      //}
    }
 
    &--link {
       background-color: transparent;
       border-color: transparent;
-      //color: css-var('font-color');
-      //
+
       &:hover,
       &:active,
       &:focus {
          background-color: transparent;
          border-color: transparent;
       }
-      //
-      //&:active {
-      //   box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
-      //}
-
-      //&:focus {
-      //   @include focus-shadow('element-primary-background-color-light');
-      //}
 
       @include link(
          'link-font-color',

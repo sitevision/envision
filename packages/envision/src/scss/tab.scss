@@ -36,9 +36,11 @@ $link-classname: #{$prefix}-tabs__link;
          color: css-var('element-primary-font-color');
       }
 
-      &:focus {
-         @include focus-shadow();
-      }
+      @include focus-visible;
+   }
+
+   &__panel {
+      @include focus-visible;
    }
 
    &--simple {

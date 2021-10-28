@@ -51,8 +51,6 @@
       right: css-var('spacing-medium', -1);
       top: css-var('spacing-small', -1);
 
-      &:focus-visible {
-         @include focus-outline();
-      }
+      @include focus-visible;
    }
 }

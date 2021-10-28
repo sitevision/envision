@@ -20,9 +20,7 @@
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: $handle-size-desktop;
 
-      &:focus {
-         @include focus();
-      }
+      @include focus-visible;
    }
 
    &__values {

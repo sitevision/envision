@@ -28,16 +28,6 @@
       }
    }
 
-   //&:hover,
-   //&:active,
-   //&:focus {
-   //   background-color: css-var($background-color-light);
-   //}
-
-   &:focus-visible {
-      @include focus-outline;
-   }
-
    &:hover,
    &:focus {
       border-color: css-var($background-color-dark);
@@ -47,15 +37,6 @@
    &:active {
       border-color: css-var($background-color-dark);
       background-color: css-var($background-color-light);
-   }
-
-   &:hover,
-   &:active {
-      //border-color: css-var($background-color-light);
-   }
-
-   &:active {
-      //box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
    }
 }
 

@@ -32,7 +32,5 @@
       }
    }
 
-   &:focus-visible {
-      @include focus-outline();
-   }
+   @include focus-visible;
 }

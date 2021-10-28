@@ -27,9 +27,7 @@
    overflow-wrap: anywhere;
    word-break: normal;
 
-   &:focus {
-      @include focus();
-   }
+   @include focus-visible;
 
    &:hover,
    &.#{$prefix}-collapse--expanded {
