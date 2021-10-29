@@ -22,7 +22,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="256px">
       <img
          class="env-profile-image env-profile-image--xx-large"
-         src="/placeholders/text/xxl.png"
+         src="https://envisionui.io/placeholders/text/xxl.png"
          alt="Example profile image"
       />
    </div>
@@ -30,7 +30,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="224px">
       <img
          class="env-profile-image env-profile-image--x-large"
-         src="/placeholders/text/xl.png"
+         src="https://envisionui.io/placeholders/text/xl.png"
          alt="Example profile image"
       />
    </div>
@@ -38,7 +38,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="128px">
       <img
          class="env-profile-image env-profile-image--large"
-         src="/placeholders/text/l.png"
+         src="https://envisionui.io/placeholders/text/l.png"
          alt="Example profile image"
       />
    </div>
@@ -46,7 +46,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="96px">
       <img
          class="env-profile-image env-profile-image--medium"
-         src="/placeholders/text/m.png"
+         src="https://envisionui.io/placeholders/text/m.png"
          alt="Example profile image"
       />
    </div>
@@ -54,7 +54,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="64px">
       <img
          class="env-profile-image env-profile-image--small"
-         src="/placeholders/text/s.png"
+         src="https://envisionui.io/placeholders/text/s.png"
          alt="Example profile image"
       />
    </div>
@@ -62,7 +62,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="48px">
       <img
          class="env-profile-image env-profile-image--x-small"
-         src="/placeholders/text/xs.png"
+         src="https://envisionui.io/placeholders/text/xs.png"
          alt="Example profile image"
       />
    </div>
@@ -70,7 +70,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="32px">
       <img
          class="env-profile-image env-profile-image--xx-small"
-         src="/placeholders/text/xxs.png"
+         src="https://envisionui.io/placeholders/text/xxs.png"
          alt="Example profile image"
       />
    </div>
@@ -89,7 +89,10 @@ the image is smaller than the image.
       data-demo-size-inside
       data-demo-size="256px"
    >
-      <img src="/placeholders/text/xxl.png" alt="Example profile image" />
+      <img
+         src="https://envisionui.io/placeholders/text/xxl.png"
+         alt="Example profile image"
+      />
    </div>
 </div>
 ```

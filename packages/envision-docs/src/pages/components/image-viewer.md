@@ -7,10 +7,10 @@ title: Image viewer
    <div>
       <a
          class="env-image-viewer__images"
-         href="/placeholders/originals/10.jpeg"
+         href="https://envisionui.io/placeholders/originals/10.jpeg"
       >
          <img
-            src="/placeholders/900x400/10.jpeg"
+            src="https://envisionui.io/placeholders/900x400/10.jpeg"
             class="env-image-viewer__img"
             alt="Image"
          />
@@ -20,10 +20,10 @@ title: Image viewer
       <li>
          <a
             class="env-image-viewer__images"
-            href="/placeholders/originals/05.jpeg"
+            href="https://envisionui.io/placeholders/originals/05.jpeg"
          >
             <img
-               src="/placeholders/200x100/05.jpeg"
+               src="https://envisionui.io/placeholders/200x100/05.jpeg"
                class="env-image-viewer__thumbnail"
                alt="First thumbnail"
             />
@@ -32,10 +32,10 @@ title: Image viewer
       <li>
          <a
             class="env-image-viewer__images"
-            href="/placeholders/originals/02.jpeg"
+            href="https://envisionui.io/placeholders/originals/02.jpeg"
          >
             <img
-               src="/placeholders/200x100/02.jpeg"
+               src="https://envisionui.io/placeholders/200x100/02.jpeg"
                class="env-image-viewer__thumbnail"
                alt="Second thumbnail"
             />
