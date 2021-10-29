@@ -22,7 +22,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="256px">
       <img
          class="env-profile-image env-profile-image--xx-large"
-         src="https://placehold.jp/ccc/000/256x256.png?text=XXL"
+         src="/placeholders/text/xxl.png"
          alt="Example profile image"
       />
    </div>
@@ -30,7 +30,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="224px">
       <img
          class="env-profile-image env-profile-image--x-large"
-         src="https://placehold.jp/ccc/000/224x224.png?text=XL"
+         src="/placeholders/text/xl.png"
          alt="Example profile image"
       />
    </div>
@@ -38,7 +38,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="128px">
       <img
          class="env-profile-image env-profile-image--large"
-         src="https://placehold.jp/ccc/000/128x128.png?text=L"
+         src="/placeholders/text/l.png"
          alt="Example profile image"
       />
    </div>
@@ -46,7 +46,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="96px">
       <img
          class="env-profile-image env-profile-image--medium"
-         src="https://placehold.jp/ccc/000/96x96.png?text=M"
+         src="/placeholders/text/m.png"
          alt="Example profile image"
       />
    </div>
@@ -54,7 +54,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="64px">
       <img
          class="env-profile-image env-profile-image--small"
-         src="https://placehold.jp/ccc/000/64x64.png?text=S"
+         src="/placeholders/text/s.png"
          alt="Example profile image"
       />
    </div>
@@ -62,7 +62,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="48px">
       <img
          class="env-profile-image env-profile-image--x-small"
-         src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+         src="/placeholders/text/xs.png"
          alt="Example profile image"
       />
    </div>
@@ -70,7 +70,7 @@ element is smaller, the image will overflow.
    <div data-demo-size="32px">
       <img
          class="env-profile-image env-profile-image--xx-small"
-         src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+         src="/placeholders/text/xxs.png"
          alt="Example profile image"
       />
    </div>
@@ -89,10 +89,7 @@ the image is smaller than the image.
       data-demo-size-inside
       data-demo-size="256px"
    >
-      <img
-         src="https://placehold.jp/ccc/000/256x256.png?text=XXL"
-         alt="Example profile image"
-      />
+      <img src="/placeholders/text/xxl.png" alt="Example profile image" />
    </div>
 </div>
 ```

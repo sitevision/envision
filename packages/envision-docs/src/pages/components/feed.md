@@ -11,7 +11,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+               src="/placeholders/text/xs.png"
                alt=""
             />
          </a>
@@ -51,7 +51,7 @@ title: Feed
          <img
             class="env-embedded__img"
             alt="Image alternative"
-            src="https://placehold.jp/730x100.png?text=embedded%20image"
+            src="/placeholders/text/embedded-image.png"
          />
          <div class="env-embedded__block">
             <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
@@ -93,7 +93,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                     src="/placeholders/text/xxs.png"
                      alt=""
                   />
                </a>
@@ -123,7 +123,7 @@ title: Feed
       <a href="#" aria-label="Example profile image">
          <img
             class="env-profile-image env-profile-image--x-small"
-            src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+            src="/placeholders/text/xs.png"
             alt=""
          />
       </a>
@@ -178,7 +178,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+               src="/placeholders/text/xs.png"
                alt=""
             />
          </a>
@@ -245,7 +245,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                           src="/placeholders/text/xs.png"
                            alt=""
                         />
                      </a>
@@ -302,7 +302,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                           src="/placeholders/text/xs.png"
                            alt=""
                         />
                      </a>
@@ -359,7 +359,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--x-small"
-                           src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                           src="/placeholders/text/xs.png"
                            alt=""
                         />
                      </a>
@@ -416,7 +416,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                     src="/placeholders/text/xxs.png"
                      alt=""
                   />
                </a>
@@ -447,7 +447,7 @@ title: Feed
          <a href="#" aria-label="Example profile image">
             <img
                class="env-profile-image env-profile-image--x-small"
-               src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+               src="/placeholders/text/xs.png"
                alt=""
             />
          </a>
@@ -488,7 +488,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                     src="/placeholders/text/xs.png"
                      alt=""
                   />
                </a>
@@ -541,7 +541,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
-                     src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                     src="/placeholders/text/xxs.png"
                      alt=""
                   />
                </a>
@@ -574,7 +574,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                     src="/placeholders/text/xs.png"
                      alt=""
                   />
                </a>
@@ -646,7 +646,7 @@ title: Feed
                            <a href="#" aria-label="Example profile image">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
-                                 src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                                 src="/placeholders/text/xs.png"
                                  alt=""
                               />
                            </a>
@@ -708,7 +708,7 @@ title: Feed
                            <a href="#" aria-label="Example profile image">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
-                                 src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                                 src="/placeholders/text/xs.png"
                                  alt=""
                               />
                            </a>
@@ -768,7 +768,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                           src="/placeholders/text/xxs.png"
                            alt=""
                         />
                      </a>
@@ -803,7 +803,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                     src="/placeholders/text/xs.png"
                      alt=""
                   />
                </a>
@@ -872,7 +872,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                           src="/placeholders/text/xxs.png"
                            alt=""
                         />
                      </a>
@@ -907,7 +907,7 @@ title: Feed
                <a href="#" aria-label="Example profile image">
                   <img
                      class="env-profile-image env-profile-image--x-small"
-                     src="https://placehold.jp/ccc/000/48x48.png?text=XS"
+                     src="/placeholders/text/xs.png"
                      alt=""
                   />
                </a>
@@ -974,7 +974,7 @@ title: Feed
                      <a href="#" aria-label="Example profile image">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
-                           src="https://placehold.jp/ccc/000/32x32.png?text=XXS"
+                           src="/placeholders/text/xxs.png"
                            alt=""
                         />
                      </a>

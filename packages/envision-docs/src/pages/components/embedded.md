@@ -10,7 +10,7 @@ title: Embedded
       <img
          class="env-embedded__img"
          alt="Image alternative"
-         src="https://placehold.jp/640x480.png"
+         src="/placeholders/text/640x480.png"
       />
    </div>
    <div class="env-embedded__block">
@@ -36,7 +36,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       <img
          class="env-embedded__img"
          alt="Image alternative"
-         src="https://placehold.jp/270x180.png"
+         src="/placeholders/text/270x180.png"
       />
    </div>
    <div class="env-embedded__block">
@@ -56,7 +56,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       <img
          class="env-embedded__img"
          alt="Image alternative"
-         src="https://placehold.jp/270x180.png"
+         src="/placeholders/text/270x180.png"
       />
    </div>
    <div class="env-embedded__block">
@@ -78,7 +78,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       <img
          class="env-embedded__img"
          alt="Image alternative"
-         src="https://placehold.jp/769x180.png"
+         src="/placeholders/text/769x180.png"
       />
    </div>
    <div class="env-embedded__block">
@@ -102,7 +102,7 @@ Uses `env-embedded__block--overlay` to position text on top of image. You can al
       <img
          class="env-embedded__img"
          alt="Image alternative"
-         src="https://placehold.jp/769x180.png"
+         src="/placeholders/text/769x180.png"
       />
    </div>
    <div class="env-embedded__block--overlay">
