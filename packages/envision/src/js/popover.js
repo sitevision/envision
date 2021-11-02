@@ -5,7 +5,7 @@
  */
 
 import $ from 'jquery';
-import { getNodes } from './util/nodes';
+import { getNodes, uniqueId } from './util/nodes';
 import { getPopper } from './util/popper';
 
 const NAME = 'envPopover';
@@ -49,7 +49,6 @@ class Popover {
       this.el = element;
       this.$el = $(this.el);
       this.config = { ...DEFAULTS, ...this.$el.data(), ...config };
-
       this.bindEvents();
    }
 
@@ -136,8 +135,11 @@ class Popover {
    }
 
    getPopoverElement() {
-      return (this.$popoverElement =
-         this.$popoverElement || $(this.config.template));
+      if (!this.$popoverElement) {
+         this.$popoverElement = $(this.config.template);
+         uniqueId(this.$popoverElement[0]);
+      }
+      return this.$popoverElement;
    }
 
    setText($popoverElement, selector, text) {
@@ -147,11 +149,15 @@ class Popover {
    }
 
    setTitle($popoverElement) {
-      this.setText(
-         $popoverElement,
-         '.env-popover__header__title',
-         this.config.title
-      );
+      if (this.config.title) {
+         this.setText(
+            $popoverElement,
+            '.env-popover__header__title',
+            this.config.title
+         );
+      } else {
+         this.$popoverElement.find('.env-popover__header').remove();
+      }
    }
 
    setContent($popoverElement) {
@@ -177,25 +183,30 @@ class Popover {
 
    hide() {
       const $popoverElement = this.getPopoverElement();
-
+      this.el.removeAttribute('aria-describedby');
       $popoverElement.detach();
 
       if (this.config.clickOutside) {
-         $('body').off(this.config.trigger + EVENT_NAMESPACE);
+         $('body').off(
+            this.config.trigger + EVENT_NAMESPACE,
+            this.clickOutsideHandler
+         );
       }
 
       this.isShowing = false;
    }
 
    _setAttachmentClass(className) {
-      this.arrowEl.classList.remove(...allAttachmentClassNames);
-      this.arrowEl.classList.add(`env-popover__arrow--${className}`);
+      if (this.arrowEl) {
+         this.arrowEl.classList.remove(...allAttachmentClassNames);
+         this.arrowEl.classList.add(`env-popover__arrow--${className}`);
+      }
    }
 
    show() {
       this.render();
-
       const $popoverElement = this.getPopoverElement();
+      this.el.setAttribute('aria-describedby', this.$popoverElement[0].id);
 
       $('body').append($popoverElement);
 
