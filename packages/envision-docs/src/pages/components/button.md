@@ -5,7 +5,6 @@ title: Button
 ## Types
 
 <span class="env-badge env-badge--info">Ghost button added in 8.2</span>
-<span class="env-badge env-badge--danger">Invert button deprecated in X.x</span>
 
 ```html
 <p>
@@ -210,3 +209,7 @@ All button types and sizes are available.
 ```html
 <button type="button" class="env-button" disabled>Disabled</button>
 ```
+
+## Deprecated
+
+Invert button <span class="env-badge env-badge--danger">10.0</span>
