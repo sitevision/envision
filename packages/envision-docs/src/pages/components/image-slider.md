@@ -10,27 +10,28 @@ title: Image slider
 <div
    id="exampleSlider0"
    data-image-slider="cycle"
+   data-interval="2000"
    data-buttons="false"
    class="env-image-slider env-image-slider--slide"
 >
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/10.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400/"
+            src="https://envisionui.io/placeholders/900x400/05.jpeg"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/02.jpeg"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -50,21 +51,21 @@ title: Image slider
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/01.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400"
+            src="https://envisionui.io/placeholders/900x400/07.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/06.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
@@ -84,21 +85,21 @@ title: Image slider
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://unsplash.it/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/04.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/800/400"
+            src="https://envisionui.io/placeholders/900x400/08.jpeg"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/09.jpeg"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -138,7 +139,7 @@ title: Image slider
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://unsplash.it/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/02.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
@@ -149,7 +150,7 @@ title: Image slider
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/800/400"
+            src="https://envisionui.io/placeholders/900x400/10.jpeg"
             class="env-embedded__img"
             alt="Second slide"
          />
@@ -160,7 +161,7 @@ title: Image slider
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/05.jpeg"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -184,21 +185,21 @@ title: Image slider
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/11.jpeg"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400"
+            src="https://envisionui.io/placeholders/900x400/03.jpeg"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/12.jpeg"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -208,7 +209,7 @@ title: Image slider
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/11.jpeg"
             class="env-image-slider__thumbnail env-image-slider__item--active"
             data-move-to="0"
             alt="First thumbnail"
@@ -217,7 +218,7 @@ title: Image slider
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://unsplash.it/g/800/400"
+            src="https://envisionui.io/placeholders/900x400/03.jpeg"
             class="env-image-slider__thumbnail"
             data-move-to="1"
             alt="Second thumbnail"
@@ -226,7 +227,7 @@ title: Image slider
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://unsplash.it/g/800/400/?blur"
+            src="https://envisionui.io/placeholders/900x400/12.jpeg"
             class="env-image-slider__thumbnail"
             data-move-to="2"
             alt="Third thumbnail"

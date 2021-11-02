@@ -5,9 +5,12 @@ title: Image viewer
 ```html
 <div id="image-viewer" data-image-viewer class="env-image-viewer">
    <div>
-      <a class="env-image-viewer__images" href="https://unsplash.it/800/800">
+      <a
+         class="env-image-viewer__images"
+         href="https://envisionui.io/placeholders/originals/10.jpeg"
+      >
          <img
-            src="https://unsplash.it/900/400/"
+            src="https://envisionui.io/placeholders/900x400/10.jpeg"
             class="env-image-viewer__img"
             alt="Image"
          />
@@ -17,10 +20,10 @@ title: Image viewer
       <li>
          <a
             class="env-image-viewer__images"
-            href="https://unsplash.it/800/800?blur"
+            href="https://envisionui.io/placeholders/originals/05.jpeg"
          >
             <img
-               src="https://unsplash.it/200/100"
+               src="https://envisionui.io/placeholders/200x100/05.jpeg"
                class="env-image-viewer__thumbnail"
                alt="First thumbnail"
             />
@@ -29,10 +32,10 @@ title: Image viewer
       <li>
          <a
             class="env-image-viewer__images"
-            href="https://unsplash.it/800/800/"
+            href="https://envisionui.io/placeholders/originals/02.jpeg"
          >
             <img
-               src="https://unsplash.it/200/100?blur"
+               src="https://envisionui.io/placeholders/200x100/02.jpeg"
                class="env-image-viewer__thumbnail"
                alt="Second thumbnail"
             />

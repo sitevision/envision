@@ -12,7 +12,7 @@ title: Media
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -40,7 +40,7 @@ title: Media
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -83,7 +83,7 @@ title: Media
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -109,7 +109,11 @@ title: Media
 <article class="env-media env-media--column">
    <div class="env-media__figure">
       <a href="#" aria-label="Example image">
-         <img class="env-image" src="https://placehold.jp/200x200.png" alt="" />
+         <img
+            class="env-image"
+            src="https://envisionui.io/placeholders/text/200x200.png"
+            alt=""
+         />
       </a>
    </div>
    <div class="env-media__body">
@@ -137,7 +141,7 @@ title: Media
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -161,7 +165,11 @@ title: Media
 <article class="env-media env-media--column env-media--center">
    <div class="env-media__figure">
       <a href="#" aria-label="Example image">
-         <img class="env-image" src="https://placehold.jp/200x200.png" alt="" />
+         <img
+            class="env-image"
+            src="https://envisionui.io/placeholders/text/200x200.png"
+            alt=""
+         />
       </a>
    </div>
    <div class="env-media__body">
@@ -185,7 +193,11 @@ Alignment modifiers can also be applied to elements within the media container (
 <article class="env-media env-media--column env-media">
    <div class="env-media__figure env-media__figure--center">
       <a href="#" aria-label="Example image">
-         <img class="env-image" src="https://placehold.jp/200x200.png" alt="" />
+         <img
+            class="env-image"
+            src="https://envisionui.io/placeholders/text/200x200.png"
+            alt=""
+         />
       </a>
    </div>
    <div class="env-media__body">
@@ -211,7 +223,7 @@ Alignment modifiers can also be applied to elements within the media container (
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -241,7 +253,7 @@ Alignment modifiers can also be applied to elements within the media container (
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -269,7 +281,7 @@ Alignment modifiers can also be applied to elements within the media container (
       <a href="#" aria-label="Example image">
          <img
             class="env-image env-image--small"
-            src="https://placehold.jp/400x400.png"
+            src="https://envisionui.io/placeholders/text/400x400.png"
             alt=""
          />
       </a>
@@ -290,7 +302,7 @@ Alignment modifiers can also be applied to elements within the media container (
             <a href="#" aria-label="Example image">
                <img
                   class="env-image env-image--small"
-                  src="https://placehold.jp/400x400.png"
+                  src="https://envisionui.io/placeholders/text/400x400.png"
                   alt=""
                />
             </a>
