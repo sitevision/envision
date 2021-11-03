@@ -121,34 +121,49 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          See <a class="env-link" href="../select/">Tag select documentation</a>
       </p>
    </div>
+   <div
+      class="env-form-element"
+      role="radiogroup"
+      aria-labelledby="radio-header"
+   >
+      <span class="env-form-element__label" id="radio-header">
+         Radio button
+      </span>
+      <label for="radio1" class="env-form-radiobutton">
+         <input id="radio1" type="radio" name="radios" />
+         Alternative 1
+      </label>
+      <label for="radio2" class="env-form-radiobutton">
+         <input id="radio2" type="radio" name="radios" />
+         Alternative 2
+      </label>
+      <label for="radio3" class="env-form-radiobutton">
+         <input id="radio3" type="radio" name="radios" />
+         Alternative 3
+      </label>
+   </div>
    <div class="env-form-element">
-      <span class="env-form-element__label" id="radio-header"
-         >Radio button</span
+      <span class="env-form-element__label" id="legacy-radio-header"
+         >Legacy radio button
+         <span class="env-badge env-badge--danger">Deprecated</span></span
       >
       <div
          class="env-form-element__control"
          role="radiogroup"
-         aria-labelledby="radio-header"
+         aria-labelledby="legacy-radio-header"
       >
          <div class="env-form-radio">
-            <input id="radio1" type="radio" name="radios" checked />
-            <label for="radio1" class="env-form-element__label">
+            <input id="legacyradio1" type="radio" name="legacyradios" checked />
+            <label for="legacyradio1" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative</span>
             </label>
          </div>
          <div class="env-form-radio">
-            <input id="radio2" type="radio" name="radios" />
-            <label for="radio2" class="env-form-element__label">
+            <input id="legacyradio2" type="radio" name="legacyradios" />
+            <label for="legacyradio2" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative 2</span>
-            </label>
-         </div>
-         <div class="env-form-radio">
-            <input id="radio3" type="radio" name="radios" />
-            <label for="radio3" class="env-form-element__label">
-               <span class="env-form-radio__fake"></span>
-               <span class="env-form-radio__label">Alternative 3</span>
             </label>
          </div>
       </div>

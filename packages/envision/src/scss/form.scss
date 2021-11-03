@@ -238,6 +238,7 @@
    }
 
    &-radio {
+      // Legacy fake radio button
       display: block;
       font-size: css-var('font-size-medium');
       box-sizing: content-box;
@@ -308,6 +309,68 @@
          label {
             @include disabled;
          }
+      }
+   }
+
+   &-radiobutton {
+      // New native radiobutton 2021
+      display: grid;
+      grid-template-columns: 1.375em auto;
+      gap: css-var('spacing-x-small');
+      justify-content: start;
+      align-items: center;
+      box-sizing: border-box;
+      font-size: var(--env-font-size-medium);
+      font-weight: 500;
+      margin-bottom: var(--env-spacing-x-small);
+
+      // If env-form-radiobutton is div and label & input is separated inside.
+      > label ~ input[type='radio'] {
+         order: 1;
+      }
+
+      > label {
+         order: 2;
+      }
+
+      input[type='radio'] {
+         appearance: none;
+         display: grid;
+         place-content: center;
+         margin: 0;
+         padding: 0;
+         font: inherit;
+         color: currentColor;
+         width: $native-radiobutton-size;
+         height: $native-radiobutton-size;
+         // Todo: Align exactly as legacy version?
+         //transform: translate(0, -0.15em);
+         background-color: css-var('form-input-background-color');
+         border: $border-width $border-style css-var('form-input-border-color');
+         border-radius: 50%;
+         vertical-align: middle;
+
+         &::before {
+            content: '';
+            width: $native-radiobutton-checked-size;
+            height: $native-radiobutton-checked-size;
+            border-radius: 50%;
+            transform: scale(0);
+            box-shadow: inset 1em 1em
+               css-var('element-primary-background-color');
+            // Windows High Contrast Mode
+            background-color: #{'CanvasText'};
+         }
+
+         &:checked {
+            border-color: css-var('element-primary-background-color');
+         }
+
+         &:checked::before {
+            transform: scale(1);
+         }
+
+         @include focus-visible;
       }
    }
 
