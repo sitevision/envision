@@ -96,7 +96,6 @@ export const uniqueId = (() => {
       return PREFIX + i;
    };
    return (elements) => {
-      console.log(getNodes(elements));
       getNodes(elements).forEach((node) => {
          if (!node.id) {
             let id = getId();
