@@ -20,6 +20,8 @@
   "--env-link-secondary-hover-text-decoration": "var(--env-link-hover-text-decoration)",
   "--env-background-color": "initial",
   "--env-section-background-color": "#fff",
+  "--env-focus-box-shadow": "0 0 0 2px var(--env-section-background-color),0 0 0 4px var(--env-font-color)",
+  "--env-focus-outline": "0",
   "--env-block-font-color": "#202330",
   "--env-block-link-font-color": "var(--env-link-font-color)",
   "--env-block-link-hover-font-color": "var(--env-link-hover-font-color)",
