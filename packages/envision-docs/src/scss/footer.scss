@@ -34,4 +34,6 @@
 .footer a {
    color: #ffffff;
    font-size: 14px;
+
+   @include focus-visible;
 }

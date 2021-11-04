@@ -14,13 +14,6 @@
       ) !important;
    }
 
-   .#{$prefix}-form-input:focus,
-   .#{$prefix}-checkbox__fake:focus,
-   .#{$prefix}-form-radio__fake:focus,
-   .#{$prefix}-select__input.focus {
-      @include focus('element-#{$colorName}-background-color');
-   }
-
    .#{$prefix}-select__item {
       background-color: css-var(
          'element-#{$colorName}-background-color'

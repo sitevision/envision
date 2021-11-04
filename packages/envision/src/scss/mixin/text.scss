@@ -31,4 +31,6 @@
          text-decoration: css-var($hover-text-decoration);
       }
    }
+
+   @include focus-visible;
 }

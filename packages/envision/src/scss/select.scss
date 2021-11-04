@@ -76,7 +76,7 @@ $prefix-select: '#{$prefix}-select';
       }
 
       &.focus {
-         @include focus;
+         @include focus-outline();
       }
 
       &.disabled,

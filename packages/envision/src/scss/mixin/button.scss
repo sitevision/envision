@@ -10,15 +10,16 @@
    }
    $color: 'element#{$name}-font-color';
    $background-color: 'element#{$name}-background-color';
-   $active-background-color: 'element#{$name}-background-color-dark';
+   $background-color-dark: 'element#{$name}-background-color-dark';
+   $background-color-light: 'element#{$name}-background-color-light';
    background-color: css-var($background-color);
    border-color: css-var($background-color);
    color: css-var($color);
 
    &.env-button--ghost {
       background-color: transparent;
-      color: css-var($active-background-color);
-      border-color: css-var($active-background-color);
+      color: css-var($background-color-light);
+      border-color: css-var($background-color-light);
 
       &:hover,
       &:active,
@@ -28,18 +29,14 @@
    }
 
    &:hover,
-   &:active,
    &:focus {
-      background-color: css-var($active-background-color);
-   }
-
-   &:hover,
-   &:active {
-      border-color: css-var($active-background-color);
+      border-color: css-var($background-color-dark);
+      background-color: css-var($background-color-dark);
    }
 
    &:active {
-      box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+      border-color: css-var($background-color-dark);
+      background-color: css-var($background-color-light);
    }
 }
 

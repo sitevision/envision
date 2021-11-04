@@ -23,9 +23,10 @@
       text-decoration: none;
 
       &:focus {
-         @include focus();
          z-index: 3;
       }
+
+      @include focus-visible;
 
       &.#{$prefix}-is-active {
          background-color: css-var('element-primary-background-color');

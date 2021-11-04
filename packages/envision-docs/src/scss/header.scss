@@ -25,6 +25,8 @@
    .logo {
       display: block;
 
+      @include focus-visible;
+
       &__img {
          display: block;
          width: 160px;
@@ -51,6 +53,8 @@
                margin: 0.25em;
                outline: 0;
                text-decoration: none;
+
+               @include focus-visible;
             }
 
             a:hover {

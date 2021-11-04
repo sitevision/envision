@@ -24,7 +24,6 @@
       line-height: $form-input-line-height;
       margin: 0;
       padding: css-var('spacing-x-small');
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
 
       @include placeholder {
@@ -41,9 +40,7 @@
          user-select: none;
       }
 
-      &:focus {
-         @include focus();
-      }
+      @include focus-visible;
 
       &[type='search'] {
          appearance: none;
@@ -262,7 +259,6 @@
          background-color: css-var('form-input-background-color');
          border: $border-width $border-style css-var('form-input-border-color');
          border-radius: 50%;
-         transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
          vertical-align: middle;
 
          &:after {
@@ -292,8 +288,20 @@
          }
       }
 
+      [type='radio'] + label &__fake {
+         transition: box-shadow 0.2s ease-in-out;
+      }
+
       [type='radio']:focus + label &__fake {
-         @include focus-shadow();
+         @include focus-outline;
+      }
+
+      [type='radio']:focus-visible + label &__fake {
+         @include focus-outline;
+      }
+
+      [type='radio']:focus:not(:focus-visible) + label &__fake {
+         @include focus-outline-none;
       }
 
       &--disabled {
@@ -416,8 +424,20 @@
       }
    }
 
+   [type='checkbox'] + label &__fake {
+      transition: box-shadow 0.2s ease-in-out;
+   }
+
    [type='checkbox']:focus + label &__fake {
-      @include focus();
+      @include focus-outline;
+   }
+
+   [type='checkbox']:focus-visible + label &__fake {
+      @include focus-outline;
+   }
+
+   [type='checkbox']:focus:not(:focus-visible) + label &__fake {
+      @include focus-outline-none;
    }
 
    &__fake {
@@ -428,7 +448,6 @@
       height: $checkbox-size;
       margin-right: css-var('spacing-xx-small');
       position: relative;
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       vertical-align: middle;
       width: $checkbox-size;
    }
@@ -517,8 +536,20 @@
          border-color: css-var('element-primary-background-color');
       }
 
+      input ~ & {
+         transition: box-shadow 0.2s ease-in-out;
+      }
+
       input:focus ~ & {
-         @include focus();
+         @include focus-outline;
+      }
+
+      input:focus-visible ~ & {
+         @include focus-outline;
+      }
+
+      input:focus:not(:focus-visible) ~ & {
+         @include focus-outline-none;
       }
 
       input:disabled ~ & {

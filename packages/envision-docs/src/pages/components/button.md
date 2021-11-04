@@ -33,8 +33,6 @@ title: Button
       Ghost
    </button>
 
-   <button type="button" class="env-button env-button--invert">Invert</button>
-
    <button type="button" class="env-button env-button--link">Link</button>
 </p>
 ```
@@ -211,3 +209,7 @@ All button types and sizes are available.
 ```html
 <button type="button" class="env-button" disabled>Disabled</button>
 ```
+
+## Deprecated
+
+Invert button <span class="env-badge env-badge--danger">10.0</span>

@@ -119,6 +119,20 @@ $section-background-color: #ffffff !default;
    )
 );
 
+// ----- FOCUS -----
+
+// Color
+$focus-box-shadow: 0 0 0 2px css-var('section-background-color'),
+   0 0 0 4px css-var('font-color') !default;
+$section-background-color: #ffffff !default;
+
+@include to-css-custom-property(
+   (
+      'focus-box-shadow': $focus-box-shadow,
+      'focus-outline': 0,
+   )
+);
+
 $color-primary: #2e62ff !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;

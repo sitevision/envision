@@ -58,9 +58,7 @@
       border: none;
       background: transparent;
 
-      &:focus:not(:focus-visible) {
-         outline: none;
-      }
+      @include focus-visible;
    }
 
    &--next {

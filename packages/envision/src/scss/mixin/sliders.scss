@@ -26,7 +26,7 @@
       }
    }
 
-   button:focus:not(:focus-visible) {
-      outline: none;
+   button {
+      @include focus-visible;
    }
 }

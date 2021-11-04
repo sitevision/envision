@@ -1,10 +1,28 @@
-@mixin focus($color: 'element-primary-background-color-light') {
-   border-color: css-var($color);
-   box-shadow: 0 0 5px css-var($color);
-   outline: 0;
+@mixin focus-outline() {
+   box-shadow: css-var('focus-box-shadow');
+   outline: css-var('focus-outline');
 }
 
-@mixin focus-shadow($color: 'element-primary-background-color-light') {
-   box-shadow: 0 0 5px css-var($color);
-   outline: 0;
+@mixin focus-outline-none() {
+   box-shadow: none;
+   outline: none;
+}
+
+@mixin focus-visible {
+   // Support browsers without focus-visible (Safari)
+   // Todo: Clean up when Safari gets support for focus-visible
+   transition: box-shadow 0.2s ease-in-out;
+
+   &:focus {
+      // Set focus style for all
+      @include focus-outline;
+   }
+   &:focus-visible {
+      // Set focus style for all that supports focus-visible
+      @include focus-outline;
+   }
+   &:focus:not(:focus-visible) {
+      // Remove regular focus style for all that supports focus-visible
+      @include focus-outline-none;
+   }
 }

@@ -204,11 +204,6 @@ h1 {
    }
 }
 
-a {
-   text-decoration: none;
-   color: var(--env-font-color);
-}
-
 .highlighter-rouge {
    background-color: rgba(0, 0, 0, 0.05);
    padding: 4px 8px;
@@ -237,6 +232,8 @@ a {
 
    a {
       color: var(--env-font-color);
+
+      @include focus-visible;
    }
 
    > div {
