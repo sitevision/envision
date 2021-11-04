@@ -121,26 +121,31 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          See <a class="env-link" href="../select/">Tag select documentation</a>
       </p>
    </div>
-   <div
-      class="env-form-element"
-      role="radiogroup"
-      aria-labelledby="radio-header"
-   >
+   <div class="env-form-element"
+        role="radiogroup"
+        aria-labelledby="radio-header">
       <span class="env-form-element__label" id="radio-header">
          Radio button
+         <span class="env-badge env-badge--warning">Beta since 10.0</span></span
       </span>
-      <label for="radio1" class="env-form-radiobutton">
-         <input id="radio1" type="radio" name="radios" />
-         Alternative 1
-      </label>
-      <label for="radio2" class="env-form-radiobutton">
-         <input id="radio2" type="radio" name="radios" />
-         Alternative 2
-      </label>
-      <label for="radio3" class="env-form-radiobutton">
-         <input id="radio3" type="radio" name="radios" />
-         Alternative 3
-      </label>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" checked />
+            Alternative 1
+         </label>
+      </div>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" />
+            Alternative 2
+         </label>
+      </div>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" />
+            Alternative 3
+         </label>
+      </div>
    </div>
    <div class="env-form-element">
       <span class="env-form-element__label" id="legacy-radio-header"
