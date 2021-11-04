@@ -102,6 +102,7 @@ title: Popover
    class="env-button example-popover"
    data-placement="top"
    data-title="Lorem ipsum"
+   data-click-outside="true"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
    Top
@@ -111,6 +112,7 @@ title: Popover
    class="env-button example-popover"
    data-placement="right"
    data-title="Lorem ipsum"
+   data-click-outside="true"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
    Right
@@ -120,6 +122,7 @@ title: Popover
    class="env-button example-popover"
    data-placement="bottom"
    data-title="Lorem ipsum"
+   data-click-outside="true"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
    Bottom
@@ -129,6 +132,7 @@ title: Popover
    class="env-button example-popover"
    data-placement="left"
    data-title="Lorem ipsum"
+   data-click-outside="true"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
    Left
