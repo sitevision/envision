@@ -67,6 +67,26 @@
       }
    }
 
+   &.#{$prefix}-link {
+      // This is a combo of env-button and env-link
+      background-color: transparent;
+      border-color: transparent;
+
+      &:hover,
+      &:active,
+      &:focus {
+         background-color: transparent;
+         border-color: transparent;
+      }
+
+      @include link(
+         'link-font-color',
+         'link-text-decoration',
+         'link-hover-font-color',
+         'link-hover-text-decoration'
+      );
+   }
+
    &--block {
       display: block;
       width: 100%;
