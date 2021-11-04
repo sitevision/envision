@@ -36,7 +36,6 @@ const DEFAULTS = {
 
 class RangeSlider {
    constructor(element, config) {
-      console.log('CONSTRUCTOR', this);
       this.config = $.extend({}, DEFAULTS, config);
       this.$document = $(document);
       this.el = element;
@@ -58,7 +57,6 @@ class RangeSlider {
    }
 
    initialize() {
-      console.log('INIT', this);
       this._setupHandles();
       this._refreshRange();
       this._bindEvents();
@@ -88,12 +86,8 @@ class RangeSlider {
       let valPercent;
       let val;
 
-      console.log('refresh', this);
-
       this.handles.each((i, handle) => {
          val = this._getValue(i);
-         console.log('handle', handle);
-         console.log('val', val);
          /* eslint-disable no-magic-numbers */
          valPercent =
             ((val - this.config.min) / (this.config.max - this.config.min)) *

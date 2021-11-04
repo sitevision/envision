@@ -104,7 +104,7 @@ title: Button
 </p>
 ```
 
-## Icons <span class="env-badge env-badge--info">9.01</span>
+## Icons <span class="env-badge env-badge--info">9.0.1</span>
 
 Support for icons in buttons were added in Envision released with Sitevision 8.2.
 Square icon-only button was added with Sitevision 9.0.

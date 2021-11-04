@@ -45,7 +45,7 @@
    }
 }
 
-button.#{$prefix}-link {
+button:not(.env-button).#{$prefix}-link {
    appearance: none;
    display: inline;
    border: none;

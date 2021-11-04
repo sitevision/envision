@@ -17,7 +17,16 @@ export const useCopyExample = (content) => {
 
       // Initialize jQuery plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
-      envision.popover('.example-popover');
+      envision.popover('.example-popover').then((popovers) => {
+         // Remove possible remaining popovers from Popover page
+         if (!popovers) {
+            document
+               .querySelectorAll('.env-popover[role="tooltip"]')
+               .forEach((el) => {
+                  el.parentNode.removeChild(el);
+               });
+         }
+      });
 
       // New version initiation
       envision.tabs('.example-tabs');
