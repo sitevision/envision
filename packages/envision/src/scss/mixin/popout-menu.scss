@@ -31,6 +31,7 @@
       padding: css-var('spacing-x-small');
       @include truncate-text();
 
+      &--active,
       &:active,
       &:focus,
       &:hover {
