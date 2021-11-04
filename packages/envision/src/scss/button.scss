@@ -37,6 +37,7 @@
    }
 
    &--invert {
+      // DEPRECATED since 10.0
       background-color: transparent;
       border-color: transparent;
       color: css-var('element-primary-background-color-dark');
@@ -56,6 +57,7 @@
    &--link {
       background-color: transparent;
       border-color: transparent;
+      color: css-var('font-color');
 
       &:hover,
       &:active,
@@ -63,13 +65,6 @@
          background-color: transparent;
          border-color: transparent;
       }
-
-      @include link(
-         'link-font-color',
-         'link-text-decoration',
-         'link-hover-font-color',
-         'link-hover-text-decoration'
-      );
    }
 
    &--block {
