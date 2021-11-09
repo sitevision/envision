@@ -18,25 +18,21 @@
 
    &.env-button--ghost {
       background-color: transparent;
-      color: css-var($background-color-light);
       border-color: css-var($background-color-light);
-
-      &:hover,
-      &:active,
-      &:focus {
-         color: css-var($color);
-      }
+      color: css-var($background-color-light);
    }
 
    &:hover,
    &:focus {
-      border-color: css-var($background-color-dark);
       background-color: css-var($background-color-dark);
+      border-color: css-var($background-color-dark);
+      color: css-var($color);
    }
 
    &:active {
-      border-color: css-var($background-color-dark);
       background-color: css-var($background-color-light);
+      border-color: css-var($background-color-dark);
+      color: css-var($color);
    }
 }
 
