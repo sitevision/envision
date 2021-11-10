@@ -28,7 +28,9 @@ body a {
    // This here to avoid issues in Sitevision
    // by making sure we add the CSS needed for
    // misc components.
-   color: #000000;
+   // (Simulates setting in BODY font)
+   // a.dummybody, body a, .dummybody a
+   color: deeppink;
    text-decoration: underline;
 }
 
