@@ -30,9 +30,8 @@ $font-weight-bold: 600 !default;
 $font-weight-extrabold: 700 !default;
 
 // Line height
-$line-height-small: 1.25 !default;
 $line-height-medium: 1.4 !default;
-$button-line-height: $line-height-medium !default;
+$button-line-height: 1 !default;
 $form-input-line-height: $line-height-medium !default;
 
 // Icon Size
@@ -378,10 +377,12 @@ $image-control-color: #fff !default;
 
 // ----- BUTTONS -----
 
+$button-border-radius: 0.375em !default;
+
 @include to-css-custom-property(
    (
       'button-font-family': css-var('font-family'),
-      'button-border-radius': css-var('border-radius-small'),
+      'button-border-radius': $button-border-radius,
    )
 );
 

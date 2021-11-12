@@ -37,34 +37,78 @@
 }
 
 @mixin button-size($size) {
-   $paddingsX: (
-      small: 'spacing-x-small',
-      medium: 'spacing-x-small',
-      large: 'spacing-small',
+   // Radius - scaled relative to variable in settings (0.375em default),
+   $radiuses: (
+      // small =>  3px (default)
+      small: ((3 / 16 / 0.375) / (14 / 16)),
+      // medium =>  6px (default)
+      medium: (6 / 16 / 0.375),
+      // large => 10px (default)
+      large: ((10 / 16 / 0.375) / (20 / 16)),
+      // slim => 6px  (Same as medium),
+      slim: (6 / 16 / 0.375)
    );
-   $paddingsY: (
-      small: 'spacing-xx-small',
-      medium: 'spacing-xx-small',
-      large: 'spacing-x-small',
+   $minHeights: (
+      small: (
+         22 / 14 * 1em,
+      ),
+      medium: (
+         44 / 16 * 1em,
+      ),
+      large: (
+         56 / 20 * 1em,
+      ),
+      slim: (
+         32 / 16 * 1em,
+      ),
+   );
+   $fontSizes: (
+      // small => 14 px
+      small: 'font-size-small',
+      // medium => 16 px
+      medium: 'font-size-medium',
+      // large => 20 px
+      large: 'font-size-large',
+      slim: 'font-size-medium'
+   );
+   $paddingsX: (
+      small: (
+         8 / 14,
+      ) * 1em,
+      medium: (
+         21 / 16,
+      ) * 1em,
+      large: (
+         23 / 20,
+      ) * 1em,
+      slim: (
+         8 / 16,
+      ) * 1em,
    );
    // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
    $iconSizes: (
-      small: 1em / 0.875 * 13 / 16,
-      medium: 1em / 1 * 15 / 16,
-      large: 1em / 1.25 * 21 / 16,
+      small: 1em / 0.875 * 11 / 16,
+      medium: 1em / 1 * 22 / 16,
+      large: 1em / 1.25 * 28 / 16,
+      slim: 1em / 1 * 15 / 16,
    );
 
+   $font-size: map-get($fontSizes, $size);
    $padding-x: map-get($paddingsX, $size);
-   $padding-y: map-get($paddingsY, $size);
    $icon-size: map-get($iconSizes, $size);
+   $radius-scale: map-get($radiuses, $size);
+   $min-height: map-get($minHeights, $size);
 
-   font-size: css-var('font-size-#{$size}');
-   padding: css-var($padding-y) css-var($padding-x);
+   font-size: css-var($font-size);
+   padding: 0 $padding-x;
+   border-radius: calc(#{css-var('button-border-radius')} * #{$radius-scale});
+   min-height: $min-height;
 
    @include squareIconButton {
+      min-height: auto;
       height: 0;
-      width: calc(#{css-var($padding-y)} * 2 + 1.4em + 2px);
-      padding: calc(#{css-var($padding-y)} * 2 + 1.4em) 0 0;
+      width: $min-height;
+      padding: calc(#{$min-height} - 2px) 0 0; // Compensate for border
    }
 
    &.#{$prefix}-button--icon .env-icon {
@@ -74,22 +118,18 @@
    }
 
    &.#{$prefix}-button--icon-before {
-      padding-left: calc(
-         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
-      );
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
-         left: calc(#{css-var($padding-x)});
+         left: $padding-x;
       }
    }
 
    &.#{$prefix}-button--icon-after {
-      padding-right: calc(
-         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
-      );
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
-         right: calc(#{css-var($padding-x)});
+         right: $padding-x;
       }
    }
 
