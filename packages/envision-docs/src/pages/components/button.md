@@ -64,6 +64,16 @@ title: Button
    </button>
    <button type="button" class="env-button env-button--small">Small</button>
 </p>
+
+<p>
+   <button
+      type="button"
+      class="env-button env-button--primary env-button--slim"
+   >
+      Slim
+   </button>
+   <button type="button" class="env-button env-button--slim">Slim</button>
+</p>
 ```
 
 ### Block
@@ -118,7 +128,7 @@ All button types and sizes are available.
 <button type="button" class="env-button env-button--primary env-button--icon">
    Icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -128,7 +138,7 @@ All button types and sizes are available.
 >
    Icon left
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -138,7 +148,7 @@ All button types and sizes are available.
 >
    Icon right
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -150,7 +160,7 @@ All button types and sizes are available.
 >
    Size small, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -160,14 +170,14 @@ All button types and sizes are available.
 >
    Small
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
 <button type="button" class="env-button env-button--primary env-button--icon">
    Size medium, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -177,7 +187,7 @@ All button types and sizes are available.
 >
    Medium
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -187,7 +197,7 @@ All button types and sizes are available.
 >
    Size large, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -197,7 +207,29 @@ All button types and sizes are available.
 >
    Large
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<h4>Small icon size</h4>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-small"
+>
+   Size medium, icon only, assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-small env-button--icon-before"
+>
+   Medium
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 ```

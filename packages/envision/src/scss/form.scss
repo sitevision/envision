@@ -23,7 +23,8 @@
       font-size: css-var('font-size-medium');
       line-height: $form-input-line-height;
       margin: 0;
-      padding: css-var('spacing-x-small');
+      padding: css-var('spacing-x-small') css-var('spacing-small');
+      min-height: ((44 / 16) * 1em);
       width: 100%;
 
       @include placeholder {
@@ -379,7 +380,7 @@
          }
 
          + .#{$form-element} {
-            margin-left: css-var('spacing-xx-small');
+            margin-left: css-var('spacing-small');
          }
       }
    }
@@ -528,6 +529,31 @@
 
          input:checked ~ & {
             transform: translateX(1.125em);
+         }
+      }
+
+      &:after {
+         position: absolute;
+         content: '';
+         height: 6px;
+         width: 6px;
+         left: auto;
+         right: 0.25em;
+         top: 50%;
+         background-color: transparent;
+         margin-top: -5px;
+         opacity: 0.5;
+         border-radius: 50%;
+         border: 2px solid var(--env-element-primary-font-color);
+
+         input:checked ~ & {
+            height: 10px;
+            width: 2px;
+            left: 0.55em;
+            right: auto;
+            background-color: var(--env-element-primary-font-color);
+            border-radius: 2px;
+            border: none;
          }
       }
 

@@ -1,5 +1,5 @@
-@mixin squareIconButton {
-   &.#{$prefix}-button--icon:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before) {
+@mixin squareIconButton($modifier: '') {
+   &.#{$prefix}-button--icon#{$modifier}:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before) {
       @content;
    }
 }
@@ -87,15 +87,23 @@
    );
    // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
    $iconSizes: (
-      small: 1em / 0.875 * 11 / 16,
-      medium: 1em / 1 * 22 / 16,
-      large: 1em / 1.25 * 28 / 16,
+      small: 1em / 0.875 * 9 / 16,
+      medium: 1em / 1 * 18 / 16,
+      large: 1em / 1.25 * 22 / 16,
       slim: 1em / 1 * 15 / 16,
+   );
+
+   $smallIconSizes: (
+      small: 1em / 0.875 * 6 / 16,
+      medium: 1em / 1 * 12 / 16,
+      large: 1em / 1.25 * 15 / 16,
+      slim: 1em / 1 * 12 / 16,
    );
 
    $font-size: map-get($fontSizes, $size);
    $padding-x: map-get($paddingsX, $size);
    $icon-size: map-get($iconSizes, $size);
+   $small-icon-size: map-get($smallIconSizes, $size);
    $radius-scale: map-get($radiuses, $size);
    $min-height: map-get($minHeights, $size);
 
@@ -136,6 +144,32 @@
    @include squareIconButton {
       .env-icon {
          margin: #{($icon-size / -2)} 0 0 #{($icon-size / -2)};
+      }
+   }
+
+   // Small icons
+
+   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon .env-icon {
+      width: #{$small-icon-size};
+      height: #{$small-icon-size};
+      margin: #{($small-icon-size / -2)} 0 0 0;
+   }
+
+   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon-before {
+      padding-left: calc(
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+      );
+   }
+
+   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon-after {
+      padding-right: calc(
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+      );
+   }
+
+   @include squareIconButton('-small') {
+      .env-icon {
+         margin: #{($small-icon-size / -2)} 0 0 #{($small-icon-size / -2)};
       }
    }
 }

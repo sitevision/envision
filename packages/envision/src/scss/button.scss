@@ -54,15 +54,13 @@
    }
 
    &--link {
-      background-color: transparent;
-      border-color: transparent;
-      color: css-var('font-color');
-
+      &,
       &:hover,
       &:active,
       &:focus {
          background-color: transparent;
          border-color: transparent;
+         color: css-var('font-color');
       }
    }
 
