@@ -2,9 +2,11 @@
 title: Button
 ---
 
+Button appearance and size have been enhanced in Envision released with Sitevision 10.0.
+
 ## Types
 
-<span class="env-badge env-badge--info">Ghost button added in 8.2</span>
+<span class="env-badge env-badge--info">Ghost button available since 8.2</span>
 
 ```html
 <p>
@@ -38,6 +40,8 @@ title: Button
 ```
 
 ## Sizes
+
+<span class="env-badge env-badge--info">Slim button size available since 10.0</span>
 
 ```html
 <p>
@@ -76,7 +80,7 @@ title: Button
 </p>
 ```
 
-### Block
+## Block
 
 ```html
 <p>
@@ -114,7 +118,7 @@ title: Button
 </p>
 ```
 
-## Icons <span class="env-badge env-badge--info">9.0.1</span>
+## Icons
 
 Support for icons in buttons were added in Envision released with Sitevision 8.2.
 Square icon-only button was added with Sitevision 9.0.
@@ -211,7 +215,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4>Small icon size</h4>
+<h4>Small icon size <span class="env-badge env-badge--info">10.0</span></h4>
 
 <button
    type="button"
