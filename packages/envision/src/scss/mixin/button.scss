@@ -37,29 +37,57 @@
 }
 
 @mixin button-size($size) {
+   $button-border-radius: strip-unit($button-border-radius);
+
+   // Button font sizes (px)
+   $btn-small-font-size: 14; // --env-font-size-small
+   $btn-medium-font-size: 16; // --env-font-size-medium
+   $btn-large-font-size: 20; // --env-font-size-large
+
+   // Button border-radius setting in Sitevision (em)
+   $btn-default-border-radius: 0.375; // --env-button-border-radius
+
+   // Border radiuses for buttons (px)
+   $btn-small-border-radius: 3;
+   $btn-medium-border-radius: 6;
+   $btn-large-border-radius: 10;
+
+   // Horizontal paddings for buttons (px)
+   $btn-small-padding: 8;
+   $btn-medium-padding: 21;
+   $btn-large-padding: 23;
+   $btn-slim-padding: 8;
+
+   // Default button heights (px)
+   $btn-small-min-height: $form-input-height / 2; // 22
+   $btn-medium-min-height: $form-input-height; // 44
+   $btn-large-min-height: $form-input-height * 1.27273; // 56
+   $btn-slim-min-height: 32; // Old default button height
+
    // Radius - scaled relative to variable in settings (0.375em default),
-   $radiuses: (
+   /* prettier-ignore */
+   $radiusScales: (
       // small =>  3px (default)
-      small: ((3 / 16 / 0.375) / (14 / 16)),
+      small: (($btn-small-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-small-font-size / $BROWSER_FONT_SIZE)),
       // medium =>  6px (default)
-      medium: (6 / 16 / 0.375),
+      medium: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius),
       // large => 10px (default)
-      large: ((10 / 16 / 0.375) / (20 / 16)),
+      large: (($btn-large-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-large-font-size / $BROWSER_FONT_SIZE)),
       // slim => 6px  (Same as medium),
-      slim: (6 / 16 / 0.375)
+      slim: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius)
    );
    $minHeights: (
       small: (
-         22 / 14 * 1em,
+         $btn-small-min-height / $btn-small-font-size * 1em,
       ),
       medium: (
-         44 / 16 * 1em,
+         $btn-medium-min-height / $btn-medium-font-size * 1em,
       ),
       large: (
-         56 / 20 * 1em,
+         $btn-large-min-height / $btn-large-font-size * 1em,
       ),
       slim: (
-         32 / 16 * 1em,
+         $btn-slim-min-height / $btn-medium-font-size * 1em,
       ),
    );
    $fontSizes: (
@@ -73,38 +101,41 @@
    );
    $paddingsX: (
       small: (
-         (8 / 14) * 1em,
+         ($btn-small-padding / $btn-small-font-size) * 1em,
       ),
       medium: (
-         (21 / 16) * 1em,
+         ($btn-medium-padding / $btn-medium-font-size) * 1em,
       ),
       large: (
-         (23 / 20) * 1em,
+         ($btn-large-padding / $btn-large-font-size) * 1em,
       ),
       slim: (
-         (8 / 16) * 1em,
+         ($btn-small-padding / $btn-medium-font-size) * 1em,
       ),
    );
-   // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
+   // Icon size in em:
+   // [icon-size in px] / [relative-button-font-size] / [base-font-size in px] * 1em
+   /* prettier-ignore */
    $iconSizes: (
-      small: 1em / 0.875 * 9 / 16,
-      medium: 1em / 1 * 18 / 16,
-      large: 1em / 1.25 * 22 / 16,
-      slim: 1em / 1 * 15 / 16,
+      small: 9 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      medium: 18 / 1 / $BROWSER_FONT_SIZE * 1em,
+      large: 22 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      slim: 15 / 1 / $BROWSER_FONT_SIZE * 1em,
    );
 
+   /* prettier-ignore */
    $smallIconSizes: (
-      small: 1em / 0.875 * 6 / 16,
-      medium: 1em / 1 * 12 / 16,
-      large: 1em / 1.25 * 15 / 16,
-      slim: 1em / 1 * 12 / 16,
+      small: 6 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      medium: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
+      large: 15 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      slim: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
    );
 
    $font-size: map-get($fontSizes, $size);
    $padding-x: map-get($paddingsX, $size);
    $icon-size: map-get($iconSizes, $size);
    $small-icon-size: map-get($smallIconSizes, $size);
-   $radius-scale: map-get($radiuses, $size);
+   $radius-scale: map-get($radiusScales, $size);
    $min-height: map-get($minHeights, $size);
 
    font-size: css-var($font-size);

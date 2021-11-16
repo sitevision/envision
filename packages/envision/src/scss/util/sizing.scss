@@ -1,7 +1,3 @@
-@function strip-unit($value) {
-   @return $value / ($value * 0 + 1);
-}
-
 $values: 25% 50% 75% 100%;
 $properties: width height;
 @each $value in $values {

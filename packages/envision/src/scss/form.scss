@@ -24,7 +24,7 @@
       line-height: $form-input-line-height;
       margin: 0;
       padding: css-var('spacing-x-small') css-var('spacing-small');
-      min-height: ((44 / 16) * 1em);
+      min-height: (($form-input-height / $BROWSER_FONT_SIZE) * 1em);
       width: 100%;
 
       @include placeholder {
