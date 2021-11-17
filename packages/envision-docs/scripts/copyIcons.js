@@ -6,7 +6,7 @@ fs.copyFileSync(
    path.resolve(
       '..',
       '..',
-      'node_modules',
+      'packages',
       'envision',
       'dist',
       'envision-icons.svg'
