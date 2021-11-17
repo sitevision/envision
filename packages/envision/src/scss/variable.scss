@@ -477,7 +477,8 @@ $alert-background-color: #fff;
    (
       'alert-font-family': css-var('font-family'),
       'alert-border-radius': css-var('border-radius-small'),
-      'alert-background-color': $alert-background-color,
+      'alert-font-color': css-var('font-color'),
+      'alert-background-color': css-var('section-background-color'),
    )
 );
 

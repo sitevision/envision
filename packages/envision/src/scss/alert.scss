@@ -1,29 +1,63 @@
 .#{$prefix}-alert {
-   border: $border-width $border-style transparent;
+   $alert-border-width: 6px;
+   $alert-icon-size: 32px;
+
+   box-sizing: border-box;
+   font-family: css-var('alert-font-family');
+   background-color: css-var('alert-background-color');
+   color: css-var('alert-font-color');
    margin: css-var('spacing-medium');
    padding: css-var('spacing-medium');
-   font-family: css-var('alert-font-family');
-   border-radius: css-var('alert-border-radius');
+   border: none;
+   border-left: $alert-border-width solid transparent;
+   line-height: $line-height-medium;
+   box-shadow: css-var('box-shadow-small');
+
+   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
+   a.env-text,
+   .env-text a {
+      color: css-var('alert-font-color');
+      text-decoration: underline;
+   }
 
    $variableNames: 'success', 'warning', 'danger', 'info';
 
+   &__body {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: calc(#{css-var('spacing-small')} * -1) 0;
+
+      .#{$prefix}-alert__close {
+         top: auto;
+      }
+   }
+
+   &__icon {
+      flex: 0 0 32px;
+   }
+
+   &__close {
+      flex: 0 0 44px;
+   }
+
+   &__text {
+      flex: 1 1 100%;
+      padding: css-var('spacing-small') 0;
+   }
+
+   &__heading {
+      display: block;
+      font-weight: bold;
+   }
+
    @each $name in $variableNames {
       &--#{$name} {
-         background-color: css-var('alert-background-color');
-         color: css-var('element-#{$name}-background-color');
-         border: 2px solid css-var('element-#{$name}-background-color');
-         border-left: 10px solid css-var('element-#{$name}-background-color');
+         border-left-color: css-var('element-#{$name}-background-color');
 
-         a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
-         a.env-text,
-         .env-text a {
-            color: css-var('alert-#{$name}-font-color');
-            text-decoration: underline;
-         }
-
-         .env-text,
-         .#{$prefix}-alert__close {
-            color: css-var('alert-#{$name}-font-color');
+         .#{$prefix}-alert__icon {
+            background-color: css-var('element-#{$name}-background-color');
+            color: css-var('element-#{$name}-font-color');
          }
       }
    }
@@ -38,11 +72,31 @@
       }
    }
 
+   &__icon {
+      position: relative;
+      //right: css-var('spacing-medium', -1);
+      //top: -8px;
+      //float: left;
+      width: 32px;
+      height: 32px;
+      border-radius: 22px;
+      margin: 0 1em 0 0;
+
+      .env-icon {
+         width: 20px;
+         height: 20px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         margin: -10px 0 0 -10px;
+      }
+   }
+
    &__close {
       appearance: none;
-      background: 0 0;
-      border: 0;
       float: right;
+      background: none;
+      border: 0;
       font-family: css-var('alert-font-family');
       font-size: css-var('font-size-medium');
       font-weight: $font-weight-bold;
