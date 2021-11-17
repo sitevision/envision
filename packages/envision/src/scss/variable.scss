@@ -4,6 +4,9 @@
 // SASS ONLY VARIABLES
 // ===================
 
+// Helpers
+$BROWSER_FONT_SIZE: 16;
+
 // Base
 $prefix: env !default;
 
@@ -30,20 +33,19 @@ $font-weight-bold: 600 !default;
 $font-weight-extrabold: 700 !default;
 
 // Line height
-$line-height-small: 1.25 !default;
 $line-height-medium: 1.4 !default;
-$button-line-height: $line-height-medium !default;
+$button-line-height: 1 !default;
 $form-input-line-height: $line-height-medium !default;
 
 // Icon Size
 // Decimal value used to calculate size relative to font-size-base
-$icon-size-xx-small: (11 / 16) !default;
-$icon-size-x-small: (14 / 16) !default;
-$icon-size-small: (20 / 16) !default;
-$icon-size-medium: (30 / 16) !default;
-$icon-size-large: (40 / 16) !default;
-$icon-size-x-large: (50 / 16) !default;
-$icon-size-xx-large: (60 / 16) !default;
+$icon-size-xx-small: (11 / $BROWSER_FONT_SIZE) !default;
+$icon-size-x-small: (14 / $BROWSER_FONT_SIZE) !default;
+$icon-size-small: (20 / $BROWSER_FONT_SIZE) !default;
+$icon-size-medium: (30 / $BROWSER_FONT_SIZE) !default;
+$icon-size-large: (40 / $BROWSER_FONT_SIZE) !default;
+$icon-size-x-large: (50 / $BROWSER_FONT_SIZE) !default;
+$icon-size-xx-large: (60 / $BROWSER_FONT_SIZE) !default;
 
 // =============================
 // CSS CUSTOM PROPERTY VARIABLES
@@ -378,10 +380,12 @@ $image-control-color: #fff !default;
 
 // ----- BUTTONS -----
 
+$button-border-radius: 0.375em !default;
+
 @include to-css-custom-property(
    (
       'button-font-family': css-var('font-family'),
-      'button-border-radius': css-var('border-radius-small'),
+      'button-border-radius': $button-border-radius,
    )
 );
 
@@ -397,6 +401,8 @@ $checkbox-size: 1.25em !default;
 $checkbox-tick-height: $checkbox-size * 0.4 !default;
 $checkbox-tick-width: $checkbox-size * 0.7 !default;
 $checkbox-disabled-color: $color-lighter !default;
+
+$form-input-height: 44;
 
 @include to-css-custom-property(
    (
