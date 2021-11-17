@@ -4,9 +4,9 @@ const path = require('path');
 
 fs.copyFileSync(
    path.resolve(
-      __dirname,
       '..',
       '..',
+      'node_modules',
       'envision',
       'dist',
       'envision-icons.svg'
