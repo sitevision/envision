@@ -125,6 +125,9 @@
 <symbol id="icon-arrow-down" viewBox="4 4 24 24">
 <path d="M16 23.219l-11.609-11.61 1.884-1.884 9.724 9.723 9.724-9.723 1.884 1.884z"></path>
 </symbol>
+<symbol id="icon-angle-down" viewBox="4.5 4.4 10 10">
+<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.236 7.5 9.55 11.185a.258.258 0 0 1-.364 0L5.5 7.5"/>
+</symbol>
 <symbol id="icon-delete" viewBox="4 4 24 24">
 <path d="M4.391 6.277l1.886-1.886 21.333 21.333-1.886 1.886-21.333-21.333z"></path>
 <path d="M4.391 25.723l21.333-21.333 1.886 1.886-21.333 21.333-1.886-1.886z"></path>

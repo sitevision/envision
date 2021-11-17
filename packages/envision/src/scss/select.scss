@@ -11,7 +11,7 @@ $prefix-select: '#{$prefix}-select';
    &__input {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: baseline;
       font-family: inherit;
       background-color: css-var('form-input-background-color');
       background-image: none;
@@ -25,6 +25,7 @@ $prefix-select: '#{$prefix}-select';
       padding: css-var('spacing-xx-small') css-var('spacing-x-small');
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
+      min-height: (($form-input-height / $BROWSER_FONT_SIZE) * 1em);
       cursor: text;
       overflow: hidden;
 
@@ -49,7 +50,7 @@ $prefix-select: '#{$prefix}-select';
          display: inline-block;
          flex: 1 1 auto;
          font-size: css-var('font-size-medium');
-         line-height: (30 / 16);
+         line-height: (34 / $BROWSER_FONT_SIZE);
          margin: 0;
          max-height: none;
          max-width: 100%;
@@ -131,7 +132,7 @@ $prefix-select: '#{$prefix}-select';
       border-radius: css-var('border-radius-small');
       font-size: em(14px);
       line-height: 1;
-      padding: 0.58em em(8px, 14px) 0.6em;
+      padding: em(10px, 14px);
       color: css-var('element-primary-font-color');
       background-color: css-var('element-primary-background-color');
       white-space: nowrap;
@@ -139,14 +140,14 @@ $prefix-select: '#{$prefix}-select';
       text-overflow: ellipsis;
 
       .plugin-remove_button & {
-         line-height: (1 / (14 / 16));
-         padding: 0 0 0 em(8px, 14px); // em(8px, 14px);
+         line-height: (1 / (14 / $BROWSER_FONT_SIZE));
+         padding: 0 0 0 em(10px, 14px);
       }
 
       &__remove {
          text-decoration: none !important;
          color: css-var('element-primary-font-color');
-         padding: 0.5em;
+         padding: em(9px, 14px) em(7px, 14px);
       }
    }
 
