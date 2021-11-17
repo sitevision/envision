@@ -8,8 +8,7 @@ fs.copyFileSync(
       '..',
       '..',
       'envision',
-      'src',
-      'icons',
+      'dist',
       'envision-icons.svg'
    ),
    path.resolve(__dirname, '..', 'static', 'sitevision', 'envision-icons.svg')
