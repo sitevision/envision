@@ -26,6 +26,8 @@
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
+   color: inherit;
+   text-decoration: none;
 
    @include focus-visible;
 

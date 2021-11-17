@@ -90,7 +90,7 @@ $font-color-invert: #ffffff !default;
    )
 );
 
-$link-color: #2e62ff !default;
+$link-color: #3a71aa !default;
 $link-text-decoration: none !default;
 $link-hover-text-decoration: underline !default;
 
@@ -135,14 +135,14 @@ $section-background-color: #ffffff !default;
    )
 );
 
-$color-primary: #2e62ff !default;
+$color-primary: #3a71aa !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
-$color-warning: #c59219 !default;
+$color-warning: #ffcd45 !default;
 $color-warning-dark: darken($color-warning, 10%) !default;
-$color-danger: #e22c2c !default;
-$color-success: #318731 !default;
-$color-info: #1d818b !default;
+$color-danger: #c15252 !default;
+$color-success: #358156 !default;
+$color-info: #29818d !default;
 $color-hover: #f7f7f7 !default;
 
 $color-base: #000000 !default;
@@ -161,11 +161,11 @@ $block-default-border-color: #e7e7e7;
 $block-primary-background-color: #f7f7f7;
 $block-primary-border-color: #ccc;
 
-$block-secondary-background-color: #e7f1ff;
+$block-secondary-background-color: #ebf2ff;
 $block-secondary-border-color: #a7bed0;
-$block-secondary-link-font-color: #2e62e9;
+$block-secondary-link-font-color: #3a71aa;
 
-$element-default-background-color: #f2f2f2;
+$element-default-background-color: #f0f1f2;
 
 $element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
@@ -190,37 +190,42 @@ $element-common-background-color-dark: #909090;
       'block-secondary-link-hover-font-color': css-var('link-hover-font-color'),
       'block-secondary-background-color': $block-secondary-background-color,
       'block-secondary-border-color': $block-secondary-border-color,
+   )
+);
+
+@include to-css-custom-property(
+   (
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
       'element-background-color-dark':
-         darken($element-default-background-color, 5%),
+         darken($element-default-background-color, 8%),
       'element-background-color-light':
          lighten($element-default-background-color, 3%),
       'element-primary-font-color': $font-color-invert,
       'element-primary-background-color': $color-primary,
-      'element-primary-background-color-dark': darken($color-primary, 5%),
+      'element-primary-background-color-dark': darken($color-primary, 8%),
       'element-primary-background-color-light': lighten($color-primary, 3%),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
       'element-secondary-background-color-dark':
-         darken($element-secondary-background-color, 5%),
+         darken($element-secondary-background-color, 8%),
       'element-secondary-background-color-light':
          lighten($element-secondary-background-color, 3%),
       'element-success-font-color': $font-color-invert,
       'element-success-background-color': $color-success,
-      'element-success-background-color-dark': darken($color-success, 5%),
+      'element-success-background-color-dark': darken($color-success, 8%),
       'element-success-background-color-light': lighten($color-success, 3%),
       'element-warning-font-color': $font-color,
       'element-warning-background-color': $color-warning,
-      'element-warning-background-color-dark': darken($color-warning, 5%),
+      'element-warning-background-color-dark': darken($color-warning, 8%),
       'element-warning-background-color-light': lighten($color-warning, 3%),
       'element-danger-font-color': $font-color-invert,
       'element-danger-background-color': $color-danger,
-      'element-danger-background-color-dark': darken($color-danger, 5%),
+      'element-danger-background-color-dark': darken($color-danger, 8%),
       'element-danger-background-color-light': lighten($color-danger, 3%),
       'element-info-font-color': $font-color-invert,
       'element-info-background-color': $color-info,
-      'element-info-background-color-dark': darken($color-info, 5%),
+      'element-info-background-color-dark': darken($color-info, 8%),
       'element-info-background-color-light': lighten($color-info, 3%),
       'element-common-background-color': $element-common-background-color,
       'element-common-background-color-dark':
