@@ -4,14 +4,17 @@
 
    box-sizing: border-box;
    font-family: css-var('alert-font-family');
-   background-color: css-var('alert-background-color');
-   color: css-var('alert-font-color');
    margin: css-var('spacing-medium');
    padding: css-var('spacing-medium');
-   border: none;
+   //border: none;
    border-left: $alert-border-width solid transparent;
    line-height: $line-height-medium;
-   box-shadow: css-var('box-shadow-small');
+   //box-shadow: css-var('box-shadow-small');
+
+   &:not([class^='#{$prefix}-block']):not([class*=' #{$prefix}-block']) {
+      background-color: css-var('alert-background-color');
+      color: css-var('alert-font-color');
+   }
 
    a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
    a.env-text,
@@ -53,11 +56,14 @@
 
    @each $name in $variableNames {
       &--#{$name} {
-         border-left-color: css-var('element-#{$name}-background-color');
+         border-color: css-var('element-#{$name}-background-color');
 
          .#{$prefix}-alert__icon {
             background-color: css-var('element-#{$name}-background-color');
-            color: css-var('element-#{$name}-font-color');
+
+            * {
+               color: css-var('element-#{$name}-font-color') !important;
+            }
          }
       }
    }
@@ -97,6 +103,7 @@
       float: right;
       background: none;
       border: 0;
+      color: css-var('alert-font-color');
       font-family: css-var('alert-font-family');
       font-size: css-var('font-size-medium');
       font-weight: $font-weight-bold;
@@ -104,6 +111,12 @@
       position: relative;
       right: css-var('spacing-medium', -1);
       top: css-var('spacing-small', -1);
+      opacity: 0.65;
+
+      &:hover,
+      &:focus {
+         opacity: 1;
+      }
 
       @include focus-visible;
    }

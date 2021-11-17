@@ -1,5 +1,6 @@
 .env-theme-darkmode {
-   --env-alert-background-color: #fff;
+   --env-alert-font-color: var(--env-font-color);
+   --env-alert-background-color: var(--env-section-background-color);
    --env-alert-border-radius: var(--env-border-radius-small);
    --env-alert-font-family: var(--env-font-family);
    --env-background-color: #2b323c;
