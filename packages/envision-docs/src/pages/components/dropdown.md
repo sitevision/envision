@@ -128,7 +128,7 @@ Use `env-button-group` to split buttons.
    <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
@@ -136,7 +136,7 @@ Use `env-button-group` to split buttons.
       </li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
             Properties
@@ -145,7 +145,7 @@ Use `env-button-group` to split buttons.
       <li class="env-dropdown--divider" role="separator"></li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-check-done"
                ></use>
