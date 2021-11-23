@@ -66,7 +66,7 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 
 ### Split button dropdown
 
-Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to desired button.
+Use `env-button-group` to split buttons.
 
 ```html
 <div
@@ -81,7 +81,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       Button
    </button>
    <button
-      class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost env-button--ghost-split"
+      class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost"
       type="button"
       data-dropdown
       aria-expanded="false"
