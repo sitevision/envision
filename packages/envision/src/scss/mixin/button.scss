@@ -150,8 +150,7 @@
    min-height: $min-height;
 
    @include squareIconButton {
-      min-height: auto;
-      height: 0;
+      height: $min-height;
       width: $min-height;
       padding: calc(#{$min-height} - 2px) 0 0; // Compensate for border
    }
