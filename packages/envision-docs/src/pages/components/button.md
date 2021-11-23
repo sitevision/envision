@@ -161,7 +161,7 @@ All button types and sizes are available.
    class="env-button env-button--icon env-button--icon-around"
 >
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
    </svg>
    Icons around
    <svg class="env-icon">
