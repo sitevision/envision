@@ -16,6 +16,12 @@
    border-color: css-var($background-color);
    color: css-var($color);
 
+   // Dark border for dropdown split button
+   .#{$prefix}-dropdown.#{$prefix}-button-group
+      &:not(:first-child):not(.#{$prefix}-button--ghost) {
+      border-left-color: css-var($background-color-dark);
+   }
+
    &.env-button--ghost {
       background-color: transparent;
       border-color: css-var($background-color-light);
