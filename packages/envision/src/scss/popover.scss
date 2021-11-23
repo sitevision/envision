@@ -36,14 +36,6 @@ $arrow-border-size: 10px;
 
    @include popout-menu;
 
-   &__menu {
-      padding: css-var('spacing-x-small') 0;
-   }
-
-   &__item {
-      padding: css-var('spacing-x-small') css-var('spacing-small');
-   }
-
    &__arrow {
       border-color: transparent;
       border-style: $border-style;
