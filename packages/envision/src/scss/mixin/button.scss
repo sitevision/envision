@@ -1,5 +1,5 @@
 @mixin squareIconButton($modifier: '') {
-   &.#{$prefix}-button--icon#{$modifier}:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before) {
+   &.#{$prefix}-button--icon#{$modifier}:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before):not(.#{$prefix}-button--icon-around) {
       @content;
    }
 }
@@ -168,6 +168,19 @@
       padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
+         right: $padding-x;
+      }
+   }
+
+   &.#{$prefix}-button--icon-around {
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+
+      .env-icon:first-child {
+         left: $padding-x;
+      }
+
+      .env-icon:last-child {
          right: $padding-x;
       }
    }

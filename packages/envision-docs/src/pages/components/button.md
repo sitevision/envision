@@ -121,7 +121,7 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 ## Icons
 
 Support for icons in buttons were added in Envision released with Sitevision 8.2.
-Square icon-only button was added with Sitevision 9.0.
+Square icon-only button was added with Sitevision 9.0. Modifier "icon-around" available since Sitevision 10.
 Method of adding icons have since been updated as examples below.
 
 All button types and sizes are available.
@@ -151,6 +151,19 @@ All button types and sizes are available.
    class="env-button env-button--secondary env-button--icon env-button--icon-after"
 >
    Icon right
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--icon env-button--icon-around"
+>
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+   Icons around
    <svg class="env-icon">
       <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
