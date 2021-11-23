@@ -84,12 +84,6 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 
 ```html
 <p>
-   <button
-      type="button"
-      class="env-button env-button--primary env-button--large env-button--block"
-   >
-      Large
-   </button>
    <button type="button" class="env-button env-button--large env-button--block">
       Large
    </button>
@@ -102,18 +96,20 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
    >
       Default
    </button>
-   <button type="button" class="env-button env-button--block">Default</button>
 </p>
 
 <p>
    <button
       type="button"
-      class="env-button env-button--primary env-button--small env-button--block"
+      class="env-button env-button--secondary env-button--small env-button--block"
    >
       Small
    </button>
-   <button type="button" class="env-button env-button--small env-button--block">
-      Small
+</p>
+
+<p>
+   <button type="button" class="env-button env-button--slim env-button--block">
+      Slim
    </button>
 </p>
 ```
