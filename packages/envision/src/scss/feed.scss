@@ -1,4 +1,4 @@
-.#{$prefix}-post {
+.env-post {
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -11,7 +11,7 @@
    }
 
    &__shared {
-      .#{$prefix}-post {
+      .env-post {
          border-left: 3px solid css-var('element-primary-background-color');
 
          &__entry {
@@ -25,7 +25,7 @@
    }
 }
 
-.#{$prefix}-comments {
+.env-comments {
    border-top: 1px solid transparent;
 
    &__wrapper {
@@ -38,12 +38,12 @@
    }
 }
 
-.#{$prefix}-comment {
+.env-comment {
    border-bottom: 1px solid transparent;
    padding: css-var('spacing-x-small') 0;
 }
 
-.#{$prefix}-feed {
+.env-feed {
    &__item:not(:last-child) {
       padding-bottom: css-var('spacing-x-small');
    }

@@ -1,9 +1,9 @@
 @mixin block-text-size($element, $font-size, $margin-bottom, $font-weight) {
-   #{$element}.#{$prefix}-text,
-   .#{$prefix}-text #{$element},
-   .#{$prefix}-text-#{$element},
+   #{$element}.env-text,
+   .env-text #{$element},
+   .env-text-#{$element},
       // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
-   .#{$prefix}-text--#{$element} {
+   .env-text--#{$element} {
       font-size: css-var($font-size);
       font-weight: $font-weight;
       margin: 0 0 css-var($margin-bottom);

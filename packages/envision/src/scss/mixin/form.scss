@@ -1,27 +1,27 @@
 @mixin input-validation-state($colorName) {
    &,
-   .#{$prefix}-form-element__help,
+   .env-form-element__help,
    .env-select__item__remove {
       color: css-var('element-#{$colorName}-background-color');
    }
 
-   .#{$prefix}-form-input,
-   .#{$prefix}-checkbox__fake,
-   .#{$prefix}-form-radio__fake,
-   .#{$prefix}-select__input {
+   .env-form-input,
+   .env-checkbox__fake,
+   .env-form-radio__fake,
+   .env-select__input {
       border-color: css-var(
          'element-#{$colorName}-background-color'
       ) !important;
    }
 
-   .#{$prefix}-select__item {
+   .env-select__item {
       background-color: css-var(
          'element-#{$colorName}-background-color'
       ) !important;
    }
 
-   .#{$prefix}-select__item,
-   .#{$prefix}-select__item__remove {
+   .env-select__item,
+   .env-select__item__remove {
       color: css-var('element-#{$colorName}-font-color');
    }
 }

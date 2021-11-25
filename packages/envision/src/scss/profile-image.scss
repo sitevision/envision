@@ -10,7 +10,7 @@
    padding: 100% 0 0 0;
 }
 
-img.#{$prefix}-profile-image {
+img.env-profile-image {
    display: block;
    @include image-size(96px);
    object-fit: cover;
@@ -45,7 +45,7 @@ img.#{$prefix}-profile-image {
    }
 }
 
-div.#{$prefix}-profile-image {
+div.env-profile-image {
    display: block;
    position: relative;
    @include container-size(96px);

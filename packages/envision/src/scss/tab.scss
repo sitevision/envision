@@ -1,6 +1,4 @@
-$link-classname: #{$prefix}-tabs__link;
-
-.#{$prefix}-tabs {
+.env-tabs {
    &__nav {
       @include reset-list();
       display: flex;
@@ -47,7 +45,7 @@ $link-classname: #{$prefix}-tabs__link;
       @include reset-list();
       display: flex;
 
-      .#{$prefix}-tabs__link {
+      .env-tabs__link {
          background-color: transparent;
          border-color: transparent;
          color: css-var('font-color');
@@ -69,7 +67,7 @@ $link-classname: #{$prefix}-tabs__link;
    }
 
    &--hover-fill {
-      .#{$link-classname} {
+      .env-tabs__link {
          @include nav-link();
          @include filled-nav-states();
       }

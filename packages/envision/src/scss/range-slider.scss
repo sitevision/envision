@@ -1,4 +1,4 @@
-.#{$prefix}-range-slider {
+.env-range-slider {
    $range-height: $spacing-small;
    $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
@@ -51,9 +51,7 @@
    }
 
    &--touch {
-      $slider: #{$prefix}-range-slider;
-
-      .#{$slider}__handle {
+      .env-range-slider__handle {
          height: $handle-size-touch;
          margin-left: -($handle-size-touch / 2);
          top: calc(
@@ -62,7 +60,7 @@
          width: $handle-size-touch;
       }
 
-      .#{$slider}__value {
+      .env-range-slider__value {
          margin-left: -($handle-size-touch / 2) !important;
          top: $spacing-x-large; // Keep
       }

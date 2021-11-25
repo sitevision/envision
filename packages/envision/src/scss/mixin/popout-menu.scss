@@ -47,7 +47,7 @@
 
       @include focus-visible;
 
-      .#{$prefix}-icon {
+      .env-icon {
          flex: 0 0 $icon-size;
          width: $icon-size;
          height: $icon-size;

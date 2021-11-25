@@ -1,4 +1,4 @@
-.#{$prefix}-form {
+.env-form {
    text-size-adjust: none;
 
    input,
@@ -70,7 +70,7 @@
          overflow: auto;
          resize: vertical;
 
-         ~ .#{$prefix}-form-element__contenteditable-placeholder {
+         ~ .env-form-element__contenteditable-placeholder {
             display: none;
             position: absolute;
             top: calc(#{css-var('spacing-x-small')} + 1px);
@@ -81,7 +81,7 @@
             filter: opacity(0.5);
          }
 
-         &:empty ~ .#{$prefix}-form-element__contenteditable-placeholder {
+         &:empty ~ .env-form-element__contenteditable-placeholder {
             display: block;
          }
       }
@@ -99,8 +99,8 @@
       align-items: stretch;
 
       &__label,
-      .#{$prefix}-button,
-      .#{$prefix}-form-input {
+      .env-button,
+      .env-form-input {
          position: relative;
          z-index: 1;
          border-radius: 0;
@@ -118,14 +118,14 @@
          }
       }
 
-      .#{$prefix}-button {
+      .env-button {
          // No matter the order of elements,
          // button border should be on top of
          // input and label borders.
          z-index: 2;
       }
 
-      .#{$prefix}-form-input:focus {
+      .env-form-input:focus {
          // When focused, move input to top
          z-index: 3;
       }
@@ -312,23 +312,22 @@
       }
    }
 
-   $form-element: #{$prefix}-form-element;
    //Variants
    &--horizontal {
-      .#{$form-element} {
+      .env-form-element {
          display: flex;
          align-items: baseline;
          flex-wrap: wrap;
 
-         & > .#{$form-element}__label,
-         & > .#{$form-element}__control {
+         & > .env-form-element__label,
+         & > .env-form-element__control {
             // align-items in Firefox needs inline children for baseline to work.
             // This fixes the issue without messing things up in Chrome et.al.
             display: inline-flex;
             flex-direction: column;
          }
 
-         & > .#{$form-element}__label {
+         & > .env-form-element__label {
             flex-basis: 20%;
          }
 
@@ -345,7 +344,7 @@
    &--inline {
       display: flex;
 
-      .#{$form-element} {
+      .env-form-element {
          align-items: center;
          display: flex;
          margin-bottom: 0;
@@ -361,8 +360,8 @@
          }
       }
 
-      .#{$prefix}-form-radio,
-      .#{$prefix}-checkbox {
+      .env-form-radio,
+      .env-checkbox {
          margin-bottom: 0;
       }
    }
@@ -370,7 +369,7 @@
    &__row {
       display: flex;
 
-      .#{$form-element} {
+      .env-form-element {
          flex: 1;
 
          @for $i from 1 through 6 {
@@ -379,14 +378,14 @@
             }
          }
 
-         + .#{$form-element} {
+         + .env-form-element {
             margin-left: css-var('spacing-small');
          }
       }
    }
 }
 
-.#{$prefix}-checkbox {
+.env-checkbox {
    display: block;
    font-size: css-var('font-size-medium');
    box-sizing: content-box;
@@ -469,7 +468,7 @@
    }
 }
 
-.#{$prefix}-switch {
+.env-switch {
    position: relative;
    margin-bottom: css-var('spacing-x-small');
    font-size: css-var('font-size-medium');
@@ -490,7 +489,7 @@
       display: inline-block;
       margin-top: 0.1875em;
 
-      .#{$prefix}-switch__slider + & {
+      .env-switch__slider + & {
          margin-left: css-var('spacing-small');
       }
 
@@ -512,7 +511,7 @@
       background-color: css-var('element-common-background-color-dark');
       transition: 0.3s;
 
-      .#{$prefix}-switch__text + & {
+      .env-switch__text + & {
          margin-left: css-var('spacing-small');
       }
 

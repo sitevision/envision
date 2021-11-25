@@ -1,4 +1,4 @@
-.#{$prefix}-embedded {
+.env-embedded {
    color: css-var('block-primary-font-color');
    background-color: css-var('block-primary-background-color');
    display: flex;
@@ -18,7 +18,7 @@
       &--right {
          order: 3;
 
-         .#{$prefix}-embedded__img {
+         .env-embedded__img {
             float: right;
          }
       }

@@ -1,5 +1,5 @@
-.#{$prefix}-accordion {
-   html:not(.sv-no-js) &:not(.#{$prefix}-accordion--show) {
+.env-accordion {
+   html:not(.sv-no-js) &:not(.env-accordion--show) {
       display: none;
    }
 }

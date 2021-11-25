@@ -1,4 +1,4 @@
-.#{$prefix}-card {
+.env-card {
    $secondary-opacity: 0.75;
 
    position: relative;
@@ -33,7 +33,7 @@
       flex: 1 1 100%;
       padding: css-var('spacing-large');
 
-      .#{$prefix}-card__header ~ & {
+      .env-card__header ~ & {
          padding-top: 0;
       }
 
@@ -46,7 +46,7 @@
       padding: css-var('spacing-x-small') css-var('spacing-large')
          css-var('spacing-large');
 
-      .#{$prefix}-card__body ~ & {
+      .env-card__body ~ & {
          margin-top: calc(#{css-var('spacing-large')} * -1);
       }
    }
@@ -68,7 +68,7 @@
    }
 
    &__image,
-   .#{$prefix}-media {
+   .env-media {
       margin: css-var('spacing-medium') 0;
 
       &:first-child {
@@ -77,7 +77,7 @@
    }
 }
 
-.#{$prefix}-cardholder {
+.env-cardholder {
    display: flex;
    flex-wrap: wrap;
    align-content: stretch;
@@ -96,63 +96,63 @@
       flex: 1 1 100%;
       min-width: css-var('cardholder-column-min-width');
 
-      .#{$prefix}-cardholder--8 & {
+      .env-cardholder--8 & {
          flex: 1 1 12.5%;
       }
 
-      .#{$prefix}-cardholder--6 & {
+      .env-cardholder--6 & {
          flex: 1 1 16.6667%;
       }
 
-      .#{$prefix}-cardholder--5 & {
+      .env-cardholder--5 & {
          flex: 1 1 20%;
       }
 
-      .#{$prefix}-cardholder--4 & {
+      .env-cardholder--4 & {
          flex: 1 1 25%;
       }
 
-      .#{$prefix}-cardholder--3 & {
+      .env-cardholder--3 & {
          flex: 1 1 33.3333%;
       }
 
-      .#{$prefix}-cardholder--2 & {
+      .env-cardholder--2 & {
          flex: 1 1 50%;
       }
 
-      .#{$prefix}-cardholder--max & {
+      .env-cardholder--max & {
          max-width: css-var('cardholder-column-max-width');
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--8 & {
+      .env-cardholder--max.env-cardholder--8 & {
          max-width: 12.5%;
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--6 & {
+      .env-cardholder--max.env-cardholder--6 & {
          max-width: 16.6667%;
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--5 & {
+      .env-cardholder--max.env-cardholder--5 & {
          max-width: 20%;
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--4 & {
+      .env-cardholder--max.env-cardholder--4 & {
          max-width: 25%;
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--3 & {
+      .env-cardholder--max.env-cardholder--3 & {
          max-width: 33.3333%;
       }
 
-      .#{$prefix}-cardholder--max.#{$prefix}-cardholder--2 & {
+      .env-cardholder--max.env-cardholder--2 & {
          max-width: 50%;
       }
    }
 }
 
-.#{$prefix}-cardholder-grid {
-   --#{$prefix}-ch-col-w: #{css-var('cardholder-grid-column-width')};
-   --#{$prefix}-ch-g: #{css-var('cardholder-grid-gap')};
+.env-cardholder-grid {
+   --env-ch-col-w: #{css-var('cardholder-grid-column-width')};
+   --env-ch-g: #{css-var('cardholder-grid-gap')};
    display: grid;
    grid-template-columns: repeat(
       auto-fill,
@@ -163,27 +163,23 @@
    margin: 0 auto;
 
    &--gap-none {
-      --#{$prefix}-ch-g: 0;
+      --env-ch-g: 0;
    }
 
    &--gap-small {
-      --#{$prefix}-ch-g: calc(0.5 * #{css-var('cardholder-grid-gap')});
+      --env-ch-g: calc(0.5 * #{css-var('cardholder-grid-gap')});
    }
 
    &--gap-large {
-      --#{$prefix}-ch-g: calc(2 * #{css-var('cardholder-grid-gap')});
+      --env-ch-g: calc(2 * #{css-var('cardholder-grid-gap')});
    }
 
    &--column-small {
-      --#{$prefix}-ch-col-w: calc(
-         0.75 * #{css-var('cardholder-grid-column-width')}
-      );
+      --env-ch-col-w: calc(0.75 * #{css-var('cardholder-grid-column-width')});
    }
 
    &--column-large {
-      --#{$prefix}-ch-col-w: calc(
-         1.25 * #{css-var('cardholder-grid-column-width')}
-      );
+      --env-ch-col-w: calc(1.25 * #{css-var('cardholder-grid-column-width')});
    }
 
    $cols: 2, 3, 4, 5, 6, 8;
@@ -201,7 +197,7 @@
       }
    }
 
-   .#{$prefix}-cardholder__slot {
+   .env-cardholder__slot {
       min-width: 0;
       max-width: none;
       padding: 0;

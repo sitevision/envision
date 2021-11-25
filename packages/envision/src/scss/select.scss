@@ -1,6 +1,4 @@
-$prefix-select: '#{$prefix}-select';
-
-.#{$prefix-select} {
+.env-select {
    position: relative;
 
    // Hide original input/select
@@ -84,14 +82,14 @@ $prefix-select: '#{$prefix}-select';
       &.locked {
          @include disabled;
 
-         .#{$prefix-select}__input__clear {
+         .env-select__input__clear {
             display: none !important;
          }
       }
 
       &.locked {
          &,
-         .#{$prefix-select}__item,
+         .env-select__item,
          a,
          button {
             cursor: default !important;
@@ -117,9 +115,9 @@ $prefix-select: '#{$prefix}-select';
          text-align: center;
       }
 
-      &.has-items:hover .#{$prefix-select}__input__clear,
-      &.has-items:focus .#{$prefix-select}__input__clear,
-      &.has-items.focus .#{$prefix-select}__input__clear {
+      &.has-items:hover .env-select__input__clear,
+      &.has-items:focus .env-select__input__clear,
+      &.has-items.focus .env-select__input__clear {
          display: block;
       }
    }

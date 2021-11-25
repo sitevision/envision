@@ -1,6 +1,4 @@
-$nav-link-classname: #{$prefix}-nav__link;
-
-.#{$prefix}-nav {
+.env-nav {
    @include reset-list();
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
@@ -11,21 +9,21 @@ $nav-link-classname: #{$prefix}-nav__link;
    }
 }
 
-.#{$prefix}-nav--menubar {
+.env-nav--menubar {
    display: flex;
 
-   .#{$nav-link-classname} {
+   .env-nav__link {
       padding: css-var('spacing-small');
    }
 
-   &.#{$prefix}-nav--fill {
-      .#{$nav-link-classname} {
+   &.env-nav--fill {
+      .env-nav__link {
          @include filled-nav-states();
       }
    }
 
-   &.#{$prefix}-nav--border {
-      .#{$nav-link-classname} {
+   &.env-nav--border {
+      .env-nav__link {
          border-bottom: $border-width $border-style transparent;
 
          &:hover {
@@ -43,8 +41,8 @@ $nav-link-classname: #{$prefix}-nav__link;
    }
 }
 
-.#{$prefix}-nav--sidenav {
-   .#{$nav-link-classname} {
+.env-nav--sidenav {
+   .env-nav__link {
       border-bottom: $border-width $border-style css-var('border-color-light');
       color: css-var('font-color');
       padding: css-var('spacing-small') 0;
