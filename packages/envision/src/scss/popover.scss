@@ -2,7 +2,7 @@
 $arrow-position: -22px;
 $arrow-border-size: 10px;
 
-.#{$prefix}-popover {
+.env-popover {
    background-color: css-var('section-background-color');
    border: $border-width $border-style css-var('border-color-light');
    border-radius: css-var('border-radius-medium');

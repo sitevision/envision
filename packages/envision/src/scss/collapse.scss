@@ -1,5 +1,5 @@
-.#{$prefix}-collapse {
-   html:not(.sv-no-js) &:not(.#{$prefix}-collapse--show) {
+.env-collapse {
+   html:not(.sv-no-js) &:not(.env-collapse--show) {
       display: none;
    }
 
@@ -12,7 +12,7 @@
    }
 }
 
-.#{$prefix}-collapse-header {
+.env-collapse-header {
    width: 100%;
    padding: css-var('spacing-x-small');
    cursor: pointer;
@@ -32,15 +32,15 @@
    @include focus-visible;
 
    &:hover,
-   &.#{$prefix}-collapse--expanded {
+   &.env-collapse--expanded {
       background-color: css-var('collapse-expanded-background-color');
       border-color: css-var('collapse-expanded-border-color');
    }
 }
 
-[data-#{$prefix}-collapse] {
-   &:not(.#{$prefix}-collapse--expanded) {
-      .#{$prefix}-collapse-header--icons {
+[data-env-collapse] {
+   &:not(.env-collapse--expanded) {
+      .env-collapse-header--icons {
          &::before {
             transform: rotate(-90deg);
          }
@@ -48,7 +48,7 @@
    }
 }
 
-.#{$prefix}-collapse-header--icons {
+.env-collapse-header--icons {
    margin-left: $collapse-icon-width;
    min-height: $collapse-heading-min-height;
    position: relative;

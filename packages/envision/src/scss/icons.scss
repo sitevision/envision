@@ -1,4 +1,4 @@
-.#{$prefix}-icon {
+.env-icon {
    display: inline-block;
    width: calc(var(--env-font-size-base) * #{$icon-size-x-small});
    height: calc(var(--env-font-size-base) * #{$icon-size-x-small});
@@ -18,13 +18,13 @@ $sizes: (
 );
 
 @each $size, $value in $sizes {
-   .#{$prefix}-icon--#{$size} {
+   .env-icon--#{$size} {
       width: $value;
       height: $value;
    }
 }
 
-.#{$prefix}-icon--inactive {
+.env-icon--inactive {
    opacity: 0.3;
 
    &:hover {

@@ -6,7 +6,7 @@
 // Deprecated, 9.1
 $flexDirectionValues: row-reverse column column-reverse;
 @each $value in $flexDirectionValues {
-   .#{$prefix}-flex--#{$value} {
+   .env-flex--#{$value} {
       flex-direction: $value;
    }
 }
@@ -15,7 +15,7 @@ $flexDirectionValues: row-reverse column column-reverse;
 $justifyContentValues: flex-end center space-between space-around;
 @each $value in $justifyContentValues {
    $shortValue: getShortValue($value);
-   .#{$prefix}-justify-content--#{$shortValue} {
+   .env-justify-content--#{$shortValue} {
       justify-content: $value;
    }
 }
@@ -24,7 +24,7 @@ $justifyContentValues: flex-end center space-between space-around;
 $alignItemsValues: stretch center flex-start flex-end baseline;
 @each $value in $alignItemsValues {
    $shortValue: getShortValue($value);
-   .#{$prefix}-align-items--#{$shortValue} {
+   .env-align-items--#{$shortValue} {
       align-items: $value;
    }
 }
@@ -33,21 +33,21 @@ $alignItemsValues: stretch center flex-start flex-end baseline;
 $alignSelfValues: stretch center flex-start flex-end baseline;
 @each $value in $alignSelfValues {
    $shortValue: getShortValue($value);
-   .#{$prefix}-align-self--#{$shortValue} {
+   .env-align-self--#{$shortValue} {
       align-self: $value;
    }
 }
 
 // Deprecated, 9.1
 @for $i from 1 through 10 {
-   .#{$prefix}-flex-length--#{$i} {
+   .env-flex-length--#{$i} {
       flex: $i;
    }
 }
 
 // Deprecated, 9.1
 @for $i from 1 through 10 {
-   .#{$prefix}-flex-grow--#{$i} {
+   .env-flex-grow--#{$i} {
       flex-grow: $i;
    }
 }
@@ -55,13 +55,13 @@ $alignSelfValues: stretch center flex-start flex-end baseline;
 // Deprecated, 9.1
 $flexWrapValues: nowrap wrap wrap-reverse;
 @each $value in $flexWrapValues {
-   .#{$prefix}-flex-wrap--#{$value} {
+   .env-flex-wrap--#{$value} {
       flex-wrap: $value;
    }
 }
 
 // New version (Sitevision 9.1)
-.#{$prefix}-flex {
+.env-flex {
    display: flex;
 
    $flexDirectionValues: row-reverse column column-reverse;

@@ -1,4 +1,4 @@
-.#{$prefix}-button {
+.env-button {
    appearance: none;
    border: $border-width $border-style;
    box-sizing: border-box;
@@ -64,7 +64,7 @@
       }
    }
 
-   &.#{$prefix}-link {
+   &.env-link {
       // This is a combo of env-button and env-link
       background-color: transparent;
       border-color: transparent;
@@ -93,7 +93,7 @@
    &--icon {
       position: relative;
 
-      .#{$prefix}-icon {
+      .env-icon {
          position: absolute;
          top: 50%;
       }
@@ -105,7 +105,7 @@
       line-height: 1;
       overflow: hidden;
 
-      .#{$prefix}-icon {
+      .env-icon {
          left: 50%;
       }
    }

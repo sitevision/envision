@@ -4,16 +4,16 @@ $properties: width height;
    @each $property in $properties {
       $p: str-slice($property, 0, 1);
       $unitless: strip-unit($value);
-      .#{$prefix}-#{$p}--#{$unitless} {
+      .env-#{$p}--#{$unitless} {
          #{$property}: $value !important;
       }
    }
 }
 
-.#{$prefix}-mw--100 {
+.env-mw--100 {
    max-width: 100% !important;
 }
 
-.#{$prefix}-mh--100 {
+.env-mh--100 {
    max-height: 100% !important;
 }

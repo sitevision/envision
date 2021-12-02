@@ -1,4 +1,4 @@
-.#{$prefix}-pagination {
+.env-pagination {
    @include reset-list();
    display: flex;
 
@@ -28,13 +28,13 @@
 
       @include focus-visible;
 
-      &.#{$prefix}-is-active {
+      &.env-is-active {
          background-color: css-var('element-primary-background-color');
          color: css-var('element-primary-font-color');
          border-color: css-var('element-primary-background-color');
       }
 
-      &.#{$prefix}-is-disabled {
+      &.env-is-disabled {
          @include is-disabled();
       }
    }
@@ -60,7 +60,7 @@
    }
 
    &--small {
-      .#{$prefix}-pagination__link {
+      .env-pagination__link {
          @include pagination-size(
             'spacing-xxx-small',
             'spacing-x-small',
@@ -70,7 +70,7 @@
    }
 
    &--large {
-      .#{$prefix}-pagination__link {
+      .env-pagination__link {
          @include pagination-size(
             'spacing-x-small',
             'spacing-medium',

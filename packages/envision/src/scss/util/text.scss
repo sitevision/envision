@@ -1,4 +1,4 @@
-.#{$prefix}-text {
+.env-text {
    color: css-var('font-color');
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
@@ -45,7 +45,7 @@
    }
 }
 
-button:not(.env-button).#{$prefix}-link {
+button:not(.env-button).env-link {
    appearance: none;
    display: inline;
    border: none;
@@ -57,9 +57,9 @@ button:not(.env-button).#{$prefix}-link {
    white-space: normal;
 }
 
-.#{$prefix}-link,
-a.#{$prefix}-text,
-.#{$prefix}-text a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
+.env-link,
+a.env-text,
+.env-text a:not([class^='env-']):not([class*=' env-']) {
    @include link(
       'link-font-color',
       'link-text-decoration',
@@ -68,9 +68,9 @@ a.#{$prefix}-text,
    );
 }
 
-.#{$prefix}-text .#{$prefix}-link-secondary,
-.#{$prefix}-text a.#{$prefix}-link-secondary,
-.#{$prefix}-link-secondary {
+.env-text .env-link-secondary,
+.env-text a.env-link-secondary,
+.env-link-secondary {
    @include link(
       'link-secondary-font-color',
       'link-secondary-text-decoration',
@@ -125,16 +125,16 @@ a.#{$prefix}-text,
 
 // .env-text--small is not following BEM standards and have
 // never been documented. Kept for backwards compatibility.
-small.#{$prefix}-text,
-.#{$prefix}-text small,
-.#{$prefix}-text-small,
-.#{$prefix}-text--small {
+small.env-text,
+.env-text small,
+.env-text-small,
+.env-text--small {
    font-size: smaller;
 }
 
 // Since we set .env-text to font-weight 400,
 // We need to set it back to bold for strong and b.
-b.#{$prefix}-text,
-strong.#{$prefix}-text {
+b.env-text,
+strong.env-text {
    font-weight: $font-weight-bold;
 }

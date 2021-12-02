@@ -1,11 +1,11 @@
-.#{$prefix}-shadow-small {
+.env-shadow-small {
    box-shadow: css-var('box-shadow-small');
 }
 
-.#{$prefix}-shadow {
+.env-shadow {
    box-shadow: css-var('box-shadow');
 }
 
-.#{$prefix}-shadow-large {
+.env-shadow-large {
    box-shadow: css-var('box-shadow-large');
 }

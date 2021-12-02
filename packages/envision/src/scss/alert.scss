@@ -1,4 +1,4 @@
-.#{$prefix}-alert {
+.env-alert {
    border: $border-width $border-style transparent;
    margin: css-var('spacing-medium');
    padding: css-var('spacing-medium');
@@ -7,7 +7,7 @@
    color: css-var('alert-font-color');
    border-radius: css-var('alert-border-radius');
 
-   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']),
+   a:not([class^='env-']):not([class*=' env-']),
    a.env-text,
    .env-text a {
       color: css-var('alert-font-color');
@@ -15,7 +15,7 @@
    }
 
    .env-text,
-   .#{$prefix}-alert__close {
+   .env-alert__close {
       color: css-var('alert-font-color');
    }
 

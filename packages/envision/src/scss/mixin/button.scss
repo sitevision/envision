@@ -1,5 +1,5 @@
 @mixin squareIconButton($modifier: '') {
-   &.#{$prefix}-button--icon#{$modifier}:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before):not(.#{$prefix}-button--icon-around) {
+   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around) {
       @content;
    }
 }
@@ -17,8 +17,7 @@
    color: css-var($color);
 
    // Dark border for dropdown split button
-   .#{$prefix}-dropdown.#{$prefix}-button-group
-      &:not(:first-child):not(.#{$prefix}-button--ghost) {
+   .env-dropdown.env-button-group &:not(:first-child):not(.env-button--ghost) {
       border-left-color: css-var($background-color-dark);
    }
 
@@ -155,13 +154,13 @@
       padding: calc(#{$min-height} - 2px) 0 0; // Compensate for border
    }
 
-   &.#{$prefix}-button--icon .env-icon {
+   &.env-button--icon .env-icon {
       width: #{$icon-size};
       height: #{$icon-size};
       margin: #{($icon-size / -2)} 0 0 0;
    }
 
-   &.#{$prefix}-button--icon-before {
+   &.env-button--icon-before {
       padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
@@ -169,7 +168,7 @@
       }
    }
 
-   &.#{$prefix}-button--icon-after {
+   &.env-button--icon-after {
       padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
@@ -177,7 +176,7 @@
       }
    }
 
-   &.#{$prefix}-button--icon-around {
+   &.env-button--icon-around {
       padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
       padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
@@ -198,19 +197,19 @@
 
    // Small icons
 
-   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon .env-icon {
+   &.env-button--icon-small.env-button--icon .env-icon {
       width: #{$small-icon-size};
       height: #{$small-icon-size};
       margin: #{($small-icon-size / -2)} 0 0 0;
    }
 
-   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon-before {
+   &.env-button--icon-small.env-button--icon-before {
       padding-left: calc(
          #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
       );
    }
 
-   &.#{$prefix}-button--icon-small.#{$prefix}-button--icon-after {
+   &.env-button--icon-small.env-button--icon-after {
       padding-right: calc(
          #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
       );

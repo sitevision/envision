@@ -2,15 +2,15 @@ $variableNames: 'brand', 'success', 'warning', 'danger', 'info', 'base',
    'darker', 'dark', 'normal', 'light', 'lighter', 'lightest', 'hover';
 
 @each $name in $variableNames {
-   .#{$prefix}-color--#{$name} {
+   .env-color--#{$name} {
       color: css-var('color-#{$name}') !important;
    }
-   .#{$prefix}-bg-color--#{$name},
-   .#{$prefix}-bg-color--#{$name}--80,
-   .#{$prefix}-bg-color--#{$name}--60,
-   .#{$prefix}-bg-color--#{$name}--40,
-   .#{$prefix}-bg-color--#{$name}--20,
-   .#{$prefix}-bg-color--#{$name}--10 {
+   .env-bg-color--#{$name},
+   .env-bg-color--#{$name}--80,
+   .env-bg-color--#{$name}--60,
+   .env-bg-color--#{$name}--40,
+   .env-bg-color--#{$name}--20,
+   .env-bg-color--#{$name}--10 {
       background-color: css-var('color-#{$name}');
    }
 }

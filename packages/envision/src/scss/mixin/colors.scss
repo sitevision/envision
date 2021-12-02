@@ -5,17 +5,17 @@
    }
 
    &,
-   *:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']):not(a),
-   .#{$prefix}-button--link,
-   .#{$prefix}-link-secondary,
-   a.#{$prefix}-link-secondary,
+   *:not([class^='env-']):not([class*=' env-']):not(a),
+   .env-button--link,
+   .env-link-secondary,
+   a.env-link-secondary,
    .env-text {
       color: css-var('block-#{$blockName}font-color');
    }
 
-   .#{$prefix}-link,
-   a.#{$prefix}-text,
-   a:not([class^='#{$prefix}-']):not([class*=' #{$prefix}-']) {
+   .env-link,
+   a.env-text,
+   a:not([class^='env-']):not([class*=' env-']) {
       @include link(
          'block-#{$blockName}link-font-color',
          'link-text-decoration',

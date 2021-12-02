@@ -21,9 +21,9 @@
 
 @function css-var($variableName, $multiplyBy: 1) {
    @if ($multiplyBy == 1) {
-      @return var(--#{$prefix}-#{$variableName});
+      @return var(--env-#{$variableName});
    } @else {
-      @return #{'calc('}var(--#{$prefix}-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
+      @return #{'calc('}var(--env-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
    }
 }
 
