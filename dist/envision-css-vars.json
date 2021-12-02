@@ -154,6 +154,6 @@
   "--env-color-lightest": "#e6e6e6",
   "--env-focus-color": "#5cb3fd",
   "--env-focus-background-color": "rgba(0,0,0,0.2)",
-  "--env-ch-col-w": "calc(\n         1.25 * var(--env-cardholder-grid-column-width)\n      )",
+  "--env-ch-col-w": "calc(1.25 * var(--env-cardholder-grid-column-width))",
   "--env-ch-g": "calc(2 * var(--env-cardholder-grid-gap))"
 }
