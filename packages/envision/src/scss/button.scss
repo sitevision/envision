@@ -1,4 +1,4 @@
-.#{$prefix}-button {
+.env-button {
    appearance: none;
    border: $border-width $border-style;
    box-sizing: border-box;
@@ -12,7 +12,6 @@
    text-decoration: none;
    user-select: none;
    vertical-align: middle;
-   border-radius: css-var('button-border-radius');
    line-height: $button-line-height;
 
    // Reset inner elements in apps
@@ -55,19 +54,17 @@
    }
 
    &--link {
-      background-color: transparent;
-      border-color: transparent;
-      color: css-var('font-color');
-
+      &,
       &:hover,
       &:active,
       &:focus {
          background-color: transparent;
          border-color: transparent;
+         color: css-var('font-color');
       }
    }
 
-   &.#{$prefix}-link {
+   &.env-link {
       // This is a combo of env-button and env-link
       background-color: transparent;
       border-color: transparent;
@@ -88,7 +85,7 @@
    }
 
    &--block {
-      display: block;
+      display: flex;
       width: 100%;
       white-space: normal;
    }
@@ -96,7 +93,7 @@
    &--icon {
       position: relative;
 
-      .#{$prefix}-icon {
+      .env-icon {
          position: absolute;
          top: 50%;
       }
@@ -108,7 +105,7 @@
       line-height: 1;
       overflow: hidden;
 
-      .#{$prefix}-icon {
+      .env-icon {
          left: 50%;
       }
    }
@@ -117,36 +114,6 @@
    &[disabled] {
       opacity: 0.55;
       pointer-events: none;
-   }
-
-   &--dropdown {
-      background-color: transparent;
-      border-color: transparent;
-      color: #1d1d1b;
-      height: css-var('font-size-xxx-large');
-      padding: 0;
-      width: css-var('font-size-xxx-large');
-
-      &:hover {
-         background-color: rgba(0, 0, 0, 0.1);
-         border-color: transparent;
-      }
-
-      &:focus {
-         background-color: rgba(0, 0, 0, 0.2);
-         border-color: transparent;
-      }
-   }
-
-   &--divider {
-      background-color: transparent;
-
-      &:hover,
-      &:active,
-      &:focus {
-         background: transparent;
-         box-shadow: initial;
-      }
    }
 
    // ----- BUTTON & ICON SIZING -----
@@ -159,5 +126,9 @@
 
    &--small {
       @include button-size('small');
+   }
+
+   &--slim {
+      @include button-size('slim');
    }
 }

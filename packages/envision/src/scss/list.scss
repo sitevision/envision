@@ -1,27 +1,25 @@
-.#{$prefix}-list {
+.env-list {
    @include reset-list();
-
-   $item: #{$prefix}-list__item;
 
    &--horizontal {
       display: flex;
 
-      &.#{$prefix}-list-dividers {
-         &--left > .#{$item},
-         &--right > .#{$item} {
+      &.env-list-dividers {
+         &--left > .env-list__item,
+         &--right > .env-list__item {
             align-items: center;
             display: flex;
          }
-         &--left > .#{$item}:before {
+         &--left > .env-list__item:before {
             @include dot-divider();
          }
-         &--left > .#{$item}:first-child:before {
+         &--left > .env-list__item:first-child:before {
             content: none;
          }
-         &--right > .#{$item}:after {
+         &--right > .env-list__item:after {
             @include dot-divider();
          }
-         &--right > .#{$item}:last-child:after {
+         &--right > .env-list__item:last-child:after {
             content: none;
          }
       }
@@ -31,7 +29,7 @@
          flex-wrap: wrap;
 
          @for $i from 1 through 12 {
-            &--#{$i} > .#{$item} {
+            &--#{$i} > .env-list__item {
                @include basis-value($i);
                box-sizing: border-box;
             }
@@ -43,23 +41,23 @@
       }
    }
 
-   &.#{$prefix}-list-dividers {
-      &--top > .#{$item} {
+   &.env-list-dividers {
+      &--top > .env-list__item {
          border-top: $border-width $border-style css-var('border-color-light');
       }
-      &--bottom > .#{$item} {
+      &--bottom > .env-list__item {
          border-bottom: $border-width $border-style
             css-var('border-color-light');
       }
-      &--around > .#{$item} {
+      &--around > .env-list__item {
          border: $border-width $border-style css-var('border-color-light');
-         + .#{$item} {
+         + .env-list__item {
             margin-top: css-var('spacing-xxx-small');
          }
       }
    }
 
-   .#{$prefix}-list-item-divider {
+   .env-list-item-divider {
       &--top {
          border-top: $border-width $border-style css-var('border-color-light');
       }
@@ -73,7 +71,7 @@
    }
 }
 
-.#{$prefix}-definition-list {
+.env-definition-list {
    dd {
       margin: 0;
       padding: 0 0 css-var('spacing-small');

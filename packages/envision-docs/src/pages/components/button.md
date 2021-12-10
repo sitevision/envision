@@ -2,9 +2,11 @@
 title: Button
 ---
 
+Button appearance and size have been enhanced in Envision released with Sitevision 10.0.
+
 ## Types
 
-<span class="env-badge env-badge--info">Ghost button added in 8.2</span>
+<span class="env-badge env-badge--info">Ghost button available since 8.2</span>
 
 ```html
 <p>
@@ -39,6 +41,8 @@ title: Button
 
 ## Sizes
 
+<span class="env-badge env-badge--info">Slim button size available since 10.0</span>
+
 ```html
 <p>
    <button
@@ -64,18 +68,22 @@ title: Button
    </button>
    <button type="button" class="env-button env-button--small">Small</button>
 </p>
-```
 
-### Block
-
-```html
 <p>
    <button
       type="button"
-      class="env-button env-button--primary env-button--large env-button--block"
+      class="env-button env-button--primary env-button--slim"
    >
-      Large
+      Slim
    </button>
+   <button type="button" class="env-button env-button--slim">Slim</button>
+</p>
+```
+
+## Block
+
+```html
+<p>
    <button type="button" class="env-button env-button--large env-button--block">
       Large
    </button>
@@ -88,26 +96,28 @@ title: Button
    >
       Default
    </button>
-   <button type="button" class="env-button env-button--block">Default</button>
 </p>
 
 <p>
    <button
       type="button"
-      class="env-button env-button--primary env-button--small env-button--block"
+      class="env-button env-button--secondary env-button--small env-button--block"
    >
       Small
    </button>
-   <button type="button" class="env-button env-button--small env-button--block">
-      Small
+</p>
+
+<p>
+   <button type="button" class="env-button env-button--slim env-button--block">
+      Slim
    </button>
 </p>
 ```
 
-## Icons <span class="env-badge env-badge--info">9.0.1</span>
+## Icons
 
 Support for icons in buttons were added in Envision released with Sitevision 8.2.
-Square icon-only button was added with Sitevision 9.0.
+Square icon-only button was added with Sitevision 9.0. Modifier "icon-around" available since Sitevision 10.
 Method of adding icons have since been updated as examples below.
 
 All button types and sizes are available.
@@ -118,7 +128,7 @@ All button types and sizes are available.
 <button type="button" class="env-button env-button--primary env-button--icon">
    Icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -128,7 +138,7 @@ All button types and sizes are available.
 >
    Icon left
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -138,7 +148,20 @@ All button types and sizes are available.
 >
    Icon right
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--icon env-button--icon-around"
+>
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+   </svg>
+   Icons around
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -150,7 +173,7 @@ All button types and sizes are available.
 >
    Size small, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -160,14 +183,14 @@ All button types and sizes are available.
 >
    Small
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
 <button type="button" class="env-button env-button--primary env-button--icon">
    Size medium, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -177,7 +200,7 @@ All button types and sizes are available.
 >
    Medium
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -187,7 +210,7 @@ All button types and sizes are available.
 >
    Size large, icon only, assistive text
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 
@@ -197,7 +220,29 @@ All button types and sizes are available.
 >
    Large
    <svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-grid-small"></use>
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<h4>Small icon size <span class="env-badge env-badge--info">10.0</span></h4>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-small"
+>
+   Size medium, icon only, assistive text
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-small env-button--icon-before"
+>
+   Medium
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 ```

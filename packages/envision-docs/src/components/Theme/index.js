@@ -28,6 +28,8 @@ const ThemeProvider = ({ children }) => {
       if (font) {
          document.body.classList.add('font-' + font);
          window.localStorage.setItem('env-font', font.toString());
+      } else {
+         window.localStorage.removeItem('env-font');
       }
    }, [font]);
 

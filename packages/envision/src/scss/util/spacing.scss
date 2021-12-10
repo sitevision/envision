@@ -12,7 +12,7 @@ $sizes: (
    xxx-large: 'spacing-xxx-large',
 );
 
-.#{$prefix} {
+.env {
    @each $specifier in $specifiers {
       &-m-#{$specifier}--0 {
          margin-#{$specifier}: 0 !important;
@@ -72,7 +72,7 @@ $sizes: (
          &-m-#{$specifier}--#{$size} {
             margin-#{$specifier}: css-var($variableName) !important;
          }
-         &-m-#{$specifier}--#{$size}.#{$prefix}-m-#{$specifier}--negative {
+         &-m-#{$specifier}--#{$size}.env-m-#{$specifier}--negative {
             margin-#{$specifier}: css-var($variableName, -1) !important;
          }
          &-p-#{$specifier}--#{$size} {
@@ -82,7 +82,7 @@ $sizes: (
       &-m-around--#{$size} {
          margin: css-var($variableName) !important;
       }
-      &-m-around--#{$size}.#{$prefix}-m-around--negative {
+      &-m-around--#{$size}.env-m-around--negative {
          margin: css-var($variableName, -1) !important;
       }
       &-p-around--#{$size} {
@@ -92,7 +92,7 @@ $sizes: (
          margin-right: css-var($variableName) !important;
          margin-left: css-var($variableName) !important;
       }
-      &-m-horizontal--negative.#{$prefix}-m-horizontal--#{$size} {
+      &-m-horizontal--negative.env-m-horizontal--#{$size} {
          margin-right: css-var($variableName, -1) !important;
          margin-left: css-var($variableName, -1) !important;
       }
@@ -100,7 +100,7 @@ $sizes: (
          margin-top: css-var($variableName) !important;
          margin-bottom: css-var($variableName) !important;
       }
-      &-m-vertical--negative.#{$prefix}-m-horizontal--#{$size} {
+      &-m-vertical--negative.env-m-horizontal--#{$size} {
          margin-top: css-var($variableName, -1) !important;
          margin-bottom: css-var($variableName, -1) !important;
       }

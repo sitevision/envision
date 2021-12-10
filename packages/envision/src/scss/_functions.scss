@@ -21,13 +21,20 @@
 
 @function css-var($variableName, $multiplyBy: 1) {
    @if ($multiplyBy == 1) {
-      @return var(--#{$prefix}-#{$variableName});
+      @return var(--env-#{$variableName});
    } @else {
-      @return #{'calc('}var(--#{$prefix}-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
+      @return #{'calc('}var(--env-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
    }
 }
 
-@function em($px, $base: 16px) {
+@function em($px, $base: ($BROWSER_FONT_SIZE * 1px)) {
    $em: ($px / $base) * 1em;
    @return $em;
+}
+
+@function strip-unit($number) {
+   @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+   }
+   @return $number;
 }

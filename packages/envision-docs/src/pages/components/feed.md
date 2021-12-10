@@ -26,7 +26,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--dropdown env-dropdown__toggle"
+            class="env-button env-button--icon env-dropdown__toggle"
             aria-haspopup="true"
             title="More options"
          >
@@ -154,7 +154,7 @@ title: Feed
    <div class="env-media__actions">
       <button
          type="button"
-         class="env-button env-button--dropdown env-dropdown__toggle"
+         class="env-button env-button--icon env-dropdown__toggle"
          aria-haspopup="true"
          title="More options"
       >
@@ -193,7 +193,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--dropdown env-dropdown__toggle"
+            class="env-button env-button--icon env-dropdown__toggle"
             aria-haspopup="true"
             title="More options"
          >
@@ -282,7 +282,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--dropdown env-dropdown__toggle"
+                        class="env-button env-button--icon env-dropdown__toggle"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -339,7 +339,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--dropdown env-dropdown__toggle"
+                        class="env-button env-button--icon env-dropdown__toggle"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -396,7 +396,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--dropdown env-dropdown__toggle"
+                        class="env-button env-button--icon env-dropdown__toggle"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -465,7 +465,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--dropdown env-dropdown__toggle"
+            class="env-button env-button--icon env-dropdown__toggle"
             aria-haspopup="true"
             title="More options"
          >
@@ -589,7 +589,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--dropdown env-dropdown__toggle"
+                  class="env-button env-button--icon env-dropdown__toggle"
                   aria-haspopup="true"
                   title="More options"
                >
@@ -686,7 +686,7 @@ title: Feed
                         <div class="env-media__actions">
                            <button
                               type="button"
-                              class="env-button env-button--dropdown env-dropdown__toggle"
+                              class="env-button env-button--icon env-dropdown__toggle"
                               aria-haspopup="true"
                               title="More options"
                            >
@@ -746,7 +746,7 @@ title: Feed
                         <div class="env-media__actions">
                            <button
                               type="button"
-                              class="env-button env-button--dropdown env-dropdown__toggle"
+                              class="env-button env-button--icon env-dropdown__toggle"
                               aria-haspopup="true"
                               title="More options"
                            >
@@ -818,7 +818,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--dropdown env-dropdown__toggle"
+                  class="env-button env-button--icon env-dropdown__toggle"
                   aria-haspopup="true"
                   title="More options"
                >
@@ -922,7 +922,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--dropdown env-dropdown__toggle"
+                  class="env-button env-button--icon env-dropdown__toggle"
                   aria-haspopup="true"
                   title="More options"
                >

@@ -44,6 +44,7 @@ extra:
       - icon-user
       - icon-user-fill
       - icon-user-group
+      - icon-angle-down
 ---
 
 <span class="env-badge env-badge--info">Changes in 9.1</span>

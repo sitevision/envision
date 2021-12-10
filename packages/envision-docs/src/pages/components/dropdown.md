@@ -7,7 +7,7 @@ title: Dropdown
 ```html
 <div id="example0" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -16,7 +16,7 @@ title: Dropdown
    >
       Dropdown
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
@@ -66,7 +66,7 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 
 ### Split button dropdown
 
-Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to desired button.
+Use `env-button-group` to split buttons.
 
 ```html
 <div
@@ -81,7 +81,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       Button
    </button>
    <button
-      class="env-button env-button--primary env-button--ghost env-button--ghost-split"
+      class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost"
       type="button"
       data-dropdown
       aria-expanded="false"
@@ -89,7 +89,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       data-target="#example2"
    >
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
@@ -113,7 +113,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
 ```html
 <div id="example3" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -122,13 +122,13 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
    >
       Dropdown
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
@@ -136,7 +136,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       </li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
             Properties
@@ -145,7 +145,7 @@ Use `env-button-group` to split buttons and add `env-dropdown--toggle-split` to 
       <li class="env-dropdown--divider" role="separator"></li>
       <li role="presentation">
          <button type="button" role="menuitem" class="env-dropdown__item">
-            <svg class="env-icon env-icon--small env-m-right--small">
+            <svg class="env-icon">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-check-done"
                ></use>
@@ -165,7 +165,7 @@ to open dropdown as an immediate child of `<body>`.
 ```html
 <div id="example4" class="env-dropdown">
    <button
-      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-after"
+      class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
       data-dropdown
@@ -175,7 +175,7 @@ to open dropdown as an immediate child of `<body>`.
    >
       Dropdown in body
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
+         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul class="env-dropdown__menu env-dropdown__menu--large">

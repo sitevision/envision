@@ -1,4 +1,4 @@
-.#{$prefix}-progress {
+.env-progress {
    background-color: css-var('element-common-background-color');
    border-radius: css-var('border-radius-small');
    display: flex;
@@ -45,7 +45,7 @@
          }
 
          &--animated {
-            animation: #{$prefix}-progress-animation 1s linear infinite;
+            animation: env-progress-animation 1s linear infinite;
          }
       }
    }
@@ -80,7 +80,7 @@
       &--highlighted {
          font-weight: bold;
 
-         .#{$prefix}-progress-poll__bar {
+         .env-progress-poll__bar {
             background-color: css-var('progress-bar-poll-highlight-color');
          }
       }
@@ -117,7 +117,7 @@
    }
 }
 
-@keyframes #{$prefix}-progress-animation {
+@keyframes env-progress-animation {
    0% {
       background-position: $spacing-xx-large 0; // Keep
    }

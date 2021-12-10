@@ -1,5 +1,5 @@
-@mixin squareIconButton {
-   &.#{$prefix}-button--icon:not(.#{$prefix}-button--icon-after):not(.#{$prefix}-button--icon-before) {
+@mixin squareIconButton($modifier: '') {
+   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around) {
       @content;
    }
 }
@@ -16,90 +16,208 @@
    border-color: css-var($background-color);
    color: css-var($color);
 
+   // Dark border for dropdown split button
+   .env-dropdown.env-button-group &:not(:first-child):not(.env-button--ghost) {
+      border-left-color: css-var($background-color-dark);
+   }
+
    &.env-button--ghost {
       background-color: transparent;
-      color: css-var($background-color-light);
       border-color: css-var($background-color-light);
-
-      &:hover,
-      &:active,
-      &:focus {
-         color: css-var($color);
-      }
+      color: css-var($background-color-light);
    }
 
    &:hover,
    &:focus {
-      border-color: css-var($background-color-dark);
       background-color: css-var($background-color-dark);
+      border-color: css-var($background-color-dark);
+      color: css-var($color);
    }
 
    &:active {
-      border-color: css-var($background-color-dark);
       background-color: css-var($background-color-light);
+      border-color: css-var($background-color-dark);
+      color: css-var($color);
    }
 }
 
 @mixin button-size($size) {
+   $button-border-radius: strip-unit($button-border-radius);
+
+   // Button font sizes (px)
+   $btn-small-font-size: 14; // --env-font-size-small
+   $btn-medium-font-size: 16; // --env-font-size-medium
+   $btn-large-font-size: 20; // --env-font-size-large
+
+   // Button border-radius setting in Sitevision (em)
+   $btn-default-border-radius: 0.375; // --env-button-border-radius
+
+   // Border radiuses for buttons (px)
+   $btn-small-border-radius: 3;
+   $btn-medium-border-radius: 6;
+   $btn-large-border-radius: 10;
+
+   // Horizontal paddings for buttons (px)
+   $btn-small-padding: 8;
+   $btn-medium-padding: 21;
+   $btn-large-padding: 23;
+   $btn-slim-padding: 8;
+
+   // Default button heights (px)
+   $btn-small-min-height: $form-input-height / 2; // 22
+   $btn-medium-min-height: $form-input-height; // 44
+   $btn-large-min-height: $form-input-height * 1.27273; // 56
+   $btn-slim-min-height: 32; // Old default button height
+
+   // Radius - scaled relative to variable in settings (0.375em default),
+   /* prettier-ignore */
+   $radiusScales: (
+      // small =>  3px (default)
+      small: (($btn-small-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-small-font-size / $BROWSER_FONT_SIZE)),
+      // medium =>  6px (default)
+      medium: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius),
+      // large => 10px (default)
+      large: (($btn-large-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-large-font-size / $BROWSER_FONT_SIZE)),
+      // slim => 6px  (Same as medium),
+      slim: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius)
+   );
+   $minHeights: (
+      small: (
+         $btn-small-min-height / $btn-small-font-size * 1em,
+      ),
+      medium: (
+         $btn-medium-min-height / $btn-medium-font-size * 1em,
+      ),
+      large: (
+         $btn-large-min-height / $btn-large-font-size * 1em,
+      ),
+      slim: (
+         $btn-slim-min-height / $btn-medium-font-size * 1em,
+      ),
+   );
+   $fontSizes: (
+      // small => 14 px
+      small: 'font-size-small',
+      // medium => 16 px
+      medium: 'font-size-medium',
+      // large => 20 px
+      large: 'font-size-large',
+      slim: 'font-size-medium'
+   );
    $paddingsX: (
-      small: 'spacing-x-small',
-      medium: 'spacing-x-small',
-      large: 'spacing-small',
+      small: (
+         ($btn-small-padding / $btn-small-font-size) * 1em,
+      ),
+      medium: (
+         ($btn-medium-padding / $btn-medium-font-size) * 1em,
+      ),
+      large: (
+         ($btn-large-padding / $btn-large-font-size) * 1em,
+      ),
+      slim: (
+         ($btn-small-padding / $btn-medium-font-size) * 1em,
+      ),
    );
-   $paddingsY: (
-      small: 'spacing-xx-small',
-      medium: 'spacing-xx-small',
-      large: 'spacing-x-small',
-   );
-   // Icon size in em: 1em / [relative-button-font-size] * [icon-size in px] / [base-font-size in px]
+   // Icon size in em:
+   // [icon-size in px] / [relative-button-font-size] / [base-font-size in px] * 1em
+   /* prettier-ignore */
    $iconSizes: (
-      small: 1em / 0.875 * 13 / 16,
-      medium: 1em / 1 * 15 / 16,
-      large: 1em / 1.25 * 21 / 16,
+      small: 9 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      medium: 18 / 1 / $BROWSER_FONT_SIZE * 1em,
+      large: 22 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      slim: 15 / 1 / $BROWSER_FONT_SIZE * 1em,
    );
 
-   $padding-x: map-get($paddingsX, $size);
-   $padding-y: map-get($paddingsY, $size);
-   $icon-size: map-get($iconSizes, $size);
+   /* prettier-ignore */
+   $smallIconSizes: (
+      small: 6 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      medium: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
+      large: 15 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      slim: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
+   );
 
-   font-size: css-var('font-size-#{$size}');
-   padding: css-var($padding-y) css-var($padding-x);
+   $font-size: map-get($fontSizes, $size);
+   $padding-x: map-get($paddingsX, $size);
+   $icon-size: map-get($iconSizes, $size);
+   $small-icon-size: map-get($smallIconSizes, $size);
+   $radius-scale: map-get($radiusScales, $size);
+   $min-height: map-get($minHeights, $size);
+
+   font-size: css-var($font-size);
+   padding: 0 $padding-x;
+   border-radius: calc(#{css-var('button-border-radius')} * #{$radius-scale});
+   min-height: $min-height;
 
    @include squareIconButton {
-      height: 0;
-      width: calc(#{css-var($padding-y)} * 2 + 1.4em + 2px);
-      padding: calc(#{css-var($padding-y)} * 2 + 1.4em) 0 0;
+      height: $min-height;
+      width: $min-height;
+      padding: calc(#{$min-height} - 2px) 0 0; // Compensate for border
    }
 
-   &.#{$prefix}-button--icon .env-icon {
+   &.env-button--icon .env-icon {
       width: #{$icon-size};
       height: #{$icon-size};
       margin: #{($icon-size / -2)} 0 0 0;
    }
 
-   &.#{$prefix}-button--icon-before {
-      padding-left: calc(
-         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
-      );
+   &.env-button--icon-before {
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
-         left: calc(#{css-var($padding-x)});
+         left: $padding-x;
       }
    }
 
-   &.#{$prefix}-button--icon-after {
-      padding-right: calc(
-         #{css-var($padding-x)} + #{$icon-size} + #{css-var('spacing-x-small')}
-      );
+   &.env-button--icon-after {
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
 
       .env-icon {
-         right: calc(#{css-var($padding-x)});
+         right: $padding-x;
+      }
+   }
+
+   &.env-button--icon-around {
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+
+      .env-icon:first-child {
+         left: $padding-x;
+      }
+
+      .env-icon:last-child {
+         right: $padding-x;
       }
    }
 
    @include squareIconButton {
       .env-icon {
          margin: #{($icon-size / -2)} 0 0 #{($icon-size / -2)};
+      }
+   }
+
+   // Small icons
+
+   &.env-button--icon-small.env-button--icon .env-icon {
+      width: #{$small-icon-size};
+      height: #{$small-icon-size};
+      margin: #{($small-icon-size / -2)} 0 0 0;
+   }
+
+   &.env-button--icon-small.env-button--icon-before {
+      padding-left: calc(
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+      );
+   }
+
+   &.env-button--icon-small.env-button--icon-after {
+      padding-right: calc(
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+      );
+   }
+
+   @include squareIconButton('-small') {
+      .env-icon {
+         margin: #{($small-icon-size / -2)} 0 0 #{($small-icon-size / -2)};
       }
    }
 }

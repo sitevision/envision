@@ -1,4 +1,4 @@
-.#{$prefix}-image-slider {
+.env-image-slider {
    position: relative;
 
    &__inner {
@@ -70,18 +70,18 @@
       fill: currentColor;
    }
 
-   &__item--next.#{$prefix}-image-slider__item--left,
-   &__item--prev.#{$prefix}-image-slider__item--right {
+   &__item--next.env-image-slider__item--left,
+   &__item--prev.env-image-slider__item--right {
       transform: translate3d(0, 0, 0);
    }
 
    &__item--next,
-   &__item--active.#{$prefix}-image-slider__item--right {
+   &__item--active.env-image-slider__item--right {
       transform: translate3d(100%, 0, 0);
    }
 
    &__item--prev,
-   &__item--active.#{$prefix}-image-slider__item--left {
+   &__item--active.env-image-slider__item--left {
       transform: translate3d(-100%, 0, 0);
    }
 
@@ -103,12 +103,12 @@
          position: relative;
       }
 
-      .#{$prefix}-image-slider__thumbnail {
+      .env-image-slider__thumbnail {
          max-width: 90px;
          opacity: 0.4;
       }
 
-      .#{$prefix}-image-slider__item--active {
+      .env-image-slider__item--active {
          opacity: 1;
       }
    }

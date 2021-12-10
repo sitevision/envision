@@ -88,9 +88,6 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
    <br><br>
 -  `--env-border-color`
 -  `--env-border-color-light`
--  `--env-border-success-color`
--  `--env-border-warning-color`
--  `--env-border-danger-color`
 
 ### Colors
 
@@ -250,6 +247,9 @@ Only works in browsers that support <a class="env-link" href="https://caniuse.co
 
 ## Legacy variables <span class="env-badge env-badge--danger">Deprecated</span>
 
+-  `--env-border-success-color`
+-  `--env-border-warning-color`
+-  `--env-border-danger-color`
 -  `--env-color-page-bg`
 -  `--env-color-element-bg`
 -  `--env-color-brand`

@@ -1,4 +1,4 @@
-.#{$prefix}-table {
+.env-table {
    border-collapse: collapse;
 
    caption {
@@ -91,7 +91,7 @@
    $blocks: row cell;
    @each $state, $color in $colors {
       @each $block in $blocks {
-         .#{$prefix}-table__#{$block}--#{$state} {
+         .env-table__#{$block}--#{$state} {
             background-color: css-var($color);
          }
       }

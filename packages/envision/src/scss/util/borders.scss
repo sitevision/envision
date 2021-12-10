@@ -1,35 +1,35 @@
-[class^='#{$prefix}-border--'] {
+[class^='env-border--'] {
    border: $border-width $border-style css-var('border-color');
 }
 
-.#{$prefix}-border--0 {
+.env-border--0 {
    border: 0 !important;
 }
-.#{$prefix}-border--t-0 {
+.env-border--t-0 {
    border-top: 0 !important;
 }
-.#{$prefix}-border--r-0 {
+.env-border--r-0 {
    border-right: 0 !important;
 }
-.#{$prefix}-border--b-0 {
+.env-border--b-0 {
    border-bottom: 0 !important;
 }
-.#{$prefix}-border--l-0 {
+.env-border--l-0 {
    border-left: 0 !important;
 }
 
-.#{$prefix}-border {
+.env-border {
    border: $border-width $border-style css-var('border-color') !important;
 }
-.#{$prefix}-border-top {
+.env-border-top {
    border-top: $border-width $border-style css-var('border-color') !important;
 }
-.#{$prefix}-border-right {
+.env-border-right {
    border-right: $border-width $border-style css-var('border-color') !important;
 }
-.#{$prefix}-border-bottom {
+.env-border-bottom {
    border-bottom: $border-width $border-style css-var('border-color') !important;
 }
-.#{$prefix}-border-left {
+.env-border-left {
    border-left: $border-width $border-style css-var('border-color') !important;
 }

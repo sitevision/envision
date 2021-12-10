@@ -21,7 +21,7 @@
       background-color: css-var('image-control-color');
       filter: opacity(0.5);
 
-      &.#{$prefix}-is-active {
+      &.env-is-active {
          filter: opacity(1);
       }
    }

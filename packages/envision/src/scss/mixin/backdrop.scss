@@ -11,6 +11,6 @@
 }
 
 @mixin backdrop-in {
-   animation: #{$prefix}-fade 0.3s;
+   animation: env-fade 0.3s;
    opacity: css-var('modal-backdrop-opacity');
 }
