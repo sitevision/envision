@@ -575,7 +575,7 @@ cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-rad
 
 ## Validation
 
-Add modifiers `.env-form-element--success`, `.env-form-element--warning` or `.env-form-element--danger` to define a
+Add modifiers `.env-form-element--success` or `.env-form-element--danger` to define a
 validation state. The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the
 element.
 
@@ -593,20 +593,6 @@ element.
       </div>
       <span id="success-feedback" class="env-form-element__feedback"
          >Success feedback</span
-      >
-   </div>
-   <div class="env-form-element env-form-element--warning">
-      <label for="warning" class="env-form-element__label">Warning</label>
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            id="warning"
-            aria-describedby="warning-feedback"
-         />
-      </div>
-      <span id="warning-feedback" class="env-form-element__feedback"
-         >Warning feedback</span
       >
    </div>
    <div class="env-form-element env-form-element--danger">
