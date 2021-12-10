@@ -121,37 +121,70 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          See <a class="env-link" href="../select/">Tag select documentation</a>
       </p>
    </div>
-   <div class="env-form-element"
-        role="radiogroup"
-        aria-labelledby="radio-header">
+   <div
+      class="env-form-element"
+      role="radiogroup"
+      aria-labelledby="radio-header"
+   >
       <span class="env-form-element__label" id="radio-header">
          Radio button
-         <span class="env-badge env-badge--warning">Beta since 10.0</span></span
+         <span class="env-badge env-badge--warning">Beta since 10.0</span>
       </span>
       <div>
          <label class="env-radio">
-            <input type="radio" name="radios" checked />
+            <input type="radio" name="radios" value="1" checked />
             Alternative 1
          </label>
       </div>
       <div>
          <label class="env-radio">
-            <input type="radio" name="radios" />
+            <input type="radio" name="radios" value="2" />
             Alternative 2
          </label>
       </div>
+   </div>
+   <div
+      class="env-form-element"
+      role="radiogroup"
+      aria-labelledby="disabled-radio-header"
+   >
+      <span
+         class="env-form-element__label env-text--muted"
+         id="disabled-radio-header"
+      >
+         Disabled radio button
+      </span>
       <div>
-         <label class="env-radio">
-            <input type="radio" name="radios" />
-            Alternative 3
+         <label class="env-radio env-radio--disabled">
+            <input
+               class="env-radio"
+               type="radio"
+               name="d_radios"
+               value="1"
+               disabled
+               checked
+            />
+            Alternative 1
+         </label>
+      </div>
+      <div>
+         <label class="env-radio env-radio--disabled">
+            <input
+               class="env-radio"
+               type="radio"
+               name="d_radios"
+               value="2"
+               disabled
+            />
+            Alternative 2
          </label>
       </div>
    </div>
    <div class="env-form-element">
-      <span class="env-form-element__label" id="legacy-radio-header"
-         >Legacy radio button
-         <span class="env-badge env-badge--danger">Deprecated</span></span
-      >
+      <span class="env-form-element__label" id="legacy-radio-header">
+         Legacy radio button
+         <span class="env-badge env-badge--danger">Deprecated</span>
+      </span>
       <div
          class="env-form-element__control"
          role="radiogroup"
@@ -526,8 +559,8 @@ used to reference the `ID` of the text that describes the element.
 ## States
 
 Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default
-cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-radio--disabled`
-/ `.env-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
+cursor. For disabled radio buttons and checkboxes, apply modifier `.env-radio--disabled`
+/ `.env-checkbox--disabled` to its wrapper for a muted label.
 
 ```html
 <div class="env-form">
@@ -568,10 +601,20 @@ cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-rad
    </div>
    <div class="env-form-element">
       <div class="env-form-element__control">
+         <label class="env-radio env-radio--disabled">
+            <input class="env-radio" type="radio" disabled checked />
+            Disabled radio button
+            <span class="env-badge env-badge--warning">Beta since 10.0</span>
+         </label>
+      </div>
+   </div>
+   <div class="env-form-element">
+      <div class="env-form-element__control">
          <div class="env-form-radio env-form-radio--disabled">
             <label class="env-form-element__label">
                <input type="radio" disabled />
-               Disabled radio button
+               Disabled legacy radio button
+               <span class="env-badge env-badge--danger">Deprecated</span>
             </label>
          </div>
       </div>
