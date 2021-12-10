@@ -143,17 +143,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          </label>
       </div>
    </div>
-   <div
-      class="env-form-element"
-      role="radiogroup"
-      aria-labelledby="disabled-radio-header"
-   >
-      <span
-         class="env-form-element__label env-text--muted"
-         id="disabled-radio-header"
-      >
-         Disabled radio button
-      </span>
+   <div class="env-form-element" role="radiogroup">
       <div>
          <label class="env-radio env-radio--disabled">
             <input
@@ -164,7 +154,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
                disabled
                checked
             />
-            Alternative 1
+            Disabled alternative 1
          </label>
       </div>
       <div>
@@ -176,7 +166,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
                value="2"
                disabled
             />
-            Alternative 2
+            Disabled alternative 2
          </label>
       </div>
    </div>
