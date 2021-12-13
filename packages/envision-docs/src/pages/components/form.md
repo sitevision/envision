@@ -146,26 +146,13 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
    <div class="env-form-element" role="radiogroup">
       <div>
          <label class="env-radio env-radio--disabled">
-            <input
-               class="env-radio"
-               type="radio"
-               name="d_radios"
-               value="1"
-               disabled
-               checked
-            />
+            <input type="radio" name="d_radios" value="1" disabled checked />
             Disabled alternative 1
          </label>
       </div>
       <div>
          <label class="env-radio env-radio--disabled">
-            <input
-               class="env-radio"
-               type="radio"
-               name="d_radios"
-               value="2"
-               disabled
-            />
+            <input type="radio" name="d_radios" value="2" disabled />
             Disabled alternative 2
          </label>
       </div>
@@ -175,6 +162,13 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          Legacy radio button
          <span class="env-badge env-badge--danger">Deprecated</span>
       </span>
+      <p class="env-form-element__help">
+         Legacy radio button is deprecated since 10.0 and should be replaced
+         with the new Radio button
+         <small
+            ><code class="env-text-small language-text">.env-radio</code></small
+         >.
+      </p>
       <div
          class="env-form-element__control"
          role="radiogroup"
