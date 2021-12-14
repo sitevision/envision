@@ -121,34 +121,71 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          See <a class="env-link" href="../select/">Tag select documentation</a>
       </p>
    </div>
+   <div
+      class="env-form-element"
+      role="radiogroup"
+      aria-labelledby="radio-header"
+   >
+      <span class="env-form-element__label" id="radio-header">
+         Radio button
+         <span class="env-badge env-badge--warning">Beta since 10.0</span>
+      </span>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" value="1" checked />
+            Alternative 1
+         </label>
+      </div>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" value="2" />
+            Alternative 2
+         </label>
+      </div>
+   </div>
+   <div class="env-form-element" role="radiogroup">
+      <div>
+         <label class="env-radio env-radio--disabled">
+            <input type="radio" name="d_radios" value="1" disabled checked />
+            Disabled alternative 1
+         </label>
+      </div>
+      <div>
+         <label class="env-radio env-radio--disabled">
+            <input type="radio" name="d_radios" value="2" disabled />
+            Disabled alternative 2
+         </label>
+      </div>
+   </div>
    <div class="env-form-element">
-      <span class="env-form-element__label" id="radio-header"
-         >Radio button</span
-      >
+      <span class="env-form-element__label" id="legacy-radio-header">
+         Legacy radio button
+         <span class="env-badge env-badge--danger">Deprecated</span>
+      </span>
+      <p class="env-form-element__help">
+         Legacy radio button is deprecated since 10.0 and should be replaced
+         with the new Radio button
+         <small
+            ><code class="env-text-small language-text">.env-radio</code></small
+         >.
+      </p>
       <div
          class="env-form-element__control"
          role="radiogroup"
-         aria-labelledby="radio-header"
+         aria-labelledby="legacy-radio-header"
       >
          <div class="env-form-radio">
-            <input id="radio1" type="radio" name="radios" checked />
-            <label for="radio1" class="env-form-element__label">
+            <input id="legacyradio1" type="radio" name="legacyradios" checked />
+            <label for="legacyradio1" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative</span>
             </label>
          </div>
          <div class="env-form-radio">
-            <input id="radio2" type="radio" name="radios" />
-            <label for="radio2" class="env-form-element__label">
+            <input id="legacyradio2" type="radio" name="legacyradios" />
+            <label for="legacyradio2" class="env-form-element__label">
                <span class="env-form-radio__fake"></span>
                <span class="env-form-radio__label">Alternative 2</span>
-            </label>
-         </div>
-         <div class="env-form-radio">
-            <input id="radio3" type="radio" name="radios" />
-            <label for="radio3" class="env-form-element__label">
-               <span class="env-form-radio__fake"></span>
-               <span class="env-form-radio__label">Alternative 3</span>
             </label>
          </div>
       </div>
@@ -506,8 +543,8 @@ used to reference the `ID` of the text that describes the element.
 ## States
 
 Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default
-cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-radio--disabled`
-/ `.env-checkbox--disabled` to its wrapper for a lighter label and a `not-allowed` cursor.
+cursor. For disabled radio buttons and checkboxes, apply modifier `.env-radio--disabled`
+/ `.env-checkbox--disabled` to its wrapper for a muted label.
 
 ```html
 <div class="env-form">
@@ -548,10 +585,20 @@ cursor. For disabled radio buttons and checkboxes, apply modifier `.env-form-rad
    </div>
    <div class="env-form-element">
       <div class="env-form-element__control">
+         <label class="env-radio env-radio--disabled">
+            <input class="env-radio" type="radio" disabled checked />
+            Disabled radio button
+            <span class="env-badge env-badge--warning">Beta since 10.0</span>
+         </label>
+      </div>
+   </div>
+   <div class="env-form-element">
+      <div class="env-form-element__control">
          <div class="env-form-radio env-form-radio--disabled">
             <label class="env-form-element__label">
                <input type="radio" disabled />
-               Disabled radio button
+               Disabled legacy radio button
+               <span class="env-badge env-badge--danger">Deprecated</span>
             </label>
          </div>
       </div>
