@@ -387,10 +387,9 @@
 }
 
 .env-radio {
-   // New native radiobutton 2021
+   // New native radiobutton
 
    @at-root label#{&} {
-      // label.env-radio { ... }
       display: inline-flex;
       gap: css-var('spacing-x-small');
       justify-content: start;
@@ -407,8 +406,6 @@
 
    @at-root input[type='radio']#{&},
       #{&} input[type='radio'] {
-      // input[type='radio'].env-radio,
-      // .env-radio input[type='radio'] { ... }
       appearance: none;
       display: inline-grid;
       place-content: center;
