@@ -3,7 +3,7 @@
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
-   text-size-adjust: none;
+   text-size-adjust: 100%;
    text-align: left;
 
    &--muted {

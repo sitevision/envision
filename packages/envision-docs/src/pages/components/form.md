@@ -2,327 +2,272 @@
 title: Form
 ---
 
-## Elements
+## Text input element
 
-Related elements (radio buttons and checkboxes in this example) should have a `role="radiogroup"` / `role="group"`
+```html
+<label for="text-1" class="env-form-element__label">Input text</label>
+<div class="env-form-element__control">
+   <input
+      type="text"
+      class="env-form-input"
+      placeholder="Placeholder text"
+      id="text-1"
+   />
+</div>
+```
+
+### Search input element
+
+```html
+<div class="env-form-element">
+   <label for="search1" class="env-form-element__label">Input search</label>
+   <div class="env-form-element__control">
+      <input
+         type="search"
+         class="env-form-input"
+         placeholder="Placeholder text"
+         id="search1"
+      />
+   </div>
+</div>
+<div class="env-form-element">
+   <label for="search2" class="env-form-element__label"
+      >Input search with cancel button</label
+   >
+   <div class="env-form-element__control">
+      <input
+         type="search"
+         class="env-form-input env-form-input--search"
+         placeholder="Placeholder text"
+         id="search2"
+      />
+   </div>
+</div>
+```
+
+## Textarea element
+
+```html
+<label for="textarea" class="env-form-element__label">Textarea</label>
+<div class="env-form-element__control">
+   <textarea
+      class="env-form-input"
+      placeholder="Placeholder text"
+      id="textarea"
+      rows="3"
+   ></textarea>
+</div>
+```
+
+### Contenteditable element <span class="env-badge env-badge--info">8.2</span>
+
+```html
+<div class="env-form-element__label" id="contenteditable-header">
+   Contenteditable
+</div>
+<div class="env-form-element__control">
+   <div
+      class="env-form-input"
+      aria-labelledby="contenteditable-header"
+      contenteditable
+   ></div>
+   <div class="env-form-element__contenteditable-placeholder">
+      Placeholder text
+   </div>
+</div>
+```
+
+## Select element
+
+```html
+<div class="env-form-element">
+   <label for="select" class="env-form-element__label">Select</label>
+   <div class="env-form-element__control">
+      <select class="env-form-input" id="select">
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+   </div>
+</div>
+<div class="env-form-element">
+   <label for="multiple-select" class="env-form-element__label"
+      >Multiple select</label
+   >
+   <div class="env-form-element__control env-form-multiple-select">
+      <select class="env-form-input" id="multiple-select" multiple>
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+   </div>
+</div>
+```
+
+### Tag select component <span class="env-badge env-badge--info">9.1</span>
+
+See <a class="env-link" href="../select/">Tag select documentation</a>.
+
+```html
+<label for="tag-select" class="env-form-element__label"> Tag select </label>
+<div class="env-form-element__control">
+   <select class="env-form-input example-tag-select" id="tag-select" multiple>
+      <option value="">Select an item...</option>
+      <option value="item1" selected>Item</option>
+      <option value="item2">Item 2</option>
+      <option value="item3">Item 3</option>
+      <option value="item4">Item 4</option>
+   </select>
+</div>
+```
+
+## Radiobutton input element <small class="env-badge env-badge--warning">Beta since 10.0</small>
+
+Related radiobutton elements should have `role="radiogroup"`
 applied to its container to indicate group membership of the contained elements.
 
 The `aria-labelledby` is used to reference the `ID` of the text that labels the group.
 
 ```html
-<div class="env-form">
-   <div class="env-form-element">
-      <label for="text-1" class="env-form-element__label">Input text</label>
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            placeholder="Placeholder text"
-            id="text-1"
-         />
-      </div>
-   </div>
-   <div class="env-form__row">
-      <div class="env-form-element">
-         <label for="search1" class="env-form-element__label"
-            >Input search</label
-         >
-         <div class="env-form-element__control">
-            <input
-               type="search"
-               class="env-form-input"
-               placeholder="Placeholder text"
-               id="search1"
-            />
-         </div>
-      </div>
-      <div class="env-form-element">
-         <label for="search2" class="env-form-element__label"
-            >Input search with cancel button</label
-         >
-         <div class="env-form-element__control">
-            <input
-               type="search"
-               class="env-form-input env-form-input--search"
-               placeholder="Placeholder text"
-               id="search2"
-            />
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <label for="textarea" class="env-form-element__label">Textarea</label>
-      <div class="env-form-element__control">
-         <textarea
-            class="env-form-input"
-            placeholder="Placeholder text"
-            id="textarea"
-            rows="3"
-         ></textarea>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <div class="env-form-element__label" id="contenteditable-header">
-         Contenteditable <span class="env-badge env-badge--info">8.2</span>
-      </div>
-      <div class="env-form-element__control">
-         <div
-            class="env-form-input"
-            aria-labelledby="contenteditable-header"
-            contenteditable
-         ></div>
-         <div class="env-form-element__contenteditable-placeholder">
-            Placeholder text
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <label for="select" class="env-form-element__label">Select</label>
-      <div class="env-form-element__control">
-         <select class="env-form-input" id="select">
-            <option>Item</option>
-            <option>Item 2</option>
-            <option>Item 3</option>
-            <option>Item 4</option>
-         </select>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <label for="multiple-select" class="env-form-element__label"
-         >Multiple select</label
-      >
-      <div class="env-form-element__control env-form-multiple-select">
-         <select class="env-form-input" id="multiple-select" multiple>
-            <option>Item</option>
-            <option>Item 2</option>
-            <option>Item 3</option>
-            <option>Item 4</option>
-         </select>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <label for="tag-select" class="env-form-element__label">
-         Tag select <span class="env-badge env-badge--info">9.1</span>
+<div class="env-form-element" role="radiogroup" aria-labelledby="radio-header">
+   <span class="env-form-element__label" id="radio-header"> Radio button </span>
+   <div>
+      <label class="env-radio">
+         <input type="radio" name="radios" value="1" checked />
+         Alternative 1
       </label>
-      <div class="env-form-element__control">
-         <select
-            class="env-form-input example-tag-select"
-            id="tag-select"
-            multiple
-         >
-            <option value="">Select an item...</option>
-            <option value="item1" selected>Item</option>
-            <option value="item2">Item 2</option>
-            <option value="item3">Item 3</option>
-            <option value="item4">Item 4</option>
-         </select>
-      </div>
-      <p class="env-form-element__help">
-         See <a class="env-link" href="../select/">Tag select documentation</a>
-      </p>
    </div>
-   <div
-      class="env-form-element"
-      role="radiogroup"
-      aria-labelledby="radio-header"
-   >
-      <span class="env-form-element__label" id="radio-header">
-         Radio button
-         <span class="env-badge env-badge--warning">Beta since 10.0</span>
-      </span>
-      <div>
-         <label class="env-radio">
-            <input type="radio" name="radios" value="1" checked />
-            Alternative 1
-         </label>
-      </div>
-      <div>
-         <label class="env-radio">
-            <input type="radio" name="radios" value="2" />
-            Alternative 2
-         </label>
-      </div>
-   </div>
-   <div class="env-form-element" role="radiogroup">
-      <div>
-         <label class="env-radio env-radio--disabled">
-            <input type="radio" name="d_radios" value="1" disabled checked />
-            Disabled alternative 1
-         </label>
-      </div>
-      <div>
-         <label class="env-radio env-radio--disabled">
-            <input type="radio" name="d_radios" value="2" disabled />
-            Disabled alternative 2
-         </label>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <span class="env-form-element__label" id="legacy-radio-header">
-         Legacy radio button
-         <span class="env-badge env-badge--danger">Deprecated</span>
-      </span>
-      <p class="env-form-element__help">
-         Legacy radio button is deprecated since 10.0 and should be replaced
-         with the new Radio button
-         <small
-            ><code class="env-text-small language-text">.env-radio</code></small
-         >.
-      </p>
-      <div
-         class="env-form-element__control"
-         role="radiogroup"
-         aria-labelledby="legacy-radio-header"
-      >
-         <div class="env-form-radio">
-            <input id="legacyradio1" type="radio" name="legacyradios" checked />
-            <label for="legacyradio1" class="env-form-element__label">
-               <span class="env-form-radio__fake"></span>
-               <span class="env-form-radio__label">Alternative</span>
-            </label>
-         </div>
-         <div class="env-form-radio">
-            <input id="legacyradio2" type="radio" name="legacyradios" />
-            <label for="legacyradio2" class="env-form-element__label">
-               <span class="env-form-radio__fake"></span>
-               <span class="env-form-radio__label">Alternative 2</span>
-            </label>
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <span class="env-form-element__label" id="checkbox-header">Checkbox</span>
-      <div
-         class="env-form-element__control"
-         role="group"
-         aria-labelledby="checkbox-header"
-      >
-         <div class="env-checkbox">
-            <input type="checkbox" checked name="options" id="cb1" />
-            <label class="env-form-element__label" for="cb1">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Checked</span>
-            </label>
-         </div>
-         <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb2" />
-            <label class="env-form-element__label" for="cb2">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check</span>
-            </label>
-         </div>
-         <div class="env-checkbox">
-            <input type="checkbox" checked disabled name="options" id="cb3" />
-            <label class="env-form-element__label" for="cb3">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Checked disabled</span>
-            </label>
-         </div>
-         <div class="env-checkbox">
-            <input type="checkbox" disabled name="options" id="cb4" />
-            <label class="env-form-element__label" for="cb4">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Check disabled</span>
-            </label>
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <span class="env-form-element__label" id="switch-header"
-         >Switch <span class="env-badge env-badge--info">8.2</span></span
-      >
-      <div
-         class="env-form-element__control"
-         role="group"
-         aria-labelledby="switch-header"
-      >
-         <div class="env-switch">
-            <label class="env-switch__label">
-               <input type="checkbox" checked />
-               <span class="env-switch__text">On</span>
-               <span class="env-switch__slider"></span>
-            </label>
-         </div>
-
-         <div class="env-switch">
-            <label class="env-switch__label">
-               <input type="checkbox" />
-               <span class="env-switch__text">Off</span>
-               <span class="env-switch__slider"></span>
-            </label>
-         </div>
-
-         <div class="env-switch">
-            <label class="env-switch__label">
-               <input type="checkbox" checked disabled />
-               <span class="env-switch__text">On disabled</span>
-               <span class="env-switch__slider"></span>
-            </label>
-         </div>
-
-         <div class="env-switch">
-            <label class="env-switch__label">
-               <input type="checkbox" disabled />
-               <span class="env-switch__text">Off disabled</span>
-               <span class="env-switch__slider"></span>
-            </label>
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <label for="file-upload" class="env-form-element__label"
-         >File upload</label
-      >
-      <div class="env-form-element__control">
-         <input type="file" id="file-upload" />
-      </div>
-   </div>
-   <div class="env-form-element">
-      <button type="submit" class="env-button env-button--primary">
-         Submit
-      </button>
+   <div>
+      <label class="env-radio">
+         <input type="radio" name="radios" value="2" />
+         Alternative 2
+      </label>
    </div>
 </div>
 ```
 
+### Legacy radiobutton element <span class="env-badge env-badge--danger">Deprecated</span>
+
+Legacy radio button is deprecated since 10.0 and should be replaced
+with the new Radiobutton input element.
+
+```html
+<div
+   class="env-form-element__control"
+   role="radiogroup"
+   aria-labelledby="legacy-radio-header"
+>
+   <div class="env-form-radio">
+      <input id="legacyradio1" type="radio" name="legacyradios" checked />
+      <label for="legacyradio1" class="env-form-element__label">
+         <span class="env-form-radio__fake"></span>
+         <span class="env-form-radio__label">Alternative</span>
+      </label>
+   </div>
+   <div class="env-form-radio">
+      <input id="legacyradio2" type="radio" name="legacyradios" />
+      <label for="legacyradio2" class="env-form-element__label">
+         <span class="env-form-radio__fake"></span>
+         <span class="env-form-radio__label">Alternative 2</span>
+      </label>
+   </div>
+</div>
+```
+
+## Checkbox input element
+
+Related checkbox elements should have `role="group"`
+applied to its container to indicate group membership of the contained elements.
+
+```html
+<span class="env-form-element__label" id="checkbox-header">Checkbox</span>
+<div
+   class="env-form-element__control"
+   role="group"
+   aria-labelledby="checkbox-header"
+>
+   <div class="env-checkbox">
+      <input type="checkbox" checked name="options" id="cb1" />
+      <label class="env-form-element__label" for="cb1">
+         <span class="env-checkbox__fake"></span>
+         <span class="env-checkbox__label">Checked</span>
+      </label>
+   </div>
+   <div class="env-checkbox">
+      <input type="checkbox" name="options" id="cb2" />
+      <label class="env-form-element__label" for="cb2">
+         <span class="env-checkbox__fake"></span>
+         <span class="env-checkbox__label">Check</span>
+      </label>
+   </div>
+</div>
+```
+
+### Switch component <span class="env-badge env-badge--info">8.2</span>
+
+```html
+<span class="env-form-element__label" id="switch-header"> Switch </span>
+<div
+   class="env-form-element__control"
+   role="group"
+   aria-labelledby="switch-header"
+>
+   <div class="env-switch">
+      <label class="env-switch__label">
+         <input type="checkbox" checked />
+         <span class="env-switch__text">On</span>
+         <span class="env-switch__slider"></span>
+      </label>
+   </div>
+   <div class="env-switch">
+      <label class="env-switch__label">
+         <input type="checkbox" />
+         <span class="env-switch__text">Off</span>
+         <span class="env-switch__slider"></span>
+      </label>
+   </div>
+</div>
+```
+
+<div id="input-icons"></div>
+
 ## Icons in input fields <span class="env-badge env-badge--info">8.2</span>
 
 ```html
-<div class="env-form">
-   <div class="env-form__row">
-      <div class="env-form-element">
-         <label for="search3" class="env-form-element__label"
-            >Input search with cancel button + icon left</label
-         >
-         <div class="env-form-element__control env-form-element__control--icon">
-            <svg class="env-icon">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-search"
-               ></use>
-            </svg>
-            <input
-               type="search"
-               class="env-form-input env-form-input--search"
-               placeholder="Placeholder text"
-               id="search3"
-            />
-         </div>
+<div class="example-input-fields">
+   <div class="env-form-element">
+      <label for="search3" class="env-form-element__label"
+         >Input search with cancel button + icon left</label
+      >
+      <div class="env-form-element__control env-form-element__control--icon">
+         <svg class="env-icon">
+            <use xlink:href="/sitevision/envision-icons.svg#icon-search"></use>
+         </svg>
+         <input
+            type="search"
+            class="env-form-input env-form-input--search"
+            placeholder="Placeholder text"
+            id="search3"
+         />
       </div>
-      <div class="env-form-element">
-         <label for="text-2" class="env-form-element__label"
-            >Input text + icon right</label
-         >
-         <div class="env-form-element__control env-form-element__control--icon">
-            <input
-               type="text"
-               class="env-form-input"
-               placeholder="Placeholder text"
-               id="text-2"
-            />
-            <svg class="env-icon">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
-            </svg>
-         </div>
+   </div>
+
+   <div class="env-form-element">
+      <label for="text-2" class="env-form-element__label"
+         >Input text + icon right</label
+      >
+      <div class="env-form-element__control env-form-element__control--icon">
+         <input
+            type="text"
+            class="env-form-input"
+            placeholder="Placeholder text"
+            id="text-2"
+         />
+         <svg class="env-icon">
+            <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+         </svg>
       </div>
    </div>
 </div>
@@ -333,7 +278,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
 Join text, input and button with `env-form-input-group`.
 
 ```html
-<div class="env-form example-input-group">
+<div class="example-input-fields">
    <div class="env-form-element">
       <label for="email" class="env-form-element__label">Subscribe</label>
       <div class="env-form-element__control env-form-input-group">
@@ -367,14 +312,74 @@ Join text, input and button with `env-form-input-group`.
 </div>
 ```
 
-## Horizontal
+## Form layouts
+
+### Common elements
+
+#### .env-form
+
+By itself the class is only a wrapper that sets the text-size-adjust property to control the text inflation
+for some smartphones and tablets.
+
+May be used with modifiers <small>`.env-form--horizontal`</small> and <small>`.env-form--inline`</small> for
+variations in form layout.
+
+#### .env-form\_\_row
+
+Wrap <small>`env-form-element`</small> in <small>`env-form__row`</small> to place them horizontally.
+
+#### .env-form-element
+
+Generic form input wrapper that sets spacing between elements.
+
+#### .env-form-element\_\_label
+
+Generic label class to set style and spacing for input labels.
+
+#### .env-form-element\_\_control
+
+Wrapper for form elements.
+Required for inputs with <a href="#input-icons" class="env-link">icons</a> and a few other cases.
+
+```html
+<form class="env-form" action="/">
+   <div class="env-form__row">
+      <div class="env-form-element">
+         <label for="form-input-1" class="env-form-element__label"
+            >Text input</label
+         >
+         <div class="env-form-element__control">
+            <input type="text" class="env-form-input" id="form-input-1" />
+         </div>
+      </div>
+      <div class="env-form-element">
+         <label for="form-input-2" class="env-form-element__label"
+            >Text input w. icon</label
+         >
+         <div class="env-form-element__control env-form-element__control--icon">
+            <input type="text" class="env-form-input" id="form-input-2" />
+            <svg class="env-icon">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+            </svg>
+         </div>
+      </div>
+   </div>
+   <div class="env-form-element">
+      <button type="submit" class="env-button env-button--primary">
+         Submit
+      </button>
+   </div>
+</form>
+```
+
+### Horizontal
 
 To create a horizontal form (horizontally align labels with input), apply modifier `.env-form--horizontal` to the form
 wrapper. The label of the element takes up 20% of the width and the `.env-form-element__control` uses the remaining
 width.
 
 ```html
-<div class="env-form env-form--horizontal">
+<form class="env-form env-form--horizontal" action="/">
    <div class="env-form-element">
       <label for="first-name" class="env-form-element__label">First name</label>
       <div class="env-form-element__control">
@@ -408,13 +413,6 @@ width.
                <span class="env-checkbox__label">Subject 2</span>
             </label>
          </div>
-         <div class="env-checkbox">
-            <input type="checkbox" name="options" id="cb7" />
-            <label class="env-form-element__label" for="cb7">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Subject 3</span>
-            </label>
-         </div>
       </div>
    </div>
    <div class="env-form-element">
@@ -422,15 +420,15 @@ width.
          Submit
       </button>
    </div>
-</div>
+</form>
 ```
 
-## Inline
+### Inline
 
 Apply modifier `.env-form--inline` to the form wrapper to display elements inline.
 
 ```html
-<div class="env-form env-form--inline">
+<form class="env-form env-form--inline" action="/">
    <div class="env-form-element">
       <label for="country" class="env-form-element__label">Country</label>
       <div class="env-form-element__control">
@@ -459,17 +457,17 @@ Apply modifier `.env-form--inline` to the form wrapper to display elements inlin
          Submit
       </button>
    </div>
-</div>
+</form>
 ```
 
-## Hybrid
+### Hybrid
 
 To position multiple elements on a row, wrap target elements (`.env-form-element`) with a `.env-form__row` container.
 Use modifer `.env-form-element--*` to specify the length of an element, relative to other elements on the row. Valid
 values `1-6`. Default is `1`
 
 ```html
-<div class="env-form">
+<form class="env-form" action="/">
    <div class="env-form__row">
       <div class="env-form-element">
          <label for="username" class="env-form-element__label">Username</label>
@@ -513,7 +511,7 @@ values `1-6`. Default is `1`
          Submit
       </button>
    </div>
-</div>
+</form>
 ```
 
 ## Help text
@@ -522,100 +520,101 @@ Use `.env-form-element__help` for help texts associated with a form element. The
 used to reference the `ID` of the text that describes the element.
 
 ```html
-<div class="env-form">
-   <div class="env-form-element">
-      <label for="password" class="env-form-element__label">Password</label>
-      <div class="env-form-element__control">
-         <input
-            type="password"
-            class="env-form-input"
-            id="password"
-            aria-describedby="password-help"
-         />
-      </div>
-      <span id="password-help" class="env-form-element__help"
-         >Enter a secure password</span
-      >
-   </div>
+<label for="password" class="env-form-element__label">Password</label>
+<div class="env-form-element__control">
+   <input
+      type="password"
+      class="env-form-input"
+      id="password"
+      aria-describedby="password-help"
+   />
 </div>
+<span id="password-help" class="env-form-element__help"
+   >Enter a secure password</span
+>
 ```
 
 ## States
 
-Elements with the `disabled` attribute recieve a `not-allowed` cursor while `readonly` elements maintain the default
-cursor. For disabled radio buttons and checkboxes, apply modifier `.env-radio--disabled`
-/ `.env-checkbox--disabled` to its wrapper for a muted label.
+For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its wrapper for a muted label.
 
 ```html
-<div class="env-form">
-   <div class="env-form-element">
-      <label for="disabled" class="env-form-element__label"
-         >Disabled text input</label
-      >
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            id="disabled"
-            placeholder="Disabled"
-            disabled
-         />
-      </div>
+<div class="env-form-element">
+   <label for="disabled" class="env-form-element__label"
+      >Disabled text input</label
+   >
+   <div class="env-form-element__control">
+      <input
+         type="text"
+         class="env-form-input"
+         id="disabled"
+         placeholder="Disabled"
+         disabled
+      />
    </div>
-   <div class="env-form-element">
-      <label for="disabled-select" class="env-form-element__label"
-         >Disabled select</label
-      >
-      <div class="env-form-element__control">
-         <select class="env-form-input" id="disabled-select" disabled>
-            <option>Disabled</option>
-         </select>
-      </div>
+</div>
+<div class="env-form-element">
+   <label for="disabled-select" class="env-form-element__label"
+      >Disabled select</label
+   >
+   <div class="env-form-element__control">
+      <select class="env-form-input" id="disabled-select" disabled>
+         <option>Disabled</option>
+      </select>
    </div>
-   <div class="env-form-element">
-      <div class="env-form-element__control">
-         <div class="env-checkbox env-checkbox--disabled">
-            <input type="checkbox" name="options" id="cb9" disabled />
-            <label class="env-form-element__label" for="cb9">
-               <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Disabled checkbox</span>
-            </label>
-         </div>
-      </div>
-   </div>
-   <div class="env-form-element">
-      <div class="env-form-element__control">
-         <label class="env-radio env-radio--disabled">
-            <input class="env-radio" type="radio" disabled checked />
-            Disabled radio button
-            <span class="env-badge env-badge--warning">Beta since 10.0</span>
+</div>
+<div class="env-form-element">
+   <div class="env-form-element__control">
+      <div class="env-checkbox env-checkbox--disabled">
+         <input type="checkbox" name="options" id="cb9" checked disabled />
+         <label class="env-form-element__label" for="cb9">
+            <span class="env-checkbox__fake"></span>
+            <span class="env-checkbox__label">Disabled checkbox</span>
          </label>
       </div>
    </div>
-   <div class="env-form-element">
-      <div class="env-form-element__control">
-         <div class="env-form-radio env-form-radio--disabled">
-            <label class="env-form-element__label">
-               <input type="radio" disabled />
-               Disabled legacy radio button
-               <span class="env-badge env-badge--danger">Deprecated</span>
-            </label>
-         </div>
+</div>
+<div class="env-form-element">
+   <div class="env-form-element__control">
+      <label class="env-radio env-radio--disabled">
+         <input class="env-radio" type="radio" disabled checked />
+         Disabled radio button
+         <span class="env-badge env-badge--warning">Beta since 10.0</span>
+      </label>
+   </div>
+</div>
+<div class="env-form-element">
+   <div class="env-form-element__control">
+      <div class="env-form-radio env-form-radio--disabled">
+         <label class="env-form-element__label">
+            <input type="radio" disabled />
+            Disabled legacy radio button
+            <span class="env-badge env-badge--danger">Deprecated</span>
+         </label>
       </div>
    </div>
-   <div class="env-form-element">
-      <label for="readonly" class="env-form-element__label"
-         >Readonly text input</label
-      >
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            id="readonly"
-            placeholder="Readonly"
-            readonly
-         />
-      </div>
+</div>
+<div class="env-form-element">
+   <div class="env-switch">
+      <label class="env-switch__label">
+         <input type="checkbox" checked disabled />
+         <span class="env-switch__text">On disabled</span>
+         <span class="env-switch__slider"></span>
+      </label>
+   </div>
+</div>
+<div class="env-form-element">
+   <label for="readonly" class="env-form-element__label"
+      >Readonly text input</label
+   >
+   <div class="env-form-element__control">
+      <input
+         type="text"
+         class="env-form-input"
+         id="readonly"
+         placeholder="Readonly"
+         readonly
+      />
    </div>
 </div>
 ```
@@ -627,34 +626,32 @@ validation state. The `aria-describedby` attribute should be used to reference t
 element.
 
 ```html
-<div class="env-form">
-   <div class="env-form-element env-form-element--success">
-      <label for="success" class="env-form-element__label">Success</label>
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            id="success"
-            aria-describedby="success-feedback"
-         />
-      </div>
-      <span id="success-feedback" class="env-form-element__feedback"
-         >Success feedback</span
-      >
+<div class="env-form-element env-form-element--success">
+   <label for="success" class="env-form-element__label">Success</label>
+   <div class="env-form-element__control">
+      <input
+         type="text"
+         class="env-form-input"
+         id="success"
+         aria-describedby="success-feedback"
+      />
    </div>
-   <div class="env-form-element env-form-element--danger">
-      <label for="danger" class="env-form-element__label">Danger</label>
-      <div class="env-form-element__control">
-         <input
-            type="text"
-            class="env-form-input"
-            id="danger"
-            aria-describedby="danger-feedback"
-         />
-      </div>
-      <span id="danger-feedback" class="env-form-element__feedback"
-         >Danger feedback</span
-      >
+   <span id="success-feedback" class="env-form-element__feedback"
+      >Success feedback</span
+   >
+</div>
+<div class="env-form-element env-form-element--danger">
+   <label for="danger" class="env-form-element__label">Danger</label>
+   <div class="env-form-element__control">
+      <input
+         type="text"
+         class="env-form-input"
+         id="danger"
+         aria-describedby="danger-feedback"
+      />
    </div>
+   <span id="danger-feedback" class="env-form-element__feedback"
+      >Danger feedback</span
+   >
 </div>
 ```

@@ -28,6 +28,14 @@ export const useCopyExample = (content) => {
          }
       });
 
+      // Disable example forms
+      const forms = document.querySelectorAll('form[action="/"]');
+      forms.forEach((form) => {
+         form.addEventListener('submit', (e) => {
+            e.preventDefault();
+         });
+      });
+
       // New version initiation
       envision.tabs('.example-tabs');
       // Legacy version initiation (deprecated)

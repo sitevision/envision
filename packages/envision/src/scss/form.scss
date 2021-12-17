@@ -1,5 +1,5 @@
 .env-form {
-   text-size-adjust: none;
+   text-size-adjust: 100%;
 
    input,
    select,
@@ -520,12 +520,6 @@
    &__label {
       display: inline;
       vertical-align: bottom;
-   }
-
-   &--disabled {
-      label {
-         color: css-var('font-color-light');
-      }
    }
 }
 
