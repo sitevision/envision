@@ -47,8 +47,4 @@
       /* IE 10+ */
       @content;
    }
-   &:-moz-placeholder {
-      /* Firefox 18- */
-      @content;
-   }
 }
