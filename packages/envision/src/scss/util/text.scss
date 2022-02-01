@@ -1,10 +1,11 @@
 .env-text {
-   color: css-var('font-color');
    font-family: css-var('font-family');
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
    text-size-adjust: 100%;
    text-align: left;
+   line-height: $line-height-medium;
+   color: css-var('font-color');
 
    &--muted {
       filter: opacity(0.625);

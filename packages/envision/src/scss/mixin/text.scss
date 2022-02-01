@@ -4,8 +4,12 @@
    .env-text-#{$element},
       // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .env-text--#{$element} {
+      font-family: css-var('font-family');
       font-size: css-var($font-size);
       font-weight: $font-weight;
+      font-style: normal;
+      line-height: $line-height-medium;
+      color: css-var('font-color');
       margin: 0 0 css-var($margin-bottom);
    }
 }
