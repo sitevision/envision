@@ -55,11 +55,13 @@
       margin: css-var('spacing-xx-small') 0;
 
       &--title {
+         @include sitevision-site-font-override(
+            css-var('font-size-large'),
+            normal,
+            $font-weight-semibold,
+            $line-height-medium
+         );
          margin: 0;
-         font: {
-            size: css-var('font-size-large');
-            weight: $font-weight-semibold;
-         }
       }
 
       &--secondary {
