@@ -7,6 +7,10 @@
    overflow-wrap: anywhere;
    word-break: normal;
 
+   // Margin collapse fix
+   margin-top: -1px;
+   border-top: 1px solid transparent;
+
    > :first-child {
       padding-top: css-var('spacing-xx-small');
    }
