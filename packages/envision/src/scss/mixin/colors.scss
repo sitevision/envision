@@ -4,6 +4,14 @@
       $blockName: '#{$blockName}-';
    }
 
+   --env-font-color: #{css-var('block-#{$blockName}font-color')};
+   --env-link-font-color: #{css-var('block-#{$blockName}link-font-color')};
+   --env-link-hover-font-color: #{css-var(
+         'block-#{$blockName}link-hover-font-color'
+      )};
+
+   color: css-var('block-#{$blockName}font-color');
+
    &,
    *:not([class^='env-']):not([class*=' env-']):not(a),
    .env-button--link,

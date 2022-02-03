@@ -1,15 +1,31 @@
+@mixin sitevision-site-font-override(
+   $font-size: css-var('font-size-medium'),
+   $font-style: normal,
+   $font-weight: 400,
+   $line-height: normal,
+   $font-family: css-var('font-family'),
+   $color: css-var('font-color')
+) {
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-style: $font-style;
+   font-size: $font-size;
+   color: $color;
+   line-height: $line-height;
+}
+
 @mixin block-text-size($element, $font-size, $margin-bottom, $font-weight) {
    #{$element}.env-text,
    .env-text #{$element},
    .env-text-#{$element},
       // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .env-text--#{$element} {
-      font-family: css-var('font-family');
-      font-size: css-var($font-size);
-      font-weight: $font-weight;
-      font-style: normal;
-      line-height: $line-height-medium;
-      color: css-var('font-color');
+      @include sitevision-site-font-override(
+         css-var($font-size),
+         normal,
+         $font-weight,
+         $line-height-medium
+      );
       margin: 0 0 css-var($margin-bottom);
    }
 }
