@@ -108,7 +108,7 @@ title: Form
 
 ### Tag select component <span class="env-badge env-badge--info">9.1</span>
 
-See <a class="env-link" href="../select/">Tag select documentation</a>.
+See [Tag select documentation](../select/).
 
 ```html
 <label for="tag-select" class="env-form-element__label"> Tag select </label>
@@ -339,7 +339,7 @@ Generic label class to set style and spacing for input labels.
 #### .env-form-element\_\_control
 
 Wrapper for form elements.
-Required for inputs with <a href="#input-icons" class="env-link">icons</a> and a few other cases.
+Required for inputs with [icons](#input-icons) and a few other cases.
 
 ```html
 <form class="env-form" action="/">

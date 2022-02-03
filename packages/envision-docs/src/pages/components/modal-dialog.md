@@ -6,7 +6,7 @@ title: Modal dialog
 
 ```html
 <div
-   class="env-modal-dialog doc-demo__modal"
+   class="env-modal-dialog example-demo__modal"
    role="dialog"
    aria-labelledby="myDialog"
    aria-hidden="true"

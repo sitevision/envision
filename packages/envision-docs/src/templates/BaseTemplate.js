@@ -35,7 +35,7 @@ const BaseTemplate = ({
          <Header title={title} menuItems={topMenuItems} />
          <div className="main-container">
             <main>
-               <h1 className="main-heading">{title}</h1>
+               <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
                {children}
             </main>
             <Sidenav

@@ -1,5 +1,5 @@
-.doc-demo-dark,
-.env-modal-dialog.doc-demo__modal {
+.example-demo-dark,
+.env-modal-dialog.example-demo__modal {
    background-color: var(--env-element-common-background-color);
    border-color: var(--env-border-color) var(--env-border-color-light)
       var(--env-border-color-light);
@@ -33,7 +33,9 @@
    justify-content: center;
    height: 200px;
    width: 200px;
-   background-color: var(--env-element-common-background-color);
+   color: #000;
+   background-color: #f2f2f2;
+   text-decoration: none;
 }
 
 .example-sizing > div,

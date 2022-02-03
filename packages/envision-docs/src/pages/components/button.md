@@ -123,7 +123,7 @@ Method of adding icons have since been updated as examples below.
 All button types and sizes are available.
 
 ```html
-<h4>Icon button types</h4>
+<h4 class="doc-heading-4">Icon button types</h4>
 
 <button type="button" class="env-button env-button--primary env-button--icon">
    Icon only, assistive text
@@ -165,7 +165,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4>Icon button sizes</h4>
+<h4 class="doc-heading-4">Icon button sizes</h4>
 
 <button
    type="button"
@@ -224,7 +224,9 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4>Small icon size <span class="env-badge env-badge--info">10.0</span></h4>
+<h4 class="doc-heading-4">
+   Small icon size <span class="env-badge env-badge--info">10.0</span>
+</h4>
 
 <button
    type="button"

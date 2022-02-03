@@ -2,7 +2,7 @@
 title: Collapse
 ---
 
-<h2>Collapsible content</h2>
+## Collapsible content
 
 ```html
 <h4 class="env-text">

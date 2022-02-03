@@ -28,17 +28,20 @@ p.sv-home__text {
    }
 }
 
-.sv-home__title {
+.doc-heading-1.sv-home__title {
    font-family: 'Open Sans', sans-serif;
    font-weight: 700;
+   font-style: normal;
    letter-spacing: -0.05em;
    margin: 0 0 0.25em;
    font-size: 2.25em;
+   color: var(--env-font-color);
+   line-height: normal;
 }
 
-.sv-home__subheader {
-   font-size: 1.125em;
+.doc-heading-2.sv-home__subheader {
    font-weight: 400;
+   font-size: 1.125em;
    margin: 0 0 2em;
 }
 

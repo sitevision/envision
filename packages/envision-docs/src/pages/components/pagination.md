@@ -176,7 +176,7 @@ title: Pagination
 
 ## Wrap
 
-When working with large number of items, utilize <a class="env-link" href="/utils/flexbox/#flex-wrap-flex-wrap-property">flex-wrap</a> to make the items wrap onto multiple lines
+When working with large number of items, utilize [flex-wrap](/utils/flexbox/#flex-wrap-flex-wrap-property) to make the items wrap onto multiple lines
 
 ```html
 <nav aria-label="Pagination example">

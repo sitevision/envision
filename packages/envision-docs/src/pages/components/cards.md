@@ -18,7 +18,7 @@ its width and height to make a nice aligned grid of cards.
 ## Cards
 
 ```html
-<div class="doc-demo-dark">
+<div class="example-demo-dark">
    <article class="example-card env-card env-block env-shadow-small">
       <header class="env-card__header">
          <h2 class="env-card__text env-card__text--title">Lorem Ipsumsson</h2>
@@ -108,7 +108,7 @@ will always stick to the bottom of the Card. Inside a Cardholder, if the Card ne
 vertically, the body of the Card will be the element that stretches.
 
 ```html
-<div class="doc-demo-dark">
+<div class="example-demo-dark">
    <article class="example-card-parts env-card env-block env-shadow-small">
       <header class="env-card__header">Header</header>
       <div class="env-card__body">Body</div>
@@ -123,7 +123,7 @@ A Cardholder will use flexbox to make a grid of Cards that adapt to the given sp
 Use one `env-cardholder__slot` to hold each Card. See configuration options below.
 
 ```html
-<div class="doc-demo-dark">
+<div class="example-demo-dark">
    <div class="env-cardholder env-cardholder--3">
       <div class="env-cardholder__slot">
          <article class="env-card env-block env-shadow-small">
@@ -268,7 +268,7 @@ To control the size and spacing of the columns there are three CSS variables tha
 Below are a few examples that you may resize and see how the columns adapt to the given space.
 
 <div class="demo-cardholder-flex">
-   <h4>Three columns</h4>
+   <h4 class="doc-heading-4">Three columns</h4>
    <p><code class="language-text">.env-cardholder.env-cardholder--3</code></p>
    <div class="demo-cardholder-flex__resizeable">   
    <div class="env-cardholder env-cardholder--3">
@@ -284,7 +284,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-flex">
-   <h4>Five columns</h4>
+   <h4 class="doc-heading-4">Five columns</h4>
    <p><code class="language-text">.env-cardholder.env-cardholder--5</code></p>
    <div class="demo-cardholder-flex__resizeable">   
    <div class="env-cardholder env-cardholder--5">
@@ -300,7 +300,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-flex">
-   <h4>Five columns, slot max width</h4>
+   <h4 class="doc-heading-4">Five columns, slot max width</h4>
    <p><code class="language-text">.env-cardholder.env-cardholder--5.env-cardholder--max</code></p>
    <div class="demo-cardholder-flex__resizeable">   
    <div class="env-cardholder env-cardholder--5 env-cardholder--max">
@@ -316,7 +316,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-flex">
-   <h4>Five columns, slot max width, aligned left</h4>
+   <h4 class="doc-heading-4">Five columns, slot max width, aligned left</h4>
    <p><code class="language-text">.env-cardholder.env-cardholder--5.env-cardholder--max.env-cardholder--start</code></p>
    <div class="demo-cardholder-flex__resizeable">   
    <div class="env-cardholder env-cardholder--5 env-cardholder--max env-cardholder--start">
@@ -339,7 +339,7 @@ Cardholder Grid uses CSS Grid. Cardholder slots are _not_ required.
 Columns will always be equal width and aligned.
 
 ```html
-<div class="doc-demo-dark">
+<div class="example-demo-dark">
    <div class="env-cardholder-grid">
 
          <article class="env-card env-block env-shadow-small">
@@ -446,7 +446,7 @@ To further adjust the size and spacing of the columns there are two CSS variable
 Below are a few examples that you may resize and see how the columns adapt to the given space.
 
 <div class="demo-cardholder-grid">
-   <h4>Default Cardholder Grid</h4>
+   <h4 class="doc-heading-4">Default Cardholder Grid</h4>
    <p><code class="language-text">.env-cardholder-grid</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid">
@@ -467,7 +467,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Six columns</h4>
+   <h4 class="doc-heading-4">Six columns</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--6</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--6">
@@ -483,7 +483,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Small column width</h4>
+   <h4 class="doc-heading-4">Small column width</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--column-small</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--column-small">
@@ -499,7 +499,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Large column width</h4>
+   <h4 class="doc-heading-4">Large column width</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--column-large</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--column-large">
@@ -515,7 +515,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Large column gap</h4>
+   <h4 class="doc-heading-4">Large column gap</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--gap-large</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--gap-large">
@@ -531,7 +531,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Small column gap</h4>
+   <h4 class="doc-heading-4">Small column gap</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--gap-small</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--gap-small">
@@ -547,7 +547,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>No column gap</h4>
+   <h4 class="doc-heading-4">No column gap</h4>
    <p><code class="language-text">.env-cardholder-grid.env-cardholder-grid--gap-none</code></p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--gap-none">
@@ -563,7 +563,7 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 <div class="demo-cardholder-grid">
-   <h4>Combined modifiers</h4>
+   <h4 class="doc-heading-4">Combined modifiers</h4>
    <p>Small column width, large column gap, 8 columns max</p>
    <div class="demo-cardholder-grid__resizeable">   
    <div class="env-cardholder-grid env-cardholder-grid--column-small env-cardholder-grid--gap-large env-cardholder-grid--8">
