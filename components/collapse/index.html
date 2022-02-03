@@ -36,9 +36,9 @@
       quam. Proin eu tincidunt metus.
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre></div>
-<p>Add <code class="language-text">env-collapse--show</code> to have your content expanded</p>
-<h2>Background</h2>
-<p>Add <code class="language-text">env-collapse-header</code> to give the collapsible header a background
+<p class="doc-p">Add <code class="language-text">env-collapse--show</code> to have your content expanded</p>
+<h2 class="doc-heading-2">Background</h2>
+<p class="doc-p">Add <code class="language-text">env-collapse-header</code> to give the collapsible header a background
 Add <code class="language-text">env-collapse-header--icons</code> to add icons</p>
 <div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span>
@@ -61,8 +61,8 @@ Add <code class="language-text">env-collapse-header--icons</code> to add icons</
       quam. Proin eu tincidunt metus.
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre></div>
-<h2>Methods</h2>
-<p>Show</p>
+<h2 class="doc-heading-2">Methods</h2>
+<p class="doc-p">Show</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Since Sitevision 9.1</span>
 envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -70,7 +70,7 @@ envision<span class="token punctuation">.</span><span class="token function">col
 
 <span class="token comment">// Deprecated since Sitevision 9.1</span>
 <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">envCollapse</span><span class="token punctuation">(</span><span class="token string">'show'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>Hide</p>
+<p class="doc-p">Hide</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Since Sitevision 9.1</span>
 envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -78,7 +78,7 @@ envision<span class="token punctuation">.</span><span class="token function">col
 
 <span class="token comment">// Deprecated since Sitevision 9.1</span>
 <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">envCollapse</span><span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>Toggle</p>
+<p class="doc-p">Toggle</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Since Sitevision 9.1</span>
 envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
