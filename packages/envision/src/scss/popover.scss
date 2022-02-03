@@ -56,6 +56,13 @@ $arrow-border-size: 10px;
          width: 0;
       }
 
+      // x-placement is used in Popper 1.x (Envision)
+      // data-popper-placement is Popper 2.x (React apps)
+      // Classname modifiers are kept for legacy reasons but not really needed.
+      [x-placement='top'] &,
+      [data-popper-placement='top'] &,
+      [x-placement='bottom'] &,
+      [data-popper-placement='bottom'] &,
       &--top,
       &--bottom {
          left: 50%;
@@ -66,6 +73,8 @@ $arrow-border-size: 10px;
          }
       }
 
+      [x-placement='bottom'] &,
+      [data-popper-placement='bottom'] &,
       &--bottom {
          border-bottom-color: css-var('border-color-light');
          top: $arrow-position;
@@ -77,6 +86,8 @@ $arrow-border-size: 10px;
          }
       }
 
+      [x-placement='top'] &,
+      [data-popper-placement='top'] &,
       &--top {
          border-top-color: css-var('border-color-light');
          bottom: $arrow-position;
@@ -88,6 +99,10 @@ $arrow-border-size: 10px;
          }
       }
 
+      [x-placement='right'] &,
+      [data-popper-placement='right'] &,
+      [x-placement='left'] &,
+      [data-popper-placement='left'] &,
       &--right,
       &--left {
          margin-top: -$arrow-border-size;
@@ -98,6 +113,8 @@ $arrow-border-size: 10px;
          }
       }
 
+      [x-placement='left'] &,
+      [data-popper-placement='left'] &,
       &--left {
          border-left-color: css-var('border-color-light');
          right: $arrow-position;
@@ -109,6 +126,8 @@ $arrow-border-size: 10px;
          }
       }
 
+      [x-placement='right'] &,
+      [data-popper-placement='right'] &,
       &--right {
          border-right-color: css-var('border-color-light');
          left: $arrow-position;

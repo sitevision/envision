@@ -3,8 +3,8 @@ title: Popover
 ---
 
 ```html
-<div class="env-popover">
-   <div class="env-popover__arrow env-popover__arrow--top"></div>
+<div class="env-popover" data-popper-placement="top">
+   <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
@@ -21,8 +21,8 @@ title: Popover
 ```
 
 ```html
-<div class="env-popover">
-   <div class="env-popover__arrow env-popover__arrow--bottom"></div>
+<div class="env-popover" data-popper-placement="bottom">
+   <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
@@ -39,8 +39,8 @@ title: Popover
 ```
 
 ```html
-<div class="env-popover">
-   <div class="env-popover__arrow env-popover__arrow--left"></div>
+<div class="env-popover" data-popper-placement="left">
+   <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
@@ -57,8 +57,8 @@ title: Popover
 ```
 
 ```html
-<div class="env-popover">
-   <div class="env-popover__arrow env-popover__arrow--right"></div>
+<div class="env-popover" data-popper-placement="right">
+   <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover</h4>
    </div>
@@ -193,8 +193,8 @@ To keep the popover alive when being hovered it requires a delay to function pro
 ## Popover menu <span class="env-badge env-badge--info">9.0</span>
 
 ```html
-<div class="env-popover">
-   <div class="env-popover__arrow env-popover__arrow--top"></div>
+<div class="env-popover" data-popper-placement="top">
+   <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-text env-popover__header__title">Popover menu</h4>
    </div>

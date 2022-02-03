@@ -12,19 +12,6 @@ const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
 const EVENT_NAMESPACE = `.${IDENTIFIER}`;
 
-const attachmentMapping = {
-   top: 'top',
-   right: 'right',
-   bottom: 'bottom',
-   left: 'left',
-};
-
-const allAttachmentClassNames = Object.values(attachmentMapping).map(
-   (location) => {
-      return `env-popover__arrow--${location}`;
-   }
-);
-
 const DEFAULTS = {
    clickOutside: false,
    constraints: [],
@@ -178,7 +165,6 @@ class Popover {
       this.arrowEl = this.$popoverElement.find('.env-popover__arrow')[0];
       this.setTitle($popoverElement);
       this.setContent($popoverElement);
-      this._setAttachmentClass(attachmentMapping[this.config.placement]);
    }
 
    hide() {
@@ -196,13 +182,6 @@ class Popover {
       this.isShowing = false;
    }
 
-   _setAttachmentClass(className) {
-      if (this.arrowEl) {
-         this.arrowEl.classList.remove(...allAttachmentClassNames);
-         this.arrowEl.classList.add(`env-popover__arrow--${className}`);
-      }
-   }
-
    show() {
       this.render();
       const $popoverElement = this.getPopoverElement();
@@ -212,7 +191,7 @@ class Popover {
 
       getPopper().then((Popper) => {
          this._popper = new Popper(this.el, $popoverElement[0], {
-            placement: attachmentMapping[this.config.placement],
+            placement: this.config.placement,
             modifiers: {
                flip: {
                   behavior: 'flip',
@@ -223,14 +202,6 @@ class Popover {
             },
             arrow: {
                element: '.env-popover__arrow',
-            },
-            onCreate: (data) => {
-               if (data.originalPlacement !== data.placement) {
-                  this._setAttachmentClass(attachmentMapping[data.placement]);
-               }
-            },
-            onUpdate: (data) => {
-               this._setAttachmentClass(attachmentMapping[data.placement]);
             },
          });
 
