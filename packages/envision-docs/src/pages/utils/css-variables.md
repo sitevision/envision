@@ -5,9 +5,9 @@ description: CSS variables
 group: utils
 ---
 
-CSS variables (<a class="env-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener">CSS custom properties</a>) are available with the format: `--env-{variable}`
+CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) are available with the format: `--env-{variable}`
 
-Only works in browsers that support <a class="env-link" href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">CSS variables.</a>
+Only works in browsers that support [CSS variables](https://caniuse.com/#feat=css-variables).
 
 ## Example
 

@@ -60,7 +60,7 @@ title: Text
 ```
 
 ```html
-<h1 class="env-text--uppercase">will be all uppercase</h1>
+<p class="env-text--uppercase">will be all uppercase</p>
 
 <p class="env-text--lowercase">THIS WILL BE LOWERCASE</p>
 

@@ -144,7 +144,7 @@ title: Image slider
             alt="First slide"
          />
          <div class="env-image-slider__caption">
-            <h3>Lorem ipsum</h3>
+            <h3 class="doc-heading-3">Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
@@ -155,7 +155,7 @@ title: Image slider
             alt="Second slide"
          />
          <div class="env-image-slider__caption">
-            <h3>Lorem ipsum</h3>
+            <h3 class="doc-heading-3">Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>
@@ -166,7 +166,7 @@ title: Image slider
             alt="Third slide"
          />
          <div class="env-image-slider__caption">
-            <h3>Lorem ipsum</h3>
+            <h3 class="doc-heading-3">Lorem ipsum</h3>
             <p>dolor sit amet, consectetur</p>
          </div>
       </div>

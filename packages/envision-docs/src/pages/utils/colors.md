@@ -7,11 +7,11 @@ title: Colors
 Preset color combinations, use for larger blocks of content.
 
 ```html
-<div class="example-grid doc-demo__modal" id="blocks">
+<div class="example-grid example-demo__modal" id="blocks">
    <div class="example-grid__col example-grid__col--33">
       <div class="env-block env-block--border">
          <div class="example-variant">
-            <h2>Default</h2>
+            <h2 class="env-text-h4">Default</h2>
             <p>
                Bacon <a href="#block" class="env-link">ipsum</a> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
@@ -23,7 +23,7 @@ Preset color combinations, use for larger blocks of content.
    <div class="example-grid__col example-grid__col--33">
       <div class="env-block-primary env-block-primary--border">
          <div class="example-variant">
-            <h2>Primary</h2>
+            <h2 class="env-text-h4">Primary</h2>
             <p>
                Bacon <a href="#block" class="env-link">ipsum</a> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
@@ -35,7 +35,7 @@ Preset color combinations, use for larger blocks of content.
    <div class="example-grid__col example-grid__col--33">
       <div class="env-block-secondary env-block-secondary--border">
          <div class="example-variant">
-            <h2>Secondary</h2>
+            <h2 class="env-text-h4">Secondary</h2>
             <p>
                Bacon <span href="#block" class="env-link">ipsum</span> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
@@ -120,7 +120,7 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--100">
     <div class="example-grid__box example-grid">
       <div class="example-element-header example-grid__col example-grid__col--100">
-        <h2>Primary & default</h2>
+        <h2 class="doc-heading-h2">Primary & default</h2>
         <p>All elements use the same color setting.</p>
       </div>
       <div class="example-grid__col example-grid__col--50">
@@ -289,7 +289,7 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--50">
     <div class="example-grid__box">
       <div class="example-element-header">
-        <h2>Success</h2>
+        <h2 class="doc-heading-h2">Success</h2>
       </div>
       <div class="example-element">
         <div class="example-element-label">Button:</div>
@@ -326,7 +326,7 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--50">
     <div class="example-grid__box">
       <div class="example-element-header">
-        <h2>Warning</h2>
+        <h2 class="doc-heading-h2">Warning</h2>
       </div>
       <div class="example-element">
         <div class="example-element-label">Button:</div>
@@ -363,7 +363,7 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--50">
     <div class="example-grid__box">
       <div class="example-element-header">
-        <h2>Danger</h2>
+        <h2 class="doc-heading-h2">Danger</h2>
       </div>
       <div class="example-element">
         <div class="example-element-label">Button:</div>
@@ -400,7 +400,7 @@ Element colors are used for elements and components. See usage examples below.
   <div class="example-grid__col example-grid__col--50">
     <div class="example-grid__box">
       <div class="example-element-header">
-        <h2>Info</h2>
+        <h2 class="doc-heading-h2">Info</h2>
       </div>
       <div class="example-element">
         <div class="example-element-label">Button:</div>

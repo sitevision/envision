@@ -24,20 +24,7 @@ body {
    transition: all 0.3s;
 }
 
-body a {
-   // This here to avoid issues in Sitevision
-   // by making sure we add the CSS needed for
-   // misc components.
-   // (Simulates setting in BODY font)
-   // a.dummybody, body a, .dummybody a
-   color: deeppink;
-   text-decoration: underline;
-}
-
-:not(pre) > code[class*='language-'] {
-   text-shadow: none;
-}
-
+// Font family styles set from theme picker
 body {
    font-family: var(--env-font-family);
 
@@ -62,7 +49,145 @@ body {
    }
 }
 
-.main-body > h2,
+//----- SITEVISION SITE FONT ISSUES DETECTION START -----
+
+// This here to avoid issues in Sitevision
+// by making sure we add the CSS needed for
+// misc components.
+// Simulates setting in BODY font and default H1-H6-font.
+//
+// 1. Set ugly pink font with same specificity as Sitevision sets font styles.
+// 2. Override documenation style to always look nice.
+// 3. If we get a CSS leak from SV in Envision components, we'll see the ugly font.
+
+body a {
+   color: deeppink;
+   text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   // Set ugly pink font so we catch it in documentation site
+   font-family: cursive;
+   font-weight: 900;
+   font-style: italic;
+   font-size: 30px;
+   color: deeppink;
+   line-height: 2;
+
+   // Restore apperance for documentation headings
+   &[class^='doc-'],
+   &[class*=' doc-'] {
+      font-family: var(--env-font-family);
+      color: var(--env-font-color);
+      font-weight: 500;
+      font-style: normal;
+      line-height: normal;
+
+      .code-example & {
+         color: currentColor;
+      }
+   }
+}
+
+//----- SITEVISION SITE FONT ISSUES DETECTION END -----
+
+//----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS START -----
+
+.doc-link,
+.doc-link-secondary {
+   color: var(--env-link-font-color);
+   text-decoration: var(--env-link-text-decoration);
+   transition: box-shadow 0.2s ease-in-out;
+
+   &:hover {
+      color: var(--env-link-hover-font-color);
+      text-decoration: var(--env-link-hover-text-decoration);
+   }
+
+   @include focus-visible;
+}
+
+h1.doc-heading-1 {
+   font-family: $roboto;
+   font-size: 46px;
+   font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
+   line-height: 1;
+   font-weight: 500;
+   margin: 0 0 1em;
+
+   &--main {
+      font-family: $roboto;
+      line-height: 1;
+      margin: 0 0 0.25em;
+   }
+}
+
+h2.doc-heading-2 {
+   font-family: $roboto;
+   font-weight: 500;
+   font-size: 26px;
+   font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
+   margin: 1em 0 0.5em;
+}
+
+h3.doc-heading-3 {
+   font-family: $roboto;
+   font-size: 22px;
+   font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
+   margin: 1em 0 0.5em;
+}
+
+h4.doc-heading-4,
+h5.doc-heading-5,
+h6.doc-heading-6 {
+   font-family: $roboto;
+   font-size: 18px;
+   margin: 1em 0 0.5em;
+}
+
+p.doc-p {
+   font-family: $roboto;
+   margin: 0 0 1em;
+}
+
+blockquote.doc-blockquote {
+   margin: 2em 0;
+   padding: 1em 1em;
+   border-left: 4px solid var(--env-font-color);
+   font-style: italic;
+}
+
+.doc-list {
+   list-style-type: square;
+   margin: 2em 0;
+   padding: 0 0 0 1.5em;
+
+   &__item {
+      margin: 0 0 0.5em;
+   }
+}
+
+[class^='doc-'],
+[class*=' doc-'],
+.gatsby-highlight {
+   // Use doc font for envision components that are part of docs.
+   --env-font-family: #{$roboto};
+   --env-badge-font-family: #{$roboto};
+   --env-button-font-family: #{$roboto};
+}
+
+//----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS END -----
+
+:not(pre) > code[class*='language-'] {
+   font-size: 0.85em;
+   text-shadow: none;
+}
+
 .docs-text,
 .sidenav,
 .sidenav *,
@@ -72,7 +197,6 @@ body {
    --env-font-family: #{$roboto};
 }
 
-.main-body > h2,
 .docs-text,
 .sidenav,
 .sidenav *,
@@ -157,63 +281,6 @@ img {
    max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-   font-weight: 500;
-}
-
-h1 {
-   font-size: 46px;
-   font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
-
-   &.main-heading {
-      font-family: $roboto;
-      line-height: 1;
-      margin: 0;
-   }
-}
-
-.main-body {
-   > h1 {
-      font-size: 46px;
-      font-size: clamp(2.1rem, #{'-0.7857rem + 8.1633vw'}, 2.9rem);
-      font-weight: 500;
-      margin: 0 0 1em;
-   }
-
-   > h2 {
-      font-weight: 500;
-      font-size: 26px;
-      font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
-      margin: 1em 0 0.5em;
-   }
-
-   > h3 {
-      font-size: 22px;
-      font-size: clamp(1.1rem, #{'-0.7857rem + 8.1633vw'}, 1.4rem);
-      margin: 1em 0;
-   }
-
-   > h4 {
-      font-size: 18px;
-      margin: 1em 0 0.5em;
-   }
-
-   > p {
-      margin: 0 0 1em;
-   }
-}
-
-:not(.code-example) {
-   > p {
-      line-height: 1.375;
-   }
-}
-
 .highlighter-rouge {
    background-color: rgba(0, 0, 0, 0.05);
    padding: 4px 8px;
@@ -268,7 +335,7 @@ h1 {
    }
 
    ul li a,
-   .theme-picker .env-link-secondary {
+   .theme-picker .doc-link-secondary {
       font-weight: 300;
       font-size: 16px;
       color: var(--env-link-secondary-font-color);

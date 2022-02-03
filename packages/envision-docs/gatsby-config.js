@@ -52,6 +52,7 @@ module.exports = {
                         'heading[depth=5]': 'doc-heading-5',
                         'heading[depth=6]': 'doc-heading-6',
                         paragraph: 'doc-p',
+                        blockquote: 'doc-blockquote',
                         emphasis: 'doc-em',
                         strong: 'doc-strong',
                         inlineCode: 'doc-code',

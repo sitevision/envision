@@ -13,7 +13,7 @@ const Sidenav = ({ categories, menuItems }) => {
                      <li key={id}>
                         <Link
                            to={slug}
-                           className="env-link-secondary"
+                           className="doc-link-secondary"
                            activeClassName="active"
                         >
                            {title}
@@ -24,7 +24,7 @@ const Sidenav = ({ categories, menuItems }) => {
             </div>
          ))}
          <div className="theme-picker env-text">
-            <a href="/theme/settings/" className="env-link-secondary">
+            <a href="/theme/settings/" className="doc-link-secondary">
                Site theme settings
             </a>
          </div>
