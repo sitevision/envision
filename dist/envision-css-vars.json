@@ -9,10 +9,10 @@
   "--env-font-size-xx-large": "calc(var(--env-font-size-base) * 1.75)",
   "--env-font-size-xxx-large": "calc(var(--env-font-size-base) * 2)",
   "--env-font-size-xxxx-large": "calc(var(--env-font-size-base) * 2.5)",
-  "--env-font-color": "var(--env-block-secondary-font-color)",
-  "--env-link-font-color": "var(--env-block-secondary-link-font-color)",
+  "--env-font-color": "#202330",
+  "--env-link-font-color": "#3a71aa",
   "--env-link-text-decoration": "none",
-  "--env-link-hover-font-color": "var(--env-block-secondary-link-hover-font-color)",
+  "--env-link-hover-font-color": "var(--env-link-font-color)",
   "--env-link-hover-text-decoration": "underline",
   "--env-link-secondary-font-color": "var(--env-font-color)",
   "--env-link-secondary-text-decoration": "var(--env-link-text-decoration)",
@@ -153,7 +153,5 @@
   "--env-color-lighter": "#ccc",
   "--env-color-lightest": "#e6e6e6",
   "--env-focus-color": "#5cb3fd",
-  "--env-focus-background-color": "rgba(0,0,0,0.2)",
-  "--env-ch-col-w": "calc(1.25 * var(--env-cardholder-grid-column-width))",
-  "--env-ch-g": "calc(2 * var(--env-cardholder-grid-gap))"
+  "--env-focus-background-color": "rgba(0,0,0,0.2)"
 }
