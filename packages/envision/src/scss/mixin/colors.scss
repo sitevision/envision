@@ -9,20 +9,22 @@
    --env-link-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'
       )};
+   --env-link-secondary-font-color: #{css-var('block-#{$blockName}-font-color')};
+   --env-link-secondary-hover-font-color: #{css-var(
+         'block-#{$blockName}-font-color'
+      )};
 
+   background-color: css-var('block-#{$blockName}background-color');
    color: css-var('block-#{$blockName}font-color');
 
-   &,
-   *:not([class^='env-']):not([class*=' env-']):not(a),
-   .env-button--link,
-   .env-link-secondary,
-   a.env-link-secondary,
-   .env-text {
-      color: css-var('block-#{$blockName}font-color');
+   &--border {
+      border: {
+         color: css-var('block-#{$blockName}border-color');
+         style: solid;
+         width: 1px;
+      }
    }
 
-   .env-link,
-   a.env-text,
    a:not([class^='env-']):not([class*=' env-']) {
       @include link(
          'block-#{$blockName}link-font-color',
@@ -30,15 +32,5 @@
          'block-#{$blockName}link-hover-font-color',
          'link-hover-text-decoration'
       );
-   }
-
-   background-color: css-var('block-#{$blockName}background-color');
-   border-color: css-var('block-#{$blockName}border-color');
-
-   &--border {
-      border: {
-         style: solid;
-         width: 1px;
-      }
    }
 }
