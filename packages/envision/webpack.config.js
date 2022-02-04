@@ -4,6 +4,7 @@ const process = require('process');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -33,6 +34,7 @@ module.exports = {
       new MiniCssExtractPlugin({
          filename: 'envision.css',
       }),
+      new ESLintPlugin(),
    ],
    externals: {
       jquery: {
@@ -61,9 +63,6 @@ module.exports = {
                         ],
                      ],
                   },
-               },
-               {
-                  loader: 'eslint-loader',
                },
             ],
          },

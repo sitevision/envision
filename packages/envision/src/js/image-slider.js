@@ -346,9 +346,8 @@ class Imageslider {
             .find(SELECTORS.ACTIVE_DOT)
             .removeClass(ClassName.ACTIVE_DOT);
 
-         const nextIndicator = this._indicatorsElement.children[
-            this._getItemIndex(element)
-         ];
+         const nextIndicator =
+            this._indicatorsElement.children[this._getItemIndex(element)];
 
          if (nextIndicator) {
             $(nextIndicator).addClass(ClassName.ACTIVE_DOT);
@@ -358,9 +357,9 @@ class Imageslider {
             .find(SELECTORS.ACTIVE)
             .removeClass(ClassName.ACTIVE);
 
-         const nextIndicator = this._thumbnailElements.children[
-            this._getItemIndex(element)
-         ].firstElementChild;
+         const nextIndicator =
+            this._thumbnailElements.children[this._getItemIndex(element)]
+               .firstElementChild;
 
          if (nextIndicator) {
             $(nextIndicator).addClass(ClassName.ACTIVE);
