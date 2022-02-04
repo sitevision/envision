@@ -8,9 +8,12 @@ module.exports = function (content) {
    const emitFile = this.emitFile;
 
    const cssVars = {};
+
    cssTree.walk(tree, (node) => {
-      if (node.type === 'Declaration' && node.property.startsWith('--')) {
-         cssVars[node.property] = node.value.value.trim();
+      if (node.type === 'Declaration' && node.property.startsWith('--env-')) {
+         if (!Object.prototype.hasOwnProperty.call(cssVars, node.property)) {
+            cssVars[node.property] = node.value.value.trim();
+         }
       }
    });
    emitFile(options.filename, JSON.stringify(cssVars, null, 2));
