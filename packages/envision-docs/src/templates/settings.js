@@ -27,7 +27,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-   query($slug: String!) {
+   query ($slug: String!) {
       site {
          siteMetadata {
             topMenuItems {
