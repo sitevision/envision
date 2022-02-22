@@ -190,7 +190,7 @@ Valid modifiers:
 ### Align self
 
 Applicable to direct children within a flex container (`env-flex__item`).
-Modifier classes are named using the format: `env-flex__item-align-{value}`
+Modifier classes are named using the format: `env-flex__item--align-{value}`
 
 Valid values
 
