@@ -121,14 +121,16 @@ $section-background-color: #ffffff !default;
 // ----- FOCUS -----
 
 // Color
-$focus-box-shadow: 0 0 0 2px css-var('section-background-color'),
-   0 0 0 4px css-var('font-color') !default;
-$section-background-color: #ffffff !default;
+$focus-size: 2px;
+$focus-box-shadow: 0 0 0 css-var('focus-size')
+   css-var('section-background-color') !default;
+$focus-outline: css-var('focus-size') solid css-var('font-color') !default;
 
 @include to-css-custom-property(
    (
       'focus-box-shadow': $focus-box-shadow,
-      'focus-outline': 0,
+      'focus-size': $focus-size,
+      'focus-outline': $focus-outline,
    )
 );
 

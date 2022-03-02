@@ -104,9 +104,10 @@
    --env-element-warning-font-color: #ffffff;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
    --env-focus-color: #5cb3fd;
-   --env-focus-box-shadow: 0 0 0 2px var(--env-section-background-color),
-      0 0 0 4px var(--env-font-color);
-   --env-focus-outline: 0;
+   --env-focus-size: 2px;
+   --env-focus-box-shadow: 0 0 0 var(--env-focus-size)
+      var(--env-section-background-color);
+   --env-focus-outline: var(--env-focus-size) solid var(--env-font-color);
    --env-font-color-invert: #fff;
    --env-font-color-light: #34394f;
    --env-font-color-lighter: #49506d;

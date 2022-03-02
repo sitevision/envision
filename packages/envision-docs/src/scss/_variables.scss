@@ -42,6 +42,7 @@ $bp-tablet: 768px;
 @mixin focus-outline() {
    box-shadow: var(--env-focus-box-shadow);
    outline: var(--env-focus-outline);
+   outline-offset: var(--env-focus-size);
 }
 
 @mixin focus-visible {
