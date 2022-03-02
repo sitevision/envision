@@ -73,16 +73,19 @@
    &__item--next.env-image-slider__item--left,
    &__item--prev.env-image-slider__item--right {
       transform: translate3d(0, 0, 0);
+      z-index: 1;
    }
 
    &__item--next,
    &__item--active.env-image-slider__item--right {
       transform: translate3d(100%, 0, 0);
+      z-index: 2;
    }
 
    &__item--prev,
    &__item--active.env-image-slider__item--left {
       transform: translate3d(-100%, 0, 0);
+      z-index: 2;
    }
 
    &__thumbnails {

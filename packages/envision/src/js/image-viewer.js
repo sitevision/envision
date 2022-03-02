@@ -186,7 +186,6 @@ class Imageviewer {
    _bindContainerEvents() {
       this.$btnContainer.on(Events.CLICK_DATA_API, SELECTORS.DATA_MOVE, (e) => {
          e.preventDefault();
-
          if ($(e.currentTarget).data('move') === 'next') {
             this.next();
          } else {
@@ -377,11 +376,10 @@ if (typeof document !== 'undefined') {
          const $images = $target
             .closest('[data-image-viewer]')
             .find(SELECTORS.IMAGES);
-         const index = $images.index($target.parent());
          if ($target.is('img')) {
-            $(this).envImageviewer({ index: index });
+            $(this).envImageviewer({ index: $images.index($target.parent()) });
          } else if ($target.is('a.env-image-viewer__images')) {
-            $(this).envImageviewer({ index: index });
+            $(this).envImageviewer({ index: $images.index($target) });
          }
       }
    );
