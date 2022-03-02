@@ -59,6 +59,8 @@ $bp-tablet: 768px;
    &:focus:not(:focus-visible) {
       // Remove regular focus style for all that supports focus-visible
       box-shadow: none;
+      // outline: none that we want to keep.
+      // Styling for documentation website.
       outline: none;
    }
 }

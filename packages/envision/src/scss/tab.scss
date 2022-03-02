@@ -27,7 +27,6 @@
       color: css-var('font-color');
       margin: 0 css-var('spacing-xxx-small');
       padding: css-var('spacing-x-small') css-var('spacing-medium');
-      outline: 0;
 
       &--active {
          background-color: css-var('element-primary-background-color');
@@ -48,10 +47,10 @@
       .env-tabs__link {
          background-color: transparent;
          border-color: transparent;
+         border-radius: 0;
          color: css-var('font-color');
          margin: 0 css-var('spacing-xx-small');
          padding: css-var('spacing-x-small') css-var('spacing-x-small');
-         outline: 0;
          transition: border-color 0.5s ease;
 
          &--active {
@@ -63,6 +62,8 @@
             border-bottom: $tab-bottom-width $border-style
                css-var('element-primary-background-color');
          }
+
+         @include focus-visible;
       }
    }
 
