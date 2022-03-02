@@ -350,6 +350,10 @@ img {
 
       &.active {
          border-bottom: 2px solid #6892d5;
+
+         &:hover {
+            text-decoration: none;
+         }
       }
    }
 }
