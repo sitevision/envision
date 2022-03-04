@@ -59,6 +59,8 @@
          user-select: auto;
 
          &:focus {
+            // outline: none that we want to keep.
+            // Outline is set on parent element.
             outline: none;
          }
       }
