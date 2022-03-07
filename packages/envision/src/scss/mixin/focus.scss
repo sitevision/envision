@@ -6,9 +6,7 @@
 
 @mixin focus-outline-none() {
    box-shadow: none;
-   // outline: none that we want to keep.
-   // Part of our focus outline styling.
-   outline: none;
+   outline: 1px solid transparent;
 }
 
 @mixin focus-visible {
