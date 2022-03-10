@@ -23,8 +23,8 @@
 
    &.env-button--ghost {
       background-color: transparent;
-      border-color: css-var($background-color-light);
-      color: css-var($background-color-light);
+      border-color: css-var($background-color);
+      color: css-var($background-color);
    }
 
    &:hover,
