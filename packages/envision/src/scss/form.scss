@@ -460,6 +460,10 @@
       margin-bottom: css-var('spacing-x-small');
    }
 
+   .env-form-element__label {
+      font-size: 1em;
+   }
+
    [type='checkbox']:checked + label &__fake::after {
       $tick-position: 50%;
       content: '';
