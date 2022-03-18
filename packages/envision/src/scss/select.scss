@@ -47,7 +47,7 @@
          box-shadow: none;
          display: inline-block;
          flex: 1 1 auto;
-         font-size: css-var('font-size-medium');
+         font-size: 1em;
          line-height: (34 / $BROWSER_FONT_SIZE);
          margin: 0;
          max-height: none;
@@ -161,6 +161,7 @@
       right: 0;
       left: 0;
       z-index: $zindex-tagselect;
+      font-size: var(--env-font-size-medium);
 
       &__content {
          padding: css-var('spacing-x-small') 0;
