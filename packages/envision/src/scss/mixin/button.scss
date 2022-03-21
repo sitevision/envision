@@ -1,5 +1,5 @@
 @mixin squareIconButton($modifier: '') {
-   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around) {
+   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around):not(.env-button--icon-above) {
       @content;
    }
 }
@@ -48,6 +48,7 @@
    $btn-small-font-size: 14; // --env-font-size-small
    $btn-medium-font-size: 16; // --env-font-size-medium
    $btn-large-font-size: 20; // --env-font-size-large
+   $btn-iconabove-font-size: 12; // (saknas som variabel)
 
    // Button border-radius setting in Sitevision (em)
    $btn-default-border-radius: 0.375; // --env-button-border-radius
@@ -62,6 +63,8 @@
    $btn-medium-padding: 21;
    $btn-large-padding: 23;
    $btn-slim-padding: 8;
+   $btn-iconabove-padding: 10;
+   $btn-iconabove-link-padding: 8;
 
    // Default button heights (px)
    $btn-small-min-height: $form-input-height / 2; // 22
@@ -133,6 +136,7 @@
       small: 6 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
       medium: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
       large: 15 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
+      //large-above: 15 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
       slim: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
    );
 
@@ -186,6 +190,91 @@
 
       .env-icon:last-child {
          right: $padding-x;
+      }
+   }
+
+   @if ($size == 'medium' or $size == 'large') {
+      $fs: ($btn-iconabove-font-size / $BROWSER_FONT_SIZE);
+      $mh: $btn-medium-min-height / $btn-iconabove-font-size;
+      $pd: 6 / $BROWSER_FONT_SIZE / $fs;
+      $icn: 16 /
+         ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+         $BROWSER_FONT_SIZE;
+      $pdt: calc(#{($mh * 1em)} - #{($fs * 1em)} - #{($pd * 2em)} - 2px);
+      $brs: (
+         (
+               $btn-medium-border-radius /
+                  $BROWSER_FONT_SIZE /
+                  $button-border-radius
+            ) /
+            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+      );
+
+      &.env-button--icon-above {
+         font-size: calc(#{css-var('font-size-medium')} * #{$fs});
+         line-height: 1;
+
+         .env-icon {
+            margin: 0 !important;
+            background-color: rgba(255, 0, 255, 0.4);
+         }
+      }
+
+      @if ($size == 'large') {
+         $mh: $btn-large-min-height / $btn-iconabove-font-size;
+         $brs: (
+            (
+                  $btn-large-border-radius /
+                     $BROWSER_FONT_SIZE /
+                     $button-border-radius
+               ) /
+               ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+         );
+         $icn: 20 /
+            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+            $BROWSER_FONT_SIZE;
+         $pd: 10 / $BROWSER_FONT_SIZE / $fs;
+         $pdt: calc(#{($mh * 1em)} - #{($fs * 1em)} - #{($pd * 2em)} - 2px);
+      }
+      &.env-button--icon-above {
+         min-height: $mh * 1em;
+         min-width: $mh * 1em;
+         border-radius: calc(#{css-var('button-border-radius')} * #{$brs});
+         padding: 0 $pd * 1em;
+         padding-top: $pdt;
+
+         .env-icon {
+            width: $icn * 1em !important;
+            height: $icn * 1em !important;
+            top: $pd * 1em;
+         }
+
+         &.env-button--link {
+            background-color: #eee;
+            $icn: 20 /
+               ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+               $BROWSER_FONT_SIZE;
+            $pd: 3 / $BROWSER_FONT_SIZE / $fs;
+            $pdt: calc(#{($mh * 1em)} - #{($fs * 1em)} - #{($pd * 2em)} - 4px);
+
+            @if ($size == 'large') {
+               $icn: 24 /
+                  ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+                  $BROWSER_FONT_SIZE;
+               $pd: 6 / $BROWSER_FONT_SIZE / $fs;
+               $pdt: calc(
+                  #{($mh * 1em)} - #{($fs * 1em)} - #{($pd * 2em)} - 4px
+               );
+            }
+            padding: 0 $pd * 1em;
+            padding-top: $pdt;
+
+            .env-icon {
+               width: $icn * 1em !important;
+               height: $icn * 1em !important;
+               top: $pd * 1em;
+            }
+         }
       }
    }
 
