@@ -7,8 +7,9 @@
    padding: 0;
    margin: -1px;
    overflow: hidden;
-   clip: rect(0, 0, 0, 0);
+   clip-path: inset(50%);
    border: 0;
+   white-space: nowrap;
 }
 
 // Useful for "Skip to main content" links; see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
@@ -23,6 +24,8 @@
       height: auto;
       margin: 0;
       overflow: visible;
-      clip: auto;
+      clip-path: none;
+      white-space: normal;
+      @include focus-visible;
    }
 }
