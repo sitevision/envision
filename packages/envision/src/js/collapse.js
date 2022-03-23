@@ -92,7 +92,7 @@ if (typeof document !== 'undefined') {
       e.preventDefault();
 
       const $this = $(this);
-      const target = $this.attr('href') || $this.attr('data-target');
+      const target = $this.attr('data-target') || $this.attr('href');
       const $target = $(target);
 
       if ($target.is(':animated')) {
