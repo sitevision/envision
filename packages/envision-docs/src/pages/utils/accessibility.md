@@ -8,7 +8,7 @@ title: Accessibility
 <p class="env-assistive-text">
    This text is invisible for the eye but visible to a screenreader
 </p>
-<a href="#" class="env-assistive-text env-assistive-text--focusable"
-   >This text is invisible until focused</a
->
+<a href="#" class="env-assistive-text env-assistive-text--focusable env-link">
+   This text is invisible until focused
+</a>
 ```

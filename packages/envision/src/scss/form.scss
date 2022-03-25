@@ -80,6 +80,7 @@
             color: css-var('form-input-font-color');
             filter: opacity(0.5);
             line-height: 1.4;
+            font-size: var(--env-font-size-medium);
          }
 
          &:empty ~ .env-form-element__contenteditable-placeholder {
@@ -251,6 +252,10 @@
 
       label {
          margin-bottom: css-var('spacing-x-small');
+      }
+
+      .env-form-element__label {
+         font-size: 1em;
       }
 
       &__fake {
@@ -458,6 +463,10 @@
 
    label {
       margin-bottom: css-var('spacing-x-small');
+   }
+
+   .env-form-element__label {
+      font-size: 1em;
    }
 
    [type='checkbox']:checked + label &__fake::after {
