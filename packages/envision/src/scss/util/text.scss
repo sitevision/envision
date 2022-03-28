@@ -78,7 +78,6 @@ a.env-text,
       'link-secondary-hover-font-color',
       'link-secondary-hover-text-decoration'
    );
-   font-weight: $font-weight-semibold;
 }
 
 @include block-text-size(
