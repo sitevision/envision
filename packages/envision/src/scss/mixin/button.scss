@@ -1,6 +1,43 @@
 @mixin squareIconButton($modifier: '') {
-   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around) {
+   &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around):not(.env-button--icon-above) {
       @content;
+   }
+}
+
+@mixin iconAboveButton(
+   $fontSize,
+   $height,
+   $padding,
+   $paddingLink,
+   $borderRadius,
+   $iconSize,
+   $iconSizeLink
+) {
+   &.env-button--icon-above {
+      font-size: calc(#{css-var('font-size-medium')} * #{$fontSize});
+      line-height: 1;
+      align-items: flex-end;
+      min-height: $height;
+      min-width: $height;
+      border-radius: $borderRadius;
+      padding: 0 $padding $padding;
+
+      .env-icon {
+         margin: 0 !important;
+         width: $iconSize !important;
+         height: $iconSize !important;
+         top: $padding;
+      }
+
+      &.env-button--link {
+         padding: 0 $paddingLink $paddingLink;
+
+         .env-icon {
+            width: $iconSize * 1.25 !important;
+            height: $iconSize * 1.25 !important;
+            top: $paddingLink;
+         }
+      }
    }
 }
 
@@ -48,6 +85,7 @@
    $btn-small-font-size: 14; // --env-font-size-small
    $btn-medium-font-size: 16; // --env-font-size-medium
    $btn-large-font-size: 20; // --env-font-size-large
+   $btn-iconabove-font-size: 12; // (Not available as a variable)
 
    // Button border-radius setting in Sitevision (em)
    $btn-default-border-radius: 0.375; // --env-button-border-radius
@@ -62,6 +100,8 @@
    $btn-medium-padding: 21;
    $btn-large-padding: 23;
    $btn-slim-padding: 8;
+   $btn-iconabove-padding: 10;
+   $btn-iconabove-link-padding: 8;
 
    // Default button heights (px)
    $btn-small-min-height: $form-input-height / 2; // 22
@@ -187,6 +227,57 @@
       .env-icon:last-child {
          right: $padding-x;
       }
+   }
+
+   @if ($size == 'medium') {
+      $fontSize: ($btn-iconabove-font-size / $BROWSER_FONT_SIZE);
+      $borderRadiusScale: (
+         (
+               $btn-medium-border-radius /
+                  $BROWSER_FONT_SIZE /
+                  $button-border-radius
+            ) /
+            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+      );
+      @include iconAboveButton(
+         $fontSize,
+         $btn-medium-min-height / $btn-iconabove-font-size * 1em,
+         // Height
+         4 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         // Padding
+         1 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         // Padding Link
+         calc(#{css-var('button-border-radius')} * #{$borderRadiusScale}),
+         // Border Radius
+         16 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+            $BROWSER_FONT_SIZE * 1em,
+         // Icon size
+         20 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+            $BROWSER_FONT_SIZE * 1em // Icon size Link
+      );
+   }
+
+   @if ($size == 'large') {
+      $fontSize: ($btn-iconabove-font-size / $BROWSER_FONT_SIZE);
+      $borderRadiusScale: (
+         (
+               $btn-large-border-radius /
+                  $BROWSER_FONT_SIZE /
+                  $button-border-radius
+            ) /
+            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+      );
+      @include iconAboveButton(
+         $fontSize,
+         $btn-large-min-height / $btn-iconabove-font-size * 1em,
+         8 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         4 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         calc(#{css-var('button-border-radius')} * #{$borderRadiusScale}),
+         20 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+            $BROWSER_FONT_SIZE * 1em,
+         24 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
+            $BROWSER_FONT_SIZE * 1em
+      );
    }
 
    @include squareIconButton {

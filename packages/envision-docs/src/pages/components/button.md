@@ -247,6 +247,31 @@ All button types and sizes are available.
       <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
+
+<h4 class="doc-heading-4">
+   Icon above <span class="env-badge env-badge--warning">Beta since 11.0</span>
+</h4>
+<p>Available in medium and large size.</p>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-above"
+>
+   Above
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+
+<button
+   type="button"
+   class="env-button env-button--primary env-button--icon env-button--icon-above env-button--large"
+>
+   Above
+   <svg class="env-icon">
+      <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
 ```
 
 ## State
