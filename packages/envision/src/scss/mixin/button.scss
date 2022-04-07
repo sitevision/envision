@@ -206,6 +206,17 @@
       .env-icon {
          left: $padding-x;
       }
+
+      &.env-button--block {
+         padding-left: $padding-x;
+
+         .env-icon {
+            position: relative;
+            left: 0;
+            top: auto;
+            margin: 0 0.5em 0 0;
+         }
+      }
    }
 
    &.env-button--icon-after {
@@ -213,6 +224,17 @@
 
       .env-icon {
          right: $padding-x;
+      }
+
+      &.env-button--block {
+         padding-right: $padding-x;
+
+         .env-icon {
+            position: relative;
+            right: 0;
+            top: auto;
+            margin: 0 0 0 0.5em;
+         }
       }
    }
 
@@ -226,6 +248,26 @@
 
       .env-icon:last-child {
          right: $padding-x;
+      }
+
+      &.env-button--block {
+         padding-left: $padding-x;
+         padding-right: $padding-x;
+
+         .env-icon {
+            position: relative;
+            top: auto;
+
+            &:first-child {
+               left: 0;
+               margin: 0 0.5em 0 0;
+            }
+
+            &:last-child {
+               right: 0;
+               margin: 0 0 0 0.5em;
+            }
+         }
       }
    }
 
