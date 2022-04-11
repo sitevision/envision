@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .env-dropdown {
    position: relative;
 
@@ -10,8 +12,8 @@
       box-shadow: css-var('box-shadow');
       display: none;
       left: 0;
-      max-width: (240 / $BROWSER_FONT_SIZE * 1em);
-      min-width: (180 / $BROWSER_FONT_SIZE * 1em);
+      max-width: (math.div(240, $BROWSER_FONT_SIZE) * 1em);
+      min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
       position: fixed;
       top: 100%;
       z-index: $zindex-dropdown;

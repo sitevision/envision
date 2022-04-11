@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .env-select {
    position: relative;
 
@@ -23,7 +25,7 @@
       padding: css-var('spacing-xx-small') css-var('spacing-x-small');
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
-      min-height: (($form-input-height / $BROWSER_FONT_SIZE) * 1em);
+      min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
       cursor: text;
       overflow: hidden;
 
@@ -48,7 +50,7 @@
          display: inline-block;
          flex: 1 1 auto;
          font-size: 1em;
-         line-height: (34 / $BROWSER_FONT_SIZE);
+         line-height: math.div(34, $BROWSER_FONT_SIZE);
          margin: 0;
          max-height: none;
          max-width: 100%;
@@ -138,7 +140,7 @@
       text-overflow: ellipsis;
 
       .plugin-remove_button & {
-         line-height: (1 / (14 / $BROWSER_FONT_SIZE));
+         line-height: math.div(1, math.div(14, $BROWSER_FONT_SIZE));
          padding: 0 0 0 em(10px, 14px);
       }
 

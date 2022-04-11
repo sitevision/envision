@@ -180,33 +180,33 @@
 
       &:nth-child(2) {
          top: ($xxl - $xl);
-         left: $xxl - $xl / 4;
+         left: $xxl - $xl * 0.25;
       }
 
       &:nth-child(3) {
          top: ($xxl - $l);
-         left: $xxl + $xl - ($xl + $l) / 4;
+         left: $xxl + $xl - ($xl + $l) * 0.25;
       }
 
       &:nth-child(4) {
          top: ($xxl - $m);
-         left: $xxl + $xl + $l - ($xl + $l + $m) / 4;
+         left: $xxl + $xl + $l - ($xl + $l + $m) * 0.25;
       }
 
       &:nth-child(5) {
          top: ($xxl - $s);
-         left: $xxl + $xl + $l + $m - ($xl + $l + $m + $s) / 4;
+         left: $xxl + $xl + $l + $m - ($xl + $l + $m + $s) * 0.25;
       }
 
       &:nth-child(6) {
          top: ($xxl - $xs);
-         left: $xxl + $xl + $l + $m + $s - ($xl + $l + $m + $s + $xs) / 4;
+         left: $xxl + $xl + $l + $m + $s - ($xl + $l + $m + $s + $xs) * 0.25;
       }
 
       &:nth-child(7) {
          top: ($xxl - $xxs);
          left: $xxl + $xl + $l + $m + $s + $xs -
-            ($xl + $l + $m + $s + $xs + $xxs) / 4;
+            ($xl + $l + $m + $s + $xs + $xxs) * 0.25;
       }
    }
 

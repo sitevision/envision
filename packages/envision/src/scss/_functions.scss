@@ -4,6 +4,8 @@
 /// @param {String} $search - Substring to replace
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
+@use 'sass:math';
+
 @function str-replace($string, $search, $replace: '') {
    $index: str-index($string, $search);
 
@@ -28,13 +30,13 @@
 }
 
 @function em($px, $base: ($BROWSER_FONT_SIZE * 1px)) {
-   $em: ($px / $base) * 1em;
+   $em: math.div($px, $base) * 1em;
    @return $em;
 }
 
 @function strip-unit($number) {
    @if type-of($number) == 'number' and not unitless($number) {
-      @return $number / ($number * 0 + 1);
+      @return math.div($number, $number * 0 + 1);
    }
    @return $number;
 }
