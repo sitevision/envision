@@ -12,7 +12,7 @@
       background-color: css-var('element-common-background-color');
       border: $border-width $border-style css-var('border-color');
       height: $handle-size-desktop;
-      margin-left: -($handle-size-desktop / 2);
+      margin-left: -($handle-size-desktop * 0.5);
       position: absolute;
       top: calc(
          -1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px)
@@ -53,7 +53,7 @@
    &--touch {
       .env-range-slider__handle {
          height: $handle-size-touch;
-         margin-left: -($handle-size-touch / 2);
+         margin-left: -($handle-size-touch * 0.5);
          top: calc(
             -1 * (((#{$handle-size-touch} - #{$range-height}) / 2) + 1px)
          );
@@ -61,7 +61,7 @@
       }
 
       .env-range-slider__value {
-         margin-left: -($handle-size-touch / 2) !important;
+         margin-left: -($handle-size-touch * 0.5) !important;
          top: $spacing-x-large; // Keep
       }
    }

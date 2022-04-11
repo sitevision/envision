@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import 'mixin/css-variables';
 
 // ===================
@@ -36,13 +38,13 @@ $form-input-line-height: $line-height-medium !default;
 
 // Icon Size
 // Decimal value used to calculate size relative to font-size-base
-$icon-size-xx-small: (11 / $BROWSER_FONT_SIZE) !default;
-$icon-size-x-small: (14 / $BROWSER_FONT_SIZE) !default;
-$icon-size-small: (20 / $BROWSER_FONT_SIZE) !default;
-$icon-size-medium: (30 / $BROWSER_FONT_SIZE) !default;
-$icon-size-large: (40 / $BROWSER_FONT_SIZE) !default;
-$icon-size-x-large: (50 / $BROWSER_FONT_SIZE) !default;
-$icon-size-xx-large: (60 / $BROWSER_FONT_SIZE) !default;
+$icon-size-xx-small: math.div(11, $BROWSER_FONT_SIZE) !default;
+$icon-size-x-small: math.div(14, $BROWSER_FONT_SIZE) !default;
+$icon-size-small: math.div(20, $BROWSER_FONT_SIZE) !default;
+$icon-size-medium: math.div(30, $BROWSER_FONT_SIZE) !default;
+$icon-size-large: math.div(40, $BROWSER_FONT_SIZE) !default;
+$icon-size-x-large: math.div(50, $BROWSER_FONT_SIZE) !default;
+$icon-size-xx-large: math.div(60, $BROWSER_FONT_SIZE) !default;
 
 // =============================
 // CSS CUSTOM PROPERTY VARIABLES

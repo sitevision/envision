@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin squareIconButton($modifier: '') {
    &.env-button--icon#{$modifier}:not(.env-button--icon-after):not(.env-button--icon-before):not(.env-button--icon-around):not(.env-button--icon-above) {
       @content;
@@ -104,7 +106,7 @@
    $btn-iconabove-link-padding: 8;
 
    // Default button heights (px)
-   $btn-small-min-height: $form-input-height / 2; // 22
+   $btn-small-min-height: $form-input-height * 0.5; // 22
    $btn-medium-min-height: $form-input-height; // 44
    $btn-large-min-height: $form-input-height * 1.27273; // 56
    $btn-slim-min-height: 32; // Old default button height
@@ -113,26 +115,26 @@
    /* prettier-ignore */
    $radiusScales: (
       // small =>  3px (default)
-      small: (($btn-small-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-small-font-size / $BROWSER_FONT_SIZE)),
+      small: math.div(math.div(math.div($btn-small-border-radius, $BROWSER_FONT_SIZE), $button-border-radius), math.div($btn-small-font-size, $BROWSER_FONT_SIZE)),
       // medium =>  6px (default)
-      medium: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius),
+      medium: math.div(math.div($btn-medium-border-radius, $BROWSER_FONT_SIZE), $button-border-radius),
       // large => 10px (default)
-      large: (($btn-large-border-radius / $BROWSER_FONT_SIZE / $button-border-radius) / ($btn-large-font-size / $BROWSER_FONT_SIZE)),
+      large: math.div(math.div(math.div($btn-large-border-radius, $BROWSER_FONT_SIZE), $button-border-radius), math.div($btn-large-font-size, $BROWSER_FONT_SIZE)),
       // slim => 6px  (Same as medium),
-      slim: ($btn-medium-border-radius / $BROWSER_FONT_SIZE / $button-border-radius)
+      slim: math.div(math.div($btn-medium-border-radius, $BROWSER_FONT_SIZE), $button-border-radius)
    );
    $minHeights: (
       small: (
-         $btn-small-min-height / $btn-small-font-size * 1em,
+         math.div($btn-small-min-height, $btn-small-font-size) * 1em,
       ),
       medium: (
-         $btn-medium-min-height / $btn-medium-font-size * 1em,
+         math.div($btn-medium-min-height, $btn-medium-font-size) * 1em,
       ),
       large: (
-         $btn-large-min-height / $btn-large-font-size * 1em,
+         math.div($btn-large-min-height, $btn-large-font-size) * 1em,
       ),
       slim: (
-         $btn-slim-min-height / $btn-medium-font-size * 1em,
+         math.div($btn-slim-min-height, $btn-medium-font-size) * 1em,
       ),
    );
    $fontSizes: (
@@ -145,35 +147,27 @@
       slim: 'font-size-medium'
    );
    $paddingsX: (
-      small: (
-         ($btn-small-padding / $btn-small-font-size) * 1em,
-      ),
-      medium: (
-         ($btn-medium-padding / $btn-medium-font-size) * 1em,
-      ),
-      large: (
-         ($btn-large-padding / $btn-large-font-size) * 1em,
-      ),
-      slim: (
-         ($btn-small-padding / $btn-medium-font-size) * 1em,
-      ),
+      small: math.div($btn-small-padding, $btn-small-font-size) * 1em,
+      medium: math.div($btn-medium-padding, $btn-medium-font-size) * 1em,
+      large: math.div($btn-large-padding, $btn-large-font-size) * 1em,
+      slim: math.div($btn-small-padding, $btn-medium-font-size) * 1em,
    );
    // Icon size in em:
    // [icon-size in px] / [relative-button-font-size] / [base-font-size in px] * 1em
    /* prettier-ignore */
    $iconSizes: (
-      small: 9 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
-      medium: 18 / 1 / $BROWSER_FONT_SIZE * 1em,
-      large: 22 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
-      slim: 15 / 1 / $BROWSER_FONT_SIZE * 1em,
+      small: math.div(math.div(9, math.div($btn-small-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
+      medium: math.div(18, $BROWSER_FONT_SIZE) * 1em,
+      large: math.div(math.div(22, math.div($btn-large-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
+      slim: math.div(15, $BROWSER_FONT_SIZE) * 1em,
    );
 
    /* prettier-ignore */
    $smallIconSizes: (
-      small: 6 / ($btn-small-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
-      medium: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
-      large: 15 / ($btn-large-font-size / $BROWSER_FONT_SIZE) / $BROWSER_FONT_SIZE * 1em,
-      slim: 12 / 1 / $BROWSER_FONT_SIZE * 1em,
+      small: math.div(math.div(6, math.div($btn-small-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
+      medium: math.div(12, $BROWSER_FONT_SIZE) * 1em,
+      large: math.div(math.div(15, math.div($btn-large-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
+      slim: math.div(12, $BROWSER_FONT_SIZE) * 1em,
    );
 
    $font-size: map-get($fontSizes, $size);
@@ -197,11 +191,13 @@
    &.env-button--icon .env-icon {
       width: #{$icon-size};
       height: #{$icon-size};
-      margin: #{($icon-size / -2)} 0 0 0;
+      margin: #{math.div($icon-size, -2)} 0 0 0;
    }
 
    &.env-button--icon-before {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+      //@debug $padding-x;
+      //@debug $icon-size;
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
 
       .env-icon {
          left: $padding-x;
@@ -209,7 +205,7 @@
    }
 
    &.env-button--icon-after {
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
 
       .env-icon {
          right: $padding-x;
@@ -217,8 +213,8 @@
    }
 
    &.env-button--icon-around {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x / 2});
+      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
 
       .env-icon:first-child {
          left: $padding-x;
@@ -230,59 +226,77 @@
    }
 
    @if ($size == 'medium') {
-      $fontSize: ($btn-iconabove-font-size / $BROWSER_FONT_SIZE);
-      $borderRadiusScale: (
-         (
-               $btn-medium-border-radius /
-                  $BROWSER_FONT_SIZE /
-                  $button-border-radius
-            ) /
-            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+      $fontSize: math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE);
+      $borderRadiusScale: math.div(
+         math.div(
+            math.div($btn-medium-border-radius, $BROWSER_FONT_SIZE),
+            $button-border-radius
+         ),
+         math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
       );
       @include iconAboveButton(
          $fontSize,
-         $btn-medium-min-height / $btn-iconabove-font-size * 1em,
+         math.div($btn-medium-min-height, $btn-iconabove-font-size) * 1em,
          // Height
-         4 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         math.div(math.div(4, $BROWSER_FONT_SIZE), $fontSize) * 1em,
          // Padding
-         1 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         math.div(math.div(1, $BROWSER_FONT_SIZE), $fontSize) * 1em,
          // Padding Link
          calc(#{css-var('button-border-radius')} * #{$borderRadiusScale}),
          // Border Radius
-         16 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
-            $BROWSER_FONT_SIZE * 1em,
+         math.div(
+               math.div(
+                  16,
+                  math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
+               ),
+               $BROWSER_FONT_SIZE
+            ) * 1em,
          // Icon size
-         20 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
-            $BROWSER_FONT_SIZE * 1em // Icon size Link
+         math.div(
+               math.div(
+                  20,
+                  math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
+               ),
+               $BROWSER_FONT_SIZE
+            ) * 1em // Icon size Link
       );
    }
 
    @if ($size == 'large') {
-      $fontSize: ($btn-iconabove-font-size / $BROWSER_FONT_SIZE);
-      $borderRadiusScale: (
-         (
-               $btn-large-border-radius /
-                  $BROWSER_FONT_SIZE /
-                  $button-border-radius
-            ) /
-            ($btn-iconabove-font-size / $BROWSER_FONT_SIZE)
+      $fontSize: math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE);
+      $borderRadiusScale: math.div(
+         math.div(
+            math.div($btn-large-border-radius, $BROWSER_FONT_SIZE),
+            $button-border-radius
+         ),
+         math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
       );
       @include iconAboveButton(
          $fontSize,
-         $btn-large-min-height / $btn-iconabove-font-size * 1em,
-         8 / $BROWSER_FONT_SIZE / $fontSize * 1em,
-         4 / $BROWSER_FONT_SIZE / $fontSize * 1em,
+         math.div($btn-large-min-height, $btn-iconabove-font-size) * 1em,
+         math.div(math.div(8, $BROWSER_FONT_SIZE), $fontSize) * 1em,
+         math.div(math.div(4, $BROWSER_FONT_SIZE), $fontSize) * 1em,
          calc(#{css-var('button-border-radius')} * #{$borderRadiusScale}),
-         20 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
-            $BROWSER_FONT_SIZE * 1em,
-         24 / ($btn-iconabove-font-size / $BROWSER_FONT_SIZE) /
-            $BROWSER_FONT_SIZE * 1em
+         math.div(
+               math.div(
+                  20,
+                  math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
+               ),
+               $BROWSER_FONT_SIZE
+            ) * 1em,
+         math.div(
+               math.div(
+                  24,
+                  math.div($btn-iconabove-font-size, $BROWSER_FONT_SIZE)
+               ),
+               $BROWSER_FONT_SIZE
+            ) * 1em
       );
    }
 
    @include squareIconButton {
       .env-icon {
-         margin: #{($icon-size / -2)} 0 0 #{($icon-size / -2)};
+         margin: #{math.div($icon-size, -2)} 0 0 #{math.div($icon-size, -2)};
       }
    }
 
@@ -291,24 +305,27 @@
    &.env-button--icon-small.env-button--icon .env-icon {
       width: #{$small-icon-size};
       height: #{$small-icon-size};
-      margin: #{($small-icon-size / -2)} 0 0 0;
+      margin: #{math.div($small-icon-size, -2)} 0 0 0;
    }
 
    &.env-button--icon-small.env-button--icon-before {
       padding-left: calc(
-         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x * 0.5}
       );
    }
 
    &.env-button--icon-small.env-button--icon-after {
       padding-right: calc(
-         #{$padding-x} + #{$small-icon-size} + #{$padding-x / 2}
+         #{$padding-x} + #{$small-icon-size} + #{$padding-x * 0.5}
       );
    }
 
    @include squareIconButton('-small') {
       .env-icon {
-         margin: #{($small-icon-size / -2)} 0 0 #{($small-icon-size / -2)};
+         margin: #{math.div($small-icon-size, -2)} 0 0 #{math.div(
+               $small-icon-size,
+               -2
+            )};
       }
    }
 }

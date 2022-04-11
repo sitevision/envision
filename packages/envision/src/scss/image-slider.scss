@@ -123,11 +123,11 @@
    &__caption {
       bottom: css-var('spacing-large');
       color: rgba(255, 255, 255, 1);
-      left: ((100% - 70%) / 2);
+      left: ((100% - 70%) * 0.5);
       padding-bottom: css-var('spacing-large');
       padding-top: css-var('spacing-large');
       position: absolute;
-      right: ((100% - 70%) / 2);
+      right: ((100% - 70%) * 0.5);
       text-align: center;
       z-index: $zindex-imageslider-indicator;
    }

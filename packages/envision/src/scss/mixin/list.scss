@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 @mixin basis-value($i) {
-   flex-basis: percentage(1 / $i);
+   flex-basis: percentage(math.div(1, $i));
 }
 
 @mixin dot-divider() {

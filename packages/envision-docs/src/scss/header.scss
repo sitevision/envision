@@ -18,7 +18,7 @@
    justify-content: space-between;
 
    @include mobile-and-tablet {
-      padding: $site-padding / 2 $site-padding;
+      padding: $site-padding * 0.5 $site-padding;
       height: auto;
    }
 
