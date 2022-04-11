@@ -23,7 +23,7 @@
       "gatsby-source-filesystem": "^4.11.1",
       "gatsby-transformer-remark": "^5.11.1",
       "gatsby-transformer-sharp": "^4.11.0",
-      "node-sass": "^6.0.1"
+      "sass": "^1.50.0"
    },
    "dependencies": {
       "envision": "0.0.1",

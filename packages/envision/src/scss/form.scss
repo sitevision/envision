@@ -400,7 +400,7 @@
    @at-root label#{&} {
       display: inline-flex;
       gap: css-var('spacing-x-small');
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
       box-sizing: border-box;
       font-size: var(--env-font-size-medium);
