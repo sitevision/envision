@@ -36,6 +36,9 @@
 
 @function strip-unit($number) {
    @if type-of($number) == 'number' and not unitless($number) {
+      // $number * 0 + 1 may look strange, but it's a trick to get 1 of the same type as $number.
+      // Then we can divide by it to strip the unit.
+      // https://css-tricks.com/snippets/sass/strip-unit-function/
       @return math.div($number, $number * 0 + 1);
    }
    @return $number;
