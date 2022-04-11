@@ -157,17 +157,17 @@
    /* prettier-ignore */
    $iconSizes: (
       small: math.div(math.div(9, math.div($btn-small-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
-      medium: math.div(math.div(18, 1), $BROWSER_FONT_SIZE) * 1em,
+      medium: math.div(18, $BROWSER_FONT_SIZE) * 1em,
       large: math.div(math.div(22, math.div($btn-large-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
-      slim: math.div(math.div(15, 1), $BROWSER_FONT_SIZE) * 1em,
+      slim: math.div(15, $BROWSER_FONT_SIZE) * 1em,
    );
 
    /* prettier-ignore */
    $smallIconSizes: (
       small: math.div(math.div(6, math.div($btn-small-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
-      medium: math.div(math.div(12, 1), $BROWSER_FONT_SIZE) * 1em,
+      medium: math.div(12, $BROWSER_FONT_SIZE) * 1em,
       large: math.div(math.div(15, math.div($btn-large-font-size, $BROWSER_FONT_SIZE)), $BROWSER_FONT_SIZE) * 1em,
-      slim: math.div(math.div(12, 1), $BROWSER_FONT_SIZE) * 1em,
+      slim: math.div(12, $BROWSER_FONT_SIZE) * 1em,
    );
 
    $font-size: map-get($fontSizes, $size);
