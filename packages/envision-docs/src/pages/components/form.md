@@ -128,7 +128,7 @@ See [Tag select documentation](../select/).
 Related radiobutton elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
 
 ```html
-<fieldset class="env-form-element">
+<fieldset class="env-form-element__control">
    <legend class="env-form-element__label">Radio button</legend>
    <div>
       <label class="env-radio">
