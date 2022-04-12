@@ -112,6 +112,9 @@
    $btn-slim-min-height: 32; // Old default button height
 
    // Radius - scaled relative to variable in settings (0.375em default),
+   // Calculation:
+   // (3 / 16 / 0.375) / (14 / 16) = 0.5714285714
+   // ([radius in px] / [browser-font-size] / [base-font-size in px]) / ([button-font-size in px] / [browser-font-size])
    /* prettier-ignore */
    $radiusScales: (
       // small =>  3px (default)
@@ -195,8 +198,6 @@
    }
 
    &.env-button--icon-before {
-      //@debug $padding-x;
-      //@debug $icon-size;
       padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
 
       .env-icon {
