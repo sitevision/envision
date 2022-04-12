@@ -6,13 +6,11 @@ title: Accordion
 
 ```html
 <div id="accordionExample">
-   <div id="heading1">
-      <h1 class="env-text">
-         <a href="#container1" data-env-accordion aria-controls="container1">
-            Example 1
-         </a>
-      </h1>
-   </div>
+   <h1 class="env-text" id="heading1">
+      <a href="#container1" data-env-accordion aria-controls="container1">
+         Example 1
+      </a>
+   </h1>
    <div
       id="container1"
       class="env-accordion env-accordion--show"
@@ -27,13 +25,11 @@ title: Accordion
       </p>
    </div>
 
-   <div id="heading2">
-      <h1 class="env-text">
-         <a href="#container2" data-env-accordion aria-controls="container2">
-            Example 2
-         </a>
-      </h1>
-   </div>
+   <h1 class="env-text" id="heading2">
+      <a href="#container2" data-env-accordion aria-controls="container2">
+         Example 2
+      </a>
+   </h1>
    <div
       id="container2"
       class="env-accordion"
@@ -48,13 +44,11 @@ title: Accordion
       </p>
    </div>
 
-   <div id="heading3">
-      <h1 class="env-text">
-         <a href="#container3" data-env-accordion aria-controls="container3">
-            Example 3
-         </a>
-      </h1>
-   </div>
+   <h1 class="env-text" id="heading3">
+      <a href="#container3" data-env-accordion aria-controls="container3">
+         Example 3
+      </a>
+   </h1>
    <div
       id="container3"
       class="env-accordion"
@@ -77,17 +71,16 @@ You can also use attribute `data-target="#container4"`
 
 ```html
 <div id="accordionExample2">
-   <div id="heading4">
-      <h1 class="env-text">
-         <a
-            data-target="#container4"
-            data-env-accordion
-            aria-controls="container4"
-         >
-            Example 4
-         </a>
-      </h1>
-   </div>
+   <h1 class="env-text" id="heading4">
+      <a
+         href="#container4"
+         data-target="#container4"
+         data-env-accordion
+         aria-controls="container4"
+      >
+         Example 4
+      </a>
+   </h1>
    <div
       id="container4"
       class="env-accordion env-accordion--show"

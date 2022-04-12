@@ -31,16 +31,9 @@ const Header = ({ title, menuItems }) => {
                   />
                </a>
                <nav className="header-nav">
-                  <ul
-                     className="env-nav env-nav--menubar env-nav--border"
-                     role="menubar"
-                  >
+                  <ul className="env-nav env-nav--menubar env-nav--border">
                      {menuItems.map(({ label, to }) => (
-                        <li
-                           className="env-nav__item"
-                           key={label}
-                           role="menuitem"
-                        >
+                        <li className="env-nav__item" key={label}>
                            <Link to={to} activeClassName="active">
                               {label}
                            </Link>

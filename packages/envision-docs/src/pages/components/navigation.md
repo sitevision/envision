@@ -8,14 +8,14 @@ title: Navigation
 
 ```html
 <nav>
-   <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
-      <li class="env-nav__item" role="menuitem">
+   <ul class="env-nav env-nav--menubar env-nav--fill">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>
@@ -26,14 +26,14 @@ title: Navigation
 
 ```html
 <nav>
-   <ul class="env-nav env-nav--menubar env-nav--border" role="menubar">
-      <li class="env-nav__item" role="menuitem">
+   <ul class="env-nav env-nav--menubar env-nav--border">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>
@@ -44,14 +44,14 @@ title: Navigation
 
 ```html
 <nav>
-   <ul class="env-nav env-nav--sidenav" role="menu">
-      <li class="env-nav__item" role="menuitem">
+   <ul class="env-nav env-nav--sidenav">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link env-nav__link--active" href="#">Item</a>
       </li>
-      <li class="env-nav__item" role="menuitem">
+      <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
       </li>
    </ul>

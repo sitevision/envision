@@ -125,14 +125,11 @@ See [Tag select documentation](../select/).
 
 ## Radiobutton input element <small class="env-badge env-badge--warning">Beta since 10.0</small>
 
-Related radiobutton elements should have `role="radiogroup"`
-applied to its container to indicate group membership of the contained elements.
-
-The `aria-labelledby` is used to reference the `ID` of the text that labels the group.
+Related radiobutton elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
 
 ```html
-<div class="env-form-element" role="radiogroup" aria-labelledby="radio-header">
-   <span class="env-form-element__label" id="radio-header"> Radio button </span>
+<fieldset class="env-form-element">
+   <legend class="env-form-element__label">Radio button</legend>
    <div>
       <label class="env-radio">
          <input type="radio" name="radios" value="1" checked />
@@ -145,7 +142,7 @@ The `aria-labelledby` is used to reference the `ID` of the text that labels the 
          Alternative 2
       </label>
    </div>
-</div>
+</fieldset>
 ```
 
 ### Legacy radiobutton element <span class="env-badge env-badge--danger">Deprecated</span>
@@ -154,16 +151,13 @@ Legacy radio button is deprecated since 10.0 and should be replaced
 with the new Radiobutton input element.
 
 ```html
-<div
-   class="env-form-element__control"
-   role="radiogroup"
-   aria-labelledby="legacy-radio-header"
->
+<fieldset class="env-form-element__control">
+   <legend class="env-form-element__label">Legacy radio button</legend>
    <div class="env-form-radio">
       <input id="legacyradio1" type="radio" name="legacyradios" checked />
       <label for="legacyradio1" class="env-form-element__label">
          <span class="env-form-radio__fake"></span>
-         <span class="env-form-radio__label">Alternative</span>
+         <span class="env-form-radio__label">Alternative 1</span>
       </label>
    </div>
    <div class="env-form-radio">
@@ -173,21 +167,14 @@ with the new Radiobutton input element.
          <span class="env-form-radio__label">Alternative 2</span>
       </label>
    </div>
-</div>
+</fieldset>
 ```
 
 ## Checkbox input element
 
-Related checkbox elements should have `role="group"`
-applied to its container to indicate group membership of the contained elements.
-
 ```html
-<span class="env-form-element__label" id="checkbox-header">Checkbox</span>
-<div
-   class="env-form-element__control"
-   role="group"
-   aria-labelledby="checkbox-header"
->
+<fieldset class="env-form-element__control">
+   <legend class="env-form-element__label">Checkbox</legend>
    <div class="env-checkbox">
       <input type="checkbox" checked name="options" id="cb1" />
       <label class="env-form-element__label" for="cb1">
@@ -202,18 +189,14 @@ applied to its container to indicate group membership of the contained elements.
          <span class="env-checkbox__label">Check</span>
       </label>
    </div>
-</div>
+</fieldset>
 ```
 
 ### Switch component <span class="env-badge env-badge--info">8.2</span>
 
 ```html
-<span class="env-form-element__label" id="switch-header"> Switch </span>
-<div
-   class="env-form-element__control"
-   role="group"
-   aria-labelledby="switch-header"
->
+<fieldset class="env-form-element__control">
+   <legend class="env-form-element__label">Switch</legend>
    <div class="env-switch">
       <label class="env-switch__label">
          <input type="checkbox" checked />
@@ -228,7 +211,7 @@ applied to its container to indicate group membership of the contained elements.
          <span class="env-switch__slider"></span>
       </label>
    </div>
-</div>
+</fieldset>
 ```
 
 <div id="input-icons"></div>
@@ -393,17 +376,13 @@ width.
       </div>
    </div>
    <div class="env-form-element">
-      <span class="env-form-element__label" id="subjects-header">Subjects</span>
-      <div
-         class="env-form-element__control"
-         role="group"
-         aria-labelledby="subjects-header"
-      >
+      <fieldset class="env-form-element__control">
+         <legend class="env-form-element__label">Subjects</legend>
          <div class="env-checkbox">
             <input type="checkbox" name="options" id="cb5" />
             <label class="env-form-element__label" for="cb5">
                <span class="env-checkbox__fake"></span>
-               <span class="env-checkbox__label">Subject</span>
+               <span class="env-checkbox__label">Subject 1</span>
             </label>
          </div>
          <div class="env-checkbox">
@@ -413,7 +392,7 @@ width.
                <span class="env-checkbox__label">Subject 2</span>
             </label>
          </div>
-      </div>
+      </fieldset>
    </div>
    <div class="env-form-element">
       <button type="submit" class="env-button env-button--primary">

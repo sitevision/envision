@@ -7,6 +7,7 @@ title: Dropdown
 ```html
 <div id="example0" class="env-dropdown">
    <button
+      id="example0-button"
       class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
@@ -19,15 +20,18 @@ title: Dropdown
          <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
-   <ul class="env-dropdown__menu env-dropdown__menu--large">
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+   <ul
+      class="env-dropdown__menu env-dropdown__menu--large"
+      aria-labelledby="example0-button"
+   >
+      <li>
+         <a href="#" class="env-dropdown__item">Action</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Properties</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Settings</a>
       </li>
    </ul>
 </div>
@@ -40,6 +44,7 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
 ```html
 <div id="example1" class="env-dropdown">
    <button
+      id="example1-button"
       class="env-button env-button--primary env-button--large"
       aria-expanded="false"
       aria-haspopup="true"
@@ -49,16 +54,19 @@ Add a `<div>` element to menu list with the class `env-dropdown--divider`.
    >
       Dropdown
    </button>
-   <ul class="env-dropdown__menu env-dropdown__menu--large">
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+   <ul
+      class="env-dropdown__menu env-dropdown__menu--large"
+      aria-labelledby="example1-button"
+   >
+      <li>
+         <a href="#" class="env-dropdown__item">Action</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Properties</a>
       </li>
       <li class="env-dropdown--divider" role="separator"></li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Settings</a>
       </li>
    </ul>
 </div>
@@ -81,6 +89,7 @@ Use `env-button-group` to split buttons.
       Button
    </button>
    <button
+      id="example2-button"
       class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost"
       type="button"
       data-dropdown
@@ -93,16 +102,16 @@ Use `env-button-group` to split buttons.
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
-   <ul class="env-dropdown__menu">
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+   <ul class="env-dropdown__menu" aria-labelledby="example2-button"
+      <li>
+         <a href="#" class="env-dropdown__item">Action</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Properties</a>
       </li>
       <li class="env-dropdown--divider" role="separator"></li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Settings</a>
       </li>
    </ul>
 </div>
@@ -113,6 +122,7 @@ Use `env-button-group` to split buttons.
 ```html
 <div id="example3" class="env-dropdown">
    <button
+      id="example3-button"
       class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
@@ -125,17 +135,20 @@ Use `env-button-group` to split buttons.
          <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
-   <ul class="env-dropdown__menu env-dropdown__menu--large">
-      <li role="presentation">
-         <button type="button" role="menuitem" class="env-dropdown__item">
+   <ul
+      class="env-dropdown__menu env-dropdown__menu--large"
+      aria-labelledby="example3-button"
+   >
+      <li>
+         <button type="button" class="env-dropdown__item">
             <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
          </button>
       </li>
-      <li role="presentation">
-         <button type="button" role="menuitem" class="env-dropdown__item">
+      <li>
+         <button type="button" class="env-dropdown__item">
             <svg class="env-icon">
                <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
@@ -143,8 +156,8 @@ Use `env-button-group` to split buttons.
          </button>
       </li>
       <li class="env-dropdown--divider" role="separator"></li>
-      <li role="presentation">
-         <button type="button" role="menuitem" class="env-dropdown__item">
+      <li>
+         <button type="button" class="env-dropdown__item">
             <svg class="env-icon">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-check-done"
@@ -165,6 +178,7 @@ to open dropdown as an immediate child of `<body>`.
 ```html
 <div id="example4" class="env-dropdown">
    <button
+      id="example4-button"
       class="env-button env-button--primary env-button--large env-button--icon env-button--icon-small env-button--icon-after"
       aria-expanded="false"
       aria-haspopup="true"
@@ -178,15 +192,18 @@ to open dropdown as an immediate child of `<body>`.
          <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
-   <ul class="env-dropdown__menu env-dropdown__menu--large">
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+   <ul
+      class="env-dropdown__menu env-dropdown__menu--large"
+      aria-labelledby="example4-button"
+   >
+      <li>
+         <a href="#" class="env-dropdown__item">Action</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Properties</a>
       </li>
-      <li role="presentation">
-         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      <li>
+         <a href="#" class="env-dropdown__item">Settings</a>
       </li>
    </ul>
 </div>

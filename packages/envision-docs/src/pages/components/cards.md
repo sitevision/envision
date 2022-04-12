@@ -63,7 +63,7 @@ its width and height to make a nice aligned grid of cards.
       <header class="env-card__header">
          <article class="env-media env-media--center">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--small"
                      src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
