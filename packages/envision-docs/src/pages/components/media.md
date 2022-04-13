@@ -9,11 +9,11 @@ title: Media
 ```html
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -37,11 +37,11 @@ title: Media
 ```html
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -60,7 +60,7 @@ title: Media
    <div class="env-media__actions">
       <button
          type="button"
-         class="env-button env-button--icon env-dropdown__toggle"
+         class="env-button env-button--icon"
          aria-haspopup="true"
          title="More options"
       >
@@ -80,11 +80,11 @@ title: Media
 ```html
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -108,11 +108,11 @@ title: Media
 ```html
 <article class="env-media env-media--column">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -138,11 +138,11 @@ title: Media
 ```html
 <article class="env-media env-media--center">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -164,11 +164,11 @@ title: Media
 ```html
 <article class="env-media env-media--column env-media--center">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -192,11 +192,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <article class="env-media env-media--column env-media">
    <div class="env-media__figure env-media__figure--center">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -220,11 +220,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <article class="env-media env-media--bottom">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -250,11 +250,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <article class="env-media env-media--reverse">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -278,11 +278,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <article class="env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example image">
+      <a href="#">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt=""
+            alt="Example image"
          />
       </a>
    </div>
@@ -299,11 +299,11 @@ Alignment modifiers can also be applied to elements within the media container (
       </p>
       <article class="env-media">
          <div class="env-media__figure">
-            <a href="#" aria-label="Example image">
+            <a href="#">
                <img
                   class="env-image env-image--small"
                   src="https://envisionui.io/placeholders/text/400x400.png"
-                  alt=""
+                  alt="Example image"
                />
             </a>
          </div>

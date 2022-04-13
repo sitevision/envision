@@ -152,6 +152,11 @@
       &__control {
          position: relative;
 
+         // Fieldset reset
+         margin: 0;
+         padding: 0;
+         border: none;
+
          &--icon {
             $iconSize: 1em;
 
@@ -193,6 +198,9 @@
          font-size: css-var('font-size-medium');
          font-weight: $font-weight-semibold;
          margin-bottom: css-var('spacing-xx-small');
+
+         // Legend reset
+         padding: 0;
       }
 
       &__help,

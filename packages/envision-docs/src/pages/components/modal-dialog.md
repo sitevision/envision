@@ -8,14 +8,18 @@ title: Modal dialog
 <div
    class="env-modal-dialog example-demo__modal"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-1"
    aria-hidden="true"
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h4 class="env-text env-modal-dialog__header__title">
+            <h4
+               class="env-text env-modal-dialog__header__title"
+               id="modalDialogHeader-1"
+            >
                Modal Header
             </h4>
          </header>
@@ -61,14 +65,18 @@ Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--rig
    id="example1"
    class="env-modal-dialog"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-2"
    aria-hidden="true"
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h5 class="env-text env-modal-dialog__header__title">
+            <h5
+               class="env-text env-modal-dialog__header__title"
+               id="modalDialogHeader-2"
+            >
                Modal Header
             </h5>
          </header>
@@ -114,14 +122,18 @@ Uses `env-modal-dialog__dialog--small`
    id="example2"
    class="env-modal-dialog"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-3"
    aria-hidden="true"
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--small">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h6 class="env-text env-modal-dialog__header__title">
+            <h6
+               class="env-text env-modal-dialog__header__title"
+               id="modalDialogHeader-3"
+            >
                Modal Header
             </h6>
          </header>
@@ -177,14 +189,18 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
    id="example3"
    class="env-modal-dialog"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-4"
    aria-hidden="true"
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h5 class="env-text env-modal-dialog__header__title">
+            <h5
+               class="env-text env-modal-dialog__header__title"
+               id="modalDialogHeader-4"
+            >
                Outer scroll
             </h5>
          </header>
@@ -288,14 +304,18 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
    id="example4"
    class="env-modal-dialog env-modal-dialog--inner-scroll"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-5"
    aria-hidden="true"
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
-            <h5 class="env-text env-modal-dialog__header__title">
+            <h5
+               class="env-text env-modal-dialog__header__title"
+               id="modalDialogHeader-5"
+            >
                Inner scroll
             </h5>
          </header>
@@ -417,12 +437,16 @@ to open dialog window as an immediate child of `<body>`.
    id="example5"
    class="env-modal-dialog"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-6"
    aria-hidden="true"
    tabindex="-1"
    data-modal-dialog-placement-body
 >
-   <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
+   <div
+      class="env-modal-dialog__dialog env-modal-dialog__dialog--large"
+      id="modalDialogHeader-6"
+   >
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
             <h5 class="env-text env-modal-dialog__header__title">
@@ -503,7 +527,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    id="example6"
    class="env-modal-alert"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-7"
    aria-hidden="true"
    tabindex="-1"
 >
@@ -517,7 +542,10 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
                   ></use>
                </svg>
             </div>
-            <h5 class="env-text env-modal-alert__header__title">
+            <h5
+               class="env-text env-modal-alert__header__title"
+               id="modalDialogHeader-7"
+            >
                Modal Header
             </h5>
          </header>
@@ -547,7 +575,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    id="example7"
    class="env-modal-alert env-modal-alert--success"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-8"
    aria-hidden="true"
    tabindex="-1"
 >
@@ -561,7 +590,10 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
                   ></use>
                </svg>
             </div>
-            <h5 class="env-text env-modal-alert__header__title">
+            <h5
+               class="env-text env-modal-alert__header__title"
+               id="modalDialogHeader-8"
+            >
                Modal Header
             </h5>
          </header>
@@ -591,7 +623,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    id="example8"
    class="env-modal-alert env-modal-alert--danger"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-9"
    aria-hidden="true"
    tabindex="-1"
 >
@@ -605,7 +638,10 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
                   ></use>
                </svg>
             </div>
-            <h5 class="env-text env-modal-alert__header__title">
+            <h5
+               class="env-text env-modal-alert__header__title"
+               id="modalDialogHeader-9"
+            >
                Modal Header
             </h5>
          </header>
@@ -632,7 +668,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    id="example9"
    class="env-modal-alert env-modal-alert--info"
    role="dialog"
-   aria-labelledby="myDialog"
+   aria-modal="true"
+   aria-labelledby="modalDialogHeader-10"
    aria-hidden="true"
    tabindex="-1"
 >
@@ -646,7 +683,10 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
                   ></use>
                </svg>
             </div>
-            <h5 class="env-text env-modal-alert__header__title">
+            <h5
+               class="env-text env-modal-alert__header__title"
+               id="modalDialogHeader-10"
+            >
                Modal Header
             </h5>
          </header>

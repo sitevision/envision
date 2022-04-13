@@ -10,16 +10,9 @@ const Footer = ({ menuItems }) => {
             <footer className="footer">
                <a href="https://www.sitevision.se/">© Sitevision</a>
                <nav className="footer-nav">
-                  <ul
-                     className="env-nav env-nav--menubar env-nav--border"
-                     role="menubar"
-                  >
+                  <ul className="env-nav env-nav--menubar env-nav--border">
                      {menuItems.map(({ label, to }) => (
-                        <li
-                           className="env-nav__item"
-                           key={label}
-                           role="menuitem"
-                        >
+                        <li className="env-nav__item" key={label}>
                            <Link to={to} activeClassName="active">
                               {label}
                            </Link>

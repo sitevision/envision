@@ -181,17 +181,19 @@ Element colors are used for elements and components. See usage examples below.
       <div class="example-grid__col example-grid__col--50">
         <div class="example-element">
           <div class="example-element-label">Menu:</div>
-          <ul class="env-nav env-nav--menubar env-nav--fill" role="menubar">
-            <li class="env-nav__item" role="menuitem">
+          <nav>
+            <ul class="env-nav env-nav--menubar env-nav--fill">
+            <li class="env-nav__item">
               <a class="env-nav__link" href="javascript:void(0)">Item</a>
             </li>
-            <li class="env-nav__item" role="menuitem">
+            <li class="env-nav__item">
               <a class="env-nav__link env-nav__link--active" href="javascript:void(0)">Item</a>
             </li>
-            <li class="env-nav__item" role="menuitem">
+            <li class="env-nav__item">
               <a class="env-nav__link" href="javascript:void(0)">Item</a>
             </li>
           </ul>
+         </nav>
         </div>
         <div class="example-element">
           <div class="example-element-label">Pagination:</div>
@@ -313,11 +315,12 @@ Element colors are used for elements and components. See usage examples below.
           <strong>Hello!</strong> this is successful alert
           <button
             type="button"
-            class="env-alert__close"
+            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
             data-dismiss="alert"
-            aria-label="Close"
           >
-            &times;
+            <svg class="env-icon env-icon--xx-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+            </svg>
           </button>
         </div>
       </div>
@@ -350,11 +353,12 @@ Element colors are used for elements and components. See usage examples below.
           <strong>Hello!</strong> this is warning alert
           <button
             type="button"
-            class="env-alert__close"
+            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
             data-dismiss="alert"
-            aria-label="Close"
           >
-            &times;
+            <svg class="env-icon env-icon--xx-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+            </svg>
           </button>
         </div>
       </div>
@@ -387,11 +391,12 @@ Element colors are used for elements and components. See usage examples below.
           <strong>Hello!</strong> this is danger alert
           <button
             type="button"
-            class="env-alert__close"
+            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
             data-dismiss="alert"
-            aria-label="Close"
           >
-            &times;
+            <svg class="env-icon env-icon--xx-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+            </svg>
           </button>
         </div>
       </div>
@@ -424,11 +429,12 @@ Element colors are used for elements and components. See usage examples below.
           <strong>Hello!</strong> this is info alert
           <button
             type="button"
-            class="env-alert__close"
+            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
             data-dismiss="alert"
-            aria-label="Close"
           >
-            &times;
+            <svg class="env-icon env-icon--xx-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+            </svg>
           </button>
         </div>
       </div>

@@ -8,11 +8,11 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example profile image">
+         <a href="#">
             <img
                class="env-profile-image env-profile-image--x-small"
                src="https://envisionui.io/placeholders/text/xs.png"
-               alt=""
+               alt="Example profile image"
             />
          </a>
       </div>
@@ -26,7 +26,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--icon env-dropdown__toggle"
+            class="env-button env-button--icon"
             aria-haspopup="true"
             title="More options"
          >
@@ -65,23 +65,23 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#"
-               >Like (0)</a
-            >
+            <button class="env-button env-button--small env-link">
+               Like (0)
+            </button>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#">Share</a>
+            <button class="env-button env-button--small env-link">Share</button>
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small"
-               role="button"
-               href="#comments"
+            <button
+               class="env-button env-button--small env-link"
                data-env-collapse
                aria-expanded="false"
+               data-target="#comments"
                aria-controls="comments"
-               >Comment (0)</a
             >
+               Comment (0)
+            </button>
          </li>
       </ul>
    </footer>
@@ -90,11 +90,11 @@ title: Feed
          <ul class="env-comments__list env-list"></ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
                      src="https://envisionui.io/placeholders/text/xxs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -120,11 +120,11 @@ title: Feed
 ```html
 <article class="env-comment env-media">
    <div class="env-media__figure">
-      <a href="#" aria-label="Example profile image">
+      <a href="#">
          <img
             class="env-profile-image env-profile-image--x-small"
             src="https://envisionui.io/placeholders/text/xs.png"
-            alt=""
+            alt="Example profile image"
          />
       </a>
    </div>
@@ -141,9 +141,9 @@ title: Feed
       <footer class="env-comment__footer">
          <ul class="env-list env-list--horizontal env-list-dividers--left">
             <li class="env-list__item">
-               <a class="env-text env-text--small" role="button" href="#"
-                  >Like (0)</a
-               >
+               <button class="env-button env-button--small env-link">
+                  Like (0)
+               </button>
             </li>
             <li class="env-list__item">
                <small>09:30</small>
@@ -154,7 +154,7 @@ title: Feed
    <div class="env-media__actions">
       <button
          type="button"
-         class="env-button env-button--icon env-dropdown__toggle"
+         class="env-button env-button--icon"
          aria-haspopup="true"
          title="More options"
       >
@@ -175,11 +175,11 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example profile image">
+         <a href="#">
             <img
                class="env-profile-image env-profile-image--x-small"
                src="https://envisionui.io/placeholders/text/xs.png"
-               alt=""
+               alt="Example profile image"
             />
          </a>
       </div>
@@ -193,7 +193,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--icon env-dropdown__toggle"
+            class="env-button env-button--icon"
             aria-haspopup="true"
             title="More options"
          >
@@ -216,23 +216,23 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#"
-               >Like (0)</a
-            >
+            <button class="env-button env-button--small env-link">
+               Like (0)
+            </button>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#">Share</a>
+            <button class="env-button env-button--small env-link">Share</button>
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small"
-               role="button"
-               href="#comments2"
+            <button
+               class="env-button env-button--small env-link"
                data-env-collapse
                aria-expanded="true"
+               data-target="#comments2"
                aria-controls="comments2"
-               >Comment (3)</a
             >
+               Comment (3)
+            </button>
          </li>
       </ul>
    </footer>
@@ -242,11 +242,11 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--x-small"
                            src="https://envisionui.io/placeholders/text/xs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>
@@ -266,12 +266,11 @@ title: Feed
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
                            <li class="env-list__item">
-                              <a
-                                 class="env-text env-text--small"
-                                 role="button"
-                                 href="#"
-                                 >Like (0)</a
+                              <button
+                                 class="env-button env-button--small env-link"
                               >
+                                 Like (0)
+                              </button>
                            </li>
                            <li class="env-list__item">
                               <small class="env-text">10:27</small>
@@ -282,7 +281,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--icon env-dropdown__toggle"
+                        class="env-button env-button--icon"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -299,11 +298,11 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--x-small"
                            src="https://envisionui.io/placeholders/text/xs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>
@@ -323,12 +322,11 @@ title: Feed
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
                            <li class="env-list__item">
-                              <a
-                                 class="env-text env-text--small"
-                                 role="button"
-                                 href="#"
-                                 >Like (0)</a
+                              <button
+                                 class="env-button env-button--small env-link"
                               >
+                                 Like (0)
+                              </button>
                            </li>
                            <li class="env-list__item">
                               <small class="env-text">15:25</small>
@@ -339,7 +337,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--icon env-dropdown__toggle"
+                        class="env-button env-button--icon"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -356,11 +354,11 @@ title: Feed
             <li>
                <article class="env-comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--x-small"
                            src="https://envisionui.io/placeholders/text/xs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>
@@ -380,12 +378,11 @@ title: Feed
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
                            <li class="env-list__item">
-                              <a
-                                 class="env-text env-text--small"
-                                 role="button"
-                                 href="#"
-                                 >Like (0)</a
+                              <button
+                                 class="env-button env-button--small env-link"
                               >
+                                 Like (0)
+                              </button>
                            </li>
                            <li class="env-list__item">
                               <small class="env-text">17:39</small>
@@ -396,7 +393,7 @@ title: Feed
                   <div class="env-media__actions">
                      <button
                         type="button"
-                        class="env-button env-button--icon env-dropdown__toggle"
+                        class="env-button env-button--icon"
                         aria-haspopup="true"
                         title="More options"
                      >
@@ -413,11 +410,11 @@ title: Feed
          </ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
                      src="https://envisionui.io/placeholders/text/xxs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -444,11 +441,11 @@ title: Feed
 <article class="env-post">
    <header class="env-post__header env-media">
       <div class="env-media__figure">
-         <a href="#" aria-label="Example profile image">
+         <a href="#">
             <img
                class="env-profile-image env-profile-image--x-small"
                src="https://envisionui.io/placeholders/text/xs.png"
-               alt=""
+               alt="Example profile image"
             />
          </a>
       </div>
@@ -465,7 +462,7 @@ title: Feed
       <div class="env-media__actions">
          <button
             type="button"
-            class="env-button env-button--icon env-dropdown__toggle"
+            class="env-button env-button--icon"
             aria-haspopup="true"
             title="More options"
          >
@@ -485,11 +482,11 @@ title: Feed
       <blockquote class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--x-small"
                      src="https://envisionui.io/placeholders/text/xs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -513,23 +510,23 @@ title: Feed
    <footer class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#"
-               >Like (0)</a
-            >
+            <button class="env-button env-button--small env-link">
+               Like (0)
+            </button>
          </li>
          <li class="env-list__item">
-            <a class="env-text env-text--small" role="button" href="#">Share</a>
+            <button class="env-button env-button--small env-link">Share</button>
          </li>
          <li class="env-list__item">
-            <a
-               class="env-text env-text--small"
-               role="button"
-               href="#comments3"
+            <button
+               class="env-button env-button--small env-link"
                data-env-collapse
                aria-expanded="false"
+               data-target="#comments3"
                aria-controls="comments3"
-               >Comment (0)</a
             >
+               Comment (0)
+            </button>
          </li>
       </ul>
    </footer>
@@ -538,11 +535,11 @@ title: Feed
          <ul class="env-comments__list env-list"></ul>
          <div class="env-comments__comment env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--xx-small"
                      src="https://envisionui.io/placeholders/text/xxs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -571,11 +568,11 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--x-small"
                      src="https://envisionui.io/placeholders/text/xs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -589,7 +586,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--icon env-dropdown__toggle"
+                  class="env-button env-button--icon"
                   aria-haspopup="true"
                   title="More options"
                >
@@ -612,25 +609,25 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Like (0)</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Like (0)
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Share</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Share
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small"
-                     role="button"
-                     href="#comments4"
+                  <button
+                     class="env-button env-button--small env-link"
                      data-env-collapse
-                     aria-expanded="true"
+                     aria-expanded="false"
+                     data-target="#comments4"
                      aria-controls="comments4"
-                     >Comment (2)</a
                   >
+                     Comment (2)
+                  </button>
                </li>
             </ul>
          </footer>
@@ -643,11 +640,11 @@ title: Feed
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#" aria-label="Example profile image">
+                           <a href="#">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
                                  src="https://envisionui.io/placeholders/text/xs.png"
-                                 alt=""
+                                 alt="Example profile image"
                               />
                            </a>
                         </div>
@@ -670,12 +667,11 @@ title: Feed
                                  class="env-list env-list--horizontal env-list-dividers--left"
                               >
                                  <li class="env-list__item">
-                                    <a
-                                       class="env-text env-text--small"
-                                       role="button"
-                                       href="#"
-                                       >Like (0)</a
+                                    <button
+                                       class="env-button env-button--small env-link"
                                     >
+                                       Like (0)
+                                    </button>
                                  </li>
                                  <li class="env-list__item">
                                     <small class="env-text">17:39</small>
@@ -686,7 +682,7 @@ title: Feed
                         <div class="env-media__actions">
                            <button
                               type="button"
-                              class="env-button env-button--icon env-dropdown__toggle"
+                              class="env-button env-button--icon"
                               aria-haspopup="true"
                               title="More options"
                            >
@@ -705,11 +701,11 @@ title: Feed
                   <li>
                      <article class="env-comment env-media">
                         <div class="env-media__figure">
-                           <a href="#" aria-label="Example profile image">
+                           <a href="#">
                               <img
                                  class="env-profile-image env-profile-image--x-small"
                                  src="https://envisionui.io/placeholders/text/xs.png"
-                                 alt=""
+                                 alt="Example profile image"
                               />
                            </a>
                         </div>
@@ -730,12 +726,11 @@ title: Feed
                                  class="env-list env-list--horizontal env-list-dividers--left"
                               >
                                  <li class="env-list__item">
-                                    <a
-                                       class="env-text env-text--small"
-                                       role="button"
-                                       href="#"
-                                       >Like (0)</a
+                                    <button
+                                       class="env-button env-button--small env-link"
                                     >
+                                       Like (0)
+                                    </button>
                                  </li>
                                  <li class="env-list__item">
                                     <small class="env-text">19:24</small>
@@ -746,7 +741,7 @@ title: Feed
                         <div class="env-media__actions">
                            <button
                               type="button"
-                              class="env-button env-button--icon env-dropdown__toggle"
+                              class="env-button env-button--icon"
                               aria-haspopup="true"
                               title="More options"
                            >
@@ -765,11 +760,11 @@ title: Feed
                </ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
                            src="https://envisionui.io/placeholders/text/xxs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>
@@ -800,11 +795,11 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--x-small"
                      src="https://envisionui.io/placeholders/text/xs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -818,7 +813,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--icon env-dropdown__toggle"
+                  class="env-button env-button--icon"
                   aria-haspopup="true"
                   title="More options"
                >
@@ -842,25 +837,25 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Like (0)</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Like (0)
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Share</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Share
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small"
-                     role="button"
-                     href="#comments5"
+                  <button
+                     class="env-button env-button--small env-link"
                      data-env-collapse
                      aria-expanded="false"
+                     data-target="#comments5"
                      aria-controls="comments5"
-                     >Comment (0)</a
                   >
+                     Comment (0)
+                  </button>
                </li>
             </ul>
          </footer>
@@ -869,11 +864,11 @@ title: Feed
                <ul class="env-comments__list env-list"></ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
                            src="https://envisionui.io/placeholders/text/xxs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>
@@ -904,11 +899,11 @@ title: Feed
       <article class="env-post">
          <header class="env-post__header env-media">
             <div class="env-media__figure">
-               <a href="#" aria-label="Example profile image">
+               <a href="#">
                   <img
                      class="env-profile-image env-profile-image--x-small"
                      src="https://envisionui.io/placeholders/text/xs.png"
-                     alt=""
+                     alt="Example profile image"
                   />
                </a>
             </div>
@@ -922,7 +917,7 @@ title: Feed
             <div class="env-media__actions">
                <button
                   type="button"
-                  class="env-button env-button--icon env-dropdown__toggle"
+                  class="env-button env-button--icon"
                   aria-haspopup="true"
                   title="More options"
                >
@@ -944,25 +939,25 @@ title: Feed
          <footer class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Like (0)</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Like (0)
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a class="env-text env-text--small" role="button" href="#"
-                     >Share</a
-                  >
+                  <button class="env-button env-button--small env-link">
+                     Share
+                  </button>
                </li>
                <li class="env-list__item">
-                  <a
-                     class="env-text env-text--small"
-                     role="button"
-                     href="#comments6"
+                  <button
+                     class="env-button env-button--small env-link"
                      data-env-collapse
                      aria-expanded="false"
+                     data-target="#comments6"
                      aria-controls="comments6"
-                     >Comment (0)</a
                   >
+                     Comment (0)
+                  </button>
                </li>
             </ul>
          </footer>
@@ -971,11 +966,11 @@ title: Feed
                <ul class="env-comments__list env-list"></ul>
                <div class="env-comments__comment env-media">
                   <div class="env-media__figure">
-                     <a href="#" aria-label="Example profile image">
+                     <a href="#">
                         <img
                            class="env-profile-image env-profile-image--xx-small"
                            src="https://envisionui.io/placeholders/text/xxs.png"
-                           alt=""
+                           alt="Example profile image"
                         />
                      </a>
                   </div>

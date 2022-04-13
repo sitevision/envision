@@ -9,11 +9,13 @@ title: Alert
    <strong>Hello!</strong> this is successful alert
    <button
       type="button"
-      class="env-alert__close"
+      class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
       data-dismiss="alert"
-      aria-label="Close"
    >
-      &times;
+      Close
+      <svg class="env-icon env-icon--xx-small">
+         <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+      </svg>
    </button>
 </div>
 <div class="env-alert env-alert--warning" role="alert">
