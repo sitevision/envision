@@ -11,7 +11,6 @@ title: Modal dialog
    aria-modal="true"
    aria-labelledby="modalDialogHeader-1"
    aria-hidden="true"
-   tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
       <section class="env-modal-dialog__content">
