@@ -249,7 +249,8 @@ All button types and sizes are available.
 </button>
 
 <h4 class="doc-heading-4">
-   Icon above <span class="env-badge env-badge--warning">Beta since 11.0</span>
+   Icon above
+   <span class="env-badge env-badge--warning">Beta since 2022.05.1</span>
 </h4>
 <p>Available in medium and large size.</p>
 
