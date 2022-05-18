@@ -25,8 +25,7 @@
       font-size: css-var('font-size-medium');
       line-height: $form-input-line-height;
       margin: 0;
-      padding: css-var('spacing-x-small') css-var('spacing-small');
-      min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
+      padding: $form-padding-y $form-padding-x;
       width: 100%;
 
       @include placeholder {
@@ -162,33 +161,32 @@
 
             .env-icon {
                position: absolute;
-               top: 50%;
+               top: calc(
+                  #{math.div(
+                        math.div($form-input-height, $BROWSER_FONT_SIZE),
+                        2
+                     ) - 0.5} * var(--env-font-size-medium)
+               );
                left: css-var('spacing-x-small');
-               margin-top: ($iconSize * 0.5 * -1);
                width: $iconSize;
                height: $iconSize;
                color: css-var('form-input-font-color');
             }
 
-            input:first-child {
-               padding-right: calc(
-                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
-                        'spacing-x-small'
-                     )}
-               );
+            input:first-child,
+            textarea:first-child {
+               padding-right: calc(#{$iconSize} + #{css-var('spacing-medium')});
             }
 
-            input + .env-icon {
+            input + .env-icon,
+            textarea + .env-icon {
                left: auto;
                right: css-var('spacing-x-small');
             }
 
-            .env-icon + input {
-               padding-left: calc(
-                  #{$iconSize} + #{css-var('spacing-x-small')} + #{css-var(
-                        'spacing-x-small'
-                     )}
-               );
+            .env-icon + input,
+            .env-icon + textarea {
+               padding-left: calc(#{$iconSize} + #{css-var('spacing-medium')});
             }
          }
       }
@@ -235,7 +233,7 @@
 
       textarea {
          border-radius: css-var('form-input-border-radius');
-         padding: css-var('spacing-x-small');
+         padding: $form-padding-y $form-padding-x;
          resize: vertical;
       }
    }
