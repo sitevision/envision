@@ -288,7 +288,7 @@ Initialize the imageSlider with an optional `object` and starts cycling through 
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageslider('#myImageSlider', {
+envision.imageSlider('#myImageSlider', {
    interval: 2000,
    imageSlider: 'cycle',
    buttons: false,
