@@ -284,11 +284,13 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 ## Methods
 
+**Notice:** `envision.imageSlider()` only returns `sliders` the first time it is called. If you want to pause/cycle the slider after it has been initialized, you have to store the slider as a variable during initialization.
+
 Initialize the imageSlider with an optional `object` and starts cycling through slides.
 
 ```javascript
 // Since Sitevision 9.1
-envision.imageslider('#myImageSlider', {
+envision.imageSlider('#myImageSlider', {
    interval: 2000,
    imageSlider: 'cycle',
    buttons: false,
