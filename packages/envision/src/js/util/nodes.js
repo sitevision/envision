@@ -64,6 +64,12 @@ export const setStyle = function (node, prop, val, prio) {
    node.style.setProperty(prop, val, prio);
 };
 
+export const setAttributes = (node, attributes) => {
+   Object.keys(attributes).forEach((attr) => {
+      node.setAttribute(attr, attributes[attr]);
+   });
+};
+
 export const lockScroll = function () {
    setStyle(document.body, 'overflow-x', '');
    setStyle(document.body, 'overflow-y', '');

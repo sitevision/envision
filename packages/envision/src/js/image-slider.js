@@ -7,13 +7,16 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import Util from './util/util';
-import { getNodes } from './util/nodes';
+import {
+   getNode,
+   getNodes,
+   uniqueId,
+   setStyle,
+   setAttributes,
+} from './util/nodes';
+import { isPlainObject } from 'webpack-merge/dist/utils';
 
-const DATA_KEY = 'env.image-slider';
-const EVENT_KEY = `.${DATA_KEY}`;
 const NAME = 'envImageslider';
-const DATA_INITIALIZED = 'data-env-image-slider';
-const DATA_API_KEY = '.data-api';
 const ARROW_LEFT_KEYCODE = 37;
 const ARROW_RIGHT_KEYCODE = 39;
 const TOUCHEVENT_WAIT = 500;
@@ -28,25 +31,32 @@ const DEFAULTS = {
    slide: false,
    swipe: true,
    wrap: true,
+   i18n: {
+      prev: 'Previous',
+      next: 'Next',
+   },
 };
 
 const SELECTORS = {
    ACTIVE: '.env-image-slider__item--active',
+   ACTIVE__CHILD: '.env-image-slider__item--active > *',
    ACTIVE_DOT: '.env-is-active',
    ACTIVE_ITEM: '.env-image-slider__item--active.env-image-slider__item',
-   DATA_SLIDE: '[data-move], [data-move-to], [data-image-slider-touch]',
-   DATA_IMAGE_SLIDER: '[data-image-slider]',
+   DATA_SLIDE: '[data-move], [data-move-to]',
+   SLIDER_DATA_ATTRIBUTE: `[data-image-slider]`,
    INDICATORS: '.env-image-slider__indicators',
+   INDICATOR_ITEMS: '.env-image-slider__indicators > *',
    INNER: '.env-image-slider__inner',
    NEXT_PREV: '.env-image-slider--next, .env-image-slider--prev',
    ITEM: '.env-image-slider__item',
    THUMBNAILS: '.env-image-slider__thumbnails',
+   THUMBNAIL__ITEMS: '.env-image-slider__thumbnails > *',
 };
 
 const ClassName = {
    ACTIVE: 'env-image-slider__item--active',
    ACTIVE_DOT: 'env-is-active',
-   IMAGESLIDER: 'env-image-slider',
+   //IMAGESLIDER: 'env-image-slider',
    LEFT: 'env-image-slider__item--left',
    NEXT: 'env-image-slider__item--next',
    PREV: 'env-image-slider__item--prev',
@@ -62,47 +72,58 @@ const Direction = {
 };
 
 const Events = {
-   CLICK_DATA_API: `click${EVENT_KEY}${DATA_API_KEY}`,
-   KEYDOWN: `keydown${EVENT_KEY}`,
-   LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
-   MOUSEENTER: `mouseenter${EVENT_KEY}`,
-   MOUSELEAVE: `mouseleave${EVENT_KEY}`,
-   SLID: `slid${EVENT_KEY}`,
-   SLIDE: `slide${EVENT_KEY}`,
-   TOUCHEND: `touchend${EVENT_KEY}`,
-   TOUCHMOVE: `touchmove${EVENT_KEY}`,
-   TOUCHSTART: `touchstart${EVENT_KEY}`,
+   KEYDOWN: 'keydown',
+   MOUSEENTER: 'mouseenter',
+   MOUSELEAVE: 'mouseleave',
+   SLID: 'slid',
+   SLIDE: 'slide',
+   JQSLID: `slid.env.image-slider`, // Deprecated
+   JQSLIDE: `slide.env.image-slider`, // Deprecated
+   TOUCHEND: 'touchend',
+   TOUCHMOVE: 'touchmove',
+   TOUCHSTART: 'touchstart',
 };
 
 class Imageslider {
+   #images;
+   #indicatorsElement;
+   #thumbnailElement;
+   #interval;
+   #isSliding;
+   #activeElement;
+   #config;
+
    constructor(element, config) {
-      this.$el = $(element);
-      this.$images = this.$el.find(SELECTORS.ITEM);
+      this.el = element;
+      this.isPaused = false;
+      this.#images = getNodes(SELECTORS.ITEM, this.el);
+      this.#indicatorsElement = getNode(SELECTORS.INDICATORS, this.el);
+      this.#thumbnailElement = getNode(SELECTORS.THUMBNAILS, this.el);
+      this.#isSliding = false;
+      this.#interval = null;
+      this.#activeElement = null;
 
-      this._isSliding = false;
-      this._isPaused = false;
-      this._interval = null;
+      this.settings(config);
 
-      this._activeElement = null;
-      this._indicatorsElement = this.$el.find(SELECTORS.INDICATORS)[0];
-      this._thumbnailElements = this.$el.find(SELECTORS.THUMBNAILS)[0];
-      this.config = $.extend({}, DEFAULTS, this.$el.data(), config);
-
-      if (this.$images.length > 1 && config.buttons) {
+      if (this.#images.length > 1 && config.buttons) {
          this._addSlideButtons();
       }
+
+      this.#images.forEach((image, i) => {
+         image.setAttribute('data-env-imageslider-index', i);
+      });
 
       this._bindEvents();
    }
 
    next() {
-      if (!this._isSliding) {
+      if (!this.#isSliding) {
          this._slide(Direction.NEXT);
       }
    }
 
    prev() {
-      if (!this._isSliding) {
+      if (!this.#isSliding) {
          this._slide(Direction.PREV);
       }
    }
@@ -115,43 +136,43 @@ class Imageslider {
 
    pause(event) {
       if (!event) {
-         this._isPaused = true;
+         this.isPaused = true;
       }
 
-      clearInterval(this._interval);
-      this._interval = null;
+      clearInterval(this.#interval);
+      this.#interval = null;
    }
 
    cycle(event) {
       if (!event) {
-         this._isPaused = false;
+         this.isPaused = false;
       }
 
-      if (this._interval) {
-         clearInterval(this._interval);
-         this._interval = null;
+      if (this.#interval) {
+         clearInterval(this.#interval);
+         this.#interval = null;
       }
 
-      if (this.config.interval && !this._isPaused) {
-         this._interval = setInterval(
+      if (this.#config.interval && !this.isPaused) {
+         this.#interval = setInterval(
             (document.visibilityState ? this.nextWhenVisible : this.next).bind(
                this
             ),
-            this.config.interval
+            this.#config.interval
          );
       }
    }
 
    goTo(index) {
-      this._activeElement = this.$el.find(SELECTORS.ACTIVE_ITEM)[0];
+      this.#activeElement = getNode(SELECTORS.ACTIVE_ITEM, this.el);
 
-      const activeIndex = this._getItemIndex(this._activeElement);
+      const activeIndex = this._getItemIndex(this.#activeElement);
 
-      if (index > this.$images.length - 1 || index < 0) {
+      if (index > this.#images.length - 1 || index < 0) {
          return;
       }
 
-      if (this._isSliding) {
+      if (this.#isSliding) {
          return;
       }
 
@@ -163,111 +184,146 @@ class Imageslider {
 
       const direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
 
-      this._slide(direction, this.$images[index]);
-      return;
+      this._slide(direction, this.#images[index]);
    }
 
    startTouchSlide(event) {
-      this.touchstartx = event.originalEvent.touches[0].pageX;
+      this.touchstartx = event.touches[0].pageX;
    }
 
    moveTouchSlide(event) {
-      this.touchmovex = event.originalEvent.touches[0].pageX;
-
+      this.touchmovex = event.touches[0].pageX;
       this.movex = -(this.touchstartx - this.touchmovex);
-
       this.moved = false;
-      const activeItem = this.$el.find(SELECTORS.ACTIVE).children();
-      activeItem.css('transform', `translate3d(${this.movex}px, 0, 0)`);
+
+      const activeItem = getNode(SELECTORS.ACTIVE__CHILD, this.el);
+
+      setStyle(activeItem, 'transform', `translate3d(${this.movex}px, 0, 0)`);
 
       if (this.movex > SLIDE_WIDTH_PX) {
          this.prev();
          this.moved = true;
          setTimeout(() => {
-            activeItem.css('transform', 'translate3d(0, 0, 0)');
+            setStyle(activeItem, 'transform', `translate3d(0, 0, 0)`);
          }, TOUCHEVENT_WAIT);
       } else if (this.movex < -SLIDE_WIDTH_PX) {
          this.next();
          this.moved = true;
          setTimeout(() => {
-            activeItem.css('transform', 'translate3d(0, 0, 0)');
+            setStyle(activeItem, 'transform', `translate3d(0, 0, 0)`);
          }, TOUCHEVENT_WAIT);
       }
    }
 
    endTouchSlide() {
       if (!this.moved) {
-         this.$el
-            .find(SELECTORS.ACTIVE)
-            .children()
-            .css('transform', 'translate3d(0, 0, 0)');
+         setStyle(
+            getNode(SELECTORS.ACTIVE__CHILD, this.el),
+            'transform',
+            'translate3d(0, 0, 0)'
+         );
       }
    }
 
    dispose() {
-      this.$el.off(EVENT_KEY).removeData(DATA_KEY);
+      this.el = this.el.cloneNode(true);
+      delete this.el.envImageslider;
+      delete this.el.envImagesliderJQ;
+      this.el = null;
+      this.#images = null;
+      this.#interval = null;
+      this.isPaused = null;
+      this.#isSliding = null;
+      this.#activeElement = null;
+      this.#indicatorsElement = null;
+      this.#thumbnailElement = null;
+   }
 
-      this.$el = null;
-      this.$images = null;
-      this._interval = null;
-      this._isPaused = null;
-      this._isSliding = null;
-      this._activeElement = null;
-      this._indicatorsElement = null;
-      this._thumbnailElements = null;
+   settings(config) {
+      this.#config = Util.extend(
+         {},
+         DEFAULTS,
+         this.el.dataset,
+         isPlainObject(this.#config) ? this.#config : {},
+         config
+      );
    }
 
    _addSlideButtons() {
-      const sliderId = this.$el[0].id;
-      const buttonHTML = `<button type="button" class="env-image-slider--prev" data-move="prev" data-target="#${sliderId}">
-               <svg class="env-image-slider__previous-icon env-icon env-icon-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use>
-               </svg>
-               <span class="env-assistive-text">Previous</span>
-            </button>
-            <button type="button" class="env-image-slider--next" data-move="next" data-target="#${sliderId}">
-               <svg class="env-image-slider__next-icon env-icon env-icon-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use>
-               </svg>
-               <span class="env-assistive-text">Next</span>
-            </button>`;
-      $(`#${sliderId}`).find(SELECTORS.INNER).append(buttonHTML);
+      const sliderId = this.el.id;
+      const container = getNode(SELECTORS.INNER, this.el);
+      const prevButton = document.createElement('button');
+      setAttributes(prevButton, {
+         type: 'button',
+         class: 'env-image-slider--prev',
+         'data-move': 'prev',
+         'data-target': `#${sliderId}`,
+      });
+      prevButton.innerHTML = `<svg class='env-image-slider__previous-icon env-icon env-icon-small'>
+               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-left'></use></svg>
+               <span class='env-assistive-text'>${
+                  this.#config.i18n.prev
+               }</span>`;
+
+      const nextButton = document.createElement('button');
+      setAttributes(nextButton, {
+         type: 'button',
+         class: 'env-image-slider--next',
+         'data-move': 'next',
+         'data-target': `#${sliderId}`,
+      });
+      nextButton.innerHTML = `<svg class='env-image-slider__previous-icon env-icon env-icon-small'>
+               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-right'></use></svg>
+               <span class='env-assistive-text'>${
+                  this.#config.i18n.next
+               }</span>`;
+
+      container.appendChild(prevButton);
+      container.appendChild(nextButton);
    }
 
    _getItemByDirection(direction, activeElement) {
       const isNextDirection = direction === Direction.NEXT;
       const activeIndex = this._getItemIndex(activeElement);
-      const lastImageIndex = this.$images.length - 1;
+      const lastImageIndex = this.#images.length - 1;
       const isGoingToWrap =
          (!isNextDirection && activeIndex === 0) ||
          (isNextDirection && activeIndex === lastImageIndex);
 
-      if (isGoingToWrap && !this.config.wrap) {
+      if (isGoingToWrap && !this.#config.wrap) {
          return activeElement;
       }
 
       const delta = isNextDirection ? 1 : -1;
-      const itemIndex = (activeIndex + delta) % this.$images.length;
+      const itemIndex = (activeIndex + delta) % this.#images.length;
 
       return itemIndex === -1
-         ? this.$images[lastImageIndex]
-         : this.$images[itemIndex];
+         ? this.#images[lastImageIndex]
+         : this.#images[itemIndex];
    }
 
    _bindEvents() {
-      if (this.config.keyboard) {
-         this.$el.on(Events.KEYDOWN, (event) => this._keydown(event));
+      this.el.addEventListener('click', (event) => this._click(event));
+
+      if (this.#config.keyboard) {
+         this.el.addEventListener(Events.KEYDOWN, (event) =>
+            this._keydown(event)
+         );
       }
 
       if (
-         this.config.pause === 'hover' &&
-         this.config.imageSlider === 'cycle'
+         this.#config.pause === 'hover' &&
+         this.#config.imageSlider === 'cycle'
       ) {
-         this.$el
-            .on(Events.MOUSEENTER, (event) => this.pause(event))
-            .on(Events.MOUSELEAVE, (event) => this.cycle(event));
+         this.el.addEventListener(Events.MOUSEENTER, (event) =>
+            this.pause(event)
+         );
+         this.el.addEventListener(Events.MOUSELEAVE, (event) =>
+            this.cycle(event)
+         );
+
          if (CssUtil.isTouch()) {
-            this.$el.on(Events.TOUCHEND, () => {
+            this.el.addEventListener(Events.TOUCHEND, () => {
                this.pause();
                if (this.touchTimeout) {
                   clearTimeout(this.touchTimeout);
@@ -275,27 +331,28 @@ class Imageslider {
                this.touchTimeout = setTimeout(
                   (event) => this.cycle(event),
                   TOUCHEVENT_WAIT,
-                  this.config.interval
+                  this.#config.interval
                );
             });
          }
       }
-      if (this.config.swipe) {
+      if (this.#config.swipe) {
          this._bindTouchSlider();
       }
    }
 
    _bindTouchSlider() {
-      const container = this.$el.find(SELECTORS.INNER);
-      container.on(Events.TOUCHSTART, (event) => {
+      const container = getNode(SELECTORS.INNER, this.el);
+
+      container.addEventListener(Events.TOUCHSTART, (event) => {
          this.startTouchSlide(event);
       });
 
-      container.on(Events.TOUCHMOVE, (event) => {
+      container.addEventListener(Events.TOUCHMOVE, (event) => {
          this.moveTouchSlide(event);
       });
 
-      container.on(Events.TOUCHEND, () => {
+      container.addEventListener(Events.TOUCHEND, (event) => {
          this.endTouchSlide(event);
       });
    }
@@ -319,60 +376,104 @@ class Imageslider {
       }
    }
 
+   _click(event) {
+      const clickTarget = event.target.closest(SELECTORS.DATA_SLIDE);
+
+      if (!clickTarget) {
+         return;
+      }
+
+      let dataSet = clickTarget.dataset;
+
+      if (!dataSet.target || !document.querySelector(dataSet.target)) {
+         return;
+      }
+
+      const targetEl = document.querySelector(dataSet.target);
+
+      if (!targetEl || typeof targetEl.dataset.imageSlider === 'undefined') {
+         return;
+      }
+
+      if (dataSet.moveTo) {
+         const slideIndex = parseInt(dataSet.moveTo, 10);
+         this.settings({ interval: false });
+         this.goTo(slideIndex);
+      } else if (
+         dataSet.move === Direction.PREV ||
+         dataSet.move === Direction.NEXT
+      ) {
+         this[dataSet.move]();
+      }
+
+      event.preventDefault();
+   }
+
    _getItemIndex(element) {
-      return this.$images.index(element);
+      return parseInt(element.dataset.envImagesliderIndex, 10);
    }
 
    _triggerSlideEvent(targetElement, eventDirectionName) {
       const targetIndex = this._getItemIndex(targetElement);
       const fromIndex = this._getItemIndex(
-         this.$el.find(SELECTORS.ACTIVE_ITEM)[0]
+         getNode(SELECTORS.ACTIVE_ITEM, this.el)
       );
-      const slideEvent = $.Event(Events.SLIDE, {
-         targetElement,
-         direction: eventDirectionName,
-         from: fromIndex,
-         to: targetIndex,
-      });
+      let slideEvent;
 
-      this.$el.trigger(slideEvent);
-
+      // TODO: Delete if/else when jQuery dependency is removed
+      if (this.el.envImagesliderJQ) {
+         // Deprecated
+         slideEvent = $.Event(Events.JQSLIDE, {
+            targetElement,
+            direction: eventDirectionName,
+            from: fromIndex,
+            to: targetIndex,
+         });
+         $(this.el).trigger(slideEvent);
+         slideEvent.defaultPrevented = slideEvent.isDefaultPrevented();
+      } else {
+         slideEvent = new CustomEvent(Events.SLIDE, {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+               direction: eventDirectionName,
+               from: fromIndex,
+               to: targetIndex,
+            },
+         });
+         targetElement.dispatchEvent(slideEvent);
+      }
       return slideEvent;
    }
 
    _setActiveIndicatorElement(element) {
-      if (this._indicatorsElement) {
-         $(this._indicatorsElement)
-            .find(SELECTORS.ACTIVE_DOT)
-            .removeClass(ClassName.ACTIVE_DOT);
-
-         const nextIndicator =
-            this._indicatorsElement.children[this._getItemIndex(element)];
-
-         if (nextIndicator) {
-            $(nextIndicator).addClass(ClassName.ACTIVE_DOT);
-         }
-      } else if (this._thumbnailElements) {
-         $(this._thumbnailElements)
-            .find(SELECTORS.ACTIVE)
-            .removeClass(ClassName.ACTIVE);
-
-         const nextIndicator =
-            this._thumbnailElements.children[this._getItemIndex(element)]
-               .firstElementChild;
-
-         if (nextIndicator) {
-            $(nextIndicator).addClass(ClassName.ACTIVE);
-         }
+      if (this.#indicatorsElement) {
+         const active = getNode(SELECTORS.ACTIVE_DOT, this.#indicatorsElement);
+         const nextIndicator = getNodes(
+            SELECTORS.INDICATOR_ITEMS,
+            this.#indicatorsElement
+         )[this._getItemIndex(element)];
+         active && active.classList.remove(ClassName.ACTIVE_DOT);
+         nextIndicator && nextIndicator.classList.add(ClassName.ACTIVE_DOT);
+      } else if (this.#thumbnailElement) {
+         const active = getNode(SELECTORS.ACTIVE, this.#thumbnailElement);
+         const nextIndicator = getNodes(
+            SELECTORS.ACTIVE,
+            this.#thumbnailElement
+         )[this._getItemIndex(element)];
+         active && active.classList.remove(ClassName.ACTIVE);
+         nextIndicator && nextIndicator.classList.add(ClassName.ACTIVE);
       }
    }
 
    _slide(direction, element) {
-      const activeElement = this.$el.find(SELECTORS.ACTIVE_ITEM)[0];
+      const activeElement = getNode(SELECTORS.ACTIVE_ITEM, this.el);
       const activeElementIndex = this._getItemIndex(activeElement);
-      const nextElement =
+      const nextElement = getNode(
          element ||
-         (activeElement && this._getItemByDirection(direction, activeElement));
+            (activeElement &&
+               this._getItemByDirection(direction, activeElement))
+      );
       const nextElementIndex = this._getItemIndex(nextElement);
 
       let directionalClassName;
@@ -389,10 +490,8 @@ class Imageslider {
          eventDirectionName = Direction.RIGHT;
       }
 
-      const $nextElement = $(nextElement);
-
-      if (nextElement && $nextElement.hasClass(ClassName.ACTIVE)) {
-         this._isSliding = false;
+      if (nextElement && nextElement.classList.contains(ClassName.ACTIVE)) {
+         this.#isSliding = false;
          return;
       }
 
@@ -401,7 +500,7 @@ class Imageslider {
          eventDirectionName
       );
 
-      if (slideEvent.isDefaultPrevented()) {
+      if (slideEvent.defaultPrevented) {
          return;
       }
 
@@ -409,127 +508,147 @@ class Imageslider {
          return;
       }
 
-      this._isSliding = true;
+      this.#isSliding = true;
 
       this._setActiveIndicatorElement(nextElement);
 
-      const slidEvent = $.Event(Events.SLID, {
-         relatedTarget: nextElement,
-         direction: eventDirectionName,
-         from: activeElementIndex,
-         to: nextElementIndex,
-      });
+      let slidEvent;
 
-      const $activeElement = $(activeElement);
+      // TODO: Delete if/else when jQuery dependency is removed
+      if (this.el.envImagesliderJQ) {
+         // Deprecated
+         slidEvent = $.Event(Events.JQSLID, {
+            relatedTarget: nextElement,
+            direction: eventDirectionName,
+            from: activeElementIndex,
+            to: nextElementIndex,
+         });
+         slidEvent.defaultPrevented = slideEvent.isDefaultPrevented();
+      } else {
+         slidEvent = new CustomEvent(Events.SLID, {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+               relatedTarget: nextElement,
+               direction: eventDirectionName,
+               from: activeElementIndex,
+               to: nextElementIndex,
+            },
+         });
+      }
 
-      if (this.$el.hasClass(ClassName.SLIDE)) {
-         $nextElement.addClass(orderClassName);
+      if (this.el.classList.contains(ClassName.SLIDE)) {
+         nextElement.classList.add(orderClassName);
 
          CssUtil.reflow(nextElement);
 
-         $activeElement.addClass(directionalClassName);
-         $nextElement.addClass(directionalClassName);
+         activeElement.classList.add(directionalClassName);
+         nextElement.classList.add(directionalClassName);
 
-         $activeElement.one('transitionend', () => {
-            $nextElement
-               .removeClass(`${directionalClassName} ${orderClassName}`)
-               .addClass(ClassName.ACTIVE);
+         activeElement.addEventListener(
+            'transitionend',
+            () => {
+               nextElement.classList.remove(
+                  directionalClassName,
+                  orderClassName
+               );
+               nextElement.classList.add(ClassName.ACTIVE);
 
-            $activeElement.removeClass(
-               `${ClassName.ACTIVE} ${orderClassName} ${directionalClassName}`
-            );
+               activeElement.classList.remove(
+                  ClassName.ACTIVE,
+                  orderClassName,
+                  directionalClassName
+               );
 
-            this._isSliding = false;
+               this.#isSliding = false;
 
-            this.$el.trigger(slidEvent);
-         });
+               if (this.el.envImagesliderJQ) {
+                  $(this.el).trigger(slidEvent);
+               } else {
+                  this.el.dispatchEvent(slidEvent);
+               }
+            },
+            { once: true }
+         );
       } else {
-         $activeElement.removeClass(ClassName.ACTIVE);
-         $nextElement.addClass(ClassName.ACTIVE);
+         activeElement.classList.remove(ClassName.ACTIVE);
+         nextElement.classList.add(ClassName.ACTIVE);
 
-         this._isSliding = false;
-         this.$el.trigger(slideEvent);
+         this.#isSliding = false;
+
+         // TODO: Delete if/else when jQuery dependency is removed
+         if (this.el.envImagesliderJQ) {
+            $(this.el).trigger(slideEvent);
+         } else {
+            this.el.dispatchEvent(slideEvent);
+         }
+      }
+   }
+
+   static _init(elements, settings, isJQuery) {
+      const nodes = getNodes(elements);
+
+      if (nodes.length > 0) {
+         const sliders = nodes.map((node) => {
+            uniqueId(node);
+            let config;
+
+            if (typeof settings === 'object') {
+               config = { ...DEFAULTS, ...node.dataset, ...settings };
+            } else {
+               config = { ...DEFAULTS, ...node.dataset };
+            }
+
+            if (!node.envImageslider) {
+               node.envImagesliderJQ = isJQuery;
+               node.envImageslider = new Imageslider(node, config);
+            } else {
+               node.envImageslider.settings(
+                  Util.extend({}, { ...node.dataset, ...settings })
+               );
+            }
+
+            const action =
+               typeof settings === 'string' ? settings : config.move;
+
+            if (typeof settings === 'number') {
+               node.envImageslider.goTo(settings);
+            } else if (typeof action === 'string') {
+               if (node.envImageslider[action] === undefined) {
+                  throw new Error(`No method named "${action}"`);
+               }
+               node.envImageslider[action]();
+            }
+
+            if (config.interval && config.imageSlider === 'cycle') {
+               node.envImageslider.pause();
+               node.envImageslider.cycle();
+            }
+            return node.envImageslider;
+         });
+         return sliders;
       }
    }
 
    static _jQueryInterface(config) {
       return this.each(() => {
-         const $this = $(this);
-         let data = $this.data(DATA_KEY);
-
-         const _config = $.extend({}, DEFAULTS, $this.data());
-
-         if (typeof config === 'object') {
-            $.extend(_config, config);
-         }
-
-         const action = typeof config === 'string' ? config : _config.move;
-
-         if (!data) {
-            data = new Imageslider(this, _config);
-            $this.data(DATA_KEY, data);
-         }
-
-         if (typeof config === 'number') {
-            data.goTo(config);
-         } else if (typeof action === 'string') {
-            if (data[action] === undefined) {
-               throw new Error(`No method named "${action}"`);
-            }
-            data[action]();
-         } else if (_config.interval && _config.imageSlider === 'cycle') {
-            data.pause();
-            data.cycle();
-         }
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            Imageslider._init(node, config, true);
+         });
       });
-   }
-
-   static _dataApiClickHandler(event) {
-      // 'this' is current clicked element i.e. slide-right, slide-left or a indicator/thumbnail.
-      const selector = Util.getSelectorFromElement(this);
-
-      if (!selector) {
-         return;
-      }
-
-      const $target = $(selector).eq(0);
-
-      if (!$target.length || !$target.hasClass(ClassName.IMAGESLIDER)) {
-         return;
-      }
-
-      const config = $.extend({}, $target.data(), $(this).data());
-      const slideIndex = this.getAttribute('data-move-to');
-
-      if (slideIndex) {
-         config.interval = false;
-      }
-
-      Imageslider._jQueryInterface.call($target, config);
-
-      if (slideIndex) {
-         $target.data(DATA_KEY).goTo(slideIndex);
-      }
-
-      event.preventDefault();
    }
 }
 
 if (typeof document !== 'undefined') {
-   $(document).on(
-      Events.CLICK_DATA_API,
-      SELECTORS.DATA_SLIDE,
-      Imageslider._dataApiClickHandler
-   );
-
-   $(window).on(Events.LOAD_DATA_API, () => {
-      const $imageSliders = $(SELECTORS.DATA_IMAGE_SLIDER);
-      $imageSliders.each((i, slider) => {
-         const $slider = $(slider);
-         Imageslider._jQueryInterface.call($slider, $slider.data());
-      });
+   window.addEventListener('load', () => {
+      const imageSliders = getNodes(SELECTORS.SLIDER_DATA_ATTRIBUTE);
+      if (imageSliders.length > 0) {
+         Imageslider._init(imageSliders);
+      }
    });
 
+   // Deprecated
    const NO_CONFLICT = $.fn[NAME];
    $.fn[NAME] = Imageslider._jQueryInterface;
    $.fn[NAME].Constructor = Imageslider;
@@ -540,26 +659,5 @@ if (typeof document !== 'undefined') {
 }
 
 export default async (elements, settings) => {
-   const nodes = getNodes(elements);
-
-   if (nodes.length > 0) {
-      const sliders = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            let config;
-            if (typeof settings === 'object') {
-               config = { ...DEFAULTS, ...node.dataset, ...settings };
-            } else {
-               config = { ...DEFAULTS, ...node.dataset };
-            }
-            const slider = new Imageslider(node, config);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            if (config.interval && config.imageSlider === 'cycle') {
-               slider.pause();
-               slider.cycle();
-            }
-            return slider;
-         });
-      return sliders;
-   }
+   return Imageslider._init(elements, settings);
 };

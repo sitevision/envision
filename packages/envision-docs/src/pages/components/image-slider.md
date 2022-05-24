@@ -240,13 +240,12 @@ title: Image slider
 ## Usage
 
 Attribute `data-image-slider` is required to initiate a image
-slider and if there is more then one image, buttons will be generated to move
-the image slider to the next or previous item. Automatic genereted buttons can
-be prevented by using attribute `data-buttons="false"`.
+slider and if there is more then one image, previous and next buttons will be automatically added.
+Avoid addings buttons by using attribute `data-buttons="false"`.
 
 The `data-image-slider="cycle"` attribute is used to start the imageSlider animation
 at page load. `data-image-slider` attribute will initiate a image slider with
-no automatic.
+no automatic start.
 
 ### Via data attributes
 
@@ -326,7 +325,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
 $('#myImageSlider').envImageslider('pause');
 ```
 
-Cycles to the next item
+Move to the next item
 
 ```javascript
 // Since Sitevision 9.1
@@ -338,7 +337,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
 $('#myImageSlider').envImageslider('next');
 ```
 
-Cycles to the previous item
+Move to the previous item
 
 ```javascript
 // Since Sitevision 9.1
@@ -350,7 +349,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
 $('#myImageSlider').envImageslider('prev');
 ```
 
-Cycles the imageSlider to a particular slide.
+Move to a particular slide.
 
 ```javascript
 // Since Sitevision 9.1
@@ -364,15 +363,27 @@ $('#myImageSlider').envImageslider(2);
 
 ## Events
 
-Slid - Fires when slider transition is finished.
-
 Slide - Fires before slider transition starts.
 
+Slid - Fires when slider transition is finished.
+
 ```javascript
+document.getElementById('myImageslider').addEventListener('slide', (e) => {
+   // @e.detail {{ direction:string, from:number,to:number }}
+   // do something...
+});
+
+document.getElementById('myImageslider').addEventListener('slid', (e) => {
+   // @e.detail {{ relatedTarget:node, direction:string, from:number, to:number }}
+   // do something...
+});
+
+// Deprecated Sitevision 2022.06.1
 $('#myImageslider').on('slid.env.image-slider', () => {
    // do something...
 });
 
+// Deprecated Sitevision 2022.06.1
 $('#myImageslider').on('slide.env.image-slider', () => {
    // do something...
 });

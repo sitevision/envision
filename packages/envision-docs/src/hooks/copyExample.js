@@ -43,24 +43,9 @@ export const useCopyExample = (content) => {
 
       envision.rangeSlider('.example-range-slider', { values: [20, 70] });
 
-      // Initialize Image slider examples, load method does not work in gatsby.
-
-      envision.imageSlider('#exampleSlider0', {
-         imageSlider: 'cycle',
-         buttons: false,
-      });
-
-      envision.imageSlider('#exampleSlider1');
-
-      envision.imageSlider('#exampleSlider2', {
-         imageSlider: 'cycle',
-      });
-
-      envision.imageSlider('#exampleSlider3');
-
-      envision.imageSlider('#exampleSlider4', {
-         imageSlider: 'cycle',
-      });
+      // To initialize Image slider examples,
+      // load method must be triggered again in gatsby.
+      window.dispatchEvent(new Event('load'));
 
       // Initialize Envision plugins
 
