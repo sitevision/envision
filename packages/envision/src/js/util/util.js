@@ -6,6 +6,37 @@
 
 const Util = (() => {
    const Util = {
+      getLanguageOptions(i18nSetting, langObj, rootEl) {
+         const FALLBACK = 'sv';
+         let i18n = {};
+
+         const getLangObj = () => {
+            rootEl = rootEl || document.documentElement;
+            const langEl = rootEl.closest('[lang]');
+            let lang = langEl.getAttribute('lang').substring(0, 2);
+            if (!Object.prototype.hasOwnProperty.call(langObj, lang)) {
+               lang = FALLBACK;
+            }
+            if (Object.prototype.hasOwnProperty.call(langObj, lang)) {
+               return langObj[lang];
+            }
+            return {};
+         };
+
+         if (
+            typeof i18nSetting === 'string' &&
+            Object.prototype.hasOwnProperty.call(langObj, i18nSetting)
+         ) {
+            i18n = Object.assign({}, langObj[i18nSetting]);
+         } else if (this.isPlainObject(i18nSetting)) {
+            i18n = Object.assign({}, getLangObj(), i18nSetting);
+         } else {
+            i18n = Object.assign({}, getLangObj());
+         }
+
+         return i18n;
+      },
+
       isPlainObject(obj) {
          if (typeof obj == 'object' && obj !== null) {
             const proto = Object.getPrototypeOf(obj);

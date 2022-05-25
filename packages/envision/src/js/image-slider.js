@@ -14,13 +14,23 @@ import {
    setStyle,
    setAttributes,
 } from './util/nodes';
-import { isPlainObject } from 'webpack-merge/dist/utils';
 
 const NAME = 'envImageslider';
 const ARROW_LEFT_KEYCODE = 37;
 const ARROW_RIGHT_KEYCODE = 39;
 const TOUCHEVENT_WAIT = 500;
 const SLIDE_WIDTH_PX = 80;
+
+const lang = {
+   sv: {
+      prev: 'Föregående',
+      next: 'Nästa',
+   },
+   en: {
+      prev: 'Previous',
+      next: 'Next',
+   },
+};
 
 const DEFAULTS = {
    buttons: true,
@@ -31,10 +41,6 @@ const DEFAULTS = {
    slide: false,
    swipe: true,
    wrap: true,
-   i18n: {
-      prev: 'Previous',
-      next: 'Next',
-   },
 };
 
 const SELECTORS = {
@@ -102,6 +108,9 @@ class Imageslider {
       this.#isSliding = false;
       this.#interval = null;
       this.#activeElement = null;
+
+      typeof this.el.dataset.imageSlider === 'undefined' &&
+         this.el.setAttribute('data-image-slider', '');
 
       this.settings(config);
 
@@ -244,7 +253,7 @@ class Imageslider {
          {},
          DEFAULTS,
          this.el.dataset,
-         isPlainObject(this.#config) ? this.#config : {},
+         Util.isPlainObject(this.#config) ? this.#config : {},
          config
       );
    }
@@ -594,9 +603,18 @@ class Imageslider {
             let config;
 
             if (typeof settings === 'object') {
-               config = { ...DEFAULTS, ...node.dataset, ...settings };
+               config = {
+                  ...DEFAULTS,
+                  ...node.dataset,
+                  ...settings,
+                  i18n: Util.getLanguageOptions(settings?.i18n, lang, node),
+               };
             } else {
-               config = { ...DEFAULTS, ...node.dataset };
+               config = {
+                  ...DEFAULTS,
+                  ...node.dataset,
+                  i18n: Util.getLanguageOptions({}, lang, node),
+               };
             }
 
             if (!node.envImageslider) {

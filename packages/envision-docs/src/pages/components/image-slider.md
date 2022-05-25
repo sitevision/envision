@@ -281,6 +281,10 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `swipe = false` Will disable swipe functionallity on mobile devices.
 
+`i18n` _'sv'_ | _'en'_ | _{ add, no_results, remove_button, clear_button }_
+
+-  Available since 2022.06.1. Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+
 ## Methods
 
 Initialize the imageSlider with an optional `object` and starts cycling through slides.
@@ -293,7 +297,7 @@ envision.imageSlider('#myImageSlider', {
    buttons: false,
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider({
    interval: 2000,
    imageSlider: 'cycle',
@@ -309,7 +313,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].cycle();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('cycle');
 ```
 
@@ -321,7 +325,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].pause();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('pause');
 ```
 
@@ -333,7 +337,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].next();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('next');
 ```
 
@@ -345,7 +349,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].prev();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('prev');
 ```
 
@@ -357,7 +361,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].goTo(2);
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider(2);
 ```
 
@@ -368,23 +372,17 @@ Slide - Fires before slider transition starts.
 Slid - Fires when slider transition is finished.
 
 ```javascript
+// Since Sitevision 2022.06.1
 document.getElementById('myImageslider').addEventListener('slide', (e) => {
    // @e.detail {{ direction:string, from:number,to:number }}
-   // do something...
 });
 
+// Since Sitevision 2022.06.1
 document.getElementById('myImageslider').addEventListener('slid', (e) => {
    // @e.detail {{ relatedTarget:node, direction:string, from:number, to:number }}
-   // do something...
 });
 
-// Deprecated Sitevision 2022.06.1
-$('#myImageslider').on('slid.env.image-slider', () => {
-   // do something...
-});
-
-// Deprecated Sitevision 2022.06.1
-$('#myImageslider').on('slide.env.image-slider', () => {
-   // do something...
-});
+// Deprecated since Sitevision 2022.06.1
+$('#myImageslider').on('slid.env.image-slider', () => {});
+$('#myImageslider').on('slide.env.image-slider', () => {});
 ```

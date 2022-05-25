@@ -83,7 +83,7 @@ tagSelect.then(function (selects) {
 -  `i18n` _'sv'_ | _'en'_ | _{ add, no_results, remove_button, clear_button }_
 
    -  Translation of remove button, clear button, add item and no results.
-      Use predefined strings for swedish or english or write your own translation.
+      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
 
 -  `load` _function(query, callback)_
 
