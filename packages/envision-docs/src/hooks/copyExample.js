@@ -14,7 +14,7 @@ export const useCopyExample = (content) => {
 
       const envision = window.envision;
 
-      // Initialize jQuery plugins
+      // Initialize Envision plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
       envision.popover('.example-popover').then((popovers) => {
          // Remove possible remaining popovers from Popover page
@@ -27,25 +27,11 @@ export const useCopyExample = (content) => {
          }
       });
 
-      // Disable example forms
-      const forms = document.querySelectorAll('form[action="/"]');
-      forms.forEach((form) => {
-         form.addEventListener('submit', (e) => {
-            e.preventDefault();
-         });
-      });
-
       envision.tabs(
          '.example-tabs, .example-tabs1, .example-tabs2, .example-tabs3'
       );
 
       envision.rangeSlider('.example-range-slider', { values: [20, 70] });
-
-      // To initialize Image slider examples,
-      // load method must be triggered again in gatsby.
-      window.dispatchEvent(new Event('load'));
-
-      // Initialize Envision plugins
 
       const exampleSelects = document.querySelectorAll('.example-tag-select');
       for (let i = 0; exampleSelects && i < exampleSelects.length; i++) {
@@ -142,5 +128,17 @@ export const useCopyExample = (content) => {
             });
          }
       }
+
+      // Disable example forms
+      const forms = document.querySelectorAll('form[action="/"]');
+      forms.forEach((form) => {
+         form.addEventListener('submit', (e) => {
+            e.preventDefault();
+         });
+      });
+
+      // To initialize Image slider examples,
+      // load method must be triggered again in gatsby.
+      window.dispatchEvent(new Event('load'));
    }, [content]);
 };
