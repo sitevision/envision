@@ -11,7 +11,6 @@ const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const MODIFIER_BASE = 'env-accordion--';
 const NAME = 'envAccordion';
-const DATA_INITIALIZED = 'data-env-accordion';
 const SHOW = MODIFIER_BASE + 'show';
 const PARENT = 'data-parent';
 
@@ -56,30 +55,44 @@ class Accordion {
          });
    }
 
-   static _jQuery(config) {
-      return this.each(function () {
-         const data = new Accordion(this);
-
-         if (typeof config === 'string') {
-            if (data[config] === undefined) {
-               throw new Error(`No method named "${config}"`);
+   static _init(elements, settings) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         const accordions = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new Accordion(node);
             }
-            data[config]();
-            return;
-         }
+            if (typeof settings === 'string') {
+               if (!node[NAME][settings]) {
+                  throw new Error(`No method named "${settings}"`);
+               }
+               node[NAME][settings].call(node[NAME]);
+            } else {
+               node[NAME].toggle.call(node[NAME]);
+            }
+            return node[NAME];
+         });
+         return accordions;
+      }
+   }
 
-         data.toggle();
+   static _jQueryInterface(settings) {
+      return this.each(() => {
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            Accordion._init(node, settings);
+         });
       });
    }
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = Accordion._jQuery;
+   $.fn[NAME] = Accordion._jQueryInterface;
    $.fn[NAME].Constructor = Accordion;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return Accordion._jQuery;
+      return Accordion._jQueryInterface;
    };
 
    $(document).on('click', '[data-env-accordion]', function (e) {
@@ -93,16 +106,6 @@ if (typeof document !== 'undefined') {
    });
 }
 
-export default async (elements) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      const accordions = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            let accordion = new Accordion(node);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            return accordion;
-         });
-      return accordions;
-   }
+export default async (elements, settings) => {
+   return Accordion._init(elements, settings);
 };

@@ -132,7 +132,7 @@ class Popover {
    setText($popoverElement, selector, text) {
       // prettier-ignore
       $popoverElement
-         .find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
+      .find(selector)[this.config.escapeContent ? 'text' : 'html'](text);
    }
 
    setTitle($popoverElement) {
@@ -244,49 +244,50 @@ class Popover {
          this.hide();
       }
    }
-}
 
-function _jQuery(config) {
-   return this.each(function () {
-      const $this = $(this);
-      let data = $this.data(IDENTIFIER);
+   static async _init(elements, settings) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         await getPopper();
 
-      if (!data && /destroy|hide/.test(config)) {
-         return;
+         const popovers = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new Popover(node, settings);
+            }
+
+            if (typeof settings === 'string') {
+               if (!node[NAME][settings]) {
+                  throw new Error(`No method named "${settings}"`);
+               }
+               node[NAME][settings].call(node[NAME]);
+            }
+
+            return node[NAME];
+         });
+         return popovers;
       }
+   }
 
-      if (!data) {
-         data = new Popover(this, typeof config === 'object' ? config : null);
-         $this.data(IDENTIFIER, data);
-      }
-
-      if (typeof config === 'string') {
-         const method = data[config];
-
-         if (!method) {
-            throw new Error(`Invalid method name "${config}"`);
-         }
-
-         method.call(data);
-      }
-   });
+   static _jQueryInterface(settings) {
+      return this.each(() => {
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            Popover._init(node, settings);
+         });
+      });
+   }
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = _jQuery;
+   $.fn[NAME] = Popover._jQueryInterface;
    $.fn[NAME].Constructor = Popover;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return Popover._jQuery;
+      return Popover._jQueryInterface;
    };
 }
 
 export default async (elements, settings) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      await getPopper();
-      const popovers = nodes.map((node) => new Popover(node, settings));
-      return popovers;
-   }
+   return Popover._init(elements, settings);
 };

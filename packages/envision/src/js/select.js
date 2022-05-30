@@ -7,6 +7,8 @@
 import Util from './util/util';
 import { getNodes } from './util/nodes';
 
+const NAME = 'envSelect';
+
 const lang = {
    sv: {
       add: 'Lägg till',
@@ -204,17 +206,17 @@ const getSettings = (settings, node) => {
 // Plugin / extension for envision library
 export default async (elements, settings) => {
    const nodes = getNodes(elements);
-
    if (nodes.length > 0) {
       const { default: TomSelect } = await import(
          /* webpackChunkName: "tom-select" */ 'tom-select'
       );
-      const selects = nodes
-         .filter((node) => !node.classList.contains('tomselected'))
-         .map((node) => {
-            settings = getSettings(settings, node);
-            return new SelectPlugin(node, settings, TomSelect);
-         });
+      const selects = nodes.map((node) => {
+         settings = getSettings(settings, node);
+         if (!node[NAME]) {
+            node[NAME] = new SelectPlugin(node, settings, TomSelect);
+         }
+         return node[NAME];
+      });
       return selects;
    }
 };

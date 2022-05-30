@@ -236,7 +236,7 @@ class Imageslider {
 
    dispose() {
       this.el = this.el.cloneNode(true);
-      delete this.el.envImageslider;
+      delete this.el[NAME];
       delete this.el.envImagesliderJQ;
       this.el = null;
       this.#images = null;
@@ -268,9 +268,9 @@ class Imageslider {
          'data-move': 'prev',
          'data-target': `#${sliderId}`,
       });
-      prevButton.innerHTML = `<svg class='env-image-slider__previous-icon env-icon env-icon-small'>
-               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-left'></use></svg>
-               <span class='env-assistive-text'>${
+      prevButton.innerHTML = `<svg class="env-image-slider__previous-icon env-icon env-icon-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use></svg>
+               <span class="env-assistive-text">${
                   this.#config.i18n.prev
                }</span>`;
 
@@ -281,9 +281,9 @@ class Imageslider {
          'data-move': 'next',
          'data-target': `#${sliderId}`,
       });
-      nextButton.innerHTML = `<svg class='env-image-slider__previous-icon env-icon env-icon-small'>
-               <use xlink:href='/sitevision/envision-icons.svg#icon-arrow-right'></use></svg>
-               <span class='env-assistive-text'>${
+      nextButton.innerHTML = `<svg class="env-image-slider__previous-icon env-icon env-icon-small">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use></svg>
+               <span class="env-assistive-text">${
                   this.#config.i18n.next
                }</span>`;
 
@@ -617,11 +617,11 @@ class Imageslider {
                };
             }
 
-            if (!node.envImageslider) {
+            if (!node[NAME]) {
                node.envImagesliderJQ = isJQuery;
-               node.envImageslider = new Imageslider(node, config);
+               node[NAME] = new Imageslider(node, config);
             } else {
-               node.envImageslider.settings(
+               node[NAME].settings(
                   Util.extend({}, { ...node.dataset, ...settings })
                );
             }
@@ -630,19 +630,19 @@ class Imageslider {
                typeof settings === 'string' ? settings : config.move;
 
             if (typeof settings === 'number') {
-               node.envImageslider.goTo(settings);
+               node[NAME].goTo(settings);
             } else if (typeof action === 'string') {
-               if (node.envImageslider[action] === undefined) {
+               if (node[NAME][action] === undefined) {
                   throw new Error(`No method named "${action}"`);
                }
-               node.envImageslider[action]();
+               node[NAME][action]();
             }
 
             if (config.interval && config.imageSlider === 'cycle') {
-               node.envImageslider.pause();
-               node.envImageslider.cycle();
+               node[NAME].pause();
+               node[NAME].cycle();
             }
-            return node.envImageslider;
+            return node[NAME];
          });
          return sliders;
       }

@@ -45,9 +45,11 @@ title: Image viewer
 </div>
 ```
 
-## Usage from script
+## Usage from script <span class="env-badge env-badge--info">9.1</span>
 
-<span class="env-badge env-badge--info">Added in 9.1</span>
+### Options
+
+`i18n` _'sv'_ | _'en'_ | _{ prev, next, moveto }_ <span class="env-badge env-badge--info">Added in 2022.06.1</span>
 
 ```javascript
 // Since Sitevision 9.1

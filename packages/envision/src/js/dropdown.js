@@ -12,9 +12,7 @@ const TARGET_ATTR = 'data-target';
 const INDEX_ATTR = 'data-env-dropdown-index';
 const PLACEMENT_BODY_ATTR = 'data-dropdown-placement-body';
 const ENV_DROPDOWN_MENU = '.env-dropdown__menu';
-const DATA_INITIALIZED = 'data-env-dropdown';
-
-const dropdowns = {};
+const NAME = 'envDropdown';
 
 class Dropdown {
    constructor(container, menu, button) {
@@ -140,17 +138,15 @@ const initialize = async (e) => {
       const container = e.target.closest(button.getAttribute(TARGET_ATTR));
       const menu = container.querySelector(ENV_DROPDOWN_MENU);
       if (container && container.id) {
-         if (container.getAttribute(DATA_INITIALIZED) === 'true') {
-            dropdowns[container.id].toggle();
-         } else if (container.getAttribute(DATA_INITIALIZED) !== 'true') {
+         if (container[NAME]) {
+            container[NAME].toggle();
+         } else {
             await getPopper();
-            dropdowns[container.id] = new Dropdown(container, menu, button);
-            container.setAttribute(DATA_INITIALIZED, 'true');
+            container[NAME] = new Dropdown(container, menu, button);
             if (menu) {
-               menu.setAttribute(DATA_INITIALIZED, 'true');
                hide(menu);
             }
-            dropdowns[container.id].toggle();
+            container[NAME].toggle();
          }
       }
    }

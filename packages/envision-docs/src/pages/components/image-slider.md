@@ -281,7 +281,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `swipe = false` Will disable swipe functionallity on mobile devices.
 
-`i18n` _'sv'_ | _'en'_ | _{ add, no_results, remove_button, clear_button }_
+`i18n` _'sv'_ | _'en'_ | _{ prev, next }_
 
 -  Available since 2022.06.1. Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
 

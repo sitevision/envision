@@ -12,7 +12,6 @@ export const useCopyExample = (content) => {
             element.parentNode.insertBefore(example, element);
          });
 
-      const $ = window.$;
       const envision = window.envision;
 
       // Initialize jQuery plugins
@@ -36,10 +35,9 @@ export const useCopyExample = (content) => {
          });
       });
 
-      // New version initiation
-      envision.tabs('.example-tabs');
-      // Legacy version initiation (deprecated)
-      $('.example-tabs1, .example-tabs2, .example-tabs3').envTabs();
+      envision.tabs(
+         '.example-tabs, .example-tabs1, .example-tabs2, .example-tabs3'
+      );
 
       envision.rangeSlider('.example-range-slider', { values: [20, 70] });
 

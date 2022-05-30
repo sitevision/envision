@@ -6,21 +6,17 @@
    @include popout-menu;
 
    &__menu {
+      display: block;
       background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color-light');
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('box-shadow');
-      display: none;
       left: 0;
       max-width: (math.div(240, $BROWSER_FONT_SIZE) * 1em);
       min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
       position: fixed;
       top: 100%;
       z-index: $zindex-dropdown;
-
-      &[data-env-dropdown] {
-         display: block;
-      }
    }
 
    &-icon {

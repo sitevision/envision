@@ -14,7 +14,6 @@ const VALUE_HOLDERS_SELECTOR = '.env-range-slider__values__value';
 const RANGE_SELECTOR = '.env-range-slider__range';
 const TOUCH_MODIFIER = 'env-range-slider--touch';
 const IDENTIFIER = 'env.range-slider';
-const DATA_INITIALIZED = 'data-env-range-slider';
 const NAME = 'envRangeSlider';
 const KEY_RIGHT = 39;
 const KEY_LEFT = 37;
@@ -355,51 +354,46 @@ class RangeSlider {
       }
    }
 
-   static _jQuery(config, ...args) {
-      return this.each(() => {
-         const $this = $(this);
-         let rangeSlider = $this.data(IDENTIFIER);
-
-         if (!rangeSlider) {
-            rangeSlider = new RangeSlider(this, config);
-            $this.data(IDENTIFIER, rangeSlider);
-         }
-
-         if (typeof config === 'string') {
-            const method = rangeSlider[config];
-            if (method === undefined) {
-               throw new Error(`No method named "${config}"`);
+   static _init(elements, settings, ...args) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         const rangeSliders = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new RangeSlider(node, settings);
+               node[NAME].initialize();
             }
+            if (typeof settings === 'string') {
+               if (!node[NAME][settings]) {
+                  throw new Error(`No method named "${settings}"`);
+               }
+               node[NAME][settings].call(node[NAME], ...args);
+            }
+            return node[NAME];
+         });
+         return rangeSliders;
+      }
+   }
 
-            method.call(rangeSlider, ...args);
-         }
-
-         rangeSlider.initialize();
+   static _jQueryInterface(settings, ...args) {
+      return this.each(() => {
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            RangeSlider._init(node, settings, ...args);
+         });
       });
    }
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = RangeSlider._jQuery;
+   $.fn[NAME] = RangeSlider._jQueryInterface;
    $.fn[NAME].Constructor = RangeSlider;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return RangeSlider._jQuery;
+      return RangeSlider._jQueryInterface;
    };
 }
 
 export default async (elements, settings) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      const rangeSliders = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            let slider = new RangeSlider(node, settings);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            slider.initialize();
-            return slider;
-         });
-      return rangeSliders;
-   }
+   return RangeSlider._init(elements, settings);
 };

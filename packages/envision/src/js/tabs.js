@@ -10,8 +10,6 @@ import { hide, unhide, getNodes } from './util/nodes';
 
 const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
-const IDENTIFIER = 'env-tabs';
-const DATA_INITIALIZED = 'data-env-tabs';
 const DATA_INDEX = 'data-env-tabs-index';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
@@ -96,7 +94,6 @@ class Tabs {
          tab.removeEventListener('keydown', this._keydownHandler, false);
          tab.removeAttribute(DATA_INDEX);
       });
-      this.el.removeAttribute(DATA_INITIALIZED);
       for (let key in this) {
          delete this[key];
       }
@@ -168,56 +165,46 @@ class Tabs {
       }
    }
 
-   static _jQuery(config, argument) {
-      return this.each(() => {
-         const $this = $(this);
-         let tabs = $this.data(IDENTIFIER);
-
-         if (!tabs) {
-            $this.data(IDENTIFIER, tabs);
-            for (let i = 0; i < this.length; i++) {
-               let el = this[i];
-               if (el.getAttribute(DATA_INITIALIZED) !== 'true') {
-                  let tabs = new Tabs(el, config);
-                  el.setAttribute(DATA_INITIALIZED, 'true');
-                  tabs.initialize();
+   static _init(elements, settings, argument) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         const tabs = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new Tabs(node, settings);
+               node[NAME].initialize();
+            }
+            if (typeof settings === 'string') {
+               if (!node[NAME][settings]) {
+                  throw new Error(`Invalid method name "${settings}"`);
                }
+               node[NAME][settings].call(node[NAME], argument);
             }
-         } else if (typeof config === 'string') {
-            const method = tabs[config];
+            return node[NAME];
+         });
+         return tabs;
+      }
+   }
 
-            if (!method) {
-               throw new Error(`Invalid method name "${config}"`);
-            }
-
-            method.call(tabs, argument);
-         }
+   static _jQueryInterface(settings, argument) {
+      return this.each(() => {
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            Tabs._init(node, settings, argument);
+         });
       });
    }
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = Tabs._jQuery;
+   $.fn[NAME] = Tabs._jQueryInterface;
    $.fn[NAME].Constructor = Tabs;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return Tabs._jQuery;
+      return Tabs._jQueryInterface;
    };
 }
 
-// Plugin / extension for envision library
-export default async (elements, settings) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      const tabs = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            let tab = new Tabs(node, settings);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            tab.initialize();
-            return tab;
-         });
-      return tabs;
-   }
+export default async (elements, settings, argument) => {
+   return Tabs._init(elements, settings, argument);
 };
