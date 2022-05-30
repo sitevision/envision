@@ -240,7 +240,7 @@ title: Image slider
 ## Usage
 
 Attribute `data-image-slider` is required to initiate a image
-slider and if there is more then one image, previous and next buttons will be automatically added.
+slider and if there is more than one image, previous and next buttons will be automatically added.
 Avoid addings buttons by using attribute `data-buttons="false"`.
 
 The `data-image-slider="cycle"` attribute is used to start the imageSlider animation
