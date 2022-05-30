@@ -7,7 +7,7 @@
 const Util = (() => {
    const Util = {
       getLanguageOptions(i18nSetting, langObj, rootEl) {
-         const FALLBACK = 'sv';
+         const FALLBACK = 'en';
          let i18n = {};
 
          const getLangObj = () => {
