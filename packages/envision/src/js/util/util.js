@@ -24,7 +24,6 @@ const Util = (() => {
          }
       },
 
-      jQueryDeprecationWarning: () => {},
       getLanguageOptions(i18nSetting, langObj, rootEl) {
          const FALLBACK = 'en';
          let i18n = {};
