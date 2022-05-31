@@ -188,6 +188,13 @@ blockquote.doc-blockquote {
    text-shadow: none;
 }
 
+.offset-anchor {
+   display: block;
+   position: relative;
+   top: -120px;
+   visibility: hidden;
+}
+
 .docs-text,
 .sidenav,
 .sidenav *,

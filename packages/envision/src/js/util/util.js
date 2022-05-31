@@ -6,6 +6,25 @@
 
 const Util = (() => {
    const Util = {
+      consoleWarning: (issue, ...args) => {
+         const DOC_URL = 'https://envisionui.io/';
+         const issues = {
+            jQuery: (jqName) => {
+               let envName = jqName
+                  .replace(/^env/, '')
+                  .replace(/Imageslider/, 'imageSlider')
+                  .replace(/Imageviewer/, 'imageWiewer');
+               envName = envName.charAt(0).toLowerCase() + envName.slice(1);
+               return `WARNING: $.fn.${jqName} is deprecated. Please update your code with new method envision.${envName}. Refer to ${DOC_URL}warnings/#jquery for documentation.`;
+            },
+         };
+
+         if (Object.prototype.hasOwnProperty.call(issues, issue)) {
+            console.warn(issues[issue](...args));
+         }
+      },
+
+      jQueryDeprecationWarning: () => {},
       getLanguageOptions(i18nSetting, langObj, rootEl) {
          const FALLBACK = 'en';
          let i18n = {};

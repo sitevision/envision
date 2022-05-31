@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes, lockScroll, unlockScroll } from './util/nodes';
+import Util from './util/util';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
@@ -223,6 +224,7 @@ class ModalDialog {
    }
 
    static _jQueryInterface(action) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
@@ -241,15 +243,17 @@ if (typeof document !== 'undefined') {
       return ModalDialog._jQueryInterface;
    };
 
-   $(document).on(
-      'click',
-      SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
-      function (e) {
-         e.preventDefault();
-         const target = document.querySelector(this.dataset?.target);
-         target && ModalDialog._init(target, 'show');
+   document.addEventListener('click', (e) => {
+      const el = event.target.closest(
+         SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG
+      );
+      if (!el) {
+         return;
       }
-   );
+      e.preventDefault();
+      const selector = el.dataset.target;
+      ModalDialog._init(document.querySelector(selector), 'show');
+   });
 }
 
 export default async (elements, action) => {

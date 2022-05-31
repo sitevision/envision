@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes } from './util/nodes';
+import Util from './util/util';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const MODIFIER_BASE = 'env-collapse--';
@@ -83,6 +84,7 @@ class Collapse {
    }
 
    static _jQueryInterface(settings) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
@@ -101,18 +103,14 @@ if (typeof document !== 'undefined') {
       return Collapse._jQueryInterface;
    };
 
-   $(document).on('click', '[data-env-collapse]', function (e) {
-      e.preventDefault();
-
-      const $this = $(this);
-      const target = $this.attr('data-target') || $this.attr('href');
-      const $target = $(target);
-
-      if ($target.is(':animated')) {
+   document.addEventListener('click', (e) => {
+      const el = event.target.closest('[data-env-collapse]');
+      if (!el) {
          return;
       }
-
-      $target[NAME]();
+      e.preventDefault();
+      const selector = el.dataset.target || el.getAttribute('href');
+      Collapse._init(document.querySelector(selector));
    });
 }
 

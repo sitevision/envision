@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes } from './util/nodes';
+import Util from './util/util';
 
 const HANDLE_INDEX = 'range-handle-index';
 const HANDLES_SELECTOR = '.env-range-slider__handle';
@@ -375,6 +376,7 @@ class RangeSlider {
    }
 
    static _jQueryInterface(settings, ...args) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

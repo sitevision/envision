@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import { getNodes, uniqueId } from './util/nodes';
 import { getPopper } from './util/popper';
+import Util from './util/util';
 
 const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
@@ -269,6 +270,7 @@ class Popover {
    }
 
    static _jQueryInterface(settings) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

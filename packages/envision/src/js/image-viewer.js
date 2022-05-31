@@ -400,6 +400,7 @@ class Imageviewer {
    }
 
    static _jQueryInterface(settings) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

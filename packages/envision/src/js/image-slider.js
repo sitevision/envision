@@ -649,6 +649,7 @@ class Imageslider {
    }
 
    static _jQueryInterface(config) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
