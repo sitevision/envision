@@ -11,7 +11,6 @@ import { getNodes, lockScroll, unlockScroll } from './util/nodes';
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
 const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
-const DATA_KEY = 'env.modal-dialog';
 const DISMISS_SELECTOR = '[data-modal-dialog-dismiss]';
 const PLACEMENT_BODY_ATTR = 'data-modal-dialog-placement-body';
 const ESCAPE_KEY = 27;
@@ -19,7 +18,6 @@ const FOCUSIN = 'focusin.env-modal-dialog';
 const MODIFIER_BASE = 'env-modal-dialog--';
 const ALERT_MODIFIER_BASE = 'env-modal-alert--';
 const NAME = 'envDialog';
-const DATA_INITIALIZED = 'data-env-modal-dialog';
 const SELECTORS = {
    MODAL_DIALOG: '[data-modal-dialog]',
    MODAL_ALERT: '[data-modal-alert]',
@@ -205,37 +203,42 @@ class ModalDialog {
       $(e.currentTarget).removeClass(ANIMATION);
    }
 
-   static _jQuery(action) {
-      return this.each(() => {
-         const $this = $(this);
-         let data = $this.data(DATA_KEY);
-
-         if (!data) {
-            data = new ModalDialog(this);
-            $this.data(DATA_KEY, data);
-         }
-
-         if (typeof action === 'string') {
-            const method = data[action];
-            if (method === undefined) {
-               throw new Error(`No method named "${action}"`);
+   static _init(elements, action) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         const modals = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new ModalDialog(node);
             }
-            method.call(data);
-            return;
-         }
+            if (typeof action === 'string') {
+               if (!node[NAME][action]) {
+                  throw new Error(`No method named "${action}"`);
+               }
+               node[NAME][action].call(node[NAME]);
+            }
+            return node[NAME];
+         });
+         return modals;
+      }
+   }
 
-         data.show();
+   static _jQueryInterface(action) {
+      return this.each(() => {
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            ModalDialog._init(node, action);
+         });
       });
    }
 }
 
 if (typeof document !== 'undefined') {
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = ModalDialog._jQuery;
+   $.fn[NAME] = ModalDialog._jQueryInterface;
    $.fn[NAME].Constructor = ModalDialog;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return ModalDialog._jQuery;
+      return ModalDialog._jQueryInterface;
    };
 
    $(document).on(
@@ -243,24 +246,12 @@ if (typeof document !== 'undefined') {
       SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
       function (e) {
          e.preventDefault();
-
-         const $target = $($(this).data('target'));
-
-         $target[NAME]();
+         const target = document.querySelector(this.dataset?.target);
+         target && ModalDialog._init(target, 'show');
       }
    );
 }
 
-export default async (elements) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      const modals = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            const modal = new ModalDialog(node);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            return modal;
-         });
-      return modals;
-   }
+export default async (elements, action) => {
+   return ModalDialog._init(elements, action);
 };

@@ -240,13 +240,12 @@ title: Image slider
 ## Usage
 
 Attribute `data-image-slider` is required to initiate a image
-slider and if there is more then one image, buttons will be generated to move
-the image slider to the next or previous item. Automatic genereted buttons can
-be prevented by using attribute `data-buttons="false"`.
+slider and if there is more than one image, previous and next buttons will be automatically added.
+Avoid addings buttons by using attribute `data-buttons="false"`.
 
 The `data-image-slider="cycle"` attribute is used to start the imageSlider animation
 at page load. `data-image-slider` attribute will initiate a image slider with
-no automatic.
+no automatic start.
 
 ### Via data attributes
 
@@ -282,6 +281,10 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `swipe = false` Will disable swipe functionallity on mobile devices.
 
+`i18n` _'sv'_ | _'en'_ | _{ prev, next }_
+
+-  Available since 2022.06.1. Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+
 ## Methods
 
 Initialize the imageSlider with an optional `object` and starts cycling through slides.
@@ -294,7 +297,7 @@ envision.imageSlider('#myImageSlider', {
    buttons: false,
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider({
    interval: 2000,
    imageSlider: 'cycle',
@@ -310,7 +313,7 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].cycle();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('cycle');
 ```
 
@@ -322,11 +325,11 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].pause();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('pause');
 ```
 
-Cycles to the next item
+Move to the next item
 
 ```javascript
 // Since Sitevision 9.1
@@ -334,11 +337,11 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].next();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('next');
 ```
 
-Cycles to the previous item
+Move to the previous item
 
 ```javascript
 // Since Sitevision 9.1
@@ -346,11 +349,11 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].prev();
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider('prev');
 ```
 
-Cycles the imageSlider to a particular slide.
+Move to a particular slide.
 
 ```javascript
 // Since Sitevision 9.1
@@ -358,22 +361,28 @@ envision.imageSlider('#myImageSlider').then(function (sliders) {
    sliders[0].goTo(2);
 });
 
-// Deprecated Sitevision 9.1
+// Deprecated since Sitevision 9.1
 $('#myImageSlider').envImageslider(2);
 ```
 
 ## Events
 
-Slid - Fires when slider transition is finished.
-
 Slide - Fires before slider transition starts.
 
+Slid - Fires when slider transition is finished.
+
 ```javascript
-$('#myImageslider').on('slid.env.image-slider', () => {
-   // do something...
+// Since Sitevision 2022.06.1
+document.getElementById('myImageslider').addEventListener('slide', (e) => {
+   // @e.detail {{ direction:string, from:number,to:number }}
 });
 
-$('#myImageslider').on('slide.env.image-slider', () => {
-   // do something...
+// Since Sitevision 2022.06.1
+document.getElementById('myImageslider').addEventListener('slid', (e) => {
+   // @e.detail {{ relatedTarget:node, direction:string, from:number, to:number }}
 });
+
+// Deprecated since Sitevision 2022.06.1
+$('#myImageslider').on('slid.env.image-slider', () => {});
+$('#myImageslider').on('slide.env.image-slider', () => {});
 ```

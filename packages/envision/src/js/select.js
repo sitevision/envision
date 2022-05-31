@@ -7,6 +7,8 @@
 import Util from './util/util';
 import { getNodes } from './util/nodes';
 
+const NAME = 'envSelect';
+
 const lang = {
    sv: {
       add: 'Lägg till',
@@ -155,7 +157,7 @@ const SelectPlugin = function (el, settings, TomSelect) {
    return this;
 };
 
-const getSettings = (settings) => {
+const getSettings = (settings, node) => {
    // Remove unwanted settings
    settings = Util.normalizeOptions(settings, defaults.userConfig);
 
@@ -189,16 +191,7 @@ const getSettings = (settings) => {
    // Handle language option
    // May be set to string 'sv', 'en' - use lang variable
    // or set to object with custom text.
-   if (
-      typeof settings.i18n === 'string' &&
-      Object.prototype.hasOwnProperty.call(lang, settings.i18n)
-   ) {
-      settings.i18n = Object.assign({}, lang[settings.i18n]);
-   } else if (Util.isPlainObject(settings.i18n)) {
-      settings.i18n = Object.assign({}, lang['sv'], settings.i18n);
-   } else {
-      settings.i18n = Object.assign({}, lang['sv']);
-   }
+   settings.i18n = Util.getLanguageOptions(settings?.i18n, lang, node);
 
    // Translate plugin texts
    for (let name in settings.plugins) {
@@ -213,15 +206,17 @@ const getSettings = (settings) => {
 // Plugin / extension for envision library
 export default async (elements, settings) => {
    const nodes = getNodes(elements);
-   settings = getSettings(settings);
-
    if (nodes.length > 0) {
       const { default: TomSelect } = await import(
          /* webpackChunkName: "tom-select" */ 'tom-select'
       );
-      const selects = nodes
-         .filter((node) => !node.classList.contains('tomselected'))
-         .map((node) => new SelectPlugin(node, settings, TomSelect));
+      const selects = nodes.map((node) => {
+         settings = getSettings(settings, node);
+         if (!node[NAME]) {
+            node[NAME] = new SelectPlugin(node, settings, TomSelect);
+         }
+         return node[NAME];
+      });
       return selects;
    }
 };

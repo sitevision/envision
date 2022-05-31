@@ -6,13 +6,13 @@
 
 import $ from 'jquery';
 import { getNodes, lockScroll, unlockScroll } from './util/nodes';
+import Util from './util/util';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-image-viewer__backdrop';
 const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
 const EVENT_KEY = `.env.image-viewer`;
 const NAME = 'envImageviewer';
-const DATA_INITIALIZED = 'data-env-image-viewer';
 const DATA_API_KEY = '.data-api';
 const ESCAPE_KEY = 27;
 const ARROW_LEFT_KEYCODE = 37;
@@ -25,6 +25,19 @@ const SPINNER_TEMPLATE = `<div class="env-spinner">
                                 <div class="env-rect4"></div>
                                 <div class="env-rect5"></div>
                              </div>`;
+
+const lang = {
+   sv: {
+      prev: 'Föregående',
+      next: 'Nästa',
+      moveto: 'Gå till bild',
+   },
+   en: {
+      prev: 'Previous',
+      next: 'Next',
+      moveto: 'Move to image',
+   },
+};
 
 const SELECTORS = {
    ACTIVE_DOT: '.env-is-active',
@@ -60,13 +73,21 @@ class Imageviewer {
       this.$images = this.$el.find(SELECTORS.IMAGES);
       this._isShown = false;
 
-      this.config = $.extend({}, this.$el.data());
+      this.config = $.extend(
+         {},
+         {
+            i18n: Util.getLanguageOptions(settings?.i18n, lang, element),
+         },
+         this.$el.data()
+      );
 
       const index =
          settings && this.$images.length > settings.index
             ? settings.index
             : BASE_SETTINGS.index;
       this.config.index = index;
+
+      this.$el.on(Events.CLICK_DATA_API, this._click.bind(this));
    }
 
    next() {
@@ -146,6 +167,16 @@ class Imageviewer {
       this._isShown = false;
    }
 
+   _click(e) {
+      e.preventDefault();
+      const $target = $(e.target);
+      if ($target.is('img')) {
+         this.show(this.$images.index($target.parent()));
+      } else if ($target.is('a.env-image-viewer__images')) {
+         this.show(this.$images.index($target));
+      }
+   }
+
    _loadImage(href) {
       const $downloadingImage = $('<img>');
       const $imageModal = $('.env-image-viewer__dialog');
@@ -211,13 +242,13 @@ class Imageviewer {
                <svg class="env-image-viewer__prev-icon env-icon env-icon-small">
                <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use>
                </svg>
-               <span class="env-assistive-text">Previous</span>
+               <span class="env-assistive-text">${this.config.i18n.prev}</span>
             </button>
             <button type="button" class="env-image-viewer--next" data-move="next">
                <svg class="env-image-viewer__next-icon env-icon env-icon-small">
                <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use>
                </svg>
-               <span class="env-assistive-text">Next</span>
+               <span class="env-assistive-text">${this.config.i18n.next}</span>
             </button>`;
 
       return buttonHTML;
@@ -236,7 +267,7 @@ class Imageviewer {
 
       this.$images.each((index) => {
          const isActive = index === activeElementIndex;
-         items += `<button type="button" title="Move to image ${
+         items += `<button type="button" title="${this.config.i18n.moveto} ${
             index + 1
          }" data-move-to="${index}" class="${
             isActive ? 'env-is-active' : ''
@@ -340,9 +371,6 @@ class Imageviewer {
    }
 
    _setActiveIndicatorElement() {
-      this._indicatorsElement = this.$btnContainer.find(
-         SELECTORS.INDICATORS
-      )[0];
       if (this.$images.length > 0) {
          this.$btnContainer
             .find(SELECTORS.ACTIVE_DOT)
@@ -358,52 +386,47 @@ class Imageviewer {
       }
    }
 
-   static _jQuery(settings) {
+   static _init(elements, settings) {
+      const nodes = getNodes(elements);
+      if (nodes.length > 0) {
+         const imageViewers = nodes.map((node) => {
+            if (!node[NAME]) {
+               node[NAME] = new Imageviewer(node, settings);
+            }
+            return node[NAME];
+         });
+         return imageViewers;
+      }
+   }
+
+   static _jQueryInterface(settings) {
       return this.each(() => {
-         const data = new Imageviewer(this, settings);
-         data.show(data.config.index);
+         const nodes = getNodes(this);
+         nodes.forEach((node) => {
+            Imageviewer._init(node, settings);
+         });
       });
    }
 }
 
 if (typeof document !== 'undefined') {
-   $(document).on(
-      Events.CLICK_DATA_API,
-      SELECTORS.DATA_IMAGE_VIEWER,
-      function (e) {
-         e.preventDefault();
-         const $target = $(e.target);
-         const $images = $target
-            .closest('[data-image-viewer]')
-            .find(SELECTORS.IMAGES);
-         if ($target.is('img')) {
-            $(this).envImageviewer({ index: $images.index($target.parent()) });
-         } else if ($target.is('a.env-image-viewer__images')) {
-            $(this).envImageviewer({ index: $images.index($target) });
-         }
+   window.addEventListener('load', () => {
+      const imageViewers = getNodes(SELECTORS.DATA_IMAGE_VIEWER);
+      if (imageViewers.length > 0) {
+         Imageviewer._init(imageViewers);
       }
-   );
+   });
 
+   // Deprecated
    const NO_CONFLICT = $.fn[NAME];
-   $.fn[NAME] = Imageviewer._jQuery;
+   $.fn[NAME] = Imageviewer._jQueryInterface;
    $.fn[NAME].Constructor = Imageviewer;
    $.fn[NAME].noConflict = () => {
       $.fn[NAME] = NO_CONFLICT;
-      return Imageviewer._jQuery;
+      return Imageviewer._jQueryInterface;
    };
 }
 
-export default async (elements) => {
-   const nodes = getNodes(elements);
-   if (nodes.length > 0) {
-      const imageViewers = nodes
-         .filter((node) => node.getAttribute(DATA_INITIALIZED) !== 'true')
-         .map((node) => {
-            let viewer = new Imageviewer(node);
-            node.setAttribute(DATA_INITIALIZED, 'true');
-            viewer.initialize();
-            return viewer;
-         });
-      return imageViewers;
-   }
+export default async (elements, settings) => {
+   return Imageviewer._init(elements, settings);
 };
