@@ -16,8 +16,6 @@ import {
 } from './util/nodes';
 
 const NAME = 'envImageslider';
-const ARROW_LEFT_KEYCODE = 37;
-const ARROW_RIGHT_KEYCODE = 39;
 const TOUCHEVENT_WAIT = 500;
 const SLIDE_WIDTH_PX = 80;
 
@@ -62,7 +60,6 @@ const SELECTORS = {
 const ClassName = {
    ACTIVE: 'env-image-slider__item--active',
    ACTIVE_DOT: 'env-is-active',
-   //IMAGESLIDER: 'env-image-slider',
    LEFT: 'env-image-slider__item--left',
    NEXT: 'env-image-slider__item--next',
    PREV: 'env-image-slider__item--prev',
@@ -143,8 +140,8 @@ class Imageslider {
       }
    }
 
-   pause(event) {
-      if (!event) {
+   pause(e) {
+      if (!e) {
          this.isPaused = true;
       }
 
@@ -152,8 +149,8 @@ class Imageslider {
       this.#interval = null;
    }
 
-   cycle(event) {
-      if (!event) {
+   cycle(e) {
+      if (!e) {
          this.isPaused = false;
       }
 
@@ -196,12 +193,12 @@ class Imageslider {
       this._slide(direction, this.#images[index]);
    }
 
-   startTouchSlide(event) {
-      this.touchstartx = event.touches[0].pageX;
+   startTouchSlide(e) {
+      this.touchstartx = e.touches[0].pageX;
    }
 
-   moveTouchSlide(event) {
-      this.touchmovex = event.touches[0].pageX;
+   moveTouchSlide(e) {
+      this.touchmovex = e.touches[0].pageX;
       this.movex = -(this.touchstartx - this.touchmovex);
       this.moved = false;
 
@@ -312,24 +309,18 @@ class Imageslider {
    }
 
    _bindEvents() {
-      this.el.addEventListener('click', (event) => this._click(event));
+      this.el.addEventListener('click', (e) => this._click(e));
 
       if (this.#config.keyboard) {
-         this.el.addEventListener(Events.KEYDOWN, (event) =>
-            this._keydown(event)
-         );
+         this.el.addEventListener(Events.KEYDOWN, (e) => this._keydown(e));
       }
 
       if (
          this.#config.pause === 'hover' &&
          this.#config.imageSlider === 'cycle'
       ) {
-         this.el.addEventListener(Events.MOUSEENTER, (event) =>
-            this.pause(event)
-         );
-         this.el.addEventListener(Events.MOUSELEAVE, (event) =>
-            this.cycle(event)
-         );
+         this.el.addEventListener(Events.MOUSEENTER, (e) => this.pause(e));
+         this.el.addEventListener(Events.MOUSELEAVE, (e) => this.cycle(e));
 
          if (CssUtil.isTouch()) {
             this.el.addEventListener(Events.TOUCHEND, () => {
@@ -338,7 +329,7 @@ class Imageslider {
                   clearTimeout(this.touchTimeout);
                }
                this.touchTimeout = setTimeout(
-                  (event) => this.cycle(event),
+                  (e) => this.cycle(e),
                   TOUCHEVENT_WAIT,
                   this.#config.interval
                );
@@ -353,31 +344,31 @@ class Imageslider {
    _bindTouchSlider() {
       const container = getNode(SELECTORS.INNER, this.el);
 
-      container.addEventListener(Events.TOUCHSTART, (event) => {
-         this.startTouchSlide(event);
+      container.addEventListener(Events.TOUCHSTART, (e) => {
+         this.startTouchSlide(e);
       });
 
-      container.addEventListener(Events.TOUCHMOVE, (event) => {
-         this.moveTouchSlide(event);
+      container.addEventListener(Events.TOUCHMOVE, (e) => {
+         this.moveTouchSlide(e);
       });
 
-      container.addEventListener(Events.TOUCHEND, (event) => {
-         this.endTouchSlide(event);
+      container.addEventListener(Events.TOUCHEND, (e) => {
+         this.endTouchSlide(e);
       });
    }
 
-   _keydown(event) {
-      if (/input|textarea/i.test(event.target.tagName)) {
+   _keydown(e) {
+      if (/input|textarea/i.test(e.target.tagName)) {
          return;
       }
 
-      switch (event.which) {
-         case ARROW_LEFT_KEYCODE:
-            event.preventDefault();
+      switch (e.key) {
+         case 'ArrowLeft':
+            e.preventDefault();
             this.prev();
             break;
-         case ARROW_RIGHT_KEYCODE:
-            event.preventDefault();
+         case 'ArrowRight':
+            e.preventDefault();
             this.next();
             break;
          default:
@@ -385,8 +376,8 @@ class Imageslider {
       }
    }
 
-   _click(event) {
-      const clickTarget = event.target.closest(SELECTORS.DATA_SLIDE);
+   _click(e) {
+      const clickTarget = e.target.closest(SELECTORS.DATA_SLIDE);
 
       if (!clickTarget) {
          return;
@@ -415,7 +406,7 @@ class Imageslider {
          this[dataSet.move]();
       }
 
-      event.preventDefault();
+      e.preventDefault();
    }
 
    _getItemIndex(element) {
@@ -649,6 +640,7 @@ class Imageslider {
    }
 
    static _jQueryInterface(config) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

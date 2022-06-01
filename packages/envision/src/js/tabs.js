@@ -186,6 +186,7 @@ class Tabs {
    }
 
    static _jQueryInterface(settings, argument) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

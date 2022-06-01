@@ -7,13 +7,13 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes, lockScroll, unlockScroll } from './util/nodes';
+import Util from './util/util';
 
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
 const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
 const DISMISS_SELECTOR = '[data-modal-dialog-dismiss]';
 const PLACEMENT_BODY_ATTR = 'data-modal-dialog-placement-body';
-const ESCAPE_KEY = 27;
 const FOCUSIN = 'focusin.env-modal-dialog';
 const MODIFIER_BASE = 'env-modal-dialog--';
 const ALERT_MODIFIER_BASE = 'env-modal-alert--';
@@ -23,7 +23,6 @@ const SELECTORS = {
    MODAL_ALERT: '[data-modal-alert]',
 };
 const SHOW = 'show';
-const TAB_KEY = 9;
 
 const FOCUSABLE_ELEMENTS_SELECTOR =
    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
@@ -123,15 +122,15 @@ class ModalDialog {
    }
 
    _bindEvents() {
-      this.$el.on('click', DISMISS_SELECTOR, (event) => this.hide(event));
+      this.$el.on('click', DISMISS_SELECTOR, (e) => this.hide(e));
 
       $(document)
          .off(FOCUSIN)
-         .one(FOCUSIN, (event) => {
+         .one(FOCUSIN, (e) => {
             if (
-               document !== event.target &&
-               this.el !== event.target &&
-               !this.$el.has(event.target).length
+               document !== e.target &&
+               this.el !== e.target &&
+               !this.$el.has(e.target).length
             ) {
                this.$el.trigger('focus');
             }
@@ -142,7 +141,7 @@ class ModalDialog {
       const lastElement = focusableElements[focusableElements.length - 1];
 
       this.$el.on('keydown', (e) => {
-         if (e.which === TAB_KEY) {
+         if (e.key === 'Tab') {
             if (e.shiftKey) {
                if (e.target === firstElement) {
                   e.preventDefault();
@@ -154,7 +153,7 @@ class ModalDialog {
             }
          }
 
-         if (e.which === ESCAPE_KEY) {
+         if (e.key === 'Escape') {
             this.hide();
          }
       });
@@ -176,12 +175,12 @@ class ModalDialog {
          class: BACKDROP,
       });
 
-      this.$el.on('mousedown', (event) => {
+      this.$el.on('mousedown', (e) => {
          if (this.$backdrop.hasClass(ANIMATION)) {
             return;
          }
 
-         if (event.target !== event.currentTarget) {
+         if (e.target !== e.currentTarget) {
             return;
          }
 
@@ -223,6 +222,7 @@ class ModalDialog {
    }
 
    static _jQueryInterface(action) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
@@ -241,15 +241,17 @@ if (typeof document !== 'undefined') {
       return ModalDialog._jQueryInterface;
    };
 
-   $(document).on(
-      'click',
-      SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG,
-      function (e) {
-         e.preventDefault();
-         const target = document.querySelector(this.dataset?.target);
-         target && ModalDialog._init(target, 'show');
+   document.addEventListener('click', (e) => {
+      const el = e.target.closest(
+         SELECTORS.MODAL_ALERT + ',' + SELECTORS.MODAL_DIALOG
+      );
+      if (!el) {
+         return;
       }
-   );
+      e.preventDefault();
+      const selector = el.dataset.target;
+      ModalDialog._init(document.querySelector(selector), 'show');
+   });
 }
 
 export default async (elements, action) => {

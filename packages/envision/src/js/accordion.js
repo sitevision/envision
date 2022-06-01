@@ -6,6 +6,7 @@
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes } from './util/nodes';
+import Util from './util/util';
 
 const ARIA_EXPANDED = 'aria-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
@@ -77,6 +78,7 @@ class Accordion {
    }
 
    static _jQueryInterface(settings) {
+      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
@@ -95,14 +97,14 @@ if (typeof document !== 'undefined') {
       return Accordion._jQueryInterface;
    };
 
-   $(document).on('click', '[data-env-accordion]', function (e) {
+   document.addEventListener('click', (e) => {
+      const el = e.target.closest('[data-env-accordion]');
+      if (!el) {
+         return;
+      }
       e.preventDefault();
-
-      const $this = $(this);
-      const target = $this.attr('href') || $this.attr('data-target');
-      const $target = $(target);
-
-      $target[NAME]();
+      const selector = el.dataset.target || el.getAttribute('href');
+      Accordion._init(document.querySelector(selector));
    });
 }
 
