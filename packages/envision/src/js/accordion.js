@@ -98,7 +98,7 @@ if (typeof document !== 'undefined') {
    };
 
    document.addEventListener('click', (e) => {
-      const el = event.target.closest('[data-env-accordion]');
+      const el = e.target.closest('[data-env-accordion]');
       if (!el) {
          return;
       }

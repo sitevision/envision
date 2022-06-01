@@ -104,7 +104,7 @@ if (typeof document !== 'undefined') {
    };
 
    document.addEventListener('click', (e) => {
-      const el = event.target.closest('[data-env-collapse]');
+      const el = e.target.closest('[data-env-collapse]');
       if (!el) {
          return;
       }

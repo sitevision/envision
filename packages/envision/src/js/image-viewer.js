@@ -14,10 +14,6 @@ const BACKDROP_ANIMATION = 'env-image-viewer__backdrop--in';
 const EVENT_KEY = `.env.image-viewer`;
 const NAME = 'envImageviewer';
 const DATA_API_KEY = '.data-api';
-const ESCAPE_KEY = 27;
-const ARROW_LEFT_KEYCODE = 37;
-const ARROW_RIGHT_KEYCODE = 39;
-const TAB_KEY = 9;
 const SPINNER_TEMPLATE = `<div class="env-spinner">
                                 <div class="env-rect1"></div>
                                 <div class="env-rect2"></div>
@@ -282,12 +278,12 @@ class Imageviewer {
          class: BACKDROP,
       });
 
-      this.$modal.on(Events.CLICK_DATA_API, (event) => {
+      this.$modal.on(Events.CLICK_DATA_API, (e) => {
          if (this.$backdrop.hasClass(ANIMATION)) {
             return;
          }
 
-         if (event.target !== event.currentTarget) {
+         if (e.target !== e.currentTarget) {
             return;
          }
 
@@ -314,42 +310,42 @@ class Imageviewer {
       const firstElement = focusableElements[0];
       const lastElement = focusableElements[focusableElements.length - 1];
 
-      this.$modal.on('keydown', (event) =>
-         this._keydown(event, firstElement, lastElement)
+      this.$modal.on('keydown', (e) =>
+         this._keydown(e, firstElement, lastElement)
       );
    }
 
-   _keydown(event, firstElement, lastElement) {
-      if (/input|textarea/i.test(event.target.tagName)) {
+   _keydown(e, firstElement, lastElement) {
+      if (/input|textarea/i.test(e.target.tagName)) {
          return;
       }
 
-      switch (event.which) {
-         case ARROW_LEFT_KEYCODE:
-            event.preventDefault();
+      switch (e.key) {
+         case 'ArrowLeft':
+            e.preventDefault();
             this.prev();
             break;
-         case ARROW_RIGHT_KEYCODE:
-            event.preventDefault();
+         case 'ArrowRight':
+            e.preventDefault();
             this.next();
             break;
-         case ESCAPE_KEY:
-            event.preventDefault();
+         case 'Escape':
+            e.preventDefault();
             if (!this.$backdrop.hasClass(ANIMATION)) {
                this.hide();
             }
             break;
-         case TAB_KEY:
-            if (event.target.tagName === 'IMG') {
-               event.preventDefault();
+         case 'Tab':
+            if (e.target.tagName === 'IMG') {
+               e.preventDefault();
                firstElement.focus();
-            } else if (event.shiftKey) {
-               if (event.target === firstElement) {
-                  event.preventDefault();
+            } else if (e.shiftKey) {
+               if (e.target === firstElement) {
+                  e.preventDefault();
                   lastElement.focus();
                }
-            } else if (event.target === lastElement) {
-               event.preventDefault();
+            } else if (e.target === lastElement) {
+               e.preventDefault();
                firstElement.focus();
             }
             break;
