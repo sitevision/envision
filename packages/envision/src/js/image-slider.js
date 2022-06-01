@@ -60,7 +60,6 @@ const SELECTORS = {
 const ClassName = {
    ACTIVE: 'env-image-slider__item--active',
    ACTIVE_DOT: 'env-is-active',
-   //IMAGESLIDER: 'env-image-slider',
    LEFT: 'env-image-slider__item--left',
    NEXT: 'env-image-slider__item--next',
    PREV: 'env-image-slider__item--prev',
