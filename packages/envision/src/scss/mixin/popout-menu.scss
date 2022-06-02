@@ -1,8 +1,8 @@
 @use 'sass:math';
 
-@mixin popout-menu {
+@mixin popout-menu($horizontalPadding: 1.125em) {
    $menu-item-min-height: math.div(52, $BROWSER_FONT_SIZE) * 1em;
-   $menu-item-padding: 1.125em;
+   $menu-item-padding: $horizontalPadding;
    $menu-inner-spacing: 0.75em;
    // $icon-size: Icon 20 x 20 px at browser default font size (16px)
    $icon-size: math.div(20, $BROWSER_FONT_SIZE) * 1em;

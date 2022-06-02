@@ -21,7 +21,7 @@ $arrow-border-size: 10px;
       border-radius: css-var('border-radius-medium')
          css-var('border-radius-medium') 0 0;
       display: block;
-      padding: css-var('spacing-x-small') css-var('spacing-small');
+      padding: css-var('spacing-small') css-var('spacing-x-large');
       border-bottom: $border-width $border-style css-var('border-color-light');
 
       &__title {
@@ -31,10 +31,14 @@ $arrow-border-size: 10px;
 
    &__content {
       display: block;
-      padding: css-var('spacing-small');
+      padding: css-var('spacing-x-large');
+
+      .env-popover__header + & {
+         padding-top: css-var('spacing-small');
+      }
    }
 
-   @include popout-menu;
+   @include popout-menu(#{css-var('spacing-x-large')});
 
    &__arrow {
       border-color: transparent;
