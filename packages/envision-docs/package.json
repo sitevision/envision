@@ -13,17 +13,17 @@
    "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
-      "gatsby": "^4.11.2",
-      "gatsby-plugin-manifest": "^4.11.1",
-      "gatsby-plugin-offline": "^5.11.1",
-      "gatsby-plugin-react-helmet": "^5.11.0",
-      "gatsby-plugin-sass": "^5.11.1",
-      "gatsby-plugin-sharp": "^4.11.1",
-      "gatsby-remark-prismjs": "^6.11.0",
-      "gatsby-source-filesystem": "^4.11.1",
-      "gatsby-transformer-remark": "^5.11.1",
-      "gatsby-transformer-sharp": "^4.11.0",
-      "sass": "^1.50.0"
+      "gatsby": "^4.15.2",
+      "gatsby-plugin-manifest": "^4.15.1",
+      "gatsby-plugin-offline": "^5.15.1",
+      "gatsby-plugin-react-helmet": "^5.15.0",
+      "gatsby-plugin-sass": "^5.15.1",
+      "gatsby-plugin-sharp": "^4.15.1",
+      "gatsby-remark-prismjs": "^6.15.0",
+      "gatsby-source-filesystem": "^4.15.0",
+      "gatsby-transformer-remark": "^5.15.1",
+      "gatsby-transformer-sharp": "^4.15.1",
+      "sass": "^1.52.2"
    },
    "dependencies": {
       "envision": "0.0.1",
