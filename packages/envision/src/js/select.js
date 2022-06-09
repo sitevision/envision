@@ -37,6 +37,7 @@ const defaults = {
          direction: 'asc',
       },
       plugins: {
+         caret_position: {},
          remove_button: {
             title: `${lang.sv.remove_button}`,
             className: 'env-select__item__remove',
@@ -106,6 +107,9 @@ const SelectPlugin = function (el, settings, TomSelect) {
    // Initialize
    this.el.classList.remove('env-form-input');
    let select = new TomSelect(this.el, this.settings);
+
+   select.control.classList.add('env-select__input');
+   select.input.classList.add('env-assistive-text');
 
    // API
    this.addOptions = select.addOption.bind(select);
