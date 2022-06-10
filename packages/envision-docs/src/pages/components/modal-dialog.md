@@ -16,7 +16,7 @@ title: Modal dialog
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
             <h4
-               class="env-text env-modal-dialog__header__title"
+               class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-1"
             >
                Modal Header
@@ -73,7 +73,7 @@ Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--rig
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
             <h5
-               class="env-text env-modal-dialog__header__title"
+               class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-2"
             >
                Modal Header
@@ -130,7 +130,7 @@ Uses `env-modal-dialog__dialog--small`
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
             <h6
-               class="env-text env-modal-dialog__header__title"
+               class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-3"
             >
                Modal Header
@@ -197,7 +197,7 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
       <section class="env-modal-dialog__content">
          <header class="env-modal-dialog__header">
             <h5
-               class="env-text env-modal-dialog__header__title"
+               class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-4"
             >
                Outer scroll
