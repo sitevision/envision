@@ -3,11 +3,6 @@
 .env-select {
    position: relative;
 
-   // Hide original input/select
-   &[hidden] {
-      @include visually-hidden;
-   }
-
    &__input {
       display: flex;
       flex-wrap: wrap;
@@ -22,20 +17,19 @@
       font-size: css-var('font-size-medium');
       line-height: 1;
       margin: 0;
-      padding: css-var('spacing-xx-small') css-var('spacing-x-small');
+      padding: 0.25em;
       transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       width: 100%;
       min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
       cursor: text;
       overflow: hidden;
 
-      &.has-items {
-         padding: css-var('spacing-xx-small') css-var('spacing-x-small') 0
-            css-var('spacing-xx-small');
+      .env-select.has-items & {
+         padding-bottom: 0;
       }
 
-      .plugin-clear_button & {
-         padding-right: css-var('spacing-x-large');
+      .env-select.plugin-clear_button & {
+         padding-right: 1.5em;
       }
 
       > * {
@@ -51,7 +45,7 @@
          flex: 1 1 auto;
          font-size: 1em;
          line-height: math.div(34, $BROWSER_FONT_SIZE);
-         margin: 0;
+         margin: 0 0 0 em(4px);
          max-height: none;
          max-width: 100%;
          min-height: 0;
@@ -65,23 +59,22 @@
          }
       }
 
-      &.full > input,
-      &.input-hidden > input {
-         left: -10000px;
-         opacity: 0;
-         position: absolute;
+      .env-select.full & > input,
+      .env-select.input-hidden & > input {
+         flex: none;
+         visibility: hidden;
+         min-width: 1px;
+         width: 1px;
+         overflow: hidden;
       }
 
-      &.has-items > input {
-         margin: 0 0 css-var('spacing-xx-small') css-var('spacing-xx-small');
-      }
-
-      &.focus {
+      .env-select.focus & {
          @include focus-outline();
       }
 
-      &.disabled,
-      &.locked {
+      .env-select--locked &,
+      .env-select.locked &,
+      .env-select.disabled & {
          @include disabled;
 
          .env-select__input__clear {
@@ -89,7 +82,8 @@
          }
       }
 
-      &.locked {
+      .env-select--locked &,
+      .env-select.locked & {
          &,
          .env-select__item,
          a,
@@ -98,7 +92,7 @@
          }
       }
 
-      &.disabled {
+      .env-select.disabled & {
          * {
             cursor: default !important;
          }
@@ -117,16 +111,16 @@
          text-align: center;
       }
 
-      &.has-items:hover .env-select__input__clear,
-      &.has-items:focus .env-select__input__clear,
-      &.has-items.focus .env-select__input__clear {
+      .env-select.has-items &:hover .env-select__input__clear,
+      .env-select.has-items &:focus .env-select__input__clear,
+      .env-select.has-items.focus & .env-select__input__clear {
          display: block;
       }
    }
 
    &__item {
       cursor: pointer;
-      margin: 0 css-var('spacing-xx-small') css-var('spacing-xx-small') 0;
+      margin: 0 em(4px, 14px) em(4px, 14px) 0;
       align-items: center;
       display: flex;
       border-radius: css-var('border-radius-small');
@@ -140,7 +134,6 @@
       text-overflow: ellipsis;
 
       .plugin-remove_button & {
-         line-height: math.div(1, math.div(14, $BROWSER_FONT_SIZE));
          padding: 0 0 0 em(10px, 14px);
       }
 
@@ -159,7 +152,7 @@
       border-radius: css-var('border-radius-small');
       box-shadow: css-var('box-shadow-small');
       position: absolute;
-      top: calc(100% + 1px);
+      top: calc(100% + 4px);
       right: 0;
       left: 0;
       z-index: $zindex-tagselect;
