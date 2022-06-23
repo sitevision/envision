@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import Util from './util/util';
-import { hide, unhide, getNodes } from './util/nodes';
+import { uniqueId, hide, unhide, getNodes } from './util/nodes';
 
 const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
@@ -14,7 +14,7 @@ const DATA_INDEX = 'data-env-tabs-index';
 const IS_ACTIVE = 'env-tabs__link--active';
 const NAME = 'envTabs';
 const TAB_PANEL_CLASS = 'env-tabs__panel';
-const TAB_SELECTOR = '.env-tabs__link';
+const TAB_SELECTOR = '[role="tab"]';
 const STACKED_SELECTOR = '.env-tabs--column';
 
 const DEFAULTS = {
@@ -65,14 +65,26 @@ class Tabs {
 
    initialize() {
       this.tabs.forEach((tab, i) => {
-         const panel = document.querySelector(tab.getAttribute('href'));
+         uniqueId(tab);
+         let panel = document.getElementById(tab.getAttribute('aria-controls'));
+         if (!panel) {
+            // Legacy selector fallback
+            document.querySelector(tab.getAttribute('href'));
+         }
          this.panels[tab.getAttribute('id')] = panel;
+         if (
+            tab.getAttribute(ARIA_SELECTED) === 'true' ||
+            tab.classList.contains(IS_ACTIVE)
+         ) {
+            this.config.active = i;
+         }
          tab.classList.remove(IS_ACTIVE);
          tab.setAttribute(ARIA_SELECTED, false);
          tab.setAttribute(DATA_INDEX, i);
          tab.setAttribute('tabindex', '-1');
          if (panel) {
             panel.setAttribute('tabindex', '0');
+            panel.setAttribute('role', 'tabpanel');
             panel.setAttribute(ARIA_HIDDEN, true);
             panel.classList.add(TAB_PANEL_CLASS);
             hide(panel);
