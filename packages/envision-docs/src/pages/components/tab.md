@@ -9,8 +9,8 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
 ```html
 <div class="env-tabs example-tabs">
    <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
-      <li role="tab" aria-controls="panel1" aria-selected="false">Tab 1</li>
-      <li role="tab" aria-controls="panel2" aria-selected="true">Tab 2</li>
+      <li role="tab" aria-controls="panel1" aria-selected="true">Tab 1</li>
+      <li role="tab" aria-controls="panel2" aria-selected="false">Tab 2</li>
       <li role="tab" aria-controls="panel3" aria-selected="false">Tab 3</li>
    </ul>
 </div>
@@ -60,7 +60,7 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
    class="example-panel"
    aria-labelledby="tab4"
    role="tabpanel"
-   aria-hidden="false"
+   aria-hidden="true"
 >
    4
 </div>
@@ -69,7 +69,7 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
    class="example-panel"
    aria-labelledby="tab5"
    role="tabpanel"
-   aria-hidden="true"
+   aria-hidden="false"
 >
    5
 </div>
