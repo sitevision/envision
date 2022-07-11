@@ -24,7 +24,7 @@
       box-sizing: border-box;
       appearance: none;
       font-family: css-var('font-family');
-      font-size: 1em;
+      font-size: css-var('font-size-medium');
       line-height: 1;
       text-align: left;
       color: css-var('font-color');
