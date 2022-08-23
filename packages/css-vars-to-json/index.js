@@ -1,8 +1,7 @@
 const cssTree = require('css-tree');
-const loaderUtils = require('loader-utils');
 
 module.exports = function (content) {
-   const options = loaderUtils.getOptions(this);
+   const options = this.getOptions();
    const tree = cssTree.parse(content);
 
    const emitFile = this.emitFile;
