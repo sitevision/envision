@@ -1,13 +1,5 @@
-@mixin to-css-variables($colors) {
-   :root {
-      @each $var, $color in $colors {
-         --env-#{$var}: #{$color};
-      }
-   }
-}
-
-@mixin to-css-custom-property($variables) {
-   :root {
+@mixin to-css-custom-property($variables, $selector: ':root') {
+   #{$selector} {
       @each $name, $value in $variables {
          --env-#{$name}: #{$value};
       }
