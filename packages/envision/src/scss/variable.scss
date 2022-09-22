@@ -121,6 +121,70 @@ $section-background-color: #ffffff !default;
    )
 );
 
+// ----- UI COLORS -----
+
+@include to-css-custom-property(
+   (
+      'ui-color-brand': '#757575',
+      'ui-color-brand-contrast': '#ffffff',
+      'ui-color-brand-100': '#fafafa',
+      'ui-color-brand-100-contrast': '#202330',
+      'ui-color-brand-200': '#f5f5f5',
+      'ui-color-brand-200-contrast': '#202330',
+      'ui-color-brand-300': '#dedede',
+      'ui-color-brand-300-contrast': '#202330',
+      'ui-color-brand-400': '#cccccc',
+      'ui-color-brand-400-contrast': '#202330',
+      'ui-color-brand-500': '#adadad',
+      'ui-color-brand-500-contrast': '#202330',
+      'ui-color-brand-600': '#8c8c8c',
+      'ui-color-brand-600-contrast': '#202330',
+      'ui-color-brand-700': '#737373',
+      'ui-color-brand-700-contrast': '#ffffff',
+      'ui-color-brand-800': '#4d4d4d',
+      'ui-color-brand-800-contrast': '#ffffff',
+      'ui-color-brand-900': '#262626',
+      'ui-color-brand-900-contrast': '#ffffff',
+   )
+);
+
+// ----- UI TEXT -----
+
+@include to-css-custom-property(
+   (
+      'ui-text-overline-font-family': css-var('font-family'),
+      'ui-text-overline-font-color': css-var('font-color'),
+      'ui-text-overline-font-size': 0.75em,
+      'ui-text-overline-font-weight': 500,
+      'ui-text-overline-text-transform': uppercase,
+      'ui-text-overline-letter-spacing': 0.15em,
+      'ui-text-heading-font-family': css-var('font-family'),
+      'ui-text-heading-font-color': css-var('font-color'),
+      'ui-text-heading-font-size': 1.25em,
+      'ui-text-heading-font-weight': 500,
+      'ui-text-heading-text-transform': none,
+      'ui-text-heading-letter-spacing': normal,
+      'ui-text-subtitle-font-family': css-var('font-family'),
+      'ui-text-subtitle-font-color': css-var('font-color'),
+      'ui-text-subtitle-font-size': 1em,
+      'ui-text-subtitle-font-weight': 500,
+      'ui-text-subtitle-text-transform': none,
+      'ui-text-subtitle-letter-spacing': normal,
+      'ui-text-lead-font-family': css-var('font-family'),
+      'ui-text-lead-font-color': css-var('font-color'),
+      'ui-text-lead-font-size': 1.1em,
+      'ui-text-lead-font-weight': 300,
+      'ui-text-lead-text-transform': none,
+      'ui-text-lead-letter-spacing': normal,
+      'ui-text-caption-font-family': css-var('font-family'),
+      'ui-text-caption-font-color': #777,
+      'ui-text-caption-font-size': 0.875em,
+      'ui-text-caption-font-weight': 400,
+      'ui-text-caption-text-transform': none,
+      'ui-text-caption-letter-spacing': normal,
+   )
+);
+
 // ----- FOCUS -----
 
 // Color
