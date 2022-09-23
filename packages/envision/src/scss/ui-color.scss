@@ -1,0 +1,14 @@
+.env-brand-layout {
+   background-color: var(--env-ui-color-brand);
+   color: var(--env-ui-color-brand-contrast);
+   --env-font-color: var(--env-ui-color-brand-contrast);
+}
+
+$variants: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+@each $variant in $variants {
+   .env-brand-layout-#{$variant} {
+      background-color: var(--env-ui-color-brand-#{$variant});
+      color: var(--env-ui-color-brand-#{$variant}-contrast);
+      --env-font-color: var(--env-ui-color-brand-#{$variant}-contrast);
+   }
+}
