@@ -32,10 +32,6 @@ const defaults = {
       dropdownContentClass: 'env-select__dropdown__content',
       itemClass: 'env-select__item',
       optionClass: 'env-select__dropdown__option',
-      sortField: {
-         field: 'text',
-         direction: 'asc',
-      },
       plugins: {
          caret_position: {},
          remove_button: {
@@ -72,10 +68,16 @@ const defaults = {
       dropdownParent: null,
       maxItems: null,
       options: null,
+      maxOptions: null,
       items: null,
       create: false,
       clearButton: true,
       placeholder: null,
+      sortField: function (a, b) {
+         const aText = this.items[a.id].text;
+         const bText = this.items[b.id].text;
+         return aText && bText ? aText.localeCompare(bText) : 0;
+      },
       createFilter: function (input) {
          input = input.toLowerCase();
          return !(input in this.options);
