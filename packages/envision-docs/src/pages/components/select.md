@@ -204,7 +204,7 @@ envision
 ### Options from remote data API
 
 This example fetches repository names from github. It will preload some popular names on page load.
-The data does not follow the Tag Select naming standards so value-/label-/searchField/-sortField must be defined.
+The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.
 
 ```HTML
 <div class="env-form-element">
