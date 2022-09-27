@@ -79,7 +79,7 @@ tagSelect.then(function (selects) {
 
 -  `maxOptions` _number_ <span class="env-badge env-badge--info">since Sitevision 2022.10.1</span>
 
-   -  Limits the amount visible options
+   -  Limits the number of visible options
    -  Default value: `null` (unlimited)
 
 -  `items` _['value']_
