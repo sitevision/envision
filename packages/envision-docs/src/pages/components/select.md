@@ -44,8 +44,10 @@ tagSelect.then(function (selects) {
 ## Options
 
 -  `maxItems` _number_
+
    -  The max number of items the user can select.
    -  Default value: `null` (unlimited)
+
 -  `create` _boolean_
 
    -  Allow adding new tags
@@ -74,6 +76,11 @@ tagSelect.then(function (selects) {
 
    -  Create a Tag select from custom dataset
    -  By default this is populated from the original element.
+
+-  `maxOptions` _number_ <span class="env-badge env-badge--info">since Sitevision 2022.10.1</span>
+
+   -  Limits the amount visible options
+   -  Default value: `null` (unlimited)
 
 -  `items` _['value']_
 
@@ -105,6 +112,13 @@ tagSelect.then(function (selects) {
 -  `searchField` _'string'_ | _['string']_
 
    -  A string or an array of property names to analyze when filtering options in remote data.
+
+-  `sortField` _'string'_ | _[object]_ | _function(a, b)_ <span class="env-badge env-badge--info">since Sitevision 2022.10.1</span>
+
+   -  A string, an array of objects or a function to sort available options.
+   -  By default the the order is based on the current locale.
+   -  To disable sorting entirely and maintain the original order of options, use:
+      `sortField:[{field:'$order'},{field:'$score'}]`
 
 -  <code class="language-text">on<i>EventName</i></code> _function()_
    -  See Event handlers and Advanced example
@@ -190,7 +204,7 @@ envision
 ### Options from remote data API
 
 This example fetches repository names from github. It will preload some popular names on page load.
-The data does not follow the Tag Select naming standards so value-/label-/searchField must be defined.
+The data does not follow the Tag Select naming standards so value-/label-/searchField/-sortField must be defined.
 
 ```HTML
 <div class="env-form-element">
@@ -209,6 +223,7 @@ envision.select('#example-tag-select-3', {
    valueField: 'url',
    labelField: 'name',
    searchField: ['name'],
+   sortField: [{ field: 'name', direction: 'desc' }],
    preload: true,
    load: function (query, callback) {
       query = query || 'sitevision';

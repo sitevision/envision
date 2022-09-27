@@ -110,6 +110,7 @@ export const useCopyExample = (content) => {
                valueField: 'url',
                labelField: 'name',
                searchField: ['name'],
+               sortField: [{ field: 'name', direction: 'desc' }],
                preload: true,
                load: function (query, callback) {
                   query = query || 'sitevision';
