@@ -1,14 +1,43 @@
-.env-brand-layout {
+.env-layout-section {
+   background-color: var(--env-section-background-color);
+   color: var(--env-font-color);
+}
+
+.env-layout-brand {
    background-color: var(--env-ui-color-brand);
    color: var(--env-ui-color-brand-contrast);
-   --env-font-color: var(--env-ui-color-brand-contrast);
+
+   &--setvars {
+      --efc: var(--env-font-color);
+
+      > * {
+         --env-font-color: var(--env-ui-color-brand-contrast);
+      }
+
+      .env-popover,
+      .env-dropdown__menu {
+         --env-font-color: var(--efc);
+      }
+   }
 }
 
 $variants: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 @each $variant in $variants {
-   .env-brand-layout-#{$variant} {
+   .env-layout-brand-#{$variant} {
       background-color: var(--env-ui-color-brand-#{$variant});
       color: var(--env-ui-color-brand-#{$variant}-contrast);
-      --env-font-color: var(--env-ui-color-brand-#{$variant}-contrast);
+
+      &--setvars {
+         --efc: var(--env-font-color);
+
+         > * {
+            --env-font-color: var(--env-ui-color-brand-#{$variant}-contrast);
+         }
+
+         .env-popover,
+         .env-dropdown__menu {
+            --env-font-color: var(--efc);
+         }
+      }
    }
 }
