@@ -472,3 +472,15 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       max-width: 400px;
    }
 }
+
+.example-brand-color-list {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+
+   li {
+      padding: 1em 1em;
+      font-size: 0.8em;
+      font-weight: 400;
+   }
+}
