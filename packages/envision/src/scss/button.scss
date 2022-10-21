@@ -1,24 +1,5 @@
 .env-button {
-   appearance: none;
-   border: $border-width $border-style;
-   box-sizing: border-box;
-   cursor: pointer;
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   font-family: css-var('button-font-family');
-   margin: 0;
-   text-align: center;
-   text-decoration: none;
-   user-select: none;
-   vertical-align: middle;
-   line-height: $button-line-height;
-
-   // Reset inner elements in apps
-   > span:not([class]):not([style]),
-   > div:not([class]):not([style]) {
-      line-height: 1;
-   }
+   @include button-base;
 
    // ----- BUTTON COLORS & TYPES -----
 
@@ -27,12 +8,22 @@
    @include focus-visible;
 
    // Variants
+
    $buttonNames: 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
 
    @each $name in $buttonNames {
       &--#{$name} {
          @include button-color-variant($name);
       }
+   }
+
+   &--brand {
+      @include button-color-variant(
+         'brand',
+         'ui-color-brand',
+         'ui-color-brand-dark',
+         'ui-color-brand-contrast'
+      );
    }
 
    &--invert {

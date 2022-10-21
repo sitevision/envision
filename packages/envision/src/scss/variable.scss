@@ -124,6 +124,7 @@ $section-background-color: #ffffff !default;
 // ----- UI COLORS -----
 
 $brand-color-base: 46.25%; // #767676
+$brand-color: lighten(#000, $brand-color-base);
 $brand-color-variants: (
    '05': 98%,
    '10': 96%,
@@ -144,7 +145,7 @@ $brand-color-variants: (
    // 56% = #8f8f8f
    // 46.25% = #767676
    $contrast: #202330;
-   @if ($val > 56% & & $val < $brand-color-base) {
+   @if ($val > 56%) {
       $contrast: #000000;
    }
    @if ($val <= $brand-color-base) {
@@ -158,9 +159,11 @@ $brand-color-variants: (
    );
 }
 
+// 'element-primary-background-color-dark': darken($color-primary, 8%),
 @include to-css-custom-property(
    (
-      'ui-color-brand': lighten(#000, $brand-color-base),
+      'ui-color-brand': $brand-color,
+      'ui-color-brand-dark': darken($brand-color, 8%),
       'ui-color-brand-contrast': '#ffffff',
    )
 );

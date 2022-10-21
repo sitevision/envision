@@ -1,14 +1,12 @@
-// Arrow Size
-$arrow-position: -22px;
-$arrow-border-size: 10px;
-
 .env-popover {
+   $arrow-size: 10px;
+
    background-color: css-var('section-background-color');
    border: $border-width $border-style css-var('border-color-light');
    border-radius: css-var('border-radius-medium');
    box-shadow: css-var('box-shadow');
    color: css-var('font-color');
-   margin: $arrow-border-size;
+   margin: $arrow-size;
    max-width: css-var('popover-width');
    position: relative;
    text-align: left;
@@ -21,8 +19,8 @@ $arrow-border-size: 10px;
       border-radius: css-var('border-radius-medium')
          css-var('border-radius-medium') 0 0;
       display: block;
-      padding: css-var('spacing-small') css-var('spacing-x-large');
-      border-bottom: $border-width $border-style css-var('border-color-light');
+      padding: css-var('spacing-large') css-var('spacing-x-large')
+         css-var('spacing-small');
 
       &__title {
          margin-bottom: 0 !important;
@@ -41,106 +39,13 @@ $arrow-border-size: 10px;
    @include popout-menu(#{css-var('spacing-x-large')});
 
    &__arrow {
-      border-color: transparent;
-      border-style: $border-style;
-      border-width: $arrow-border-size + 1;
-      display: block;
-      height: 0;
-      position: absolute;
-      width: 0;
+      @include arrowBase($arrow-size);
+   }
 
-      &::after {
-         border-color: transparent;
-         border-style: $border-style;
-         border-width: $arrow-border-size;
-         content: '';
-         display: block;
-         height: 0;
-         position: absolute;
-         width: 0;
-      }
+   $arrowLocations: 'top', 'right', 'bottom', 'left';
+   $branded-border-width: 4px;
 
-      // x-placement is used in Popper 1.x (Envision)
-      // data-popper-placement is Popper 2.x (React apps)
-      // Classname modifiers are kept for legacy reasons but not really needed.
-      [x-placement='top'] &,
-      [data-popper-placement='top'] &,
-      [x-placement='bottom'] &,
-      [data-popper-placement='bottom'] &,
-      &--top,
-      &--bottom {
-         left: 50%;
-         margin-left: -$arrow-border-size;
-
-         &::after {
-            margin-left: -$arrow-border-size;
-         }
-      }
-
-      [x-placement='bottom'] &,
-      [data-popper-placement='bottom'] &,
-      &--bottom {
-         border-bottom-color: css-var('border-color-light');
-         top: $arrow-position;
-
-         &::after {
-            border-bottom-color: css-var('section-background-color');
-            border-top-width: 0;
-            top: 1px;
-         }
-      }
-
-      [x-placement='top'] &,
-      [data-popper-placement='top'] &,
-      &--top {
-         border-top-color: css-var('border-color-light');
-         bottom: $arrow-position;
-
-         &::after {
-            border-bottom-width: 0;
-            border-top-color: css-var('section-background-color');
-            bottom: 1px;
-         }
-      }
-
-      [x-placement='right'] &,
-      [data-popper-placement='right'] &,
-      [x-placement='left'] &,
-      [data-popper-placement='left'] &,
-      &--right,
-      &--left {
-         margin-top: -$arrow-border-size;
-         top: 50%;
-
-         &::after {
-            margin-top: -$arrow-border-size;
-         }
-      }
-
-      [x-placement='left'] &,
-      [data-popper-placement='left'] &,
-      &--left {
-         border-left-color: css-var('border-color-light');
-         right: $arrow-position;
-
-         &::after {
-            border-left-color: css-var('section-background-color');
-            border-right-width: 0;
-            right: 1px;
-         }
-      }
-
-      [x-placement='right'] &,
-      [data-popper-placement='right'] &,
-      &--right {
-         border-right-color: css-var('border-color-light');
-         left: $arrow-position;
-
-         &::after {
-            border-left-width: 0;
-            border-right-color: css-var('section-background-color');
-            left: 1px;
-         }
-      }
+   @each $location in $arrowLocations {
+      @include arrow($location, $arrow-size, $branded-border-width);
    }
 }

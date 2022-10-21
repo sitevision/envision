@@ -45,6 +45,8 @@
       &:active,
       &:hover {
          background-color: rgba(0, 0, 0, 0.1);
+         background-color: css-var('ui-color-brand-20');
+         color: css-var('ui-color-brand-20-contrast');
       }
 
       @include focus-visible;
