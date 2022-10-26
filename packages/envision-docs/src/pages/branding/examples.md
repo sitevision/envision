@@ -82,7 +82,7 @@ Envision components using Brand colors and UI Text
          />
            </div>
            <div class="env-p-left--large">
-               <p class="env-ui-text-subtitle"><a href="#">Frukostklubben serverar pölsa</a></p>
+               <p class="env-ui-text-subheading"><a href="#">Frukostklubben serverar pölsa</a></p>
                <p class="env-ui-text-caption">Senast aktiv 3 dagar</p>
                <p class="env-ui-text-caption">Administratör</p>
        </div></li>
@@ -95,7 +95,7 @@ Envision components using Brand colors and UI Text
          />
            </div>
            <div class="env-p-left--large">
-               <p class="env-ui-text-subtitle"><a href="#">Gaming på jobbet</a></p>
+               <p class="env-ui-text-subheading"><a href="#">Gaming på jobbet</a></p>
                <p class="env-ui-text-caption">Senast aktiv 3 dagar</p>
                <p class="env-ui-text-caption">Administratör</p>
        </div></li>
@@ -108,7 +108,7 @@ Envision components using Brand colors and UI Text
          />
            </div>
            <div class="env-p-left--large">
-               <p class="env-ui-text-subtitle"><a href="#">I en annan del av världen</a></p>
+               <p class="env-ui-text-subheading"><a href="#">I en annan del av världen</a></p>
                <p class="env-ui-text-caption">Senast aktiv 3 dagar</p>
             </div>
       </li>
