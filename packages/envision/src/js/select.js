@@ -124,6 +124,11 @@ const SelectPlugin = function (el, settings, TomSelect) {
    this.refreshOptions = select.refreshOptions.bind(select);
    this.getValue = select.getValue.bind(select);
    this.setValue = select.setValue.bind(select);
+   this.open = select.open.bind(select);
+   this.close = select.close.bind(select);
+   this.clear = select.clear.bind(select);
+   this.clearOptions = select.clearOptions.bind(select);
+   this.clearFilter = select.clearFilter.bind(select);
    this.lock = function () {
       select.lock();
       if (select.input.tagName === 'SELECT') {
