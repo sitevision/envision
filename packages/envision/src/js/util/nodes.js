@@ -9,7 +9,7 @@ export const getNodes = function (elements, root) {
             nodes.push(domNodes[i]);
          }
       }
-   } else if (typeof elements === 'object') {
+   } else if (elements && typeof elements === 'object') {
       if (elements.nodeType === 1) {
          // Single element
          nodes.push(elements);
