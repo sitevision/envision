@@ -4,6 +4,16 @@ title: Text
 
 ## Headings
 
+<h3 class="env-text">
+   Fancy display heading
+   <small class="env-text--muted">With faded secondary text</small>
+</h3>
+
+<h3 class="env-text">
+   Fancy display heading
+   <small class="env-text--muted2">With faded secondary text</small>
+</h3>
+
 ```html
 <h1 class="env-text">Heading 1</h1>
 
@@ -67,6 +77,12 @@ title: Text
 <p class="env-text--capitalize">every word will start with a capital letter.</p>
 
 <p class="env-text--strike">This text will be hard to read</p>
+```
+
+```html
+<div class="env-text">Left aligned (default)</div>
+<div class="env-text env-text-align--center">Center aligned</div>
+<div class="env-text env-text-align--right">Right aligned</div>
 ```
 
 ## Links <span class="env-badge env-badge--info">8.2</span>

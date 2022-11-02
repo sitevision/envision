@@ -211,7 +211,7 @@
       }
 
       &__help {
-         filter: opacity(0.625);
+         color: css-var('font-color-muted');
          font-size: css-var('font-size-small');
       }
 

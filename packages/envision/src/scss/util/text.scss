@@ -8,8 +8,8 @@
    color: css-var('font-color');
 
    &--muted {
-      filter: opacity(0.625);
       font-weight: $font-weight-regular;
+      color: css-var('font-color-muted');
    }
 
    &--uppercase {
