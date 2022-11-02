@@ -172,6 +172,8 @@ $brand-color-variants: (
 
 // ----- UI TEXT -----
 
+$UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption';
+
 @include to-css-custom-property(
    (
       'ui-text-overline-font-family': css-var('font-family'),

@@ -5,6 +5,11 @@
    }
 
    --env-font-color: #{css-var('block-#{$blockName}font-color')};
+   @each $name in $UI_TEXT_NAMES {
+      --env-ui-text-#{$name}-font-color: #{css-var(
+            'block-#{$blockName}font-color'
+         )};
+   }
    --env-link-font-color: #{css-var('block-#{$blockName}link-font-color')};
    --env-link-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'

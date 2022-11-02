@@ -1,6 +1,5 @@
 .env-ui-text {
-   $names: 'overline', 'heading', 'sectionheading', 'subheading', 'caption';
-   @each $name in $names {
+   @each $name in $UI_TEXT_NAMES {
       &-#{$name} {
          font-family: css-var('ui-text-#{$name}-font-family');
          font-size: css-var('ui-text-#{$name}-font-size');
