@@ -406,6 +406,26 @@ envision.select('#tag-select').then(function (selects) {
 
    -  Invoked when new options should be loaded from the server. Called with the current query string.
 
+-  `open()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Shows the autocomplete dropdown containing the available options.
+
+-  `close()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Closes the autocomplete dropdown menu.
+
+-  `clear(silent)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
+
+-  `clearOptions(clearFilter?)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
+
+-  `clearFilter(option, value)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
+
 ### Items
 
 -  `getItem(value)`
