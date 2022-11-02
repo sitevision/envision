@@ -1,7 +1,7 @@
 export const getNodes = function (elements, root) {
    const nodes = [];
    root = root || document;
-   if (typeof elements === 'string') {
+   if (elements && typeof elements === 'string') {
       let domNodes = root.querySelectorAll(elements);
       if (domNodes && domNodes.length > 0) {
          // NodeList
