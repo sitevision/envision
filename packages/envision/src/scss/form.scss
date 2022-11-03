@@ -308,16 +308,8 @@
          transition: box-shadow 0.2s ease-in-out;
       }
 
-      [type='radio']:focus + label &__fake {
-         @include focus-outline;
-      }
-
       [type='radio']:focus-visible + label &__fake {
          @include focus-outline;
-      }
-
-      [type='radio']:focus:not(:focus-visible) + label &__fake {
-         @include focus-outline-none;
       }
 
       &--disabled {
@@ -507,16 +499,8 @@
       transition: box-shadow 0.2s ease-in-out;
    }
 
-   [type='checkbox']:focus + label &__fake {
-      @include focus-outline;
-   }
-
    [type='checkbox']:focus-visible + label &__fake {
       @include focus-outline;
-   }
-
-   [type='checkbox']:focus:not(:focus-visible) + label &__fake {
-      @include focus-outline-none;
    }
 
    &__fake {
@@ -638,16 +622,8 @@
          transition: box-shadow 0.2s ease-in-out;
       }
 
-      input:focus ~ & {
-         @include focus-outline;
-      }
-
       input:focus-visible ~ & {
          @include focus-outline;
-      }
-
-      input:focus:not(:focus-visible) ~ & {
-         @include focus-outline-none;
       }
 
       input:disabled ~ & {
