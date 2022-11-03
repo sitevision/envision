@@ -1,7 +1,7 @@
 export const getNodes = function (elements, root) {
    const nodes = [];
    root = root || document;
-   if (typeof elements === 'string') {
+   if (elements && typeof elements === 'string') {
       let domNodes = root.querySelectorAll(elements);
       if (domNodes && domNodes.length > 0) {
          // NodeList
@@ -9,7 +9,7 @@ export const getNodes = function (elements, root) {
             nodes.push(domNodes[i]);
          }
       }
-   } else if (typeof elements === 'object') {
+   } else if (elements && typeof elements === 'object') {
       if (elements.nodeType === 1) {
          // Single element
          nodes.push(elements);

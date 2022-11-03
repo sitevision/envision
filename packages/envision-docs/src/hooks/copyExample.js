@@ -54,6 +54,13 @@ export const useCopyExample = (content) => {
                maxItems: 5,
                clearButton: true,
                create: true,
+               render: {
+                  item: (data, escape) =>
+                     `<div>
+                        <svg class="env-icon env-m-right--x-small"><use xlink:href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
+                        ${escape(data.text)}
+                     </div>`,
+               },
                placeholder: 'Select or add tags...',
                items: ['fruit01'],
                i18n: 'en',

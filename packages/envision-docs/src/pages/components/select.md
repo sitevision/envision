@@ -120,6 +120,17 @@ tagSelect.then(function (selects) {
    -  To disable sorting entirely and maintain the original order of options, use:
       `sortField:[{field:'$order'},{field:'$score'}]`
 
+-  `render` _object_ <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  An object specifications for rendering.
+   -  Available options:
+      -  `item` _function(data, escape)_
+      -  `option` _function(data, escape)_
+      -  `option_create` _function(data, escape)_
+      -  `no_results` _function(data, escape)_
+      -  `loading` _function(data, escape)_
+   -  The `escape` argument is a function that takes a string and escapes all special HTML characters. This is very important to use to prevent XSS vulnerabilities.
+
 -  <code class="language-text">on<i>EventName</i></code> _function()_
    -  See Event handlers and Advanced example
 
@@ -158,6 +169,13 @@ envision
       maxItems: 5,
       placeholder: 'Select or add tags...',
       create: true, // Allow creating tags
+      render: {
+         item: (data, escape) =>
+            `<div>
+               <svg class="env-icon env-m-right--x-small"><use xlink:href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
+               ${escape(data.text)}
+            </div>`,
+      },
       items: ['fruit01'], // Preselect one existing option
       options: [
          // Populate options
@@ -405,6 +423,26 @@ envision.select('#tag-select').then(function (selects) {
 -  `load(query)`
 
    -  Invoked when new options should be loaded from the server. Called with the current query string.
+
+-  `open()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Shows the autocomplete dropdown containing the available options.
+
+-  `close()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Closes the autocomplete dropdown menu.
+
+-  `clear(silent)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
+
+-  `clearOptions(clearFilter?)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
+
+-  `clearFilter(option, value)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+
+   -  Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
 
 ### Items
 

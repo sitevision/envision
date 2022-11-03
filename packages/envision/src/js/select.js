@@ -43,23 +43,6 @@ const defaults = {
             className: 'env-select__input__clear',
          },
       },
-      render: {
-         option_create: function (data, escape) {
-            return `<div class="create">${
-               this.settings.i18n.add
-            } <strong>${escape(data.input)}</strong>&hellip;</div>`;
-         },
-         no_results: function () {
-            return `<div class="no-results">${this.settings.i18n.no_results}</div>`;
-         },
-         loading: function () {
-            return (
-               '<div class="env-select__spinner env-spinner-bounce">' +
-               '<div class="env-bounce1"></div><div class="env-bounce2"></div>' +
-               '<div class="env-bounce3"></div></div>'
-            );
-         },
-      },
    },
    userConfig: {
       valueField: 'value',
@@ -83,6 +66,29 @@ const defaults = {
          return !(input in this.options);
       },
       preload: false,
+      render: {
+         option: function (data, escape) {
+            return '<div>' + escape(data[this.settings.labelField]) + '</div>';
+         },
+         item: function (data, escape) {
+            return '<div>' + escape(data[this.settings.labelField]) + '</div>';
+         },
+         option_create: function (data, escape) {
+            return `<div class="create">${
+               this.settings.i18n.add
+            } <strong>${escape(data.input)}</strong>&hellip;</div>`;
+         },
+         no_results: function () {
+            return `<div class="no-results">${this.settings.i18n.no_results}</div>`;
+         },
+         loading: function () {
+            return (
+               '<div class="env-select__spinner env-spinner-bounce">' +
+               '<div class="env-bounce1"></div><div class="env-bounce2"></div>' +
+               '<div class="env-bounce3"></div></div>'
+            );
+         },
+      },
       load: null, // function() { ... }
       onInitialize: null, // function() { ... }
       onChange: null, // function(value) { ... }
@@ -124,6 +130,11 @@ const SelectPlugin = function (el, settings, TomSelect) {
    this.refreshOptions = select.refreshOptions.bind(select);
    this.getValue = select.getValue.bind(select);
    this.setValue = select.setValue.bind(select);
+   this.open = select.open.bind(select);
+   this.close = select.close.bind(select);
+   this.clear = select.clear.bind(select);
+   this.clearOptions = select.clearOptions.bind(select);
+   this.clearFilter = select.clearFilter.bind(select);
    this.lock = function () {
       select.lock();
       if (select.input.tagName === 'SELECT') {
@@ -166,6 +177,9 @@ const SelectPlugin = function (el, settings, TomSelect) {
 const getSettings = (settings, node) => {
    // Remove unwanted settings
    settings = Util.normalizeOptions(settings, defaults.userConfig);
+
+   // Avoid overwriting defaults for unspecified render properties
+   settings.render = { ...defaults.userConfig.render, ...settings.render };
 
    // Merge user settings with envision and user defaults
    settings = Object.assign(
