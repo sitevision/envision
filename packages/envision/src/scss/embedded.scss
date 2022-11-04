@@ -5,6 +5,7 @@
    flex-direction: column;
    overflow: hidden;
    position: relative;
+   border-radius: css-var('border-radius-medium');
 
    &--horizontal {
       display: flex;

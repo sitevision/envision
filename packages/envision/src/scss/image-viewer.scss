@@ -118,6 +118,7 @@
       border: $border-width $border-style transparent;
       max-width: 80px;
       opacity: 0.9;
+      border-radius: css-var('border-radius-medium');
 
       &:active {
          border: $border-width $border-style
@@ -138,6 +139,7 @@
    &__img {
       max-width: 100%;
       @include focus-visible;
+      border-radius: css-var('border-radius-medium');
    }
 
    &--hidden {

@@ -123,7 +123,7 @@
       margin: 0 em(4px, 14px) em(4px, 14px) 0;
       align-items: center;
       display: flex;
-      border-radius: css-var('border-radius-small');
+      border-radius: css-var('border-radius-medium');
       font-size: em(14px);
       line-height: 1;
       padding: em(10px, 14px);
@@ -149,7 +149,7 @@
       background-color: css-var('section-background-color');
       color: css-var('font-color');
       border: $border-width $border-style css-var('border-color-light');
-      border-radius: css-var('border-radius-small');
+      border-radius: css-var('border-radius-medium');
       box-shadow: css-var('box-shadow-small');
       position: absolute;
       top: calc(100% + 4px);

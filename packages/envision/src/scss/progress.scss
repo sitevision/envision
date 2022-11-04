@@ -1,6 +1,6 @@
 .env-progress {
    background-color: css-var('element-common-background-color');
-   border-radius: css-var('border-radius-small');
+   border-radius: css-var('border-radius-medium');
    display: flex;
    font-family: css-var('font-family');
    font-size: css-var('font-size-small');
@@ -74,7 +74,7 @@
          bottom: 0;
          left: 0;
          background-color: css-var('element-background-color-dark');
-         border-radius: css-var('border-radius-small');
+         border-radius: css-var('border-radius-medium');
       }
 
       &--highlighted {

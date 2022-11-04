@@ -2,6 +2,22 @@
    @include reset-list();
    display: flex;
 
+   &:not(.env-flex-wrap--wrap) {
+      .env-pagination__item:first-child {
+         .env-pagination__link {
+            border-radius: css-var('border-radius-medium') 0 0
+               css-var('border-radius-medium');
+         }
+      }
+
+      .env-pagination__item:last-child {
+         .env-pagination__link {
+            border-radius: 0 css-var('border-radius-medium')
+               css-var('border-radius-medium') 0;
+         }
+      }
+   }
+
    &__link {
       @include pagination-size(
          'spacing-xx-small',

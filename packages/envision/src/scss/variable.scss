@@ -573,7 +573,7 @@ $pagination-border-style: $border-style !default;
 @include to-css-custom-property(
    (
       'alert-font-family': css-var('font-family'),
-      'alert-border-radius': css-var('border-radius-small'),
+      'alert-border-radius': css-var('border-radius-medium'),
       'alert-background-color': css-var('section-background-color'),
       'alert-font-color': css-var('font-color'),
    )
