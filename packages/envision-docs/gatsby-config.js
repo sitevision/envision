@@ -18,7 +18,7 @@ module.exports = {
          },
          {
             title: 'Branding',
-            slug: 'branding',
+            slug: 'ui',
          },
          {
             title: 'Components',

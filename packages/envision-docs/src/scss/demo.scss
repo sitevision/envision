@@ -475,12 +475,22 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 
 .example-brand-color-list {
    list-style-type: none;
+   display: flex;
+   flex-wrap: wrap;
    margin: 0;
    padding: 0;
 
    li {
-      padding: 1em 1em;
+      flex: 1 1 50%;
       font-size: 0.8em;
       font-weight: 400;
+
+      &:first-child {
+         flex: 1 1 100%;
+      }
+
+      > div {
+         padding: 1em 1em;
+      }
    }
 }
