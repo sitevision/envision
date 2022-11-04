@@ -46,19 +46,7 @@ $bp-tablet: 768px;
 }
 
 @mixin focus-visible {
-   // Support browsers without focus-visible (Safari)
-   // Todo: Clean up when Safari gets support for focus-visible
-   &:focus {
-      // Set focus style for all
-      @include focus-outline;
-   }
    &:focus-visible {
-      // Set focus style for all that supports focus-visible
       @include focus-outline;
-   }
-   &:focus:not(:focus-visible) {
-      // Remove regular focus style for all that supports focus-visible
-      box-shadow: none;
-      outline: 1px solid transparent;
    }
 }
