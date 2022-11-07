@@ -3,12 +3,12 @@
    $handle-size-desktop: $spacing-xx-large;
    $handle-size-touch: $spacing-x-large;
    border: $border-width $border-style css-var('border-color');
-   border-radius: css-var('border-radius-small');
+   border-radius: css-var('border-radius-medium');
    height: $range-height;
    position: relative;
 
    &__handle {
-      border-radius: css-var('border-radius-small');
+      border-radius: css-var('border-radius-medium');
       background-color: css-var('element-common-background-color');
       border: $border-width $border-style css-var('border-color');
       height: $handle-size-desktop;

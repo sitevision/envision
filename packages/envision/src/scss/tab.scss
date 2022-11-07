@@ -80,7 +80,6 @@
       [role='tab'] {
          background-color: transparent;
          border-color: transparent;
-         border-radius: 0;
          color: css-var('font-color');
          margin: 0 css-var('spacing-xx-small');
          padding: css-var('spacing-x-small') css-var('spacing-x-small');
@@ -113,7 +112,7 @@
    }
 
    &--column [role='tab'] {
-      border-radius: 0;
+      border-radius: css-var('border-radius-medium');
       margin: 0;
    }
 }

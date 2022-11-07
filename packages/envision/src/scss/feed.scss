@@ -2,6 +2,7 @@
    word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
+   border-radius: css-var('border-radius-medium');
 
    &__header,
    &__entry,
@@ -13,6 +14,7 @@
    &__shared {
       .env-post {
          border-left: 3px solid css-var('element-primary-background-color');
+         border-radius: 0;
 
          &__entry {
             padding: css-var('spacing-x-small');
@@ -41,6 +43,7 @@
 .env-comment {
    border-bottom: 1px solid transparent;
    padding: css-var('spacing-x-small') 0;
+   border-radius: css-var('border-radius-medium');
 }
 
 .env-feed {
