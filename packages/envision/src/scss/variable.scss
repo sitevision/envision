@@ -80,10 +80,11 @@ $font-size-base: 1em !default;
 );
 
 $font-color: #202330 !default;
+//$font-color: #8452fa !default;
 $font-color-light: lighten($font-color, 10%) !default;
 $font-color-lighter: lighten($font-color, 20%) !default;
 $font-color-invert: #ffffff !default;
-$font-color-muted: desaturate(lighten($font-color, 31%), 19%) !default;
+$font-color-muted: rgba($font-color, 0.65);
 
 @include to-css-custom-property(
    (
