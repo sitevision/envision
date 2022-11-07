@@ -9,7 +9,11 @@ title: News item
 ```html
 <article class="env-news-item">
    <div class="env-news-item__media">
-      <img src="https://envisionui.io/placeholders/900x400/01.jpeg" alt="" />
+      <img
+         class="env-image"
+         src="https://envisionui.io/placeholders/900x400/01.jpeg"
+         alt=""
+      />
    </div>
    <header class="env-news-item__headline">
       <div class="env-news-item__headline__title">
@@ -53,6 +57,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/900x400/02.jpeg"
                alt=""
             />
@@ -95,6 +100,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/900x400/03.jpeg"
                alt=""
             />
@@ -137,6 +143,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/900x400/04.jpeg"
                alt=""
             />
@@ -188,6 +195,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/06.jpeg"
                alt=""
             />
@@ -230,6 +238,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/07.jpeg"
                alt=""
             />
@@ -272,6 +281,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/08.jpeg"
                alt=""
             />
@@ -314,6 +324,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/09.jpeg"
                alt=""
             />
@@ -356,6 +367,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/10.jpeg"
                alt=""
             />
@@ -398,6 +410,7 @@ title: News item
       <article class="env-news-item">
          <div class="env-news-item__media">
             <img
+               class="env-image"
                src="https://envisionui.io/placeholders/225x100/11.jpeg"
                alt=""
             />

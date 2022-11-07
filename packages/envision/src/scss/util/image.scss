@@ -1,6 +1,7 @@
 .env-image {
    height: auto;
    max-width: 100%;
+   border-radius: css-var('border-radius-medium');
 
    &--medium {
       width: 60px;

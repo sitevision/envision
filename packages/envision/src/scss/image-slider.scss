@@ -5,6 +5,7 @@
       overflow: hidden;
       position: relative;
       width: 100%;
+      border-radius: css-var('border-radius-medium');
    }
 
    &__item {
@@ -109,6 +110,7 @@
       .env-image-slider__thumbnail {
          max-width: 90px;
          opacity: 0.4;
+         border-radius: css-var('border-radius-medium');
       }
 
       .env-image-slider__item--active {

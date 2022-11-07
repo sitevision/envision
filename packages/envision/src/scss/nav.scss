@@ -19,6 +19,7 @@
    &.env-nav--fill {
       .env-nav__link {
          @include filled-nav-states();
+         border-radius: css-var('border-radius-medium');
       }
    }
 
