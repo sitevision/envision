@@ -177,7 +177,7 @@
   "--env-pagination-border-width": "1px",
   "--env-pagination-border-style": "solid",
   "--env-alert-font-family": "var(--env-font-family)",
-  "--env-alert-border-radius": "var(--env-border-radius-small)",
+  "--env-alert-border-radius": "var(--env-border-radius-medium)",
   "--env-alert-background-color": "var(--env-section-background-color)",
   "--env-alert-font-color": "var(--env-font-color)",
   "--env-profile-image-border-radius": "50%",
