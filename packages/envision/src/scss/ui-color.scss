@@ -1,18 +1,4 @@
 .env-ui-section {
    background-color: var(--env-section-background-color);
    color: var(--env-font-color);
-
-   &-brand {
-      background-color: var(--env-ui-color-brand);
-      color: var(--env-ui-color-brand-contrast);
-
-      $variants: '05', '10', '15', '20', '25', '30', '35', '40', '45', '50',
-         '55', '60', '65', '70', '75', '80', '85', '90', '95', '100';
-      @each $variant in $variants {
-         &-#{$variant} {
-            background-color: var(--env-ui-color-brand-#{$variant});
-            color: var(--env-ui-color-brand-#{$variant}-contrast);
-         }
-      }
-   }
 }

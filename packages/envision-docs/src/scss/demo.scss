@@ -494,3 +494,17 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       }
    }
 }
+
+.example-section {
+   &-brand {
+      background-color: var(--env-ui-color-brand);
+      color: var(--env-ui-color-brand-contrast);
+
+      @each $variant in $BRAND_COLOR_VARIANTS {
+         &-#{$variant} {
+            background-color: var(--env-ui-color-brand-#{$variant});
+            color: var(--env-ui-color-brand-#{$variant}-contrast);
+         }
+      }
+   }
+}

@@ -33,7 +33,7 @@
       color: css-var('ui-color-brand-contrast');
       background-color: css-var('ui-color-brand');
    }
-   @each $key, $val in $brand-color-variants {
+   @each $key, $val in $BRAND_COLOR_VARIANTS {
       &--brand-#{$key} {
          color: css-var('ui-color-brand-#{$key}-contrast');
          background-color: css-var('ui-color-brand-#{$key}');
