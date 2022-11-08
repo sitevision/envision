@@ -1,6 +1,6 @@
 @mixin focus-outline() {
-   box-shadow: css-var('focus-box-shadow');
-   outline: css-var('focus-outline');
+   box-shadow: 0 0 0 css-var('focus-offset') css-var('focus-inner-color');
+   outline: css-var('focus-size') solid css-var('focus-outline-color');
    outline-offset: css-var('focus-offset');
 }
 
