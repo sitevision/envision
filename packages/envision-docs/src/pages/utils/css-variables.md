@@ -187,8 +187,8 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-cardholder-column-min-width`
 -  `--env-cardholder-column-max-width`
 -  `--env-cardholder-column-spacing`
--  `--env-cardholder-grid-column-width` <span class="env-badge env-badge--warning">Beta since 10.0</span>
--  `--env-cardholder-grid-gap` <span class="env-badge env-badge--warning">Beta since 10.0</span>
+-  `--env-cardholder-grid-column-width` <span class="env-badge env-badge--info">10.0</span>
+-  `--env-cardholder-grid-gap` <span class="env-badge env-badge--info">10.0</span>
 
 #### Collapse <span class="env-badge env-badge--info">8.2</span>
 

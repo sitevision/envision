@@ -123,7 +123,7 @@ See [Tag select documentation](../select/).
 </div>
 ```
 
-## Radiobutton input element <small class="env-badge env-badge--warning">Beta since 10.0</small>
+## Radiobutton input element <small class="env-badge env-badge--info">10.0</small>
 
 Related radiobutton elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
 
@@ -140,31 +140,6 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
       <label class="env-radio">
          <input type="radio" name="radios" value="2" />
          Alternative 2
-      </label>
-   </div>
-</fieldset>
-```
-
-### Legacy radiobutton element <span class="env-badge env-badge--danger">Deprecated</span>
-
-Legacy radio button is deprecated since 10.0 and should be replaced
-with the new Radiobutton input element.
-
-```html
-<fieldset class="env-form-element__control">
-   <legend class="env-form-element__label">Legacy radio button</legend>
-   <div class="env-form-radio">
-      <input id="legacyradio1" type="radio" name="legacyradios" checked />
-      <label for="legacyradio1" class="env-form-element__label">
-         <span class="env-form-radio__fake"></span>
-         <span class="env-form-radio__label">Alternative 1</span>
-      </label>
-   </div>
-   <div class="env-form-radio">
-      <input id="legacyradio2" type="radio" name="legacyradios" />
-      <label for="legacyradio2" class="env-form-element__label">
-         <span class="env-form-radio__fake"></span>
-         <span class="env-form-radio__label">Alternative 2</span>
       </label>
    </div>
 </fieldset>
@@ -558,19 +533,8 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
       <label class="env-radio env-radio--disabled">
          <input class="env-radio" type="radio" disabled checked />
          Disabled radio button
-         <span class="env-badge env-badge--warning">Beta since 10.0</span>
+         <span class="env-badge env-badge--info">10.0</span>
       </label>
-   </div>
-</div>
-<div class="env-form-element">
-   <div class="env-form-element__control">
-      <div class="env-form-radio env-form-radio--disabled">
-         <label class="env-form-element__label">
-            <input type="radio" disabled />
-            Disabled legacy radio button
-            <span class="env-badge env-badge--danger">Deprecated</span>
-         </label>
-      </div>
    </div>
 </div>
 <div class="env-form-element">
