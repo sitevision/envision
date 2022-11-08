@@ -225,10 +225,6 @@ $focus-size: 2px;
       'focus-offset': css-var('focus-size'),
       'focus-outline-color': css-var('font-color'),
       'focus-inner-color': css-var('section-background-color'),
-      'focus-box-shadow': 0 0 0 css-var('focus-offset')
-         css-var('focus-inner-color'),
-      'focus-outline': css-var('focus-size') solid
-         css-var('focus-outline-color'),
    )
 );
 

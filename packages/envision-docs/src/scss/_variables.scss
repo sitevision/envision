@@ -43,8 +43,8 @@ $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
 }
 
 @mixin focus-outline() {
-   box-shadow: var(--env-focus-box-shadow);
-   outline: var(--env-focus-outline);
+   box-shadow: 0 0 0 var(--env-focus-offset) var(--env-focus-inner-color);
+   outline: var(--env-focus-size) solid var(--env-focus-outline-color);
    outline-offset: var(--env-focus-offset);
 }
 
