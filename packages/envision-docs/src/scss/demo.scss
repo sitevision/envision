@@ -508,3 +508,11 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
       }
    }
 }
+
+.example-badges {
+   margin: 0 -0.25em;
+
+   .env-badge {
+      margin: 0.25em;
+   }
+}

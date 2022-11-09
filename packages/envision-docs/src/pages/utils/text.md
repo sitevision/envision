@@ -4,16 +4,6 @@ title: Text
 
 ## Headings
 
-<h3 class="env-text">
-   Fancy display heading
-   <small class="env-text--muted">With faded secondary text</small>
-</h3>
-
-<h3 class="env-text">
-   Fancy display heading
-   <small class="env-text--muted2">With faded secondary text</small>
-</h3>
-
 ```html
 <h1 class="env-text">Heading 1</h1>
 

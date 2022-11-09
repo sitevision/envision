@@ -6,7 +6,7 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 
 ## Types
 
-<span class="env-badge env-badge--info">Brand button available since 2022.xx</span>
+<span class="env-badge env-badge--info">Brand button coming soon</span>
 
 ```html
 <p>
