@@ -184,3 +184,50 @@
       color: var(--env-font-color);
    }
 }
+
+.env-theme-example-brand {
+   --env-ui-color-brand-20-contrast: #396b70;
+   --env-ui-color-brand-30-contrast: #305b5f;
+   --env-ui-color-brand-35-contrast: #294e51;
+   --env-ui-color-brand-95: #1a3133;
+   --env-ui-color-brand-55-contrast: #162a2c;
+   --env-ui-color-brand-90: #1d373a;
+   --env-ui-color-brand-dark: hsla(184.7, 32.7%, 30.4%, 1);
+   --env-ui-color-brand-25-contrast: #305b5f;
+   --env-ui-color-brand-85: #244447;
+   --env-ui-color-brand-80: #294e51;
+   --env-ui-color-brand-50-contrast: #1d373a;
+   --env-ui-color-brand-100: #162a2c;
+   --env-ui-color-brand-75: #305b5f;
+   --env-ui-color-brand-70: #396b70;
+   --env-ui-color-brand-60-contrast: #000000;
+   --env-ui-color-brand-contrast: #ffffff;
+   --env-ui-color-brand-65: #417c81;
+   --env-ui-color-brand-60: #4a8c92;
+   --env-ui-color-brand-55: #529ca2;
+   --env-ui-color-brand-50: #6db0b5;
+   --env-ui-color-brand-70-contrast: #d3e7e9;
+   --env-ui-color-brand-95-contrast: #6db0b5;
+   --env-ui-color-brand-45-contrast: #244447;
+   --env-ui-color-brand-10-contrast: #396b70;
+   --env-ui-color-brand-45: #7eb9be;
+   --env-ui-color-brand-40: #8fc2c6;
+   --env-ui-color-brand-90-contrast: #6db0b5;
+   --env-ui-color-brand-35: #a0cbcf;
+   --env-ui-color-brand-30: #b1d5d8;
+   --env-ui-color-brand-25: #c2dee0;
+   --env-ui-color-brand-20: #d3e7e9;
+   --env-ui-color-brand-15: #e4f0f1;
+   --env-ui-color-brand-10: #f1f8f8;
+   --env-ui-color-brand-05: #f8fbfc;
+   --env-ui-color-brand-80-contrast: #8fc2c6;
+   --env-ui-color-brand-85-contrast: #7eb9be;
+   --env-ui-color-brand-100-contrast: #529ca2;
+   --env-ui-color-brand-05-contrast: #417c81;
+   --env-ui-color-brand-75-contrast: #b1d5d8;
+   --env-ui-color-brand-65-contrast: #f8fbfc;
+   --env-ui-color-brand-40-contrast: #294e51;
+   --env-ui-color-brand: #427d82;
+   --env-ui-color-brand-15-contrast: #396b70;
+   --env-ui-text-sectionheading-font-color: var(--env-ui-color-brand);
+}

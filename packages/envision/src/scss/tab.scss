@@ -1,17 +1,3 @@
-@include to-css-custom-property(
-   (
-      'tab-background-color': css-var('ui-color-brand'),
-      'tab-font-color': css-var('ui-color-brand-contrast'),
-   )
-);
-
-//@include to-css-custom-property(
-//   (
-//      'tab-background-color': css-var('element-primary-background-color'),
-//      'tab-font-color': css-var('element-primary-font-color'),
-//   )
-//);
-
 .env-tabs {
    &__nav {
       @include reset-list();
@@ -19,7 +5,7 @@
 
       &--border-bottom {
          border-bottom: $tab-bottom-width $border-style
-            css-var('tab-background-color');
+            css-var('ui-color-brand');
       }
 
       :first-child > a {
@@ -59,10 +45,8 @@
       padding: css-var('spacing-x-small') css-var('spacing-medium');
 
       &[aria-selected='true'] {
-         background-color: css-var('element-primary-background-color');
-         background-color: css-var('tab-background-color');
-         color: css-var('element-primary-font-color');
-         color: css-var('tab-font-color');
+         background-color: css-var('ui-color-brand');
+         color: css-var('ui-color-brand-contrast');
       }
 
       @include focus-visible;
@@ -87,12 +71,12 @@
 
          &[aria-selected='true'] {
             border-bottom: $tab-bottom-width $border-style
-               css-var('tab-background-color');
+               css-var('ui-color-brand');
          }
 
          &:hover {
             border-bottom: $tab-bottom-width $border-style
-               css-var('tab-background-color');
+               css-var('ui-color-brand');
          }
 
          @include focus-visible;
