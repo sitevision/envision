@@ -19,21 +19,25 @@ its width and height to make a nice aligned grid of cards.
 
 ```html
 <div class="example-demo-dark">
-   <article class="example-card env-card env-block env-shadow-small">
+   <article
+      class="example-card env-card env-ui-section env-border env-shadow-small"
+   >
       <header class="env-card__header">
-         <h2 class="env-card__text env-card__text--title">Lorem Ipsumsson</h2>
+         <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
       </header>
       <div class="env-card__body">
-         <p class="env-card__text env-card__text--secondary">Web Developer</p>
-         <p class="env-card__text env-card__text--secondary">
+         <p class="env-ui-text-caption">Web Developer</p>
+         <p class="env-ui-text-caption">
             <a href="#" class="env-link env-link-secondary">lorem@domain.com</a>
          </p>
-         <p class="env-card__text env-card__text--secondary">
+         <p class="env-ui-text-caption">
             <a href="#" class="env-link env-link-secondary">012-345 67 89</a>
          </p>
       </div>
       <footer class="env-card__footer">
-         <a href="#" class="env-link">Contact</a>
+         <p class="env-ui-text-caption">
+            <a href="#" class="env-link">Contact</a>
+         </p>
       </footer>
    </article>
 
@@ -46,12 +50,12 @@ its width and height to make a nice aligned grid of cards.
             src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
             alt="Example profile image"
          />
-         <h2 class="env-card__text env-card__text--title">Lorem Ipsumsson</h2>
-         <p class="env-card__text env-card__text--secondary">Job Title</p>
-         <p class="env-card__text env-card__text--secondary">
+         <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+         <p class="env-ui-text-caption">Job Title</p>
+         <p class="env-ui-text-caption">
             <a href="#" class="env-link env-link-secondary">lorem@domain.com</a>
          </p>
-         <p class="env-card__text env-card__text--secondary">
+         <p class="env-ui-text-caption">
             <a href="#" class="env-link env-link-secondary">012-345 67 89</a>
          </p>
       </div>
@@ -72,21 +76,21 @@ its width and height to make a nice aligned grid of cards.
                </a>
             </div>
             <div class="env-media__body env-text--small">
-               <p class="env-card__text">Open group &bull; 29 members</p>
-               <p class="env-card__text">Latest activity 3 hours ago</p>
+               <p class="env-ui-text-caption">Open group &bull; 29 members</p>
+               <p class="env-ui-text-caption">Latest activity 3 hours ago</p>
             </div>
          </article>
 
-         <h2 class="env-card__text env-card__text--title">Lorem ipsum dolor</h2>
+         <h2 class="env-ui-text-subheading">Lorem ipsum dolor</h2>
       </header>
       <div class="env-card__body">
-         <p class="env-card__text env-card__text--secondary">
+         <p class="env-ui-text-caption">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             eget lobortis dui, in accumsan augue.
          </p>
       </div>
       <footer class="env-card__footer env-text--small">
-         <a type="button" class="env-button env-button--link">
+         <a href="#" type="button" class="env-button env-button--link">
             <svg class="env-icon env-icon--small env-m-right--xx-small">
                <use
                   xlink:href="/sitevision/envision-icons.svg#icon-phone"
@@ -133,19 +137,14 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   src="https://envisionui.io/placeholders/profile/200x200/05.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
-                  Lorem Ipsumsson
-               </h2>
-               <p class="env-card__text">Utvecklare</p>
-               <p class="env-card__text env-card__text--secondary">
-                  Utvecklare
-               </p>
-               <p class="env-card__text env-card__text--secondary">
+               <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+               <p class="env-ui-text-caption">Utvecklare</p>
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >lorem@domain.com</a
                   >
                </p>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
@@ -161,10 +160,8 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   src="https://envisionui.io/placeholders/profile/200x200/04.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
-                  Lorem Ipsumsson
-               </h2>
-               <p class="env-card__text env-card__text--secondary">
+               <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
@@ -180,13 +177,9 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
-                  Lorem Ipsumsson
-               </h2>
-               <p class="env-card__text env-card__text--secondary">
-                  Utvecklare
-               </p>
-               <p class="env-card__text env-card__text--secondary">
+               <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+               <p class="env-ui-text-caption">Utvecklare</p>
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
@@ -202,12 +195,8 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
-                  Lorem Ipsumsson
-               </h2>
-               <p class="env-card__text env-card__text--secondary">
-                  Utvecklare
-               </p>
+               <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+               <p class="env-ui-text-caption">Utvecklare</p>
             </div>
          </article>
       </div>
@@ -219,13 +208,9 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   src="https://envisionui.io/placeholders/profile/200x200/03.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
-                  Lorem Ipsumsson
-               </h2>
-               <p class="env-card__text env-card__text--secondary">
-                  Utvecklare
-               </p>
-               <p class="env-card__text env-card__text--secondary">
+               <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
+               <p class="env-ui-text-caption">Utvecklare</p>
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >lorem@domain.com</a
                   >
@@ -349,19 +334,18 @@ Columns will always be equal width and aligned.
                   src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
+               <h2 class="env-ui-text-subheading">
                   Lorem Ipsumsson
                </h2>
-               <p class="env-card__text">Utvecklare</p>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   Utvecklare
                </p>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >lorem@domain.com</a
                   >
                </p>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
@@ -376,10 +360,10 @@ Columns will always be equal width and aligned.
                   src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
+               <h2 class="env-ui-text-subheading">
                   Lorem Ipsumsson
                </h2>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
@@ -394,13 +378,13 @@ Columns will always be equal width and aligned.
                   src="https://envisionui.io/placeholders/profile/200x200/04.jpeg"
                   alt="Example profile image"
                />
-               <h2 class="env-card__text env-card__text--title">
+               <h2 class="env-ui-text-subheading">
                   Lorem Ipsumsson
                </h2>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   Utvecklare
                </p>
-               <p class="env-card__text env-card__text--secondary">
+               <p class="env-ui-text-caption">
                   <a href="#" class="env-link env-link-secondary"
                      >012-345 67 89</a
                   >
