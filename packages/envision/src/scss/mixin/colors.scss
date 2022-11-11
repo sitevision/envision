@@ -9,9 +9,9 @@
    --env-link-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'
       )};
-   --env-link-secondary-font-color: #{css-var('block-#{$blockName}-font-color')};
+   --env-link-secondary-font-color: #{css-var('block-#{$blockName}font-color')};
    --env-link-secondary-hover-font-color: #{css-var(
-         'block-#{$blockName}-font-color'
+         'block-#{$blockName}link-hover-font-color'
       )};
 
    background-color: css-var('block-#{$blockName}background-color');
