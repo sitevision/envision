@@ -23,11 +23,11 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 <p>
    <button type="button" class="env-button env-button--success">Success</button>
 
+   <button type="button" class="env-button env-button--warning">Warning</button>
+
    <button type="button" class="env-button env-button--danger">Danger</button>
 
    <button type="button" class="env-button env-button--info">Info</button>
-
-   <button type="button" class="env-button env-button--warning">Warning</button>
 </p>
 <p>
    <button
