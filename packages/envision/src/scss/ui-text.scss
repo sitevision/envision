@@ -10,19 +10,22 @@
          line-height: $line-height-medium;
          color: css-var('ui-text-#{$name}-font-color');
          margin: 0;
-
-         @extend %ui-text-link;
       }
    }
 }
 
-%ui-text-link {
-   a {
-      color: inherit;
-      text-decoration: none;
+@each $name in $UI_TEXT_NAMES {
+   a.env-ui-text-#{$name},
+   .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
+      @extend %ui-text-link;
+   }
+}
 
-      &:hover {
-         text-decoration: underline;
-      }
+%ui-text-link {
+   color: inherit;
+   text-decoration: none;
+
+   &:hover {
+      text-decoration: underline;
    }
 }
