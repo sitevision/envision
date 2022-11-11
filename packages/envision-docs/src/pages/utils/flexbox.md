@@ -47,7 +47,7 @@ Examples
 
 ### Justify content
 
-Applicable to flex containers (`env-flex). Modifier classes are named using the format: `env-flex--justify-content-{value}`
+Applicable to flex containers (`env-flex`). Modifier classes are named using the format: `env-flex--justify-content-{value}`
 
 Valid values
 

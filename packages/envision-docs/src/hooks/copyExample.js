@@ -137,6 +137,13 @@ export const useCopyExample = (content) => {
          }
       }
 
+      // Disable example links
+      const links = document.querySelectorAll('a[href="#"]');
+      links.forEach((link) => {
+         link.addEventListener('click', (e) => {
+            e.preventDefault();
+         });
+      });
       // Disable example forms
       const forms = document.querySelectorAll('form[action="/"]');
       forms.forEach((form) => {
