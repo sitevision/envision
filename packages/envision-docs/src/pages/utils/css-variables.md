@@ -100,7 +100,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-ui-color-brand-{n}`
 -  `--env-ui-color-brand-{n}-contrast`
 
-Valid values for `{n}`are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
+Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
 , `85`, `90`, `95`, `100`.
 
 #### UI Text <span class="env-badge env-badge--info">Coming soon</span>
@@ -112,7 +112,7 @@ Valid values for `{n}`are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`,
 -  `--env-ui-text-{name}-text-transform`
 -  `--env-ui-text-{name}-letter-spacing`
 
-Valid values for `{name}`are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
+Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
 ### Colors
 
