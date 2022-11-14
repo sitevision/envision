@@ -24,7 +24,14 @@ UI Text will be used as the new default text styles for headings in all componen
 <p class="env-ui-text-caption">Caption</p>
 ```
 
-## Example branding of components <span id="examples" class="offset-anchor"></span>
+<h2 class="hide-when-has-theme doc-heading-2">
+   Example branding of components <span id="examples" class="offset-anchor"></span>
+</h2>
+<h2 class="show-when-has-theme doc-heading-2">
+   Branding of components <span id="examples" class="offset-anchor"></span>
+</h2>
+
+##
 
 <div class="env-theme-example-brand">
 
@@ -136,7 +143,10 @@ UI Text will be used as the new default text styles for headings in all componen
    </div>
 </div>
 
-### Example brand color palette
+<div class="example-brand-color-palette">
+
+<h3 class="hide-when-has-theme doc-heading-3">Example brand color palette</h3>
+<h3 class="show-when-has-theme doc-heading-3">Current example theme brand color palette</h3>
 
 <ol class="example-brand-color-list">
    <li class="example-section-brand"><div>Brand color</div></li>
@@ -164,9 +174,11 @@ UI Text will be used as the new default text styles for headings in all componen
 
 </div>
 
+</div>
+
 ## Default brand color palette <span id="examples" class="brand-defaults"></span>
 
-<ol class="example-brand-color-list env-m-vertical--large">
+<ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
    <li class="example-section-brand-10"><div>Brand 10</div></li>
