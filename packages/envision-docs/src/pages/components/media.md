@@ -18,10 +18,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -46,10 +46,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -89,10 +89,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body env-media__body--inline">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -117,10 +117,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -147,10 +147,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -173,10 +173,10 @@ title: Media
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -201,10 +201,10 @@ Alignment modifiers can also be applied to elements within the media container (
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -229,10 +229,10 @@ Alignment modifiers can also be applied to elements within the media container (
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -259,10 +259,10 @@ Alignment modifiers can also be applied to elements within the media container (
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -287,10 +287,10 @@ Alignment modifiers can also be applied to elements within the media container (
       </a>
    </div>
    <div class="env-media__body">
-      <h3 class="env-text">
+      <h3 class="env-ui-text-subheading">
          <a href="#" class="env-link-secondary">Emma</a>
       </h3>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Cras varius, felis a accumsan accumsan, tellus elit maximus purus, id
          dignissim sem odio at eros. Morbi vel commodo diam. Integer hendrerit
          tellus nec ligula egestas consequat. Curabitur sapien mauris, rhoncus
@@ -308,10 +308,10 @@ Alignment modifiers can also be applied to elements within the media container (
             </a>
          </div>
          <div class="env-media__body">
-            <h3 class="env-text">
+            <h3 class="env-ui-text-subheading">
                <a href="#" class="env-link-secondary">Emma</a>
             </h3>
-            <p class="env-text">
+            <p class="env-ui-text-caption">
                Cras varius, felis a accumsan accumsan, tellus elit maximus
                purus, id dignissim sem odio at eros. Morbi vel commodo diam.
                Integer hendrerit tellus nec ligula egestas consequat. Curabitur

@@ -6,7 +6,7 @@ title: Popover
 <div class="env-popover" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-text-h5 env-popover__header__title">Popover</h4>
+      <h4 class="env-ui-text-overline">Popover</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
@@ -24,7 +24,7 @@ title: Popover
 <div class="env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-text-h5 env-popover__header__title">Popover</h4>
+      <h4 class="env-ui-text-overline">Popover</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
@@ -42,7 +42,7 @@ title: Popover
 <div class="env-popover" data-popper-placement="left">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-text-h5 env-popover__header__title">Popover</h4>
+      <h4 class="env-ui-text-overline">Popover</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
@@ -60,7 +60,7 @@ title: Popover
 <div class="env-popover" data-popper-placement="right">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-text-h5 env-popover__header__title">Popover</h4>
+      <h4 class="env-ui-text-overline">Popover</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
@@ -196,9 +196,7 @@ To keep the popover alive when being hovered it requires a delay to function pro
 <div class="env-popover" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-text-h5 env-popover__header__title" id="popover-heading">
-         Popover menu
-      </h4>
+      <h4 class="env-ui-text-overline" id="popover-heading">Popover menu</h4>
    </div>
    <ul class="env-popover__menu" aria-labelledby="popover-heading">
       <li>

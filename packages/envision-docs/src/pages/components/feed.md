@@ -17,11 +17,11 @@ title: Feed
          </a>
       </div>
       <div class="env-media__body">
-         <h3 class="env-text">
+         <h3 class="env-ui-text-subheading">
             <a href="#" class="env-link-secondary">Erik</a>
             <small>16:34</small>
          </h3>
-         <p class="env-text">Design</p>
+         <p class="env-ui-text-caption">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -40,7 +40,7 @@ title: Feed
       </div>
    </header>
    <div class="env-post__entry">
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
          lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed
          purus quam. Proin eu tincidunt metus.
@@ -54,10 +54,12 @@ title: Feed
             src="https://envisionui.io/placeholders/text/embedded-image.png"
          />
          <div class="env-embedded__block">
-            <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-            <p class="env-embedded__text env-text">
-               Bacon ipsum dolor amet beef cupim brisket pork turducken salami
-               pig drumstick chuck ball tip biltong shoulder.
+            <h4 class="env-ui-text-subheading">Lorem ipsum</h4>
+            <p class="env-text">
+               <span class="env-text--muted">
+                  Bacon ipsum dolor amet beef cupim brisket pork turducken
+                  salami pig drumstick chuck ball tip biltong shoulder
+               </span>
             </p>
          </div>
       </div>
@@ -130,11 +132,11 @@ title: Feed
    </div>
    <div class="env-media__body">
       <header class="env-comment__header">
-         <h3 class="env-text">
+         <h3 class="env-ui-text-subheading">
             <a href="#" class="env-link-secondary">Emma</a>
          </h3>
       </header>
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
          tempor incididunt ut labore et Lorem ipsum dolor sit amet
       </p>
@@ -184,11 +186,11 @@ title: Feed
          </a>
       </div>
       <div class="env-media__body">
-         <h3 class="env-text">
+         <h3 class="env-ui-text-subheading">
             <a href="#" class="env-link-secondary">Erik</a>
             <small>16:34</small>
          </h3>
-         <p class="env-text">Design</p>
+         <p class="env-ui-text-caption">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -207,7 +209,7 @@ title: Feed
       </div>
    </header>
    <div class="env-post__entry">
-      <p class="env-text">
+      <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
          lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed
          purus quam. Proin eu tincidunt metus.
@@ -252,11 +254,11 @@ title: Feed
                   </div>
                   <div class="env-media__body">
                      <header class="env-comment__header">
-                        <h4 class="env-text">
+                        <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Malin</a>
                         </h4>
                      </header>
-                     <p class="env-text">
+                     <p class="env-ui-text-caption">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et Lorem
                         ipsum dolor sit amet
@@ -308,11 +310,11 @@ title: Feed
                   </div>
                   <div class="env-media__body">
                      <header class="env-comment__header">
-                        <h4 class="env-text">
+                        <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Robin</a>
                         </h4>
                      </header>
-                     <p class="env-text">
+                     <p class="env-ui-text-caption">
                         Aenean aliquet sem eget velit tincidunt ullamcorper.
                         Donec aliquet, quam vitae cursus aliquet, lorem nunc
                         efficitur nulla, ullamcorper placerat dui massa at eros.
@@ -364,11 +366,11 @@ title: Feed
                   </div>
                   <div class="env-media__body">
                      <header class="env-comment__header">
-                        <h4 class="env-text">
+                        <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Anders</a>
                         </h4>
                      </header>
-                     <p class="env-text">
+                     <p class="env-ui-text-caption">
                         Aenean aliquet sem eget velit tincidunt ullamcorper.
                         Donec aliquet, quam vitae cursus aliquet, lorem nunc
                         efficitur nulla, ullamcorper placerat dui massa at eros.
@@ -450,14 +452,14 @@ title: Feed
          </a>
       </div>
       <div class="env-media__body">
-         <h3 class="env-text">
+         <h3 class="env-ui-text-subheading">
             <a href="#" class="env-link-secondary">Erik</a>
             <small>shared</small>
             <a href="#" class="env-link-secondary">Malin's</a>
             <small>post</small>
             <small>16:34</small>
          </h3>
-         <p class="env-text">Design</p>
+         <p class="env-ui-text-caption">Design</p>
       </div>
       <div class="env-media__actions">
          <button
@@ -476,7 +478,7 @@ title: Feed
       </div>
    </header>
    <div class="env-post__entry">
-      <p class="env-text">Lorem ipsum dolor sit amet</p>
+      <p class="env-ui-text-caption">Lorem ipsum dolor sit amet</p>
    </div>
    <div class="env-post__shared">
       <blockquote class="env-post">
@@ -491,15 +493,15 @@ title: Feed
                </a>
             </div>
             <div class="env-media__body">
-               <h3 class="env-text">
+               <h3 class="env-ui-text-subheading">
                   <a href="#" class="env-link-secondary">Malin</a>
                   <small>17:29</small>
                </h3>
-               <p class="env-text">Design</p>
+               <p class="env-ui-text-caption">Design</p>
             </div>
          </header>
          <div class="env-post__entry">
-            <p class="env-text">
+            <p class="env-ui-text-caption">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
                eget lobortis dui, in accumsan augue. Quisque nec augue quam.
                Donec sed purus quam. Proin eu tincidunt metus.
@@ -577,11 +579,11 @@ title: Feed
                </a>
             </div>
             <div class="env-media__body">
-               <h3 class="env-text">
+               <h3 class="env-ui-text-subheading">
                   <a href="#" class="env-link-secondary">Erik</a>
                   <small>16:34</small>
                </h3>
-               <p class="env-text">Design</p>
+               <p class="env-ui-text-caption">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -600,7 +602,7 @@ title: Feed
             </div>
          </header>
          <div class="env-post__entry">
-            <p class="env-text">
+            <p class="env-ui-text-caption">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
                eget lobortis dui, in accumsan augue. Quisque nec augue quam.
                Donec sed purus quam. Proin eu tincidunt metus.
@@ -650,13 +652,13 @@ title: Feed
                         </div>
                         <div class="env-media__body">
                            <header class="env-comment__header">
-                              <h4 class="env-text">
+                              <h4 class="env-ui-text-subheading">
                                  <a href="#" class="env-link-secondary"
                                     >Anders</a
                                  >
                               </h4>
                            </header>
-                           <p class="env-text">
+                           <p class="env-ui-text-caption">
                               Aenean aliquet sem eget velit tincidunt
                               ullamcorper. Donec aliquet, quam vitae cursus
                               aliquet, lorem nunc efficitur nulla, ullamcorper
@@ -711,11 +713,11 @@ title: Feed
                         </div>
                         <div class="env-media__body">
                            <header class="env-comment__header">
-                              <h4 class="env-text">
+                              <h4 class="env-ui-text-subheading">
                                  <a href="#" class="env-link-secondary">Emma</a>
                               </h4>
                            </header>
-                           <p class="env-text">
+                           <p class="env-ui-text-caption">
                               Aenean aliquet sem eget velit tincidunt
                               ullamcorper. Donec aliquet, quam vitae cursus
                               aliquet, lorem nunc efficitur nulla, ullamcorper
@@ -804,11 +806,11 @@ title: Feed
                </a>
             </div>
             <div class="env-media__body">
-               <h3 class="env-text">
+               <h3 class="env-ui-text-subheading">
                   <a href="#" class="env-link-secondary">Robin</a>
                   <small class="env-text">17:28</small>
                </h3>
-               <p class="env-text">Design</p>
+               <p class="env-ui-text-caption">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -827,7 +829,7 @@ title: Feed
             </div>
          </header>
          <div class="env-post__entry">
-            <p class="env-text">
+            <p class="env-ui-text-caption">
                Duis eget eros urna. Maecenas rutrum tortor eget elit mattis,
                pretium aliquet sapien accumsan. Nunc congue vehicula mi sit amet
                dictum. Aenean aliquam ex lorem, sit amet laoreet justo ultrices
@@ -908,11 +910,11 @@ title: Feed
                </a>
             </div>
             <div class="env-media__body">
-               <h3 class="env-text">
+               <h3 class="env-ui-text-subheading">
                   <a href="#" class="env-link-secondary">Ebba</a>
                   <small class="env-text">19:05</small>
                </h3>
-               <p class="env-text">Design</p>
+               <p class="env-ui-text-caption">Design</p>
             </div>
             <div class="env-media__actions">
                <button
@@ -931,7 +933,7 @@ title: Feed
             </div>
          </header>
          <div class="env-post__entry">
-            <p class="env-text">
+            <p class="env-ui-text-caption">
                Nulla faucibus ultrices ullamcorper. Duis gravida malesuada
                commodo. Praesent ornare id nisl non suscipit.
             </p>
