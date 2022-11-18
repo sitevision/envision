@@ -23,11 +23,6 @@ const Sidenav = ({ categories, menuItems }) => {
                </ul>
             </div>
          ))}
-         <div className="theme-picker env-text">
-            <a href="/theme/settings/" className="doc-link-secondary">
-               Site theme settings
-            </a>
-         </div>
       </nav>
    );
 };
