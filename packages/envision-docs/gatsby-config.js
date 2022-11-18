@@ -17,6 +17,10 @@ module.exports = {
             slug: 'getting-started',
          },
          {
+            title: 'Branding',
+            slug: 'ui',
+         },
+         {
             title: 'Components',
             slug: 'components',
          },

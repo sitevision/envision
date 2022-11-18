@@ -1,76 +1,31 @@
 .env-ui-text {
-   &-overline {
-      font-family: css-var('ui-text-overline-font-family');
-      font-size: css-var('ui-text-overline-font-size');
-      font-weight: css-var('ui-text-overline-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-overline-text-transform');
-      letter-spacing: css-var('ui-text-overline-letter-spacing');
-      line-height: $line-height-medium;
-      color: css-var('ui-text-overline-font-color');
-      margin: 0;
-   }
-
-   &-heading {
-      font-family: css-var('ui-text-heading-font-family');
-      font-size: css-var('ui-text-heading-font-size');
-      font-weight: css-var('ui-text-heading-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-heading-text-transform');
-      letter-spacing: css-var('ui-text-heading-letter-spacing');
-      line-height: $line-height-medium;
-      color: css-var('ui-text-heading-font-color');
-      margin: 0;
-   }
-
-   &-subtitle {
-      font-family: css-var('ui-text-subtitle-font-family');
-      font-size: css-var('ui-text-subtitle-font-size');
-      font-weight: css-var('ui-text-subtitle-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-subtitle-text-transform');
-      letter-spacing: css-var('ui-text-subtitle-letter-spacing');
-      line-height: $line-height-medium;
-      color: css-var('ui-text-subtitle-font-color');
-      margin: 0;
-   }
-
-   &-lead {
-      font-family: css-var('ui-text-lead-font-family');
-      font-size: css-var('ui-text-lead-font-size');
-      font-weight: css-var('ui-text-lead-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-lead-text-transform');
-      letter-spacing: css-var('ui-text-lead-letter-spacing');
-      line-height: $line-height-medium;
-      color: css-var('ui-text-lead-font-color');
-      margin: 0;
-   }
-
-   &-caption {
-      font-family: css-var('ui-text-caption-font-family');
-      font-size: css-var('ui-text-caption-font-size');
-      font-weight: css-var('ui-text-caption-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-caption-text-transform');
-      letter-spacing: css-var('ui-text-caption-letter-spacing');
-      line-height: $line-height-medium;
-      color: css-var('ui-text-caption-font-color');
-      margin: 0;
-   }
-
-   &-overline,
-   &-heading,
-   &-subtitle,
-   &-lead,
-   &-caption {
-      a {
-         color: inherit;
-         text-decoration: none;
-
-         &:hover {
-            text-decoration: underline;
-         }
+   @each $name in $UI_TEXT_NAMES {
+      &-#{$name} {
+         font-family: css-var('ui-text-#{$name}-font-family');
+         font-size: css-var('ui-text-#{$name}-font-size');
+         font-weight: css-var('ui-text-#{$name}-font-weight');
+         font-style: normal;
+         text-transform: css-var('ui-text-#{$name}-text-transform');
+         letter-spacing: css-var('ui-text-#{$name}-letter-spacing');
+         line-height: $line-height-medium;
+         color: css-var('ui-text-#{$name}-font-color');
+         margin: 0;
       }
+   }
+}
+
+@each $name in $UI_TEXT_NAMES {
+   a.env-ui-text-#{$name},
+   .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
+      @extend %ui-text-link;
+   }
+}
+
+%ui-text-link {
+   color: inherit;
+   text-decoration: none;
+
+   &:hover {
+      text-decoration: underline;
    }
 }

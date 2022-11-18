@@ -83,10 +83,12 @@ $font-color: #202330 !default;
 $font-color-light: lighten($font-color, 10%) !default;
 $font-color-lighter: lighten($font-color, 20%) !default;
 $font-color-invert: #ffffff !default;
+$font-color-muted: rgba($font-color, 0.65);
 
 @include to-css-custom-property(
    (
       'font-color': $font-color,
+      'font-color-muted': $font-color-muted,
    )
 );
 
@@ -110,7 +112,6 @@ $link-hover-text-decoration: underline !default;
 
 // ----- GENERAL COLORS -----
 
-// Color
 $background-color: initial !default;
 $section-background-color: #ffffff !default;
 
@@ -123,49 +124,60 @@ $section-background-color: #ffffff !default;
 
 // ----- UI COLORS -----
 
-$brand-color-base: 46.25%; // #767676
-$brand-color-variants: (
-   '05': 98%,
-   '10': 96%,
-   '20': 87%,
-   '30': 80%,
-   '40': 68%,
-   '50': 55%,
-   '60': 45%,
-   '70': 30%,
-   '80': 17%,
-   '90': 12%,
-   '100': 10%,
-);
-
-@each $key, $val in $brand-color-variants {
-   // env-font-color #202330 contrast is WCAG AA compliant for background 56% and higher (lighter).
-   // color-brand-contrast #ffffff is WCAG AA compliant for background 46.25% and lower (darker).
-   // 56% = #8f8f8f
-   // 46.25% = #767676
-   $contrast: #202330;
-   @if ($val > 56% & & $val < $brand-color-base) {
-      $contrast: #000000;
-   }
-   @if ($val <= $brand-color-base) {
-      $contrast: #ffffff;
-   }
-   @include to-css-custom-property(
-      (
-         'ui-color-brand-#{$key}': lighten(#000, $val),
-         'ui-color-brand-#{$key}-contrast': $contrast,
-      )
-   );
-}
+$BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
+   '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100';
 
 @include to-css-custom-property(
    (
-      'ui-color-brand': lighten(#000, $brand-color-base),
-      'ui-color-brand-contrast': '#ffffff',
+      'ui-color-brand': #767676,
+      'ui-color-brand-dark': #626262,
+      'ui-color-brand-contrast': #ffffff,
+      'ui-color-brand-05': #fafafa,
+      'ui-color-brand-05-contrast': #6e6e6e,
+      'ui-color-brand-10': #f5f5f5,
+      'ui-color-brand-10-contrast': #6e6e6e,
+      'ui-color-brand-15': #ebebeb,
+      'ui-color-brand-15-contrast': #616161,
+      'ui-color-brand-20': #dedede,
+      'ui-color-brand-20-contrast': #616161,
+      'ui-color-brand-25': #d1d1d1,
+      'ui-color-brand-25-contrast': #545454,
+      'ui-color-brand-30': #c4c4c4,
+      'ui-color-brand-30-contrast': #474747,
+      'ui-color-brand-35': #b8b8b8,
+      'ui-color-brand-35-contrast': #474747,
+      'ui-color-brand-40': #ababab,
+      'ui-color-brand-40-contrast': #3d3d3d,
+      'ui-color-brand-45': #9e9e9e,
+      'ui-color-brand-45-contrast': #363636,
+      'ui-color-brand-50': #919191,
+      'ui-color-brand-50-contrast': #262626,
+      'ui-color-brand-55': #7a7a7a,
+      'ui-color-brand-55-contrast': #000000,
+      'ui-color-brand-60': #6e6e6e,
+      'ui-color-brand-60-contrast': #f5f5f5,
+      'ui-color-brand-65': #616161,
+      'ui-color-brand-65-contrast': #dedede,
+      'ui-color-brand-70': #545454,
+      'ui-color-brand-70-contrast': #d1d1d1,
+      'ui-color-brand-75': #474747,
+      'ui-color-brand-75-contrast': #b8b8b8,
+      'ui-color-brand-80': #3d3d3d,
+      'ui-color-brand-80-contrast': #ababab,
+      'ui-color-brand-85': #363636,
+      'ui-color-brand-85-contrast': #9e9e9e,
+      'ui-color-brand-90': #2b2b2b,
+      'ui-color-brand-90-contrast': #9e9e9e,
+      'ui-color-brand-95': #262626,
+      'ui-color-brand-95-contrast': #919191,
+      'ui-color-brand-100': #212121,
+      'ui-color-brand-100-contrast': #919191,
    )
 );
 
 // ----- UI TEXT -----
+
+$UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption';
 
 @include to-css-custom-property(
    (
@@ -177,24 +189,24 @@ $brand-color-variants: (
       'ui-text-overline-letter-spacing': 0.15em,
       'ui-text-heading-font-family': css-var('font-family'),
       'ui-text-heading-font-color': css-var('font-color'),
-      'ui-text-heading-font-size': 1.25em,
+      'ui-text-heading-font-size': 1.82em,
       'ui-text-heading-font-weight': 500,
       'ui-text-heading-text-transform': none,
       'ui-text-heading-letter-spacing': normal,
-      'ui-text-subtitle-font-family': css-var('font-family'),
-      'ui-text-subtitle-font-color': css-var('font-color'),
-      'ui-text-subtitle-font-size': 1em,
-      'ui-text-subtitle-font-weight': 500,
-      'ui-text-subtitle-text-transform': none,
-      'ui-text-subtitle-letter-spacing': normal,
-      'ui-text-lead-font-family': css-var('font-family'),
-      'ui-text-lead-font-color': css-var('font-color'),
-      'ui-text-lead-font-size': 1.1em,
-      'ui-text-lead-font-weight': 300,
-      'ui-text-lead-text-transform': none,
-      'ui-text-lead-letter-spacing': normal,
+      'ui-text-sectionheading-font-family': css-var('font-family'),
+      'ui-text-sectionheading-font-color': css-var('font-color'),
+      'ui-text-sectionheading-font-size': 1.25em,
+      'ui-text-sectionheading-font-weight': 500,
+      'ui-text-sectionheading-text-transform': none,
+      'ui-text-sectionheading-letter-spacing': normal,
+      'ui-text-subheading-font-family': css-var('font-family'),
+      'ui-text-subheading-font-color': css-var('font-color'),
+      'ui-text-subheading-font-size': 1em,
+      'ui-text-subheading-font-weight': 500,
+      'ui-text-subheading-text-transform': none,
+      'ui-text-subheading-letter-spacing': normal,
       'ui-text-caption-font-family': css-var('font-family'),
-      'ui-text-caption-font-color': #777,
+      'ui-text-caption-font-color': css-var('font-color-muted'),
       'ui-text-caption-font-size': 0.875em,
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
@@ -206,15 +218,17 @@ $brand-color-variants: (
 
 // Color
 $focus-size: 2px;
-$focus-box-shadow: 0 0 0 css-var('focus-size')
-   css-var('section-background-color') !default;
-$focus-outline: css-var('focus-size') solid css-var('font-color') !default;
 
 @include to-css-custom-property(
    (
-      'focus-box-shadow': $focus-box-shadow,
       'focus-size': $focus-size,
-      'focus-outline': $focus-outline,
+      'focus-offset': css-var('focus-size'),
+      'focus-outline-color': css-var('font-color'),
+      'focus-inner-color': css-var('section-background-color'),
+      'focus-box-shadow': 0 0 0 css-var('focus-offset')
+         css-var('focus-inner-color'),
+      'focus-outline': css-var('focus-size') solid
+         css-var('focus-outline-color'),
    )
 );
 

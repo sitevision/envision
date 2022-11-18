@@ -43,21 +43,50 @@
    }
 }
 
-@mixin button-color-variant($name: '') {
+@mixin button-base() {
+   appearance: none;
+   border: $border-width $border-style;
+   box-sizing: border-box;
+   cursor: pointer;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: css-var('button-font-family');
+   margin: 0;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   vertical-align: middle;
+   line-height: $button-line-height;
+
+   // Reset inner elements in apps
+   > span:not([class]):not([style]),
+   > div:not([class]):not([style]) {
+      line-height: 1;
+   }
+}
+
+@mixin button-color-variant(
+   $name: '',
+   $background-color: '',
+   $background-color-hover: '',
+   $font-color: ''
+) {
    @if ($name != '') {
       $name: '-#{$name}';
    }
-   $color: 'element#{$name}-font-color';
-   $background-color: 'element#{$name}-background-color';
-   $background-color-dark: 'element#{$name}-background-color-dark';
-   $background-color-light: 'element#{$name}-background-color-light';
+   @if ($background-color == '') {
+      $font-color: 'element#{$name}-font-color';
+      $background-color: 'element#{$name}-background-color';
+      $background-color-hover: 'element#{$name}-background-color-dark';
+   }
    background-color: css-var($background-color);
    border-color: css-var($background-color);
-   color: css-var($color);
+   color: css-var($font-color);
 
    // Dark border for dropdown split button
    .env-dropdown.env-button-group &:not(:first-child):not(.env-button--ghost) {
-      border-left-color: css-var($background-color-dark);
+      border-left-color: css-var($background-color-hover);
    }
 
    &.env-button--ghost {
@@ -68,15 +97,15 @@
 
    &:hover,
    &:focus {
-      background-color: css-var($background-color-dark);
-      border-color: css-var($background-color-dark);
-      color: css-var($color);
+      background-color: css-var($background-color-hover);
+      border-color: css-var($background-color-hover);
+      color: css-var($font-color);
    }
 
    &:active {
-      background-color: css-var($background-color-light);
-      border-color: css-var($background-color-dark);
-      color: css-var($color);
+      background-color: css-var($background-color);
+      border-color: css-var($background-color-hover);
+      color: css-var($font-color);
    }
 }
 

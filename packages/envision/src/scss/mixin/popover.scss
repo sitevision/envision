@@ -1,0 +1,80 @@
+@mixin arrowBase($arrow-size) {
+   border-color: transparent;
+   border-style: $border-style;
+   border-width: $arrow-size;
+   display: block;
+   height: 0;
+   position: absolute;
+   width: 0;
+
+   &::after {
+      border-color: transparent;
+      border-style: $border-style;
+      border-width: $arrow-size;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      width: 0;
+   }
+
+   // x-placement is used in Popper 1.x (Envision)
+   // data-popper-placement is Popper 2.x (React apps)
+   // Classname modifiers are kept for legacy reasons but not really needed.
+   [x-placement='top'] &,
+   [data-popper-placement='top'] &,
+   &--top,
+   [x-placement='bottom'] &,
+   [data-popper-placement='bottom'] &,
+   &--bottom {
+      left: 50%;
+      margin-left: -$arrow-size;
+
+      &::after {
+         margin-left: -$arrow-size;
+      }
+   }
+
+   [x-placement='right'] &,
+   [data-popper-placement='right'] &,
+   &--right,
+   [x-placement='left'] &,
+   [data-popper-placement='left'] &,
+   &--left {
+      margin-top: -$arrow-size;
+      top: 50%;
+
+      &::after {
+         margin-top: -$arrow-size;
+      }
+   }
+}
+
+@mixin arrow($location, $arrow-size, $branded-border-width) {
+   $oppositeLocation: map-get(
+      (
+         'top': 'bottom',
+         'right': 'left',
+         'bottom': 'top',
+         'left': 'right',
+      ),
+      $location
+   );
+
+   &[x-placement='#{$location}'],
+   &[data-popper-placement='#{$location}'],
+   &__arrow--#{$location} {
+      border-#{$oppositeLocation}: $branded-border-width solid
+         css-var('ui-color-brand');
+
+      .env-popover__arrow {
+         #{$oppositeLocation}: -$arrow-size * 2 - $branded-border-width;
+
+         &::after {
+            border-#{$location}-color: css-var('ui-color-brand');
+            border-#{$oppositeLocation}-width: 0;
+            #{$oppositeLocation}: 0;
+         }
+      }
+   }
+}

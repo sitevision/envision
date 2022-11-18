@@ -58,8 +58,8 @@
       min-height: 3.25em;
       margin-bottom: css-var('spacing-x-small');
       line-height: 1;
-      background-color: css-var('element-background-color-light');
-      color: css-var('element-font-color');
+      background-color: css-var('ui-color-brand-10');
+      color: css-var('ui-color-brand-10-contrast');
       padding: 0 css-var('spacing-x-small');
 
       &,
@@ -73,16 +73,8 @@
          top: 0;
          bottom: 0;
          left: 0;
-         background-color: css-var('element-background-color-dark');
+         background-color: css-var('ui-color-brand-20');
          border-radius: css-var('border-radius-medium');
-      }
-
-      &--highlighted {
-         font-weight: bold;
-
-         .env-progress-poll__bar {
-            background-color: css-var('progress-bar-poll-highlight-color');
-         }
       }
 
       &__label,
@@ -91,6 +83,17 @@
          z-index: 2;
          box-sizing: border-box;
          padding: 0 css-var('spacing-x-small');
+      }
+
+      &--highlighted {
+         font-weight: bold;
+
+         .env-progress-poll__bar {
+            background-color: css-var('ui-color-brand-40');
+         }
+         .env-progress-poll__label {
+            color: css-var('ui-color-brand-40-contrast');
+         }
       }
 
       &__label {

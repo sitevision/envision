@@ -1,44 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThemeContext = React.createContext({ font: '', darkMode: false });
+const ThemeContext = React.createContext({ theme: '', darkMode: false });
 const useTheme = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
-   const [darkMode, setDarkMode] = React.useState(false);
-   const [font, setFont] = React.useState(null);
+   const [theme, setTheme] = React.useState('');
 
    React.useEffect(() => {
-      setDarkMode(window.localStorage.getItem('env-darkmode') === 'true');
-      setFont(window.localStorage.getItem('env-font') || '');
+      setTheme(window.localStorage.getItem('env-theme') || '');
    }, []);
 
    React.useEffect(() => {
-      if (darkMode) {
-         document.body.classList.add('env-theme-darkmode');
+      let oldTheme = window.localStorage.getItem('env-theme');
+      document.body.classList.remove(oldTheme);
+      if (theme) {
+         document.body.classList.add(theme);
+         window.localStorage.setItem('env-theme', theme.toString());
       } else {
-         document.body.classList.remove('env-theme-darkmode');
+         window.localStorage.removeItem('env-theme');
       }
-      window.localStorage.setItem('env-darkmode', darkMode.toString());
-   }, [darkMode]);
-
-   React.useEffect(() => {
-      let oldFont = window.localStorage.getItem('env-font');
-      document.body.classList.remove('font-' + oldFont);
-      if (font) {
-         document.body.classList.add('font-' + font);
-         window.localStorage.setItem('env-font', font.toString());
-      } else {
-         window.localStorage.removeItem('env-font');
-      }
-   }, [font]);
-
-   const toggleDarkMode = () => setDarkMode(!darkMode);
+   }, [theme]);
 
    return (
-      <ThemeContext.Provider
-         value={{ toggleDarkMode, darkMode, setFont, font }}
-      >
+      <ThemeContext.Provider value={{ setTheme, theme }}>
          {children}
       </ThemeContext.Provider>
    );

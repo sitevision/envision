@@ -24,7 +24,7 @@ const DEFAULTS = {
    template: `<div class="env-popover" role="tooltip">
                   <div class="env-popover__arrow"></div>
                   <div class="env-popover__header">
-                     <h4 class="env-text env-popover__header__title"></h4>
+                     <h4 class="env-ui-text-overline env-popover__header__title"></h4>
                   </div>
                   <div class="env-popover__content"></div>
                </div>`,

@@ -14,10 +14,12 @@ title: Embedded
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-      <p class="env-embedded__text env-text env-text--muted">
-         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-         drumstick chuck ball tip biltong shoulder.
+      <h4 class="env-text">Lorem ipsum</h4>
+      <p class="env-text">
+         <span class="env-text--muted">
+            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+            drumstick chuck ball tip biltong shoulder
+         </span>
       </p>
       <button type="button" class="env-button env-button--primary">
          Lorem ipsum
@@ -40,11 +42,13 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-      <p class="env-embedded__text env-text env-text--muted">
-         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-         loin.
+      <h4 class="env-text">Lorem ipsum</h4>
+      <p class="env-text">
+         <span class="env-text--muted">
+            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+            loin.
+         </span>
       </p>
    </div>
 </div>
@@ -60,11 +64,13 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-      <p class="env-embedded__text env-text env-text--muted">
-         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-         loin.
+      <h4 class="env-text">Lorem ipsum</h4>
+      <p class="env-text">
+         <span class="env-text--muted">
+            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+            loin.
+         </span>
       </p>
    </div>
 </div>
@@ -82,11 +88,14 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
       />
    </div>
    <div class="env-embedded__block">
-      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-      <p class="env-embedded__text env-text env-text--muted">
-         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-         loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock salami.
+      <h4 class="env-text">Lorem ipsum</h4>
+      <p class="env-text">
+         <span class="env-text--muted">
+            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+            loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock
+            salami.
+         </span>
       </p>
    </div>
 </div>
@@ -106,11 +115,13 @@ Uses `env-embedded__block--overlay` to position text on top of image. You can al
       />
    </div>
    <div class="env-embedded__block--overlay">
-      <h4 class="env-embedded__title env-text">Lorem ipsum</h4>
-      <p class="env-embedded__text env-text env-text--muted">
-         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-         loin.
+      <h4 class="env-text">Lorem ipsum</h4>
+      <p class="env-text">
+         <span class="env-text--muted">
+            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+            loin.
+         </span>
       </p>
    </div>
 </div>

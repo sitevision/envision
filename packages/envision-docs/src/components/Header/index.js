@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import Link from '../Link';
+import ThemePicker from '../ThemePicker';
 
 const Header = ({ title, menuItems }) => {
    return (
@@ -30,17 +31,21 @@ const Header = ({ title, menuItems }) => {
                      alt="Envision"
                   />
                </a>
-               <nav className="header-nav">
-                  <ul className="env-nav env-nav--menubar env-nav--border">
-                     {menuItems.map(({ label, to }) => (
-                        <li className="env-nav__item" key={label}>
-                           <Link to={to} activeClassName="active">
-                              {label}
-                           </Link>
-                        </li>
-                     ))}
-                  </ul>
-               </nav>
+
+               <div className="header-nav">
+                  <ThemePicker></ThemePicker>
+                  <nav>
+                     <ul className="env-nav env-nav--menubar env-nav--border">
+                        {menuItems.map(({ label, to }) => (
+                           <li className="env-nav__item" key={label}>
+                              <Link to={to} activeClassName="active">
+                                 {label}
+                              </Link>
+                           </li>
+                        ))}
+                     </ul>
+                  </nav>
+               </div>
             </header>
          </div>
       </>

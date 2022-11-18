@@ -6,11 +6,13 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 
 ## Types
 
-<span class="env-badge env-badge--info">Ghost button available since 8.2</span>
+<span class="env-badge env-badge--info">Brand button coming soon</span>
 
 ```html
 <p>
    <button type="button" class="env-button">Default</button>
+
+   <button type="button" class="env-button env-button--brand">Brand</button>
 
    <button type="button" class="env-button env-button--primary">Primary</button>
 
@@ -21,11 +23,11 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 <p>
    <button type="button" class="env-button env-button--success">Success</button>
 
+   <button type="button" class="env-button env-button--warning">Warning</button>
+
    <button type="button" class="env-button env-button--danger">Danger</button>
 
    <button type="button" class="env-button env-button--info">Info</button>
-
-   <button type="button" class="env-button env-button--warning">Warning</button>
 </p>
 <p>
    <button

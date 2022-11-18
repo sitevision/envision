@@ -28,4 +28,16 @@
       color: css-var('element-info-font-color');
       background-color: css-var('element-info-background-color');
    }
+
+   &--brand {
+      color: css-var('ui-color-brand-contrast');
+      background-color: css-var('ui-color-brand');
+   }
+
+   @each $key, $val in $BRAND_COLOR_VARIANTS {
+      &--brand-#{$key} {
+         color: css-var('ui-color-brand-#{$key}-contrast');
+         background-color: css-var('ui-color-brand-#{$key}');
+      }
+   }
 }

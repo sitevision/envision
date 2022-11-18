@@ -39,6 +39,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 
 -  `--env-font-family`
 -  `--env-font-color`
+-  `--env-font-color-muted` <span class="env-badge env-badge--info">Coming soon</span>
 -  `--env-font-size-base`
 -  `--env-font-size-x-small`
 -  `--env-font-size-small`
@@ -88,6 +89,30 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
    <br><br>
 -  `--env-border-color`
 -  `--env-border-color-light`
+
+### Branding
+
+#### UI Colors <span class="env-badge env-badge--info">Coming soon</span>
+
+-  `--env-ui-color-brand`
+-  `--env-ui-color-brand-dark`
+-  `--env-ui-color-brand-contrast`
+-  `--env-ui-color-brand-{n}`
+-  `--env-ui-color-brand-{n}-contrast`
+
+Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
+, `85`, `90`, `95`, `100`.
+
+#### UI Text <span class="env-badge env-badge--info">Coming soon</span>
+
+-  `--env-ui-text-{name}-font-family`
+-  `--env-ui-text-{name}-font-color`
+-  `--env-ui-text-{name}-font-size`
+-  `--env-ui-text-{name}-font-weight`
+-  `--env-ui-text-{name}-text-transform`
+-  `--env-ui-text-{name}-letter-spacing`
+
+Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
 ### Colors
 
@@ -158,6 +183,13 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
    <br><br>
 -  `--env-element-common-background-color`
 -  `--env-element-common-background-color-dark`
+
+#### Focus Outline <span class="env-badge env-badge--info">Coming soon</span>
+
+-  `--env-focus-size`
+-  `--env-focus-offset`
+-  `--env-focus-outline-color`
+-  `--env-focus-inner-color`
 
 ### Components
 

@@ -1,43 +1,4 @@
-.env-layout-section {
+.env-ui-section {
    background-color: var(--env-section-background-color);
    color: var(--env-font-color);
-}
-
-.env-layout-brand {
-   background-color: var(--env-ui-color-brand);
-   color: var(--env-ui-color-brand-contrast);
-
-   &--setvars {
-      --efc: var(--env-font-color);
-
-      > * {
-         --env-font-color: var(--env-ui-color-brand-contrast);
-      }
-
-      .env-popover,
-      .env-dropdown__menu {
-         --env-font-color: var(--efc);
-      }
-   }
-}
-
-$variants: '05', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100';
-@each $variant in $variants {
-   .env-layout-brand-#{$variant} {
-      background-color: var(--env-ui-color-brand-#{$variant});
-      color: var(--env-ui-color-brand-#{$variant}-contrast);
-
-      &--setvars {
-         --efc: var(--env-font-color);
-
-         > * {
-            --env-font-color: var(--env-ui-color-brand-#{$variant}-contrast);
-         }
-
-         .env-popover,
-         .env-dropdown__menu {
-            --env-font-color: var(--efc);
-         }
-      }
-   }
 }
