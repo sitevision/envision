@@ -182,7 +182,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color-light`
    <br><br>
 -  `--env-element-common-background-color`
--  `--env-element-common-background-color-dark`
 
 #### Focus Outline <span class="env-badge env-badge--info">Coming soon</span>
 
@@ -310,4 +309,5 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-page-background-color` <span class="env-badge env-badge--danger">9.2</span>
 -  `--env-default-button-color` <span class="env-badge env-badge--danger">8.2</span>
--  `--env-image-control-inactive-color`<span class="env-badge env-badge--danger">9.2</span>
+-  `--env-image-control-inactive-color` <span class="env-badge env-badge--danger">9.2</span>
+-  `--env-element-common-background-color-dark` <span class="env-badge env-badge--danger">2023.01</span>

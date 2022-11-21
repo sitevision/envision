@@ -564,9 +564,10 @@
       width: 2.375em;
       height: 1.25em;
       border-radius: 0.75em;
-      border: 0.125em solid css-var('element-common-background-color-dark');
-      background-color: css-var('element-common-background-color-dark');
+      border: 0.125em solid css-var('element-primary-background-color');
+      background-color: css-var('element-primary-background-color');
       transition: 0.3s;
+      filter: grayscale(100%);
 
       .env-switch__text + & {
          margin-left: css-var('spacing-small');
@@ -600,22 +601,21 @@
          margin-top: -5px;
          opacity: 0.5;
          border-radius: 50%;
-         border: 2px solid var(--env-element-primary-font-color);
+         border: 2px solid css-var('element-primary-font-color');
 
          input:checked ~ & {
             height: 10px;
             width: 2px;
             left: 0.55em;
             right: auto;
-            background-color: var(--env-element-primary-font-color);
+            background-color: css-var('element-primary-font-color');
             border-radius: 2px;
             border: none;
          }
       }
 
       input:checked ~ & {
-         background-color: css-var('element-primary-background-color');
-         border-color: css-var('element-primary-background-color');
+         filter: grayscale(0);
       }
 
       input ~ & {

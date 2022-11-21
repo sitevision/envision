@@ -136,9 +136,9 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-color-brand-dark: hsla(143.5, 32.2%, 40%, 1);
    --env-cardholder-column-spacing: var(--env-spacing-medium);
    --env-color-lightest: #e6e6e6;
-   --env-element-common-background-color-dark: #909090;
    --env-block-link-font-color: var(--env-link-font-color);
    --env-block-secondary-background-color: #53a272;
+   --env-element-common-background-color-light: hsl(0, 0%, 21%);
    --env-ui-color-brand-25-contrast: #9db9a8;
    --env-collapse-background-color: var(--env-element-background-color-light);
    --env-element-primary-background-color: #53a272;
@@ -184,6 +184,8 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-overline-font-family: var(--env-font-family);
    --env-link-font-color: #9ab8fe;
    --env-ui-color-brand-65: #9db9a8;
+   --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
+      var(--env-focus-inner-color);
    --env-ui-color-brand-60: #8eaf9b;
    --env-element-danger-background-color-dark: hsl(344, 82%, 70%);
    --env-pagination-border-width: 1px;
@@ -306,7 +308,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-sectionheading-font-color: #53a272;
    --env-color-dark: #333333;
    --env-ui-text-heading-letter-spacing: normal;
-   --env-element-common-background-color: #f2f2f2;
+   --env-element-common-background-color: #2e2e2e;
    --env-color-danger: var(--env-element-danger-background-color);
    --env-form-input-border-radius: var(--env-border-radius-medium);
    --env-ui-text-subheading-letter-spacing: normal;
@@ -318,6 +320,8 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-overline-font-size: 0.75em;
    --env-border-radius: 0.25em;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
+   --env-focus-outline: var(--env-focus-size) solid
+      var(--env-focus-outline-color);
    --env-ui-color-brand-40-contrast: #e7eeea;
    --env-spacing-xxx-large: 2em;
    --env-element-info-font-color: #2d3237;
@@ -380,7 +384,6 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-color-brand-dark: hsla(334.9, 100%, 77.5%, 1);
    --env-cardholder-column-spacing: var(--env-spacing-medium);
    --env-color-lightest: #e6e6e6;
-   --env-element-common-background-color-dark: #909090;
    --env-block-link-font-color: var(--env-link-font-color);
    --env-block-secondary-background-color: #472975;
    --env-ui-color-brand-25-contrast: #8f003c;
@@ -623,7 +626,6 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-color-brand-dark: hsla(216.6, 61.2%, 5.1%, 1);
    --env-cardholder-column-spacing: var(--env-spacing-medium);
    --env-color-lightest: #e6e6e6;
-   --env-element-common-background-color-dark: #909090;
    --env-block-link-font-color: var(--env-link-font-color);
    --env-block-secondary-background-color: #ff7b02;
    --env-ui-color-brand-25-contrast: #214988;

@@ -267,8 +267,7 @@ $element-default-background-color: #f0f1f2;
 $element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
 
-$element-common-background-color: #f2f2f2;
-$element-common-background-color-dark: #909090;
+$element-common-background-color: darken(#f0f0f0, 5%); // => #f2f2f2;
 
 @include to-css-custom-property(
    (
@@ -325,8 +324,6 @@ $element-common-background-color-dark: #909090;
       'element-info-background-color-dark': darken($color-info, 8%),
       'element-info-background-color-light': lighten($color-info, 3%),
       'element-common-background-color': $element-common-background-color,
-      'element-common-background-color-dark':
-         $element-common-background-color-dark,
    )
 );
 
@@ -392,7 +389,7 @@ $radius-large: $radius-base * 1.5 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: #ccc !default;
-$border-color-light: #e6e6e6 !default;
+$border-color-light: lighten($border-color, 10%) !default;
 $tab-bottom-width: 3px !default;
 
 @include to-css-custom-property(
@@ -511,6 +508,7 @@ $checkbox-disabled-color: $color-lighter !default;
 
 $form-input-height: 44;
 $form-input-line-height: 1.375; // 22px @ 16px font size
+$form-input-border-color: #949494 !default;
 $form-padding-x: 0.75em;
 $form-padding-y: 0.625em;
 
@@ -519,7 +517,7 @@ $form-padding-y: 0.625em;
       'form-font-family': css-var('font-family'),
       'form-input-border-radius': css-var('border-radius-medium'),
       'form-input-font-color': css-var('font-color'),
-      'form-input-border-color': css-var('border-color'),
+      'form-input-border-color': $form-input-border-color,
       'form-input-background-color': css-var('section-background-color'),
    )
 );

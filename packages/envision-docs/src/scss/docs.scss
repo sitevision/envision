@@ -75,7 +75,7 @@ h6 {
 
 //----- SITEVISION SITE FONT ISSUES DETECTION END -----
 
-//----- SITEVISION THEME CUSTOM ADJUSTMENTS START -----
+//----- SITEVISION THEME DEMO SITE ADJUSTMENTS START -----
 
 .example-brand-color-palette {
    body:not([class^='sv-theme-']):not([class*=' sv-theme-']) & {
@@ -96,12 +96,13 @@ h6 {
 }
 
 .sv-theme-dark {
-   // No settings in Sitevision:
-   --env-element-common-background-color: #444;
-   --env-element-common-background-color-dark: #333;
-   --env-box-shadow: 0 0.5em 1em rgba(255, 255, 255, 0.15);
-   --env-box-shadow-small: 0 0.125em 0.25em rgba(255, 255, 255, 0.075);
-   --env-box-shadow-large: 0 1em 3em rgba(255, 255, 255, 0.175);
+   .code-example {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+   }
+
+   pre[class*='language-'] {
+      background-color: var(--env-ui-color-brand-85);
+   }
 }
 
 body[class^='sv-theme-'],
@@ -111,17 +112,13 @@ body[class*=' sv-theme-'] {
       opacity: 0.85;
    }
 
-   .code-example {
-      border-color: var(--env-section-background-color);
-   }
-
    :not(pre) > code[class*='language-'] {
       background-color: var(--env-section-background-color);
       color: var(--env-font-color);
    }
 }
 
-//----- SITEVISION THEME CUSTOM ADJUSTMENTS END -----
+//----- SITEVISION THEME DEMO SITE ADJUSTMENTS END -----
 
 //----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS START -----
 
@@ -213,6 +210,10 @@ blockquote.doc-blockquote {
 :not(pre) > code[class*='language-'] {
    font-size: 0.85em;
    text-shadow: none;
+}
+
+pre[class*='language-'] {
+   background-color: var(--env-ui-color-brand-05);
 }
 
 .offset-anchor {
@@ -326,7 +327,8 @@ img {
 .code-example {
    padding: 20px;
    box-sizing: border-box;
-   border: 4px solid rgba(0, 0, 0, 0.02);
+   background-color: var(--env-section-background-color);
+   border: 4px solid rgba(0, 0, 0, 0.1);
    border-radius: 3px 3px 0 0;
 }
 
@@ -343,6 +345,11 @@ img {
 
    a {
       color: var(--env-font-color);
+      text-decoration: none;
+
+      &:hover {
+         text-decoration: underline;
+      }
 
       @include focus-visible;
    }
