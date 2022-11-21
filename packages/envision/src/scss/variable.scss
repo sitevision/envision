@@ -267,7 +267,7 @@ $element-default-background-color: #f0f1f2;
 $element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
 
-$element-common-background-color: darken(#f0f0f0, 5%); // => #f2f2f2;
+$element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
 
 @include to-css-custom-property(
    (
