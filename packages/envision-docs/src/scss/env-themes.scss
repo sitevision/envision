@@ -138,7 +138,6 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-color-lightest: #e6e6e6;
    --env-block-link-font-color: var(--env-link-font-color);
    --env-block-secondary-background-color: #53a272;
-   --env-element-common-background-color-light: hsl(0, 0%, 21%);
    --env-ui-color-brand-25-contrast: #9db9a8;
    --env-collapse-background-color: var(--env-element-background-color-light);
    --env-element-primary-background-color: #53a272;
@@ -153,7 +152,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-color-brand-85: #d8e3dd;
    --env-ui-color-brand-80: #c9d9cf;
    --env-collapse-icon-color: var(--env-font-color);
-   --env-border-color-light: hsl(200, 1%, 51%);
+   --env-border-color-light: hsl(200, 1%, 31%);
    --env-ui-color-brand-50-contrast: #000000;
    --env-border-success-color: #358156;
    --env-ui-text-sectionheading-font-family: var(--env-font-family);
@@ -202,7 +201,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-color-normal: #666666;
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: 'encode sans';
-   --env-form-input-border-color: var(--env-border-color);
+   --env-form-input-border-color: #737373;
    --env-box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175);
    --env-ui-text-subheading-font-weight: 500;
    --env-ui-color-brand-45-contrast: #000000;
@@ -379,7 +378,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-element-secondary-font-color: #472975;
    --env-font-size-x-small: calc(var(--env-font-size-base) * 0.75);
    --env-ui-color-brand-55-contrast: #000000;
-   --env-link-text-decoration: none;
+   --env-link-text-decoration: underline;
    --env-ui-color-brand-90: #570024;
    --env-ui-color-brand-dark: hsla(334.9, 100%, 77.5%, 1);
    --env-cardholder-column-spacing: var(--env-spacing-medium);
@@ -413,7 +412,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
       --env-link-hover-text-decoration
    );
    --env-element-success-background-color: #a4ffbb;
-   --env-element-background-color-light: #f8f9f9;
+   --env-element-background-color-light: hsl(0, 0%, 61%);
    --env-collapse-border-width: 1px;
    --env-progress-bar-poll-highlight-color: #4bc5f5;
    --env-ui-color-brand-100: #42001c;
@@ -430,6 +429,8 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-overline-font-family: var(--env-font-family);
    --env-link-font-color: #472975;
    --env-ui-color-brand-65: #c20051;
+   --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
+      var(--env-focus-inner-color);
    --env-ui-color-brand-60: #db005c;
    --env-element-danger-background-color-dark: hsl(324, 57%, 48%);
    --env-pagination-border-width: 1px;
@@ -446,7 +447,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-color-normal: #666666;
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: heinemann;
-   --env-form-input-border-color: var(--env-border-color);
+   --env-form-input-border-color: #949494;
    --env-box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175);
    --env-ui-text-subheading-font-weight: 500;
    --env-ui-color-brand-45-contrast: #4d0020;
@@ -464,7 +465,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-border-warning-color: #ffbf12;
    --env-element-warning-background-color-dark: hsl(23, 100%, 75%);
    --env-color-brand-dark: var(--env-element-primary-background-color-dark);
-   --env-element-background-color-dark: #dadddf;
+   --env-element-background-color-dark: hsl(0, 0%, 50%);
    --env-link-secondary-text-decoration: var(--env-link-text-decoration);
    --env-spacing-xx-small: 0.25em;
    --env-focus-size: 2px;
@@ -487,7 +488,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-pagination-font-family: var(--env-font-family);
    --env-element-info-background-color-light: hsl(195, 100%, 88%);
    --env-spacing-large: 1.25em;
-   --env-element-background-color: #f0f1f2;
+   --env-element-background-color: #949494;
    --env-ui-text-subheading-text-transform: none;
    --env-font-size-xxxx-large: calc(var(--env-font-size-base) * 2.5);
    --env-element-primary-background-color-light: hsl(264, 48%, 34%);
@@ -564,6 +565,8 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-overline-font-size: 0.75em;
    --env-border-radius: 0.25em;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
+   --env-focus-outline: var(--env-focus-size) solid
+      var(--env-focus-outline-color);
    --env-ui-color-brand-40-contrast: #570024;
    --env-spacing-xxx-large: 2em;
    --env-element-info-font-color: #13141c;
@@ -573,7 +576,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-border-color: #ccc;
    --env-color-brand-light: var(--env-element-primary-background-color-light);
    --env-ui-color-brand: #ffb5d4;
-   --env-element-font-color: #202330;
+   --env-element-font-color: #292929;
    --env-block-secondary-link-hover-font-color: #ffb5d4;
    --env-ui-color-brand-15-contrast: #c20051;
    --env-block-background-color: #fff;
@@ -586,7 +589,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    background-color: var(--env-background-color) !important;
    color: var(--env-font-color);
    font-family: var(--env-font-family);
-   --env-link-hover-font-color: #234e9c;
+   --env-link-hover-font-color: #3170e6;
    --env-ui-color-brand-20-contrast: #26549c;
    --env-modal-large-width: 900px;
    --env-block-secondary-font-color: #0d1d36;
@@ -655,7 +658,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
       --env-link-hover-text-decoration
    );
    --env-element-success-background-color: #7bff07;
-   --env-element-background-color-light: #f8f9f9;
+   --env-element-background-color-light: hsl(0, 0%, 46%);
    --env-collapse-border-width: 1px;
    --env-progress-bar-poll-highlight-color: #4bc5f5;
    --env-ui-color-brand-100: #0d1d35;
@@ -670,8 +673,10 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-caption-letter-spacing: normal;
    --env-form-font-family: var(--env-font-family);
    --env-ui-text-overline-font-family: var(--env-font-family);
-   --env-link-font-color: #234e9c;
+   --env-link-font-color: #3170e6;
    --env-ui-color-brand-65: #26549c;
+   --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
+      var(--env-focus-inner-color);
    --env-ui-color-brand-60: #2b5fb1;
    --env-element-danger-background-color-dark: hsl(8, 100%, 46%);
    --env-pagination-border-width: 1px;
@@ -688,7 +693,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-color-normal: #666666;
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: quicksand;
-   --env-form-input-border-color: var(--env-border-color);
+   --env-form-input-border-color: #949494;
    --env-box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175);
    --env-ui-text-subheading-font-weight: 500;
    --env-ui-color-brand-45-contrast: #112646;
@@ -706,7 +711,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-border-warning-color: #ffbf12;
    --env-element-warning-background-color-dark: hsl(49, 100%, 44%);
    --env-color-brand-dark: var(--env-element-primary-background-color-dark);
-   --env-element-background-color-dark: #dadddf;
+   --env-element-background-color-dark: hsl(0, 0%, 35%);
    --env-link-secondary-text-decoration: var(--env-link-text-decoration);
    --env-spacing-xx-small: 0.25em;
    --env-focus-size: 2px;
@@ -729,7 +734,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-pagination-font-family: var(--env-font-family);
    --env-element-info-background-color-light: hsl(217, 61%, 49%);
    --env-spacing-large: 1.25em;
-   --env-element-background-color: #f0f1f2;
+   --env-element-background-color: #6e6e6e;
    --env-ui-text-subheading-text-transform: none;
    --env-font-size-xxxx-large: calc(var(--env-font-size-base) * 2.5);
    --env-element-primary-background-color-light: hsl(29, 100%, 53%);
@@ -804,8 +809,10 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-ui-text-sectionheading-font-weight: 500;
    --env-font-color-light: #34394f;
    --env-ui-text-overline-font-size: 0.75em;
-   --env-border-radius: 10px;
+   --env-border-radius: 6px;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
+   --env-focus-outline: var(--env-focus-size) solid
+      var(--env-focus-outline-color);
    --env-ui-color-brand-40-contrast: #183563;
    --env-spacing-xxx-large: 2em;
    --env-element-info-font-color: #f9fbfc;
@@ -815,7 +822,7 @@ body:not([class^='sv-theme-']):not([class*=' sv-theme-'])
    --env-border-color: #ccc;
    --env-color-brand-light: var(--env-element-primary-background-color-light);
    --env-ui-color-brand: #0d1d36;
-   --env-element-font-color: #202330;
+   --env-element-font-color: #ffffff;
    --env-block-secondary-link-hover-font-color: #0d1d36;
    --env-ui-color-brand-15-contrast: #2b5fb1;
    --env-block-background-color: #fff;
