@@ -143,7 +143,7 @@
   "--env-element-info-background-color": "#29818d",
   "--env-element-info-background-color-dark": "#20646d",
   "--env-element-info-background-color-light": "#2c8c99",
-  "--env-element-common-background-color": "#e3e3e3",
+  "--env-element-common-background-color": "#f2f2f2",
   "--env-spacing-xxx-small": "0.125em",
   "--env-spacing-xx-small": "0.25em",
   "--env-spacing-x-small": "0.5em",
