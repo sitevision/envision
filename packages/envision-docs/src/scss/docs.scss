@@ -7,7 +7,10 @@
 @import 'demo';
 @import 'icons';
 @import 'home';
-@import 'env-themes';
+@import 'demo-themes/example-brand';
+@import 'demo-themes/sv-theme-dark';
+@import 'demo-themes/sv-theme-fancy';
+@import 'demo-themes/sv-theme-quicksand';
 
 html {
    font-family: Helvetica, Arial, sans-serif;
