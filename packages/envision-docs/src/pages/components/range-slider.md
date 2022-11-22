@@ -5,7 +5,10 @@ title: Range slider
 Capture a range
 
 ```html
-<div id="my-slider" class="env-range-slider example-range-slider">
+<div
+   id="my-slider"
+   class="env-range-slider example-range-slider env-m-bottom--xxx-large"
+>
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
