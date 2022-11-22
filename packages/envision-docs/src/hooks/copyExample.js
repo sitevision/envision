@@ -16,7 +16,7 @@ export const useCopyExample = (content) => {
 
       // Initialize Envision plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
-      envision.popover('.example-popover').then((popovers) => {
+      envision.popover('.example-popover-data').then((popovers) => {
          // Remove possible remaining popovers from Popover page
          if (!popovers) {
             document
@@ -26,6 +26,18 @@ export const useCopyExample = (content) => {
                });
          }
       });
+
+      const popoverContentEl = document.querySelector(
+         '#example-popover-content'
+      );
+      if (popoverContentEl) {
+         envision.popover('.example-popover-js', {
+            placement: 'bottom',
+            title: 'Lorem ipsum',
+            content: popoverContentEl.innerHTML,
+            escapeContent: false,
+         });
+      }
 
       envision.tabs(
          '.example-tabs, .example-tabs1, .example-tabs2, .example-tabs3'
