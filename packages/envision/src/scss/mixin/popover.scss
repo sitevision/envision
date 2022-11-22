@@ -62,8 +62,7 @@
    );
 
    &[x-placement='#{$location}'],
-   &[data-popper-placement='#{$location}'],
-   &__arrow--#{$location} {
+   &[data-popper-placement='#{$location}'] {
       border-#{$oppositeLocation}: $branded-border-width solid
          css-var('ui-color-brand');
 
