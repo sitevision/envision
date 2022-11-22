@@ -77,6 +77,7 @@ if (popoverContentEl) {
       title: 'Lorem ipsum',
       content: popoverContentEl.innerHTML,
       escapeContent: false,
+      clickOutside: true,
    });
 }
 ```

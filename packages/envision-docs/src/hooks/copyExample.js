@@ -36,6 +36,7 @@ export const useCopyExample = (content) => {
             title: 'Lorem ipsum',
             content: popoverContentEl.innerHTML,
             escapeContent: false,
+            clickOutside: true,
          });
       }
 
