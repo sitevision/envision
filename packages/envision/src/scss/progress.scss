@@ -28,8 +28,8 @@
          background-image: linear-gradient(
             -45deg,
             transparent 33%,
-            rgba($font-color-invert, 0.15) 33%,
-            rgba($font-color-invert, 0.15) 66%,
+            rgba(255, 255, 255, 0.15) 33%,
+            rgba(255, 255, 255, 0.15) 66%,
             transparent 66%
          );
          background-size: $spacing-xx-large $spacing-large; // Keep
@@ -38,8 +38,8 @@
             background-image: linear-gradient(
                45deg,
                transparent 33%,
-               rgba($font-color-invert, 0.15) 33%,
-               rgba($font-color-invert, 0.15) 66%,
+               rgba(255, 255, 255, 0.15) 33%,
+               rgba(255, 255, 255, 0.15) 66%,
                transparent 66%
             );
          }

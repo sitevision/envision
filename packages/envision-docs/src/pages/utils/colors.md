@@ -137,11 +137,6 @@ Element colors are used for elements and components. See usage examples below.
             Ghost
           </button>
           <br />
-          <br />
-          <button type="button" class="env-button env-button--invert">
-            Invert
-          </button>
-          <button type="button" class="env-button env-button--link">Link</button>
         </div>
         <div class="example-element">
           <div class="example-element-label">Badge:</div>

@@ -80,9 +80,6 @@ $font-size-base: 1em !default;
 );
 
 $font-color: #202330 !default;
-$font-color-light: lighten($font-color, 10%) !default;
-$font-color-lighter: lighten($font-color, 20%) !default;
-$font-color-invert: #ffffff !default;
 $font-color-muted: rgba($font-color, 0.65);
 
 @include to-css-custom-property(
@@ -252,7 +249,7 @@ $color-lightest: lighten($color-lighter, 10%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
-$block-default-background-color: #fff;
+$block-default-background-color: #ffffff;
 $block-default-border-color: #e7e7e7;
 
 $block-primary-background-color: #f7f7f7;
@@ -264,8 +261,8 @@ $block-secondary-link-font-color: #3a71aa;
 
 $element-default-background-color: #f0f1f2;
 
-$element-secondary-font-color: #fff;
 $element-secondary-background-color: #4f5153;
+$element-secondary-font-color: #ffffff;
 
 $element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
 
@@ -297,7 +294,7 @@ $element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
          darken($element-default-background-color, 8%),
       'element-background-color-light':
          lighten($element-default-background-color, 3%),
-      'element-primary-font-color': $font-color-invert,
+      'element-primary-font-color': #ffffff,
       'element-primary-background-color': $color-primary,
       'element-primary-background-color-dark': darken($color-primary, 8%),
       'element-primary-background-color-light': lighten($color-primary, 3%),
@@ -307,7 +304,7 @@ $element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
          darken($element-secondary-background-color, 8%),
       'element-secondary-background-color-light':
          lighten($element-secondary-background-color, 3%),
-      'element-success-font-color': $font-color-invert,
+      'element-success-font-color': #ffffff,
       'element-success-background-color': $color-success,
       'element-success-background-color-dark': darken($color-success, 8%),
       'element-success-background-color-light': lighten($color-success, 3%),
@@ -315,11 +312,11 @@ $element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
       'element-warning-background-color': $color-warning,
       'element-warning-background-color-dark': darken($color-warning, 8%),
       'element-warning-background-color-light': lighten($color-warning, 3%),
-      'element-danger-font-color': $font-color-invert,
+      'element-danger-font-color': #ffffff,
       'element-danger-background-color': $color-danger,
       'element-danger-background-color-dark': darken($color-danger, 8%),
       'element-danger-background-color-light': lighten($color-danger, 3%),
-      'element-info-font-color': $font-color-invert,
+      'element-info-font-color': #ffffff,
       'element-info-background-color': $color-info,
       'element-info-background-color-dark': darken($color-info, 8%),
       'element-info-background-color-light': lighten($color-info, 3%),
@@ -469,7 +466,7 @@ $badge-font-family: $font-family !default;
 
 // ----- IMAGE CONTROL -----
 
-$image-control-color: #fff !default;
+$image-control-color: #ffffff !default;
 
 @include to-css-custom-property(
    (
@@ -617,6 +614,10 @@ $profile-image-radius: 50% !default;
 
 // All variables below this line are deprecated. To be removed later.
 // ------------------------------------------------------------------
+
+$font-color-light: lighten($font-color, 10%) !default;
+$font-color-lighter: lighten($font-color, 20%) !default;
+$font-color-invert: #ffffff !default;
 
 @include to-css-custom-property(
    (
