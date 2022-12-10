@@ -14,13 +14,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.13.x]
+        node-version: [18.12.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -42,7 +42,7 @@ jobs:
           name: dist
           path: packages/envision/dist
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs
@@ -54,8 +54,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
         with:
           name: docs
           path: docs
@@ -64,8 +64,8 @@ jobs:
         run: ls -R
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          folder: docs
