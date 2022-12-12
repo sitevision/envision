@@ -14,7 +14,13 @@
    line-height: $line-height;
 }
 
-@mixin block-text-size($element, $font-size, $margin-bottom, $font-weight) {
+@mixin block-text-size(
+   $element,
+   $font-size,
+   $margin-bottom,
+   $font-weight,
+   $line-height: $line-height-medium
+) {
    #{$element}.env-text,
    .env-text #{$element},
    .env-text-#{$element},
@@ -24,7 +30,7 @@
          css-var($font-size),
          normal,
          $font-weight,
-         $line-height-medium
+         $line-height
       );
       margin: 0 0 css-var($margin-bottom);
    }
