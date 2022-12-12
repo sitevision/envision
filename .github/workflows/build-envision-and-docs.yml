@@ -10,9 +10,6 @@ on:
 
 jobs:
   build:
-    permissions:
-      contents: write
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -55,6 +52,9 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
