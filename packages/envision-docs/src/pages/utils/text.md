@@ -60,13 +60,15 @@ title: Text
 ```
 
 ```html
-<p class="env-text--uppercase">will be all uppercase</p>
+<p class="env-text env-text--uppercase">will be all uppercase</p>
 
-<p class="env-text--lowercase">THIS WILL BE LOWERCASE</p>
+<p class="env-text env-text--lowercase">THIS WILL BE LOWERCASE</p>
 
-<p class="env-text--capitalize">every word will start with a capital letter.</p>
+<p class="env-text env-text--capitalize">
+   every word will start with a capital letter.
+</p>
 
-<p class="env-text--strike">This text will be hard to read</p>
+<p class="env-text env-text--strike">This text will be hard to read</p>
 ```
 
 ```html

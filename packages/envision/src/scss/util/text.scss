@@ -120,7 +120,8 @@ a.env-text,
    'p',
    'font-size-medium',
    'spacing-xx-small',
-   $font-weight-regular
+   $font-weight-regular,
+   $line-height-wcag-min
 );
 
 // .env-text--small is not following BEM standards and have
