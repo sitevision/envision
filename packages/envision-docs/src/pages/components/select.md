@@ -480,4 +480,13 @@ envision.select('#tag-select').then(function (selects) {
    -  Re-enables the control.
 
 -  `destroy()`
+
    -  Destroys the control and unbinds event listeners so that it can be garbage collected.
+
+-  `focus()` <span class="env-badge env-badge--info">since Sitevision 2023.01.1</span>
+
+   -  Focuses the control.
+
+-  `blur()` <span class="env-badge env-badge--info">since Sitevision 2023.01.1</span>
+
+   -  Blurs the control.
