@@ -151,6 +151,8 @@ const SelectPlugin = function (el, settings, TomSelect) {
       select.input.readOnly = false;
       select.control_input.readOnly = false;
    };
+   this.focus = select.focus.bind(select);
+   this.blur = select.blur.bind(select);
    this.disable = select.disable.bind(select);
    this.enable = select.enable.bind(select);
    this.destroy = function () {
