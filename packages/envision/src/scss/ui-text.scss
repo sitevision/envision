@@ -9,7 +9,7 @@
          letter-spacing: css-var('ui-text-#{$name}-letter-spacing');
          line-height: $line-height-medium;
          color: css-var('ui-text-#{$name}-font-color');
-         margin: 0;
+         margin: 0 !important;
       }
    }
 }
