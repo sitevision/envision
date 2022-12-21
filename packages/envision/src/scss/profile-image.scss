@@ -5,9 +5,9 @@
 
 @mixin container-size($s) {
    width: 100%;
-   max-width: $s;
    height: 0;
-   padding: 100% 0 0 0;
+   max-width: $s;
+   padding: min(100%, $s) 0 0 0;
 }
 
 img.env-profile-image {
@@ -55,12 +55,16 @@ div.env-profile-image {
       display: block;
       object-fit: cover;
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      max-width: 100%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       border-radius: css-var('profile-image-border-radius');
+   }
+
+   &--w-100 {
+      width: 100%;
+      height: 0;
+      padding: 100% 0 0 0;
    }
 
    &--xx-large {
