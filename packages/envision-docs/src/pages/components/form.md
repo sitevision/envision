@@ -67,6 +67,7 @@ title: Form
 </div>
 <div class="env-form-element__control">
    <div
+      role="textbox"
       class="env-form-input"
       aria-labelledby="contenteditable-header"
       contenteditable
