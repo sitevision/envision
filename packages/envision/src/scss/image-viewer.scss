@@ -140,6 +140,10 @@
       max-width: 100%;
       @include focus-visible;
       border-radius: css-var('border-radius-medium');
+
+      .env-image-viewer__modal-container & {
+         border-radius: 0;
+      }
    }
 
    &--hidden {
