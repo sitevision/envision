@@ -39,6 +39,7 @@
 
       > input {
          background: none;
+         color: css-var('form-input-font-color');
          border: 0;
          box-shadow: none;
          display: inline-block;
@@ -53,6 +54,11 @@
          padding: 0;
          text-indent: 0;
          user-select: auto;
+
+         @include placeholder {
+            color: css-var('form-input-font-color');
+            filter: opacity(0.65);
+         }
 
          &:focus {
             outline: 1px solid transparent;
