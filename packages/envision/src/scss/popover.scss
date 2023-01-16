@@ -48,4 +48,41 @@
    @each $location in $arrowLocations {
       @include arrow($location, $arrow-size, $branded-border-width);
    }
+
+   &--black {
+      $background-color: #000000;
+      $color: #eeeeee;
+      $color-muted: #a0a0a0;
+
+      @at-root {
+         @include to-css-custom-property(
+            (
+               'font-color': $color,
+               'font-color-muted': $color-muted,
+               'link-font-color': $color,
+               'link-hover-font-color': $color,
+               'link-text-decoration': underline,
+               'link-hover-text-decoration': underline,
+            ),
+            '.env-popover--black'
+         );
+      }
+
+      color: $color;
+      background-color: $background-color;
+
+      [class^='env-ui-text-'],
+      [class*=' env-ui-text-'] {
+         color: $color;
+      }
+
+      @each $location in $arrowLocations {
+         @include arrow(
+            $location,
+            $arrow-size,
+            $branded-border-width,
+            $background-color
+         );
+      }
+   }
 }

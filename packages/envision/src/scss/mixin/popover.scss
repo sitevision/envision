@@ -50,7 +50,12 @@
    }
 }
 
-@mixin arrow($location, $arrow-size, $branded-border-width) {
+@mixin arrow(
+   $location,
+   $arrow-size,
+   $branded-border-width,
+   $color: css-var('ui-color-brand')
+) {
    $oppositeLocation: map-get(
       (
          'top': 'bottom',
@@ -63,14 +68,13 @@
 
    &[x-placement='#{$location}'],
    &[data-popper-placement='#{$location}'] {
-      border-#{$oppositeLocation}: $branded-border-width solid
-         css-var('ui-color-brand');
+      border-#{$oppositeLocation}: $branded-border-width solid $color;
 
       .env-popover__arrow {
          #{$oppositeLocation}: -$arrow-size * 2 - $branded-border-width;
 
          &::after {
-            border-#{$location}-color: css-var('ui-color-brand');
+            border-#{$location}-color: $color;
             border-#{$oppositeLocation}-width: 0;
             #{$oppositeLocation}: 0;
          }

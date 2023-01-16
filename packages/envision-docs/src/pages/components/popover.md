@@ -122,6 +122,32 @@ if (popoverContentEl) {
 </div>
 ```
 
+## Black Popover <span class="env-badge env-badge--info">2023.02</span>
+
+Add modifier `env-popover--black` for a theme independent black popover. Common text components will adjust color
+automatically.
+
+```html
+<div class="env-popover env-popover--black" data-popper-placement="bottom">
+   <div class="env-popover__arrow"></div>
+   <div class="env-popover__header">
+      <h4 class="env-ui-text-overline">Popover</h4>
+   </div>
+   <div class="env-popover__content">
+      <p class="env-text">
+         Lorem ipsum dolor sit amet,
+         <a href="javascript:void(0)">consectetur adipiscing elit</a>. In
+         fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed
+         bibendum cursus eros, vitae mattis leo laoreet eget. Cras luctus semper
+         facilisis.
+      </p>
+      <p class="env-text">
+         <span class="env-text--muted">Aliquam diam risus tincidunt.</span>
+      </p>
+   </div>
+</div>
+```
+
 ## Options <span id="options" class="offset-anchor"></span>
 
 -  `placement` _string_
