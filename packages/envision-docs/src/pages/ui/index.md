@@ -2,7 +2,7 @@
 title: Brand colors and UI Text
 ---
 
-<span class="env-badge env-badge--info">Coming soon</span>
+<span class="env-badge env-badge--info">2023.01</span>
 
 ## Brand colors
 
