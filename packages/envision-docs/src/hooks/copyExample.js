@@ -150,6 +150,18 @@ export const useCopyExample = (content) => {
          }
       }
 
+      envision.tooltip();
+
+      const tooltipEl = document.querySelectorAll(
+         '.example-custom-init-tooltip'
+      );
+      if (tooltipEl) {
+         envision.tooltip(tooltipEl, {
+            placement: 'right',
+            delay: 300,
+         });
+      }
+
       // Disable example links
       const links = document.querySelectorAll('a[href="#"]');
       links.forEach((link) => {

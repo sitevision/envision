@@ -49,39 +49,42 @@
       @include arrow($location, $arrow-size, $branded-border-width);
    }
 
-   &--black {
-      $background-color: #000000;
-      $color: #eeeeee;
-      $color-muted: #a0a0a0;
-
+   &--tooltip {
+      // Override theme colors for tooltip class
       @at-root {
          @include to-css-custom-property(
             (
-               'font-color': $color,
-               'font-color-muted': $color-muted,
-               'link-font-color': $color,
-               'link-hover-font-color': $color,
+               'font-color': var(--env-tooltip-font-color),
+               'link-font-color': var(--env-tooltip-font-color),
+               'link-hover-font-color': var(--env-tooltip-font-color),
                'link-text-decoration': underline,
                'link-hover-text-decoration': underline,
             ),
-            '.env-popover--black'
+            '.env-popover--tooltip'
          );
       }
 
-      color: $color;
-      background-color: $background-color;
+      color: var(--env-tooltip-font-color);
+      background-color: var(--env-tooltip-background-color);
+      border: none !important;
 
       [class^='env-ui-text-'],
       [class*=' env-ui-text-'] {
-         color: $color;
+         color: var(--env-tooltip-font-color);
+      }
+
+      .env-text--muted,
+      .env-ui-text-caption {
+         color: var(--env-tooltip-font-color);
+         filter: opacity(0.65);
       }
 
       @each $location in $arrowLocations {
          @include arrow(
             $location,
             $arrow-size,
-            $branded-border-width,
-            $background-color
+            0,
+            var(--env-tooltip-background-color)
          );
       }
    }
