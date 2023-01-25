@@ -2,6 +2,8 @@
 title: Tooltip
 ---
 
+<span class="env-badge env-badge--info">Added in 2023.02</span>
+
 ```html
 <span class="env-tooltip">
    <a class="env-link" href="javascript:void(0)">Hover or focus</a>
