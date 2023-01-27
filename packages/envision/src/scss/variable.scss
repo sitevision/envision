@@ -120,7 +120,23 @@ $section-background-color: #ffffff !default;
    )
 );
 
-// ----- UI COLORS -----
+// ----- UI STATUS COLORS -----
+
+$ui-color-status-active: #58a978;
+$ui-color-status-active-contrast: #202330;
+$ui-color-status-attention: #ce2e7e;
+$ui-color-status-attention-contrast: #ffffff;
+
+@include to-css-custom-property(
+   (
+      'ui-color-status-active': $ui-color-status-active,
+      'ui-color-status-active-contrast': $ui-color-status-active-contrast,
+      'ui-color-status-attention': $ui-color-status-attention,
+      'ui-color-status-attention-contrast': $ui-color-status-attention-contrast,
+   )
+);
+
+// ----- UI BRAND COLORS -----
 
 $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
    '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100';

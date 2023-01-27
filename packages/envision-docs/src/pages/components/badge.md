@@ -11,12 +11,15 @@ title: Badge
 
 ## Variations
 
+<span class="env-badge env-badge--info">Notification badge available since 2023.02</span>
+
 ```html
 <span class="env-badge">Primary</span>
 <span class="env-badge env-badge--success">Success</span>
 <span class="env-badge env-badge--warning">Warning</span>
 <span class="env-badge env-badge--danger">Danger</span>
 <span class="env-badge env-badge--info">Info</span>
+<span class="env-badge env-badge--notification">Notification</span>
 ```
 
 ### Brand
@@ -53,3 +56,14 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
       <span class="env-badge env-badge--brand-100">Brand 100</span>
    </div>
 </div>
+
+### Status badge <span id="status-badge" class="offset-anchor"></span>
+
+<span class="env-badge env-badge--info">2023.02</span>
+
+Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
+
+```html
+<p class="env-status-badge">Last logged in 5 h</p>
+<p class="env-status-badge env-status-badge--active">Logged in</p>
+```
