@@ -430,6 +430,21 @@ $spinner-color: #5cb3fd !default;
    )
 );
 
+// ----- TOOLTIP -----
+
+$tooltip-background-color: #000;
+$tooltip-font-color: #eeeeee;
+
+@include to-css-custom-property(
+   (
+      'tooltip-font-family': css-var('font-family'),
+      'tooltip-font-size': css-var('font-size-small'),
+      'tooltip-font-color': $tooltip-font-color,
+      'tooltip-background-color': $tooltip-background-color,
+      'tooltip-border-radius': css-var('border-radius'),
+   )
+);
+
 // ----- POPOVER -----
 
 // Popover

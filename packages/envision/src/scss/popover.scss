@@ -48,4 +48,44 @@
    @each $location in $arrowLocations {
       @include arrow($location, $arrow-size, $branded-border-width);
    }
+
+   &--tooltip {
+      // Override theme colors for tooltip class
+      @at-root {
+         @include to-css-custom-property(
+            (
+               'font-color': var(--env-tooltip-font-color),
+               'link-font-color': var(--env-tooltip-font-color),
+               'link-hover-font-color': var(--env-tooltip-font-color),
+               'link-text-decoration': underline,
+               'link-hover-text-decoration': underline,
+            ),
+            '.env-popover--tooltip'
+         );
+      }
+
+      color: var(--env-tooltip-font-color);
+      background-color: var(--env-tooltip-background-color);
+      border: none !important;
+
+      [class^='env-ui-text-'],
+      [class*=' env-ui-text-'] {
+         color: var(--env-tooltip-font-color);
+      }
+
+      .env-text--muted,
+      .env-ui-text-caption {
+         color: var(--env-tooltip-font-color);
+         filter: opacity(0.65);
+      }
+
+      @each $location in $arrowLocations {
+         @include arrow(
+            $location,
+            $arrow-size,
+            0,
+            var(--env-tooltip-background-color)
+         );
+      }
+   }
 }

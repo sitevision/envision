@@ -122,6 +122,30 @@ if (popoverContentEl) {
 </div>
 ```
 
+<span id="tooltip" class="offset-anchor"></span>
+
+## Popover Tooltip <span class="env-badge env-badge--info">2023.02</span>
+
+Add modifier `env-popover--tooltip` for a Tooltip-styled popover. Common text components will adjust color
+automatically.
+
+```html
+<div class="env-popover env-popover--tooltip" data-popper-placement="bottom">
+   <div class="env-popover__arrow"></div>
+   <div class="env-popover__header">
+      <h4 class="env-ui-text-overline">Popover Tooltip</h4>
+   </div>
+   <div class="env-popover__content">
+      <p class="env-text">
+         Lorem ipsum dolor sit amet,
+         <a href="javascript:void(0)">consectetur adipiscing elit</a>. In
+         fermentum nunc bibendum laoreet malesuada.
+      </p>
+      <p class="env-ui-text-caption">Aliquam diam risus tincidunt.</p>
+   </div>
+</div>
+```
+
 ## Options <span id="options" class="offset-anchor"></span>
 
 -  `placement` _string_
