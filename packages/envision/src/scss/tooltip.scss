@@ -1,0 +1,63 @@
+.env-tooltip {
+   $arrow-size: 6px;
+
+   &--inline {
+      display: inline-block;
+   }
+
+   [role='tooltip'] {
+      display: none;
+      background-color: var(--env-tooltip-background-color);
+      color: var(--env-tooltip-font-color);
+      padding: 0.25em 0.75em;
+      border-radius: var(--env-tooltip-border-radius);
+      font-family: var(--env-tooltip-font-family);
+      font-size: var(--env-tooltip-font-size);
+      line-height: $line-height-medium !important;
+      text-align: center;
+      white-space: nowrap;
+
+      &::after {
+         display: block;
+         position: absolute;
+         content: '';
+         width: 0;
+         height: 0;
+         border: $arrow-size solid transparent;
+      }
+
+      &[x-placement='top']::after,
+      &[data-popper-placement='top']::after,
+      &[x-placement='bottom']::after,
+      &[data-popper-placement='bottom']::after {
+         left: calc(50% - #{$arrow-size});
+         bottom: $arrow-size * -1;
+         border-top: $arrow-size solid var(--env-tooltip-background-color);
+         border-bottom: none;
+      }
+
+      &[x-placement='bottom']::after,
+      &[data-popper-placement='bottom']::after {
+         left: calc(50% - #{$arrow-size});
+         top: $arrow-size * -1;
+         border-bottom: $arrow-size solid var(--env-tooltip-background-color);
+         border-top: none;
+      }
+
+      &[x-placement='right']::after,
+      &[data-popper-placement='right']::after {
+         top: calc(50% - #{$arrow-size});
+         left: $arrow-size * -1;
+         border-right: $arrow-size solid var(--env-tooltip-background-color);
+         border-left: none;
+      }
+
+      &[x-placement='left']::after,
+      &[data-popper-placement='left']::after {
+         top: calc(50% - #{$arrow-size});
+         right: $arrow-size * -1;
+         border-left: $arrow-size solid var(--env-tooltip-background-color);
+         border-right: none;
+      }
+   }
+}

@@ -276,6 +276,14 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-spinner-color`
 
+#### Tooltip <span class="env-badge env-badge--info">2023.02</span>
+
+-  `--env-tooltip-font-family`
+-  `--env-tooltip-font-size`
+-  `--env-tooltip-font-color`
+-  `--env-tooltip-background-color`
+-  `--env-tooltip-border-radius`
+
 ## Legacy variables <span class="env-badge env-badge--danger">Deprecated</span>
 
 -  `--env-border-success-color`
