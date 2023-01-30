@@ -29,10 +29,24 @@
       background-color: css-var('element-info-background-color');
    }
 
-   &--notification {
+   // ----- STATUS VARIANTS -----
+
+   &--neutral {
+      color: css-var('ui-color-status-neutral-contrast');
+      background-color: css-var('ui-color-status-neutral');
+   }
+
+   &--active {
+      color: css-var('ui-color-status-active-contrast');
+      background-color: css-var('ui-color-status-active');
+   }
+
+   &--attention {
       color: css-var('ui-color-status-attention-contrast');
       background-color: css-var('ui-color-status-attention');
    }
+
+   // ----- BRAND VARIANTS -----
 
    &--brand {
       color: css-var('ui-color-brand-contrast');

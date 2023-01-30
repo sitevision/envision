@@ -122,6 +122,8 @@ $section-background-color: #ffffff !default;
 
 // ----- UI STATUS COLORS -----
 
+$ui-color-status-neutral: #393939;
+$ui-color-status-neutral-contrast: #ffffff;
 $ui-color-status-active: #58a978;
 $ui-color-status-active-contrast: #202330;
 $ui-color-status-attention: #ce2e7e;
@@ -129,6 +131,8 @@ $ui-color-status-attention-contrast: #ffffff;
 
 @include to-css-custom-property(
    (
+      'ui-color-status-neutral': $ui-color-status-neutral,
+      'ui-color-status-neutral-contrast': $ui-color-status-neutral-contrast,
       'ui-color-status-active': $ui-color-status-active,
       'ui-color-status-active-contrast': $ui-color-status-active-contrast,
       'ui-color-status-attention': $ui-color-status-attention,

@@ -321,7 +321,7 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
-$variableNames: 'active', 'attention';
+$variableNames: 'neutral', 'active', 'attention';
 
 @each $name in $variableNames {
    .example-ui-color-status--#{$name} {

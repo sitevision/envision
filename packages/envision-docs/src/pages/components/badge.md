@@ -9,9 +9,7 @@ title: Badge
 <h2 class="env-text">Hello <span class="env-badge">New</span></h2>
 ```
 
-## Variations
-
-<span class="env-badge env-badge--info">Notification badge available since 2023.02</span>
+## Variants
 
 ```html
 <span class="env-badge">Primary</span>
@@ -19,7 +17,16 @@ title: Badge
 <span class="env-badge env-badge--warning">Warning</span>
 <span class="env-badge env-badge--danger">Danger</span>
 <span class="env-badge env-badge--info">Info</span>
-<span class="env-badge env-badge--notification">Notification</span>
+```
+
+### Status variants <span id="status-variant" class="offset-anchor"></span>
+
+<span class="env-badge env-badge--info">Available since 2023.02</span>
+
+```html
+<span class="env-badge env-badge--neutral">Neutral</span>
+<span class="env-badge env-badge--active">Active</span>
+<span class="env-badge env-badge--attention">Attention</span>
 ```
 
 ### Brand
