@@ -442,7 +442,7 @@ Element colors are used for elements and components. See usage examples below.
 Status colors are UI colors that are used to signal a status,
 for example if a user is logged in or when new messages have arrived.
 
-Status colors has a main color and a a matching contrast color for text.
+Status colors have a main color and a matching contrast color for text.
 
 <div class="example-grid">
   <div class="example-grid__col example-grid__col--33">
