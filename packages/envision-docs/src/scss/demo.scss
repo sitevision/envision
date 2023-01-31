@@ -366,7 +366,8 @@ $variableNames: 'neutral', 'active', 'attention';
 
    &__box {
       box-sizing: border-box;
-      border: 1px solid #ccc;
+      border: 1px solid var(--env-border-color-light);
+      background-color: var(--env-section-background-color);
       padding: 1em;
       height: 100%;
    }
