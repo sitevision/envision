@@ -175,6 +175,7 @@
   "--env-tooltip-font-family": "var(--env-font-family)",
   "--env-tooltip-font-size": "var(--env-font-size-small)",
   "--env-tooltip-font-color": "#eeeeee",
+  "--env-tooltip-font-weight": "400",
   "--env-tooltip-background-color": "#000",
   "--env-tooltip-border-radius": "var(--env-border-radius)",
   "--env-popover-width": "360px",
