@@ -185,6 +185,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 #### Status <span class="env-badge env-badge--info">2023.02</span>
 
+-  `env-ui-color-status-neutral`
+-  `env-ui-color-status-neutral-contrast`
 -  `env-ui-color-status-active`
 -  `env-ui-color-status-active-contrast`
 -  `env-ui-color-status-attention`
