@@ -290,6 +290,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-tooltip-font-family`
 -  `--env-tooltip-font-size`
 -  `--env-tooltip-font-color`
+-  `--env-tooltip-font-weight`
 -  `--env-tooltip-background-color`
 -  `--env-tooltip-border-radius`
 

@@ -444,6 +444,7 @@ $tooltip-font-color: #eeeeee;
       'tooltip-font-family': css-var('font-family'),
       'tooltip-font-size': css-var('font-size-small'),
       'tooltip-font-color': $tooltip-font-color,
+      'tooltip-font-weight': $font-weight-regular,
       'tooltip-background-color': $tooltip-background-color,
       'tooltip-border-radius': css-var('border-radius'),
    )
