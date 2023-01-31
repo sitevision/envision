@@ -29,6 +29,25 @@
       background-color: css-var('element-info-background-color');
    }
 
+   // ----- STATUS VARIANTS -----
+
+   &--neutral {
+      color: css-var('ui-color-status-neutral-contrast');
+      background-color: css-var('ui-color-status-neutral');
+   }
+
+   &--active {
+      color: css-var('ui-color-status-active-contrast');
+      background-color: css-var('ui-color-status-active');
+   }
+
+   &--attention {
+      color: css-var('ui-color-status-attention-contrast');
+      background-color: css-var('ui-color-status-attention');
+   }
+
+   // ----- BRAND VARIANTS -----
+
    &--brand {
       color: css-var('ui-color-brand-contrast');
       background-color: css-var('ui-color-brand');
@@ -39,5 +58,29 @@
          color: css-var('ui-color-brand-#{$key}-contrast');
          background-color: css-var('ui-color-brand-#{$key}');
       }
+   }
+}
+
+.env-status-badge {
+   position: relative;
+   padding: 0 0 0 1.375em;
+   box-sizing: content-box;
+
+   &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.8em;
+      height: 0.8em;
+      margin-top: -0.5em;
+      border-radius: 50%;
+      border: 0.125em solid css-var('font-color');
+      background-color: css-var('section-background-color');
+   }
+
+   &--active:after {
+      border-color: css-var('ui-color-status-active');
+      background-color: css-var('ui-color-status-active');
    }
 }

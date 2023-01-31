@@ -5,6 +5,11 @@
    stroke-width: 0;
    stroke: currentColor;
    fill: currentColor;
+
+   &--attention {
+      stroke: css-var('ui-color-status-attention');
+      fill: css-var('ui-color-status-attention');
+   }
 }
 
 $sizes: (

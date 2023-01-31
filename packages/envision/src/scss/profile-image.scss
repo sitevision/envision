@@ -49,6 +49,7 @@ div.env-profile-image {
    display: block;
    position: relative;
    @include container-size(96px);
+   overflow: hidden;
 
    img {
       display: block;
@@ -92,5 +93,59 @@ div.env-profile-image {
 
    &--xx-small {
       @include container-size(32px);
+   }
+
+   .env-status-badge {
+      position: absolute;
+      white-space: nowrap;
+      display: block;
+      margin: 0 !important;
+      padding: 60% 0 0;
+      width: 60%;
+      height: 0;
+      left: auto;
+      right: -12%;
+      bottom: -12%;
+      top: auto;
+      overflow: hidden;
+      background-color: css-var('section-background-color');
+      border-radius: 50%;
+
+      &:after {
+         content: '';
+         position: absolute;
+         top: 20%;
+         left: 20%;
+         width: 60%;
+         height: 60%;
+         margin-top: 0;
+         border-radius: 50%;
+         border: none;
+         background-color: css-var('font-color');
+      }
+
+      &:before {
+         content: '';
+         position: absolute;
+         z-index: 2;
+         top: 30%;
+         left: 30%;
+         width: 40%;
+         height: 40%;
+         margin-top: 0;
+         border-radius: 50%;
+         border: none;
+         background-color: css-var('section-background-color');
+      }
+
+      &--active {
+         &:after {
+            background-color: css-var('ui-color-status-active');
+         }
+
+         &:before {
+            display: none;
+         }
+      }
    }
 }

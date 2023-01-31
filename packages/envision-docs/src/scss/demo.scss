@@ -155,7 +155,7 @@
       overflow: hidden;
    }
 
-   img {
+   img.env-profile-image {
       border: 1px solid #aaa;
    }
 
@@ -247,7 +247,8 @@
    }
 }
 
-.example-element-color p {
+.example-element-color p,
+.example-ui-color-status p {
    padding: 1em;
    margin: 0;
    text-align: center;
@@ -258,6 +259,15 @@
 
    h2 {
       margin: 0;
+   }
+}
+
+.example-ui-color-status-heading {
+   margin: 0 0 1em !important;
+   border-bottom: 1px dotted var(--env-border-color-light);
+
+   &:not(:first-child) {
+      margin-top: 2em !important;
    }
 }
 
@@ -311,6 +321,15 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
+$variableNames: 'neutral', 'active', 'attention';
+
+@each $name in $variableNames {
+   .example-ui-color-status--#{$name} {
+      color: var(--env-ui-color-status-#{$name}-contrast);
+      background-color: var(--env-ui-color-status-#{$name});
+   }
+}
+
 .example-grid {
    display: flex;
    flex-wrap: wrap;
@@ -328,7 +347,7 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
 
    &__col {
       box-sizing: border-box;
-      min-width: 250px;
+      min-width: 25%;
       flex: 1 1 25%;
       padding: 0.5em;
 
