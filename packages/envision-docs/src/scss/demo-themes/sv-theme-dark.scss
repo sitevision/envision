@@ -27,7 +27,9 @@
    --env-block-primary-link-hover-font-color: #e8e8e8;
    --env-element-success-background-color-dark: hsl(147, 30%, 16%);
    --env-ui-color-brand-30-contrast: #bfb0b9;
+   --env-tooltip-background-color: #666869;
    --env-ui-color-brand-35-contrast: #d6ccd2;
+   --env-tooltip-border-radius: var(--env-border-radius);
    --env-ui-text-heading-font-color: var(--env-font-color);
    --env-element-success-font-color: #ffffff;
    --env-color-darker: #0d0d0d;
@@ -89,13 +91,16 @@
    --env-ui-text-overline-font-family: var(--env-font-family);
    --env-link-font-color: #9f8494;
    --env-ui-color-brand-65: #b4a2ad;
+   --env-ui-color-status-attention-contrast: #1f1d1f;
    --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
       var(--env-focus-inner-color);
+   --env-tooltip-font-weight: 700;
    --env-ui-color-brand-60: #a993a1;
    --env-element-danger-background-color-dark: hsl(0, 32%, 25%);
    --env-pagination-border-width: 1px;
    --env-font-color-lighter: #49506d;
    --env-color-info: var(--env-element-info-background-color);
+   --env-ui-color-status-active-contrast: #161718;
    --env-ui-text-subheading-font-color: var(--env-font-color);
    --env-ui-color-brand-55: #9d8594;
    --env-ui-color-brand-50: #886d7d;
@@ -104,6 +109,7 @@
    --env-ui-color-brand-95-contrast: #7a6270;
    --env-collapse-border-color: var(--env-element-background-color);
    --env-element-primary-font-color: #ffffff;
+   --env-tooltip-font-family: var(--env-font-family);
    --env-color-normal: #666666;
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: 'encode sans';
@@ -122,6 +128,7 @@
    --env-color-base: #000000;
    --env-font-size-medium: var(--env-font-size-base);
    --env-color-element-bg: #ffffff;
+   --env-ui-color-status-active: #5ae063;
    --env-border-warning-color: #ffbf12;
    --env-element-warning-background-color-dark: hsl(44, 46%, 28%);
    --env-color-brand-dark: var(--env-element-primary-background-color-dark);
@@ -133,6 +140,7 @@
    --env-ui-color-brand-35: #5d4b56;
    --env-border-radius-medium: var(--env-border-radius);
    --env-ui-color-brand-30: #4f4049;
+   --env-ui-color-status-attention: #df4ea7;
    --env-color-light: #999999;
    --env-form-input-font-color: var(--env-font-color);
    --env-modal-backdrop-background-color: #000;
@@ -153,6 +161,7 @@
    --env-font-size-xxxx-large: calc(var(--env-font-size-base) * 2.5);
    --env-element-primary-background-color-light: hsl(210, 38%, 31%);
    --env-spacing-x-small: 0.5em;
+   --env-tooltip-font-color: #ffffff;
    --env-ui-color-brand-15: #30272c;
    --env-cardholder-column-min-width: 240px;
    --env-collapse-expanded-border-color: var(
@@ -178,6 +187,7 @@
    --env-ui-color-brand-80-contrast: #5d4b56;
    --env-element-warning-background-color: #866f31;
    --env-font-size-xxx-large: calc(var(--env-font-size-base) * 2);
+   --env-ui-color-status-neutral: #626262;
    --env-ui-text-overline-text-transform: uppercase;
    --env-element-info-background-color: #254f55;
    --env-border-radius-large: calc(var(--env-border-radius) * 1.5);
@@ -186,7 +196,7 @@
    --env-block-font-color: #9f8494;
    --env-ui-color-brand-100-contrast: #7a6270;
    --env-ui-text-heading-text-transform: none;
-   --env-image-control-color: #fff;
+   --env-image-control-color: #ffffff;
    --env-font-size-xx-large: calc(var(--env-font-size-base) * 1.75);
    --env-spacing-xxx-small: 0.125em;
    --env-element-success-background-color-light: hsl(147, 30%, 27%);
@@ -228,7 +238,9 @@
    --env-focus-outline: var(--env-focus-size) solid
       var(--env-focus-outline-color);
    --env-ui-color-brand-40-contrast: #e1dadf;
+   --env-tooltip-font-size: 12px;
    --env-spacing-xxx-large: 2em;
+   --env-ui-color-status-neutral-contrast: #ffffff;
    --env-element-info-font-color: #ffffff;
    --env-color-lighter: #cccccc;
    --env-element-primary-background-color-dark: hsl(210, 38%, 20%);

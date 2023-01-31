@@ -27,7 +27,9 @@
    --env-block-primary-link-hover-font-color: var(--env-link-hover-font-color);
    --env-element-success-background-color-dark: hsl(92, 100%, 43%);
    --env-ui-color-brand-30-contrast: #7a3b00;
+   --env-tooltip-background-color: #3170e6;
    --env-ui-color-brand-35-contrast: #7a3b00;
+   --env-tooltip-border-radius: var(--env-border-radius);
    --env-ui-text-heading-font-color: #0d1d36;
    --env-element-success-font-color: #0d1d36;
    --env-color-darker: #0d0d0d;
@@ -88,13 +90,16 @@
    --env-ui-text-overline-font-family: var(--env-font-family);
    --env-link-font-color: #3170e6;
    --env-ui-color-brand-65: #c25d00;
+   --env-ui-color-status-attention-contrast: #ffffff;
    --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
       var(--env-focus-inner-color);
+   --env-tooltip-font-weight: 400;
    --env-ui-color-brand-60: #db6900;
    --env-element-danger-background-color-dark: hsl(8, 100%, 46%);
    --env-pagination-border-width: 1px;
    --env-font-color-lighter: #49506d;
    --env-color-info: var(--env-element-info-background-color);
+   --env-ui-color-status-active-contrast: #202330;
    --env-ui-text-subheading-font-color: var(--env-font-color);
    --env-ui-color-brand-55: #f57500;
    --env-ui-color-brand-50: #ff8d24;
@@ -103,6 +108,7 @@
    --env-ui-color-brand-95-contrast: #f57500;
    --env-collapse-border-color: var(--env-element-background-color);
    --env-element-primary-font-color: #ffffff;
+   --env-tooltip-font-family: var(--env-font-family);
    --env-color-normal: #666666;
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: quicksand;
@@ -121,6 +127,7 @@
    --env-color-base: #000000;
    --env-font-size-medium: var(--env-font-size-base);
    --env-color-element-bg: #ffffff;
+   --env-ui-color-status-active: #7bff07;
    --env-border-warning-color: #ffbf12;
    --env-element-warning-background-color-dark: hsl(49, 100%, 44%);
    --env-color-brand-dark: var(--env-element-primary-background-color-dark);
@@ -132,6 +139,7 @@
    --env-ui-color-brand-35: #ffb570;
    --env-border-radius-medium: var(--env-border-radius);
    --env-ui-color-brand-30: #ffc28a;
+   --env-ui-color-status-attention: #e02b0f;
    --env-color-light: #999999;
    --env-form-input-font-color: var(--env-font-color);
    --env-modal-backdrop-background-color: #000;
@@ -152,6 +160,7 @@
    --env-font-size-xxxx-large: calc(var(--env-font-size-base) * 2.5);
    --env-element-primary-background-color-light: hsl(217, 61%, 45%);
    --env-spacing-x-small: 0.5em;
+   --env-tooltip-font-color: #ffffff;
    --env-ui-color-brand-15: #ffead6;
    --env-cardholder-column-min-width: 240px;
    --env-collapse-expanded-border-color: var(
@@ -177,6 +186,7 @@
    --env-ui-color-brand-80-contrast: #ffb570;
    --env-element-warning-background-color: #ffd209;
    --env-font-size-xxx-large: calc(var(--env-font-size-base) * 2);
+   --env-ui-color-status-neutral: #404040;
    --env-ui-text-overline-text-transform: uppercase;
    --env-element-info-background-color: #3371d4;
    --env-border-radius-large: calc(var(--env-border-radius) * 1.5);
@@ -185,7 +195,7 @@
    --env-block-font-color: #202330;
    --env-ui-color-brand-100-contrast: #f57500;
    --env-ui-text-heading-text-transform: none;
-   --env-image-control-color: #fff;
+   --env-image-control-color: #ffffff;
    --env-font-size-xx-large: calc(var(--env-font-size-base) * 1.75);
    --env-spacing-xxx-small: 0.125em;
    --env-element-success-background-color-light: hsl(92, 100%, 54%);
@@ -227,7 +237,9 @@
    --env-focus-outline: var(--env-focus-size) solid
       var(--env-focus-outline-color);
    --env-ui-color-brand-40-contrast: #6b3300;
+   --env-tooltip-font-size: var(--env-font-size-small);
    --env-spacing-xxx-large: 2em;
+   --env-ui-color-status-neutral-contrast: #f9fbfc;
    --env-element-info-font-color: #f9fbfc;
    --env-color-lighter: #cccccc;
    --env-element-primary-background-color-dark: hsl(217, 61%, 34%);
@@ -238,7 +250,7 @@
    --env-element-font-color: #202330;
    --env-block-secondary-link-hover-font-color: #0d1d36;
    --env-ui-color-brand-15-contrast: #a85100;
-   --env-block-background-color: #fff;
+   --env-block-background-color: #ffffff;
    --env-color-page-bg: #ffffff;
    --env-alert-font-family: var(--env-font-family);
    --env-font-size-base: 1em;
