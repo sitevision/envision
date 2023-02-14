@@ -20,7 +20,6 @@
 
    // x-placement is used in Popper 1.x (Envision)
    // data-popper-placement is Popper 2.x (React apps)
-   // Classname modifiers are kept for legacy reasons but not really needed.
    [x-placement='top'] &,
    [data-popper-placement='top'] &,
    [x-placement='bottom'] &,
