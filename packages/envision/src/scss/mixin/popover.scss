@@ -18,20 +18,14 @@
       width: 0;
    }
 
-   // x-placement is used in Popper 1.x (Envision)
-   // data-popper-placement is Popper 2.x (React apps)
-   [x-placement='top'] &,
    [data-popper-placement='top'] &,
-   [x-placement='bottom'] &,
    [data-popper-placement='bottom'] & {
       &::after {
          transform: translateX(-50%);
       }
    }
 
-   [x-placement='right'] &,
    [data-popper-placement='right'] &,
-   [x-placement='left'] &,
    [data-popper-placement='left'] & {
       &::after {
          transform: translateY(-50%);
@@ -55,10 +49,8 @@
       $location
    );
 
-   &[x-placement='#{$location}'],
    &[data-popper-placement='#{$location}'] {
       border-#{$oppositeLocation}: $branded-border-width solid $color;
-      margin-#{$oppositeLocation}: $arrow-size;
 
       .env-popover__arrow {
          #{$oppositeLocation}: -$arrow-size * 2 - $branded-border-width;

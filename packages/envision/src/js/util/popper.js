@@ -3,9 +3,9 @@ export const getPopper = async () => {
    if (Popper) {
       return Popper;
    }
-   const { default: DynamicPopper } = await import(
-      /* webpackChunkName: "popper" */ 'popper.js'
+   const { createPopper } = await import(
+      /* webpackChunkName: "createPopper" */ '@popperjs/core'
    );
-   Popper = DynamicPopper;
+   Popper = createPopper;
    return Popper;
 };
