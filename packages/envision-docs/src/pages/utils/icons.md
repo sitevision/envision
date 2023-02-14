@@ -135,7 +135,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 
 ## Attention <span id="attention" class="offset-anchor"></span>
 
-<span class="env-badge env-badge--info">2023.02</span>
+<span class="env-badge env-badge--info">2023.02.1</span>
 
 For Envision icons and custom inline SVG images you may use modifier `env-icon--attention`
 on the icon or on part of an icon. The modifier will set the color to Status color Attention.

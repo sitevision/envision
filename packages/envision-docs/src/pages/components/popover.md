@@ -124,7 +124,7 @@ if (popoverContentEl) {
 
 <span id="tooltip" class="offset-anchor"></span>
 
-## Popover Tooltip <span class="env-badge env-badge--info">2023.02</span>
+## Popover Tooltip <span class="env-badge env-badge--info">2023.02.1</span>
 
 Add modifier `env-popover--tooltip` for a Tooltip-styled popover. Common text components will adjust color
 automatically.

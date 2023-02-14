@@ -183,7 +183,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
    <br><br>
 -  `--env-element-common-background-color`
 
-#### Status <span class="env-badge env-badge--info">2023.02</span>
+#### Status <span class="env-badge env-badge--info">2023.02.1</span>
 
 -  `env-ui-color-status-neutral`
 -  `env-ui-color-status-neutral-contrast`
@@ -285,7 +285,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-spinner-color`
 
-#### Tooltip <span class="env-badge env-badge--info">2023.02</span>
+#### Tooltip <span class="env-badge env-badge--info">2023.02.1</span>
 
 -  `--env-tooltip-font-family`
 -  `--env-tooltip-font-size`
