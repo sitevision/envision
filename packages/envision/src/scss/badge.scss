@@ -8,6 +8,7 @@
    vertical-align: baseline;
    color: css-var('element-primary-font-color');
    background-color: css-var('element-primary-background-color');
+   text-decoration: none !important;
 
    &--success {
       color: css-var('element-success-font-color');
