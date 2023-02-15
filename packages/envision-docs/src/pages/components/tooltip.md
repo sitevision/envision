@@ -42,7 +42,7 @@ See [available options below](#options).
       </label>
       <div
          class="env-tooltip env-form-element__control"
-         data-placement="bottom"
+         data-placement="bottom-start"
          data-delay="1000"
       >
          <input
@@ -96,7 +96,8 @@ envision.tooltip(element, options);
 
       -  Prefered initial placement.
       -  Default value: `top`
-      -  Possible values: `top`, `right`, `bottom`, `left`, `auto`
+      -  Possible values: `top`, `right`, `bottom`, `left`, `auto`,
+      -  Possible value modifiers <span class="env-badge env-badge--info">2023.02.2</span>: `{value}-start`, `{value}-end`
 
    -  `delay` _number_
 

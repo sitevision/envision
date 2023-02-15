@@ -18,34 +18,17 @@
       width: 0;
    }
 
-   // x-placement is used in Popper 1.x (Envision)
-   // data-popper-placement is Popper 2.x (React apps)
-   // Classname modifiers are kept for legacy reasons but not really needed.
-   [x-placement='top'] &,
    [data-popper-placement='top'] &,
-   &--top,
-   [x-placement='bottom'] &,
-   [data-popper-placement='bottom'] &,
-   &--bottom {
-      left: 50%;
-      margin-left: -$arrow-size;
-
+   [data-popper-placement='bottom'] & {
       &::after {
-         margin-left: -$arrow-size;
+         transform: translateX(-50%);
       }
    }
 
-   [x-placement='right'] &,
    [data-popper-placement='right'] &,
-   &--right,
-   [x-placement='left'] &,
-   [data-popper-placement='left'] &,
-   &--left {
-      margin-top: -$arrow-size;
-      top: 50%;
-
+   [data-popper-placement='left'] & {
       &::after {
-         margin-top: -$arrow-size;
+         transform: translateY(-50%);
       }
    }
 }
@@ -66,7 +49,6 @@
       $location
    );
 
-   &[x-placement='#{$location}'],
    &[data-popper-placement='#{$location}'] {
       border-#{$oppositeLocation}: $branded-border-width solid $color;
 

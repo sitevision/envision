@@ -12,6 +12,7 @@ import Util from './util/util';
 const NAME = 'envPopover';
 const IDENTIFIER = 'env.popover';
 const EVENT_NAMESPACE = `.${IDENTIFIER}`;
+const ARROW_SIZE = 10;
 
 const DEFAULTS = {
    clickOutside: false,
@@ -190,22 +191,18 @@ class Popover {
 
       $('body').append($popoverElement);
 
-      getPopper().then((Popper) => {
-         this._popper = new Popper(this.el, $popoverElement[0], {
+      getPopper().then((createPopper) => {
+         this._popper = createPopper(this.el, $popoverElement[0], {
             placement: this.config.placement,
-            modifiers: {
-               flip: {
-                  behavior: 'flip',
+            modifiers: [
+               {
+                  name: 'offset',
+                  options: {
+                     offset: [0, ARROW_SIZE],
+                  },
                },
-               arrow: {
-                  element: '.env-popover__arrow',
-               },
-            },
-            arrow: {
-               element: '.env-popover__arrow',
-            },
+            ],
          });
-
          this._popper.update();
 
          if (this.config.clickOutside) {

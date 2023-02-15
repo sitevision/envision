@@ -49,13 +49,12 @@ class Dropdown {
       }
       unhide(this.menu);
       this._bindEvents();
-      getPopper().then((Popper) => {
-         this._popper = new Popper(this.container, this.menu, {
+      getPopper().then((createPopper) => {
+         this._popper = createPopper(this.container, this.menu, {
             placement: 'bottom-start',
             modifiers: {
-               flip: {
-                  enabled: false,
-               },
+               name: 'flip',
+               enabled: false,
             },
          });
          this._popper.update();

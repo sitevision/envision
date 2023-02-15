@@ -535,3 +535,18 @@ $variableNames: 'neutral', 'active', 'attention';
       margin: 0.25em;
    }
 }
+
+.env-popover {
+   // Demo positioning for arrow in static no popper popovers
+   [data-popper-placement='top'] &__arrow,
+   [data-popper-placement='bottom'] &__arrow {
+      left: 50%;
+      margin-left: -10px;
+   }
+
+   [data-popper-placement='right'] &__arrow,
+   [data-popper-placement='left'] &__arrow {
+      top: 50%;
+      margin-top: -10px;
+   }
+}

@@ -14,27 +14,18 @@ const ARROW_SIZE = 6;
 const DEFAULTS = {
    placement: 'top',
    delay: 200,
-   modifiers: {
-      offset: {
-         enabled: true,
-         fn: (data) => {
-            if (data.placement === 'left') {
-               data.offsets.popper.left -= ARROW_SIZE;
-            } else if (data.placement === 'right') {
-               data.offsets.popper.left += ARROW_SIZE;
-            } else if (data.placement === 'top') {
-               data.offsets.popper.top -= ARROW_SIZE;
-            } else if (data.placement === 'bottom') {
-               data.offsets.popper.top += ARROW_SIZE;
-            }
-            return data;
+   modifiers: [
+      {
+         name: 'offset',
+         options: {
+            offset: [0, ARROW_SIZE],
          },
       },
-      flip: {
+      {
+         name: 'flip',
          enabled: true,
-         behavior: ['top', 'bottom', 'right', 'left'],
       },
-   },
+   ],
 };
 
 class Tooltip {
@@ -128,8 +119,8 @@ class Tooltip {
 
    show() {
       setStyle(this.tooltip, 'display', 'block');
-      getPopper().then((Popper) => {
-         this._popper = new Popper(this.container, this.tooltip, {
+      getPopper().then((createPopper) => {
+         this._popper = createPopper(this.container, this.tooltip, {
             placement: this.config.placement,
             modifiers: this.config.modifiers,
          });
