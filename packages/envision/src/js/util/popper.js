@@ -4,7 +4,7 @@ export const getPopper = async () => {
       return Popper;
    }
    const { createPopper } = await import(
-      /* webpackChunkName: "createPopper" */ '@popperjs/core'
+      /* webpackChunkName: "popper" */ '@popperjs/core'
    );
    Popper = createPopper;
    return Popper;
