@@ -14,9 +14,21 @@
    --env-link-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'
       )};
+   --env-link-text-decoration: #{css-var(
+         'block-#{$blockName}link-text-decoration'
+      )};
+   --env-link-hover-text-decoration: #{css-var(
+         'block-#{$blockName}link-hover-text-decoration'
+      )};
    --env-link-secondary-font-color: #{css-var('block-#{$blockName}font-color')};
    --env-link-secondary-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'
+      )};
+   --env-link-secondary-text-decoration: #{css-var(
+         'block-#{$blockName}link-text-decoration'
+      )};
+   --env-link-secondary-hover-text-decoration: #{css-var(
+         'block-#{$blockName}link-hover-text-decoration'
       )};
 
    background-color: css-var('block-#{$blockName}background-color');
@@ -33,9 +45,9 @@
    a:not([class^='env-']):not([class*=' env-']) {
       @include link(
          'block-#{$blockName}link-font-color',
-         'link-text-decoration',
+         'block-#{$blockName}link-text-decoration',
          'block-#{$blockName}link-hover-font-color',
-         'link-hover-text-decoration'
+         'block-#{$blockName}link-hover-text-decoration'
       );
    }
 }

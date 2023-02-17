@@ -126,23 +126,29 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-block-font-color`
 -  `--env-block-background-color`
 -  `--env-block-border-color`
-   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
 -  `--env-block-link-font-color`
 -  `--env-block-link-hover-font-color`
+   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
+-  `--env-block-link-text-decoration`
+-  `--env-block-link-hover-text-decoration`
    <br><br>
 -  `--env-block-primary-font-color`
 -  `--env-block-primary-background-color`
 -  `--env-block-primary-border-color`
-   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
 -  `--env-block-primary-link-font-color`
 -  `--env-block-primary-link-hover-font-color`
+   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
+-  `--env-block-primary-link-text-decoration`
+-  `--env-block-primary-link-hover-text-decoration`
    <br><br>
 -  `--env-block-secondary-font-color`
 -  `--env-block-secondary-background-color`
 -  `--env-block-secondary-border-color`
-   <br><span class="env-badge env-badge--info">Block links: 8.2.1</span>
 -  `--env-block-secondary-link-font-color`
 -  `--env-block-secondary-link-hover-font-color`
+   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
+-  `--env-block-secondary-link-text-decoration`
+-  `--env-block-secondary-link-hover-text-decoration`
 
 ### Elements <span class="env-badge env-badge--info">8.2</span>
 
