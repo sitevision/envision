@@ -201,6 +201,12 @@ class Popover {
                      offset: [0, ARROW_SIZE],
                   },
                },
+               {
+                  name: 'arrow',
+                  options: {
+                     element: '.env-popover__arrow',
+                  },
+               },
             ],
          });
          this._popper.update();

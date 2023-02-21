@@ -152,6 +152,7 @@ automatically.
 
    -  Prefered initial placement.
    -  Default value: `top`
+   -  Possible values: `top`, `right`, `bottom`, `left`
 
 -  `title` _string_
 

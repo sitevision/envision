@@ -536,16 +536,16 @@ $variableNames: 'neutral', 'active', 'attention';
    }
 }
 
-.env-popover {
+.code-example {
    // Demo positioning for arrow in static no popper popovers
-   [data-popper-placement='top'] &__arrow,
-   [data-popper-placement='bottom'] &__arrow {
+   [data-popper-placement='top'] .env-popover__arrow,
+   [data-popper-placement='bottom'] .env-popover__arrow {
       left: 50%;
       margin-left: -10px;
    }
 
-   [data-popper-placement='right'] &__arrow,
-   [data-popper-placement='left'] &__arrow {
+   [data-popper-placement='right'] .env-popover__arrow,
+   [data-popper-placement='left'] .env-popover__arrow {
       top: 50%;
       margin-top: -10px;
    }
