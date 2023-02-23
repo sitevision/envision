@@ -29,7 +29,6 @@ $toggle-duration: 300ms !default;
 $font-weight-regular: 400 !default;
 $font-weight-semibold: 500 !default;
 $font-weight-bold: 600 !default;
-$font-weight-extrabold: 700 !default;
 
 // Line height
 $line-height-medium: 1.4 !default;
@@ -202,25 +201,25 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
       'ui-text-overline-font-family': css-var('font-family'),
       'ui-text-overline-font-color': css-var('font-color'),
       'ui-text-overline-font-size': 0.75em,
-      'ui-text-overline-font-weight': 500,
+      'ui-text-overline-font-weight': 600,
       'ui-text-overline-text-transform': uppercase,
       'ui-text-overline-letter-spacing': 0.15em,
       'ui-text-heading-font-family': css-var('font-family'),
       'ui-text-heading-font-color': css-var('font-color'),
       'ui-text-heading-font-size': 1.82em,
-      'ui-text-heading-font-weight': 500,
+      'ui-text-heading-font-weight': 600,
       'ui-text-heading-text-transform': none,
       'ui-text-heading-letter-spacing': normal,
       'ui-text-sectionheading-font-family': css-var('font-family'),
       'ui-text-sectionheading-font-color': css-var('font-color'),
       'ui-text-sectionheading-font-size': 1.25em,
-      'ui-text-sectionheading-font-weight': 500,
+      'ui-text-sectionheading-font-weight': 600,
       'ui-text-sectionheading-text-transform': none,
       'ui-text-sectionheading-letter-spacing': normal,
       'ui-text-subheading-font-family': css-var('font-family'),
       'ui-text-subheading-font-color': css-var('font-color'),
       'ui-text-subheading-font-size': 1em,
-      'ui-text-subheading-font-weight': 500,
+      'ui-text-subheading-font-weight': 600,
       'ui-text-subheading-text-transform': none,
       'ui-text-subheading-letter-spacing': normal,
       'ui-text-caption-font-family': css-var('font-family'),
