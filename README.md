@@ -8,13 +8,13 @@ You can watch the documentation and examples at [http://envisionui.io/](http://e
 1. Clone repository `git clone https://github.com/sitevision/envision.git`
 2. Change directory to repo folder `cd envision`
 3. Run `yarn install` to install dependencies
-4. Run `npm run build`
+4. Run `yarn build`
 5. Run `yarn dev` to start local server
 6. Visit [http://localhost:8000](http://localhost:8000)
 
 ## To build
 
-Run `npm run build`
+Run `yarn build`
 
 ## License information
 
