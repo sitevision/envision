@@ -37,9 +37,11 @@ module.exports = {
          filename: 'envision.css',
       }),
       new ESLintPlugin(),
+      //compress using gzip
       new CompressionPlugin({
          test: /\.(js|css|json|html|svg)$/,
       }),
+      //compress using brotli
       new CompressionPlugin({
          algorithm: 'brotliCompress',
          test: /\.(js|css|json|html|svg)$/,
