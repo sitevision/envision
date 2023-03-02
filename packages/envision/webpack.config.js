@@ -5,6 +5,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const zlib = require('zlib');
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -35,6 +37,20 @@ module.exports = {
          filename: 'envision.css',
       }),
       new ESLintPlugin(),
+      //compress using gzip
+      new CompressionPlugin({
+         test: /\.(js|css|json|html|svg)$/,
+      }),
+      //compress using brotli
+      new CompressionPlugin({
+         algorithm: 'brotliCompress',
+         test: /\.(js|css|json|html|svg)$/,
+         compressionOptions: {
+            params: {
+               [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+            },
+         },
+      }),
    ],
    externals: {
       jquery: {
