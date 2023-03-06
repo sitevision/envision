@@ -15,6 +15,7 @@
    --env-element-secondary-background-color-dark: hsl(335, 100%, 77%);
    --env-modal-medium-width: 450px;
    --env-focus-outline-color: var(--env-font-color);
+   --env-block-primary-link-text-decoration: var(--env-link-text-decoration);
    --env-color-brand: var(--env-element-primary-background-color);
    --env-spacing-xx-large: 1.75em;
    --env-color-warning: var(--env-element-warning-background-color);
@@ -42,6 +43,7 @@
    --env-link-text-decoration: underline;
    --env-ui-color-brand-90: #271640;
    --env-ui-color-brand-dark: hsla(263.7, 48.1%, 23%, 1);
+   --env-block-secondary-link-text-decoration: underline;
    --env-cardholder-column-spacing: var(--env-spacing-medium);
    --env-color-lightest: #e6e6e6;
    --env-block-link-font-color: var(--env-link-font-color);
@@ -201,6 +203,7 @@
    --env-element-success-background-color-light: hsl(93, 61%, 72%);
    --env-block-primary-link-font-color: var(--env-link-font-color);
    --env-ui-color-brand-05-contrast: #6e40b5;
+   --env-block-secondary-link-hover-text-decoration: underline;
    --env-ui-text-caption-font-weight: 300;
    --env-link-secondary-hover-font-color: var(--env-link-font-color);
    --env-ui-text-caption-font-family: var(--env-font-family);
@@ -218,6 +221,9 @@
    --env-cardholder-grid-column-width: 20em;
    --env-button-font-family: var(--env-font-family);
    --env-border-radius-small: calc(var(--env-border-radius) * 0.5);
+   --env-block-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
    --env-modal-backdrop-opacity: 0.5;
    --env-ui-text-sectionheading-font-color: #472975;
    --env-color-dark: #333333;
@@ -232,10 +238,14 @@
    --env-ui-text-sectionheading-font-weight: 500;
    --env-font-color-light: #34394f;
    --env-ui-text-overline-font-size: 0.75em;
+   --env-block-primary-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
    --env-border-radius: 0.25em;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
    --env-focus-outline: var(--env-focus-size) solid
       var(--env-focus-outline-color);
+   --env-block-link-text-decoration: var(--env-link-text-decoration);
    --env-ui-color-brand-40-contrast: #301c4f;
    --env-tooltip-font-size: 13px;
    --env-spacing-xxx-large: 2em;

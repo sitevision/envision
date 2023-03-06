@@ -15,6 +15,7 @@
    --env-element-secondary-background-color-dark: hsl(0, 0%, 11%);
    --env-modal-medium-width: 450px;
    --env-focus-outline-color: #dfeee5;
+   --env-block-primary-link-text-decoration: underline;
    --env-color-brand: var(--env-element-primary-background-color);
    --env-spacing-xx-large: 1.75em;
    --env-color-warning: var(--env-element-warning-background-color);
@@ -42,6 +43,7 @@
    --env-link-text-decoration: underline;
    --env-ui-color-brand-90: #ede8eb;
    --env-ui-color-brand-dark: hsla(323.2, 69.4%, 51%, 1);
+   --env-block-secondary-link-text-decoration: underline;
    --env-cardholder-column-spacing: var(--env-spacing-medium);
    --env-color-lightest: #e6e6e6;
    --env-block-link-font-color: #9f8494;
@@ -202,6 +204,7 @@
    --env-element-success-background-color-light: hsl(147, 30%, 27%);
    --env-block-primary-link-font-color: #e8e8e8;
    --env-ui-color-brand-05-contrast: #9d8594;
+   --env-block-secondary-link-hover-text-decoration: underline;
    --env-ui-text-caption-font-weight: 400;
    --env-link-secondary-hover-font-color: var(--env-link-font-color);
    --env-ui-text-caption-font-family: var(--env-font-family);
@@ -219,6 +222,7 @@
    --env-cardholder-grid-column-width: 20em;
    --env-button-font-family: var(--env-font-family);
    --env-border-radius-small: calc(var(--env-border-radius) * 0.5);
+   --env-block-link-hover-text-decoration: underline;
    --env-modal-backdrop-opacity: 0.5;
    --env-ui-text-sectionheading-font-color: #df4ea7;
    --env-color-dark: #333333;
@@ -233,10 +237,12 @@
    --env-ui-text-sectionheading-font-weight: 500;
    --env-font-color-light: #34394f;
    --env-ui-text-overline-font-size: 0.75em;
+   --env-block-primary-link-hover-text-decoration: underline;
    --env-border-radius: 0.25em;
    --env-focus-background-color: rgba(0, 0, 0, 0.2);
    --env-focus-outline: var(--env-focus-size) solid
       var(--env-focus-outline-color);
+   --env-block-link-text-decoration: underline;
    --env-ui-color-brand-40-contrast: #e1dadf;
    --env-tooltip-font-size: 12px;
    --env-spacing-xxx-large: 2em;
