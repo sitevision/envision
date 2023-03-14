@@ -96,6 +96,13 @@
       line-height: 1;
       overflow: hidden;
 
+      &:before {
+         // Insert line break before text to avoid
+         // certain letters showing in button.
+         content: '\A';
+         white-space: pre-wrap;
+         speak: never;
+      }
       .env-icon {
          left: 50%;
       }
