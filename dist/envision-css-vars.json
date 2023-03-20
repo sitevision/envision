@@ -198,6 +198,8 @@
   "--env-button-font-family": "var(--env-font-family)",
   "--env-button-border-radius": "0.375em",
   "--env-form-font-family": "var(--env-font-family)",
+  "--env-form-label-font-family": "var(--env-font-family)",
+  "--env-form-label-font-weight": "500",
   "--env-form-input-border-radius": "var(--env-border-radius-medium)",
   "--env-form-input-font-color": "var(--env-font-color)",
   "--env-form-input-border-color": "#949494",
