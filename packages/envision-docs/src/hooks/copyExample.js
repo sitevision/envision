@@ -55,6 +55,28 @@ export const useCopyExample = (content) => {
          });
       }
 
+      const singleSelectEl1 = document.querySelector(
+         '#example-tag-select-single-1'
+      );
+      if (singleSelectEl1) {
+         envision.select(singleSelectEl1, {
+            maxItems: 1,
+            i18n: 'en',
+         });
+      }
+
+      const singleSelectEl2 = document.querySelector(
+         '#example-tag-select-single-2'
+      );
+      if (singleSelectEl2) {
+         envision.select(singleSelectEl2, {
+            maxItems: 1,
+            allowEmptyOption: true,
+            sortField: [{ field: '$order' }, { field: '$score' }],
+            i18n: 'en',
+         });
+      }
+
       const simpleSelectEl = document.querySelector('#example-tag-select-1');
       if (simpleSelectEl) {
          envision.select(simpleSelectEl, { i18n: 'en' });

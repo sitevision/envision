@@ -626,3 +626,56 @@ textarea.env-form-input {
       }
    }
 }
+
+.env-select.single {
+   .env-select__input {
+      padding: 0.25em 0.5em;
+   }
+
+   .env-select__item {
+      font-size: 1em;
+      background-color: transparent;
+      color: css-var('form-input-font-color');
+      padding: 0.5625em 0.25em;
+   }
+}
+
+.env-form-select {
+   @include form-input-defaults;
+   padding: 0;
+
+   @include focus-within;
+
+   select:not([multiple]),
+   select.env-form-input {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      border-radius: css-var('form-input-border-radius');
+      appearance: none;
+      color: css-var('form-input-font-color');
+      font-size: css-var('font-size-medium');
+      min-height: calc(
+         #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
+      );
+      padding: $form-padding-y calc(#{$form-padding-x} + 1em) $form-padding-y
+         $form-padding-x;
+
+      @include hide-focus-visible;
+   }
+}
+
+.env-select,
+.env-form-select {
+   .env-icon {
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: $form-padding-y;
+      transform: translateY(-50%);
+      width: 1em;
+      height: 1em;
+   }
+}
