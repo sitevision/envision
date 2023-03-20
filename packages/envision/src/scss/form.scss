@@ -193,8 +193,9 @@
 
       &__label {
          display: inline-block;
+         font-family: css-var('form-label-font-family');
          font-size: css-var('font-size-medium');
-         font-weight: $font-weight-semibold;
+         font-weight: css-var('form-label-font-weight');
          margin-bottom: css-var('spacing-xx-small');
 
          // Legend reset

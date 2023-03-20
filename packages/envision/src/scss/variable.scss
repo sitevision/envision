@@ -556,6 +556,8 @@ $form-padding-y: 0.625em;
 @include to-css-custom-property(
    (
       'form-font-family': css-var('font-family'),
+      'form-label-font-family': css-var('font-family'),
+      'form-label-font-weight': $font-weight-semibold,
       'form-input-border-radius': css-var('border-radius-medium'),
       'form-input-font-color': css-var('font-color'),
       'form-input-border-color': $form-input-border-color,
