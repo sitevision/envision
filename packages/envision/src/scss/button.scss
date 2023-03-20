@@ -96,13 +96,15 @@
       line-height: 1;
       overflow: hidden;
 
-      &:before {
-         // Insert line break before text to avoid
+      @at-root button.env-button--icon:before {
+         // Insert spacing before text to avoid
          // certain letters showing in button.
-         content: '\A';
-         white-space: pre-wrap;
+         content: '';
          speak: never;
+         display: inline-block;
+         height: 1em;
       }
+
       .env-icon {
          left: 50%;
       }
