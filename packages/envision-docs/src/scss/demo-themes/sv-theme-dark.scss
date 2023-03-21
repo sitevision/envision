@@ -83,7 +83,25 @@
    --env-spinner-color: #5cb3fd;
    --env-ui-text-heading-font-size: 1.82em;
    --env-ui-color-brand-70: #bfb0b9;
-   --env-box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
+   --env-box-shadow-color: 0, 0, 0;
+   --env-box-shadow-opacity: 0.8;
+   --env-box-shadow-size: 0.8em;
+   --env-box-shadow-offset-x: 0;
+   --env-box-shadow-offset-y: 0.25em;
+   --env-box-shadow: var(--env-box-shadow-offset-x)
+      var(--env-box-shadow-offset-y) var(--env-box-shadow-size)
+      rgba(var(--env-box-shadow-color), var(--env-box-shadow-opacity));
+   --env-box-shadow-large: var(--env-box-shadow-offset-x)
+      calc(var(--env-box-shadow-offset-y) * 2)
+      calc(var(--env-box-shadow-size) * 3)
+      rgba(
+         var(--env-box-shadow-color),
+         calc(var(--env-box-shadow-opacity) * 1.167)
+      );
+   --env-box-shadow-small: var(--env-box-shadow-offset-x)
+      calc(var(--env-box-shadow-offset-y) / 4)
+      calc(var(--env-box-shadow-size) / 4)
+      rgba(var(--env-box-shadow-color), calc(var(--env-box-shadow-opacity) / 2));
    --env-ui-color-brand-60-contrast: #30272c;
    --env-ui-color-brand-contrast: #1f1d1f;
    --env-brand-palette-muting: 85%;
@@ -116,7 +134,6 @@
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: 'encode sans';
    --env-form-input-border-color: #737373;
-   --env-box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175);
    --env-ui-text-subheading-font-weight: 500;
    --env-ui-color-brand-45-contrast: #ede8eb;
    --env-ui-color-brand-10-contrast: #9d8594;
@@ -125,7 +142,6 @@
    --env-ui-color-brand-45: #7a6270;
    --env-block-primary-border-color: #84898c;
    --env-ui-color-brand-40: #6c5663;
-   --env-box-shadow-small: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
    --env-ui-text-sectionheading-letter-spacing: normal;
    --env-color-base: #000000;
    --env-font-size-medium: var(--env-font-size-base);
