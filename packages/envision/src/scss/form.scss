@@ -12,10 +12,11 @@
    input {
       margin: 0;
    }
+}
 
-   select:not([multiple]) {
-      min-height: math.div($form-input-height, $form-input-font-size) * 1em;
-   }
+select.env-form-input:not([multiple]),
+.env-form select:not([multiple]) {
+   min-height: math.div($form-input-height, $form-input-font-size) * 1em;
 }
 
 @supports (background: -webkit-named-image(i)) {
