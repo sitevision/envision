@@ -642,6 +642,7 @@ textarea.env-form-input {
 
 .env-form-select {
    @include form-input-defaults;
+   position: relative;
    padding: 0;
 
    @include focus-within;
