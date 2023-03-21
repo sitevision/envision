@@ -660,8 +660,7 @@ textarea.env-form-input {
       min-height: calc(
          #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
       );
-      padding: $form-padding-y calc(#{$form-padding-x} + 1em) $form-padding-y
-         $form-padding-x;
+      padding: $form-padding-y 2em $form-padding-y $form-padding-x;
 
       @include hide-focus-visible;
    }
