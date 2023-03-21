@@ -1,3 +1,19 @@
+@mixin form-input-defaults {
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
+   margin: 0;
+   padding: $form-padding-y $form-padding-x;
+   font-family: css-var('form-font-family');
+   font-size: css-var('font-size-medium');
+   line-height: $form-input-line-height;
+   color: css-var('form-input-font-color');
+   background-color: css-var('form-input-background-color');
+   background-image: none;
+   border: $border-width $border-style css-var('form-input-border-color');
+   border-radius: css-var('form-input-border-radius');
+}
+
 @mixin input-validation-state($colorName) {
    &,
    .env-form-element__help,

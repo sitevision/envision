@@ -5,390 +5,380 @@
 
    input,
    select,
-   textarea,
-   &-input {
-      font-family: inherit;
+   textarea {
+      font-family: css-var('form-font-family');
    }
 
    input {
       margin: 0;
    }
 
-   &-input {
-      background-color: css-var('form-input-background-color');
-      background-image: none;
+   select:not([multiple]) {
+      min-height: math.div($form-input-height, $form-input-font-size) * 1em;
+   }
+}
+
+@supports (background: -webkit-named-image(i)) {
+   // Hack for Safari only to set height of native select
+   select.env-form-input:not([multiple]),
+   .env-form select:not([multiple]) {
+      height: math.div($form-input-height, $form-input-font-size) * 1em;
+   }
+}
+
+.env-form-input {
+   @include form-input-defaults;
+
+   @include placeholder {
+      color: css-var('form-input-font-color');
+      filter: opacity(0.65);
+   }
+
+   &[disabled],
+   &[readonly] {
+      @include disabled;
+   }
+
+   &[disabled] {
+      user-select: none;
+   }
+
+   @include focus-visible;
+
+   &[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button {
+         display: none;
+      }
+   }
+
+   &--search[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-cancel-button {
+         display: block;
+      }
+
+      &::-ms-clear {
+         display: block;
+      }
+   }
+
+   &[contenteditable=''],
+   &[contenteditable='true'] {
+      height: 88px;
+      overflow: auto;
+      resize: vertical;
+
+      ~ .env-form-element__contenteditable-placeholder {
+         display: none;
+         position: absolute;
+         top: calc(#{css-var('spacing-x-small')} + 1px);
+         left: calc(#{css-var('spacing-small')} + 1px);
+         pointer-events: none;
+         speak: never;
+         color: css-var('form-input-font-color');
+         filter: opacity(0.5);
+         line-height: 1.4;
+         font-size: var(--env-font-size-medium);
+      }
+
+      &:empty ~ .env-form-element__contenteditable-placeholder {
+         display: block;
+      }
+   }
+}
+
+.env-form textarea,
+textarea.env-form-input {
+   resize: vertical;
+}
+
+.env-form-input-group {
+   display: flex;
+   align-items: stretch;
+
+   &__label,
+   .env-button,
+   .env-form-input {
+      position: relative;
+      z-index: 1;
+      border-radius: 0;
+      margin-right: -1px;
+
+      &:first-child {
+         border-radius: css-var('form-input-border-radius') 0 0
+            css-var('form-input-border-radius');
+      }
+
+      &:last-child {
+         margin-right: 0;
+         border-radius: 0 css-var('form-input-border-radius')
+            css-var('form-input-border-radius') 0;
+      }
+   }
+
+   .env-button {
+      // No matter the order of elements,
+      // button border should be on top of
+      // input and label borders.
+      z-index: 2;
+   }
+
+   .env-form-input:focus {
+      // When focused, move input to top
+      z-index: 3;
+   }
+
+   &__label {
+      display: flex;
+      align-items: center;
       border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: css-var('form-input-border-radius');
       box-sizing: border-box;
       color: css-var('form-input-font-color');
-      display: block;
       font-size: css-var('font-size-medium');
       line-height: $form-input-line-height;
+      padding: css-var('spacing-x-small');
+   }
+}
+
+.env-form-element {
+   margin-bottom: css-var('spacing-medium');
+
+   &__control {
+      position: relative;
+
+      // Fieldset reset
       margin: 0;
-      padding: $form-padding-y $form-padding-x;
-      width: 100%;
+      padding: 0;
+      border: none;
 
-      @include placeholder {
-         color: css-var('form-input-font-color');
-         filter: opacity(0.65);
+      &--icon {
+         $iconSize: 1em;
+
+         .env-icon {
+            position: absolute;
+            top: calc(
+               #{math.div(math.div($form-input-height, $BROWSER_FONT_SIZE), 2) -
+                  0.5} * var(--env-font-size-medium)
+            );
+            left: css-var('spacing-x-small');
+            width: $iconSize;
+            height: $iconSize;
+            color: css-var('form-input-font-color');
+         }
+
+         input:first-child,
+         textarea:first-child {
+            padding-right: calc(#{$iconSize} + #{css-var('spacing-medium')});
+         }
+
+         input + .env-icon,
+         textarea + .env-icon {
+            left: auto;
+            right: css-var('spacing-x-small');
+         }
+
+         .env-icon + input,
+         .env-icon + textarea {
+            padding-left: calc(#{$iconSize} + #{css-var('spacing-medium')});
+         }
       }
+   }
 
-      &[disabled],
-      &[readonly] {
+   &__label {
+      display: inline-block;
+      font-family: css-var('form-label-font-family');
+      font-size: css-var('font-size-medium');
+      font-weight: css-var('form-label-font-weight');
+      margin-bottom: css-var('spacing-xx-small');
+
+      // Legend reset
+      padding: 0;
+   }
+
+   &__help,
+   &__feedback {
+      display: block;
+      font-size: css-var('font-size-small');
+      font-style: italic;
+      margin-bottom: css-var('spacing-x-small');
+      margin-top: css-var('spacing-x-small');
+   }
+
+   &__help {
+      color: css-var('font-color-muted');
+      font-size: css-var('font-size-small');
+   }
+
+   &--success {
+      @include input-validation-state('success');
+   }
+
+   &--warning {
+      @include input-validation-state('warning');
+   }
+
+   &--danger {
+      @include input-validation-state('danger');
+   }
+
+   &[type='file'] {
+      display: block;
+   }
+}
+
+.env-form-multiple-select {
+   select[multiple] {
+      padding: css-var('spacing-xx-small');
+   }
+
+   select[multiple] > option {
+      padding: css-var('spacing-x-small');
+   }
+}
+
+.env-form-radio {
+   // Legacy fake radio button
+   display: block;
+   font-size: css-var('font-size-medium');
+   box-sizing: content-box;
+
+   [type='radio'] {
+      @include visually-hidden;
+   }
+
+   label {
+      margin-bottom: css-var('spacing-x-small');
+   }
+
+   .env-form-element__label {
+      font-size: 1em;
+   }
+
+   &__fake {
+      display: inline-block;
+      position: relative;
+      width: $radiobutton-size;
+      height: $radiobutton-size;
+      margin-right: css-var('spacing-xx-small');
+      background-color: css-var('form-input-background-color');
+      border: $border-width $border-style css-var('form-input-border-color');
+      border-radius: 50%;
+      vertical-align: middle;
+
+      &:after {
+         content: '';
+         display: none;
+         width: $radiobutton-checked-size;
+         height: $radiobutton-checked-size;
+         background-color: css-var('element-primary-background-color');
+         position: absolute;
+         top: (50% - $radiobutton-checked-size * 0.5);
+         left: (50% - $radiobutton-checked-size * 0.5);
+         border-radius: 50%;
+         box-sizing: border-box;
+      }
+   }
+
+   &__label {
+      display: inline;
+      vertical-align: bottom;
+   }
+
+   [type='radio']:checked + label &__fake {
+      border-color: css-var('element-primary-background-color');
+
+      &:after {
+         display: block;
+      }
+   }
+
+   [type='radio'] + label &__fake {
+      transition: box-shadow 0.2s ease-in-out;
+   }
+
+   [type='radio']:focus-visible + label &__fake {
+      @include focus-outline;
+   }
+
+   &--disabled {
+      label {
          @include disabled;
       }
-
-      &[disabled] {
-         user-select: none;
-      }
-
-      @include focus-visible;
-
-      &[type='search'] {
-         appearance: none;
-
-         &::-webkit-search-decoration,
-         &::-webkit-search-cancel-button {
-            display: none;
-         }
-      }
-
-      &--search[type='search'] {
-         appearance: none;
-
-         &::-webkit-search-cancel-button {
-            display: block;
-         }
-
-         &::-ms-clear {
-            display: block;
-         }
-      }
-
-      &[contenteditable=''],
-      &[contenteditable='true'] {
-         height: 88px;
-         overflow: auto;
-         resize: vertical;
-
-         ~ .env-form-element__contenteditable-placeholder {
-            display: none;
-            position: absolute;
-            top: calc(#{css-var('spacing-x-small')} + 1px);
-            left: calc(#{css-var('spacing-small')} + 1px);
-            pointer-events: none;
-            speak: never;
-            color: css-var('form-input-font-color');
-            filter: opacity(0.5);
-            line-height: 1.4;
-            font-size: var(--env-font-size-medium);
-         }
-
-         &:empty ~ .env-form-element__contenteditable-placeholder {
-            display: block;
-         }
-      }
    }
+}
 
-   select:not([multiple]) {
-      height: calc(
-         #{css-var('spacing-x-small')} * 2 + #{$form-input-line-height * 1em} +
-            #{$border-width * 2}
-      );
-   }
-
-   &-input-group {
+//Variants
+.env-form--horizontal {
+   .env-form-element {
       display: flex;
-      align-items: stretch;
+      align-items: baseline;
+      flex-wrap: wrap;
 
-      &__label,
-      .env-button,
-      .env-form-input {
-         position: relative;
-         z-index: 1;
-         border-radius: 0;
-         margin-right: -1px;
-
-         &:first-child {
-            border-radius: css-var('form-input-border-radius') 0 0
-               css-var('form-input-border-radius');
-         }
-
-         &:last-child {
-            margin-right: 0;
-            border-radius: 0 css-var('form-input-border-radius')
-               css-var('form-input-border-radius') 0;
-         }
+      & > .env-form-element__label,
+      & > .env-form-element__control {
+         // align-items in Firefox needs inline children for baseline to work.
+         // This fixes the issue without messing things up in Chrome et.al.
+         display: inline-flex;
+         flex-direction: column;
       }
 
-      .env-button {
-         // No matter the order of elements,
-         // button border should be on top of
-         // input and label borders.
-         z-index: 2;
+      & > .env-form-element__label {
+         flex-basis: 20%;
       }
-
-      .env-form-input:focus {
-         // When focused, move input to top
-         z-index: 3;
-      }
-
-      &__label {
-         display: flex;
-         align-items: center;
-         border: $border-width $border-style css-var('form-input-border-color');
-         box-sizing: border-box;
-         color: css-var('form-input-font-color');
-         font-size: css-var('font-size-medium');
-         line-height: $form-input-line-height;
-         padding: css-var('spacing-x-small');
-      }
-   }
-
-   &-element {
-      margin-bottom: css-var('spacing-medium');
 
       &__control {
-         position: relative;
-
-         // Fieldset reset
-         margin: 0;
-         padding: 0;
-         border: none;
-
-         &--icon {
-            $iconSize: 1em;
-
-            .env-icon {
-               position: absolute;
-               top: calc(
-                  #{math.div(
-                        math.div($form-input-height, $BROWSER_FONT_SIZE),
-                        2
-                     ) - 0.5} * var(--env-font-size-medium)
-               );
-               left: css-var('spacing-x-small');
-               width: $iconSize;
-               height: $iconSize;
-               color: css-var('form-input-font-color');
-            }
-
-            input:first-child,
-            textarea:first-child {
-               padding-right: calc(#{$iconSize} + #{css-var('spacing-medium')});
-            }
-
-            input + .env-icon,
-            textarea + .env-icon {
-               left: auto;
-               right: css-var('spacing-x-small');
-            }
-
-            .env-icon + input,
-            .env-icon + textarea {
-               padding-left: calc(#{$iconSize} + #{css-var('spacing-medium')});
-            }
-         }
-      }
-
-      &__label {
-         display: inline-block;
-         font-family: css-var('form-label-font-family');
-         font-size: css-var('font-size-medium');
-         font-weight: css-var('form-label-font-weight');
-         margin-bottom: css-var('spacing-xx-small');
-
-         // Legend reset
-         padding: 0;
-      }
-
-      &__help,
-      &__feedback {
-         display: block;
-         font-size: css-var('font-size-small');
-         font-style: italic;
-         margin-bottom: css-var('spacing-x-small');
-         margin-top: css-var('spacing-x-small');
+         flex-basis: 80%;
       }
 
       &__help {
-         color: css-var('font-color-muted');
-         font-size: css-var('font-size-small');
-      }
-
-      &--success {
-         @include input-validation-state('success');
-      }
-
-      &--warning {
-         @include input-validation-state('warning');
-      }
-
-      &--danger {
-         @include input-validation-state('danger');
-      }
-
-      &[type='file'] {
-         display: block;
-      }
-
-      textarea {
-         border-radius: css-var('form-input-border-radius');
-         padding: $form-padding-y $form-padding-x;
-         resize: vertical;
+         margin-left: 20%;
       }
    }
+}
 
-   &-multiple-select {
-      select[multiple] {
-         padding: css-var('spacing-xx-small');
-      }
+.env-form--inline {
+   display: flex;
 
-      select[multiple] > option {
-         padding: css-var('spacing-x-small');
-      }
-   }
-
-   &-radio {
-      // Legacy fake radio button
-      display: block;
-      font-size: css-var('font-size-medium');
-      box-sizing: content-box;
-
-      [type='radio'] {
-         @include visually-hidden;
-      }
-
-      label {
-         margin-bottom: css-var('spacing-x-small');
-      }
-
-      .env-form-element__label {
-         font-size: 1em;
-      }
-
-      &__fake {
-         display: inline-block;
-         position: relative;
-         width: $radiobutton-size;
-         height: $radiobutton-size;
-         margin-right: css-var('spacing-xx-small');
-         background-color: css-var('form-input-background-color');
-         border: $border-width $border-style css-var('form-input-border-color');
-         border-radius: 50%;
-         vertical-align: middle;
-
-         &:after {
-            content: '';
-            display: none;
-            width: $radiobutton-checked-size;
-            height: $radiobutton-checked-size;
-            background-color: css-var('element-primary-background-color');
-            position: absolute;
-            top: (50% - $radiobutton-checked-size * 0.5);
-            left: (50% - $radiobutton-checked-size * 0.5);
-            border-radius: 50%;
-            box-sizing: border-box;
-         }
-      }
+   .env-form-element {
+      align-items: center;
+      display: flex;
+      margin-bottom: 0;
+      margin-right: css-var('spacing-x-small');
 
       &__label {
-         display: inline;
-         vertical-align: bottom;
-      }
-
-      [type='radio']:checked + label &__fake {
-         border-color: css-var('element-primary-background-color');
-
-         &:after {
-            display: block;
-         }
-      }
-
-      [type='radio'] + label &__fake {
-         transition: box-shadow 0.2s ease-in-out;
-      }
-
-      [type='radio']:focus-visible + label &__fake {
-         @include focus-outline;
-      }
-
-      &--disabled {
-         label {
-            @include disabled;
-         }
-      }
-   }
-
-   //Variants
-   &--horizontal {
-      .env-form-element {
-         display: flex;
-         align-items: baseline;
-         flex-wrap: wrap;
-
-         & > .env-form-element__label,
-         & > .env-form-element__control {
-            // align-items in Firefox needs inline children for baseline to work.
-            // This fixes the issue without messing things up in Chrome et.al.
-            display: inline-flex;
-            flex-direction: column;
-         }
-
-         & > .env-form-element__label {
-            flex-basis: 20%;
-         }
-
-         &__control {
-            flex-basis: 80%;
-         }
-
-         &__help {
-            margin-left: 20%;
-         }
-      }
-   }
-
-   &--inline {
-      display: flex;
-
-      .env-form-element {
-         align-items: center;
-         display: flex;
          margin-bottom: 0;
          margin-right: css-var('spacing-x-small');
-
-         &__label {
-            margin-bottom: 0;
-            margin-right: css-var('spacing-x-small');
-         }
-
-         &__help {
-            margin-left: css-var('spacing-xx-small');
-         }
       }
 
-      .env-form-radio,
-      .env-checkbox {
-         margin-bottom: 0;
+      &__help {
+         margin-left: css-var('spacing-xx-small');
       }
    }
 
-   &__row {
-      display: flex;
+   .env-form-radio,
+   .env-checkbox {
+      margin-bottom: 0;
+   }
+}
 
-      .env-form-element {
-         flex: 1;
+.env-form__row {
+   display: flex;
 
-         @for $i from 1 through 6 {
-            &--#{$i} {
-               flex: $i;
-            }
+   .env-form-element {
+      flex: 1;
+
+      @for $i from 1 through 6 {
+         &--#{$i} {
+            flex: $i;
          }
+      }
 
-         + .env-form-element {
-            margin-left: css-var('spacing-small');
-         }
+      + .env-form-element {
+         margin-left: css-var('spacing-small');
       }
    }
 }
