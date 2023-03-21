@@ -5,7 +5,9 @@ title: Tag Select
 <span class="env-badge env-badge--info">Added in 9.1</span>
 
 Tag select is a JS alternative to `<select>` that allows you to create a nice looking multi-select with cross browser
-styling. Tag Select offers an API for creating interacting with the component.
+styling. A [single select version](#single-select) is also available since Sitevision 2023.04.1.
+
+Tag Select offers an API for creating interaction with the component.
 
 ## Configuration and initialization
 
@@ -41,12 +43,66 @@ tagSelect.then(function (selects) {
 });
 ```
 
+<span id="single-select" class="offset-anchor"></span>
+
+## Single select <span class="env-badge env-badge--info">2023.04.1</span>
+
+Create a Single select by using a Tag select and set `maxItems` to `1`.
+Note: Clear and remove buttons will not be available in a single select.
+
+Use `allowEmptyOption` and `sortField` as in second example below to make behaviour similar to native select element.
+
+```HTML
+<div class="env-form-element">
+   <label for="example-tag-select-single-1" class="env-form-element__label">
+      Tag select single
+   </label>
+   <div class="env-form-element__control">
+      <select class="env-form-input" id="example-tag-select-single-1">
+         <option value="">Select an item ...</option>
+         <option value="item-1">Item</option>
+         <option value="item-3">Item 3</option>
+         <option value="item-2">Item 2</option>
+         <option value="item-4">Item 4</option>
+      </select>
+   </div>
+</div>
+
+<div class="env-form-element">
+   <label for="example-tag-select-single-2" class="env-form-element__label">
+      Tag select single - native-like behaviour
+   </label>
+   <div class="env-form-element__control">
+      <select class="env-form-input" id="example-tag-select-single-2">
+         <option value="">Select an item ...</option>
+         <option value="item-1">Item</option>
+         <option value="item-3">Item 3</option>
+         <option value="item-2">Item 2</option>
+         <option value="item-4">Item 4</option>
+      </select>
+   </div>
+</div>
+```
+
+```javascript
+var singleSelectExample1 = envision.select('#example-tag-select-single-1', {
+   maxItems: 1,
+});
+
+var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
+   maxItems: 1,
+   allowEmptyOption: true,
+   sortField: [{ field: '$order' }, { field: '$score' }],
+});
+```
+
 ## Options
 
 -  `maxItems` _number_
 
    -  The max number of items the user can select.
    -  Default value: `null` (unlimited)
+   -  Set to `1` to create a Single select.
 
 -  `create` _boolean_
 
@@ -61,11 +117,18 @@ tagSelect.then(function (selects) {
 
    -  Show clear all button
    -  Default value: `true`
+   -  Not available in Single select
+
+-  `allowEmptyOption` _boolean_ <span class="env-badge env-badge--info">since Sitevision 2023.04.1</span>
+
+   -  Only available in Single select
+   -  Option with no value will be selectable if set to true.
+   -  Default value: `false`
 
 -  `placeholder` _'string'_
 
    -  Use a custom placeholder.
-   -  Default: Will try to use option with empty value or placeholder attribute from HTML.
+   -  Default: Will try to use option with empty value or placeholder attribute from HTML first.
 
 -  `dropdownParent` _'string'_
 

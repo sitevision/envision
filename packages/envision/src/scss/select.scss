@@ -61,17 +61,15 @@
          }
 
          &:focus {
-            outline: 1px solid transparent;
+            @include wcagSafeOutlineNone;
          }
       }
 
       .env-select.full & > input,
       .env-select.input-hidden & > input {
-         flex: none;
-         visibility: hidden;
-         min-width: 1px;
-         width: 1px;
-         overflow: hidden;
+         left: -10000px;
+         opacity: 0;
+         position: absolute;
       }
 
       .env-select.focus & {

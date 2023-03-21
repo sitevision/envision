@@ -4,8 +4,26 @@
    outline-offset: css-var('focus-offset');
 }
 
+@mixin wcagSafeOutlineNone {
+   outline: 1px solid transparent;
+}
+
 @mixin focus-visible {
    &:focus-visible {
       @include focus-outline;
+   }
+}
+
+@mixin hide-focus-visible {
+   &:focus-visible {
+      box-shadow: none;
+      @include wcagSafeOutlineNone;
+   }
+}
+
+@mixin focus-within {
+   &:focus-within {
+      @include focus-outline;
+      @content;
    }
 }

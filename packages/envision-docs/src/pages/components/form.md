@@ -80,6 +80,8 @@ title: Form
 
 ## Select element
 
+Native select element with class `env-form-input`. Only light styling, might look different in different browsers.
+
 ```html
 <div class="env-form-element">
    <label for="select" class="env-form-element__label">Select</label>
@@ -103,6 +105,34 @@ title: Form
          <option>Item 3</option>
          <option>Item 4</option>
       </select>
+   </div>
+</div>
+```
+
+## Select component <span class="env-badge env-badge--info">2023.04.1</span>
+
+A select element wrapped in an element with class `env-form-select` will have the same appearance cross browsers.
+Use an `env-icon` for the arrow.
+
+For more advanced usage, see [Single select documentation](/components/select/#single-select)
+
+```html
+<div class="env-form-element">
+   <label for="formselect" class="env-form-element__label">Select</label>
+   <div class="env-form-element__control">
+      <div class="env-form-select">
+         <select id="formselect">
+            <option>Item</option>
+            <option>Item 2</option>
+            <option>Item 3</option>
+            <option>Item 4</option>
+         </select>
+         <svg class="env-icon">
+            <use
+               xlink:href="/sitevision/envision-icons.svg#icon-angle-down"
+            ></use>
+         </svg>
+      </div>
    </div>
 </div>
 ```
