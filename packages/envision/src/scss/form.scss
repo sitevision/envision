@@ -666,9 +666,9 @@ textarea.env-form-input {
    }
 }
 
-.env-select,
+.env-select.single,
 .env-form-select {
-   .env-icon {
+   > .env-icon {
       pointer-events: none;
       display: block;
       position: absolute;

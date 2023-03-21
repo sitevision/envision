@@ -197,9 +197,6 @@ const getSettings = (options, node) => {
    // Remove unwanted settings
    options = Util.normalizeOptions(options, defaults.userConfig);
 
-   // Avoid overwriting defaults for unspecified render properties
-   options.render = { ...defaults.userConfig.render, ...options.render };
-
    // Merge user settings with envision and user defaults
    let settings = Util.extend(
       true,
