@@ -109,6 +109,8 @@ Native select element with class `env-form-input`. Only light styling, might loo
 </div>
 ```
 
+<span id="select-component" class="offset-anchor"></span>
+
 ## Select component <span class="env-badge env-badge--info">2023.04.1</span>
 
 A select element wrapped in an element with class `env-form-select` will have the same appearance cross browsers.
