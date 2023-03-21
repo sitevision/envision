@@ -673,9 +673,9 @@ textarea.env-form-input {
       display: block;
       position: absolute;
       top: 50%;
-      right: $form-padding-y;
+      right: 0.9375em;
       transform: translateY(-50%);
-      width: 1em;
-      height: 1em;
+      width: 0.875em;
+      height: 0.875em;
    }
 }

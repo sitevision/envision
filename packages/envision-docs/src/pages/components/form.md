@@ -129,7 +129,7 @@ For more advanced usage, see [Single select documentation](/components/select/#s
          </select>
          <svg class="env-icon">
             <use
-               xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
+               xlink:href="/sitevision/envision-icons.svg#icon-angle-down"
             ></use>
          </svg>
       </div>

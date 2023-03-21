@@ -129,7 +129,7 @@ const SelectPlugin = function (el, settings, TomSelect) {
       useEl.setAttributeNS(
          XLINK_NS,
          'xlink:href',
-         '/sitevision/envision-icons.svg#icon-arrow-down'
+         '/sitevision/envision-icons.svg#icon-angle-down'
       );
       svgEl.appendChild(useEl);
       svgEl.classList.add('env-icon');
