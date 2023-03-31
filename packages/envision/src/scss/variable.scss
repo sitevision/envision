@@ -384,28 +384,10 @@ $spacing-xxx-large: $spacing-base * 2 !default;
 
 @include to-css-custom-property(
    (
-      'box-shadow-color': #{0,
-      0,
-      0},
-      'box-shadow-opacity': 0.15,
-      'box-shadow-size': 1em,
-      'box-shadow-offset-x': 0,
-      'box-shadow-offset-y': 0.5em,
-      'box-shadow': #{css-var('box-shadow-offset-x')} #{css-var(
-            'box-shadow-offset-y'
-         )} #{css-var('box-shadow-size')} rgba(#{css-var('box-shadow-color')}, #{css-var(
-                  'box-shadow-opacity'
-               )}),
-      'box-shadow-large': #{css-var('box-shadow-offset-x')} calc(
-            #{css-var('box-shadow-offset-y')} * 2
-         ) calc(#{css-var('box-shadow-size')} * 3) rgba(#{css-var(
-                  'box-shadow-color'
-               )}, calc(#{css-var('box-shadow-opacity')} * 1.167)),
-      'box-shadow-small': #{css-var('box-shadow-offset-x')} calc(
-            #{css-var('box-shadow-offset-y')} / 4
-         ) calc(#{css-var('box-shadow-size')} / 4) rgba(#{css-var(
-                  'box-shadow-color'
-               )}, calc(#{css-var('box-shadow-opacity')} / 2)),
+      'box-shadow-color': rgba(0, 0, 0, 0.15),
+      'box-shadow': 0 0.5em 1em #{css-var('box-shadow-color')},
+      'box-shadow-small': 0 0.125em 0.25em #{css-var('box-shadow-color')},
+      'box-shadow-large': 0 1em 3em #{css-var('box-shadow-color')},
    )
 );
 

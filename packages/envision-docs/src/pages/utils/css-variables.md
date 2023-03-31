@@ -81,10 +81,6 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-box-shadow-small`
    <br><br><span class="env-badge env-badge--info">Box shadow color, size, offset: 2023.04.1</span>
 -  `--env-box-shadow-color`
--  `--env-box-shadow-opacity`
--  `--env-box-shadow-size`
--  `--env-box-shadow-offset-x`
--  `--env-box-shadow-offset-y`
 
 #### Borders <span class="env-badge env-badge--info">8.2</span>
 
