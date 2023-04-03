@@ -536,17 +536,19 @@ $variableNames: 'neutral', 'active', 'attention';
    }
 }
 
-.code-example {
-   // Demo positioning for arrow in static no popper popovers
-   [data-popper-placement='top'] .env-popover__arrow,
-   [data-popper-placement='bottom'] .env-popover__arrow {
-      left: 50%;
-      margin-left: -10px;
-   }
+// Demo positioning for arrow in static no popper popovers
+.example-static-popover[data-popper-placement='top'] .env-popover__arrow,
+.example-static-popover[data-popper-placement='bottom'] .env-popover__arrow,
+.code-example [data-popper-placement='top'] .env-popover__arrow,
+.code-example [data-popper-placement='bottom'] .env-popover__arrow {
+   left: 50%;
+   margin-left: -10px;
+}
 
-   [data-popper-placement='right'] .env-popover__arrow,
-   [data-popper-placement='left'] .env-popover__arrow {
-      top: 50%;
-      margin-top: -10px;
-   }
+.example-static-popover[data-popper-placement='right'] .env-popover__arrow,
+.example-static-popover[data-popper-placement='left'] .env-popover__arrow,
+.code-example [data-popper-placement='right'] .env-popover__arrow,
+.code-example [data-popper-placement='left'] .env-popover__arrow {
+   top: 50%;
+   margin-top: -10px;
 }

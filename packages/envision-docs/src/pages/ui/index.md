@@ -72,7 +72,7 @@ UI Text will be used as the new default text styles for headings in all componen
    </ul>
 </div>
 
-<div class="env-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h4 class="env-ui-text-overline env-popover__header__title">UI Text Overline</h4>
