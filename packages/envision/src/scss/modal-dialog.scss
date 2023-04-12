@@ -103,7 +103,9 @@
       padding: css-var('spacing-small') css-var('spacing-x-large');
 
       .env-modal-dialog--inner-scroll & {
-         max-height: 50vh;
+         // Margin + header + footer height = 180px = 11.25em
+         max-height: min(calc(100vh - 11.25em), 50vh);
+         min-height: 3em;
          overflow-y: auto;
       }
    }
