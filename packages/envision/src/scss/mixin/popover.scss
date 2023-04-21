@@ -32,6 +32,14 @@
       }
    }
 
+   [data-popper-placement='right'] & {
+      clip-path: inset(0 0 0 50%);
+   }
+
+   [data-popper-placement='left'] & {
+      clip-path: inset(0 50% 0 0);
+   }
+
    [data-popper-placement='right'] &,
    [data-popper-placement='left'] & {
       &::after {
