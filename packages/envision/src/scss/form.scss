@@ -393,8 +393,9 @@ textarea.env-form-input {
       justify-content: flex-start;
       align-items: center;
       box-sizing: border-box;
-      font-size: var(--env-font-size-medium);
-      font-weight: 500;
+      font-family: css-var('form-label-font-family');
+      font-size: css-var('font-size-medium');
+      font-weight: css-var('form-label-font-weight');
       margin-bottom: var(--env-spacing-x-small);
 
       &--disabled {
