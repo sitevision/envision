@@ -22,13 +22,16 @@ const DEFAULTS = {
    delay: 0,
    escapeContent: true,
    placement: 'top',
-   template: `<div class="env-popover" role="tooltip">
-                  <div class="env-popover__arrow"></div>
-                  <div class="env-popover__header">
-                     <h4 class="env-ui-text-overline env-popover__header__title"></h4>
-                  </div>
-                  <div class="env-popover__content"></div>
-               </div>`,
+   template: (
+      containerModifier,
+      contentClassName
+   ) => `<div class="env-popover ${containerModifier}" role="tooltip">
+   <div class="env-popover__arrow"></div>
+   <div class="env-popover__header">
+   <h4 class="env-ui-text-overline env-popover__header__title"></h4>
+   </div>
+   <div class="${contentClassName}"></div>
+   </div>`,
    title: '',
    trigger: 'click',
 };
@@ -57,7 +60,6 @@ class Popover {
             const hoverTrigger = trigger === 'hover';
             const inEvent = hoverTrigger ? 'mouseenter' : 'focusin';
             const outEvent = hoverTrigger ? 'mouseleave' : 'focusout';
-
             this.$el
                .on(inEvent + EVENT_NAMESPACE, () => {
                   if (this.config.delay > 0) {
@@ -123,9 +125,27 @@ class Popover {
       });
    }
 
+   getPopoverTemplate() {
+      const containerModifier = this.config.tooltip
+         ? 'env-popover--tooltip'
+         : '';
+      const contentClassName = this.config.menu
+         ? 'env-popover__menu'
+         : 'env-popover__content';
+
+      if (typeof this.config.template === 'function') {
+         this.config.template = this.config.template(
+            containerModifier,
+            contentClassName
+         );
+      }
+
+      return this.config.template;
+   }
+
    getPopoverElement() {
       if (!this.$popoverElement) {
-         this.$popoverElement = $(this.config.template);
+         this.$popoverElement = $(this.getPopoverTemplate());
          uniqueId(this.$popoverElement[0]);
       }
       return this.$popoverElement;
@@ -150,9 +170,12 @@ class Popover {
    }
 
    setContent($popoverElement) {
+      if (this.config.content instanceof HTMLElement) {
+         this.config.content = this.config.content.innerHTML;
+      }
       this.setText(
          $popoverElement,
-         '.env-popover__content',
+         this.config.menu ? '.env-popover__menu' : '.env-popover__content',
          this.config.content
       );
    }
@@ -164,7 +187,6 @@ class Popover {
 
    render() {
       const $popoverElement = this.getPopoverElement();
-      this.arrowEl = this.$popoverElement.find('.env-popover__arrow')[0];
       this.setTitle($popoverElement);
       this.setContent($popoverElement);
    }
@@ -251,10 +273,11 @@ class Popover {
 
    static async _init(elements, settings) {
       const nodes = getNodes(elements);
+
       if (nodes.length > 0) {
          await getPopper();
 
-         const popovers = nodes.map((node) => {
+         return nodes.map((node) => {
             if (!node[NAME]) {
                node[NAME] = new Popover(node, settings);
             }
@@ -268,7 +291,6 @@ class Popover {
 
             return node[NAME];
          });
-         return popovers;
       }
    }
 
