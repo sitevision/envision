@@ -48,7 +48,7 @@ export const useCopyExample = (content) => {
             content: popoverMenuContentEl,
             escapeContent: false,
             clickOutside: true,
-            menu: true,
+            type: 'menu',
          });
       }
 
@@ -62,7 +62,7 @@ export const useCopyExample = (content) => {
             content: popoverTooltipContentEl,
             escapeContent: false,
             clickOutside: true,
-            tooltip: true,
+            type: 'tooltip',
          });
       }
 

@@ -32,7 +32,7 @@ See [available options below](#options).
    class="env-button env-button--primary"
    data-placement="top"
    data-trigger="hover focus"
-   data-title="Lorem ipsum"
+   data-stitle="Lorem ipsum"
    data-delay="200"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
@@ -78,6 +78,9 @@ if (popoverContentEl) {
 ```
 
 ## Popover menu <span class="env-badge env-badge--info">9.0</span>
+
+Add `type: 'menu'` in JS or `data-type="menu"` in HTML
+for a menu-styled popover. Use class `env-popover__item` for the menu items.
 
 <div class="env-m-vertical--large">
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
@@ -148,7 +151,7 @@ if (popoverMenuContentEl) {
       content: popoverMenuContentEl,
       escapeContent: false,
       clickOutside: true,
-      menu: true,
+      type: 'menu',
    });
 }
 ```
@@ -157,7 +160,7 @@ if (popoverMenuContentEl) {
 
 ## Popover Tooltip <span class="env-badge env-badge--info">2023.05.1</span>
 
-Setting `tooltip: true` in JS or `data-tooltip="true"` in HTML adds modifier `env-popover--tooltip`
+Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
 for a Tooltip-styled popover. Common text components will adjust color automatically.
 
 <div class="env-m-vertical--large">
@@ -202,7 +205,7 @@ if (popoverTooltipContentEl) {
       content: popoverTooltipContentEl,
       escapeContent: false,
       clickOutside: true,
-      tooltip: true,
+      type: 'tooltip',
    });
 }
 ```
@@ -245,12 +248,8 @@ if (popoverTooltipContentEl) {
    -  Close popover on click outside.
    -  Default value: `false`
 
--  `menu` _boolean_ <span class="env-badge env-badge--info">2023.05.1</span>
+-  `type` _string_ <span class="env-badge env-badge--info">2023.05.1</span>
 
-   -  Use menu styling when including a list of `env-popover__item`s
-   -  Default value: `false`
-
--  `tooltip` _boolean_ <span class="env-badge env-badge--info">2023.05.1</span>
-
-   -  Use tooltip styling
-   -  Default value: `false`
+   -  Popover styling
+   -  Default value: null
+   -  Possible values: `menu`, `tooltip`
