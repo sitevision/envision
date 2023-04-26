@@ -32,7 +32,7 @@ See [available options below](#options).
    class="env-button env-button--primary"
    data-placement="top"
    data-trigger="hover focus"
-   data-stitle="Lorem ipsum"
+   data-title="Lorem ipsum"
    data-delay="200"
    data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum cursus eros, vitae mattis leo laoreet eget."
 >
