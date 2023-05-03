@@ -180,8 +180,8 @@
       &__option {
          &:hover,
          &.active {
-            color: css-var('element-font-color');
-            background-color: css-var('element-background-color');
+            background-color: css-var('ui-color-brand-10');
+            color: css-var('font-color');
          }
       }
    }

@@ -50,7 +50,6 @@
       &--active,
       &:active,
       &:hover {
-         background-color: rgba(0, 0, 0, 0.1);
          background-color: css-var('ui-color-brand-10');
          color: css-var('font-color');
       }
