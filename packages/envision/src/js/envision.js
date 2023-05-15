@@ -22,4 +22,3 @@ import './modal-dialog';
 import './popover';
 import './range-slider';
 import './tooltip';
-import './shims';
