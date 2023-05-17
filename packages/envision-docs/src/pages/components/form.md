@@ -59,7 +59,7 @@ title: Form
 </div>
 ```
 
-### Contenteditable element <span class="env-badge env-badge--info">8.2</span>
+### Contenteditable element
 
 ```html
 <div class="env-form-element__label" id="contenteditable-header">
@@ -139,7 +139,7 @@ For more advanced usage, see [Single select documentation](/components/select/#s
 </div>
 ```
 
-### Tag select component <span class="env-badge env-badge--info">9.1</span>
+### Tag select component
 
 See [Tag select documentation](../select/).
 
@@ -156,7 +156,7 @@ See [Tag select documentation](../select/).
 </div>
 ```
 
-## Radiobutton input element <small class="env-badge env-badge--info">10.0</small>
+## Radiobutton input element
 
 Related radiobutton elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
 
@@ -200,7 +200,7 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
 </fieldset>
 ```
 
-### Switch component <span class="env-badge env-badge--info">8.2</span>
+### Switch component
 
 ```html
 <fieldset class="env-form-element__control">
@@ -224,7 +224,7 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
 
 <div id="input-icons"></div>
 
-## Icons in input fields <span class="env-badge env-badge--info">8.2</span>
+## Icons in input fields
 
 ```html
 <div class="example-input-fields">
@@ -264,7 +264,7 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
 </div>
 ```
 
-## Input group <span class="env-badge env-badge--info">9.1</span>
+## Input group
 
 Join text, input and button with `env-form-input-group`.
 
@@ -566,7 +566,6 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
       <label class="env-radio env-radio--disabled">
          <input class="env-radio" type="radio" disabled checked />
          Disabled radio button
-         <span class="env-badge env-badge--info">10.0</span>
       </label>
    </div>
 </div>

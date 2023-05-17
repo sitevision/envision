@@ -43,8 +43,6 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 
 ## Sizes
 
-<span class="env-badge env-badge--info">Slim button size available since 10.0</span>
-
 ```html
 <p>
    <button
@@ -117,10 +115,6 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 ```
 
 ## Icons
-
-Support for icons in buttons were added in Envision released with Sitevision 8.2.
-Square icon-only button was added with Sitevision 9.0. Modifier "icon-around" available since Sitevision 10.
-Method of adding icons have since been updated as examples below.
 
 All button types and sizes are available.
 
@@ -226,9 +220,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4 class="doc-heading-4">
-   Small icon size <span class="env-badge env-badge--info">10.0</span>
-</h4>
+<h4 class="doc-heading-4">Small icon size</h4>
 
 <button
    type="button"
@@ -250,10 +242,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4 class="doc-heading-4">
-   Icon above
-   <span class="env-badge env-badge--warning">Beta since 2022.05.1</span>
-</h4>
+<h4 class="doc-heading-4">Icon above</h4>
 <p>Available in medium and large size.</p>
 
 <button

@@ -24,11 +24,7 @@ Capture a range
 ```
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', object);
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider({ values: [20, 70] });
 ```
 
 ## Options
@@ -41,13 +37,7 @@ $('#my-slider').envRangeSlider({ values: [20, 70] });
 Values to initialize the slider with.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', {
-   values: [20, 70],
-});
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider({
    values: [20, 70],
 });
 ```
@@ -60,13 +50,7 @@ $('#my-slider').envRangeSlider({
 The minimum value of the slider.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', {
-   min: 100,
-});
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider({
    min: 100,
 });
 ```
@@ -79,13 +63,7 @@ $('#my-slider').envRangeSlider({
 The maximum value of the slider.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', {
-   max: 200,
-});
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider({
    max: 200,
 });
 ```
@@ -98,13 +76,7 @@ $('#my-slider').envRangeSlider({
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', {
-   step: 5,
-});
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider({
    step: 5,
 });
 ```
@@ -117,13 +89,9 @@ $('#my-slider').envRangeSlider({
 If values should be visible below the handles.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider', {
    visibleValues: false,
 });
-
-// Deprecated Sitevision 9.1
-$('.my-slider').envRangeSlider({ visibleValues: false });
 ```
 
 ## Events
@@ -171,11 +139,7 @@ Parameters
 Set the values for the range.
 
 ```javascript
-// Since Sitevision 9.1
 envision.rangeSlider('#my-slider').then(function (sliders) {
    sliders[0].values([50, 90]);
 });
-
-// Deprecated Sitevision 9.1
-$('#my-slider').envRangeSlider('values', [50, 90]);
 ```

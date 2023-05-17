@@ -190,8 +190,6 @@ Add `--striped--animated` to animate the stripes
 
 ## Poll
 
-<span class="env-badge env-badge--info">Added in 9.2</span>
-
 ```html
 <div class="example-progress">
    <p class="env-text env-m-bottom--large">

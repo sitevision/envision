@@ -2,8 +2,6 @@
 title: Tag Select
 ---
 
-<span class="env-badge env-badge--info">Added in 9.1</span>
-
 Tag select is a JS alternative to `<select>` that allows you to create a nice looking multi-select with cross browser
 styling. A [single select version](#single-select) is also available since Sitevision 2023.04.1.
 

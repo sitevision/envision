@@ -2,8 +2,6 @@
 title: Toast
 ---
 
-<span class="env-badge env-badge--info">Added in 8.2.1</span>
-
 ```html
 <div class="env-toast env-toast--visible">
    <div class="env-toast__content">Hello, World! This is a Toast message.</div>

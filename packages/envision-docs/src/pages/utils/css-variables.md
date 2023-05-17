@@ -50,7 +50,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-font-size-xxx-large`
 -  `--env-font-size-xxxx-large`
 
-#### Links <span class="env-badge env-badge--info">8.2</span>
+#### Links
 
 -  `--env-link-font-color`
 -  `--env-link-text-decoration`
@@ -62,7 +62,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-link-secondary-hover-font-color`
 -  `--env-link-secondary-hover-text-decoration`
 
-#### Spacing <span class="env-badge env-badge--info">8.2</span>
+#### Spacing
 
 -  `--env-spacing-xxx-small`
 -  `--env-spacing-xx-small`
@@ -74,7 +74,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-spacing-xx-large`
 -  `--env-spacing-xxx-large`
 
-#### Shadows <span class="env-badge env-badge--info">8.2</span>
+#### Shadows
 
 -  `--env-box-shadow`
 -  `--env-box-shadow-large`
@@ -82,7 +82,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
    <br><br><span class="env-badge env-badge--info">Box shadow color, size, offset: 2023.04.1</span>
 -  `--env-box-shadow-color`
 
-#### Borders <span class="env-badge env-badge--info">8.2</span>
+#### Borders
 
 -  `--env-border-radius`
 -  `--env-border-radius-small`
@@ -120,10 +120,10 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 #### Base
 
--  `--env-background-color` <span class="env-badge env-badge--info">9.2</span>
--  `--env-section-background-color` <span class="env-badge env-badge--info">8.2</span>
+-  `--env-background-color`
+-  `--env-section-background-color`
 
-#### Blocks <span class="env-badge env-badge--info">8.2</span>
+#### Blocks
 
 -  `--env-block-font-color`
 -  `--env-block-background-color`
@@ -149,7 +149,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-block-secondary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
 -  `--env-block-secondary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
 
-### Elements <span class="env-badge env-badge--info">8.2</span>
+### Elements
 
 -  `--env-element-font-color`
 -  `--env-element-background-color`
@@ -206,36 +206,36 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 ### Components
 
-#### Alert <span class="env-badge env-badge--info">8.2</span>
+#### Alert
 
 -  `--env-alert-font-family`
 -  `--env-alert-border-radius`
 -  `--env-alert-background-color`
 
-#### Badge <span class="env-badge env-badge--info">8.2</span>
+#### Badge
 
 -  `--env-badge-font-family`
 -  `--env-badge-font-size`
 -  `--env-badge-border-radius`
 
-#### Breadcrumbs <span class="env-badge env-badge--info">8.2</span>
+#### Breadcrumbs
 
 -  `--env-breadcrumb-divider-color`
 
-#### Buttons <span class="env-badge env-badge--info">8.2</span>
+#### Buttons
 
 -  `--env-button-font-family`
 -  `--env-button-border-radius`
 
-#### Cardholder <span class="env-badge env-badge--info">9.0.1</span>
+#### Cardholder
 
 -  `--env-cardholder-column-min-width`
 -  `--env-cardholder-column-max-width`
 -  `--env-cardholder-column-spacing`
--  `--env-cardholder-grid-column-width` <span class="env-badge env-badge--info">10.0</span>
--  `--env-cardholder-grid-gap` <span class="env-badge env-badge--info">10.0</span>
+-  `--env-cardholder-grid-column-width`
+-  `--env-cardholder-grid-gap`
 
-#### Collapse <span class="env-badge env-badge--info">8.2</span>
+#### Collapse
 
 -  `--env-collapse-border-style`
 -  `--env-collapse-border-width`
@@ -248,7 +248,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-collapse-expanded-background-color`
 -  `--env-collapse-expanded-border-color`
 
-#### Form <span class="env-badge env-badge--info">8.2</span>
+#### Form
 
 -  `--env-form-font-family`
 -  `--env-form-input-border-radius`
@@ -258,11 +258,11 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
 -  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
 
-#### Image viewer/slider controls <span class="env-badge env-badge--info">8.2</span>
+#### Image viewer/slider controls
 
 -  `--env-image-control-color`
 
-#### Modal <span class="env-badge env-badge--info">8.2</span>
+#### Modal
 
 -  `--env-modal-small-width`
 -  `--env-modal-medium-width`
@@ -270,21 +270,21 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-modal-backdrop-background-color`
 -  `--env-modal-backdrop-opacity`
 
-#### Pagination <span class="env-badge env-badge--info">8.2</span>
+#### Pagination
 
 -  `--env-pagination-font-family`
 -  `--env-pagination-border-width`
 -  `--env-pagination-border-style`
 
-#### Popover <span class="env-badge env-badge--info">8.2</span>
+#### Popover
 
 -  `--env-popover-width`
 
 #### Progress indicator
 
--  `--env-progress-bar-poll-highlight-color` <span class="env-badge env-badge--info">9.2</span>
+-  `--env-progress-bar-poll-highlight-color`
 
-#### Profile image <span class="env-badge env-badge--info">8.2</span>
+#### Profile image
 
 -  `--env-profile-image-border-radius`
 
@@ -332,7 +332,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 ### Removed
 
--  `--env-page-background-color` <span class="env-badge env-badge--danger">9.2</span>
--  `--env-default-button-color` <span class="env-badge env-badge--danger">8.2</span>
--  `--env-image-control-inactive-color` <span class="env-badge env-badge--danger">9.2</span>
+-  `--env-page-background-color`
+-  `--env-default-button-color`
+-  `--env-image-control-inactive-color`
 -  `--env-element-common-background-color-dark` <span class="env-badge env-badge--danger">2023.01</span>
