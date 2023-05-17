@@ -1,0 +1,235 @@
+$inset: css-var('spacing-xx-large');
+
+@mixin overlayButton($opacity: 0.65) {
+   background-color: rgba(0, 0, 0, $opacity);
+   border-color: transparent;
+   color: #fff;
+}
+
+.env-image-viewer-2 {
+   position: relative;
+   text-align: center;
+
+   //----- Core slider styling -----
+
+   &__viewer {
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+   }
+
+   &__viewer__items {
+      overflow: hidden;
+      position: relative;
+   }
+
+   &__viewer__item {
+      float: left;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+   }
+
+   //----- Slider controls -----
+
+   &__viewer__controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      justify-items: start;
+      margin: 0 0 0.5em 0;
+
+      .env-image-viewer-2--overlay & {
+         position: absolute;
+         z-index: 1;
+         inset: 0 0 auto;
+         margin: 0;
+         padding: 0.25em;
+
+         &__button {
+            @include overlayButton;
+
+            &:hover,
+            &:focus,
+            &:active {
+               @include overlayButton(0.75);
+            }
+         }
+      }
+
+      &__button:first-child {
+         // Zoom or Autoplay button
+         margin: 0 0.25em 0 0;
+      }
+
+      &__button:nth-last-child(2) {
+         // Prev-button
+         margin: 0 0.25em 0 auto;
+      }
+   }
+
+   // ----- Slider caption -----
+
+   &__viewer__caption {
+      font-family: css-var('ui-text-caption-font-family');
+      font-size: css-var('ui-text-caption-font-size');
+      font-weight: css-var('ui-text-caption-font-weight');
+      font-style: normal;
+      text-transform: css-var('ui-text-caption-text-transform');
+      letter-spacing: css-var('ui-text-caption-letter-spacing');
+      color: css-var('ui-text-caption-font-color');
+      line-height: $line-height-medium;
+      text-align: left;
+      padding: 0.5em 1em;
+
+      .env-image-viewer-2--overlay & {
+         position: absolute;
+         z-index: 1;
+         inset: auto auto 0 0;
+         background-color: rgba(0, 0, 0, 0.65);
+         color: #fff;
+
+         * {
+            color: #fff;
+         }
+
+         a {
+            text-decoration: underline;
+         }
+      }
+   }
+
+   // ----- Lightbox -----
+
+   &__lightbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      --env-font-color: #fff;
+      --env-spinner-color: #fff;
+      position: fixed;
+      inset: 0;
+      margin: $inset;
+      overflow: hidden;
+      opacity: 1;
+      text-align: center;
+      z-index: $zindex-modal;
+      border-radius: var(--env-border-radius-large);
+
+      &__panel {
+         position: absolute;
+         inset: 0;
+         overflow: hidden;
+         background-color: #000;
+         background-position: 50%;
+         background-size: cover;
+         filter: blur(40px) brightness(0.4);
+         pointer-events: none;
+
+         &__header-gradient,
+         &__footer-gradient {
+            position: absolute;
+            inset: 0 0 auto;
+            z-index: 1;
+            height: 85px;
+            background-image: linear-gradient(
+               rgba(0, 0, 0, 0.7),
+               rgba(0, 0, 0, 0)
+            );
+         }
+
+         &__footer-gradient {
+            inset: auto 0 0;
+            background-image: linear-gradient(
+               rgba(0, 0, 0, 0),
+               rgba(0, 0, 0, 0.7)
+            );
+         }
+      }
+
+      &__image-container {
+         position: relative;
+         text-align: center;
+         margin: 0 auto;
+      }
+
+      &__image {
+         max-height: calc(100vh - #{$inset} * 2);
+      }
+
+      &__download,
+      &__close {
+         &,
+         &:focus,
+         &:hover {
+            background-color: transparent;
+            border-color: transparent;
+            color: #fff;
+         }
+
+         &:focus,
+         &:hover {
+            backdrop-filter: invert(10%);
+            transition: backdrop-filter 0.025s ease-in-out;
+         }
+      }
+
+      &__download {
+         position: fixed !important;
+         z-index: 9999;
+         bottom: calc(#{$inset} + 0.5em);
+         right: calc(#{$inset} + 0.5em);
+      }
+
+      &__close {
+         position: fixed !important;
+         z-index: 9999;
+         top: calc(#{$inset} + 0.5em);
+         right: calc(#{$inset} + 0.5em);
+      }
+
+      &__next,
+      &__prev {
+         position: fixed !important;
+         top: 50%;
+         transform: translateY(-50%);
+         border-radius: 50%;
+
+         &,
+         &:hover,
+         &:focus {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+         }
+      }
+
+      &__next {
+         right: calc(#{$inset} + 0.5em);
+      }
+
+      &__prev {
+         left: calc(#{$inset} + 0.5em);
+      }
+
+      &__backdrop {
+         @include backdrop(rgba(0, 0, 0, 0.9));
+
+         &--in {
+            @include backdrop-in(1);
+         }
+      }
+
+      &__showOnActive {
+         @media (hover: hover) {
+            opacity: 0;
+            transition: opacity 0.1s 0.2s;
+         }
+
+         .env-image-viewer-2__lightbox--active &,
+         .env-image-viewer-2__lightbox:hover & {
+            opacity: 1;
+         }
+      }
+   }
+}

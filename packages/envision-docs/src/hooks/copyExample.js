@@ -22,6 +22,44 @@ export const useCopyExample = (content) => {
          });
 
       // Initialize Envision plugins
+
+      const is2 = document.querySelector('#myCarousel');
+
+      envision.imageViewer2(is2, {
+         slides: {
+            auto: 2000,
+            playing: false,
+            overlay: false,
+            buttons: {
+               type: 'secondary',
+               size: 'slim',
+            },
+         },
+         zoom: true,
+         buttons: {
+            showText: true,
+         },
+         i18n: {
+            prev: 'Nej vänta',
+         },
+      });
+
+      const is2NZ = document.querySelector('#myCarousel2');
+
+      envision.imageViewer2(is2NZ, {
+         slides: true,
+         zoom: false,
+         i18n: 'en',
+      });
+
+      const is2Z = document.querySelector('#zoomTest');
+
+      envision.imageViewer2(is2Z);
+
+      const is2Z2 = document.querySelector('#zoomTest2');
+
+      envision.imageViewer2(is2Z2);
+
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
       envision.popover('#example-popover-data');
 

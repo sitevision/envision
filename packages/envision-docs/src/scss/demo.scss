@@ -556,3 +556,13 @@ $variableNames: 'neutral', 'active', 'attention';
    top: 50%;
    margin-top: -10px;
 }
+
+.example-imageviewer2-images {
+   --env-cardholder-grid-column-width: 8em;
+   max-width: 34em;
+   margin: 0 auto 0 0 !important;
+
+   img {
+      width: 100%;
+   }
+}
