@@ -1,4 +1,6 @@
 .env-spinner {
+   display: flex;
+   justify-content: center;
    font-size: 10px;
    height: 60px;
    text-align: center;
@@ -8,12 +10,19 @@
       display: none;
    }
 
+   &--fade-in {
+      animation-name: env-fadein;
+      animation-duration: 1.5s;
+      animation-delay: 0.5s;
+   }
+
    > div {
       animation: env-stretchdelay 1.2s infinite ease-in-out;
       background-color: css-var('spinner-color');
       display: inline-block;
       height: 100%;
       width: 6px;
+      margin: 0 1px;
    }
 
    .env-rect2 {
@@ -30,6 +39,15 @@
 
    .env-rect5 {
       animation-delay: -0.8s;
+   }
+}
+
+@keyframes env-fadein {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
    }
 }
 
