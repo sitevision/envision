@@ -77,7 +77,7 @@ if (popoverContentEl) {
 }
 ```
 
-## Popover menu <span class="env-badge env-badge--info">9.0</span>
+## Popover menu
 
 Add `type: 'menu'` in JS or `data-type="menu"` in HTML
 for a menu-styled popover. Use class `env-popover__item` for the menu items.

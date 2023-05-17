@@ -14,7 +14,7 @@ title: Spinner
 </div>
 ```
 
-## Bounce <span class="env-badge env-badge--info">8.2</span>
+## Bounce
 
 ```html
 <div class="env-spinner-bounce">

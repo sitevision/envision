@@ -2,6 +2,8 @@
 title: Image viewer
 ---
 
+<span class="env-badge env-badge--danger">Deprecated</span>
+
 ```html
 <div id="image-viewer" data-image-viewer class="env-image-viewer">
    <div>
@@ -45,14 +47,13 @@ title: Image viewer
 </div>
 ```
 
-## Usage from script <span class="env-badge env-badge--info">9.1</span>
+## Usage from script
 
 ### Options
 
-`i18n` _'sv'_ | _'en'_ | _{ prev, next, moveto }_ <span class="env-badge env-badge--info">Added in 2022.06.1</span>
+`i18n` _'sv'_ | _'en'_ | _{ prev, next, moveto }_
 
 ```javascript
-// Since Sitevision 9.1
 envision.imageViewer('#image-viewer').then(function (viewers) {
    // Show Image viewer
    viewers[0].show();

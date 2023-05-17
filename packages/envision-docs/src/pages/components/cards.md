@@ -2,8 +2,6 @@
 title: Cards
 ---
 
-<span class="env-badge env-badge--info">Added in 9.0.1</span>
-
 ## Cards & Cardholders
 
 Use Cards to display information about, for example, a page, a group or a user.
@@ -317,8 +315,6 @@ Below are a few examples that you may resize and see how the columns adapt to th
 </div>
 
 ## Cardholder Grid
-
-<span class="env-badge env-badge--info">Added in 10.0</span>
 
 Cardholder Grid uses CSS Grid. Cardholder slots are _not_ required.
 Columns will always be equal width and aligned.

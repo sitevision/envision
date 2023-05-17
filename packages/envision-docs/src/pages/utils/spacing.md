@@ -15,25 +15,25 @@ Valid values for _specifier_
 -  `right`
 -  `bottom`
 -  `left`
--  `horizontal` <span class="env-badge env-badge--info">9.1</span>
--  `vertical` <span class="env-badge env-badge--info">9.1</span>
+-  `horizontal`
+-  `vertical`
 -  `around`
 
 Valid values for _size_
 
 -  `0`
 -  `a` auto, only applicable to `margin`
--  `xxx-small`
--  `xx-small`
--  `x-small`
--  `small`
--  `medium`
--  `large`
--  `x-large`
--  `xx-large`
--  `xxx-large`
+-  `xxx-small` <small>(0.125em)</small>
+-  `xx-small` <small>(0.25em)</small>
+-  `x-small` <small>(0.5em)</small>
+-  `small` <small>(0.75em)</small>
+-  `medium` <small>(1em)</small>
+-  `large` <small>(1.25em)</small>
+-  `x-large` <small>(1.5em)</small>
+-  `xx-large` <small>(1.75em)</small>
+-  `xxx-large` <small>(2em)</small>
 
-Invert values for margin by adding the negative modifier <span class="env-badge env-badge--info">9.1</span>
+Invert values for margin by adding the negative modifier
 
 -  `env-m-{specifier}--negative`
 

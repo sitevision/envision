@@ -2,7 +2,7 @@
 title: Colors
 ---
 
-## Block colors <span class="env-badge env-badge--info">8.2</span>
+## Block colors
 
 Preset color combinations, use for larger blocks of content.
 
@@ -47,7 +47,7 @@ Preset color combinations, use for larger blocks of content.
 </div>
 ```
 
-## Element colors <span class="env-badge env-badge--info">8.2</span>
+## Element colors
 
 Element colors are used for elements and components. See usage examples below.
 
@@ -516,7 +516,7 @@ larger sections or less defined parts of components.
 For example, `--env-section-background-color`
 is used as background color for Modal dialogs.
 
--  `--env-background-color` - Theme background color <span class="env-badge env-badge--info">9.2</span>
+-  `--env-background-color` - Theme background color
 -  `--env-font-color` - Generic text color
 -  `--env-link-font-color` - Generic link color
 -  `--env-link-hover-font-color` - Generic link:hover color
@@ -526,7 +526,7 @@ is used as background color for Modal dialogs.
 
 ## Background color <span class="env-badge env-badge--danger">Deprecated</span>
 
-Since Sitevision 8.2 Background color is deprecated. Please use Block colors.
+Background color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
@@ -548,7 +548,7 @@ Since Sitevision 8.2 Background color is deprecated. Please use Block colors.
 
 ## Color <span class="env-badge env-badge--danger">Deprecated</span>
 
-Since Sitevision 8.2 Color is deprecated. Please use Block colors.
+Color is deprecated. Please use Block colors.
 
 ```html
 <div class="example-color">
@@ -567,10 +567,3 @@ Since Sitevision 8.2 Color is deprecated. Please use Block colors.
    <p class="env-text env-color--lightest env-bg-color--dark">Lightest</p>
 </div>
 ```
-
-## Background color - Darker / Lighter <span class="env-badge env-badge--danger">Removed</span>
-
-Since Sitevision 8.2 Background color - Darker / Lighter is no longer
-included in Envision. Please use Block and Element colors.
-
-`--env-bg-color--{color}--{value}`
