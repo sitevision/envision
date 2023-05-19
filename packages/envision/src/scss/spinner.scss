@@ -8,12 +8,10 @@
 
    &--hide {
       display: none;
-   }
 
-   &--fade-in {
-      animation-name: env-fadein;
-      animation-duration: 1.5s;
-      animation-delay: 0.5s;
+      > div {
+         animation-name: none;
+      }
    }
 
    > div {
@@ -42,15 +40,6 @@
    }
 }
 
-@keyframes env-fadein {
-   from {
-      opacity: 0;
-   }
-   to {
-      opacity: 1;
-   }
-}
-
 @keyframes env-stretchdelay {
    0%,
    40%,
@@ -68,6 +57,10 @@
 
    &--hide {
       display: none;
+
+      > div {
+         animation-name: none;
+      }
    }
 
    > div {
@@ -79,12 +72,10 @@
    }
 
    .env-bounce1 {
-      -webkit-animation-delay: -0.32s;
       animation-delay: -0.32s;
    }
 
    .env-bounce2 {
-      -webkit-animation-delay: -0.16s;
       animation-delay: -0.16s;
    }
 }
@@ -98,5 +89,33 @@
 
    40% {
       transform: scale(1);
+   }
+}
+
+.env-spinner,
+.env-spinner-bounce {
+   &--fade-in {
+      animation-name: env-fadein;
+      animation-duration: 0.5s;
+
+      &[data-delay='short'] {
+         animation-duration: 0.25s;
+      }
+
+      &[data-delay='long'] {
+         animation-duration: 0.8s;
+      }
+   }
+}
+
+@keyframes env-fadein {
+   from {
+      opacity: 0;
+   }
+   80% {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
    }
 }
