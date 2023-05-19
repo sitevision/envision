@@ -11878,6 +11878,11 @@ swap-case@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
+swipejs@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/swipejs/-/swipejs-2.3.1.tgz#4d04da8ed5725aa09c51d6d6a6b4a51955b8638c"
+  integrity sha512-mUL5MKSVkpQ2/CMgurNNgiKNRKcRkkD1/bfe8f2Y5MZW74E99p3zCxBrV9C7goMmBY4J8lrH3Dm0IQvaV64UEQ==
+
 table@^6.0.9:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/table/-/table-6.8.0.tgz#87e28f14fa4321c3377ba286f07b79b281a3b3ca"
