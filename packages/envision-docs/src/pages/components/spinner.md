@@ -33,12 +33,16 @@ Use modifier `env-spinner--hide` or `env-spinner-bounce--hide` to hide the spinn
 Delay showing the spinner to avoid spinner flashing when the content loads fast.
 
 Use modifier `env-spinner--fade-in` or `env-spinner-bounce--fade-in` for a delayed spinner.
-Data attribute `data-delay="short"` may be used to control delay timing. Allowed values are `short`, `medium` and `long`.
+Data attribute `data-delay="short"` may be used to control delay timing. Allowed values are:
+
+-  `short` (0.25s delay)
+-  `medium` (0.5s)
+-  `long` (1s)
 
 ### Delayed spinner demo
 
 <div id="demo-delayed-spinner" class="demo-delayed-spinner code-example">
-   <div class="env-spinner env-spinner--fade-in">
+<div class="env-spinner env-spinner--hide">
       <div class="env-rect1"></div>
       <div class="env-rect2"></div>
       <div class="env-rect3"></div>

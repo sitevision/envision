@@ -1,13 +1,15 @@
 .env-spinner {
+   --delay: 0s;
    display: flex;
    justify-content: center;
-   font-size: 10px;
    height: 60px;
-   text-align: center;
    min-width: 42px;
+   font-size: 10px;
+   text-align: center;
 
    &--hide {
       display: none;
+      animation-name: none;
 
       > div {
          animation-name: none;
@@ -15,28 +17,37 @@
    }
 
    > div {
-      animation: env-stretchdelay 1.2s infinite ease-in-out;
-      background-color: css-var('spinner-color');
       display: inline-block;
       height: 100%;
       width: 6px;
       margin: 0 1px;
+      background-color: css-var('spinner-color');
+      transform: scaleY(0.4);
+      animation-name: env-stretchdelay;
+      animation-duration: 1.2s;
+      animation-delay: calc(-0.9s + var(--delay));
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+   }
+
+   .env-rect1 {
+      animation-delay: calc(-0.9s + var(--delay));
    }
 
    .env-rect2 {
-      animation-delay: -1.1s;
+      animation-delay: calc(-0.8s + var(--delay));
    }
 
    .env-rect3 {
-      animation-delay: -1s;
+      animation-delay: calc(-0.7s + var(--delay));
    }
 
    .env-rect4 {
-      animation-delay: -0.9s;
+      animation-delay: calc(-0.6s + var(--delay));
    }
 
    .env-rect5 {
-      animation-delay: -0.8s;
+      animation-delay: calc(-0.5s + var(--delay));
    }
 }
 
@@ -52,8 +63,9 @@
 }
 
 .env-spinner-bounce {
-   text-align: center;
+   --delay: 0s;
    min-width: 63px;
+   text-align: center;
 
    &--hide {
       display: none;
@@ -64,19 +76,29 @@
    }
 
    > div {
-      padding: 9px;
-      background-color: css-var('spinner-color');
-      border-radius: 100%;
       display: inline-block;
-      animation: env-loader 1.4s infinite ease-in-out both;
+      padding: 9px;
+      border-radius: 100%;
+      background-color: css-var('spinner-color');
+      transform: scaleY(0);
+      animation-name: env-loader;
+      animation-duration: 1.4s;
+      animation-delay: var(--delay);
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both;
    }
 
    .env-bounce1 {
-      animation-delay: -0.32s;
+      animation-delay: calc(-0.32s + var(--delay));
    }
 
    .env-bounce2 {
-      animation-delay: -0.16s;
+      animation-delay: calc(-0.16s + var(--delay));
+   }
+
+   .env-bounce3 {
+      animation-delay: var(--delay);
    }
 }
 
@@ -94,25 +116,29 @@
 
 .env-spinner,
 .env-spinner-bounce {
+   animation-play-state: paused;
+
    &--fade-in {
+      --delay: 0.5s;
       animation-name: env-fadein;
       animation-duration: 0.5s;
+      animation-delay: var(--delay);
+      animation-iteration-count: 1;
+      animation-play-state: running;
+      animation-fill-mode: both;
 
       &[data-delay='short'] {
-         animation-duration: 0.25s;
+         --delay: 0.25s;
       }
 
       &[data-delay='long'] {
-         animation-duration: 0.8s;
+         --delay: 1s;
       }
    }
 }
 
 @keyframes env-fadein {
    from {
-      opacity: 0;
-   }
-   80% {
       opacity: 0;
    }
    to {

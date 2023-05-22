@@ -31,9 +31,11 @@ export const useCopyExample = (content) => {
             '#demo-delayed-spinner .env-spinner'
          );
          spinner.classList.add('env-spinner--hide');
+         spinner.classList.remove('env-spinner--fade-in');
          spinner.dataset.delay = delay;
          setTimeout(() => {
             spinner.classList.remove('env-spinner--hide');
+            spinner.classList.add('env-spinner--fade-in');
          }, 1);
       };
 
