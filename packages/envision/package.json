@@ -44,9 +44,7 @@
    "dependencies": {
       "jquery": "^3.6.1",
       "@popperjs/core": "^2.11.6",
-      "tom-select": "^2.2.2",
-      "svgxuse": "^1.2.6",
-      "element-closest-polyfill": "^1.0.6"
+      "tom-select": "^2.2.2"
    },
    "browserslist": [
       ">0.5%",
