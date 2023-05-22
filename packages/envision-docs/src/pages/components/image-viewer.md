@@ -2,8 +2,6 @@
 title: Image viewer
 ---
 
-<span class="env-badge env-badge--danger">Deprecated</span>
-
 ```html
 <div id="image-viewer" data-image-viewer class="env-image-viewer">
    <div>
