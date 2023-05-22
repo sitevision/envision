@@ -13,6 +13,12 @@
       list-style: none;
       margin: 0;
       padding: $menu-inner-spacing 0;
+
+      > ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
    }
 
    &__item {
@@ -44,9 +50,8 @@
       &--active,
       &:active,
       &:hover {
-         background-color: rgba(0, 0, 0, 0.1);
          background-color: css-var('ui-color-brand-10');
-         color: css-var('ui-color-brand-10-contrast');
+         color: css-var('font-color');
       }
 
       @include focus-visible;
@@ -55,7 +60,7 @@
          flex: 0 0 $icon-size;
          width: $icon-size;
          height: $icon-size;
-         margin: 0 $menu-item-padding 0 0;
+         margin: 0 calc($menu-item-padding / 2) 0 0;
       }
    }
 

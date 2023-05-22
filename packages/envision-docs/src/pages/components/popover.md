@@ -2,8 +2,8 @@
 title: Popover
 ---
 
-```html
-<div class="env-popover" data-popper-placement="bottom">
+<div class="code-example">
+<div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-ui-text-overline">Popover</h4>
@@ -12,17 +12,15 @@ title: Popover
       <p class="env-text">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum
          nunc bibendum laoreet malesuada. Proin eget augue tortor. Sed bibendum
-         cursus eros, vitae mattis leo laoreet eget. Cras luctus semper
-         facilisis. Aliquam diam risus, tincidunt vitae erat sed, lobortis
-         pretium magna. Donec sollicitudin lorem eget imperdiet auctor.
+         cursus eros, vitae mattis leo laoreet eget.
       </p>
    </div>
 </div>
-```
+</div>
 
 ## Configuration and initialization
 
-Initialize from script. Use data-attributes or option parameters in JavaScript for settings.
+Initialize from script. Use data-attributes on the opener element or option parameters in JavaScript for settings.
 
 See [available options below](#options).
 
@@ -30,7 +28,8 @@ See [available options below](#options).
 
 ```html
 <button
-   class="env-button env-button--primary example-popover-data"
+   id="example-popover-data"
+   class="env-button env-button--primary"
    data-placement="top"
    data-trigger="hover focus"
    data-title="Lorem ipsum"
@@ -41,18 +40,16 @@ See [available options below](#options).
 </button>
 ```
 
-#### Initialization of data-attributes example
-
 ```javascript
-envision.popover('.example-popover-data');
+envision.popover('#example-popover-data');
 ```
 
 ### Example using JavaScript
 
-Content is read from hidden DOM element and displayed in the popover.
+The content will be fetched from a template element and displayed in the popover.
 
 ```html
-<div id="example-popover-content" class="env-d--none">
+<template id="example-popover-content">
    <div class="env-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <p>In fermentum <a href="#">nunc bibendum laoreet</a> malesuada.</p>
@@ -61,21 +58,19 @@ Content is read from hidden DOM element and displayed in the popover.
          leo laoreet eget.
       </p>
    </div>
-</div>
-<button class="env-button env-button--primary example-popover-js">
+</template>
+<button id="example-popover-button" class="env-button env-button--primary">
    Click me!
 </button>
 ```
 
-#### Initialization of JavaScript options example
-
 ```javascript
 const popoverContentEl = document.querySelector('#example-popover-content');
 if (popoverContentEl) {
-   envision.popover('.example-popover-js', {
+   envision.popover('#example-popover-button', {
       placement: 'bottom',
       title: 'Lorem ipsum',
-      content: popoverContentEl.innerHTML,
+      content: popoverContentEl,
       escapeContent: false,
       clickOutside: true,
    });
@@ -84,13 +79,33 @@ if (popoverContentEl) {
 
 ## Popover menu <span class="env-badge env-badge--info">9.0</span>
 
-```html
-<div class="env-popover" data-popper-placement="top">
+Add `type: 'menu'` in JS or `data-type="menu"` in HTML
+for a menu-styled popover. Use class `env-popover__item` for the menu items.
+
+<div class="env-m-vertical--large">
+<div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-ui-text-overline" id="popover-heading">Popover menu</h4>
+      <h4 class="env-ui-text-overline">Popover menu</h4>
    </div>
-   <ul class="env-popover__menu" aria-labelledby="popover-heading">
+   <div class="env-popover__menu">
+<ul>
+      <li>
+         <button type="button" class="env-popover__item">
+            <svg class="env-icon">
+               <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
+            </svg>
+            Action
+         </button>
+      </li>
+</ul>
+   </div>
+</div>
+</div>
+
+```html
+<template id="example-popover-menu-content">
+   <ul>
       <li>
          <button type="button" class="env-popover__item">
             <svg class="env-icon">
@@ -119,31 +134,80 @@ if (popoverContentEl) {
          </button>
       </li>
    </ul>
-</div>
+</template>
+<button id="example-popover-menu-button" class="env-button env-button--primary">
+   Show popover menu
+</button>
+```
+
+```javascript
+const popoverMenuContentEl = document.querySelector(
+   '#example-popover-menu-content'
+);
+if (popoverMenuContentEl) {
+   envision.popover('#example-popover-menu-button', {
+      placement: 'top',
+      title: 'Popover menu',
+      content: popoverMenuContentEl,
+      escapeContent: false,
+      clickOutside: true,
+      type: 'menu',
+   });
+}
 ```
 
 <span id="tooltip" class="offset-anchor"></span>
 
-## Popover Tooltip <span class="env-badge env-badge--info">2023.02.1</span>
+## Popover Tooltip <span class="env-badge env-badge--info">2023.05.1</span>
 
-Add modifier `env-popover--tooltip` for a Tooltip-styled popover. Common text components will adjust color
-automatically.
+Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
+for a Tooltip-styled popover. Common text components will adjust color automatically.
 
-```html
-<div class="env-popover env-popover--tooltip" data-popper-placement="bottom">
-   <div class="env-popover__arrow"></div>
+<div class="env-m-vertical--large">
+<div class="example-static-popover env-popover env-popover--tooltip" data-popper-placement="bottom">
+<div class="env-popover__arrow"></div>
    <div class="env-popover__header">
       <h4 class="env-ui-text-overline">Popover Tooltip</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
-         Lorem ipsum dolor sit amet,
-         <a href="javascript:void(0)">consectetur adipiscing elit</a>. In
-         fermentum nunc bibendum laoreet malesuada.
+         Lorem ipsum dolor sit amet
       </p>
-      <p class="env-ui-text-caption">Aliquam diam risus tincidunt.</p>
    </div>
 </div>
+</div>
+
+```html
+<template id="example-popover-tooltip-content">
+   <p class="env-text">
+      Lorem ipsum dolor sit amet,
+      <a href="javascript:void(0)">consectetur adipiscing elit</a>. In fermentum
+      nunc bibendum laoreet malesuada.
+   </p>
+   <p class="env-ui-text-caption">Aliquam diam risus tincidunt.</p>
+</template>
+<button
+   id="example-popover-tooltip-button"
+   class="env-button env-button--primary"
+>
+   Show popover tooltip
+</button>
+```
+
+```javascript
+const popoverTooltipContentEl = document.querySelector(
+   '#example-popover-tooltip-content'
+);
+if (popoverTooltipContentEl) {
+   envision.popover('#example-popover-tooltip-button', {
+      placement: 'top',
+      title: 'Popover tooltip',
+      content: popoverTooltipContentEl,
+      escapeContent: false,
+      clickOutside: true,
+      type: 'tooltip',
+   });
+}
 ```
 
 ## Options <span id="options" class="offset-anchor"></span>
@@ -159,7 +223,7 @@ automatically.
    -  Popover title.
    -  Default value: `''`
 
--  `content` _string_
+-  `content` _string_ | _HTMLElement_ <span class="env-badge env-badge--info">2023.05.1</span>
 
    -  Popover content.
    -  Default value: `''`
@@ -183,3 +247,9 @@ automatically.
 
    -  Close popover on click outside.
    -  Default value: `false`
+
+-  `type` _string_ <span class="env-badge env-badge--info">2023.05.1</span>
+
+   -  Popover styling
+   -  Default value: null
+   -  Possible values: `menu`, `tooltip`

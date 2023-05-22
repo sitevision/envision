@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 .env-popover {
-   $arrow-size: 10px;
+   $arrow-size: 11px;
 
    background-color: css-var('section-background-color');
    border: $border-width $border-style css-var('border-color-light');
@@ -37,6 +39,10 @@
    }
 
    @include popout-menu(#{css-var('spacing-x-large')});
+
+   &__menu {
+      min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
+   }
 
    &__arrow {
       @include arrowBase($arrow-size);

@@ -8,6 +8,8 @@ import Util from './util/util';
 import { getNodes } from './util/nodes';
 
 const NAME = 'envSelect';
+const XML_NS = 'http://www.w3.org/2000/svg';
+const XLINK_NS = 'http://www.w3.org/1999/xlink';
 
 const lang = {
    sv: {
@@ -45,6 +47,7 @@ const defaults = {
       },
    },
    userConfig: {
+      allowEmptyOption: false,
       valueField: 'value',
       labelField: 'text',
       searchField: ['text'],
@@ -119,6 +122,20 @@ const SelectPlugin = function (el, settings, TomSelect) {
    select.control.classList.add('env-select__input');
    select.input.classList.add('env-assistive-text');
 
+   if (this.settings.maxItems === 1) {
+      // Add arrow down icon for single select.
+      const svgEl = document.createElementNS(XML_NS, 'svg');
+      const useEl = document.createElementNS(XML_NS, 'use');
+      useEl.setAttributeNS(
+         XLINK_NS,
+         'xlink:href',
+         '/sitevision/envision-icons.svg#icon-angle-down'
+      );
+      svgEl.appendChild(useEl);
+      svgEl.classList.add('env-icon');
+      select.wrapper.appendChild(svgEl);
+   }
+
    // API
    this.addOptions = select.addOption.bind(select);
    this.load = select.load.bind(select);
@@ -176,20 +193,27 @@ const SelectPlugin = function (el, settings, TomSelect) {
    return this;
 };
 
-const getSettings = (settings, node) => {
+const getSettings = (options, node) => {
    // Remove unwanted settings
-   settings = Util.normalizeOptions(settings, defaults.userConfig);
-
-   // Avoid overwriting defaults for unspecified render properties
-   settings.render = { ...defaults.userConfig.render, ...settings.render };
+   options = Util.normalizeOptions(options, defaults.userConfig);
 
    // Merge user settings with envision and user defaults
-   settings = Object.assign(
+   let settings = Util.extend(
+      true,
       {},
       defaults.staticConfig,
       defaults.userConfig,
-      settings
+      options
    );
+
+   if (settings.maxItems === 1) {
+      // Settings not allowed in Single select
+      delete settings.plugins.clear_button;
+      delete settings.plugins.remove_button;
+   } else {
+      // Setting only allowed for Single select
+      delete settings.allowEmptyOption;
+   }
 
    if (!settings.clearButton) {
       // Custom option clearButton will activate
@@ -200,15 +224,11 @@ const getSettings = (settings, node) => {
 
    // Must remove from settings to use HTML markup
 
-   if (!settings.items) {
-      delete settings.items;
-   }
-   if (!settings.placeholder) {
-      delete settings.placeholder;
-   }
-   if (!settings.options) {
-      delete settings.options;
-   }
+   ['items', 'placeholder', 'options'].forEach((prop) => {
+      if (!settings[prop]) {
+         delete settings[prop];
+      }
+   });
 
    // Handle language option
    // May be set to string 'sv', 'en' - use lang variable
@@ -226,19 +246,21 @@ const getSettings = (settings, node) => {
 };
 
 // Plugin / extension for envision library
-export default async (elements, settings) => {
+export default async (elements, options) => {
    const nodes = getNodes(elements);
    if (nodes.length > 0) {
       const { default: TomSelect } = await import(
          /* webpackChunkName: "tom-select" */ 'tom-select'
       );
-      const selects = nodes.map((node) => {
-         settings = getSettings(settings, node);
+      return nodes.map((node) => {
          if (!node[NAME]) {
-            node[NAME] = new SelectPlugin(node, settings, TomSelect);
+            node[NAME] = new SelectPlugin(
+               node,
+               getSettings(options, node),
+               TomSelect
+            );
          }
          return node[NAME];
       });
-      return selects;
    }
 };

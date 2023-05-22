@@ -79,6 +79,8 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-box-shadow`
 -  `--env-box-shadow-large`
 -  `--env-box-shadow-small`
+   <br><br><span class="env-badge env-badge--info">Box shadow color, size, offset: 2023.04.1</span>
+-  `--env-box-shadow-color`
 
 #### Borders <span class="env-badge env-badge--info">8.2</span>
 
@@ -128,27 +130,24 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-block-border-color`
 -  `--env-block-link-font-color`
 -  `--env-block-link-hover-font-color`
-   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
--  `--env-block-link-text-decoration`
--  `--env-block-link-hover-text-decoration`
+-  `--env-block-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-primary-font-color`
 -  `--env-block-primary-background-color`
 -  `--env-block-primary-border-color`
 -  `--env-block-primary-link-font-color`
 -  `--env-block-primary-link-hover-font-color`
-   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
--  `--env-block-primary-link-text-decoration`
--  `--env-block-primary-link-hover-text-decoration`
+-  `--env-block-primary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-primary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-secondary-font-color`
 -  `--env-block-secondary-background-color`
 -  `--env-block-secondary-border-color`
 -  `--env-block-secondary-link-font-color`
 -  `--env-block-secondary-link-hover-font-color`
-   <br><span class="env-badge env-badge--info">Block link text decoration: 2023.03.1</span>
--  `--env-block-secondary-link-text-decoration`
--  `--env-block-secondary-link-hover-text-decoration`
+-  `--env-block-secondary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-secondary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
 
 ### Elements <span class="env-badge env-badge--info">8.2</span>
 
@@ -256,6 +255,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-input-font-color`
 -  `--env-form-input-border-color`
 -  `--env-form-input-background-color`
+-  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
+-  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
 
 #### Image viewer/slider controls <span class="env-badge env-badge--info">8.2</span>
 

@@ -14,29 +14,55 @@ export const useCopyExample = (content) => {
 
       const envision = window.envision;
 
+      // Remove possible remaining popovers from Popover page
+      document
+         .querySelectorAll('.env-popover[role="tooltip"]')
+         .forEach((el) => {
+            el.parentNode.removeChild(el);
+         });
+
       // Initialize Envision plugins
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
-      envision.popover('.example-popover-data').then((popovers) => {
-         // Remove possible remaining popovers from Popover page
-         if (!popovers) {
-            document
-               .querySelectorAll('.env-popover[role="tooltip"]')
-               .forEach((el) => {
-                  el.parentNode.removeChild(el);
-               });
-         }
-      });
+      envision.popover('#example-popover-data');
 
       const popoverContentEl = document.querySelector(
          '#example-popover-content'
       );
       if (popoverContentEl) {
-         envision.popover('.example-popover-js', {
+         envision.popover('#example-popover-button', {
             placement: 'bottom',
             title: 'Lorem ipsum',
-            content: popoverContentEl.innerHTML,
+            content: popoverContentEl,
             escapeContent: false,
             clickOutside: true,
+         });
+      }
+
+      const popoverMenuContentEl = document.querySelector(
+         '#example-popover-menu-content'
+      );
+      if (popoverMenuContentEl) {
+         envision.popover('#example-popover-menu-button', {
+            placement: 'top',
+            title: 'Popover menu',
+            content: popoverMenuContentEl,
+            escapeContent: false,
+            clickOutside: true,
+            type: 'menu',
+         });
+      }
+
+      const popoverTooltipContentEl = document.querySelector(
+         '#example-popover-tooltip-content'
+      );
+      if (popoverTooltipContentEl) {
+         envision.popover('#example-popover-tooltip-button', {
+            placement: 'top',
+            title: 'Popover tooltip',
+            content: popoverTooltipContentEl,
+            escapeContent: false,
+            clickOutside: true,
+            type: 'tooltip',
          });
       }
 
@@ -51,6 +77,28 @@ export const useCopyExample = (content) => {
          envision.select(exampleSelects, {
             maxItems: 6,
             create: true,
+            i18n: 'en',
+         });
+      }
+
+      const singleSelectEl1 = document.querySelector(
+         '#example-tag-select-single-1'
+      );
+      if (singleSelectEl1) {
+         envision.select(singleSelectEl1, {
+            maxItems: 1,
+            i18n: 'en',
+         });
+      }
+
+      const singleSelectEl2 = document.querySelector(
+         '#example-tag-select-single-2'
+      );
+      if (singleSelectEl2) {
+         envision.select(singleSelectEl2, {
+            maxItems: 1,
+            allowEmptyOption: true,
+            sortField: [{ field: '$order' }, { field: '$score' }],
             i18n: 'en',
          });
       }

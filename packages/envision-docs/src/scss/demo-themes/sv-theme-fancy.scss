@@ -89,6 +89,8 @@
    --env-spacing-small: 0.75em;
    --env-ui-text-caption-letter-spacing: normal;
    --env-form-font-family: var(--env-font-family);
+   --env-form-label-font-family: var(--env-font-family);
+   --env-form-label-font-weight: 600;
    --env-ui-text-overline-font-family: var(--env-font-family);
    --env-link-font-color: #472975;
    --env-ui-color-brand-65: #573290;
@@ -115,7 +117,6 @@
    --env-badge-font-family: var(--env-font-family);
    --env-font-family: heinemann;
    --env-form-input-border-color: #949494;
-   --env-box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175);
    --env-ui-text-subheading-font-weight: 500;
    --env-ui-color-brand-45-contrast: #1e1131;
    --env-ui-color-brand-10-contrast: #6e40b5;
@@ -124,7 +125,6 @@
    --env-ui-color-brand-45: #946fcd;
    --env-block-primary-border-color: #ccc;
    --env-ui-color-brand-40: #a282d3;
-   --env-box-shadow-small: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
    --env-ui-text-sectionheading-letter-spacing: normal;
    --env-color-base: #000000;
    --env-font-size-medium: var(--env-font-size-base);

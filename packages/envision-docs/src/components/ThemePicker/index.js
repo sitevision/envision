@@ -13,19 +13,23 @@ const ThemePicker = () => {
             <label htmlFor="selectTheme" className="env-assistive-text">
                Select theme
             </label>
-            <small className="env-form-element__control">
-               <select
-                  className="env-form-input"
-                  id="selectTheme"
-                  value={theme}
-                  onChange={onThemeChange}
-               >
-                  <option value="">Default theme</option>
-                  <option value="sv-theme-dark">Dark theme</option>
-                  <option value="sv-theme-fancy">Fancy theme</option>
-                  <option value="sv-theme-quicksand">Quicksand theme</option>
-               </select>
-            </small>
+            <div className="env-text-small">
+               <div className="env-form-select">
+                  <select
+                     id="selectTheme"
+                     value={theme}
+                     onChange={onThemeChange}
+                  >
+                     <option value="">Default theme</option>
+                     <option value="sv-theme-dark">Dark theme</option>
+                     <option value="sv-theme-fancy">Fancy theme</option>
+                     <option value="sv-theme-quicksand">Quicksand theme</option>
+                  </select>
+                  <svg className="env-icon">
+                     <use xlinkHref="/sitevision/envision-icons.svg#icon-angle-down"></use>
+                  </svg>
+               </div>
+            </div>
          </div>
       </div>
    );

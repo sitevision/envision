@@ -382,15 +382,12 @@ $spacing-xxx-large: $spacing-base * 2 !default;
 
 // ----- SHADOWS -----
 
-$box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15) !default;
-$box-shadow-small: 0 0.125em 0.25em rgba(0, 0, 0, 0.075) !default;
-$box-shadow-large: 0 1em 3em rgba(0, 0, 0, 0.175) !default;
-
 @include to-css-custom-property(
    (
-      'box-shadow': $box-shadow,
-      'box-shadow-large': $box-shadow-large,
-      'box-shadow-small': $box-shadow-small,
+      'box-shadow-color': rgba(0, 0, 0, 0.15),
+      'box-shadow': 0 0.5em 1em #{css-var('box-shadow-color')},
+      'box-shadow-small': 0 0.125em 0.25em #{css-var('box-shadow-color')},
+      'box-shadow-large': 0 1em 3em #{css-var('box-shadow-color')},
    )
 );
 
@@ -548,6 +545,7 @@ $checkbox-tick-width: $checkbox-size * 0.7 !default;
 $checkbox-disabled-color: $color-lighter !default;
 
 $form-input-height: 44;
+$form-input-font-size: 16;
 $form-input-line-height: 1.375; // 22px @ 16px font size
 $form-input-border-color: #949494 !default;
 $form-padding-x: 0.75em;
@@ -556,6 +554,8 @@ $form-padding-y: 0.625em;
 @include to-css-custom-property(
    (
       'form-font-family': css-var('font-family'),
+      'form-label-font-family': css-var('font-family'),
+      'form-label-font-weight': $font-weight-semibold,
       'form-input-border-radius': css-var('border-radius-medium'),
       'form-input-font-color': css-var('font-color'),
       'form-input-border-color': $form-input-border-color,

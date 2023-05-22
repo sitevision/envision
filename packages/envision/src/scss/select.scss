@@ -61,17 +61,15 @@
          }
 
          &:focus {
-            outline: 1px solid transparent;
+            @include wcagSafeOutlineNone;
          }
       }
 
       .env-select.full & > input,
       .env-select.input-hidden & > input {
-         flex: none;
-         visibility: hidden;
-         min-width: 1px;
-         width: 1px;
-         overflow: hidden;
+         left: -10000px;
+         opacity: 0;
+         position: absolute;
       }
 
       .env-select.focus & {
@@ -182,8 +180,8 @@
       &__option {
          &:hover,
          &.active {
-            color: css-var('element-font-color');
-            background-color: css-var('element-background-color');
+            background-color: css-var('ui-color-brand-10');
+            color: css-var('font-color');
          }
       }
    }
