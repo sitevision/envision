@@ -2,8 +2,6 @@
 title: Profile image
 ---
 
-<span class="env-badge env-badge--info">Added in 8.2</span>
-
 ## Overview
 
 `.env-profile-image` will always give you a centered image. Use modifiers for size:

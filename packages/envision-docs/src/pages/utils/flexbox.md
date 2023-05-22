@@ -2,8 +2,6 @@
 title: Flexbox
 ---
 
-<span class="env-badge env-badge--info">New naming format since 9.1</span>
-
 ## Flex Container
 
 ### Direction

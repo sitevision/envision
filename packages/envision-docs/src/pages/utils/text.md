@@ -77,7 +77,7 @@ title: Text
 <div class="env-text env-text-align--right">Right aligned</div>
 ```
 
-## Links <span class="env-badge env-badge--info">8.2</span>
+## Links
 
 <div id="links"></div>
 

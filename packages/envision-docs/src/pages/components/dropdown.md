@@ -170,7 +170,7 @@ Use `env-button-group` to split buttons.
 </div>
 ```
 
-### Optional placement <span class="env-badge env-badge--info">9.2</span>
+### Optional placement
 
 Use `data-dropdown-placement-body` attribute on `<button>` element
 to open dropdown as an immediate child of `<body>`.

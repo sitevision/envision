@@ -416,7 +416,7 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
 </div>
 ```
 
-### Optional placement <span class="env-badge env-badge--info">9.2</span>
+### Optional placement
 
 Use `data-modal-dialog-placement-body` attribute on container element
 to open dialog window as an immediate child of `<body>`.
@@ -713,37 +713,25 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
 Show
 
 ```javascript
-// Since Sitevision 9.1
 envision.dialog('#myModal').then(function (dialogs) {
    dialogs[0].show();
 });
-
-// Deprecated Sitevision 9.1
-$('#myModal').envDialog('show');
 ```
 
 Hide
 
 ```javascript
-// Since Sitevision 9.1
 envision.dialog('#myModal').then(function (dialogs) {
    dialogs[0].hide();
 });
-
-// Deprecated Sitevision 9.1
-$('#myModal').envDialog('hide');
 ```
 
 Toggle
 
 ```javascript
-// Since Sitevision 9.1
 envision.dialog('#myModal').then(function (dialogs) {
    dialogs[0].toggle();
 });
-
-// Deprecated Sitevision 9.1
-$('#myModal').envDialog('toggle');
 ```
 
 ## Events
