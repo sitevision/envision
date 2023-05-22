@@ -63,6 +63,30 @@ export const useCopyExample = (content) => {
       // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
       envision.popover('#example-popover-data');
 
+      // Delayed spinner demo
+      const showDelayedSpinner = (delay) => {
+         const spinner = document.querySelector(
+            '#demo-delayed-spinner .env-spinner'
+         );
+         spinner.classList.add('env-spinner--hide');
+         spinner.classList.remove('env-spinner--fade-in');
+         spinner.dataset.delay = delay;
+         setTimeout(() => {
+            spinner.classList.remove('env-spinner--hide');
+            spinner.classList.add('env-spinner--fade-in');
+         }, 1);
+      };
+
+      document
+         .querySelector('#toggle-spinner-1')
+         ?.addEventListener('click', () => showDelayedSpinner('short'));
+      document
+         .querySelector('#toggle-spinner-2')
+         ?.addEventListener('click', () => showDelayedSpinner('medium'));
+      document
+         .querySelector('#toggle-spinner-3')
+         ?.addEventListener('click', () => showDelayedSpinner('long'));
+
       const popoverContentEl = document.querySelector(
          '#example-popover-content'
       );
