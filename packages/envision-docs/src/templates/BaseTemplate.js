@@ -39,7 +39,7 @@ const BaseTemplate = ({
             <main>
                <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
                {deprecated && (
-                  <h2 className="env-text-h2">
+                  <h2 className="doc-heading-2 doc-heading-2--main">
                      <span className="env-badge env-badge--danger">
                         Deprecated
                      </span>

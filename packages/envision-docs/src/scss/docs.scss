@@ -173,6 +173,11 @@ body[class*=' sv-theme-'] {
    font-size: 26px;
    font-size: clamp(1.2rem, #{'-0.7857rem + 8.1633vw'}, 2rem);
    margin: 1em 0 0.5em;
+
+   &--main {
+      line-height: 1;
+      margin: 1em 0;
+   }
 }
 
 .doc-heading-3 {
