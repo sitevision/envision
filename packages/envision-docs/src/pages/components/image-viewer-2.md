@@ -5,7 +5,7 @@ title: Image viewer 2
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
 and/or a lightbox viewer with navigation between images.
 
-<section id="demoCarousel"
+<section id="demoImageViewer2"
 class="env-m-vertical--large"
          aria-label="Photos from Örebro">
       <div>
@@ -49,7 +49,7 @@ with navigation arrows to switch between images. The link href:s should point to
 
 ```html
 <div
-   id="example-imageviewer-1"
+   id="example-imageviewer2-1"
    class="example-imageviewer2-images env-flex env-flex--justify-content-around"
 >
    <a href="/placeholders/originals/03.jpeg" data-zoom>
@@ -65,16 +65,17 @@ with navigation arrows to switch between images. The link href:s should point to
       <img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Dandelion" />
    </a>
 </div>
-<script>
-   envision.imageViewer2(document.querySelector('#example-imageviewer-1'));
-</script>
+```
+
+```javascript
+envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
 ```
 
 ## Slideshow
 
 ```html
 <section
-   id="example-imageviewer-2"
+   id="example-imageviewer2-2"
    class="env-p-around--medium"
    aria-label="Photos from Örebro"
 >
@@ -104,19 +105,20 @@ with navigation arrows to switch between images. The link href:s should point to
       </div>
    </div>
 </section>
-<script>
-   envision.imageViewer2(document.querySelector('#example-imageviewer-2'), {
-      slides: {
-         auto: 3000,
-         playing: false,
-         overlay: false,
-         buttons: {
-            type: 'secondary',
-            size: 'slim',
-         },
+```
+
+```javascript
+envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
+   slides: {
+      auto: 3000,
+      playing: false,
+      overlay: false,
+      buttons: {
+         type: 'secondary',
+         size: 'slim',
       },
-   });
-</script>
+   },
+});
 ```
 
 ## Options

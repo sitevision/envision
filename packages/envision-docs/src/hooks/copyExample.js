@@ -23,7 +23,7 @@ export const useCopyExample = (content) => {
 
       // Initialize Envision plugins
 
-      const demoImageViewer2 = document.querySelector('#demoCarousel');
+      const demoImageViewer2 = document.querySelector('#demoImageViewer2');
       demoImageViewer2 &&
          envision.imageViewer2(demoImageViewer2, {
             slides: {
@@ -32,8 +32,8 @@ export const useCopyExample = (content) => {
             },
          });
 
-      const imageViewer2_1 = document.querySelector('#example-imageviewer-1');
-      const imageViewer2_2 = document.querySelector('#example-imageviewer-2');
+      const imageViewer2_1 = document.querySelector('#example-imageviewer2-1');
+      const imageViewer2_2 = document.querySelector('#example-imageviewer2-2');
       imageViewer2_1 && envision.imageViewer2(imageViewer2_1);
 
       imageViewer2_2 &&
