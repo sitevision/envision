@@ -17,6 +17,7 @@ export default function Template({
    return (
       <BaseTemplate
          title={frontmatter.title}
+         deprecated={frontmatter.deprecated}
          topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
@@ -48,6 +49,7 @@ export const pageQuery = graphql`
          html
          frontmatter {
             title
+            deprecated
          }
       }
       allMarkdownRemark {
@@ -56,6 +58,7 @@ export const pageQuery = graphql`
                id
                frontmatter {
                   title
+                  deprecated
                }
                fields {
                   slug

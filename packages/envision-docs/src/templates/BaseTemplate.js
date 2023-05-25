@@ -9,6 +9,7 @@ const filterMenuItems = (items) => {
       .map(({ node }) => ({
          id: node.id,
          title: node.frontmatter.title,
+         deprecated: node.frontmatter.deprecated,
          slug: node.fields.slug,
       }))
       .reduce((accumulated, item) => {
@@ -25,6 +26,7 @@ const filterMenuItems = (items) => {
 };
 const BaseTemplate = ({
    title,
+   deprecated,
    topMenuItems,
    menuCategories,
    menuItems,
@@ -36,6 +38,13 @@ const BaseTemplate = ({
          <div className="main-container">
             <main>
                <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
+               {deprecated && (
+                  <h2 className="env-text-h2">
+                     <span className="env-badge env-badge--danger">
+                        Deprecated
+                     </span>
+                  </h2>
+               )}
                {children}
             </main>
             <Sidenav
@@ -50,6 +59,7 @@ const BaseTemplate = ({
 
 BaseTemplate.propTypes = {
    title: PropTypes.string,
+   deprecated: PropTypes.bool,
    topMenuItems: PropTypes.array,
    menuCategories: PropTypes.array,
    menuItems: PropTypes.array,

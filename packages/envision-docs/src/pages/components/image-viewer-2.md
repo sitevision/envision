@@ -2,188 +2,258 @@
 title: Image viewer 2
 ---
 
-## UNDER CONSTRUCTION
+Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
+and/or a lightbox viewer with navigation between images.
 
-<div id="zoomTest2"  class="env-m-vertical--large">
-<a class="env-link env-d--inline-block" href="/placeholders/originals/02.jpeg" data-zoom>
-      <img src="/placeholders/225x100/02.jpeg" alt="Walking Tour in Amsterdam">
-   </a>
-</div>
-
-<div id="zoomTest" class="example-imageviewer2-images env-cardholder-grid" style="max-width: 34em; margin: 0 auto;--env-cardholder-grid-column-width: 8em">
-<a href="/placeholders/originals/02.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/02.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-<a href="/placeholders/originals/03.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-<a href="/placeholders/originals/04.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/04.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-<a href="/placeholders/originals/08.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/08.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-<a href="/placeholders/originals/09.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-<a href="/placeholders/originals/10.jpeg" data-zoom class="env-flex__item">
-<img loading="lazy" src="/placeholders/225x100/10.jpeg" alt="Walking Tour in Amsterdam">
-</a>
-</div>
-
-<div lang="en">
-<section id="myCarousel"
-class="env-border env-p-around--medium env-m-vertical--large"
-         aria-label="Highlighted television shows">
+<section id="demoCarousel"
+class="env-m-vertical--large"
+         aria-label="Photos from Örebro">
       <div>
-          <span data-href="/placeholders/originals/10.jpeg" data-zoom class="env-image-viewer-2__item__zoom">
-            <img src="/placeholders/900x400/10.jpeg" alt="Walking Tour in Amsterdam">
+          <span data-href="/placeholders/originals/10.jpeg" data-zoom>
+            <img src="/placeholders/900x400/10.jpeg" alt="Örebro Castle">
           </span>
-        <div class="env-image-viewer-2__viewer__caption env-text">
-         Dynamic Europe: Amsterdam, Prague, Berlin, 7 pm Tuesday, March 3, on TV
+        <div class="env-image-viewer-2__viewer__caption">
+         Örebro Castle
         </div>
       </div>
       <div>
-          <span data-href="/placeholders/originals/05.jpeg" data-zoom class="env-image-viewer-2__item__zoom">
-            <img src="/placeholders/900x400/05.jpeg" alt="Land's End in Cornwall">
+          <span data-href="/placeholders/originals/05.jpeg" data-zoom>
+            <img src="/placeholders/900x400/05.jpeg" alt="Karlslund Manor House">
           </span>
-        <div class="env-image-viewer-2__viewer__caption env-text">
-            <a href="#">
-              Travel to Southwest England and Paris
-            </a>
+        <div class="env-image-viewer-2__viewer__caption">
+              Karlslund Manor House
         </div>
       </div>
       <div>
-            <img data-href="/placeholders/originals/02.jpeg" data-zoom src="/placeholders/900x400/02.jpeg" alt="Mom and daughter play Daniel Tiger game on notebook computer.">
-        <div class="env-image-viewer-2__viewer__caption env-text">
-            <a href="#">
-              Great Children's Programming on Public TV
-            </a>
+            <img data-href="/placeholders/originals/02.jpeg" data-zoom src="/placeholders/900x400/02.jpeg" alt="Highland cattle at Oset">
+        <div class="env-image-viewer-2__viewer__caption">
+              Highland cattle at Oset
         </div>
       </div>
 </section>
+
+## Features include
+
+-  Buttons for displaying the previous and next slides.
+-  Button for stopping and restarting rotation.
+-  Keyboard navigation support.
+-  Aria-live announcement for image changes.
+-  Optional automatic rotation, always disabled for users who prefers reduced motion.
+-  Optional download button in lightbox.
+-  Optional placement of slideshow buttons.
+
+## Lightbox
+
+Use attribute `data-zoom` on one or more links inside the element being initialized from script. The lightbox opens
+with navigation arrows to switch between images. The link href:s should point to a large version of the image being shown.
+
+```html
+<div
+   id="example-imageviewer-1"
+   class="example-imageviewer2-images env-flex env-flex--justify-content-around"
+>
+   <a href="/placeholders/originals/03.jpeg" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Grass" />
+   </a>
+   <a href="/placeholders/originals/04.jpeg" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/04.jpeg" alt="Fern" />
+   </a>
+   <a href="/placeholders/originals/08.jpeg" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/08.jpeg" alt="Snail" />
+   </a>
+   <a href="/placeholders/originals/09.jpeg" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Dandelion" />
+   </a>
 </div>
+<script>
+   envision.imageViewer2(document.querySelector('#example-imageviewer-1'));
+</script>
+```
 
-<div id="myCarousel2"
-         aria-label="Highlighted television shows">
-      <div>
-          <span data-href="/placeholders/originals/10.jpeg" data-zoom class="env-image-viewer-2__item__zoom">
-            <img src="/placeholders/900x400/10.jpeg" alt="Walking Tour in Amsterdam">
-          </span>
-        <div class="env-image-viewer-2__viewer__caption">
-         Dynamic Europe: Amsterdam, Prague, Berlin, 7 pm Tuesday, March 3, on TV
-        </div>
+## Slideshow
+
+```html
+<section
+   id="example-imageviewer-2"
+   class="env-p-around--medium"
+   aria-label="Photos from Örebro"
+>
+   <div>
+      <span data-href="/placeholders/originals/10.jpeg" data-zoom>
+         <img src="/placeholders/900x400/10.jpeg" alt="Örebro Castle" />
+      </span>
+      <div class="env-image-viewer-2__viewer__caption">Örebro Castle</div>
+   </div>
+   <div>
+      <span data-href="/placeholders/originals/05.jpeg" data-zoom>
+         <img src="/placeholders/900x400/05.jpeg" alt="Karlslund Manor House" />
+      </span>
+      <div class="env-image-viewer-2__viewer__caption">
+         Karlslund Manor House
       </div>
-      <div>
-          <span data-href="/placeholders/originals/05.jpeg" data-zoom class="env-image-viewer-2__item__zoom">
-            <img src="/placeholders/900x400/05.jpeg" alt="Land's End in Cornwall">
-          </span>
-        <div class="env-image-viewer-2__viewer__caption">
-            <a href="#">
-              Travel to Southwest England and Paris
-            </a>
-        </div>
+   </div>
+   <div>
+      <img
+         data-href="/placeholders/originals/02.jpeg"
+         data-zoom
+         src="/placeholders/900x400/02.jpeg"
+         alt="Highland cattle at Oset"
+      />
+      <div class="env-image-viewer-2__viewer__caption">
+         Highland cattle at Oset
       </div>
-      <div>
-            <img data-href="/placeholders/originals/02.jpeg" data-zoom src="/placeholders/900x400/02.jpeg" alt="Mom and daughter play Daniel Tiger game on notebook computer.">
-        <div class="env-image-viewer-2__viewer__caption">
-            <a href="#">
-              Great Children's Programming on Public TV
-            </a>
-        </div>
-      </div>
-</div>
+   </div>
+</section>
+<script>
+   envision.imageViewer2(document.querySelector('#example-imageviewer-2'), {
+      slides: {
+         auto: 3000,
+         playing: false,
+         overlay: false,
+         buttons: {
+            type: 'secondary',
+            size: 'slim',
+         },
+      },
+   });
+</script>
+```
 
-### Carousel View and Behavior Options
+## Options
 
-**Display controls and captions outside of image**
+```javascript
+// Default options
+{
+   slides: false,
+   buttons: {
+      download: true,
+      showText: false,
+   },
+   i18n: 'sv',
+}
 
-This option is more accessible than rendering controls and captions within the image, because controls are easier to
-perceive and captions are easier to read without rotating images behind them.
+// Default slides options if set to true
+{
+   auto: 0,
+   speed: 300,
+   draggable: true,
+   playing: false,
+   overlay: true,
+   buttons: {
+      type: null,
+      ghost: false,
+      size: null,
+   },
+},
+```
 
-**Pause auto-rotation on load (reload needed)**
+-  `buttons` _{ download, showText }_
 
-This option controls whether the carousel is paused or playing on page load. The paused option improves accessibility
-for users with visual impairments and people who are distracted or confused by auto-rotation, but allows users to start
-auto-rotation using the start/stop button.
+   -  Lightbox button options. Show/hide download button. Visible text in close/download buttons.
+   -  Default values: `{ download: true, showText: false }`
 
-Note: If the user has chosen reduced motion in system settings, auto-rotation will always be paused on load.
+-  `i18n` _'sv'_ | _'en'_ | _{ language keys }_
 
-**Disable auto-rotation**
+   -  Translation of buttons aria-label and aria-roledescription.
+      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+   -  Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download, image, of_
 
-This option improves accessibility for users with visual impairments and people who are distracted or confused by
-auto-rotation by disabling the auto-rotation feature and removing the start/stop button from the user interface. Users
-can use the previous and next buttons to manually navigate through the slides.
+-  `slides` _boolean_ | _{ [options object](#slides-options-object) }_
 
-## Keyboard Support
+   -  Initialize a slideshow with default or custom options
+   -  Default value: `false`
 
-### Rotation Control Button
+<span id="slides-options-object" class="offset-anchor"></span>
 
-**Tab**
+### Slides options object
 
-Moves focus through interactive elements in the carousel.
+-  `auto` _number_
 
-Rotation control, previous slide, and next slide buttons precede the slide content in the Tab sequence.
+   -  Auto rotation possible, play button visible. Number is interval in _ms_.
+   -  Default value: `0` (auto rotation not available)
 
-**Enter or Space**
+-  `speed` _number_
 
-Toggle the auto rotation of slides in the carousel.
+   -  Slide speed in _ms_.
+   -  Default value: `300`
 
-### Next and Previous Slide Buttons
+-  `draggable` _boolean_
 
-**Enter or Space**
+   -  Slides listen to mouse drag events in addition to touch events.
+   -  Default value: `true`
 
-Display next or previous slide in the carousel.
+-  `playing` _boolean_
 
-## Role, Property, State, and Tabindex Attributes
+   -  If `auto` is set to > 0, this will start auto rotation automatically.
+   -  Default value: `false`
 
-**section (role region)**
+-  `overlay` _boolean_
 
-Role region is implied for any section element that has an accessible name.
-Defines the carousel and its controls as a landmark region.
+   -  Control buttons and caption should overlay the slides.
+   -  Default value: `true`
 
-**aria-roledescription="carousel"**
+-  `buttons` _{ size, type, ghost }_
 
-Informs assistive technologies to identify the element as a "carousel" rather than a "region."
+   -  Control button appearance.
+   -  Allowed value for `type`: Any Element color name in lowercase.
+   -  Allowed value for `size`: Any Button size name in lowercase.
+   -  Allowed value for `ghost`: true/false
 
-NOTE: The aria-roledescription value is defined using the language of the page and should be localized by the author.
+auto: 0,
+speed: 300,
+draggable: true,
+playing: false,
+overlay: true,
+buttons: {
+type: null,
+ghost: false,
+size: null,
 
-**aria-label="Highlighted television shows"**
+TODO MER HÄR
 
-Provides a label that describes the content in the carousel region.
+## API functions
 
-**aria-live="off"**
+Instances of Image viewer 2 may be controlled by the methods described below.
 
-Identifies the container element as a live region that is in the "off" state, meaning assistive technology users are not
-informed about changes to the region.
+```javascript
+envision.imageViewer2('#image-viewer').then(function (imageViewers) {
+   imageViewers[0].slider.pause();
+   imageViewers[0].lightbox.show(1);
+});
+```
 
-The live region is off when the carousel is automatically rotating.
+### Slider
 
-**aria-live="polite"**
+-  `slider.pause()`
 
-This causes screen readers to automatically announce the content of slides when the next and previous slide buttons are
-activated.
+   -  Pause slider automatic rotation.
 
-**aria-roledescription="slide"**
+-  `slider.play()`
 
-Informs assistive technologies to identify the element as a "slide" rather than a "group."
+   -  Start slider automatic rotation if available.
 
-Affects how the assistive technology renders the role but does not remove any assistive technology functions related to
-group elements.
+-  `slider.next()`
 
-NOTE: The aria-roledescription value is defined using the language of the page and should be localized by the author.
+   -  Show next image.
 
-**aria-label="N of 6"**
+-  `slider.prev()`
 
-Provides each slide with a distinct label that helps the user understand which of the 6 slides is displayed.
+   -  Show previous image.
 
-Note: Normally, including set position and size information in an accessible name is not appropriate. An exception is
-helpful in this implementation because group elements do not support aria-setsize or aria-posinset.
+-  `slider.goTo(index, speed)`
 
-**aria-label="LABEL_STRING"**
+   -  Set slider to image at position _index_. Use _speed_ to control how fast image is shown.
 
-Defines the accessible name for the pause auto-rotation button and the next and previous slide buttons.
+-  `slider.getPos()`
 
-**aria-controls="IDREF"**
+   -  Get index for current image.
 
-Refers to the div that contains all the slides.
+### Lightbox
+
+-  `lightbox.show(index)`
+
+   -  Show lightbox starting at _index_. Defaults to index 0.
+
+-  `lightbox.hide()`
+
+   -  Hide the lightbox.

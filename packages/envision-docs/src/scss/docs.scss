@@ -139,6 +139,19 @@ body[class*=' sv-theme-'] {
    @include focus-visible;
 }
 
+.doc-link-secondary--deprecated {
+   font-style: italic;
+
+   .env-badge {
+      font-size: 0.5em;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0.1em 0.25em;
+      margin: 0 0 0 0.5em;
+      transform: translateY(-0.15em);
+   }
+}
+
 .doc-heading-1 {
    font-family: $roboto;
    font-size: 46px;

@@ -558,12 +558,13 @@ $variableNames: 'neutral', 'active', 'attention';
 }
 
 .example-imageviewer2-images {
-   --env-cardholder-grid-column-width: 8em;
-   max-width: 34em;
-   margin: 0 auto 0 0 !important;
+   a {
+      padding: 0 0.2em;
+   }
 
    img {
-      width: 100%;
+      display: block;
+      max-width: 100%;
    }
 }
 

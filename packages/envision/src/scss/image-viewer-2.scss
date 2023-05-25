@@ -90,11 +90,11 @@ $inset: css-var('spacing-xx-large');
          color: #fff;
 
          * {
-            color: #fff;
+            color: #fff !important;
          }
 
          a {
-            text-decoration: underline;
+            text-decoration: underline !important;
          }
       }
    }
@@ -132,6 +132,9 @@ $inset: css-var('spacing-xx-large');
             inset: 0 0 auto;
             z-index: 1;
             height: 85px;
+            // For button icon and text, the background will be at least
+            // #767676 on a white image for all text but the very top of
+            // some large letters.
             background-image: linear-gradient(
                rgba(0, 0, 0, 0.7),
                rgba(0, 0, 0, 0)
@@ -212,11 +215,28 @@ $inset: css-var('spacing-xx-large');
          left: calc(#{$inset} + 0.5em);
       }
 
+      @keyframes env-image-viewer-fade {
+         from {
+            opacity: 0;
+         }
+         to {
+            opacity: 1;
+         }
+      }
+
       &__backdrop {
-         @include backdrop(rgba(0, 0, 0, 0.9));
+         position: fixed;
+         inset: 0;
+         background-color: rgba(0, 0, 0, 0.9);
+         opacity: 0;
+         z-index: $zindex-modal-backdrop;
+         // Fade out-animation
+         transition: all 0.2s linear;
 
          &--in {
-            @include backdrop-in(1);
+            // Fade in-animation
+            animation: env-image-viewer-fade 0.1s;
+            opacity: 1;
          }
       }
 

@@ -7,10 +7,10 @@
 import { getSwipe } from './util/swipe';
 
 import {
+   createElement,
    getFocusable,
    getNode,
    getNodes,
-   createElement,
    hide,
    isVisible,
    lockScroll,
@@ -27,7 +27,7 @@ const NAME = 'envImageviewer2';
 
 const CLASSNAME = {
    BASE: 'env-image-viewer-2',
-   ANIMATION: 'env-animation-in-progress',
+   ANIMATING: 'env-animation-in-progress',
    ITEM: 'env-image-viewer-2__viewer__item',
    ITEMS: 'env-image-viewer-2__viewer__items',
    LIGHTBOX: 'env-image-viewer-2__lightbox',
@@ -108,7 +108,7 @@ const SLIDER_CONTROLS_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer__control
 
 const lang = {
    sv: {
-      carousel: 'karusell',
+      roledescription: 'karusell',
       prev: 'Visa nästa',
       next: 'Visa föregående',
       pause: 'Stoppa',
@@ -122,7 +122,7 @@ const lang = {
       of: 'av',
    },
    en: {
-      carousel: 'carousel',
+      roledescription: 'carousel',
       prev: 'Previous',
       next: 'Next',
       pause: 'Stop',
@@ -138,9 +138,9 @@ const lang = {
 };
 
 const defaults = {
-   zoom: true,
-   slides: null,
+   slides: false,
    buttons: {
+      download: true,
       showText: false,
    },
    i18n: 'sv',
@@ -160,119 +160,111 @@ const slidesDefaults = {
 };
 
 class Imageviewer2Lightbox {
-   constructor(element, settings) {
-      this.el = element;
-      this.config = settings;
+   #el;
+   #config;
+   #lightbox;
+   #images;
+   #backdrop;
+   #currentHref;
+   #downloadButton;
+   #opener;
 
-      this.images = [];
-      getNodes('[data-zoom]', this.el).forEach((el) => {
+   constructor(element, settings) {
+      this.#el = element;
+      this.#config = settings;
+      this.#images = [];
+
+      getNodes('[data-zoom]', this.#el).forEach((el) => {
          const href = el.href || el.dataset.href;
          if (el.href && !el.href.startsWith('#')) {
             el.dataset.href = href;
             el.href = '#0';
          }
-         this.images.push(href);
+         this.#images.push(href);
       });
 
       this.bindThis();
 
       // If slideshow, show event is handled in Slider.
-      if (!this.config.slides) {
-         this.el?.addEventListener('click', this.show);
+      if (!this.#config.slides) {
+         this.#el?.addEventListener('click', this.#handleClick);
       }
    }
 
    getImageCount() {
-      return this.images.length;
+      return this.#images.length;
    }
 
    bindThis() {
-      this.setFocus = this.setFocus.bind(this);
-      this.show = this.show.bind(this);
-      this.handleClick = this.handleClick.bind(this);
-      this.handleKeydown = this.handleKeydown.bind(this);
-      this.handleLightboxActive = this.handleLightboxActive.bind(this);
+      this.#setFocus = this.#setFocus.bind(this);
+      this.#handleClick = this.#handleClick.bind(this);
+      this.#handleClickInside = this.#handleClickInside.bind(this);
+      this.#handleKeydown = this.#handleKeydown.bind(this);
+      this.#handleLightboxActive = this.#handleLightboxActive.bind(this);
    }
 
    loadImage() {
       const imgContainer = getNode(
          `.${CLASSNAME.LIGHTBOX}__image-container`,
-         this.lightbox
+         this.#lightbox
       );
       const lightboxBgPanel = getNode(
          `.${CLASSNAME.LIGHTBOX}__panel`,
-         this.lightbox
+         this.#lightbox
       );
       imgContainer.innerHTML = TEMPLATE.SPINNER;
       const img = new Image();
-      img.src = this.currentHref;
+      img.src = this.#currentHref;
       img.classList.add(`${CLASSNAME.LIGHTBOX}__image`);
       img.onload = () => {
-         this.downloadButton.href = img.src;
+         if (this.#config.buttons.download) {
+            this.#downloadButton.href = img.src;
+         }
          setStyle(lightboxBgPanel, 'background-image', `url('${img.src}')`);
          imgContainer.replaceChildren(img);
       };
       this.setVisibleButtons();
-      setTimeout(this.setFocus, 1);
+      setTimeout(this.#setFocus, 1);
    }
 
-   setImageHref(e, i) {
-      let href;
-      if (i >= 0) {
-         href = this.images[i];
-         this.currentHref = href;
-      } else if (
-         e.target.closest('[data-zoom]') &&
-         e.target.closest('[data-zoom]').dataset.href
-      ) {
-         href = e.target.closest('[data-zoom]').dataset.href;
-         this.currentHref = href;
-      }
-   }
+   showLightbox() {
+      this.#lightbox = createElement(TEMPLATE.LIGHTBOX);
+      const showText = this.#config.buttons.showText;
 
-   show(e, i) {
-      e.preventDefault();
-
-      this.opener =
-         e.target.closest('[data-zoom]') || e.target.closest('button');
-
-      this.setImageHref(e, i);
-      this.lightbox = createElement(TEMPLATE.LIGHTBOX);
-      const showText = this.config.buttons.showText;
-
-      if (this.images.length > 1) {
-         this.lightbox.appendChild(
+      if (this.#images.length > 1) {
+         this.#lightbox.appendChild(
             getButtonElement({
-               text: this.config.i18n.prev,
+               text: this.#config.i18n.prev,
                icon: ICON.PREV,
                className: `${CLASSNAME.LIGHTBOX}__prev ${CLASSNAME.LIGHTBOX}__showOnActive`,
                dataset: { move: 'prev' },
             })
          );
-         this.lightbox.appendChild(
+         this.#lightbox.appendChild(
             getButtonElement({
-               text: this.config.i18n.next,
+               text: this.#config.i18n.next,
                icon: ICON.NEXT,
                className: `${CLASSNAME.LIGHTBOX}__next ${CLASSNAME.LIGHTBOX}__showOnActive`,
                dataset: { move: 'next' },
             })
          );
       }
-      this.downloadButton = getButtonElement({
-         text: this.config.i18n.download,
-         icon: ICON.DOWNLOAD,
-         className: `${CLASSNAME.LIGHTBOX}__download ${
-            showText && CLASSNAME.BUTTON_ICON_BEFORE
-         } ${CLASSNAME.LIGHTBOX}__showOnActive`,
-         as: 'a',
-      });
-      this.downloadButton.setAttribute('download', '');
-      this.downloadButton.removeAttribute('type');
-      this.lightbox.appendChild(this.downloadButton);
-
-      this.lightbox.appendChild(
+      if (this.#config.buttons.download) {
+         this.#downloadButton = getButtonElement({
+            text: this.#config.i18n.download,
+            icon: ICON.DOWNLOAD,
+            className: `${CLASSNAME.LIGHTBOX}__download ${
+               showText && CLASSNAME.BUTTON_ICON_BEFORE
+            } ${CLASSNAME.LIGHTBOX}__showOnActive`,
+            as: 'a',
+         });
+         this.#downloadButton.setAttribute('download', '');
+         this.#downloadButton.removeAttribute('type');
+         this.#lightbox.appendChild(this.#downloadButton);
+      }
+      this.#lightbox.appendChild(
          getButtonElement({
-            text: this.config.i18n.close,
+            text: this.#config.i18n.close,
             icon: ICON.CLOSE,
             className: `${CLASSNAME.LIGHTBOX}__close  ${
                showText && CLASSNAME.BUTTON_ICON_BEFORE
@@ -283,109 +275,133 @@ class Imageviewer2Lightbox {
 
       this.loadImage();
 
-      document.body.appendChild(this.lightbox);
+      document.body.appendChild(this.#lightbox);
 
       lockScroll();
       this.showBackdrop();
       this.bindEvents();
 
-      if (this.config.slides?.auto) {
-         this.el.dispatchEvent(new Event('pause'));
+      if (this.#config.slides?.auto) {
+         this.#el.dispatchEvent(new Event('pause'));
       }
    }
 
-   showBackdrop() {
-      this.backdrop = createElement(TEMPLATE.BACKDROP);
+   show(i) {
+      // API Method
+      i = i || 0;
+      if (i < 0 || i > this.#images.length - 1) {
+         i = 0;
+      }
+      this.#currentHref = this.#images[i];
+      this.showLightbox();
+   }
 
-      this.backdrop.addEventListener(
+   #handleClick = (e) => {
+      e.preventDefault();
+      this.#opener =
+         e.target.closest('[data-zoom]') || e.target.closest('button');
+      if (
+         e.target.closest('[data-zoom]') &&
+         e.target.closest('[data-zoom]').dataset.href
+      ) {
+         this.#currentHref = e.target.closest('[data-zoom]').dataset.href;
+      }
+      this.showLightbox();
+   };
+
+   showBackdrop() {
+      this.#backdrop = createElement(TEMPLATE.BACKDROP);
+
+      this.#backdrop.addEventListener(
          'animationend',
          (e) => {
-            e.currentTarget?.classList.remove(CLASSNAME.ANIMATION);
+            e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
          },
          { once: true }
       );
 
-      document.body.appendChild(this.backdrop);
+      document.body.appendChild(this.#backdrop);
 
-      this.backdrop.classList.add(
+      this.#backdrop.classList.add(
          CLASSNAME.BACKDROP_ANIMATION,
-         CLASSNAME.ANIMATION
+         CLASSNAME.ANIMATING
       );
    }
 
    hide() {
+      // API Method
       const removeBackdropCallback = () => {
-         this.backdrop.remove();
-         this.lightbox.remove();
-         this.lightbox = null;
+         this.#backdrop.remove();
+         this.#lightbox.remove();
+         this.#lightbox = null;
          unlockScroll();
       };
 
-      this.backdrop.addEventListener('transitionend', removeBackdropCallback, {
+      this.#backdrop.addEventListener('transitionend', removeBackdropCallback, {
          once: true,
       });
-      this.backdrop.classList.remove(CLASSNAME.BACKDROP_ANIMATION);
+      this.#backdrop.classList.remove(CLASSNAME.BACKDROP_ANIMATION);
 
-      this.opener && this.opener.focus();
+      this.#opener && this.#opener.focus();
    }
 
    getCurrentIndex() {
-      const i = this.images.indexOf(this.currentHref);
+      const i = this.#images.indexOf(this.#currentHref);
       return i >= 0 ? i : 0;
    }
 
    goTo(i) {
-      this.currentHref = this.images[i];
+      this.#currentHref = this.#images[i];
       this.loadImage();
    }
 
-   next() {
+   #next() {
       let i = this.getCurrentIndex();
       i++;
-      if (i >= this.images.length) {
-         i = this.images.length - 1;
-         this.currentHref = this.images[i];
+      if (i >= this.#images.length) {
+         i = this.#images.length - 1;
+         this.#currentHref = this.#images[i];
       } else {
          this.goTo(i);
       }
    }
 
-   prev() {
+   #prev = () => {
       let i = this.getCurrentIndex();
       i--;
       if (i < 0) {
-         this.currentHref = this.images[0];
+         this.#currentHref = this.#images[0];
       } else {
          this.goTo(i);
       }
-   }
+   };
 
-   setFocus() {
+   #setFocus = () => {
       const activeEl = document.activeElement;
-      if (!this.lightbox.contains(activeEl) || !isVisible(activeEl)) {
-         const focusable = getFocusable(this.lightbox);
+      if (!this.#lightbox.contains(activeEl) || !isVisible(activeEl)) {
+         const focusable = getFocusable(this.#lightbox);
          focusable[0] && focusable[0].focus();
       }
-   }
+   };
 
    setVisibleButtons() {
       const i = this.getCurrentIndex();
-      const n = this.images.length;
+      const n = this.#images.length;
 
       if (n === 1 || (i === 0 && n > 1)) {
-         hide(getNode('[data-move="prev"]', this.lightbox));
+         hide(getNode('[data-move="prev"]', this.#lightbox));
       } else {
-         unhide(getNode('[data-move="prev"]', this.lightbox));
+         unhide(getNode('[data-move="prev"]', this.#lightbox));
       }
       if (n === 1 || (i === n - 1 && n > 1)) {
-         hide(getNode('[data-move="next"]', this.lightbox));
+         hide(getNode('[data-move="next"]', this.#lightbox));
       } else {
-         unhide(getNode('[data-move="next"]', this.lightbox));
+         unhide(getNode('[data-move="next"]', this.#lightbox));
       }
    }
 
-   handleClick(e) {
-      if (!this.lightbox.contains(e.target)) {
+   #handleClickInside = (e) => {
+      if (!this.#lightbox.contains(e.target)) {
          this.hide();
          return;
       }
@@ -404,8 +420,8 @@ class Imageviewer2Lightbox {
          if (i < 0) {
             i = 0;
          }
-         if (i >= this.images.length - 1) {
-            i = this.images.length - 1;
+         if (i >= this.#images.length - 1) {
+            i = this.#images.length - 1;
          }
 
          this.goTo(i);
@@ -414,28 +430,28 @@ class Imageviewer2Lightbox {
       if ('close' in target.dataset) {
          this.hide();
       }
-   }
+   };
 
-   handleKeydown(e) {
+   #handleKeydown = (e) => {
       if (/input|textarea/i.test(e.target.tagName)) {
          return;
       }
-      const focusable = getFocusable(this.lightbox);
+      const focusable = getFocusable(this.#lightbox);
       const firstElement = focusable[0];
       const lastElement = focusable[focusable.length - 1];
 
       switch (e.key) {
          case 'ArrowLeft':
             e.preventDefault();
-            this.prev();
+            this.#prev();
             break;
          case 'ArrowRight':
             e.preventDefault();
-            this.next();
+            this.#next();
             break;
          case 'Escape':
             e.preventDefault();
-            if (!this.backdrop.classList.contains(CLASSNAME.ANIMATION)) {
+            if (!this.#backdrop.classList.contains(CLASSNAME.ANIMATING)) {
                this.hide();
             }
             break;
@@ -453,30 +469,39 @@ class Imageviewer2Lightbox {
          default:
             return;
       }
-   }
+   };
 
-   handleLightboxActive(e) {
-      this.lightbox.classList.toggle(
+   #handleLightboxActive = (e) => {
+      this.#lightbox.classList.toggle(
          `${CLASSNAME.LIGHTBOX}--active`,
          e.type !== 'mouseleave'
       );
-   }
+   };
 
    bindEvents() {
-      this.lightbox.addEventListener('click', this.handleClick);
-      this.backdrop.addEventListener('click', this.handleClick);
-      this.lightbox.addEventListener('keydown', this.handleKeydown);
-      this.lightbox.addEventListener('mouseenter', this.handleLightboxActive);
-      this.lightbox.addEventListener('mouseleave', this.handleLightboxActive);
-      this.lightbox.addEventListener('keydown', this.handleLightboxActive);
+      this.#lightbox.addEventListener('click', this.#handleClickInside);
+      this.#backdrop.addEventListener('click', this.#handleClickInside);
+      this.#lightbox.addEventListener('keydown', this.#handleKeydown);
+      this.#lightbox.addEventListener('mouseenter', this.#handleLightboxActive);
+      this.#lightbox.addEventListener('mouseleave', this.#handleLightboxActive);
+      this.#lightbox.addEventListener('keydown', this.#handleLightboxActive);
    }
 }
 
 class Imageviewer2Slider {
+   #el;
+   #lightbox;
+   #config;
+   #autoplayState;
+   #slider;
+   #sliderEl;
+   #viewerEl;
+   #autoplayButtonEl;
+
    constructor(element, settings, lightbox, Swipe) {
-      this.el = element;
-      this.config = settings;
-      this.lightbox = lightbox;
+      this.#el = element;
+      this.#config = settings;
+      this.#lightbox = lightbox;
 
       this.bindThis();
 
@@ -488,92 +513,105 @@ class Imageviewer2Slider {
          '(prefers-reduced-motion: reduce)'
       ).matches;
 
-      this.config.slides.auto =
-         !prefersReducedMotion && this.config.slides.auto > 0
-            ? this.config.slides.auto
+      this.#config.slides.auto =
+         !prefersReducedMotion && this.#config.slides.auto > 0
+            ? this.#config.slides.auto
             : 0;
-      this.autoplayState = this.config.slides.auto
+      this.#autoplayState = this.#config.slides.auto
          ? AUTOPLAY_STATE.PLAY
          : AUTOPLAY_STATE.STOP;
 
       this.setSliderAriaLive();
       this.setPlayButton();
 
-      if (this.config.slides.overlay) {
-         this.el.classList.add(`${CLASSNAME.BASE}--overlay`);
+      if (this.#config.slides.overlay) {
+         this.#el.classList.add(`${CLASSNAME.BASE}--overlay`);
       }
 
-      this.slider = new Swipe(this.viewerEl, {
-         speed: prefersReducedMotion ? 1 : this.config.slides.speed,
-         draggable: this.config.slides.draggable,
-         auto: this.config.slides.auto, // 0 = av
+      this.#slider = new Swipe(this.#viewerEl, {
+         speed: prefersReducedMotion ? 1 : this.#config.slides.speed,
+         draggable: this.#config.slides.draggable,
+         auto: this.#config.slides.auto, // 0 = av
          stopPropagation: true,
-         transitionEnd: this.handleTransitionEnd,
+         transitionEnd: this.#handleTransitionEnd,
       });
 
-      if (this.config.slides.auto && this.config.slides.playing === false) {
-         this.setAutoplay(AUTOPLAY_STATE.STOP);
+      if (this.#config.slides.auto && this.#config.slides.playing === false) {
+         this.#setAutoplay(AUTOPLAY_STATE.STOP);
       }
 
       this.setSlideTabindex(
-         this.viewerEl,
-         this.viewerEl.querySelector(`.${CLASSNAME.ITEM}`)
+         this.#viewerEl,
+         this.#viewerEl.querySelector(`.${CLASSNAME.ITEM}`)
       );
+
+      // API
+      this.prev = this.#slider.prev;
+      this.next = this.#slider.next;
+      this.goTo = this.#slider.slide;
+      this.getPos = this.#slider.getPos;
    }
 
    bindThis() {
-      this.setAutoplay = this.setAutoplay.bind(this);
-      this.handleAutoplayButton = this.handleAutoplayButton.bind(this);
-      this.prev = this.prev.bind(this);
-      this.next = this.next.bind(this);
-      this.handleFocus = this.handleFocus.bind(this);
-      this.handleBlur = this.handleBlur.bind(this);
-      this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-      this.handleLightboxZoom = this.handleLightboxZoom.bind(this);
-      this.handlePauseEvent = this.handlePauseEvent.bind(this);
+      this.#setAutoplay = this.#setAutoplay.bind(this);
+      this.#handleAutoplayButton = this.#handleAutoplayButton.bind(this);
+      this.#prev = this.#prev.bind(this);
+      this.#next = this.#next.bind(this);
+      this.#handleFocus = this.#handleFocus.bind(this);
+      this.#handleBlur = this.#handleBlur.bind(this);
+      this.#handleTransitionEnd = this.#handleTransitionEnd.bind(this);
+      this.#handleLightboxZoom = this.#handleLightboxZoom.bind(this);
+      this.#handlePauseEvent = this.#handlePauseEvent.bind(this);
    }
 
    setupSlider() {
-      this.el.classList.add(CLASSNAME.BASE);
-      this.el.setAttribute('role', 'region');
-      this.el.setAttribute('aria-roledescription', this.config.i18n.carousel);
+      this.#el.classList.add(CLASSNAME.BASE);
+      this.#el.setAttribute('role', 'region');
+      this.#el.setAttribute(
+         'aria-roledescription',
+         this.#config.i18n.roledescription
+      );
 
-      this.viewerEl = createElement(SLIDER_VIEWER_TEMPLATE);
-      this.sliderEl = getNode(`.${CLASSNAME.ITEMS}`, this.viewerEl);
-      uniqueId(this.sliderEl);
+      this.#viewerEl = createElement(SLIDER_VIEWER_TEMPLATE);
+      this.#sliderEl = getNode(`.${CLASSNAME.ITEMS}`, this.#viewerEl);
+      uniqueId(this.#sliderEl);
 
-      const slideCount = this.el.children.length;
+      const slideCount = this.#el.children.length;
 
-      for (let i = this.el.children.length - 1; i >= 0; i--) {
+      for (let i = this.#el.children.length - 1; i >= 0; i--) {
          // Wrap and move all items inside slider
          const childNode = wrapElement(
-            this.el.children[i],
+            this.#el.children[i],
             SLIDER_ITEM_TEMPLATE
          );
          childNode.setAttribute(
             'aria-label',
-            `${this.config.i18n.image} ${i + 1} ${
-               this.config.i18n.of
+            `${this.#config.i18n.image} ${i + 1} ${
+               this.#config.i18n.of
             } ${slideCount}`
          );
-         this.sliderEl.prepend(childNode);
+         this.#sliderEl.prepend(childNode);
       }
 
-      this.el.replaceChildren(this.viewerEl);
+      this.#el.replaceChildren(this.#viewerEl);
    }
 
    getSliderButtonClassNames() {
       let className = `${CLASSNAME.BASE}__viewer__controls__button`;
-      if (!this.config.slides.overlay) {
-         if (this.config.slides.buttons.type) {
-            className = `env-button--${this.config.slides.buttons.type} ${className}`;
+      if (!this.#config.slides.overlay) {
+         if (this.#config.slides.buttons?.type) {
+            className = `env-button--${
+               this.#config.slides.buttons.type
+            } ${className}`;
          }
-         if (this.config.slides.buttons.ghost) {
+         if (this.#config.slides.buttons?.ghost) {
             className = `env-button--ghost ${className}`;
          }
       }
-      if (this.config.slides.buttons.size) {
-         className = `env-button--${this.config.slides.buttons.size} ${className}`;
+      if (this.#config.slides.buttons?.size) {
+         className = `env-button--${
+            this.#config.slides.buttons.size
+         } ${className}`;
       }
       return className;
    }
@@ -581,40 +619,46 @@ class Imageviewer2Slider {
    setupSliderControls() {
       const containerEl = createElement(SLIDER_CONTROLS_TEMPLATE);
       const className = this.getSliderButtonClassNames();
-      const showText = this.config.buttons.showText;
+      const showText = this.#config.buttons.showText;
       const prevBtn = getButtonElement({
-         text: this.config.i18n.prev,
+         text: this.#config.i18n.prev,
          icon: ICON.PREV,
          className: `${className} ${
             showText ? CLASSNAME.BUTTON_ICON_BEFORE : ''
          }`,
-         controls: this.sliderEl.id,
+         controls: this.#sliderEl.id,
       });
       const nextBtn = getButtonElement({
-         text: this.config.i18n.next,
+         text: this.#config.i18n.next,
          icon: ICON.NEXT,
          className: `${className} ${
             showText ? CLASSNAME.BUTTON_ICON_AFTER : ''
          }`,
-         controls: this.sliderEl.id,
+         controls: this.#sliderEl.id,
       });
       containerEl.appendChild(prevBtn);
       containerEl.appendChild(nextBtn);
       let zoomBtn;
-      if (this.config.slides.auto) {
-         this.autoplayButtonEl = getButtonElement({
-            text: `${this.config.i18n.pause} <span class="env-assistive-text">${this.config.i18n.slideshow}</span>`,
+      if (this.#config.slides.auto) {
+         this.#autoplayButtonEl = getButtonElement({
+            text: `${
+               this.#config.i18n.pause
+            } <span class="env-assistive-text">${
+               this.#config.i18n.slideshow
+            }</span>`,
             icon: ICON.PLAY,
             className: `${className} ${
                showText ? CLASSNAME.BUTTON_ICON_BEFORE : ''
             }`,
          });
-         containerEl.prepend(this.autoplayButtonEl);
+         containerEl.prepend(this.#autoplayButtonEl);
       }
 
-      if (this.config.zoom && this.lightbox?.getImageCount() > 0) {
+      if (this.#lightbox?.getImageCount() > 0) {
          zoomBtn = getButtonElement({
-            text: `${this.config.i18n.zoom} <span class="env-assistive-text">${this.config.i18n.largeImage}</span>`,
+            text: `${this.#config.i18n.zoom} <span class="env-assistive-text">${
+               this.#config.i18n.largeImage
+            }</span>`,
             icon: ICON.ZOOM,
             className: `${className} ${
                showText && CLASSNAME.BUTTON_ICON_BEFORE
@@ -623,43 +667,43 @@ class Imageviewer2Slider {
          containerEl.prepend(zoomBtn);
       }
       this.bindEvents(prevBtn, nextBtn, zoomBtn);
-      this.el.prepend(containerEl);
+      this.#el.prepend(containerEl);
    }
 
-   setAutoplay(state) {
+   #setAutoplay = (state) => {
       if (state === AUTOPLAY_STATE.PAUSE) {
-         if (this.autoplayState !== AUTOPLAY_STATE.STOP) {
-            this.autoplayState = AUTOPLAY_STATE.PAUSE;
-            this.slider.stop();
+         if (this.#autoplayState !== AUTOPLAY_STATE.STOP) {
+            this.#autoplayState = AUTOPLAY_STATE.PAUSE;
+            this.#slider.stop();
          }
       } else if (state === AUTOPLAY_STATE.CONTINUE) {
          if (
-            this.autoplayState !== AUTOPLAY_STATE.STOP &&
-            this.config.slides.auto
+            this.#autoplayState !== AUTOPLAY_STATE.STOP &&
+            this.#config.slides.auto
          ) {
-            this.autoplayState = AUTOPLAY_STATE.PLAY;
-            this.slider.restart();
+            this.#autoplayState = AUTOPLAY_STATE.PLAY;
+            this.#slider.restart();
          }
       } else if (state === AUTOPLAY_STATE.STOP) {
-         this.autoplayState = AUTOPLAY_STATE.STOP;
-         this.slider.stop();
-      } else if (state === AUTOPLAY_STATE.PLAY && this.config.slides.auto) {
-         this.autoplayState = AUTOPLAY_STATE.PLAY;
-         this.slider.restart();
+         this.#autoplayState = AUTOPLAY_STATE.STOP;
+         this.#slider.stop();
+      } else if (state === AUTOPLAY_STATE.PLAY && this.#config.slides.auto) {
+         this.#autoplayState = AUTOPLAY_STATE.PLAY;
+         this.#slider.restart();
       }
       this.setPlayButton();
       this.setSliderAriaLive();
-   }
+   };
 
-   next() {
-      this.slider.next();
-      this.setAutoplay(AUTOPLAY_STATE.PAUSE);
-   }
+   #next = () => {
+      this.#slider.next();
+      this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+   };
 
-   prev() {
-      this.slider.prev();
-      this.setAutoplay(AUTOPLAY_STATE.PAUSE);
-   }
+   #prev = () => {
+      this.#slider.prev();
+      this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+   };
 
    setSlideTabindex(sliderEl, currentSlideEl) {
       sliderEl.querySelectorAll('a, button, input').forEach((el) => {
@@ -676,82 +720,92 @@ class Imageviewer2Slider {
 
    setSliderAriaLive() {
       const ariaLive =
-         this.config.slides.auto && this.autoplayState === AUTOPLAY_STATE.PLAY
+         this.#config.slides.auto && this.#autoplayState === AUTOPLAY_STATE.PLAY
             ? 'off'
             : 'polite';
-      this.sliderEl.setAttribute('aria-live', ariaLive);
+      this.#sliderEl.setAttribute('aria-live', ariaLive);
    }
 
    setPlayButton() {
-      if (!this.autoplayButtonEl) {
+      if (!this.#autoplayButtonEl) {
          return;
       }
-      if (this.autoplayState === AUTOPLAY_STATE.PLAY) {
-         this.autoplayButtonEl.innerHTML = `${
-            this.config.i18n.pause
+      if (this.#autoplayState === AUTOPLAY_STATE.PLAY) {
+         this.#autoplayButtonEl.innerHTML = `${
+            this.#config.i18n.pause
          } <span class="env-assistive-text">${
-            this.config.i18n.slideshow
+            this.#config.i18n.slideshow
          }</span>${getButtonIcon(ICON.PAUSE)}`;
       } else {
-         this.autoplayButtonEl.innerHTML = `${
-            this.config.i18n.play
+         this.#autoplayButtonEl.innerHTML = `${
+            this.#config.i18n.play
          } <span class="env-assistive-text">${
-            this.config.i18n.slideshow
+            this.#config.i18n.slideshow
          }</span>${getButtonIcon(ICON.PLAY)}`;
       }
    }
 
-   handleAutoplayButton(e) {
+   #handleAutoplayButton = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      if (this.autoplayState !== AUTOPLAY_STATE.PLAY) {
-         this.setAutoplay(AUTOPLAY_STATE.PLAY);
+      if (this.#autoplayState !== AUTOPLAY_STATE.PLAY) {
+         this.#setAutoplay(AUTOPLAY_STATE.PLAY);
       } else {
-         this.setAutoplay(AUTOPLAY_STATE.STOP);
+         this.#setAutoplay(AUTOPLAY_STATE.STOP);
       }
-   }
+   };
 
-   handlePauseEvent() {
-      this.setAutoplay(AUTOPLAY_STATE.PAUSE);
-   }
+   #handlePauseEvent = () => {
+      this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+   };
 
-   handleTransitionEnd(index, elem) {
-      this.setSlideTabindex(this.viewerEl, elem);
-   }
+   #handleTransitionEnd = (index, elem) => {
+      this.setSlideTabindex(this.#viewerEl, elem);
+   };
 
-   handleFocus(e) {
+   #handleFocus = (e) => {
       if (
          e.target.tagName !== 'BUTTON' &&
-         this.el.contains(document.activeElement)
+         this.#el.contains(document.activeElement)
       ) {
-         this.setAutoplay(AUTOPLAY_STATE.PAUSE);
+         this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
       }
+   };
+
+   #handleBlur = (e) => {
+      if (e.target.tagName !== 'BUTTON' && !this.#el.contains(e.target)) {
+         this.#setAutoplay(AUTOPLAY_STATE.CONTINUE);
+      }
+   };
+
+   #handleLightboxZoom = () => {
+      this.#lightbox?.show(this.#slider.getPos());
+   };
+
+   pause() {
+      // API Method
+      this.#setAutoplay(AUTOPLAY_STATE.STOP);
    }
 
-   handleBlur(e) {
-      if (e.target.tagName !== 'BUTTON' && !this.el.contains(e.target)) {
-         this.setAutoplay(AUTOPLAY_STATE.CONTINUE);
-      }
-   }
-
-   handleLightboxZoom(e) {
-      this.lightbox?.show(e, this.slider.getPos());
+   play() {
+      // API Method
+      this.#setAutoplay(AUTOPLAY_STATE.PLAY);
    }
 
    bindEvents(prevBtn, nextBtn, zoomBtn) {
-      this.autoplayButtonEl?.addEventListener(
+      this.#autoplayButtonEl?.addEventListener(
          'click',
-         this.handleAutoplayButton
+         this.#handleAutoplayButton
       );
-      prevBtn.addEventListener('click', this.prev);
-      nextBtn.addEventListener('click', this.next);
+      prevBtn.addEventListener('click', this.#prev);
+      nextBtn.addEventListener('click', this.#next);
 
-      zoomBtn?.addEventListener('click', this.handleLightboxZoom);
+      zoomBtn?.addEventListener('click', this.#handleLightboxZoom);
 
-      if (this.config.slides.auto) {
-         this.el.addEventListener('focus', this.handleFocus, true);
-         this.el.addEventListener('blur', this.handleBlur, true);
-         this.el.addEventListener('pause', this.handlePauseEvent);
+      if (this.#config.slides.auto) {
+         this.#el.addEventListener('focus', this.#handleFocus, true);
+         this.#el.addEventListener('blur', this.#handleBlur, true);
+         this.#el.addEventListener('pause', this.#handlePauseEvent);
       }
    }
 }
@@ -761,9 +815,7 @@ class Imageviewer2 {
       this.el = element;
       this.config = settings;
 
-      if (this.config.zoom) {
-         this.lightbox = new Imageviewer2Lightbox(this.el, this.config);
-      }
+      this.lightbox = new Imageviewer2Lightbox(this.el, this.config);
 
       if (this.config.slides) {
          getSwipe().then((Swipe) => {
@@ -779,8 +831,9 @@ class Imageviewer2 {
 }
 
 const getSettings = (options, node) => {
-   if (options?.slides === true) {
-      options.slides = Object.assign({}, slidesDefaults);
+   let slideOptions = options?.slides;
+   if (slideOptions === true) {
+      slideOptions = {};
    }
 
    // Remove unwanted settings
@@ -788,6 +841,9 @@ const getSettings = (options, node) => {
 
    // Merge user settings with envision and user defaults
    let settings = Util.extend(true, {}, defaults, options);
+   if (slideOptions) {
+      settings.slides = Util.extend(true, {}, slidesDefaults, slideOptions);
+   }
 
    // Handle language option
    // May be set to string 'sv', 'en' - use lang variable

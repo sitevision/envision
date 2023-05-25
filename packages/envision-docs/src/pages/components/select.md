@@ -107,7 +107,7 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  Allow adding new tags
    -  Default value: `false`
 
--  `createFilter` _RegExp_ | _'string' _ | _function(input)_
+-  `createFilter` _RegExp_ | _'string'_ | _function(input)_
 
    -  Specifies a RegExp or a string containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
 
