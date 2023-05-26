@@ -594,15 +594,40 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 </div>
 ```
 
+<span id="validation" class="offset-anchor"></span>
+
 ## Validation
 
-Add modifiers `.env-form-element--success` or `.env-form-element--danger` to define a
-validation state. The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the
-element.
+<span class="env-badge env-badge--info">2023.07.1</span>
+
+Add modifier `.env-form-element--error` to define error validation state.
+The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
+
+Error validation state uses the Status color [Error text](/utils/colors/#status-colors).
+
+```html
+<div class="env-form-element env-form-element--error">
+   <label for="danger" class="env-form-element__label">Error</label>
+   <div class="env-form-element__control">
+      <input
+         type="text"
+         class="env-form-input"
+         id="error"
+         aria-describedby="error-feedback"
+      />
+   </div>
+   <p id="error-feedback" class="env-form-element__feedback">Error feedback</p>
+</div>
+```
+
+Since 2023.07.1, modifiers `.env-form-element--success` and `.env-form-element--danger` are deprecated.
 
 ```html
 <div class="env-form-element env-form-element--success">
-   <label for="success" class="env-form-element__label">Success</label>
+   <label for="success" class="env-form-element__label"
+      >Success
+      <span class="env-badge env-badge--danger">Deprecated</span></label
+   >
    <div class="env-form-element__control">
       <input
          type="text"
@@ -616,7 +641,9 @@ element.
    >
 </div>
 <div class="env-form-element env-form-element--danger">
-   <label for="danger" class="env-form-element__label">Danger</label>
+   <label for="danger" class="env-form-element__label"
+      >Danger <span class="env-badge env-badge--danger">Deprecated</span></label
+   >
    <div class="env-form-element__control">
       <input
          type="text"
