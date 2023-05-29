@@ -2,6 +2,8 @@
 title: Image viewer 2
 ---
 
+<span class="env-badge env-badge--info">Since 2023.07.1</span>
+
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
 and/or a lightbox viewer with navigation between images.
 
@@ -200,18 +202,6 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
    -  Allowed value for `type`: Any Element color name in lowercase.
    -  Allowed value for `size`: Any Button size name in lowercase.
    -  Allowed value for `ghost`: true/false
-
-auto: 0,
-speed: 300,
-draggable: true,
-playing: false,
-overlay: true,
-buttons: {
-type: null,
-ghost: false,
-size: null,
-
-TODO MER HÄR
 
 ## API functions
 
