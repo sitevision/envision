@@ -194,8 +194,13 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `env-ui-color-status-neutral-contrast`
 -  `env-ui-color-status-active`
 -  `env-ui-color-status-active-contrast`
+-  `env-ui-color-status-active-text` <span class="env-badge env-badge--info">2023.07.1</span>
 -  `env-ui-color-status-attention`
 -  `env-ui-color-status-attention-contrast`
+-  `env-ui-color-status-attention-text` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-contrast` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-text` <span class="env-badge env-badge--info">2023.07.1</span>
 
 #### Focus Outline <span class="env-badge env-badge--info">2023.01</span>
 

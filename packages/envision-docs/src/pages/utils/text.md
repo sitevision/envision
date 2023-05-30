@@ -59,6 +59,8 @@ title: Text
 </h3>
 ```
 
+## Transformation
+
 ```html
 <p class="env-text env-text--uppercase">will be all uppercase</p>
 
@@ -71,10 +73,22 @@ title: Text
 <p class="env-text env-text--strike">This text will be hard to read</p>
 ```
 
+## Alignment
+
 ```html
 <div class="env-text">Left aligned (default)</div>
 <div class="env-text env-text-align--center">Center aligned</div>
 <div class="env-text env-text-align--right">Right aligned</div>
+```
+
+<span id="status-colors" class="offset-anchor"></span>
+
+## Status colors <span class="env-badge env-badge--info">2023.07.1</span>
+
+```html
+<p class="env-text env-text--attention">Attention text</p>
+<p class="env-text env-text--active">Active text</p>
+<p class="env-text env-text--error">Error text</p>
 ```
 
 ## Links

@@ -125,17 +125,27 @@ $ui-color-status-neutral: #393939;
 $ui-color-status-neutral-contrast: #ffffff;
 $ui-color-status-active: #58a978;
 $ui-color-status-active-contrast: #202330;
+$ui-color-status-active-text: #44835d;
 $ui-color-status-attention: #ce2e7e;
 $ui-color-status-attention-contrast: #ffffff;
+$ui-color-status-attention-text: #ce2e7e;
+$ui-color-status-error: css-var('element-danger-background-color');
+$ui-color-status-error-contrast: css-var('element-danger-font-color');
+$ui-color-status-error-text: css-var('element-danger-background-color');
 
 @include to-css-custom-property(
    (
       'ui-color-status-neutral': $ui-color-status-neutral,
       'ui-color-status-neutral-contrast': $ui-color-status-neutral-contrast,
       'ui-color-status-active': $ui-color-status-active,
+      'ui-color-status-active-text': $ui-color-status-active-text,
       'ui-color-status-active-contrast': $ui-color-status-active-contrast,
       'ui-color-status-attention': $ui-color-status-attention,
       'ui-color-status-attention-contrast': $ui-color-status-attention-contrast,
+      'ui-color-status-attention-text': $ui-color-status-attention-text,
+      'ui-color-status-error': $ui-color-status-error,
+      'ui-color-status-error-contrast': $ui-color-status-error-contrast,
+      'ui-color-status-error-text': $ui-color-status-error-text,
    )
 );
 
@@ -258,14 +268,9 @@ $color-danger: #c15252 !default;
 $color-success: #358156 !default;
 $color-info: #29818d !default;
 $color-hover: #f7f7f7 !default;
-
 $color-base: #000000 !default;
-$color-darker: lighten($color-base, 5%) !default;
-$color-dark: lighten($color-base, 20%) !default;
-$color-normal: lighten($color-base, 40%) !default;
 $color-light: lighten($color-base, 60%) !default;
 $color-lighter: lighten($color-base, 80%) !default;
-$color-lightest: lighten($color-lighter, 10%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
@@ -680,6 +685,11 @@ $color-section-bg: #ffffff !default;
       'color-element-bg': $color-section-bg,
    )
 );
+
+$color-darker: lighten($color-base, 5%) !default;
+$color-dark: lighten($color-base, 20%) !default;
+$color-normal: lighten($color-base, 40%) !default;
+$color-lightest: lighten($color-lighter, 10%) !default;
 
 $color-brand: $color-primary;
 $color-brand-light: $color-primary-light;
