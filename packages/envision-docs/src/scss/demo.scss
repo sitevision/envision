@@ -253,6 +253,10 @@
    margin: 0;
    text-align: center;
 }
+.example-ui-color-status-text {
+   margin: 1em 0 0;
+   text-align: center;
+}
 
 .example-element-header {
    text-align: center;
@@ -321,12 +325,15 @@ $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
    }
 }
 
-$variableNames: 'neutral', 'active', 'attention';
+$variableNames: 'neutral', 'active', 'attention', 'error';
 
 @each $name in $variableNames {
    .example-ui-color-status--#{$name} {
       color: var(--env-ui-color-status-#{$name}-contrast);
       background-color: var(--env-ui-color-status-#{$name});
+   }
+   .example-ui-color-status-text--#{$name} {
+      color: var(--env-ui-color-status-#{$name}-text);
    }
 }
 
@@ -570,4 +577,17 @@ $variableNames: 'neutral', 'active', 'attention';
 
 .demo-delayed-spinner {
    height: 6.75em;
+}
+
+.example-basic-colors {
+   background-color: var(--env-background-color);
+}
+
+.example-basic-colors-class {
+   display: inline-block;
+   color: var(--env-font-color-muted);
+   line-height: 1;
+   font-size: 12px;
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+   word-break: keep-all;
 }

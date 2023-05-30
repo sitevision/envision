@@ -32,6 +32,18 @@
       text-decoration: line-through;
    }
 
+   &--attention {
+      color: css-var('ui-color-status-attention-text') !important;
+   }
+
+   &--active {
+      color: css-var('ui-color-status-active-text') !important;
+   }
+
+   &--error {
+      color: css-var('ui-color-status-error-text') !important;
+   }
+
    // Text alignment
    &-align--center {
       text-align: center;
