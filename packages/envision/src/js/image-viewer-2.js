@@ -31,7 +31,7 @@ const CLASSNAME = {
    ITEM: 'env-image-viewer-2__viewer__item',
    ITEMS: 'env-image-viewer-2__viewer__items',
    LIGHTBOX: 'env-image-viewer-2__lightbox',
-   BACKDROP_ANIMATION: 'env-image-viewer-2__lightbox__backdrop--in',
+   ANIMATION: 'env-image-viewer-2__lightbox--in',
    BUTTON_ICON_BEFORE: 'env-button--icon-before',
    BUTTON_ICON_AFTER: 'env-button--icon-after',
 };
@@ -44,14 +44,12 @@ const AUTOPLAY_STATE = {
 };
 
 const TEMPLATE = {
-   BACKDROP: `<div class="${CLASSNAME.LIGHTBOX}__backdrop"></div>`,
-
-   LIGHTBOX: `<div class="${CLASSNAME.LIGHTBOX}">
+   LIGHTBOX: `<dialog class="${CLASSNAME.LIGHTBOX}">
       <div class="${CLASSNAME.LIGHTBOX}__panel"></div>
       <div class="${CLASSNAME.LIGHTBOX}__panel__header-gradient ${CLASSNAME.LIGHTBOX}__showOnActive"></div>
       <div class="${CLASSNAME.LIGHTBOX}__panel__footer-gradient ${CLASSNAME.LIGHTBOX}__showOnActive"></div>
       <div class="${CLASSNAME.LIGHTBOX}__image-container" aria-live="polite"></div>
-      </div>`,
+      </dialog>`,
 
    SPINNER: `<div class="env-spinner env-spinner--fade-in"><div class="env-rect1"></div>
       <div class="env-rect2"></div><div class="env-rect3"></div>
@@ -164,10 +162,8 @@ class Imageviewer2Lightbox {
    #config;
    #lightbox;
    #images;
-   #backdrop;
    #currentHref;
    #downloadButton;
-   #opener;
 
    constructor(element, settings) {
       this.#el = element;
@@ -227,7 +223,7 @@ class Imageviewer2Lightbox {
       setTimeout(this.#setFocus, 1);
    }
 
-   showLightbox() {
+   createLightbox() {
       this.#lightbox = createElement(TEMPLATE.LIGHTBOX);
       const showText = this.#config.buttons.showText;
 
@@ -272,14 +268,29 @@ class Imageviewer2Lightbox {
             dataset: { close: '' },
          })
       );
+   }
 
-      this.loadImage();
+   fadeIn() {
+      this.#lightbox.addEventListener(
+         'animationend',
+         (e) => {
+            e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
+         },
+         { once: true }
+      );
+      this.#lightbox.classList.add(CLASSNAME.ANIMATION, CLASSNAME.ANIMATING);
+   }
 
+   showLightbox() {
+      if (!this.#lightbox) {
+         this.createLightbox();
+         this.bindEvents();
+      }
       document.body.appendChild(this.#lightbox);
-
+      this.loadImage();
       lockScroll();
-      this.showBackdrop();
-      this.bindEvents();
+      this.#lightbox.showModal();
+      this.fadeIn();
 
       if (this.#config.slides?.auto) {
          this.#el.dispatchEvent(new Event('pause'));
@@ -298,8 +309,6 @@ class Imageviewer2Lightbox {
 
    #handleClick = (e) => {
       e.preventDefault();
-      this.#opener =
-         e.target.closest('[data-zoom]') || e.target.closest('button');
       if (
          e.target.closest('[data-zoom]') &&
          e.target.closest('[data-zoom]').dataset.href
@@ -309,40 +318,17 @@ class Imageviewer2Lightbox {
       this.showLightbox();
    };
 
-   showBackdrop() {
-      this.#backdrop = createElement(TEMPLATE.BACKDROP);
-
-      this.#backdrop.addEventListener(
-         'animationend',
-         (e) => {
-            e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
-         },
-         { once: true }
-      );
-
-      document.body.appendChild(this.#backdrop);
-
-      this.#backdrop.classList.add(
-         CLASSNAME.BACKDROP_ANIMATION,
-         CLASSNAME.ANIMATING
-      );
-   }
-
    hide() {
       // API Method
-      const removeBackdropCallback = () => {
-         this.#backdrop.remove();
+      const fadeOutCallback = () => {
+         this.#lightbox.close();
          this.#lightbox.remove();
-         this.#lightbox = null;
          unlockScroll();
       };
-
-      this.#backdrop.addEventListener('transitionend', removeBackdropCallback, {
+      this.#lightbox.addEventListener('transitionend', fadeOutCallback, {
          once: true,
       });
-      this.#backdrop.classList.remove(CLASSNAME.BACKDROP_ANIMATION);
-
-      this.#opener && this.#opener.focus();
+      this.#lightbox.classList.remove(CLASSNAME.ANIMATION);
    }
 
    getCurrentIndex() {
@@ -401,7 +387,8 @@ class Imageviewer2Lightbox {
    }
 
    #handleClickInside = (e) => {
-      if (!this.#lightbox.contains(e.target)) {
+      if (e.target.isEqualNode(e.currentTarget)) {
+         // Click outside panel on ::backdrop
          this.hide();
          return;
       }
@@ -451,7 +438,7 @@ class Imageviewer2Lightbox {
             break;
          case 'Escape':
             e.preventDefault();
-            if (!this.#backdrop.classList.contains(CLASSNAME.ANIMATING)) {
+            if (!this.#lightbox.classList.contains(CLASSNAME.ANIMATING)) {
                this.hide();
             }
             break;
@@ -480,7 +467,6 @@ class Imageviewer2Lightbox {
 
    bindEvents() {
       this.#lightbox.addEventListener('click', this.#handleClickInside);
-      this.#backdrop.addEventListener('click', this.#handleClickInside);
       this.#lightbox.addEventListener('keydown', this.#handleKeydown);
       this.#lightbox.addEventListener('mouseenter', this.#handleLightboxActive);
       this.#lightbox.addEventListener('mouseleave', this.#handleLightboxActive);

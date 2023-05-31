@@ -52,7 +52,7 @@ with navigation arrows to switch between images. The link href:s should point to
 ```html
 <div
    id="example-imageviewer2-1"
-   class="example-imageviewer2-images env-flex env-flex--justify-content-around"
+   class="example-imageviewer2-images env-text env-flex env-flex--justify-content-around"
 >
    <a href="/placeholders/originals/03.jpeg" data-zoom>
       <img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Grass" />

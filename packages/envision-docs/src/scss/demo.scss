@@ -566,7 +566,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
 .example-imageviewer2-images {
    a {
-      padding: 0 0.2em;
+      display: block;
+      margin: 0 0.2em;
    }
 
    img {

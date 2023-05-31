@@ -102,19 +102,26 @@ $inset: css-var('spacing-xx-large');
    // ----- Lightbox -----
 
    &__lightbox {
-      display: flex;
       justify-content: center;
       align-items: center;
       --env-font-color: #fff;
       --env-spinner-color: #fff;
       position: fixed;
       inset: 0;
+      width: auto;
+      height: auto;
       margin: $inset;
+      padding: 0;
       overflow: hidden;
       opacity: 1;
       text-align: center;
-      z-index: $zindex-modal;
+      border: none;
       border-radius: var(--env-border-radius-large);
+      background-color: transparent;
+
+      &[open] {
+         display: flex;
+      }
 
       &__panel {
          position: absolute;
@@ -124,7 +131,6 @@ $inset: css-var('spacing-xx-large');
          background-position: 50%;
          background-size: cover;
          filter: blur(40px) brightness(0.4);
-         pointer-events: none;
 
          &__header-gradient,
          &__footer-gradient {
@@ -224,20 +230,16 @@ $inset: css-var('spacing-xx-large');
          }
       }
 
-      &__backdrop {
-         position: fixed;
-         inset: 0;
-         background-color: rgba(0, 0, 0, 0.9);
+      &::backdrop {
+         background: rgba(0, 0, 0, 0.9);
          opacity: 0;
-         z-index: $zindex-modal-backdrop;
-         // Fade out-animation
          transition: all 0.2s linear;
+      }
 
-         &--in {
-            // Fade in-animation
-            animation: env-image-viewer-fade 0.1s;
-            opacity: 1;
-         }
+      &--in::backdrop {
+         // Fade in-out-animation
+         animation: env-image-viewer-fade 0.1s;
+         opacity: 1;
       }
 
       &__showOnActive {
