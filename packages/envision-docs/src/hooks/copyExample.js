@@ -33,9 +33,9 @@ export const useCopyExample = (content) => {
          });
 
       const imageViewer2_1 = document.querySelector('#example-imageviewer2-1');
-      const imageViewer2_2 = document.querySelector('#example-imageviewer2-2');
       imageViewer2_1 && envision.imageViewer2(imageViewer2_1);
 
+      const imageViewer2_2 = document.querySelector('#example-imageviewer2-2');
       imageViewer2_2 &&
          envision.imageViewer2(imageViewer2_2, {
             slides: {

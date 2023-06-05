@@ -246,6 +246,6 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 
    -  Show lightbox starting at _index_. Defaults to index 0.
 
--  `lightbox.hide()`
+-  `lightbox.close()`
 
-   -  Hide the lightbox.
+   -  Close the lightbox.
