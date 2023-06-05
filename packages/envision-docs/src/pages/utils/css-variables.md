@@ -185,8 +185,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color`
 -  `--env-element-info-background-color-dark`
 -  `--env-element-info-background-color-light`
-   <br><br>
--  `--env-element-common-background-color`
 
 #### Status <span class="env-badge env-badge--info">2023.02.1</span>
 
@@ -263,17 +261,11 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
 -  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
 
-#### Image viewer/slider controls
+#### Dialog <span class="env-badge env-badge--info">2023.07.1</span>
 
--  `--env-image-control-color`
-
-#### Modal
-
--  `--env-modal-small-width`
--  `--env-modal-medium-width`
--  `--env-modal-large-width`
--  `--env-modal-backdrop-background-color`
--  `--env-modal-backdrop-opacity`
+-  `--env-dialog-small-width`
+-  `--env-dialog-medium-width`
+-  `--env-dialog-large-width`
 
 #### Pagination
 
@@ -334,6 +326,13 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-color-lightest`
 -  `--env-focus-background-color`
 -  `--env-focus-color`
+-  `--env-modal-small-width`
+-  `--env-modal-medium-width`
+-  `--env-modal-large-width`
+-  `--env-modal-backdrop-background-color`
+-  `--env-modal-backdrop-opacity`
+-  `--env-image-control-color`
+-  `--env-element-common-background-color`
 
 ### Removed
 

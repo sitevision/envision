@@ -234,6 +234,22 @@ export const useCopyExample = (content) => {
          });
       }
 
+      // Dialog examples
+      for (let i = 1; i <= 5; i++) {
+         let dialog = document.querySelector(`#example-dialog-${i}`);
+         let alertdialog = document.querySelector(`#example-alertdialog-${i}`);
+         if (dialog) {
+            envision.dialog(dialog, {
+               opener: `#example-dialog-${i}-opener`,
+            });
+         }
+         if (alertdialog) {
+            envision.dialog(alertdialog, {
+               opener: `#example-alertdialog-${i}-opener`,
+            });
+         }
+      }
+
       // Disable example links
       const links = document.querySelectorAll('a[href="#"]');
       links.forEach((link) => {

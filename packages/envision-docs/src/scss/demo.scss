@@ -1,4 +1,5 @@
 .example-demo-dark,
+.example-demo-dialog,
 .env-modal-dialog.example-demo__modal {
    background-color: var(--env-element-common-background-color);
    border-color: var(--env-border-color) var(--env-border-color-light)
@@ -579,4 +580,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    font-size: 12px;
    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
    word-break: keep-all;
+}
+
+.example-demo-dialog dialog {
+   position: static;
 }

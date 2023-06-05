@@ -1,0 +1,127 @@
+@keyframes env-dialog-fade {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+.env-dialog {
+   background-color: css-var('section-background-color');
+   color: css-var('font-color');
+   box-shadow: css-var('box-shadow');
+   width: css-var('dialog-medium-width');
+   max-width: calc(100% - 2em);
+   max-height: calc(100% - 2em);
+   padding: 0;
+   text-align: start;
+   vertical-align: middle;
+   word-wrap: break-word;
+   overflow-wrap: anywhere;
+   word-break: normal;
+   white-space: normal;
+   border: $border-width $border-style css-var('border-color');
+   border-radius: css-var('border-radius-medium');
+   overflow: hidden;
+
+   &--large {
+      width: css-var('dialog-large-width');
+   }
+
+   &--small {
+      width: css-var('dialog-small-width');
+   }
+
+   &:not(:modal) {
+      z-index: $zindex-modal;
+   }
+
+   &__title {
+      display: block;
+      padding: css-var('spacing-small') 1.5rem;
+      border-bottom: $border-width $border-style css-var('border-color-light');
+      border-radius: css-var('border-radius-medium')
+         css-var('border-radius-medium') 0 0;
+      font-family: css-var('font-family');
+      font-weight: $font-weight-semibold;
+      font-style: normal;
+      font-size: css-var('font-size-large');
+      text-align: start;
+      line-height: $line-height-medium;
+      color: css-var('font-color');
+      margin: 0;
+   }
+
+   &__main {
+      padding: css-var('spacing-small') 1.5rem;
+      // Margin + header + footer height = 180px = 11.25em
+      max-height: min(calc(100vh - 11.25em), 50vh);
+      min-height: 3em;
+      overflow-y: auto;
+   }
+
+   &__controls {
+      padding: css-var('spacing-small') 1.5rem;
+      border-top: $border-width $border-style css-var('border-color-light');
+      border-radius: 0 0 css-var('border-radius-medium')
+         css-var('border-radius-medium');
+      text-align: start;
+
+      &--end {
+         text-align: end !important;
+      }
+   }
+
+   &::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s linear;
+   }
+
+   &--in::backdrop {
+      animation: env-dialog-fade 0.3s;
+      opacity: 1;
+   }
+
+   &[role='alertdialog'] {
+      border: none;
+      border-radius: 0;
+      border-top: 6px $border-style css-var('element-primary-background-color');
+
+      .env-dialog__title,
+      .env-dialog__controls {
+         border: none;
+      }
+
+      .env-dialog__controls {
+         padding-bottom: 1.5rem;
+      }
+   }
+
+   &__icon {
+      color: css-var('element-primary-background-color');
+      margin: 1em 0 0;
+      padding: 0.5em 0;
+      text-align: center;
+   }
+
+   &.env-dialog--error[role='alertdialog'] {
+      border-top-color: css-var('ui-color-status-error-text');
+
+      .env-dialog__icon {
+         color: css-var('ui-color-status-error-text');
+      }
+   }
+
+   $variableNames: 'success', 'warning', 'info';
+   @each $name in $variableNames {
+      &.env-dialog--#{$name}[role='alertdialog'] {
+         border-top-color: css-var('element-#{$name}-background-color');
+
+         .env-dialog__icon {
+            color: css-var('element-#{$name}-background-color');
+         }
+      }
+   }
+}

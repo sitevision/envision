@@ -9,6 +9,8 @@ import CssUtil from './util/css-util';
 import { getNodes, lockScroll, unlockScroll } from './util/nodes';
 import Util from './util/util';
 
+import Dialog, { getDialogSettings } from './dialog';
+
 const ANIMATION = 'env-animation-in-progress';
 const BACKDROP = 'env-modal-dialog__backdrop';
 const BACKDROP_ANIMATION = 'env-modal-dialog__backdrop--in';
@@ -202,22 +204,32 @@ class ModalDialog {
       $(e.currentTarget).removeClass(ANIMATION);
    }
 
-   static _init(elements, action) {
+   static _init(elements, options) {
       const nodes = getNodes(elements);
       if (nodes.length > 0) {
-         const modals = nodes.map((node) => {
-            if (!node[NAME]) {
-               node[NAME] = new ModalDialog(node);
-            }
-            if (typeof action === 'string') {
-               if (!node[NAME][action]) {
-                  throw new Error(`No method named "${action}"`);
+         return nodes.map((node) => {
+            if (
+               node.tagName === 'DIALOG' &&
+               node.classList.contains('env-dialog')
+            ) {
+               // New dialog component
+               if (!node[NAME]) {
+                  node[NAME] = new Dialog(node, getDialogSettings(options));
                }
-               node[NAME][action].call(node[NAME]);
+               return node[NAME];
+            } else {
+               if (!node[NAME]) {
+                  node[NAME] = new ModalDialog(node);
+               }
+               if (typeof options === 'string') {
+                  if (!node[NAME][options]) {
+                     throw new Error(`No method named "${options}"`);
+                  }
+                  node[NAME][options].call(node[NAME]);
+               }
+               return node[NAME];
             }
-            return node[NAME];
          });
-         return modals;
       }
    }
 
