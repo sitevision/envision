@@ -332,7 +332,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-modal-backdrop-background-color`
 -  `--env-modal-backdrop-opacity`
 -  `--env-image-control-color`
--  `--env-element-common-background-color`
+-  `--env-element-common-background-color` <span class="env-badge env-badge--danger">2023.07</span>
 
 ### Removed
 
