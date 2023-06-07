@@ -10,9 +10,9 @@ import Util from './util/util';
 import {
    getNode,
    getNodes,
-   uniqueId,
-   setStyle,
    setAttributes,
+   setStyle,
+   uniqueId,
 } from './util/nodes';
 
 const NAME = 'envImageslider';
@@ -586,10 +586,17 @@ class Imageslider {
    }
 
    static _init(elements, settings, isJQuery) {
+      Util.consoleWarning(
+         'component',
+         'Image slider',
+         'image-slider',
+         'Image viewer 2'
+      );
+
       const nodes = getNodes(elements);
 
       if (nodes.length > 0) {
-         const sliders = nodes.map((node) => {
+         return nodes.map((node) => {
             uniqueId(node);
             let config;
 
@@ -635,12 +642,10 @@ class Imageslider {
             }
             return node[NAME];
          });
-         return sliders;
       }
    }
 
    static _jQueryInterface(config) {
-      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {

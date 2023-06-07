@@ -565,6 +565,18 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    margin-top: -10px;
 }
 
+.example-imageviewer2-images {
+   a {
+      display: block;
+      margin: 0 0.2em;
+   }
+
+   img {
+      display: block;
+      max-width: 100%;
+   }
+}
+
 .demo-delayed-spinner {
    height: 6.75em;
 }

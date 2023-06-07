@@ -5,7 +5,7 @@
  */
 
 const CssUtil = (() => {
-   const CssUtil = {
+   return {
       reflow(element) {
          return element.offsetHeight;
       },
@@ -36,8 +36,6 @@ const CssUtil = (() => {
          return speed;
       },
    };
-
-   return CssUtil;
 })();
 
 export default CssUtil;

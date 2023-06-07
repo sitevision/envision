@@ -17,6 +17,12 @@ const Util = (() => {
                envName = envName.charAt(0).toLowerCase() + envName.slice(1);
                return `WARNING: $.fn.${jqName} is deprecated. Please update your code with new method envision.${envName}. Refer to ${DOC_URL}warnings/#jquery for documentation.`;
             },
+            component: (componentName, anchor, replacementComponent) => {
+               const replacementText = replacementComponent
+                  ? `Please update your code with new component "${replacementComponent}".`
+                  : '';
+               return `WARNING: The component "${componentName}" is deprecated. ${replacementText} Refer to ${DOC_URL}warnings/#${anchor} for documentation.`;
+            },
          };
 
          if (Object.prototype.hasOwnProperty.call(issues, issue)) {
@@ -72,7 +78,7 @@ const Util = (() => {
             deep = arguments[0];
          }
          const merge = function (obj) {
-            for (var prop in obj) {
+            for (const prop in obj) {
                if (Object.prototype.hasOwnProperty.call(obj, prop)) {
                   if (
                      deep &&
@@ -91,8 +97,7 @@ const Util = (() => {
             }
          };
          for (let i = 0; i < arguments.length; i++) {
-            var obj = arguments[i];
-            merge(obj);
+            merge(arguments[i]);
          }
          return extended;
       },

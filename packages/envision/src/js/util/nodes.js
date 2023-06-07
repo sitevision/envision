@@ -29,6 +29,22 @@ export const getNode = function (elements, root) {
    return getNodes(elements, root)[0];
 };
 
+export const createElement = function (htmlString) {
+   const template = document.createElement('template');
+   template.innerHTML = htmlString;
+   return template.content.firstElementChild;
+};
+
+export const wrapElement = function (node, wrapperEl) {
+   if (typeof wrapperEl === 'string') {
+      wrapperEl = createElement(wrapperEl);
+   }
+   wrapperEl = wrapperEl || document.createElement('div');
+   node.replaceWith(wrapperEl);
+   wrapperEl.appendChild(node);
+   return wrapperEl;
+};
+
 const PREV_ATTR = 'data-env-prev-style';
 
 export const resetStyle = function (node, prop) {
@@ -92,6 +108,37 @@ export const unhide = function (elements) {
    getNodes(elements).forEach((node) => {
       resetStyle(node, 'display');
    });
+};
+
+export const isVisible = function (element) {
+   return !!(
+      element.offsetWidth ||
+      element.offsetHeight ||
+      element.getClientRects().length
+   );
+};
+
+export const getFocusable = function (root) {
+   const SELECTOR = [
+      'a[href]',
+      'area[href]',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      'button:not([disabled])',
+      'details:not([disabled])',
+      'summary:not([disabled])',
+      '[tabindex]:not([tabindex="-1"]):not([disabled])',
+      '[contenteditable]',
+   ].join(',');
+   const allFocusable = getNodes(SELECTOR, root);
+   const visibleFocusable = [];
+   for (let i = 0; i < allFocusable.length; i++) {
+      if (isVisible(allFocusable[i])) {
+         visibleFocusable.push(allFocusable[i]);
+      }
+   }
+   return visibleFocusable;
 };
 
 export const uniqueId = (() => {
