@@ -3,7 +3,7 @@ title: Image slider
 deprecated: true
 ---
 
-Image slider is deprecated and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
+Image slider is deprecated since 2023.07.1 and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
 
 ### Slides only
 
