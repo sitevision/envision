@@ -104,6 +104,8 @@
    --env-font-color-lighter: #49506d;
    --env-color-info: var(--env-element-info-background-color);
    --env-ui-color-status-active-contrast: #161718;
+   --env-ui-color-status-active-text: #6cc76a;
+   --env-ui-color-status-error-text: #fb5b56;
    --env-ui-text-subheading-font-color: var(--env-font-color);
    --env-ui-color-brand-55: #86949c;
    --env-ui-color-brand-50: #6e7d87;
@@ -144,6 +146,7 @@
    --env-border-radius-medium: var(--env-border-radius);
    --env-ui-color-brand-30: #40494f;
    --env-ui-color-status-attention: #f06863;
+   --env-ui-color-status-attention-text: #f06863;
    --env-color-light: #999999;
    --env-form-input-font-color: #aaaaaa;
    --env-modal-backdrop-background-color: #000;
