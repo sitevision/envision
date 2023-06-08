@@ -45,6 +45,10 @@ extra:
       - icon-user-fill
       - icon-user-group
       - icon-angle-down
+      - icon-zoom-in
+      - icon-zoom-out
+      - icon-pause
+      - icon-download
 ---
 
 ## Sizes

@@ -383,20 +383,24 @@ class Imageviewer {
    }
 
    static _init(elements, settings) {
+      Util.consoleWarning(
+         'component',
+         'Image viewer',
+         'image-viewer',
+         'Image viewer 2'
+      );
       const nodes = getNodes(elements);
       if (nodes.length > 0) {
-         const imageViewers = nodes.map((node) => {
+         return nodes.map((node) => {
             if (!node[NAME]) {
                node[NAME] = new Imageviewer(node, settings);
             }
             return node[NAME];
          });
-         return imageViewers;
       }
    }
 
    static _jQueryInterface(settings) {
-      Util.consoleWarning('jQuery', NAME);
       return this.each(() => {
          const nodes = getNodes(this);
          nodes.forEach((node) => {
