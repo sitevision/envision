@@ -52,7 +52,6 @@ $exampleElPaddingBg: #c3d08a;
 
 .example-sizing > div,
 .example-sizing-h > div {
-   //backdrop-filter: invert(10%);
    @include exampleEl;
 }
 
