@@ -3,19 +3,18 @@ title: Dialog
 ---
 
 <span class="env-badge env-badge--info">Since 2023.07.1</span>
+<span class="env-badge env-badge--warning">Beta</span>
 
 The Dialog component relies heavily on
 [The HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).
 
-The component must be initialized from Javascript. In this Envision component you will find a few extra features.
-You may use the component HTML markup only if you wish to handle your own scripting.
+The component must be initialized from Javascript. In the Envision scripted component you will find a
+few extra features:
 
-## Features include
-
--  Opener button added as option
+-  Opener button added as option on initialization
 -  Close on click outside as an option
 -  Nice fade-in animation
--  Focus trap keeps tab navigation from leaving the dialog
+-  Focus trap to keep tab navigation from leaving the dialog
 
 ### Default dialog
 
@@ -401,17 +400,10 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
       <form method="dialog">
          <button
             type="submit"
-            value="save"
+            value="ok"
             class="env-button env-button--success"
          >
-            Save
-         </button>
-         <button
-            type="submit"
-            value="cancel"
-            class="env-button env-button--link"
-         >
-            Cancel
+            OK
          </button>
       </form>
    </div>
@@ -448,33 +440,14 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
       <form method="dialog">
          <button
             type="submit"
-            value="cancel"
+            value="ok"
             class="env-button env-button--block env-button--danger"
          >
-            Cancel
+            OK
          </button>
       </form>
    </div>
 </dialog>
-```
-
-## Events
-
-Use native dialog events as described on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).
-
-### Basic event example
-
-```javascript
-// Default options
-envision
-   .dialog(document.querySelector('#example-dialog-1'), {
-      opener: '#example-dialog-1-opener',
-   })
-   .then((dialogs) => {
-      dialogs[0].el.addEventListener('close', () => {
-         console.log(dialogs[0].el.returnValue);
-      });
-   });
 ```
 
 ## Options
@@ -502,14 +475,15 @@ envision
 Instances of Dialog may be controlled by the methods described below.
 
 ```javascript
-envision.dialog('#dialog', { opener: '.example' }).then(function (dialogs) {
+envision.dialog('#dialog', { opener: '#opener' }).then(function (dialogs) {
    console.log(dialogs[0].el.open);
    dialogs[0].show();
    dialogs[0].close();
 });
 envision.dialog('#dialog').then(function (dialogs) {
-   document.querySelector('.example').addEventListener('click', () => {
-      // ... custom code before show ...
+   // Custom opener event
+   document.querySelector('#opener').addEventListener('click', () => {
+      // ... before show ...
       dialogs[0].show();
    });
 });
@@ -519,12 +493,31 @@ envision.dialog('#dialog').then(function (dialogs) {
 
 -  `el`
 
-   -  Access to the dialog element and its properties `open` and `returnValue`.
+   -  Access to the [HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement), e.g. `open` and `returnValue`.
 
 -  `show()`
 
-   -  Show the dialog using `showModal()`.
+   -  Show the dialog. Uses [HTMLDialogElement showModal()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) to always display the dialog in the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer).
 
 -  `close()`
 
    -  Close the dialog.
+
+## Events
+
+Use [native HTMLDialogElement events](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#events).
+
+### Example
+
+```javascript
+envision
+   .dialog(document.querySelector('#dialog'), {
+      opener: '#opener',
+   })
+   .then((dialogs) => {
+      dialogs[0].el.addEventListener('close', () => {
+         // ... do something when dialog is closed
+         console.log(dialogs[0].el.returnValue);
+      });
+   });
+```
