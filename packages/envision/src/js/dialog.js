@@ -16,6 +16,7 @@ export default class Dialog {
    #opener;
    #initialized;
    #modalEventsBound;
+   #elementPlaceholder;
 
    constructor(element, options) {
       this.options = options;
@@ -23,6 +24,8 @@ export default class Dialog {
       if (!this.#initialized) {
          this._bindThis();
          this.el = element;
+         this.#elementPlaceholder = document.createElement('span');
+         this.#elementPlaceholder.dataset.envDialogPlaceholder = '';
          if (options.opener) {
             this.#opener = getNodes(options.opener);
             this._bindOpenEvent();
@@ -105,6 +108,8 @@ export default class Dialog {
       if (e) {
          e.preventDefault();
       }
+      this.el.after(this.#elementPlaceholder);
+      document.body.append(this.el);
       lockScroll();
       this.el.showModal();
       this._fadeIn();
@@ -117,6 +122,8 @@ export default class Dialog {
       if (this.el.classList.contains(CLASSNAME.ANIMATION)) {
          this.el.classList.remove(CLASSNAME.ANIMATION);
          this.el.close();
+         this.#elementPlaceholder.after(this.el);
+         this.#elementPlaceholder.remove();
          unlockScroll();
       }
    }
