@@ -342,3 +342,5 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-page-background-color`
 -  `--env-default-button-color`
+-  `--env-image-control-inactive-color`
+-  `--env-element-common-background-color-dark` <span class="env-badge env-badge--danger">2023.01</span>
