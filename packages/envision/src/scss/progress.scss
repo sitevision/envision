@@ -1,11 +1,11 @@
 .env-progress {
+   background-color: css-var('element-common-background-color');
    border-radius: css-var('border-radius-medium');
    display: flex;
    font-family: css-var('font-family');
    font-size: css-var('font-size-small');
    overflow: hidden;
    text-align: center;
-   backdrop-filter: invert(4%);
 
    &__bar {
       background-color: css-var('element-primary-background-color');
@@ -91,6 +91,7 @@
          .env-progress-poll__bar {
             background-color: css-var('ui-color-brand-40');
          }
+
          .env-progress-poll__label {
             color: css-var('ui-color-brand-40-contrast');
          }

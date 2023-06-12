@@ -185,6 +185,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color`
 -  `--env-element-info-background-color-dark`
 -  `--env-element-info-background-color-light`
+   <br><br>
+-  `--env-element-common-background-color`
 
 #### Status <span class="env-badge env-badge--info">2023.02.1</span>
 
@@ -267,6 +269,10 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-dialog-medium-width`
 -  `--env-dialog-large-width`
 
+#### Image viewer/slider controls
+
+-  `--env-image-control-color`
+
 #### Pagination
 
 -  `--env-pagination-font-family`
@@ -331,12 +337,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-modal-large-width`
 -  `--env-modal-backdrop-background-color`
 -  `--env-modal-backdrop-opacity`
--  `--env-image-control-color`
--  `--env-element-common-background-color` <span class="env-badge env-badge--danger">2023.07</span>
 
 ### Removed
 
 -  `--env-page-background-color`
 -  `--env-default-button-color`
--  `--env-image-control-inactive-color`
--  `--env-element-common-background-color-dark` <span class="env-badge env-badge--danger">2023.01</span>

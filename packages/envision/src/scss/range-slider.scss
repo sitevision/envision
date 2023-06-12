@@ -9,9 +9,8 @@
 
    &__handle {
       border-radius: css-var('border-radius-medium');
-      background-color: css-var('element-background-color');
-      border: $border-width $border-style
-         css-var('element-background-color-dark');
+      background-color: css-var('element-common-background-color');
+      border: $border-width $border-style css-var('border-color');
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop * 0.5);
       position: absolute;
