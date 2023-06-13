@@ -185,8 +185,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color`
 -  `--env-element-info-background-color-dark`
 -  `--env-element-info-background-color-light`
-   <br><br>
--  `--env-element-common-background-color`
 
 #### Status <span class="env-badge env-badge--info">2023.02.1</span>
 
@@ -263,10 +261,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
 -  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
 
-#### Image viewer/slider controls
-
--  `--env-image-control-color`
-
 #### Modal
 
 -  `--env-modal-small-width`
@@ -334,10 +328,12 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-color-lightest`
 -  `--env-focus-background-color`
 -  `--env-focus-color`
+-  `--env-image-control-color`
+-  `--env-element-common-background-color`
 
 ### Removed
 
 -  `--env-page-background-color`
 -  `--env-default-button-color`
 -  `--env-image-control-inactive-color`
--  `--env-element-common-background-color-dark` <span class="env-badge env-badge--danger">2023.01</span>
+-  `--env-element-common-background-color-dark`

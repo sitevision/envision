@@ -1,6 +1,19 @@
+$exampleElBg: #8cb6c0;
+$exampleElColor: #000;
+$exampleElBorder: #80868b;
+$exampleElMarginBg: #f9cc9d;
+$exampleElMarginBorder: #303942;
+$exampleElPaddingBg: #c3d08a;
+
+@mixin exampleEl {
+   background-color: $exampleElBg;
+   color: $exampleElColor;
+   border: 1px solid $exampleElBorder;
+}
+
 .example-demo-dark,
 .env-modal-dialog.example-demo__modal {
-   background-color: var(--env-element-common-background-color);
+   backdrop-filter: invert(5%);
    border-color: var(--env-border-color) var(--env-border-color-light)
       var(--env-border-color-light);
    border-width: 1px 0;
@@ -39,7 +52,7 @@
 
 .example-sizing > div,
 .example-sizing-h > div {
-   background-color: var(--env-element-common-background-color);
+   @include exampleEl;
 }
 
 .example-sizing-h {
@@ -47,15 +60,18 @@
 }
 
 .example-flex {
-   background-color: var(--env-element-common-background-color);
    margin-bottom: 10px;
+   backdrop-filter: invert(10%);
 
    .env-flex__item {
-      border: 1px solid var(--env-border-color);
       margin-top: -1px;
       margin-left: -1px;
       padding: 0.5em;
       text-align: center;
+      background-color: $exampleElBg;
+      color: $exampleElColor;
+      border: 1px solid $exampleElBorder;
+      line-height: 1;
    }
 
    &--align {
@@ -77,13 +93,12 @@
 }
 
 .example-display > div {
-   background-color: var(--env-element-common-background-color);
+   @include exampleEl;
    margin-top: 20px;
 }
 
 .example-list-item {
-   background-color: var(--env-element-common-background-color);
-   border: 1px solid var(--env-border-color);
+   @include exampleEl;
    box-sizing: border-box;
    margin-top: -1px;
    margin-left: -1px;
@@ -92,8 +107,7 @@
 }
 
 .example-list-item-responsive {
-   background-color: var(--env-element-common-background-color);
-   border: 1px solid var(--env-border-color);
+   @include exampleEl;
    height: 100px;
    line-height: 100px;
    margin-top: -1px;
@@ -107,7 +121,7 @@
    display: inline-block;
    width: 6rem;
    height: 6rem;
-   background-color: var(--env-element-common-background-color);
+   backdrop-filter: invert(3%);
    margin: 5px;
 }
 
@@ -450,15 +464,15 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 }
 
 .example-spacing {
-   color: #000;
+   color: $exampleElColor;
    border: 1px dotted #5f6368;
    margin: 2em 0;
    padding: 2em;
 
    &__margin {
       position: relative;
-      background-color: #f9cc9d;
-      border: 1px dashed #303942;
+      background-color: $exampleElMarginBg;
+      border: 1px dashed $exampleElMarginBorder;
 
       &:before {
          content: 'margin';
@@ -473,7 +487,7 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       position: relative;
       line-height: 1;
       background-color: #c3d08a;
-      border: 1px dashed #80868b;
+      border: 1px dashed $exampleElBorder;
 
       &:before {
          content: 'padding';
@@ -488,8 +502,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       line-height: 1;
       font-size: 12px;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-      background-color: #8cb6c0;
-      border: 1px solid #80868b;
+      background-color: $exampleElBg;
+      border: 1px solid $exampleElBorder;
    }
 }
 
