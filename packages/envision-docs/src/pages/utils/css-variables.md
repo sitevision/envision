@@ -267,10 +267,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-dialog-medium-width`
 -  `--env-dialog-large-width`
 
-#### Image viewer/slider controls
-
--  `--env-image-control-color`
-
 #### Pagination
 
 -  `--env-pagination-font-family`
