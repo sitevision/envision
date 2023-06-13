@@ -34,13 +34,11 @@
 
       &:hover,
       &:active,
-      &:focus {
-         background-color: css-var('element-common-background-color');
-         border-color: css-var('element-common-background-color');
-      }
-
+      &:focus,
       &:active {
-         border-color: css-var('element-common-background-color');
+         background-color: transparent;
+         border-color: transparent;
+         backdrop-filter: invert(4%);
       }
    }
 

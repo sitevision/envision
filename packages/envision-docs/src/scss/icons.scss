@@ -1,12 +1,12 @@
 .icons-demo {
    margin: 2em 0;
    li {
-      background-color: var(--env-element-common-background-color);
+      backdrop-filter: invert(3%);
       padding: 1.5em;
       text-align: center;
 
       &:hover {
-         background-color: var(--env-element-common-background-color);
+         backdrop-filter: invert(5%);
       }
    }
 }
