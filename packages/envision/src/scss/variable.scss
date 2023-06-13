@@ -289,8 +289,6 @@ $element-default-background-color: #f0f1f2;
 $element-secondary-background-color: #4f5153;
 $element-secondary-font-color: #ffffff;
 
-$element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
-
 @include to-css-custom-property(
    (
       'block-font-color': $font-color,
@@ -353,7 +351,6 @@ $element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
       'element-info-background-color': $color-info,
       'element-info-background-color-dark': darken($color-info, 8%),
       'element-info-background-color-light': lighten($color-info, 3%),
-      'element-common-background-color': $element-common-background-color,
    )
 );
 
@@ -515,16 +512,6 @@ $badge-font-family: $font-family !default;
       'badge-font-family': css-var('font-family'),
       'badge-font-size': $badge-font-size,
       'badge-border-radius': css-var('border-radius-medium'),
-   )
-);
-
-// ----- IMAGE CONTROL -----
-
-$image-control-color: #ffffff !default;
-
-@include to-css-custom-property(
-   (
-      'image-control-color': $image-control-color,
    )
 );
 
@@ -736,5 +723,21 @@ $focus-background-color: rgba(0, 0, 0, 0.2) !default;
 @include to-css-custom-property(
    (
       'focus-background-color': $focus-background-color,
+   )
+);
+
+$image-control-color: #ffffff !default;
+
+@include to-css-custom-property(
+   (
+      'image-control-color': $image-control-color,
+   )
+);
+
+$element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
+
+@include to-css-custom-property(
+   (
+      'element-common-background-color': $element-common-background-color,
    )
 );
