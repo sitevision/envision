@@ -139,9 +139,8 @@ body[class*=' sv-theme-'] {
    @include focus-visible;
 }
 
+.doc-link-secondary--new,
 .doc-link-secondary--deprecated {
-   font-style: italic;
-
    .env-badge {
       font-size: 0.5em;
       font-weight: 400;
@@ -150,6 +149,10 @@ body[class*=' sv-theme-'] {
       margin: 0 0 0 0.5em;
       transform: translateY(-0.15em);
    }
+}
+
+.doc-link-secondary--deprecated {
+   font-style: italic;
 }
 
 .doc-heading-1 {
@@ -175,8 +178,13 @@ body[class*=' sv-theme-'] {
    margin: 1em 0 0.5em;
 
    &--main {
+      font-size: 24px;
       line-height: 1;
       margin: 1em 0;
+
+      .env-badge {
+         margin-right: 0.125em;
+      }
    }
 }
 

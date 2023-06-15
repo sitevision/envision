@@ -1,9 +1,8 @@
 ---
 title: Image viewer 2
+since: 2023.07.01
+beta: true
 ---
-
-<span class="env-badge env-badge--info">Since 2023.07.1</span>
-<span class="env-badge env-badge--warning">Beta</span>
 
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
 and/or a lightbox viewer with navigation between images.
