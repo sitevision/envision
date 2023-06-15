@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link';
+import classNames from 'classnames';
 
 const Sidenav = ({ categories, menuItems }) => {
    return (
@@ -9,26 +10,32 @@ const Sidenav = ({ categories, menuItems }) => {
             <div key={slug}>
                <Link to={menuItems[slug][0].slug}>{title}</Link>
                <ul>
-                  {menuItems[slug].map(({ id, title, slug, deprecated }) => (
-                     <li key={id}>
-                        <Link
-                           to={slug}
-                           className={
-                              !deprecated
-                                 ? 'doc-link-secondary'
-                                 : 'doc-link-secondary doc-link-secondary--deprecated'
-                           }
-                           activeClassName="active"
-                        >
-                           {title}
-                           {deprecated && (
-                              <span className="env-badge env-badge--danger">
-                                 Deprecated
-                              </span>
-                           )}
-                        </Link>
-                     </li>
-                  ))}
+                  {menuItems[slug].map(
+                     ({ id, title, slug, deprecated, since }) => (
+                        <li key={id}>
+                           <Link
+                              to={slug}
+                              className={classNames('doc-link-secondary', {
+                                 ['doc-link-secondary--new']: since,
+                                 ['doc-link-secondary--deprecated']: deprecated,
+                              })}
+                              activeClassName="active"
+                           >
+                              {title}
+                              {deprecated && (
+                                 <span className="env-badge env-badge--danger">
+                                    Deprecated
+                                 </span>
+                              )}
+                              {since && (
+                                 <span className="env-badge env-badge--success">
+                                    New
+                                 </span>
+                              )}
+                           </Link>
+                        </li>
+                     )
+                  )}
                </ul>
             </div>
          ))}

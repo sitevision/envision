@@ -10,6 +10,8 @@ const filterMenuItems = (items) => {
          id: node.id,
          title: node.frontmatter.title,
          deprecated: node.frontmatter.deprecated,
+         since: node.frontmatter.since,
+         beta: node.frontmatter.beta,
          slug: node.fields.slug,
       }))
       .reduce((accumulated, item) => {
@@ -27,6 +29,8 @@ const filterMenuItems = (items) => {
 const BaseTemplate = ({
    title,
    deprecated,
+   since,
+   beta,
    topMenuItems,
    menuCategories,
    menuItems,
@@ -38,11 +42,23 @@ const BaseTemplate = ({
          <div className="main-container">
             <main>
                <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
-               {deprecated && (
+               {(since || beta || deprecated) && (
                   <h2 className="doc-heading-2 doc-heading-2--main">
-                     <span className="env-badge env-badge--danger">
-                        Deprecated
-                     </span>
+                     {deprecated && (
+                        <span className="env-badge env-badge--danger">
+                           Deprecated
+                        </span>
+                     )}
+                     {since && (
+                        <span className="env-badge env-badge--info">
+                           Since {since}
+                        </span>
+                     )}
+                     {beta && (
+                        <span className="env-badge env-badge--warning">
+                           Beta
+                        </span>
+                     )}
                   </h2>
                )}
                {children}
@@ -60,6 +76,8 @@ const BaseTemplate = ({
 BaseTemplate.propTypes = {
    title: PropTypes.string,
    deprecated: PropTypes.bool,
+   since: PropTypes.string,
+   beta: PropTypes.bool,
    topMenuItems: PropTypes.array,
    menuCategories: PropTypes.array,
    menuItems: PropTypes.array,
