@@ -1,9 +1,8 @@
 ---
 title: Dialog
+since: 2023.07.1
+beta: true
 ---
-
-<span class="env-badge env-badge--info">Since 2023.07.1</span>
-<span class="env-badge env-badge--warning">Beta</span>
 
 The Dialog component relies heavily on
 [The HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).
