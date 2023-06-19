@@ -54,16 +54,16 @@ with navigation arrows to switch between images. The link href:s should point to
    id="example-imageviewer2-1"
    class="example-imageviewer2-images env-text env-flex env-flex--justify-content-around"
 >
-   <a href="https://envisionui.io/placeholders/originals/03.jpeg" data-zoom>
+   <a href="/placeholders/originals/03.jpeg" data-zoom>
       <img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Grass" />
    </a>
-   <a href="https://envisionui.io/placeholders/originals/04.jpeg" data-zoom>
+   <a href="/placeholders/originals/04.jpeg" data-zoom>
       <img loading="lazy" src="/placeholders/225x100/04.jpeg" alt="Fern" />
    </a>
-   <a href="https://envisionui.io/placeholders/originals/08.jpeg" data-zoom>
+   <a href="/placeholders/originals/08.jpeg" data-zoom>
       <img loading="lazy" src="/placeholders/225x100/08.jpeg" alt="Snail" />
    </a>
-   <a href="https://envisionui.io/placeholders/originals/09.jpeg" data-zoom>
+   <a href="/placeholders/originals/09.jpeg" data-zoom>
       <img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Dandelion" />
    </a>
 </div>
