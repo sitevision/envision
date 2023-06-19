@@ -15,8 +15,8 @@ const NAME = 'envImageviewer2';
 const lang = {
    sv: {
       roledescription: 'karusell',
-      prev: 'Visa nästa',
-      next: 'Visa föregående',
+      prev: 'Visa föregående',
+      next: 'Visa nästa',
       pause: 'Stoppa',
       play: 'Starta',
       slideshow: 'automatiskt bläddring',
