@@ -11,23 +11,23 @@ and/or a lightbox viewer with navigation between images.
 class="env-m-vertical--large"
          aria-label="Photos from Örebro">
       <div>
-          <span data-href="https://envisionui.io/placeholders/originals/10.jpeg" data-zoom>
-            <img src="https://envisionui.io/placeholders/900x400/10.jpeg" alt="Örebro Castle">
+          <span data-href="/placeholders/originals/10.jpeg" data-zoom>
+            <img src="/placeholders/900x400/10.jpeg" alt="Örebro Castle">
           </span>
         <div class="env-image-viewer-2__viewer__caption">
          Örebro Castle
         </div>
       </div>
       <div>
-          <span data-href="https://envisionui.io/placeholders/originals/05.jpeg" data-zoom>
-            <img src="https://envisionui.io/placeholders/900x400/05.jpeg" alt="Karlslund Manor House">
+          <span data-href="/placeholders/originals/05.jpeg" data-zoom>
+            <img src="/placeholders/900x400/05.jpeg" alt="Karlslund Manor House">
           </span>
         <div class="env-image-viewer-2__viewer__caption">
               Karlslund Manor House
         </div>
       </div>
       <div>
-            <img data-href="https://envisionui.io/placeholders/originals/02.jpeg" data-zoom src="https://envisionui.io/placeholders/900x400/02.jpeg" alt="Highland cattle at Oset">
+            <img data-href="/placeholders/originals/02.jpeg" data-zoom src="/placeholders/900x400/02.jpeg" alt="Highland cattle at Oset">
         <div class="env-image-viewer-2__viewer__caption">
               Highland cattle at Oset
         </div>
@@ -55,32 +55,16 @@ with navigation arrows to switch between images. The link href:s should point to
    class="example-imageviewer2-images env-text env-flex env-flex--justify-content-around"
 >
    <a href="https://envisionui.io/placeholders/originals/03.jpeg" data-zoom>
-      <img
-         loading="lazy"
-         src="https://envisionui.io/placeholders/225x100/03.jpeg"
-         alt="Grass"
-      />
+      <img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Grass" />
    </a>
    <a href="https://envisionui.io/placeholders/originals/04.jpeg" data-zoom>
-      <img
-         loading="lazy"
-         src="https://envisionui.io/placeholders/225x100/04.jpeg"
-         alt="Fern"
-      />
+      <img loading="lazy" src="/placeholders/225x100/04.jpeg" alt="Fern" />
    </a>
    <a href="https://envisionui.io/placeholders/originals/08.jpeg" data-zoom>
-      <img
-         loading="lazy"
-         src="https://envisionui.io/placeholders/225x100/08.jpeg"
-         alt="Snail"
-      />
+      <img loading="lazy" src="/placeholders/225x100/08.jpeg" alt="Snail" />
    </a>
    <a href="https://envisionui.io/placeholders/originals/09.jpeg" data-zoom>
-      <img
-         loading="lazy"
-         src="https://envisionui.io/placeholders/225x100/09.jpeg"
-         alt="Dandelion"
-      />
+      <img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Dandelion" />
    </a>
 </div>
 ```
@@ -98,26 +82,14 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
    aria-label="Photos from Örebro"
 >
    <div>
-      <span
-         data-href="https://envisionui.io/placeholders/originals/10.jpeg"
-         data-zoom
-      >
-         <img
-            src="https://envisionui.io/placeholders/900x400/10.jpeg"
-            alt="Örebro Castle"
-         />
+      <span data-href="/placeholders/originals/10.jpeg" data-zoom>
+         <img src="/placeholders/900x400/10.jpeg" alt="Örebro Castle" />
       </span>
       <div class="env-image-viewer-2__viewer__caption">Örebro Castle</div>
    </div>
    <div>
-      <span
-         data-href="https://envisionui.io/placeholders/originals/05.jpeg"
-         data-zoom
-      >
-         <img
-            src="https://envisionui.io/placeholders/900x400/05.jpeg"
-            alt="Karlslund Manor House"
-         />
+      <span data-href="/placeholders/originals/05.jpeg" data-zoom>
+         <img src="/placeholders/900x400/05.jpeg" alt="Karlslund Manor House" />
       </span>
       <div class="env-image-viewer-2__viewer__caption">
          Karlslund Manor House
@@ -125,9 +97,9 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
    </div>
    <div>
       <img
-         data-href="https://envisionui.io/placeholders/originals/02.jpeg"
+         data-href="/placeholders/originals/02.jpeg"
          data-zoom
-         src="https://envisionui.io/placeholders/900x400/02.jpeg"
+         src="/placeholders/900x400/02.jpeg"
          alt="Highland cattle at Oset"
       />
       <div class="env-image-viewer-2__viewer__caption">

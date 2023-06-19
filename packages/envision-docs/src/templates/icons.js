@@ -59,6 +59,9 @@ export const pageQuery = graphql`
          html
          frontmatter {
             title
+            deprecated
+            since
+            beta
             extra {
                icons
             }
@@ -70,6 +73,9 @@ export const pageQuery = graphql`
                id
                frontmatter {
                   title
+                  deprecated
+                  since
+                  beta
                }
                fields {
                   slug
