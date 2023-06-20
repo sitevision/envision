@@ -25,6 +25,9 @@
    border-radius: css-var('border-radius-medium');
    overflow: hidden;
 
+   // Dialog element may get focus in certain conditions
+   @include focus-visible;
+
    &--large {
       width: css-var('dialog-large-width');
    }
