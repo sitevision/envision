@@ -483,6 +483,14 @@ $modal-large: 900px !default;
    )
 );
 
+@include to-css-custom-property(
+   (
+      'dialog-small-width': $modal-small,
+      'dialog-medium-width': $modal-medium,
+      'dialog-large-width': $modal-large,
+   )
+);
+
 // ----- BREADCRUMB -----
 
 $breadcrumb-divider-color: $color-light !default;

@@ -12,6 +12,7 @@ $exampleElPaddingBg: #c3d08a;
 }
 
 .example-demo-dark,
+.example-demo-dialog,
 .env-modal-dialog.example-demo__modal {
    backdrop-filter: invert(5%);
    border-color: var(--env-border-color) var(--env-border-color-light)
@@ -605,4 +606,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    font-size: 12px;
    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
    word-break: keep-all;
+}
+
+.example-demo-dialog dialog {
+   position: static;
 }
