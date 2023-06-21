@@ -6,6 +6,12 @@ $inset: css-var('spacing-xx-large');
    color: #fff;
 }
 
+@mixin overlayButtonFocusVisible($inner, $outer) {
+   box-shadow: 0 0 0 css-var('focus-offset') $inner;
+   outline: css-var('focus-size') solid $outer;
+   outline-offset: css-var('focus-offset');
+}
+
 .env-image-viewer-2 {
    position: relative;
    text-align: center;
@@ -58,6 +64,10 @@ $inset: css-var('spacing-xx-large');
             &:focus,
             &:active {
                @include overlayButton(0.75);
+            }
+
+            &:focus-visible {
+               @include overlayButtonFocusVisible(#fff, rgba(0, 0, 0, 0.75));
             }
          }
       }
@@ -193,6 +203,10 @@ $inset: css-var('spacing-xx-large');
             backdrop-filter: invert(10%);
             transition: backdrop-filter 0.025s ease-in-out;
          }
+
+         &:focus-visible {
+            @include overlayButtonFocusVisible(#fff, #000);
+         }
       }
 
       &__download {
@@ -222,6 +236,10 @@ $inset: css-var('spacing-xx-large');
             background-color: #fff;
             color: #000;
             border-color: #fff;
+         }
+
+         &:focus-visible {
+            @include overlayButtonFocusVisible(#000, #fff);
          }
       }
 
