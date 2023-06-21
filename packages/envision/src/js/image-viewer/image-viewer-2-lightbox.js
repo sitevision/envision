@@ -78,6 +78,7 @@ export default class Imageviewer2Lightbox {
       imgContainer.innerHTML = TEMPLATE.SPINNER;
       const img = new Image();
       img.src = this.#currentHref;
+      img.alt = '';
       img.classList.add(`${CLASSNAME.LIGHTBOX}__image`);
       img.onload = () => {
          if (this.#config.buttons.download) {
