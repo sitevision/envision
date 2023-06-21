@@ -8,7 +8,7 @@ import { getFocusable, getNodes, lockScroll, unlockScroll } from './util/nodes';
 import Util from './util/util';
 
 const CLASSNAME = {
-   ANIMATING: 'env-animation-in-progress',
+   USE_ANIMATION: 'env-dialog--fade',
    ANIMATION: 'env-dialog--in',
 };
 
@@ -24,12 +24,13 @@ export default class Dialog {
       if (!this.#initialized) {
          this._bindThis();
          this.el = element;
+         this.el.classList.add(CLASSNAME.USE_ANIMATION);
+         this.el.classList.remove(CLASSNAME.ANIMATION);
          this.#elementPlaceholder = document.createElement('span');
          this.#elementPlaceholder.dataset.envDialogPlaceholder = '';
          if (options.opener) {
             this.#opener = getNodes(options.opener);
             this._bindOpenEvent();
-            this.el.classList.remove(CLASSNAME.ANIMATION);
          }
          this.#initialized = true;
       }
@@ -42,14 +43,7 @@ export default class Dialog {
    }
 
    _fadeIn() {
-      this.el.addEventListener(
-         'animationend',
-         (e) => {
-            e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
-         },
-         { once: true }
-      );
-      this.el.classList.add(CLASSNAME.ANIMATION, CLASSNAME.ANIMATING);
+      this.el.classList.add(CLASSNAME.ANIMATION);
    }
 
    _bindModalEvents() {

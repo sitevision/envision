@@ -28,6 +28,11 @@ $inset: css-var('spacing-xx-large');
       width: 100%;
       position: relative;
       overflow: hidden;
+
+      img {
+         display: block;
+         max-width: 100%;
+      }
    }
 
    //----- Slider controls -----
@@ -113,11 +118,16 @@ $inset: css-var('spacing-xx-large');
       margin: $inset;
       padding: 0;
       overflow: hidden;
-      opacity: 1;
       text-align: center;
       border: none;
       border-radius: var(--env-border-radius-large);
       background-color: transparent;
+      opacity: 0;
+      transition: all 0.2s linear;
+
+      &--in {
+         opacity: 1;
+      }
 
       &[open] {
          display: flex;
@@ -163,6 +173,8 @@ $inset: css-var('spacing-xx-large');
       }
 
       &__image {
+         display: block;
+         max-width: 100%;
          max-height: calc(100vh - #{$inset} * 2);
       }
 
@@ -221,25 +233,8 @@ $inset: css-var('spacing-xx-large');
          left: calc(#{$inset} + 0.5em);
       }
 
-      @keyframes env-image-viewer-fade {
-         from {
-            opacity: 0;
-         }
-         to {
-            opacity: 1;
-         }
-      }
-
       &::backdrop {
          background: rgba(0, 0, 0, 0.9);
-         opacity: 0;
-         transition: all 0.2s linear;
-      }
-
-      &--in::backdrop {
-         // Fade in-out-animation
-         animation: env-image-viewer-fade 0.1s;
-         opacity: 1;
       }
 
       &__showOnActive {

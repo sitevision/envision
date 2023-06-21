@@ -1,12 +1,3 @@
-@keyframes env-dialog-fade {
-   from {
-      opacity: 0;
-   }
-   to {
-      opacity: 1;
-   }
-}
-
 .env-dialog {
    background-color: css-var('section-background-color');
    color: css-var('font-color');
@@ -24,6 +15,15 @@
    border: $border-width $border-style css-var('border-color');
    border-radius: css-var('border-radius-medium');
    overflow: hidden;
+   transition: opacity 0.2s linear;
+
+   &--fade {
+      opacity: 0;
+   }
+
+   &--in {
+      opacity: 1;
+   }
 
    // Dialog element may get focus in certain conditions
    @include focus-visible;
@@ -78,13 +78,6 @@
 
    &::backdrop {
       background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      transition: opacity 0.3s linear;
-   }
-
-   &--in::backdrop {
-      animation: env-dialog-fade 0.3s;
-      opacity: 1;
    }
 
    &[role='alertdialog'] {

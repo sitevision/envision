@@ -139,7 +139,7 @@ export default class Imageviewer2Lightbox {
 
    fadeIn() {
       this.#lightbox.addEventListener(
-         'animationend',
+         'transitionend',
          (e) => {
             e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
          },
