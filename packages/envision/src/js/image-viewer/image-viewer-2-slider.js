@@ -67,7 +67,7 @@ export default class Imageviewer2Slider {
          this.#setAutoplay(AUTOPLAY_STATE.STOP);
       }
 
-      this.setSlideTabindex(
+      this.#setSlideMarkup(
          this.#viewerEl,
          this.#viewerEl.querySelector(`.${CLASSNAME.ITEM}`)
       );
@@ -232,8 +232,8 @@ export default class Imageviewer2Slider {
       this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
    };
 
-   setSlideTabindex(sliderEl, currentSlideEl) {
-      sliderEl.querySelectorAll('a, button, input').forEach((el) => {
+   #setSlideMarkup(viewerEl, currentSlideEl) {
+      viewerEl.querySelectorAll('a, button, input').forEach((el) => {
          if (el.getAttribute('tabindex') !== '-1') {
             el.setAttribute('tabindex', '-1');
             el.dataset.tabindex = 'true';
@@ -243,6 +243,13 @@ export default class Imageviewer2Slider {
          el.removeAttribute('tabindex');
          el.dataset.tabindex = 'true';
       });
+      const assistiveText = `${
+         currentSlideEl.querySelector('img')?.alt
+      } ${currentSlideEl.textContent.trim()}`;
+      if (assistiveText) {
+         viewerEl.querySelector(`.${CLASSNAME.BASE}__assistive`).textContent =
+            assistiveText;
+      }
    }
 
    setSliderAriaLive() {
@@ -250,7 +257,7 @@ export default class Imageviewer2Slider {
          this.#config.slides.auto && this.#autoplayState === AUTOPLAY_STATE.PLAY
             ? 'off'
             : 'polite';
-      this.#sliderEl.setAttribute('aria-live', ariaLive);
+      this.#viewerEl.setAttribute('aria-live', ariaLive);
    }
 
    setPlayButton() {
@@ -287,7 +294,7 @@ export default class Imageviewer2Slider {
    };
 
    #handleTransitionEnd = (index, elem) => {
-      this.setSlideTabindex(this.#viewerEl, elem);
+      this.#setSlideMarkup(this.#viewerEl, elem);
    };
 
    #handleFocus = (e) => {

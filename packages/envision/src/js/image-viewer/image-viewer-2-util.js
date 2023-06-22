@@ -76,8 +76,10 @@ export const TEMPLATE = {
       <div class="env-rect4"></div><div class="env-rect5"></div></div>`,
 };
 
-export const SLIDER_VIEWER_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer"><div class="${CLASSNAME.ITEMS}"
-         aria-live="off"></div></div>`;
+export const SLIDER_VIEWER_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer" aria-live="off">
+<div class="${CLASSNAME.ITEMS}"></div>
+<div class="env-assistive-text ${CLASSNAME.BASE}__assistive"></div>
+</div>`;
 
 export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group" aria-roledescription="slide"></div>`;
 
