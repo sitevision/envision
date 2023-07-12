@@ -38,12 +38,7 @@ export default class Imageviewer2Lightbox {
       this.#images = [];
 
       getNodes('[data-zoom]', this.#el).forEach((el) => {
-         const href = el.href || el.dataset.href;
-         if (el.href && !el.href.startsWith('#')) {
-            el.dataset.href = href;
-            el.href = '#0';
-         }
-         this.#images.push(href);
+         this.#images.push(this.#getImageData(el));
       });
 
       this.bindThis();
@@ -52,6 +47,29 @@ export default class Imageviewer2Lightbox {
       if (!this.#config.slides) {
          this.#el?.addEventListener('click', this.#handleClick);
       }
+   }
+
+   #getImageData(el) {
+      const href = el.href || el.dataset.href;
+      if (el.href && !el.href.startsWith('#')) {
+         el.dataset.href = href;
+         el.href = '#0';
+      }
+      let altEl;
+      let alt = '';
+      if (el.hasAttribute('alt') || el.dataset.alt) {
+         altEl = el;
+      } else {
+         altEl = el.querySelector('[alt], [data-alt]');
+      }
+      if (altEl) {
+         alt = altEl.getAttribute('alt');
+         alt = alt || altEl.dataset.alt;
+      }
+      return {
+         href: href,
+         alt: alt,
+      };
    }
 
    getImageCount() {
@@ -77,8 +95,9 @@ export default class Imageviewer2Lightbox {
       );
       imgContainer.innerHTML = TEMPLATE.SPINNER;
       const img = new Image();
-      img.src = this.#currentHref;
-      img.alt = '';
+      const image = this.#images.find((img) => img.href === this.#currentHref);
+      img.src = image.href;
+      img.alt = image.alt;
       img.classList.add(`${CLASSNAME.LIGHTBOX}__image`);
       img.onload = () => {
          if (this.#config.buttons.download) {
@@ -171,7 +190,7 @@ export default class Imageviewer2Lightbox {
       if (i < 0 || i > this.#images.length - 1) {
          i = 0;
       }
-      this.#currentHref = this.#images[i];
+      this.#currentHref = this.#images[i].href;
       this.showLightbox();
    }
 
@@ -200,12 +219,14 @@ export default class Imageviewer2Lightbox {
    }
 
    getCurrentIndex() {
-      const i = this.#images.indexOf(this.#currentHref);
+      const i = this.#images.findIndex(
+         (image) => image.href === this.#currentHref
+      );
       return i >= 0 ? i : 0;
    }
 
    goTo(i) {
-      this.#currentHref = this.#images[i];
+      this.#currentHref = this.#images[i].href;
       this.loadImage();
    }
 
@@ -214,7 +235,7 @@ export default class Imageviewer2Lightbox {
       i++;
       if (i >= this.#images.length) {
          i = this.#images.length - 1;
-         this.#currentHref = this.#images[i];
+         this.#currentHref = this.#images[i].href;
       } else {
          this.goTo(i);
       }
@@ -224,7 +245,7 @@ export default class Imageviewer2Lightbox {
       let i = this.getCurrentIndex();
       i--;
       if (i < 0) {
-         this.#currentHref = this.#images[0];
+         this.#currentHref = this.#images[0].href;
       } else {
          this.goTo(i);
       }
