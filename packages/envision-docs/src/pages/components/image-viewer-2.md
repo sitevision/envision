@@ -10,28 +10,22 @@ and/or a lightbox viewer with navigation between images.
 <section id="demoImageViewer2"
 class="env-m-vertical--large"
          aria-label="Photos from Örebro">
-      <div>
-          <span data-href="/placeholders/originals/10.jpeg" data-zoom>
-            <img src="/placeholders/900x400/10.jpeg" data-alt="Örebro Castle" alt="">
-          </span>
-        <div class="env-image-viewer-2__viewer__caption">
-         Örebro Castle
-        </div>
-      </div>
-      <div>
-          <span data-alt="Karlslund Manor House" data-href="/placeholders/originals/05.jpeg" data-zoom>
-            <img src="/placeholders/900x400/05.jpeg" alt="">
-          </span>
-        <div class="env-image-viewer-2__viewer__caption">
-              Karlslund Manor House
-        </div>
-      </div>
-      <div>
-            <img data-href="/placeholders/originals/02.jpeg" data-alt="Highland cattle at Oset outside Örebro" data-zoom src="/placeholders/900x400/02.jpeg" alt="">
-        <div class="env-image-viewer-2__viewer__caption">
-              Highland cattle at Oset outside Örebro
-        </div>
-      </div>
+   <figure data-href="/placeholders/originals/10.webp" data-zoom>
+      <img src="/placeholders/900x400/10.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Örebro Castle</figcaption>
+   </figure>
+   <figure data-href="/placeholders/originals/05.webp" data-zoom>
+      <img src="/placeholders/900x400/05.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">
+         Karlslund Manor House
+      </figcaption>
+   </figure>
+   <figure data-href="/placeholders/originals/02.webp" data-zoom>
+      <img src="/placeholders/900x400/02.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">
+         Highland cattle at Oset outside Örebro
+      </figcaption>
+   </figure>
 </section>
 
 ## Features include
@@ -54,17 +48,17 @@ with navigation arrows to switch between images. The link href:s should point to
    id="example-imageviewer2-1"
    class="example-imageviewer2-images env-text env-flex env-flex--justify-content-around"
 >
-   <a href="/placeholders/originals/03.jpeg" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/03.jpeg" alt="Grass" />
+   <a href="/placeholders/originals/03.webp" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/03.webp" alt="Grass" />
    </a>
-   <a href="/placeholders/originals/04.jpeg" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/04.jpeg" alt="Fern" />
+   <a href="/placeholders/originals/04.webp" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/04.webp" alt="Fern" />
    </a>
-   <a href="/placeholders/originals/08.jpeg" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/08.jpeg" alt="Snail" />
+   <a href="/placeholders/originals/08.webp" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/08.webp" alt="Snail" />
    </a>
-   <a href="/placeholders/originals/09.jpeg" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/09.jpeg" alt="Dandelion" />
+   <a href="/placeholders/originals/09.webp" data-zoom>
+      <img loading="lazy" src="/placeholders/225x100/09.webp" alt="Dandelion" />
    </a>
 </div>
 ```
@@ -81,31 +75,24 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
    class="env-p-around--medium"
    aria-label="Photos from Örebro"
 >
-   <div>
-      <span data-href="/placeholders/originals/10.jpeg" data-zoom>
-         <img src="/placeholders/900x400/10.jpeg" alt="" />
-      </span>
-      <div class="env-image-viewer-2__viewer__caption">Örebro Castle</div>
-   </div>
-   <div>
-      <span data-href="/placeholders/originals/05.jpeg" data-zoom>
-         <img src="/placeholders/900x400/05.jpeg" alt="" />
-      </span>
-      <div class="env-image-viewer-2__viewer__caption">
+   <figure data-href="/placeholders/originals/10.webp" data-zoom>
+      <img src="/placeholders/900x400/10.webp" alt="" />
+      <figcaption class="env-image-viewer-2__viewer__caption">
+         Örebro Castle
+      </figcaption>
+   </figure>
+   <figure data-href="/placeholders/originals/05.webp" data-zoom>
+      <img src="/placeholders/900x400/05.webp" alt="" />
+      <figcaption class="env-image-viewer-2__viewer__caption">
          Karlslund Manor House
-      </div>
-   </div>
-   <div>
-      <img
-         data-href="/placeholders/originals/02.jpeg"
-         data-zoom
-         src="/placeholders/900x400/02.jpeg"
-         alt=""
-      />
-      <div class="env-image-viewer-2__viewer__caption">
-         Highland cattle at Oset
-      </div>
-   </div>
+      </figcaption>
+   </figure>
+   <figure data-href="/placeholders/originals/02.webp" data-zoom>
+      <img src="/placeholders/900x400/02.webp" alt="" />
+      <figcaption class="env-image-viewer-2__viewer__caption">
+         Highland cattle at Oset outside Örebro
+      </figcaption>
+   </figure>
 </section>
 ```
 
@@ -123,9 +110,80 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
 });
 ```
 
+### Slideshow markup
+
+-  All immediate child elements of the container will be included in slideshow.
+-  The container used for initialization should have an `aria-label` attribute.
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <img src="example-1.webp" alt="Image description">
+   <img src="example-2.webp" alt="Image description">
+</section>
+```
+
+#### Zoom
+
+Add attribute `data-zoom` to activate zoom/lightbox. Add URL to larger images in `data-href`.
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <img src="example-1.webp" alt="Image description" data-href="example-1-large.webp" data-zoom>
+   <img src="example-2.webp" alt="Image description" data-href="example-2-large.webp" data-zoom>
+</section>
+```
+
+Optionally wrap the image in a link pointing to the larger image. The `href` attribute will be used for zoom
+and `data-zoom` should be added to the link, not the image.
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <a href="example-1-large.webp" data-zoom>
+      <img src="example-1.webp" alt="Image description">
+   </a>
+   <a href="example-2-large.webp" data-zoom>
+      <img src="example-2.webp" alt="Image description">
+   </a>
+</section>
+```
+
+#### Caption
+
+Wrap the images in a `figure` tag and add a `figcaption` with class `env-image-viewer-2__viewer__caption`.
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <figure>
+      <img src="example-1.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
+   </figure>
+   <figure>
+      <img src="example-2.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 2 caption</figcaption>
+   </figure>
+</section>
+```
+
+#### Zoom and caption
+
+Combine zoom and captions using data attributes or links:
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <figure data-href="example-1-large.webp" data-zoom>
+      <img src="example-1.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
+   </figure>
+   <a href="example-2-large.webp" data-zoom>
+      <img src="example-2.webp" alt="">
+      <div class="env-image-viewer-2__viewer__caption">Image 2 caption</div>
+   </a>
+</section>
+```
+
 ## Options
 
-```javascript
+```js-no-expand
 // Default options
 {
    slides: false,

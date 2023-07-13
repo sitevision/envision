@@ -35,6 +35,10 @@ $inset: css-var('spacing-xx-large');
       position: relative;
       overflow: hidden;
 
+      figure {
+         margin: 0;
+      }
+
       img {
          display: block;
          max-width: 100%;
