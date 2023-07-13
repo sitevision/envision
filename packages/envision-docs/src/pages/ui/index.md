@@ -78,7 +78,7 @@ UI Text will be used as the new default text styles for headings in all componen
       <h4 class="env-ui-text-overline env-popover__header__title">UI Text Overline</h4>
       <img
          class="env-card__image env-profile-image env-profile-image--small"
-         src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
+         src="https://envisionui.io/placeholders/profile/200x200/01.webp"
          alt="Example profile image"
       />
       <h2 class="env-ui-text-subheading">UI Text Subheading</h2>

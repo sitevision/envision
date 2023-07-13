@@ -15,6 +15,12 @@ export const useExpandCode = (content) => {
       content.current
          .querySelectorAll('.gatsby-highlight[data-language]')
          .forEach((element) => {
+            if (
+               element.dataset.language.includes('no-example') ||
+               element.dataset.language.includes('no-expand')
+            ) {
+               return;
+            }
             const pre = element.querySelector('pre');
             if (pre && pre.clientHeight > window.innerHeight * 0.25) {
                const button = document.createElement('button');

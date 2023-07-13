@@ -10,10 +10,10 @@ Image viewer is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div>
       <a
          class="env-image-viewer__images"
-         href="https://envisionui.io/placeholders/originals/10.jpeg"
+         href="https://envisionui.io/placeholders/originals/10.webp"
       >
          <img
-            src="https://envisionui.io/placeholders/900x400/10.jpeg"
+            src="https://envisionui.io/placeholders/900x400/10.webp"
             class="env-image-viewer__img"
             alt="Image"
          />
@@ -23,10 +23,10 @@ Image viewer is deprecated since 2023.07.1 and will eventually be removed. Pleas
       <li>
          <a
             class="env-image-viewer__images"
-            href="https://envisionui.io/placeholders/originals/05.jpeg"
+            href="https://envisionui.io/placeholders/originals/05.webp"
          >
             <img
-               src="https://envisionui.io/placeholders/200x100/05.jpeg"
+               src="https://envisionui.io/placeholders/200x100/05.webp"
                class="env-image-viewer__thumbnail"
                alt="First thumbnail"
             />
@@ -35,10 +35,10 @@ Image viewer is deprecated since 2023.07.1 and will eventually be removed. Pleas
       <li>
          <a
             class="env-image-viewer__images"
-            href="https://envisionui.io/placeholders/originals/02.jpeg"
+            href="https://envisionui.io/placeholders/originals/02.webp"
          >
             <img
-               src="https://envisionui.io/placeholders/200x100/02.jpeg"
+               src="https://envisionui.io/placeholders/200x100/02.webp"
                class="env-image-viewer__thumbnail"
                alt="Second thumbnail"
             />

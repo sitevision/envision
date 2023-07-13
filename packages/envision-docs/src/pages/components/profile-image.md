@@ -109,7 +109,7 @@ relative to the image.
 <div class="example-profile-images example-profile-images--resizeable">
    <div class="env-profile-image env-profile-image--xx-large">
       <img
-         src="https://envisionui.io/placeholders/profile/400x400/02.jpeg"
+         src="https://envisionui.io/placeholders/profile/400x400/02.webp"
          alt="Example profile image"
       />
       <p class="env-status-badge env-status-badge--active">Logged in</p>

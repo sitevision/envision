@@ -42,7 +42,22 @@ module.exports = {
                {
                   resolve: 'gatsby-remark-prismjs',
                   options: {
-                     inlineCodeMarker: '~',
+                     languageExtensions: [
+                        {
+                           language: 'html-no-example',
+                           extend: 'html',
+                           definition: {
+                              superscript_types: /(SuperType)/,
+                           },
+                        },
+                        {
+                           language: 'js-no-expand',
+                           extend: 'javascript',
+                           definition: {
+                              superscript_types: /(SuperType)/,
+                           },
+                        },
+                     ],
                   },
                },
                {
@@ -86,7 +101,7 @@ module.exports = {
             background_color: '#444',
             theme_color: '#444',
             display: 'minimal-ui',
-            icon: 'static/images/envision_logo.png',
+            icon: 'static/images/envision_logo.webp',
          },
       },
    ],

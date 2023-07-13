@@ -549,7 +549,7 @@ Status color text should be used when status color is applied to text on section
          <h3 class="env-ui-text-caption example-ui-color-status-heading">Status badge on Profile image</h3>
          <div class="env-profile-image env-profile-image--small">
             <img
-               src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
+               src="https://envisionui.io/placeholders/profile/200x200/01.webp"
                alt="Example profile image" />
             <div class="env-status-badge env-status-badge--active">Logged in</div>
          </div>

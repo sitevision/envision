@@ -2,7 +2,7 @@
    <div class="env-d--flex env-justify-content--center sv-home__content">
       <div class="sv-home__item">
          <div class="sv-home__env-logo">
-            <img class="env-image" src="/images/envision_logo.png" alt="">
+            <img class="env-image" src="/images/envision_logo.webp" alt="">
          </div>
          <h1 class="doc-heading-1 sv-home__title">
             Envision

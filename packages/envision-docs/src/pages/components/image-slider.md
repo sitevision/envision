@@ -18,21 +18,21 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://envisionui.io/placeholders/900x400/10.jpeg"
+            src="https://envisionui.io/placeholders/900x400/10.webp"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/05.jpeg"
+            src="https://envisionui.io/placeholders/900x400/05.webp"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/02.jpeg"
+            src="https://envisionui.io/placeholders/900x400/02.webp"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -52,21 +52,21 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://envisionui.io/placeholders/900x400/01.jpeg"
+            src="https://envisionui.io/placeholders/900x400/01.webp"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/07.jpeg"
+            src="https://envisionui.io/placeholders/900x400/07.webp"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/06.jpeg"
+            src="https://envisionui.io/placeholders/900x400/06.webp"
             class="env-embedded__img"
             alt="First slide"
          />
@@ -86,21 +86,21 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://envisionui.io/placeholders/900x400/04.jpeg"
+            src="https://envisionui.io/placeholders/900x400/04.webp"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/08.jpeg"
+            src="https://envisionui.io/placeholders/900x400/08.webp"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/09.jpeg"
+            src="https://envisionui.io/placeholders/900x400/09.webp"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -140,7 +140,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://envisionui.io/placeholders/900x400/02.jpeg"
+            src="https://envisionui.io/placeholders/900x400/02.webp"
             class="env-embedded__img"
             alt="First slide"
          />
@@ -151,7 +151,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/10.jpeg"
+            src="https://envisionui.io/placeholders/900x400/10.webp"
             class="env-embedded__img"
             alt="Second slide"
          />
@@ -162,7 +162,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/05.jpeg"
+            src="https://envisionui.io/placeholders/900x400/05.webp"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -186,21 +186,21 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
    <div class="env-image-slider__inner">
       <div class="env-image-slider__item env-image-slider__item--active">
          <img
-            src="https://envisionui.io/placeholders/900x400/11.jpeg"
+            src="https://envisionui.io/placeholders/900x400/11.webp"
             class="env-embedded__img"
             alt="First slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/03.jpeg"
+            src="https://envisionui.io/placeholders/900x400/03.webp"
             class="env-embedded__img"
             alt="Second slide"
          />
       </div>
       <div class="env-image-slider__item">
          <img
-            src="https://envisionui.io/placeholders/900x400/12.jpeg"
+            src="https://envisionui.io/placeholders/900x400/12.webp"
             class="env-embedded__img"
             alt="Third slide"
          />
@@ -210,7 +210,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://envisionui.io/placeholders/900x400/11.jpeg"
+            src="https://envisionui.io/placeholders/900x400/11.webp"
             class="env-image-slider__thumbnail env-image-slider__item--active"
             data-move-to="0"
             alt="First thumbnail"
@@ -219,7 +219,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://envisionui.io/placeholders/900x400/03.jpeg"
+            src="https://envisionui.io/placeholders/900x400/03.webp"
             class="env-image-slider__thumbnail"
             data-move-to="1"
             alt="Second thumbnail"
@@ -228,7 +228,7 @@ Image slider is deprecated since 2023.07.1 and will eventually be removed. Pleas
       <li data-target="#exampleSlider4">
          <img
             data-target="#exampleSlider4"
-            src="https://envisionui.io/placeholders/900x400/12.jpeg"
+            src="https://envisionui.io/placeholders/900x400/12.webp"
             class="env-image-slider__thumbnail"
             data-move-to="2"
             alt="Third thumbnail"

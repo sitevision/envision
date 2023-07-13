@@ -18,7 +18,7 @@ const Header = ({ title, menuItems }) => {
             <link
                rel="icon"
                type="image/png"
-               href="/images/envision_logo.png"
+               href="/images/envision_logo.webp"
                sizes="32x32"
             />
          </Helmet>

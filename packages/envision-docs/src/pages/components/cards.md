@@ -45,7 +45,7 @@ its width and height to make a nice aligned grid of cards.
       <div class="env-card__body">
          <img
             class="env-card__image env-profile-image env-profile-image--small"
-            src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
+            src="https://envisionui.io/placeholders/profile/200x200/01.webp"
             alt="Example profile image"
          />
          <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -68,7 +68,7 @@ its width and height to make a nice aligned grid of cards.
                <a href="#">
                   <img
                      class="env-profile-image env-profile-image--small"
-                     src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
+                     src="https://envisionui.io/placeholders/profile/200x200/02.webp"
                      alt="Example profile image"
                   />
                </a>
@@ -132,7 +132,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/05.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/05.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -155,7 +155,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/04.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/04.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -172,7 +172,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/01.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -190,7 +190,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/02.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -203,7 +203,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/03.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/03.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
@@ -327,7 +327,7 @@ Columns will always be equal width and aligned.
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/01.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/01.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">
@@ -353,7 +353,7 @@ Columns will always be equal width and aligned.
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/02.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/02.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">
@@ -371,7 +371,7 @@ Columns will always be equal width and aligned.
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
-                  src="https://envisionui.io/placeholders/profile/200x200/04.jpeg"
+                  src="https://envisionui.io/placeholders/profile/200x200/04.webp"
                   alt="Example profile image"
                />
                <h2 class="env-ui-text-subheading">
