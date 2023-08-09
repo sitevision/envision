@@ -5,28 +5,44 @@
  */
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNode, getNodes, show } from './util/nodes';
 import Util from './util/util';
+import { slideDown, slideUp } from './util/slideToggle';
 
 const ARIA_EXPANDED = 'aria-expanded';
+const DATA_EXPANDED = 'data-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const MODIFIER_BASE = 'env-accordion--';
 const NAME = 'envAccordion';
 const SHOW = MODIFIER_BASE + 'show';
-const PARENT = 'data-parent';
+const TOGGLER_ATTR = '[data-env-accordion]';
 
 class Accordion {
    constructor(element) {
       this.el = element;
-      this.$el = $(element);
-      if (this.$el.hasClass(SHOW)) {
-         this.$el.removeClass(SHOW).attr(ARIA_EXPANDED, 'true').show();
+      this.parentEl = getNode(this.el.dataset.parent);
+      this.togglerEl =
+         this.parentEl &&
+         getNode(
+            `${TOGGLER_ATTR}[aria-controls="${this.el.id}"]`,
+            this.parentEl
+         );
+
+      if (this.el.classList.contains(SHOW)) {
+         this.el.classList.remove(SHOW);
+         this.el.setAttribute(DATA_EXPANDED, 'true');
+         show(this.el);
+
+         if (this.togglerEl) {
+            this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
+         }
       }
-      this.speed = CssUtil.getToggleSpeed(this.$el[0], DURATION_CUSTOM_PROP);
+
+      this.speed = CssUtil.getToggleSpeed(this.el, DURATION_CUSTOM_PROP);
    }
 
    toggle() {
-      if (this.$el.attr(ARIA_EXPANDED) === 'true') {
+      if (this.el.getAttribute(DATA_EXPANDED) === 'true') {
          this.hide();
       } else {
          this.show();
@@ -34,32 +50,39 @@ class Accordion {
    }
 
    show() {
-      $(this.$el.attr(PARENT))
-         .find(`[${ARIA_EXPANDED}="true"]`)
-         .each(
-            ((i, el) => {
-               this._hide($(el), this.speed);
-            }).bind(this)
-         );
-      this.$el.attr(ARIA_EXPANDED, true).stop().slideDown(this.speed);
+      if (this.parentEl) {
+         getNodes(`[${DATA_EXPANDED}="true"]`, this.parentEl).forEach((el) => {
+            if (!el.isEqualNode(this.el)) {
+               this._hide(el, this.speed);
+            }
+         });
+      }
+      if (this.togglerEl) {
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
+      }
+      this.el.setAttribute(DATA_EXPANDED, 'true');
+      slideDown(this.el, this.speed);
    }
 
    hide() {
-      this._hide(this.$el, this.speed);
+      this._hide(this.el, this.speed);
    }
 
-   _hide($el, speed) {
-      $el.attr(ARIA_EXPANDED, false)
-         .stop()
-         .slideUp(speed, () => {
-            $el.removeClass(SHOW);
-         });
+   _hide(el, speed) {
+      if (this.togglerEl) {
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+      }
+      el.setAttribute(DATA_EXPANDED, 'false');
+      slideUp(el, speed);
+      setTimeout(() => {
+         el.classList.remove(SHOW);
+      }, speed);
    }
 
    static _init(elements, settings) {
       const nodes = getNodes(elements);
       if (nodes.length > 0) {
-         const accordions = nodes.map((node) => {
+         return nodes.map((node) => {
             if (!node[NAME]) {
                node[NAME] = new Accordion(node);
             }
@@ -73,7 +96,6 @@ class Accordion {
             }
             return node[NAME];
          });
-         return accordions;
       }
    }
 
@@ -98,7 +120,7 @@ if (typeof document !== 'undefined') {
    };
 
    document.addEventListener('click', (e) => {
-      const el = e.target.closest('[data-env-accordion]');
+      const el = e.target.closest(TOGGLER_ATTR);
       if (!el) {
          return;
       }

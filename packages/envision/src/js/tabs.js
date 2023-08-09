@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import Util from './util/util';
-import { uniqueId, hide, unhide, getNodes } from './util/nodes';
+import { uniqueId, hide, resetDisplay, getNodes } from './util/nodes';
 
 const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
@@ -141,7 +141,7 @@ class Tabs {
       const panel = this._getPanelForTab(tab);
       if (panel) {
          panel.setAttribute(ARIA_HIDDEN, false);
-         unhide(panel);
+         resetDisplay(panel);
       }
       this.activeTab = tab;
 

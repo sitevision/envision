@@ -96,34 +96,31 @@ envision.rangeSlider('#my-slider', {
 
 ## Events
 
-### slide
+Available events: `slide` and `slidestop`.
 
-Triggered for every move during slide.
+<span class="env-badge env-badge--danger">Removed</span> jQuery Events are removed from 2023.09.1.
 
 ```javascript
-$('#my-slider').on('slide', function (e, data) {
-   // Do something...
+document.querySelector('#my-slider').addEventListener('slide', function (e) {
+   // Triggered for every move during slide.
+   console.log('slide', e.detail);
 });
 
-$('#my-slider').envRangeSlider({
-   slide: function (e, data) {
+document
+   .querySelector('#my-slider')
+   .addEventListener('slidestop', function (e) {
+      // Triggered when slide is completed
+      console.log('slidestop', e.detail);
+   });
+
+envision.rangeSlider({
+   slide: function (e) {
       // Do something...
+      console.log('slide', e.detail);
    },
-});
-```
-
-### slidestop
-
-Triggered when slide is completed
-
-```javascript
-$('#my-slider').on('slidestop', function (e, data) {
-   // Do something...
-});
-
-$('#my-slider').envRangeSlider({
-   slidestop: function (e, data) {
+   slidestop: function (e) {
       // Do something...
+      console.log('slidestop', e.detail);
    },
 });
 ```

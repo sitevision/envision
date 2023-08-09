@@ -10,10 +10,6 @@ const CssUtil = (() => {
          return element.offsetHeight;
       },
 
-      isTouch() {
-         return window.matchMedia('(pointer: coarse)').matches;
-      },
-
       getToggleSpeed(el, durationCustomProperty) {
          let speed = 300,
             duration;

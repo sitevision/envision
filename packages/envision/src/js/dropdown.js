@@ -3,7 +3,7 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
-import { getNodes, hide, unhide } from './util/nodes';
+import { getNodes, hide, resetDisplay } from './util/nodes';
 import { getPopper } from './util/popper';
 
 const ENV_DROPDOWN_OPEN = 'env-is-open';
@@ -47,7 +47,7 @@ class Dropdown {
       if (this.placementBody) {
          document.body.appendChild(this.menu);
       }
-      unhide(this.menu);
+      resetDisplay(this.menu);
       this._bindEvents();
       getPopper().then((createPopper) => {
          this._popper = createPopper(this.container, this.menu, {
