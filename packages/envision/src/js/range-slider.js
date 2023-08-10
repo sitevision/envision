@@ -322,15 +322,10 @@ class RangeSlider {
    }
 
    _trigger(type, e, data) {
-      const el = this.el[0];
-      const callback = this.config[type];
-
-      const evt = new CustomEvent(e.type, { bubbles: false, detail: data });
-
+      const evt = new CustomEvent(type, { bubbles: false, detail: data });
       this.el.dispatchEvent(evt);
-
-      if (callback) {
-         callback.call(el, evt);
+      if (this.config[type] && this.config[type] instanceof Function) {
+         this.config[type].call(this.el, evt, data);
       }
    }
 

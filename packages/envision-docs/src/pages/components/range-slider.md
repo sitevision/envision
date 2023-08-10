@@ -4,6 +4,10 @@ title: Range slider
 
 Capture a range
 
+<span class="env-badge env-badge--danger">Changed in 2023.09.1</span>
+
+Changes have been made to event callback parameters, please see [Event documentation](#events).
+
 ```html
 <div
    id="my-slider"
@@ -94,31 +98,34 @@ envision.rangeSlider('#my-slider', {
 });
 ```
 
-## Events
+<span id="events" class="offset-anchor"></span>
+
+## Events <span class="env-badge env-badge--danger">Changed 2023.09.1</span>
+
+Since 2023.09.1, events will be triggered using native CustomEvent. Event listeners
+added using jquery will continue to work, but the Range slider data is no longer
+available as a second `data` parameter. Data is now a property of the event object
+`e` and can be read from `e.detail`.
 
 Available events: `slide` and `slidestop`.
 
-<span class="env-badge env-badge--danger">Removed</span> jQuery Events are removed from 2023.09.1.
-
 ```javascript
-document.querySelector('#my-slider').addEventListener('slide', function (e) {
+document.querySelector('#my-slider').addEventListener('slide', (e) => {
    // Triggered for every move during slide.
    console.log('slide', e.detail);
 });
 
-document
-   .querySelector('#my-slider')
-   .addEventListener('slidestop', function (e) {
-      // Triggered when slide is completed
-      console.log('slidestop', e.detail);
-   });
+document.querySelector('#my-slider').addEventListener('slidestop', (e) => {
+   // Triggered when slide is completed
+   console.log('slidestop', e.detail);
+});
 
 envision.rangeSlider({
-   slide: function (e) {
+   slide: (e) => {
       // Do something...
       console.log('slide', e.detail);
    },
-   slidestop: function (e) {
+   slidestop: (e) => {
       // Do something...
       console.log('slidestop', e.detail);
    },
