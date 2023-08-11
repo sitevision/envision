@@ -62,9 +62,10 @@ export default class Imageviewer2Lightbox {
       } else {
          altEl = el.querySelector('[alt], [data-alt]');
       }
-      if (altEl) {
+      if (altEl && altEl.dataset.alt) {
+         alt = altEl.dataset.alt;
+      } else if (altEl && altEl.hasAttribute('alt')) {
          alt = altEl.getAttribute('alt');
-         alt = alt || altEl.dataset.alt;
       }
       return {
          src: src,
