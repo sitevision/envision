@@ -5,7 +5,6 @@ title: Range slider
 Capture a range
 
 <span class="env-badge env-badge--danger">Changed in 2023.09.1</span>
-
 Changes have been made to event callback parameters, please see [Event documentation](#events).
 
 ```html
@@ -100,36 +99,51 @@ envision.rangeSlider('#my-slider', {
 
 <span id="events" class="offset-anchor"></span>
 
-## Events <span class="env-badge env-badge--danger">Changed 2023.09.1</span>
+## Events
 
-Since 2023.09.1, events will be triggered using native CustomEvent. Event listeners
-added using jquery will continue to work, but the Range slider data is no longer
-available as a second `data` parameter. Data is now a property of the event object
-`e` and can be read from `e.detail`.
+Since 2023.09.1 there are two new native custom events `input`and `change`. The new events
+replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
+`slidestop` are also deprecated.
 
-Available events: `slide` and `slidestop`.
+### input <span class="env-badge env-badge--info">2023.09.1</span>
+
+Triggered for every move during slide.
 
 ```javascript
-document.querySelector('#my-slider').addEventListener('slide', (e) => {
-   // Triggered for every move during slide.
-   console.log('slide', e.detail);
+document.querySelector('#my-slider').addEventListener('input', (e) => {
+   console.log('input', e.detail);
 });
+```
 
-document.querySelector('#my-slider').addEventListener('slidestop', (e) => {
+### change <span class="env-badge env-badge--info">2023.09.1</span>
+
+Triggered when slide is completed.
+
+```javascript
+document.querySelector('#my-slider').addEventListener('change', (e) => {
    // Triggered when slide is completed
-   console.log('slidestop', e.detail);
+   console.log('change', e.detail);
 });
+```
 
-envision.rangeSlider({
-   slide: (e) => {
-      // Do something...
-      console.log('slide', e.detail);
-   },
-   slidestop: (e) => {
-      // Do something...
-      console.log('slidestop', e.detail);
-   },
-});
+### slide <span class="env-badge env-badge--danger">Deprecated</span>
+
+Triggered for every move during slide. Event is deprecated, please use `input` event.
+
+```javascript
+// Deprecated, please use 'input'
+// $('#my-slider').on('slide', (e, data) => {});
+// $('#my-slider').envRangeSlider({ slide: (e, data) => {} });
+```
+
+### slidestop <span class="env-badge env-badge--danger">Deprecated</span>
+
+Triggered when slide is completed. Event is deprecated, please use `change` event.
+
+```javascript
+// Deprecated, please use 'change'
+// $('#my-slider').on('slidestop', (e, data) => {});
+// $('#my-slider').envRangeSlider({ slidestop: (e, data) => {} });
 ```
 
 ## Methods

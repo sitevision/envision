@@ -15,8 +15,10 @@ const RANGE_SELECTOR = '.env-range-slider__range';
 const NAME = 'envRangeSlider';
 
 const EVENTS = {
-   SLIDE: 'slide',
-   STOP: 'slidestop',
+   DEPRECATED_SLIDE: 'slide',
+   DEPRECATED_STOP: 'slidestop',
+   INPUT: 'input',
+   CHANGE: 'change',
 };
 
 const DEFAULTS = {
@@ -186,7 +188,7 @@ class RangeSlider {
          return;
       }
 
-      this._trigger(EVENTS.SLIDE, e, {
+      this._trigger(EVENTS.INPUT, e, {
          values: newValues,
       });
 
@@ -196,7 +198,7 @@ class RangeSlider {
    _stopSlide(e) {
       document.removeEventListener('mousemove', this._handleSlide);
       document.removeEventListener('touchmove', this._handleSlide);
-      this._trigger(EVENTS.STOP, e, {
+      this._trigger(EVENTS.CHANGE, e, {
          values: this._getValues(),
       });
       this._handleIndex = null;
@@ -247,7 +249,7 @@ class RangeSlider {
    _stopKeySlide(e) {
       if (this._keySliding) {
          this._keySliding = false;
-         this._trigger(EVENTS.STOP, e, {
+         this._trigger(EVENTS.CHANGE, e, {
             values: this._getValues(),
          });
       }
@@ -321,11 +323,35 @@ class RangeSlider {
       this._refreshRange();
    }
 
-   _trigger(type, e, data) {
+   _trigger(type, deprecadedEvt, data) {
+      // New event trigger since 2023.09.1
       const evt = new CustomEvent(type, { bubbles: false, detail: data });
       this.el.dispatchEvent(evt);
-      if (this.config[type] && this.config[type] instanceof Function) {
-         this.config[type].call(this.el, evt, data);
+
+      // Deprecated event trigger to be removed
+      let deprecatedType;
+      const jqEvents = $._data(this.el, 'events');
+      if (type === EVENTS.INPUT) {
+         deprecatedType = EVENTS.DEPRECATED_SLIDE;
+      } else if (type === EVENTS.CHANGE) {
+         deprecatedType = EVENTS.DEPRECATED_STOP;
+      }
+      if (
+         jqEvents &&
+         (jqEvents[EVENTS.DEPRECATED_SLIDE] || jqEvents[EVENTS.DEPRECATED_STOP])
+      ) {
+         // jQuery events detected
+         deprecadedEvt = $.Event(deprecadedEvt);
+         deprecadedEvt.type = deprecatedType;
+         deprecadedEvt.target = this.el;
+         $(this.el).trigger(deprecadedEvt, data);
+      }
+      // Deprecated callback function
+      if (
+         this.config[deprecatedType] &&
+         this.config[deprecatedType] instanceof Function
+      ) {
+         this.config[deprecatedType].call(this.el, deprecadedEvt, data);
       }
    }
 
