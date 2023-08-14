@@ -3,7 +3,7 @@
    font-size: css-var('font-size-medium');
    font-weight: $font-weight-regular;
    text-size-adjust: 100%;
-   text-align: left;
+   text-align: start;
    line-height: $line-height-medium;
    color: css-var('font-color');
 
@@ -45,16 +45,29 @@
    }
 
    // Text alignment
-   &-align--center {
-      text-align: center;
-   }
-
    &-align--right {
       text-align: right;
    }
 
+   &-align--center {
+      text-align: center;
+   }
+
+   &-align--left {
+      text-align: left;
+   }
+
    &--rtl {
       direction: rtl;
+      text-align: start;
+   }
+
+   &-align--start {
+      text-align: start !important;
+   }
+
+   &-align--end {
+      text-align: end !important;
    }
 }
 

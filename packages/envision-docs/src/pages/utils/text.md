@@ -81,6 +81,23 @@ title: Text
 <div class="env-text env-text-align--right">Right aligned</div>
 ```
 
+### Logical properties <span class="env-badge env-badge--info">2023.08.1</span>
+
+```html
+<div class="env-text env-text-align--start">Start aligned</div>
+<div class="env-text env-text-align--end">End aligned</div>
+```
+
+#### Logical properties, right to left-aligned
+
+```html
+<div dir="rtl">
+   <div class="env-text">من اليمين الى اليسار</div>
+   <div class="env-text env-text-align--start">بدء محاذاة</div>
+   <div class="env-text env-text-align--end">محاذاة النهاية</div>
+</div>
+```
+
 <span id="status-colors" class="offset-anchor"></span>
 
 ## Status colors <span class="env-badge env-badge--info">2023.07.1</span>
