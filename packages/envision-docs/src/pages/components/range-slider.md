@@ -101,7 +101,7 @@ envision.rangeSlider('#my-slider', {
 
 ## Events
 
-Since 2023.09.1 there are two new native custom events `input`and `change`. The new events
+Since 2023.09.1 there are two new native custom events `input` and `change`. The new events
 replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
 `slidestop` are also deprecated.
 
