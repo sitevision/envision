@@ -157,34 +157,35 @@ textarea.env-form-input {
       border: none;
 
       &--icon {
-         $iconSize: 1em;
-
          .env-icon {
             position: absolute;
-            top: calc(
-               #{math.div(math.div($form-input-height, $BROWSER_FONT_SIZE), 2) -
-                  0.5} * var(--env-font-size-medium)
-            );
-            left: css-var('spacing-x-small');
-            width: $iconSize;
-            height: $iconSize;
+            top: 50%;
+            left: calc(var(--env-font-size-base) * 0.75);
+            width: var(--env-font-size-medium);
+            height: var(--env-font-size-medium);
+            transform: translate(0, -50%);
             color: css-var('form-input-font-color');
+            pointer-events: none;
          }
 
          input:first-child,
          textarea:first-child {
-            padding-right: calc(#{$iconSize} + #{css-var('spacing-medium')});
+            padding-right: calc(
+               var(--env-font-size-medium) + #{css-var('spacing-medium')}
+            );
          }
 
          input + .env-icon,
          textarea + .env-icon {
             left: auto;
-            right: css-var('spacing-x-small');
+            right: calc(var(--env-font-size-base) * 0.75);
          }
 
          .env-icon + input,
          .env-icon + textarea {
-            padding-left: calc(#{$iconSize} + #{css-var('spacing-medium')});
+            padding-left: calc(
+               var(--env-font-size-medium) + #{css-var('spacing-medium')}
+            );
          }
       }
    }
