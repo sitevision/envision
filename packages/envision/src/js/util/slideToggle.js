@@ -1,8 +1,14 @@
 // https://dev.to/bmsvieira/vanilla-js-slidedown-up-4dkn
 
-export const slideUp = (target, duration = 300) => {
+export const slideUp = (target, options) => {
+   options = Object.assign(
+      {
+         duration: 300,
+      },
+      options
+   );
    target.style.transitionProperty = 'height, margin, padding';
-   target.style.transitionDuration = duration + 'ms';
+   target.style.transitionDuration = options.duration + 'ms';
    const computed = getComputedStyle(target);
    if (computed.boxSizing === 'border-box') {
       target.style.height = target.offsetHeight + 'px';
@@ -30,10 +36,19 @@ export const slideUp = (target, duration = 300) => {
       target.style.removeProperty('overflow');
       target.style.removeProperty('transition-duration');
       target.style.removeProperty('transition-property');
-   }, duration);
+      if (options.complete && options.complete instanceof Function) {
+         options.complete.call();
+      }
+   }, options.duration);
 };
 
-export const slideDown = (target, duration = 300) => {
+export const slideDown = (target, options) => {
+   options = Object.assign(
+      {
+         duration: 300,
+      },
+      options
+   );
    target.style.removeProperty('display');
    let display = window.getComputedStyle(target).display;
    if (display === 'none') {
@@ -50,7 +65,7 @@ export const slideDown = (target, duration = 300) => {
    target.offsetHeight;
    target.style.boxSizing = 'border-box';
    target.style.transitionProperty = 'height, margin, padding';
-   target.style.transitionDuration = duration + 'ms';
+   target.style.transitionDuration = options.duration + 'ms';
    target.style.height = height + 'px';
    target.style.removeProperty('padding-top');
    target.style.removeProperty('padding-bottom');
@@ -61,13 +76,8 @@ export const slideDown = (target, duration = 300) => {
       target.style.removeProperty('overflow');
       target.style.removeProperty('transition-duration');
       target.style.removeProperty('transition-property');
-   }, duration);
-};
-
-export const slideToggle = (target, duration = 300) => {
-   if (window.getComputedStyle(target).display === 'none') {
-      return slideDown(target, duration);
-   } else {
-      return slideUp(target, duration);
-   }
+      if (options.complete && options.complete instanceof Function) {
+         options.complete.call();
+      }
+   }, options.duration);
 };

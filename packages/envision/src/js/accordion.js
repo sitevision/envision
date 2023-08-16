@@ -18,6 +18,8 @@ const SHOW = MODIFIER_BASE + 'show';
 const TOGGLER_ATTR = '[data-env-accordion]';
 
 class Accordion {
+   #isAnimating;
+
    constructor(element) {
       this.el = element;
       this.parentEl = getNode(this.el.dataset.parent);
@@ -50,33 +52,55 @@ class Accordion {
    }
 
    show() {
+      if (this.#isAnimating) {
+         return;
+      }
       if (this.parentEl) {
-         getNodes(`[${DATA_EXPANDED}="true"]`, this.parentEl).forEach((el) => {
-            if (!el.isEqualNode(this.el)) {
-               this._hide(el, this.speed);
+         getNodes(`[${DATA_EXPANDED}="true"], .${SHOW}`, this.parentEl).forEach(
+            (el) => {
+               if (!el.isEqualNode(this.el)) {
+                  this._hide(el, this.speed, true);
+               }
             }
-         });
+         );
       }
-      if (this.togglerEl) {
-         this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
-      }
-      this.el.setAttribute(DATA_EXPANDED, 'true');
-      slideDown(this.el, this.speed);
+      this.#isAnimating = true;
+      slideDown(this.el, {
+         duration: this.speed,
+         complete: () => {
+            if (this.togglerEl) {
+               this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
+            }
+            this.el.setAttribute(DATA_EXPANDED, 'true');
+            this.#isAnimating = false;
+         },
+      });
    }
 
    hide() {
+      if (this.#isAnimating) {
+         return;
+      }
       this._hide(this.el, this.speed);
    }
 
-   _hide(el, speed) {
-      if (this.togglerEl) {
-         this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+   _hide(el, speed, force) {
+      if (!force) {
+         this.#isAnimating = true;
       }
-      el.setAttribute(DATA_EXPANDED, 'false');
-      slideUp(el, speed);
-      setTimeout(() => {
-         el.classList.remove(SHOW);
-      }, speed);
+      slideUp(el, {
+         duration: speed,
+         complete: () => {
+            if (this.togglerEl) {
+               this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+            }
+            el.setAttribute(DATA_EXPANDED, 'false');
+            el.classList.remove(SHOW);
+            if (!force) {
+               this.#isAnimating = false;
+            }
+         },
+      });
    }
 
    static _init(elements, settings) {

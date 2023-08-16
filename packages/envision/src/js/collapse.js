@@ -49,7 +49,7 @@ class Collapse {
          this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
       }
       this.el.classList.add(SHOW);
-      slideDown(this.el, this.speed);
+      slideDown(this.el, { duration: this.speed });
    }
 
    hide() {
@@ -57,10 +57,12 @@ class Collapse {
          this.togglerEl.classList.remove(EXPANDED);
          this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
       }
-      slideUp(this.el, this.speed);
-      setTimeout(() => {
-         this.el.classList.remove(SHOW);
-      }, this.speed);
+      slideUp(this.el, {
+         duration: this.speed,
+         complete: () => {
+            this.el.classList.remove(SHOW);
+         },
+      });
    }
 
    static _init(elements, settings) {
