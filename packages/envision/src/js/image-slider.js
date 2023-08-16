@@ -322,19 +322,17 @@ class Imageslider {
          this.el.addEventListener(Events.MOUSEENTER, (e) => this.pause(e));
          this.el.addEventListener(Events.MOUSELEAVE, (e) => this.cycle(e));
 
-         if (CssUtil.isTouch()) {
-            this.el.addEventListener(Events.TOUCHEND, () => {
-               this.pause();
-               if (this.touchTimeout) {
-                  clearTimeout(this.touchTimeout);
-               }
-               this.touchTimeout = setTimeout(
-                  (e) => this.cycle(e),
-                  TOUCHEVENT_WAIT,
-                  this.#config.interval
-               );
-            });
-         }
+         this.el.addEventListener(Events.TOUCHEND, () => {
+            this.pause();
+            if (this.touchTimeout) {
+               clearTimeout(this.touchTimeout);
+            }
+            this.touchTimeout = setTimeout(
+               (e) => this.cycle(e),
+               TOUCHEVENT_WAIT,
+               this.#config.interval
+            );
+         });
       }
       if (this.#config.swipe) {
          this._bindTouchSlider();

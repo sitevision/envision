@@ -6,37 +6,37 @@
 
 import $ from 'jquery';
 import CssUtil from './util/css-util';
-import { getNodes } from './util/nodes';
+import { getNode, getNodes, show } from './util/nodes';
 import Util from './util/util';
+import { slideDown, slideUp } from './util/slideToggle';
 
 const ARIA_EXPANDED = 'aria-expanded';
-const MODIFIER_BASE = 'env-collapse--';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
 const NAME = 'envCollapse';
-const EXPANDED = MODIFIER_BASE + 'expanded';
-const SHOW = MODIFIER_BASE + 'show';
+const EXPANDED = 'env-collapse--expanded';
+const SHOW = 'env-collapse--show';
 
 class Collapse {
    constructor(element) {
       this.el = element;
-      this.$el = $(element);
-      this.$trigger = $(
+      this.togglerEl = getNode(
          `[data-env-collapse][href="#${element.id}"], [data-env-collapse][data-target="#${element.id}"]`
       );
-      if (this.$el.hasClass(SHOW)) {
-         this.$el.show();
-         this.$trigger.addClass(EXPANDED).attr(ARIA_EXPANDED, true);
+
+      if (this.el.classList.contains(SHOW)) {
+         show(this.el);
+         this.togglerEl.classList.add(EXPANDED);
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
       }
-      this.speed = CssUtil.getToggleSpeed(
-         this.$trigger[0],
-         DURATION_CUSTOM_PROP
-      );
+      this.speed = CssUtil.getToggleSpeed(this.togglerEl, DURATION_CUSTOM_PROP);
    }
 
    toggle() {
-      if (this.$el.is(':animated')) {
+      if (this.el.getAnimations().length > 0) {
+         // Animation in progress
          return;
-      } else if (this.$el.hasClass(SHOW)) {
+      }
+      if (this.el.classList.contains(SHOW)) {
          this.hide();
       } else {
          this.show();
@@ -44,28 +44,31 @@ class Collapse {
    }
 
    show() {
-      if (this.$trigger.length) {
-         this.$trigger.addClass(EXPANDED).attr(ARIA_EXPANDED, true);
+      if (this.togglerEl) {
+         this.togglerEl.classList.add(EXPANDED);
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
       }
-      this.$el.stop().slideDown(this.speed).addClass(SHOW);
+      this.el.classList.add(SHOW);
+      slideDown(this.el, { duration: this.speed });
    }
 
    hide() {
-      if (this.$trigger.length) {
-         this.$trigger.removeClass(EXPANDED).attr(ARIA_EXPANDED, false);
+      if (this.togglerEl) {
+         this.togglerEl.classList.remove(EXPANDED);
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
       }
-      this.$el.stop().slideUp(
-         this.speed,
-         function () {
-            this.$el.removeClass(SHOW);
-         }.bind(this)
-      );
+      slideUp(this.el, {
+         duration: this.speed,
+         complete: () => {
+            this.el.classList.remove(SHOW);
+         },
+      });
    }
 
    static _init(elements, settings) {
       const nodes = getNodes(elements);
       if (nodes.length > 0) {
-         const collapses = nodes.map((node) => {
+         return nodes.map((node) => {
             if (!node[NAME]) {
                node[NAME] = new Collapse(node);
             }
@@ -79,7 +82,6 @@ class Collapse {
             }
             return node[NAME];
          });
-         return collapses;
       }
    }
 

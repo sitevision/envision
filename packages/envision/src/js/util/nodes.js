@@ -104,7 +104,17 @@ export const hide = function (elements) {
    });
 };
 
-export const unhide = function (elements) {
+export const show = function (elements) {
+   getNodes(elements).forEach((node) => {
+      const el = document.createElement(node.tagName);
+      document.body.appendChild(el);
+      const displayValue = getComputedStyle(el).display;
+      el.remove();
+      setStyle(node, 'display', displayValue);
+   });
+};
+
+export const resetDisplay = function (elements) {
    getNodes(elements).forEach((node) => {
       resetStyle(node, 'display');
    });

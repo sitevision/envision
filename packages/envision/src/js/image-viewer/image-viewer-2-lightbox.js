@@ -13,7 +13,7 @@ import {
    isVisible,
    lockScroll,
    setStyle,
-   unhide,
+   resetDisplay,
    unlockScroll,
 } from '../util/nodes';
 
@@ -269,12 +269,12 @@ export default class Imageviewer2Lightbox {
       if (n === 1 || (i === 0 && n > 1)) {
          hide(getNode('[data-move="prev"]', this.#lightbox));
       } else {
-         unhide(getNode('[data-move="prev"]', this.#lightbox));
+         resetDisplay(getNode('[data-move="prev"]', this.#lightbox));
       }
       if (n === 1 || (i === n - 1 && n > 1)) {
          hide(getNode('[data-move="next"]', this.#lightbox));
       } else {
-         unhide(getNode('[data-move="next"]', this.#lightbox));
+         resetDisplay(getNode('[data-move="next"]', this.#lightbox));
       }
    }
 

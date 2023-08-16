@@ -4,6 +4,9 @@ title: Range slider
 
 Capture a range
 
+<span class="env-badge env-badge--danger">Changed in 2023.09.1</span>
+Changes have been made to event callback parameters, please see [Event documentation](#events).
+
 ```html
 <div
    id="my-slider"
@@ -94,38 +97,53 @@ envision.rangeSlider('#my-slider', {
 });
 ```
 
+<span id="events" class="offset-anchor"></span>
+
 ## Events
 
-### slide
+Since 2023.09.1 there are two new native custom events `input` and `change`. The new events
+replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
+`slidestop` are also deprecated.
+
+### input <span class="env-badge env-badge--info">2023.09.1</span>
 
 Triggered for every move during slide.
 
 ```javascript
-$('#my-slider').on('slide', function (e, data) {
-   // Do something...
-});
-
-$('#my-slider').envRangeSlider({
-   slide: function (e, data) {
-      // Do something...
-   },
+document.querySelector('#my-slider').addEventListener('input', (e) => {
+   console.log('input', e.detail);
 });
 ```
 
-### slidestop
+### change <span class="env-badge env-badge--info">2023.09.1</span>
 
-Triggered when slide is completed
+Triggered when slide is completed.
 
 ```javascript
-$('#my-slider').on('slidestop', function (e, data) {
-   // Do something...
+document.querySelector('#my-slider').addEventListener('change', (e) => {
+   // Triggered when slide is completed
+   console.log('change', e.detail);
 });
+```
 
-$('#my-slider').envRangeSlider({
-   slidestop: function (e, data) {
-      // Do something...
-   },
-});
+### slide <span class="env-badge env-badge--danger">Deprecated</span>
+
+Triggered for every move during slide. Event is deprecated, please use `input` event.
+
+```javascript
+// Deprecated, please use 'input'
+// $('#my-slider').on('slide', (e, data) => {});
+// $('#my-slider').envRangeSlider({ slide: (e, data) => {} });
+```
+
+### slidestop <span class="env-badge env-badge--danger">Deprecated</span>
+
+Triggered when slide is completed. Event is deprecated, please use `change` event.
+
+```javascript
+// Deprecated, please use 'change'
+// $('#my-slider').on('slidestop', (e, data) => {});
+// $('#my-slider').envRangeSlider({ slidestop: (e, data) => {} });
 ```
 
 ## Methods
