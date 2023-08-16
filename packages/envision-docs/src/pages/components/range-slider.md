@@ -4,7 +4,7 @@ title: Range slider
 
 Capture a range
 
-<span class="env-badge env-badge--danger">Changed in 2023.09.1</span>
+<span class="env-badge env-badge--danger">Changed in 2023.08.1</span>
 Changes have been made to event callback parameters, please see [Event documentation](#events).
 
 ```html
@@ -101,11 +101,11 @@ envision.rangeSlider('#my-slider', {
 
 ## Events
 
-Since 2023.09.1 there are two new native custom events `input` and `change`. The new events
+Since 2023.08.1 there are two new native custom events `input` and `change`. The new events
 replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
 `slidestop` are also deprecated.
 
-### input <span class="env-badge env-badge--info">2023.09.1</span>
+### input <span class="env-badge env-badge--info">2023.08.1</span>
 
 Triggered for every move during slide.
 
@@ -115,7 +115,7 @@ document.querySelector('#my-slider').addEventListener('input', (e) => {
 });
 ```
 
-### change <span class="env-badge env-badge--info">2023.09.1</span>
+### change <span class="env-badge env-badge--info">2023.08.1</span>
 
 Triggered when slide is completed.
 

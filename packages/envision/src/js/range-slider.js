@@ -324,7 +324,7 @@ class RangeSlider {
    }
 
    _trigger(type, deprecadedEvt, data) {
-      // New event trigger since 2023.09.1
+      // New event trigger since 2023.08.1
       const evt = new CustomEvent(type, { bubbles: false, detail: data });
       this.el.dispatchEvent(evt);
 
