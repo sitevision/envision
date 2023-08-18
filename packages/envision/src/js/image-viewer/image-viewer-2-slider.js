@@ -163,9 +163,11 @@ export default class Imageviewer2Slider {
          }`,
          controls: this.#sliderEl.id,
       });
-      containerEl.appendChild(prevBtn);
-      containerEl.appendChild(nextBtn);
-      let zoomBtn;
+      if (this.#viewerEl.querySelectorAll(`.${CLASSNAME.ITEM}`)?.length > 1) {
+         containerEl.appendChild(prevBtn);
+         containerEl.appendChild(nextBtn);
+      }
+
       if (this.#config.slides.auto) {
          this.#autoplayButtonEl = getButtonElement({
             text: `${
@@ -178,9 +180,14 @@ export default class Imageviewer2Slider {
                showText ? CLASSNAME.BUTTON_ICON_BEFORE : ''
             }`,
          });
-         containerEl.prepend(this.#autoplayButtonEl);
+         if (
+            this.#viewerEl.querySelectorAll(`.${CLASSNAME.ITEM}`)?.length > 1
+         ) {
+            containerEl.prepend(this.#autoplayButtonEl);
+         }
       }
 
+      let zoomBtn;
       if (this.#lightbox?.getImageCount() > 0) {
          zoomBtn = getButtonElement({
             text: `${this.#config.i18n.zoom} <span class="env-assistive-text">${
