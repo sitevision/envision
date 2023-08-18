@@ -5,7 +5,7 @@ title: Range slider
 Capture a range
 
 <span class="env-badge env-badge--danger">Changed in 2023.08.1</span>
-Changes have been made to event callback parameters, please see [Event documentation](#events).
+Changes have been made to event handling, please see [Event documentation](#events).
 
 ```html
 <div
@@ -128,7 +128,7 @@ document.querySelector('#my-slider').addEventListener('change', (e) => {
 
 ### slide <span class="env-badge env-badge--danger">Deprecated</span>
 
-Triggered for every move during slide. Event is deprecated, please use `input` event.
+Triggered for every move during slide. Event `slide` is deprecated, please use `input` event.
 
 ```javascript
 // Deprecated, please use 'input'
@@ -138,7 +138,7 @@ Triggered for every move during slide. Event is deprecated, please use `input` e
 
 ### slidestop <span class="env-badge env-badge--danger">Deprecated</span>
 
-Triggered when slide is completed. Event is deprecated, please use `change` event.
+Triggered when slide is completed. Event `slidestop` is deprecated, please use `change` event.
 
 ```javascript
 // Deprecated, please use 'change'
