@@ -93,7 +93,9 @@ export default class Imageviewer2Slider {
 
    setupSlider() {
       this.#el.classList.add(CLASSNAME.BASE);
-      this.#el.setAttribute('role', 'region');
+      if (this.#el.tagName !== 'SECTION') {
+         this.#el.setAttribute('role', 'region');
+      }
       this.#el.setAttribute(
          'aria-roledescription',
          this.#config.i18n.roledescription
