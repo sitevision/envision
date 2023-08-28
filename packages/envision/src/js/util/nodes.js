@@ -151,6 +151,23 @@ export const getFocusable = function (root) {
    return visibleFocusable;
 };
 
+export const getNextFocusable = (focusable, root) => {
+   root = root || document;
+   const focusableElements = getFocusable(root);
+   let nextFocusable = focusable;
+   for (let i = 0; i < focusableElements.length; i++) {
+      const el = focusableElements[i];
+      if (el === focusable) {
+         nextFocusable =
+            i === focusableElements.length - 1
+               ? focusableElements[0]
+               : focusableElements[i + 1];
+         break;
+      }
+   }
+   return nextFocusable;
+};
+
 export const uniqueId = (() => {
    let i = 0;
    const PREFIX = 'env-';

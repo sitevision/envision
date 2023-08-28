@@ -3,7 +3,7 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
-import { getNodes, hide, resetDisplay } from './util/nodes';
+import { getNextFocusable, getNodes, hide, resetDisplay } from './util/nodes';
 import { getPopper } from './util/popper';
 
 const ENV_DROPDOWN_OPEN = 'env-is-open';
@@ -58,6 +58,9 @@ class Dropdown {
             },
          });
          this._popper.update();
+         setTimeout(() => {
+            this.menuitems[0].focus();
+         }, 1);
       });
    }
 
@@ -101,31 +104,33 @@ class Dropdown {
 
       if (e.key === 'Escape') {
          this.hide();
-      } else if (this.button.contains(el) && menuItemCount > 0) {
-         if ((e.key === 'Tab' && !e.shiftKey) || e.key === 'ArrowDown') {
-            this.menuitems[0].focus();
-            e.preventDefault();
-         }
+         this.button.focus();
       } else if (this.menu.contains(el) && menuItemCount > 0) {
          const current = parseInt(el.getAttribute(INDEX_ATTR), 10);
-         if (e.key === 'Tab' && !e.shiftKey && current === menuItemCount - 1) {
-            this.button.focus();
+         if (e.key === 'Tab') {
+            if (e.shiftKey) {
+               e.preventDefault();
+               this.button.focus();
+            } else if (this.placementBody) {
+               e.preventDefault();
+               const nextFocusable = getNextFocusable(this.button);
+               nextFocusable.focus();
+            }
             this.hide();
-         } else if (e.key === 'Tab' && e.shiftKey && current === 0) {
+         } else if (e.key === 'Home') {
             e.preventDefault();
-            this.button.focus();
+            this.menuitems[0].focus();
+         } else if (e.key === 'End') {
+            e.preventDefault();
+            this.menuitems[this.menuitems.length - 1].focus();
          } else if (e.key === 'ArrowUp') {
             e.preventDefault();
-            const prev = this.menu.querySelector(
-               `[${INDEX_ATTR} ="${current - 1}"]`
-            );
-            prev && prev.focus();
+            const prev = current > 0 ? current - 1 : this.menuitems.length - 1;
+            this.menuitems[prev].focus();
          } else if (e.key === 'ArrowDown') {
             e.preventDefault();
-            const next = this.menu.querySelector(
-               `[${INDEX_ATTR} ="${current + 1}"]`
-            );
-            next && next.focus();
+            const next = current < this.menuitems.length - 1 ? current + 1 : 0;
+            this.menuitems[next].focus();
          }
       }
    }
