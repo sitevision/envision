@@ -99,6 +99,7 @@ $inset: css-var('spacing-xx-large');
       color: css-var('ui-text-caption-font-color');
       line-height: $line-height-medium;
       text-align: left;
+      overflow-wrap: anywhere;
       padding: 0.5em 1em;
 
       .env-image-viewer-2--overlay & {
