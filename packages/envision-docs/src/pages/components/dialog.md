@@ -476,9 +476,11 @@ Instances of Dialog may be controlled by the methods described below.
 ```javascript
 envision.dialog('#dialog', { opener: '#opener' }).then(function (dialogs) {
    console.log(dialogs[0].el.open);
-   dialogs[0].show();
-   dialogs[0].close();
+   // dialogs[0].show(); // Uncomment to show dialog on load
 });
+```
+
+```javascript
 envision.dialog('#dialog').then(function (dialogs) {
    // Custom opener event
    document.querySelector('#opener').addEventListener('click', () => {
