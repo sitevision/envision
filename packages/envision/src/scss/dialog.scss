@@ -1,4 +1,5 @@
 .env-dialog {
+   z-index: $zindex-modal;
    background-color: css-var('section-background-color');
    color: css-var('font-color');
    box-shadow: css-var('box-shadow');
@@ -34,10 +35,6 @@
 
    &--small {
       width: css-var('dialog-small-width');
-   }
-
-   &:not(:modal) {
-      z-index: $zindex-modal;
    }
 
    &__title {
