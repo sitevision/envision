@@ -177,7 +177,7 @@ class ModalDialog {
          class: BACKDROP,
       });
 
-      this.$el.on('mousedown', (e) => {
+      this.$el.on('click', (e) => {
          if (this.$backdrop.hasClass(ANIMATION)) {
             return;
          }
