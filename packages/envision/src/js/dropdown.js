@@ -3,7 +3,13 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
-import { getNextFocusable, getNodes, hide, resetDisplay } from './util/nodes';
+import {
+   getNextFocusable,
+   getNodes,
+   hide,
+   resetDisplay,
+   uniqueId,
+} from './util/nodes';
 import { getPopper } from './util/popper';
 
 const ENV_DROPDOWN_OPEN = 'env-is-open';
@@ -13,6 +19,7 @@ const INDEX_ATTR = 'data-env-dropdown-index';
 const PLACEMENT_BODY_ATTR = 'data-dropdown-placement-body';
 const ENV_DROPDOWN_MENU = '.env-dropdown__menu';
 const NAME = 'envDropdown';
+const DATA_INITIALIZED = 'data-env-dropdown';
 
 class Dropdown {
    constructor(container, menu, button) {
@@ -21,19 +28,39 @@ class Dropdown {
       this.placeholder = document.createElement('span');
       this.menu = menu;
       this.menuitems = getNodes('.env-dropdown__item', this.menu);
+
+      uniqueId(this.button);
+      uniqueId(this.menu);
+
+      this.button.setAttribute('aria-haspopup', 'true');
+      this.button.setAttribute('aria-controls', this.menu.id);
+
       this.menu.insertAdjacentElement('beforebegin', this.placeholder);
-      this.placementBody = this.button.hasAttribute(PLACEMENT_BODY_ATTR);
+      this.menu.setAttribute('aria-labelledby', this.button.id);
+      this.menu.setAttribute('role', 'menu');
 
       this.menuitems.forEach((el, i) => {
+         const li = el.closest('li');
          el.setAttribute(INDEX_ATTR, i);
+         el.setAttribute('role', 'menuitem');
+         if (el !== li && this.menu.contains(el.closest('li'))) {
+            // If menuitem has a enveloping LI element it should have role=none
+            li.setAttribute('role', 'none');
+         }
       });
 
-      this.handleClick = this.handleClick.bind(this);
-      this.handleKeyDown = this.handleKeyDown.bind(this);
-      this.handleKeyUp = this.handleKeyUp.bind(this);
+      this.placementBody = this.button.hasAttribute(PLACEMENT_BODY_ATTR);
+
+      this.handleButtonClick = this.handleButtonClick.bind(this);
+      this.handleButtonKeyDown = this.handleButtonKeyDown.bind(this);
+      this.handleMenuKeyDown = this.handleMenuKeyDown.bind(this);
+      this.handleOutsideClick = this.handleOutsideClick.bind(this);
+      this.handleOutsideKeyUp = this.handleOutsideKeyUp.bind(this);
+
+      this._bindEventsOnInit();
    }
 
-   toggle() {
+   handleButtonClick() {
       if (this.container.classList.contains(ENV_DROPDOWN_OPEN)) {
          this.hide();
       } else {
@@ -41,14 +68,22 @@ class Dropdown {
       }
    }
 
-   show() {
+   handleButtonKeyDown(e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === ' ') {
+         e.preventDefault();
+         this.show(e.key === 'ArrowUp' ? this.menuitems.length - 1 : 0);
+      }
+   }
+
+   show(focusIndex) {
+      focusIndex = focusIndex || 0;
       this.container.classList.add(ENV_DROPDOWN_OPEN);
       this.button.setAttribute('aria-expanded', 'true');
       if (this.placementBody) {
          document.body.appendChild(this.menu);
       }
       resetDisplay(this.menu);
-      this._bindEvents();
+      this._bindMenuEvents();
       getPopper().then((createPopper) => {
          this._popper = createPopper(this.container, this.menu, {
             placement: 'bottom-start',
@@ -59,7 +94,7 @@ class Dropdown {
          });
          this._popper.update();
          setTimeout(() => {
-            this.menuitems[0].focus();
+            this.menuitems[focusIndex].focus();
          }, 1);
       });
    }
@@ -67,38 +102,46 @@ class Dropdown {
    hide() {
       this.container.classList.remove(ENV_DROPDOWN_OPEN);
       this.button.setAttribute('aria-expanded', 'false');
-      this._unbindEvents();
+      this._unbindMenuEvents();
       hide(this.menu);
       if (this.placementBody) {
          this.placeholder.insertAdjacentElement('afterend', this.menu);
       }
    }
 
-   _bindEvents() {
-      this._unbindEvents();
-      document.addEventListener('click', this.handleClick);
-      document.addEventListener('keydown', this.handleKeyDown);
-      document.addEventListener('keyup', this.handleKeyUp);
+   _bindEventsOnInit() {
+      this.button.addEventListener('click', this.handleButtonClick);
+      this.button.addEventListener('keydown', this.handleButtonKeyDown);
    }
 
-   _unbindEvents() {
-      document.removeEventListener('click', this.handleClick);
-      document.removeEventListener('keydown', this.handleKeyDown);
-      document.removeEventListener('keyup', this.handleKeyUp);
+   _bindMenuEvents() {
+      this._unbindMenuEvents();
+      document.addEventListener('click', this.handleOutsideClick);
+      document.addEventListener('keydown', this.handleMenuKeyDown);
+      document.addEventListener('keyup', this.handleOutsideKeyUp);
    }
 
-   handleClick() {
-      this.hide();
+   _unbindMenuEvents() {
+      document.removeEventListener('click', this.handleOutsideClick);
+      document.removeEventListener('keydown', this.handleMenuKeyDown);
+      document.removeEventListener('keyup', this.handleOutsideKeyUp);
    }
 
-   handleKeyUp(e) {
+   handleOutsideClick(e) {
       const el = e.target;
       if (!this.button.contains(el) && !this.menu.contains(el)) {
          this.hide();
       }
    }
 
-   handleKeyDown(e) {
+   handleOutsideKeyUp(e) {
+      const el = e.target;
+      if (!this.button.contains(el) && !this.menu.contains(el)) {
+         this.hide();
+      }
+   }
+
+   handleMenuKeyDown(e) {
       const el = e.target;
       const menuItemCount = this.menuitems.length;
 
@@ -107,7 +150,12 @@ class Dropdown {
          this.button.focus();
       } else if (this.menu.contains(el) && menuItemCount > 0) {
          const current = parseInt(el.getAttribute(INDEX_ATTR), 10);
-         if (e.key === 'Tab') {
+
+         if (e.key === ' ' && el.tagName !== 'BUTTON') {
+            e.preventDefault();
+            const menuItemEl = el.closest('[role=menuitem]');
+            menuItemEl && menuItemEl.click();
+         } else if (e.key === 'Tab') {
             if (e.shiftKey) {
                e.preventDefault();
                this.button.focus();
@@ -142,22 +190,21 @@ const initialize = async (e) => {
       const container = e.target.closest(button.getAttribute(TARGET_ATTR));
       const menu = container.querySelector(ENV_DROPDOWN_MENU);
       if (container && container.id) {
-         if (container[NAME]) {
-            container[NAME].toggle();
-         } else {
+         if (!container[NAME]) {
+            container[NAME] = true;
             await getPopper();
             container[NAME] = new Dropdown(container, menu, button);
             if (menu) {
+               menu.setAttribute(DATA_INITIALIZED, 'true');
                hide(menu);
             }
-            container[NAME].toggle();
          }
       }
    }
 };
 
 if (document) {
-   document.addEventListener('click', initialize);
+   document.addEventListener('focusin', initialize);
 }
 
 export default Dropdown;
