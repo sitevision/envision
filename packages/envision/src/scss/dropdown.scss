@@ -6,7 +6,7 @@
    @include popout-menu;
 
    &__menu {
-      display: block;
+      display: none;
       background-color: css-var('section-background-color');
       border: $border-width $border-style css-var('border-color-light');
       border-radius: css-var('border-radius-medium');
@@ -17,6 +17,10 @@
       position: fixed;
       top: 100%;
       z-index: $zindex-dropdown;
+
+      &[data-env-dropdown] {
+         display: block;
+      }
    }
 
    &-icon {
