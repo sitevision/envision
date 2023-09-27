@@ -53,7 +53,8 @@
       }
    }
 
-   &.env-link {
+   &.env-link,
+   &.env-link-secondary {
       // This is a combo of env-button and env-link
       background-color: transparent;
       border-color: transparent;
@@ -64,12 +65,23 @@
          background-color: transparent;
          border-color: transparent;
       }
+   }
 
+   &.env-link {
       @include link(
          'link-font-color',
          'link-text-decoration',
          'link-hover-font-color',
          'link-hover-text-decoration'
+      );
+   }
+
+   &.env-link-secondary {
+      @include link(
+         'link-secondary-font-color',
+         'link-secondary-text-decoration',
+         'link-secondary-hover-font-color',
+         'link-secondary-hover-text-decoration'
       );
    }
 
