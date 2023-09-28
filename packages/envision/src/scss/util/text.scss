@@ -71,7 +71,8 @@
    }
 }
 
-button:not(.env-button).env-link {
+button:not(.env-button).env-link,
+button:not(.env-button).env-link-secondary {
    appearance: none;
    display: inline;
    border: none;
