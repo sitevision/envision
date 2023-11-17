@@ -188,8 +188,10 @@ const initialize = async (e) => {
    const button = e.target.closest(TOGGLE_DROPDOWN);
    if (button) {
       const container = e.target.closest(button.getAttribute(TARGET_ATTR));
-      const menu = container.querySelector(ENV_DROPDOWN_MENU);
+
       if (container && container.id) {
+         const menu = container.querySelector(ENV_DROPDOWN_MENU);
+
          if (!container[NAME]) {
             container[NAME] = true;
             await getPopper();
@@ -198,6 +200,9 @@ const initialize = async (e) => {
                menu.setAttribute(DATA_INITIALIZED, 'true');
                hide(menu);
             }
+            if (e.type === 'click') {
+               container[NAME].handleButtonClick();
+            }
          }
       }
    }
@@ -205,6 +210,7 @@ const initialize = async (e) => {
 
 if (document) {
    document.addEventListener('focusin', initialize);
+   document.addEventListener('click', initialize);
 }
 
 export default Dropdown;
