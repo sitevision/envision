@@ -10,7 +10,6 @@ import {
    getNode,
    getNodes,
    hide,
-   isVisible,
    lockScroll,
    setStyle,
    resetDisplay,
@@ -78,7 +77,6 @@ export default class Imageviewer2Lightbox {
    }
 
    bindThis() {
-      this.#setFocus = this.#setFocus.bind(this);
       this.#handleClick = this.#handleClick.bind(this);
       this.#handleClickInside = this.#handleClickInside.bind(this);
       this.#handleKeydown = this.#handleKeydown.bind(this);
@@ -110,7 +108,6 @@ export default class Imageviewer2Lightbox {
          imgContainer.replaceChildren(imgEl);
       };
       this.setVisibleButtons();
-      setTimeout(this.#setFocus, 1);
    }
 
    createLightbox() {
@@ -135,6 +132,16 @@ export default class Imageviewer2Lightbox {
             })
          );
       }
+      this.#lightbox.appendChild(
+         getButtonElement({
+            text: this.#config.i18n.close,
+            icon: ICON.CLOSE,
+            className: `${CLASSNAME.LIGHTBOX}__close  ${
+               showText && CLASSNAME.BUTTON_ICON_BEFORE
+            } ${CLASSNAME.LIGHTBOX}__showOnActive`,
+            dataset: { close: '' },
+         })
+      );
       if (this.#config.buttons.download) {
          this.#downloadButton = getButtonElement({
             text: this.#config.i18n.download,
@@ -148,16 +155,6 @@ export default class Imageviewer2Lightbox {
          this.#downloadButton.removeAttribute('type');
          this.#lightbox.appendChild(this.#downloadButton);
       }
-      this.#lightbox.appendChild(
-         getButtonElement({
-            text: this.#config.i18n.close,
-            icon: ICON.CLOSE,
-            className: `${CLASSNAME.LIGHTBOX}__close  ${
-               showText && CLASSNAME.BUTTON_ICON_BEFORE
-            } ${CLASSNAME.LIGHTBOX}__showOnActive`,
-            dataset: { close: '' },
-         })
-      );
    }
 
    fadeIn() {
@@ -251,14 +248,6 @@ export default class Imageviewer2Lightbox {
          this.#currentSrc = this.#images[0].src;
       } else {
          this.goTo(i);
-      }
-   };
-
-   #setFocus = () => {
-      const activeEl = document.activeElement;
-      if (!this.#lightbox.contains(activeEl) || !isVisible(activeEl)) {
-         const focusable = getFocusable(this.#lightbox);
-         focusable[0] && focusable[0].focus();
       }
    };
 
