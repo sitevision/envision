@@ -140,6 +140,8 @@ $inset: css-var('spacing-xx-large');
       opacity: 0;
       transition: all 0.2s linear;
 
+      @include focus-visible;
+
       &--in {
          opacity: 1;
       }

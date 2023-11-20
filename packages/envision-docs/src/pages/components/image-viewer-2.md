@@ -1,7 +1,6 @@
 ---
 title: Image viewer 2
 since: 2023.07.01
-beta: true
 ---
 
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
@@ -41,7 +40,8 @@ class="env-m-vertical--large"
 ## Lightbox
 
 Use attribute `data-zoom` on one or more links inside the element being initialized from script. The lightbox opens
-with navigation arrows to switch between images. The link href:s should point to a large version of the image being shown.
+with navigation arrows to switch between images. The link href:s should point to a large version of the image being
+shown.
 
 ```html
 <div
@@ -217,8 +217,10 @@ Combine zoom and captions using data attributes or links:
 -  `i18n` _'sv'_ | _'en'_ | _{ language keys }_
 
    -  Translation of buttons aria-label and aria-roledescription.
-      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
-   -  Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download, image, of_
+      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on
+      HTML lang attribute.
+   -  Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
+      image, of_
 
 -  `slides` _boolean_ | _{ [options object](#slides-options-object) }_
 
