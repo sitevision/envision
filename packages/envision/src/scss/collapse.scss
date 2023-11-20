@@ -3,7 +3,6 @@
       display: none;
    }
 
-   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
 
@@ -27,7 +26,6 @@
       color: css-var('collapse-border-color');
    }
    background-color: css-var('collapse-background-color');
-   word-wrap: break-word;
    overflow-wrap: anywhere;
    word-break: normal;
    color: inherit;
