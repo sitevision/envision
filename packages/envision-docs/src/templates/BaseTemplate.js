@@ -12,6 +12,7 @@ const filterMenuItems = (items) => {
          deprecated: node.frontmatter.deprecated,
          since: node.frontmatter.since,
          beta: node.frontmatter.beta,
+         dashboard: node.frontmatter.dashboard,
          slug: node.fields.slug,
       }))
       .reduce((accumulated, item) => {
@@ -31,15 +32,19 @@ const BaseTemplate = ({
    deprecated,
    since,
    beta,
+   dashboard,
    topMenuItems,
    menuCategories,
    menuItems,
    children,
 }) => {
+   const bodyClass = dashboard
+      ? 'env-dashboard-theme'
+      : window.localStorage.getItem('env-theme');
    return (
       <>
-         <Header title={title} menuItems={topMenuItems} />
-         <div className="main-container">
+         <Header title={title} bodyClass={bodyClass} menuItems={topMenuItems} />
+         <div className={'main-container'}>
             <main>
                <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
                {(since || beta || deprecated) && (
@@ -78,6 +83,7 @@ BaseTemplate.propTypes = {
    deprecated: PropTypes.bool,
    since: PropTypes.string,
    beta: PropTypes.bool,
+   dashboard: PropTypes.bool,
    topMenuItems: PropTypes.array,
    menuCategories: PropTypes.array,
    menuItems: PropTypes.array,

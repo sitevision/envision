@@ -433,8 +433,11 @@ img {
 }
 
 .theme-picker {
-   //border-top: 1px solid var(--env-border-color);
    margin: 0 1em;
+
+   .env-dashboard-theme & {
+      display: none;
+   }
 
    .env-form-element {
       margin: 0;

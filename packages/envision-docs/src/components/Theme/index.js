@@ -12,6 +12,9 @@ const ThemeProvider = ({ children }) => {
    }, []);
 
    React.useEffect(() => {
+      if (document.body.classList.contains('env-dashboard-theme')) {
+         return;
+      }
       let oldTheme = window.localStorage.getItem('env-theme');
       document.body.classList.remove(oldTheme);
       if (theme) {

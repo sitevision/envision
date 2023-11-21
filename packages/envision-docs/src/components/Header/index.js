@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import ThemePicker from '../ThemePicker';
 
-const Header = ({ title, menuItems }) => {
+const Header = ({ title, bodyClass, menuItems }) => {
    return (
       <>
-         <Helmet>
+         <Helmet bodyAttributes={{ class: bodyClass }}>
             <html lang="en" className="sv-js" />
             <meta charset="utf-8" />
             <meta
@@ -54,6 +54,7 @@ const Header = ({ title, menuItems }) => {
 
 Header.propTypes = {
    title: PropTypes.string,
+   bodyClass: PropTypes.string,
    menuItems: PropTypes.array,
 };
 
