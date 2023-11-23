@@ -444,3 +444,15 @@ img {
       padding: 0;
    }
 }
+
+@media print {
+   .sv-header {
+      position: static;
+      margin-bottom: -60px;
+   }
+
+   .sidenav,
+   .footer-wrapper {
+      display: none !important;
+   }
+}
