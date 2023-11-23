@@ -12,6 +12,8 @@ A theme will have a brand color and a brand contrast color. [The default Envisio
 
 The brand color will be used to generate a palette of lighter and darker variants. Each color in the palette will get a matching contrast color for text verified against WCAG 2.0 AA.
 
+<span id="ui-text" class="offset-anchor"></span>
+
 ## UI text
 
 UI Text will be used as the new default text styles for headings in all components.
@@ -30,8 +32,6 @@ UI Text will be used as the new default text styles for headings in all componen
 <h2 class="show-when-has-theme doc-heading-2">
    Branding of components <span id="examples" class="offset-anchor"></span>
 </h2>
-
-##
 
 <div class="env-theme-example-brand">
 

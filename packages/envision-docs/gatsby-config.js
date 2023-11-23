@@ -55,6 +55,13 @@ module.exports = {
                            },
                         },
                         {
+                           language: 'css-no-expand',
+                           extend: 'css',
+                           definition: {
+                              superscript_types: /(SuperType)/,
+                           },
+                        },
+                        {
                            language: 'js-no-expand',
                            extend: 'javascript',
                            definition: {
@@ -83,6 +90,7 @@ module.exports = {
                         list: 'doc-list',
                         listItem: 'doc-list__item',
                         image: 'doc-image',
+                        table: 'doc-table',
                      },
                   },
                },

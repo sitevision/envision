@@ -38,9 +38,12 @@ const BaseTemplate = ({
    menuItems,
    children,
 }) => {
-   const bodyClass = dashboard
-      ? 'env-dashboard-theme'
-      : window.localStorage.getItem('env-theme');
+   const theme =
+      typeof window !== 'undefined'
+         ? window.localStorage.getItem('env-theme')
+         : '';
+
+   const bodyClass = dashboard ? 'env-dashboard-theme' : theme;
    return (
       <>
          <Header title={title} bodyClass={bodyClass} menuItems={topMenuItems} />

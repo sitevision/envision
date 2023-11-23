@@ -1,6 +1,8 @@
 @import '../functions';
 @import '../mixin/css-variables';
 
-.fooBar {
-   color: red;
-}
+@import 'env-dashboard-theme';
+@import 'core';
+@import 'colors';
+@import 'components';
+@import 'typography';

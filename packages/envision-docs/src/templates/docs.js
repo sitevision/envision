@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useCopyExample } from '../hooks/copyExample';
+import { useDashboardExample } from '../hooks/dashboardExample';
 import { useExpandCode } from '../hooks/expandCode';
 import BaseTemplate from './BaseTemplate';
 
@@ -13,6 +14,7 @@ export default function Template({
    const content = useRef(null);
    useCopyExample(content);
    useExpandCode(content);
+   useDashboardExample(content);
 
    return (
       <BaseTemplate

@@ -1,0 +1,21 @@
+.env-dashboard-widget {
+   background-color: var(--env-section-background-color);
+   border: 1px solid var(--env-border-color-light);
+   border-radius: var(--env-border-radius-medium);
+   box-shadow: var(--env-box-shadow);
+}
+
+.env-badge--positive {
+   color: var(--env-dashboard-color-green-90);
+   background-color: var(--env-dashboard-color-green-05);
+}
+
+.env-badge--negative {
+   color: var(--env-dashboard-color-pink-90);
+   background-color: var(--env-dashboard-color-pink-05);
+}
+
+.env-badge--unchanged {
+   color: var(--env-dashboard-color-light-blue-90);
+   background-color: var(--env-dashboard-color-light-blue-05);
+}

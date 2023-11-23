@@ -1,0 +1,14 @@
+.env-dashboard-theme .main-body *,
+.env-dashboard-theme .main-body *::before,
+.env-dashboard-theme .main-body *::after {
+   // Same box sizing as dashboard in Sitevision
+   box-sizing: border-box;
+}
+
+p,
+p.env-text,
+.env-text p,
+.env-text-p,
+.env-text--p {
+   margin: 0 0 var(--env-spacing-medium);
+}
