@@ -16,8 +16,7 @@ Additional CSS variables, class names and components for building widgets are av
 
 Use Envision components when possible.
 
-When using custom CSS for styling, use Envision and Dashboard variables.
-All colors should use Envision or Dashboard variables.
+When using custom CSS for styling, all colors should use Envision and Dashboard variables.
 Other colors and hard coded color values should be avoided.
 
 ### Wrapper
@@ -352,8 +351,8 @@ This example shows basic usage of CSS classes for headings, labels and more.
       Chart widget example heading
    </h2>
    <p class="env-ui-text-value">
-      <span class="env-dashboard-color-txt-orange-50">—&nbsp;Legend line 1</span>
-      <span class="env-dashboard-color-txt-cyan-50">—&nbsp;Legend line 2</span>
+      <span class="env-dashboard-color-txt-orange-50">—</span> Legend line 1
+      <span class="env-dashboard-color-txt-cyan-50">—</span> Legend line 2
    </p>
    <h3 class="env-ui-text-label">
       Y axis label
