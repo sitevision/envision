@@ -3,6 +3,11 @@ import * as React from 'react';
 export const onRenderBody = ({ setHeadComponents }) => {
    setHeadComponents([
       <link key="envision-css" rel="stylesheet" href="/dist/envision.css" />,
+      <link
+         key="envision-dashboard-css"
+         rel="stylesheet"
+         href="/dist/envision-dashboard.css"
+      />,
       <script
          key="jquery-script"
          src="https://code.jquery.com/jquery-3.5.1.min.js"
