@@ -322,10 +322,9 @@ Brand colors are not available in the dashboard theme, please use the Color pale
       <li class="env-ui-text-value">600</li>
       <li class="env-ui-text-value">400</li>
    </ul>
-   <canvas id="example-chart-canvas"
-           class="env-border example-canvas"
-           aria-label="Example chart, this text should tell the chart values for accessibility." 
-           role="img"></canvas>
+   <img class="env-border example-canvas"
+           alt="Example chart" 
+           src="https://envisionui.io/placeholders/examples/chart.webp" />
    <h3 class="env-ui-text-label example-chart-axis-label-x">
       X axis label
    </h3>

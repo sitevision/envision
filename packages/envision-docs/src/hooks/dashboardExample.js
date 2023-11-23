@@ -5,7 +5,7 @@ import {
    getContrastRatio,
    passesWCAG,
 } from './colorUtils';
-import { demoLineChartCanvas, toTitleCase } from './demoUtils';
+import { toTitleCase } from './demoUtils';
 
 const TEXT_CONTRAST_ICON =
    '<svg class="env-icon example-dashboard-color-list-icon">' +
@@ -79,21 +79,6 @@ export const useDashboardExample = (content) => {
             });
             gridEl.appendChild(listEl);
             colorList.appendChild(gridEl);
-         });
-      }
-
-      const canvas = document.getElementById('example-chart-canvas');
-
-      if (canvas) {
-         demoLineChartCanvas(canvas, {
-            w: 600,
-            h: 200,
-            columns: 6,
-            rows: 5,
-            line1: [1, 3, 2, 4, 2, 2, 5],
-            line2: [2, 4, 4, 3, 1, 3, 4],
-            lineColor1: '#f69911',
-            lineColor2: '#1eb7cc',
          });
       }
    }, [content]);
