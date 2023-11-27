@@ -4,13 +4,13 @@ $line-height-medium: 1.4 !default;
    (
       'ui-text-label-font-family': css-var('font-family'),
       'ui-text-label-font-color': css-var('font-color'),
-      'ui-text-label-font-size': 1em,
+      'ui-text-label-font-size': 0.8125em,
       'ui-text-label-font-weight': 600,
       'ui-text-label-text-transform': none,
       'ui-text-label-letter-spacing': normal,
       'ui-text-value-font-family': css-var('font-family'),
       'ui-text-value-font-color': css-var('font-color-muted'),
-      'ui-text-value-font-size': 0.875em,
+      'ui-text-value-font-size': 0.75em,
       'ui-text-value-font-weight': 400,
       'ui-text-value-text-transform': none,
       'ui-text-value-letter-spacing': normal,
@@ -20,17 +20,17 @@ $line-height-medium: 1.4 !default;
 @include to-css-custom-property(
    (
       'ui-text-kpi-number-font-family': css-var('font-family'),
-      'ui-text-kpi-number-font-color': css-var('dashboard-color-teal-90'),
-      'ui-text-kpi-number-font-size': 4em,
+      'ui-text-kpi-number-font-color': css-var('font-color'),
+      'ui-text-kpi-number-font-size': 2em,
       'ui-text-kpi-number-font-weight': 800,
       'ui-text-kpi-number-text-transform': none,
-      'ui-text-kpi-number-letter-spacing': normal,
+      'ui-text-kpi-number-letter-spacing': -0.05em,
    )
 );
 
 @include to-css-custom-property(
    (
-      'ui-text-kpi-number-font-size-small': 2em,
+      'ui-text-kpi-number-font-size-small': 1.5em,
       'ui-text-kpi-number-font-size-large': 6em,
       'ui-text-kpi-number-font-size-x-large': 8em,
    )

@@ -28,7 +28,7 @@ This will set the correct background, borders and more for the widget. The wrapp
    <h2 class="env-ui-text-sectionheading">
    Simple widget   
    </h2>
-   <span class="env-ui-text-kpi-number">96%</span>
+   <span class="env-ui-text-kpi-number" style="font-size: var(--env-ui-text-kpi-number-font-size-large)">96%</span>
 </section>
 
 ```html-no-example
@@ -91,7 +91,7 @@ The grid column container where the app will be displayed is a [containment cont
 @container dashboard-widget (max-width: 449px) {
    .example-responsive-widget .env-ui-text-kpi-number {
       font-size: var(--env-ui-text-kpi-number-font-size-small);
-      color: var(--env-dashboard-color-pink-90);
+      color: var(--env-dashboard-color-pink-50);
    }
 }
 

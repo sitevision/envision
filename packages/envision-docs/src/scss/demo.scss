@@ -630,7 +630,7 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 @container dashboard-widget (max-width: 449px) {
    .example-responsive-widget .env-ui-text-kpi-number {
       font-size: var(--env-ui-text-kpi-number-font-size-small);
-      color: var(--env-dashboard-color-pink-90);
+      color: var(--env-dashboard-color-pink-50);
    }
 }
 
