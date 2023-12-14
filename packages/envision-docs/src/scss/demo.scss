@@ -268,6 +268,7 @@ $exampleElPaddingBg: #c3d08a;
    margin: 0;
    text-align: center;
 }
+
 .example-ui-color-status-text {
    margin: 1em 0 0;
    text-align: center;
@@ -610,4 +611,17 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
 .example-demo-dialog dialog {
    position: static;
+}
+
+.example-dropdown-placement {
+   position: relative;
+   margin: 0 auto;
+   padding: 1em;
+   max-width: 400px;
+   border: 1px dashed var(--env-border-color-light);
+
+   > div:last-child {
+      position: absolute;
+      inset: 1em 1em auto auto;
+   }
 }
