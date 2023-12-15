@@ -12,14 +12,15 @@ import {
 } from './util/nodes';
 import { getPopper } from './util/popper';
 
-const ENV_DROPDOWN_OPEN = 'env-is-open';
 const TOGGLE_DROPDOWN = '[data-dropdown]';
-const TARGET_ATTR = 'data-target';
-const INDEX_ATTR = 'data-env-dropdown-index';
-const PLACEMENT_BODY_ATTR = 'data-dropdown-placement-body';
+const TARGET_DATA_ATTR = 'target';
+const INDEX_DATA_ATTR = 'envDropdownIndex';
+const CONTAINER_BODY_DATA_ATTR = 'container';
+const PLACEMENT_DATA_ATTR = 'placement';
+const LEGACY_PLACEMENT_BODY_DATA_ATTR = 'dropdownPlacementBody';
+const INITIALIZED_DATA_ATTR = 'envDropdown';
 const ENV_DROPDOWN_MENU = '.env-dropdown__menu';
 const NAME = 'envDropdown';
-const DATA_INITIALIZED = 'data-env-dropdown';
 
 class Dropdown {
    constructor(container, menu, button) {
@@ -41,7 +42,7 @@ class Dropdown {
 
       this.menuitems.forEach((el, i) => {
          const li = el.closest('li');
-         el.setAttribute(INDEX_ATTR, i);
+         el.dataset[INDEX_DATA_ATTR] = i;
          el.setAttribute('role', 'menuitem');
          if (el !== li && this.menu.contains(el.closest('li'))) {
             // If menuitem has a enveloping LI element it should have role=none
@@ -49,7 +50,10 @@ class Dropdown {
          }
       });
 
-      this.placementBody = this.button.hasAttribute(PLACEMENT_BODY_ATTR);
+      this.openInBody =
+         this.button.dataset[CONTAINER_BODY_DATA_ATTR] === 'body' ||
+         typeof this.button.dataset[LEGACY_PLACEMENT_BODY_DATA_ATTR] !==
+            'undefined';
 
       this.handleButtonClick = this.handleButtonClick.bind(this);
       this.handleButtonKeyDown = this.handleButtonKeyDown.bind(this);
@@ -61,7 +65,7 @@ class Dropdown {
    }
 
    handleButtonClick() {
-      if (this.container.classList.contains(ENV_DROPDOWN_OPEN)) {
+      if (this.button.getAttribute('aria-expanded') === 'true') {
          this.hide();
       } else {
          this.show();
@@ -77,21 +81,27 @@ class Dropdown {
 
    show(focusIndex) {
       focusIndex = focusIndex || 0;
-      this.container.classList.add(ENV_DROPDOWN_OPEN);
       this.button.setAttribute('aria-expanded', 'true');
-      if (this.placementBody) {
+      if (this.openInBody) {
          document.body.appendChild(this.menu);
       }
       resetDisplay(this.menu);
       this._bindMenuEvents();
       getPopper().then((createPopper) => {
-         this._popper = createPopper(this.container, this.menu, {
-            placement: 'bottom-start',
-            modifiers: {
-               name: 'flip',
-               enabled: false,
-            },
-         });
+         const placementEnd =
+            this.button.dataset[PLACEMENT_DATA_ATTR] === 'end';
+         const placement = placementEnd ? 'bottom-end' : 'bottom-start';
+         this._popper = createPopper(
+            placementEnd ? this.button : this.container,
+            this.menu,
+            {
+               placement: placement,
+               modifiers: {
+                  name: 'flip',
+                  enabled: false,
+               },
+            }
+         );
          this._popper.update();
          setTimeout(() => {
             this.menuitems[focusIndex].focus();
@@ -100,11 +110,10 @@ class Dropdown {
    }
 
    hide() {
-      this.container.classList.remove(ENV_DROPDOWN_OPEN);
       this.button.setAttribute('aria-expanded', 'false');
       this._unbindMenuEvents();
       hide(this.menu);
-      if (this.placementBody) {
+      if (this.openInBody) {
          this.placeholder.insertAdjacentElement('afterend', this.menu);
       }
    }
@@ -149,7 +158,7 @@ class Dropdown {
          this.hide();
          this.button.focus();
       } else if (this.menu.contains(el) && menuItemCount > 0) {
-         const current = parseInt(el.getAttribute(INDEX_ATTR), 10);
+         const current = parseInt(el.dataset[INDEX_DATA_ATTR], 10);
 
          if (e.key === ' ' && el.tagName !== 'BUTTON') {
             e.preventDefault();
@@ -159,7 +168,7 @@ class Dropdown {
             if (e.shiftKey) {
                e.preventDefault();
                this.button.focus();
-            } else if (this.placementBody) {
+            } else if (this.openInBody) {
                e.preventDefault();
                const nextFocusable = getNextFocusable(this.button);
                nextFocusable.focus();
@@ -186,23 +195,22 @@ class Dropdown {
 
 const initialize = async (e) => {
    const button = e.target.closest(TOGGLE_DROPDOWN);
-   if (button) {
-      const container = e.target.closest(button.getAttribute(TARGET_ATTR));
-
-      if (container && container.id) {
-         const menu = container.querySelector(ENV_DROPDOWN_MENU);
-
-         if (!container[NAME]) {
-            container[NAME] = true;
-            await getPopper();
-            container[NAME] = new Dropdown(container, menu, button);
-            if (menu) {
-               menu.setAttribute(DATA_INITIALIZED, 'true');
-               hide(menu);
-            }
-            if (e.type === 'click') {
-               container[NAME].handleButtonClick();
-            }
+   if (button && !button[NAME]) {
+      let container =
+         button.dataset[TARGET_DATA_ATTR] &&
+         e.target.closest(button.dataset[TARGET_DATA_ATTR]);
+      if (!container) {
+         container = button.parentNode;
+      }
+      button[NAME] = true;
+      const menu = container.querySelector(ENV_DROPDOWN_MENU);
+      if (menu) {
+         await getPopper();
+         button[NAME] = new Dropdown(container, menu, button);
+         menu.dataset[INITIALIZED_DATA_ATTR] = 'true';
+         hide(menu);
+         if (e.type === 'click') {
+            button[NAME].handleButtonClick();
          }
       }
    }

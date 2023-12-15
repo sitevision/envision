@@ -839,3 +839,16 @@ canvas.example-canvas {
 .example-demo-dialog dialog {
    position: static;
 }
+
+.example-dropdown-placement {
+   position: relative;
+   margin: 0 auto;
+   padding: 1em;
+   max-width: 400px;
+   border: 1px dashed var(--env-border-color-light);
+
+   > div:last-child {
+      position: absolute;
+      inset: 1em 1em auto auto;
+   }
+}
