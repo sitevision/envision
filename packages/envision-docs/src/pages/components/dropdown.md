@@ -84,11 +84,7 @@ Add an empty list item to menu with the class `env-dropdown--divider` and `role=
 Use `env-button-group` to split buttons.
 
 ```html
-
-<div
-   class="env-dropdown env-button-group env_list__item"
-   role="group"
->
+<div class="env-dropdown env-button-group env_list__item" role="group">
    <button
       class="env-button env-button--ghost env-button--primary"
       type="button"
@@ -109,17 +105,22 @@ Use `env-button-group` to split buttons.
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
-   <ul id="example2-menu" role="menu" aria-labelledby="example2-button" class="env-dropdown__menu"
-   <li role="presentation">
-      <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
-   </li>
-   <li role="presentation">
-      <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
-   </li>
-   <li class="env-dropdown--divider" role="separator"></li>
-   <li role="presentation">
-      <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
-   </li>
+   <ul
+      id="example2-menu"
+      role="menu"
+      aria-labelledby="example2-button"
+      class="env-dropdown__menu"
+   >
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Action</a>
+      </li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Properties</a>
+      </li>
+      <li class="env-dropdown--divider" role="separator"></li>
+      <li role="presentation">
+         <a href="#" role="menuitem" class="env-dropdown__item">Settings</a>
+      </li>
    </ul>
 </div>
 ```
