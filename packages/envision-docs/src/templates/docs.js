@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useCopyExample } from '../hooks/copyExample';
+import { useDashboardExample } from '../hooks/dashboardExample';
 import { useExpandCode } from '../hooks/expandCode';
 import BaseTemplate from './BaseTemplate';
 
@@ -13,6 +14,7 @@ export default function Template({
    const content = useRef(null);
    useCopyExample(content);
    useExpandCode(content);
+   useDashboardExample(content);
 
    return (
       <BaseTemplate
@@ -20,6 +22,7 @@ export default function Template({
          deprecated={frontmatter.deprecated}
          since={frontmatter.since}
          beta={frontmatter.beta}
+         dashboard={frontmatter.dashboard}
          topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
@@ -54,6 +57,7 @@ export const pageQuery = graphql`
             deprecated
             since
             beta
+            dashboard
          }
       }
       allMarkdownRemark {
@@ -65,6 +69,7 @@ export const pageQuery = graphql`
                   deprecated
                   since
                   beta
+                  dashboard
                }
                fields {
                   slug

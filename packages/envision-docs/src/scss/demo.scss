@@ -537,6 +537,233 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    }
 }
 
+.example-dashboard-color-grid {
+   --env-cardholder-grid-column-width: 10em;
+}
+
+.example-dashboard-color-list {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+
+   li {
+      font-size: 0.8em;
+      font-weight: 400;
+
+      &:first-child {
+         flex: 1 1 100%;
+      }
+
+      > div {
+         padding: 0 1em;
+         height: 3em;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         line-height: 1;
+         vertical-align: center;
+
+         .example-dashboard-color-list-icon {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin: 0 0 0 0.5em;
+         }
+
+         span {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+         }
+      }
+   }
+}
+
+.example-dashboard-color-list-icon {
+   border: 1px solid rgba(32, 35, 48, 0.5);
+   padding: 2px;
+   border-radius: 3px;
+}
+
+.env-button--icon-before .example-dashboard-color-list-icon {
+   transform: translate(-3px, -3px);
+   border-color: currentColor !important;
+}
+
+.env-button--icon-after .example-dashboard-color-list-icon {
+   transform: translate(3px, -3px);
+   border-color: currentColor !important;
+}
+
+.example-dashboard-color-list-legend {
+   display: inline-flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   font-size: 0.8em;
+
+   .example-dashboard-color-list-icon {
+      font-size: 1.4em;
+      margin: 0 0.5em 0 0;
+   }
+}
+
+.example-responsive-widget {
+   min-width: 320px;
+   max-width: 708px;
+   width: fit-content;
+
+   &__resizeable {
+      box-sizing: border-box;
+      width: 510px;
+      min-width: 318px;
+      max-width: 100%;
+      resize: horizontal;
+      overflow: hidden;
+      // Container queries to simulate Sitevision grid
+      container-type: inline-size;
+      container-name: dashboard-widget;
+   }
+}
+
+.example-responsive-widget .env-ui-text-kpi-number {
+   transition: all 0.2s;
+}
+
+@container dashboard-widget (max-width: 449px) {
+   .example-responsive-widget .env-ui-text-kpi-number {
+      font-size: var(--env-ui-text-kpi-number-font-size-small);
+      color: var(--env-dashboard-color-pink-50);
+   }
+}
+
+@container dashboard-widget (min-width: 580px) {
+   .example-responsive-widget .env-ui-text-kpi-number {
+      font-size: var(--env-ui-text-kpi-number-font-size-large);
+      color: var(--env-dashboard-color-light-blue-90);
+   }
+}
+
+.example-fw-100 {
+   font-weight: 100;
+}
+
+.example-fw-200 {
+   font-weight: 200;
+}
+
+.example-fw-300 {
+   font-weight: 300;
+}
+
+.example-fw-400 {
+   font-weight: 400;
+}
+
+.example-fw-500 {
+   font-weight: 500;
+}
+
+.example-fw-600 {
+   font-weight: 600;
+}
+
+.example-fw-700 {
+   font-weight: 700;
+}
+
+.example-fw-800 {
+   font-weight: 800;
+}
+
+.example-fw-900 {
+   font-weight: 900;
+}
+
+.example-kpi-small {
+   font-size: var(--env-ui-text-kpi-number-font-size-small);
+}
+
+.example-kpi-large {
+   font-size: var(--env-ui-text-kpi-number-font-size-large);
+}
+
+.example-kpi-x-large {
+   font-size: var(--env-ui-text-kpi-number-font-size-x-large);
+}
+
+canvas.example-canvas {
+   display: block;
+   max-width: 100%;
+   background-color: var(--env-section-background-color);
+}
+
+#example-chart {
+   position: relative;
+   width: fit-content;
+   margin: 1.5em 0 3em 4em;
+}
+
+.example-chart-axis {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.example-chart-axis--x {
+   display: flex;
+   position: absolute;
+   top: calc(100% + 0.125em);
+   right: 0;
+   left: 0;
+}
+
+.example-chart-axis--x li {
+   width: 16.6667%;
+   max-width: 16.6667%;
+   white-space: nowrap;
+   text-align: center;
+   transform: translateX(50%);
+}
+
+.example-chart-axis--y {
+   position: absolute;
+   top: 0;
+   right: calc(100% + 0.25em);
+   bottom: 0;
+   margin-top: -2px;
+}
+
+.example-chart-axis--y li {
+   display: flex;
+   width: 3.25em;
+   height: 20%;
+   white-space: nowrap;
+   justify-content: flex-end;
+   flex: 1 0 20%;
+   align-items: center;
+   transform: translateY(-50%);
+}
+
+.example-chart-axis-label-x,
+.example-chart-axis-label-y {
+   position: absolute;
+}
+
+.example-chart-axis-label-x {
+   top: calc(100% + 1.5em);
+   left: 0;
+   right: 0;
+   text-align: center;
+}
+
+.example-chart-axis-label-y {
+   left: auto;
+   right: calc(100% + 2.5em);
+   top: 0;
+   bottom: 0;
+   rotate: -180deg;
+   text-align: center;
+   writing-mode: vertical-lr;
+}
+
 .example-section {
    &-brand {
       background-color: var(--env-ui-color-brand);

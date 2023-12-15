@@ -1,0 +1,53 @@
+@import 'constants';
+
+// ===== BRAND RESET =====
+.env-dashboard-theme {
+   --env-ui-color-brand: initial;
+   --env-ui-color-brand-dark: initial;
+   --env-ui-color-brand-contrast: initial;
+   @each $variant in $BRAND_COLOR_VARIANTS {
+      --env-ui-color-brand-#{$variant}: initial;
+      --env-ui-color-brand-#{$variant}-contrast: initial;
+   }
+}
+
+// ===== DASHBOARD COLOR PALETTE =====
+
+.env-dashboard-color-bg-black {
+   background-color: var(--env-dashboard-color-black);
+}
+
+.env-dashboard-color-txt-black {
+   color: var(--env-dashboard-color-black);
+}
+
+.env-dashboard-color-bg-white {
+   background-color: var(--env-dashboard-color-white);
+}
+
+.env-dashboard-color-txt-white {
+   color: var(--env-dashboard-color-white);
+}
+
+@include to-css-custom-property(
+   (
+      'dashboard-color-black': #202330,
+      'dashboard-color-white': #ffffff,
+   )
+);
+
+@each $colorName, $variants in $DASHBOARD_COLORS {
+   @each $variant, $color in $variants {
+      .env-dashboard-color-bg-#{$colorName}-#{$variant} {
+         background-color: var(--env-dashboard-color-#{$colorName}-#{$variant});
+      }
+      .env-dashboard-color-txt-#{$colorName}-#{$variant} {
+         color: var(--env-dashboard-color-#{$colorName}-#{$variant});
+      }
+      @include to-css-custom-property(
+         (
+            'dashboard-color-#{$colorName}-#{$variant}': $color,
+         )
+      );
+   }
+}

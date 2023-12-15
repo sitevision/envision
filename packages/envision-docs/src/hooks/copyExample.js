@@ -292,6 +292,35 @@ export const useCopyExample = (content) => {
          });
       });
 
+      // Wrap Dashboard specific Envision styling
+      // so it doesn't leak into other doc pages.
+      const DASHBOARD_THEME = 'env-dashboard-theme';
+      const wrapDashboardRule = (s) => {
+         const a = s.split(',');
+         a.forEach((s2, i) => {
+            a[i] = `.${DASHBOARD_THEME} ${s2}`.replace(/\s\s+/g, ' ');
+         });
+         return a.join(', ');
+      };
+
+      for (let i = 0; i < document.styleSheets.length; i++) {
+         if (document.styleSheets[i].href.includes('dashboard')) {
+            const ruleList = document.styleSheets[i].cssRules;
+            for (let j = 0; j < ruleList.length; j++) {
+               if (ruleList[j].selectorText.includes('p.env-text')) {
+                  if (!ruleList[j].selectorText.includes(DASHBOARD_THEME)) {
+                     ruleList[j].selectorText = wrapDashboardRule(
+                        ruleList[j].selectorText
+                     );
+                  }
+                  break;
+               }
+            }
+
+            break;
+         }
+      }
+
       // To initialize Image slider examples,
       // load method must be triggered again in gatsby.
       window.dispatchEvent(new Event('load'));
