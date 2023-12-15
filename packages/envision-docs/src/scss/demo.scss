@@ -678,15 +678,15 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 }
 
 .example-kpi-small {
-   font-size: var(--env-ui-text-kpi-number-font-size-small);
+   font-size: var(--env-ui-text-kpi-number-font-size-small) !important;
 }
 
 .example-kpi-large {
-   font-size: var(--env-ui-text-kpi-number-font-size-large);
+   font-size: var(--env-ui-text-kpi-number-font-size-large) !important;
 }
 
 .example-kpi-x-large {
-   font-size: var(--env-ui-text-kpi-number-font-size-x-large);
+   font-size: var(--env-ui-text-kpi-number-font-size-x-large) !important;
 }
 
 canvas.example-canvas {
