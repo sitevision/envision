@@ -304,7 +304,7 @@ export const useCopyExample = (content) => {
       };
 
       for (let i = 0; i < document.styleSheets.length; i++) {
-         if (document.styleSheets[i].href.includes('dashboard')) {
+         if (document.styleSheets[i].href?.includes('dashboard')) {
             const ruleList = document.styleSheets[i].cssRules;
             for (let j = 0; j < ruleList.length; j++) {
                if (ruleList[j].selectorText.includes('p.env-text')) {
