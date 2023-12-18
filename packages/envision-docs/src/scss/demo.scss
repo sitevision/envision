@@ -605,9 +605,12 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    }
 }
 
+.example-responsive-widget-wrapper {
+   max-width: 708px;
+}
 .example-responsive-widget {
    min-width: 320px;
-   max-width: 708px;
+   max-width: 100%;
    width: fit-content;
 
    &__resizeable {
