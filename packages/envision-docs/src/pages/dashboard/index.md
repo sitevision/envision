@@ -299,7 +299,7 @@ patterns as CSS variable names.
 
 ### Brand colors
 
-Brand colors are not available in the dashboard theme, please use the Color palette.
+Brand colors should not be used in dashboard widgets. Please use the Color palette and components not based on brand colors.
 
 ## Widget example
 
