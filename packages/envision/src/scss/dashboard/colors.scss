@@ -1,16 +1,5 @@
 @import 'constants';
 
-// ===== BRAND RESET =====
-.env-dashboard-theme {
-   --env-ui-color-brand: initial;
-   --env-ui-color-brand-dark: initial;
-   --env-ui-color-brand-contrast: initial;
-   @each $variant in $BRAND_COLOR_VARIANTS {
-      --env-ui-color-brand-#{$variant}: initial;
-      --env-ui-color-brand-#{$variant}-contrast: initial;
-   }
-}
-
 // ===== DASHBOARD COLOR PALETTE =====
 
 .env-dashboard-color-bg-black {
