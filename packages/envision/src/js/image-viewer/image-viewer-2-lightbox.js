@@ -14,6 +14,7 @@ import {
    setStyle,
    resetDisplay,
    unlockScroll,
+   isVisible,
 } from '../util/nodes';
 
 import {
@@ -264,6 +265,13 @@ export default class Imageviewer2Lightbox {
          hide(getNode('[data-move="next"]', this.#lightbox));
       } else {
          resetDisplay(getNode('[data-move="next"]', this.#lightbox));
+      }
+
+      if (!isVisible(document.activeElement)) {
+         // Element that had focus might have been hidden
+         // Make sure a visible element has focus
+         const focusable = getFocusable(this.#lightbox);
+         focusable[0].focus();
       }
    }
 
