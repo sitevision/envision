@@ -20,15 +20,16 @@ const TOGGLER_ATTR = '[data-env-accordion]';
 class Accordion {
    #isAnimating;
 
-   constructor(element) {
+   constructor(element, toggler) {
       this.el = element;
       this.parentEl = getNode(this.el.dataset.parent);
-      this.togglerEl =
-         this.parentEl &&
-         getNode(
-            `${TOGGLER_ATTR}[aria-controls="${this.el.id}"]`,
-            this.parentEl
-         );
+      this.togglerEl = toggler
+         ? toggler
+         : this.parentEl &&
+           getNode(
+              `${TOGGLER_ATTR}[aria-controls="${this.el.id}"]`,
+              this.parentEl
+           );
 
       if (this.el.classList.contains(SHOW)) {
          this.el.classList.remove(SHOW);
@@ -38,7 +39,12 @@ class Accordion {
          if (this.togglerEl) {
             this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
          }
+      } else {
+         this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
       }
+
+      // Handle legacy code. aria-expanded may be placed on content, not button.
+      this.el.removeAttribute(ARIA_EXPANDED);
 
       this.speed = CssUtil.getToggleSpeed(this.el, DURATION_CUSTOM_PROP);
    }
@@ -150,7 +156,7 @@ if (typeof document !== 'undefined') {
       }
       e.preventDefault();
       const selector = el.dataset.target || el.getAttribute('href');
-      Accordion._init(document.querySelector(selector));
+      Accordion._init(document.querySelector(selector), el);
    });
 }
 
