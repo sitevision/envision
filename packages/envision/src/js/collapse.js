@@ -32,10 +32,6 @@ class Collapse {
    }
 
    toggle() {
-      if (this.el.getAnimations().length > 0) {
-         // Animation in progress
-         return;
-      }
       if (this.el.classList.contains(SHOW)) {
          this.hide();
       } else {
@@ -44,6 +40,10 @@ class Collapse {
    }
 
    show() {
+      if (this.el.getAnimations().length > 0) {
+         // Animation in progress
+         return;
+      }
       if (this.togglerEl) {
          this.togglerEl.classList.add(EXPANDED);
          this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
@@ -53,6 +53,10 @@ class Collapse {
    }
 
    hide() {
+      if (this.el.getAnimations().length > 0) {
+         // Animation in progress
+         return;
+      }
       if (this.togglerEl) {
          this.togglerEl.classList.remove(EXPANDED);
          this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
