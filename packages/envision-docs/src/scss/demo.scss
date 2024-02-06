@@ -680,6 +680,10 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    font-weight: 900;
 }
 
+.example-kpi-x-small {
+   font-size: var(--env-ui-text-kpi-number-font-size-x-small) !important;
+}
+
 .example-kpi-small {
    font-size: var(--env-ui-text-kpi-number-font-size-small) !important;
 }

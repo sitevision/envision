@@ -174,6 +174,7 @@ For displaying key performance indicators you should use the `env-ui-text-kpi-nu
 Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`.
 
 ```html
+<span class="env-ui-text-kpi-number example-kpi-x-small">96%</span>
 <span class="env-ui-text-kpi-number example-kpi-small">96%</span>
 <span class="env-ui-text-kpi-number">96%</span>
 <span class="env-ui-text-kpi-number example-kpi-large">96%</span>
@@ -181,6 +182,10 @@ Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`
 ```
 
 ```css
+.example-kpi-x-small {
+   font-size: var(--env-ui-text-kpi-number-font-size-x-small);
+}
+
 .example-kpi-small {
    font-size: var(--env-ui-text-kpi-number-font-size-small);
 }
@@ -465,6 +470,8 @@ This example shows basic usage of CSS classes for headings, labels and more.
 -  `--env-ui-text-kpi-number-font-weight`
 -  `--env-ui-text-kpi-number-text-transform`
 -  `--env-ui-text-kpi-number-letter-spacing`
+-  `--env-ui-text-kpi-number-font-size-x-small`
 -  `--env-ui-text-kpi-number-font-size-small`
+-  `--env-ui-text-kpi-number-font-size-medium`
 -  `--env-ui-text-kpi-number-font-size-large`
 -  `--env-ui-text-kpi-number-font-size-x-large`
