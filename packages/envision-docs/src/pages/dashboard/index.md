@@ -47,16 +47,16 @@ a widget may use between one and four columns.
 
 A small widget will never use more than one column. An extra large widget will
 use as many as available. A small widget will not vary much in size, but a large widget may use anything between
-320 and 1440 pixels width.
+250 and 1440 pixels width.
 
 #### Widget size table
 
 | Widget      | Columns | Sizes (px) |
 | :---------- | :-----: | :--------: |
 | Small       |    1    |  250–342   |
-| Medium      |   1–2   |  320–708   |
-| Large       |   1–3   |  320–1074  |
-| Extra Large |   1–4   |  320–1440  |
+| Medium      |   1–2   |  250–708   |
+| Large       |   1–3   |  250–1074  |
+| Extra Large |   1–4   |  250–1440  |
 
 ## Responsive widgets
 
