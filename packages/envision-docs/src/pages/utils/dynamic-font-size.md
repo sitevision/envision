@@ -292,7 +292,7 @@ For higher precision in setting the values, the following CSS variables may be s
 **Note!** Do not use any units.
 
 ```css-no-expand
-.some-element .env-dynamic-font {
+.env-dynamic-font.your-special-dynamic-font-class-name {
    /* Scaling factor */
    --df-scale: 1.13;
    /* Container from- and to widths (px) */
