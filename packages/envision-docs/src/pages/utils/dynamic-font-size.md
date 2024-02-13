@@ -3,7 +3,7 @@ title: Dynamic font size
 beta: true
 ---
 
-Use Dynamic font size to scale the base font size of an container element. Any element inside the container using
+Use Dynamic font size to scale the base font size of an element. Any element inside the element using
 relative font sizes, for example `em`, will scale proportionally. There is a given container width where the
 scaling starts, and a width where scaling stops. These parameters may be controlled using modifer classnames as
 described below.
@@ -21,7 +21,7 @@ The default values are a scaling factor of `1 â€“ 1.25` between widths `400px â€
                      <span class="example-dynamic-font__elfontsize"></span>
                   </h2>
                   <p class="env-text env-m-top--small">
-                     This text will resize dynamically depending on the width of the container element.
+                     This text will resize dynamically depending on the width of the containment context.
                      Baseline font-size will go from 1em to 1.25em starting at 400px width up to 750px.
                      The heading will also scale to a factor of 1.25, but starting at 1.25em it will scale up to 1.5625em.
                      <span class="example-dynamic-font__elfontsize"></span>
@@ -40,8 +40,8 @@ The default values are a scaling factor of `1 â€“ 1.25` between widths `400px â€
 
 ## Required markup
 
-There must be a container element with class `env-dynamic-font-container`. This element is the one from which
-the base width is calculated.
+There must be a container element that has a containment context. Use class `env-dynamic-font-container` to create
+one. This element is the one from which the base width for dynamic font is calculated.
 
 Inside the container, place one or more dynamic font elements with class `env-dynamic-font`. Text inside these elements
 will be dynamically scaled. Text placed outside of the dynamic font element will not be scaled.

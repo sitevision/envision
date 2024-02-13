@@ -201,7 +201,8 @@ Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`
 
 ### Dynamic font size in widgets <span id="dynamic-font-size" class="offset-anchor"></span>
 
-The widgets are dynamic font containers by default, so it's **not** required to use the Dynamic font container.
+Widgets already has a containment context which makes them dynamic font containers by default.
+Therefore the dynamic font container is **not** required.
 
 Here is an overview of how different size widgets will change size at different Dashboard grid sizes.
 The dashboard grid adapts between 1–4 columns depending on available screen space.
