@@ -1,0 +1,70 @@
+@include to-css-custom-property(
+   (
+      'dynamic-font-root-font-size': 16,
+   )
+);
+
+.env-dynamic-font-container {
+   container-type: inline-size;
+   container-name: env-dynamic-font-container;
+   box-sizing: border-box;
+}
+
+.env-dynamic-font {
+   --df-scale: 1.25;
+   --df-from-width: 400;
+   --df-to-width: 750;
+
+   --df-internal-from-font-size: 1;
+   --df-internal-to-font-size: var(--df-scale) *
+      var(--df-internal-from-font-size);
+   --df-internal-slope: calc(
+      (
+         (var(--df-internal-to-font-size) - var(--df-internal-from-font-size)) /
+            (
+               (var(--df-to-width) / var(--env-dynamic-font-root-font-size)) -
+                  var(--df-from-width) / var(--env-dynamic-font-root-font-size)
+            )
+      )
+   );
+   --df-internal-yaxis: calc(
+      (
+            var(--df-from-width) / var(--env-dynamic-font-root-font-size) * -1 *
+               var(--df-internal-slope) + var(--df-internal-from-font-size)
+         ) * 1rem
+   );
+
+   box-sizing: border-box;
+   font-size: clamp(
+      var(--df-internal-from-font-size) * 1em,
+      var(--df-internal-yaxis) + var(--df-internal-slope) * 100cqw,
+      var(--df-internal-to-font-size) * 1em
+   );
+
+   $scaleSizes: '1.125', '1.25', '1.375', '1.5', '1.625', '1.75', '1.875', '2';
+
+   @each $scaleSize in $scaleSizes {
+      &--scale-#{str-replace($scaleSize, '.', '_')} {
+         --df-scale: #{$scaleSize};
+      }
+   }
+
+   $fromSizes: '250', '300', '350', '400', '450', '500', '550';
+   $toSizes: '500', '550', '600', '650', '700', '750', '800', '900', '1000';
+
+   @each $fromSize in $fromSizes {
+      &--from-#{$fromSize} {
+         --df-from-width: #{$fromSize};
+      }
+   }
+   @each $toSize in $toSizes {
+      &--to-#{$toSize} {
+         --df-to-width: #{$toSize};
+      }
+   }
+
+   &--downscale {
+      --df-internal-from-font-size: 1 / var(--df-scale);
+      --df-internal-to-font-size: 1;
+   }
+}

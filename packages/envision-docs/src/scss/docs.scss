@@ -254,6 +254,7 @@ blockquote.doc-blockquote {
 
 .doc-table {
    border-collapse: collapse;
+   margin: 1em 0 2em;
 
    caption {
       font-size: var(--env-font-size-large);

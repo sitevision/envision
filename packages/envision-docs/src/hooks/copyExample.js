@@ -321,6 +321,73 @@ export const useCopyExample = (content) => {
          }
       }
 
+      // Dynamic font examples
+      const resizeObserver = new ResizeObserver((containers) => {
+         for (const container of containers) {
+            if (!container.target) {
+               return;
+            }
+            const dynContainerEl = container.target;
+            const dfEl = dynContainerEl.querySelector('.env-dynamic-font');
+            const wrapperEl = dynContainerEl.closest(
+               '.example-dynamic-font-wrapper'
+            );
+            const containerWidthOutputEl = wrapperEl.querySelector(
+               '.example-dynamic-font__width'
+            );
+            const dfSizeEl = dynContainerEl.querySelector(
+               '.example-dynamic-font__dffontsize'
+            );
+            const elSizeEl = dynContainerEl.querySelectorAll(
+               '.example-dynamic-font__elfontsize'
+            );
+
+            if (!dfEl) {
+               return;
+            }
+
+            const cs = getComputedStyle(dfEl);
+
+            if (dfSizeEl) {
+               const fromWidth = parseInt(
+                  cs.getPropertyValue('--df-from-width'),
+                  10
+               );
+               const toWidth = parseInt(
+                  cs.getPropertyValue('--df-to-width'),
+                  10
+               );
+               const containerWidth = dynContainerEl.offsetWidth;
+               wrapperEl.classList.toggle(
+                  'example-dynamic-font-wrapper--in-span',
+                  containerWidth >= fromWidth && containerWidth <= toWidth
+               );
+            }
+
+            if (dynContainerEl && containerWidthOutputEl) {
+               containerWidthOutputEl.innerHTML = `${dynContainerEl.offsetWidth}`;
+            }
+            if (dfSizeEl) {
+               dfSizeEl.innerHTML = `${(parseFloat(cs.fontSize) / 16).toFixed(
+                  3
+               )}`;
+            }
+            elSizeEl.forEach((el) => {
+               const cs = getComputedStyle(el.parentNode);
+               el.innerHTML = `${
+                  Math.round((parseFloat(cs.fontSize) / 16) * 10000) / 10000
+               }em`;
+            });
+         }
+      });
+
+      const dynFontExamples = document.querySelectorAll(
+         '.example-dynamic-font-wrapper .env-dynamic-font-container'
+      );
+      dynFontExamples.forEach((container) => {
+         resizeObserver.observe(container);
+      });
+
       // To initialize Image slider examples,
       // load method must be triggered again in gatsby.
       window.dispatchEvent(new Event('load'));
