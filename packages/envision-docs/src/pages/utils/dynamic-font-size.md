@@ -17,7 +17,7 @@ The default values are a scaling factor of `1 â€“ 1.25` between widths `400px â€
 <div class="example-dynamic-font-wrapper">
    <section class="example-dynamic-font env-m-bottom--large">
       <div class="example-dynamic-font__resizeable">
-         <div class="env-container example-dynamic-container" data-name="tjena">
+         <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
                <div class="env-dynamic-font">
                   <h2 class="env-ui-text-sectionheading">
