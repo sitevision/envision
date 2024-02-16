@@ -1,51 +1,48 @@
 @include to-css-custom-property(
    (
-      'dynamic-font-root-font-size': 16,
+      'root-font-size': 16,
+      'dynamic-font-scale': 1.25,
+      'dynamic-font-from-width': 400,
+      'dynamic-font-to-width': 750,
    )
 );
 
-.env-dynamic-font-container {
-   container-type: inline-size;
-   container-name: env-dynamic-font-container;
-   box-sizing: border-box;
-}
-
 .env-dynamic-font {
-   --df-scale: 1.25;
-   --df-from-width: 400;
-   --df-to-width: 750;
+   --df-root: var(--env-root-font-size);
+   --df-scale: var(--env-dynamic-font-scale);
+   --df-from-width: var(--env-dynamic-font-from-width);
+   --df-to-width: var(--env-dynamic-font-to-width);
 
-   --df-internal-from-font-size: 1;
-   --df-internal-to-font-size: var(--df-scale) *
-      var(--df-internal-from-font-size);
-   --df-internal-slope: calc(
+   --df-from-font-size: 1;
+   --df-to-font-size: var(--df-scale) * var(--df-from-font-size);
+   --df-slope: calc(
       (
-         (var(--df-internal-to-font-size) - var(--df-internal-from-font-size)) /
+         (var(--df-to-font-size) - var(--df-from-font-size)) /
             (
-               (var(--df-to-width) / var(--env-dynamic-font-root-font-size)) -
-                  var(--df-from-width) / var(--env-dynamic-font-root-font-size)
+               (var(--df-to-width) / var(--env-root-font-size)) -
+                  var(--df-from-width) / var(--env-root-font-size)
             )
       )
    );
-   --df-internal-yaxis: calc(
+   --df-yaxis: calc(
       (
-            var(--df-from-width) / var(--env-dynamic-font-root-font-size) * -1 *
-               var(--df-internal-slope) + var(--df-internal-from-font-size)
+            var(--df-from-width) / var(--env-root-font-size) * -1 *
+               var(--df-slope) + var(--df-from-font-size)
          ) * 1rem
    );
 
    box-sizing: border-box;
    font-size: clamp(
-      var(--df-internal-from-font-size) * 1em,
-      var(--df-internal-yaxis) + var(--df-internal-slope) * 100cqw,
-      var(--df-internal-to-font-size) * 1em
+      var(--df-from-font-size) * 1em,
+      var(--df-yaxis) + var(--df-slope) * 100cqw,
+      var(--df-to-font-size) * 1em
    );
 
    $scaleSizes: '1.125', '1.25', '1.375', '1.5', '1.625', '1.75', '1.875', '2';
 
    @each $scaleSize in $scaleSizes {
       &--scale-#{str-replace($scaleSize, '.', '_')} {
-         --df-scale: #{$scaleSize};
+         --env-dynamic-font-scale: #{$scaleSize};
       }
    }
 
@@ -54,17 +51,17 @@
 
    @each $fromSize in $fromSizes {
       &--from-#{$fromSize} {
-         --df-from-width: #{$fromSize};
+         --env-dynamic-font-from-width: #{$fromSize};
       }
    }
    @each $toSize in $toSizes {
       &--to-#{$toSize} {
-         --df-to-width: #{$toSize};
+         --env-dynamic-font-to-width: #{$toSize};
       }
    }
 
    &--downscale {
-      --df-internal-from-font-size: 1 / var(--df-scale);
-      --df-internal-to-font-size: 1;
+      --df-from-font-size: 1 / var(--df-scale);
+      --df-to-font-size: 1;
    }
 }

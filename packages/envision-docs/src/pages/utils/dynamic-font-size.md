@@ -1,19 +1,23 @@
 ---
 title: Dynamic font size
+since: 2024.02.1
 beta: true
 ---
 
-Use Dynamic font size to scale the base font size of an element. Any element inside the element using
-relative font sizes, for example `em`, will scale proportionally. There is a given container width where the
-scaling starts, and a width where scaling stops. These parameters may be controlled using modifer classnames as
+Use Dynamic font size to scale the base font size of an element. Any element children using
+relative font sizes will scale proportionally.
+
+A [container element](/utils/container/) is required as a wrapper.
+There are set widths for the container where the scaling starts and stops.
+The scaling and width parameters may be controlled using modifer classnames as
 described below.
 
 The default values are a scaling factor of `1 – 1.25` between widths `400px – 750px`.
 
 <div class="example-dynamic-font-wrapper">
    <section class="example-dynamic-font env-m-bottom--large">
-      <div class="example-dynamic-font__resizeable"><!-- -->
-         <div class="env-dynamic-font-container example-dynamic-container">
+      <div class="example-dynamic-font__resizeable">
+         <div class="env-container example-dynamic-container" data-name="tjena">
             <div class="env-p-around--medium">
                <div class="env-dynamic-font">
                   <h2 class="env-ui-text-sectionheading">
@@ -40,14 +44,14 @@ The default values are a scaling factor of `1 – 1.25` between widths `400px �
 
 ## Required markup
 
-There must be a container element that has a containment context. Use class `env-dynamic-font-container` to create
-one. This element is the one from which the base width for dynamic font is calculated.
+A containment context is required. The easiest way to create one is to use the [container element](/utils/container/).
+The containment context determines the width from which the scaling of the dynamic font is calculated.
 
-Inside the container, place one or more dynamic font elements with class `env-dynamic-font`. Text inside these elements
-will be dynamically scaled. Text placed outside of the dynamic font element will not be scaled.
+Inside the container, place one or more dynamic font elements using class `env-dynamic-font`.
+Text inside these elements will be dynamically scaled, text outside will not.
 
 ```html-no-example
-<div class="env-dynamic-font-container">
+<div class="env-container">
    <div class="env-dynamic-font">
       <p class="env-text">
          This text will resize!
@@ -56,16 +60,17 @@ will be dynamically scaled. Text placed outside of the dynamic font element will
 </div>
 ```
 
-Note: When using [Envision for Dashboard Widgets](/dashboard/#dynamic-font-size), the container element is not required.
+Note: When using [Envision for Dashboard Widgets](/dashboard/#dynamic-font-size),
+the container element is not required since the widget already is a containment context.
 
 ### Additional markup
 
 To not interfere with the width calculations, padding must be used on a
-separate element inside the container element. Elements placed inside `env-dynamic-font-container` but outside of
+separate element inside the container element. Elements placed inside the container but outside of
 `env-dynamic-font` will not scale.
 
 ```html-no-example
-<div class="env-dynamic-font-container">
+<div class="env-container">
    <div class="env-p-around--medium">
       <h2 class="env-ui-text-sectionheading">
          This heading will not resize
@@ -93,8 +98,8 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
 
 <div class="example-dynamic-font-wrapper">
    <section class="example-dynamic-font env-m-bottom--large">
-      <div class="example-dynamic-font__resizeable"><!-- -->
-         <div class="env-dynamic-font-container example-dynamic-container">
+      <div class="example-dynamic-font__resizeable">
+         <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
                <h2 class="env-ui-text-sectionheading">
                   Scaling factor
@@ -159,7 +164,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
 </div>
 
 ```html-no-example
-<div class="env-dynamic-font-container">
+<div class="env-container">
    <div class="env-dynamic-font env-dynamic-font--scale-1_125">
       <p class="env-text">
          Scaling factor 1.125
@@ -187,8 +192,8 @@ src="/placeholders/examples/dyn-font.svg" />
 
 <div class="example-dynamic-font-wrapper">
    <section class="example-dynamic-font env-m-bottom--large">
-      <div class="example-dynamic-font__resizeable"><!-- -->
-         <div class="env-dynamic-font-container example-dynamic-container">
+      <div class="example-dynamic-font__resizeable">
+         <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
                <h2 class="env-ui-text-sectionheading">
                   Boundaries
@@ -222,7 +227,7 @@ src="/placeholders/examples/dyn-font.svg" />
 </div>
 
 ```html-no-example
-<div class="env-dynamic-font-container">
+<div class="env-container">
    <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500">
       <p class="env-text">
          From 250 to 500
@@ -242,8 +247,8 @@ at default settings.
 
 <div class="example-dynamic-font-wrapper">
    <section class="example-dynamic-font env-m-bottom--large">
-      <div class="example-dynamic-font__resizeable"><!-- -->
-         <div class="env-dynamic-font-container example-dynamic-container">
+      <div class="example-dynamic-font__resizeable">
+         <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
                <h2 class="env-ui-text-sectionheading">
                   Upscaling vs downscaling
@@ -271,7 +276,7 @@ at default settings.
 </div>
 
 ```html-no-example
-<div class="env-dynamic-font-container">
+<div class="env-container">
    <div class="env-dynamic-font">
       <p class="env-text">
          Upscaling (default)
@@ -291,12 +296,22 @@ For higher precision in setting the values, the following CSS variables may be s
 
 **Note!** Do not use any units.
 
+```html-no-example
+<div class="env-container">
+   <div class="env-dynamic-font example-custom-dynamic-font-settings">
+      <p class="env-text">
+         Scaling factor 1.2345
+      </p>
+   </div>
+</div>
+```
+
 ```css-no-expand
-.env-dynamic-font.your-special-dynamic-font-class-name {
+.example-custom-dynamic-font-settings {
    /* Scaling factor */
-   --df-scale: 1.13;
+   --env-dynamic-font-scale: 1.2345;
    /* Container from- and to widths (px) */
-   --df-from-width: 312;
-   --df-to-width: 645;
+   --env-dynamic-font-from-width: 357;
+   --env-dynamic-font-to-width: 579;
 }
 ```

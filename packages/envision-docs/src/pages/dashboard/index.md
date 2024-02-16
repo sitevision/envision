@@ -89,7 +89,6 @@ The grid column container where the app will be displayed is a [containment cont
 ```
 
 ```css-no-expand
-
 @container dashboard-widget (max-width: 449px) {
    .example-responsive-widget .env-ui-text-kpi-number {
       font-size: var(--env-ui-text-kpi-number-font-size-small);
