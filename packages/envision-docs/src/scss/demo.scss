@@ -132,7 +132,6 @@ $exampleElPaddingBg: #c3d08a;
 }
 
 .example-shadow-util span {
-   display: inline-block;
    width: 12rem;
    height: 6rem;
    background-color: var(--env-section-background-color);
@@ -605,9 +604,83 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    }
 }
 
+.example-dynamic-font-chart {
+   max-width: 450px;
+   border: 1px solid var(--env-border-color-light);
+   margin: 1em 0 2em;
+}
+
+.example-dynamic-font-wrapper {
+   min-width: 250px;
+}
+
+.example-dynamic-font {
+   min-width: 250px;
+   max-width: 802px;
+   width: fit-content;
+   box-sizing: border-box;
+   background-color: var(--env-section-background-color);
+   border: 1px solid var(--env-ui-color-status-neutral);
+   border-radius: 0.5em;
+   box-shadow: var(--env-box-shadow);
+
+   .example-dynamic-font-wrapper--in-span & {
+      border: 1px solid var(--env-ui-color-status-active);
+   }
+
+   .env-container {
+      position: relative;
+   }
+
+   &__resizeable {
+      box-sizing: border-box;
+      width: 350px;
+      min-width: 250px;
+      max-width: 100%;
+      resize: horizontal;
+      overflow: hidden;
+
+      &__help {
+         margin-bottom: 10px !important;
+         margin-right: 15px !important;
+
+         &__arrow {
+            font-size: 1.25em;
+            transform: rotate(28deg) translate(0.2em, 0.2em);
+            display: inline-block;
+         }
+      }
+   }
+   &__dffontsize {
+      font-size: 12px;
+      position: absolute;
+      padding: 3px 5px;
+      inset: 0 0 auto auto;
+      color: var(--env-font-color-muted);
+
+      &:before {
+         content: 'Scale factor ';
+      }
+   }
+
+   &__elfontsize {
+      vertical-align: super;
+      font-size: 11px;
+      line-height: 1;
+      color: var(--env-element-info-font-color);
+      background-color: var(--env-element-info-background-color);
+      border-radius: var(--env-badge-border-radius);
+      display: inline-block;
+      font-family: var(--env-badge-font-family);
+      font-weight: 600;
+      padding: var(--env-spacing-xxx-small);
+   }
+}
+
 .example-responsive-widget-wrapper {
    max-width: 708px;
 }
+
 .example-responsive-widget {
    min-width: 320px;
    max-width: 100%;

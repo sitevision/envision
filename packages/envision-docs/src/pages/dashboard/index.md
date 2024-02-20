@@ -89,7 +89,6 @@ The grid column container where the app will be displayed is a [containment cont
 ```
 
 ```css-no-expand
-
 @container dashboard-widget (max-width: 449px) {
    .example-responsive-widget .env-ui-text-kpi-number {
       font-size: var(--env-ui-text-kpi-number-font-size-small);
@@ -198,6 +197,29 @@ Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`
    font-size: var(--env-ui-text-kpi-number-font-size-x-large);
 }
 ```
+
+### Dynamic font size in widgets <span id="dynamic-font-size" class="offset-anchor"></span>
+
+Widgets already has a containment context which makes them dynamic font containers by default.
+Therefore the dynamic font container is **not** required.
+
+Here is an overview of how different size widgets will change size at different Dashboard grid sizes.
+The dashboard grid adapts between 1–4 columns depending on available screen space.
+
+| Widget      | 1 column | 2 columns | 3 columns | 4 columns |
+| :---------- | -------: | --------: | --------: | --------: |
+| Small       |  250–342 |   250–342 |   250–342 |   250–342 |
+| Medium      |  250–523 |   524–708 |   534–708 |   524–708 |
+| Large       |  250–523 |   524-812 |  813-1071 |  798–1074 |
+| Extra Large |  250–523 |   524-812 |  813-1071 | 1072–1440 |
+
+There are additional widget specific boundaries available for Dynamic fonts. Regular boundaries are documented
+on the [Dynamic font size page](/utils/dynamic-font-size/#dynamic-font-width-boundaries).
+Boundaries are set using modifier classes `env-dynamic-font--from-{value}` and `env-dynamic-font--to-{value}`.
+
+Additional boundaries for **from** values: `524`, `534`, `813`, `798`, `1072`
+
+Additional boundaries for **to** values: `342`, `523`, `708`, `812`, `1071`, `1440`
 
 ## Badges
 

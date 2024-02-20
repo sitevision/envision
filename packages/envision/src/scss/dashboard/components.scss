@@ -19,3 +19,19 @@
    color: var(--env-dashboard-color-light-blue-90);
    background-color: var(--env-dashboard-color-light-blue-05);
 }
+
+.env-dynamic-font {
+   $fromSizes: '524', '534', '813', '798', '1072';
+   $toSizes: '342', '523', '708', '812', '1071', '1440';
+
+   @each $fromSize in $fromSizes {
+      &--from-#{$fromSize} {
+         --df-from-width: #{$fromSize};
+      }
+   }
+   @each $toSize in $toSizes {
+      &--to-#{$toSize} {
+         --df-to-width: #{$toSize};
+      }
+   }
+}
