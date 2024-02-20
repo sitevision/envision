@@ -217,7 +217,7 @@ There are additional widget specific boundaries available for Dynamic fonts. Reg
 on the [Dynamic font size page](/utils/dynamic-font-size/#dynamic-font-width-boundaries).
 Boundaries are set using modifier classes `env-dynamic-font--from-{value}` and `env-dynamic-font--to-{value}`.
 
-Additional boundaries for **from** values: `524`, `534`, `813`, `798`, `1072`
+Additional boundaries for **from** values: `524`, `813`, `1072`
 
 Additional boundaries for **to** values: `342`, `523`, `708`, `812`, `1071`, `1440`
 
