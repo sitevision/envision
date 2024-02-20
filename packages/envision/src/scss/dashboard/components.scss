@@ -21,7 +21,7 @@
 }
 
 .env-dynamic-font {
-   $fromSizes: '524', '813', '798', '1072';
+   $fromSizes: '524', '813', '1072';
    $toSizes: '342', '523', '708', '812', '1071', '1440';
 
    @each $fromSize in $fromSizes {
