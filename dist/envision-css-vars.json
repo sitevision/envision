@@ -259,5 +259,9 @@
   "--env-focus-color": "#5cb3fd",
   "--env-focus-background-color": "rgba(0, 0, 0, 0.2)",
   "--env-image-control-color": "#ffffff",
-  "--env-element-common-background-color": "#f2f2f2"
+  "--env-element-common-background-color": "#f2f2f2",
+  "--env-root-font-size": "16",
+  "--env-dynamic-font-scale": "1.25",
+  "--env-dynamic-font-from-width": "400",
+  "--env-dynamic-font-to-width": "750"
 }
