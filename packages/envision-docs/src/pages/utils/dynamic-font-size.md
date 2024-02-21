@@ -34,7 +34,7 @@ The default values are a scaling factor of `1 â€“ 1.25` between widths `400px â€
             </div>
             <span class="example-dynamic-font__dffontsize"></span>
          </div>
-         <p class="example-dynamic-font__resizeable__help env-ui-text-caption env-text-align--right">
+         <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
@@ -155,7 +155,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
                </div>
          </div>
 </div>
-         <p class="example-dynamic-font__resizeable__help env-ui-text-caption env-text-align--right">
+         <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
@@ -218,7 +218,7 @@ src="/placeholders/examples/dyn-font.svg" />
                </div>
             </div>
          </div>
-         <p class="example-dynamic-font__resizeable__help env-ui-text-caption env-text-align--right">
+         <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
@@ -253,21 +253,31 @@ at default settings.
                <h2 class="env-ui-text-sectionheading">
                   Upscaling vs downscaling
                </h2>
-               <div class="env-dynamic-font">
-                  <p class="env-text env-m-vertical--small">
-                     Upscaling (default)
+               <div class="env-dynamic-font env-m-vertical--small">
+                  <p class="env-text">
+                     Upscaling factor 1.25 (default)
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-               <div class="env-dynamic-font env-dynamic-font--downscale">
-                  <p class="env-text env-m-vertical--small">
-                     Downscaling
+<div class="env-dynamic-font env-dynamic-font--scale-2 env-m-vertical--small">
+<p class="env-text">
+                     Upscaling factor 2
+                     <span class="example-dynamic-font__elfontsize"></span>
+                  </p></div>
+               <div class="env-dynamic-font env-dynamic-font--downscale env-m-vertical--small">
+                  <p class="env-text">
+                     Downscaling factor 1.25
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
+<div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-vertical--small">
+<p class="env-text">
+                     Downscaling factor 2
+                     <span class="example-dynamic-font__elfontsize"></span>
+                  </p></div>
             </div>
          </div>
-         <p class="example-dynamic-font__resizeable__help env-ui-text-caption env-text-align--right">
+         <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
@@ -279,12 +289,22 @@ at default settings.
 <div class="env-container">
    <div class="env-dynamic-font">
       <p class="env-text">
-         Upscaling (default)
+         Upscaling factor 1.25 (default)
+      </p>
+   </div>
+   <div class="env-dynamic-font env-dynamic-font--scale-2">
+      <p class="env-text">
+         Upscaling factor 2
       </p>
    </div>
    <div class="env-dynamic-font env-dynamic-font--downscale">
       <p class="env-text">
-         Downscaling
+         Downscaling factor 1.25
+      </p>
+   </div>
+   <div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale">
+      <p class="env-text">
+         Downscaling factor 2
       </p>
    </div>
 </div>

@@ -641,8 +641,16 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       overflow: hidden;
 
       &__help {
-         margin-bottom: 10px !important;
-         margin-right: 15px !important;
+         font-family: var(--env-ui-text-caption-font-family);
+         font-size: var(--env-ui-text-caption-font-size);
+         font-style: normal;
+         font-weight: var(--env-ui-text-caption-font-weight);
+         letter-spacing: var(--env-ui-text-caption-letter-spacing);
+         line-height: 1.4;
+         color: var(--env-ui-text-caption-font-color);
+         text-transform: var(--env-ui-text-caption-text-transform);
+         margin: 0 15px 10px 0;
+         text-align: right;
 
          &__arrow {
             font-size: 1.25em;
