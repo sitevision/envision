@@ -40,7 +40,9 @@ class Accordion {
             this.togglerEl.setAttribute(ARIA_EXPANDED, 'true');
          }
       } else {
-         this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+         if (this.togglerEl) {
+            this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+         }
       }
 
       // Handle legacy code. aria-expanded may be placed on content, not button.
@@ -114,7 +116,11 @@ class Accordion {
       if (nodes.length > 0) {
          return nodes.map((node) => {
             if (!node[NAME]) {
-               node[NAME] = new Accordion(node);
+               if (settings instanceof Element) {
+                  node[NAME] = new Accordion(node, settings);
+               } else {
+                  node[NAME] = new Accordion(node);
+               }
             }
             if (typeof settings === 'string') {
                if (!node[NAME][settings]) {
