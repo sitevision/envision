@@ -1,7 +1,6 @@
 ---
 title: Dialog
 since: 2023.07.1
-beta: true
 ---
 
 The Dialog component relies heavily on
