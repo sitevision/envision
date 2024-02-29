@@ -2,6 +2,50 @@
 title: Form
 ---
 
+<fieldset class="env-form-element__control">
+   <legend class="env-form-element__label">Switch</legend>
+   <div class="env-switch">
+      <label class="env-switch__label">
+         <input type="checkbox" checked />
+         <span class="env-switch__text">On</span>
+         <span class="env-switch__slider"></span>
+      </label>
+   </div>
+   <div class="env-switch">
+      <label class="env-switch__label">
+         <input type="checkbox" />
+         <span class="env-switch__text">Off</span>
+         <span class="env-switch__slider"></span>
+      </label>
+   </div>
+</fieldset>
+
+<div class="env-form">
+<fieldset>
+   <legend class="env-form-element__label">Switch</legend>
+   <div class="env-form-element__control">
+      <label class="env-switch">
+         Alternative 1
+         <input type="checkbox" switch checked />
+      </label>
+   </div>
+   <div class="env-form-element__control">
+      <label class="env-switch">
+         <span class="env-form-element__label">Alternative 2</span>
+         <input type="checkbox" switch checked />
+      </label>
+   </div>
+   <div class="env-form-element__control env-switch">
+      <label for="switch-1" class="env-form-element__label">Alternative 3</label>
+      <input id="switch-1" type="checkbox" switch checked />
+   </div>
+   <div class="env-form-element__control env-switch">
+      <input id="switch-2" type="checkbox" switch  disabled />
+      <label for="switch-2" class="env-form-element__label">Alternative 4</label>
+   </div>
+</fieldset>
+</div>
+
 ## Text input element
 
 ```html
