@@ -151,10 +151,13 @@ textarea.env-form-input {
    &__control {
       position: relative;
 
-      // Fieldset reset
-      margin: 0;
-      padding: 0;
-      border: none;
+      @at-root .env-form fieldset,
+         & {
+         // Fieldset reset
+         margin: 0;
+         padding: 0;
+         border: none;
+      }
 
       &--icon {
          .env-icon {
@@ -190,7 +193,8 @@ textarea.env-form-input {
       }
    }
 
-   &__label {
+   @at-root .env-form legend,
+      &__label {
       display: inline-block;
       font-family: css-var('form-label-font-family');
       font-size: css-var('font-size-medium');
@@ -215,19 +219,21 @@ textarea.env-form-input {
       font-size: css-var('font-size-small');
    }
 
+   @import 'legacy/input-state';
+
    &--success {
       // Deprecated
-      @include input-validation-state('success');
+      @include input-element-color('success');
    }
 
    &--warning {
       // Deprecated
-      @include input-validation-state('warning');
+      @include input-element-color('warning');
    }
 
    &--danger {
       // Deprecated
-      @include input-validation-state('danger');
+      @include input-element-color('danger');
    }
 
    &--error {
@@ -263,77 +269,6 @@ textarea.env-form-input {
 
    select[multiple] > option {
       padding: css-var('spacing-x-small');
-   }
-}
-
-.env-form-radio {
-   // Legacy fake radio button
-   display: block;
-   font-size: css-var('font-size-medium');
-   box-sizing: content-box;
-
-   [type='radio'] {
-      @include visually-hidden;
-   }
-
-   label {
-      margin-bottom: css-var('spacing-x-small');
-   }
-
-   .env-form-element__label {
-      font-size: 1em;
-   }
-
-   &__fake {
-      display: inline-block;
-      position: relative;
-      width: $radiobutton-size;
-      height: $radiobutton-size;
-      margin-right: css-var('spacing-xx-small');
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: 50%;
-      vertical-align: middle;
-
-      &:after {
-         content: '';
-         display: none;
-         width: $radiobutton-checked-size;
-         height: $radiobutton-checked-size;
-         background-color: css-var('element-primary-background-color');
-         position: absolute;
-         top: (50% - $radiobutton-checked-size * 0.5);
-         left: (50% - $radiobutton-checked-size * 0.5);
-         border-radius: 50%;
-         box-sizing: border-box;
-      }
-   }
-
-   &__label {
-      display: inline;
-      vertical-align: bottom;
-   }
-
-   [type='radio']:checked + label &__fake {
-      border-color: css-var('element-primary-background-color');
-
-      &:after {
-         display: block;
-      }
-   }
-
-   [type='radio'] + label &__fake {
-      transition: box-shadow 0.2s ease-in-out;
-   }
-
-   [type='radio']:focus-visible + label &__fake {
-      @include focus-outline;
-   }
-
-   &--disabled {
-      label {
-         @include disabled;
-      }
    }
 }
 
@@ -409,137 +344,57 @@ textarea.env-form-input {
    }
 }
 
+// Deprecated fake radio button
+@import 'legacy/fake-radio-button';
+
 .env-radio {
-   // New native radiobutton
+   // New native radiobutton since SV 10.1
+   @include radioCheckboxCommon('radio');
 
-   @at-root label#{&} {
-      display: inline-flex;
-      gap: css-var('spacing-x-small');
-      justify-content: flex-start;
-      align-items: center;
-      box-sizing: border-box;
-      font-family: css-var('form-label-font-family');
-      font-size: css-var('font-size-medium');
-      font-weight: css-var('form-label-font-weight');
-      margin-bottom: var(--env-spacing-x-small);
+   @at-root [type='radio']#{&}:checked,
+      #{&} [type='radio']:checked {
+      border-color: var(--env-element-primary-background-color);
 
-      &--disabled {
-         @include disabled;
-      }
-   }
-
-   @at-root input[type='radio']#{&},
-      #{&} input[type='radio'] {
-      appearance: none;
-      display: inline-grid;
-      place-content: center;
-      width: $native-radiobutton-size;
-      height: $native-radiobutton-size;
-      margin: 0;
-      padding: 0;
-      font: inherit;
-      color: currentColor;
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: 50%;
-      vertical-align: middle;
-
-      &:before {
+      &::before {
          content: '';
-         width: $native-radiobutton-checked-size;
-         height: $native-radiobutton-checked-size;
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: scale(1) translate(-50%, -50%);
+         width: 0.75em;
+         height: 0.75em;
+         background-color: var(--env-element-primary-background-color);
          border-radius: 50%;
-         transform: scale(0);
-         box-shadow: inset 1em 1em css-var('element-primary-background-color');
-         background-color: css-var('element-primary-background-color');
+         box-shadow: inset 1em 1em var(--env-element-primary-background-color);
       }
-
-      &:disabled {
-         @include disabled;
-      }
-
-      &:checked {
-         border-color: css-var('element-primary-background-color');
-      }
-
-      &:checked:before {
-         transform: scale(1);
-      }
-
-      @include focus-visible;
    }
 }
 
+// Deprecated fake checkbox
+@import 'legacy/fake-checkbox';
+
 .env-checkbox {
-   display: block;
-   font-size: css-var('font-size-medium');
-   box-sizing: content-box;
+   // New native checkbox styling since 2024.03.1
+   @include radioCheckboxCommon('checkbox');
 
-   [type='checkbox'] {
-      @include visually-hidden();
-   }
+   @at-root [type='checkbox']#{&}:checked,
+      #{&} [type='checkbox']:checked {
+      background-color: var(--env-element-primary-background-color);
 
-   label {
-      margin-bottom: css-var('spacing-x-small');
-   }
-
-   .env-form-element__label {
-      font-size: 1em;
-   }
-
-   [type='checkbox']:checked + label &__fake::after {
-      $tick-position: 50%;
-      content: '';
-      display: block;
-      position: absolute;
-      top: 40%;
-      left: $tick-position;
-      width: $checkbox-size * 0.7;
-      height: $checkbox-size * 0.25;
-      background-color: transparent;
-      border-bottom: ($checkbox-size * 0.1) solid
-         css-var('element-primary-font-color');
-      border-left: ($checkbox-size * 0.1) solid
-         css-var('element-primary-font-color');
-      transform: translate3d(-49%, -45%, 0) rotate(-50deg);
-   }
-
-   [type='checkbox']:disabled + label &__fake,
-   [type='checkbox']:disabled + label &__label {
-      @include disabled;
-
-      &:after {
-         opacity: 0.7;
+      &::before {
+         content: '';
+         display: block;
+         position: absolute;
+         top: 40%;
+         left: 50%;
+         transform: translate3d(-49%, -45%, 0) rotate(-50deg);
+         width: 0.9em;
+         height: 0.3em;
+         background-color: transparent;
+         border-bottom: 0.15em solid var(--env-element-primary-font-color);
+         border-left: 0.15em solid var(--env-element-primary-font-color);
       }
-   }
-
-   [type='checkbox'] + label &__fake {
-      transition: box-shadow 0.2s ease-in-out;
-   }
-
-   [type='checkbox']:focus-visible + label &__fake {
-      @include focus-outline;
-   }
-
-   &__fake {
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: css-var('border-radius');
-      display: inline-block;
-      height: $checkbox-size;
-      margin-right: css-var('spacing-xx-small');
-      position: relative;
-      vertical-align: middle;
-      width: $checkbox-size;
-   }
-
-   [type='checkbox']:checked + label &__fake {
-      background-color: css-var('element-primary-background-color');
-   }
-
-   &__label {
-      display: inline;
-      vertical-align: bottom;
    }
 }
 

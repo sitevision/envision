@@ -1,0 +1,80 @@
+.env-form-radio {
+   // Legacy fake radio button is deprecated since 2024.04.1.
+   //
+   // Fake markup has been removed from the docs:
+   // <div class="env-form-radio">
+   //   <input id="radio2" type="radio" name="radios">
+   //   <label for="radio2" class="env-form-element__label">
+   //     <span class="env-form-radio__fake"></span>
+   //     <span class="env-form-radio__label">Alternative 2</span>
+   //   </label>
+   // </div>
+
+   display: block;
+   font-size: css-var('font-size-medium');
+   box-sizing: content-box;
+
+   [type='radio'] {
+      @include visually-hidden;
+   }
+
+   label {
+      margin-bottom: css-var('spacing-x-small');
+   }
+
+   .env-form-element__label {
+      font-size: 1em;
+   }
+
+   &__fake {
+      display: inline-block;
+      position: relative;
+      width: $radiobutton-size;
+      height: $radiobutton-size;
+      margin-right: css-var('spacing-xx-small');
+      background-color: css-var('form-input-background-color');
+      border: $border-width $border-style css-var('form-input-border-color');
+      border-radius: 50%;
+      vertical-align: middle;
+
+      &:after {
+         content: '';
+         display: none;
+         width: $radiobutton-checked-size;
+         height: $radiobutton-checked-size;
+         background-color: css-var('element-primary-background-color');
+         position: absolute;
+         top: (50% - $radiobutton-checked-size * 0.5);
+         left: (50% - $radiobutton-checked-size * 0.5);
+         border-radius: 50%;
+         box-sizing: border-box;
+      }
+   }
+
+   &__label {
+      display: inline;
+      vertical-align: bottom;
+   }
+
+   [type='radio']:checked + label &__fake {
+      border-color: css-var('element-primary-background-color');
+
+      &:after {
+         display: block;
+      }
+   }
+
+   [type='radio'] + label &__fake {
+      transition: box-shadow 0.2s ease-in-out;
+   }
+
+   [type='radio']:focus-visible + label &__fake {
+      @include focus-outline;
+   }
+
+   &--disabled {
+      label {
+         @include disabled;
+      }
+   }
+}

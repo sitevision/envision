@@ -161,65 +161,71 @@ See [Tag select documentation](../select/).
 Related radiobutton elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
 
 ```html
-<fieldset class="env-form-element__control">
-   <legend class="env-form-element__label">Radio button</legend>
-   <div>
-      <label class="env-radio">
-         <input type="radio" name="radios" value="1" checked />
-         Alternative 1
-      </label>
-   </div>
-   <div>
-      <label class="env-radio">
-         <input type="radio" name="radios" value="2" />
-         Alternative 2
-      </label>
-   </div>
-</fieldset>
+<div class="env-form">
+   <fieldset>
+      <legend>Radio button</legend>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" value="1" checked />
+            Alternative 1
+         </label>
+      </div>
+      <div>
+         <label class="env-radio">
+            <input type="radio" name="radios" value="2" />
+            Alternative 2
+         </label>
+      </div>
+   </fieldset>
+</div>
 ```
 
 ## Checkbox input element
 
+Related checkbox elements should be wrapped by a fieldset element to indicate group membership of the contained elements.
+
 ```html
-<fieldset class="env-form-element__control">
-   <legend class="env-form-element__label">Checkbox</legend>
-   <div class="env-checkbox">
-      <input type="checkbox" checked name="options" id="cb1" />
-      <label class="env-form-element__label" for="cb1">
-         <span class="env-checkbox__fake"></span>
-         <span class="env-checkbox__label">Checked</span>
-      </label>
-   </div>
-   <div class="env-checkbox">
-      <input type="checkbox" name="options" id="cb2" />
-      <label class="env-form-element__label" for="cb2">
-         <span class="env-checkbox__fake"></span>
-         <span class="env-checkbox__label">Check</span>
-      </label>
-   </div>
-</fieldset>
+<div class="env-form">
+   <fieldset>
+      <legend>Checkbox</legend>
+      <div>
+         <label class="env-checkbox">
+            <input type="checkbox" name="options" value="one" checked />
+            One option
+         </label>
+      </div>
+      <div>
+         <label class="env-checkbox">
+            <input type="checkbox" name="options" value="another" />
+            Another option
+         </label>
+      </div>
+   </fieldset>
+</div>
 ```
 
 ### Switch component
 
 ```html
-<fieldset class="env-form-element__control">
-   <legend class="env-form-element__label">Switch</legend>
-   <div class="env-switch">
-      <label class="env-switch__label">
-         <input type="checkbox" checked />
-         <span class="env-switch__text">On</span>
-         <span class="env-switch__slider"></span>
-      </label>
-   </div>
-   <div class="env-switch">
-      <label class="env-switch__label">
-         <input type="checkbox" />
-         <span class="env-switch__text">Off</span>
-         <span class="env-switch__slider"></span>
-      </label>
-   </div>
-</fieldset>
+<div class="env-form">
+   <fieldset>
+      <legend>Switch</legend>
+      <div class="env-switch">
+         <label class="env-switch__label">
+            <input type="checkbox" checked />
+            <span class="env-switch__text">On</span>
+            <span class="env-switch__slider"></span>
+         </label>
+      </div>
+      <div class="env-switch">
+         <label class="env-switch__label">
+            <input type="checkbox" />
+            <span class="env-switch__text">Off</span>
+            <span class="env-switch__slider"></span>
+         </label>
+      </div>
+   </fieldset>
+</div>
 ```
 
 <div id="input-icons"></div>
@@ -384,8 +390,8 @@ width.
       </div>
    </div>
    <div class="env-form-element">
-      <fieldset class="env-form-element__control">
-         <legend class="env-form-element__label">Subjects</legend>
+      <fieldset>
+         <legend>Subjects</legend>
          <div class="env-checkbox">
             <input type="checkbox" name="options" id="cb5" />
             <label class="env-form-element__label" for="cb5">
@@ -523,8 +529,6 @@ used to reference the `ID` of the text that describes the element.
 
 ## States
 
-For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its wrapper for a muted label.
-
 ```html
 <div class="env-form-element">
    <label for="disabled" class="env-form-element__label"
@@ -552,19 +556,16 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 </div>
 <div class="env-form-element">
    <div class="env-form-element__control">
-      <div class="env-checkbox env-checkbox--disabled">
+      <label class="env-checkbox">
          <input type="checkbox" name="options" id="cb9" checked disabled />
-         <label class="env-form-element__label" for="cb9">
-            <span class="env-checkbox__fake"></span>
-            <span class="env-checkbox__label">Disabled checkbox</span>
-         </label>
-      </div>
+         Disabled checkbox
+      </label>
    </div>
 </div>
 <div class="env-form-element">
    <div class="env-form-element__control">
-      <label class="env-radio env-radio--disabled">
-         <input class="env-radio" type="radio" disabled checked />
+      <label class="env-radio">
+         <input type="radio" checked disabled />
          Disabled radio button
       </label>
    </div>

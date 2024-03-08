@@ -1,0 +1,27 @@
+.env-checkbox {
+   // This version of checkbox used to use fake elements to create the checkbox.
+   // Since 2024.04.1, fake elements are no longer used,
+   // old markup now also uses native checkbox element styling.
+   //
+   // Fake markup has been removed from the docs and is deprecated:
+   // <div class="env-checkbox">
+   //   <input type="checkbox" checked="" name="options" id="cb1">
+   //   <label class="env-form-element__label" for="cb1">
+   //     <span class="env-checkbox__fake"></span>
+   //     <span class="env-checkbox__label">Checked</span>
+   //   </label>
+   // </div>
+
+   .env-form-element__label {
+      font-size: 1em;
+   }
+
+   &__fake {
+      vertical-align: middle;
+   }
+
+   &__label {
+      display: inline;
+      vertical-align: bottom;
+   }
+}
