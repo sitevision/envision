@@ -1,0 +1,114 @@
+.env-form-control {
+   position: relative;
+}
+
+// Option element container variant
+// Wrapper styling for checkboxes, radiobuttons etc.
+.env-switch__label, // Support legacy markup. Deprecated since 2024.04.1.
+.env-form-control:has(.env-form-label):has(.env-switch, .env-radio, .env-checkbox) {
+   // NEW
+   display: inline-flex;
+   gap: var(--env-spacing-x-small);
+   justify-content: flex-start;
+   align-items: center;
+   margin-bottom: css-var('spacing-x-small');
+
+   label,
+   .env-form-field &,
+   .env-form-label,
+   .env-form-element__label {
+      margin: 0;
+   }
+}
+
+// Input group container variant
+// Wrapper for grouping input, button & label
+.env-form-input-group, // Support legacy markup. Deprecated since 2024.04.1.
+.env-form-control:has(.env-button):has(.env-form-input) {
+   display: flex;
+   align-items: stretch;
+
+   .env-button {
+      // No matter the order of elements,
+      // button border should be on top of
+      // input and label borders.
+      z-index: 2;
+   }
+
+   .env-form-input:focus {
+      // When focused, move input to top
+      z-index: 3;
+   }
+
+   .env-form-input-group__label, // Deprecated since 2024.04.1
+   .env-form label,
+   .env-form-label {
+      display: flex;
+      align-items: center;
+      border: $border-width $border-style css-var('form-input-border-color');
+      box-sizing: border-box;
+      color: css-var('form-input-font-color');
+      font-size: css-var('font-size-medium');
+      line-height: $form-input-line-height;
+      padding: css-var('spacing-x-small');
+      margin: 0;
+   }
+
+   .env-form-input-group__label,
+   .env-form label,
+   .env-form-label,
+   .env-button,
+   .env-form-input {
+      position: relative;
+      z-index: 1;
+      border-radius: 0;
+      margin-right: -1px;
+
+      &:first-child {
+         border-radius: css-var('form-input-border-radius') 0 0
+            css-var('form-input-border-radius');
+      }
+
+      &:last-child {
+         margin-right: 0;
+         border-radius: 0 css-var('form-input-border-radius')
+            css-var('form-input-border-radius') 0;
+      }
+   }
+}
+
+// Icon input container variant
+// Wrapper for input and icon
+.env-form-element__control--icon, // Support legacy markup. Deprecated since 2024.04.1.
+.env-form-control:has(.env-icon):not(:has(.env-form-label)):not(:has(.env-button)) {
+   .env-icon {
+      position: absolute;
+      top: 50%;
+      left: calc(var(--env-font-size-base) * 0.75);
+      width: var(--env-font-size-medium);
+      height: var(--env-font-size-medium);
+      transform: translate(0, -50%);
+      color: css-var('form-input-font-color');
+      pointer-events: none;
+   }
+
+   input:first-child,
+   textarea:first-child {
+      padding-right: calc(
+         var(--env-font-size-medium) + #{css-var('spacing-medium')}
+      );
+   }
+
+   input + .env-icon,
+   textarea + .env-icon {
+      left: auto;
+      right: calc(var(--env-font-size-base) * 0.75);
+   }
+
+   .env-icon + input,
+   .env-icon + textarea {
+      padding-left: calc(
+         var(--env-font-size-medium) + #{css-var('spacing-medium')}
+      );
+   }
+}

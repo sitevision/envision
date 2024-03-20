@@ -1,0 +1,102 @@
+@use 'sass:math';
+
+$form-input-min-height: math.div($form-input-height, $form-input-font-size) *
+   1em;
+
+.env-form-input {
+   @include form-input-defaults;
+
+   @include placeholder {
+      color: css-var('form-input-font-color');
+      filter: opacity(0.65);
+   }
+
+   fieldset[disabled] &,
+   &[disabled],
+   &[readonly] {
+      @include disabled;
+   }
+
+   fieldset[disabled] &,
+   &[disabled] {
+      user-select: none;
+   }
+
+   @include focus-visible;
+
+   &[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button {
+         display: none;
+      }
+   }
+
+   &--search[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-cancel-button {
+         display: block;
+      }
+
+      &::-ms-clear {
+         display: block;
+      }
+   }
+
+   &[contenteditable=''],
+   &[contenteditable='true'] {
+      height: 88px;
+      overflow: auto;
+      resize: vertical;
+
+      ~ .env-form-element__contenteditable-placeholder, // Deprecated
+      ~ [aria-hidden] {
+         display: none;
+         position: absolute;
+         top: calc(#{css-var('spacing-x-small')} + 1px);
+         left: calc(#{css-var('spacing-small')} + 1px);
+         pointer-events: none;
+         speak: never;
+         color: css-var('form-input-font-color');
+         filter: opacity(0.5);
+         line-height: 1.4;
+         font-size: var(--env-font-size-medium);
+      }
+
+      &:empty ~ [aria-hidden],
+      &:empty ~ .env-form-element__contenteditable-placeholder {
+         display: block;
+      }
+   }
+}
+
+.env-form textarea,
+textarea.env-form-input {
+   resize: vertical;
+   min-height: $form-input-min-height;
+}
+
+.env-form select,
+select.env-form-input {
+   min-height: $form-input-min-height;
+}
+
+@supports (background: -webkit-named-image(i)) {
+   // Hack for Safari only to set height of native select
+   .env-form select:not([multiple]),
+   select.env-form-input:not([multiple]) {
+      height: $form-input-min-height;
+   }
+}
+
+select[multiple].env-form-input,
+.env-form-multiple-select select[multiple] {
+   padding: css-var('spacing-xx-small');
+}
+
+select[multiple].env-form-input > option,
+.env-form-multiple-select select[multiple] > option {
+   padding: css-var('spacing-x-small');
+}

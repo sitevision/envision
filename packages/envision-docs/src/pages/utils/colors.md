@@ -175,27 +175,24 @@ Element colors are used for elements and components. See usage examples below.
         </div>
         <div class="example-element">
           <div class="example-element-label">Radio button:</div>
-          <label class="env-radio">
-            <input id="radio1" type="radio" name="radios" checked />
-            Alternative
-          </label>
+          <div class="env-form-control">
+            <input class="env-radio" id="radio1" type="radio" name="radios" checked />
+            <label for="radio1" class="env-form-label">Alternative</label>
+          </div>
         </div>
         <div class="example-element">
           <div class="example-element-label">Checkbox:</div>
-         <label class="env-checkbox">
-           <input type="checkbox" checked name="options" />
-           Checked
-         </label>
+         <div class="env-form-control">
+            <input id="checkbox1" class="env-checkbox" type="checkbox" checked name="options" />
+            <label for="checkbox1" class="env-form-label">Checked</label>
+          </div>
         </div>
         <div class="example-element">
          <div class="example-element-label">Switch:</div>
-         <div class="env-switch">
-            <label class="env-switch__label">
-               <input type="checkbox" checked />
-               <span class="env-switch__text">On</span>
-               <span class="env-switch__slider"></span>
-            </label>
-         </div>
+<div class="env-form-control">
+            <input id="switch1" class="env-switch" type="checkbox" checked name="options" />
+            <label for="switch1" class="env-form-label">On</label>
+          </div>
         </div>
       </div>
       <div class="example-grid__col example-grid__col--50">
