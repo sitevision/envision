@@ -1,6 +1,7 @@
 ---
 title: Modal dialog
 deprecated: true
+indexing: false
 ---
 
 Modal dialog is deprecated and will eventually be removed. Please use [Dialog](/components/dialog/).

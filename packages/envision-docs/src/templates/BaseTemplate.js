@@ -13,6 +13,7 @@ const filterMenuItems = (items) => {
          since: node.frontmatter.since,
          beta: node.frontmatter.beta,
          dashboard: node.frontmatter.dashboard,
+         indexing: node.frontmatter.indexing,
          slug: node.fields.slug,
       }))
       .reduce((accumulated, item) => {
@@ -37,6 +38,7 @@ const BaseTemplate = ({
    menuCategories,
    menuItems,
    children,
+   indexing,
 }) => {
    const theme =
       typeof window !== 'undefined'
@@ -46,7 +48,12 @@ const BaseTemplate = ({
    const bodyClass = dashboard ? 'env-dashboard-theme' : theme;
    return (
       <>
-         <Header title={title} bodyClass={bodyClass} menuItems={topMenuItems} />
+         <Header
+            title={title}
+            bodyClass={bodyClass}
+            indexing={indexing}
+            menuItems={topMenuItems}
+         />
          <div className={'main-container'}>
             <main>
                <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
@@ -91,6 +98,7 @@ BaseTemplate.propTypes = {
    menuCategories: PropTypes.array,
    menuItems: PropTypes.array,
    children: PropTypes.node,
+   indexing: PropTypes.bool,
 };
 
 export default BaseTemplate;

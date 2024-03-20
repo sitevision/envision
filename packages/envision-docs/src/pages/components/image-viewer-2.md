@@ -1,7 +1,8 @@
 ---
 title: Image viewer 2
-since: 2023.07.01
 ---
+
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2023.07.01</span></h2>
 
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
 and/or a lightbox viewer with navigation between images.
@@ -309,3 +310,10 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 -  `lightbox.close()`
 
    -  Close the lightbox.
+
+## Legacy documentation
+
+Image Viewer 2 is a replacement for the following, which are deprecated since 2023.07.1:
+
+-  [Image slider](/deprecated/image-slider/)
+-  [Image viewer](/deprecated/image-viewer/)
