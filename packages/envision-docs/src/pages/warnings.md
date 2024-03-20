@@ -14,11 +14,11 @@ Please follow the link to the plugin's documentation to see how to migrate to th
 
 -  [$.fn.envAccordion](/components/accordion/)
 -  [$.fn.envCollapse](/components/collapse/)
--  [$.fn.envDialog](/components/modal-dialog/)
+-  [$.fn.envDialog](/deprecated/modal-dialog/)
 -  [$.fn.envPopover](/components/popover/)
 -  [$.fn.envTabs](/components/tab/)
--  [$.fn.envImageslider](/components/image-slider/)
--  [$.fn.envImageviewer](/components/image-viewer/)
+-  [$.fn.envImageslider](/deprecated/image-slider/)
+-  [$.fn.envImageviewer](/deprecated/image-viewer/)
 -  [$.fn.envRangeSlider](/components/range-slider/)
 
 ## Component Warnings

@@ -23,6 +23,7 @@ export default function Template({
          since={frontmatter.since}
          beta={frontmatter.beta}
          dashboard={frontmatter.dashboard}
+         indexing={frontmatter.indexing}
          topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
@@ -58,6 +59,7 @@ export const pageQuery = graphql`
             since
             beta
             dashboard
+            indexing
          }
       }
       allMarkdownRemark {
@@ -70,6 +72,7 @@ export const pageQuery = graphql`
                   since
                   beta
                   dashboard
+                  indexing
                }
                fields {
                   slug

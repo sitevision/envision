@@ -1,6 +1,7 @@
 ---
 title: Image viewer
 deprecated: true
+indexing: false
 ---
 
 Image viewer is deprecated since 2023.07.1 and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).

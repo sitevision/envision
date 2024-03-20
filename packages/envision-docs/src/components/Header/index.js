@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import ThemePicker from '../ThemePicker';
 
-const Header = ({ title, bodyClass, menuItems }) => {
+const Header = ({ title, bodyClass, menuItems, indexing }) => {
    return (
       <>
          <Helmet bodyAttributes={{ class: bodyClass }}>
@@ -21,6 +21,7 @@ const Header = ({ title, bodyClass, menuItems }) => {
                href="/images/envision_logo.webp"
                sizes="32x32"
             />
+            {indexing === false && <meta name="robots" content="noindex" />}
          </Helmet>
          <div className="sv-header">
             <header className="header">
@@ -56,6 +57,7 @@ Header.propTypes = {
    title: PropTypes.string,
    bodyClass: PropTypes.string,
    menuItems: PropTypes.array,
+   indexing: PropTypes.bool,
 };
 
 export default Header;

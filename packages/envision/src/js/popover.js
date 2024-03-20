@@ -91,6 +91,12 @@ class Popover {
       }
    }
 
+   handleKeyboardEvent(e) {
+      if (e.key === 'Escape') {
+         this.hide();
+      }
+   }
+
    bindEvents() {
       const triggers = this.config.trigger.split(' ');
 
@@ -100,6 +106,7 @@ class Popover {
       this.handlePopoverMouseEnter = this.handlePopoverMouseEnter.bind(this);
       this.handlePopoverMouseLeave = this.handlePopoverMouseLeave.bind(this);
       this.clickOutsideHandler = this.clickOutsideHandler.bind(this);
+      this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
 
       triggers.forEach((trigger) => {
          if (trigger === 'click') {
@@ -265,7 +272,7 @@ class Popover {
       if (this.config.clickOutside) {
          document.body.removeEventListener('click', this.clickOutsideHandler);
       }
-
+      document.removeEventListener('keyup', this.handleKeyboardEvent);
       this.isShowing = false;
    }
 
@@ -299,6 +306,8 @@ class Popover {
          if (this.config.clickOutside) {
             document.body.addEventListener('click', this.clickOutsideHandler);
          }
+
+         document.addEventListener('keyup', this.handleKeyboardEvent);
 
          this.isShowing = true;
       });
