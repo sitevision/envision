@@ -19,6 +19,7 @@
       "gatsby-plugin-react-helmet": "^6.7.0",
       "gatsby-plugin-sass": "^6.7.0",
       "gatsby-plugin-sharp": "^5.8.1",
+      "gatsby-plugin-meta-redirect": "^1.0.0",
       "gatsby-remark-prismjs": "^7.7.0",
       "gatsby-source-filesystem": "^5.7.0",
       "gatsby-transformer-remark": "^6.7.0",

@@ -116,5 +116,6 @@ module.exports = {
             icon: 'static/images/envision_logo.webp',
          },
       },
+      `gatsby-plugin-meta-redirect`, // make sure to put last in the array
    ],
 };
