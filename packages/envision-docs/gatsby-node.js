@@ -9,7 +9,23 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-   const { createPage } = actions;
+   const { createPage, createRedirect } = actions;
+
+   createRedirect({
+      fromPath: `/components/modal-dialog/`,
+      toPath: `/deprecated/modal-dialog/`,
+      isPermanent: true,
+   });
+   createRedirect({
+      fromPath: `/components/image-slider/`,
+      toPath: `/deprecated/image-slider/`,
+      isPermanent: true,
+   });
+   createRedirect({
+      fromPath: `/components/image-viewer/`,
+      toPath: `/deprecated/image-viewer/`,
+      isPermanent: true,
+   });
 
    const result = await graphql(`
       {
