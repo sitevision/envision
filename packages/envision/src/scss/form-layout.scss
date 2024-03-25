@@ -1,0 +1,144 @@
+// ===== VARIANTS =====
+
+// Deprecated since 2024.04.1.
+.env-form--horizontal {
+   //&:has(.env-form-element) {
+   .env-form-element {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      & > .env-form-element__label,
+      & > .env-form-element__control {
+         // align-items in Firefox needs inline children for baseline to work.
+         // This fixes the issue without messing things up in Chrome et.al.
+         display: inline-flex;
+         flex-direction: column;
+      }
+
+      & > .env-form-element__label {
+         flex-basis: 20%;
+      }
+
+      &__control {
+         flex-basis: 80%;
+      }
+
+      &__help {
+         margin-left: 20%;
+      }
+   }
+}
+
+// Deprecated since 2024.04.1.
+.env-form--inline {
+   display: flex;
+
+   .env-form-element {
+      align-items: center;
+      display: flex;
+      margin-bottom: 0;
+      margin-right: css-var('spacing-x-small');
+
+      &__label {
+         margin-bottom: 0;
+         margin-right: css-var('spacing-x-small');
+      }
+
+      &__help {
+         margin-left: css-var('spacing-xx-small');
+      }
+   }
+
+   .env-form-radio,
+   .env-checkbox {
+      margin-bottom: 0;
+   }
+}
+
+// Deprecated since 2024.04.1.
+.env-form__row {
+   display: flex;
+   gap: css-var('spacing-small');
+
+   .env-form-element {
+      flex: 1;
+
+      @for $i from 1 through 6 {
+         &--#{$i} {
+            flex: $i;
+         }
+      }
+   }
+}
+
+// Added in 2024.04.1.
+.env-form:has(.env-form-row) {
+   container-type: inline-size;
+}
+
+// Added in 2024.04.1.
+.env-form-row {
+   // Variants
+   // --------
+   // Row with form fields as children puts fields in columns
+   // Row on the field creates inline label/control
+   // Row with controls as children containing checkbox/radio creates inline controls with even spacing
+
+   &:has(> .env-form-field) {
+      display: flex;
+      gap: css-var('spacing-small');
+      align-items: center;
+
+      .env-form-field:not([class*='env-form-col']) {
+         flex: 1;
+      }
+   }
+
+   &.env-form-field {
+      display: flex;
+      gap: css-var('spacing-small');
+      align-items: center;
+
+      .env-form-label:not([class*='env-form-col']),
+      .env-form-control:not([class*='env-form-col']) {
+         flex: 1;
+      }
+   }
+
+   &:has(> .env-form-control > .env-switch, > .env-form-control
+         > .env-radio, > .env-form-control > .env-checkbox) {
+      display: flex;
+      column-gap: css-var('spacing-x-small');
+      flex-wrap: wrap;
+   }
+
+   &--stack-s {
+      @container (max-width: 20em) {
+         flex-direction: column !important;
+         align-items: stretch !important;
+         gap: 0 !important;
+      }
+   }
+   &--stack-m {
+      @container (max-width: 30em) {
+         flex-direction: column !important;
+         align-items: stretch !important;
+         gap: 0 !important;
+      }
+   }
+   &--stack-l {
+      @container (max-width: 40em) {
+         flex-direction: column !important;
+         align-items: stretch !important;
+         gap: 0 !important;
+      }
+   }
+}
+
+// Added in 2024.04.1.
+@for $i from 1 through 6 {
+   .env-form-col-#{$i} {
+      flex: $i;
+   }
+}

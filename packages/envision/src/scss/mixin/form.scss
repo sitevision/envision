@@ -14,31 +14,6 @@
    border-radius: css-var('form-input-border-radius');
 }
 
-@mixin input-validation-state($colorName) {
-   // DEPRECATED - DO NOT USE
-   &,
-   .env-form-element__help,
-   .env-select__item,
-   .env-select__item__remove {
-      color: css-var('element-#{$colorName}-background-color');
-   }
-
-   .env-form-input,
-   .env-checkbox__fake,
-   .env-form-radio__fake,
-   .env-select__input {
-      border-color: css-var(
-         'element-#{$colorName}-background-color'
-      ) !important;
-   }
-
-   .env-select__item {
-      background-color: css-var(
-         'element-#{$colorName}-background-color'
-      ) !important;
-   }
-}
-
 @mixin disabled($grayscale: true) {
    @if ($grayscale) {
       filter: opacity(0.5) grayscale(100%);
