@@ -146,7 +146,12 @@ See [Tag select documentation](../select/).
 ```html
 <label for="tag-select" class="env-form-element__label"> Tag select </label>
 <div class="env-form-element__control">
-   <select class="env-form-input example-tag-select" id="tag-select" multiple>
+   <select
+      class="env-form-input example-tag-select"
+      id="tag-select"
+      aria-label="Tag select"
+      multiple
+   >
       <option value="">Select an item...</option>
       <option value="item1" selected>Item</option>
       <option value="item2">Item 2</option>

@@ -16,7 +16,7 @@ By default, Tag select will use the HTML markup to generate the data.
 <div class="env-form-element">
    <label for="example-tag-select-1" class="env-form-element__label">Tag select</label>
    <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-1">
+      <select class="env-form-input" id="example-tag-select-1" aria-label="Tag select">
          <option value="">Select an item ...</option>
          <option value="item-1">Item</option>
          <option value="item-2">Item 2</option>
@@ -56,7 +56,7 @@ Use `allowEmptyOption` and `sortField` as in second example below to make behavi
       Tag select single
    </label>
    <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-single-1">
+      <select class="env-form-input" id="example-tag-select-single-1" aria-label="Tag select single">
          <option value="">Select an item ...</option>
          <option value="item-1">Item</option>
          <option value="item-3">Item 3</option>
@@ -71,7 +71,7 @@ Use `allowEmptyOption` and `sortField` as in second example below to make behavi
       Tag select single - native-like behaviour
    </label>
    <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-single-2">
+      <select class="env-form-input" id="example-tag-select-single-2" aria-label="Tag select single - native-like behaviour">
          <option value="">Select an item ...</option>
          <option value="item-1">Item</option>
          <option value="item-3">Item 3</option>
@@ -337,6 +337,7 @@ When disabled, the control can not receive focus.
       <select
          class="env-form-input example-tag-select"
          id="example-tag-select-4"
+         aria-label="Disabled"
          multiple
          disabled
       >
@@ -366,6 +367,7 @@ _Note: The `readonly` attribute is not supported or relevant to the Tag Select c
       <select
          class="env-select--locked env-form-input example-tag-select"
          id="example-tag-select-6"
+         aria-label="Locked"
          multiple
       >
          <option value="">Select an item...</option>
