@@ -1,8 +1,7 @@
 // ===== VARIANTS =====
 
-// Deprecated since 2024.04.1.
+// Deprecated since 2024.05.1.
 .env-form--horizontal {
-   //&:has(.env-form-element) {
    .env-form-element {
       display: flex;
       align-items: baseline;
@@ -30,7 +29,7 @@
    }
 }
 
-// Deprecated since 2024.04.1.
+// Deprecated since 2024.05.1.
 .env-form--inline {
    display: flex;
 
@@ -56,7 +55,7 @@
    }
 }
 
-// Deprecated since 2024.04.1.
+// Deprecated since 2024.05.1.
 .env-form__row {
    display: flex;
    gap: css-var('spacing-small');
@@ -72,73 +71,93 @@
    }
 }
 
-// Added in 2024.04.1.
+// Added in 2024.05.1.
 .env-form:has(.env-form-row) {
    container-type: inline-size;
 }
 
-// Added in 2024.04.1.
+// Added in 2024.05.1.
 .env-form-row {
    // Variants
    // --------
-   // Row with form fields as children puts fields in columns
-   // Row on the field creates inline label/control
+   // Row with form columns as children puts fields in columns
+   // Use column on label/control to create inline label/control
    // Row with controls as children containing checkbox/radio creates inline controls with even spacing
 
-   &:has(> .env-form-field) {
+   &:has(> [class*='env-form-column']:not(.env-form-control, .env-form-label)) {
       display: flex;
       gap: css-var('spacing-small');
       align-items: center;
 
-      .env-form-field:not([class*='env-form-col']) {
+      [class*='env-form-column'] {
          flex: 1;
+      }
+
+      &.env-form-row--stack-s {
+         @container (max-width: 20em) {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: css-var('spacing-medium') !important;
+         }
+      }
+      &.env-form-row--stack-m {
+         @container (max-width: 30em) {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: css-var('spacing-medium') !important;
+         }
+      }
+      &.env-form-row--stack-l {
+         @container (max-width: 40em) {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: css-var('spacing-medium') !important;
+         }
       }
    }
 
-   &.env-form-field {
+   &:has(> [class*='env-form-column'].env-form-control):has(> [class*='env-form-column'].env-form-label) {
       display: flex;
-      gap: css-var('spacing-small');
+      column-gap: css-var('spacing-small');
       align-items: center;
 
-      .env-form-label:not([class*='env-form-col']),
-      .env-form-control:not([class*='env-form-col']) {
+      [class*='env-form-column'] {
          flex: 1;
+      }
+
+      &.env-form-row--stack-s {
+         @container (max-width: 20em) {
+            display: block;
+         }
+      }
+      &.env-form-row--stack-m {
+         @container (max-width: 30em) {
+            display: block;
+         }
+      }
+      &.env-form-row--stack-l {
+         @container (max-width: 40em) {
+            display: block;
+         }
       }
    }
 
-   &:has(> .env-form-control > .env-switch, > .env-form-control
-         > .env-radio, > .env-form-control > .env-checkbox) {
+   + .env-form-row {
+      margin-top: css-var('spacing-medium');
+   }
+
+   &:has(> .env-form-control:not([class*='env-form-column'])
+         > .env-radio, > .env-form-control:not([class*='env-form-column'])
+         > .env-checkbox) {
       display: flex;
       column-gap: css-var('spacing-x-small');
       flex-wrap: wrap;
    }
-
-   &--stack-s {
-      @container (max-width: 20em) {
-         flex-direction: column !important;
-         align-items: stretch !important;
-         gap: 0 !important;
-      }
-   }
-   &--stack-m {
-      @container (max-width: 30em) {
-         flex-direction: column !important;
-         align-items: stretch !important;
-         gap: 0 !important;
-      }
-   }
-   &--stack-l {
-      @container (max-width: 40em) {
-         flex-direction: column !important;
-         align-items: stretch !important;
-         gap: 0 !important;
-      }
-   }
 }
 
-// Added in 2024.04.1.
+// Added in 2024.05.1.
 @for $i from 1 through 6 {
-   .env-form-col-#{$i} {
-      flex: $i;
+   .env-form-column-#{$i} {
+      flex: $i !important;
    }
 }
