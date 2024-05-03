@@ -324,10 +324,6 @@ patterns as CSS variable names.
 </div>
 ```
 
-### Brand colors
-
-Brand colors should not be used in dashboard widgets. Please use the Color palette and components not based on brand colors.
-
 ## Widget example
 
 <section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small" style="width: fit-content">

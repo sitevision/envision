@@ -105,6 +105,20 @@ h6 {
    }
 }
 
+pre[class*='language-'] {
+   .token.selector,
+   .token.attr-name,
+   .token.string,
+   .token.char,
+   .token.builtin,
+   .token.inserted {
+      color: #527a00;
+   }
+   .token.namespace {
+      opacity: 1;
+   }
+}
+
 .sv-theme-dark {
    .code-example {
       border: 4px solid rgba(255, 255, 255, 0.1);

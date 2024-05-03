@@ -234,7 +234,12 @@ See [Tag select documentation](../select/).
 ```html
 <div class="env-form-field">
    <label for="tag-select-1" class="env-form-label"> Tag select </label>
-   <select class="env-form-input example-tag-select" id="tag-select-1" multiple>
+   <select
+      class="env-form-input example-tag-select"
+      id="tag-select-1"
+      aria-label="Tag select"
+      multiple
+   >
       <option value="">Select an item...</option>
       <option value="item1" selected>Item</option>
       <option value="item2">Item 2</option>
