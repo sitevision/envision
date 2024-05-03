@@ -215,11 +215,10 @@ Combine zoom and captions using data attributes or links:
    -  Lightbox button options. Show/hide download button. Visible text in close/download buttons.
    -  Default values: `{ download: true, showText: false }`
 
--  `i18n` _'sv'_ | _'en'_ | _{ language keys }_
+-  `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
 
    -  Translation of buttons aria-label and aria-roledescription.
-      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on
-      HTML lang attribute.
+      Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
    -  Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
       image, of_
 

@@ -24,6 +24,12 @@ const lang = {
       clear_button: 'Clear all',
       no_results: 'No results found',
    },
+   no: {
+      add: 'Legg til',
+      remove_button: 'Fjern',
+      clear_button: 'Fjern alt',
+      no_results: 'Ingen resultater funnet',
+   },
 };
 
 const defaults = {
