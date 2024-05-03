@@ -192,6 +192,8 @@ $inset: css-var('spacing-xx-large');
 
       &__image {
          display: block;
+         width: 100%;
+         height: auto;
          max-width: 100%;
          max-height: calc(100vh - #{$inset} * 2);
       }
