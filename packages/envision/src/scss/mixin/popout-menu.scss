@@ -54,6 +54,12 @@
          color: css-var('font-color');
       }
 
+      &[aria-disabled='true'] {
+         background-color: transparent;
+         @include disabled(true);
+         cursor: default;
+      }
+
       @include focus-visible;
 
       .env-icon {
