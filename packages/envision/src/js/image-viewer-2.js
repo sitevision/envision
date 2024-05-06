@@ -41,6 +41,20 @@ const lang = {
       image: 'Image',
       of: 'of',
    },
+   no: {
+      roledescription: 'karusell',
+      prev: 'Forrige',
+      next: 'Neste',
+      pause: 'Stopp',
+      play: 'Start',
+      slideshow: 'automatisk lysbildeserie',
+      zoom: 'Vis',
+      largeImage: 'stort bilde',
+      close: 'Lukk',
+      download: 'Last ned bilde',
+      image: 'Bilde',
+      of: 'av',
+   },
 };
 
 const defaults = {
