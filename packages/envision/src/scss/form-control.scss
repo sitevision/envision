@@ -4,7 +4,7 @@
 
 // Option element container variant
 // Wrapper styling for checkboxes, radiobuttons etc.
-.env-switch__label, // Support legacy markup. Deprecated since 2024.07.1.
+.env-switch__label, // Support legacy markup. Deprecated since 2024.08.1.
 .env-form-control:has(.env-form-label):has(.env-switch, .env-radio, .env-checkbox) {
    // NEW
    display: inline-flex;
@@ -23,7 +23,7 @@
 
 // Input group container variant
 // Wrapper for grouping input, button & label
-.env-form-input-group, // Support legacy markup. Deprecated since 2024.07.1.
+.env-form-input-group, // Support legacy markup. Deprecated since 2024.08.1.
 .env-form-control:has(.env-button):has(.env-form-input) {
    display: flex;
    align-items: stretch;
@@ -40,7 +40,7 @@
       z-index: 3;
    }
 
-   .env-form-input-group__label, // Deprecated since 2024.07.1
+   .env-form-input-group__label, // Deprecated since 2024.08.1
    .env-form label,
    .env-form-label {
       display: flex;
@@ -79,7 +79,7 @@
 
 // Icon input container variant
 // Wrapper for input and icon
-.env-form-element__control--icon, // Support legacy markup. Deprecated since 2024.07.1.
+.env-form-element__control--icon, // Support legacy markup. Deprecated since 2024.08.1.
 .env-form-control:has(.env-icon):not(:has(.env-form-label)):not(:has(.env-button)) {
    .env-icon {
       position: absolute;
