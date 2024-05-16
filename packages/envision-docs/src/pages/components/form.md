@@ -1,9 +1,9 @@
 ---
 title: Form
-since: 2024.05.1
+since: 2024.07.1
 ---
 
-Form classes and markup has been updated in 2024.05.1.
+Form classes and markup has been updated in 2024.07.1.
 [Deprecated legacy form classes and components can be found here](/deprecated/form/).
 
 ## Basics

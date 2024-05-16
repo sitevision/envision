@@ -11,7 +11,7 @@
       margin: 0;
    }
 
-   // New markup and classes added in 2024.05.1
+   // New markup and classes added in 2024.07.1
 
    & fieldset,
    &-fieldset {
@@ -24,7 +24,7 @@
    &-legend,
    & label,
    &-label {
-      // Since 2024.05.1
+      // Since 2024.07.1
       display: inline-block;
       color: css-var('font-color');
       font-family: css-var('form-label-font-family');
@@ -33,7 +33,7 @@
 
    & legend,
    &-legend {
-      // Since 2024.05.1
+      // Since 2024.07.1
       font-weight: 600;
       margin-bottom: css-var('spacing-x-small');
       padding: 0;
@@ -90,18 +90,18 @@
 }
 
 .env-checkbox {
-   // New native checkbox styling since 2024.05.1
+   // New native checkbox styling since 2024.07.1
    @include input-option-base('checkbox');
 
-   // Deprecated fake markup  since 2024.05.1
+   // Deprecated fake markup  since 2024.07.1
    @include deprecated-fake-radio-checkbox-fix;
 }
 
 .env-switch {
-   // New native checkbox styling for switch since 2024.05.1
+   // New native checkbox styling for switch since 2024.07.1
    @include input-option-switch;
 
-   // Deprecated fake markup since 2024.05.1
+   // Deprecated fake markup since 2024.07.1
    @include deprecated-fake-switch-fix;
 }
 
@@ -165,6 +165,6 @@
 }
 
 .env-form-element {
-   // Deprecated since 2024.05.1. Replaced by .env-form-field.
+   // Deprecated since 2024.07.1. Replaced by .env-form-field.
    @include deprecated-form-element;
 }

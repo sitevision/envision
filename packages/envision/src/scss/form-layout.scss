@@ -1,6 +1,6 @@
 // ===== VARIANTS =====
 
-// Deprecated since 2024.05.1.
+// Deprecated since 2024.07.1.
 .env-form--horizontal {
    .env-form-element {
       display: flex;
@@ -29,7 +29,7 @@
    }
 }
 
-// Deprecated since 2024.05.1.
+// Deprecated since 2024.07.1.
 .env-form--inline {
    display: flex;
 
@@ -55,7 +55,7 @@
    }
 }
 
-// Deprecated since 2024.05.1.
+// Deprecated since 2024.07.1.
 .env-form__row {
    display: flex;
    gap: css-var('spacing-small');
@@ -71,12 +71,12 @@
    }
 }
 
-// Added in 2024.05.1.
+// Added in 2024.07.1.
 .env-form:has(.env-form-row) {
    container-type: inline-size;
 }
 
-// Added in 2024.05.1.
+// Added in 2024.07.1.
 .env-form-row {
    // Variants
    // --------
@@ -155,7 +155,7 @@
    }
 }
 
-// Added in 2024.05.1.
+// Added in 2024.07.1.
 @for $i from 1 through 6 {
    .env-form-column-#{$i} {
       flex: $i !important;
