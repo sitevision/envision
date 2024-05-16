@@ -148,10 +148,10 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  An array of the initial selected values.
    -  By default this is populated from the original element.
 
--  `i18n` _'sv'_ | _'en'_ | _{ add, no_results, remove_button, clear_button }_
+-  `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ add, no_results, remove_button, clear_button }_
 
    -  Translation of remove button, clear button, add item and no results.
-      Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+      Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
 
 -  `load` _function(query, callback)_
 
