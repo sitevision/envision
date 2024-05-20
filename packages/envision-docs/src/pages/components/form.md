@@ -448,7 +448,7 @@ Valid values are `1-6`. Default is `1`.
 Form fields may optionally be stacked below a certain container width. Use `.env-form-row--stack-{width}` to activate.
 Valid values for `{width}` is `s`, `m` and `l`.
 
-```html
+```html-resizeable
 <form class="env-form" action="/">
    <div class="env-form-row env-form-row--stack-m">
       <div class="env-form-column-1">
@@ -478,7 +478,7 @@ label and control relative to each other. Valid values are `1-6`. Default is `1`
 
 Stacking is supported using `.env-form-row--stack-{width}`. Valid values for `{width}` is `s`, `m` and `l`.
 
-```html
+```html-resizeable
 <form class="env-form" action="/">
    <div class="env-form-row env-form-row--stack-m">
       <label for="first-name" class="env-form-label env-form-column-1"
@@ -504,7 +504,7 @@ Stacking is supported using `.env-form-row--stack-{width}`. Valid values for `{w
 Use `.env-form-row` as a wrapper for multiple `.env-form-control` elements containing `.env-radio` or `.env-checkbox`
 to create a inline form layout for option inputs with consistent spacing vetically and horizontally.
 
-```html
+```html-resizeable
 <fieldset class="env-form-fieldset">
    <legend class="env-form-legend">Radio buttons inline</legend>
    <div class="env-form-row">

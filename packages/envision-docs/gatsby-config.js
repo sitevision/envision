@@ -55,6 +55,13 @@ module.exports = {
                            },
                         },
                         {
+                           language: 'html-resizeable',
+                           extend: 'html',
+                           definition: {
+                              superscript_types: /(SuperType)/,
+                           },
+                        },
+                        {
                            language: 'css-no-expand',
                            extend: 'css',
                            definition: {

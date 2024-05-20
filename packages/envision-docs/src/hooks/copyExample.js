@@ -4,10 +4,14 @@ export const useCopyExample = (content) => {
    React.useEffect(() => {
       // Initialize Code Highlighter
       content.current
-         .querySelectorAll('.gatsby-highlight[data-language=html]')
+         .querySelectorAll(
+            '.gatsby-highlight[data-language=html], .gatsby-highlight[data-language=html-resizeable]'
+         )
          .forEach((element) => {
             const example = document.createElement('div');
             example.classList.add('code-example');
+            element.dataset.language === 'html-resizeable' &&
+               example.classList.add('code-example--resizeable');
             example.innerHTML = element.textContent;
             element.parentNode.insertBefore(example, element);
          });
