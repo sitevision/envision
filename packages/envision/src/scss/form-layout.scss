@@ -146,9 +146,8 @@
       margin-top: css-var('spacing-medium');
    }
 
-   &:has(> .env-form-control:not([class*='env-form-column'])
-         > .env-radio, > .env-form-control:not([class*='env-form-column'])
-         > .env-checkbox) {
+   &:has(> .env-form-control:not([class*='env-form-column']) > .env-radio),
+   &:has(> .env-form-control:not([class*='env-form-column']) > .env-checkbox) {
       display: flex;
       column-gap: css-var('spacing-x-small');
       flex-wrap: wrap;
