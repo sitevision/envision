@@ -1,8 +1,6 @@
 @use 'sass:math';
 
 .env-form {
-   text-size-adjust: 100%;
-
    input,
    select,
    textarea {
@@ -12,648 +10,102 @@
    input {
       margin: 0;
    }
-}
 
-select.env-form-input:not([multiple]),
-.env-form select:not([multiple]) {
-   min-height: math.div($form-input-height, $form-input-font-size) * 1em;
-}
+   // New markup and classes added in 2024.08.1
 
-@supports (background: -webkit-named-image(i)) {
-   // Hack for Safari only to set height of native select
-   select.env-form-input:not([multiple]),
-   .env-form select:not([multiple]) {
-      height: math.div($form-input-height, $form-input-font-size) * 1em;
-   }
-}
-
-.env-form-input {
-   @include form-input-defaults;
-
-   @include placeholder {
-      color: css-var('form-input-font-color');
-      filter: opacity(0.65);
-   }
-
-   &[disabled],
-   &[readonly] {
-      @include disabled;
-   }
-
-   &[disabled] {
-      user-select: none;
-   }
-
-   @include focus-visible;
-
-   &[type='search'] {
-      appearance: none;
-
-      &::-webkit-search-decoration,
-      &::-webkit-search-cancel-button {
-         display: none;
-      }
-   }
-
-   &--search[type='search'] {
-      appearance: none;
-
-      &::-webkit-search-cancel-button {
-         display: block;
-      }
-
-      &::-ms-clear {
-         display: block;
-      }
-   }
-
-   &[contenteditable=''],
-   &[contenteditable='true'] {
-      height: 88px;
-      overflow: auto;
-      resize: vertical;
-
-      ~ .env-form-element__contenteditable-placeholder {
-         display: none;
-         position: absolute;
-         top: calc(#{css-var('spacing-x-small')} + 1px);
-         left: calc(#{css-var('spacing-small')} + 1px);
-         pointer-events: none;
-         speak: never;
-         color: css-var('form-input-font-color');
-         filter: opacity(0.5);
-         line-height: 1.4;
-         font-size: var(--env-font-size-medium);
-      }
-
-      &:empty ~ .env-form-element__contenteditable-placeholder {
-         display: block;
-      }
-   }
-}
-
-.env-form textarea,
-textarea.env-form-input {
-   resize: vertical;
-}
-
-.env-form-input-group {
-   display: flex;
-   align-items: stretch;
-
-   &__label,
-   .env-button,
-   .env-form-input {
-      position: relative;
-      z-index: 1;
-      border-radius: 0;
-      margin-right: -1px;
-
-      &:first-child {
-         border-radius: css-var('form-input-border-radius') 0 0
-            css-var('form-input-border-radius');
-      }
-
-      &:last-child {
-         margin-right: 0;
-         border-radius: 0 css-var('form-input-border-radius')
-            css-var('form-input-border-radius') 0;
-      }
-   }
-
-   .env-button {
-      // No matter the order of elements,
-      // button border should be on top of
-      // input and label borders.
-      z-index: 2;
-   }
-
-   .env-form-input:focus {
-      // When focused, move input to top
-      z-index: 3;
-   }
-
-   &__label {
-      display: flex;
-      align-items: center;
-      border: $border-width $border-style css-var('form-input-border-color');
-      box-sizing: border-box;
-      color: css-var('form-input-font-color');
-      font-size: css-var('font-size-medium');
-      line-height: $form-input-line-height;
-      padding: css-var('spacing-x-small');
-   }
-}
-
-.env-form-element {
-   margin-bottom: css-var('spacing-medium');
-
-   &__control {
-      position: relative;
-
-      // Fieldset reset
-      margin: 0;
+   & fieldset,
+   &-fieldset {
+      margin: css-var('spacing-medium') 0;
       padding: 0;
       border: none;
-
-      &--icon {
-         .env-icon {
-            position: absolute;
-            top: 50%;
-            left: calc(var(--env-font-size-base) * 0.75);
-            width: var(--env-font-size-medium);
-            height: var(--env-font-size-medium);
-            transform: translate(0, -50%);
-            color: css-var('form-input-font-color');
-            pointer-events: none;
-         }
-
-         input:first-child,
-         textarea:first-child {
-            padding-right: calc(
-               var(--env-font-size-medium) + #{css-var('spacing-medium')}
-            );
-         }
-
-         input + .env-icon,
-         textarea + .env-icon {
-            left: auto;
-            right: calc(var(--env-font-size-base) * 0.75);
-         }
-
-         .env-icon + input,
-         .env-icon + textarea {
-            padding-left: calc(
-               var(--env-font-size-medium) + #{css-var('spacing-medium')}
-            );
-         }
-      }
    }
 
-   &__label {
+   & legend,
+   &-legend,
+   & label,
+   &-label {
+      // Since 2024.08.1
       display: inline-block;
+      color: css-var('font-color');
       font-family: css-var('form-label-font-family');
       font-size: css-var('font-size-medium');
+   }
+
+   & legend,
+   &-legend {
+      // Since 2024.08.1
+      font-weight: 600;
+      margin-bottom: css-var('spacing-x-small');
+      padding: 0;
+   }
+
+   & label,
+   &-label {
       font-weight: css-var('form-label-font-weight');
       margin-bottom: css-var('spacing-xx-small');
-
-      // Legend reset
-      padding: 0;
    }
 
-   &__help,
-   &__feedback {
+   &-field {
+      position: relative;
+      margin-bottom: var(--env-spacing-medium);
+
+      &--error {
+         --env-font-color: var(--env-ui-color-status-error-text);
+         --env-font-color-muted: var(--env-ui-color-status-error-text);
+         --env-form-input-border-color: var(--env-ui-color-status-error-text);
+      }
+
+      .env-form fieldset &,
+      .env-form-fieldset & {
+         margin-bottom: var(--env-spacing-x-small);
+      }
+   }
+
+   &-field-help {
       display: block;
       font-size: css-var('font-size-small');
-      font-style: italic;
-      margin-bottom: css-var('spacing-x-small');
-      margin-top: css-var('spacing-x-small');
-   }
-
-   &__help {
+      margin: css-var('spacing-x-small') 0 0;
       color: css-var('font-color-muted');
-      font-size: css-var('font-size-small');
-   }
-
-   &--success {
-      // Deprecated
-      @include input-validation-state('success');
-   }
-
-   &--warning {
-      // Deprecated
-      @include input-validation-state('warning');
-   }
-
-   &--danger {
-      // Deprecated
-      @include input-validation-state('danger');
-   }
-
-   &--error {
-      &,
-      .env-form-element__help {
-         color: css-var('ui-color-status-error-text');
-      }
-
-      .env-form-input,
-      .env-checkbox__fake,
-      .env-form-radio__fake,
-      .env-select__input {
-         border-color: css-var('ui-color-status-error-text') !important;
-      }
-
-      .env-select__item,
-      .env-select__item__remove {
-         // Tag select item
-         background-color: css-var('ui-color-status-error') !important;
-         color: css-var('ui-color-status-error-contrast');
-      }
-   }
-
-   &[type='file'] {
-      display: block;
    }
 }
 
-.env-form-multiple-select {
-   select[multiple] {
-      padding: css-var('spacing-xx-small');
-   }
-
-   select[multiple] > option {
-      padding: css-var('spacing-x-small');
-   }
-}
-
+// Fake radio button, deprecated since SV 10.1
 .env-form-radio {
-   // Legacy fake radio button
-   display: block;
-   font-size: css-var('font-size-medium');
-   box-sizing: content-box;
+   @include input-option-base('radio');
 
    [type='radio'] {
-      @include visually-hidden;
-   }
-
-   label {
-      margin-bottom: css-var('spacing-x-small');
-   }
-
-   .env-form-element__label {
-      font-size: 1em;
-   }
-
-   &__fake {
-      display: inline-block;
-      position: relative;
-      width: $radiobutton-size;
-      height: $radiobutton-size;
-      margin-right: css-var('spacing-xx-small');
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: 50%;
-      vertical-align: middle;
-
-      &:after {
-         content: '';
-         display: none;
-         width: $radiobutton-checked-size;
-         height: $radiobutton-checked-size;
-         background-color: css-var('element-primary-background-color');
-         position: absolute;
-         top: (50% - $radiobutton-checked-size * 0.5);
-         left: (50% - $radiobutton-checked-size * 0.5);
-         border-radius: 50%;
-         box-sizing: border-box;
-      }
-   }
-
-   &__label {
-      display: inline;
-      vertical-align: bottom;
-   }
-
-   [type='radio']:checked + label &__fake {
-      border-color: css-var('element-primary-background-color');
-
-      &:after {
-         display: block;
-      }
-   }
-
-   [type='radio'] + label &__fake {
-      transition: box-shadow 0.2s ease-in-out;
-   }
-
-   [type='radio']:focus-visible + label &__fake {
-      @include focus-outline;
-   }
-
-   &--disabled {
-      label {
-         @include disabled;
-      }
-   }
-}
-
-//Variants
-.env-form--horizontal {
-   .env-form-element {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-
-      & > .env-form-element__label,
-      & > .env-form-element__control {
-         // align-items in Firefox needs inline children for baseline to work.
-         // This fixes the issue without messing things up in Chrome et.al.
-         display: inline-flex;
-         flex-direction: column;
-      }
-
-      & > .env-form-element__label {
-         flex-basis: 20%;
-      }
-
-      &__control {
-         flex-basis: 80%;
-      }
-
-      &__help {
-         margin-left: 20%;
-      }
-   }
-}
-
-.env-form--inline {
-   display: flex;
-
-   .env-form-element {
-      align-items: center;
-      display: flex;
-      margin-bottom: 0;
-      margin-right: css-var('spacing-x-small');
-
-      &__label {
-         margin-bottom: 0;
-         margin-right: css-var('spacing-x-small');
-      }
-
-      &__help {
-         margin-left: css-var('spacing-xx-small');
-      }
-   }
-
-   .env-form-radio,
-   .env-checkbox {
-      margin-bottom: 0;
-   }
-}
-
-.env-form__row {
-   display: flex;
-
-   .env-form-element {
-      flex: 1;
-
-      @for $i from 1 through 6 {
-         &--#{$i} {
-            flex: $i;
-         }
-      }
-
-      + .env-form-element {
-         margin-left: css-var('spacing-small');
-      }
-   }
-}
-
-.env-radio {
-   // New native radiobutton
-
-   @at-root label#{&} {
-      display: inline-flex;
-      gap: css-var('spacing-x-small');
-      justify-content: flex-start;
-      align-items: center;
-      box-sizing: border-box;
-      font-family: css-var('form-label-font-family');
-      font-size: css-var('font-size-medium');
-      font-weight: css-var('form-label-font-weight');
-      margin-bottom: var(--env-spacing-x-small);
-
-      &--disabled {
-         @include disabled;
-      }
-   }
-
-   @at-root input[type='radio']#{&},
-      #{&} input[type='radio'] {
-      appearance: none;
-      display: inline-grid;
-      place-content: center;
-      width: $native-radiobutton-size;
-      height: $native-radiobutton-size;
-      margin: 0;
-      padding: 0;
-      font: inherit;
-      color: currentColor;
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: 50%;
-      vertical-align: middle;
-
-      &:before {
-         content: '';
-         width: $native-radiobutton-checked-size;
-         height: $native-radiobutton-checked-size;
-         border-radius: 50%;
-         transform: scale(0);
-         box-shadow: inset 1em 1em css-var('element-primary-background-color');
-         background-color: css-var('element-primary-background-color');
-      }
-
-      &:disabled {
-         @include disabled;
-      }
+      margin-right: var(--env-spacing-xx-small);
 
       &:checked {
-         border-color: css-var('element-primary-background-color');
+         @include radio-button-checked;
       }
-
-      &:checked:before {
-         transform: scale(1);
-      }
-
-      @include focus-visible;
    }
+
+   @include deprecated-fake-radio-checkbox-fix;
+}
+
+// New native radiobutton since SV 10.1
+.env-radio {
+   @include input-option-base('radio');
 }
 
 .env-checkbox {
-   display: block;
-   font-size: css-var('font-size-medium');
-   box-sizing: content-box;
+   // New native checkbox styling since 2024.08.1
+   @include input-option-base('checkbox');
 
-   [type='checkbox'] {
-      @include visually-hidden();
-   }
-
-   label {
-      margin-bottom: css-var('spacing-x-small');
-   }
-
-   .env-form-element__label {
-      font-size: 1em;
-   }
-
-   [type='checkbox']:checked + label &__fake::after {
-      $tick-position: 50%;
-      content: '';
-      display: block;
-      position: absolute;
-      top: 40%;
-      left: $tick-position;
-      width: $checkbox-size * 0.7;
-      height: $checkbox-size * 0.25;
-      background-color: transparent;
-      border-bottom: ($checkbox-size * 0.1) solid
-         css-var('element-primary-font-color');
-      border-left: ($checkbox-size * 0.1) solid
-         css-var('element-primary-font-color');
-      transform: translate3d(-49%, -45%, 0) rotate(-50deg);
-   }
-
-   [type='checkbox']:disabled + label &__fake,
-   [type='checkbox']:disabled + label &__label {
-      @include disabled;
-
-      &:after {
-         opacity: 0.7;
-      }
-   }
-
-   [type='checkbox'] + label &__fake {
-      transition: box-shadow 0.2s ease-in-out;
-   }
-
-   [type='checkbox']:focus-visible + label &__fake {
-      @include focus-outline;
-   }
-
-   &__fake {
-      background-color: css-var('form-input-background-color');
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: css-var('border-radius');
-      display: inline-block;
-      height: $checkbox-size;
-      margin-right: css-var('spacing-xx-small');
-      position: relative;
-      vertical-align: middle;
-      width: $checkbox-size;
-   }
-
-   [type='checkbox']:checked + label &__fake {
-      background-color: css-var('element-primary-background-color');
-   }
-
-   &__label {
-      display: inline;
-      vertical-align: bottom;
-   }
+   // Deprecated fake markup  since 2024.08.1
+   @include deprecated-fake-radio-checkbox-fix;
 }
 
 .env-switch {
-   position: relative;
-   margin-bottom: css-var('spacing-x-small');
-   font-size: css-var('font-size-medium');
-   box-sizing: content-box;
+   // New native checkbox styling for switch since 2024.08.1
+   @include input-option-switch;
 
-   input {
-      @include visually-hidden;
-   }
-
-   &__label {
-      display: inline-flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      align-content: center;
-   }
-
-   &__text {
-      display: inline-block;
-      margin-top: 0.1875em;
-
-      .env-switch__slider + & {
-         margin-left: css-var('spacing-small');
-      }
-
-      input:disabled ~ & {
-         @include disabled;
-      }
-   }
-
-   &__slider {
-      display: inline-block;
-      position: relative;
-      top: 0;
-      left: 0;
-      flex: 0 0 2.375em;
-      width: 2.375em;
-      height: 1.25em;
-      border-radius: 0.75em;
-      border: 0.125em solid css-var('element-primary-background-color');
-      background-color: css-var('element-primary-background-color');
-      transition: 0.3s;
-      filter: grayscale(100%);
-
-      .env-switch__text + & {
-         margin-left: css-var('spacing-small');
-      }
-
-      &:before {
-         position: absolute;
-         content: '';
-         height: 1.25em;
-         width: 1.25em;
-         border-radius: 50%;
-         left: 0;
-         top: 0;
-         background-color: css-var('element-primary-font-color');
-         transition: 0.3s;
-
-         input:checked ~ & {
-            transform: translateX(1.125em);
-         }
-      }
-
-      &:after {
-         position: absolute;
-         content: '';
-         height: 6px;
-         width: 6px;
-         left: auto;
-         right: 0.25em;
-         top: 50%;
-         background-color: transparent;
-         margin-top: -5px;
-         opacity: 0.5;
-         border-radius: 50%;
-         border: 2px solid css-var('element-primary-font-color');
-
-         input:checked ~ & {
-            height: 10px;
-            width: 2px;
-            left: 0.55em;
-            right: auto;
-            background-color: css-var('element-primary-font-color');
-            border-radius: 2px;
-            border: none;
-         }
-      }
-
-      input:checked ~ & {
-         filter: grayscale(0);
-      }
-
-      input ~ & {
-         transition: box-shadow 0.2s ease-in-out;
-      }
-
-      input:focus-visible ~ & {
-         @include focus-outline;
-      }
-
-      input:disabled ~ & {
-         @include disabled(false);
-
-         &:before {
-            opacity: 0.5;
-         }
-      }
-   }
+   // Deprecated fake markup since 2024.08.1
+   @include deprecated-fake-switch-fix;
 }
 
+// Tag select, single select version
 .env-select.single {
    .env-select__input {
       padding: 0.25em 2em 0.25em 0.5em;
@@ -671,6 +123,7 @@ textarea.env-form-input {
    }
 }
 
+// Native select wrapper
 .env-form-select {
    @include form-input-defaults;
    position: relative;
@@ -709,4 +162,9 @@ textarea.env-form-input {
       width: 0.875em;
       height: 0.875em;
    }
+}
+
+.env-form-element {
+   // Deprecated since 2024.08.1. Replaced by .env-form-field.
+   @include deprecated-form-element;
 }

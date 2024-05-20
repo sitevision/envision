@@ -1,0 +1,180 @@
+@mixin input-option-common-base($type) {
+   & {
+      box-sizing: border-box;
+      font-family: var(--env-form-label-font-family);
+      font-size: var(--env-font-size-medium);
+      font-weight: var(--env-form-label-font-weight);
+      margin-bottom: var(--env-spacing-x-small);
+   }
+   @at-root label#{&} {
+      display: inline-flex;
+      gap: var(--env-spacing-x-small); // 0;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: var(--env-spacing-x-small);
+   }
+}
+
+@mixin input-option-common-states($type) {
+   @at-root [type='#{$type}']#{&}:focus-visible,
+      #{&} [type='#{$type}']:focus-visible {
+      @include focus-outline;
+   }
+
+   @at-root fieldset:disabled [type='#{$type}']#{&},
+      [type='#{$type}']#{&}:disabled,
+      #{&}:has([type='#{$type}']:disabled) [type='#{$type}'] {
+      @include disabled;
+   }
+}
+
+@mixin checkbox-button-checked {
+   background-color: var(--env-element-primary-background-color);
+
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate3d(-49%, -45%, 0) rotate(-50deg);
+      width: 0.9em;
+      height: 0.3em;
+      background-color: transparent;
+      border-bottom: 0.15em solid var(--env-element-primary-font-color);
+      border-left: 0.15em solid var(--env-element-primary-font-color);
+   }
+}
+
+@mixin radio-button-checked {
+   border-color: var(--env-element-primary-background-color);
+
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: scale(1) translate(-50%, -50%);
+      width: 0.75em;
+      height: 0.75em;
+      background-color: var(--env-element-primary-background-color);
+      border-radius: 50%;
+      box-shadow: inset 1em 1em var(--env-element-primary-background-color);
+   }
+}
+
+@mixin input-option-switch() {
+   @include input-option-common-base('checkbox');
+
+   @at-root [type='checkbox']#{&},
+      #{&} [type='checkbox'] {
+      box-sizing: border-box;
+      appearance: none;
+      position: relative;
+      z-index: 1;
+      width: 2.625em;
+      height: 1.5em;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: var(--env-font-size-medium);
+      border-radius: 0.75em;
+      background-color: css-var('element-primary-background-color');
+      filter: grayscale(100%);
+      margin: 0;
+      padding: 0;
+
+      &:before {
+         content: '';
+         display: block;
+         position: absolute;
+         z-index: 3;
+         height: 1.25em;
+         width: 1.25em;
+         border-radius: 50%;
+         inset: 0.125em auto auto 0.125em;
+         background-color: css-var('element-primary-font-color');
+         transition: 0.3s;
+      }
+
+      &:after {
+         position: absolute;
+         z-index: 2;
+         content: '';
+         height: 0.375em;
+         width: 0.375em;
+         left: auto;
+         right: 0.375em;
+         top: 50%;
+         background-color: transparent;
+         transform: translateY(-50%);
+         opacity: 0.5;
+         border-radius: 50%;
+         border: 0.125em solid css-var('element-primary-font-color');
+      }
+
+      &:checked {
+         filter: grayscale(0);
+
+         &:before {
+            transform: translateX(1.125em);
+         }
+
+         &:after {
+            height: 0.625em;
+            width: 0.125em;
+            left: 0.7em;
+            right: auto;
+            background-color: css-var('element-primary-font-color');
+            border-radius: 2px;
+            border: none;
+         }
+      }
+   }
+
+   @include input-option-common-states('checkbox');
+}
+
+@mixin input-option-base($type) {
+   // We allow implicit label.env-{type}, but recommended usage is
+   // label.env-label w for-attribute and separate input.env-{type} w id-attribute.
+
+   $radius: var(--env-form-input-border-radius);
+   @if ($type == 'radio') {
+      $radius: 50%;
+   }
+
+   @include input-option-common-base($type);
+
+   @at-root [type='#{$type}']#{&},
+      #{&} [type='#{$type}'] {
+      box-sizing: border-box;
+      clip-path: none;
+      appearance: none;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      width: 1.375em;
+      height: 1.375em;
+      margin: 0;
+      padding: 0;
+      font-size: var(--env-font-size-medium);
+      background-color: var(--env-form-input-background-color);
+      border: $border-width $border-style var(--env-form-input-border-color);
+      border-radius: $radius;
+   }
+
+   @if ($type == 'radio') {
+      @at-root [type='radio']#{&}:checked,
+         #{&} [type='radio']:checked {
+         @include radio-button-checked;
+      }
+   } @else if($type == 'checkbox') {
+      @at-root [type='checkbox']#{&}:checked,
+         #{&} [type='checkbox']:checked {
+         @include checkbox-button-checked;
+      }
+   }
+
+   @include input-option-common-states($type);
+}

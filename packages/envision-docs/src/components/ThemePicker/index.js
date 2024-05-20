@@ -9,7 +9,7 @@ const ThemePicker = () => {
 
    return (
       <div className="theme-picker">
-         <div className="env-form-element">
+         <div className="env-form-field">
             <label htmlFor="selectTheme" className="env-assistive-text">
                Select theme
             </label>
