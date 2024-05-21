@@ -51,8 +51,12 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
       overflow: auto;
       resize: vertical;
 
+      &[aria-placeholder]:before {
+         content: attr(aria-placeholder);
+      }
+
       ~ .env-form-element__contenteditable-placeholder, // Deprecated
-      ~ [aria-hidden] {
+      &[aria-placeholder]:before {
          display: none;
          position: absolute;
          top: calc(#{css-var('spacing-x-small')} + 1px);
@@ -65,8 +69,8 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
          font-size: var(--env-font-size-medium);
       }
 
-      &:empty ~ [aria-hidden],
-      &:empty ~ .env-form-element__contenteditable-placeholder {
+      &:empty ~ .env-form-element__contenteditable-placeholder, // Deprecated
+      &[aria-placeholder]:empty:before {
          display: block;
       }
    }
