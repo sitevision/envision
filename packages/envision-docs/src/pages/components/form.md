@@ -99,9 +99,6 @@ Add [icons](#input-icons) to input fields using the combination of `.env-form-in
 </div>
 ```
 
-For [contenteditable elements](#contenteditable), add a placeholder with a combination
-of `.env-form-input[contenteditable="true"]` and `[aria-hidden="true"]`.
-
 ## Input elements
 
 ```html
@@ -158,7 +155,7 @@ Make sure to add `role="textbox"` and `aria-multiline="true"` to the contentedit
 The contenteditable element should also have `aria-label` or `aria-labelledby` attribute since a native label element
 is not allowed.
 
-An optional placeholder may be added using an element with attribute `aria-hidden="true"` inside the `.env-form-control` element.
+An optional placeholder may be added using attribute `aria-placeholder` on the contenteditable element.
 
 ```html
 <div class="env-form-field">
@@ -169,9 +166,9 @@ An optional placeholder may be added using an element with attribute `aria-hidde
          class="env-form-input"
          aria-labelledby="contenteditable-header"
          aria-multiline="true"
+         aria-placeholder="Placeholder text"
          contenteditable
       ></div>
-      <div aria-hidden="true">Placeholder text</div>
    </div>
 </div>
 ```
