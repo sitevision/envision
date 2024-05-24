@@ -28,15 +28,13 @@
          border-bottom: $border-width $border-style transparent;
 
          &:hover {
-            border-bottom-color: css-var(
-               'element-primary-background-color-dark'
-            );
-            color: css-var('element-primary-background-color-dark');
+            border-bottom-color: css-var('link-hover-font-color');
+            color: css-var('link-hover-font-color');
          }
 
          &--active {
-            border-bottom-color: css-var('element-primary-background-color');
-            color: css-var('element-primary-background-color');
+            border-bottom-color: css-var('link-hover-font-color');
+            color: css-var('link-hover-font-color');
          }
       }
    }
@@ -45,17 +43,17 @@
 .env-nav--sidenav {
    .env-nav__link {
       border-bottom: $border-width $border-style css-var('border-color-light');
-      color: css-var('font-color');
+      color: css-var('link-secondary-font-color');
       padding: css-var('spacing-small') 0;
 
       &--active {
          border-left: 2px $border-style
-            css-var('element-primary-background-color');
+            css-var('link-secondary-hover-font-color');
          padding-left: css-var('spacing-x-small');
       }
 
       &:hover {
-         color: css-var('element-primary-background-color-dark');
+         color: css-var('link-secondary-hover-font-color');
       }
    }
 }
