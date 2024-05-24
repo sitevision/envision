@@ -143,6 +143,9 @@
    @if ($type == 'radio') {
       $radius: 50%;
    }
+   @if ($type == 'checkbox') {
+      $radius: min(var(--env-form-input-border-radius), 30%);
+   }
 
    @include input-option-common-base($type);
 
