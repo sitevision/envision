@@ -14,7 +14,9 @@ const Header = ({ title, bodyClass, menuItems, indexing }) => {
                name="viewport"
                content="width=device-width, initial-scale=1"
             />
-            <title>{`${title} \u00B7 Envision by Sitevision`}</title>
+            <title>{`${title}${
+               title ? ' \u00B7 ' : ''
+            }Envision by Sitevision`}</title>
             <link
                rel="icon"
                type="image/png"
