@@ -33,7 +33,10 @@ class Dropdown {
       uniqueId(this.button);
       uniqueId(this.menu);
 
-      this.button.setAttribute('aria-haspopup', 'true');
+      if (!this.button.hasAttribute('aria-haspopup')) {
+         this.button.setAttribute('aria-haspopup', 'true');
+      }
+
       this.button.setAttribute('aria-controls', this.menu.id);
 
       this.menu.insertAdjacentElement('beforebegin', this.placeholder);
