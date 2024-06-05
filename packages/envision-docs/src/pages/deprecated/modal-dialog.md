@@ -17,22 +17,22 @@ Modal dialog is deprecated and will eventually be removed. Please use [Dialog](/
    aria-hidden="true"
 >
    <div class="env-modal-dialog__dialog">
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h4
                class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-1"
             >
                Modal Header
             </h4>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-dialog__footer">
+         <div class="env-modal-dialog__footer">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -43,8 +43,8 @@ Modal dialog is deprecated and will eventually be removed. Please use [Dialog](/
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 ```
@@ -74,24 +74,22 @@ Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--rig
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--large">
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h5
                class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-2"
             >
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer
-            class="env-modal-dialog__footer env-modal-dialog__footer--right"
-         >
+         <div class="env-modal-dialog__footer env-modal-dialog__footer--right">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -102,8 +100,8 @@ Uses `env-modal-dialog__dialog--large` and footer `env-modal-dialog__footer--rig
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 ```
@@ -131,22 +129,22 @@ Uses `env-modal-dialog__dialog--small`
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog env-modal-dialog__dialog--small">
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h6
                class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-3"
             >
                Modal Header
             </h6>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-dialog__footer">
+         <div class="env-modal-dialog__footer">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -157,8 +155,8 @@ Uses `env-modal-dialog__dialog--small`
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 ```
@@ -198,15 +196,15 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h5
                class="env-text-h5 env-modal-dialog__header__title"
                id="modalDialogHeader-4"
             >
                Outer scroll
             </h5>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -286,9 +284,7 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
                Suspendisse convallis tortor et nulla porttitor dictum.
             </p>
          </div>
-         <footer
-            class="env-modal-dialog__footer env-modal-dialog__footer--right"
-         >
+         <div class="env-modal-dialog__footer env-modal-dialog__footer--right">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -299,8 +295,8 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 <div
@@ -313,15 +309,15 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
    tabindex="-1"
 >
    <div class="env-modal-dialog__dialog">
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h5
                class="env-text env-modal-dialog__header__title"
                id="modalDialogHeader-5"
             >
                Inner scroll
             </h5>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -401,9 +397,7 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
                Suspendisse convallis tortor et nulla porttitor dictum.
             </p>
          </div>
-         <footer
-            class="env-modal-dialog__footer env-modal-dialog__footer--right"
-         >
+         <div class="env-modal-dialog__footer env-modal-dialog__footer--right">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -414,8 +408,8 @@ Outer scroll is default. Use `env-modal-dialog--inner-scroll` to set scrolling t
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 ```
@@ -450,21 +444,19 @@ to open dialog window as an immediate child of `<body>`.
       class="env-modal-dialog__dialog env-modal-dialog__dialog--large"
       id="modalDialogHeader-6"
    >
-      <section class="env-modal-dialog__content">
-         <header class="env-modal-dialog__header">
+      <div class="env-modal-dialog__content">
+         <div class="env-modal-dialog__header">
             <h5 class="env-text env-modal-dialog__header__title">
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-dialog__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer
-            class="env-modal-dialog__footer env-modal-dialog__footer--right"
-         >
+         <div class="env-modal-dialog__footer env-modal-dialog__footer--right">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -475,8 +467,8 @@ to open dialog window as an immediate child of `<body>`.
             >
                Cancel
             </button>
-         </footer>
-      </section>
+         </div>
+      </div>
    </div>
 </div>
 ```
@@ -536,8 +528,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <article class="env-modal-alert__content">
-         <header class="env-modal-alert__header">
+      <div class="env-modal-alert__content">
+         <div class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
                <svg class="env-icon env-icon--large">
                   <use
@@ -551,14 +543,14 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-alert__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-alert__footer">
+         <div class="env-modal-alert__footer">
             <button type="button" class="env-button env-button--primary">
                Save
             </button>
@@ -569,8 +561,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Cancel
             </button>
-         </footer>
-      </article>
+         </div>
+      </div>
    </div>
 </div>
 
@@ -584,8 +576,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <article class="env-modal-alert__content">
-         <header class="env-modal-alert__header">
+      <div class="env-modal-alert__content">
+         <div class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
                <svg class="env-icon env-icon--large">
                   <use
@@ -599,14 +591,14 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-alert__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump on top of your human's bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-alert__footer env-modal-alert__footer--right">
+         <div class="env-modal-alert__footer env-modal-alert__footer--right">
             <button type="button" class="env-button env-button--success">
                Save
             </button>
@@ -617,8 +609,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Cancel
             </button>
-         </footer>
-      </article>
+         </div>
+      </div>
    </div>
 </div>
 
@@ -632,8 +624,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <article class="env-modal-alert__content">
-         <header class="env-modal-alert__header">
+      <div class="env-modal-alert__content">
+         <div class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
                <svg class="env-icon env-icon--large">
                   <use
@@ -647,14 +639,14 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-alert__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump top bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-alert__footer">
+         <div class="env-modal-alert__footer">
             <button
                type="button"
                data-modal-dialog-dismiss
@@ -662,8 +654,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Cancel
             </button>
-         </footer>
-      </article>
+         </div>
+      </div>
    </div>
 </div>
 
@@ -677,8 +669,8 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
    tabindex="-1"
 >
    <div class="env-modal-alert__dialog">
-      <article class="env-modal-alert__content">
-         <header class="env-modal-alert__header">
+      <div class="env-modal-alert__content">
+         <div class="env-modal-alert__header">
             <div class="env-modal-alert__icon">
                <svg class="env-icon env-icon--large">
                   <use
@@ -692,22 +684,22 @@ Avaliable alert variations: `env-modal-alert--'secondary', 'success', 'warning',
             >
                Modal Header
             </h5>
-         </header>
+         </div>
          <div class="env-modal-alert__body">
             <p class="env-text">
                Caticus cuteicus wake up wander around the house making large
                amounts of noise jump top bed and fall asleep.
             </p>
          </div>
-         <footer class="env-modal-alert__footer">
+         <div class="env-modal-alert__footer">
             <button type="button" class="env-button env-button--info">
                OK
             </button>
             <button type="button" data-modal-dialog-dismiss class="env-button">
                Cancel
             </button>
-         </footer>
-      </article>
+         </div>
+      </div>
    </div>
 </div>
 ```

@@ -15,7 +15,7 @@ described below.
 The default values are a scaling factor of `1 – 1.25` between widths `400px – 750px`.
 
 <div class="example-dynamic-font-wrapper">
-   <section class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-bottom--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
@@ -39,7 +39,7 @@ The default values are a scaling factor of `1 – 1.25` between widths `400px �
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
       </div>
-   </section>
+   </div>
 </div>
 
 ## Required markup
@@ -97,7 +97,7 @@ Default scaling factor is `1.25` which is identical to using the `1_25` modifer.
 _Note that dot is replaced by underscore as dot is not allowed in CSS class names._
 
 <div class="example-dynamic-font-wrapper">
-   <section class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-bottom--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
@@ -160,7 +160,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
       </div>
-   </section>
+   </div>
 </div>
 
 ```html-no-example
@@ -191,7 +191,7 @@ alt="Dynamic font scaling chart"
 src="/placeholders/examples/dyn-font.svg" />
 
 <div class="example-dynamic-font-wrapper">
-   <section class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-bottom--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
@@ -223,7 +223,7 @@ src="/placeholders/examples/dyn-font.svg" />
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
       </div>
-   </section>
+   </div>
 </div>
 
 ```html-no-example
@@ -246,7 +246,7 @@ the modifier `env-dynamic-font--downscale`. The lowest factor will then be `1 / 
 at default settings.
 
 <div class="example-dynamic-font-wrapper">
-   <section class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-bottom--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
             <div class="env-p-around--medium">
@@ -282,7 +282,7 @@ at default settings.
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
       </div>
-   </section>
+   </div>
 </div>
 
 ```html-no-example

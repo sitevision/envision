@@ -2,6 +2,8 @@
 title: Navigation
 ---
 
+Use `aria-current="page"` on a link to indicate that the user is currently on that page.
+
 ## Menubar
 
 ### Fill
@@ -13,7 +15,7 @@ title: Navigation
          <a class="env-nav__link" href="#">Item</a>
       </li>
       <li class="env-nav__item">
-         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+         <a class="env-nav__link" aria-current="page" href="#">Item</a>
       </li>
       <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
@@ -31,7 +33,7 @@ title: Navigation
          <a class="env-nav__link" href="#">Item</a>
       </li>
       <li class="env-nav__item">
-         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+         <a class="env-nav__link" aria-current="page" href="#">Item</a>
       </li>
       <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>
@@ -49,7 +51,7 @@ title: Navigation
          <a class="env-nav__link" href="#">Item</a>
       </li>
       <li class="env-nav__item">
-         <a class="env-nav__link env-nav__link--active" href="#">Item</a>
+         <a class="env-nav__link" aria-current="page" href="#">Item</a>
       </li>
       <li class="env-nav__item">
          <a class="env-nav__link" href="#">Item</a>

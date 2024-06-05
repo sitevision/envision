@@ -406,15 +406,15 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 }
 
 .example-card-parts {
-   header,
-   footer,
+   .env-card__header,
+   .env-card__footer,
    div {
       border: 1px dashed #ccc;
       margin: 0 0.5em 0.5em !important;
       padding: 0.25em 1em !important;
    }
 
-   header {
+   .env-card__header {
       margin: 0.5em !important;
    }
 }

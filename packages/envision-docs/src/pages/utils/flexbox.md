@@ -151,7 +151,7 @@ Valid values
 </div>
 ```
 
-### Flex wrap
+### Flex wrap <span id="flex-wrap" class="offset-anchor"></span>
 
 Modifiers applicable to flex containers (`env-flex`).
 

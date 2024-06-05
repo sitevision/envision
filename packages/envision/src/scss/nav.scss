@@ -32,6 +32,7 @@
             color: css-var('link-hover-font-color');
          }
 
+         &[aria-current='page'],
          &--active {
             border-bottom-color: css-var('link-hover-font-color');
             color: css-var('link-hover-font-color');
@@ -46,6 +47,7 @@
       color: css-var('link-secondary-font-color');
       padding: css-var('spacing-small') 0;
 
+      &[aria-current='page'],
       &--active {
          border-left: 2px $border-style
             css-var('link-secondary-hover-font-color');

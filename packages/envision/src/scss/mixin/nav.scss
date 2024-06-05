@@ -4,6 +4,7 @@
       color: css-var('element-primary-font-color');
    }
 
+   &[aria-current='page'],
    &--active {
       background-color: css-var('element-primary-background-color');
       color: css-var('element-primary-font-color');
@@ -22,6 +23,7 @@
 
    @include focus-visible;
 
+   &[aria-current='page'],
    &--active {
       color: css-var('link-hover-font-color');
    }

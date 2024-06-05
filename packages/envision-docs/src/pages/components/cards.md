@@ -17,12 +17,12 @@ its width and height to make a nice aligned grid of cards.
 
 ```html
 <div class="example-demo-dark">
-   <article
+   <div
       class="example-card env-card env-ui-section env-border env-shadow-small"
    >
-      <header class="env-card__header">
+      <div class="env-card__header">
          <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
-      </header>
+      </div>
       <div class="env-card__body">
          <p class="env-ui-text-caption">Web Developer</p>
          <p class="env-ui-text-caption">
@@ -32,14 +32,14 @@ its width and height to make a nice aligned grid of cards.
             <a href="#" class="env-link env-link-secondary">012-345 67 89</a>
          </p>
       </div>
-      <footer class="env-card__footer">
+      <div class="env-card__footer">
          <p class="env-ui-text-caption">
             <a href="#" class="env-link">Contact</a>
          </p>
-      </footer>
-   </article>
+      </div>
+   </div>
 
-   <article
+   <div
       class="example-card env-card env-block-primary env-block-primary--border env-shadow-small"
    >
       <div class="env-card__body">
@@ -57,13 +57,13 @@ its width and height to make a nice aligned grid of cards.
             <a href="#" class="env-link env-link-secondary">012-345 67 89</a>
          </p>
       </div>
-   </article>
+   </div>
 
-   <article
+   <div
       class="example-card env-card  env-block-secondary env-block-secondary--border env-shadow-small"
    >
-      <header class="env-card__header">
-         <article class="env-media env-media--center">
+      <div class="env-card__header">
+         <div class="env-media env-media--center">
             <div class="env-media__figure">
                <a href="#">
                   <img
@@ -77,17 +77,17 @@ its width and height to make a nice aligned grid of cards.
                <p class="env-ui-text-caption">Open group &bull; 29 members</p>
                <p class="env-ui-text-caption">Latest activity 3 hours ago</p>
             </div>
-         </article>
+         </div>
 
          <h2 class="env-ui-text-subheading">Lorem ipsum dolor</h2>
-      </header>
+      </div>
       <div class="env-card__body">
          <p class="env-ui-text-caption">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             eget lobortis dui, in accumsan augue.
          </p>
       </div>
-      <footer class="env-card__footer env-text--small">
+      <div class="env-card__footer env-text--small">
          <a href="#" type="button" class="env-button env-button--link">
             <svg class="env-icon env-icon--small env-m-right--xx-small">
                <use
@@ -96,8 +96,8 @@ its width and height to make a nice aligned grid of cards.
             </svg>
             Administrator
          </a>
-      </footer>
-   </article>
+      </div>
+   </div>
 </div>
 ```
 
@@ -111,11 +111,11 @@ vertically, the body of the Card will be the element that stretches.
 
 ```html
 <div class="example-demo-dark">
-   <article class="example-card-parts env-card env-block env-shadow-small">
-      <header class="env-card__header">Header</header>
+   <div class="example-card-parts env-card env-block env-shadow-small">
+      <div class="env-card__header">Header</div>
       <div class="env-card__body">Body</div>
-      <footer class="env-card__footer">Footer</footer>
-   </article>
+      <div class="env-card__footer">Footer</div>
+   </div>
 </div>
 ```
 
@@ -128,7 +128,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
 <div class="example-demo-dark">
    <div class="env-cardholder env-cardholder--3">
       <div class="env-cardholder__slot">
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -148,10 +148,10 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   >
                </p>
             </div>
-         </article>
+         </div>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -165,10 +165,10 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   >
                </p>
             </div>
-         </article>
+         </div>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -183,10 +183,10 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   >
                </p>
             </div>
-         </article>
+         </div>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -196,10 +196,10 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                <h2 class="env-ui-text-subheading">Lorem Ipsumsson</h2>
                <p class="env-ui-text-caption">Utvecklare</p>
             </div>
-         </article>
+         </div>
       </div>
       <div class="env-cardholder__slot">
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -214,7 +214,7 @@ Use one `env-cardholder__slot` to hold each Card. See configuration options belo
                   >
                </p>
             </div>
-         </article>
+         </div>
       </div>
    </div>
 </div>
@@ -323,7 +323,7 @@ Columns will always be equal width and aligned.
 <div class="example-demo-dark">
    <div class="env-cardholder-grid">
 
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -347,9 +347,9 @@ Columns will always be equal width and aligned.
                   >
                </p>
             </div>
-         </article>
+         </div>
 
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -365,9 +365,9 @@ Columns will always be equal width and aligned.
                   >
                </p>
             </div>
-         </article>
+         </div>
 
-         <article class="env-card env-block env-shadow-small">
+         <div class="env-card env-block env-shadow-small">
             <div class="env-card__body">
                <img
                   class="env-card__image env-profile-image env-profile-image--small"
@@ -386,7 +386,7 @@ Columns will always be equal width and aligned.
                   >
                </p>
             </div>
-         </article>
+         </div>
 
       </div>
    </div>
