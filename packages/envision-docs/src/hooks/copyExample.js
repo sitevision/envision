@@ -14,6 +14,13 @@ export const useCopyExample = (content) => {
                example.classList.add('code-example--resizeable');
             example.innerHTML = element.textContent;
             element.parentNode.insertBefore(example, element);
+            // Add comments so example is not indexed by developer web.
+            let noIndexStart = document.createElement('div');
+            let noIndexEnd = document.createElement('div');
+            noIndexStart.innerHTML = '<!--sv-no-index-->';
+            noIndexEnd.innerHTML = '<!--/sv-no-index-->';
+            example.insertAdjacentElement('beforebegin', noIndexStart);
+            element.insertAdjacentElement('afterend', noIndexEnd);
          });
 
       const envision = window.envision;
