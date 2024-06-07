@@ -5,8 +5,8 @@ title: Feed
 ## Simple post with embedded attachment
 
 ```html
-<article class="env-post">
-   <header class="env-post__header env-media">
+<div class="env-post">
+   <div class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
             <img
@@ -38,7 +38,7 @@ title: Feed
             <span class="env-assistive-text">More options</span>
          </button>
       </div>
-   </header>
+   </div>
    <div class="env-post__entry">
       <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
@@ -64,7 +64,7 @@ title: Feed
          </div>
       </div>
    </div>
-   <footer class="env-post__footer">
+   <div class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
             <button class="env-button env-button--small env-link">
@@ -86,7 +86,7 @@ title: Feed
             </button>
          </li>
       </ul>
-   </footer>
+   </div>
    <div class="env-comments env-collapse" id="comments">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list"></ul>
@@ -114,13 +114,13 @@ title: Feed
          </div>
       </div>
    </div>
-</article>
+</div>
 ```
 
 ## Comment
 
 ```html
-<article class="env-comment env-media">
+<div class="env-comment env-media">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -131,16 +131,16 @@ title: Feed
       </a>
    </div>
    <div class="env-media__body">
-      <header class="env-comment__header">
+      <div class="env-comment__header">
          <h3 class="env-ui-text-subheading">
             <a href="#" class="env-link-secondary">Emma</a>
          </h3>
-      </header>
+      </div>
       <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
          tempor incididunt ut labore et Lorem ipsum dolor sit amet
       </p>
-      <footer class="env-comment__footer">
+      <div class="env-comment__footer">
          <ul class="env-list env-list--horizontal env-list-dividers--left">
             <li class="env-list__item">
                <button class="env-button env-button--small env-link">
@@ -151,7 +151,7 @@ title: Feed
                <small>09:30</small>
             </li>
          </ul>
-      </footer>
+      </div>
    </div>
    <div class="env-media__actions">
       <button
@@ -168,14 +168,14 @@ title: Feed
          <span class="env-assistive-text">More options</span>
       </button>
    </div>
-</article>
+</div>
 ```
 
 ## Post with comments
 
 ```html
-<article class="env-post">
-   <header class="env-post__header env-media">
+<div class="env-post">
+   <div class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
             <img
@@ -207,7 +207,7 @@ title: Feed
             <span class="env-assistive-text">More options</span>
          </button>
       </div>
-   </header>
+   </div>
    <div class="env-post__entry">
       <p class="env-ui-text-caption">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
@@ -215,7 +215,7 @@ title: Feed
          purus quam. Proin eu tincidunt metus.
       </p>
    </div>
-   <footer class="env-post__footer">
+   <div class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
             <button class="env-button env-button--small env-link">
@@ -237,12 +237,12 @@ title: Feed
             </button>
          </li>
       </ul>
-   </footer>
+   </div>
    <div class="env-comments env-collapse env-collapse--show" id="comments2">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list">
             <li>
-               <article class="env-comment env-media">
+               <div class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
                         <img
@@ -253,17 +253,17 @@ title: Feed
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <header class="env-comment__header">
+                     <div class="env-comment__header">
                         <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Malin</a>
                         </h4>
-                     </header>
+                     </div>
                      <p class="env-ui-text-caption">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et Lorem
                         ipsum dolor sit amet
                      </p>
-                     <footer class="env-comment__footer">
+                     <div class="env-comment__footer">
                         <ul
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
@@ -278,7 +278,7 @@ title: Feed
                               <small class="env-text">10:27</small>
                            </li>
                         </ul>
-                     </footer>
+                     </div>
                   </div>
                   <div class="env-media__actions">
                      <button
@@ -295,10 +295,10 @@ title: Feed
                         <span class="env-assistive-text">More options</span>
                      </button>
                   </div>
-               </article>
+               </div>
             </li>
             <li>
-               <article class="env-comment env-media">
+               <div class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
                         <img
@@ -309,17 +309,17 @@ title: Feed
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <header class="env-comment__header">
+                     <div class="env-comment__header">
                         <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Robin</a>
                         </h4>
-                     </header>
+                     </div>
                      <p class="env-ui-text-caption">
                         Aenean aliquet sem eget velit tincidunt ullamcorper.
                         Donec aliquet, quam vitae cursus aliquet, lorem nunc
                         efficitur nulla, ullamcorper placerat dui massa at eros.
                      </p>
-                     <footer class="env-comment__footer">
+                     <div class="env-comment__footer">
                         <ul
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
@@ -334,7 +334,7 @@ title: Feed
                               <small class="env-text">15:25</small>
                            </li>
                         </ul>
-                     </footer>
+                     </div>
                   </div>
                   <div class="env-media__actions">
                      <button
@@ -351,10 +351,10 @@ title: Feed
                         <span class="env-assistive-text">More options</span>
                      </button>
                   </div>
-               </article>
+               </div>
             </li>
             <li>
-               <article class="env-comment env-media">
+               <div class="env-comment env-media">
                   <div class="env-media__figure">
                      <a href="#">
                         <img
@@ -365,17 +365,17 @@ title: Feed
                      </a>
                   </div>
                   <div class="env-media__body">
-                     <header class="env-comment__header">
+                     <div class="env-comment__header">
                         <h4 class="env-ui-text-subheading">
                            <a href="#" class="env-link-secondary">Anders</a>
                         </h4>
-                     </header>
+                     </div>
                      <p class="env-ui-text-caption">
                         Aenean aliquet sem eget velit tincidunt ullamcorper.
                         Donec aliquet, quam vitae cursus aliquet, lorem nunc
                         efficitur nulla, ullamcorper placerat dui massa at eros.
                      </p>
-                     <footer class="env-comment__footer">
+                     <div class="env-comment__footer">
                         <ul
                            class="env-list env-list--horizontal env-list-dividers--left"
                         >
@@ -390,7 +390,7 @@ title: Feed
                               <small class="env-text">17:39</small>
                            </li>
                         </ul>
-                     </footer>
+                     </div>
                   </div>
                   <div class="env-media__actions">
                      <button
@@ -407,7 +407,7 @@ title: Feed
                         <span class="env-assistive-text">More options</span>
                      </button>
                   </div>
-               </article>
+               </div>
             </li>
          </ul>
          <div class="env-comments__comment env-media">
@@ -434,14 +434,14 @@ title: Feed
          </div>
       </div>
    </div>
-</article>
+</div>
 ```
 
 ## Shared post
 
 ```html
-<article class="env-post">
-   <header class="env-post__header env-media">
+<div class="env-post">
+   <div class="env-post__header env-media">
       <div class="env-media__figure">
          <a href="#">
             <img
@@ -476,13 +476,13 @@ title: Feed
             <span class="env-assistive-text">More options</span>
          </button>
       </div>
-   </header>
+   </div>
    <div class="env-post__entry">
       <p class="env-ui-text-caption">Lorem ipsum dolor sit amet</p>
    </div>
    <div class="env-post__shared">
       <blockquote class="env-post">
-         <header class="env-post__header env-media">
+         <div class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
                   <img
@@ -499,7 +499,7 @@ title: Feed
                </h3>
                <p class="env-ui-text-caption">Design</p>
             </div>
-         </header>
+         </div>
          <div class="env-post__entry">
             <p class="env-ui-text-caption">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -509,7 +509,7 @@ title: Feed
          </div>
       </blockquote>
    </div>
-   <footer class="env-post__footer">
+   <div class="env-post__footer">
       <ul class="env-list env-list--horizontal env-list-dividers--left">
          <li class="env-list__item">
             <button class="env-button env-button--small env-link">
@@ -531,7 +531,7 @@ title: Feed
             </button>
          </li>
       </ul>
-   </footer>
+   </div>
    <div class="env-comments env-collapse" id="comments3">
       <div class="env-comments__wrapper">
          <ul class="env-comments__list env-list"></ul>
@@ -559,7 +559,7 @@ title: Feed
          </div>
       </div>
    </div>
-</article>
+</div>
 ```
 
 ## Feed list
@@ -567,8 +567,8 @@ title: Feed
 ```html
 <ul class="env-feed env-list">
    <li class="env-feed__item">
-      <article class="env-post">
-         <header class="env-post__header env-media">
+      <div class="env-post">
+         <div class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
                   <img
@@ -600,7 +600,7 @@ title: Feed
                   <span class="env-assistive-text">More options</span>
                </button>
             </div>
-         </header>
+         </div>
          <div class="env-post__entry">
             <p class="env-ui-text-caption">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
@@ -608,7 +608,7 @@ title: Feed
                Donec sed purus quam. Proin eu tincidunt metus.
             </p>
          </div>
-         <footer class="env-post__footer">
+         <div class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
                   <button class="env-button env-button--small env-link">
@@ -632,7 +632,7 @@ title: Feed
                   </button>
                </li>
             </ul>
-         </footer>
+         </div>
          <div
             class="env-comments env-collapse env-collapse--show"
             id="comments4"
@@ -640,7 +640,7 @@ title: Feed
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list">
                   <li>
-                     <article class="env-comment env-media">
+                     <div class="env-comment env-media">
                         <div class="env-media__figure">
                            <a href="#">
                               <img
@@ -651,20 +651,20 @@ title: Feed
                            </a>
                         </div>
                         <div class="env-media__body">
-                           <header class="env-comment__header">
+                           <div class="env-comment__header">
                               <h4 class="env-ui-text-subheading">
                                  <a href="#" class="env-link-secondary"
                                     >Anders</a
                                  >
                               </h4>
-                           </header>
+                           </div>
                            <p class="env-ui-text-caption">
                               Aenean aliquet sem eget velit tincidunt
                               ullamcorper. Donec aliquet, quam vitae cursus
                               aliquet, lorem nunc efficitur nulla, ullamcorper
                               placerat dui massa at eros.
                            </p>
-                           <footer class="env-comment__footer">
+                           <div class="env-comment__footer">
                               <ul
                                  class="env-list env-list--horizontal env-list-dividers--left"
                               >
@@ -679,7 +679,7 @@ title: Feed
                                     <small class="env-text">17:39</small>
                                  </li>
                               </ul>
-                           </footer>
+                           </div>
                         </div>
                         <div class="env-media__actions">
                            <button
@@ -698,10 +698,10 @@ title: Feed
                               >
                            </button>
                         </div>
-                     </article>
+                     </div>
                   </li>
                   <li>
-                     <article class="env-comment env-media">
+                     <div class="env-comment env-media">
                         <div class="env-media__figure">
                            <a href="#">
                               <img
@@ -712,18 +712,18 @@ title: Feed
                            </a>
                         </div>
                         <div class="env-media__body">
-                           <header class="env-comment__header">
+                           <div class="env-comment__header">
                               <h4 class="env-ui-text-subheading">
                                  <a href="#" class="env-link-secondary">Emma</a>
                               </h4>
-                           </header>
+                           </div>
                            <p class="env-ui-text-caption">
                               Aenean aliquet sem eget velit tincidunt
                               ullamcorper. Donec aliquet, quam vitae cursus
                               aliquet, lorem nunc efficitur nulla, ullamcorper
                               placerat dui massa at eros.
                            </p>
-                           <footer class="env-comment__footer">
+                           <div class="env-comment__footer">
                               <ul
                                  class="env-list env-list--horizontal env-list-dividers--left"
                               >
@@ -738,7 +738,7 @@ title: Feed
                                     <small class="env-text">19:24</small>
                                  </li>
                               </ul>
-                           </footer>
+                           </div>
                         </div>
                         <div class="env-media__actions">
                            <button
@@ -757,7 +757,7 @@ title: Feed
                               >
                            </button>
                         </div>
-                     </article>
+                     </div>
                   </li>
                </ul>
                <div class="env-comments__comment env-media">
@@ -791,11 +791,11 @@ title: Feed
                </div>
             </div>
          </div>
-      </article>
+      </div>
    </li>
    <li class="env-feed__item">
-      <article class="env-post">
-         <header class="env-post__header env-media">
+      <div class="env-post">
+         <div class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
                   <img
@@ -827,7 +827,7 @@ title: Feed
                   <span class="env-assistive-text">More options</span>
                </button>
             </div>
-         </header>
+         </div>
          <div class="env-post__entry">
             <p class="env-ui-text-caption">
                Duis eget eros urna. Maecenas rutrum tortor eget elit mattis,
@@ -836,7 +836,7 @@ title: Feed
                quis.
             </p>
          </div>
-         <footer class="env-post__footer">
+         <div class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
                   <button class="env-button env-button--small env-link">
@@ -860,7 +860,7 @@ title: Feed
                   </button>
                </li>
             </ul>
-         </footer>
+         </div>
          <div class="env-comments env-collapse" id="comments5">
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list"></ul>
@@ -895,11 +895,11 @@ title: Feed
                </div>
             </div>
          </div>
-      </article>
+      </div>
    </li>
    <li class="env-feed__item">
-      <article class="env-post">
-         <header class="env-post__header env-media">
+      <div class="env-post">
+         <div class="env-post__header env-media">
             <div class="env-media__figure">
                <a href="#">
                   <img
@@ -931,14 +931,14 @@ title: Feed
                   <span class="env-assistive-text">More post options</span>
                </button>
             </div>
-         </header>
+         </div>
          <div class="env-post__entry">
             <p class="env-ui-text-caption">
                Nulla faucibus ultrices ullamcorper. Duis gravida malesuada
                commodo. Praesent ornare id nisl non suscipit.
             </p>
          </div>
-         <footer class="env-post__footer">
+         <div class="env-post__footer">
             <ul class="env-list env-list--horizontal env-list-dividers--left">
                <li class="env-list__item">
                   <button class="env-button env-button--small env-link">
@@ -962,7 +962,7 @@ title: Feed
                   </button>
                </li>
             </ul>
-         </footer>
+         </div>
          <div class="env-comments env-collapse" id="comments6">
             <div class="env-comments__wrapper">
                <ul class="env-comments__list env-list"></ul>
@@ -997,7 +997,7 @@ title: Feed
                </div>
             </div>
          </div>
-      </article>
+      </div>
    </li>
 </ul>
 ```

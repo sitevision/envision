@@ -223,7 +223,7 @@ Element colors are used for elements and components. See usage examples below.
                 <a class="env-pagination__link" href="javascript:void(0)">1</a>
               </li>
               <li class="env-pagination__item">
-                <a class="env-pagination__link env-is-active" href="javascript:void(0)"
+                <a class="env-pagination__link" aria-current="true" href="javascript:void(0)"
                 >2 <span class="env-assistive-text">Current</span></a
                 >
               </li>

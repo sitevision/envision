@@ -7,7 +7,7 @@ title: Media
 ### Default media object
 
 ```html
-<article class="env-media">
+<div class="env-media">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -29,13 +29,13 @@ title: Media
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ### Default media object with actions menu
 
 ```html
-<article class="env-media">
+<div class="env-media">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -72,13 +72,13 @@ title: Media
          <span class="env-assistive-text">More options</span>
       </button>
    </div>
-</article>
+</div>
 ```
 
 ### Inline media object
 
 ```html
-<article class="env-media">
+<div class="env-media">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -100,13 +100,13 @@ title: Media
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ### Column media object
 
 ```html
-<article class="env-media env-media--column">
+<div class="env-media env-media--column">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -128,7 +128,7 @@ title: Media
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ## Alignment
@@ -136,7 +136,7 @@ title: Media
 ### Center
 
 ```html
-<article class="env-media env-media--center">
+<div class="env-media env-media--center">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -158,11 +158,11 @@ title: Media
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ```html
-<article class="env-media env-media--column env-media--center">
+<div class="env-media env-media--column env-media--center">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -184,13 +184,13 @@ title: Media
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 Alignment modifiers can also be applied to elements within the media container (`__figure` & `__body`)
 
 ```html
-<article class="env-media env-media--column env-media">
+<div class="env-media env-media--column env-media">
    <div class="env-media__figure env-media__figure--center">
       <a href="#">
          <img
@@ -212,13 +212,13 @@ Alignment modifiers can also be applied to elements within the media container (
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ### Bottom
 
 ```html
-<article class="env-media env-media--bottom">
+<div class="env-media env-media--bottom">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -240,7 +240,7 @@ Alignment modifiers can also be applied to elements within the media container (
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ## Order
@@ -248,7 +248,7 @@ Alignment modifiers can also be applied to elements within the media container (
 ### Reverse
 
 ```html
-<article class="env-media env-media--reverse">
+<div class="env-media env-media--reverse">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -270,13 +270,13 @@ Alignment modifiers can also be applied to elements within the media container (
          scelerisque.
       </p>
    </div>
-</article>
+</div>
 ```
 
 ## Nesting
 
 ```html
-<article class="env-media">
+<div class="env-media">
    <div class="env-media__figure">
       <a href="#">
          <img
@@ -297,7 +297,7 @@ Alignment modifiers can also be applied to elements within the media container (
          non blandit eu, rhoncus ut sem. Pellentesque elementum non augue vitae
          scelerisque.
       </p>
-      <article class="env-media">
+      <div class="env-media">
          <div class="env-media__figure">
             <a href="#">
                <img
@@ -319,7 +319,7 @@ Alignment modifiers can also be applied to elements within the media container (
                Pellentesque elementum non augue vitae scelerisque.
             </p>
          </div>
-      </article>
+      </div>
    </div>
-</article>
+</div>
 ```
