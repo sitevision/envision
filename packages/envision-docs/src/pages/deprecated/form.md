@@ -6,7 +6,7 @@ indexing: false
 
 **Note! This page contains deprecated content.**
 
-The following form classnames are deprecated since 2024.08.1 or earlier and will be removed in a future release.
+The following form classnames are deprecated since 2024.07.1 or earlier and will be removed in a future release.
 
 -  `env-form-element`
 -  `env-form-element__label`

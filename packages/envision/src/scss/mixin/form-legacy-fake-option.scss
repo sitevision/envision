@@ -1,6 +1,6 @@
 @mixin deprecated-fake-radio-checkbox-fix {
    // Checkbox and Radio used to use fake elements to create the styled checkbox/radio.
-   // Since 2024.08.1, fake elements are no longer used.
+   // Since 2024.07.1, fake elements are no longer used.
    // Old fake markup is supported but deprecated.
    // `env-checkbox` and `env-form-radio` will now use native element styling, and
    // fake elements are mostly ignored.
@@ -39,7 +39,7 @@
 
 @mixin deprecated-fake-switch-fix {
    // Switch used to use fake elements to create the styled checkbox.
-   // Since 2024.08.1, fake elements are no longer used.
+   // Since 2024.07.1, fake elements are no longer used.
    // Old fake markup is supported but deprecated.
    // `env-switch` will now use native element styling, and
    // fake elements are mostly ignored.
