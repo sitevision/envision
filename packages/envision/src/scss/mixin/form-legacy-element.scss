@@ -50,6 +50,7 @@
 
    &--error {
       &,
+      .env-form-element__label,
       .env-form-element__help {
          color: css-var('ui-color-status-error-text');
       }
