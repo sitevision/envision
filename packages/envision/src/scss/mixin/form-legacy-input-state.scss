@@ -1,6 +1,7 @@
 @mixin deprecated-input-element-color($colorName) {
    // DEPRECATED - DO NOT USE!
    &,
+   .env-form-element__label,
    .env-form-element__help,
    .env-select__item,
    .env-select__item__remove {
