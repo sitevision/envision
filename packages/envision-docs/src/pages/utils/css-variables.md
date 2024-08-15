@@ -39,7 +39,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 
 -  `--env-font-family`
 -  `--env-font-color`
--  `--env-font-color-muted` <span class="env-badge env-badge--info">2023.01</span>
+-  `--env-font-color-muted` <span class="doc-badge doc-badge--info">2023.01</span>
 -  `--env-font-size-base`
 -  `--env-font-size-x-small`
 -  `--env-font-size-small`
@@ -79,7 +79,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 -  `--env-box-shadow`
 -  `--env-box-shadow-large`
 -  `--env-box-shadow-small`
-   <br><br><span class="env-badge env-badge--info">Box shadow color, size, offset: 2023.04.1</span>
+   <br><br><span class="doc-badge doc-badge--info">Box shadow color, size, offset: 2023.04.1</span>
 -  `--env-box-shadow-color`
 
 #### Borders
@@ -94,7 +94,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 
 ### Branding
 
-#### UI Colors <span class="env-badge env-badge--info">2023.01</span>
+#### UI Colors <span class="doc-badge doc-badge--info">2023.01</span>
 
 -  `--env-ui-color-brand`
 -  `--env-ui-color-brand-dark`
@@ -105,7 +105,7 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
 , `85`, `90`, `95`, `100`.
 
-#### UI Text <span class="env-badge env-badge--info">2023.01</span>
+#### UI Text <span class="doc-badge doc-badge--info">2023.01</span>
 
 -  `--env-ui-text-{name}-font-family`
 -  `--env-ui-text-{name}-font-color`
@@ -130,24 +130,24 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-block-border-color`
 -  `--env-block-link-font-color`
 -  `--env-block-link-hover-font-color`
--  `--env-block-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-primary-font-color`
 -  `--env-block-primary-background-color`
 -  `--env-block-primary-border-color`
 -  `--env-block-primary-link-font-color`
 -  `--env-block-primary-link-hover-font-color`
--  `--env-block-primary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-primary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-primary-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-primary-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-secondary-font-color`
 -  `--env-block-secondary-background-color`
 -  `--env-block-secondary-border-color`
 -  `--env-block-secondary-link-font-color`
 -  `--env-block-secondary-link-hover-font-color`
--  `--env-block-secondary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-secondary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-secondary-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-secondary-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
 
 ### Elements
 
@@ -186,21 +186,21 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color-dark`
 -  `--env-element-info-background-color-light`
 
-#### Status <span class="env-badge env-badge--info">2023.02.1</span>
+#### Status <span class="doc-badge doc-badge--info">2023.02.1</span>
 
 -  `env-ui-color-status-neutral`
 -  `env-ui-color-status-neutral-contrast`
 -  `env-ui-color-status-active`
 -  `env-ui-color-status-active-contrast`
--  `env-ui-color-status-active-text` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-active-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
 -  `env-ui-color-status-attention`
 -  `env-ui-color-status-attention-contrast`
--  `env-ui-color-status-attention-text` <span class="env-badge env-badge--info">2023.07.1</span>
--  `env-ui-color-status-error` <span class="env-badge env-badge--info">2023.07.1</span>
--  `env-ui-color-status-error-contrast` <span class="env-badge env-badge--info">2023.07.1</span>
--  `env-ui-color-status-error-text` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-attention-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error` <span class="doc-badge doc-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-contrast` <span class="doc-badge doc-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
 
-#### Focus Outline <span class="env-badge env-badge--info">2023.01</span>
+#### Focus Outline <span class="doc-badge doc-badge--info">2023.01</span>
 
 -  `--env-focus-size`
 -  `--env-focus-offset`
@@ -258,10 +258,10 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-input-font-color`
 -  `--env-form-input-border-color`
 -  `--env-form-input-background-color`
--  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
--  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
+-  `--env-form-label-font-family` <span class="doc-badge doc-badge--info">2023.04.1</span>
+-  `--env-form-label-font-weight` <span class="doc-badge doc-badge--info">2023.04.1</span>
 
-#### Dialog <span class="env-badge env-badge--info">2023.07.1</span>
+#### Dialog <span class="doc-badge doc-badge--info">2023.07.1</span>
 
 -  `--env-dialog-small-width`
 -  `--env-dialog-medium-width`
@@ -289,7 +289,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-spinner-color`
 
-#### Tooltip <span class="env-badge env-badge--info">2023.02.1</span>
+#### Tooltip <span class="doc-badge doc-badge--info">2023.02.1</span>
 
 -  `--env-tooltip-font-family`
 -  `--env-tooltip-font-size`
@@ -298,7 +298,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-tooltip-background-color`
 -  `--env-tooltip-border-radius`
 
-## Legacy variables <span class="env-badge env-badge--danger">Deprecated</span>
+## Legacy variables <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 -  `--env-border-success-color`
 -  `--env-border-warning-color`

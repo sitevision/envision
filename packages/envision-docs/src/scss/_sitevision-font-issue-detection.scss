@@ -1,0 +1,30 @@
+//----- SITEVISION SITE FONT ISSUES DETECTION START -----
+
+// This here to avoid issues in Sitevision
+// by making sure we add the CSS needed for
+// misc components.
+// Simulates setting in BODY font and default H1-H6-font.
+//
+// 1. Set ugly pink font with same specificity as Sitevision sets font styles.
+// 2. Override documenation style to always look nice.
+// 3. If we get a CSS leak from SV in Envision components, we'll see the ugly font.
+
+body a {
+   color: deeppink;
+   text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   // Set ugly pink font so we catch it in documentation site
+   font-family: cursive;
+   font-weight: 900;
+   font-style: italic;
+   font-size: 30px;
+   color: deeppink;
+   line-height: 2;
+}

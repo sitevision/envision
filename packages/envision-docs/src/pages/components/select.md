@@ -43,7 +43,7 @@ tagSelect.then(function (selects) {
 
 <span id="single-select" class="offset-anchor"></span>
 
-## Single select <span class="env-badge env-badge--info">2023.04.1</span>
+## Single select <span class="doc-badge doc-badge--info">2023.04.1</span>
 
 Create a Single select by using a Tag select and set `maxItems` to `1`.
 Note: Clear and remove buttons will not be available in a single select.
@@ -117,7 +117,7 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  Default value: `true`
    -  Not available in Single select
 
--  `allowEmptyOption` _boolean_ <span class="env-badge env-badge--info">since Sitevision 2023.04.1</span>
+-  `allowEmptyOption` _boolean_ <span class="doc-badge doc-badge--info">since Sitevision 2023.04.1</span>
 
    -  Only available in Single select
    -  Option with no value will be selectable if set to true.
@@ -138,7 +138,7 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  Create a Tag select from custom dataset
    -  By default this is populated from the original element.
 
--  `maxOptions` _number_ <span class="env-badge env-badge--info">since Sitevision 2022.10.1</span>
+-  `maxOptions` _number_ <span class="doc-badge doc-badge--info">since Sitevision 2022.10.1</span>
 
    -  Limits the number of visible options
    -  Default value: `null` (unlimited)
@@ -174,14 +174,14 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
 
    -  A string or an array of property names to analyze when filtering options in remote data.
 
--  `sortField` _'string'_ | _[object]_ | _function(a, b)_ <span class="env-badge env-badge--info">since Sitevision 2022.10.1</span>
+-  `sortField` _'string'_ | _[object]_ | _function(a, b)_ <span class="doc-badge doc-badge--info">since Sitevision 2022.10.1</span>
 
    -  A string, an array of objects or a function to sort available options.
    -  By default the the order is based on the current locale.
    -  To disable sorting entirely and maintain the original order of options, use:
       `sortField:[{field:'$order'},{field:'$score'}]`
 
--  `render` _object_ <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `render` _object_ <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  An object specifications for rendering.
    -  Available options:
@@ -487,23 +487,23 @@ envision.select('#tag-select').then(function (selects) {
 
    -  Invoked when new options should be loaded from the server. Called with the current query string.
 
--  `open()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `open()` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  Shows the autocomplete dropdown containing the available options.
 
--  `close()` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `close()` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  Closes the autocomplete dropdown menu.
 
--  `clear(silent)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `clear(silent)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
 
--  `clearOptions(clearFilter?)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `clearOptions(clearFilter?)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
 
--  `clearFilter(option, value)` <span class="env-badge env-badge--info">since Sitevision 2022.11.1</span>
+-  `clearFilter(option, value)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
 
    -  Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
 
@@ -546,10 +546,10 @@ envision.select('#tag-select').then(function (selects) {
 
    -  Destroys the control and unbinds event listeners so that it can be garbage collected.
 
--  `focus()` <span class="env-badge env-badge--info">since Sitevision 2023.01.1</span>
+-  `focus()` <span class="doc-badge doc-badge--info">since Sitevision 2023.01.1</span>
 
    -  Focuses the control.
 
--  `blur()` <span class="env-badge env-badge--info">since Sitevision 2023.01.1</span>
+-  `blur()` <span class="doc-badge doc-badge--info">since Sitevision 2023.01.1</span>
 
    -  Blurs the control.

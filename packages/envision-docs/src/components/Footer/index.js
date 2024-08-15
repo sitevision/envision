@@ -6,22 +6,28 @@ import Link from '../Link';
 const Footer = ({ menuItems }) => {
    return (
       <>
-         <div className="footer-wrapper">
-            <footer className="footer">
-               <a href="https://www.sitevision.se/">© Sitevision</a>
-               <nav className="footer-nav">
-                  <ul className="env-nav env-nav--menubar env-nav--border">
+         <footer className="footer">
+            <div className="container">
+               <img
+                  src="/images/sitevision-developer-logo-light.svg"
+                  alt="Envision"
+                  width="191"
+                  height="27"
+               />
+               <nav aria-label="Main" className="footer-nav">
+                  <ul className="env-list">
                      {menuItems.map(({ label, to }) => (
-                        <li className="env-nav__item" key={label}>
-                           <Link to={to} activeClassName="active">
-                              {label}
-                           </Link>
+                        <li
+                           className="env-nav__item env-m-vertical--medium"
+                           key={label}
+                        >
+                           <Link to={to}>{label}</Link>
                         </li>
                      ))}
                   </ul>
                </nav>
-            </footer>
-         </div>
+            </div>
+         </footer>
          <Helmet>
             <script>
                {`var _paq = _paq || [];

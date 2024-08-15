@@ -262,7 +262,7 @@ Valid values `1-10`
 </div>
 ```
 
-## Previous class names <span class="env-badge env-badge--danger">Deprecated</span>
+## Previous class names <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Direction
 

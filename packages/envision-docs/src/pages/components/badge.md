@@ -21,7 +21,7 @@ title: Badge
 
 ### Status variants <span id="status-variant" class="offset-anchor"></span>
 
-<span class="env-badge env-badge--info">Available since 2023.02.1</span>
+<span class="doc-badge doc-badge--info">Available since 2023.02.1</span>
 
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
@@ -31,7 +31,7 @@ title: Badge
 
 ### Brand
 
-<span class="env-badge env-badge--info">2023.01</span>
+<span class="doc-badge doc-badge--info">2023.01</span>
 
 Brand color badges are available by using modifier `env-badge--brand` or `env-badge--brand-{n}`.
 
@@ -66,7 +66,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Status badge <span id="status-badge" class="offset-anchor"></span>
 
-<span class="env-badge env-badge--info">2023.02.1</span>
+<span class="doc-badge doc-badge--info">2023.02.1</span>
 
 Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
 

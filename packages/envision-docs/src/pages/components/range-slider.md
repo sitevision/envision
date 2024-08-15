@@ -4,7 +4,7 @@ title: Range slider
 
 Capture a range
 
-<span class="env-badge env-badge--danger">Changed in 2023.08.1</span>
+<span class="doc-badge doc-badge--danger">Changed in 2023.08.1</span>
 Changes have been made to event handling, please see [Event documentation](#events).
 
 ```html
@@ -105,7 +105,7 @@ Since 2023.08.1 there are two new native custom events `input` and `change`. The
 replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
 `slidestop` are also deprecated.
 
-### input <span class="env-badge env-badge--info">2023.08.1</span>
+### input <span class="doc-badge doc-badge--info">2023.08.1</span>
 
 Triggered for every move during slide.
 
@@ -115,7 +115,7 @@ document.querySelector('#my-slider').addEventListener('input', (e) => {
 });
 ```
 
-### change <span class="env-badge env-badge--info">2023.08.1</span>
+### change <span class="doc-badge doc-badge--info">2023.08.1</span>
 
 Triggered when slide is completed.
 
@@ -126,7 +126,7 @@ document.querySelector('#my-slider').addEventListener('change', (e) => {
 });
 ```
 
-### slide <span class="env-badge env-badge--danger">Deprecated</span>
+### slide <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Triggered for every move during slide. Event `slide` is deprecated, please use `input` event.
 
@@ -136,7 +136,7 @@ Triggered for every move during slide. Event `slide` is deprecated, please use `
 // $('#my-slider').envRangeSlider({ slide: (e, data) => {} });
 ```
 
-### slidestop <span class="env-badge env-badge--danger">Deprecated</span>
+### slidestop <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Triggered when slide is completed. Event `slidestop` is deprecated, please use `change` event.
 

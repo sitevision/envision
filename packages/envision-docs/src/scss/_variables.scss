@@ -2,15 +2,8 @@
 // This file contains Sass variables for the documentation website.
 // -----------------------------------------------------------------------------
 
-$helvetica: Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
-$frank-ruhl: 'Frank Ruhl Libre', serif;
-$roboto: Roboto, sans-serif;
-$source-sans: 'Source Sans Pro', sans-serif;
-$open-sans: 'Open Sans', sans-serif;
-
 $site-width: 1280px;
-$site-padding: 15px;
+$site-padding: 1em;
 
 $bp-mobile: 520px;
 $bp-tablet: 768px;
@@ -18,27 +11,43 @@ $bp-tablet: 768px;
 $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
    '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100';
 
-@mixin desktop {
-   @media (min-width: #{$bp-tablet}) {
+@mixin main-layout-break {
+   @media (min-width: 48em) {
+      // 768px = 48em
       @content;
    }
 }
 
-@mixin tablet {
-   @media (min-width: #{$bp-mobile}) and (max-width: #{$bp-tablet - 1}) {
+@mixin dark-mode {
+   @media (prefers-color-scheme: dark) {
       @content;
    }
 }
 
-@mixin mobile-and-tablet {
-   @media (max-width: #{$bp-tablet - 1}) {
-      @content;
+@mixin dark-mode-element-override {
+   @media (prefers-color-scheme: dark) {
+      --env-element-primary-font-color: #272b30;
+      --env-element-primary-background-color: #81a6ca;
+      --env-element-danger-font-color: #272b30;
+      --env-element-danger-background-color: #ed8178;
+      --env-element-success-font-color: #272b30;
+      --env-element-success-background-color: #00bc8c;
    }
 }
 
-@mixin mobile {
-   @media (max-width: #{$bp-mobile - 1}) {
-      @content;
+@mixin dark-mode-status-override {
+   @media (prefers-color-scheme: dark) {
+      --env-ui-color-status-active: #00bc8c;
+      --env-ui-color-status-active-contrast: #272b30;
+      --env-ui-color-status-active-text: #00bc8c;
+      --env-ui-color-status-attention: #ed8178;
+      --env-ui-color-status-attention-contrast: #272b30;
+      --env-ui-color-status-attention-text: #f39d12;
+      --env-ui-color-status-error: #ed8178;
+      --env-ui-color-status-error-text: #ed8178;
+      --env-ui-color-status-error-contrast: #272b30;
+      --env-ui-color-status-neutral: #444444;
+      --env-ui-color-status-neutral-contrast: #ffffff;
    }
 }
 

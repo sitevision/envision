@@ -1,0 +1,16 @@
+.icons-demo {
+   color: var(--env-font-color);
+   background-color: var(--env-section-background-color);
+   margin: 2em 0;
+   backdrop-filter: invert(3%);
+
+   li {
+      backdrop-filter: invert(3%);
+      padding: 1.5em;
+      text-align: center;
+
+      &:hover {
+         backdrop-filter: invert(5%);
+      }
+   }
+}

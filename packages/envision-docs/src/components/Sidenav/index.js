@@ -5,41 +5,52 @@ import classNames from 'classnames';
 
 const Sidenav = ({ categories, menuItems }) => {
    return (
-      <nav className="sidenav">
-         {categories.map(({ title, slug }) => (
-            <div key={slug}>
-               <Link to={menuItems[slug][0].slug}>{title}</Link>
-               <ul>
-                  {menuItems[slug].map(
-                     ({ id, title, slug, deprecated, since }) => (
-                        <li key={id}>
-                           <Link
-                              to={slug}
-                              className={classNames('doc-link-secondary', {
-                                 ['doc-link-secondary--new']: since,
-                                 ['doc-link-secondary--deprecated']: deprecated,
-                              })}
-                              activeClassName="active"
-                           >
-                              {title}
-                              {deprecated && (
-                                 <span className="env-badge env-badge--danger">
-                                    Deprecated
-                                 </span>
-                              )}
-                              {since && (
-                                 <span className="env-badge env-badge--success">
-                                    New
-                                 </span>
-                              )}
-                           </Link>
-                        </li>
-                     )
-                  )}
-               </ul>
-            </div>
-         ))}
-      </nav>
+      <div className="sidenav" id="navigation">
+         <nav aria-label="Envision documentation">
+            <ul className="env-nav env-nav--sidenav">
+               {categories.map(({ title, slug }) => (
+                  <li key={slug} className="env-nav__item">
+                     <Link
+                        to={menuItems[slug][0].slug}
+                        className="env-nav__link level-1"
+                     >
+                        {title}
+                     </Link>
+                     <ul className="env-nav env-nav--sidenav">
+                        {menuItems[slug].map(
+                           ({ id, title, slug, deprecated, since }) => (
+                              <li key={id} className="env-nav__item">
+                                 <Link
+                                    to={slug}
+                                    className={classNames(
+                                       'env-nav__link level-2',
+                                       {
+                                          ['new']: since,
+                                          ['deprecated']: deprecated,
+                                       }
+                                    )}
+                                 >
+                                    {title}
+                                    {deprecated && (
+                                       <span className="doc-badge doc-badge--danger">
+                                          Deprecated
+                                       </span>
+                                    )}
+                                    {since && (
+                                       <span className="doc-badge doc-badge--success">
+                                          New
+                                       </span>
+                                    )}
+                                 </Link>
+                              </li>
+                           )
+                        )}
+                     </ul>
+                  </li>
+               ))}
+            </ul>
+         </nav>
+      </div>
    );
 };
 

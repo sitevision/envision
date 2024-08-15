@@ -28,7 +28,7 @@ title: Spinner
 
 Use modifier `env-spinner--hide` or `env-spinner-bounce--hide` to hide the spinner. i.e `env-spinner env-spinner--hide`
 
-## Delayed spinner <span class="env-badge env-badge--info">2023.07.1</span>
+## Delayed spinner <span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Delay showing the spinner to avoid spinner flashing when the content loads fast.
 

@@ -1,0 +1,212 @@
+//----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS START -----
+
+@mixin restore-doc-font {
+   // Font issue detection - restore apperance for documentation headings
+   font-family: var(--doc-font-family);
+   color: var(--doc-font-color);
+   font-weight: 600;
+   font-style: normal;
+   line-height: normal;
+
+   .code-example & {
+      color: currentColor;
+   }
+}
+
+.doc-main-heading,
+.doc-heading-1,
+.doc-heading-2,
+.doc-heading-3,
+.doc-heading-4,
+.doc-heading-5,
+.doc-heading-6,
+.doc-p,
+.doc-list,
+.doc-table {
+   // Custom dynamic font sizing for markdown generated content.
+   --df-root: 16;
+   --df-from-width: 375;
+   --df-to-width: 720;
+   --df-slope: calc(
+      (
+         (var(--df-to-font-size) - var(--df-from-font-size)) /
+            (
+               (var(--df-to-width) / var(--env-root-font-size)) -
+                  var(--df-from-width) / var(--env-root-font-size)
+            )
+      )
+   );
+   --df-yaxis: calc(
+      (
+            var(--df-from-width) / var(--env-root-font-size) * -1 *
+               var(--df-slope) + var(--df-from-font-size)
+         ) * 1rem
+   );
+   box-sizing: border-box;
+   font-size: clamp(
+      var(--df-from-font-size) * 1em,
+      var(--df-yaxis) + var(--df-slope) * 100cqw,
+      var(--df-to-font-size) * 1em
+   );
+}
+
+.doc-link,
+.doc-link-secondary {
+   color: var(--doc-link-font-color);
+   text-decoration: var(--doc-link-text-decoration);
+
+   &:hover {
+      color: var(--doc-link-font-color);
+      text-decoration: underline;
+   }
+
+   @include focus-visible;
+}
+
+.doc-link-secondary--new,
+.doc-link-secondary--deprecated {
+   .doc-badge {
+      font-size: 0.5em;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0.1em 0.25em;
+      margin: 0 0 0 0.5em;
+      transform: translateY(-0.15em);
+   }
+}
+
+.doc-link-secondary--deprecated {
+   font-style: italic;
+}
+
+h1.doc-main-heading {
+   @include restore-doc-font;
+   //font-family: var(--doc-font-family);
+   --df-from-font-size: 2;
+   --df-to-font-size: 3;
+   line-height: 1;
+   margin: 0 0 0.25em;
+}
+
+h1.doc-heading-1 {
+   @include restore-doc-font;
+   --df-from-font-size: 2;
+   --df-to-font-size: 3;
+   line-height: 1;
+   margin: 0 0 1em;
+}
+
+h2.doc-heading-2 {
+   @include restore-doc-font;
+   --df-from-font-size: 1.5;
+   --df-to-font-size: 2;
+   margin: 1em 0 0.5em;
+
+   &--main {
+      font-size: 24px;
+      line-height: 1;
+      margin: 1em 0;
+
+      .doc-badge {
+         margin-right: 0.125em;
+      }
+   }
+}
+
+h3.doc-heading-3 {
+   @include restore-doc-font;
+   --df-from-font-size: 1.25;
+   --df-to-font-size: 1.5;
+   margin: 1em 0 0.5em;
+}
+
+h4.doc-heading-4,
+h5.doc-heading-5,
+h6.doc-heading-6 {
+   @include restore-doc-font;
+   --df-from-font-size: 1.25;
+   --df-to-font-size: 1;
+   margin: 1em 0 0.5em;
+}
+
+.doc-p {
+   font-family: var(--doc-font-family);
+   color: var(--doc-font-color);
+   --df-from-font-size: 1;
+   --df-to-font-size: 1.1;
+   font-weight: 400;
+   line-height: 1.5;
+   margin: 0 0 1em;
+}
+
+.doc-strong {
+   font-weight: 600;
+}
+
+blockquote.doc-blockquote {
+   font-family: var(--doc-font-family);
+   color: var(--doc-font-color);
+   margin: 2em 0;
+   padding: 1em 1em 0;
+   border-left: 4px solid var(--doc-color-brand);
+   font-style: italic;
+
+   &::after {
+      content: '';
+      display: table;
+   }
+}
+
+.doc-list {
+   font-family: var(--doc-font-family);
+   color: var(--doc-font-color);
+   --df-from-font-size: 1;
+   --df-to-font-size: 1.1;
+   list-style-type: square;
+   margin: 2em 0;
+   padding: 0 0 0 1.5em;
+
+   &__item {
+      margin: 0 0 0.5em;
+   }
+}
+
+.doc-table {
+   border-collapse: collapse;
+   margin: 1em 0 2em;
+   color: var(--doc-font-color);
+   --df-from-font-size: 0.9;
+   --df-to-font-size: 1;
+
+   caption {
+      font-size: 1.25em;
+      font-weight: 700;
+      text-align: left;
+      margin: 0 0 0.5em;
+      padding: 0 0.675em;
+   }
+
+   thead th {
+      vertical-align: bottom;
+   }
+
+   th {
+      text-align: left;
+   }
+
+   th,
+   td {
+      font-size: 1em;
+
+      font-weight: 400;
+      border-top: 1px solid var(--doc-border-color);
+      padding: 0.5em;
+      vertical-align: top;
+   }
+
+   th {
+      font-weight: 600;
+   }
+}
+
+//----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS END -----

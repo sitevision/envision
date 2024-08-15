@@ -2,7 +2,7 @@
 title: Brand colors and UI Text
 ---
 
-<span class="env-badge env-badge--info">2023.01</span>
+<span class="doc-badge doc-badge--info">2023.01</span>
 
 ## Brand colors
 
@@ -26,11 +26,8 @@ UI Text will be used as the new default text styles for headings in all componen
 <p class="env-ui-text-caption">Caption</p>
 ```
 
-<h2 class="hide-when-has-theme doc-heading-2">
+<h2 class="doc-heading-2">
    Example branding of components <span id="examples" class="offset-anchor"></span>
-</h2>
-<h2 class="show-when-has-theme doc-heading-2">
-   Branding of components <span id="examples" class="offset-anchor"></span>
 </h2>
 
 <div class="env-theme-example-brand">
@@ -145,8 +142,7 @@ UI Text will be used as the new default text styles for headings in all componen
 
 <div class="example-brand-color-palette">
 
-<h3 class="hide-when-has-theme doc-heading-3">Example brand color palette</h3>
-<h3 class="show-when-has-theme doc-heading-3">Current example theme brand color palette</h3>
+<h3 class="doc-heading-3">Example brand color palette</h3>
 
 <ol class="example-brand-color-list">
    <li class="example-section-brand"><div>Brand color</div></li>

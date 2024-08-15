@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 const Link = ({ to, children, ...rest }) => {
    if (/^http/.test(to)) {
-      return <a href={to}>{children}</a>;
+      return (
+         <a href={to} {...rest}>
+            {children}
+         </a>
+      );
    }
 
    return (

@@ -4,32 +4,38 @@ import { useTheme } from '../Theme';
 const ThemePicker = () => {
    const { theme, setTheme } = useTheme();
    const onThemeChange = (e) => {
-      setTheme(e.target.value);
+      setTheme(e.target.checked ? 'sv-theme-dark' : '');
    };
 
    return (
       <div className="theme-picker">
-         <div className="env-form-field">
-            <label htmlFor="selectTheme" className="env-assistive-text">
-               Select theme
+         <div className="doc-theme-switch">
+            <input
+               className="doc-theme-switch__checkbox"
+               type="checkbox"
+               id="darkTheme"
+               onChange={onThemeChange}
+               checked={theme === 'sv-theme-dark'}
+            />
+            <label className="env-assistive-text" htmlFor="darkTheme">
+               Use dark theme in examples
             </label>
-            <div className="env-text-small">
-               <div className="env-form-select">
-                  <select
-                     id="selectTheme"
-                     value={theme}
-                     onChange={onThemeChange}
-                  >
-                     <option value="">Default theme</option>
-                     <option value="sv-theme-dark">Dark theme</option>
-                     <option value="sv-theme-fancy">Fancy theme</option>
-                     <option value="sv-theme-quicksand">Quicksand theme</option>
-                  </select>
-                  <svg className="env-icon">
-                     <use xlinkHref="/sitevision/envision-icons.svg#icon-angle-down"></use>
-                  </svg>
-               </div>
-            </div>
+            <svg
+               aria-hidden="true"
+               className="env-icon doc-theme-switch__moon"
+               width="24"
+               height="24"
+            >
+               <use xlinkHref="/images/docs-icons.svg#moon"></use>
+            </svg>
+            <svg
+               aria-hidden="true"
+               className="env-icon doc-theme-switch__sun"
+               width="24"
+               height="24"
+            >
+               <use xlinkHref="/images/docs-icons.svg#sun"></use>
+            </svg>
          </div>
       </div>
    );

@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import ThemePicker from '../ThemePicker';
 
-const Header = ({ title, bodyClass, menuItems, indexing }) => {
+const Header = ({ title, dashboard, menuItems, indexing }) => {
    return (
       <>
-         <Helmet bodyAttributes={{ class: bodyClass }}>
+         <Helmet>
             <html lang="en" className="sv-js" />
             <meta charset="utf-8" />
             <meta
@@ -25,39 +25,58 @@ const Header = ({ title, bodyClass, menuItems, indexing }) => {
             />
             {indexing === false && <meta name="robots" content="noindex" />}
          </Helmet>
-         <div className="sv-header">
-            <header className="header">
+         <header className="header">
+            <div className="container">
                <a className="logo" href="/">
-                  <img
-                     className="logo__img"
-                     src="/images/sitevision-envision-logo.svg"
-                     alt="Envision"
-                  />
+                  <picture>
+                     <source
+                        media="(prefers-color-scheme: light)"
+                        srcSet="/images/sitevision-developer-logo-dark.svg"
+                     />
+                     <source
+                        media="(prefers-color-scheme: dark)"
+                        srcSet="/images/sitevision-developer-logo-light.svg"
+                     />
+                     <img
+                        src="/images/sitevision-developer-logo-dark.svg"
+                        alt="Envision"
+                        width="234"
+                        height="31"
+                     />
+                  </picture>
                </a>
-
-               <div className="header-nav">
-                  <ThemePicker></ThemePicker>
-                  <nav>
-                     <ul className="env-nav env-nav--menubar env-nav--border">
-                        {menuItems.map(({ label, to }) => (
-                           <li className="env-nav__item" key={label}>
-                              <Link to={to} activeClassName="active">
-                                 {label}
-                              </Link>
-                           </li>
-                        ))}
-                     </ul>
-                  </nav>
+               <nav aria-label="Main">
+                  <ul className="env-nav env-nav--menubar env-nav--border">
+                     {menuItems.map(({ label, to }) => (
+                        <li className="env-nav__item" key={label}>
+                           <Link to={to} className="env-nav__link">
+                              {label}
+                           </Link>
+                        </li>
+                     ))}
+                  </ul>
+               </nav>
+               {!dashboard && <ThemePicker></ThemePicker>}
+               <div className="mobile-nav-button">
+                  <a
+                     href="#navigation"
+                     className="env-button env-button--link env-button--icon"
+                  >
+                     <svg className="env-icon env-icon--xx-small">
+                        <use xlinkHref="/sitevision/envision-icons.svg#icon-menu-line"></use>
+                     </svg>
+                     Menu
+                  </a>
                </div>
-            </header>
-         </div>
+            </div>
+         </header>
       </>
    );
 };
 
 Header.propTypes = {
    title: PropTypes.string,
-   bodyClass: PropTypes.string,
+   dashboard: PropTypes.bool,
    menuItems: PropTypes.array,
    indexing: PropTypes.bool,
 };

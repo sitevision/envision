@@ -8,20 +8,24 @@ const ThemeProvider = ({ children }) => {
    const [theme, setTheme] = React.useState('');
 
    React.useEffect(() => {
-      setTheme(window.localStorage.getItem('env-theme') || '');
+      setTheme(window.localStorage.getItem('doc-theme') || '');
    }, []);
 
    React.useEffect(() => {
-      if (document.body.classList.contains('env-dashboard-theme')) {
+      const themeEl = document.querySelector('main');
+
+      if (!themeEl || themeEl.classList.contains('env-dashboard-theme')) {
          return;
       }
-      let oldTheme = window.localStorage.getItem('env-theme');
-      document.body.classList.remove(oldTheme);
+
+      let oldTheme = window.localStorage.getItem('doc-theme');
+
+      oldTheme && themeEl.classList.remove(oldTheme);
       if (theme) {
-         document.body.classList.add(theme);
-         window.localStorage.setItem('env-theme', theme.toString());
+         themeEl.classList.add(theme);
+         window.localStorage.setItem('doc-theme', theme.toString());
       } else {
-         window.localStorage.removeItem('env-theme');
+         window.localStorage.removeItem('doc-theme');
       }
    }, [theme]);
 

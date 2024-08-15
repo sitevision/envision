@@ -1,0 +1,44 @@
+.sidenav {
+   --env-font-color: var(--doc-font-color);
+
+   @include dark-mode-element-override;
+
+   background-color: var(--doc-sidenav-background-color);
+   color: var(--doc-sidenav-font-color);
+
+   .env-nav__link {
+      border-bottom: 1px solid var(--doc-background-color);
+      color: var(--doc-sidenav-font-color);
+      padding: 0.75em 0.875em;
+      border-left: 2px solid transparent;
+
+      &:hover {
+         color: var(--doc-color-brand);
+      }
+
+      &.level-1 {
+         font-weight: 700;
+         border-left: 2px solid transparent;
+         padding-left: 0.875em;
+      }
+
+      &.level-2 {
+         font-weight: 500;
+         padding-left: 2.5em;
+         border-left: 2px solid transparent;
+      }
+
+      &.level-2[aria-current='page'],
+      &--active.level-2 {
+         border-left: 2px solid var(--doc-color-brand);
+         padding-left: 2.5em;
+      }
+
+      .doc-badge {
+         margin-left: 0.5em;
+      }
+   }
+   .env-nav__item .env-nav__item:last-child .level-2 {
+      border-bottom-color: var(--doc-sidenav-font-color);
+   }
+}

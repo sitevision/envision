@@ -81,7 +81,7 @@ title: Text
 <div class="env-text env-text-align--right">Right aligned</div>
 ```
 
-### Logical properties <span class="env-badge env-badge--info">2023.08.1</span>
+### Logical properties <span class="doc-badge doc-badge--info">2023.08.1</span>
 
 ```html
 <div class="env-text env-text-align--start">Start aligned</div>
@@ -100,7 +100,7 @@ title: Text
 
 <span id="status-colors" class="offset-anchor"></span>
 
-## Status colors <span class="env-badge env-badge--info">2023.07.1</span>
+## Status colors <span class="doc-badge doc-badge--info">2023.07.1</span>
 
 ```html
 <p class="env-text env-text--attention">Attention text</p>

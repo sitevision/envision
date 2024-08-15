@@ -200,7 +200,7 @@ Native select element with class `.env-form-input`. Only light styling, might lo
 
 <span id="select-component" class="offset-anchor"></span>
 
-## Select component <span class="env-badge env-badge--info">2023.04.1</span>
+## Select component <span class="doc-badge doc-badge--info">2023.04.1</span>
 
 A select element wrapped in an element with class `.env-form-select` will have the same appearance cross browsers.
 Use an `.env-icon` for the arrow.
@@ -654,7 +654,7 @@ Attribute `[readonly]` is also available for input elements.
 
 ## Validation error
 
-<span class="env-badge env-badge--info">2023.07.1</span>
+<span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Add modifier `.env-form-field--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.

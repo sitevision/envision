@@ -238,6 +238,6 @@ title: Table
 </table>
 ```
 
-### Colors <span class="env-badge env-badge--danger">Deprecated</span>
+### Colors <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Table with colored rows and cells is deprecated and will be removed.

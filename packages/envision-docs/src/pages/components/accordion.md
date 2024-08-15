@@ -6,7 +6,7 @@ title: Accordion
 
 ```html
 <div id="accordionExample">
-   <h1 class="env-text" id="heading1">
+   <h2 class="env-text" id="heading1">
       <a
          href="#container1"
          aria-expanded="true"
@@ -15,7 +15,7 @@ title: Accordion
       >
          Example 1
       </a>
-   </h1>
+   </h2>
    <div
       id="container1"
       class="env-accordion env-accordion--show"
@@ -29,7 +29,7 @@ title: Accordion
       </p>
    </div>
 
-   <h1 class="env-text" id="heading2">
+   <h2 class="env-text" id="heading2">
       <a
          href="#container2"
          aria-expanded="false"
@@ -38,7 +38,7 @@ title: Accordion
       >
          Example 2
       </a>
-   </h1>
+   </h2>
    <div
       id="container2"
       class="env-accordion"
@@ -52,7 +52,7 @@ title: Accordion
       </p>
    </div>
 
-   <h1 class="env-text" id="heading3">
+   <h2 class="env-text" id="heading3">
       <a
          href="#container3"
          aria-expanded="false"
@@ -61,7 +61,7 @@ title: Accordion
       >
          Example 3
       </a>
-   </h1>
+   </h2>
    <div
       id="container3"
       class="env-accordion"

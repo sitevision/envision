@@ -1,0 +1,12 @@
+.footer {
+   background-color: var(--doc-footer-background-color);
+   color: var(--doc-footer-font-color);
+   padding: min(6vh, 6em) $site-padding;
+}
+
+.footer a {
+   color: var(--doc-footer-font-color);
+   font-size: 0.875em;
+
+   @include focus-visible;
+}

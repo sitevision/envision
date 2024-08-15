@@ -6,7 +6,7 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 
 ## Types
 
-<span class="env-badge env-badge--info">Brand button available since 2023.01</span>
+<span class="doc-badge doc-badge--info">Brand button available since 2023.01</span>
 
 ```html
 <p>
@@ -119,7 +119,7 @@ Button appearance and size have been enhanced in Envision released with Sitevisi
 All button types and sizes are available.
 
 ```html
-<h4 class="doc-heading-4">Icon button types</h4>
+<h3 class="doc-heading-3">Icon button types</h3>
 
 <button type="button" class="env-button env-button--primary env-button--icon">
    Icon only, assistive text
@@ -161,7 +161,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4 class="doc-heading-4">Icon button sizes</h4>
+<h3 class="doc-heading-3">Icon button sizes</h3>
 
 <button
    type="button"
@@ -220,7 +220,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4 class="doc-heading-4">Small icon size</h4>
+<h3 class="doc-heading-3">Small icon size</h3>
 
 <button
    type="button"
@@ -242,7 +242,7 @@ All button types and sizes are available.
    </svg>
 </button>
 
-<h4 class="doc-heading-4">Icon above</h4>
+<h3 class="doc-heading-3">Icon above</h3>
 <p>Available in medium and large size.</p>
 
 <button
@@ -276,4 +276,4 @@ All button types and sizes are available.
 
 ## Deprecated
 
-Invert button <span class="env-badge env-badge--danger">10.0</span>
+Invert button <span class="doc-badge doc-badge--danger">10.0</span>

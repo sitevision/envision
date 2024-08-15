@@ -1,6 +1,7 @@
 @mixin image-size($s) {
    width: $s;
    height: $s;
+   //max-width: $s;
 }
 
 @mixin container-size($s) {

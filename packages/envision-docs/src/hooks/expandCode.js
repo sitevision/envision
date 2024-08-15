@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { uniqueId } from 'envision/src/js/util/nodes';
 
 export const useExpandCode = (content) => {
    useEffect(() => {
@@ -6,11 +7,17 @@ export const useExpandCode = (content) => {
          TOGGLER = [
             'gatsby-highlight__toggler',
             'env-button',
-            'env-button--primary',
+            'env-button--link',
+            'env-button--icon',
+            'env-button--icon-after',
+            'env-button--secondary',
             'env-button--small',
          ],
-         MORE = '+ Show more',
-         LESS = '- Show less';
+         MORE = 'Show full example',
+         LESS = 'Hide full example',
+         SVG = `<svg class="env-icon env-icon--small">
+                <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down">
+                </use></svg>`;
 
       content.current
          .querySelectorAll('.gatsby-highlight[data-language]')
@@ -23,16 +30,25 @@ export const useExpandCode = (content) => {
             }
             const pre = element.querySelector('pre');
             if (pre && pre.clientHeight > window.innerHeight * 0.25) {
+               uniqueId(element);
+               element.classList.add(EXPANDABLE);
+
+               const span = document.createElement('span');
+               span.textContent = MORE;
+
                const button = document.createElement('button');
+               button.insertAdjacentHTML('afterbegin', SVG);
                button.setAttribute('type', 'button');
                button.setAttribute('aria-expanded', 'false');
                button.classList.add(...TOGGLER);
-               button.textContent = MORE;
-               element.classList.add(EXPANDABLE);
+               button.setAttribute('aria-controls', element.id);
+
+               button.appendChild(span);
                element.appendChild(button);
-               button.addEventListener('click', (e) => {
+
+               button.addEventListener('click', () => {
                   const expanded =
-                     e.target.getAttribute('aria-expanded') === 'true';
+                     button.getAttribute('aria-expanded') === 'true';
                   if (expanded) {
                      element.classList.add(EXPANDABLE);
                      setTimeout(() => {
@@ -41,12 +57,12 @@ export const useExpandCode = (content) => {
                            block: 'center',
                         });
                      }, 1);
-                     button.textContent = MORE;
+                     span.textContent = MORE;
                   } else {
                      element.classList.remove(EXPANDABLE);
-                     button.textContent = LESS;
+                     span.textContent = LESS;
                   }
-                  e.target.setAttribute('aria-expanded', !expanded);
+                  button.setAttribute('aria-expanded', !expanded);
                });
             }
          });

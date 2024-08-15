@@ -461,14 +461,14 @@ Element colors are used for elements and components. See usage examples below.
 
 <span id="status-colors" class="offset-anchor"></span>
 
-## Status colors <span class="env-badge env-badge--info">2023.02.1</span>
+## Status colors <span class="doc-badge doc-badge--info">2023.02.1</span>
 
 Status colors are UI colors that are used to signal a status,
 for example if a user is logged in or when new messages have arrived.
 
 Status colors have a main color and a matching contrast color for text.
 
-Status color text should be used when status color is applied to text on section background. <span class="env-badge env-badge--info">Since 2023.07.1</span>
+Status color text should be used when status color is applied to text on section background. <span class="doc-badge doc-badge--info">Since 2023.07.1</span>
 
 <div class="example-grid">
   <div class="example-grid__col example-grid__col--25">
@@ -561,7 +561,7 @@ Documentation of examples:
 -  [Form error message](/components/form/#validation)
 -  [Text status colors](/utils/text/#status-colors)
 
-## Legacy colors <span class="env-badge env-badge--danger">Deprecated</span>
+## Legacy colors <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 The following colors are deprecated and will be removed.
 

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Sidenav from '../components/Sidenav';
 import Footer from '../components/Footer';
+import Banner from '../components/Banner';
+import classNames from 'classnames';
 
 const filterMenuItems = (items) => {
    return items
@@ -33,6 +35,7 @@ const BaseTemplate = ({
    deprecated,
    since,
    beta,
+   info,
    dashboard,
    topMenuItems,
    menuCategories,
@@ -40,43 +43,40 @@ const BaseTemplate = ({
    children,
    indexing,
 }) => {
-   const theme =
-      typeof window !== 'undefined'
-         ? window.localStorage.getItem('env-theme')
-         : '';
+   let theme = '';
+   if (typeof window !== 'undefined') {
+      theme = window.localStorage.getItem('doc-theme')
+         ? window.localStorage.getItem('doc-theme')
+         : theme;
+      window.localStorage.setItem('doc-theme', theme);
+   }
 
-   const bodyClass = dashboard ? 'env-dashboard-theme' : theme;
+   const mainClassName = dashboard ? 'env-dashboard-theme' : theme;
+   let bannerType = null;
+
+   if (deprecated) {
+      bannerType = 'deprecated';
+   } else if (beta) {
+      bannerType = 'beta';
+   } else if (since) {
+      bannerType = 'since';
+      info = since;
+   }
    return (
-      <>
+      <div className="layout">
          <Header
             title={title}
-            bodyClass={bodyClass}
+            dashboard={dashboard}
             indexing={indexing}
             menuItems={topMenuItems}
          />
-         <div className={'main-container'}>
-            <main>
-               <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
-               {(since || beta || deprecated) && (
-                  <h2 className="doc-heading-2 doc-heading-2--main">
-                     {deprecated && (
-                        <span className="env-badge env-badge--danger">
-                           Deprecated
-                        </span>
-                     )}
-                     {since && (
-                        <span className="env-badge env-badge--info">
-                           Since {since}
-                        </span>
-                     )}
-                     {beta && (
-                        <span className="env-badge env-badge--warning">
-                           Beta
-                        </span>
-                     )}
-                  </h2>
-               )}
-               {children}
+         {bannerType && <Banner bannerType={bannerType} info={info}></Banner>}
+         <div className="body">
+            <main className={classNames('main', mainClassName)}>
+               <div className="content-wrapper">
+                  <h1 className="doc-main-heading">{title}</h1>
+                  {children}
+               </div>
             </main>
             <Sidenav
                categories={menuCategories}
@@ -84,7 +84,7 @@ const BaseTemplate = ({
             ></Sidenav>
          </div>
          <Footer menuItems={topMenuItems} />
-      </>
+      </div>
    );
 };
 
@@ -93,6 +93,7 @@ BaseTemplate.propTypes = {
    deprecated: PropTypes.bool,
    since: PropTypes.string,
    beta: PropTypes.bool,
+   info: PropTypes.bool,
    dashboard: PropTypes.bool,
    topMenuItems: PropTypes.array,
    menuCategories: PropTypes.array,

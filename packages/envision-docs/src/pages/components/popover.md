@@ -158,7 +158,7 @@ if (popoverMenuContentEl) {
 
 <span id="tooltip" class="offset-anchor"></span>
 
-## Popover Tooltip <span class="env-badge env-badge--info">2023.05.1</span>
+## Popover Tooltip <span class="doc-badge doc-badge--info">2023.05.1</span>
 
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
 for a Tooltip-styled popover. Common text components will adjust color automatically.
@@ -223,7 +223,7 @@ if (popoverTooltipContentEl) {
    -  Popover title.
    -  Default value: `''`
 
--  `content` _string_ | _HTMLElement_ <span class="env-badge env-badge--info">2023.05.1</span>
+-  `content` _string_ | _HTMLElement_ <span class="doc-badge doc-badge--info">2023.05.1</span>
 
    -  Popover content.
    -  Default value: `''`
@@ -248,7 +248,7 @@ if (popoverTooltipContentEl) {
    -  Close popover on click outside.
    -  Default value: `false`
 
--  `type` _string_ <span class="env-badge env-badge--info">2023.05.1</span>
+-  `type` _string_ <span class="doc-badge doc-badge--info">2023.05.1</span>
 
    -  Popover styling
    -  Default value: null

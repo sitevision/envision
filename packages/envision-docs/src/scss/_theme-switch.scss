@@ -1,0 +1,86 @@
+.doc-theme-switch {
+   position: relative;
+   z-index: 1;
+
+   --bg: var(--doc-header-font-color);
+   --fg: var(--doc-header-background-color);
+   --sw: #ffcd45;
+   --ch: var(--bg);
+
+   @include dark-mode {
+      --sw: var(--doc-header-background-color);
+      --ch: #ffcd45;
+   }
+
+   &__sun,
+   &__moon {
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      z-index: 3;
+      height: 0.8em;
+      width: 0.8em;
+      inset: 50% auto auto 0.325em;
+      transform: translateY(-50%);
+      fill: var(--fg);
+   }
+
+   &__moon {
+      inset: 50% auto auto 1.5em;
+   }
+
+   &__checkbox {
+      box-sizing: border-box;
+      font-family: var(--doc-font-family);
+      font-size: 1em;
+      font-weight: normal;
+      appearance: none;
+      position: relative;
+      z-index: 3;
+      width: 2.625em;
+      height: 1.5em;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 0.75em;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+
+      &:before {
+         content: '';
+         display: block;
+         position: absolute;
+         z-index: 3;
+         height: 1.25em;
+         width: 1.25em;
+         border-radius: 50%;
+         inset: 0.125em auto auto 0.125em;
+         background-color: var(--sw);
+         transition: 0.3s;
+      }
+
+      ~ .doc-theme-switch__sun {
+         fill: var(--ch);
+      }
+      ~ .doc-theme-switch__moon {
+         fill: var(--fg);
+      }
+
+      &:checked {
+         &:before {
+            transform: translateX(1.125em);
+         }
+
+         ~ .doc-theme-switch__sun {
+            fill: var(--fg);
+         }
+         ~ .doc-theme-switch__moon {
+            fill: var(--ch);
+         }
+      }
+
+      &:focus-visible {
+         @include focus-outline;
+      }
+   }
+}
