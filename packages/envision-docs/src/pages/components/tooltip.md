@@ -36,15 +36,11 @@ See [available options below](#options).
 
 ```html
 <div class="example-input-fields">
-   <div class="env-form-element">
-      <label for="password-example" class="env-form-element__label">
+   <div class="env-form-field">
+      <label for="password-example" class="env-form-label">
          Password - show tooltip after one second
       </label>
-      <div
-         class="env-tooltip env-form-element__control"
-         data-placement="bottom-start"
-         data-delay="1000"
-      >
+      <div class="env-tooltip" data-placement="bottom-start" data-delay="1000">
          <input
             type="password"
             class="env-form-input"

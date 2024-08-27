@@ -13,17 +13,15 @@ By default, Tag select will use the HTML markup to generate the data.
 
 ```HTML
 
-<div class="env-form-element">
-   <label for="example-tag-select-1" class="env-form-element__label">Tag select</label>
-   <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-1" aria-label="Tag select">
-         <option value="">Select an item ...</option>
-         <option value="item-1">Item</option>
-         <option value="item-2">Item 2</option>
-         <option value="item-3">Item 3</option>
-         <option value="item-4">Item 4</option>
-      </select>
-   </div>
+<div class="env-form-field">
+   <label for="example-tag-select-1" class="env-form-label">Tag select</label>
+   <select class="env-form-input" id="example-tag-select-1" aria-label="Tag select">
+      <option value="">Select an item ...</option>
+      <option value="item-1">Item</option>
+      <option value="item-2">Item 2</option>
+      <option value="item-3">Item 3</option>
+      <option value="item-4">Item 4</option>
+   </select>
 </div>
 ```
 
@@ -51,34 +49,30 @@ Note: Clear and remove buttons will not be available in a single select.
 Use `allowEmptyOption` and `sortField` as in second example below to make behaviour similar to native select element.
 
 ```HTML
-<div class="env-form-element">
-   <label for="example-tag-select-single-1" class="env-form-element__label">
+<div class="env-form-field">
+   <label for="example-tag-select-single-1" class="env-form-label">
       Tag select single
    </label>
-   <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-single-1" aria-label="Tag select single">
-         <option value="">Select an item ...</option>
-         <option value="item-1">Item</option>
-         <option value="item-3">Item 3</option>
-         <option value="item-2">Item 2</option>
-         <option value="item-4">Item 4</option>
-      </select>
-   </div>
+   <select class="env-form-input" id="example-tag-select-single-1" aria-label="Tag select single">
+      <option value="">Select an item ...</option>
+      <option value="item-1">Item</option>
+      <option value="item-3">Item 3</option>
+      <option value="item-2">Item 2</option>
+      <option value="item-4">Item 4</option>
+   </select>
 </div>
 
-<div class="env-form-element">
-   <label for="example-tag-select-single-2" class="env-form-element__label">
+<div class="env-form-field">
+   <label for="example-tag-select-single-2" class="env-form-label">
       Tag select single - native-like behaviour
    </label>
-   <div class="env-form-element__control">
-      <select class="env-form-input" id="example-tag-select-single-2" aria-label="Tag select single - native-like behaviour">
-         <option value="">Select an item ...</option>
-         <option value="item-1">Item</option>
-         <option value="item-3">Item 3</option>
-         <option value="item-2">Item 2</option>
-         <option value="item-4">Item 4</option>
-      </select>
-   </div>
+   <select class="env-form-input" id="example-tag-select-single-2" aria-label="Tag select single - native-like behaviour">
+      <option value="">Select an item ...</option>
+      <option value="item-1">Item</option>
+      <option value="item-3">Item 3</option>
+      <option value="item-2">Item 2</option>
+      <option value="item-4">Item 4</option>
+   </select>
 </div>
 ```
 
@@ -202,21 +196,15 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
 This example sets the options from the config. It will allow adding tags from the Tag Select itself, or from a separate input using the API.
 
 ```HTML
-<div class="env-form-element">
-   <label for="example-tag-select-2" class="env-form-element__label">Advanced select</label>
-   <div class="env-form-element__control">
-      <input class="env-form-input" id="example-tag-select-2" />
-   </div>
+<div class="env-form-field">
+   <label for="example-tag-select-2" class="env-form-label">Advanced select</label>
+   <input class="env-form-input" id="example-tag-select-2" />
 </div>
 
-<div class="env-form env-form--inline">
-   <div class="env-form-element">
-      <label for="country" class="env-form-element__label">Add tag using API</label>
-      <div class="env-form-element__control">
-         <input id="example-tag-select-2-tag" type="text" class="env-form-input" id="country" />
-      </div>
-   </div>
-   <div class="env-form-element">
+<div class="env-form-field">
+   <label for="example-tag-select-2-tag" class="env-form-label">Add tag using API</label>
+   <div class="env-form-control">
+      <input id="example-tag-select-2-tag" type="text" class="env-form-input" />
       <button id="example-tag-select-2-add" type="submit" class="env-button env-button--primary">
          Add
       </button>
@@ -286,11 +274,9 @@ This example fetches repository names from github. It will preload some popular 
 The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.
 
 ```HTML
-<div class="env-form-element">
-   <label for="example-tag-select-3" class="env-form-element__label">Remote data</label>
-   <div class="env-form-element__control">
-      <input class="env-form-input" id="example-tag-select-3" />
-   </div>
+<div class="env-form-field">
+   <label for="example-tag-select-3" class="env-form-label">Remote data</label>
+   <input class="env-form-input" id="example-tag-select-3" />
 </div>
 ```
 
@@ -329,23 +315,19 @@ A Tag Select may be disabled by adding the `disabled` attribute in the HTML.
 When disabled, the control can not receive focus.
 
 ```html
-<div class="env-form-element">
-   <label for="example-tag-select-4" class="env-form-element__label">
-      Disabled
-   </label>
-   <div class="env-form-element__control">
-      <select
-         class="env-form-input example-tag-select"
-         id="example-tag-select-4"
-         aria-label="Disabled"
-         multiple
-         disabled
-      >
-         <option value="">Select an item...</option>
-         <option value="item1" selected>Item</option>
-         <option value="item2">Item 2</option>
-      </select>
-   </div>
+<div class="env-form-field">
+   <label for="example-tag-select-4" class="env-form-label"> Disabled </label>
+   <select
+      class="env-form-input example-tag-select"
+      id="example-tag-select-4"
+      aria-label="Disabled"
+      multiple
+      disabled
+   >
+      <option value="">Select an item...</option>
+      <option value="item1" selected>Item</option>
+      <option value="item2">Item 2</option>
+   </select>
 </div>
 ```
 
@@ -359,37 +341,31 @@ Locked disables user input on the control, but the control can still receive foc
 _Note: The `readonly` attribute is not supported or relevant to the Tag Select component. An input with the `readonly` attribute will be locked._
 
 ```html
-<div class="env-form-element">
-   <label for="example-tag-select-6" class="env-form-element__label">
-      Locked
-   </label>
-   <div class="env-form-element__control">
-      <select
-         class="env-select--locked env-form-input example-tag-select"
-         id="example-tag-select-6"
-         aria-label="Locked"
-         multiple
-      >
-         <option value="">Select an item...</option>
-         <option value="item1" selected>Item</option>
-         <option value="item2">Item 2</option>
-      </select>
-   </div>
+<div class="env-form-field">
+   <label for="example-tag-select-6" class="env-form-label"> Locked </label>
+   <select
+      class="env-select--locked env-form-input example-tag-select"
+      id="example-tag-select-6"
+      aria-label="Locked"
+      multiple
+   >
+      <option value="">Select an item...</option>
+      <option value="item1" selected>Item</option>
+      <option value="item2">Item 2</option>
+   </select>
 </div>
 
-<div class="env-form-element">
-   <label for="example-tag-select-5" class="env-form-element__label">
+<div class="env-form-field">
+   <label for="example-tag-select-5" class="env-form-label">
       Locked (readonly)
    </label>
-   <div class="env-form-element__control">
-      <input
-         class="example-tag-select env-form-input"
-         id="example-tag-select-5"
-         value="Item"
-         placeholder="Select an item..."
-         readonly
-      />
-   </div>
+   <input
+      class="example-tag-select env-form-input"
+      id="example-tag-select-5"
+      value="Item"
+      placeholder="Select an item..."
+      readonly
+   />
 </div>
 ```
 
