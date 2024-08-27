@@ -392,7 +392,7 @@ Use `.env-form-control` to wrap `.env-checkbox` and `.env-form-label`.
    <div class="env-form-field">
       <label for="email-1" class="env-form-label">Subscribe</label>
       <div class="env-form-control">
-         <label for="email" class="env-form-label">@</label>
+         <label for="email-1" class="env-form-label">@</label>
          <input
             type="email"
             class="env-form-input"
