@@ -53,19 +53,12 @@
          border-color: css-var('element-primary-background-color');
       }
 
-      // env-is-disabled is deprecated
-      &[href=''],
-      &:not([href]),
-      &.env-is-disabled {
-         @include is-disabled();
+      &:hover {
+         background-color: css-var('element-primary-background-color');
+         border-color: css-var('element-primary-background-color');
+         color: css-var('element-primary-font-color');
+         z-index: 2;
       }
-   }
-
-   &__link:hover {
-      background-color: css-var('element-primary-background-color');
-      border-color: css-var('element-primary-background-color');
-      color: css-var('element-primary-font-color');
-      z-index: 2;
    }
 
    &--center {
@@ -95,4 +88,12 @@
          );
       }
    }
+}
+
+a.env-pagination__link[href=''],
+.env-pagination__link:not([href]):not(:is(button)),
+button.env-pagination__link[disabled],
+.env-pagination__link.env-is-disabled {
+   // env-is-disabled is deprecated
+   @include is-disabled();
 }
