@@ -68,8 +68,8 @@ Use `aria-current="page"` or `aria-current="true"` on a link to indicate that th
 
 ### Disabled
 
-An element without href attribute is considered disabled. If you must use a link, remove the href attribute
-and set the `aria-disabled="true"` and `aria-role="link"` attributes.
+Any element except button without a href attribute is considered disabled. Buttons are disabled using the disabled attribute.
+If you must use a link, remove the href attribute and set the `aria-disabled="true"` and `aria-role="link"` attributes.
 
 ```html
 <nav aria-label="Pagination example">
