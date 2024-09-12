@@ -90,9 +90,7 @@ its width and height to make a nice aligned grid of cards.
       <div class="env-card__footer env-text--small">
          <a href="#" type="button" class="env-button env-button--link">
             <svg class="env-icon env-icon--small env-m-right--xx-small">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-phone"
-               ></use>
+               <use href="/sitevision/envision-icons.svg#icon-phone"></use>
             </svg>
             Administrator
          </a>

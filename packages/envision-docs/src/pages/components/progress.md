@@ -235,13 +235,10 @@ Add `--striped--animated` to animate the stripes
          Nibh urna eu vitae sem donec in sem tellus ipsum
          <svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
             class="env-progress-poll__icon"
          >
             <title>Your vote</title>
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
-            ></use>
+            <use href="/sitevision/envision-icons.svg#icon-check-done"></use>
          </svg>
       </div>
       <div class="env-progress-poll__value">30 %</div>

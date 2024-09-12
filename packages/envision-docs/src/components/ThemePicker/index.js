@@ -26,7 +26,7 @@ const ThemePicker = () => {
                      <option value="sv-theme-quicksand">Quicksand theme</option>
                   </select>
                   <svg className="env-icon">
-                     <use xlinkHref="/sitevision/envision-icons.svg#icon-angle-down"></use>
+                     <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
                   </svg>
                </div>
             </div>

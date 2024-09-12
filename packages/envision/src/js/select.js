@@ -134,7 +134,7 @@ const SelectPlugin = function (el, settings, TomSelect) {
       const useEl = document.createElementNS(XML_NS, 'use');
       useEl.setAttributeNS(
          XLINK_NS,
-         'xlink:href',
+         'href',
          '/sitevision/envision-icons.svg#icon-angle-down'
       );
       svgEl.appendChild(useEl);

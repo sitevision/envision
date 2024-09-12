@@ -54,7 +54,7 @@ elements using `.env-form-input`, `.env-button` and `.env-form-label`.
    <div class="env-form-control">
       <label for="text-2" class="env-form-label" aria-hidden="true">
          <svg class="env-icon env-icon--x-small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-phone"></use>
+            <use href="/sitevision/envision-icons.svg#icon-phone"></use>
          </svg>
       </label>
       <input
@@ -87,7 +87,7 @@ Add [icons](#input-icons) to input fields using the combination of `.env-form-in
    <label for="search-1" class="env-form-label">Search</label>
    <div class="env-form-control">
       <svg aria-hidden="true" class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-search"></use>
+         <use href="/sitevision/envision-icons.svg#icon-search"></use>
       </svg>
       <input
          type="search"
@@ -218,7 +218,7 @@ For more advanced usage, see [Single select documentation](/components/select/#s
          <option>Item 4</option>
       </select>
       <svg aria-hidden="true" class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </div>
 </div>
@@ -353,7 +353,7 @@ Use `.env-form-control` to wrap `.env-icon` and `.env-form-input`.
       >
       <div class="env-form-control">
          <svg aria-hidden="true" class="env-icon">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-search"></use>
+            <use href="/sitevision/envision-icons.svg#icon-search"></use>
          </svg>
          <input
             type="search"
@@ -373,7 +373,7 @@ Use `.env-form-control` to wrap `.env-icon` and `.env-form-input`.
             id="text-4"
          />
          <svg aria-hidden="true" class="env-icon">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+            <use href="/sitevision/envision-icons.svg#icon-star"></use>
          </svg>
       </div>
    </div>
@@ -419,9 +419,7 @@ Use `.env-form-control` to wrap `.env-checkbox` and `.env-form-label`.
          >
             Search
             <svg aria-hidden="true" class="env-icon">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-search"
-               ></use>
+               <use href="/sitevision/envision-icons.svg#icon-search"></use>
             </svg>
          </button>
       </div>

@@ -70,37 +70,37 @@ Valid values for _size_
    <ul class="env-list env-list--horizontal">
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--medium">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
    </ul>
@@ -114,7 +114,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 ```html
 <div class="env-d--flex env-justify-content--center">
    <svg class="env-icon env-icon--xx-large env-icon--inactive">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+      <use href="/sitevision/envision-icons.svg#icon-user"></use>
    </svg>
 </div>
 ```
@@ -127,7 +127,7 @@ For Envision icons and custom inline SVG images you may use modifier `env-icon--
 on the icon or on part of an icon. The modifier will set the color to Status color Attention.
 
 <svg class="env-icon env-icon--small env-icon--attention">
-   <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
+   <use href="/sitevision/envision-icons.svg#icon-bell"></use>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="env-icon env-icon--small">

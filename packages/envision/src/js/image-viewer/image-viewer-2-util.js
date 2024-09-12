@@ -35,7 +35,7 @@ export const ICON = {
 
 export const getButtonIcon = (iconName) => {
    return `<svg class="env-icon">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-${iconName}"></use>
+      <use href="/sitevision/envision-icons.svg#icon-${iconName}"></use>
       </svg>`;
 };
 
