@@ -26,8 +26,10 @@ export default class Dialog {
          this.el = element;
          this.el.classList.add(CLASSNAME.USE_ANIMATION);
          this.el.classList.remove(CLASSNAME.ANIMATION);
-         this.#elementPlaceholder = document.createElement('span');
-         this.#elementPlaceholder.dataset.envDialogPlaceholder = '';
+         if (this.options.placement === 'body') {
+            this.#elementPlaceholder = document.createElement('span');
+            this.#elementPlaceholder.dataset.envDialogPlaceholder = '';
+         }
          if (options.opener) {
             this.#opener = getNodes(options.opener);
             this._bindOpenEvent();
@@ -102,8 +104,10 @@ export default class Dialog {
       if (e) {
          e.preventDefault();
       }
-      this.el.after(this.#elementPlaceholder);
-      document.body.append(this.el);
+      if (this.options.placement === 'body') {
+         this.el.after(this.#elementPlaceholder);
+         document.body.append(this.el);
+      }
       lockScroll();
       this.el.showModal();
       this._fadeIn();
@@ -116,8 +120,10 @@ export default class Dialog {
       if (this.el.classList.contains(CLASSNAME.ANIMATION)) {
          this.el.classList.remove(CLASSNAME.ANIMATION);
          this.el.close();
-         this.#elementPlaceholder.after(this.el);
-         this.#elementPlaceholder.remove();
+         if (this.options.placement === 'body') {
+            this.#elementPlaceholder.after(this.el);
+            this.#elementPlaceholder.remove();
+         }
          unlockScroll();
       }
    }
@@ -126,6 +132,7 @@ export default class Dialog {
 const dialogDefaults = {
    opener: null,
    backdropClick: true,
+   placement: null,
 };
 
 export const getDialogSettings = (options) => {
