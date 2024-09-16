@@ -470,7 +470,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
    -  Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
    -  Default value: `true`
 
--  `placement` _'string'_ <span class="env-badge env-badge--info">since Sitevision 2024.9.2</span>
+-  `placement` _'string'_ <span class="env-badge env-badge--info">since Sitevision 2024.09.2</span>
 
    -  Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
    -  Allowed values: `'body'`
