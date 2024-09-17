@@ -65,9 +65,7 @@ title: Media
          title="More options"
       >
          <svg class="env-icon">
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-arrow-down"
-            ></use>
+            <use href="/sitevision/envision-icons.svg#icon-arrow-down"></use>
          </svg>
          <span class="env-assistive-text">More options</span>
       </button>

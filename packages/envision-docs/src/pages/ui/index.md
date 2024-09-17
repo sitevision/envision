@@ -53,7 +53,7 @@ UI Text will be used as the new default text styles for headings in all componen
    >
       Dropdown
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul
@@ -130,12 +130,11 @@ UI Text will be used as the new default text styles for headings in all componen
          Branded poll label 3
          <svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
             class="env-progress-poll__icon"
          >
             <title>Your vote</title>
             <use
-               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+               href="/sitevision/envision-icons.svg#icon-check-done"
             ></use>
          </svg>
       </div>

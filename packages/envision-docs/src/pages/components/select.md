@@ -221,7 +221,7 @@ envision
       render: {
          item: (data, escape) =>
             `<div>
-               <svg class="env-icon env-m-right--x-small"><use xlink:href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
+               <svg class="env-icon env-m-right--x-small"><use href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
                ${escape(data.text)}
             </div>`,
       },

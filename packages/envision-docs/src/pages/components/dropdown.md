@@ -20,7 +20,7 @@ and should be located inside the same parent element as the button.
    >
       Dropdown
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul
@@ -101,7 +101,7 @@ Use `env-button-group` to split buttons.
       data-dropdown
    >
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
       <span class="env-assistive-text">Toggle Dropdown Menu</span>
    </button>
@@ -144,7 +144,7 @@ to open dropdown as an immediate child of `<body>`.
    >
       Dropdown in body
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul
@@ -183,9 +183,7 @@ aligned to end of button.
          data-dropdown
       >
          <svg class="env-icon">
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-menu-dots"
-            ></use>
+            <use href="/sitevision/envision-icons.svg#icon-menu-dots"></use>
          </svg>
          <span class="env-assistive-text">Default aligned Dropdown Menu</span>
       </button>
@@ -220,9 +218,7 @@ aligned to end of button.
          data-dropdown
       >
          <svg class="env-icon">
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-menu-dots"
-            ></use>
+            <use href="/sitevision/envision-icons.svg#icon-menu-dots"></use>
          </svg>
          <span class="env-assistive-text">End aligned Dropdown Menu</span>
       </button>

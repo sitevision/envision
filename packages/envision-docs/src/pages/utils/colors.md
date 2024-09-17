@@ -336,7 +336,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -374,7 +374,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -412,7 +412,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -450,7 +450,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>

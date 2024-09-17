@@ -335,7 +335,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-check-line"></use>
+         <use href="/sitevision/envision-icons.svg#icon-check-line"></use>
       </svg>
    </div>
    <h2 class="env-dialog__title" id="example-alertdialog-1-header">
@@ -383,7 +383,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
+         <use href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
       </svg>
    </div>
    <h2 class="env-dialog__title" id="example-alertdialog-2-header">
@@ -423,7 +423,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+         <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </div>
    <h3 class="env-dialog__title" id="example-alertdialog-3-header">
