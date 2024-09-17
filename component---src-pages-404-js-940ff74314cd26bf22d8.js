@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkenvision_docs=self.webpackChunkenvision_docs||[]).push([[883],{4431:function(e,a,t){t.r(a);var n=t(2784);a.default=()=>n.createElement("div",{className:"env-p-around--large"},n.createElement("h1",{className:"env-text"},"404 - Page not found"),n.createElement("p",{className:"env-text"},"Oops! That page does not exist. ",n.createElement("a",{href:"/"},"Home")))}}]);
-//# sourceMappingURL=component---src-pages-404-js-940ff74314cd26bf22d8.js.map
