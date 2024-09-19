@@ -198,13 +198,13 @@ This example sets the options from the config. It will allow adding tags from th
 ```HTML
 <div class="env-form-field">
    <label for="example-tag-select-2" class="env-form-label">Advanced select</label>
-   <input class="env-form-input" id="example-tag-select-2" />
+   <input class="env-form-input" id="example-tag-select-2" aria-label="Advanced select" />
 </div>
 
 <div class="env-form-field">
    <label for="example-tag-select-2-tag" class="env-form-label">Add tag using API</label>
    <div class="env-form-control">
-      <input id="example-tag-select-2-tag" type="text" class="env-form-input" />
+      <input id="example-tag-select-2-tag" type="text" class="env-form-input" aria-label="Add tag using API" />
       <button id="example-tag-select-2-add" type="submit" class="env-button env-button--primary">
          Add
       </button>
@@ -276,7 +276,7 @@ The data does not follow the Tag Select naming standards so value-/label-/search
 ```HTML
 <div class="env-form-field">
    <label for="example-tag-select-3" class="env-form-label">Remote data</label>
-   <input class="env-form-input" id="example-tag-select-3" />
+   <input class="env-form-input" id="example-tag-select-3" aria-label="Remote data" />
 </div>
 ```
 
