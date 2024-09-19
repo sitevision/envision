@@ -119,6 +119,16 @@ pre[class*='language-'] {
    .token.inserted {
       color: #527a00;
    }
+   .token.function,
+   .token.class-name {
+      color: #905;
+   }
+   .token.comment,
+   .token.prolog,
+   .token.doctype,
+   .token.cdata {
+      color: #737373;
+   }
    .token.namespace {
       opacity: 1;
    }
@@ -381,8 +391,7 @@ main {
    }
 
    @include mobile-and-tablet {
-      padding-top: $site-padding * 2;
-
+      padding: ($site-padding * 2) 0 0;
       border-top: 1px solid var(--env-border-color);
 
       > div {
@@ -398,6 +407,7 @@ main {
                box-sizing: border-box;
                flex: 1 1 33%;
                width: 33%;
+               max-width: 33%;
                padding: $site-padding;
             }
          }
@@ -408,6 +418,7 @@ main {
       > div > ul li {
          flex: 1 1 50%;
          width: 50%;
+         max-width: 50%;
       }
    }
 }
@@ -484,6 +495,9 @@ img {
    a {
       color: var(--env-font-color);
       text-decoration: none;
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
 
       &:hover {
          text-decoration: underline;
@@ -496,8 +510,6 @@ img {
       margin-bottom: 10px;
 
       > a {
-         padding: 0 0 10px 0;
-         display: inline-block;
          font-weight: 400;
          font-size: 17px;
       }
@@ -507,10 +519,6 @@ img {
       margin: 0;
       list-style: none;
       padding: 0;
-
-      li {
-         padding: 0 0 10px 0;
-      }
    }
 
    ul li a,
