@@ -408,7 +408,7 @@ main {
                flex: 1 1 33%;
                width: 33%;
                max-width: 33%;
-               padding: $site-padding;
+               padding: 0 $site-padding;
             }
          }
       }
@@ -496,7 +496,7 @@ img {
       color: var(--env-font-color);
       text-decoration: none;
       display: inline-flex;
-      min-height: 2.75rem;
+      min-height: 2rem;
       align-items: center;
 
       &:hover {
