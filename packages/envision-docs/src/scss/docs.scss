@@ -496,7 +496,7 @@ img {
       color: var(--env-font-color);
       text-decoration: none;
       display: inline-flex;
-      min-height: 2rem;
+      min-height: 1.875rem;
       align-items: center;
 
       &:hover {
@@ -526,6 +526,7 @@ img {
       font-weight: 300;
       font-size: 16px;
       color: var(--env-link-secondary-font-color);
+      border-bottom: 2px solid transparent;
 
       @include desktop {
          white-space: nowrap;
