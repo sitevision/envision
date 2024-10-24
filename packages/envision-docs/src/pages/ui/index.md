@@ -10,7 +10,7 @@ With the introduction of Brand colors, some components will have new default col
 
 A theme will have a brand color and a brand contrast color. [The default Envision theme](#brand-defaults) will have a neutral brand color.
 
-The brand color will be used to generate a palette of lighter and darker variants. Each color in the palette will get a matching contrast color for text verified against WCAG 2.0 AA.
+The brand color will be used to generate a palette of lighter and darker variants. Each color in the palette will get a matching contrast color for text verified against WCAG 2 AA.
 
 <span id="ui-text" class="offset-anchor"></span>
 
