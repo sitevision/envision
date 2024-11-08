@@ -1,6 +1,5 @@
 @use 'sass:math';
-
-@import 'mixin/css-variables';
+@use 'sass:map';
 
 // ===================
 // SASS ONLY VARIABLES
@@ -238,6 +237,205 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
       'ui-text-caption-letter-spacing': normal,
+   )
+);
+
+// ----- CONTENT TEXT -----
+
+$CONTENT_TEXT_NAMES: 'headline-01', 'headline-02', 'headline-03', 'headline-04',
+   'headline-05', 'headline-06', 'display-01', 'display-02', 'display-03',
+   'preamble', 'body-01', 'body-02', 'body-03', 'body-04', 'quotation-01',
+   'quotation-02', 'table-caption', 'table-heading', 'table-data';
+
+$content-text-base: (
+   'font-family': var(--env-font-family),
+   'font-color': var(--env-font-color),
+   'font-weight': 400,
+   'font-style': normal,
+   'text-transform': none,
+   'letter-spacing': normal,
+   'line-height': 1.2,
+   'font-size': 1em,
+   'margin-block-start': 1em,
+   'margin-block-end': 1em,
+);
+
+$content-text-heading-links: (
+   'link-font-color': var(--env-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
+
+$content-text-body-links: (
+   'link-font-color': var(--env-link-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-hover-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'headline',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 800,
+                  'margin-block-start': 1.5em,
+                  'margin-block-end': 0.5em,
+               )
+            ),
+            $content-text-heading-links
+         ),
+      'variants': (
+         '01': (
+            'margin-block-start': 0,
+            'font-size': 3.8125em,
+         ),
+         '02': (
+            'margin-block-start': 0,
+            'font-size': 3.05em,
+         ),
+         '03': (
+            'font-size': 2.44em,
+         ),
+         '04': (
+            'font-size': 1.952em,
+         ),
+         '05': (
+            'font-size': 1.5616em,
+         ),
+         '06': (
+            'font-size': 1.24928em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'display',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'margin-block-start': 1em,
+                  'margin-block-end': 0.25em,
+               )
+            ),
+            $content-text-heading-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 3.05em,
+         ),
+         '02': (
+            'font-size': 1.952em,
+         ),
+         '03': (
+            'font-size': 1.24928em,
+         ),
+      ),
+   )
+);
+
+$content-text-preamble: (
+   'name': 'preamble',
+   'defaults':
+      map.merge(
+         map.merge(
+            $content-text-base,
+            (
+               'font-size': 1.125em,
+               'line-height': 1.6,
+               'margin-block-start': 1em,
+               'margin-block-end': 1em,
+            )
+         ),
+         $content-text-body-links
+      ),
+   'variants': (),
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'body',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'line-height': 1.6,
+                  'margin-block-start': 0,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 1.25em,
+         ),
+         '02': (
+            'font-size': 1em,
+         ),
+         '03': (
+            'font-size': 0.8em,
+         ),
+         '04': (
+            'font-size': 0.64em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'quotation',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 300,
+                  'line-height': 1.5,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 2.625em,
+         ),
+         '02': (
+            'font-size': 1.5em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'table',
+      'defaults':
+         map.merge(map.merge($content-text-base, ()), $content-text-body-links),
+      'variants': (
+         'caption': (
+            'font-size': 1.25em,
+            'font-weight': 700,
+            'margin-block-start': 1em,
+            'margin-block-end': 0.25em,
+         ),
+         'heading': (
+            'font-weight': 700,
+         ),
+         'data': (),
+      ),
    )
 );
 

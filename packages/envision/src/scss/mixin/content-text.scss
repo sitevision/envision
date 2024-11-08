@@ -1,37 +1,35 @@
-@mixin content-text-common($name) {
-   font-family: var(--env-text-#{$name}-font-family);
-   font-weight: var(--env-text-#{$name}-font-weight);
-   font-style: normal;
-   text-transform: var(--env-text-#{$name}-text-transform);
-   letter-spacing: var(--env-text-#{$name}-letter-spacing);
-   line-height: var(--env-text-#{$name}-line-height);
-   color: var(--env-text-#{$name}-font-color);
-   margin-block-start: var(--env-text-#{$name}-margin-block-start);
-   margin-block-end: var(--env-text-#{$name}-margin-block-end);
-}
+@use 'sass:map';
 
-@mixin content-text-link() {
-   @at-root a#{&},
-      & a:not([class^='env-']):not([class*=' env-']) {
-      color: var(--env-link-font-color);
-      text-decoration: var(--env-link-text-decoration);
-
-      &:hover {
-         color: var(--env-link-hover-font-color);
-         text-decoration: var(--env-link-hover-text-decoration);
+@mixin content-text-font-to-css-custom-properties($content-text-font) {
+   $name: map.get($content-text-font, 'name');
+   $defaults: map.get($content-text-font, 'defaults');
+   $variants: map.get($content-text-font, 'variants');
+   @if (length($variants) == 0) {
+      @each $prop, $value in $defaults {
+         @include to-css-custom-property(
+            (
+               'text-#{$name}-#{$prop}': $value,
+            )
+         );
       }
-   }
-}
-
-@mixin content-text-link-secondary() {
-   @at-root a#{&},
-      & a:not([class^='env-']):not([class*=' env-']) {
-      color: var(--env-link-secondary-font-color);
-      text-decoration: var(--env-link-secondary-text-decoration);
-
-      &:hover {
-         color: var(--env-link-secondary-hover-font-color);
-         text-decoration: var(--env-link-secondary-hover-text-decoration);
+   } @else {
+      @each $variant, $overrides in $variants {
+         @each $prop, $value in $defaults {
+            @if map-has-key($overrides, $prop) {
+               @include to-css-custom-property(
+                  (
+                     'text-#{$name}-#{$variant}-#{$prop}':
+                        map.get($overrides, $prop),
+                  )
+               );
+            } @else {
+               @include to-css-custom-property(
+                  (
+                     'text-#{$name}-#{$variant}-#{$prop}': $value,
+                  )
+               );
+            }
+         }
       }
    }
 }

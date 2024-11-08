@@ -56,7 +56,9 @@ const BaseTemplate = ({
          />
          <div className={'main-container'}>
             <main>
-               <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
+               {title && (
+                  <h1 className="doc-heading-1 doc-heading-1--main">{title}</h1>
+               )}
                {(since || beta || deprecated) && (
                   <h2 className="doc-heading-2 doc-heading-2--main">
                      {deprecated && (

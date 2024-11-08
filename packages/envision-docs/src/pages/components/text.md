@@ -1,147 +1,128 @@
 ---
 title: Content Text
-since: 2025.01.1
+since: 2025.xx.x
 ---
 
+<div class="env-block-secondary env-block-secondary--border env-m-bottom--large">
+   <div class="example-variant">
+      <h2 class="env-text-headline-04">Secondary</h2>
+      <p class="env-text-body-02">
+         Bacon <span href="#block" class="env-link">ipsum</span> dolor
+         <a href="#blocks">amet beef</a> cupim brisket pork
+         <a href="#block" class="env-link-secondary">turducken</a>.
+      </p>
+   </div>
+</div>
+
+**Note:** Content text is not yet available in Sitevision.
+
 Content Text is designed to be used for all types of text content.
-It is a versatile and flexible text style that can be used for a wide range of purposes,
+It is a versatile and flexible set of site fonts that can be used for a wide range of purposes,
 from body text to headings and captions.
 
-<div class="env-container" style="position:relative">
-   <div class="env-dynamic-font env-dynamic-font--scale-1_375 env-dynamic-font--from-400 env-dynamic-font--to-800">
-<p class="env-text-display-02 nr uc">
-  <mark class="typo"><span>display / 02</span></mark>
-  Local history
-</p>
-<h1 class="env-text-headline-01">
-  <mark class="typo"><span>headline / 01</span></mark>
-  The <a href="#">Enigmatic Legend</a> of Örebro Castle
-</h1>
-<p class="env-text-body-04 p-02">
-  <mark class="typo"><span>body / 04</span></mark>
-  <!-- <mark class="typo"><span>env-text-preamble</span></mark> -->
-  Published on dec 5 by John Blacksmith
-</p>
-<p class="env-text-preamble">
-  <mark class="typo"><span>preamble</span></mark>
-  Örebro Castle, <a href="#" class="env-link">a historic fortress</a> located in the heart of Sweden, has stood
-  for centuries as a testament to the <a href="#">nation's rich heritage</a>. Its stone walls
-  whisper tales of medieval knights, royal intrigues, and spectral apparitions.
-  This story delves into one of the lesser-known legends of Örebro Castle, a
-  tale of mystery and courage that has been passed down through generations.
-</p>
-<h2 class="env-text-headline-02">
-  <mark class="typo"><span>headline / 02</span></mark> The Curse of the
-  Blacksmith
-</h2>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  Long ago, in the 15th century, Örebro Castle was a bustling hub of political
-  and military activity. King Charles VIII ruled with a fair but iron hand,
-  ensuring peace throughout his kingdom. However, within the castle walls, a
-  dark secret festered, one that would soon unravel.
-</p>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  A skilled blacksmith named John lived in the village nearby. He was known for
-  his exceptional craftsmanship, creating weapons and armor of unparalleled
-  quality. John's talents earned him the respect and admiration of many,
-  including the king. But John harbored a secret; he was deeply in love with
-  Helena, a beautiful maiden who served as a lady-in-waiting at the castle.
-</p>
-<p class="env-text-body-03 separator">
-  <mark class="typo"><span>body / 03</span></mark>
-  Helena reciprocated John's feelings, and their love blossomed in secret.
-  However, their happiness was short-lived. Sir Magnus, a high-ranking noble
-  with a cruel disposition, also desired Helena. Consumed by jealousy and rage
-  upon learning of Helena's love for John, Sir Magnus concocted a sinister plan.
-</p>
-<p class="env-text-quotation-01">
-  <mark class="typo"><span>quotation / 01</span></mark
-  ><span style="background-color: var(--env-block-secondary-background-color); color: var(--env-block-secondary-font-color); padding: 0.175em;">
-    »Touched by her sorrow, the king agreed to spare John's life on one
-    condition: John must create a sword of unparalleled strength and beauty
-    within a month.«</span
-  >
-</p>
-<h3 class="env-text-headline-03">
-  <mark class="typo"><span>headline / 03</span></mark
-  >The Betrayal
-</h3>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  One cold winter's night, Sir Magnus accused John of forging counterfeit coins,
-  a crime punishable by death. Despite his protests of innocence, John was
-  imprisoned within the castle's dungeons, awaiting execution. Helena,
-  distraught and desperate, pleaded with King Charles for mercy. Touched by her
-  sorrow, the king agreed to spare John's life on one condition: John must
-  create a sword of unparalleled strength and beauty within a month.
-</p>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  John, determined to save his life and be with Helena, accepted the challenge.
-  For weeks, he toiled tirelessly, pouring his heart and soul into his work.
-  Finally, he crafted a sword so magnificent that it seemed to glow with an
-  inner light. But as he presented the sword to the king, Sir Magnus intervened,
-  sabotaging John's work by cursing the blade.
-</p>
-<h4 class="env-text-headline-04">
-  <mark class="typo"><span>headline / 04</span></mark
-  >The Haunting
-</h4>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  The cursed sword brought misfortune to all who wielded it. One by one, the
-  castle's knights fell to mysterious accidents and illnesses. Fear and
-  suspicion spread throughout the castle, and whispers of a curse echoed through
-  the halls. John, now realizing the true nature of Sir Magnus's evil, sought to
-  break the curse.
-</p>
-<h5 class="env-text-headline-05">
-  <mark class="typo"><span>headline / 05</span></mark
-  >The Legacy
-</h5>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  Helena, heartbroken but resolute, vowed to ensure that John's sacrifice was
-  not in vain. She presented the cursed sword to King Charles, explaining the
-  truth behind the curse. The king, deeply moved by their tragic love story,
-  ordered the sword to be sealed within the castle's walls, never to be used
-  again.
-</p>
-<h6 class="env-text-headline-06">
-  <mark class="typo"><span>headline / 06</span></mark
-  >The Eternal Flame
-</h6>
-<p class="env-text-body-02">
-  <mark class="typo"><span>body / 02</span></mark>
-  Years later, a grand festival was held to commemorate the heroism and love of
-  John and Helena. During this celebration, a blacksmith's forge was lit in the
-  castle courtyard, symbolizing John's enduring spirit. This forge, known as the
-  Eternal Flame, continues to burn bright, a beacon of hope and resilience.
-  Local blacksmiths and artisans gather annually to pay homage, forging new
-  creations in honor of John's legacy.
-</p>
-<div class="env-block-secondary env-p-around--large">
-  <h3 class="env-text-display-03 uc">
-    <mark class="typo"><span>display / 03</span></mark
-    >Summary
-  </h3>
-  <p class="env-text-body-03">
-    <mark class="typo"><span>body / 03</span></mark>
-    In the 15th century, Örebro Castle was the center of a tragic love story
-    between a skilled blacksmith named John and a beautiful lady-in-waiting,
-    Helena. Their secret romance was disrupted by the jealous Sir Magnus, who
-    falsely accused John of forging counterfeit coins. To save his life, John
-    was challenged to create a magnificent sword, which Sir Magnus cursed,
-    leading to a series of misfortunes. John and Helena's love culminated in a
-    final confrontation where John defeated Sir Magnus but succumbed to the
-    curse. Helena revealed the truth to King Charles, who sealed the cursed
-    sword within the castle. Their story became a legend, commemorated by the
-    Eternal Flame, a forge lit annually to honor their love and sacrifice,
-    ensuring that their legacy endures within the walls of Örebro Castle.
-  </p>
+Content Text is divided into six different sets, each with its own unique style and purpose.
+
+<div class="code-example">
+   <div class="example-content-text-demo">
+      <h2 class="env-text-headline-02">Headline</h2>  
+      <h2 class="env-text-display-02">Display</h2>  
+      <p class="env-text-preamble">Preamble</p>  
+      <p class="env-text-body-02">Body</p>  
+      <p class="env-text-quotation-02">Quotation</p>  
+      <p class="env-text-table-data">Table</p>
+   </div>
 </div>
 
+## Variants
+
+Variants of a text style are named 01, 02, 03, etc. and are used to differentiate between different sizes of the same style.
+
+For headings there is no need to assign a certain variant number to the HTML `<H{n}>` element with the same number. Look at the
+variant numbers as a size and style indicator rather than a specific element type.
+
+When designing a website you may for example choose to use the 02 variant as a default size for an `<H1>` element and then
+use the 01 variant for specific cases where you might want to display a larger heading.
+
+### Headline
+
+Headline text is used for titles and headings. There are six different headline styles available.
+
+```html
+<div class="example-content-text-demo">
+   <h1 class="env-text-headline-01">Headline / 01</h1>
+   <h2 class="env-text-headline-02">Headline / 02</h2>
+   <h2 class="env-text-headline-03">Headline / 03</h2>
+   <h3 class="env-text-headline-04">Headline / 04</h3>
+   <h3 class="env-text-headline-05">Headline / 05</h3>
+   <h4 class="env-text-headline-06">Headline / 06</h4>
 </div>
+```
+
+Headline class names: `env-text-headline-01`, `env-text-headline-02`, `env-text-headline-03`, `env-text-headline-04`, `env-text-headline-05`, `env-text-headline-06`.
+
+## Styling
+
+All variants of a font will have its own set of variables that can be used to style the text. Below is a list of the variables.
+
+-  `--env-text-{name}-font-family`
+-  `--env-text-{name}-font-size`
+-  `--env-text-{name}-font-weight`
+-  `--env-text-{name}-font-style`
+-  `--env-text-{name}-line-height`
+-  `--env-text-{name}-text-transform`
+-  `--env-text-{name}-letter-spacing`
+-  `--env-text-{name}-font-color`
+-  `--env-text-{name}-margin-block-start`
+-  `--env-text-{name}-margin-block-end`
+
+Possible values for `{name}`: `headline-01`, `headline-02`, `headline-03`, `headline-04`, `headline-05`, `headline-06`,
+`display-01`, `display-02`, `display-03`, `preamble`, `body-01`, `body-02`, `body-03`, `body-04`,
+`quotation-01`, `quotation-02`, `table-caption`, `table-heading`, `table-data`.
+
+<div class="example-spacing">
+   <div class="example-spacing__margin">
+      <div class="example-spacing__env-content" style="margin:1.5em 0 0.5em">
+          <h2 class="env-text-display-02 example-spacing__lineheight" style="margin:0">Display / 02</h2>
+      </div>
+   </div>
 </div>
+
+```html
+<div class="example-content-text-demo">
+   <h1 class="env-text-headline-01">Headline / 01</h1>
+   <h2 class="env-text-headline-02">Headline / 02</h2>
+   <h2 class="env-text-headline-03">Headline / 03</h2>
+   <h3 class="env-text-headline-04">Headline / 04</h3>
+   <h3 class="env-text-headline-05">Headline / 05</h3>
+   <h4 class="env-text-headline-06">Headline / 06</h4>
+   <h2 class="env-text-display-01">Display / 01</h2>
+   <h2 class="env-text-display-02">Display / 02</h2>
+   <h3 class="env-text-display-03">Display / 03</h3>
+   <p class="env-text-preamble">Preamble</p>
+   <p class="env-text-body-01">Body / 01</p>
+   <p class="env-text-body-02">Body / 02</p>
+   <p class="env-text-body-03">Body / 03</p>
+   <p class="env-text-body-04">Body / 04</p>
+   <p class="env-text-quotation-01">Quotation / 01</p>
+   <p class="env-text-quotation-02">Quotation / 02</p>
+   <p class="env-text-table-caption">Table / Caption</p>
+   <p class="env-text-table-heading">Table / Heading</p>
+   <p class="env-text-table-data">Table / Data</p>
+</div>
+```
+
+## Links
+
+The heading styles (Headline and Display) will in the default
+settings use the toned down styling similar to [secondary links](/utils/text/#links).
+Body, Preamble, Quotation and Table will all use the
+[default link styling](/utils/text/#links) as default.
+
+Link styling may be adjusted by using the following classes where name is the name of the font style:
+
+-  `--env-text-{name}-link-font-color`
+-  `--env-text-{name}-link-text-decoration`
+-  `--env-text-{name}-link-hover-font-color`
+-  `--env-text-{name}-link-hover-text-decoration`
+
+[Example Article](/examples/content-text-article)
