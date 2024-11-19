@@ -242,9 +242,9 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
 
 // ----- CONTENT TEXT -----
 
-$CONTENT_TEXT_NAMES: 'headline-01', 'headline-02', 'headline-03', 'headline-04',
-   'headline-05', 'headline-06', 'display-01', 'display-02', 'display-03',
-   'preamble', 'body-01', 'body-02', 'body-03', 'body-04', 'quotation-01',
+$CONTENT_TEXT_NAMES: 'heading-01', 'heading-02', 'heading-03', 'heading-04',
+   'heading-05', 'heading-06', 'display-01', 'display-02', 'display-03',
+   'summary', 'body-01', 'body-02', 'body-03', 'body-04', 'quotation-01',
    'quotation-02', 'table-caption', 'table-heading', 'table-data';
 
 $content-text-base: (
@@ -276,7 +276,7 @@ $content-text-body-links: (
 
 @include content-text-font-to-css-custom-properties(
    (
-      'name': 'headline',
+      'name': 'heading',
       'defaults':
          map.merge(
             map.merge(
@@ -342,8 +342,8 @@ $content-text-body-links: (
    )
 );
 
-$content-text-preamble: (
-   'name': 'preamble',
+$content-text-summary: (
+   'name': 'summary',
    'defaults':
       map.merge(
          map.merge(

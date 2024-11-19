@@ -7,25 +7,25 @@
   <mark class="typo"><span>display / 02</span></mark>
   Local history
 </p>
-<h1 class="env-text-headline-01">
-  <mark class="typo"><span>headline / 01</span></mark>
+<h1 class="env-text-heading-01">
+  <mark class="typo"><span>heading / 01</span></mark>
   The <a href="#">Enigmatic Legend</a> of Örebro Castle
 </h1>
 <p class="env-text-body-04 p-02">
   <mark class="typo"><span>body / 04</span></mark>
-  <!-- <mark class="typo"><span>env-text-preamble</span></mark> -->
+  <!-- <mark class="typo"><span>env-text-summary</span></mark> -->
   Published on dec 5 by John Blacksmith
 </p>
-<p class="env-text-preamble">
-  <mark class="typo"><span>preamble</span></mark>
+<p class="env-text-summary">
+  <mark class="typo"><span>summary</span></mark>
   Örebro Castle, <a href="#" class="env-link">a historic fortress</a> located in the heart of Sweden, has stood
   for centuries as a testament to the <a href="#">nation's rich heritage</a>. Its stone walls
   whisper tales of medieval knights, royal intrigues, and spectral apparitions.
   This story delves into one of the lesser-known legends of Örebro Castle, a
   tale of mystery and courage that has been passed down through generations.
 </p>
-<h2 class="env-text-headline-02">
-  <mark class="typo"><span>headline / 02</span></mark> The Curse of the
+<h2 class="env-text-heading-02">
+  <mark class="typo"><span>heading / 02</span></mark> The Curse of the
   Blacksmith
 </h2>
 <p class="env-text-body-02">
@@ -58,8 +58,8 @@
     within a month.«</span
   >
 </p>
-<h3 class="env-text-headline-03">
-  <mark class="typo"><span>headline / 03</span></mark
+<h3 class="env-text-heading-03">
+  <mark class="typo"><span>heading / 03</span></mark
   >The Betrayal
 </h3>
 <p class="env-text-body-02">
@@ -79,8 +79,8 @@
   inner light. But as he presented the sword to the king, Sir Magnus intervened,
   sabotaging John's work by cursing the blade.
 </p>
-<h4 class="env-text-headline-04">
-  <mark class="typo"><span>headline / 04</span></mark
+<h4 class="env-text-heading-04">
+  <mark class="typo"><span>heading / 04</span></mark
   >The Haunting
 </h4>
 <p class="env-text-body-02">
@@ -91,8 +91,8 @@
   the halls. John, now realizing the true nature of Sir Magnus's evil, sought to
   break the curse.
 </p>
-<h5 class="env-text-headline-05">
-  <mark class="typo"><span>headline / 05</span></mark
+<h5 class="env-text-heading-05">
+  <mark class="typo"><span>heading / 05</span></mark
   >The Legacy
 </h5>
 <p class="env-text-body-02">
@@ -103,8 +103,8 @@
   ordered the sword to be sealed within the castle's walls, never to be used
   again.
 </p>
-<h6 class="env-text-headline-06">
-  <mark class="typo"><span>headline / 06</span></mark
+<h6 class="env-text-heading-06">
+  <mark class="typo"><span>heading / 06</span></mark
   >The Eternal Flame
 </h6>
 <p class="env-text-body-02">

@@ -5,7 +5,7 @@ since: 2025.xx.x
 
 <div class="env-block-secondary env-block-secondary--border env-m-bottom--large">
    <div class="example-variant">
-      <h2 class="env-text-headline-04">Secondary</h2>
+      <h2 class="env-text-heading-04">Secondary</h2>
       <p class="env-text-body-02">
          Bacon <span href="#block" class="env-link">ipsum</span> dolor
          <a href="#blocks">amet beef</a> cupim brisket pork
@@ -24,9 +24,9 @@ Content Text is divided into six different sets, each with its own unique style 
 
 <div class="code-example">
    <div class="example-content-text-demo">
-      <h2 class="env-text-headline-02">Headline</h2>  
+      <h2 class="env-text-heading-02">heading</h2>  
       <h2 class="env-text-display-02">Display</h2>  
-      <p class="env-text-preamble">Preamble</p>  
+      <p class="env-text-summary">summary</p>  
       <p class="env-text-body-02">Body</p>  
       <p class="env-text-quotation-02">Quotation</p>  
       <p class="env-text-table-data">Table</p>
@@ -43,22 +43,22 @@ variant numbers as a size and style indicator rather than a specific element typ
 When designing a website you may for example choose to use the 02 variant as a default size for an `<H1>` element and then
 use the 01 variant for specific cases where you might want to display a larger heading.
 
-### Headline
+### heading
 
-Headline text is used for titles and headings. There are six different headline styles available.
+heading text is used for titles and headings. There are six different heading styles available.
 
 ```html
 <div class="example-content-text-demo">
-   <h1 class="env-text-headline-01">Headline / 01</h1>
-   <h2 class="env-text-headline-02">Headline / 02</h2>
-   <h2 class="env-text-headline-03">Headline / 03</h2>
-   <h3 class="env-text-headline-04">Headline / 04</h3>
-   <h3 class="env-text-headline-05">Headline / 05</h3>
-   <h4 class="env-text-headline-06">Headline / 06</h4>
+   <h1 class="env-text-heading-01">heading / 01</h1>
+   <h2 class="env-text-heading-02">heading / 02</h2>
+   <h2 class="env-text-heading-03">heading / 03</h2>
+   <h3 class="env-text-heading-04">heading / 04</h3>
+   <h3 class="env-text-heading-05">heading / 05</h3>
+   <h4 class="env-text-heading-06">heading / 06</h4>
 </div>
 ```
 
-Headline class names: `env-text-headline-01`, `env-text-headline-02`, `env-text-headline-03`, `env-text-headline-04`, `env-text-headline-05`, `env-text-headline-06`.
+heading class names: `env-text-heading-01`, `env-text-heading-02`, `env-text-heading-03`, `env-text-heading-04`, `env-text-heading-05`, `env-text-heading-06`.
 
 ## Styling
 
@@ -75,8 +75,8 @@ All variants of a font will have its own set of variables that can be used to st
 -  `--env-text-{name}-margin-block-start`
 -  `--env-text-{name}-margin-block-end`
 
-Possible values for `{name}`: `headline-01`, `headline-02`, `headline-03`, `headline-04`, `headline-05`, `headline-06`,
-`display-01`, `display-02`, `display-03`, `preamble`, `body-01`, `body-02`, `body-03`, `body-04`,
+Possible values for `{name}`: `heading-01`, `heading-02`, `heading-03`, `heading-04`, `heading-05`, `heading-06`,
+`display-01`, `display-02`, `display-03`, `summary`, `body-01`, `body-02`, `body-03`, `body-04`,
 `quotation-01`, `quotation-02`, `table-caption`, `table-heading`, `table-data`.
 
 <div class="example-spacing">
@@ -89,16 +89,16 @@ Possible values for `{name}`: `headline-01`, `headline-02`, `headline-03`, `head
 
 ```html
 <div class="example-content-text-demo">
-   <h1 class="env-text-headline-01">Headline / 01</h1>
-   <h2 class="env-text-headline-02">Headline / 02</h2>
-   <h2 class="env-text-headline-03">Headline / 03</h2>
-   <h3 class="env-text-headline-04">Headline / 04</h3>
-   <h3 class="env-text-headline-05">Headline / 05</h3>
-   <h4 class="env-text-headline-06">Headline / 06</h4>
+   <h1 class="env-text-heading-01">heading / 01</h1>
+   <h2 class="env-text-heading-02">heading / 02</h2>
+   <h2 class="env-text-heading-03">heading / 03</h2>
+   <h3 class="env-text-heading-04">heading / 04</h3>
+   <h3 class="env-text-heading-05">heading / 05</h3>
+   <h4 class="env-text-heading-06">heading / 06</h4>
    <h2 class="env-text-display-01">Display / 01</h2>
    <h2 class="env-text-display-02">Display / 02</h2>
    <h3 class="env-text-display-03">Display / 03</h3>
-   <p class="env-text-preamble">Preamble</p>
+   <p class="env-text-summary">summary</p>
    <p class="env-text-body-01">Body / 01</p>
    <p class="env-text-body-02">Body / 02</p>
    <p class="env-text-body-03">Body / 03</p>
@@ -113,9 +113,9 @@ Possible values for `{name}`: `headline-01`, `headline-02`, `headline-03`, `head
 
 ## Links
 
-The heading styles (Headline and Display) will in the default
+The heading styles (heading and Display) will in the default
 settings use the toned down styling similar to [secondary links](/utils/text/#links).
-Body, Preamble, Quotation and Table will all use the
+Body, summary, Quotation and Table will all use the
 [default link styling](/utils/text/#links) as default.
 
 Link styling may be adjusted by using the following classes where name is the name of the font style:
