@@ -470,20 +470,6 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    margin: 2em 0;
    padding: 2em;
 
-   &__margin,
-   &__padding,
-   &__lineheight {
-      &:before {
-         position: absolute;
-         top: 1px;
-         left: 1px;
-         font-family: Helvetica, Arial, sans-serif;
-         font-size: 9px;
-         font-weight: 400;
-         line-height: 1.1;
-         color: $exampleElColor;
-      }
-   }
    &__margin {
       position: relative;
       background-color: $exampleElMarginBg;
@@ -491,12 +477,11 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
       &:before {
          content: 'margin';
-         background-color: $exampleElMarginBg;
+         position: absolute;
+         top: 1px;
+         left: 1px;
+         font-size: 9px;
       }
-   }
-
-   &__margin[data-margin]:before {
-      content: attr(data-margin);
    }
 
    &__padding {
@@ -507,48 +492,19 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
       &:before {
          content: 'padding';
-         background-color: #c3d08a;
-      }
-   }
-
-   &__padding[data-padding]:before {
-      content: attr(data-padding);
-   }
-
-   &__lineheight {
-      position: relative;
-
-      &:before {
-         content: 'line-height';
-         left: auto;
-         right: 1px;
-         background-color: $exampleElBg;
-      }
-   }
-
-   &__lineheight[data-lineheight]:before {
-      content: attr(data-lineheight);
-   }
-
-   &__content,
-   &__env-content {
-      line-height: 1;
-      background-color: $exampleElBg;
-      border: 1px solid $exampleElBorder;
-      color: $exampleElColor;
-   }
-
-   &__env-content {
-      &,
-      * {
-         font-family: Helvetica, Arial, sans-serif;
-         color: $exampleElColor;
+         position: absolute;
+         top: 1px;
+         left: 1px;
+         font-size: 9px;
       }
    }
 
    &__content {
+      line-height: 1;
       font-size: 12px;
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      background-color: $exampleElBg;
+      border: 1px solid $exampleElBorder;
    }
 }
 
@@ -980,11 +936,5 @@ canvas.example-canvas {
    > div:last-child {
       position: absolute;
       inset: 1em 1em auto auto;
-   }
-}
-
-.example-content-text-demo {
-   > * {
-      margin: 0;
    }
 }
