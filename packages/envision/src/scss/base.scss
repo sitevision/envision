@@ -1,9 +1,9 @@
 @import '_functions';
 
-@import 'variable';
-
 // Partials
 @import 'mixin/base';
+
+@import 'variable';
 
 // Utils
 @import 'util/base';
@@ -13,6 +13,7 @@
 @import 'badge';
 @import 'breadcrumb';
 @import 'cards';
+@import 'content-text';
 @import 'profile-image';
 @import 'button';
 @import 'button-group';

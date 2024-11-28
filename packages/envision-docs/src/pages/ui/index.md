@@ -2,21 +2,18 @@
 title: Brand colors and UI Text
 ---
 
-<span class="env-badge env-badge--info">2023.01</span>
-
 ## Brand colors
 
-With the introduction of Brand colors, some components will have new default color decorations using the new Brand color. [See examples below](#examples).
+An Envision theme will have one brand color and a matching contrast color. [The default theme](#brand-defaults) uses a neutral color.
 
-A theme will have a brand color and a brand contrast color. [The default Envision theme](#brand-defaults) will have a neutral brand color.
-
-The brand color will be used to generate a palette of lighter and darker variants. Each color in the palette will get a matching contrast color for text verified against WCAG 2 AA.
+The brand color is used to generate a palette of lighter and darker variants. Each color in the palette has a matching contrast color
+verified against WCAG 2 AA.
 
 <span id="ui-text" class="offset-anchor"></span>
 
 ## UI text
 
-UI Text will be used as the new default text styles for headings in all components.
+UI Text is a set of text styles that should be used for headings and other text in templates, components and applications.
 
 ```html
 <p class="env-ui-text-overline">Overline</p>
