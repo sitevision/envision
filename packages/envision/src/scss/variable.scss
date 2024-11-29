@@ -244,8 +244,9 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
 
 $CONTENT_TEXT_NAMES: 'heading-01', 'heading-02', 'heading-03', 'heading-04',
    'heading-05', 'heading-06', 'display-01', 'display-02', 'display-03',
-   'summary', 'body-01', 'body-02', 'body-03', 'body-04', 'quotation-01',
-   'quotation-02', 'table-caption', 'table-heading', 'table-data';
+   'summary-01', 'body-01', 'body-02', 'body-03', 'body-04', 'caption-01',
+   'quotation-01', 'quotation-02', 'table-caption-01', 'table-heading-01',
+   'table-data-01';
 
 $content-text-base: (
    'font-family': var(--env-font-family),
@@ -342,22 +343,26 @@ $content-text-body-links: (
    )
 );
 
-$content-text-summary: (
-   'name': 'summary',
-   'defaults':
-      map.merge(
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'summary',
+      'defaults':
          map.merge(
-            $content-text-base,
-            (
-               'font-size': 1.125em,
-               'line-height': 1.6,
-               'margin-block-start': 1em,
-               'margin-block-end': 1em,
-            )
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 1.125em,
+                  'line-height': 1.6,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
          ),
-         $content-text-body-links
+      'variants': (
+         '01': (),
       ),
-   'variants': (),
+   )
 );
 
 @include content-text-font-to-css-custom-properties(
@@ -388,6 +393,28 @@ $content-text-summary: (
          '04': (
             'font-size': 0.64em,
          ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'caption',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 1em,
+                  'line-height': 1.6,
+                  'margin-block-start': 0.25em,
+                  'margin-block-end': 0,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (),
       ),
    )
 );
@@ -425,16 +452,16 @@ $content-text-summary: (
       'defaults':
          map.merge(map.merge($content-text-base, ()), $content-text-body-links),
       'variants': (
-         'caption': (
+         'caption-01': (
             'font-size': 1.25em,
             'font-weight': 700,
             'margin-block-start': 1em,
             'margin-block-end': 0.25em,
          ),
-         'heading': (
+         'heading-01': (
             'font-weight': 700,
          ),
-         'data': (),
+         'data-01': (),
       ),
    )
 );
