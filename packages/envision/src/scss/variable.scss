@@ -460,8 +460,13 @@ $content-text-body-links: (
          ),
          'heading-01': (
             'font-weight': 700,
+            'margin-block-start': 0,
+            'margin-block-end': 0,
          ),
-         'data-01': (),
+         'data-01': (
+            'margin-block-start': 0,
+            'margin-block-end': 0,
+         ),
       ),
    )
 );
