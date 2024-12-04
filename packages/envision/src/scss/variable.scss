@@ -293,23 +293,23 @@ $content-text-body-links: (
       'variants': (
          '01': (
             'margin-block-start': 0,
-            'font-size': 3.8125em,
+            'font-size': 3em,
          ),
          '02': (
             'margin-block-start': 0,
-            'font-size': 3.05em,
+            'font-size': 2.5em,
          ),
          '03': (
-            'font-size': 2.44em,
+            'font-size': 2.0625em,
          ),
          '04': (
-            'font-size': 1.952em,
+            'font-size': 1.75em,
          ),
          '05': (
-            'font-size': 1.5616em,
+            'font-size': 1.4375em,
          ),
          '06': (
-            'font-size': 1.24928em,
+            'font-size': 1.1875em,
          ),
       ),
    )
@@ -382,16 +382,16 @@ $content-text-body-links: (
          ),
       'variants': (
          '01': (
-            'font-size': 1.25em,
+            'font-size': 1.2em,
          ),
          '02': (
             'font-size': 1em,
          ),
          '03': (
-            'font-size': 0.8em,
+            'font-size': 0.8125em,
          ),
          '04': (
-            'font-size': 0.64em,
+            'font-size': 0.6875em,
          ),
       ),
    )
@@ -405,7 +405,7 @@ $content-text-body-links: (
             map.merge(
                $content-text-base,
                (
-                  'font-size': 1em,
+                  'font-size': 0.8125em,
                   'line-height': 1.6,
                   'margin-block-start': 0.25em,
                   'margin-block-end': 0,
@@ -437,10 +437,10 @@ $content-text-body-links: (
          ),
       'variants': (
          '01': (
-            'font-size': 2.625em,
+            'font-size': 1.2em,
          ),
          '02': (
-            'font-size': 1.5em,
+            'font-size': 1em,
          ),
       ),
    )
