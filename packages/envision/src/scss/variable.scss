@@ -255,7 +255,7 @@ $content-text-base: (
    'font-style': normal,
    'text-transform': none,
    'letter-spacing': normal,
-   'line-height': 1.2,
+   'line-height': 1.6,
    'font-size': 1em,
    'margin-block-start': 1em,
    'margin-block-end': 1em,
@@ -284,6 +284,7 @@ $content-text-body-links: (
                $content-text-base,
                (
                   'font-weight': 800,
+                  'line-height': 1.2,
                   'margin-block-start': 1.5em,
                   'margin-block-end': 0.5em,
                )
@@ -323,6 +324,7 @@ $content-text-body-links: (
             map.merge(
                $content-text-base,
                (
+                  'line-height': 1.2,
                   'margin-block-start': 1em,
                   'margin-block-end': 0.25em,
                )
@@ -428,7 +430,7 @@ $content-text-body-links: (
                $content-text-base,
                (
                   'font-weight': 300,
-                  'line-height': 1.5,
+                  'line-height': 1.6,
                   'margin-block-start': 1em,
                   'margin-block-end': 1em,
                )
@@ -453,17 +455,19 @@ $content-text-body-links: (
          map.merge(map.merge($content-text-base, ()), $content-text-body-links),
       'variants': (
          'caption-01': (
-            'font-size': 1.25em,
-            'font-weight': 700,
+            'font-size': 0.8125em,
+            'line-height': 1.5,
             'margin-block-start': 1em,
             'margin-block-end': 0.25em,
          ),
          'heading-01': (
             'font-weight': 700,
+            'line-height': 1.2,
             'margin-block-start': 0,
             'margin-block-end': 0,
          ),
          'data-01': (
+            'line-height': 1.6,
             'margin-block-start': 0,
             'margin-block-end': 0,
          ),
