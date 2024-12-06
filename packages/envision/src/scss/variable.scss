@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use 'sass:map';
+@use 'sass:list';
 
 // ===================
 // SASS ONLY VARIABLES
@@ -242,11 +243,17 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
 
 // ----- CONTENT TEXT -----
 
-$CONTENT_TEXT_NAMES: 'heading-01', 'heading-02', 'heading-03', 'heading-04',
-   'heading-05', 'heading-06', 'display-01', 'display-02', 'display-03',
-   'summary-01', 'body-01', 'body-02', 'body-03', 'body-04', 'caption-01',
-   'quotation-01', 'quotation-02', 'table-caption-01', 'table-heading-01',
-   'table-data-01';
+$CONTENT_TEXT_HEADING_NAMES: 'heading-01', 'heading-02', 'heading-03',
+   'heading-04', 'heading-05', 'heading-06', 'display-01', 'display-02',
+   'display-03';
+$CONTENT_TEXT_BODY_NAMES: 'summary-01', 'body-01', 'body-02', 'body-03',
+   'body-04', 'caption-01', 'quotation-01', 'quotation-02', 'table-caption-01',
+   'table-heading-01', 'table-data-01';
+
+$CONTENT_TEXT_NAMES: list.join(
+   $CONTENT_TEXT_HEADING_NAMES,
+   $CONTENT_TEXT_BODY_NAMES
+);
 
 $content-text-base: (
    'font-family': var(--env-font-family),
@@ -462,12 +469,12 @@ $content-text-body-links: (
          ),
          'heading-01': (
             'font-weight': 700,
-            'line-height': 1.2,
+            'line-height': 1.5,
             'margin-block-start': 0,
             'margin-block-end': 0,
          ),
          'data-01': (
-            'line-height': 1.6,
+            'line-height': 1.5,
             'margin-block-start': 0,
             'margin-block-end': 0,
          ),
