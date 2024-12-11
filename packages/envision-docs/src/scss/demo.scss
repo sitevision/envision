@@ -495,8 +495,20 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       }
    }
 
-   &__margin[data-margin]:before {
-      content: attr(data-margin);
+   &__margin[data-margin-block-start]:before {
+      content: attr(data-margin-block-start);
+   }
+
+   &__margin[data-margin-block-end]:after {
+      position: absolute;
+      bottom: 1px;
+      left: 1px;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: $exampleElColor;
+      content: attr(data-margin-block-end);
    }
 
    &__padding {
@@ -986,5 +998,20 @@ canvas.example-canvas {
 .example-content-text-demo {
    > * {
       margin: 0;
+   }
+}
+
+.example-table {
+   border-collapse: collapse;
+
+   caption,
+   th,
+   td {
+      padding: 0.25rem;
+      text-align: left;
+   }
+   th,
+   td {
+      border: 1px solid var(--env-border-color);
    }
 }

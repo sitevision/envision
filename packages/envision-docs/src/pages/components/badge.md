@@ -5,8 +5,8 @@ title: Badge
 ## Overview
 
 ```html
-<h1 class="env-text">Hello <span class="env-badge">New</span></h1>
-<h2 class="env-text">Hello <span class="env-badge">New</span></h2>
+<h1 class="env-text-heading-01">Hello <span class="env-badge">New</span></h1>
+<h2 class="env-text-heading-02">Hello <span class="env-badge">New</span></h2>
 ```
 
 ## Variants
@@ -21,8 +21,6 @@ title: Badge
 
 ### Status variants <span id="status-variant" class="offset-anchor"></span>
 
-<span class="env-badge env-badge--info">Available since 2023.02.1</span>
-
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
 <span class="env-badge env-badge--active">Active</span>
@@ -31,7 +29,7 @@ title: Badge
 
 ### Brand
 
-<span class="env-badge env-badge--info">2023.01</span>
+<span class="env-badge env-badge--info">2023.01.1</span>
 
 Brand color badges are available by using modifier `env-badge--brand` or `env-badge--brand-{n}`.
 

@@ -1,8 +1,8 @@
 ---
 title: Dynamic font size
-since: 2024.02.1
-beta: true
 ---
+
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2024.02.1</span></h2>
 
 Use Dynamic font size to scale the base font size of an element. Any element children using
 relative font sizes will scale proportionally.

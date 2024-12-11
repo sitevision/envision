@@ -57,7 +57,6 @@ export const pageQuery = graphql`
             title
             deprecated
             since
-            beta
             dashboard
             indexing
          }
@@ -70,7 +69,6 @@ export const pageQuery = graphql`
                   title
                   deprecated
                   since
-                  beta
                   dashboard
                   indexing
                }

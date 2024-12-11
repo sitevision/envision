@@ -5,10 +5,10 @@ title: Collapse
 ## Collapsible content
 
 ```html
-<h4 class="env-text">
+<h4 class="env-ui-text-sectionheading">
    <a
       role="button"
-      class="env-button env-button--link"
+      class="env-link"
       href="#container1"
       data-env-collapse
       aria-expanded="false"
@@ -19,7 +19,7 @@ title: Collapse
 </h4>
 
 <div class="env-collapse" id="container1">
-   <p class="env-text">
+   <p class="env-text-body-02">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
       lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus
       quam. Proin eu tincidunt metus.
@@ -35,9 +35,9 @@ Add `env-collapse-header` to give the collapsible header a background
 Add `env-collapse-header--icons` to add icons
 
 ```html
-<h4 class="env-text">
+<h4 class="env-ui-text-sectionheading">
    <a
-      class="env-collapse-header env-d--flex env-align-items--center env-justify-content--between"
+      class="env-collapse-header env-flex env-flex--justify-content-between"
       role="button"
       href="#container2"
       data-env-collapse
@@ -50,7 +50,7 @@ Add `env-collapse-header--icons` to add icons
 </h4>
 
 <div class="env-collapse" id="container2">
-   <p class="env-text">
+   <p class="env-text-body-02">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
       lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus
       quam. Proin eu tincidunt metus.
