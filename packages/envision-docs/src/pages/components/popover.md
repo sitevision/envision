@@ -93,7 +93,7 @@ for a menu-styled popover. Use class `env-popover__item` for the menu items.
       <li>
          <button type="button" class="env-popover__item">
             <svg class="env-icon">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
+               <use href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
          </button>
@@ -109,7 +109,7 @@ for a menu-styled popover. Use class `env-popover__item` for the menu items.
       <li>
          <button type="button" class="env-popover__item">
             <svg class="env-icon">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-file"></use>
+               <use href="/sitevision/envision-icons.svg#icon-file"></use>
             </svg>
             Action
          </button>
@@ -117,7 +117,7 @@ for a menu-styled popover. Use class `env-popover__item` for the menu items.
       <li>
          <button type="button" class="env-popover__item">
             <svg class="env-icon">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
+               <use href="/sitevision/envision-icons.svg#icon-bell"></use>
             </svg>
             Properties
          </button>
@@ -126,9 +126,7 @@ for a menu-styled popover. Use class `env-popover__item` for the menu items.
       <li>
          <button type="button" class="env-popover__item">
             <svg class="env-icon">
-               <use
-                  xlink:href="/sitevision/envision-icons.svg#icon-check-done"
-               ></use>
+               <use href="/sitevision/envision-icons.svg#icon-check-done"></use>
             </svg>
             Settings
          </button>

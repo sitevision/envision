@@ -336,7 +336,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -374,7 +374,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -412,7 +412,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -450,7 +450,7 @@ Element colors are used for elements and components. See usage examples below.
             data-dismiss="alert"
           >
             <svg class="env-icon env-icon--xx-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
             </svg>
           </button>
         </div>
@@ -513,18 +513,16 @@ Status color text should be used when status color is applied to text on section
             </svg>
          </button>
          <h3 class="env-ui-text-caption example-ui-color-status-heading">Error message</h3>
-<div class="env-form-element env-form-element--error">
-   <label for="danger" class="env-form-element__label">Email</label>
-   <div class="env-form-element__control">
-      <input
-         type="text"
-         class="env-form-input"
-         id="danger"
-         value="wrong @address.com"
-         aria-describedby="error-feedback"
-         >
-   </div>
-   <span id="error-feedback" class="env-form-element__feedback">Please enter a valid email address</span>
+   <div class="env-form-field env-form-field--error">
+   <label for="error" class="env-form-label">Email</label>
+   <input
+      type="text"
+      class="env-form-input"
+      id="error"
+      value="wrong @address.com"
+      aria-describedby="error-feedback"
+      >
+   <span id="error-feedback" class="env-form-field-help">Please enter a valid email address</span>
 </div>
       </div>
    </div>

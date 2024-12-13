@@ -2,21 +2,18 @@
 title: Brand colors and UI Text
 ---
 
-<span class="doc-badge doc-badge--info">2023.01</span>
-
 ## Brand colors
 
-With the introduction of Brand colors, some components will have new default color decorations using the new Brand color. [See examples below](#examples).
+An Envision theme will have one brand color and a matching contrast color. [The default theme](#brand-defaults) uses a neutral color.
 
-A theme will have a brand color and a brand contrast color. [The default Envision theme](#brand-defaults) will have a neutral brand color.
-
-The brand color will be used to generate a palette of lighter and darker variants. Each color in the palette will get a matching contrast color for text verified against WCAG 2.0 AA.
+The brand color is used to generate a palette of lighter and darker variants. Each color in the palette has a matching contrast color
+verified against WCAG 2 AA.
 
 <span id="ui-text" class="offset-anchor"></span>
 
 ## UI text
 
-UI Text will be used as the new default text styles for headings in all components.
+UI Text is a set of text styles that should be used for headings and other text in templates, components and applications.
 
 ```html
 <p class="env-ui-text-overline">Overline</p>
@@ -50,7 +47,7 @@ UI Text will be used as the new default text styles for headings in all componen
    >
       Dropdown
       <svg class="env-icon">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
       </svg>
    </button>
    <ul
@@ -127,12 +124,11 @@ UI Text will be used as the new default text styles for headings in all componen
          Branded poll label 3
          <svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
             class="env-progress-poll__icon"
          >
             <title>Your vote</title>
             <use
-               xlink:href="/sitevision/envision-icons.svg#icon-check-done"
+               href="/sitevision/envision-icons.svg#icon-check-done"
             ></use>
          </svg>
       </div>

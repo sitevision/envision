@@ -14,7 +14,7 @@ title: Alert
    >
       Close
       <svg class="env-icon env-icon--xx-small">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+         <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </button>
 </div>

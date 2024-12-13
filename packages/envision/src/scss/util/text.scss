@@ -9,19 +9,19 @@
 
    &--muted {
       font-weight: $font-weight-regular;
-      color: css-var('font-color-muted');
+      color: css-var('font-color-muted') !important;
    }
 
    &--uppercase {
-      text-transform: uppercase;
+      text-transform: uppercase !important;
    }
 
    &--lowercase {
-      text-transform: lowercase;
+      text-transform: lowercase !important;
    }
 
    &--capitalize {
-      text-transform: capitalize;
+      text-transform: capitalize !important;
    }
 
    &--truncate {
@@ -29,7 +29,7 @@
    }
 
    &--strike {
-      text-decoration: line-through;
+      text-decoration: line-through !important;
    }
 
    &--attention {

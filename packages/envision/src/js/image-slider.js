@@ -266,7 +266,7 @@ class Imageslider {
          'data-target': `#${sliderId}`,
       });
       prevButton.innerHTML = `<svg class="env-image-slider__previous-icon env-icon env-icon-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-left"></use></svg>
+               <use href="/sitevision/envision-icons.svg#icon-arrow-left"></use></svg>
                <span class="env-assistive-text">${
                   this.#config.i18n.prev
                }</span>`;
@@ -279,7 +279,7 @@ class Imageslider {
          'data-target': `#${sliderId}`,
       });
       nextButton.innerHTML = `<svg class="env-image-slider__previous-icon env-icon env-icon-small">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-right"></use></svg>
+               <use href="/sitevision/envision-icons.svg#icon-arrow-right"></use></svg>
                <span class="env-assistive-text">${
                   this.#config.i18n.next
                }</span>`;

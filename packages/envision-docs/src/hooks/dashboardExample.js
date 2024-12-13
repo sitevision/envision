@@ -9,7 +9,7 @@ import { toTitleCase } from './demoUtils';
 
 const TEXT_CONTRAST_ICON =
    '<svg class="env-icon example-dashboard-color-list-icon">' +
-   '<use xlink:href="/images/docs-icons.svg#text"></use></svg>';
+   '<use href="/images/docs-icons.svg#text"></use></svg>';
 
 const listItem = (options) => {
    const o = Object.assign({}, options);

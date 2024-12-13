@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+@mixin content-text-font-to-css-custom-properties($content-text-font) {
+   $name: map.get($content-text-font, 'name');
+   $defaults: map.get($content-text-font, 'defaults');
+   $variants: map.get($content-text-font, 'variants');
+   :root {
+      @each $variant, $overrides in $variants {
+         @each $prop, $value in $defaults {
+            @if map-has-key($overrides, $prop) {
+               --env-text-#{$name}-#{$variant}-#{$prop}: #{map.get(
+                     $overrides,
+                     $prop
+                  )};
+            } @else {
+               --env-text-#{$name}-#{$variant}-#{$prop}: #{$value};
+            }
+         }
+      }
+   }
+}

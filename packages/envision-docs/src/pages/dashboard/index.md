@@ -229,25 +229,21 @@ widget specific badges availble.
 ```html
 <span class="env-badge env-badge--negative">
    <svg class="env-icon env-icon--xx-small">
-      <use
-         xlink:href="/sitevision/envision-icons.svg#icon-arrow-fill-down"
-      ></use>
+      <use href="/sitevision/envision-icons.svg#icon-arrow-fill-down"></use>
    </svg>
    Down 18%
 </span>
 
 <span class="env-badge env-badge--unchanged">
    <svg class="env-icon env-icon--xx-small">
-      <use
-         xlink:href="/sitevision/envision-icons.svg#icon-arrow-fill-right"
-      ></use>
+      <use href="/sitevision/envision-icons.svg#icon-arrow-fill-right"></use>
    </svg>
    No change
 </span>
 
 <span class="env-badge env-badge--positive">
    <svg class="env-icon env-icon--xx-small">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-arrow-fill-up"></use>
+      <use href="/sitevision/envision-icons.svg#icon-arrow-fill-up"></use>
    </svg>
    Up 18%
 </span>
@@ -272,7 +268,7 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
       <li class="env-dashboard-color-bg-black env-dashboard-color-txt-white" data-wcag-aa="true">
          <div>
             <span>Black
-               <svg class="env-icon example-dashboard-color-list-icon"><use xlink:href="/images/docs-icons.svg#text"></use></svg>*
+               <svg class="env-icon example-dashboard-color-list-icon"><use href="/images/docs-icons.svg#text"></use></svg>*
             </span>
             <span>#202330</span>
          </div>
@@ -288,7 +284,7 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
 
 <p class="example-dashboard-color-list-legend env-m-bottom--0">
    <svg class="env-icon example-dashboard-color-list-icon">
-      <use xlink:href="/images/docs-icons.svg#text"></use>
+      <use href="/images/docs-icons.svg#text"></use>
    </svg> = The color will pass WCAG 2 level AA contrast requirements as text on white (widget wrapper) background.
 </p>
 <p class="example-dashboard-color-list-legend env-m-top--0">

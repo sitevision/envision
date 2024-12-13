@@ -335,7 +335,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-check-line"></use>
+         <use href="/sitevision/envision-icons.svg#icon-check-line"></use>
       </svg>
    </div>
    <h2 class="env-dialog__title" id="example-alertdialog-1-header">
@@ -383,7 +383,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
+         <use href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
       </svg>
    </div>
    <h2 class="env-dialog__title" id="example-alertdialog-2-header">
@@ -423,7 +423,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 >
    <div class="env-dialog__icon">
       <svg class="env-icon env-icon--large">
-         <use xlink:href="/sitevision/envision-icons.svg#icon-delete"></use>
+         <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </div>
    <h3 class="env-dialog__title" id="example-alertdialog-3-header">
@@ -456,6 +456,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 {
    opener: null,
    backdropClick: true,
+   placement: null,
 }
 ```
 
@@ -468,6 +469,12 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 
    -  Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
    -  Default value: `true`
+
+-  `placement` _'string'_ <span class="env-badge env-badge--info">since Sitevision 2024.09.2</span>
+
+   -  Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
+   -  Allowed values: `'body'`
+   -  Default value: `null`
 
 ## API
 

@@ -10,6 +10,25 @@
             'block-#{$blockName}font-color'
          )};
    }
+
+   @each $name in $CONTENT_TEXT_NAMES {
+      --env-text-#{$name}-font-color: #{css-var(
+            'block-#{$blockName}font-color'
+         )};
+      --env-text-#{$name}-link-font-color: #{css-var(
+            'block-#{$blockName}link-font-color'
+         )};
+      --env-text-#{$name}-link-hover-font-color: #{css-var(
+            'block-#{$blockName}link-hover-font-color'
+         )};
+      --env-text-#{$name}-link-text-decoration: #{css-var(
+            'block-#{$blockName}link-text-decoration'
+         )};
+      --env-text-#{$name}-link-hover-text-decoration: #{css-var(
+            'block-#{$blockName}link-hover-text-decoration'
+         )};
+   }
+
    --env-link-font-color: #{css-var('block-#{$blockName}link-font-color')};
    --env-link-hover-font-color: #{css-var(
          'block-#{$blockName}link-hover-font-color'

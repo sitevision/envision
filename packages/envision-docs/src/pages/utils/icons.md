@@ -53,12 +53,13 @@ extra:
 
 ## Usage
 
-Use the `xlink:href` attribute to reference the icon in the included sprite.
+Use the `href` attribute to reference the icon in the included sprite.
+
 The name of the icon is the id of the symbol in the sprite.
 
 ```html
 <svg class="env-icon env-icon--medium">
-   <use xlink:href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
+   <use href="/sitevision/envision-icons.svg#icon-thumb-up"></use>
 </svg>
 ```
 
@@ -90,37 +91,37 @@ Valid values for _size_
    <ul class="env-list env-list--horizontal">
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--small">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--medium">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--x-large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
       <li class="env-list__item">
          <svg class="env-icon env-icon--xx-large">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+            <use href="/sitevision/envision-icons.svg#icon-user"></use>
          </svg>
       </li>
    </ul>
@@ -133,7 +134,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 ```html
 <div class="env-d--flex env-justify-content--center">
    <svg class="env-icon env-icon--xx-large env-icon--inactive">
-      <use xlink:href="/sitevision/envision-icons.svg#icon-user"></use>
+      <use href="/sitevision/envision-icons.svg#icon-user"></use>
    </svg>
 </div>
 ```
@@ -147,7 +148,7 @@ on the icon or on part of an icon. The modifier will set the color to Status col
 
 ```html
 <svg class="env-icon env-icon--small env-icon--attention">
-   <use xlink:href="/sitevision/envision-icons.svg#icon-bell"></use>
+   <use href="/sitevision/envision-icons.svg#icon-bell"></use>
 </svg>
 
 <svg

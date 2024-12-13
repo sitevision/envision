@@ -166,9 +166,7 @@ For more advanced usage, see [Single select documentation](/components/select/#s
             <option>Item 4</option>
          </select>
          <svg class="env-icon">
-            <use
-               xlink:href="/sitevision/envision-icons.svg#icon-angle-down"
-            ></use>
+            <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
          </svg>
       </div>
    </div>
@@ -270,7 +268,7 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
       >
       <div class="env-form-element__control env-form-element__control--icon">
          <svg class="env-icon">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-search"></use>
+            <use href="/sitevision/envision-icons.svg#icon-search"></use>
          </svg>
          <input
             type="search"
@@ -293,7 +291,7 @@ Related radiobutton elements should be wrapped by a fieldset element to indicate
             id="text-2"
          />
          <svg class="env-icon">
-            <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+            <use href="/sitevision/envision-icons.svg#icon-star"></use>
          </svg>
       </div>
    </div>
@@ -386,7 +384,7 @@ Required for inputs with [icons](#input-icons) and a few other cases.
          <div class="env-form-element__control env-form-element__control--icon">
             <input type="text" class="env-form-input" id="form-input-2" />
             <svg class="env-icon">
-               <use xlink:href="/sitevision/envision-icons.svg#icon-star"></use>
+               <use href="/sitevision/envision-icons.svg#icon-star"></use>
             </svg>
          </div>
       </div>

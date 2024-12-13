@@ -1,6 +1,6 @@
 @use 'sass:math';
-
-@import 'mixin/css-variables';
+@use 'sass:map';
+@use 'sass:list';
 
 // ===================
 // SASS ONLY VARIABLES
@@ -238,6 +238,247 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
       'ui-text-caption-letter-spacing': normal,
+   )
+);
+
+// ----- CONTENT TEXT -----
+
+$CONTENT_TEXT_HEADING_NAMES: 'heading-01', 'heading-02', 'heading-03',
+   'heading-04', 'heading-05', 'heading-06', 'display-01', 'display-02',
+   'display-03';
+$CONTENT_TEXT_BODY_NAMES: 'summary-01', 'body-01', 'body-02', 'body-03',
+   'body-04', 'caption-01', 'quotation-01', 'quotation-02', 'table-caption-01',
+   'table-heading-01', 'table-data-01';
+
+$CONTENT_TEXT_NAMES: list.join(
+   $CONTENT_TEXT_HEADING_NAMES,
+   $CONTENT_TEXT_BODY_NAMES
+);
+
+$content-text-base: (
+   'font-family': var(--env-font-family),
+   'font-color': var(--env-font-color),
+   'font-weight': 400,
+   'font-style': normal,
+   'text-transform': none,
+   'letter-spacing': normal,
+   'line-height': 1.6,
+   'font-size': 1em,
+   'margin-block-start': 1em,
+   'margin-block-end': 1em,
+);
+
+$content-text-heading-links: (
+   'link-font-color': var(--env-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
+
+$content-text-body-links: (
+   'link-font-color': var(--env-link-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-hover-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'heading',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 800,
+                  'line-height': 1.2,
+                  'margin-block-start': 1.5em,
+                  'margin-block-end': 0.5em,
+               )
+            ),
+            $content-text-heading-links
+         ),
+      'variants': (
+         '01': (
+            'margin-block-start': 0,
+            'font-size': 3em,
+         ),
+         '02': (
+            'margin-block-start': 0,
+            'font-size': 2.5em,
+         ),
+         '03': (
+            'font-size': 2.0625em,
+         ),
+         '04': (
+            'font-size': 1.75em,
+         ),
+         '05': (
+            'font-size': 1.4375em,
+         ),
+         '06': (
+            'font-size': 1.1875em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'display',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'line-height': 1.2,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 0.25em,
+               )
+            ),
+            $content-text-heading-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 3.05em,
+         ),
+         '02': (
+            'font-size': 1.952em,
+         ),
+         '03': (
+            'font-size': 1.24928em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'summary',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 1.125em,
+                  'line-height': 1.6,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'body',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'line-height': 1.6,
+                  'margin-block-start': 0,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 1.2em,
+         ),
+         '02': (
+            'font-size': 1em,
+         ),
+         '03': (
+            'font-size': 0.8125em,
+         ),
+         '04': (
+            'font-size': 0.6875em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'caption',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 0.8125em,
+                  'line-height': 1.6,
+                  'margin-block-start': 0.25em,
+                  'margin-block-end': 0,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'quotation',
+      'defaults':
+         map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 300,
+                  'line-height': 1.6,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-body-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 1.2em,
+         ),
+         '02': (
+            'font-size': 1em,
+         ),
+      ),
+   )
+);
+
+@include content-text-font-to-css-custom-properties(
+   (
+      'name': 'table',
+      'defaults':
+         map.merge(map.merge($content-text-base, ()), $content-text-body-links),
+      'variants': (
+         'caption-01': (
+            'font-size': 0.8125em,
+            'line-height': 1.5,
+            'margin-block-start': 1em,
+            'margin-block-end': 0.25em,
+         ),
+         'heading-01': (
+            'font-weight': 700,
+            'line-height': 1.5,
+            'margin-block-start': 0,
+            'margin-block-end': 0,
+         ),
+         'data-01': (
+            'line-height': 1.5,
+            'margin-block-start': 0,
+            'margin-block-end': 0,
+         ),
+      ),
    )
 );
 
