@@ -6,8 +6,9 @@ title: Accordion
 
 ```html
 <div id="accordionExample">
-   <h2 class="env-text" id="heading1">
+   <h2 class="env-ui-text-sectionheading" id="heading1">
       <a
+         class="env-link"
          href="#container1"
          aria-expanded="true"
          aria-controls="container1"
@@ -22,15 +23,16 @@ title: Accordion
       aria-labelledby="heading1"
       data-parent="#accordionExample"
    >
-      <p class="env-text">
+      <p class="env-text-body-02">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
          lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed
          purus quam. Proin eu tincidunt metus.
       </p>
    </div>
 
-   <h2 class="env-text" id="heading2">
+   <h2 class="env-ui-text-sectionheading" id="heading2">
       <a
+         class="env-link"
          href="#container2"
          aria-expanded="false"
          aria-controls="container2"
@@ -45,15 +47,16 @@ title: Accordion
       aria-labelledby="heading2"
       data-parent="#accordionExample"
    >
-      <p class="env-text">
+      <p class="env-text-body-02">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
          lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed
          purus quam. Proin eu tincidunt metus.
       </p>
    </div>
 
-   <h2 class="env-text" id="heading3">
+   <h2 class="env-ui-text-sectionheading" id="heading3">
       <a
+         class="env-link"
          href="#container3"
          aria-expanded="false"
          aria-controls="container3"
@@ -68,7 +71,7 @@ title: Accordion
       aria-labelledby="heading3"
       data-parent="#accordionExample"
    >
-      <p class="env-text">
+      <p class="env-text-body-02">
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
          lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed
          purus quam. Proin eu tincidunt metus.

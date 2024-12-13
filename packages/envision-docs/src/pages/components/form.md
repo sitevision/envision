@@ -3,8 +3,7 @@ title: Form
 since: 2024.07.1
 ---
 
-Form classes and markup has been updated in 2024.07.1.
-[Deprecated legacy form classes and components can be found here](/deprecated/form/).
+Form classes and markup was updated in 2024.07.1.
 
 ## Basics
 
@@ -671,3 +670,7 @@ Error validation state uses the Status color [Error text](/utils/colors/#status-
    <p id="error-feedback" class="env-form-field-help">Error feedback</p>
 </div>
 ```
+
+## Deprecated
+
+[Deprecated legacy form classes and components can be found here](/deprecated/form/).

@@ -61,7 +61,6 @@ export const pageQuery = graphql`
             title
             deprecated
             since
-            beta
             extra {
                icons
             }
@@ -75,7 +74,6 @@ export const pageQuery = graphql`
                   title
                   deprecated
                   since
-                  beta
                }
                fields {
                   slug

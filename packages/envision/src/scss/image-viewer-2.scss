@@ -90,14 +90,14 @@ $inset: css-var('spacing-xx-large');
    // ----- Slider caption -----
 
    &__viewer__caption {
-      font-family: css-var('ui-text-caption-font-family');
-      font-size: css-var('ui-text-caption-font-size');
-      font-weight: css-var('ui-text-caption-font-weight');
-      font-style: normal;
-      text-transform: css-var('ui-text-caption-text-transform');
-      letter-spacing: css-var('ui-text-caption-letter-spacing');
-      color: css-var('ui-text-caption-font-color');
-      line-height: $line-height-medium;
+      font-family: var(--env-text-caption-01-font-family);
+      font-size: var(--env-text-caption-01-font-size);
+      font-weight: var(--env-text-caption-01-font-weight);
+      font-style: var(--env-text-caption-01-font-style);
+      line-height: var(--env-text-caption-01-line-height);
+      text-transform: var(--env-text-caption-01-text-transform);
+      letter-spacing: var(--env-text-caption-01-letter-spacing);
+      color: var(--env-text-caption-01-font-color);
       text-align: left;
       overflow-wrap: anywhere;
       padding: 0.5em 1em;
