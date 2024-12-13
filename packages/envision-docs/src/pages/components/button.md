@@ -2,11 +2,7 @@
 title: Button
 ---
 
-Button appearance and size have been enhanced in Envision released with Sitevision 10.0.
-
 ## Types
-
-<span class="doc-badge doc-badge--info">Brand button available since 2023.01</span>
 
 ```html
 <p>

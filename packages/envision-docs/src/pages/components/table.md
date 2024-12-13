@@ -2,6 +2,9 @@
 title: Table
 ---
 
+Default table styling has been updated in 2025.01.1. Text styles will now use the variables
+and styling from the [Text component](/components/text/).
+
 ## Types
 
 ### Default

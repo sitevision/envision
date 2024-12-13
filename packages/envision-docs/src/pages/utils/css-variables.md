@@ -7,8 +7,6 @@ group: utils
 
 CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) are available with the format: `--env-{variable}`
 
-Only works in browsers that support [CSS variables](https://caniuse.com/#feat=css-variables).
-
 ## Example
 
 ```html
@@ -105,7 +103,43 @@ Only works in browsers that support [CSS variables](https://caniuse.com/#feat=cs
 Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
 , `85`, `90`, `95`, `100`.
 
-#### UI Text <span class="doc-badge doc-badge--info">2023.01</span>
+#### UI Status Colors <span class="env-badge env-badge--info">2023.02.1</span>
+
+-  `env-ui-color-status-neutral`
+-  `env-ui-color-status-neutral-contrast`
+-  `env-ui-color-status-active`
+-  `env-ui-color-status-active-contrast`
+-  `env-ui-color-status-active-text` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-attention`
+-  `env-ui-color-status-attention-contrast`
+-  `env-ui-color-status-attention-text` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-contrast` <span class="env-badge env-badge--info">2023.07.1</span>
+-  `env-ui-color-status-error-text` <span class="env-badge env-badge--info">2023.07.1</span>
+
+### Typography
+
+#### Text <span class="env-badge env-badge--info">2025.01.1</span>
+
+-  `--env-text-{name}-font-family`
+-  `--env-text-{name}-font-color`
+-  `--env-text-{name}-font-size`
+-  `--env-text-{name}-font-weight`
+-  `--env-text-{name}-font-style`
+-  `--env-text-{name}-text-transform`
+-  `--env-text-{name}-letter-spacing`
+-  `--env-text-{name}-line-height`
+-  `--env-text-{name}-margin-block-start`
+-  `--env-text-{name}-margin-block-end`
+-  `--env-text-{name}-link-font-color`
+-  `--env-text-{name}-link-text-decoration`
+-  `--env-text-{name}-link-hover-font-color`
+-  `--env-text-{name}-link-hover-text-decoration`
+
+Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `display-03`, `summary-01`, `body-01` – `body-04`,
+`caption-01`, `quotation-01`, `quotation-02`, `table-caption-01`, `table-heading-01`, `table-data-01`.
+
+#### UI Text <span class="env-badge env-badge--info">2023.01.1</span>
 
 -  `--env-ui-text-{name}-font-family`
 -  `--env-ui-text-{name}-font-color`
@@ -186,21 +220,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-element-info-background-color-dark`
 -  `--env-element-info-background-color-light`
 
-#### Status <span class="doc-badge doc-badge--info">2023.02.1</span>
-
--  `env-ui-color-status-neutral`
--  `env-ui-color-status-neutral-contrast`
--  `env-ui-color-status-active`
--  `env-ui-color-status-active-contrast`
--  `env-ui-color-status-active-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
--  `env-ui-color-status-attention`
--  `env-ui-color-status-attention-contrast`
--  `env-ui-color-status-attention-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
--  `env-ui-color-status-error` <span class="doc-badge doc-badge--info">2023.07.1</span>
--  `env-ui-color-status-error-contrast` <span class="doc-badge doc-badge--info">2023.07.1</span>
--  `env-ui-color-status-error-text` <span class="doc-badge doc-badge--info">2023.07.1</span>
-
-#### Focus Outline <span class="doc-badge doc-badge--info">2023.01</span>
+#### Focus Outline <span class="env-badge env-badge--info">2023.01.1</span>
 
 -  `--env-focus-size`
 -  `--env-focus-offset`
