@@ -1,4 +1,5 @@
-export const redirects = [
+/* globals exports: false */
+exports.redirects = [
    {
       fromPath: `/components/modal-dialog/`,
       toPath: `/deprecated/modal-dialog/`,

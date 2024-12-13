@@ -7,14 +7,14 @@
 
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { redirects } = require('./redirects');
+const { redirects } = require('./redirects.js');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
    const { createPage, createRedirect } = actions;
 
-   redirects.forEach(({ fromPath, toPath, isPermanent }) =>
-      createRedirect({ fromPath, toPath, isPermanent })
-   );
+   redirects.forEach(({ fromPath, toPath, isPermanent }) => {
+      createRedirect({ fromPath, toPath, isPermanent });
+   });
 
    const result = await graphql(`
       {
