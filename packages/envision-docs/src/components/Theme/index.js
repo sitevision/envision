@@ -12,21 +12,25 @@ const ThemeProvider = ({ children }) => {
    }, []);
 
    React.useEffect(() => {
-      const themeEl = document.querySelector('main');
-
-      if (!themeEl || themeEl.classList.contains('env-dashboard-theme')) {
-         return;
-      }
-
+      // Theme class is also set in copyExample.js
+      // when creating the example elements
       let oldTheme = window.localStorage.getItem('doc-theme');
+      const mainEl = document.querySelector('main');
+      const exampleEls = mainEl && mainEl.querySelectorAll('.code-example');
 
-      oldTheme && themeEl.classList.remove(oldTheme);
-      if (theme) {
-         themeEl.classList.add(theme);
-         window.localStorage.setItem('doc-theme', theme.toString());
-      } else {
-         window.localStorage.removeItem('doc-theme');
-      }
+      exampleEls &&
+         exampleEls.forEach((themeEl) => {
+            if (!themeEl || mainEl.classList.contains('env-dashboard-theme')) {
+               return;
+            }
+            oldTheme && themeEl.classList.remove(oldTheme);
+            if (theme) {
+               themeEl.classList.add(theme);
+               window.localStorage.setItem('doc-theme', theme.toString());
+            } else {
+               window.localStorage.removeItem('doc-theme');
+            }
+         });
    }, [theme]);
 
    return (

@@ -43,15 +43,7 @@ const BaseTemplate = ({
    children,
    indexing,
 }) => {
-   let theme = '';
-   if (typeof window !== 'undefined') {
-      theme = window.localStorage.getItem('doc-theme')
-         ? window.localStorage.getItem('doc-theme')
-         : theme;
-      window.localStorage.setItem('doc-theme', theme);
-   }
-
-   const mainClassName = dashboard ? 'env-dashboard-theme' : theme;
+   const mainClassName = dashboard ? 'env-dashboard-theme' : '';
    let bannerType = null;
 
    if (deprecated) {

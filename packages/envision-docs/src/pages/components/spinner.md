@@ -41,8 +41,9 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
 
 ### Delayed spinner demo
 
-<div id="demo-delayed-spinner" class="demo-delayed-spinner code-example">
-<div class="env-spinner env-spinner--hide">
+```html-nocode
+<div id="demo-delayed-spinner" class="demo-delayed-spinner">
+   <div class="env-spinner env-spinner--hide">
       <div class="env-rect1"></div>
       <div class="env-rect2"></div>
       <div class="env-rect3"></div>
@@ -50,6 +51,8 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
       <div class="env-rect5"></div>
    </div>
 </div>
+```
+
 <div class="env-m-top--x-small">
    <button class="env-button" id="toggle-spinner-1">Short delay</button>
    <button class="env-button" id="toggle-spinner-2">Medium delay</button>

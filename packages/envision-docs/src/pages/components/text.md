@@ -9,18 +9,18 @@ headings and image captions.
 
 Text is divided into different sets, each with its own unique style and purpose.
 
-<div class="code-example">
-   <div class="example-content-text-demo">
-      <h2 class="env-text-heading-01">Heading</h2>  
-      <h2 class="env-text-display-01">Display</h2>  
-      <p class="env-text-summary-01">Summary</p>  
-      <p class="env-text-body-01">Body</p>  
-      <p class="env-text-caption-01">Image Caption</p>  
-      <p class="env-text-quotation-01">Quotation</p>  
-      <p class="env-text-caption-01">Table Caption</p>  
-      <p class="env-text-table-data-01">Table</p>
-   </div>
+```html-nocode
+<div class="example-content-text-demo">
+   <h2 class="env-text-heading-01">Heading</h2>
+   <h2 class="env-text-display-01">Display</h2>
+   <p class="env-text-summary-01">Summary</p>
+   <p class="env-text-body-01">Body</p>
+   <p class="env-text-caption-01">Image Caption</p>
+   <p class="env-text-quotation-01">Quotation</p>
+   <p class="env-text-caption-01">Table Caption</p>
+   <p class="env-text-table-data-01">Table</p>
 </div>
+```
 
 ## Variants
 

@@ -109,7 +109,7 @@ The grid column container where the app will be displayed is a [containment cont
 The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font family which has support for nine different weights
 100-900. Other font familes should in most cases not be used.
 
-<div class="code-example">
+```html-nocode
    <p class="example-fw-100">
       Thin 100 — The quick brown fox jumps … 123456789
    </p>
@@ -137,7 +137,7 @@ The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font fami
    <p class="example-fw-900">
       Black 900 — The quick brown fox jumps … 123456789
    </p>
-</div>
+```
 
 ```css
 /* Available weights 100–900 */

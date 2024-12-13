@@ -19,6 +19,8 @@
 
    pre {
       font-family: var(--doc-code-font-family);
+      scrollbar-color: var(--env-ui-color-brand-40) transparent;
+      scrollbar-gutter: auto;
 
       code {
          text-shadow: none;

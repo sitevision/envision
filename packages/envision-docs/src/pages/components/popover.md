@@ -2,7 +2,7 @@
 title: Popover
 ---
 
-<div class="code-example">
+```html-nocode
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
@@ -16,7 +16,7 @@ title: Popover
       </p>
    </div>
 </div>
-</div>
+```
 
 ## Configuration and initialization
 

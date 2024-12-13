@@ -117,6 +117,7 @@ html {
 }
 
 .sidenav {
+   --env-font-family: var(--doc-font-family);
    --env-element-background-color-light: #f8f9f9;
    --env-element-background-color-dark: #dadddf;
    --env-element-background-color: #f0f1f2;
@@ -162,6 +163,7 @@ body {
    padding: 0;
    margin: 0;
    overscroll-behavior: none;
+   --env-font-family: Helvetica, Arial, sans-serif;
 }
 
 .env-dashboard-theme .main-body *,

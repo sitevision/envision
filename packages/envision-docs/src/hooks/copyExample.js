@@ -3,13 +3,18 @@ import * as React from 'react';
 export const useCopyExample = (content) => {
    React.useEffect(() => {
       // Initialize Code Highlighter
+      let theme = window.localStorage.getItem('doc-theme') || '';
+
       content.current
          .querySelectorAll(
-            '.gatsby-highlight[data-language=html], .gatsby-highlight[data-language=html-resizeable]'
+            '.gatsby-highlight[data-language=html],' +
+               '.gatsby-highlight[data-language=html-nocode],' +
+               '.gatsby-highlight[data-language=html-resizeable]'
          )
          .forEach((element) => {
             const example = document.createElement('div');
             example.classList.add('code-example');
+            theme && example.classList.add(theme);
             element.dataset.language === 'html-resizeable' &&
                example.classList.add('code-example--resizeable');
             example.innerHTML = element.textContent;
@@ -21,6 +26,7 @@ export const useCopyExample = (content) => {
             noIndexEnd.innerHTML = '<!--/sv-no-index-->';
             example.insertAdjacentElement('beforebegin', noIndexStart);
             element.insertAdjacentElement('afterend', noIndexEnd);
+            element.dataset.language === 'html-nocode' && element.remove();
          });
 
       const envision = window.envision;
