@@ -9,6 +9,7 @@ import { getNode, getNodes, show } from './util/nodes';
 import Util from './util/util';
 import { slideDown, slideUp } from './util/slideToggle';
 
+const ARIA_CONTROLS = 'aria-controls';
 const ARIA_EXPANDED = 'aria-expanded';
 const DATA_EXPANDED = 'data-expanded';
 const DURATION_CUSTOM_PROP = '--env-collapse-toggle-duration';
@@ -27,7 +28,7 @@ class Accordion {
          ? toggler
          : this.parentEl &&
            getNode(
-              `${TOGGLER_ATTR}[aria-controls="${this.el.id}"]`,
+              `${TOGGLER_ATTR}[${ARIA_CONTROLS}="${this.el.id}"]`,
               this.parentEl
            );
 
@@ -67,7 +68,11 @@ class Accordion {
          getNodes(`[${DATA_EXPANDED}="true"], .${SHOW}`, this.parentEl).forEach(
             (el) => {
                if (!el.isEqualNode(this.el)) {
-                  this._hide(el, this.speed, true);
+                  const togglerEl = getNode(
+                     `${TOGGLER_ATTR}[${ARIA_CONTROLS}="${el.id}"]`,
+                     this.parentEl
+                  );
+                  this._hide(el, togglerEl, this.speed, true);
                }
             }
          );
@@ -89,18 +94,18 @@ class Accordion {
       if (this.#isAnimating) {
          return;
       }
-      this._hide(this.el, this.speed);
+      this._hide(this.el, this.togglerEl, this.speed);
    }
 
-   _hide(el, speed, force) {
+   _hide(el, togglerEl, speed, force) {
       if (!force) {
          this.#isAnimating = true;
       }
       slideUp(el, {
          duration: speed,
          complete: () => {
-            if (this.togglerEl) {
-               this.togglerEl.setAttribute(ARIA_EXPANDED, 'false');
+            if (togglerEl) {
+               togglerEl.setAttribute(ARIA_EXPANDED, 'false');
             }
             el.setAttribute(DATA_EXPANDED, 'false');
             el.classList.remove(SHOW);
