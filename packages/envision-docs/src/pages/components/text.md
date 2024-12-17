@@ -72,7 +72,7 @@ The Body, Summary, Quotation and Table style sets are used for different types o
 For image captions and table text there are specialized styles available.
 
 ```html
-<figure class="env-m-bottom--large">
+<figure>
    <img src="/placeholders/225x100/10.webp" alt="Example image" />
    <figcaption class="env-text-caption-01">Caption / 01</figcaption>
 </figure>
