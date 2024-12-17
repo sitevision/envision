@@ -1012,7 +1012,7 @@ canvas.example-canvas {
 
 .example-content-text-demo {
    > * {
-      margin: 0;
+      margin: 0 !important;
    }
 }
 
