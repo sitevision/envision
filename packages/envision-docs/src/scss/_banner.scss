@@ -1,7 +1,7 @@
 .banner {
    grid-area: banner;
    display: block;
-   padding: 1em $site-padding;
+   padding: 7.5em 1em $site-padding;
 
    @include dark-mode-status-override;
 
@@ -13,16 +13,29 @@
    &--since {
       background-color: var(--env-ui-color-status-neutral);
       color: var(--env-ui-color-status-neutral-contrast);
+
+      .icon svg {
+         transform: rotate(180deg);
+      }
    }
    &--beta {
       background-color: var(--env-ui-color-status-active);
       color: var(--env-ui-color-status-active-contrast);
+
+      .icon {
+         padding: 3px 1.5em 3px 3px;
+      }
+      .icon svg {
+         width: 30px;
+         margin: 0 0 0 10px;
+      }
    }
 
    .container {
       display: flex;
       align-items: center;
       gap: 2em;
+      flex-wrap: wrap;
    }
 
    .icon {

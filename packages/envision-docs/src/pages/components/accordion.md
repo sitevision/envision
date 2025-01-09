@@ -1,5 +1,7 @@
 ---
 title: Accordion
+deprecated: true
+since: 2024.11.1
 ---
 
 ## Overview

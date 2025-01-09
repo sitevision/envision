@@ -1,5 +1,5 @@
 ---
-title: Text
+title: Basic text
 ---
 
 ## Headings

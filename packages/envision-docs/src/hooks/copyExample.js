@@ -3,7 +3,7 @@ import * as React from 'react';
 export const useCopyExample = (content) => {
    React.useEffect(() => {
       // Initialize Code Highlighter
-      let theme = window.localStorage.getItem('doc-theme') || '';
+      // let darkMode = !!window.sessionStorage.getItem('color-scheme');
 
       content.current
          .querySelectorAll(
@@ -14,7 +14,7 @@ export const useCopyExample = (content) => {
          .forEach((element) => {
             const example = document.createElement('div');
             example.classList.add('code-example');
-            theme && example.classList.add(theme);
+            // darkMode && example.classList.add('doc-dark-mode');
             element.dataset.language === 'html-resizeable' &&
                example.classList.add('code-example--resizeable');
             example.innerHTML = element.textContent;

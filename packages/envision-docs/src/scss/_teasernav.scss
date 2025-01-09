@@ -1,0 +1,77 @@
+.teaserNav {
+   --env-cardholder-grid-gap: 2em;
+   --env-cardholder-grid-column-width: 16em;
+
+   margin: 3em 0;
+
+   &--start {
+      --env-cardholder-grid-column-width: 14em;
+      max-width: min(66em, calc(100vw - 2em - 2em));
+      margin: -8em auto 4em;
+   }
+
+   &__link {
+      color: var(--doc-font-color);
+      text-decoration: none;
+
+      &:hover .env-ui-text-sectionheading {
+         text-decoration: underline;
+      }
+
+      @include focus-visible;
+   }
+
+   .env-cardholder-grid {
+      margin: 0;
+      padding: 0;
+   }
+
+   .env-card {
+      background-color: var(--doc-section-background-color);
+      border-radius: var(--env-border-radius-small);
+   }
+
+   &__icon {
+      background-color: var(--doc-teasernav-header-background-color);
+      color: var(--doc-teasernav-header-contrast-color);
+      width: 100%;
+      height: 170px;
+      border-radius: var(--env-border-radius);
+      position: relative;
+
+      .teaserNav--start & {
+         height: 155px;
+      }
+
+      svg {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 100%;
+         height: auto;
+         max-width: 88%;
+         margin: 0 auto;
+         display: block;
+         //background-color: rgba(255, 0, 255, 0.2);
+
+         .teaserNav--start & {
+            width: 64px;
+            height: 64px;
+         }
+      }
+   }
+   //&--start .env-card__header svg {
+   //   width: 64px;
+   //   height: 64px;
+   //}
+
+   &__description {
+      margin: 0.5em 0 0;
+   }
+
+   .env-ui-text-sectionheading .env-icon {
+      vertical-align: center;
+      margin: 0 0 0 0.25em;
+   }
+}

@@ -1,6 +1,5 @@
 ---
 title: Icons
-template: icons
 extra:
    icons:
       - icon-arrow-down

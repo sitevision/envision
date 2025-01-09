@@ -1,7 +1,56 @@
 .footer {
+   font-family: var(--doc-font-family);
+   --doc-code-font-family: 'JetBrains Mono', monospace;
    background-color: var(--doc-footer-background-color);
    color: var(--doc-footer-font-color);
    padding: min(6vh, 6em) $site-padding;
+
+   .logo {
+      display: inline-block;
+   }
+   &-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      @media (max-width: 730px) {
+         display: block;
+      }
+   }
+
+   &-nav-col {
+      box-sizing: border-box;
+      flex: 1 1 25%;
+      max-width: 25%;
+      padding: 0 1em;
+
+      @media (max-width: 930px) {
+         &:first-child {
+            flex: 1 1 100%;
+            max-width: 100%;
+            margin-bottom: 3em;
+         }
+      }
+
+      @media (max-width: 730px) {
+         & {
+            margin-bottom: 2em;
+         }
+      }
+
+      &__header {
+         font-weight: 600;
+         font-style: normal;
+
+         font-family: var(--doc-font-family);
+         font-size: 1em;
+         color: var(--doc-footer-font-color);
+         line-height: 1;
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+      }
+   }
 }
 
 .footer a {

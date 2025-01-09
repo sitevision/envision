@@ -1,5 +1,5 @@
 ---
-title: Text
+title: Content text
 since: 2025.01.1
 ---
 

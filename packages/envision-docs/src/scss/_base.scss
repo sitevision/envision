@@ -2,121 +2,68 @@ html {
    font-family: Inter, sans-serif;
 
    --doc-font-family: Inter, sans-serif;
-   --doc-code-font-family: 'JetBrains Mono', monospace;
-
-   --doc-background-color: #e7faf1;
+   --doc-background-color: #f5fcf8;
    --doc-section-background-color: #fff;
    --doc-font-color: #000;
    --doc-link-font-color: #445ee3;
    --doc-link-text-decoration: none;
-   --doc-border-color: #ccc;
+   --doc-border-color: #eee;
 
    --doc-header-background-color: var(--doc-section-background-color);
    --doc-header-font-color: #202330;
    --doc-footer-background-color: #2d3237;
    --doc-footer-font-color: #aba3a3;
-   --doc-sidenav-background-color: var(--doc-section-background-color);
+   --doc-sidenav-background-color: transparent; // var(--doc-section-background-color);
    --doc-sidenav-font-color: #202330;
-   --doc-color-brand: #17cc78;
 
-   --doc-color-brand-05-contrast: #000000;
-   --doc-color-brand-05: #f6fefa;
-   --doc-color-brand-10-contrast: #000000;
-   --doc-color-brand-10: #edfdf5;
-   --doc-color-brand-100-contrast: #ffffff;
-   --doc-color-brand-100: #073c23;
-   --doc-color-brand-15-contrast: #000000;
-   --doc-color-brand-15: #dafbec;
-   --doc-color-brand-20-contrast: #000000;
-   --doc-color-brand-20: #c3f8e0;
-   --doc-color-brand-25-contrast: #000000;
-   --doc-color-brand-25: #adf6d4;
-   --doc-color-brand-30-contrast: #000000;
-   --doc-color-brand-30: #96f3c8;
-   --doc-color-brand-35-contrast: #000000;
-   --doc-color-brand-35: #7ff1bc;
-   --doc-color-brand-40-contrast: #000000;
-   --doc-color-brand-40: #68eeb0;
-   --doc-color-brand-45-contrast: #000000;
-   --doc-color-brand-45: #51eba4;
-   --doc-color-brand-50-contrast: #000000;
-   --doc-color-brand-50: #3ae998;
-   --doc-color-brand-55-contrast: #000000;
-   --doc-color-brand-55: #19dc82;
-   --doc-color-brand-60-contrast: #000000;
-   --doc-color-brand-60: #16c574;
-   --doc-color-brand-65-contrast: #000000;
-   --doc-color-brand-65: #14ae67;
-   --doc-color-brand-70-contrast: #000000;
-   --doc-color-brand-70: #119759;
-   --doc-color-brand-75-contrast: #ffffff;
-   --doc-color-brand-75: #0e804c;
-   --doc-color-brand-80-contrast: #ffffff;
-   --doc-color-brand-80: #0c6e41;
-   --doc-color-brand-85-contrast: #ffffff;
-   --doc-color-brand-85: #0b6039;
-   --doc-color-brand-90-contrast: #ffffff;
-   --doc-color-brand-90: #094e2e;
-   --doc-color-brand-95-contrast: #ffffff;
-   --doc-color-brand-95: #084528;
+   --doc-color-brand: #17cc78;
    --doc-color-brand-contrast: #000000;
 
-   @include dark-mode {
-      --doc-background-color: hsl(153, 14%, 15%);
-      --doc-section-background-color: #000;
-      --doc-font-color: #fff;
+   --doc-code-font-family: 'JetBrains Mono', monospace;
+   --doc-code-background-color: #eee;
+   --doc-code-font-color: #000;
+
+   //--doc-hero-background-color: hsl(145,54%,91%);
+   --doc-hero-background-color: #daf4e5;
+
+   --doc-teasernav-header-background-color: #e0e8e2;
+   --doc-teasernav-header-contrast-color: #737373;
+
+   .doc-dark-mode {
+      //--doc-background-color: hsl(153, 14%, 15%);
+      --doc-background-color: #0d2d2a;
+      //--doc-section-background-color: #000;
+      --doc-section-background-color: #223936;
+      //--doc-font-color: #fff;
+      --doc-font-color: #d5deda;
       --doc-link-font-color: #fff;
       --doc-link-text-decoration: underline;
       --doc-border-color: #555;
       --doc-header-font-color: #dfdccf;
       --doc-footer-background-color: #000;
       --doc-footer-font-color: #dfdccf;
-      --doc-color-brand-100-contrast: #000000;
-      --doc-color-brand-100: #f6fefa;
-      --doc-color-brand-95-contrast: #000000;
-      --doc-color-brand-95: #edfdf5;
-      --doc-color-brand-05-contrast: #ffffff;
-      --doc-color-brand-05: #073c23;
-      --doc-color-brand-90-contrast: #000000;
-      --doc-color-brand-90: #dafbec;
-      --doc-color-brand-85-contrast: #000000;
-      --doc-color-brand-85: #c3f8e0;
-      --doc-color-brand-80-contrast: #000000;
-      --doc-color-brand-80: #adf6d4;
-      --doc-color-brand-75-contrast: #000000;
-      --doc-color-brand-75: #96f3c8;
-      --doc-color-brand-70-contrast: #000000;
-      --doc-color-brand-70: #7ff1bc;
-      --doc-color-brand-65-contrast: #000000;
-      --doc-color-brand-65: #68eeb0;
-      --doc-color-brand-60-contrast: #000000;
-      --doc-color-brand-60: #51eba4;
-      --doc-color-brand-55-contrast: #000000;
-      --doc-color-brand-55: #3ae998;
-      --doc-color-brand-50-contrast: #000000;
-      --doc-color-brand-50: #19dc82;
-      --doc-color-brand-45-contrast: #000000;
-      --doc-color-brand-45: #16c574;
-      --doc-color-brand-40-contrast: #000000;
-      --doc-color-brand-40: #14ae67;
-      --doc-color-brand-35-contrast: #000000;
-      --doc-color-brand-35: #119759;
-      --doc-color-brand-30-contrast: #ffffff;
-      --doc-color-brand-30: #0e804c;
-      --doc-color-brand-25-contrast: #ffffff;
-      --doc-color-brand-25: #0c6e41;
-      --doc-color-brand-20-contrast: #ffffff;
-      --doc-color-brand-20: #0b6039;
-      --doc-color-brand-15-contrast: #ffffff;
-      --doc-color-brand-15: #094e2e;
-      --doc-color-brand-10-contrast: #ffffff;
-      --doc-color-brand-10: #084528;
-      --doc-color-brand-contrast: #000000;
+
+      //--doc-color-brand: orange;
+      //--doc-color-brand-contrast: #000000;
+      //--doc-font-family: Inter, sans-serif;
+      --doc-header-background-color: var(--doc-section-background-color);
+      //--doc-sidenav-background-color: var(--doc-section-background-color);
+      //--doc-sidenav-font-color: #202330;
       --doc-sidenav-font-color: #dfdccf;
+
+      --doc-code-background-color: #666;
+      --doc-code-font-color: #fff;
+
+      --doc-hero-background-color: hsl(145, 4%, 24%);
+      --doc-hero-background-color: #204541;
+
+      --doc-teasernav-header-background-color: #204541;
+      --doc-teasernav-header-contrast-color: #6b8c89;
    }
 }
 
-.sidenav {
+.sidenav,
+.mobileNav {
    --env-font-family: var(--doc-font-family);
    --env-element-background-color-light: #f8f9f9;
    --env-element-background-color-dark: #dadddf;
@@ -181,6 +128,16 @@ figure {
 img {
    display: block;
    max-width: 100%;
+}
+
+.doc-svg-logo {
+   display: block;
+   width: 148px;
+   height: auto;
+
+   path {
+      fill: currentColor;
+   }
 }
 
 .offset-anchor {

@@ -10,7 +10,7 @@ const Banner = ({ bannerType, info }) => {
                <div className="container">
                   <div className="icon">
                      <svg className="env-icon env-icon--large">
-                        <use xlinkHref="/images/docs-icons.svg#exclamation"></use>
+                        <use href="/images/docs-images.svg#exclamation"></use>
                      </svg>
                      Deprecated
                   </div>
@@ -22,7 +22,7 @@ const Banner = ({ bannerType, info }) => {
                <div className="container">
                   <div className="icon">
                      <svg className="env-icon env-icon--large">
-                        <use xlinkHref="/images/docs-icons.svg#exclamation"></use>
+                        <use href="/images/docs-images.svg#under-construction"></use>
                      </svg>
                      Beta
                   </div>
@@ -34,7 +34,7 @@ const Banner = ({ bannerType, info }) => {
                <div className="container">
                   <div className="icon">
                      <svg className="env-icon env-icon--large">
-                        <use xlinkHref="/images/docs-icons.svg#exclamation"></use>
+                        <use href="/images/docs-images.svg#exclamation"></use>
                      </svg>
                      Since {info}
                   </div>

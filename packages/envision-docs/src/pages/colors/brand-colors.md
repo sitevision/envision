@@ -1,8 +1,6 @@
 ---
-title: Brand colors and UI Text
+title: Brand colors
 ---
-
-## Brand colors
 
 An Envision theme will have one brand color and a matching contrast color. [The default theme](#brand-defaults) uses a neutral color.
 
@@ -10,18 +8,6 @@ The brand color is used to generate a palette of lighter and darker variants. Ea
 verified against WCAG 2 AA.
 
 <span id="ui-text" class="offset-anchor"></span>
-
-## UI text
-
-UI Text is a set of text styles that should be used for headings and other text in templates, components and applications.
-
-```html
-<p class="env-ui-text-overline">Overline</p>
-<h1 class="env-ui-text-heading">Heading</h1>
-<h2 class="env-ui-text-sectionheading">Section heading</h2>
-<h3 class="env-ui-text-subheading">Subheading</h3>
-<p class="env-ui-text-caption">Caption</p>
-```
 
 <h2 class="doc-heading-2">
    Example branding of components <span id="examples" class="offset-anchor"></span>
@@ -168,7 +154,7 @@ UI Text is a set of text styles that should be used for headings and other text 
 
 </div>
 
-## Default brand color palette <span id="examples" class="brand-defaults"></span>
+## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
 
 <ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>

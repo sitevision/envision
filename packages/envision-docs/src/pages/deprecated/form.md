@@ -4,8 +4,6 @@ deprecated: true
 indexing: false
 ---
 
-**Note! This page contains deprecated content.**
-
 The following form classnames are deprecated since 2024.07.1 or earlier and will be removed in a future release.
 
 -  `env-form-element`

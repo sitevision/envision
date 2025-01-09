@@ -17,8 +17,21 @@
       color: var(--env-ui-color-status-active-contrast);
    }
 
+   &--info {
+      background-color: #329597;
+      color: #fff;
+   }
+
    &--danger {
       background-color: var(--env-ui-color-status-attention);
       color: var(--env-ui-color-status-attention-contrast);
+   }
+
+   .doc-main-heading & {
+      border-radius: 0.95em / 50%;
+      font-size: 0.35em;
+      vertical-align: middle;
+      padding: 0.4em 0.7em;
+      margin: 0 0 0 0.5em;
    }
 }

@@ -1,8 +1,8 @@
 :not(pre) > code[class*='language-'] {
    // Inline code
    font-family: var(--doc-code-font-family);
-   background-color: var(--doc-color-brand-15);
-   color: var(--doc-color-brand-15-contrast);
+   background-color: var(--doc-code-background-color);
+   color: var(--doc-code-font-color);
    font-size: 0.875em !important;
    text-shadow: none;
    vertical-align: baseline;
@@ -17,8 +17,12 @@
    border-radius: 0 0 3px 3px;
    text-shadow: none;
 
-   pre {
+   pre,
+   code {
       font-family: var(--doc-code-font-family);
+   }
+
+   pre {
       scrollbar-color: var(--env-ui-color-brand-40) transparent;
       scrollbar-gutter: auto;
 

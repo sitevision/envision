@@ -3,7 +3,7 @@ $layout-col-sidenav: 19em;
 $layout-col-main: 59em;
 
 body {
-   padding-top: 4.5em;
+   //padding-top: 4.5em;
 }
 
 .layout {
@@ -21,21 +21,35 @@ body {
 
 .body {
    grid-area: body;
-   margin: #{'min(2.6666vw, 3em)'} auto 0;
-   padding: 0 #{'min(2.6666vw,' + $site-padding + ')'};
+   margin: 0 auto;
+   padding: 7.5em #{'min(2.6666vw,' + $site-padding + ')'} 0;
    max-width: 80em;
 
    @include main-layout-break {
       display: grid;
-      margin: 3em auto 0;
+      margin: 0 auto;
+      padding: 9.5em #{'min(2.6666vw,' + $site-padding + ')'} 0;
       gap: 2em;
       grid-template-areas: 'sidenav main';
       grid-template-columns: min($layout-col-sidenav, 23.75vw) min(
             $layout-col-main,
             calc(100vw - 2em - 2em - 23.75vw)
          );
+
+      //&--start {
+      //   grid-template-areas: 'main';
+      //   grid-template-columns: min(
+      //      $layout-col-main + $layout-col-sidenav + $layout-gap,
+      //      calc(100vw - 2em - 2em)
+      //   );
+      //}
+   }
+
+   .banner + & {
+      padding-top: 2em;
    }
 }
+
 .main {
    grid-area: main;
    container-type: inline-size;

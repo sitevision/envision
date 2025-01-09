@@ -575,7 +575,7 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
    &__content {
       font-size: 12px;
-      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      font-family: var(--doc-code-font-family);
    }
 }
 
@@ -666,6 +666,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    justify-content: flex-start;
    align-items: flex-start;
    font-size: 0.8em;
+   color: var(--doc-font-color);
+   filter: opacity(0.675);
 
    .example-dashboard-color-list-icon {
       font-size: 1.4em;
@@ -982,15 +984,6 @@ canvas.example-canvas {
 
 .example-basic-colors {
    background-color: var(--env-background-color);
-}
-
-.example-basic-colors-class {
-   display: inline-block;
-   color: var(--env-font-color-muted);
-   line-height: 1;
-   font-size: 12px;
-   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-   word-break: keep-all;
 }
 
 .example-demo-dialog dialog {

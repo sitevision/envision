@@ -1,5 +1,6 @@
 ---
-title: Accessibility
+title: Assistive text
+description: Envision is included in all Sitevision websites. The components are ready to use in your projects.
 ---
 
 ## Types

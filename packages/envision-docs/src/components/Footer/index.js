@@ -1,30 +1,93 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Link from '../Link';
+import Logo from '../Logo';
 
-const Footer = ({ menuItems }) => {
+const Footer = () => {
+   const envisionMenuItems = [
+      {
+         text: 'Envision on GitHub',
+         url: 'https://github.com/sitevision/envision',
+      },
+   ];
+
+   const developerMenuItems = [
+      {
+         text: 'Sitevision Developer Community',
+         url: 'https://developer.sitevision.se/',
+      },
+   ];
+
+   const sitevisionMenuItems = [
+      {
+         text: 'About Sitevision',
+         url: 'https://www.sitevision.se/en/startpage/sitevision/about-sitevision',
+      },
+      {
+         text: 'Contact us',
+         url: 'https://www.sitevision.se/en/startpage/sitevision/contact-us',
+      },
+      {
+         text: 'Become one of us',
+         url: 'https://www.sitevision.se/en/startpage/sitevision/become-one-of-us',
+      },
+      {
+         text: 'Privacy Statement',
+         url: 'https://www.sitevision.se/en/startpage/sitevision/privacy-statement',
+      },
+      {
+         text: 'Pressroom',
+         url: 'https://www.sitevision.se/en/startpage/sitevision/pressroom',
+      },
+   ];
+
    return (
       <>
          <footer className="footer">
             <div className="container">
-               <img
-                  src="/images/sitevision-developer-logo-light.svg"
-                  alt="Envision"
-                  width="191"
-                  height="27"
-               />
                <nav aria-label="Main" className="footer-nav">
-                  <ul className="env-list">
-                     {menuItems.map(({ label, to }) => (
-                        <li
-                           className="env-nav__item env-m-vertical--medium"
-                           key={label}
-                        >
-                           <Link to={to}>{label}</Link>
-                        </li>
-                     ))}
-                  </ul>
+                  <div className="footer-nav-col">
+                     <Link className="logo" href="/">
+                        <Logo />
+                     </Link>
+                  </div>
+                  <div className="footer-nav-col">
+                     <h2 className="footer-nav-col__header">Envision</h2>
+                     <ul className="env-list">
+                        {envisionMenuItems.map(({ text, url }) => (
+                           <li key={url}>
+                              <Link href={url}>{text}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+                  <div className="footer-nav-col">
+                     <h2 className="footer-nav-col__header">Developer</h2>
+                     <ul className="env-list">
+                        {developerMenuItems.map(({ text, url }) => (
+                           <li
+                              className="env-nav__item env-m-vertical--medium"
+                              key={url}
+                           >
+                              <Link href={url}>{text}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+                  <div className="footer-nav-col">
+                     <h2 className="footer-nav-col__header">Sitevision</h2>
+                     <ul className="env-list">
+                        {sitevisionMenuItems.map(({ text, url }) => (
+                           <li
+                              className="env-nav__item env-m-vertical--medium"
+                              key={url}
+                           >
+                              <Link href={url}>{text}</Link>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
                </nav>
             </div>
          </footer>
@@ -49,7 +112,7 @@ const Footer = ({ menuItems }) => {
 };
 
 Footer.propTypes = {
-   menuItems: PropTypes.array,
+   // menuItems: PropTypes.array,
 };
 
 export default Footer;

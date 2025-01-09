@@ -2,8 +2,6 @@
 title: Console warnings
 ---
 
-## Console warnings
-
 ## jQuery Warnings <span id="jquery" class="offset-anchor"></span>
 
 All jQuery dependencies in Envision are deprecated and will be removed. Warnings will appear in the

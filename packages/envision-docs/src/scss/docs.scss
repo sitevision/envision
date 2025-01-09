@@ -1,18 +1,27 @@
 @import 'variables';
 @import 'webfonts';
+
 @import 'base';
 @import 'sitevision-font-issue-detection';
+
 @import 'layout';
 @import 'banner';
 @import 'header';
 @import 'sidenav';
+@import 'mobilenav';
+@import 'teasernav';
 @import 'footer';
+
+@import 'startpage';
+
 @import 'badge';
 @import 'theme-switch';
 @import 'markdown-generated-content';
 @import 'highlight';
 @import 'icons';
+
 @import 'demo';
 @import 'demo-themes/example-brand';
-@import 'demo-themes/sv-theme-dark';
+@import 'doc-themes/doc-theme-dark';
+
 @import 'print';

@@ -9,7 +9,7 @@ import { toTitleCase } from './demoUtils';
 
 const TEXT_CONTRAST_ICON =
    '<svg class="env-icon example-dashboard-color-list-icon">' +
-   '<use href="/images/docs-icons.svg#text"></use></svg>';
+   '<use href="/images/docs-images.svg#text"></use></svg>';
 
 const listItem = (options) => {
    const o = Object.assign({}, options);
@@ -36,9 +36,9 @@ export const useDashboardExample = (content) => {
 
          DASHBOARD_COLORS.forEach((colorName) => {
             const gridEl = document.createElement('div');
-            gridEl.innerHTML = `<h2 class="env-ui-text-subheading">${toTitleCase(
+            gridEl.innerHTML = `<h4 class="doc-heading-4">${toTitleCase(
                colorName.replace('-', ' ')
-            )}</h2>`;
+            )}</h4>`;
 
             const listEl = document.createElement('ul');
             listEl.classList.add('example-dashboard-color-list');

@@ -2,14 +2,21 @@
    position: relative;
    z-index: 1;
 
-   --bg: var(--doc-header-font-color);
-   --fg: var(--doc-header-background-color);
-   --sw: #ffcd45;
-   --ch: var(--bg);
+   width: fit-content;
+   //width: 3.25em;
+
+   --fg: var(--doc-header-font-color);
+   --bg: var(--doc-header-background-color);
+   --sw: var(--doc-color-brand);
+   --ch: var(--doc-color-brand-contrast); //var(--bg);
 
    @include dark-mode {
-      --sw: var(--doc-header-background-color);
-      --ch: #ffcd45;
+      //--sw: var(--doc-header-background-color);
+      //--ch: #ffcd45;
+      --ch: #ddd4ff; // var(--doc-header-background-color);
+      --bg: #6539f8; // var(--doc-header-background-color);
+      --sw: #1f2a4d; // var(--doc-header-background-color);
+      //--ch: #ffcd45;
    }
 
    &__sun,
@@ -20,13 +27,16 @@
       z-index: 3;
       height: 0.8em;
       width: 0.8em;
-      inset: 50% auto auto 0.325em;
+      //inset: 50% auto auto 0.325em;
+      inset: 50% auto auto 0.45em;
       transform: translateY(-50%);
-      fill: var(--fg);
+      fill: var(--fg) !important;
    }
 
    &__moon {
-      inset: 50% auto auto 1.5em;
+      //inset: 50% auto auto 1.5em;
+      inset: 50% 0.5em auto auto;
+      fill: var(--ch) !important;
    }
 
    &__checkbox {
@@ -46,6 +56,11 @@
       margin: 0;
       padding: 0;
 
+      border: 1px solid var(--sw);
+      box-sizing: content-box;
+      border-radius: 0.8em / 50%;
+      width: 3em;
+
       &:before {
          content: '';
          display: block;
@@ -57,25 +72,37 @@
          inset: 0.125em auto auto 0.125em;
          background-color: var(--sw);
          transition: 0.3s;
+         transform: translateX(1.45em);
       }
 
       ~ .doc-theme-switch__sun {
          fill: var(--ch);
+         fill: var(--fg);
+         display: none;
+         display: block;
       }
       ~ .doc-theme-switch__moon {
          fill: var(--fg);
+         fill: var(--ch);
+         display: none;
       }
 
       &:checked {
          &:before {
-            transform: translateX(1.125em);
+            //transform: translateX(1.125em);
+            transform: translateX(1.45em);
+            transform: translateX(0);
          }
 
          ~ .doc-theme-switch__sun {
             fill: var(--fg);
+            fill: var(--ch);
+            display: none;
          }
          ~ .doc-theme-switch__moon {
             fill: var(--ch);
+            fill: var(--fg);
+            display: block;
          }
       }
 

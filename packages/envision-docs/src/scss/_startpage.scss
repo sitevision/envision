@@ -1,0 +1,50 @@
+.start-body {
+}
+
+.start-hero {
+   background-color: var(--doc-hero-background-color);
+   padding: 7.5em 0 10em;
+
+   @include main-layout-break {
+      padding: 16em 0;
+   }
+
+   &__body {
+      margin: 0 auto;
+      max-width: min(54em, calc(100vw - 2em - 2em));
+   }
+
+   &__heading {
+      font-family: var(--env-text-display-01-font-family);
+      font-size: var(--env-text-display-01-font-size);
+      font-weight: 700;
+      font-style: var(--env-text-display-01-font-style);
+      line-height: 1.25;
+      color: var(--doc-font-color);
+      margin: 0 0 1em;
+   }
+
+   &__text {
+      font-family: var(--env-text-summary-01-font-family);
+      font-size: 1.25em;
+      font-style: var(--env-text-summary-01-font-style);
+      font-weight: 500;
+      color: var(--doc-font-color);
+      letter-spacing: var(--env-text-summary-01-letter-spacing);
+      line-height: 1.6;
+      margin-block-end: var(--env-text-summary-01-margin-block-end);
+      margin-block-start: var(--env-text-summary-01-margin-block-start);
+      text-transform: var(--env-text-summary-01-text-transform);
+   }
+}
+
+.start-content {
+   margin: 0 auto;
+   max-width: min(66em, calc(100vw - 2em - 2em));
+}
+
+.start-content__body {
+   background-color: var(--doc-section-background-color);
+   padding: 1em min(3em, 4vw) min(3em, 4vw);
+   max-width: 54em;
+}

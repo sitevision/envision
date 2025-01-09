@@ -5,12 +5,16 @@ import { useCopyExample } from '../hooks/copyExample';
 import { useDashboardExample } from '../hooks/dashboardExample';
 import { useExpandCode } from '../hooks/expandCode';
 import BaseTemplate from './BaseTemplate';
+// import NavigationTemplate from './NavigationTemplate';
 
 export default function Template({
    data, // this prop will be injected by the GraphQL query below.
 }) {
+   console.log(data);
    const { markdownRemark, site, allMarkdownRemark } = data;
    const { frontmatter, html } = markdownRemark;
+   const icons = frontmatter.extra?.icons;
+   const template = frontmatter.template ? frontmatter.template : 'page';
    const content = useRef(null);
    useCopyExample(content);
    useExpandCode(content);
@@ -18,15 +22,18 @@ export default function Template({
 
    return (
       <BaseTemplate
+         template={template}
          title={frontmatter.title}
          deprecated={frontmatter.deprecated}
          since={frontmatter.since}
          beta={frontmatter.beta}
          dashboard={frontmatter.dashboard}
+         description={frontmatter.description}
          indexing={frontmatter.indexing}
-         topMenuItems={site.siteMetadata.topMenuItems}
+         // topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
+         icons={icons}
       >
          <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
       </BaseTemplate>
@@ -37,24 +44,27 @@ export const pageQuery = graphql`
    query ($slug: String!) {
       site {
          siteMetadata {
-            topMenuItems {
-               label
-               to
-            }
             menuCategories {
                title
                slug
+               spriteId
+               description
             }
          }
       }
       markdownRemark(fields: { slug: { eq: $slug } }) {
          html
          frontmatter {
+            template
             title
             deprecated
             since
             dashboard
+            description
             indexing
+            extra {
+               icons
+            }
          }
       }
       allMarkdownRemark {
@@ -62,10 +72,12 @@ export const pageQuery = graphql`
             node {
                id
                frontmatter {
+                  template
                   title
                   deprecated
                   since
                   dashboard
+                  description
                   indexing
                }
                fields {
