@@ -23,7 +23,7 @@ const StartPageTemplate = ({ mainClassName, startpageMenuItems, ...props }) => {
                </div>
             </div>
             <Teasernav
-               useIcon={true}
+               iconFile="/images/docs-navicons.svg"
                className="teaserNav--start"
                menuItems={startpageMenuItems}
             ></Teasernav>

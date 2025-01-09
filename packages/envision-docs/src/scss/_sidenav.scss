@@ -8,12 +8,6 @@
    color: var(--doc-sidenav-font-color);
 
    &__heading {
-      //font-family: cursive;
-      //font-weight: 900;
-      //font-style: italic;
-      //font-size: 30px;
-      //color: deeppink;
-      //line-height: 2;
       font-family: var(--doc-font-family);
       font-size: var(--env-font-size-large);
       font-style: normal;
@@ -42,21 +36,6 @@
       position: relative;
       font-size: 1em;
 
-      //&--hasChildren {
-      //   //background: red;
-      //   //padding-right: 3em;
-      //}
-      //
-      //.env-button {
-      //   position: absolute !important;
-      //   inset: 0 0 auto auto;
-      //   border-radius: 0;
-      //}
-      //
-      //.env-button[aria-expanded='true'] .env-icon {
-      //   transform: rotate(180deg);
-      //}
-
       &__link {
          display: block;
          border-bottom: 1px solid var(--doc-border-color);
@@ -68,21 +47,8 @@
             color: var(--doc-color-brand);
          }
 
-         //&.level-1 {
-         //   font-weight: 700;
-         //   border-left: 2px solid transparent;
-         //   padding-left: 0.875em;
-         //}
-         //
-         //&.level-2 {
-         //   font-weight: 500;
-         //   padding-left: 2.5em;
-         //   border-left: 2px solid transparent;
-         //}
-
          &[aria-current='page'] {
             border-left: 2px solid var(--doc-color-brand);
-            //padding-left: 2.5em;
          }
 
          .doc-badge {

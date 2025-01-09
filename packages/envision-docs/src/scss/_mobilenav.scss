@@ -14,7 +14,7 @@
    border: none;
 
    @include dark-mode-element-override;
-   //
+
    background-color: var(--doc-section-background-color);
    color: var(--doc-font-color);
 
@@ -58,19 +58,9 @@
          line-height: 1;
       }
    }
-   &__close {
-      //position: absolute !important;
-      //top: 0.5em;
-      //right: 0.5em;
-   }
 
    .env-nav__item {
       position: relative;
-
-      &--hasChildren {
-         //background: red;
-         //padding-right: 3em;
-      }
 
       .env-button {
          position: absolute !important;

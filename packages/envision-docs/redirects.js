@@ -85,19 +85,4 @@ exports.redirects = [
       toPath: `/layout/flexbox/`,
       isPermanent: true,
    },
-   {
-      fromPath: `/asdasdasd/`,
-      toPath: `/asdasdsd/`,
-      isPermanent: true,
-   },
-   {
-      fromPath: `/asdasdasd/`,
-      toPath: `/asdasdsd/`,
-      isPermanent: true,
-   },
-   {
-      fromPath: `/asdasdasd/`,
-      toPath: `/asdasdsd/`,
-      isPermanent: true,
-   },
 ];

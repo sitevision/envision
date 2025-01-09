@@ -1,17 +1,11 @@
 /* globals module:false, __dirname:false */
-// const createMenuItem = (label, to) => ({ label, to });
-// TODO: Remove these hardcoded links?
-// const topMenuItems = [
-//    createMenuItem('Documentation', '/getting-started/introduction/'),
-//    createMenuItem('GitHub', 'https://github.com/sitevision/envision'),
-//    createMenuItem('Sitevision', 'https://www.sitevision.se/'),
-// ];
+
 module.exports = {
    siteMetadata: {
       title: 'Sitevision Envision',
       description: 'UI library by Sitevision',
       author: '@sitevision',
-      // topMenuItems: topMenuItems,
+
       menuCategories: [
          {
             title: 'Colors',

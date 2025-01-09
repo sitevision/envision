@@ -2,10 +2,6 @@ $layout-gap: 2em;
 $layout-col-sidenav: 19em;
 $layout-col-main: 59em;
 
-body {
-   //padding-top: 4.5em;
-}
-
 .layout {
    min-height: 100vh;
 }
@@ -35,14 +31,6 @@ body {
             $layout-col-main,
             calc(100vw - 2em - 2em - 23.75vw)
          );
-
-      //&--start {
-      //   grid-template-areas: 'main';
-      //   grid-template-columns: min(
-      //      $layout-col-main + $layout-col-sidenav + $layout-gap,
-      //      calc(100vw - 2em - 2em)
-      //   );
-      //}
    }
 
    .banner + & {

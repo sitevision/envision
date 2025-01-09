@@ -1,6 +1,4 @@
 export const filterMenuItems = (items, categories, location) => {
-   console.log('filterMenuItems', items);
-
    items = items
       .map(({ node }) => ({
          id: node.id,
@@ -16,29 +14,6 @@ export const filterMenuItems = (items, categories, location) => {
       .reduce((accumulated, item) => {
          const pathItems = item.slug.split('/').filter((i) => i);
 
-         // if (pathItems.length === 1) {
-         //
-         // }
-         // console.log('pathItems', pathItems, accumulated);
-
-         // TODO: Remove?
-
-         // if (pathItems.length === 3) {
-         //    let parent = accumulated[pathItems[0]];
-         //    if (!parent) {
-         //       parent = accumulated[pathItems[0]] = {};
-         //    }
-         //
-         //    let child = parent[pathItems[1]];
-         //    if (!child) {
-         //       child = parent[pathItems[1]] = [];
-         //    }
-         //
-         //    child.push(item);
-         //
-         //    return accumulated;
-         // }
-
          let parent = accumulated[pathItems[0]];
          if (!parent) {
             parent = accumulated[pathItems[0]] = [];
@@ -49,10 +24,9 @@ export const filterMenuItems = (items, categories, location) => {
          return accumulated;
       }, {});
    setIndexAndCurrent(items, categories, location);
-   // items[category].sort(sortPages);
+
    Object.keys(items).forEach((category) => {
       items[category].sort(sortPages);
-      // filteredMenuItems[category] = getItemsExceptIndex(menuItems[category]);
    });
    return items;
 };
@@ -72,8 +46,6 @@ export const getCategoryMenuItems = (menuItems, menuCategories) => {
          break;
       }
    }
-
-   console.log('items', items);
 
    return items;
 };
@@ -100,7 +72,6 @@ export const getCategoryTop = (menuItems, menuCategories) => {
 };
 
 export const getTopLevelMenuItems = (menuItems, menuCategories) => {
-   console.log('TOP', menuItems, menuCategories);
    let items = [];
    menuCategories.forEach((category) => {
       items.push({
@@ -111,7 +82,6 @@ export const getTopLevelMenuItems = (menuItems, menuCategories) => {
       });
    });
    return items;
-   // return menuItems[category];
 };
 
 export const getCategorySlug = (title, slug, items) => {
@@ -137,10 +107,10 @@ export const setIndexAndCurrent = (menuItems, categories, location) => {
          item.isIndexPage = item.slug === categorySlug;
          item.isCurrentPage = item.slug === currentPath;
          if (item.isCurrentPage) {
-            const x = categories.find((c) => {
+            const parent = categories.find((c) => {
                return c.slug === category;
             });
-            x && (x.hasCurrentPage = true);
+            parent && (parent.hasCurrentPage = true);
          }
       });
    });

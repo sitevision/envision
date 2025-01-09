@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import Link from '../Link';
 import ThemePicker from '../ThemePicker';
-import Logo from '../Logo';
 
 const Header = ({ title, description, menuItems, indexing }) => {
    const [showMobileNav, setShowMobileNav] = React.useState(false);
@@ -13,20 +12,15 @@ const Header = ({ title, description, menuItems, indexing }) => {
       const mobileNav = document.querySelector('.mobileNav');
       const closeButton = document.querySelector('.mobileNav__close');
       const handleClose = () => {
-         console.log('handleClose');
          setShowMobileNav(false);
          mobileNav.classList.remove('show');
          document.body.style.removeProperty('overflow');
       };
-      const handleDialogClose = () => {
-         console.log('handleDialogClose');
-      };
 
       closeButton && closeButton.addEventListener('click', handleClose);
-      mobileNav && mobileNav.addEventListener('close', handleDialogClose);
+
       return () => {
          closeButton && closeButton.removeEventListener('click', handleClose);
-         mobileNav && mobileNav.removeEventListener('close', handleDialogClose);
       };
    }, []);
 
@@ -131,7 +125,12 @@ const Header = ({ title, description, menuItems, indexing }) => {
          <header className="header">
             <div className="container">
                <Link className="logo" href="/">
-                  <Logo />
+                  <svg
+                     className="env-icon doc-svg-logo"
+                     aria-label="To start page"
+                  >
+                     <use href="/images/docs-logo.svg#logo"></use>
+                  </svg>
                </Link>
                <nav aria-label="Main">
                   <ul className="env-nav env-nav--menubar env-nav--border">

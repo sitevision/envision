@@ -39,22 +39,23 @@ const ThemePicker = () => {
       changeScheme(e.target.checked ? 'dark' : 'light');
    };
 
-   React.useEffect(() => {
-      const handleMqlColorSchemeChange = () => {
-         changeScheme(mqlColorScheme.matches ? 'dark' : 'light');
-      };
-
-      setTimeout(() => {
-         mqlColorScheme.addEventListener('change', handleMqlColorSchemeChange);
-      }, 100);
-
-      return () => {
-         mqlColorScheme.removeEventListener(
-            'change',
-            handleMqlColorSchemeChange
-         );
-      };
-   }, [mqlColorScheme, changeScheme]);
+   // TODO: Decide if toggling dark mode via system setting should be implemented
+   // React.useEffect(() => {
+   //    const handleMqlColorSchemeChange = () => {
+   //       changeScheme(mqlColorScheme.matches ? 'dark' : 'light');
+   //    };
+   //
+   //    setTimeout(() => {
+   //       mqlColorScheme.addEventListener('change', handleMqlColorSchemeChange);
+   //    }, 100);
+   //
+   //    return () => {
+   //       mqlColorScheme.removeEventListener(
+   //          'change',
+   //          handleMqlColorSchemeChange
+   //       );
+   //    };
+   // }, [mqlColorScheme, changeScheme]);
 
    return (
       <div className="theme-picker">

@@ -5,12 +5,10 @@ import { useCopyExample } from '../hooks/copyExample';
 import { useDashboardExample } from '../hooks/dashboardExample';
 import { useExpandCode } from '../hooks/expandCode';
 import BaseTemplate from './BaseTemplate';
-// import NavigationTemplate from './NavigationTemplate';
 
 export default function Template({
    data, // this prop will be injected by the GraphQL query below.
 }) {
-   console.log(data);
    const { markdownRemark, site, allMarkdownRemark } = data;
    const { frontmatter, html } = markdownRemark;
    const icons = frontmatter.extra?.icons;
@@ -30,7 +28,6 @@ export default function Template({
          dashboard={frontmatter.dashboard}
          description={frontmatter.description}
          indexing={frontmatter.indexing}
-         // topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
          icons={icons}

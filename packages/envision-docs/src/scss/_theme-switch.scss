@@ -3,7 +3,6 @@
    z-index: 1;
 
    width: fit-content;
-   //width: 3.25em;
 
    --fg: var(--doc-header-font-color);
    --bg: var(--doc-header-background-color);
@@ -11,12 +10,9 @@
    --ch: var(--doc-color-brand-contrast); //var(--bg);
 
    @include dark-mode {
-      //--sw: var(--doc-header-background-color);
-      //--ch: #ffcd45;
       --ch: #ddd4ff; // var(--doc-header-background-color);
       --bg: #6539f8; // var(--doc-header-background-color);
       --sw: #1f2a4d; // var(--doc-header-background-color);
-      //--ch: #ffcd45;
    }
 
    &__sun,
@@ -27,27 +23,23 @@
       z-index: 3;
       height: 0.8em;
       width: 0.8em;
-      //inset: 50% auto auto 0.325em;
       inset: 50% auto auto 0.45em;
       transform: translateY(-50%);
       fill: var(--fg) !important;
    }
 
    &__moon {
-      //inset: 50% auto auto 1.5em;
       inset: 50% 0.5em auto auto;
       fill: var(--ch) !important;
    }
 
    &__checkbox {
-      box-sizing: border-box;
       font-family: var(--doc-font-family);
       font-size: 1em;
       font-weight: normal;
       appearance: none;
       position: relative;
       z-index: 3;
-      width: 2.625em;
       height: 1.5em;
       display: inline-block;
       vertical-align: middle;
@@ -76,13 +68,10 @@
       }
 
       ~ .doc-theme-switch__sun {
-         fill: var(--ch);
          fill: var(--fg);
-         display: none;
          display: block;
       }
       ~ .doc-theme-switch__moon {
-         fill: var(--fg);
          fill: var(--ch);
          display: none;
       }
@@ -90,17 +79,14 @@
       &:checked {
          &:before {
             //transform: translateX(1.125em);
-            transform: translateX(1.45em);
             transform: translateX(0);
          }
 
          ~ .doc-theme-switch__sun {
-            fill: var(--fg);
             fill: var(--ch);
             display: none;
          }
          ~ .doc-theme-switch__moon {
-            fill: var(--ch);
             fill: var(--fg);
             display: block;
          }

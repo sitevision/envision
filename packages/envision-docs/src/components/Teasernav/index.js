@@ -1,21 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// import Link from '../Link';
-// import classNames from 'classnames';
-// import {
-//    getCategorySlug,
-//    getItemsExceptIndex,
-// } from '../../hooks/navigationUtils';
 
-const Teasernav = ({ menuItems, className = '', useIcon = false }) => {
-   console.log('menuItems', menuItems);
-
-   // const filteredMenuItems = {};
-   // Object.keys(menuItems).forEach((category) => {
-   //    filteredMenuItems[category] = getItemsExceptIndex(menuItems[category]);
-   // });
-
+const Teasernav = ({ menuItems, className = '', iconFile }) => {
    className = className ? className : '';
 
    return (
@@ -28,12 +15,12 @@ const Teasernav = ({ menuItems, className = '', useIcon = false }) => {
                      className="env-card env-shadow-small env-border"
                   >
                      <a href={slug} className="teaserNav__link">
-                        {useIcon && (
+                        {iconFile && (
                            <div className="env-card__header">
                               <div className="teaserNav__icon">
                                  <svg aria-hidden="true" className="env-icon">
                                     <use
-                                       href={`/images/docs-navicons.svg#${
+                                       href={`${iconFile}#${
                                           spriteId
                                              ? spriteId
                                              : slug.split('/').slice(-2)[0]
@@ -75,7 +62,7 @@ const Teasernav = ({ menuItems, className = '', useIcon = false }) => {
 Teasernav.propTypes = {
    className: PropTypes.string,
    menuItems: PropTypes.array,
-   useIcon: PropTypes.bool,
+   iconFile: PropTypes.string,
 };
 
 export default Teasernav;

@@ -21,27 +21,6 @@
 
       @include focus-visible;
       color: var(--doc-header-font-color);
-
-      //img {
-      //   display: block;
-      //   width: $logo-width * 0.75;
-      //   height: auto;
-      //
-      //   @include header-layout-break {
-      //      width: $logo-width;
-      //   }
-      //
-      //   &.light {
-      //      display: none;
-      //   }
-      //
-      //   @at-root .doc-dark-mode & {
-      //      display: none;
-      //   }
-      //   @at-root .doc-dark-mode &.light {
-      //      display: block;
-      //   }
-      //}
    }
 
    nav {
@@ -59,7 +38,6 @@
 
       @include header-layout-break {
          visibility: hidden;
-         //width: $logo-width;
       }
    }
 

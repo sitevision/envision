@@ -82,7 +82,6 @@
 
 .doc-main-heading {
    @include restore-doc-font;
-   //font-family: var(--doc-font-family);
    --df-from-font-size: 2;
    --df-to-font-size: 3;
    line-height: 1;

@@ -44,27 +44,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
    }
 
    const docsTemplate = path.resolve(`src/templates/docs.js`);
-   // const navigationTemplate = path.resolve(`src/templates/navigation.js`);
-   // const iconsTemplate = path.resolve(`src/templates/icons.js`);
-
-   // console.log('111', result.data.allMarkdownRemark.edges);
 
    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      // let component;
-      //
-      // switch (node.frontmatter.template) {
-      //    case 'navigation':
-      //       component = navigationTemplate;
-      //       break;
-      //    case 'icons':
-      //       component = iconsTemplate;
-      //       break;
-      //    default:
-      //       component = docsTemplate;
-      // }
-
-      // console.log(node);
-
       createPage({
          path: node.fields.slug,
          component: docsTemplate,
@@ -78,7 +59,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 };
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-   // console.log(node);
    if (node.internal.type === 'MarkdownRemark') {
       const slug = createFilePath({ node, getNode, basePath: 'pages' });
       actions.createNodeField({

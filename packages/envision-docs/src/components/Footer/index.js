@@ -1,8 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-// import PropTypes from 'prop-types';
 import Link from '../Link';
-import Logo from '../Logo';
 
 const Footer = () => {
    const envisionMenuItems = [
@@ -49,7 +47,12 @@ const Footer = () => {
                <nav aria-label="Main" className="footer-nav">
                   <div className="footer-nav-col">
                      <Link className="logo" href="/">
-                        <Logo />
+                        <svg
+                           className="env-icon doc-svg-logo"
+                           aria-label="To start page"
+                        >
+                           <use href="/images/docs-logo.svg#logo"></use>
+                        </svg>
                      </Link>
                   </div>
                   <div className="footer-nav-col">

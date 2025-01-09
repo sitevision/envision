@@ -13,31 +13,25 @@ $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
 
 @mixin main-layout-break {
    @media (min-width: 48em) {
-      //@media (min-width: 64em) {
       // 768px = 48em
       @content;
    }
 }
 
 @mixin header-layout-break {
-   //@media (min-width: 48em) {
    @media (min-width: 64em) {
-      // 1024px = 48em
+      // 1024px = 64em
       @content;
    }
 }
 
 @mixin dark-mode {
-   //@media (prefers-color-scheme: dark) {
-   //   @content;
-   //}
    .doc-dark-mode & {
       @content;
    }
 }
 
 @mixin dark-mode-element-override {
-   //@media (prefers-color-scheme: dark) {
    .doc-dark-mode & {
       --env-element-primary-font-color: #272b30;
       --env-element-primary-background-color: #81a6ca;
@@ -49,7 +43,6 @@ $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
 }
 
 @mixin dark-mode-status-override {
-   //@media (prefers-color-scheme: dark) {
    .doc-dark-mode & {
       --env-ui-color-status-active: #00bc8c;
       --env-ui-color-status-active-contrast: #272b30;

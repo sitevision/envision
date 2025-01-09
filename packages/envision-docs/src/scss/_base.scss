@@ -23,18 +23,14 @@ html {
    --doc-code-background-color: #eee;
    --doc-code-font-color: #000;
 
-   //--doc-hero-background-color: hsl(145,54%,91%);
    --doc-hero-background-color: #daf4e5;
 
    --doc-teasernav-header-background-color: #e0e8e2;
    --doc-teasernav-header-contrast-color: #737373;
 
    .doc-dark-mode {
-      //--doc-background-color: hsl(153, 14%, 15%);
       --doc-background-color: #0d2d2a;
-      //--doc-section-background-color: #000;
       --doc-section-background-color: #223936;
-      //--doc-font-color: #fff;
       --doc-font-color: #d5deda;
       --doc-link-font-color: #fff;
       --doc-link-text-decoration: underline;
@@ -43,18 +39,12 @@ html {
       --doc-footer-background-color: #000;
       --doc-footer-font-color: #dfdccf;
 
-      //--doc-color-brand: orange;
-      //--doc-color-brand-contrast: #000000;
-      //--doc-font-family: Inter, sans-serif;
       --doc-header-background-color: var(--doc-section-background-color);
-      //--doc-sidenav-background-color: var(--doc-section-background-color);
-      //--doc-sidenav-font-color: #202330;
       --doc-sidenav-font-color: #dfdccf;
 
       --doc-code-background-color: #666;
       --doc-code-font-color: #fff;
 
-      --doc-hero-background-color: hsl(145, 4%, 24%);
       --doc-hero-background-color: #204541;
 
       --doc-teasernav-header-background-color: #204541;
@@ -133,11 +123,7 @@ img {
 .doc-svg-logo {
    display: block;
    width: 148px;
-   height: auto;
-
-   path {
-      fill: currentColor;
-   }
+   height: 56px;
 }
 
 .offset-anchor {
