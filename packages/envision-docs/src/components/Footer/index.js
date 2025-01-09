@@ -114,8 +114,4 @@ const Footer = () => {
    );
 };
 
-Footer.propTypes = {
-   // menuItems: PropTypes.array,
-};
-
 export default Footer;

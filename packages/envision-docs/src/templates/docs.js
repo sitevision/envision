@@ -37,6 +37,8 @@ export default function Template({
    );
 }
 
+// beta and description must be readded when they are to be used
+
 export const pageQuery = graphql`
    query ($slug: String!) {
       site {
@@ -57,7 +59,6 @@ export const pageQuery = graphql`
             deprecated
             since
             dashboard
-            description
             indexing
             extra {
                icons
@@ -74,7 +75,6 @@ export const pageQuery = graphql`
                   deprecated
                   since
                   dashboard
-                  description
                   indexing
                }
                fields {

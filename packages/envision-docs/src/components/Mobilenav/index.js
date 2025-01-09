@@ -42,7 +42,7 @@ const Mobilenav = ({ categories, menuItems }) => {
                         {title}
                      </Link>
                      {filteredMenuItems[slug].length > 0 && (
-                        <a
+                        <Link
                            role="button"
                            className={classNames(
                               'env-button',
@@ -58,7 +58,7 @@ const Mobilenav = ({ categories, menuItems }) => {
                            <svg className="env-icon">
                               <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
                            </svg>
-                        </a>
+                        </Link>
                      )}
                      <ul
                         className={classNames(
