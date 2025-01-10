@@ -54,6 +54,7 @@ const BaseTemplate = ({
    const filteredCategories = menuCategories.filter((category) => {
       return !category.hideInMenus;
    });
+
    const allMenuItems = filterMenuItems(
       menuItems,
       filteredCategories,
@@ -69,11 +70,8 @@ const BaseTemplate = ({
          filteredCategories
       );
    } else if (template === 'navigation' || template === 'page') {
-      categoryMenuItems = getCategoryMenuItems(
-         allMenuItems,
-         filteredCategories
-      );
-      sidebarMenuTop = getCategoryTop(allMenuItems, filteredCategories);
+      categoryMenuItems = getCategoryMenuItems(allMenuItems, menuCategories);
+      sidebarMenuTop = getCategoryTop(allMenuItems, menuCategories);
    }
 
    let bannerType = null;
