@@ -51,16 +51,29 @@ const BaseTemplate = ({
 
    const location = useLocation();
 
-   const allMenuItems = filterMenuItems(menuItems, menuCategories, location);
+   const filteredCategories = menuCategories.filter((category) => {
+      return !category.hideInMenus;
+   });
+   const allMenuItems = filterMenuItems(
+      menuItems,
+      filteredCategories,
+      location
+   );
 
    let startpageMenuItems;
    let categoryMenuItems, sidebarMenuTop;
 
    if (template === 'startpage') {
-      startpageMenuItems = getTopLevelMenuItems(allMenuItems, menuCategories);
+      startpageMenuItems = getTopLevelMenuItems(
+         allMenuItems,
+         filteredCategories
+      );
    } else if (template === 'navigation' || template === 'page') {
-      categoryMenuItems = getCategoryMenuItems(allMenuItems, menuCategories);
-      sidebarMenuTop = getCategoryTop(allMenuItems, menuCategories);
+      categoryMenuItems = getCategoryMenuItems(
+         allMenuItems,
+         filteredCategories
+      );
+      sidebarMenuTop = getCategoryTop(allMenuItems, filteredCategories);
    }
 
    let bannerType = null;
@@ -84,16 +97,15 @@ const BaseTemplate = ({
             title={title}
             description={description}
             indexing={indexing}
-            menuItems={menuCategories}
+            menuItems={filteredCategories}
          />
          {bannerType && <Banner bannerType={bannerType} info={info}></Banner>}
          {template === 'startpage' ? (
             <>
                <StartPageTemplate
                   startpageMenuItems={startpageMenuItems}
-                  allMenuItems={allMenuItems}
                   mainClassName={mainClassName}
-                  menuCategories={menuCategories}
+                  menuCategories={filteredCategories}
                >
                   {children}
                </StartPageTemplate>
@@ -122,7 +134,7 @@ const BaseTemplate = ({
                {(template === 'navigation' || template === 'page') && (
                   <Sidenav
                      topItem={sidebarMenuTop}
-                     categories={menuCategories}
+                     categories={filteredCategories}
                      menuItems={categoryMenuItems}
                   ></Sidenav>
                )}
@@ -130,7 +142,7 @@ const BaseTemplate = ({
          )}
          <Footer />
          <Mobilenav
-            categories={menuCategories}
+            categories={filteredCategories}
             menuItems={allMenuItems}
          ></Mobilenav>
       </div>
