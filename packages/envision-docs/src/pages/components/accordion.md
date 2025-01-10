@@ -84,23 +84,17 @@ title: Accordion
 
 You can `show`, `hide` and `toggle` on available collapsible elements.
 
-Show
-
 ```javascript
 envision.accordion('#container1').then(function (accordions) {
    accordions[0].show();
 });
 ```
 
-Hide
-
 ```javascript
 envision.accordion('#container1').then(function (accordions) {
    accordions[0].hide();
 });
 ```
-
-Toggle
 
 ```javascript
 envision.accordion('#container1').then(function (accordions) {
