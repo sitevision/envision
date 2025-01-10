@@ -10,7 +10,7 @@ const useColorScheme = () => React.useContext(ColorSchemeContext);
 
 const ThemeProvider = ({ children }) => {
    const [colorScheme, setColorScheme] = React.useState(
-      window.sessionStorage.getItem('color-scheme')
+      window ? window.sessionStorage.getItem('color-scheme') : null
    );
 
    return (

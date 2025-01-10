@@ -4,10 +4,12 @@ import { useColorScheme } from '../Theme';
 const ThemePicker = () => {
    const { colorScheme, setColorScheme } = useColorScheme();
 
-   const mqlColorScheme = React.useMemo(
-      () => window.matchMedia('(prefers-color-scheme: dark)'),
-      []
-   );
+   const mqlColorScheme = React.useMemo(() => {
+      if (typeof window === 'undefined') {
+         return { matches: false };
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)');
+   }, []);
 
    const [darkTheme, setDarkTheme] = React.useState(
       colorScheme === 'dark' || (colorScheme === null && mqlColorScheme.matches)
@@ -15,7 +17,7 @@ const ThemePicker = () => {
 
    const changeScheme = React.useCallback(
       (scheme) => {
-         window.sessionStorage.setItem('color-scheme', scheme);
+         window?.sessionStorage.setItem('color-scheme', scheme);
          setColorScheme(scheme);
          setDarkTheme(scheme === 'dark');
 
