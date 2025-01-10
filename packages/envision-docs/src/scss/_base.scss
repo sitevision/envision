@@ -13,7 +13,7 @@ html {
    --doc-header-font-color: #202330;
    --doc-footer-background-color: #2d3237;
    --doc-footer-font-color: #aba3a3;
-   --doc-sidenav-background-color: transparent; // var(--doc-section-background-color);
+   --doc-sidenav-background-color: transparent;
    --doc-sidenav-font-color: #202330;
 
    --doc-color-brand: #17cc78;
@@ -35,11 +35,11 @@ html {
       --doc-link-font-color: #fff;
       --doc-link-text-decoration: underline;
       --doc-border-color: #555;
+
+      --doc-header-background-color: var(--doc-section-background-color);
       --doc-header-font-color: #dfdccf;
       --doc-footer-background-color: #000;
       --doc-footer-font-color: #dfdccf;
-
-      --doc-header-background-color: var(--doc-section-background-color);
       --doc-sidenav-font-color: #dfdccf;
 
       --doc-code-background-color: #666;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Link from '../Link';
 
 const Footer = () => {
@@ -94,22 +93,6 @@ const Footer = () => {
                </nav>
             </div>
          </footer>
-         <Helmet>
-            <script>
-               {`var _paq = _paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//uistats.sitevision.se/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '8']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();`}
-            </script>
-         </Helmet>
       </>
    );
 };

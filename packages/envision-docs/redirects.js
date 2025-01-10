@@ -26,6 +26,11 @@ exports.redirects = [
       isPermanent: true,
    },
    {
+      fromPath: `/utils/icons/`,
+      toPath: `/components/icons/`,
+      isPermanent: true,
+   },
+   {
       fromPath: `/utils/colors/`,
       toPath: `/colors/`,
       isPermanent: true,
