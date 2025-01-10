@@ -36,7 +36,11 @@ const BaseTemplate = ({
 
    let colorScheme = win && win.sessionStorage.getItem('color-scheme');
 
-   if (!colorScheme && win.matchMedia('(prefers-color-scheme: dark)').matches) {
+   if (
+      !colorScheme &&
+      win.matchMedia &&
+      win.matchMedia('(prefers-color-scheme: dark)').matches
+   ) {
       win.sessionStorage.setItem('color-scheme', 'dark');
       colorScheme = 'dark';
    }
