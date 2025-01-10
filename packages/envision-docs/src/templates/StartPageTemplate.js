@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// import Mobilenav from '../components/Mobilenav';
 import Teasernav from '../components/Teasernav';
 
 const StartPageTemplate = ({ mainClassName, startpageMenuItems, ...props }) => {
@@ -39,8 +38,6 @@ StartPageTemplate.propTypes = {
    children: PropTypes.object,
    mainClassName: PropTypes.string,
    startpageMenuItems: PropTypes.array,
-   // menuCategories: PropTypes.array,
-   // allMenuItems: PropTypes.object,
 };
 
 export default StartPageTemplate;

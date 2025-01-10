@@ -62,6 +62,7 @@ export const getCategoryTop = (menuItems, menuCategories) => {
          item = {
             title: category.title,
             description: category.description,
+            hideInMenus: category.hideInMenus,
             slug: `/${category.slug}/`,
          };
          break;
@@ -77,6 +78,7 @@ export const getTopLevelMenuItems = (menuItems, menuCategories) => {
       items.push({
          title: category.title,
          description: category.description,
+         hideInMenus: category.hideInMenus,
          spriteId: category.spriteId,
          slug: `/${category.slug}/`,
       });

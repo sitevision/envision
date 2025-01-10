@@ -134,12 +134,19 @@ const Header = ({ title, description, menuItems, indexing }) => {
                </Link>
                <nav aria-label="Main">
                   <ul className="env-nav env-nav--menubar env-nav--border">
-                     {menuItems.map(({ title, slug }) => (
-                        <li className="env-nav__item" key={slug}>
-                           <Link href={`/${slug}/`} className="env-nav__link">
-                              {title}
-                           </Link>
-                        </li>
+                     {menuItems.map(({ title, slug, hideInMenus }) => (
+                        <>
+                           {!hideInMenus && (
+                              <li className="env-nav__item" key={slug}>
+                                 <Link
+                                    href={`/${slug}/`}
+                                    className="env-nav__link"
+                                 >
+                                    {title}
+                                 </Link>
+                              </li>
+                           )}
+                        </>
                      ))}
                   </ul>
                </nav>

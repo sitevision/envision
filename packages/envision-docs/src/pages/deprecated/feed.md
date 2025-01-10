@@ -1,6 +1,17 @@
 ---
 title: Feed
+deprecated: true
+indexing: false
 ---
+
+<p class="doc-summary">Feed is deprecated since 2025.01.2 and will eventually be removed.</p>
+
+Deprecated classes:
+
+-  `env-feed`
+-  `env-post`
+-  `env-comments`
+-  `env-comment`
 
 ## Simple post with embedded attachment
 

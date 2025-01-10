@@ -54,6 +54,14 @@ module.exports = {
             description:
                'An extension to Envision that should be used when creating Sitevision Dashboard Widgets.',
          },
+         {
+            title: 'Deprecated',
+            slug: 'deprecated',
+            spriteId: 'deprecated',
+            description:
+               'Documentation for deprecated versions of Envision components.',
+            hideInMenus: true,
+         },
       ],
    },
    plugins: [

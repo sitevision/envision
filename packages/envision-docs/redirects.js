@@ -21,6 +21,11 @@ exports.redirects = [
       isPermanent: true,
    },
    {
+      fromPath: `/components/feed/`,
+      toPath: `/deprecated/feed/`,
+      isPermanent: true,
+   },
+   {
       fromPath: `/ui/`,
       toPath: `/colors/brand-colors/`,
       isPermanent: true,
