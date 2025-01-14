@@ -1,5 +1,6 @@
 ---
 title: Container
+description: The Container utility establishes a containment context for applying container query at-rules.
 ---
 
 <h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2024.02.1</span></h2>

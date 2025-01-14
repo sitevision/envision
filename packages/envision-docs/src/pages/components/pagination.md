@@ -1,5 +1,6 @@
 ---
 title: Pagination
+description: The Pagination component provides accessible navigation for multi-page content, with customizable alignment and sizing options.
 ---
 
 ## Overview

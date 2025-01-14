@@ -1,5 +1,6 @@
 ---
 title: Responsive widgets
+description: Use CSS container queries to make widgets responsive to different sizes.
 dashboard: true
 ---
 

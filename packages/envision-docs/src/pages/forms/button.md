@@ -1,5 +1,6 @@
 ---
 title: Button
+description: Button provides interactive elements with various styles, sizes, and icon options.
 ---
 
 ## Types

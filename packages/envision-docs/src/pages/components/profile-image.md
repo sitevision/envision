@@ -1,5 +1,6 @@
 ---
 title: Profile image
+description: The Profile Image component displays images with fixed or responsive sizes.
 ---
 
 ## Overview

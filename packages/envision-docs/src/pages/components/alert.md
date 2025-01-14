@@ -1,5 +1,6 @@
 ---
 title: Alert
+description: The Alert component displays brief, important messages to users, with variations for success, warning, danger, and info alerts.
 ---
 
 ## Variations

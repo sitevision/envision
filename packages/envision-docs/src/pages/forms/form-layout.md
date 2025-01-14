@@ -1,5 +1,6 @@
 ---
 title: Form layout
+description: Form Layout offers structured classes for creating accessible, consistent, and responsive form layouts.
 since: 2024.07.1
 ---
 

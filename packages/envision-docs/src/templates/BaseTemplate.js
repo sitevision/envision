@@ -125,7 +125,10 @@ const BaseTemplate = ({
                      {icons && <Icons icons={icons}></Icons>}
                      {children}
                      {template === 'navigation' && (
-                        <Teasernav menuItems={categoryMenuItems}></Teasernav>
+                        <Teasernav
+                           menuItems={categoryMenuItems}
+                           iconFile="/images/docs-component-navicons.svg"
+                        ></Teasernav>
                      )}
                   </div>
                </main>

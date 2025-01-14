@@ -1,5 +1,6 @@
 ---
 title: Cards
+description: Cards are simple containers for displaying information about pages, groups, or users.
 ---
 
 Use Cards to display information about, for example, a page, a group or a user.

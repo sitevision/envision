@@ -1,5 +1,6 @@
 ---
 title: Embedded
+description: The Embedded component displays images and text with flexible layouts and overlay options.
 ---
 
 ## Example 1

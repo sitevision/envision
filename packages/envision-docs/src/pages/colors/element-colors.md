@@ -1,5 +1,6 @@
 ---
 title: Element colors
+description: The “Element Colors” section defines specific shades for buttons, icons, and interactive elements.
 ---
 
 Element colors are used for elements and components. See usage examples below.

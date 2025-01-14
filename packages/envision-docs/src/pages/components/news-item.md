@@ -1,5 +1,6 @@
 ---
 title: News item
+description: The News Item component presents news content with images and text in a structured layout.
 ---
 
 ## Types

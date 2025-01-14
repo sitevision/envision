@@ -1,5 +1,6 @@
 ---
 title: Icons
+description: The Icon component simplifies icon integration with customizable styles.
 extra:
    icons:
       - icon-arrow-down

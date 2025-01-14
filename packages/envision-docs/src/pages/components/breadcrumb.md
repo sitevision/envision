@@ -1,5 +1,6 @@
 ---
 title: Breadcrumb
+description: Use breadcrumbs to display the user´s location within a site’s hierarchy, enhancing navigation.
 ---
 
 ## Types

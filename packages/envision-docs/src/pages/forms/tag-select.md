@@ -1,5 +1,6 @@
 ---
 title: Tag Select
+description: Tag Select enables customizable multi-select interfaces with cross-browser support and styling.
 ---
 
 Tag select is a JS alternative to `<select>` that allows you to create a nice looking multi-select with cross browser

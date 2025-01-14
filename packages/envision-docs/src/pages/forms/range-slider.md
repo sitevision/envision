@@ -1,5 +1,6 @@
 ---
 title: Range slider
+description: The Range Slider component lets users select a value or range with customizable intervals and limits.
 ---
 
 Capture a range

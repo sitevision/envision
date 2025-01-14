@@ -1,5 +1,6 @@
 ---
 title: Button group
+description: Button Group groups related buttons together, providing a unified interface for multiple actions.
 ---
 
 ## Types

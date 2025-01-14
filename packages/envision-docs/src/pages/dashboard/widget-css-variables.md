@@ -1,5 +1,6 @@
 ---
 title: Widget CSS variables
+description: Additional CSS variables for styling dashboard widgets.
 dashboard: true
 ---
 

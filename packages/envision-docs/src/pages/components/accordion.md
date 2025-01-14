@@ -1,5 +1,6 @@
 ---
 title: Accordion
+description: The Accordion component toggles the visibility of content sections, allowing users to expand or collapse them.
 ---
 
 ## Overview

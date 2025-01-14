@@ -1,5 +1,6 @@
 ---
 title: Assistive text
+description: Assistive text provides helpful context, guidance, or feedback for improved accessibility and user understanding.
 ---
 
 ## Types

@@ -1,5 +1,6 @@
 ---
 title: Navigation
+description: The Navigation component provides customizable menus for site navigation, including menubars and side navigation.
 ---
 
 Use `aria-current="page"` on a link to indicate that the user is currently on that page.
