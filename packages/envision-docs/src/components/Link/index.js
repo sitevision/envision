@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 
 const Link = ({ href, children, ...rest }) => {
-   if (/^http/.test(href)) {
+   if (/^http/.test(href) || /^#/.test(href)) {
       return (
          <a href={href} {...rest}>
             {children}

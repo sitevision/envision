@@ -4,6 +4,9 @@ $layout-col-main: 59em;
 
 .layout {
    min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
 }
 
 .header {
@@ -16,9 +19,12 @@ $layout-col-main: 59em;
 }
 
 .body {
+   box-sizing: border-box;
+   flex: 1 1 100%;
    grid-area: body;
    margin: 0 auto;
    padding: 7.5em #{'min(2.6666vw,' + $site-padding + ')'} 0;
+   width: 100%;
    max-width: 80em;
 
    @include main-layout-break {
