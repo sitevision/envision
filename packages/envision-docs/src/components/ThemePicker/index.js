@@ -1,35 +1,76 @@
 import React from 'react';
-import { useTheme } from '../Theme';
+import { useColorScheme } from '../Theme';
 
 const ThemePicker = () => {
-   const { theme, setTheme } = useTheme();
-   const onThemeChange = (e) => {
-      setTheme(e.target.value);
+   const { colorScheme, setColorScheme } = useColorScheme();
+
+   const mqlColorScheme = React.useMemo(() => {
+      if (typeof window === 'undefined') {
+         return { matches: false };
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)');
+   }, []);
+
+   const [darkTheme, setDarkTheme] = React.useState(
+      colorScheme === 'dark' || (colorScheme === null && mqlColorScheme.matches)
+   );
+
+   const changeScheme = React.useCallback(
+      (scheme) => {
+         window?.sessionStorage.setItem('color-scheme', scheme);
+         setColorScheme(scheme);
+         setDarkTheme(scheme === 'dark');
+
+         const themeEl = document.querySelector('.layout');
+
+         if (scheme === 'dark') {
+            themeEl.classList.add('doc-dark-mode');
+         } else {
+            themeEl.classList.remove('doc-dark-mode');
+         }
+      },
+      [setColorScheme]
+   );
+
+   const handlePickerChange = (e) => {
+      setDarkTheme(e.target.checked);
+      setColorScheme(e.target.checked ? 'dark' : 'light');
+   };
+
+   const handlePickerClick = (e) => {
+      changeScheme(e.target.checked ? 'dark' : 'light');
    };
 
    return (
       <div className="theme-picker">
-         <div className="env-form-field">
-            <label htmlFor="selectTheme" className="env-assistive-text">
-               Select theme
-            </label>
-            <div className="env-text-small">
-               <div className="env-form-select">
-                  <select
-                     id="selectTheme"
-                     value={theme}
-                     onChange={onThemeChange}
-                  >
-                     <option value="">Default theme</option>
-                     <option value="sv-theme-dark">Dark theme</option>
-                     <option value="sv-theme-fancy">Fancy theme</option>
-                     <option value="sv-theme-quicksand">Quicksand theme</option>
-                  </select>
-                  <svg className="env-icon">
-                     <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
-                  </svg>
-               </div>
-            </div>
+         <label className="theme-picker__label" htmlFor="darkTheme">
+            Default / Dark mode
+         </label>
+         <div className="doc-theme-switch">
+            <input
+               className="doc-theme-switch__checkbox"
+               type="checkbox"
+               id="darkTheme"
+               onClick={handlePickerClick}
+               onChange={handlePickerChange}
+               checked={darkTheme}
+            />
+            <svg
+               aria-hidden="true"
+               className="env-icon doc-theme-switch__moon"
+               width="24"
+               height="24"
+            >
+               <use href="/images/docs-images.svg#moon"></use>
+            </svg>
+            <svg
+               aria-hidden="true"
+               className="env-icon doc-theme-switch__sun"
+               width="24"
+               height="24"
+            >
+               <use href="/images/docs-images.svg#sun"></use>
+            </svg>
          </div>
       </div>
    );

@@ -18,7 +18,7 @@ Run `yarn build`
 
 ## License information
 
-Code copyright 2017-2023, Sitevision AB. Code is released under the
+Code copyright 2017-2025, Sitevision AB. Code is released under the
 [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
 
 ## Supported browsers

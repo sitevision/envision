@@ -1,5 +1,6 @@
 ---
 title: Spacing
+description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
 ---
 
 Padding and margin utility classes are named using the format: `env-{property}-{specifier}--{size}`

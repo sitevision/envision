@@ -44,15 +44,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
    }
 
    const docsTemplate = path.resolve(`src/templates/docs.js`);
-   const iconsTemplate = path.resolve(`src/templates/icons.js`);
 
    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
          path: node.fields.slug,
-         component:
-            node.frontmatter.template === 'icons'
-               ? iconsTemplate
-               : docsTemplate,
+         component: docsTemplate,
          context: {
             title: node.frontmatter.title,
             slug: node.fields.slug,

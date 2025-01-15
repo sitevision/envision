@@ -1,5 +1,6 @@
 ---
 title: Display
+description: The Display utility provides classes to set an element’s display property, such as inline, block, flex, inline-block, inline-flex, or none.
 ---
 
 Use this utility to set an element's display property. Utility classes are named using the format: `env-d--{value}`

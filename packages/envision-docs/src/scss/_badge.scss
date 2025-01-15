@@ -1,0 +1,37 @@
+.doc-badge {
+   border-radius: 0.25em;
+   display: inline-block;
+   font-family: var(--doc-font-family);
+   font-size: 0.875em;
+   font-weight: 700;
+   padding: 0.125em 0.25em;
+   vertical-align: baseline;
+   color: #000;
+   background-color: #80c5ff;
+   text-decoration: none !important;
+
+   @include dark-mode-status-override;
+
+   &--success {
+      background-color: var(--env-ui-color-status-active);
+      color: var(--env-ui-color-status-active-contrast);
+   }
+
+   &--info {
+      background-color: #329597;
+      color: #fff;
+   }
+
+   &--danger {
+      background-color: var(--env-ui-color-status-attention);
+      color: var(--env-ui-color-status-attention-contrast);
+   }
+
+   .doc-main-heading & {
+      border-radius: 0.95em / 50%;
+      font-size: 0.35em;
+      vertical-align: middle;
+      padding: 0.4em 0.7em;
+      margin: 0 0 0 0.5em;
+   }
+}

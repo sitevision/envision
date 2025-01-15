@@ -1,8 +1,9 @@
 ---
 title: Dialog
+description: Use Dialog to present modal dialogs with customizable sizes, animations, and focus management.
 ---
 
-<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2023.07.01</span></h2>
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="doc-badge doc-badge--info">Since 2023.07.01</span></h2>
 
 The Dialog component relies heavily on
 [The HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement).

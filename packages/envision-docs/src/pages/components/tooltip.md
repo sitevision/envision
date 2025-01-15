@@ -1,8 +1,9 @@
 ---
 title: Tooltip
+description: Use Tooltip to display brief, informative messages when users hover over or focus on elements.
 ---
 
-<span class="env-badge env-badge--info">Added in 2023.02.1</span>
+<span class="doc-badge doc-badge--info">Added in 2023.02.1</span>
 
 ```html
 <span class="env-tooltip">
@@ -93,7 +94,7 @@ envision.tooltip(element, options);
       -  Prefered initial placement.
       -  Default value: `top`
       -  Possible values: `top`, `right`, `bottom`, `left`, `auto`,
-      -  Possible value modifiers <span class="env-badge env-badge--info">2023.02.2</span>: `{value}-start`, `{value}-end`
+      -  Possible value modifiers <span class="doc-badge doc-badge--info">2023.02.2</span>: `{value}-start`, `{value}-end`
 
    -  `delay` _number_
 

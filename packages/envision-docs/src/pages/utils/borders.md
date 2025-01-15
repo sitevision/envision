@@ -1,17 +1,18 @@
 ---
 title: Borders
+description: Use the Borders utility to set or remove borders.
 ---
 
 Set or remove borders.
 
-<span class="env-badge env-badge--danger">Changed in 2023.11.1</span> Previous versions have been using physical properties top, right, bottom and left.
+<span class="doc-badge doc-badge--danger">Changed in 2023.11.1</span> Previous versions have been using physical properties top, right, bottom and left.
 These classes are now deprecated. Please use logical properties as described below.
 
 ## Set borders
 
 Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
-<span class="env-badge env-badge--info">Since 2023.11.1</span> Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
+<span class="doc-badge doc-badge--info">Since 2023.11.1</span> Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
 
 ```html
 <div class="example-borders">
@@ -27,7 +28,7 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
 ## Remove borders
 
-<span class="env-badge env-badge--info">Since 2023.11.1</span> Use `env-border-none` to remove a border from all sides.
+<span class="doc-badge doc-badge--info">Since 2023.11.1</span> Use `env-border-none` to remove a border from all sides.
 
 ```html
 <div class="example-borders">
@@ -35,7 +36,7 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 </div>
 ```
 
-## Physical properties & modifiers <span class="env-badge env-badge--danger">Deprecated</span>
+## Physical properties & modifiers <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Since 2023.11.1, border classes based on physical properties are deprecated.
 

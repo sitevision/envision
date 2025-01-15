@@ -1,8 +1,6 @@
 ---
-layout: docs
 title: CSS variables
-description: CSS variables
-group: utils
+description: CSS Variables utility offers predefined custom properties for consistent styling across components.
 ---
 
 CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) are available with the format: `--env-{variable}`
@@ -37,7 +35,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 
 -  `--env-font-family`
 -  `--env-font-color`
--  `--env-font-color-muted` <span class="env-badge env-badge--info">2023.01</span>
+-  `--env-font-color-muted` <span class="doc-badge doc-badge--info">2023.01</span>
 -  `--env-font-size-base`
 -  `--env-font-size-x-small`
 -  `--env-font-size-small`
@@ -77,7 +75,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 -  `--env-box-shadow`
 -  `--env-box-shadow-large`
 -  `--env-box-shadow-small`
-   <br><br><span class="env-badge env-badge--info">Box shadow color, size, offset: 2023.04.1</span>
+   <br><br><span class="doc-badge doc-badge--info">Box shadow color, size, offset: 2023.04.1</span>
 -  `--env-box-shadow-color`
 
 #### Borders
@@ -92,7 +90,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 
 ### Branding
 
-#### UI Colors <span class="env-badge env-badge--info">2023.01</span>
+#### UI Colors <span class="doc-badge doc-badge--info">2023.01</span>
 
 -  `--env-ui-color-brand`
 -  `--env-ui-color-brand-dark`
@@ -164,24 +162,24 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-block-border-color`
 -  `--env-block-link-font-color`
 -  `--env-block-link-hover-font-color`
--  `--env-block-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-primary-font-color`
 -  `--env-block-primary-background-color`
 -  `--env-block-primary-border-color`
 -  `--env-block-primary-link-font-color`
 -  `--env-block-primary-link-hover-font-color`
--  `--env-block-primary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-primary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-primary-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-primary-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
    <br><br>
 -  `--env-block-secondary-font-color`
 -  `--env-block-secondary-background-color`
 -  `--env-block-secondary-border-color`
 -  `--env-block-secondary-link-font-color`
 -  `--env-block-secondary-link-hover-font-color`
--  `--env-block-secondary-link-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
--  `--env-block-secondary-link-hover-text-decoration` <span class="env-badge env-badge--info">2023.03.1</span>
+-  `--env-block-secondary-link-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
+-  `--env-block-secondary-link-hover-text-decoration` <span class="doc-badge doc-badge--info">2023.03.1</span>
 
 ### Elements
 
@@ -278,10 +276,10 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-form-input-font-color`
 -  `--env-form-input-border-color`
 -  `--env-form-input-background-color`
--  `--env-form-label-font-family` <span class="env-badge env-badge--info">2023.04.1</span>
--  `--env-form-label-font-weight` <span class="env-badge env-badge--info">2023.04.1</span>
+-  `--env-form-label-font-family` <span class="doc-badge doc-badge--info">2023.04.1</span>
+-  `--env-form-label-font-weight` <span class="doc-badge doc-badge--info">2023.04.1</span>
 
-#### Dialog <span class="env-badge env-badge--info">2023.07.1</span>
+#### Dialog <span class="doc-badge doc-badge--info">2023.07.1</span>
 
 -  `--env-dialog-small-width`
 -  `--env-dialog-medium-width`
@@ -309,7 +307,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-spinner-color`
 
-#### Tooltip <span class="env-badge env-badge--info">2023.02.1</span>
+#### Tooltip <span class="doc-badge doc-badge--info">2023.02.1</span>
 
 -  `--env-tooltip-font-family`
 -  `--env-tooltip-font-size`
@@ -318,7 +316,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-tooltip-background-color`
 -  `--env-tooltip-border-radius`
 
-## Legacy variables <span class="env-badge env-badge--danger">Deprecated</span>
+## Legacy variables <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 -  `--env-border-success-color`
 -  `--env-border-warning-color`

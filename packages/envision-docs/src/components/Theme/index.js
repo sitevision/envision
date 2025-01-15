@@ -1,34 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ThemeContext = React.createContext({ theme: '', darkMode: false });
-const useTheme = () => React.useContext(ThemeContext);
+const colorScheme = null;
+
+const ColorSchemeContext = React.createContext({
+   colorScheme: colorScheme ? colorScheme : null,
+});
+const useColorScheme = () => React.useContext(ColorSchemeContext);
 
 const ThemeProvider = ({ children }) => {
-   const [theme, setTheme] = React.useState('');
-
-   React.useEffect(() => {
-      setTheme(window.localStorage.getItem('env-theme') || '');
-   }, []);
-
-   React.useEffect(() => {
-      if (document.body.classList.contains('env-dashboard-theme')) {
-         return;
-      }
-      let oldTheme = window.localStorage.getItem('env-theme');
-      document.body.classList.remove(oldTheme);
-      if (theme) {
-         document.body.classList.add(theme);
-         window.localStorage.setItem('env-theme', theme.toString());
-      } else {
-         window.localStorage.removeItem('env-theme');
-      }
-   }, [theme]);
+   const [colorScheme, setColorScheme] = React.useState(
+      window ? window.sessionStorage.getItem('color-scheme') : null
+   );
 
    return (
-      <ThemeContext.Provider value={{ setTheme, theme }}>
+      <ColorSchemeContext.Provider value={{ colorScheme, setColorScheme }}>
          {children}
-      </ThemeContext.Provider>
+      </ColorSchemeContext.Provider>
    );
 };
 
@@ -36,4 +24,4 @@ ThemeProvider.propTypes = {
    children: PropTypes.node,
 };
 
-export { ThemeProvider, useTheme };
+export { ThemeProvider, useColorScheme };

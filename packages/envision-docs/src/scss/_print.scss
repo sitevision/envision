@@ -1,0 +1,29 @@
+@media print {
+   :root {
+      --doc-background-color: transparent;
+   }
+
+   body {
+      padding: 0;
+   }
+
+   .body {
+      display: block;
+   }
+
+   .header {
+      position: static;
+
+      nav,
+      .theme-picker,
+      .mobile-nav-button {
+         display: none !important;
+      }
+   }
+
+   .theme-picker,
+   .sidenav,
+   .footer {
+      display: none !important;
+   }
+}

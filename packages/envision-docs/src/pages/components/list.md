@@ -1,5 +1,6 @@
 ---
 title: List
+description: The List component displays items in vertical or horizontal layouts, with optional dividers.
 ---
 
 ## Overview

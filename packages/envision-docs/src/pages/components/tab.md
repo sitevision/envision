@@ -1,5 +1,6 @@
 ---
 title: Tab
+description: The Tab component organizes content into sections, displaying one panel at a time.
 ---
 
 ## Default Tab

@@ -11,6 +11,8 @@ export default function Template({
 }) {
    const { markdownRemark, site, allMarkdownRemark } = data;
    const { frontmatter, html } = markdownRemark;
+   const icons = frontmatter.extra?.icons;
+   const template = frontmatter.template ? frontmatter.template : 'page';
    const content = useRef(null);
    useCopyExample(content);
    useExpandCode(content);
@@ -18,47 +20,51 @@ export default function Template({
 
    return (
       <BaseTemplate
+         template={template}
          title={frontmatter.title}
          deprecated={frontmatter.deprecated}
          since={frontmatter.since}
          beta={frontmatter.beta}
          dashboard={frontmatter.dashboard}
+         description={frontmatter.description}
          indexing={frontmatter.indexing}
-         topMenuItems={site.siteMetadata.topMenuItems}
          menuItems={allMarkdownRemark.edges}
          menuCategories={site.siteMetadata.menuCategories}
+         icons={icons}
       >
-         <div
-            className="main-body"
-            ref={content}
-            dangerouslySetInnerHTML={{ __html: html }}
-         />
+         <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
       </BaseTemplate>
    );
 }
+
+// beta must be re-added when there is use for it
 
 export const pageQuery = graphql`
    query ($slug: String!) {
       site {
          siteMetadata {
-            topMenuItems {
-               label
-               to
-            }
             menuCategories {
                title
                slug
+               spriteId
+               description
+               hideInMenus
             }
          }
       }
       markdownRemark(fields: { slug: { eq: $slug } }) {
          html
          frontmatter {
+            template
             title
             deprecated
             since
             dashboard
+            description
             indexing
+            extra {
+               icons
+            }
          }
       }
       allMarkdownRemark {
@@ -66,10 +72,12 @@ export const pageQuery = graphql`
             node {
                id
                frontmatter {
+                  template
                   title
                   deprecated
                   since
                   dashboard
+                  description
                   indexing
                }
                fields {

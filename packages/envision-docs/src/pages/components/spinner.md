@@ -1,5 +1,6 @@
 ---
 title: Spinner
+description: The Spinner component displays loading animations with standard or bounce styles and optional delays.
 ---
 
 ## Standard
@@ -28,7 +29,7 @@ title: Spinner
 
 Use modifier `env-spinner--hide` or `env-spinner-bounce--hide` to hide the spinner. i.e `env-spinner env-spinner--hide`
 
-## Delayed spinner <span class="env-badge env-badge--info">2023.07.1</span>
+## Delayed spinner <span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Delay showing the spinner to avoid spinner flashing when the content loads fast.
 
@@ -41,8 +42,9 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
 
 ### Delayed spinner demo
 
-<div id="demo-delayed-spinner" class="demo-delayed-spinner code-example">
-<div class="env-spinner env-spinner--hide">
+```html-nocode
+<div id="demo-delayed-spinner" class="demo-delayed-spinner">
+   <div class="env-spinner env-spinner--hide">
       <div class="env-rect1"></div>
       <div class="env-rect2"></div>
       <div class="env-rect3"></div>
@@ -50,6 +52,8 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
       <div class="env-rect5"></div>
    </div>
 </div>
+```
+
 <div class="env-m-top--x-small">
    <button class="env-button" id="toggle-spinner-1">Short delay</button>
    <button class="env-button" id="toggle-spinner-2">Medium delay</button>

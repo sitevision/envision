@@ -3,9 +3,12 @@ import * as React from 'react';
 export const useCopyExample = (content) => {
    React.useEffect(() => {
       // Initialize Code Highlighter
+
       content.current
          .querySelectorAll(
-            '.gatsby-highlight[data-language=html], .gatsby-highlight[data-language=html-resizeable]'
+            '.gatsby-highlight[data-language=html],' +
+               '.gatsby-highlight[data-language=html-nocode],' +
+               '.gatsby-highlight[data-language=html-resizeable]'
          )
          .forEach((element) => {
             const example = document.createElement('div');
@@ -21,6 +24,7 @@ export const useCopyExample = (content) => {
             noIndexEnd.innerHTML = '<!--/sv-no-index-->';
             example.insertAdjacentElement('beforebegin', noIndexStart);
             element.insertAdjacentElement('afterend', noIndexEnd);
+            element.dataset.language === 'html-nocode' && element.remove();
          });
 
       const envision = window.envision;

@@ -1,5 +1,6 @@
 ---
-title: Image viewer 2
+title: Image viewer
+description: The Image Viewer component displays slideshows and lightbox galleries with navigation controls.
 ---
 
 <h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2023.07.1</span></h2>

@@ -4,8 +4,6 @@ deprecated: true
 indexing: false
 ---
 
-**Note! This page contains deprecated content.**
-
 The following form classnames are deprecated since 2024.07.1 or earlier and will be removed in a future release.
 
 -  `env-form-element`
@@ -147,7 +145,7 @@ Native select element with class `env-form-input`. Only light styling, might loo
 
 <span id="select-component" class="offset-anchor"></span>
 
-## Select component <span class="env-badge env-badge--info">2023.04.1</span>
+## Select component <span class="doc-badge doc-badge--info">2023.04.1</span>
 
 A select element wrapped in an element with class `env-form-select` will have the same appearance cross browsers.
 Use an `env-icon` for the arrow.
@@ -632,7 +630,7 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 
 ## Validation
 
-<span class="env-badge env-badge--info">2023.07.1</span>
+<span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Add modifier `.env-form-element--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
@@ -660,7 +658,7 @@ Since 2023.07.1, modifiers `.env-form-element--success` and `.env-form-element--
 <div class="env-form-element env-form-element--success">
    <label for="success" class="env-form-element__label"
       >Success
-      <span class="env-badge env-badge--danger">Deprecated</span></label
+      <span class="doc-badge doc-badge--danger">Deprecated</span></label
    >
    <div class="env-form-element__control">
       <input
@@ -676,7 +674,7 @@ Since 2023.07.1, modifiers `.env-form-element--success` and `.env-form-element--
 </div>
 <div class="env-form-element env-form-element--danger">
    <label for="danger" class="env-form-element__label"
-      >Danger <span class="env-badge env-badge--danger">Deprecated</span></label
+      >Danger <span class="doc-badge doc-badge--danger">Deprecated</span></label
    >
    <div class="env-form-element__control">
       <input

@@ -1,0 +1,95 @@
+.header {
+   --env-font-color: var(--doc-header-font-color);
+   color: var(--doc-header-font-color);
+   background-color: var(--doc-header-background-color);
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 10000;
+
+   .container {
+      position: relative;
+      display: flex;
+      padding: $site-padding;
+      height: 68px;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .logo {
+      display: block;
+
+      @include focus-visible;
+      color: var(--doc-header-font-color);
+   }
+
+   nav {
+      display: none;
+
+      @include header-layout-break {
+         flex: 1;
+         display: block;
+         padding: 0 1em;
+      }
+   }
+
+   .mobile-nav-button {
+      visibility: visible;
+
+      @include header-layout-break {
+         visibility: hidden;
+      }
+   }
+
+   .env-nav--menubar {
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+   }
+
+   .env-nav__link {
+      font-family: Inter;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--doc-header-font-color);
+      line-height: 1.2;
+      text-align: left;
+      padding: var(--env-spacing-x-small) 0;
+      @include focus-visible;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+         color: var(--doc-header-font-color) !important;
+         border-bottom-color: var(--doc-color-brand) !important;
+      }
+
+      &[aria-current] {
+         border-bottom-color: var(--doc-color-brand) !important;
+         color: var(--doc-header-font-color) !important;
+      }
+   }
+
+   .theme-picker {
+      position: absolute;
+      top: 50%;
+      right: calc(#{$site-padding} + 0.5em + 2.75em);
+      margin: 0;
+      padding: 0 0 0 1em;
+      transform: translateY(-50%);
+
+      @include header-layout-break {
+         right: $site-padding;
+      }
+
+      &__label {
+         text-transform: uppercase;
+         font-size: 9px;
+         display: none;
+         margin: 0 0 4px;
+
+         @include header-layout-break {
+            display: block;
+         }
+      }
+   }
+}

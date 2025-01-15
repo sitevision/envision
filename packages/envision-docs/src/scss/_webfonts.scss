@@ -1,0 +1,121 @@
+@mixin font-face($familyName, $style, $weight, $fileName) {
+   @font-face {
+      font-display: swap;
+      font-family: $familyName;
+      font-style: $style;
+      font-weight: $weight;
+      src: url('#{$fileName}.woff2') format('woff2');
+   }
+}
+
+@include font-face('Inter', normal, 100, '/fonts/inter/inter-v13-latin-100');
+@include font-face('Inter', normal, 200, '/fonts/inter/inter-v13-latin-200');
+@include font-face('Inter', normal, 300, '/fonts/inter/inter-v13-latin-300');
+@include font-face(
+   'Inter',
+   normal,
+   400,
+   '/fonts/inter/inter-v13-latin-regular'
+);
+@include font-face('Inter', normal, 500, '/fonts/inter/inter-v13-latin-500');
+@include font-face('Inter', normal, 600, '/fonts/inter/inter-v13-latin-600');
+@include font-face('Inter', normal, 700, '/fonts/inter/inter-v13-latin-700');
+@include font-face('Inter', normal, 800, '/fonts/inter/inter-v13-latin-800');
+@include font-face('Inter', normal, 900, '/fonts/inter/inter-v13-latin-900');
+
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   100,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   100,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   200,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   200,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   300,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   300,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   400,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-regular'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   400,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   500,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   500,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   600,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   600,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   700,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   700,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);
+@include font-face(
+   'JetBrains Mono',
+   normal,
+   800,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100'
+);
+@include font-face(
+   'JetBrains Mono',
+   italic,
+   800,
+   '/fonts/jetbrains-mono/jetbrains-mono-v18-latin-100italic'
+);

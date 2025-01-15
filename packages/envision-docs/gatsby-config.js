@@ -1,36 +1,66 @@
 /* globals module:false, __dirname:false */
-const createMenuItem = (label, to) => ({ label, to });
-const topMenuItems = [
-   createMenuItem('Documentation', '/getting-started/introduction/'),
-   createMenuItem('GitHub', 'https://github.com/sitevision/envision'),
-   createMenuItem('Sitevision', 'https://www.sitevision.se/'),
-];
+
 module.exports = {
    siteMetadata: {
       title: 'Sitevision Envision',
       description: 'UI library by Sitevision',
       author: '@sitevision',
-      topMenuItems: topMenuItems,
+
       menuCategories: [
          {
-            title: 'Getting started',
-            slug: 'getting-started',
+            title: 'Colors',
+            slug: 'colors',
+            spriteId: 'colors',
+            description:
+               'Color classes and variables for elements, components and layouts.',
          },
          {
-            title: 'Dashboard',
-            slug: 'dashboard',
+            title: 'Typography',
+            slug: 'typography',
+            spriteId: 'typography',
+            description:
+               'Classes, variables and utils for website text styles.',
          },
          {
-            title: 'Branding',
-            slug: 'ui',
+            title: 'Forms',
+            slug: 'forms',
+            spriteId: 'forms',
+            description: 'Form elements, components, buttons and more.',
          },
          {
             title: 'Components',
             slug: 'components',
+            spriteId: 'application',
+            description:
+               'Ready to use components for your Sitevision projects.',
          },
          {
             title: 'Utils',
             slug: 'utils',
+            spriteId: 'utils',
+            description:
+               'Miscellaneous utility classes for accessibility, styling and more.',
+         },
+         {
+            title: 'Layout',
+            slug: 'layout',
+            spriteId: 'layout',
+            description: 'Utility classes for creating component layouts.',
+         },
+         {
+            title: 'Dashboard Widgets',
+            slug: 'dashboard',
+            spriteId: 'dashboard',
+            description:
+               'An extension to Envision that should be used when creating Sitevision Dashboard Widgets.',
+         },
+         {
+            title: 'Deprecated',
+            slug: 'deprecated',
+            spriteId: 'deprecated',
+            description:
+               'Documentation for deprecated versions of Envision components.',
+            hideInMenus: true,
          },
       ],
    },

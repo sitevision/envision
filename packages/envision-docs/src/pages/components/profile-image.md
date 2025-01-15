@@ -1,5 +1,6 @@
 ---
 title: Profile image
+description: The Profile Image component displays images with fixed or responsive sizes.
 ---
 
 ## Overview
@@ -17,7 +18,7 @@ element is smaller, the image will overflow.
 
 ```html
 <div class="example-profile-images">
-   <div data-demo-size="256px">
+   <div data-demo-size-fixed data-demo-size="256px">
       <img
          class="env-profile-image env-profile-image--xx-large"
          src="https://envisionui.io/placeholders/text/xxl.png"
@@ -25,7 +26,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="224px">
+   <div data-demo-size-fixed data-demo-size="224px">
       <img
          class="env-profile-image env-profile-image--x-large"
          src="https://envisionui.io/placeholders/text/xl.png"
@@ -33,7 +34,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="128px">
+   <div data-demo-size-fixed data-demo-size="128px">
       <img
          class="env-profile-image env-profile-image--large"
          src="https://envisionui.io/placeholders/text/l.png"
@@ -41,7 +42,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="96px">
+   <div data-demo-size-fixed data-demo-size="96px">
       <img
          class="env-profile-image env-profile-image--medium"
          src="https://envisionui.io/placeholders/text/m.png"
@@ -49,7 +50,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="64px">
+   <div data-demo-size-fixed data-demo-size="64px">
       <img
          class="env-profile-image env-profile-image--small"
          src="https://envisionui.io/placeholders/text/s.png"
@@ -57,7 +58,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="48px">
+   <div data-demo-size-fixed data-demo-size="48px">
       <img
          class="env-profile-image env-profile-image--x-small"
          src="https://envisionui.io/placeholders/text/xs.png"
@@ -65,7 +66,7 @@ element is smaller, the image will overflow.
       />
    </div>
 
-   <div data-demo-size="32px">
+   <div data-demo-size-fixed data-demo-size="32px">
       <img
          class="env-profile-image env-profile-image--xx-small"
          src="https://envisionui.io/placeholders/text/xxs.png"
@@ -99,7 +100,7 @@ the image is smaller than the image.
 
 #### Status badge in responsive size Profile image
 
-<span class="env-badge env-badge--info">2023.02.1</span>
+<span class="doc-badge doc-badge--info">2023.02.1</span>
 
 A responsive size Profile image may have a [Status badge](/components/badge/#status-badge) inside.
 The text will be visually hidden and the badge will adjust its size
