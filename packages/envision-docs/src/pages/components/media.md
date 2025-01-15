@@ -1,5 +1,6 @@
 ---
 title: Media
+description: The Media component is used to present user activity chronologically.
 ---
 
 ## Types

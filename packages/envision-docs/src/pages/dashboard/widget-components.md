@@ -1,5 +1,6 @@
 ---
 title: Widget components
+description: Styles for widget components such as labels, values, and badges.
 dashboard: true
 ---
 

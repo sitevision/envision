@@ -1,5 +1,6 @@
 ---
 title: Brand colors
+description: The “Brand Colors” section defines primary brand hues with contrast-friendly shades for accessibility.
 ---
 
 An Envision theme will have one brand color and a matching contrast color. [The default theme](#brand-defaults) uses a neutral color.

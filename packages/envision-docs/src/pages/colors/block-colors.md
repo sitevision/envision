@@ -1,5 +1,6 @@
 ---
 title: Block colors
+description: The “Block colors” section offers preset color combinations for large content areas.
 ---
 
 Preset color combinations, use for larger blocks of content.

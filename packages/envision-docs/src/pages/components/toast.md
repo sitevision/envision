@@ -1,5 +1,6 @@
 ---
 title: Toast
+description: Use the Toast component to display brief, customizable notifications to inform users of system events.
 ---
 
 ```html

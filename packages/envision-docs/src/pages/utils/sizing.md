@@ -1,5 +1,6 @@
 ---
 title: Sizing
+description: The Sizing utility offers classes to define elements’ width and height using preset values.
 ---
 
 Sizing utility classes are available for width and height. Classes are named using the the format: `env-{property}--{size}`

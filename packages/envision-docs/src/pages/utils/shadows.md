@@ -1,5 +1,6 @@
 ---
 title: Shadows
+description: Use the Shadows utility classes to apply various sized shadows to elements.
 ---
 
 ## Sizes

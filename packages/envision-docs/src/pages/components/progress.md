@@ -1,5 +1,6 @@
 ---
 title: Progress indicator
+description: The Progress Indicator component displays progress with customizable colors, labels, and animations.
 ---
 
 ## Types

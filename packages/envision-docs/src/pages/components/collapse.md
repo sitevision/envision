@@ -1,5 +1,6 @@
 ---
 title: Collapse
+description: The Collapse component toggles content visibility, allowing sections to expand or collapse as needed.
 ---
 
 ## Collapsible content

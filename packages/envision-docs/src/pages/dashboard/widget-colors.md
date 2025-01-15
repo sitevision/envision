@@ -1,5 +1,6 @@
 ---
 title: Widget colors
+description: The widget color palette provides a set of colors that can be used to style widgets.
 dashboard: true
 ---
 

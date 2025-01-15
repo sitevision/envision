@@ -1,5 +1,6 @@
 ---
 title: Tooltip
+description: Use Tooltip to display brief, informative messages when users hover over or focus on elements.
 ---
 
 <span class="doc-badge doc-badge--info">Added in 2023.02.1</span>

@@ -50,7 +50,7 @@ module.exports = {
          {
             title: 'Dashboard Widgets',
             slug: 'dashboard',
-            spriteId: 'application',
+            spriteId: 'dashboard',
             description:
                'An extension to Envision that should be used when creating Sitevision Dashboard Widgets.',
          },

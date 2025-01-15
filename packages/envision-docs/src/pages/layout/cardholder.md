@@ -1,5 +1,6 @@
 ---
 title: Cardholder
+description: A Cardholder utilizes CSS grid or flexbox to create a responsive card grid that adapts to available space.
 ---
 
 Cardholders may be used to display any type of content, but [Cards](/components/cards/) are recommended.

@@ -1,5 +1,6 @@
 ---
 title: Flexbox
+description: Use the Flexbox utility to provide classes for flexible layouts, including direction, alignment, and wrapping.
 ---
 
 ## Flex Container

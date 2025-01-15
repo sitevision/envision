@@ -1,5 +1,6 @@
 ---
 title: Borders
+description: Use the Borders utility to set or remove borders.
 ---
 
 Set or remove borders.

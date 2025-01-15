@@ -1,5 +1,6 @@
 ---
 title: Badge
+description: Use the Badge component to display small labels for status, notifications, or event counts.
 ---
 
 ## Overview

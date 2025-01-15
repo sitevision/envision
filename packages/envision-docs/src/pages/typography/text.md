@@ -1,5 +1,8 @@
 ---
 title: Content text
+description:
+   Text is designed to be used for content text. It is a versatile and flexible
+   set of site fonts that can be used for a wide range of purposes.
 since: 2025.01.1
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Widget typography
+description: Typography guidelines for dashboard widgets.
 dashboard: true
 ---
 

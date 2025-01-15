@@ -1,5 +1,6 @@
 ---
 title: Popover
+description: Popovers displays contextual overlays with customizable content, positioning, and trigger options.
 ---
 
 ```html-nocode

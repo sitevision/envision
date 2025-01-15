@@ -1,5 +1,6 @@
 ---
 title: Dropdown
+description: Dropdowns displays a list of options that appears upon user interaction.
 ---
 
 ### Default Dropdown

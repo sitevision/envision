@@ -1,5 +1,6 @@
 ---
 title: Spinner
+description: The Spinner component displays loading animations with standard or bounce styles and optional delays.
 ---
 
 ## Standard

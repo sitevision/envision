@@ -1,5 +1,6 @@
 ---
 title: Basics
+description: Basics of designing a dashboard widget
 dashboard: true
 ---
 

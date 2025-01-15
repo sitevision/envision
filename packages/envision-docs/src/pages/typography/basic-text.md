@@ -1,5 +1,6 @@
 ---
 title: Basic text
+description: The Basic Text utility offers classes for headings, alignment, transformations, status colors, and links.
 ---
 
 ## Headings
