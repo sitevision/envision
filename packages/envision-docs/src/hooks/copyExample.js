@@ -338,58 +338,60 @@ export const useCopyExample = (content) => {
 
       // Dynamic font examples
       const resizeObserver = new ResizeObserver((containers) => {
-         for (const container of containers) {
-            const containerEl = container.target;
-            const dynFontEl = containerEl.querySelector('.env-dynamic-font');
-            if (!dynFontEl || !containerEl) {
-               return;
-            }
-            const wrapperEl = containerEl.closest(
-               '.example-dynamic-font-wrapper'
-            );
-            const containerWidthOutputEl = wrapperEl.querySelector(
-               '.example-dynamic-font__width'
-            );
-            const dfSizeEl = containerEl.querySelector(
-               '.example-dynamic-font__dffontsize'
-            );
-            const elSizeEl = containerEl.querySelectorAll(
-               '.example-dynamic-font__elfontsize'
-            );
-
-            const cs = getComputedStyle(dynFontEl);
-
-            if (dfSizeEl) {
-               const fromWidth = parseInt(
-                  cs.getPropertyValue('--df-from-width'),
-                  10
+         requestAnimationFrame(() => {
+            for (const container of containers) {
+               const containerEl = container.target;
+               const dynFontEl = containerEl.querySelector('.env-dynamic-font');
+               if (!dynFontEl || !containerEl) {
+                  return;
+               }
+               const wrapperEl = containerEl.closest(
+                  '.example-dynamic-font-wrapper'
                );
-               const toWidth = parseInt(
-                  cs.getPropertyValue('--df-to-width'),
-                  10
+               const containerWidthOutputEl = wrapperEl.querySelector(
+                  '.example-dynamic-font__width'
                );
-               const containerWidth = containerEl.offsetWidth;
-               wrapperEl.classList.toggle(
-                  'example-dynamic-font-wrapper--in-span',
-                  containerWidth >= fromWidth && containerWidth <= toWidth
+               const dfSizeEl = containerEl.querySelector(
+                  '.example-dynamic-font__dffontsize'
                );
-            }
+               const elSizeEl = containerEl.querySelectorAll(
+                  '.example-dynamic-font__elfontsize'
+               );
 
-            if (containerWidthOutputEl) {
-               containerWidthOutputEl.innerHTML = `${containerEl.offsetWidth}`;
+               const cs = getComputedStyle(dynFontEl);
+
+               if (dfSizeEl) {
+                  const fromWidth = parseInt(
+                     cs.getPropertyValue('--df-from-width'),
+                     10
+                  );
+                  const toWidth = parseInt(
+                     cs.getPropertyValue('--df-to-width'),
+                     10
+                  );
+                  const containerWidth = containerEl.offsetWidth;
+                  wrapperEl.classList.toggle(
+                     'example-dynamic-font-wrapper--in-span',
+                     containerWidth >= fromWidth && containerWidth <= toWidth
+                  );
+               }
+
+               if (containerWidthOutputEl) {
+                  containerWidthOutputEl.innerHTML = `${containerEl.offsetWidth}`;
+               }
+               if (dfSizeEl) {
+                  dfSizeEl.innerHTML = `${(
+                     parseFloat(cs.fontSize) / 16
+                  ).toFixed(3)}`;
+               }
+               elSizeEl.forEach((el) => {
+                  const cs = getComputedStyle(el.parentNode);
+                  el.innerHTML = `${
+                     Math.round((parseFloat(cs.fontSize) / 16) * 10000) / 10000
+                  }em`;
+               });
             }
-            if (dfSizeEl) {
-               dfSizeEl.innerHTML = `${(parseFloat(cs.fontSize) / 16).toFixed(
-                  3
-               )}`;
-            }
-            elSizeEl.forEach((el) => {
-               const cs = getComputedStyle(el.parentNode);
-               el.innerHTML = `${
-                  Math.round((parseFloat(cs.fontSize) / 16) * 10000) / 10000
-               }em`;
-            });
-         }
+         });
       });
 
       const dynFontExamples = document.querySelectorAll(
@@ -402,5 +404,11 @@ export const useCopyExample = (content) => {
       // To initialize Image slider examples,
       // load method must be triggered again in gatsby.
       window.dispatchEvent(new Event('load'));
+
+      return () => {
+         dynFontExamples.forEach((container) => {
+            resizeObserver.unobserve(container);
+         });
+      };
    }, [content]);
 };
