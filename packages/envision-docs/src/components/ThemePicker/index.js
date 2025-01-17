@@ -1,59 +1,36 @@
 import React from 'react';
-import { useColorScheme } from '../Theme';
+import ThemeContext from '../../theme-switcher/theme-context';
 
 const ThemePicker = () => {
-   const { colorScheme, setColorScheme } = useColorScheme();
+   const { theme, switchTheme } = React.useContext(ThemeContext);
 
-   const mqlColorScheme = React.useMemo(() => {
-      if (typeof window === 'undefined') {
-         return { matches: false };
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)');
-   }, []);
-
-   const [darkTheme, setDarkTheme] = React.useState(
-      colorScheme === 'dark' || (colorScheme === null && mqlColorScheme.matches)
-   );
-
-   const changeScheme = React.useCallback(
-      (scheme) => {
-         window?.sessionStorage.setItem('color-scheme', scheme);
-         setColorScheme(scheme);
-         setDarkTheme(scheme === 'dark');
-
-         const themeEl = document.querySelector('.layout');
-
-         if (scheme === 'dark') {
-            themeEl.classList.add('doc-dark-mode');
-         } else {
-            themeEl.classList.remove('doc-dark-mode');
-         }
-      },
-      [setColorScheme]
+   const doc = typeof document !== 'undefined' ? document : null;
+   const [checked, setChecked] = React.useState(
+      theme === 'doc-dark-mode' ||
+         (doc && doc.body.classList.contains('doc-dark-mode'))
    );
 
    const handlePickerChange = (e) => {
-      setDarkTheme(e.target.checked);
-      setColorScheme(e.target.checked ? 'dark' : 'light');
-   };
-
-   const handlePickerClick = (e) => {
-      changeScheme(e.target.checked ? 'dark' : 'light');
+      setChecked(e.target.checked);
+      if (e.target.checked) {
+         switchTheme('doc-dark-mode');
+      } else {
+         switchTheme('doc-light-mode');
+      }
    };
 
    return (
       <div className="theme-picker">
-         <label className="theme-picker__label" htmlFor="darkTheme">
+         <label className="theme-picker__label" htmlFor="darkMode">
             Default / Dark mode
          </label>
          <div className="doc-theme-switch">
             <input
                className="doc-theme-switch__checkbox"
                type="checkbox"
-               id="darkTheme"
-               onClick={handlePickerClick}
+               id="darkMode"
                onChange={handlePickerChange}
-               checked={darkTheme}
+               checked={checked}
             />
             <svg
                aria-hidden="true"

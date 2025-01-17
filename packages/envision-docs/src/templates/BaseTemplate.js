@@ -32,22 +32,7 @@ const BaseTemplate = ({
    indexing,
    icons,
 }) => {
-   const win = typeof window !== 'undefined' && window;
-
-   let colorScheme = win && win.sessionStorage.getItem('color-scheme');
-
-   if (
-      !colorScheme &&
-      win.matchMedia &&
-      win.matchMedia('(prefers-color-scheme: dark)').matches
-   ) {
-      win.sessionStorage.setItem('color-scheme', 'dark');
-      colorScheme = 'dark';
-   }
-
    const mainClassName = dashboard ? 'env-dashboard-theme' : '';
-
-   const layoutClassName = colorScheme === 'dark' ? 'doc-dark-mode' : '';
 
    const location = useLocation();
 
@@ -84,7 +69,7 @@ const BaseTemplate = ({
    }
 
    return (
-      <div className={classNames('layout', layoutClassName)}>
+      <div className={classNames('layout')}>
          <div
             style={{ display: 'none' }}
             dangerouslySetInnerHTML={{
