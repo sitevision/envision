@@ -1,8 +1,9 @@
+import * as React from 'react';
 import 'prismjs/themes/prism-okaidia.css';
 import './src/scss/docs.scss';
-import * as React from 'react';
-import { ThemeProvider } from './src/components/Theme';
 
-export const wrapRootElement = ({ element }) => (
-   <ThemeProvider>{element}</ThemeProvider>
-);
+import { ThemeProvider } from './src/theme-switcher/theme-context';
+
+export const wrapRootElement = ({ element }) => {
+   return <ThemeProvider>{element}</ThemeProvider>;
+};

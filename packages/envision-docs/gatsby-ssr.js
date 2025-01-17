@@ -1,6 +1,8 @@
 import * as React from 'react';
+import ThemeScriptTag from './src/theme-switcher/theme-script';
+import { ThemeProvider } from './src/theme-switcher/theme-context';
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
    setHeadComponents([
       <link key="envision-css" rel="stylesheet" href="/dist/envision.css" />,
       <link
@@ -16,4 +18,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
       ></script>,
       <script key="envision-js" src="/dist/envision.js"></script>,
    ]);
+
+   setPreBodyComponents([<ThemeScriptTag key="theme-switcher" />]);
+};
+export const wrapRootElement = ({ element }) => {
+   return <ThemeProvider>{element}</ThemeProvider>;
 };
