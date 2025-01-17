@@ -205,7 +205,7 @@ Native select element with class `.env-form-input`. Only light styling, might lo
 A select element wrapped in an element with class `.env-form-select` will have the same appearance cross browsers.
 Use an `.env-icon` for the arrow.
 
-For more advanced usage, see [Single select documentation](/components/select/#single-select)
+For more advanced usage, see [Single select documentation](/forms/tag-select/#single-select)
 
 ```html
 <div class="env-form-field">
@@ -657,7 +657,7 @@ Attribute `[readonly]` is also available for input elements.
 Add modifier `.env-form-field--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
 
-Error validation state uses the Status color [Error text](/utils/colors/#status-colors).
+Error validation state uses the Status color [Error text](/colors/status-colors/).
 
 ```html
 <div class="env-form-field env-form-field--error">

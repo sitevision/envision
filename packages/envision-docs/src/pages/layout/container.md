@@ -7,7 +7,7 @@ description: The Container utility establishes a containment context for applyin
 
 Using the class `env-container` on an element will declare a containment context
 that may be targeted with container query at-rules.
-A containment context is required when using [Dynamic font size](/utils/dynamic-font-size/).
+A containment context is required when using [Dynamic font size](/typography/basic-text/).
 
 ```html-no-example
 <div class="env-container">

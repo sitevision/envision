@@ -61,7 +61,7 @@ Text inside these elements will be dynamically scaled, text outside will not.
 </div>
 ```
 
-Note: When using [Envision for Dashboard Widgets](/dashboard/#dynamic-font-size),
+Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size),
 the container element is not required since the widget already is a containment context.
 
 ### Additional markup
@@ -237,7 +237,7 @@ src="/placeholders/examples/dyn-font.svg" />
 </div>
 ```
 
-Note: When using [Envision for Dashboard Widgets](/dashboard/#dynamic-font-size),
+Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size),
 there are additional widget specific boundaries available.
 
 ### Downscaling

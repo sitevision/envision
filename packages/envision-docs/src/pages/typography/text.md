@@ -163,10 +163,10 @@ Possible values for `{name}`: `heading-01`, `heading-02`, `heading-03`, `heading
 ## Links
 
 The heading styles (Heading and Display) will in the default
-settings use the toned down styling similar to <a class="env-link-secondary" href="/utils/text/#links">&laquo;secondary links&raquo;</a>.
+settings use the toned down styling similar to <a class="env-link-secondary" href="/typography/basic-text/#links">&laquo;secondary links&raquo;</a>.
 
 Body, summary, Quotation and Table will all use the
-<a class="env-link" href="/utils/text/#links">&laquo;default link styling&raquo;</a> as default.
+<a class="env-link" href="/typography/basic-text/#links">&laquo;default link styling&raquo;</a> as default.
 
 ```html
 <h2 class="env-text-heading-01">
