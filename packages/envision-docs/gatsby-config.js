@@ -1,6 +1,9 @@
 /* globals module:false, __dirname:false */
 
 module.exports = {
+   flags: {
+      DEV_SSR: true,
+   },
    siteMetadata: {
       title: 'Sitevision Envision',
       description: 'UI library by Sitevision',
