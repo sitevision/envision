@@ -10,6 +10,31 @@ const ThemePicker = () => {
          (doc && doc.body.classList.contains('doc-dark-mode'))
    );
 
+   const mqlColorScheme = React.useMemo(() => {
+      if (typeof window === 'undefined') {
+         return { matches: false };
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)');
+   }, []);
+
+   React.useEffect(() => {
+      const handleMqlColorSchemeChange = () => {
+         setChecked(mqlColorScheme.matches);
+         switchTheme(
+            mqlColorScheme.matches ? 'doc-dark-mode' : 'doc-light-mode'
+         );
+      };
+
+      mqlColorScheme.addEventListener('change', handleMqlColorSchemeChange);
+
+      return () => {
+         mqlColorScheme.removeEventListener(
+            'change',
+            handleMqlColorSchemeChange
+         );
+      };
+   }, [mqlColorScheme, switchTheme]);
+
    const handlePickerChange = (e) => {
       setChecked(e.target.checked);
       if (e.target.checked) {
