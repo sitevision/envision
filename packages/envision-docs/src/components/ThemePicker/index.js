@@ -4,7 +4,7 @@ import ThemeContext from '../../theme-switcher/theme-context';
 const ThemePicker = () => {
    const { theme, switchTheme } = React.useContext(ThemeContext);
 
-   const [checked, setChecked] = React.useState(false);
+   const [checked, setChecked] = React.useState(theme === 'doc-dark-mode');
 
    const mqlColorScheme = React.useMemo(() => {
       if (typeof window === 'undefined') {
