@@ -4,11 +4,7 @@ import ThemeContext from '../../theme-switcher/theme-context';
 const ThemePicker = () => {
    const { theme, switchTheme } = React.useContext(ThemeContext);
 
-   const doc = typeof document !== 'undefined' ? document : null;
-   const [checked, setChecked] = React.useState(
-      theme === 'doc-dark-mode' ||
-         (doc && doc.body.classList.contains('doc-dark-mode'))
-   );
+   const [checked, setChecked] = React.useState(false);
 
    const mqlColorScheme = React.useMemo(() => {
       if (typeof window === 'undefined') {
@@ -16,6 +12,10 @@ const ThemePicker = () => {
       }
       return window.matchMedia('(prefers-color-scheme: dark)');
    }, []);
+
+   React.useEffect(() => {
+      setChecked(theme === 'doc-dark-mode');
+   }, [theme]);
 
    React.useEffect(() => {
       const handleMqlColorSchemeChange = () => {
@@ -36,7 +36,7 @@ const ThemePicker = () => {
    }, [mqlColorScheme, switchTheme]);
 
    const handlePickerChange = (e) => {
-      setChecked(e.target.checked);
+      setChecked(!checked);
       if (e.target.checked) {
          switchTheme('doc-dark-mode');
       } else {
