@@ -14,4 +14,19 @@
          padding-right: css-var('spacing-x-small');
       }
    }
+
+   &:has(.env-breadcrumb__separator) {
+      .env-breadcrumb__item:nth-child(1n + 2)::before {
+         display: none;
+         content: '';
+      }
+   }
+
+   &__separator {
+      color: css-var('breadcrumb-divider-color');
+      content: '#{$breadcrumb-divider}';
+      display: inline-block;
+      padding-left: css-var('spacing-x-small');
+      padding-right: css-var('spacing-x-small');
+   }
 }
