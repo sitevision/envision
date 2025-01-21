@@ -753,6 +753,9 @@ $badge-font-family: $font-family !default;
       'badge-font-family': css-var('font-family'),
       'badge-font-size': $badge-font-size,
       'badge-border-radius': css-var('border-radius-medium'),
+      'badge-text-transform': none,
+      'badge-font-weight': $font-weight-bold,
+      'badge-letter-spacing': normal,
    )
 );
 

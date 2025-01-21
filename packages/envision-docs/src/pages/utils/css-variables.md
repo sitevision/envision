@@ -238,6 +238,9 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-badge-font-family`
 -  `--env-badge-font-size`
 -  `--env-badge-border-radius`
+-  `--env-badge-text-transform`
+-  `--env-badge-font-weight`
+-  `--env-badge-letter-spacing`
 
 #### Breadcrumbs
 
