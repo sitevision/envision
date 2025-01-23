@@ -1,33 +1,40 @@
 .env-badge {
-   border-radius: css-var('badge-border-radius');
    display: inline-block;
    font-family: css-var('badge-font-family');
    font-size: css-var('badge-font-size');
-   font-weight: $font-weight-bold;
-   padding: css-var('spacing-xx-small') css-var('spacing-x-small');
-   vertical-align: baseline;
+   font-weight: css-var('badge-font-weight');
+   text-decoration: none !important;
+   text-transform: css-var('badge-text-transform');
+   letter-spacing: css-var('badge-letter-spacing');
    color: css-var('element-primary-font-color');
    background-color: css-var('element-primary-background-color');
-   text-decoration: none !important;
+   padding: css-var('spacing-xx-small') css-var('spacing-x-small');
+   border: none;
+   border-radius: css-var('badge-border-radius');
+   vertical-align: baseline;
 
-   &--success {
-      color: css-var('element-success-font-color');
-      background-color: css-var('element-success-background-color');
+   &:focus-visible {
+      @include focus-outline;
    }
 
-   &--warning {
-      color: css-var('element-warning-font-color');
-      background-color: css-var('element-warning-background-color');
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):hover,
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):focus {
+      background-color: css-var('element-primary-background-color-dark');
    }
 
-   &--danger {
-      color: css-var('element-danger-font-color');
-      background-color: css-var('element-danger-background-color');
-   }
+   $badgeNames: 'success', 'danger', 'info', 'warning';
 
-   &--info {
-      color: css-var('element-info-font-color');
-      background-color: css-var('element-info-background-color');
+   @each $name in $badgeNames {
+      // Element color variants will have hover state if button or link
+      &--#{$name} {
+         color: css-var('element-#{$name}-font-color');
+         background-color: css-var('element-#{$name}-background-color');
+
+         &:where(a, button):hover,
+         &:where(a, button):focus {
+            background-color: css-var('element-#{$name}-background-color-dark');
+         }
+      }
    }
 
    // ----- STATUS VARIANTS -----
