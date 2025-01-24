@@ -7,7 +7,7 @@ description: Popovers displays contextual overlays with customizable content, po
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-ui-text-overline">Popover</h4>
+      <h4 class="env-ui-text-sectionheading">Popover</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
@@ -87,7 +87,7 @@ for a menu-styled popover. Use class `env-popover__item` for the menu items.
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-ui-text-overline">Popover menu</h4>
+      <h4 class="env-ui-text-sectionheading">Popover menu</h4>
    </div>
    <div class="env-popover__menu">
 <ul>
@@ -166,7 +166,7 @@ for a Tooltip-styled popover. Common text components will adjust color automatic
 <div class="example-static-popover env-popover env-popover--tooltip" data-popper-placement="bottom">
 <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
-      <h4 class="env-ui-text-overline">Popover Tooltip</h4>
+      <h4 class="env-ui-text-sectionheading">Popover Tooltip</h4>
    </div>
    <div class="env-popover__content">
       <p class="env-text">
