@@ -33,7 +33,7 @@ const DEFAULTS = {
    ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="tooltip">
    <div class="${ARROW_CLASSNAME}"></div>
    <div class="${HEADER_CLASSNAME}">
-   <h4 class="env-ui-text-overline ${TITLE_CLASSNAME}"></h4>
+   <h4 class="env-ui-text-sectionheading ${TITLE_CLASSNAME}"></h4>
    </div>
    <div class="${contentClassName}"></div>
    </div>`,
