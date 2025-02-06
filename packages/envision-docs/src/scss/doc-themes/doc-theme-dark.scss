@@ -35,7 +35,9 @@
       --env-link-hover-text-decoration
    );
    --env-block-secondary-link-text-decoration: var(--env-link-text-decoration);
-   --env-border-color-light: hsl(156, 3%, 18%);
+   --env-block-secondary-link-text-decoration: var(--env-link-text-decoration);
+   --env-border-color-light: hsl(150, 3%, 23%);
+   --env-border-color-05: hsl(150, 3%, 23%);
    --env-border-color: #454a48;
    --env-border-danger-color: #c15252;
    --env-border-radius-large: calc(var(--env-border-radius) * 1.5);
@@ -180,6 +182,7 @@
    --env-progress-bar-poll-highlight-color: #4bc5f5;
    --env-root-font-size: 16;
    --env-section-background-color: #143632;
+   --env-section-background-color-05: #1b4943;
    --env-spacing-large: 1.25em;
    --env-spacing-medium: 1em;
    --env-spacing-small: 0.75em;
