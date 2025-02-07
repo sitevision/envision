@@ -76,8 +76,7 @@
 
    &--hover {
       tbody tr:hover {
-         backdrop-filter: contrast(0.93);
-         filter: contrast(0.93);
+         background-color: css-var('section-background-color-05');
       }
    }
 
