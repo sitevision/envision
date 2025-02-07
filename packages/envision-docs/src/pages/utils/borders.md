@@ -14,7 +14,7 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
 <span class="doc-badge doc-badge--info">Since 2023.11.1</span> Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
 
-<span class="doc-badge doc-badge--info">Since in 2025.01.2</span> You can use `env-border--05` to set a muted border color.
+<span class="doc-badge doc-badge--info">Since 2025.01.2</span> You can use `env-border--05` to set a muted border color.
 
 ```html
 <div class="example-borders">
