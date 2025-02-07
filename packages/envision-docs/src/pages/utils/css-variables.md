@@ -86,7 +86,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 -  `--env-border-radius-large`
    <br><br>
 -  `--env-border-color`
--  `--env-border-color-light`
+-  `--env-border-color-05`
 
 ### Branding
 
@@ -154,6 +154,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 -  `--env-background-color`
 -  `--env-section-background-color`
+-  `--env-section-background-color-05`
 
 #### Blocks
 
@@ -324,6 +325,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-border-success-color`
 -  `--env-border-warning-color`
 -  `--env-border-danger-color`
+-  `--env-border-color-light`
 -  `--env-color-page-bg`
 -  `--env-color-element-bg`
 -  `--env-color-brand`
