@@ -7,8 +7,11 @@
    word-break: normal;
 
    // Margin collapse fix
-   margin-top: -1px;
-   border-top: 1px solid transparent;
+   &:after {
+      content: '';
+      display: block;
+      overflow: auto;
+   }
 
    > :first-child {
       padding-top: css-var('spacing-xx-small');
