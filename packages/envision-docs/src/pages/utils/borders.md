@@ -14,9 +14,12 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
 <span class="doc-badge doc-badge--info">Since 2023.11.1</span> Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
 
+<span class="doc-badge doc-badge--info">Since 2025.02.1</span> You can use `env-border--05` to set a muted border color.
+
 ```html
 <div class="example-borders">
    <span class="env-border"></span>
+   <span class="env-border env-border--05"></span>
    <span class="env-border-block"></span>
    <span class="env-border-inline"></span>
    <span class="env-border-block-start"></span>
@@ -36,29 +39,12 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 </div>
 ```
 
-## Physical properties & modifiers <span class="doc-badge doc-badge--danger">Deprecated</span>
+## Deprecated
 
-Since 2023.11.1, border classes based on physical properties are deprecated.
+### Physical properties & modifiers
 
-```html-no-example
-<div class="example-borders">
-   <span class="env-border-top"></span>
-   <span class="env-border-right"></span>
-   <span class="env-border-bottom"></span>
-   <span class="env-border-left"></span>
-</div>
-```
+<span class="doc-badge doc-badge--danger">Since 2023.11.1</span> Classnames `env-border-top`, `env-border-right`, `env-border-bottom` and `env-border-left` are deprecated and replaced by logical properties.
 
-Since 2023.11.1, modifiers `env-border--0` and `env-border--{p}-0` are deprecated.
+<span class="doc-badge doc-badge--danger">Since 2023.11.1</span> Modifiers `env-border--0` and `env-border--{p}-0` are deprecated, where `env-border--0` is replaced by `env-border-none`.
 
-`env-border--0` is replaced by `env-border-none`.
-
-```html-no-example
-<div class="example-borders">
-   <span class="env-border--0"></span>
-   <span class="env-border--t-0"></span>
-   <span class="env-border--r-0"></span>
-   <span class="env-border--b-0"></span>
-   <span class="env-border--l-0"></span>
-</div>
-```
+<span class="doc-badge doc-badge--danger">Since 2025.02.1</span> Variable `--env-border-color-light` is deprecated and replaced by `--env-border-color-05`.

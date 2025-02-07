@@ -1,5 +1,5 @@
 .env-border {
-   border: $border-width $border-style css-var('border-color') !important;
+   border: $border-width $border-style css-var('border-color');
 
    &-none {
       border: none !important;
@@ -10,10 +10,14 @@
 
    @each $p in $logicalProps {
       &-#{$p} {
-         border-#{$p}: $border-width
-            $border-style
-            css-var('border-color') !important;
+         border-#{$p}-width: $border-width;
+         border-#{$p}-style: $border-style;
+         border-#{$p}-color: css-var('border-color');
       }
+   }
+
+   &--05 {
+      border-color: css-var('border-color-05');
    }
 }
 

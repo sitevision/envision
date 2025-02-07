@@ -17,8 +17,8 @@ $exampleElPaddingBg: #c3d08a;
 .example-demo-dialog,
 .env-modal-dialog.example-demo__modal {
    backdrop-filter: invert(5%);
-   border-color: var(--env-border-color) var(--env-border-color-light)
-      var(--env-border-color-light);
+   border-color: var(--env-border-color) var(--env-border-color-05)
+      var(--env-border-color-05);
    border-width: 1px 0;
    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
    display: block;
@@ -296,7 +296,7 @@ $exampleElPaddingBg: #c3d08a;
 
 .example-ui-color-status-heading {
    margin: 0 0 1em !important;
-   border-bottom: 1px dotted var(--env-border-color-light);
+   border-bottom: 1px dotted var(--env-border-color-05);
 
    &:not(:first-child) {
       margin-top: 2em !important;
@@ -403,7 +403,7 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       color: var(--env-font-color);
       --doc-font-color: var(--env-font-color);
       box-sizing: border-box;
-      border: 1px solid var(--env-border-color-light);
+      border: 1px solid var(--env-border-color-05);
       background-color: var(--env-section-background-color);
       padding: 1em;
       height: 100%;
@@ -677,7 +677,7 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
 .example-dynamic-font-chart {
    max-width: 450px;
-   border: 1px solid var(--env-border-color-light);
+   border: 1px solid var(--env-border-color-05);
    margin: 1em 0 2em;
 }
 
@@ -995,7 +995,7 @@ canvas.example-canvas {
    margin: 0 auto;
    padding: 1em;
    max-width: 400px;
-   border: 1px dashed var(--env-border-color-light);
+   border: 1px dashed var(--env-border-color-05);
 
    > div:last-child {
       position: absolute;

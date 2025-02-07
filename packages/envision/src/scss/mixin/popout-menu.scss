@@ -50,7 +50,7 @@
       &--active,
       &:active,
       &:hover {
-         background-color: css-var('ui-color-brand-10');
+         background-color: css-var('section-background-color-05');
          color: css-var('font-color');
       }
 
@@ -71,7 +71,7 @@
    }
 
    &--divider {
-      border-bottom: $border-width $border-style css-var('border-color-light');
+      border-bottom: $border-width $border-style css-var('border-color-05');
       margin: $menu-inner-spacing 0;
    }
 }

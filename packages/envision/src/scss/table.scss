@@ -30,8 +30,7 @@
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         backdrop-filter: contrast(0.93);
-         filter: contrast(0.93);
+         background-color: css-var('section-background-color-05');
       }
    }
 
