@@ -80,7 +80,7 @@
    &__header {
       display: block;
       padding: css-var('spacing-small') css-var('spacing-x-large');
-      border-bottom: $border-width $border-style css-var('border-color-light');
+      border-bottom: $border-width $border-style css-var('border-color-05');
       border-radius: css-var('border-radius-medium')
          css-var('border-radius-medium') 0 0;
 
@@ -111,7 +111,7 @@
 
    &__footer {
       padding: css-var('spacing-small') css-var('spacing-x-large');
-      border-top: $border-width $border-style css-var('border-color-light');
+      border-top: $border-width $border-style css-var('border-color-05');
       border-radius: 0 0 css-var('border-radius-medium')
          css-var('border-radius-medium');
       text-align: left;

@@ -655,14 +655,14 @@ $radius-large: $radius-base * 1.5 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: #ccc !default;
-$border-color-light: lighten($border-color, 10%) !default;
+$border-color-05: lighten($border-color, 10%) !default;
 $tab-bottom-width: 3px !default;
 
 @include to-css-custom-property(
    (
       'border-color': $border-color,
-      'border-color-light': $border-color-light,
-      'border-color-05': $border-color-light,
+      'border-color-light': $border-color-05,
+      'border-color-05': $border-color-05,
       'border-success-color': $color-success,
       'border-warning-color': $color-warning-dark,
       'border-danger-color': $color-danger,
