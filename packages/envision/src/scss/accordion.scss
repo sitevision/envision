@@ -1,4 +1,10 @@
 .env-accordion {
+   &:after {
+      content: '';
+      display: block;
+      overflow: auto;
+   }
+
    html:not(.sv-no-js) &:not(.env-accordion--show) {
       display: none;
    }
