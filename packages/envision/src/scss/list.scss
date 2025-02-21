@@ -43,13 +43,14 @@
 
    &.env-list-dividers {
       &--top > .env-list__item {
-         border-top: $border-width $border-style css-var('border-color-05');
+         border-top: $border-width $border-style css-var('border-color-light'); // border-color-05
       }
       &--bottom > .env-list__item {
-         border-bottom: $border-width $border-style css-var('border-color-05');
+         border-bottom: $border-width $border-style
+            css-var('border-color-light'); // border-color-05
       }
       &--around > .env-list__item {
-         border: $border-width $border-style css-var('border-color-05');
+         border: $border-width $border-style css-var('border-color-light'); // border-color-05
          + .env-list__item {
             margin-top: css-var('spacing-xxx-small');
          }
@@ -58,13 +59,14 @@
 
    .env-list-item-divider {
       &--top {
-         border-top: $border-width $border-style css-var('border-color-05');
+         border-top: $border-width $border-style css-var('border-color-light'); // border-color-05
       }
       &--bottom {
-         border-bottom: $border-width $border-style css-var('border-color-05');
+         border-bottom: $border-width $border-style
+            css-var('border-color-light'); // border-color-05
       }
       &--around {
-         border: $border-width $border-style css-var('border-color-05');
+         border: $border-width $border-style css-var('border-color-light'); // border-color-05
       }
    }
 }

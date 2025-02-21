@@ -30,7 +30,9 @@
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         background-color: css-var('section-background-color-05');
+         backdrop-filter: contrast(0.93); // section-background-color-05
+         filter: contrast(0.93); // section-background-color-05
+         //background-color: css-var('section-background-color-05');
       }
    }
 
@@ -76,7 +78,9 @@
 
    &--hover {
       tbody tr:hover {
-         background-color: css-var('section-background-color-05');
+         backdrop-filter: contrast(0.93); // section-background-color-05
+         filter: contrast(0.93); // section-background-color-05
+         //background-color: css-var('section-background-color-05');
       }
    }
 

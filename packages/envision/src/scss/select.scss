@@ -154,7 +154,7 @@
       display: none;
       background-color: css-var('section-background-color');
       color: css-var('font-color');
-      border: $border-width $border-style css-var('border-color-05');
+      border: $border-width $border-style css-var('border-color-light'); // border-color-05
       border-radius: css-var('border-radius-medium');
       box-shadow: css-var('box-shadow-small');
       position: absolute;
@@ -182,7 +182,9 @@
       &__option {
          &:hover,
          &.active {
-            background-color: css-var('section-background-color-05');
+            background-color: css-var(
+               'ui-color-brand-10'
+            ); // section-background-color-05
             color: css-var('font-color');
          }
       }
