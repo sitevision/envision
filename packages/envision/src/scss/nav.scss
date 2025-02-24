@@ -43,7 +43,7 @@
 
 .env-nav--sidenav {
    .env-nav__link {
-      border-bottom: $border-width $border-style css-var('border-color-light'); // border-color-05
+      border-bottom: $border-width $border-style css-var('border-color-05');
       color: css-var('link-secondary-font-color');
       padding: css-var('spacing-small') 0;
 
