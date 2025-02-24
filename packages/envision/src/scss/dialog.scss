@@ -39,7 +39,7 @@
    &__title {
       display: block;
       padding: css-var('spacing-small') 1.5rem;
-      border-bottom: $border-width $border-style css-var('border-color-light'); // border-color-05
+      border-bottom: $border-width $border-style css-var('border-color-05');
       border-radius: css-var('border-radius-medium')
          css-var('border-radius-medium') 0 0;
       font-family: css-var('font-family');
@@ -62,7 +62,7 @@
 
    &__controls {
       padding: css-var('spacing-small') 1.5rem;
-      border-top: $border-width $border-style css-var('border-color-light'); // border-color-05
+      border-top: $border-width $border-style css-var('border-color-05');
       border-radius: 0 0 css-var('border-radius-medium')
          css-var('border-radius-medium');
       text-align: start;
