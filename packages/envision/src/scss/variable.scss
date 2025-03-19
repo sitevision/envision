@@ -109,7 +109,7 @@ $link-hover-text-decoration: underline !default;
 
 // ----- GENERAL COLORS -----
 
-$background-color: initial !default;
+$background-color: #ffffff !default;
 $section-background-color: #ffffff !default;
 
 @include to-css-custom-property(
@@ -130,10 +130,9 @@ $ui-color-status-active-text: #44835d;
 $ui-color-status-attention: #ce2e7e;
 $ui-color-status-attention-contrast: #ffffff;
 $ui-color-status-attention-text: #ce2e7e;
-$ui-color-status-error: css-var('element-danger-background-color');
-$ui-color-status-error-contrast: css-var('element-danger-font-color');
-$ui-color-status-error-text: css-var('element-danger-background-color');
 $ui-color-status-error: #c15252;
+$ui-color-status-error-contrast: #ffffff;
+$ui-color-status-error-text: #c15252;
 
 @include to-css-custom-property(
    (
@@ -692,7 +691,7 @@ $tooltip-font-color: #eeeeee;
 @include to-css-custom-property(
    (
       'tooltip-font-family': css-var('font-family'),
-      'tooltip-font-size': css-var('font-size-small'),
+      'tooltip-font-size': 0.875em,
       'tooltip-font-color': $tooltip-font-color,
       'tooltip-font-weight': $font-weight-regular,
       'tooltip-background-color': $tooltip-background-color,
@@ -748,7 +747,7 @@ $breadcrumb-divider: '/' !default;
 
 // ----- BADGE -----
 
-$badge-font-size: 75% !default;
+$badge-font-size: 0.75em !default;
 $badge-font-family: $font-family !default;
 
 @include to-css-custom-property(
