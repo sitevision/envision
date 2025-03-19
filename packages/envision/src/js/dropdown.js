@@ -221,6 +221,7 @@ const initialize = async (e) => {
 
 if (document) {
    document.addEventListener('focusin', initialize);
+   document.addEventListener('touchstart', initialize);
    document.addEventListener('click', initialize);
 }
 
