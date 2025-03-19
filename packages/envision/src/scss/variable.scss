@@ -133,6 +133,7 @@ $ui-color-status-attention-text: #ce2e7e;
 $ui-color-status-error: css-var('element-danger-background-color');
 $ui-color-status-error-contrast: css-var('element-danger-font-color');
 $ui-color-status-error-text: css-var('element-danger-background-color');
+$ui-color-status-error: #c15252;
 
 @include to-css-custom-property(
    (
