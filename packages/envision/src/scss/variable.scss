@@ -269,14 +269,7 @@ $content-text-base: (
    'margin-block-end': 1em,
 );
 
-$content-text-heading-links: (
-   'link-font-color': var(--env-font-color),
-   'link-text-decoration': var(--env-link-text-decoration),
-   'link-hover-font-color': var(--env-link-font-color),
-   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
-);
-
-$content-text-body-links: (
+$content-text-links: (
    'link-font-color': var(--env-link-font-color),
    'link-text-decoration': var(--env-link-text-decoration),
    'link-hover-font-color': var(--env-link-hover-font-color),
@@ -297,7 +290,7 @@ $content-text-body-links: (
                   'margin-block-end': 0.5em,
                )
             ),
-            $content-text-heading-links
+            $content-text-links
          ),
       'variants': (
          '01': (
@@ -337,7 +330,7 @@ $content-text-body-links: (
                   'margin-block-end': 0.25em,
                )
             ),
-            $content-text-heading-links
+            $content-text-links
          ),
       'variants': (
          '01': (
@@ -367,7 +360,7 @@ $content-text-body-links: (
                   'margin-block-end': 1em,
                )
             ),
-            $content-text-body-links
+            $content-text-links
          ),
       'variants': (
          '01': (),
@@ -388,7 +381,7 @@ $content-text-body-links: (
                   'margin-block-end': 1em,
                )
             ),
-            $content-text-body-links
+            $content-text-links
          ),
       'variants': (
          '01': (
@@ -421,7 +414,7 @@ $content-text-body-links: (
                   'margin-block-end': 0,
                )
             ),
-            $content-text-body-links
+            $content-text-links
          ),
       'variants': (
          '01': (),
@@ -443,7 +436,7 @@ $content-text-body-links: (
                   'margin-block-end': 1em,
                )
             ),
-            $content-text-body-links
+            $content-text-links
          ),
       'variants': (
          '01': (
@@ -460,7 +453,7 @@ $content-text-body-links: (
    (
       'name': 'table',
       'defaults':
-         map.merge(map.merge($content-text-base, ()), $content-text-body-links),
+         map.merge(map.merge($content-text-base, ()), $content-text-links),
       'variants': (
          'caption-01': (
             'font-size': 0.8125em,
