@@ -126,3 +126,36 @@ description: The Basic Text utility offers classes for headings, alignment, tran
    <div class="env-text">Text with <a href="#links">a link</a> inside.</div>
 </div>
 ```
+
+## Blockquote <span class="doc-badge doc-badge--info">2025.04.2</span>
+
+<div id="blockquote"></div>
+
+Classname `env-blockquote` or `<blockquote>` element inside any `env-` wrapper will get theme blockquote styling.
+
+```html
+<blockquote class="env-blockquote">
+   <p class="env-text-quotation-01">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris.
+   </p>
+</blockquote>
+```
+
+## Mark <span class="doc-badge doc-badge--info">2025.04.2</span>
+
+<div id="mark"></div>
+
+Classname `env-mark` or `<mark>` element inside any `env-` wrapper will use theme mark highlight colors.
+
+```html
+<p>
+   Lorem <mark class="env-mark">ipsum dolor</mark> sit amet, consectetur
+   adipiscing elit.
+</p>
+<p class="env-text">
+   Sed do eiusmod tempor incididunt ut labore et <mark>ipsum dolor</mark> magna
+   aliqua.
+</p>
+```

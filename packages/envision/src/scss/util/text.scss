@@ -107,6 +107,31 @@ a.env-text,
    );
 }
 
+[class^='env-'] mark,
+[class*=' env-'] mark,
+.env-mark {
+   color: var(--env-mark-font-color);
+   background-color: var(--env-mark-background-color);
+}
+
+[class^='env-'] blockquote,
+[class*=' env-'] blockquote,
+.env-blockquote {
+   border-block: var(--env-blockquote-border-block-width) solid
+      var(--env-blockquote-border-block-color);
+   border-inline-end: var(--env-blockquote-border-inline-end-width) solid
+      var(--env-blockquote-border-inline-end-color);
+   border-inline-start: var(--env-blockquote-border-inline-start-width) solid
+      var(--env-blockquote-border-inline-start-color);
+   padding-block-start: var(--env-blockquote-padding-block-start);
+   padding-inline-end: var(--env-blockquote-padding-inline-end);
+   padding-block-end: var(--env-blockquote-padding-block-end);
+   padding-inline-start: var(--env-blockquote-padding-inline-start);
+   margin-block-start: var(--env-blockquote-margin-block-start);
+   margin-block-end: var(--env-blockquote-margin-block-end);
+   margin-inline: 0;
+}
+
 @include block-text-size(
    'h1',
    'font-size-xxxx-large',

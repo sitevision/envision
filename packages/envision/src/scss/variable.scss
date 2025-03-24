@@ -476,6 +476,34 @@ $content-text-links: (
    )
 );
 
+// ----- MARK -----
+
+@include to-css-custom-property(
+   (
+      'mark-font-color': #202330,
+      'mark-background-color': #fcea4c,
+   )
+);
+
+// ----- BLOCKQUOTE -----
+
+@include to-css-custom-property(
+   (
+      'blockquote-border-block-width': 0,
+      'blockquote-border-block-color': var(--env-font-color),
+      'blockquote-border-inline-start-width': 2px,
+      'blockquote-border-inline-start-color': var(--env-font-color),
+      'blockquote-border-inline-end-width': 0,
+      'blockquote-border-inline-end-color': var(--env-font-color),
+      'blockquote-padding-block-start': 0,
+      'blockquote-padding-inline-end': 2em,
+      'blockquote-padding-block-end': 0,
+      'blockquote-padding-inline-start': 2em,
+      'blockquote-margin-block-start': 1.5em,
+      'blockquote-margin-block-end': 1.5em,
+   )
+);
+
 // ----- FOCUS -----
 
 // Color

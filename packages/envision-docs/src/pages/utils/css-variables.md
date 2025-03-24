@@ -148,6 +148,26 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
+#### Blockquote <span class="env-badge env-badge--info">2025.04.2</span>
+
+-  `--env-blockquote-border-block-width`
+-  `--env-blockquote-border-block-color`
+-  `--env-blockquote-border-inline-start-width`
+-  `--env-blockquote-border-inline-start-color`
+-  `--env-blockquote-border-inline-end-width`
+-  `--env-blockquote-border-inline-end-color`
+-  `--env-blockquote-padding-block-start`
+-  `--env-blockquote-padding-inline-start`
+-  `--env-blockquote-padding-block-end`
+-  `--env-blockquote-padding-inline-end`
+-  `--env-blockquote-margin-block-start`
+-  `--env-blockquote-margin-block-end`
+
+#### Mark <span class="env-badge env-badge--info">2025.04.2</span>
+
+-  `--env-mark-font-color`
+-  `--env-mark-background-color`
+
 ### Colors
 
 #### Base
