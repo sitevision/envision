@@ -627,4 +627,7 @@
    --env-ui-text-subheading-font-weight: 600;
    --env-ui-text-subheading-letter-spacing: normal;
    --env-ui-text-subheading-text-transform: none;
+   --env-blockquote-border-block-color: var(--env-font-color);
+   --env-blockquote-border-inline-start-color: var(--env-font-color);
+   --env-blockquote-border-inline-end-color: var(--env-font-color);
 }
