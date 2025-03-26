@@ -47,6 +47,7 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
 
    &[contenteditable=''],
    &[contenteditable='true'] {
+      position: relative;
       height: 5.5em;
       overflow: auto;
       resize: vertical;
