@@ -196,12 +196,15 @@ class Dropdown {
    }
 }
 
-const initialize = async (e) => {
-   const button = e.target.closest(TOGGLE_DROPDOWN);
+const initialize = async (e, btn) => {
+   const button =
+      e.type === 'DOMContentLoaded' && btn
+         ? btn
+         : e.target.closest(TOGGLE_DROPDOWN);
    if (button && !button[NAME]) {
       let container =
          button.dataset[TARGET_DATA_ATTR] &&
-         e.target.closest(button.dataset[TARGET_DATA_ATTR]);
+         button.closest(button.dataset[TARGET_DATA_ATTR]);
       if (!container) {
          container = button.parentNode;
       }
@@ -221,8 +224,12 @@ const initialize = async (e) => {
 
 if (document) {
    document.addEventListener('focusin', initialize);
-   document.addEventListener('touchstart', initialize);
    document.addEventListener('click', initialize);
+   document.addEventListener('DOMContentLoaded', (e) => {
+      document.body.querySelectorAll(TOGGLE_DROPDOWN).forEach((button) => {
+         initialize(e, button);
+      });
+   });
 }
 
 export default Dropdown;
