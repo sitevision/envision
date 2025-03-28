@@ -402,8 +402,11 @@ export const useCopyExample = (content) => {
       });
 
       // To initialize Image slider examples,
-      // load method must be triggered again in gatsby.
+      // load event must be triggered again in gatsby.
       window.dispatchEvent(new Event('load'));
+      // To initialize Dropdown button examples,
+      // DOMContentLoaded event must be triggered again in gatsby.
+      document.dispatchEvent(new Event('DOMContentLoaded'));
 
       return () => {
          dynFontExamples.forEach((container) => {
