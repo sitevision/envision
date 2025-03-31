@@ -3,13 +3,7 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
-import {
-   getNextFocusable,
-   getNodes,
-   hide,
-   resetDisplay,
-   uniqueId,
-} from './util/nodes';
+import { getNextFocusable, getNodes, hide, show, uniqueId } from './util/nodes';
 import { getPopper } from './util/popper';
 
 const TOGGLE_DROPDOWN = '[data-dropdown]';
@@ -88,7 +82,7 @@ class Dropdown {
       if (this.openInBody) {
          document.body.appendChild(this.menu);
       }
-      resetDisplay(this.menu);
+      show(this.menu);
       this._bindMenuEvents();
       getPopper().then((createPopper) => {
          const placementEnd =
