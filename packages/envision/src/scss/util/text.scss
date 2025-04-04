@@ -107,15 +107,13 @@ a.env-text,
    );
 }
 
-[class^='env-'] mark,
-[class*=' env-'] mark,
+.env-text mark,
 .env-mark {
    color: var(--env-mark-font-color);
    background-color: var(--env-mark-background-color);
 }
 
-[class^='env-'] blockquote,
-[class*=' env-'] blockquote,
+.env-text blockquote,
 .env-blockquote {
    border-block: var(--env-blockquote-border-block-width) solid
       var(--env-blockquote-border-block-color);

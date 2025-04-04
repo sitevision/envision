@@ -131,7 +131,7 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 
 <div id="blockquote"></div>
 
-Classname `env-blockquote` or `<blockquote>` element inside any `env-` wrapper will get theme blockquote styling.
+Classname `env-blockquote` or `<blockquote>` element inside an `env-text` wrapper will get theme blockquote styling.
 
 ```html
 <blockquote class="env-blockquote">
@@ -147,7 +147,7 @@ Classname `env-blockquote` or `<blockquote>` element inside any `env-` wrapper w
 
 <div id="mark"></div>
 
-Classname `env-mark` or `<mark>` element inside any `env-` wrapper will use theme mark highlight colors.
+Classname `env-mark` or `<mark>` element inside an `env-text` wrapper will use theme mark highlight colors.
 
 ```html
 <p>
