@@ -448,8 +448,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
    .env-card {
       height: 20px;
-      background-color: #eee;
-      border: 1px dashed #ccc;
+      background-color: var(--env-ui-color-brand-15);
+      border: 1px dashed var(--env-ui-color-brand-50);
    }
 
    &__resizeable {
