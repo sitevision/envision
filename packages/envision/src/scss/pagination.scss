@@ -1,22 +1,7 @@
 .env-pagination {
    @include reset-list();
    display: flex;
-
-   &:not(.env-flex-wrap--wrap):not(.env-flex--wrap) {
-      .env-pagination__item:first-child {
-         .env-pagination__link {
-            border-radius: css-var('border-radius-medium') 0 0
-               css-var('border-radius-medium');
-         }
-      }
-
-      .env-pagination__item:last-child {
-         .env-pagination__link {
-            border-radius: 0 css-var('border-radius-medium')
-               css-var('border-radius-medium') 0;
-         }
-      }
-   }
+   flex-wrap: wrap;
 
    &__link {
       @include pagination-size(
@@ -29,6 +14,7 @@
          style: css-var('pagination-border-style');
          width: css-var('pagination-border-width');
          color: css-var('border-color');
+         radius: 0;
       }
       color: css-var('font-color');
       display: inline-block;
@@ -37,6 +23,16 @@
       margin-left: css-var('pagination-border-width', -1);
       position: relative;
       text-decoration: none;
+
+      .env-pagination__item:first-child & {
+         border-radius: css-var('border-radius-medium') 0 0
+            css-var('border-radius-medium');
+      }
+
+      .env-pagination__item:last-child & {
+         border-radius: 0 css-var('border-radius-medium')
+            css-var('border-radius-medium') 0;
+      }
 
       &:focus {
          z-index: 3;
