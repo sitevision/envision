@@ -30,8 +30,6 @@ description: Use the Badge component to display small labels for status, notific
 
 ### Brand
 
-<span class="env-badge env-badge--info">2023.01.1</span>
-
 Brand color badges are available by using modifier `env-badge--brand` or `env-badge--brand-{n}`.
 
 Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`
@@ -64,8 +62,6 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 </div>
 
 ### Status badge <span id="status-badge" class="offset-anchor"></span>
-
-<span class="doc-badge doc-badge--info">2023.02.1</span>
 
 Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
 

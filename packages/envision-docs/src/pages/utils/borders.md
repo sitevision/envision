@@ -5,16 +5,13 @@ description: Use the Borders utility to set or remove borders.
 
 Set or remove borders.
 
-<span class="doc-badge doc-badge--danger">Changed in 2023.11.1</span> Previous versions have been using physical properties top, right, bottom and left.
-These classes are now deprecated. Please use logical properties as described below.
-
 ## Set borders
 
 Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
-<span class="doc-badge doc-badge--info">Since 2023.11.1</span> Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
+Valid values for `{p}` are: `block`, `inline`, `block-start`, `block-end`, `inline-start`, `inline-end`.
 
-<span class="doc-badge doc-badge--info">Since 2025.03.1</span> You can use `env-border--05` to set a muted border color.
+You can use `env-border--05` to set a muted border color.
 
 ```html
 <div class="example-borders">
@@ -31,7 +28,7 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
 ## Remove borders
 
-<span class="doc-badge doc-badge--info">Since 2023.11.1</span> Use `env-border-none` to remove a border from all sides.
+Use `env-border-none` to remove a border from all sides.
 
 ```html
 <div class="example-borders">
@@ -43,8 +40,8 @@ Use `env-border` or `env-border-{p}` to set border on one or more sides.
 
 ### Physical properties & modifiers
 
-<span class="doc-badge doc-badge--danger">Since 2023.11.1</span> Classnames `env-border-top`, `env-border-right`, `env-border-bottom` and `env-border-left` are deprecated and replaced by logical properties.
+Since 2023.11.1, classnames `env-border-top`, `env-border-right`, `env-border-bottom` and `env-border-left` are deprecated and replaced by logical properties.
 
-<span class="doc-badge doc-badge--danger">Since 2023.11.1</span> Modifiers `env-border--0` and `env-border--{p}-0` are deprecated, where `env-border--0` is replaced by `env-border-none`.
+Modifiers `env-border--0` and `env-border--{p}-0` are deprecated, where `env-border--0` is replaced by `env-border-none`.
 
-<span class="doc-badge doc-badge--danger">Since 2025.03.1</span> Variable `--env-border-color-light` is deprecated and replaced by `--env-border-color-05`.
+Since 2025.03.1, variable `--env-border-color-light` is deprecated and replaced by `--env-border-color-05`.

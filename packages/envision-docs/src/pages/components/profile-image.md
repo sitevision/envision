@@ -100,8 +100,6 @@ the image is smaller than the image.
 
 #### Status badge in responsive size Profile image
 
-<span class="doc-badge doc-badge--info">2023.02.1</span>
-
 A responsive size Profile image may have a [Status badge](/components/badge/#status-badge) inside.
 The text will be visually hidden and the badge will adjust its size
 relative to the image.

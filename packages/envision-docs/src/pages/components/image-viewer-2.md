@@ -3,8 +3,6 @@ title: Image viewer
 description: The Image Viewer component displays slideshows and lightbox galleries with navigation controls.
 ---
 
-<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2023.07.1</span></h2>
-
 Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
 and/or a lightbox viewer with navigation between images.
 

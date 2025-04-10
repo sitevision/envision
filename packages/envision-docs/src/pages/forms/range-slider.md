@@ -5,9 +5,6 @@ description: The Range Slider component lets users select a value or range with 
 
 Capture a range
 
-<span class="doc-badge doc-badge--danger">Changed in 2023.08.1</span>
-Changes have been made to event handling, please see [Event documentation](#events).
-
 ```html
 <div
    id="my-slider"
@@ -102,11 +99,7 @@ envision.rangeSlider('#my-slider', {
 
 ## Events
 
-Since 2023.08.1 there are two new native custom events `input` and `change`. The new events
-replaces the deprecated `slide` and `slidestop` jQuery events. Callback methods `slide` and
-`slidestop` are also deprecated.
-
-### input <span class="doc-badge doc-badge--info">2023.08.1</span>
+### input
 
 Triggered for every move during slide.
 
@@ -116,7 +109,7 @@ document.querySelector('#my-slider').addEventListener('input', (e) => {
 });
 ```
 
-### change <span class="doc-badge doc-badge--info">2023.08.1</span>
+### change
 
 Triggered when slide is completed.
 
@@ -131,21 +124,9 @@ document.querySelector('#my-slider').addEventListener('change', (e) => {
 
 Triggered for every move during slide. Event `slide` is deprecated, please use `input` event.
 
-```javascript
-// Deprecated, please use 'input'
-// $('#my-slider').on('slide', (e, data) => {});
-// $('#my-slider').envRangeSlider({ slide: (e, data) => {} });
-```
-
 ### slidestop <span class="doc-badge doc-badge--danger">Deprecated</span>
 
 Triggered when slide is completed. Event `slidestop` is deprecated, please use `change` event.
-
-```javascript
-// Deprecated, please use 'change'
-// $('#my-slider').on('slidestop', (e, data) => {});
-// $('#my-slider').envRangeSlider({ slidestop: (e, data) => {} });
-```
 
 ## Methods
 

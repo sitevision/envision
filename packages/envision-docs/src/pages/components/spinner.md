@@ -29,7 +29,7 @@ description: The Spinner component displays loading animations with standard or 
 
 Use modifier `env-spinner--hide` or `env-spinner-bounce--hide` to hide the spinner. i.e `env-spinner env-spinner--hide`
 
-## Delayed spinner <span class="doc-badge doc-badge--info">2023.07.1</span>
+## Delayed spinner
 
 Delay showing the spinner to avoid spinner flashing when the content loads fast.
 

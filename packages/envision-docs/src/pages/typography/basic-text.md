@@ -82,7 +82,7 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 <div class="env-text env-text-align--right">Right aligned</div>
 ```
 
-### Logical properties <span class="doc-badge doc-badge--info">2023.08.1</span>
+### Logical properties
 
 ```html
 <div class="env-text env-text-align--start">Start aligned</div>
@@ -101,7 +101,7 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 
 <span id="status-colors" class="offset-anchor"></span>
 
-## Status colors <span class="doc-badge doc-badge--info">2023.07.1</span>
+## Status colors
 
 ```html
 <p class="env-text env-text--attention">Attention text</p>
