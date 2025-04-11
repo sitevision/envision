@@ -3,6 +3,35 @@
 .env-select {
    position: relative;
 
+   &.single {
+      // Single select version
+      .env-select__input {
+         padding: 0.25em 2em 0.25em 0.5em;
+
+         > input {
+            min-width: 0;
+         }
+      }
+
+      .env-select__item {
+         font-size: 1em;
+         background-color: transparent;
+         color: css-var('form-input-font-color');
+         padding: 0.5625em 0.25em;
+      }
+
+      > .env-icon {
+         pointer-events: none;
+         display: block;
+         position: absolute;
+         top: 50%;
+         right: 0.9375em;
+         transform: translateY(-50%);
+         width: 0.875em;
+         height: 0.875em;
+      }
+   }
+
    &__input {
       display: flex;
       flex-wrap: wrap;
@@ -31,8 +60,6 @@
       .env-select.plugin-clear_button & {
          padding-right: 1.5em;
       }
-
-      // NOTE! Styling for single select .env-select.single in form.scss
 
       > * {
          vertical-align: baseline;
