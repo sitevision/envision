@@ -153,16 +153,6 @@ export const useCopyExample = (content) => {
       if (singleSelectEl1) {
          envision.select(singleSelectEl1, {
             maxItems: 1,
-            i18n: 'en',
-         });
-      }
-
-      const singleSelectEl2 = document.querySelector(
-         '#example-tag-select-single-2'
-      );
-      if (singleSelectEl2) {
-         envision.select(singleSelectEl2, {
-            maxItems: 1,
             allowEmptyOption: true,
             sortField: [{ field: '$order' }, { field: '$score' }],
             i18n: 'en',

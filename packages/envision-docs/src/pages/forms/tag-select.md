@@ -4,7 +4,7 @@ description: Tag Select enables customizable multi-select interfaces with cross-
 ---
 
 Tag select is a JS alternative to `<select>` that allows you to create a nice looking multi-select with cross browser
-styling. A [single select version](#single-select) is also available since Sitevision 2023.04.1.
+styling.
 
 Tag Select offers an API for creating interaction with the component.
 
@@ -42,12 +42,12 @@ tagSelect.then(function (selects) {
 
 <span id="single-select" class="offset-anchor"></span>
 
-## Single select <span class="doc-badge doc-badge--info">2023.04.1</span>
+## Single select
 
 Create a Single select by using a Tag select and set `maxItems` to `1`.
 Note: Clear and remove buttons will not be available in a single select.
 
-Use `allowEmptyOption` and `sortField` as in second example below to make behaviour similar to native select element.
+Use `allowEmptyOption` and `sortField` to make behaviour similar to native select element.
 
 ```HTML
 <div class="env-form-field">
@@ -62,27 +62,10 @@ Use `allowEmptyOption` and `sortField` as in second example below to make behavi
       <option value="item-4">Item 4</option>
    </select>
 </div>
-
-<div class="env-form-field">
-   <label for="example-tag-select-single-2" class="env-form-label">
-      Tag select single - native-like behaviour
-   </label>
-   <select class="env-form-input" id="example-tag-select-single-2" aria-label="Tag select single - native-like behaviour">
-      <option value="">Select an item ...</option>
-      <option value="item-1">Item</option>
-      <option value="item-3">Item 3</option>
-      <option value="item-2">Item 2</option>
-      <option value="item-4">Item 4</option>
-   </select>
-</div>
 ```
 
 ```javascript
-var singleSelectExample1 = envision.select('#example-tag-select-single-1', {
-   maxItems: 1,
-});
-
-var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
+var singleSelectExample = envision.select('#example-tag-select-single-1', {
    maxItems: 1,
    allowEmptyOption: true,
    sortField: [{ field: '$order' }, { field: '$score' }],
@@ -112,7 +95,7 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  Default value: `true`
    -  Not available in Single select
 
--  `allowEmptyOption` _boolean_ <span class="doc-badge doc-badge--info">since Sitevision 2023.04.1</span>
+-  `allowEmptyOption` _boolean_
 
    -  Only available in Single select
    -  Option with no value will be selectable if set to true.
@@ -133,7 +116,7 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
    -  Create a Tag select from custom dataset
    -  By default this is populated from the original element.
 
--  `maxOptions` _number_ <span class="doc-badge doc-badge--info">since Sitevision 2022.10.1</span>
+-  `maxOptions` _number_
 
    -  Limits the number of visible options
    -  Default value: `null` (unlimited)
@@ -169,14 +152,14 @@ var singleSelectExample2 = envision.select('#example-tag-select-single-2', {
 
    -  A string or an array of property names to analyze when filtering options in remote data.
 
--  `sortField` _'string'_ | _[object]_ | _function(a, b)_ <span class="doc-badge doc-badge--info">since Sitevision 2022.10.1</span>
+-  `sortField` _'string'_ | _[object]_ | _function(a, b)_
 
    -  A string, an array of objects or a function to sort available options.
    -  By default the the order is based on the current locale.
    -  To disable sorting entirely and maintain the original order of options, use:
       `sortField:[{field:'$order'},{field:'$score'}]`
 
--  `render` _object_ <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `render` _object_
 
    -  An object specifications for rendering.
    -  Available options:
@@ -464,23 +447,23 @@ envision.select('#tag-select').then(function (selects) {
 
    -  Invoked when new options should be loaded from the server. Called with the current query string.
 
--  `open()` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `open()`
 
    -  Shows the autocomplete dropdown containing the available options.
 
--  `close()` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `close()`
 
    -  Closes the autocomplete dropdown menu.
 
--  `clear(silent)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `clear(silent)`
 
    -  Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
 
--  `clearOptions(clearFilter?)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `clearOptions(clearFilter?)`
 
    -  Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
 
--  `clearFilter(option, value)` <span class="doc-badge doc-badge--info">since Sitevision 2022.11.1</span>
+-  `clearFilter(option, value)`
 
    -  Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
 
@@ -523,10 +506,10 @@ envision.select('#tag-select').then(function (selects) {
 
    -  Destroys the control and unbinds event listeners so that it can be garbage collected.
 
--  `focus()` <span class="doc-badge doc-badge--info">since Sitevision 2023.01.1</span>
+-  `focus()`
 
    -  Focuses the control.
 
--  `blur()` <span class="doc-badge doc-badge--info">since Sitevision 2023.01.1</span>
+-  `blur()`
 
    -  Blurs the control.

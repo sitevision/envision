@@ -132,7 +132,7 @@ Native select element with class `env-form-input`. Only light styling, might loo
    <label for="multiple-select" class="env-form-element__label"
       >Multiple select</label
    >
-   <div class="env-form-element__control env-form-multiple-select">
+   <div class="env-form-element__control">
       <select class="env-form-input" id="multiple-select" multiple>
          <option>Item</option>
          <option>Item 2</option>
@@ -145,12 +145,10 @@ Native select element with class `env-form-input`. Only light styling, might loo
 
 <span id="select-component" class="offset-anchor"></span>
 
-## Select component <span class="doc-badge doc-badge--info">2023.04.1</span>
+## Select component
 
 A select element wrapped in an element with class `env-form-select` will have the same appearance cross browsers.
 Use an `env-icon` for the arrow.
-
-For more advanced usage, see [Single select documentation](/components/select/#single-select)
 
 ```html
 <div class="env-form-element">
@@ -629,8 +627,6 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 <span id="validation" class="offset-anchor"></span>
 
 ## Validation
-
-<span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Add modifier `.env-form-element--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
