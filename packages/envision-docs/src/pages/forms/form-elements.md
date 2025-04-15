@@ -205,7 +205,7 @@ be customized.
 </div>
 ```
 
-### Select component — Customizable
+### Select component — Customizable <span class="doc-badge doc-badge--info">2025.04.2</span>
 
 If the browser does support customizable select elements, the picker will use fonts and colors from
 the theme. Options may also have icons. Should you want to use icons, the `.env-icon` class should be used.
