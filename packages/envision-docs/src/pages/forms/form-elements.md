@@ -184,8 +184,9 @@ as much of Envision styling as possible while still keeping the native select el
 
 ### Select component
 
-A select element wrapped in an element with class `.env-form-select` will make the select have the most uniform
-appearance cross browsers. Dropdown arrow uses class `.env-icon` and may be customized.
+A `<select>` element wrapped in an element with the class `.env-form-select` will have the
+most consistent appearance across browsers. The dropdown arrow uses the `.env-icon` class and can
+be customized.
 
 ```html
 <div class="env-form-field">
