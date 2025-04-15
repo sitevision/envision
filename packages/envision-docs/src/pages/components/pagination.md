@@ -100,7 +100,7 @@ If you must use a link, remove the href attribute and set the `aria-disabled="tr
 
 ```html
 <nav aria-label="Pagination example">
-   <ul class="env-pagination env-pagination--center env-list">
+   <ul class="env-pagination env-pagination--center">
       <li class="env-pagination__item">
          <a class="env-pagination__link" href="#">Previous</a>
       </li>
