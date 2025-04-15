@@ -116,7 +116,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Typography
 
-#### Text <span class="env-badge env-badge--info">2025.01.1</span>
+#### Text <span class="doc-badge doc-badge--info">2025.01.1</span>
 
 -  `--env-text-{name}-font-family`
 -  `--env-text-{name}-font-color`
@@ -147,7 +147,7 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
-#### Blockquote <span class="env-badge env-badge--info">2025.04.2</span>
+#### Blockquote <span class="doc-badge doc-badge--info">2025.04.2</span>
 
 -  `--env-blockquote-border-block-width`
 -  `--env-blockquote-border-block-color`
@@ -162,7 +162,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 -  `--env-blockquote-margin-block-start`
 -  `--env-blockquote-margin-block-end`
 
-#### Mark <span class="env-badge env-badge--info">2025.04.2</span>
+#### Mark <span class="doc-badge doc-badge--info">2025.04.2</span>
 
 -  `--env-mark-font-color`
 -  `--env-mark-background-color`

@@ -10,12 +10,12 @@ is used as background color for Modal dialogs.
 
 -  `--env-background-color` - Theme/body background color
 -  `--env-section-background-color` - Used for larger content sections.
--  `--env-section-background-color-05` <span class="env-badge env-badge--info">2025.03.1</span>
+-  `--env-section-background-color-05` <span class="doc-badge doc-badge--info">2025.03.1</span>
 -  `--env-font-color` - Base text color
 -  `--env-link-font-color` - Base link color
 -  `--env-link-hover-font-color` - Base link:hover color
 -  `--env-border-color` - Base border color
--  `--env-border-color-05` - Alternative border color <span class="env-badge env-badge--info">2025.03.1</span>
+-  `--env-border-color-05` - Alternative border color <span class="doc-badge doc-badge--info">2025.03.1</span>
 
 `--env-section-background-color-05` is calculated from `--env-section-background-color`.
 

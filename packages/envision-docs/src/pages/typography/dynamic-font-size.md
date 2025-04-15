@@ -3,7 +3,7 @@ title: Dynamic font size
 description: The Dynamic Font Size utility scales an element’s base font size based on container width.
 ---
 
-<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2024.02.1</span></h2>
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="doc-badge doc-badge--info">Since 2024.02.1</span></h2>
 
 Use Dynamic font size to scale the base font size of an element. Any element children using
 relative font sizes will scale proportionally.

@@ -3,7 +3,7 @@ title: Container
 description: The Container utility establishes a containment context for applying container query at-rules.
 ---
 
-<h2 class="doc-heading-2 doc-heading-2--main"><span class="env-badge env-badge--info">Since 2024.02.1</span></h2>
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="doc-badge doc-badge--info">Since 2024.02.1</span></h2>
 
 Using the class `env-container` on an element will declare a containment context
 that may be targeted with container query at-rules.
