@@ -226,7 +226,7 @@ For more advanced usage, see [Single select documentation](/forms/tag-select/#si
 
 ### Tag select component
 
-See [Tag select documentation](../select/).
+See [Tag select documentation](/forms/tag-select/).
 
 ```html
 <div class="env-form-field">

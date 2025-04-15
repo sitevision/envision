@@ -171,7 +171,7 @@ Use an `env-icon` for the arrow.
 
 ### Tag select component
 
-See [Tag select documentation](../select/).
+See [Tag select documentation](/forms/tag-select/).
 
 ```html
 <label for="tag-select" class="env-form-element__label"> Tag select </label>
