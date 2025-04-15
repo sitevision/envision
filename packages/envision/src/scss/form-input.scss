@@ -5,7 +5,6 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
 
 .env-form-input {
    @include form-input-defaults;
-
    @include placeholder {
       color: css-var('form-input-font-color');
       filter: opacity(0.65);
@@ -23,6 +22,21 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
    }
 
    @include focus-visible;
+
+   @supports (-webkit-touch-callout: none) {
+      // (hack) iOS specific styling for prettier date inputs
+      &[type='date'],
+      &[type='datetime-local'],
+      &[type='month'],
+      &[type='time'],
+      &[type='week'] {
+         appearance: none;
+
+         &::-webkit-date-and-time-value {
+            text-align: left;
+         }
+      }
+   }
 
    &[type='search'] {
       appearance: none;
@@ -81,27 +95,4 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
 textarea.env-form-input {
    resize: vertical;
    min-height: $form-input-min-height;
-}
-
-.env-form select,
-select.env-form-input {
-   min-height: $form-input-min-height;
-}
-
-@supports (background: -webkit-named-image(i)) {
-   // Hack for Safari only to set height of native select
-   .env-form select:not([multiple]),
-   select.env-form-input:not([multiple]) {
-      height: $form-input-min-height;
-   }
-}
-
-select[multiple].env-form-input,
-.env-form-multiple-select select[multiple] {
-   padding: css-var('spacing-xx-small');
-}
-
-select[multiple].env-form-input > option,
-.env-form-multiple-select select[multiple] > option {
-   padding: css-var('spacing-x-small');
 }
