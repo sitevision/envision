@@ -175,7 +175,7 @@ An optional placeholder may be added using attribute `aria-placeholder` on the c
 
 ## Select element and component
 
-**Updated in 2025.04.2.**
+**Updated in 2025.05.1.**
 With the introduction of [Customizable select elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select),
 both the Select element and the Select component will use a progressively enhanced approach to use
 as much of Envision styling as possible while still keeping the native select element functionality.
@@ -205,7 +205,7 @@ be customized.
 </div>
 ```
 
-### Select component — Customizable <span class="doc-badge doc-badge--info">2025.04.2</span>
+### Select component — Customizable <span class="doc-badge doc-badge--info">2025.05.1</span>
 
 If the browser does support customizable select elements, the picker will use fonts and colors from
 the theme. Options may also have icons. Should you want to use icons, the `.env-icon` class should be used.
