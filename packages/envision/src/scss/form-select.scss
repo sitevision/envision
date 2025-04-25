@@ -1,0 +1,164 @@
+@use 'sass:math';
+
+%select-base {
+   @include form-input-defaults;
+}
+
+// ----- Basic Select ---- //
+// The most plain styling, Safari will render this with gradient background.
+
+.env-form select,
+select.env-form-input {
+   @extend %select-base;
+   @include focus-visible;
+}
+
+.env-form select[multiple],
+select[multiple].env-form-input,
+.env-form-multiple-select select[multiple] {
+   // .env-form-multiple-select is deprecated
+   min-height: 2.75em;
+   height: auto;
+   padding: css-var('spacing-xx-small');
+
+   @supports (-webkit-touch-callout: none) {
+      // (hack) iOS specific styling for prettier select[multiple]
+      height: 2.75em;
+      padding: $form-padding-y $form-padding-x;
+   }
+
+   > option {
+      padding: css-var('spacing-x-small');
+   }
+}
+
+// ----- Select Component ---- //
+// Select wrapped in a div with class "env-form-select".
+// Rendered the same in all browsers. Icon may use a custom SVG.
+
+.env-form-select {
+   @extend %select-base;
+   position: relative;
+   padding: 0;
+
+   @include focus-within;
+
+   select:not([multiple]),
+   select.env-form-input {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      border-radius: css-var('form-input-border-radius');
+      appearance: none;
+      color: css-var('form-input-font-color');
+      font-size: css-var('font-size-medium');
+      min-height: calc(
+         #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
+      );
+      padding: $form-padding-y 2em $form-padding-y $form-padding-x;
+
+      @include hide-focus-visible;
+   }
+
+   > .env-icon {
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0.9375em;
+      transform: translateY(-50%);
+      width: 0.875em;
+      height: 0.875em;
+   }
+}
+
+// ----- Customizable Select - used in both Element & Component ---- //
+// Certain browsers now allows styling of the select and the picker.
+// Icons may be used inside options etc.
+// https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select
+
+@supports (appearance: base-select) {
+   .env-form select,
+   select.env-form-input,
+   .env-form-select select {
+      appearance: base-select !important;
+      display: flex;
+
+      selectedcontent {
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         gap: 0.5em;
+      }
+
+      optgroup {
+         font-weight: 600;
+         padding: var(--env-spacing-x-small) 0 0;
+
+         &:last-child {
+            padding-bottom: var(--env-spacing-x-small);
+         }
+         option:first-of-type {
+            margin-top: var(--env-spacing-x-small);
+         }
+
+         legend {
+            font-weight: 600;
+         }
+      }
+
+      option {
+         padding: css-var('spacing-x-small');
+
+         &:hover,
+         &.focus {
+            background-color: css-var('section-background-color-05');
+            color: css-var('font-color');
+         }
+
+         &:focus-visible {
+            box-shadow: 0 0 0 css-var('focus-offset')
+               css-var('focus-inner-color');
+            outline: css-var('focus-size') solid css-var('focus-outline-color');
+            outline-offset: css-var('focus-offset');
+         }
+      }
+
+      selectedcontent .env-icon,
+      option .env-icon {
+         width: 0.875em;
+         height: 0.875em;
+      }
+   }
+
+   .env-form ::picker(select),
+   .env-form-input::picker(select),
+   .env-form-select ::picker(select) {
+      appearance: base-select;
+      font-size: var(--env-font-size-medium);
+      background-color: css-var('section-background-color');
+      color: css-var('font-color');
+      border: $border-width $border-style css-var('border-color-05');
+      border-radius: css-var('border-radius-medium');
+      box-shadow: css-var('box-shadow-small');
+      padding: calc(css-var('focus-size') + css-var('focus-offset'));
+   }
+
+   .env-form select::picker-icon,
+   select.env-form-input::picker-icon {
+      background-color: transparent;
+      width: 0.5em;
+      height: 0.5em;
+      color: transparent;
+      transform: translate(-0.3em, 0.25em) rotate(45deg);
+      border-right: 0.125em solid var(--env-form-input-font-color);
+      border-bottom: 0.125em solid var(--env-form-input-font-color);
+      border-radius: 0.0625em;
+   }
+
+   .env-form-select select::picker-icon {
+      // Select component uses custom SVG-icon
+      display: none;
+   }
+}

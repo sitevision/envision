@@ -173,14 +173,93 @@ An optional placeholder may be added using attribute `aria-placeholder` on the c
 </div>
 ```
 
+## Select element and component
+
+**Updated in 2025.04.2.**
+With the introduction of [Customizable select elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select),
+both the Select element and the Select component will use a progressively enhanced approach to use
+as much of Envision styling as possible while still keeping the native select element functionality.
+
+<span id="select-component" class="offset-anchor"></span>
+
+### Select component
+
+A `<select>` element wrapped in an element with the class `.env-form-select` will have the
+most consistent appearance across browsers. The dropdown arrow uses the `.env-icon` class and can
+be customized.
+
+```html
+<div class="env-form-field">
+   <label for="select-1" class="env-form-label">Select</label>
+   <div class="env-form-select">
+      <select id="select-1">
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+      <svg aria-hidden="true" class="env-icon">
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+      </svg>
+   </div>
+</div>
+```
+
+### Select component — Customizable <span class="doc-badge doc-badge--info">2025.04.2</span>
+
+If the browser does support customizable select elements, the picker will use fonts and colors from
+the theme. Options may also have icons. Should you want to use icons, the `.env-icon` class should be used.
+The icon may also be displayed in the selected option if a `button` element is added as a first child and a
+`selectedcontent` element is added inside the `button`.
+
+```html
+<div class="env-form-field">
+   <label for="select-2" class="env-form-label">Customizable select</label>
+   <div class="env-form-select">
+      <select id="select-2">
+         <button>
+            <selectedcontent></selectedcontent>
+         </button>
+         <option>
+            <svg class="env-icon" aria-hidden="true">
+               <use href="/sitevision/envision-icons.svg#icon-file"></use>
+            </svg>
+            Option 1
+         </option>
+         <option>
+            <svg class="env-icon" aria-hidden="true">
+               <use href="/sitevision/envision-icons.svg#icon-files"></use>
+            </svg>
+            Option 2
+         </option>
+         <option>
+            <svg class="env-icon" aria-hidden="true">
+               <use href="/sitevision/envision-icons.svg#icon-image"></use>
+            </svg>
+            Option 3
+         </option>
+         <option>
+            <svg class="env-icon" aria-hidden="true">
+               <use href="/sitevision/envision-icons.svg#icon-images"></use>
+            </svg>
+            Option 4
+         </option>
+      </select>
+      <svg aria-hidden="true" class="env-icon">
+         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+      </svg>
+   </div>
+</div>
+```
+
 ### Select element
 
 Native select element with class `.env-form-input`. Only light styling, might look different in different browsers.
 
 ```html
 <div class="env-form-field">
-   <label for="select-1" class="env-form-label">Select</label>
-   <select class="env-form-input" id="select-1">
+   <label for="select-3" class="env-form-label">Select</label>
+   <select class="env-form-input" id="select-3">
       <option>Item</option>
       <option>Item 2</option>
       <option>Item 3</option>
@@ -194,54 +273,6 @@ Native select element with class `.env-form-input`. Only light styling, might lo
       <option>Item 2</option>
       <option>Item 3</option>
       <option>Item 4</option>
-   </select>
-</div>
-```
-
-<span id="select-component" class="offset-anchor"></span>
-
-## Select component <span class="doc-badge doc-badge--info">2023.04.1</span>
-
-A select element wrapped in an element with class `.env-form-select` will have the same appearance cross browsers.
-Use an `.env-icon` for the arrow.
-
-For more advanced usage, see [Single select documentation](/forms/tag-select/#single-select)
-
-```html
-<div class="env-form-field">
-   <label for="select-2" class="env-form-label">Select</label>
-   <div class="env-form-select">
-      <select id="select-2">
-         <option>Item</option>
-         <option>Item 2</option>
-         <option>Item 3</option>
-         <option>Item 4</option>
-      </select>
-      <svg aria-hidden="true" class="env-icon">
-         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
-      </svg>
-   </div>
-</div>
-```
-
-### Tag select component
-
-See [Tag select documentation](/forms/tag-select/).
-
-```html
-<div class="env-form-field">
-   <label for="tag-select-1" class="env-form-label"> Tag select </label>
-   <select
-      class="env-form-input example-tag-select"
-      id="tag-select-1"
-      aria-label="Tag select"
-      multiple
-   >
-      <option value="">Select an item...</option>
-      <option value="item1" selected>Item</option>
-      <option value="item2">Item 2</option>
-      <option value="item3">Item 3</option>
-      <option value="item4">Item 4</option>
    </select>
 </div>
 ```
@@ -534,8 +565,6 @@ Attribute `[readonly]` is also available for input elements.
 <span id="validation" class="offset-anchor"></span>
 
 ## Validation error
-
-<span class="doc-badge doc-badge--info">2023.07.1</span>
 
 Add modifier `.env-form-field--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
