@@ -47,7 +47,9 @@
       line-height: 1;
       margin: 0;
       padding: 0.25em;
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      transition:
+         border-color 0.2s ease-in-out,
+         box-shadow 0.2s ease-in-out;
       width: 100%;
       min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
       cursor: text;

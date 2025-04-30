@@ -15,7 +15,9 @@
    color: css-var('link-font-color');
    display: block;
    text-decoration: none;
-   transition: background-color 0.25s ease, color 0.25s ease;
+   transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
 
    &:hover {
       color: css-var('link-hover-font-color');

@@ -116,7 +116,9 @@
       }
    }
 
-   &:has(> [class*='env-form-column'].env-form-control):has(> [class*='env-form-column'].env-form-label) {
+   &:has(> [class*='env-form-column'].env-form-control):has(
+         > [class*='env-form-column'].env-form-label
+      ) {
       display: flex;
       column-gap: css-var('spacing-small');
       align-items: center;

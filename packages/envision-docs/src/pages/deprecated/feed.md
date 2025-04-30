@@ -8,10 +8,10 @@ indexing: false
 
 Deprecated classes:
 
--  `env-feed`
--  `env-post`
--  `env-comments`
--  `env-comment`
+- `env-feed`
+- `env-post`
+- `env-comments`
+- `env-comment`
 
 ## Simple post with embedded attachment
 

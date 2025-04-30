@@ -1,5 +1,6 @@
-$variableNames: 'brand', 'success', 'warning', 'danger', 'info', 'base',
-   'darker', 'dark', 'normal', 'light', 'lighter', 'lightest', 'hover';
+$variableNames:
+   'brand', 'success', 'warning', 'danger', 'info', 'base', 'darker', 'dark',
+   'normal', 'light', 'lighter', 'lightest', 'hover';
 
 @each $name in $variableNames {
    .env-color--#{$name} {

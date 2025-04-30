@@ -37,11 +37,11 @@ The class `.env-form-control` creates a multi purpose container used to enhance 
 
 It can only contain elements of the following types:
 
--  `.env-form-label`
--  `.env-form-input`
--  `.env-button`
--  `.env-icon`
--  `[aria-hidden="true"]`
+- `.env-form-label`
+- `.env-form-input`
+- `.env-button`
+- `.env-icon`
+- `[aria-hidden="true"]`
 
 #### Usages
 

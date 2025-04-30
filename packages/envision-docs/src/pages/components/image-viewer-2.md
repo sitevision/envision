@@ -29,13 +29,13 @@ class="env-m-vertical--large"
 
 ## Features include
 
--  Buttons for displaying the previous and next slides.
--  Button for stopping and restarting rotation.
--  Keyboard navigation support.
--  Aria-live announcement for image changes.
--  Optional automatic rotation, always disabled for users who prefers reduced motion.
--  Optional download button in lightbox.
--  Optional placement of slideshow buttons.
+- Buttons for displaying the previous and next slides.
+- Button for stopping and restarting rotation.
+- Keyboard navigation support.
+- Aria-live announcement for image changes.
+- Optional automatic rotation, always disabled for users who prefers reduced motion.
+- Optional download button in lightbox.
+- Optional placement of slideshow buttons.
 
 ## Lightbox
 
@@ -112,8 +112,8 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
 
 ### Slideshow markup
 
--  All immediate child elements of the container will be included in slideshow.
--  The container used for initialization should have an `aria-label` attribute.
+- All immediate child elements of the container will be included in slideshow.
+- The container used for initialization should have an `aria-label` attribute.
 
 ```html-no-example
 <section aria-label="Slideshow label">
@@ -209,58 +209,58 @@ Combine zoom and captions using data attributes or links:
 },
 ```
 
--  `buttons` _{ download, showText }_
+- `buttons` _{ download, showText }_
 
-   -  Lightbox button options. Show/hide download button. Visible text in close/download buttons.
-   -  Default values: `{ download: true, showText: false }`
+   - Lightbox button options. Show/hide download button. Visible text in close/download buttons.
+   - Default values: `{ download: true, showText: false }`
 
--  `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
+- `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
 
-   -  Translation of buttons aria-label and aria-roledescription.
-      Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
-   -  Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
-      image, of_
+   - Translation of buttons aria-label and aria-roledescription.
+     Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
+   - Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
+     image, of_
 
--  `slides` _boolean_ | _{ [options object](#slides-options-object) }_
+- `slides` _boolean_ | _{ [options object](#slides-options-object) }_
 
-   -  Initialize a slideshow with default or custom options
-   -  Default value: `false`
+   - Initialize a slideshow with default or custom options
+   - Default value: `false`
 
 <span id="slides-options-object" class="offset-anchor"></span>
 
 ### Slides options object
 
--  `auto` _number_
+- `auto` _number_
 
-   -  Auto rotation possible, play button visible. Number is interval in _ms_.
-   -  Default value: `0` (auto rotation not available)
+   - Auto rotation possible, play button visible. Number is interval in _ms_.
+   - Default value: `0` (auto rotation not available)
 
--  `speed` _number_
+- `speed` _number_
 
-   -  Slide speed in _ms_.
-   -  Default value: `300`
+   - Slide speed in _ms_.
+   - Default value: `300`
 
--  `draggable` _boolean_
+- `draggable` _boolean_
 
-   -  Slides listen to mouse drag events in addition to touch events.
-   -  Default value: `true`
+   - Slides listen to mouse drag events in addition to touch events.
+   - Default value: `true`
 
--  `playing` _boolean_
+- `playing` _boolean_
 
-   -  If `auto` is set to > 0, this will start auto rotation automatically.
-   -  Default value: `false`
+   - If `auto` is set to > 0, this will start auto rotation automatically.
+   - Default value: `false`
 
--  `overlay` _boolean_
+- `overlay` _boolean_
 
-   -  Control buttons and caption should overlay the slides.
-   -  Default value: `true`
+   - Control buttons and caption should overlay the slides.
+   - Default value: `true`
 
--  `buttons` _{ size, type, ghost }_
+- `buttons` _{ size, type, ghost }_
 
-   -  Control button appearance.
-   -  Allowed value for `type`: Any Element color name in lowercase.
-   -  Allowed value for `size`: Any Button size name in lowercase.
-   -  Allowed value for `ghost`: true/false
+   - Control button appearance.
+   - Allowed value for `type`: Any Element color name in lowercase.
+   - Allowed value for `size`: Any Button size name in lowercase.
+   - Allowed value for `ghost`: true/false
 
 ## API functions
 
@@ -275,43 +275,43 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 
 ### Slider
 
--  `slider.pause()`
+- `slider.pause()`
 
-   -  Pause slider automatic rotation.
+   - Pause slider automatic rotation.
 
--  `slider.play()`
+- `slider.play()`
 
-   -  Start slider automatic rotation if available.
+   - Start slider automatic rotation if available.
 
--  `slider.next()`
+- `slider.next()`
 
-   -  Show next image.
+   - Show next image.
 
--  `slider.prev()`
+- `slider.prev()`
 
-   -  Show previous image.
+   - Show previous image.
 
--  `slider.goTo(index, speed)`
+- `slider.goTo(index, speed)`
 
-   -  Set slider to image at position _index_. Use _speed_ to control how fast image is shown.
+   - Set slider to image at position _index_. Use _speed_ to control how fast image is shown.
 
--  `slider.getPos()`
+- `slider.getPos()`
 
-   -  Get index for current image.
+   - Get index for current image.
 
 ### Lightbox
 
--  `lightbox.show(index)`
+- `lightbox.show(index)`
 
-   -  Show lightbox starting at _index_. Defaults to index 0.
+   - Show lightbox starting at _index_. Defaults to index 0.
 
--  `lightbox.close()`
+- `lightbox.close()`
 
-   -  Close the lightbox.
+   - Close the lightbox.
 
 ## Legacy documentation
 
 Image Viewer 2 is a replacement for the following, which are deprecated since 2023.07.1:
 
--  [Image slider](/deprecated/image-slider/)
--  [Image viewer](/deprecated/image-viewer/)
+- [Image slider](/deprecated/image-slider/)
+- [Image viewer](/deprecated/image-viewer/)

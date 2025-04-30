@@ -39,7 +39,9 @@
       text-shadow: none;
       text-decoration: none;
       cursor: pointer;
-      transition: background-color 0.25s ease, color 0.25s ease;
+      transition:
+         background-color 0.25s ease,
+         color 0.25s ease;
       border-radius: $radius $radius 0 0;
       margin: 0 css-var('spacing-xxx-small');
       padding: css-var('spacing-x-small') css-var('spacing-medium');

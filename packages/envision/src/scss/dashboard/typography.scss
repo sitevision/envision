@@ -21,8 +21,9 @@ $line-height-medium: 1.4 !default;
    (
       'ui-text-kpi-number-font-family': css-var('font-family'),
       'ui-text-kpi-number-font-color': css-var('font-color'),
-      'ui-text-kpi-number-font-size':
-         css-var('ui-text-kpi-number-font-size-medium'),
+      'ui-text-kpi-number-font-size': css-var(
+            'ui-text-kpi-number-font-size-medium'
+         ),
       'ui-text-kpi-number-font-weight': 800,
       'ui-text-kpi-number-text-transform': none,
       'ui-text-kpi-number-letter-spacing': -0.05em,

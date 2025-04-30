@@ -83,18 +83,18 @@ if (tooltipEl) {
 envision.tooltip(element, options);
 ```
 
--  `element` - You may pass any selector as a string, a DOM node or node list. Leave empty to initialize all new elements with class `env-tooltip`.
+- `element` - You may pass any selector as a string, a DOM node or node list. Leave empty to initialize all new elements with class `env-tooltip`.
 
--  `options` - _{ placement, delay }_
+- `options` - _{ placement, delay }_
 
-   -  `placement` _string_
+   - `placement` _string_
 
-      -  Prefered initial placement.
-      -  Default value: `top`
-      -  Possible values: `top`, `right`, `bottom`, `left`, `auto`,
-      -  Possible value modifiers: `{value}-start`, `{value}-end`
+      - Prefered initial placement.
+      - Default value: `top`
+      - Possible values: `top`, `right`, `bottom`, `left`, `auto`,
+      - Possible value modifiers: `{value}-start`, `{value}-end`
 
-   -  `delay` _number_
+   - `delay` _number_
 
-      -  Milliseconds for delaying the popover opening and closing.
-      -  Default value: `200`
+      - Milliseconds for delaying the popover opening and closing.
+      - Default value: `200`

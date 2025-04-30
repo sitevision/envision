@@ -54,8 +54,8 @@ export const getButtonElement = (options) => {
       : '';
    const buttonEl = createElement(`<${options.as} type="button"
       ${options.controls} class="env-button env-button--icon ${
-      options.className
-   }">
+         options.className
+      }">
       ${options.text} ${getButtonIcon(options.icon)}</${options.as}>`);
 
    for (const key in options.dataset) {

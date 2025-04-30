@@ -74,104 +74,104 @@ var singleSelectExample = envision.select('#example-tag-select-single-1', {
 
 ## Options
 
--  `maxItems` _number_
+- `maxItems` _number_
 
-   -  The max number of items the user can select.
-   -  Default value: `null` (unlimited)
-   -  Set to `1` to create a Single select.
+   - The max number of items the user can select.
+   - Default value: `null` (unlimited)
+   - Set to `1` to create a Single select.
 
--  `create` _boolean_
+- `create` _boolean_
 
-   -  Allow adding new tags
-   -  Default value: `false`
+   - Allow adding new tags
+   - Default value: `false`
 
--  `createFilter` _RegExp_ | _'string'_ | _function(input)_
+- `createFilter` _RegExp_ | _'string'_ | _function(input)_
 
-   -  Specifies a RegExp or a string containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
+   - Specifies a RegExp or a string containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
 
--  `clearButton` _boolean_
+- `clearButton` _boolean_
 
-   -  Show clear all button
-   -  Default value: `true`
-   -  Not available in Single select
+   - Show clear all button
+   - Default value: `true`
+   - Not available in Single select
 
--  `allowEmptyOption` _boolean_
+- `allowEmptyOption` _boolean_
 
-   -  Only available in Single select
-   -  Option with no value will be selectable if set to true.
-   -  Default value: `false`
+   - Only available in Single select
+   - Option with no value will be selectable if set to true.
+   - Default value: `false`
 
--  `placeholder` _'string'_
+- `placeholder` _'string'_
 
-   -  Use a custom placeholder.
-   -  Default: Will try to use option with empty value or placeholder attribute from HTML first.
+   - Use a custom placeholder.
+   - Default: Will try to use option with empty value or placeholder attribute from HTML first.
 
--  `dropdownParent` _'string'_
+- `dropdownParent` _'string'_
 
-   -  The element the dropdown menu is appended to.
-   -  Default: Will be appended as a child of the control.
+   - The element the dropdown menu is appended to.
+   - Default: Will be appended as a child of the control.
 
--  `options` _[{ value, text }]_
+- `options` _[{ value, text }]_
 
-   -  Create a Tag select from custom dataset
-   -  By default this is populated from the original element.
+   - Create a Tag select from custom dataset
+   - By default this is populated from the original element.
 
--  `maxOptions` _number_
+- `maxOptions` _number_
 
-   -  Limits the number of visible options
-   -  Default value: `null` (unlimited)
+   - Limits the number of visible options
+   - Default value: `null` (unlimited)
 
--  `items` _['value']_
+- `items` _['value']_
 
-   -  An array of the initial selected values.
-   -  By default this is populated from the original element.
+   - An array of the initial selected values.
+   - By default this is populated from the original element.
 
--  `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ add, no_results, remove_button, clear_button }_
+- `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ add, no_results, remove_button, clear_button }_
 
-   -  Translation of remove button, clear button, add item and no results.
-      Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
+   - Translation of remove button, clear button, add item and no results.
+     Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
 
--  `load` _function(query, callback)_
+- `load` _function(query, callback)_
 
-   -  Loads options by invoking the provided function. The function should accept two arguments (query, callback)
-      and should invoke the callback with the results once they are available.
+   - Loads options by invoking the provided function. The function should accept two arguments (query, callback)
+     and should invoke the callback with the results once they are available.
 
--  `preload` _boolean_ | _'string'_
+- `preload` _boolean_ | _'string'_
 
-   -  If true, the load function will be called upon control initialization with an empty search. Alternatively it can be set to 'focus' to call the load function when control receives focus.
+   - If true, the load function will be called upon control initialization with an empty search. Alternatively it can be set to 'focus' to call the load function when control receives focus.
 
--  `labelField` _'string'_
+- `labelField` _'string'_
 
-   -  The name of the property to render as an option / item label when loading remote data.
+   - The name of the property to render as an option / item label when loading remote data.
 
--  `valueField` _'string'_
+- `valueField` _'string'_
 
-   -  The name of the property to use as the value when loading remote data.
+   - The name of the property to use as the value when loading remote data.
 
--  `searchField` _'string'_ | _['string']_
+- `searchField` _'string'_ | _['string']_
 
-   -  A string or an array of property names to analyze when filtering options in remote data.
+   - A string or an array of property names to analyze when filtering options in remote data.
 
--  `sortField` _'string'_ | _[object]_ | _function(a, b)_
+- `sortField` _'string'_ | _[object]_ | _function(a, b)_
 
-   -  A string, an array of objects or a function to sort available options.
-   -  By default the the order is based on the current locale.
-   -  To disable sorting entirely and maintain the original order of options, use:
-      `sortField:[{field:'$order'},{field:'$score'}]`
+   - A string, an array of objects or a function to sort available options.
+   - By default the the order is based on the current locale.
+   - To disable sorting entirely and maintain the original order of options, use:
+     `sortField:[{field:'$order'},{field:'$score'}]`
 
--  `render` _object_
+- `render` _object_
 
-   -  An object specifications for rendering.
-   -  Available options:
-      -  `item` _function(data, escape)_
-      -  `option` _function(data, escape)_
-      -  `option_create` _function(data, escape)_
-      -  `no_results` _function(data, escape)_
-      -  `loading` _function(data, escape)_
-   -  The `escape` argument is a function that takes a string and escapes all special HTML characters. This is very important to use to prevent XSS vulnerabilities.
+   - An object specifications for rendering.
+   - Available options:
+      - `item` _function(data, escape)_
+      - `option` _function(data, escape)_
+      - `option_create` _function(data, escape)_
+      - `no_results` _function(data, escape)_
+      - `loading` _function(data, escape)_
+   - The `escape` argument is a function that takes a string and escapes all special HTML characters. This is very important to use to prevent XSS vulnerabilities.
 
--  <code class="language-text">on<i>EventName</i></code> _function()_
-   -  See Event handlers and Advanced example
+- <code class="language-text">on<i>EventName</i></code> _function()_
+   - See Event handlers and Advanced example
 
 ## Advanced examples
 
@@ -355,60 +355,60 @@ _Note: The `readonly` attribute is not supported or relevant to the Tag Select c
 
 ## Event handlers
 
--  `onInitialize` _function() { ... }_
+- `onInitialize` _function() { ... }_
 
-   -  Invoked once the control is completely initialized.
+   - Invoked once the control is completely initialized.
 
--  `onChange` _function(value) { ... }_
+- `onChange` _function(value) { ... }_
 
-   -  Invoked when the value of the control changes.
+   - Invoked when the value of the control changes.
 
--  `onItemAdd` _function(value, $item) { ... }_
+- `onItemAdd` _function(value, $item) { ... }_
 
-   -  Invoked when an item is selected.
+   - Invoked when an item is selected.
 
--  `onItemRemove` _function(value) { ... }_
+- `onItemRemove` _function(value) { ... }_
 
-   -  Invoked when an item is deselected.
+   - Invoked when an item is deselected.
 
--  `onClear` _function() { ... }_
+- `onClear` _function() { ... }_
 
-   -  Invoked when the control is manually cleared via the clear() method.
+   - Invoked when the control is manually cleared via the clear() method.
 
--  `onOptionAdd` _function(value, data) { ... }_
+- `onOptionAdd` _function(value, data) { ... }_
 
-   -  Invoked when a new option is added to the available options list.
+   - Invoked when a new option is added to the available options list.
 
--  `onOptionRemove` _function(value) { ... }_
+- `onOptionRemove` _function(value) { ... }_
 
-   -  Invoked when an option is removed from the available options.
+   - Invoked when an option is removed from the available options.
 
--  `onOptionClear` _function() { ... }_
+- `onOptionClear` _function() { ... }_
 
-   -  Invoked when all options are removed from the control.
+   - Invoked when all options are removed from the control.
 
--  `onDropdownOpen` _function(dropdown) { ... }_
+- `onDropdownOpen` _function(dropdown) { ... }_
 
-   -  Invoked when the dropdown opens.
+   - Invoked when the dropdown opens.
 
--  `onDropdownClose` _function(dropdown) { ... }_
+- `onDropdownClose` _function(dropdown) { ... }_
 
-   -  Invoked when the dropdown closes.
+   - Invoked when the dropdown closes.
 
--  `onType` _function(str) { ... }_
+- `onType` _function(str) { ... }_
 
-   -  Invoked when the user types while filtering options.
+   - Invoked when the user types while filtering options.
 
--  `onFocus` _function() { ... }_
+- `onFocus` _function() { ... }_
 
-   -  Invoked when the control gains focus.
+   - Invoked when the control gains focus.
 
--  `onBlur` _function() { ... }_
+- `onBlur` _function() { ... }_
 
-   -  Invoked when the control loses focus.
+   - Invoked when the control loses focus.
 
--  `onLoad` _function() { ... }_
-   -  Invoked when new options have been loaded and added to the control via the load option.
+- `onLoad` _function() { ... }_
+   - Invoked when new options have been loaded and added to the control via the load option.
 
 ## API functions
 
@@ -423,93 +423,93 @@ envision.select('#tag-select').then(function (selects) {
 
 ### Options
 
--  `addOptions(data)`
+- `addOptions(data)`
 
-   -  Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
+   - Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
 
--  `getOption(value)`
+- `getOption(value)`
 
-   -  Retrieves the dom element for the option identified by the given value.
+   - Retrieves the dom element for the option identified by the given value.
 
--  `updateOption(value, data)`
+- `updateOption(value, data)`
 
-   -  Updates an option available for selection. If it is visible in the selected items or options dropdown, it will be re-rendered automatically.
+   - Updates an option available for selection. If it is visible in the selected items or options dropdown, it will be re-rendered automatically.
 
--  `removeOption(value)`
+- `removeOption(value)`
 
-   -  Removes the option identified by the given value.
+   - Removes the option identified by the given value.
 
--  `refreshOptions(triggerDropdown)`
+- `refreshOptions(triggerDropdown)`
 
-   -  Refreshes the list of available options shown in the autocomplete dropdown menu.
+   - Refreshes the list of available options shown in the autocomplete dropdown menu.
 
--  `load(query)`
+- `load(query)`
 
-   -  Invoked when new options should be loaded from the server. Called with the current query string.
+   - Invoked when new options should be loaded from the server. Called with the current query string.
 
--  `open()`
+- `open()`
 
-   -  Shows the autocomplete dropdown containing the available options.
+   - Shows the autocomplete dropdown containing the available options.
 
--  `close()`
+- `close()`
 
-   -  Closes the autocomplete dropdown menu.
+   - Closes the autocomplete dropdown menu.
 
--  `clear(silent)`
+- `clear(silent)`
 
-   -  Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
+   - Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
 
--  `clearOptions(clearFilter?)`
+- `clearOptions(clearFilter?)`
 
-   -  Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
+   - Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
 
--  `clearFilter(option, value)`
+- `clearFilter(option, value)`
 
-   -  Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
+   - Callback used by clearOptions() to decide whether or not an option should be removed. Return true to keep an option, false to remove
 
 ### Items
 
--  `getItem(value)`
+- `getItem(value)`
 
-   -  Returns the dom element of the item matching the given value.
+   - Returns the dom element of the item matching the given value.
 
--  `addItem(value, silent)`
-   -  "Selects" an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.
+- `addItem(value, silent)`
+   - "Selects" an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.
 
 ### Other
 
--  `getValue()`
+- `getValue()`
 
-   -  Returns the value of the control. If multiple items can be selected with a "select" input tag (e.g. `<select multiple>`), this returns an array. Otherwise, returns a string (separated by delimiter if "multiple").
+   - Returns the value of the control. If multiple items can be selected with a "select" input tag (e.g. `<select multiple>`), this returns an array. Otherwise, returns a string (separated by delimiter if "multiple").
 
--  `setValue(value, silent)`
+- `setValue(value, silent)`
 
-   -  Resets the selected items to the given value.
+   - Resets the selected items to the given value.
 
--  `lock()`
+- `lock()`
 
-   -  Disables user input on the control. The control can still receive focus.
+   - Disables user input on the control. The control can still receive focus.
 
--  `unlock()`
+- `unlock()`
 
-   -  Re-enables user input on the control.
+   - Re-enables user input on the control.
 
--  `disable()`
+- `disable()`
 
-   -  Disables user input on the control. The control can not receive focus.
+   - Disables user input on the control. The control can not receive focus.
 
--  `enable()`
+- `enable()`
 
-   -  Re-enables the control.
+   - Re-enables the control.
 
--  `destroy()`
+- `destroy()`
 
-   -  Destroys the control and unbinds event listeners so that it can be garbage collected.
+   - Destroys the control and unbinds event listeners so that it can be garbage collected.
 
--  `focus()`
+- `focus()`
 
-   -  Focuses the control.
+   - Focuses the control.
 
--  `blur()`
+- `blur()`
 
-   -  Blurs the control.
+   - Blurs the control.

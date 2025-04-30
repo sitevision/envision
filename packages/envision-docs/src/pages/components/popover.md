@@ -211,44 +211,44 @@ if (popoverTooltipContentEl) {
 
 ## Options <span id="options" class="offset-anchor"></span>
 
--  `placement` _string_
+- `placement` _string_
 
-   -  Prefered initial placement.
-   -  Default value: `top`
-   -  Possible values: `top`, `right`, `bottom`, `left`
+   - Prefered initial placement.
+   - Default value: `top`
+   - Possible values: `top`, `right`, `bottom`, `left`
 
--  `title` _string_
+- `title` _string_
 
-   -  Popover title.
-   -  Default value: `''`
+   - Popover title.
+   - Default value: `''`
 
--  `content` _string_ | _HTMLElement_
+- `content` _string_ | _HTMLElement_
 
-   -  Popover content.
-   -  Default value: `''`
+   - Popover content.
+   - Default value: `''`
 
--  `escapeContent` _boolean_
+- `escapeContent` _boolean_
 
-   -  Treat option `content` as text or HTML. If popover content is HTML, this needs to be set to `false`.
-   -  Default value: `true`
+   - Treat option `content` as text or HTML. If popover content is HTML, this needs to be set to `false`.
+   - Default value: `true`
 
--  `trigger` _string_
+- `trigger` _string_
 
-   -  Single event or mulitple space separated events for opening the popover.
-   -  Default value: `click`
+   - Single event or mulitple space separated events for opening the popover.
+   - Default value: `click`
 
--  `delay` _number_
+- `delay` _number_
 
-   -  Milliseconds for delaying the popover closing. When opening on hover, a value of at least `200` is recommended.
-   -  Default value: `0`
+   - Milliseconds for delaying the popover closing. When opening on hover, a value of at least `200` is recommended.
+   - Default value: `0`
 
--  `clickOutside` _boolean_
+- `clickOutside` _boolean_
 
-   -  Close popover on click outside.
-   -  Default value: `false`
+   - Close popover on click outside.
+   - Default value: `false`
 
--  `type` _string_
+- `type` _string_
 
-   -  Popover styling
-   -  Default value: null
-   -  Possible values: `menu`, `tooltip`
+   - Popover styling
+   - Default value: null
+   - Possible values: `menu`, `tooltip`

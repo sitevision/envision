@@ -9,10 +9,10 @@ The Dialog component relies heavily on
 The component must be initialized from Javascript. In the Envision scripted component you will find a
 few extra features:
 
--  Opener button added as option on initialization
--  Close on click outside as an option
--  Nice fade-in animation
--  Focus trap to keep tab navigation from leaving the dialog
+- Opener button added as option on initialization
+- Close on click outside as an option
+- Nice fade-in animation
+- Focus trap to keep tab navigation from leaving the dialog
 
 ### Default dialog
 
@@ -459,21 +459,21 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 }
 ```
 
--  `opener` _'string'_ | _Node_
+- `opener` _'string'_ | _Node_
 
-   -  A selector as a string or a DOM Node to assign event listener for opening the dialog.
-   -  Default value: `null`
+   - A selector as a string or a DOM Node to assign event listener for opening the dialog.
+   - Default value: `null`
 
--  `backdropClick` _boolean_
+- `backdropClick` _boolean_
 
-   -  Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
-   -  Default value: `true`
+   - Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
+   - Default value: `true`
 
--  `placement` _'string'_ <span class="doc-badge doc-badge--info">since Sitevision 2024.09.2</span>
+- `placement` _'string'_ <span class="doc-badge doc-badge--info">since Sitevision 2024.09.2</span>
 
-   -  Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
-   -  Allowed values: `'body'`
-   -  Default value: `null`
+   - Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
+   - Allowed values: `'body'`
+   - Default value: `null`
 
 ## API
 
@@ -498,17 +498,17 @@ envision.dialog('#dialog').then(function (dialogs) {
 
 ### Options
 
--  `el`
+- `el`
 
-   -  Access to the [HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement), e.g. `open` and `returnValue`.
+   - Access to the [HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement), e.g. `open` and `returnValue`.
 
--  `show()`
+- `show()`
 
-   -  Show the dialog. Uses [HTMLDialogElement showModal()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) to always display the dialog in the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer).
+   - Show the dialog. Uses [HTMLDialogElement showModal()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) to always display the dialog in the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer).
 
--  `close()`
+- `close()`
 
-   -  Close the dialog.
+   - Close the dialog.
 
 ## Events
 

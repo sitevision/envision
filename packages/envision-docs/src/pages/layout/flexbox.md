@@ -12,9 +12,9 @@ Modifier classes are named using the format: `env-flex--direction-{value}`
 
 Valid modifier values
 
--  `row-reverse`
--  `column`
--  `column-reverse`
+- `row-reverse`
+- `column`
+- `column-reverse`
 
 Examples
 
@@ -50,10 +50,10 @@ Applicable to flex containers (`env-flex`). Modifier classes are named using the
 
 Valid values
 
--  `end`
--  `center`
--  `between`
--  `around`
+- `end`
+- `center`
+- `between`
+- `around`
 
 Examples
 
@@ -104,11 +104,11 @@ Modifier classes are named using the format: `env-flex--align-items-{value}`
 
 Valid values
 
--  `stretch`
--  `start`
--  `end`
--  `center`
--  `baseline`
+- `stretch`
+- `start`
+- `end`
+- `center`
+- `baseline`
 
 ```html
 <div
@@ -158,8 +158,8 @@ Modifiers applicable to flex containers (`env-flex`).
 
 Valid modifiers:
 
--  `env-flex--wrap`
--  `env-flex--wrap-reverse`
+- `env-flex--wrap`
+- `env-flex--wrap-reverse`
 
 ```html
 <div class="example-flex env-flex">
@@ -193,11 +193,11 @@ Modifier classes are named using the format: `env-flex__item--align-{value}`
 
 Valid values
 
--  `stretch`
--  `start`
--  `end`
--  `center`
--  `baseline`
+- `stretch`
+- `start`
+- `end`
+- `center`
+- `baseline`
 
 ```html
 <div class="example-flex example-flex--align env-flex">
@@ -267,43 +267,43 @@ Valid values `1-10`
 
 Direction
 
--  `env-flex--row-reverse`
--  `env-flex--column`
--  `env-flex--column-reverse`
+- `env-flex--row-reverse`
+- `env-flex--column`
+- `env-flex--column-reverse`
 
 Justify content
 
--  `env-justify-content--end`
--  `env-justify-content--center`
--  `env-justify-content--between`
--  `env-justify-content--around`
+- `env-justify-content--end`
+- `env-justify-content--center`
+- `env-justify-content--between`
+- `env-justify-content--around`
 
 Align items
 
--  `env-align-items--stretch`
--  `env-align-items--start`
--  `env-align-items--end`
--  `env-align-items--center`
--  `env-align-items--baseline`
+- `env-align-items--stretch`
+- `env-align-items--start`
+- `env-align-items--end`
+- `env-align-items--center`
+- `env-align-items--baseline`
 
 Align self
 
--  `env-align-self--stretch`
--  `env-align-self--start`
--  `env-align-self--end`
--  `env-align-self--center`
--  `env-align-self--baseline`
+- `env-align-self--stretch`
+- `env-align-self--start`
+- `env-align-self--end`
+- `env-align-self--center`
+- `env-align-self--baseline`
 
 Flex length
 
--  `env-flex-length--{1-10}`
+- `env-flex-length--{1-10}`
 
 Flex grow
 
--  `env-flex-grow--{1-10}`
+- `env-flex-grow--{1-10}`
 
 Flex wrap
 
--  `env-flex-wrap--nowrap`
--  `env-flex-wrap--wrap`
--  `env-flex-wrap--wrap-reverse`
+- `env-flex-wrap--nowrap`
+- `env-flex-wrap--wrap`
+- `env-flex-wrap--wrap-reverse`

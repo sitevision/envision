@@ -8,14 +8,14 @@ larger sections or less defined parts of components.
 For example, `--env-section-background-color`
 is used as background color for Modal dialogs.
 
--  `--env-background-color` - Theme/body background color
--  `--env-section-background-color` - Used for larger content sections.
--  `--env-section-background-color-05` <span class="doc-badge doc-badge--info">2025.03.1</span>
--  `--env-font-color` - Base text color
--  `--env-link-font-color` - Base link color
--  `--env-link-hover-font-color` - Base link:hover color
--  `--env-border-color` - Base border color
--  `--env-border-color-05` - Alternative border color <span class="doc-badge doc-badge--info">2025.03.1</span>
+- `--env-background-color` - Theme/body background color
+- `--env-section-background-color` - Used for larger content sections.
+- `--env-section-background-color-05` <span class="doc-badge doc-badge--info">2025.03.1</span>
+- `--env-font-color` - Base text color
+- `--env-link-font-color` - Base link color
+- `--env-link-hover-font-color` - Base link:hover color
+- `--env-border-color` - Base border color
+- `--env-border-color-05` - Alternative border color <span class="doc-badge doc-badge--info">2025.03.1</span>
 
 `--env-section-background-color-05` is calculated from `--env-section-background-color`.
 
@@ -54,30 +54,30 @@ Depending on design and usage, it´s recommended to try to get at least a 4.5:1 
 
 The following colors are deprecated and will be removed.
 
--  env-bg-color--brand
--  env-bg-color--success
--  env-bg-color--info
--  env-bg-color--warning
--  env-bg-color--danger
--  env-bg-color--hover
--  env-bg-color--base
--  env-bg-color--darker
--  env-bg-color--dark
--  env-bg-color--normal
--  env-bg-color--light
--  env-bg-color--lighter
--  env-bg-color--lightest
--  env-color--brand
--  env-color--success
--  env-color--info
--  env-color--warning
--  env-color--danger
--  env-color--hover
--  env-color--base
--  env-color--darker
--  env-color--dark
--  env-color--normal
--  env-color--light
--  env-color--lighter
--  env-color--lightest
--  env-border-color-light <span class="doc-badge doc-badge--danger">2025.03.1</span>
+- env-bg-color--brand
+- env-bg-color--success
+- env-bg-color--info
+- env-bg-color--warning
+- env-bg-color--danger
+- env-bg-color--hover
+- env-bg-color--base
+- env-bg-color--darker
+- env-bg-color--dark
+- env-bg-color--normal
+- env-bg-color--light
+- env-bg-color--lighter
+- env-bg-color--lightest
+- env-color--brand
+- env-color--success
+- env-color--info
+- env-color--warning
+- env-color--danger
+- env-color--hover
+- env-color--base
+- env-color--darker
+- env-color--dark
+- env-color--normal
+- env-color--light
+- env-color--lighter
+- env-color--lightest
+- env-border-color-light <span class="doc-badge doc-badge--danger">2025.03.1</span>

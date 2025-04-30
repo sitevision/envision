@@ -18,7 +18,9 @@
       top: calc(
          -1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px)
       );
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      transition:
+         border-color 0.2s ease-in-out,
+         box-shadow 0.2s ease-in-out;
       width: $handle-size-desktop;
 
       @include focus-visible;

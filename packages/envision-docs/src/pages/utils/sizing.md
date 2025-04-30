@@ -7,15 +7,15 @@ Sizing utility classes are available for width and height. Classes are named usi
 
 Valid values for _property_
 
--  `w` for `width`
--  `h` for `height`
+- `w` for `width`
+- `h` for `height`
 
 Valid values for _size_ (%)
 
--  `25`
--  `50`
--  `75`
--  `100`
+- `25`
+- `50`
+- `75`
+- `100`
 
 Examples `width`
 
@@ -55,5 +55,5 @@ Utility classes are also available for `max-width:100%` and `max-height:100%` an
 
 Valid values for _property_
 
--  `w` for `width`
--  `h` for `height`
+- `w` for `width`
+- `h` for `height`

@@ -36,9 +36,9 @@ Delay showing the spinner to avoid spinner flashing when the content loads fast.
 Use modifier `env-spinner--fade-in` or `env-spinner-bounce--fade-in` for a delayed spinner.
 Data attribute `data-delay="short"` may be used to control delay timing. Allowed values are:
 
--  `short` (0.25s delay)
--  `medium` (0.5s)
--  `long` (1s)
+- `short` (0.25s delay)
+- `medium` (0.5s)
+- `long` (1s)
 
 ### Delayed spinner demo
 

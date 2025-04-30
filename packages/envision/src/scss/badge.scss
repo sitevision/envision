@@ -17,8 +17,14 @@
       @include focus-outline;
    }
 
-   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):hover,
-   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):focus {
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):hover,
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):focus {
       background-color: css-var('element-primary-background-color-dark');
    }
 

@@ -102,8 +102,9 @@ $link-hover-text-decoration: underline !default;
       'link-secondary-font-color': css-var('font-color'),
       'link-secondary-text-decoration': css-var('link-text-decoration'),
       'link-secondary-hover-font-color': css-var('link-font-color'),
-      'link-secondary-hover-text-decoration':
-         css-var('link-hover-text-decoration'),
+      'link-secondary-hover-text-decoration': css-var(
+            'link-hover-text-decoration'
+         ),
    )
 );
 
@@ -152,8 +153,9 @@ $ui-color-status-error-text: #c15252;
 
 // ----- UI BRAND COLORS -----
 
-$BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
-   '50', '55', '60', '65', '70', '75', '80', '85', '90', '95', '100';
+$BRAND_COLOR_VARIANTS:
+   '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65',
+   '70', '75', '80', '85', '90', '95', '100';
 
 @include to-css-custom-property(
    (
@@ -205,7 +207,8 @@ $BRAND_COLOR_VARIANTS: '05', '10', '15', '20', '25', '30', '35', '40', '45',
 
 // ----- UI TEXT -----
 
-$UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption';
+$UI_TEXT_NAMES:
+   'overline', 'heading', 'sectionheading', 'subheading', 'caption';
 
 @include to-css-custom-property(
    (
@@ -244,12 +247,13 @@ $UI_TEXT_NAMES: 'overline', 'heading', 'sectionheading', 'subheading', 'caption'
 
 // ----- CONTENT TEXT -----
 
-$CONTENT_TEXT_HEADING_NAMES: 'heading-01', 'heading-02', 'heading-03',
-   'heading-04', 'heading-05', 'heading-06', 'display-01', 'display-02',
-   'display-03';
-$CONTENT_TEXT_BODY_NAMES: 'summary-01', 'body-01', 'body-02', 'body-03',
-   'body-04', 'caption-01', 'quotation-01', 'quotation-02', 'table-caption-01',
-   'table-heading-01', 'table-data-01';
+$CONTENT_TEXT_HEADING_NAMES:
+   'heading-01', 'heading-02', 'heading-03', 'heading-04', 'heading-05',
+   'heading-06', 'display-01', 'display-02', 'display-03';
+$CONTENT_TEXT_BODY_NAMES:
+   'summary-01', 'body-01', 'body-02', 'body-03', 'body-04', 'caption-01',
+   'quotation-01', 'quotation-02', 'table-caption-01', 'table-heading-01',
+   'table-data-01';
 
 $CONTENT_TEXT_NAMES: list.join(
    $CONTENT_TEXT_HEADING_NAMES,
@@ -279,8 +283,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'heading',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -320,8 +323,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'display',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -349,8 +351,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'summary',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -371,8 +372,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'body',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -403,8 +403,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'caption',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -425,8 +424,7 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'quotation',
-      'defaults':
-         map.merge(
+      'defaults': map.merge(
             map.merge(
                $content-text-base,
                (
@@ -452,8 +450,10 @@ $content-text-links: (
 @include content-text-font-to-css-custom-properties(
    (
       'name': 'table',
-      'defaults':
-         map.merge(map.merge($content-text-base, ()), $content-text-links),
+      'defaults': map.merge(
+            map.merge($content-text-base, ()),
+            $content-text-links
+         ),
       'variants': (
          'caption-01': (
             'font-size': 0.8125em,
@@ -565,16 +565,18 @@ $element-secondary-font-color: #ffffff;
       'block-primary-link-font-color': css-var('link-font-color'),
       'block-primary-link-hover-font-color': css-var('link-hover-font-color'),
       'block-primary-link-text-decoration': css-var('link-text-decoration'),
-      'block-primary-link-hover-text-decoration':
-         css-var('link-hover-text-decoration'),
+      'block-primary-link-hover-text-decoration': css-var(
+            'link-hover-text-decoration'
+         ),
       'block-primary-background-color': $block-primary-background-color,
       'block-primary-border-color': $block-primary-border-color,
       'block-secondary-font-color': $font-color,
       'block-secondary-link-font-color': css-var('link-font-color'),
       'block-secondary-link-hover-font-color': css-var('link-hover-font-color'),
       'block-secondary-link-text-decoration': css-var('link-text-decoration'),
-      'block-secondary-link-hover-text-decoration':
-         css-var('link-hover-text-decoration'),
+      'block-secondary-link-hover-text-decoration': css-var(
+            'link-hover-text-decoration'
+         ),
       'block-secondary-background-color': $block-secondary-background-color,
       'block-secondary-border-color': $block-secondary-border-color,
    )
@@ -584,20 +586,28 @@ $element-secondary-font-color: #ffffff;
    (
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
-      'element-background-color-dark':
-         darken($element-default-background-color, 8%),
-      'element-background-color-light':
-         lighten($element-default-background-color, 3%),
+      'element-background-color-dark': darken(
+            $element-default-background-color,
+            8%
+         ),
+      'element-background-color-light': lighten(
+            $element-default-background-color,
+            3%
+         ),
       'element-primary-font-color': #ffffff,
       'element-primary-background-color': $color-primary,
       'element-primary-background-color-dark': darken($color-primary, 8%),
       'element-primary-background-color-light': lighten($color-primary, 3%),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
-      'element-secondary-background-color-dark':
-         darken($element-secondary-background-color, 8%),
-      'element-secondary-background-color-light':
-         lighten($element-secondary-background-color, 3%),
+      'element-secondary-background-color-dark': darken(
+            $element-secondary-background-color,
+            8%
+         ),
+      'element-secondary-background-color-light': lighten(
+            $element-secondary-background-color,
+            3%
+         ),
       'element-success-font-color': #ffffff,
       'element-success-background-color': $color-success,
       'element-success-background-color-dark': darken($color-success, 8%),

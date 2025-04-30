@@ -32,8 +32,8 @@ envision.rangeSlider('#my-slider', object);
 
 ### values
 
--  **Type:** Array
--  **Default:** [0, 0]
+- **Type:** Array
+- **Default:** [0, 0]
 
 Values to initialize the slider with.
 
@@ -45,8 +45,8 @@ envision.rangeSlider('#my-slider', {
 
 ### min
 
--  **Type:** Number
--  **Default:** 0
+- **Type:** Number
+- **Default:** 0
 
 The minimum value of the slider.
 
@@ -58,8 +58,8 @@ envision.rangeSlider('#my-slider', {
 
 ### max
 
--  **Type:** Number
--  **Default:** 100
+- **Type:** Number
+- **Default:** 100
 
 The maximum value of the slider.
 
@@ -71,8 +71,8 @@ envision.rangeSlider('#my-slider', {
 
 ### step
 
--  **Type:** Number
--  **Default:** 1
+- **Type:** Number
+- **Default:** 1
 
 The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.
 
@@ -84,8 +84,8 @@ envision.rangeSlider('#my-slider', {
 
 ### visibleValues
 
--  **Type:** Boolean
--  **Default:** true
+- **Type:** Boolean
+- **Default:** true
 
 If values should be visible below the handles.
 
@@ -134,7 +134,7 @@ Triggered when slide is completed. Event `slidestop` is deprecated, please use `
 
 Parameters
 
--  **values:** An array of values to set
+- **values:** An array of values to set
 
 Set the values for the range.
 

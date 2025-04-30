@@ -5,7 +5,8 @@
       border: none !important;
    }
 
-   $logicalProps: 'block', 'inline', 'block-start', 'inline-end', 'block-end',
+   $logicalProps:
+      'block', 'inline', 'block-start', 'inline-end', 'block-end',
       'inline-start';
 
    @each $p in $logicalProps {
