@@ -20,7 +20,7 @@
    "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
-      "@babel/core": "^7.26.10",
+      "@babel/core": "^7.27.1",
       "@babel/preset-env": "^7.27.1",
       "autoprefixer": "^10.4.21",
       "babel-eslint": "^10.1.0",
