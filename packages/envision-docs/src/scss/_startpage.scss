@@ -1,8 +1,10 @@
+@use 'variables';
+
 .start-hero {
    background-color: var(--doc-hero-background-color);
    padding: 7.5em 0 10em;
 
-   @include main-layout-break {
+   @include variables.main-layout-break {
       padding: 16em 0;
    }
 

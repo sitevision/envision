@@ -1,3 +1,5 @@
+@use 'variables';
+
 .doc-badge {
    border-radius: 0.25em;
    display: inline-block;
@@ -10,7 +12,7 @@
    background-color: #80c5ff;
    text-decoration: none !important;
 
-   @include dark-mode-status-override;
+   @include variables.dark-mode-status-override;
 
    &--success {
       background-color: var(--env-ui-color-status-active);

@@ -1,3 +1,5 @@
+@use 'variables';
+
 $exampleElBg: #8cb6c0;
 $exampleElColor: #000;
 $exampleElBorder: #80868b;
@@ -28,7 +30,7 @@ $exampleElPaddingBg: #c3d08a;
    z-index: 900;
    opacity: 1;
 
-   @include dark-mode {
+   @include variables.dark-mode {
       backdrop-filter: invert(20%);
    }
 }
@@ -928,7 +930,7 @@ canvas.example-canvas {
       background-color: var(--env-ui-color-brand);
       color: var(--env-ui-color-brand-contrast);
 
-      @each $variant in $BRAND_COLOR_VARIANTS {
+      @each $variant in variables.$BRAND_COLOR_VARIANTS {
          &-#{$variant} {
             background-color: var(--env-ui-color-brand-#{$variant});
             color: var(--env-ui-color-brand-#{$variant}-contrast);

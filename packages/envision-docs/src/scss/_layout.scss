@@ -1,3 +1,5 @@
+@use 'variables';
+
 $layout-gap: 2em;
 $layout-col-sidenav: 19em;
 $layout-col-main: 59em;
@@ -23,14 +25,14 @@ $layout-col-main: 59em;
    flex: 1 1 100%;
    grid-area: body;
    margin: 0 auto;
-   padding: 7.5em #{'min(2.6666vw,' + $site-padding + ')'} 0;
+   padding: 7.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
    width: 100%;
    max-width: 80em;
 
-   @include main-layout-break {
+   @include variables.main-layout-break {
       display: grid;
       margin: 0 auto;
-      padding: 9.5em #{'min(2.6666vw,' + $site-padding + ')'} 0;
+      padding: 9.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
       gap: 2em;
       grid-template-areas: 'sidenav main';
       grid-template-columns: min($layout-col-sidenav, 23.75vw) min(

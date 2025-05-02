@@ -1,8 +1,10 @@
+@use 'variables';
+
 .sidenav {
    --env-font-color: var(--doc-font-color);
    font-family: var(--doc-font-family);
 
-   @include dark-mode-element-override;
+   @include variables.dark-mode-element-override;
 
    background-color: var(--doc-sidenav-background-color);
    color: var(--doc-sidenav-font-color);
@@ -24,7 +26,7 @@
       color: var(--env-font-color);
       text-decoration: none;
 
-      @include focus-visible;
+      @include variables.focus-visible;
    }
 
    &__items {

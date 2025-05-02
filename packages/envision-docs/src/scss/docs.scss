@@ -1,27 +1,26 @@
-@import 'variables';
-@import 'webfonts';
+@use 'webfonts';
 
-@import 'base';
-@import 'sitevision-font-issue-detection';
+@use 'base';
+@use 'sitevision-font-issue-detection';
 
-@import 'layout';
-@import 'banner';
-@import 'header';
-@import 'sidenav';
-@import 'mobilenav';
-@import 'teasernav';
-@import 'footer';
+@use 'layout';
+@use 'banner';
+@use 'header';
+@use 'sidenav';
+@use 'mobilenav';
+@use 'teasernav';
+@use 'footer';
 
-@import 'startpage';
+@use 'startpage';
 
-@import 'badge';
-@import 'theme-switch';
-@import 'markdown-generated-content';
-@import 'highlight';
-@import 'icons';
+@use 'badge';
+@use 'theme-switch';
+@use 'markdown-generated-content';
+@use 'highlight';
+@use 'icons';
 
-@import 'demo';
-@import 'demo-themes/example-brand';
-@import 'doc-themes/doc-theme-dark';
+@use 'demo';
+@use 'demo-themes/example-brand';
+@use 'doc-themes/doc-theme-dark';
 
-@import 'print';
+@use 'print';

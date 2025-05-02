@@ -1,3 +1,5 @@
+@use 'variables';
+
 .teaserNav {
    --env-cardholder-grid-gap: 2em;
    --env-cardholder-grid-column-width: 16em;
@@ -18,7 +20,7 @@
          text-decoration: underline;
       }
 
-      @include focus-visible;
+      @include variables.focus-visible;
    }
 
    .env-cardholder-grid {

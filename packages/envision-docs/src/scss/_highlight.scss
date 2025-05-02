@@ -1,3 +1,5 @@
+@use 'variables';
+
 :not(pre) > code[class*='language-'] {
    // Inline code
    font-family: var(--doc-code-font-family);
@@ -46,7 +48,7 @@
       word-break: normal;
       max-width: 100%;
 
-      @include main-layout-break {
+      @include variables.main-layout-break {
          font-size: 0.8em;
       }
    }

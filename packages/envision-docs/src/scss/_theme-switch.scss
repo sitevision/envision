@@ -1,3 +1,5 @@
+@use 'variables';
+
 .doc-theme-switch {
    position: relative;
    z-index: 1;
@@ -9,7 +11,7 @@
    --sw: var(--doc-color-brand);
    --ch: var(--doc-color-brand-contrast); //var(--bg);
 
-   @include dark-mode {
+   @include variables.dark-mode {
       --ch: #ddd4ff; // var(--doc-header-background-color);
       --bg: #6539f8; // var(--doc-header-background-color);
       --sw: #1f2a4d; // var(--doc-header-background-color);
@@ -92,7 +94,7 @@
       }
 
       &:focus-visible {
-         @include focus-outline;
+         @include variables.focus-outline;
       }
    }
 }

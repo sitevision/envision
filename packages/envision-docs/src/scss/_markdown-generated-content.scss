@@ -1,3 +1,5 @@
+@use 'variables';
+
 //----- STYLE FOR MARKDOWN GENERATED MARKUP ELEMENTS START -----
 
 @mixin restore-doc-font {
@@ -64,7 +66,7 @@
       text-decoration: underline;
    }
 
-   @include focus-visible;
+   @include variables.focus-visible;
 }
 
 .doc-link-secondary--new,

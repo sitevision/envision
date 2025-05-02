@@ -1,9 +1,11 @@
+@use 'variables';
+
 .banner {
    grid-area: banner;
    display: block;
-   padding: 7.5em 1em $site-padding;
+   padding: 7.5em 1em variables.$site-padding;
 
-   @include dark-mode-status-override;
+   @include variables.dark-mode-status-override;
 
    &--deprecated {
       background-color: var(--env-ui-color-status-attention);

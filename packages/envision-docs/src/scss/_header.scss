@@ -1,3 +1,5 @@
+@use 'variables';
+
 .header {
    --env-font-color: var(--doc-header-font-color);
    color: var(--doc-header-font-color);
@@ -10,7 +12,7 @@
    .container {
       position: relative;
       display: flex;
-      padding: $site-padding;
+      padding: variables.$site-padding;
       height: 68px;
       align-items: center;
       justify-content: space-between;
@@ -19,14 +21,14 @@
    .logo {
       display: block;
 
-      @include focus-visible;
+      @include variables.focus-visible;
       color: var(--doc-header-font-color);
    }
 
    nav {
       display: none;
 
-      @include header-layout-break {
+      @include variables.header-layout-break {
          flex: 1;
          display: block;
          padding: 0 1em;
@@ -36,7 +38,7 @@
    .mobile-nav-button {
       visibility: visible;
 
-      @include header-layout-break {
+      @include variables.header-layout-break {
          visibility: hidden;
       }
    }
@@ -55,7 +57,7 @@
       line-height: 1.2;
       text-align: left;
       padding: var(--env-spacing-x-small) 0;
-      @include focus-visible;
+      @include variables.focus-visible;
       border-bottom: 2px solid transparent;
 
       &:hover {
@@ -72,13 +74,13 @@
    .theme-picker {
       position: absolute;
       top: 50%;
-      right: calc(#{$site-padding} + 0.5em + 2.75em);
+      right: calc(#{variables.$site-padding} + 0.5em + 2.75em);
       margin: 0;
       padding: 0 0 0 1em;
       transform: translateY(-50%);
 
-      @include header-layout-break {
-         right: $site-padding;
+      @include variables.header-layout-break {
+         right: variables.$site-padding;
       }
 
       &__label {
@@ -87,7 +89,7 @@
          display: none;
          margin: 0 0 4px;
 
-         @include header-layout-break {
+         @include variables.header-layout-break {
             display: block;
          }
       }
