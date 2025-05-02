@@ -7,12 +7,12 @@ Use this utility to set an element's display property. Utility classes are named
 
 Valid values
 
--  `inline`
--  `block`
--  `flex`
--  `inline-block`
--  `inline-flex`
--  `none`
+- `inline`
+- `block`
+- `flex`
+- `inline-block`
+- `inline-flex`
+- `none`
 
 Examples
 

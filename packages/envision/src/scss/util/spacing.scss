@@ -1,3 +1,5 @@
+@use 'sizing';
+
 $properties: margin padding;
 $specifiers: top right bottom left;
 $sizes: (
@@ -70,47 +72,49 @@ $sizes: (
    @each $size, $variableName in $sizes {
       @each $specifier in $specifiers {
          &-m-#{$specifier}--#{$size} {
-            margin-#{$specifier}: css-var($variableName) !important;
+            margin-#{$specifier}: var(--env-#{$variableName}) !important;
          }
          &-m-#{$specifier}--#{$size}.env-m-#{$specifier}--negative {
-            margin-#{$specifier}: css-var($variableName, -1) !important;
+            margin-#{$specifier}: calc(
+               var(--env-#{$variableName}) * -1
+            ) !important;
          }
          &-p-#{$specifier}--#{$size} {
-            padding-#{$specifier}: css-var($variableName) !important;
+            padding-#{$specifier}: var(--env-#{$variableName}) !important;
          }
       }
       &-m-around--#{$size} {
-         margin: css-var($variableName) !important;
+         margin: var(--env-#{$variableName}) !important;
       }
       &-m-around--#{$size}.env-m-around--negative {
-         margin: css-var($variableName, -1) !important;
+         margin: calc(var(--env-#{$variableName}) * -1) !important;
       }
       &-p-around--#{$size} {
-         padding: css-var($variableName) !important;
+         padding: var(--env-#{$variableName}) !important;
       }
       &-m-horizontal--#{$size} {
-         margin-right: css-var($variableName) !important;
-         margin-left: css-var($variableName) !important;
+         margin-right: var(--env-#{$variableName}) !important;
+         margin-left: var(--env-#{$variableName}) !important;
       }
       &-m-horizontal--negative.env-m-horizontal--#{$size} {
-         margin-right: css-var($variableName, -1) !important;
-         margin-left: css-var($variableName, -1) !important;
+         margin-right: calc(var(--env-#{$variableName}) * -1) !important;
+         margin-left: calc(var(--env-#{$variableName}) * -1) !important;
       }
       &-m-vertical--#{$size} {
-         margin-top: css-var($variableName) !important;
-         margin-bottom: css-var($variableName) !important;
+         margin-top: var(--env-#{$variableName}) !important;
+         margin-bottom: var(--env-#{$variableName}) !important;
       }
       &-m-vertical--negative.env-m-horizontal--#{$size} {
-         margin-top: css-var($variableName, -1) !important;
-         margin-bottom: css-var($variableName, -1) !important;
+         margin-top: calc(var(--env-#{$variableName}) * -1) !important;
+         margin-bottom: calc(var(--env-#{$variableName}) * -1) !important;
       }
       &-p-horizontal--#{$size} {
-         padding-right: css-var($variableName) !important;
-         padding-left: css-var($variableName) !important;
+         padding-right: var(--env-#{$variableName}) !important;
+         padding-left: var(--env-#{$variableName}) !important;
       }
       &-p-vertical--#{$size} {
-         padding-top: css-var($variableName) !important;
-         padding-bottom: css-var($variableName) !important;
+         padding-top: var(--env-#{$variableName}) !important;
+         padding-bottom: var(--env-#{$variableName}) !important;
       }
    }
 }

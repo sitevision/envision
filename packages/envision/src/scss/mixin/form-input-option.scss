@@ -1,3 +1,7 @@
+@use '../variable';
+@use 'focus';
+@use 'form';
+
 @mixin input-option-common-base($type) {
    & {
       box-sizing: border-box;
@@ -18,13 +22,13 @@
 @mixin input-option-common-states($type) {
    @at-root [type='#{$type}']#{&}:focus-visible,
       #{&} [type='#{$type}']:focus-visible {
-      @include focus-outline;
+      @include focus.focus-outline;
    }
 
    @at-root fieldset:disabled [type='#{$type}']#{&},
       [type='#{$type}']#{&}:disabled,
       #{&}:has([type='#{$type}']:disabled) [type='#{$type}'] {
-      @include disabled;
+      @include form.disabled;
    }
 }
 
@@ -79,7 +83,7 @@
       vertical-align: middle;
       font-size: var(--env-font-size-medium);
       border-radius: 0.75em;
-      background-color: css-var('element-primary-background-color');
+      background-color: var(--env-element-primary-background-color);
       filter: grayscale(100%);
       margin: 0;
       padding: 0;
@@ -93,7 +97,7 @@
          width: 1.25em;
          border-radius: 50%;
          inset: 0.125em auto auto 0.125em;
-         background-color: css-var('element-primary-font-color');
+         background-color: var(--env-element-primary-font-color);
          transition: 0.3s;
       }
 
@@ -110,7 +114,7 @@
          transform: translateY(-50%);
          opacity: 0.5;
          border-radius: 50%;
-         border: 0.125em solid css-var('element-primary-font-color');
+         border: 0.125em solid var(--env-element-primary-font-color);
       }
 
       &:checked {
@@ -125,7 +129,7 @@
             width: 0.125em;
             left: 0.7em;
             right: auto;
-            background-color: css-var('element-primary-font-color');
+            background-color: var(--env-element-primary-font-color);
             border-radius: 2px;
             border: none;
          }
@@ -163,7 +167,8 @@
       padding: 0;
       font-size: var(--env-font-size-medium);
       background-color: var(--env-form-input-background-color);
-      border: $border-width $border-style var(--env-form-input-border-color);
+      border: variable.$border-width variable.$border-style
+         var(--env-form-input-border-color);
       border-radius: $radius;
    }
 

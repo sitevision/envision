@@ -1,7 +1,7 @@
 @mixin focus-outline() {
-   box-shadow: 0 0 0 css-var('focus-offset') css-var('focus-inner-color');
-   outline: css-var('focus-size') solid css-var('focus-outline-color');
-   outline-offset: css-var('focus-offset');
+   box-shadow: 0 0 0 var(--env-focus-offset) var(--env-focus-inner-color);
+   outline: var(--env-focus-size) solid var(--env-focus-outline-color);
+   outline-offset: var(--env-focus-offset);
 }
 
 @mixin wcagSafeOutlineNone {

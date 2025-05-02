@@ -1,18 +1,15 @@
-/// Replace `$search` with `$replace` in `$string`
-/// @author Hugo Giraudel
-/// @param {String} $string - Initial string
-/// @param {String} $search - Substring to replace
-/// @param {String} $replace ('') - New value
-/// @return {String} - Updated string
+@use 'sass:meta';
+@use 'sass:string';
+@use 'variable';
 @use 'sass:math';
 
 @function str-replace($string, $search, $replace: '') {
-   $index: str-index($string, $search);
+   $index: string.index($string, $search);
 
    @if $index {
-      @return str-slice($string, 1, $index - 1) + $replace +
+      @return string.slice($string, 1, $index - 1) + $replace +
          str-replace(
-            str-slice($string, $index + str-length($search)),
+            string.slice($string, $index + string.length($search)),
             $search,
             $replace
          );
@@ -21,25 +18,7 @@
    @return $string;
 }
 
-@function css-var($variableName, $multiplyBy: 1) {
-   @if ($multiplyBy == 1) {
-      @return var(--env-#{$variableName});
-   } @else {
-      @return #{'calc('}var(--env-#{$variableName}) #{' * '}#{$multiplyBy}#{')'};
-   }
-}
-
-@function em($px, $base: ($BROWSER_FONT_SIZE * 1px)) {
+@function em($px, $base: (variable.$BROWSER_FONT_SIZE * 1px)) {
    $em: math.div($px, $base) * 1em;
    @return $em;
-}
-
-@function strip-unit($number) {
-   @if type-of($number) == 'number' and not unitless($number) {
-      // $number * 0 + 1 may look strange, but it's a trick to get 1 of the same type as $number.
-      // Then we can divide by it to strip the unit.
-      // https://css-tricks.com/snippets/sass/strip-unit-function/
-      @return math.div($number, $number * 0 + 1);
-   }
-   @return $number;
 }

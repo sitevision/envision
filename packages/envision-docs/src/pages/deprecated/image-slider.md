@@ -285,7 +285,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `i18n` _'sv'_ | _'en'_ | _{ prev, next }_
 
--  Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+- Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
 
 ## Methods
 

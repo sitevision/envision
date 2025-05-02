@@ -1,19 +1,26 @@
+@use 'mixin/focus';
+@use 'mixin/form';
+@use 'variable';
+
 @use 'sass:math';
 
-$form-input-min-height: math.div($form-input-height, $form-input-font-size) *
+$form-input-min-height: math.div(
+      variable.$form-input-height,
+      variable.$form-input-font-size
+   ) *
    1em;
 
 .env-form-input {
-   @include form-input-defaults;
-   @include placeholder {
-      color: css-var('form-input-font-color');
+   @include form.form-input-defaults;
+   @include form.placeholder {
+      color: var(--env-form-input-font-color);
       filter: opacity(0.65);
    }
 
    fieldset[disabled] &,
    &[disabled],
    &[readonly] {
-      @include disabled;
+      @include form.disabled;
    }
 
    fieldset[disabled] &,
@@ -21,7 +28,7 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
       user-select: none;
    }
 
-   @include focus-visible;
+   @include focus.focus-visible;
 
    @supports (-webkit-touch-callout: none) {
       // (hack) iOS specific styling for prettier date inputs
@@ -74,11 +81,11 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
       &[aria-placeholder]:before {
          display: none;
          position: absolute;
-         top: calc(#{css-var('spacing-x-small')} + 1px);
-         left: calc(#{css-var('spacing-small')} + 1px);
+         top: calc(#{var(--env-spacing-x-small)} + 1px);
+         left: calc(#{var(--env-spacing-small)} + 1px);
          pointer-events: none;
          speak: never;
-         color: css-var('form-input-font-color');
+         color: var(--env-form-input-font-color);
          filter: opacity(0.5);
          line-height: 1.4;
          font-size: var(--env-font-size-medium);

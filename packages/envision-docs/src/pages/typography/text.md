@@ -145,16 +145,16 @@ appropriate table elements.
 
 All variants of a font will have its own set of variables that can be used to style the text. Below is a list of the variables.
 
--  `--env-text-{name}-font-family`
--  `--env-text-{name}-font-size`
--  `--env-text-{name}-font-weight`
--  `--env-text-{name}-font-style`
--  `--env-text-{name}-line-height`
--  `--env-text-{name}-text-transform`
--  `--env-text-{name}-letter-spacing`
--  `--env-text-{name}-font-color`
--  `--env-text-{name}-margin-block-start`
--  `--env-text-{name}-margin-block-end`
+- `--env-text-{name}-font-family`
+- `--env-text-{name}-font-size`
+- `--env-text-{name}-font-weight`
+- `--env-text-{name}-font-style`
+- `--env-text-{name}-line-height`
+- `--env-text-{name}-text-transform`
+- `--env-text-{name}-letter-spacing`
+- `--env-text-{name}-font-color`
+- `--env-text-{name}-margin-block-start`
+- `--env-text-{name}-margin-block-end`
 
 Possible values for `{name}`: `heading-01`, `heading-02`, `heading-03`, `heading-04`, `heading-05`, `heading-06`,
 `display-01`, `display-02`, `display-03`, `summary-01`, `body-01`, `body-02`, `body-03`, `body-04`,
@@ -176,10 +176,10 @@ All sets and styles will in the default settings use the
 
 Link color and underline may be adjusted as fit for each style in a set using the following classes where name is the name of the font style:
 
--  `--env-text-{name}-link-font-color`
--  `--env-text-{name}-link-text-decoration`
--  `--env-text-{name}-link-hover-font-color`
--  `--env-text-{name}-link-hover-text-decoration`
+- `--env-text-{name}-link-font-color`
+- `--env-text-{name}-link-text-decoration`
+- `--env-text-{name}-link-hover-font-color`
+- `--env-text-{name}-link-hover-text-decoration`
 
 ## Example
 

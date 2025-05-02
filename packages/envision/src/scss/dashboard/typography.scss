@@ -1,15 +1,17 @@
+@use '../mixin/css-variables';
+
 $line-height-medium: 1.4 !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'ui-text-label-font-family': css-var('font-family'),
-      'ui-text-label-font-color': css-var('font-color'),
+      'ui-text-label-font-family': var(--env-font-family),
+      'ui-text-label-font-color': var(--env-font-color),
       'ui-text-label-font-size': 0.8125em,
       'ui-text-label-font-weight': 600,
       'ui-text-label-text-transform': none,
       'ui-text-label-letter-spacing': normal,
-      'ui-text-value-font-family': css-var('font-family'),
-      'ui-text-value-font-color': css-var('font-color-muted'),
+      'ui-text-value-font-family': var(--env-font-family),
+      'ui-text-value-font-color': var(--env-font-color-muted),
       'ui-text-value-font-size': 0.75em,
       'ui-text-value-font-weight': 400,
       'ui-text-value-text-transform': none,
@@ -17,19 +19,20 @@ $line-height-medium: 1.4 !default;
    )
 );
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'ui-text-kpi-number-font-family': css-var('font-family'),
-      'ui-text-kpi-number-font-color': css-var('font-color'),
-      'ui-text-kpi-number-font-size':
-         css-var('ui-text-kpi-number-font-size-medium'),
+      'ui-text-kpi-number-font-family': var(--env-font-family),
+      'ui-text-kpi-number-font-color': var(--env-font-color),
+      'ui-text-kpi-number-font-size': var(
+            --env-ui-text-kpi-number-font-size-medium
+         ),
       'ui-text-kpi-number-font-weight': 800,
       'ui-text-kpi-number-text-transform': none,
       'ui-text-kpi-number-letter-spacing': -0.05em,
    )
 );
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'ui-text-kpi-number-font-size-x-small': 1.5em,
       'ui-text-kpi-number-font-size-small': 2em,
@@ -44,14 +47,14 @@ $DASHBOARD_UI_TEXT_NAMES: 'label', 'value', 'kpi-number';
 .env-ui-text {
    @each $name in $DASHBOARD_UI_TEXT_NAMES {
       &-#{$name} {
-         font-family: css-var('ui-text-#{$name}-font-family');
-         font-size: css-var('ui-text-#{$name}-font-size');
-         font-weight: css-var('ui-text-#{$name}-font-weight');
+         font-family: var(--env-ui-text-#{$name}-font-family);
+         font-size: var(--env-ui-text-#{$name}-font-size);
+         font-weight: var(--env-ui-text-#{$name}-font-weight);
          font-style: normal;
-         text-transform: css-var('ui-text-#{$name}-text-transform');
-         letter-spacing: css-var('ui-text-#{$name}-letter-spacing');
+         text-transform: var(--env-ui-text-#{$name}-text-transform);
+         letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
          line-height: $line-height-medium;
-         color: css-var('ui-text-#{$name}-font-color');
+         color: var(--env-ui-text-#{$name}-font-color);
          margin: 0 !important;
       }
    }

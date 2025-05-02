@@ -1,4 +1,6 @@
-$inset: css-var('spacing-xx-large');
+@use 'mixin/focus';
+
+$inset: var(--env-spacing-xx-large);
 
 @mixin overlayButton($opacity: 0.65) {
    background-color: rgba(0, 0, 0, $opacity);
@@ -7,9 +9,9 @@ $inset: css-var('spacing-xx-large');
 }
 
 @mixin overlayButtonFocusVisible($inner, $outer) {
-   box-shadow: 0 0 0 css-var('focus-offset') $inner;
-   outline: css-var('focus-size') solid $outer;
-   outline-offset: css-var('focus-offset');
+   box-shadow: 0 0 0 var(--env-focus-offset) $inner;
+   outline: var(--env-focus-size) solid $outer;
+   outline-offset: var(--env-focus-offset);
 }
 
 .env-image-viewer-2 {
@@ -140,7 +142,7 @@ $inset: css-var('spacing-xx-large');
       opacity: 0;
       transition: all 0.2s linear;
 
-      @include focus-visible;
+      @include focus.focus-visible;
 
       &--in {
          opacity: 1;

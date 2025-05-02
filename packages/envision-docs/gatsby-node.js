@@ -43,7 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       return;
    }
 
-   const docsTemplate = path.resolve(`src/templates/docs.js`);
+   const docsTemplate = path.resolve(`src/templates/docs.jsx`);
 
    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({

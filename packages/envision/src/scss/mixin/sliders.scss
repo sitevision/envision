@@ -1,3 +1,5 @@
+@use 'focus';
+
 @mixin slide-indicator {
    position: absolute;
    right: 0;
@@ -18,7 +20,7 @@
       margin-right: 3px;
       margin-left: 3px;
       border: none;
-      background-color: css-var('image-control-color');
+      background-color: var(--env-image-control-color);
       filter: opacity(0.5);
 
       &.env-is-active {
@@ -27,6 +29,6 @@
    }
 
    button {
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 }

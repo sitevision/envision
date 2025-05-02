@@ -1,15 +1,19 @@
+@use '../mixin/text';
+@use '../mixin/truncate';
+@use '../variable';
+
 .env-text {
-   font-family: css-var('font-family');
-   font-size: css-var('font-size-medium');
-   font-weight: $font-weight-regular;
+   font-family: var(--env-font-family);
+   font-size: var(--env-font-size-medium);
+   font-weight: variable.$font-weight-regular;
    text-size-adjust: 100%;
    text-align: start;
-   line-height: $line-height-medium;
-   color: css-var('font-color');
+   line-height: variable.$line-height-medium;
+   color: var(--env-font-color);
 
    &--muted {
-      font-weight: $font-weight-regular;
-      color: css-var('font-color-muted') !important;
+      font-weight: variable.$font-weight-regular;
+      color: var(--env-font-color-muted) !important;
    }
 
    &--uppercase {
@@ -25,7 +29,7 @@
    }
 
    &--truncate {
-      @include truncate-text();
+      @include truncate.truncate-text();
    }
 
    &--strike {
@@ -33,15 +37,15 @@
    }
 
    &--attention {
-      color: css-var('ui-color-status-attention-text') !important;
+      color: var(--env-ui-color-status-attention-text) !important;
    }
 
    &--active {
-      color: css-var('ui-color-status-active-text') !important;
+      color: var(--env-ui-color-status-active-text) !important;
    }
 
    &--error {
-      color: css-var('ui-color-status-error-text') !important;
+      color: var(--env-ui-color-status-error-text) !important;
    }
 
    // Text alignment
@@ -76,7 +80,7 @@ button:not(.env-button).env-link-secondary {
    appearance: none;
    display: inline;
    border: none;
-   font-family: css-var('font-family');
+   font-family: var(--env-font-family);
    font-size: 1em !important;
    margin: 0;
    padding: 0;
@@ -88,7 +92,7 @@ button:not(.env-button).env-link-secondary {
 .env-link,
 a.env-text,
 .env-text a:not([class^='env-']):not([class*=' env-']) {
-   @include link(
+   @include text.link(
       'link-font-color',
       'link-text-decoration',
       'link-hover-font-color',
@@ -99,7 +103,7 @@ a.env-text,
 .env-text .env-link-secondary,
 .env-text a.env-link-secondary,
 .env-link-secondary {
-   @include link(
+   @include text.link(
       'link-secondary-font-color',
       'link-secondary-text-decoration',
       'link-secondary-hover-font-color',
@@ -130,48 +134,48 @@ a.env-text,
    margin-inline: 0;
 }
 
-@include block-text-size(
+@include text.block-text-size(
    'h1',
    'font-size-xxxx-large',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'h2',
    'font-size-xxx-large',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'h3',
    'font-size-xx-large',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'h4',
    'font-size-x-large',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'h5',
    'font-size-large',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'h6',
    'font-size-medium',
    'spacing-xx-small',
-   $font-weight-semibold
+   variable.$font-weight-semibold
 );
-@include block-text-size(
+@include text.block-text-size(
    'p',
    'font-size-medium',
    'spacing-xx-small',
-   $font-weight-regular,
-   $line-height-wcag-min
+   variable.$font-weight-regular,
+   variable.$line-height-wcag-min
 );
 
 // .env-text--small is not following BEM standards and have
@@ -187,5 +191,5 @@ small.env-text,
 // We need to set it back to bold for strong and b.
 b.env-text,
 strong.env-text {
-   font-weight: $font-weight-bold;
+   font-weight: variable.$font-weight-bold;
 }

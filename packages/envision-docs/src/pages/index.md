@@ -8,15 +8,15 @@ Envision is included in all Sitevision websites. The components are ready to use
 
 Usage examples in Sitevision:
 
--  Site themes
--  Themes in layouts
--  Theme colors in layouts
--  Site fonts
--  CSS rules
--  Custom templates
--  HTML- or Script modules
--  Webapps and Widgets
--  Anywhere where custom HTML, CSS, and JavaScript are used
+- Site themes
+- Themes in layouts
+- Theme colors in layouts
+- Site fonts
+- CSS rules
+- Custom templates
+- HTML- or Script modules
+- Webapps and Widgets
+- Anywhere where custom HTML, CSS, and JavaScript are used
 
 ## Contribute
 

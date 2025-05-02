@@ -1,7 +1,7 @@
 .env-post {
    overflow-wrap: anywhere;
    word-break: normal;
-   border-radius: css-var('border-radius-medium');
+   border-radius: var(--env-border-radius-medium);
 
    &__header,
    &__entry,
@@ -12,17 +12,17 @@
 
    &__shared {
       .env-post {
-         border-left: 3px solid css-var('element-primary-background-color');
+         border-left: 3px solid var(--env-element-primary-background-color);
          border-radius: 0;
 
          &__entry {
-            padding: css-var('spacing-x-small');
+            padding: var(--env-spacing-x-small);
          }
       }
    }
 
    > :not(:last-child) {
-      padding: css-var('spacing-x-small');
+      padding: var(--env-spacing-x-small);
    }
 }
 
@@ -30,23 +30,23 @@
    border-top: 1px solid transparent;
 
    &__wrapper {
-      padding: css-var('spacing-x-small');
+      padding: var(--env-spacing-x-small);
    }
 
    &__comment {
       align-items: center;
-      padding-top: css-var('spacing-x-small');
+      padding-top: var(--env-spacing-x-small);
    }
 }
 
 .env-comment {
    border-bottom: 1px solid transparent;
-   padding: css-var('spacing-x-small') 0;
-   border-radius: css-var('border-radius-medium');
+   padding: var(--env-spacing-x-small) 0;
+   border-radius: var(--env-border-radius-medium);
 }
 
 .env-feed {
    &__item:not(:last-child) {
-      padding-bottom: css-var('spacing-x-small');
+      padding-bottom: var(--env-spacing-x-small);
    }
 }

@@ -1,36 +1,39 @@
+@use 'mixin/focus';
+@use 'variable';
+
 .env-alert {
-   border: $border-width $border-style transparent;
-   margin: css-var('spacing-medium');
-   padding: css-var('spacing-medium');
-   font-family: css-var('alert-font-family');
-   background-color: css-var('alert-background-color');
-   color: css-var('alert-font-color');
-   border-radius: css-var('alert-border-radius');
+   border: variable.$border-width variable.$border-style transparent;
+   margin: var(--env-spacing-medium);
+   padding: var(--env-spacing-medium);
+   font-family: var(--env-alert-font-family);
+   background-color: var(--env-alert-background-color);
+   color: var(--env-alert-font-color);
+   border-radius: var(--env-alert-border-radius);
 
    a:not([class^='env-']):not([class*=' env-']),
    a.env-text,
    .env-text a {
-      color: css-var('alert-font-color');
+      color: var(--env-alert-font-color);
       text-decoration: underline;
    }
 
    .env-text,
    .env-alert__close {
-      color: css-var('alert-font-color');
+      color: var(--env-alert-font-color);
    }
 
    $variableNames: 'success', 'warning', 'danger', 'info';
 
    @each $name in $variableNames {
       &--#{$name} {
-         border: 2px solid css-var('element-#{$name}-background-color');
-         border-left: 10px solid css-var('element-#{$name}-background-color');
+         border: 2px solid var(--env-element-#{$name}-background-color);
+         border-left: 10px solid var(--env-element-#{$name}-background-color);
       }
    }
 
    &__link {
-      color: css-var('font-color');
-      font-weight: $font-weight-bold;
+      color: var(--env-font-color);
+      font-weight: variable.$font-weight-bold;
       text-decoration: none;
 
       &:hover {
@@ -43,14 +46,14 @@
       background: 0 0;
       border: 0;
       float: right;
-      font-family: css-var('alert-font-family');
-      font-size: css-var('font-size-medium');
-      font-weight: $font-weight-bold;
-      padding: css-var('spacing-small') css-var('spacing-medium');
+      font-family: var(--env-alert-font-family);
+      font-size: var(--env-font-size-medium);
+      font-weight: variable.$font-weight-bold;
+      padding: var(--env-spacing-small) var(--env-spacing-medium);
       position: relative;
-      right: css-var('spacing-medium', -1);
-      top: css-var('spacing-small', -1);
+      right: calc(var(--env-spacing-medium) * -1);
+      top: calc(var(--env-spacing-small) * -1);
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 }

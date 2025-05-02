@@ -1,4 +1,5 @@
-@import 'constants';
+@use 'constants';
+@use '../mixin/css-variables';
 
 // ===== DASHBOARD COLOR PALETTE =====
 
@@ -18,14 +19,14 @@
    color: var(--env-dashboard-color-white);
 }
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'dashboard-color-black': #202330,
       'dashboard-color-white': #ffffff,
    )
 );
 
-@each $colorName, $variants in $DASHBOARD_COLORS {
+@each $colorName, $variants in constants.$DASHBOARD_COLORS {
    @each $variant, $color in $variants {
       .env-dashboard-color-bg-#{$colorName}-#{$variant} {
          background-color: var(--env-dashboard-color-#{$colorName}-#{$variant});
@@ -33,7 +34,7 @@
       .env-dashboard-color-txt-#{$colorName}-#{$variant} {
          color: var(--env-dashboard-color-#{$colorName}-#{$variant});
       }
-      @include to-css-custom-property(
+      @include css-variables.to-css-custom-property(
          (
             'dashboard-color-#{$colorName}-#{$variant}': $color,
          )

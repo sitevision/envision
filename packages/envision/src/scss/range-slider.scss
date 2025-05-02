@@ -1,32 +1,37 @@
+@use 'mixin/focus';
+@use 'variable';
+
 .env-range-slider {
-   $range-height: $spacing-small;
-   $handle-size-desktop: $spacing-xx-large;
-   $handle-size-touch: $spacing-x-large;
-   border: $border-width $border-style css-var('border-color');
-   border-radius: css-var('border-radius-medium');
+   $range-height: variable.$spacing-small;
+   $handle-size-desktop: variable.$spacing-xx-large;
+   $handle-size-touch: variable.$spacing-x-large;
+   border: variable.$border-width variable.$border-style var(--env-border-color);
+   border-radius: var(--env-border-radius-medium);
    height: $range-height;
    position: relative;
 
    &__handle {
-      border-radius: css-var('border-radius-medium');
-      background-color: css-var('element-background-color');
-      border: $border-width $border-style
-         css-var('element-background-color-dark');
+      border-radius: var(--env-border-radius-medium);
+      background-color: var(--env-element-background-color);
+      border: variable.$border-width variable.$border-style
+         var(--env-element-background-color-dark);
       height: $handle-size-desktop;
       margin-left: -($handle-size-desktop * 0.5);
       position: absolute;
       top: calc(
          -1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px)
       );
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      transition:
+         border-color 0.2s ease-in-out,
+         box-shadow 0.2s ease-in-out;
       width: $handle-size-desktop;
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &__values {
       display: flex;
-      margin-top: $spacing-large; // Keep
+      margin-top: variable.$spacing-large; // Keep
       position: relative;
 
       &__value {
@@ -46,7 +51,7 @@
    }
 
    &__range {
-      background: css-var('element-primary-background-color');
+      background: var(--env-element-primary-background-color);
       height: 100%;
       position: absolute;
    }
@@ -64,7 +69,7 @@
 
       .env-range-slider__value {
          margin-left: -($handle-size-touch * 0.5) !important;
-         top: $spacing-x-large; // Keep
+         top: variable.$spacing-x-large; // Keep
       }
    }
 }

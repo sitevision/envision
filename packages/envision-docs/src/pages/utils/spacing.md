@@ -7,36 +7,36 @@ Padding and margin utility classes are named using the format: `env-{property}-{
 
 Valid values for _property_
 
--  `m` for `margin`
--  `p` for `padding`
+- `m` for `margin`
+- `p` for `padding`
 
 Valid values for _specifier_
 
--  `top`
--  `right`
--  `bottom`
--  `left`
--  `horizontal`
--  `vertical`
--  `around`
+- `top`
+- `right`
+- `bottom`
+- `left`
+- `horizontal`
+- `vertical`
+- `around`
 
 Valid values for _size_
 
--  `0`
--  `a` auto, only applicable to `margin`
--  `xxx-small` <small>(0.125em)</small>
--  `xx-small` <small>(0.25em)</small>
--  `x-small` <small>(0.5em)</small>
--  `small` <small>(0.75em)</small>
--  `medium` <small>(1em)</small>
--  `large` <small>(1.25em)</small>
--  `x-large` <small>(1.5em)</small>
--  `xx-large` <small>(1.75em)</small>
--  `xxx-large` <small>(2em)</small>
+- `0`
+- `a` auto, only applicable to `margin`
+- `xxx-small` <small>(0.125em)</small>
+- `xx-small` <small>(0.25em)</small>
+- `x-small` <small>(0.5em)</small>
+- `small` <small>(0.75em)</small>
+- `medium` <small>(1em)</small>
+- `large` <small>(1.25em)</small>
+- `x-large` <small>(1.5em)</small>
+- `xx-large` <small>(1.75em)</small>
+- `xxx-large` <small>(2em)</small>
 
 Invert values for margin by adding the negative modifier
 
--  `env-m-{specifier}--negative`
+- `env-m-{specifier}--negative`
 
 ### Spacing examples
 

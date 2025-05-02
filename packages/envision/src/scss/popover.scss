@@ -1,27 +1,33 @@
+@use 'mixin/css-variables';
+@use 'mixin/popout-menu';
+@use 'mixin/popover';
+@use 'variable';
+
 @use 'sass:math';
 
 .env-popover {
    $arrow-size: 11px;
 
-   background-color: css-var('section-background-color');
-   border: $border-width $border-style css-var('border-color-05');
-   border-radius: css-var('border-radius-medium');
-   box-shadow: css-var('box-shadow');
-   color: css-var('font-color');
+   background-color: var(--env-section-background-color);
+   border: variable.$border-width variable.$border-style
+      var(--env-border-color-05);
+   border-radius: var(--env-border-radius-medium);
+   box-shadow: var(--env-box-shadow);
+   color: var(--env-font-color);
    margin: 0;
-   max-width: css-var('popover-width');
+   max-width: var(--env-popover-width);
    position: relative;
    text-align: left;
-   z-index: $zindex-popover;
+   z-index: variable.$zindex-popover;
    overflow-wrap: anywhere;
    word-break: normal;
 
    &__header {
-      border-radius: css-var('border-radius-medium')
-         css-var('border-radius-medium') 0 0;
+      border-radius: var(--env-border-radius-medium)
+         var(--env-border-radius-medium) 0 0;
       display: block;
-      padding: css-var('spacing-large') css-var('spacing-x-large')
-         css-var('spacing-small');
+      padding: var(--env-spacing-large) var(--env-spacing-x-large)
+         var(--env-spacing-small);
 
       &__title {
          margin-bottom: 0 !important;
@@ -30,34 +36,34 @@
 
    &__content {
       display: block;
-      padding: css-var('spacing-x-large');
+      padding: var(--env-spacing-x-large);
 
       .env-popover__header + & {
-         padding-top: css-var('spacing-small');
+         padding-top: var(--env-spacing-small);
       }
    }
 
-   @include popout-menu(#{css-var('spacing-x-large')});
+   @include popout-menu.popout-menu(#{var(--env-spacing-x-large)});
 
    &__menu {
-      min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
+      min-width: (math.div(180, variable.$BROWSER_FONT_SIZE) * 1em);
    }
 
    &__arrow {
-      @include arrowBase($arrow-size);
+      @include popover.arrowBase($arrow-size);
    }
 
    $arrowLocations: 'top', 'right', 'bottom', 'left';
    $branded-border-width: 4px;
 
    @each $location in $arrowLocations {
-      @include arrow($location, $arrow-size, $branded-border-width);
+      @include popover.arrow($location, $arrow-size, $branded-border-width);
    }
 
    &--tooltip {
       // Override theme colors for tooltip class
       @at-root {
-         @include to-css-custom-property(
+         @include css-variables.to-css-custom-property(
             (
                'font-color': var(--env-tooltip-font-color),
                'link-font-color': var(--env-tooltip-font-color),
@@ -69,9 +75,11 @@
          );
       }
 
-      color: var(--env-tooltip-font-color);
-      background-color: var(--env-tooltip-background-color);
-      border: none !important;
+      & {
+         color: var(--env-tooltip-font-color);
+         background-color: var(--env-tooltip-background-color);
+         border: none !important;
+      }
 
       [class^='env-ui-text-'],
       [class*=' env-ui-text-'] {
@@ -85,7 +93,7 @@
       }
 
       @each $location in $arrowLocations {
-         @include arrow(
+         @include popover.arrow(
             $location,
             $arrow-size,
             0,

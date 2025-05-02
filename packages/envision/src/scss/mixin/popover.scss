@@ -1,6 +1,10 @@
+@use 'sass:map';
+
+@use '../variable';
+
 @mixin arrowBase($arrow-size) {
    border-color: transparent;
-   border-style: $border-style;
+   border-style: variable.$border-style;
    border-width: $arrow-size;
    display: block;
    height: 0;
@@ -9,7 +13,7 @@
 
    &::after {
       border-color: transparent;
-      border-style: $border-style;
+      border-style: variable.$border-style;
       border-width: $arrow-size;
       content: '';
       display: block;
@@ -52,9 +56,9 @@
    $location,
    $arrow-size,
    $branded-border-width,
-   $color: css-var('ui-color-brand')
+   $color: var(--env-ui-color-brand)
 ) {
-   $oppositeLocation: map-get(
+   $oppositeLocation: map.get(
       (
          'top': 'bottom',
          'right': 'left',

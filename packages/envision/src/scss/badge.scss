@@ -1,25 +1,34 @@
+@use 'mixin/focus';
+@use 'variable';
+
 .env-badge {
    display: inline-block;
-   font-family: css-var('badge-font-family');
-   font-size: css-var('badge-font-size');
-   font-weight: css-var('badge-font-weight');
+   font-family: var(--env-badge-font-family);
+   font-size: var(--env-badge-font-size);
+   font-weight: var(--env-badge-font-weight);
    text-decoration: none !important;
-   text-transform: css-var('badge-text-transform');
-   letter-spacing: css-var('badge-letter-spacing');
-   color: css-var('element-primary-font-color');
-   background-color: css-var('element-primary-background-color');
-   padding: css-var('spacing-xx-small') css-var('spacing-x-small');
+   text-transform: var(--env-badge-text-transform);
+   letter-spacing: var(--env-badge-letter-spacing);
+   color: var(--env-element-primary-font-color);
+   background-color: var(--env-element-primary-background-color);
+   padding: var(--env-spacing-xx-small) var(--env-spacing-x-small);
    border: none;
-   border-radius: css-var('badge-border-radius');
+   border-radius: var(--env-badge-border-radius);
    vertical-align: baseline;
 
    &:focus-visible {
-      @include focus-outline;
+      @include focus.focus-outline;
    }
 
-   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):hover,
-   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(a, button):focus {
-      background-color: css-var('element-primary-background-color-dark');
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):hover,
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):focus {
+      background-color: var(--env-element-primary-background-color-dark);
    }
 
    $badgeNames: 'success', 'danger', 'info', 'warning';
@@ -27,12 +36,12 @@
    @each $name in $badgeNames {
       // Element color variants will have hover state if button or link
       &--#{$name} {
-         color: css-var('element-#{$name}-font-color');
-         background-color: css-var('element-#{$name}-background-color');
+         color: var(--env-element-#{$name}-font-color);
+         background-color: var(--env-element-#{$name}-background-color);
 
          &:where(a, button):hover,
          &:where(a, button):focus {
-            background-color: css-var('element-#{$name}-background-color-dark');
+            background-color: var(--env-element-#{$name}-background-color-dark);
          }
       }
    }
@@ -40,31 +49,31 @@
    // ----- STATUS VARIANTS -----
 
    &--neutral {
-      color: css-var('ui-color-status-neutral-contrast');
-      background-color: css-var('ui-color-status-neutral');
+      color: var(--env-ui-color-status-neutral-contrast);
+      background-color: var(--env-ui-color-status-neutral);
    }
 
    &--active {
-      color: css-var('ui-color-status-active-contrast');
-      background-color: css-var('ui-color-status-active');
+      color: var(--env-ui-color-status-active-contrast);
+      background-color: var(--env-ui-color-status-active);
    }
 
    &--attention {
-      color: css-var('ui-color-status-attention-contrast');
-      background-color: css-var('ui-color-status-attention');
+      color: var(--env-ui-color-status-attention-contrast);
+      background-color: var(--env-ui-color-status-attention);
    }
 
    // ----- BRAND VARIANTS -----
 
    &--brand {
-      color: css-var('ui-color-brand-contrast');
-      background-color: css-var('ui-color-brand');
+      color: var(--env-ui-color-brand-contrast);
+      background-color: var(--env-ui-color-brand);
    }
 
-   @each $key, $val in $BRAND_COLOR_VARIANTS {
+   @each $key, $val in variable.$BRAND_COLOR_VARIANTS {
       &--brand-#{$key} {
-         color: css-var('ui-color-brand-#{$key}-contrast');
-         background-color: css-var('ui-color-brand-#{$key}');
+         color: var(--env-ui-color-brand-#{$key}-contrast);
+         background-color: var(--env-ui-color-brand-#{$key});
       }
    }
 }
@@ -83,12 +92,12 @@
       height: 0.8em;
       margin-top: -0.5em;
       border-radius: 50%;
-      border: 0.125em solid css-var('font-color');
-      background-color: css-var('section-background-color');
+      border: 0.125em solid var(--env-font-color);
+      background-color: var(--env-section-background-color);
    }
 
    &--active:after {
-      border-color: css-var('ui-color-status-active');
-      background-color: css-var('ui-color-status-active');
+      border-color: var(--env-ui-color-status-active);
+      background-color: var(--env-ui-color-status-active);
    }
 }

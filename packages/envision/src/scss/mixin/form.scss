@@ -1,18 +1,21 @@
+@use '../variable';
+
 @mixin form-input-defaults {
    display: block;
    box-sizing: border-box;
    width: 100%;
    height: 2.75em;
    margin: 0;
-   padding: $form-padding-y $form-padding-x;
-   font-family: css-var('form-font-family');
-   font-size: css-var('font-size-medium');
-   line-height: $form-input-line-height;
-   color: css-var('form-input-font-color');
-   background-color: css-var('form-input-background-color');
+   padding: variable.$form-padding-y variable.$form-padding-x;
+   font-family: var(--env-form-font-family);
+   font-size: var(--env-font-size-medium);
+   line-height: variable.$form-input-line-height;
+   color: var(--env-form-input-font-color);
+   background-color: var(--env-form-input-background-color);
    background-image: none;
-   border: $border-width $border-style css-var('form-input-border-color');
-   border-radius: css-var('form-input-border-radius');
+   border: variable.$border-width variable.$border-style
+      var(--env-form-input-border-color);
+   border-radius: var(--env-form-input-border-radius);
 }
 
 @mixin disabled($grayscale: true) {

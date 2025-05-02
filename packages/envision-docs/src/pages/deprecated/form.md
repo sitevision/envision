@@ -6,35 +6,35 @@ indexing: false
 
 The following form classnames are deprecated since 2024.07.1 or earlier and will be removed in a future release.
 
--  `env-form-element`
--  `env-form-element__label`
--  `env-form-element__control`
--  `env-form-element__control--icon`
--  `env-form-element__contenteditable-placeholder`
--  `env-form-element__help`
--  `env-form-element--error`
--  `env-form-element--success`
--  `env-form-element--danger`
--  `env-form-input-group`
--  `env-form-input-group__label`
--  `env-form-multiple-select`
--  `env-checkbox__fake`
--  `env-checkbox__label`
--  `env-switch__label`
--  `env-switch__text`
--  `env-switch__slider`
--  `env-form__row`
--  `env-form--horizontal`
--  `env-form--inline`
--  `env-form-element--{1-6}`
--  `env-radio--disabled`
--  `env-checkbox--disabled`
+- `env-form-element`
+- `env-form-element__label`
+- `env-form-element__control`
+- `env-form-element__control--icon`
+- `env-form-element__contenteditable-placeholder`
+- `env-form-element__help`
+- `env-form-element--error`
+- `env-form-element--success`
+- `env-form-element--danger`
+- `env-form-input-group`
+- `env-form-input-group__label`
+- `env-form-multiple-select`
+- `env-checkbox__fake`
+- `env-checkbox__label`
+- `env-switch__label`
+- `env-switch__text`
+- `env-switch__slider`
+- `env-form__row`
+- `env-form--horizontal`
+- `env-form--inline`
+- `env-form-element--{1-6}`
+- `env-radio--disabled`
+- `env-checkbox--disabled`
 
 Additionaly, the following combinations of element type and classname are deprecated and will be removed in a future release.
 
--  `label.env-radio`
--  `div.env-checkbox`
--  `div.env-switch`
+- `label.env-radio`
+- `div.env-checkbox`
+- `div.env-switch`
 
 ## Text input element
 

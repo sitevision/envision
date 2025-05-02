@@ -1,7 +1,11 @@
+@use 'mixin/focus';
+@use 'mixin/form';
+@use 'variable';
+
 @use 'sass:math';
 
 %select-base {
-   @include form-input-defaults;
+   @include form.form-input-defaults;
 }
 
 // ----- Basic Select ---- //
@@ -10,7 +14,7 @@
 .env-form select,
 select.env-form-input {
    @extend %select-base;
-   @include focus-visible;
+   @include focus.focus-visible;
 }
 
 .env-form select[multiple],
@@ -19,16 +23,16 @@ select[multiple].env-form-input,
    // .env-form-multiple-select is deprecated
    min-height: 2.75em;
    height: auto;
-   padding: css-var('spacing-xx-small');
+   padding: var(--env-spacing-xx-small);
 
    @supports (-webkit-touch-callout: none) {
       // (hack) iOS specific styling for prettier select[multiple]
       height: 2.75em;
-      padding: $form-padding-y $form-padding-x;
+      padding: variable.$form-padding-y variable.$form-padding-x;
    }
 
    > option {
-      padding: css-var('spacing-x-small');
+      padding: var(--env-spacing-x-small);
    }
 }
 
@@ -41,7 +45,7 @@ select[multiple].env-form-input,
    position: relative;
    padding: 0;
 
-   @include focus-within;
+   @include focus.focus-within;
 
    select:not([multiple]),
    select.env-form-input {
@@ -49,16 +53,21 @@ select[multiple].env-form-input,
       width: 100%;
       background: none;
       border: none;
-      border-radius: css-var('form-input-border-radius');
+      border-radius: var(--env-form-input-border-radius);
       appearance: none;
-      color: css-var('form-input-font-color');
-      font-size: css-var('font-size-medium');
+      color: var(--env-form-input-font-color);
+      font-size: var(--env-font-size-medium);
       min-height: calc(
-         #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
+         #{math.div(
+               variable.$form-input-height,
+               variable.$form-input-font-size
+            ) *
+            1em} - 2px
       );
-      padding: $form-padding-y 2em $form-padding-y $form-padding-x;
+      padding: variable.$form-padding-y 2em variable.$form-padding-y
+         variable.$form-padding-x;
 
-      @include hide-focus-visible;
+      @include focus.hide-focus-visible;
    }
 
    > .env-icon {
@@ -109,19 +118,19 @@ select[multiple].env-form-input,
       }
 
       option {
-         padding: css-var('spacing-x-small');
+         padding: var(--env-spacing-x-small);
 
          &:hover,
          &.focus {
-            background-color: css-var('section-background-color-05');
-            color: css-var('font-color');
+            background-color: var(--env-section-background-color-05);
+            color: var(--env-font-color);
          }
 
          &:focus-visible {
-            box-shadow: 0 0 0 css-var('focus-offset')
-               css-var('focus-inner-color');
-            outline: css-var('focus-size') solid css-var('focus-outline-color');
-            outline-offset: css-var('focus-offset');
+            box-shadow: 0 0 0 var(--env-focus-offset)
+               var(--env-focus-inner-color);
+            outline: var(--env-focus-size) solid var(--env-focus-outline-color);
+            outline-offset: var(--env-focus-offset);
          }
       }
 
@@ -137,12 +146,13 @@ select[multiple].env-form-input,
    .env-form-select ::picker(select) {
       appearance: base-select;
       font-size: var(--env-font-size-medium);
-      background-color: css-var('section-background-color');
-      color: css-var('font-color');
-      border: $border-width $border-style css-var('border-color-05');
-      border-radius: css-var('border-radius-medium');
-      box-shadow: css-var('box-shadow-small');
-      padding: calc(css-var('focus-size') + css-var('focus-offset'));
+      background-color: var(--env-section-background-color);
+      color: var(--env-font-color);
+      border: variable.$border-width variable.$border-style
+         var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium);
+      box-shadow: var(--env-box-shadow-small);
+      padding: calc(var(--env-focus-size) + var(--env-focus-offset));
    }
 
    .env-form select::picker-icon,

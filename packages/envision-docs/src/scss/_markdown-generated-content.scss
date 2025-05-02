@@ -32,8 +32,10 @@
       (
          (var(--df-to-font-size) - var(--df-from-font-size)) /
             (
-               (var(--df-to-width) / var(--env-root-font-size)) -
-                  var(--df-from-width) / var(--env-root-font-size)
+               (var(--df-to-width) / var(--env-root-font-size)) - var(
+                     --df-from-width
+                  ) /
+                  var(--env-root-font-size)
             )
       )
    );
@@ -41,7 +43,8 @@
       (
             var(--df-from-width) / var(--env-root-font-size) * -1 *
                var(--df-slope) + var(--df-from-font-size)
-         ) * 1rem
+         ) *
+         1rem
    );
    box-sizing: border-box;
    font-size: clamp(

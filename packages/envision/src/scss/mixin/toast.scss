@@ -1,16 +1,17 @@
 @mixin toast-color($colorName: 'secondary') {
-   background-color: css-var('element-#{$colorName}-background-color');
-   box-shadow: 0px 5px 10px -8px css-var('element-#{$colorName}-background-color');
-   color: css-var('element-#{$colorName}-font-color');
+   background-color: var(--env-element-#{$colorName}-background-color);
+   box-shadow: 0px 5px 10px -8px
+      var(--env-element-#{$colorName}-background-color);
+   color: var(--env-element-#{$colorName}-font-color);
 
    a:not([class^='env-']):not([class*=' env-']),
    a.env-text,
    .env-text a {
-      color: css-var('element-#{$colorName}-font-color');
+      color: var(--env-element-#{$colorName}-font-color);
       text-decoration: underline;
    }
 
    .env-toast__close {
-      color: css-var('element-#{$colorName}-font-color');
+      color: var(--env-element-#{$colorName}-font-color);
    }
 }

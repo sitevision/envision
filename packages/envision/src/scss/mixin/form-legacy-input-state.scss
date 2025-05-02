@@ -5,21 +5,21 @@
    .env-form-element__help,
    .env-select__item,
    .env-select__item__remove {
-      color: css-var('element-#{$colorName}-background-color');
+      color: var(--env-element-#{$colorName}-background-color);
    }
 
    .env-form-input,
    .env-checkbox__fake,
    .env-form-radio__fake,
    .env-select__input {
-      border-color: css-var(
-         'element-#{$colorName}-background-color'
+      border-color: var(
+         --env-element-#{$colorName}-background-color
       ) !important;
    }
 
    .env-select__item {
-      background-color: css-var(
-         'element-#{$colorName}-background-color'
+      background-color: var(
+         --env-element-#{$colorName}-background-color
       ) !important;
    }
 }

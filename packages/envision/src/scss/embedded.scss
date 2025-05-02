@@ -1,11 +1,11 @@
 .env-embedded {
-   color: css-var('block-primary-font-color');
-   background-color: css-var('block-primary-background-color');
+   color: var(--env-block-primary-font-color);
+   background-color: var(--env-block-primary-background-color);
    display: flex;
    flex-direction: column;
    overflow: hidden;
    position: relative;
-   border-radius: css-var('border-radius-medium');
+   border-radius: var(--env-border-radius-medium);
 
    &--horizontal {
       display: flex;
@@ -28,18 +28,18 @@
    &__title,
    &__text {
       // Todo: Set deprecated?
-      padding-top: css-var('spacing-x-small');
+      padding-top: var(--env-spacing-x-small);
    }
 
    &__block {
       flex: 3;
       flex-grow: 2;
       order: 2;
-      padding: css-var('spacing-medium');
+      padding: var(--env-spacing-medium);
 
       button {
-         margin-top: css-var('spacing-medium');
-         border-radius: css-var('button-border-radius');
+         margin-top: var(--env-spacing-medium);
+         border-radius: var(--env-button-border-radius);
       }
    }
 
@@ -52,7 +52,7 @@
 
       @media screen and (max-width: 769px) {
          left: 5%;
-         padding-bottom: css-var('spacing-small');
+         padding-bottom: var(--env-spacing-small);
          position: relative;
          width: 90%;
       }

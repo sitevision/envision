@@ -1,16 +1,16 @@
 // Please, do not sort alphabetically.
 // Order is important. Color needs to be set after Text etc.
-@import 'assistive';
-@import 'borders';
-@import 'clearfix';
-@import 'container';
-@import 'flexbox';
-@import 'display';
-@import 'dynamic-font-size';
-@import 'image';
-@import 'shadow';
-@import 'sizing';
-@import 'spacing';
-@import 'text';
-@import 'colors';
-@import 'vertical-alignment';
+@use 'assistive';
+@use 'borders';
+@use 'clearfix';
+@use 'container';
+@use 'flexbox';
+@use 'display';
+@use 'dynamic-font-size';
+@use 'image';
+@use 'shadow';
+@use 'sizing';
+@use 'spacing';
+@use 'text';
+@use 'colors';
+@use 'vertical-alignment';

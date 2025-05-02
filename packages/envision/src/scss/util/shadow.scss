@@ -1,11 +1,11 @@
 .env-shadow-small {
-   box-shadow: css-var('box-shadow-small');
+   box-shadow: var(--env-box-shadow-small);
 }
 
 .env-shadow {
-   box-shadow: css-var('box-shadow');
+   box-shadow: var(--env-box-shadow);
 }
 
 .env-shadow-large {
-   box-shadow: css-var('box-shadow-large');
+   box-shadow: var(--env-box-shadow-large);
 }
