@@ -1,4 +1,4 @@
-import { defineConfig, globalIgnores } from 'eslint/config';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,34 +14,13 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-   globalIgnores([
-      '**/dist',
-      '**/docs',
-      '**/envision.js',
-      '**/public',
-      '**/.cache',
-   ]),
    {
       extends: compat.extends('eslint:recommended'),
 
       languageOptions: {
          globals: {
-            ...globals.browser,
-            ...globals.jquery,
+            ...globals.commonjs,
          },
-
-         ecmaVersion: 13,
-         sourceType: 'module',
-      },
-   },
-   {
-      files: ['packages/css-vars-to-json/**/*.js'],
-      plugins: {
-         js,
-      },
-      languageOptions: {
-         ecmaVersion: 13,
-         sourceType: 'commonjs',
       },
    },
 ]);

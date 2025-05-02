@@ -11,7 +11,7 @@
       "postinstall": "husky install",
       "precommit": "lint-staged",
       "lint": "prettier -c . && eslint .",
-      "dev": "NODE_NO_WARNINGS=1 cross-env NODE_ENV=development concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
+      "dev": "cross-env NODE_ENV=development concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
       "build": "yarn workspace envision build && yarn workspace envision-docs build && yarn run copy-docs",
       "copy-docs": "node scripts/copyDocs.js",
       "publish:docker": "yarn build && docker build -t docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD) . && docker push docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD)"
@@ -34,6 +34,7 @@
       "concurrently": "^9.1.2",
       "cross-env": "^7.0.3",
       "eslint": "^9.25.1",
+      "eslint-plugin-commonjs": "^1.0.2",
       "eslint-plugin-react": "^7.37.5",
       "eslint-plugin-react-hooks": "^5.2.0",
       "globals": "^16.0.0",
@@ -45,5 +46,8 @@
       "*.js": "eslint --cache --fix",
       "*.{js,scss,css,md,json}": "prettier --write",
       ".{eslintrc,babelrc}": "prettier --write"
+   },
+   "dependencies": {
+      "sharp": "^0.34.1"
    }
 }
