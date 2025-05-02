@@ -1,11 +1,15 @@
+@use 'mixin/list';
+@use 'mixin/nav';
+@use 'variable';
+
 .env-nav {
-   @include reset-list();
-   font-family: css-var('font-family');
-   font-size: css-var('font-size-medium');
-   font-weight: $font-weight-regular;
+   @include list.reset-list();
+   font-family: var(--env-font-family);
+   font-size: var(--env-font-size-medium);
+   font-weight: variable.$font-weight-regular;
 
    &__link {
-      @include nav-link();
+      @include nav.nav-link();
    }
 }
 
@@ -13,29 +17,32 @@
    display: flex;
 
    .env-nav__link {
-      padding: css-var('spacing-small');
+      padding: var(--env-spacing-small);
    }
 
    &.env-nav--fill {
       .env-nav__link {
-         @include filled-nav-states();
-         border-radius: css-var('border-radius-medium');
+         & {
+            border-radius: var(--env-border-radius-medium);
+         }
+         @include nav.filled-nav-states();
       }
    }
 
    &.env-nav--border {
       .env-nav__link {
-         border-bottom: $border-width $border-style transparent;
+         border-bottom: variable.$border-width variable.$border-style
+            transparent;
 
          &:hover {
-            border-bottom-color: css-var('link-hover-font-color');
-            color: css-var('link-hover-font-color');
+            border-bottom-color: var(--env-link-hover-font-color);
+            color: var(--env-link-hover-font-color);
          }
 
          &[aria-current='page'],
          &--active {
-            border-bottom-color: css-var('link-hover-font-color');
-            color: css-var('link-hover-font-color');
+            border-bottom-color: var(--env-link-hover-font-color);
+            color: var(--env-link-hover-font-color);
          }
       }
    }
@@ -43,19 +50,20 @@
 
 .env-nav--sidenav {
    .env-nav__link {
-      border-bottom: $border-width $border-style css-var('border-color-05');
-      color: css-var('link-secondary-font-color');
-      padding: css-var('spacing-small') 0;
+      border-bottom: variable.$border-width variable.$border-style
+         var(--env-border-color-05);
+      color: var(--env-link-secondary-font-color);
+      padding: var(--env-spacing-small) 0;
 
       &[aria-current='page'],
       &--active {
-         border-left: 2px $border-style
-            css-var('link-secondary-hover-font-color');
-         padding-left: css-var('spacing-x-small');
+         border-left: 2px variable.$border-style
+            var(--env-link-secondary-hover-font-color);
+         padding-left: var(--env-spacing-x-small);
       }
 
       &:hover {
-         color: css-var('link-secondary-hover-font-color');
+         color: var(--env-link-secondary-hover-font-color);
       }
    }
 }

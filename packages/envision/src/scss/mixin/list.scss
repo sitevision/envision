@@ -1,18 +1,20 @@
+@use '../variable';
+
 @use 'sass:math';
 
 @mixin basis-value($i) {
-   flex-basis: percentage(math.div(1, $i));
+   flex-basis: math.percentage(math.div(1, $i));
 }
 
 @mixin dot-divider() {
-   background-color: $color-dark;
+   background-color: variable.$color-dark;
    content: '';
    display: inline-block;
-   height: css-var('spacing-xxx-small');
+   height: var(--env-spacing-xxx-small);
    vertical-align: middle;
-   width: css-var('spacing-xxx-small');
-   margin-left: css-var('spacing-x-small');
-   margin-right: css-var('spacing-x-small');
+   width: var(--env-spacing-xxx-small);
+   margin-left: var(--env-spacing-x-small);
+   margin-right: var(--env-spacing-x-small);
    border-radius: 50%;
 }
 

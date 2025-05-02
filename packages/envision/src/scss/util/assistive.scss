@@ -1,7 +1,9 @@
+@use '../mixin/assistive';
+
 .env-assistive-text {
-   @include visually-hidden();
+   @include assistive.visually-hidden();
 
    &--focusable {
-      @include visually-hidden-focusable();
+      @include assistive.visually-hidden-focusable();
    }
 }

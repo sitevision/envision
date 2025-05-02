@@ -1,3 +1,5 @@
+@use 'variable';
+
 .env-tooltip {
    $arrow-size: 6px;
 
@@ -14,7 +16,7 @@
       font-family: var(--env-tooltip-font-family);
       font-size: var(--env-tooltip-font-size);
       font-weight: var(--env-tooltip-font-weight);
-      line-height: $line-height-medium !important;
+      line-height: variable.$line-height-medium !important;
       text-align: center;
       white-space: nowrap;
 

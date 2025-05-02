@@ -1,5 +1,8 @@
+@use 'mixin/list';
+@use 'variable';
+
 .env-list {
-   @include reset-list();
+   @include list.reset-list();
 
    &--horizontal {
       display: flex;
@@ -11,13 +14,13 @@
             display: flex;
          }
          &--left > .env-list__item:before {
-            @include dot-divider();
+            @include list.dot-divider();
          }
          &--left > .env-list__item:first-child:before {
             content: none;
          }
          &--right > .env-list__item:after {
-            @include dot-divider();
+            @include list.dot-divider();
          }
          &--right > .env-list__item:last-child:after {
             content: none;
@@ -30,7 +33,7 @@
 
          @for $i from 1 through 12 {
             &--#{$i} > .env-list__item {
-               @include basis-value($i);
+               @include list.basis-value($i);
                box-sizing: border-box;
             }
          }
@@ -43,28 +46,34 @@
 
    &.env-list-dividers {
       &--top > .env-list__item {
-         border-top: $border-width $border-style css-var('border-color-05');
+         border-top: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
       }
       &--bottom > .env-list__item {
-         border-bottom: $border-width $border-style css-var('border-color-05');
+         border-bottom: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
       }
       &--around > .env-list__item {
-         border: $border-width $border-style css-var('border-color-05');
+         border: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
          + .env-list__item {
-            margin-top: css-var('spacing-xxx-small');
+            margin-top: var(--env-spacing-xxx-small);
          }
       }
    }
 
    .env-list-item-divider {
       &--top {
-         border-top: $border-width $border-style css-var('border-color-05');
+         border-top: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
       }
       &--bottom {
-         border-bottom: $border-width $border-style css-var('border-color-05');
+         border-bottom: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
       }
       &--around {
-         border: $border-width $border-style css-var('border-color-05');
+         border: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
       }
    }
 }
@@ -72,7 +81,7 @@
 .env-definition-list {
    dd {
       margin: 0;
-      padding: 0 0 css-var('spacing-small');
+      padding: 0 0 var(--env-spacing-small);
    }
 
    &--horizontal {
@@ -86,8 +95,8 @@
       }
 
       dd {
-         margin: 0 0 0 #{$dl-title-width + $spacing-medium}; // Keep
-         padding: 0 0 css-var('spacing-small');
+         margin: 0 0 0 #{$dl-title-width + variable.$spacing-medium}; // Keep
+         padding: 0 0 var(--env-spacing-small);
       }
    }
 }

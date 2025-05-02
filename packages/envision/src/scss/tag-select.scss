@@ -1,3 +1,8 @@
+@use 'functions';
+@use 'mixin/focus';
+@use 'mixin/form';
+@use 'variable';
+
 @use 'sass:math';
 
 .env-select {
@@ -16,7 +21,7 @@
       .env-select__item {
          font-size: 1em;
          background-color: transparent;
-         color: css-var('form-input-font-color');
+         color: var(--env-form-input-font-color);
          padding: 0.5625em 0.25em;
       }
 
@@ -37,13 +42,14 @@
       flex-wrap: wrap;
       align-items: baseline;
       font-family: inherit;
-      background-color: css-var('form-input-background-color');
+      background-color: var(--env-form-input-background-color);
       background-image: none;
-      border: $border-width $border-style css-var('form-input-border-color');
-      border-radius: css-var('form-input-border-radius');
+      border: variable.$border-width variable.$border-style
+         var(--env-form-input-border-color);
+      border-radius: var(--env-form-input-border-radius);
       box-sizing: border-box;
-      color: css-var('form-input-font-color');
-      font-size: css-var('font-size-medium');
+      color: var(--env-form-input-font-color);
+      font-size: var(--env-font-size-medium);
       line-height: 1;
       margin: 0;
       padding: 0.25em;
@@ -51,7 +57,10 @@
          border-color 0.2s ease-in-out,
          box-shadow 0.2s ease-in-out;
       width: 100%;
-      min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
+      min-height: (
+         math.div(variable.$form-input-height, variable.$BROWSER_FONT_SIZE) *
+            1em
+      );
       cursor: text;
       overflow: hidden;
 
@@ -70,14 +79,14 @@
 
       > input {
          background: none;
-         color: css-var('form-input-font-color');
+         color: var(--env-form-input-font-color);
          border: 0;
          box-shadow: none;
          display: inline-block;
          flex: 1 1 auto;
          font-size: 1em;
-         line-height: math.div(34, $BROWSER_FONT_SIZE);
-         margin: 0 0 0 em(4px);
+         line-height: math.div(34, variable.$BROWSER_FONT_SIZE);
+         margin: 0 0 0 functions.em(4px);
          max-height: none;
          max-width: 100%;
          min-height: 0;
@@ -86,13 +95,13 @@
          text-indent: 0;
          user-select: auto;
 
-         @include placeholder {
-            color: css-var('form-input-font-color');
+         @include form.placeholder {
+            color: var(--env-form-input-font-color);
             filter: opacity(0.65);
          }
 
          &:focus {
-            @include wcagSafeOutlineNone;
+            @include focus.wcagSafeOutlineNone;
          }
       }
 
@@ -104,13 +113,13 @@
       }
 
       .env-select.focus & {
-         @include focus-outline();
+         @include focus.focus-outline();
       }
 
       .env-select--locked &,
       .env-select.locked &,
       .env-select.disabled & {
-         @include disabled;
+         @include form.disabled;
 
          .env-select__input__clear {
             display: none !important;
@@ -137,9 +146,9 @@
          display: none;
          cursor: pointer;
          position: absolute;
-         top: calc(#{css-var('spacing-xx-small')} + 1px);
-         right: css-var('spacing-xxx-small');
-         color: css-var('form-input-font-color');
+         top: calc(#{var(--env-spacing-xx-small)} + 1px);
+         right: var(--env-spacing-xxx-small);
+         color: var(--env-form-input-font-color);
          width: 1.4em;
          height: 1.9em;
          line-height: 1.9;
@@ -155,46 +164,47 @@
 
    &__item {
       cursor: pointer;
-      margin: 0 em(4px, 14px) em(4px, 14px) 0;
+      margin: 0 functions.em(4px, 14px) functions.em(4px, 14px) 0;
       align-items: center;
       display: flex;
-      border-radius: css-var('border-radius-medium');
-      font-size: em(14px);
+      border-radius: var(--env-border-radius-medium);
+      font-size: functions.em(14px);
       line-height: 1;
-      padding: em(10px, 14px);
-      color: css-var('element-primary-font-color');
-      background-color: css-var('element-primary-background-color');
+      padding: functions.em(10px, 14px);
+      color: var(--env-element-primary-font-color);
+      background-color: var(--env-element-primary-background-color);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
 
       .plugin-remove_button & {
-         padding: 0 0 0 em(10px, 14px);
+         padding: 0 0 0 functions.em(10px, 14px);
       }
 
       &__remove {
          text-decoration: none !important;
-         color: css-var('element-primary-font-color');
-         padding: em(9px, 14px) em(7px, 14px);
+         color: var(--env-element-primary-font-color);
+         padding: functions.em(9px, 14px) functions.em(7px, 14px);
       }
    }
 
    &__dropdown {
       display: none;
-      background-color: css-var('section-background-color');
-      color: css-var('font-color');
-      border: $border-width $border-style css-var('border-color-05');
-      border-radius: css-var('border-radius-medium');
-      box-shadow: css-var('box-shadow-small');
+      background-color: var(--env-section-background-color);
+      color: var(--env-font-color);
+      border: variable.$border-width variable.$border-style
+         var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium);
+      box-shadow: var(--env-box-shadow-small);
       position: absolute;
       top: calc(100% + 4px);
       right: 0;
       left: 0;
-      z-index: $zindex-tagselect;
+      z-index: variable.$zindex-tagselect;
       font-size: var(--env-font-size-medium);
 
       &__content {
-         padding: css-var('spacing-x-small') 0;
+         padding: var(--env-spacing-x-small) 0;
          max-height: 200px;
          overflow-x: hidden;
          overflow-y: auto;
@@ -204,22 +214,22 @@
       .create,
       .no-results,
       &__option {
-         padding: css-var('spacing-x-small');
+         padding: var(--env-spacing-x-small);
       }
 
       .create,
       &__option {
          &:hover,
          &.active {
-            background-color: css-var('section-background-color-05');
-            color: css-var('font-color');
+            background-color: var(--env-section-background-color-05);
+            color: var(--env-font-color);
          }
       }
    }
 
    &__spinner {
       display: inline-block;
-      margin: css-var('spacing-small') auto 0 0;
-      padding: 0 0 0 css-var('spacing-x-small');
+      margin: var(--env-spacing-small) auto 0 0;
+      padding: 0 0 0 var(--env-spacing-x-small);
    }
 }

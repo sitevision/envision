@@ -1,5 +1,7 @@
+@use '../variable';
+
 @mixin pagination-size($padding-y, $padding-x, $font-size) {
-   font-size: css-var($font-size);
-   line-height: $line-height-medium;
-   padding: css-var($padding-y) css-var($padding-x);
+   font-size: var(--env-#{$font-size});
+   line-height: variable.$line-height-medium;
+   padding: var(--env-#{$padding-y}) var(--env-#{$padding-x});
 }

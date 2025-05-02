@@ -1,12 +1,17 @@
+@use 'mixin/focus';
+@use 'mixin/list';
+@use 'mixin/nav';
+@use 'variable';
+
 .env-tabs {
-   $radius: min(css-var('border-radius-medium'), 1em);
+   $radius: min(var(--env-border-radius-medium), 1em);
    &__nav {
-      @include reset-list();
+      @include list.reset-list();
       display: flex;
 
       &--border-bottom {
-         border-bottom: $tab-bottom-width $border-style
-            css-var('ui-color-brand');
+         border-bottom: variable.$tab-bottom-width variable.$border-style
+            var(--env-ui-color-brand);
       }
 
       :first-child > a {
@@ -24,11 +29,11 @@
       align-items: center;
       box-sizing: border-box;
       appearance: none;
-      font-family: css-var('font-family');
-      font-size: css-var('font-size-medium');
+      font-family: var(--env-font-family);
+      font-size: var(--env-font-size-medium);
       line-height: 1;
       text-align: left;
-      color: css-var('font-color');
+      color: var(--env-font-color);
       background-color: transparent;
       border: {
          style: none;
@@ -43,52 +48,52 @@
          background-color 0.25s ease,
          color 0.25s ease;
       border-radius: $radius $radius 0 0;
-      margin: 0 css-var('spacing-xxx-small');
-      padding: css-var('spacing-x-small') css-var('spacing-medium');
+      margin: 0 var(--env-spacing-xxx-small);
+      padding: var(--env-spacing-x-small) var(--env-spacing-medium);
 
       &[aria-selected='true'] {
-         background-color: css-var('ui-color-brand');
-         color: css-var('ui-color-brand-contrast');
+         background-color: var(--env-ui-color-brand);
+         color: var(--env-ui-color-brand-contrast);
       }
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &__panel[role='tabpanel'] {
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &--simple {
-      @include reset-list();
+      @include list.reset-list();
       display: flex;
 
       .env-tabs__link,
       [role='tab'] {
          background-color: transparent;
          border-color: transparent;
-         color: css-var('font-color');
-         margin: 0 css-var('spacing-xx-small');
-         padding: css-var('spacing-x-small') css-var('spacing-x-small');
+         color: var(--env-font-color);
+         margin: 0 var(--env-spacing-xx-small);
+         padding: var(--env-spacing-x-small) var(--env-spacing-x-small);
          transition: border-color 0.5s ease;
 
          &[aria-selected='true'] {
-            border-bottom: $tab-bottom-width $border-style
-               css-var('ui-color-brand');
+            border-bottom: variable.$tab-bottom-width variable.$border-style
+               var(--env-ui-color-brand);
          }
 
          &:hover {
-            border-bottom: $tab-bottom-width $border-style
-               css-var('ui-color-brand');
+            border-bottom: variable.$tab-bottom-width variable.$border-style
+               var(--env-ui-color-brand);
          }
 
-         @include focus-visible;
+         @include focus.focus-visible;
       }
    }
 
    &--hover-fill {
       .env-tabs__link {
-         @include nav-link();
-         @include filled-nav-states();
+         @include nav.nav-link();
+         @include nav.filled-nav-states();
       }
    }
 

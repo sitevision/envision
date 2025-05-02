@@ -1,10 +1,13 @@
+@use '../variable';
+@use 'focus';
+
 @mixin sitevision-site-font-override(
-   $font-size: css-var('font-size-medium'),
+   $font-size: var(--env-font-size-medium),
    $font-style: normal,
    $font-weight: 400,
    $line-height: normal,
-   $font-family: css-var('font-family'),
-   $color: css-var('font-color')
+   $font-family: var(--env-font-family),
+   $color: var(--env-font-color)
 ) {
    font-family: $font-family;
    font-weight: $font-weight;
@@ -19,7 +22,7 @@
    $font-size,
    $margin-bottom,
    $font-weight,
-   $line-height: $line-height-medium
+   $line-height: variable.$line-height-medium
 ) {
    #{$element}.env-text,
    .env-text #{$element},
@@ -27,12 +30,12 @@
       // This last one is not following BEM standards and have never been documented. Kept for backwards compatibility reasons
    .env-text--#{$element} {
       @include sitevision-site-font-override(
-         css-var($font-size),
+         var(--env-#{$font-size}),
          normal,
          $font-weight,
          $line-height
       );
-      margin: 0 0 css-var($margin-bottom);
+      margin: 0 0 var(--env-#{$margin-bottom});
    }
 }
 
@@ -42,21 +45,21 @@
    $hover-font-color: false,
    $hover-text-decoration: false
 ) {
-   color: css-var($font-color);
+   color: var(--env-#{$font-color});
 
    @if ($text-decoration) {
-      text-decoration: css-var($text-decoration);
+      text-decoration: var(--env-#{$text-decoration});
    }
    @if ($hover-font-color) {
       &:hover {
-         color: css-var($hover-font-color);
+         color: var(--env-#{$hover-font-color});
       }
    }
    @if ($hover-text-decoration) {
       &:hover {
-         text-decoration: css-var($hover-text-decoration);
+         text-decoration: var(--env-#{$hover-text-decoration});
       }
    }
 
-   @include focus-visible;
+   @include focus.focus-visible;
 }

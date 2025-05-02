@@ -11,7 +11,7 @@
       "postinstall": "husky install",
       "precommit": "lint-staged",
       "lint": "prettier -c . && eslint .",
-      "dev": "cross-env NODE_ENV=development concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
+      "dev": "NODE_NO_WARNINGS=1 cross-env NODE_ENV=development concurrently \"yarn workspace envision dev\" \"yarn workspace envision-docs dev\"",
       "build": "yarn workspace envision build && yarn workspace envision-docs build && yarn run copy-docs",
       "copy-docs": "node scripts/copyDocs.js",
       "publish:docker": "yarn build && docker build -t docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD) . && docker push docker-hub.sitevision.net/envision-test:$(git rev-parse --abbrev-ref HEAD)"

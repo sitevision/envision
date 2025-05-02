@@ -1,20 +1,22 @@
+@use 'variable';
+
 .env-ui-text {
-   @each $name in $UI_TEXT_NAMES {
+   @each $name in variable.$UI_TEXT_NAMES {
       &-#{$name} {
-         font-family: css-var('ui-text-#{$name}-font-family');
-         font-size: css-var('ui-text-#{$name}-font-size');
-         font-weight: css-var('ui-text-#{$name}-font-weight');
+         font-family: var(--env-ui-text-#{$name}-font-family);
+         font-size: var(--env-ui-text-#{$name}-font-size);
+         font-weight: var(--env-ui-text-#{$name}-font-weight);
          font-style: normal;
-         text-transform: css-var('ui-text-#{$name}-text-transform');
-         letter-spacing: css-var('ui-text-#{$name}-letter-spacing');
-         line-height: $line-height-medium;
-         color: css-var('ui-text-#{$name}-font-color');
+         text-transform: var(--env-ui-text-#{$name}-text-transform);
+         letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
+         line-height: variable.$line-height-medium;
+         color: var(--env-ui-text-#{$name}-font-color);
          margin: 0 !important;
       }
    }
 }
 
-@each $name in $UI_TEXT_NAMES {
+@each $name in variable.$UI_TEXT_NAMES {
    a.env-ui-text-#{$name},
    .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
       @extend %ui-text-link;

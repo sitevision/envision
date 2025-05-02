@@ -1,3 +1,6 @@
+@use 'mixin/focus';
+@use 'variable';
+
 .env-collapse {
    html:not(.sv-no-js) &:not(.env-collapse--show) {
       display: none;
@@ -14,33 +17,33 @@
    }
 
    > :first-child {
-      padding-top: css-var('spacing-xx-small');
+      padding-top: var(--env-spacing-xx-small);
    }
 }
 
 .env-collapse-header {
    width: 100%;
-   padding: css-var('spacing-x-small');
+   padding: var(--env-spacing-x-small);
    cursor: pointer;
    box-sizing: border-box;
    border: {
-      style: css-var('collapse-border-style');
-      width: css-var('collapse-border-width');
-      color: css-var('collapse-border-color');
+      style: var(--env-collapse-border-style);
+      width: var(--env-collapse-border-width);
+      color: var(--env-collapse-border-color);
    }
-   background-color: css-var('collapse-background-color');
+   background-color: var(--env-collapse-background-color);
    overflow-wrap: anywhere;
    word-break: normal;
    color: inherit;
    text-decoration: none;
-   border-radius: css-var('border-radius-medium');
+   border-radius: var(--env-border-radius-medium);
 
-   @include focus-visible;
+   @include focus.focus-visible;
 
    &:hover,
    &.env-collapse--expanded {
-      background-color: css-var('collapse-expanded-background-color');
-      border-color: css-var('collapse-expanded-border-color');
+      background-color: var(--env-collapse-expanded-background-color);
+      border-color: var(--env-collapse-expanded-border-color);
    }
 }
 
@@ -55,19 +58,19 @@
 }
 
 .env-collapse-header--icons {
-   margin-left: $collapse-icon-width;
-   min-height: $collapse-heading-min-height;
+   margin-left: variable.$collapse-icon-width;
+   min-height: variable.$collapse-heading-min-height;
    position: relative;
 
    &::before,
    &::after {
       content: '';
-      top: $collapse-icon-top;
-      right: $collapse-icon-right;
-      width: css-var('collapse-icon-width');
-      height: css-var('collapse-icon-height');
-      transition: transform css-var('collapse-toggle-duration') ease-out;
+      top: variable.$collapse-icon-top;
+      right: variable.$collapse-icon-right;
+      width: var(--env-collapse-icon-width);
+      height: var(--env-collapse-icon-height);
+      transition: transform var(--env-collapse-toggle-duration) ease-out;
       position: absolute;
-      background-color: css-var('collapse-icon-color');
+      background-color: var(--env-collapse-icon-color);
    }
 }

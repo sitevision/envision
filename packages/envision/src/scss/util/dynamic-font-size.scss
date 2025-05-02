@@ -1,4 +1,7 @@
-@include to-css-custom-property(
+@use '../functions';
+@use '../mixin/css-variables';
+
+@include css-variables.to-css-custom-property(
    (
       'root-font-size': 16,
       'dynamic-font-scale': 1.25,
@@ -44,7 +47,7 @@
    $scaleSizes: '1.125', '1.25', '1.375', '1.5', '1.625', '1.75', '1.875', '2';
 
    @each $scaleSize in $scaleSizes {
-      &--scale-#{str-replace($scaleSize, '.', '_')} {
+      &--scale-#{functions.str-replace($scaleSize, '.', '_')} {
          --env-dynamic-font-scale: #{$scaleSize};
       }
    }

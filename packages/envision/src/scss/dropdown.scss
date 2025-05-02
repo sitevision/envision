@@ -1,22 +1,26 @@
+@use 'mixin/popout-menu';
+@use 'variable';
+
 @use 'sass:math';
 
 .env-dropdown {
    position: relative;
 
-   @include popout-menu;
+   @include popout-menu.popout-menu;
 
    &__menu {
       display: none;
-      background-color: css-var('section-background-color');
-      border: $border-width $border-style css-var('border-color-05');
-      border-radius: css-var('border-radius-medium');
-      box-shadow: css-var('box-shadow');
+      background-color: var(--env-section-background-color);
+      border: variable.$border-width variable.$border-style
+         var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium);
+      box-shadow: var(--env-box-shadow);
       left: 0;
-      max-width: (math.div(240, $BROWSER_FONT_SIZE) * 1em);
-      min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
+      max-width: (math.div(240, variable.$BROWSER_FONT_SIZE) * 1em);
+      min-width: (math.div(180, variable.$BROWSER_FONT_SIZE) * 1em);
       position: fixed;
       top: 100%;
-      z-index: $zindex-dropdown;
+      z-index: variable.$zindex-dropdown;
 
       &[data-env-dropdown] {
          display: block;

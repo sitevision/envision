@@ -1,10 +1,12 @@
+@use '../mixin/colors';
+
 $variableNames:
    'brand', 'success', 'warning', 'danger', 'info', 'base', 'darker', 'dark',
    'normal', 'light', 'lighter', 'lightest', 'hover';
 
 @each $name in $variableNames {
    .env-color--#{$name} {
-      color: css-var('color-#{$name}') !important;
+      color: var(--env-color-#{$name}) !important;
    }
    .env-bg-color--#{$name},
    .env-bg-color--#{$name}--80,
@@ -12,18 +14,18 @@ $variableNames:
    .env-bg-color--#{$name}--40,
    .env-bg-color--#{$name}--20,
    .env-bg-color--#{$name}--10 {
-      background-color: css-var('color-#{$name}');
+      background-color: var(--env-color-#{$name});
    }
 }
 
 .env-block {
-   @include color-block();
+   @include colors.color-block();
 }
 
 .env-block-primary {
-   @include color-block('primary');
+   @include colors.color-block('primary');
 }
 
 .env-block-secondary {
-   @include color-block('secondary');
+   @include colors.color-block('secondary');
 }

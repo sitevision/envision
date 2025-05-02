@@ -1,6 +1,7 @@
+@use 'sass:string';
 @function getShortValue($value) {
-   $start: str-index($value, '-');
-   @return if($start, str-slice($value, $start + 1), $value);
+   $start: string.index($value, '-');
+   @return if($start, string.slice($value, $start + 1), $value);
 }
 
 // Deprecated, 9.1

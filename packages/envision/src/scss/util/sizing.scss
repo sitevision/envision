@@ -1,11 +1,12 @@
-$values: 25% 50% 75% 100%;
+@use 'sass:string';
+
+$values: 25 50 75 100;
 $properties: width height;
 @each $value in $values {
    @each $property in $properties {
-      $p: str-slice($property, 0, 1);
-      $unitless: strip-unit($value);
-      .env-#{$p}--#{$unitless} {
-         #{$property}: $value !important;
+      $p: string.slice($property, 0, 1);
+      .env-#{$p}--#{$value} {
+         #{$property}: #{$value}#{'%'} !important;
       }
    }
 }

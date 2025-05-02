@@ -1,3 +1,7 @@
+@use 'mixin/focus';
+@use 'mixin/sliders';
+@use 'variable';
+
 .env-image-slider {
    position: relative;
 
@@ -5,7 +9,7 @@
       overflow: hidden;
       position: relative;
       width: 100%;
-      border-radius: css-var('border-radius-medium');
+      border-radius: var(--env-border-radius-medium);
    }
 
    &__item {
@@ -41,7 +45,7 @@
       top: 0;
       width: 15%;
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &--next {
@@ -57,7 +61,7 @@
       position: absolute;
       top: 0;
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &__previous-icon,
@@ -67,7 +71,7 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-      color: css-var('image-control-color');
+      color: var(--env-image-control-color);
       fill: currentColor;
    }
 
@@ -95,22 +99,22 @@
       justify-content: flex-start;
       left: 0;
       list-style: none;
-      margin-top: css-var('spacing-x-small');
+      margin-top: var(--env-spacing-x-small);
       overflow: auto;
       padding-left: 0;
       right: 0;
-      z-index: $zindex-imageslider-indicator;
+      z-index: variable.$zindex-imageslider-indicator;
 
       li {
          cursor: pointer;
-         margin-right: css-var('spacing-x-small');
+         margin-right: var(--env-spacing-x-small);
          position: relative;
       }
 
       .env-image-slider__thumbnail {
          max-width: 90px;
          opacity: 0.4;
-         border-radius: css-var('border-radius-medium');
+         border-radius: var(--env-border-radius-medium);
       }
 
       .env-image-slider__item--active {
@@ -119,18 +123,18 @@
    }
 
    &__indicators {
-      @include slide-indicator;
+      @include sliders.slide-indicator;
    }
 
    &__caption {
-      bottom: css-var('spacing-large');
+      bottom: var(--env-spacing-large);
       color: rgba(255, 255, 255, 1);
       left: ((100% - 70%) * 0.5);
-      padding-bottom: css-var('spacing-large');
-      padding-top: css-var('spacing-large');
+      padding-bottom: var(--env-spacing-large);
+      padding-top: var(--env-spacing-large);
       position: absolute;
       right: ((100% - 70%) * 0.5);
       text-align: center;
-      z-index: $zindex-imageslider-indicator;
+      z-index: variable.$zindex-imageslider-indicator;
    }
 }

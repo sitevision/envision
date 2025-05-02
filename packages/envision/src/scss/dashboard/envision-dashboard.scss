@@ -1,8 +1,5 @@
-@import '../functions';
-@import '../mixin/css-variables';
-
-@import 'env-dashboard-theme';
-@import 'core';
-@import 'colors';
-@import 'components';
-@import 'typography';
+@use 'env-dashboard-theme';
+@use 'core';
+@use 'colors';
+@use 'components';
+@use 'typography';

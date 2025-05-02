@@ -14,13 +14,13 @@
       }
 
       &:first-of-type {
-         border-radius: css-var('button-border-radius') 0 0
-            css-var('button-border-radius');
+         border-radius: var(--env-button-border-radius) 0 0
+            var(--env-button-border-radius);
       }
 
       &:last-of-type {
-         border-radius: 0 css-var('button-border-radius')
-            css-var('button-border-radius') 0;
+         border-radius: 0 var(--env-button-border-radius)
+            var(--env-button-border-radius) 0;
       }
 
       &--ghost:last-of-type {

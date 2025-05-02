@@ -1,11 +1,19 @@
+@use 'mixin/button';
+@use 'mixin/focus';
+@use 'mixin/text';
+
 .env-button {
-   @include button-base;
+   @include button.button-base;
+
+   & {
+      @include button.button-size('medium');
+   }
 
    // ----- BUTTON COLORS & TYPES -----
 
-   @include button-color-variant();
+   @include button.button-color-variant();
 
-   @include focus-visible;
+   @include focus.focus-visible;
 
    // Variants
 
@@ -13,12 +21,12 @@
 
    @each $name in $buttonNames {
       &--#{$name} {
-         @include button-color-variant($name);
+         @include button.button-color-variant($name);
       }
    }
 
    &--brand {
-      @include button-color-variant(
+      @include button.button-color-variant(
          'brand',
          'ui-color-brand',
          'ui-color-brand-dark',
@@ -30,7 +38,7 @@
       // DEPRECATED since 10.0
       background-color: transparent;
       border-color: transparent;
-      color: css-var('element-primary-background-color-dark');
+      color: var(--env-element-primary-background-color-dark);
 
       &:hover,
       &:active,
@@ -49,7 +57,7 @@
       &:focus {
          background-color: transparent;
          border-color: transparent;
-         color: css-var('font-color');
+         color: var(--env-font-color);
       }
    }
 
@@ -68,7 +76,7 @@
    }
 
    &.env-link {
-      @include link(
+      @include text.link(
          'link-font-color',
          'link-text-decoration',
          'link-hover-font-color',
@@ -77,7 +85,7 @@
    }
 
    &.env-link-secondary {
-      @include link(
+      @include text.link(
          'link-secondary-font-color',
          'link-secondary-text-decoration',
          'link-secondary-hover-font-color',
@@ -100,7 +108,7 @@
       }
    }
 
-   @include squareIconButton {
+   @include button.squareIconButton {
       position: relative;
       display: inline-block;
       line-height: 1;
@@ -128,17 +136,15 @@
 
    // ----- BUTTON & ICON SIZING -----
 
-   @include button-size('medium');
-
    &--large {
-      @include button-size('large');
+      @include button.button-size('large');
    }
 
    &--small {
-      @include button-size('small');
+      @include button.button-size('small');
    }
 
    &--slim {
-      @include button-size('slim');
+      @include button.button-size('slim');
    }
 }

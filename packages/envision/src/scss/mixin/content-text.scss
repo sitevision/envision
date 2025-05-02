@@ -7,7 +7,7 @@
    :root {
       @each $variant, $overrides in $variants {
          @each $prop, $value in $defaults {
-            @if map-has-key($overrides, $prop) {
+            @if map.has-key($overrides, $prop) {
                --env-text-#{$name}-#{$variant}-#{$prop}: #{map.get(
                      $overrides,
                      $prop

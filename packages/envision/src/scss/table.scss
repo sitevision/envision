@@ -1,8 +1,11 @@
+@use 'mixin/table';
+@use 'variable';
+
 .env-table {
    border-collapse: collapse;
 
    caption {
-      @include table-text('table-caption-01');
+      @include table.table-text('table-caption-01');
       text-align: left;
       margin: 0 0 0.5rem;
       padding: 0 0.5rem;
@@ -13,31 +16,33 @@
    }
 
    th {
-      @include table-text('table-heading-01');
+      @include table.table-text('table-heading-01');
       text-align: left;
    }
 
    td {
-      @include table-text('table-data-01');
+      @include table.table-text('table-data-01');
    }
 
    th,
    td {
-      border-top: $border-width $border-style css-var('border-color');
+      border-top: variable.$border-width variable.$border-style
+         var(--env-border-color);
       padding: 0.5rem;
       vertical-align: top;
    }
 
    &--zebra {
       tbody tr:nth-of-type(odd) {
-         background-color: css-var('section-background-color-05');
+         background-color: var(--env-section-background-color-05);
       }
    }
 
    &--borders-around {
       th,
       td {
-         border: $border-width $border-style css-var('border-color');
+         border: variable.$border-width variable.$border-style
+            var(--env-border-color);
       }
    }
 
@@ -47,9 +52,9 @@
          th,
          td {
             border-top: 0;
-            border-#{$direction}: $border-width
-               $border-style
-               css-var('border-color');
+            border-#{$direction}: variable.$border-width
+               variable.$border-style
+               var(--env-border-color);
          }
       }
    }
@@ -76,7 +81,7 @@
 
    &--hover {
       tbody tr:hover {
-         background-color: css-var('section-background-color-05');
+         background-color: var(--env-section-background-color-05);
       }
    }
 
@@ -92,7 +97,7 @@
    @each $state, $color in $colors {
       @each $block in $blocks {
          .env-table__#{$block}--#{$state} {
-            background-color: css-var($color);
+            background-color: var(--env-#{$color});
          }
       }
    }

@@ -1,3 +1,8 @@
+@use 'mixin/backdrop';
+@use 'mixin/focus';
+@use 'mixin/sliders';
+@use 'variable';
+
 .env-image-viewer {
    position: relative;
    text-align: center;
@@ -12,7 +17,7 @@
       right: 0;
       text-align: center;
       top: 0;
-      z-index: $zindex-modal;
+      z-index: variable.$zindex-modal;
    }
 
    &__dialog {
@@ -28,10 +33,10 @@
    }
 
    &__backdrop {
-      @include backdrop();
+      @include backdrop.backdrop();
 
       &--in {
-         @include backdrop-in();
+         @include backdrop.backdrop-in();
       }
    }
 
@@ -52,11 +57,11 @@
       position: absolute;
       top: 0;
       width: 33%;
-      z-index: $zindex-imageslider-indicator;
+      z-index: variable.$zindex-imageslider-indicator;
       border: none;
       background: transparent;
 
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &--next {
@@ -82,16 +87,16 @@
       height: 20px;
       background: transparent no-repeat center center;
       background-size: 100% 100%;
-      color: css-var('image-control-color');
+      color: var(--env-image-control-color);
       fill: currentColor;
    }
 
    &__next-icon {
-      margin-right: css-var('spacing-xxx-small');
+      margin-right: var(--env-spacing-xxx-small);
    }
 
    &__prev-icon {
-      margin-left: css-var('spacing-xxx-small');
+      margin-left: var(--env-spacing-xxx-small);
    }
 
    &__thumbnails {
@@ -100,14 +105,14 @@
       justify-content: center;
       left: 0;
       list-style: none;
-      margin-top: css-var('spacing-x-small');
+      margin-top: var(--env-spacing-x-small);
       padding-left: 0;
       right: 0;
-      z-index: $zindex-imageslider-indicator;
+      z-index: variable.$zindex-imageslider-indicator;
 
       li {
          cursor: pointer;
-         margin-right: css-var('spacing-x-small');
+         margin-right: var(--env-spacing-x-small);
          position: relative;
       }
    }
@@ -115,31 +120,31 @@
    &__thumbnail {
       display: block;
       object-fit: cover;
-      border: $border-width $border-style transparent;
+      border: variable.$border-width variable.$border-style transparent;
       max-width: 80px;
       opacity: 0.9;
-      border-radius: css-var('border-radius-medium');
+      border-radius: var(--env-border-radius-medium);
 
       &:active {
-         border: $border-width $border-style
-            css-var('element-primary-background-color-light');
+         border: variable.$border-width variable.$border-style
+            var(--env-element-primary-background-color-light);
          opacity: 1;
       }
    }
 
    &__indicators {
-      @include slide-indicator;
+      @include sliders.slide-indicator;
    }
 
    &__images {
       display: block;
-      @include focus-visible;
+      @include focus.focus-visible;
    }
 
    &__img {
       max-width: 100%;
-      @include focus-visible;
-      border-radius: css-var('border-radius-medium');
+      @include focus.focus-visible;
+      border-radius: var(--env-border-radius-medium);
 
       .env-image-viewer__modal-container & {
          border-radius: 0;

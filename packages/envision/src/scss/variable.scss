@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use 'mixin/content-text';
+@use 'mixin/css-variables';
+
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:list';
@@ -56,7 +60,7 @@ $icon-size-xx-large: math.div(60, $BROWSER_FONT_SIZE) !default;
 // Font family
 $font-family: inherit !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'font-family': $font-family,
    )
@@ -65,7 +69,7 @@ $font-family: inherit !default;
 // Font Size
 $font-size-base: 1em !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'font-size-base': $font-size-base,
       'font-size-x-small': calc(var(--env-font-size-base) * 0.75),
@@ -82,7 +86,7 @@ $font-size-base: 1em !default;
 $font-color: #202330 !default;
 $font-color-muted: rgba($font-color, 0.65);
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'font-color': $font-color,
       'font-color-muted': $font-color-muted,
@@ -93,17 +97,17 @@ $link-color: #3a71aa !default;
 $link-text-decoration: none !default;
 $link-hover-text-decoration: underline !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'link-font-color': $link-color,
       'link-text-decoration': $link-text-decoration,
-      'link-hover-font-color': css-var('link-font-color'),
+      'link-hover-font-color': var(--env-link-font-color),
       'link-hover-text-decoration': $link-hover-text-decoration,
-      'link-secondary-font-color': css-var('font-color'),
-      'link-secondary-text-decoration': css-var('link-text-decoration'),
-      'link-secondary-hover-font-color': css-var('link-font-color'),
-      'link-secondary-hover-text-decoration': css-var(
-            'link-hover-text-decoration'
+      'link-secondary-font-color': var(--env-font-color),
+      'link-secondary-text-decoration': var(--env-link-text-decoration),
+      'link-secondary-hover-font-color': var(--env-link-font-color),
+      'link-secondary-hover-text-decoration': var(
+            --env-link-hover-text-decoration
          ),
    )
 );
@@ -113,11 +117,14 @@ $link-hover-text-decoration: underline !default;
 $background-color: #ffffff !default;
 $section-background-color: #ffffff !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'background-color': $background-color,
       'section-background-color': $section-background-color,
-      'section-background-color-05': darken($section-background-color, 5%),
+      'section-background-color-05': color.adjust(
+            $section-background-color,
+            $lightness: -5%
+         ),
    )
 );
 
@@ -135,7 +142,7 @@ $ui-color-status-error: #c15252;
 $ui-color-status-error-contrast: #ffffff;
 $ui-color-status-error-text: #c15252;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'ui-color-status-neutral': $ui-color-status-neutral,
       'ui-color-status-neutral-contrast': $ui-color-status-neutral-contrast,
@@ -157,7 +164,7 @@ $BRAND_COLOR_VARIANTS:
    '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65',
    '70', '75', '80', '85', '90', '95', '100';
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'ui-color-brand': #767676,
       'ui-color-brand-dark': #626262,
@@ -210,34 +217,34 @@ $BRAND_COLOR_VARIANTS:
 $UI_TEXT_NAMES:
    'overline', 'heading', 'sectionheading', 'subheading', 'caption';
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'ui-text-overline-font-family': css-var('font-family'),
-      'ui-text-overline-font-color': css-var('font-color'),
+      'ui-text-overline-font-family': var(--env-font-family),
+      'ui-text-overline-font-color': var(--env-font-color),
       'ui-text-overline-font-size': 0.75em,
       'ui-text-overline-font-weight': 600,
       'ui-text-overline-text-transform': uppercase,
       'ui-text-overline-letter-spacing': 0.15em,
-      'ui-text-heading-font-family': css-var('font-family'),
-      'ui-text-heading-font-color': css-var('font-color'),
+      'ui-text-heading-font-family': var(--env-font-family),
+      'ui-text-heading-font-color': var(--env-font-color),
       'ui-text-heading-font-size': 1.82em,
       'ui-text-heading-font-weight': 600,
       'ui-text-heading-text-transform': none,
       'ui-text-heading-letter-spacing': normal,
-      'ui-text-sectionheading-font-family': css-var('font-family'),
-      'ui-text-sectionheading-font-color': css-var('font-color'),
+      'ui-text-sectionheading-font-family': var(--env-font-family),
+      'ui-text-sectionheading-font-color': var(--env-font-color),
       'ui-text-sectionheading-font-size': 1.25em,
       'ui-text-sectionheading-font-weight': 600,
       'ui-text-sectionheading-text-transform': none,
       'ui-text-sectionheading-letter-spacing': normal,
-      'ui-text-subheading-font-family': css-var('font-family'),
-      'ui-text-subheading-font-color': css-var('font-color'),
+      'ui-text-subheading-font-family': var(--env-font-family),
+      'ui-text-subheading-font-color': var(--env-font-color),
       'ui-text-subheading-font-size': 1em,
       'ui-text-subheading-font-weight': 600,
       'ui-text-subheading-text-transform': none,
       'ui-text-subheading-letter-spacing': normal,
-      'ui-text-caption-font-family': css-var('font-family'),
-      'ui-text-caption-font-color': css-var('font-color-muted'),
+      'ui-text-caption-font-family': var(--env-font-family),
+      'ui-text-caption-font-color': var(--env-font-color-muted),
       'ui-text-caption-font-size': 0.875em,
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
@@ -280,7 +287,7 @@ $content-text-links: (
    'link-hover-text-decoration': var(--env-link-hover-text-decoration),
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'heading',
       'defaults': map.merge(
@@ -320,7 +327,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'display',
       'defaults': map.merge(
@@ -348,7 +355,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'summary',
       'defaults': map.merge(
@@ -369,7 +376,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'body',
       'defaults': map.merge(
@@ -400,7 +407,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'caption',
       'defaults': map.merge(
@@ -421,7 +428,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'quotation',
       'defaults': map.merge(
@@ -447,7 +454,7 @@ $content-text-links: (
    )
 );
 
-@include content-text-font-to-css-custom-properties(
+@include content-text.content-text-font-to-css-custom-properties(
    (
       'name': 'table',
       'defaults': map.merge(
@@ -478,7 +485,7 @@ $content-text-links: (
 
 // ----- MARK -----
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'mark-font-color': #202330,
       'mark-background-color': #fcea4c,
@@ -487,7 +494,7 @@ $content-text-links: (
 
 // ----- BLOCKQUOTE -----
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'blockquote-border-block-width': 0,
       'blockquote-border-block-color': var(--env-font-color),
@@ -509,31 +516,31 @@ $content-text-links: (
 // Color
 $focus-size: 2px;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'focus-size': $focus-size,
-      'focus-offset': css-var('focus-size'),
-      'focus-outline-color': css-var('font-color'),
-      'focus-inner-color': css-var('section-background-color'),
-      'focus-box-shadow': 0 0 0 css-var('focus-offset')
-         css-var('focus-inner-color'),
-      'focus-outline': css-var('focus-size') solid
-         css-var('focus-outline-color'),
+      'focus-offset': var(--env-focus-size),
+      'focus-outline-color': var(--env-font-color),
+      'focus-inner-color': var(--env-section-background-color),
+      'focus-box-shadow': 0 0 0 var(--env-focus-offset)
+         var(--env-focus-inner-color),
+      'focus-outline': var(--env-focus-size) solid
+         var(--env-focus-outline-color),
    )
 );
 
 $color-primary: #3a71aa !default;
-$color-primary-light: lighten($color-primary, 10%) !default;
-$color-primary-dark: darken($color-primary, 10%) !default;
+$color-primary-light: color.adjust($color-primary, $lightness: 10%) !default;
+$color-primary-dark: color.adjust($color-primary, $lightness: -10%) !default;
 $color-warning: #ffcd45 !default;
-$color-warning-dark: darken($color-warning, 10%) !default;
+$color-warning-dark: color.adjust($color-warning, $lightness: -10%) !default;
 $color-danger: #c15252 !default;
 $color-success: #358156 !default;
 $color-info: #29818d !default;
 $color-hover: #f7f7f7 !default;
 $color-base: #000000 !default;
-$color-light: lighten($color-base, 60%) !default;
-$color-lighter: lighten($color-base, 80%) !default;
+$color-light: color.adjust($color-base, $lightness: 60%) !default;
+$color-lighter: color.adjust($color-base, $lightness: 80%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
@@ -552,78 +559,108 @@ $element-default-background-color: #f0f1f2;
 $element-secondary-background-color: #4f5153;
 $element-secondary-font-color: #ffffff;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'block-font-color': $font-color,
-      'block-link-font-color': css-var('link-font-color'),
-      'block-link-hover-font-color': css-var('link-hover-font-color'),
-      'block-link-text-decoration': css-var('link-text-decoration'),
-      'block-link-hover-text-decoration': css-var('link-hover-text-decoration'),
+      'block-link-font-color': var(--env-link-font-color),
+      'block-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-link-text-decoration': var(--env-link-text-decoration),
+      'block-link-hover-text-decoration': var(--env-link-hover-text-decoration),
       'block-background-color': $block-default-background-color,
       'block-border-color': $block-default-border-color,
       'block-primary-font-color': $font-color,
-      'block-primary-link-font-color': css-var('link-font-color'),
-      'block-primary-link-hover-font-color': css-var('link-hover-font-color'),
-      'block-primary-link-text-decoration': css-var('link-text-decoration'),
-      'block-primary-link-hover-text-decoration': css-var(
-            'link-hover-text-decoration'
+      'block-primary-link-font-color': var(--env-link-font-color),
+      'block-primary-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-primary-link-text-decoration': var(--env-link-text-decoration),
+      'block-primary-link-hover-text-decoration': var(
+            --env-link-hover-text-decoration
          ),
       'block-primary-background-color': $block-primary-background-color,
       'block-primary-border-color': $block-primary-border-color,
       'block-secondary-font-color': $font-color,
-      'block-secondary-link-font-color': css-var('link-font-color'),
-      'block-secondary-link-hover-font-color': css-var('link-hover-font-color'),
-      'block-secondary-link-text-decoration': css-var('link-text-decoration'),
-      'block-secondary-link-hover-text-decoration': css-var(
-            'link-hover-text-decoration'
+      'block-secondary-link-font-color': var(--env-link-font-color),
+      'block-secondary-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-secondary-link-text-decoration': var(--env-link-text-decoration),
+      'block-secondary-link-hover-text-decoration': var(
+            --env-link-hover-text-decoration
          ),
       'block-secondary-background-color': $block-secondary-background-color,
       'block-secondary-border-color': $block-secondary-border-color,
    )
 );
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
-      'element-background-color-dark': darken(
+      'element-background-color-dark': color.adjust(
             $element-default-background-color,
-            8%
+            $lightness: -8%
          ),
-      'element-background-color-light': lighten(
+      'element-background-color-light': color.adjust(
             $element-default-background-color,
-            3%
+            $lightness: 3%
          ),
       'element-primary-font-color': #ffffff,
       'element-primary-background-color': $color-primary,
-      'element-primary-background-color-dark': darken($color-primary, 8%),
-      'element-primary-background-color-light': lighten($color-primary, 3%),
+      'element-primary-background-color-dark': color.adjust(
+            $color-primary,
+            $lightness: -8%
+         ),
+      'element-primary-background-color-light': color.adjust(
+            $color-primary,
+            $lightness: 3%
+         ),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
-      'element-secondary-background-color-dark': darken(
+      'element-secondary-background-color-dark': color.adjust(
             $element-secondary-background-color,
-            8%
+            $lightness: -8%
          ),
-      'element-secondary-background-color-light': lighten(
+      'element-secondary-background-color-light': color.adjust(
             $element-secondary-background-color,
-            3%
+            $lightness: 3%
          ),
       'element-success-font-color': #ffffff,
       'element-success-background-color': $color-success,
-      'element-success-background-color-dark': darken($color-success, 8%),
-      'element-success-background-color-light': lighten($color-success, 3%),
+      'element-success-background-color-dark': color.adjust(
+            $color-success,
+            $lightness: -8%
+         ),
+      'element-success-background-color-light': color.adjust(
+            $color-success,
+            $lightness: 3%
+         ),
       'element-warning-font-color': $font-color,
       'element-warning-background-color': $color-warning,
-      'element-warning-background-color-dark': darken($color-warning, 8%),
-      'element-warning-background-color-light': lighten($color-warning, 3%),
+      'element-warning-background-color-dark': color.adjust(
+            $color-warning,
+            $lightness: -8%
+         ),
+      'element-warning-background-color-light': color.adjust(
+            $color-warning,
+            $lightness: 3%
+         ),
       'element-danger-font-color': #ffffff,
       'element-danger-background-color': $color-danger,
-      'element-danger-background-color-dark': darken($color-danger, 8%),
-      'element-danger-background-color-light': lighten($color-danger, 3%),
+      'element-danger-background-color-dark': color.adjust(
+            $color-danger,
+            $lightness: -8%
+         ),
+      'element-danger-background-color-light': color.adjust(
+            $color-danger,
+            $lightness: 3%
+         ),
       'element-info-font-color': #ffffff,
       'element-info-background-color': $color-info,
-      'element-info-background-color-dark': darken($color-info, 8%),
-      'element-info-background-color-light': lighten($color-info, 3%),
+      'element-info-background-color-dark': color.adjust(
+            $color-info,
+            $lightness: -8%
+         ),
+      'element-info-background-color-light': color.adjust(
+            $color-info,
+            $lightness: 3%
+         ),
    )
 );
 
@@ -641,7 +678,7 @@ $spacing-x-large: $spacing-base * 1.5 !default;
 $spacing-xx-large: $spacing-base * 1.75 !default;
 $spacing-xxx-large: $spacing-base * 2 !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'spacing-xxx-small': $spacing-xxx-small,
       'spacing-xx-small': $spacing-xx-small,
@@ -657,12 +694,12 @@ $spacing-xxx-large: $spacing-base * 2 !default;
 
 // ----- SHADOWS -----
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'box-shadow-color': rgba(0, 0, 0, 0.15),
-      'box-shadow': 0 0.5em 1em #{css-var('box-shadow-color')},
-      'box-shadow-small': 0 0.125em 0.25em #{css-var('box-shadow-color')},
-      'box-shadow-large': 0 1em 3em #{css-var('box-shadow-color')},
+      'box-shadow': 0 0.5em 1em #{var(--env-box-shadow-color)},
+      'box-shadow-small': 0 0.125em 0.25em #{var(--env-box-shadow-color)},
+      'box-shadow-large': 0 1em 3em #{var(--env-box-shadow-color)},
    )
 );
 
@@ -674,22 +711,22 @@ $radius-small: $radius-base * 0.5 !default;
 $radius-medium: $radius-base !default;
 $radius-large: $radius-base * 1.5 !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'border-radius': $radius-base,
-      'border-radius-small': calc(#{css-var('border-radius')} * 0.5),
-      'border-radius-medium': #{css-var('border-radius')},
-      'border-radius-large': calc(#{css-var('border-radius')} * 1.5),
+      'border-radius-small': calc(#{var(--env-border-radius)} * 0.5),
+      'border-radius-medium': #{var(--env-border-radius)},
+      'border-radius-large': calc(#{var(--env-border-radius)} * 1.5),
    )
 );
 
 $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: #ccc !default;
-$border-color-05: lighten($border-color, 10%) !default;
+$border-color-05: color.adjust($border-color, $lightness: 10%) !default;
 $tab-bottom-width: 3px !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'border-color': $border-color,
       'border-color-light': $border-color-05,
@@ -708,7 +745,7 @@ $tab-bottom-width: 3px !default;
 
 $spinner-color: #5cb3fd !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'spinner-color': $spinner-color,
    )
@@ -719,14 +756,14 @@ $spinner-color: #5cb3fd !default;
 $tooltip-background-color: #000;
 $tooltip-font-color: #eeeeee;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'tooltip-font-family': css-var('font-family'),
+      'tooltip-font-family': var(--env-font-family),
       'tooltip-font-size': 0.875em,
       'tooltip-font-color': $tooltip-font-color,
       'tooltip-font-weight': $font-weight-regular,
       'tooltip-background-color': $tooltip-background-color,
-      'tooltip-border-radius': css-var('border-radius'),
+      'tooltip-border-radius': var(--env-border-radius),
    )
 );
 
@@ -735,7 +772,7 @@ $tooltip-font-color: #eeeeee;
 // Popover
 $popover-width: 360px !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'popover-width': $popover-width,
    )
@@ -747,7 +784,7 @@ $modal-small: 300px !default;
 $modal-medium: 450px !default;
 $modal-large: 900px !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'modal-small-width': $modal-small,
       'modal-medium-width': $modal-medium,
@@ -757,7 +794,7 @@ $modal-large: 900px !default;
    )
 );
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'dialog-small-width': $modal-small,
       'dialog-medium-width': $modal-medium,
@@ -770,7 +807,7 @@ $modal-large: 900px !default;
 $breadcrumb-divider-color: $color-light !default;
 $breadcrumb-divider: '/' !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'breadcrumb-divider-color': $breadcrumb-divider-color,
    )
@@ -781,11 +818,11 @@ $breadcrumb-divider: '/' !default;
 $badge-font-size: 0.75em !default;
 $badge-font-family: $font-family !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'badge-font-family': css-var('font-family'),
+      'badge-font-family': var(--env-font-family),
       'badge-font-size': $badge-font-size,
-      'badge-border-radius': css-var('border-radius-medium'),
+      'badge-border-radius': var(--env-border-radius-medium),
       'badge-text-transform': none,
       'badge-font-weight': $font-weight-bold,
       'badge-letter-spacing': normal,
@@ -796,9 +833,9 @@ $badge-font-family: $font-family !default;
 
 $button-border-radius: 0.375em !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'button-font-family': css-var('font-family'),
+      'button-font-family': var(--env-font-family),
       'button-border-radius': $button-border-radius,
    )
 );
@@ -828,15 +865,15 @@ $form-input-border-color: #949494 !default;
 $form-padding-x: 0.75em;
 $form-padding-y: 0.625em;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'form-font-family': css-var('font-family'),
-      'form-label-font-family': css-var('font-family'),
+      'form-font-family': var(--env-font-family),
+      'form-label-font-family': var(--env-font-family),
       'form-label-font-weight': $font-weight-semibold,
-      'form-input-border-radius': css-var('border-radius-medium'),
-      'form-input-font-color': css-var('font-color'),
+      'form-input-border-radius': var(--env-border-radius-medium),
+      'form-input-font-color': var(--env-font-color),
       'form-input-border-color': $form-input-border-color,
-      'form-input-background-color': css-var('section-background-color'),
+      'form-input-background-color': var(--env-section-background-color),
    )
 );
 
@@ -847,7 +884,7 @@ $progress-bar-height: 1.25em !default;
 
 // Poll
 $progress-bar-poll-highlight-color: #4bc5f5 !default;
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'progress-bar-poll-highlight-color': $progress-bar-poll-highlight-color,
    )
@@ -867,18 +904,18 @@ $collapse-toggle-duration: $toggle-duration !default;
 $collapse-border-width: $border-width !default;
 $collapse-border-style: $border-style !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'collapse-border-style': $collapse-border-style,
       'collapse-border-width': $collapse-border-width,
-      'collapse-icon-color': css-var('font-color'),
+      'collapse-icon-color': var(--env-font-color),
       'collapse-icon-width': $collapse-icon-width,
       'collapse-icon-height': $collapse-icon-height,
       'collapse-toggle-duration': $collapse-toggle-duration,
-      'collapse-background-color': css-var('element-background-color-light'),
-      'collapse-border-color': css-var('element-background-color'),
-      'collapse-expanded-background-color': css-var('element-background-color'),
-      'collapse-expanded-border-color': css-var('element-background-color-dark'),
+      'collapse-background-color': var(--env-element-background-color-light),
+      'collapse-border-color': var(--env-element-background-color),
+      'collapse-expanded-background-color': var(--env-element-background-color),
+      'collapse-expanded-border-color': var(--env-element-background-color-dark),
    )
 );
 
@@ -889,9 +926,9 @@ $pagination-font: $font-family !default;
 $pagination-border-width: $border-width !default;
 $pagination-border-style: $border-style !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'pagination-font-family': css-var('font-family'),
+      'pagination-font-family': var(--env-font-family),
       'pagination-border-width': $pagination-border-width,
       'pagination-border-style': $pagination-border-style,
    )
@@ -900,12 +937,12 @@ $pagination-border-style: $border-style !default;
 // ----- ALERT -----
 
 // Alert
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'alert-font-family': css-var('font-family'),
-      'alert-border-radius': css-var('border-radius-medium'),
-      'alert-background-color': css-var('section-background-color'),
-      'alert-font-color': css-var('font-color'),
+      'alert-font-family': var(--env-font-family),
+      'alert-border-radius': var(--env-border-radius-medium),
+      'alert-background-color': var(--env-section-background-color),
+      'alert-font-color': var(--env-font-color),
    )
 );
 
@@ -913,7 +950,7 @@ $pagination-border-style: $border-style !default;
 
 $profile-image-radius: 50% !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'profile-image-border-radius': $profile-image-radius,
    )
@@ -921,13 +958,13 @@ $profile-image-radius: 50% !default;
 
 // ----- CARDHOLDER -----
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'cardholder-column-min-width': 240px,
       'cardholder-column-max-width': 400px,
-      'cardholder-column-spacing': css-var('spacing-medium'),
+      'cardholder-column-spacing': var(--env-spacing-medium),
       'cardholder-grid-column-width': 20em,
-      'cardholder-grid-gap': css-var('spacing-medium'),
+      'cardholder-grid-gap': var(--env-spacing-medium),
    )
 );
 
@@ -936,11 +973,11 @@ $profile-image-radius: 50% !default;
 // All variables below this line are deprecated. To be removed later.
 // ------------------------------------------------------------------
 
-$font-color-light: lighten($font-color, 10%) !default;
-$font-color-lighter: lighten($font-color, 20%) !default;
+$font-color-light: color.adjust($font-color, $lightness: 10%) !default;
+$font-color-lighter: color.adjust($font-color, $lightness: 20%) !default;
 $font-color-invert: #ffffff !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'font-color-light': $font-color-light,
       'font-color-lighter': $font-color-lighter,
@@ -951,38 +988,44 @@ $font-color-invert: #ffffff !default;
 $color-page-bg: #ffffff !default;
 $color-section-bg: #ffffff !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'color-page-bg': $color-page-bg,
       'color-element-bg': $color-section-bg,
    )
 );
 
-$color-darker: lighten($color-base, 5%) !default;
-$color-dark: lighten($color-base, 20%) !default;
-$color-normal: lighten($color-base, 40%) !default;
-$color-lightest: lighten($color-lighter, 10%) !default;
+$color-darker: color.adjust($color-base, $lightness: 5%) !default;
+$color-dark: color.adjust($color-base, $lightness: 20%) !default;
+$color-normal: color.adjust($color-base, $lightness: 40%) !default;
+$color-lightest: color.adjust($color-lighter, $lightness: 10%) !default;
 
 $color-brand: $color-primary;
 $color-brand-light: $color-primary-light;
 $color-brand-dark: $color-primary-dark;
 
 $color-secondary: #6c757d !default;
-$color-secondary-light: lighten($color-secondary, 10%) !default;
-$color-secondary-dark: darken($color-secondary, 10%) !default;
+$color-secondary-light: color.adjust(
+   $color-secondary,
+   $lightness: 10%
+) !default;
+$color-secondary-dark: color.adjust(
+   $color-secondary,
+   $lightness: -10%
+) !default;
 
 $focus-color: #5cb3fd !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
-      'color-brand': css-var('element-primary-background-color'),
-      'color-brand-light': css-var('element-primary-background-color-light'),
-      'color-brand-dark': css-var('element-primary-background-color-dark'),
-      'color-warning': css-var('element-warning-background-color'),
-      'color-warning-dark': css-var('element-warning-background-color-dark'),
-      'color-danger': css-var('element-danger-background-color'),
-      'color-success': css-var('element-success-background-color'),
-      'color-info': css-var('element-info-background-color'),
+      'color-brand': var(--env-element-primary-background-color),
+      'color-brand-light': var(--env-element-primary-background-color-light),
+      'color-brand-dark': var(--env-element-primary-background-color-dark),
+      'color-warning': var(--env-element-warning-background-color),
+      'color-warning-dark': var(--env-element-warning-background-color-dark),
+      'color-danger': var(--env-element-danger-background-color),
+      'color-success': var(--env-element-success-background-color),
+      'color-info': var(--env-element-info-background-color),
       'color-hover': $color-hover,
       'color-base': $color-base,
       'color-darker': $color-darker,
@@ -997,7 +1040,7 @@ $focus-color: #5cb3fd !default;
 
 $focus-background-color: rgba(0, 0, 0, 0.2) !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'focus-background-color': $focus-background-color,
    )
@@ -1005,15 +1048,18 @@ $focus-background-color: rgba(0, 0, 0, 0.2) !default;
 
 $image-control-color: #ffffff !default;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'image-control-color': $image-control-color,
    )
 );
 
-$element-common-background-color: darken(#ffffff, 5%); // => #f2f2f2;
+$element-common-background-color: color.adjust(
+   #ffffff,
+   $lightness: -5%
+); // => #f2f2f2;
 
-@include to-css-custom-property(
+@include css-variables.to-css-custom-property(
    (
       'element-common-background-color': $element-common-background-color,
    )

@@ -1,68 +1,71 @@
+@use '../variable';
+@use 'text';
+
 @mixin color-block($blockName: '') {
    @if ($blockName != '') {
       // Add slash if name is set, Otherwise it's default with no name and no slash.
       $blockName: '#{$blockName}-';
    }
 
-   --env-font-color: #{css-var('block-#{$blockName}font-color')};
-   @each $name in $UI_TEXT_NAMES {
-      --env-ui-text-#{$name}-font-color: #{css-var(
-            'block-#{$blockName}font-color'
+   --env-font-color: #{var(--env-block-#{$blockName}font-color)};
+   @each $name in variable.$UI_TEXT_NAMES {
+      --env-ui-text-#{$name}-font-color: #{var(
+            --env-block-#{$blockName}font-color
          )};
    }
 
-   @each $name in $CONTENT_TEXT_NAMES {
-      --env-text-#{$name}-font-color: #{css-var(
-            'block-#{$blockName}font-color'
+   @each $name in variable.$CONTENT_TEXT_NAMES {
+      --env-text-#{$name}-font-color: #{var(
+            --env-block-#{$blockName}font-color
          )};
-      --env-text-#{$name}-link-font-color: #{css-var(
-            'block-#{$blockName}link-font-color'
+      --env-text-#{$name}-link-font-color: #{var(
+            --env-block-#{$blockName}link-font-color
          )};
-      --env-text-#{$name}-link-hover-font-color: #{css-var(
-            'block-#{$blockName}link-hover-font-color'
+      --env-text-#{$name}-link-hover-font-color: #{var(
+            --env-block-#{$blockName}link-hover-font-color
          )};
-      --env-text-#{$name}-link-text-decoration: #{css-var(
-            'block-#{$blockName}link-text-decoration'
+      --env-text-#{$name}-link-text-decoration: #{var(
+            --env-block-#{$blockName}link-text-decoration
          )};
-      --env-text-#{$name}-link-hover-text-decoration: #{css-var(
-            'block-#{$blockName}link-hover-text-decoration'
+      --env-text-#{$name}-link-hover-text-decoration: #{var(
+            --env-block-#{$blockName}link-hover-text-decoration
          )};
    }
 
-   --env-link-font-color: #{css-var('block-#{$blockName}link-font-color')};
-   --env-link-hover-font-color: #{css-var(
-         'block-#{$blockName}link-hover-font-color'
+   --env-link-font-color: #{var(--env-block-#{$blockName}link-font-color)};
+   --env-link-hover-font-color: #{var(
+         --env-block-#{$blockName}link-hover-font-color
       )};
-   --env-link-text-decoration: #{css-var(
-         'block-#{$blockName}link-text-decoration'
+   --env-link-text-decoration: #{var(
+         --env-block-#{$blockName}link-text-decoration
       )};
-   --env-link-hover-text-decoration: #{css-var(
-         'block-#{$blockName}link-hover-text-decoration'
+   --env-link-hover-text-decoration: #{var(
+         --env-block-#{$blockName}link-hover-text-decoration
       )};
-   --env-link-secondary-font-color: #{css-var('block-#{$blockName}font-color')};
-   --env-link-secondary-hover-font-color: #{css-var(
-         'block-#{$blockName}link-hover-font-color'
+   --env-link-secondary-font-color: #{var(--env-block-#{$blockName}font-color)};
+   --env-link-secondary-hover-font-color: #{var(
+         --env-block-#{$blockName}link-hover-font-color
       )};
-   --env-link-secondary-text-decoration: #{css-var(
-         'block-#{$blockName}link-text-decoration'
+   --env-link-secondary-text-decoration: #{var(
+         --env-block-#{$blockName}link-text-decoration
       )};
-   --env-link-secondary-hover-text-decoration: #{css-var(
-         'block-#{$blockName}link-hover-text-decoration'
+   --env-link-secondary-hover-text-decoration: #{var(
+         --env-block-#{$blockName}link-hover-text-decoration
       )};
 
-   background-color: css-var('block-#{$blockName}background-color');
-   color: css-var('block-#{$blockName}font-color');
+   background-color: var(--env-block-#{$blockName}background-color);
+   color: var(--env-block-#{$blockName}font-color);
 
    &--border {
       border: {
-         color: css-var('block-#{$blockName}border-color');
+         color: var(--env-block-#{$blockName}border-color);
          style: solid;
          width: 1px;
       }
    }
 
    a:not([class^='env-']):not([class*=' env-']) {
-      @include link(
+      @include text.link(
          'block-#{$blockName}link-font-color',
          'block-#{$blockName}link-text-decoration',
          'block-#{$blockName}link-hover-font-color',

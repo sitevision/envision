@@ -1,3 +1,5 @@
+@use 'variable';
+
 .env-form-control {
    position: relative;
 }
@@ -11,7 +13,7 @@
    gap: var(--env-spacing-x-small);
    justify-content: flex-start;
    align-items: center;
-   margin-bottom: css-var('spacing-x-small');
+   margin-bottom: var(--env-spacing-x-small);
 
    label,
    .env-form-field &,
@@ -45,12 +47,13 @@
    .env-form-label {
       display: flex;
       align-items: center;
-      border: $border-width $border-style css-var('form-input-border-color');
+      border: variable.$border-width variable.$border-style
+         var(--env-form-input-border-color);
       box-sizing: border-box;
-      color: css-var('form-input-font-color');
-      font-size: css-var('font-size-medium');
-      line-height: $form-input-line-height;
-      padding: css-var('spacing-x-small');
+      color: var(--env-form-input-font-color);
+      font-size: var(--env-font-size-medium);
+      line-height: variable.$form-input-line-height;
+      padding: var(--env-spacing-x-small);
       margin: 0;
    }
 
@@ -65,14 +68,14 @@
       margin-right: -1px;
 
       &:first-child {
-         border-radius: css-var('form-input-border-radius') 0 0
-            css-var('form-input-border-radius');
+         border-radius: var(--env-form-input-border-radius) 0 0
+            var(--env-form-input-border-radius);
       }
 
       &:last-child {
          margin-right: 0;
-         border-radius: 0 css-var('form-input-border-radius')
-            css-var('form-input-border-radius') 0;
+         border-radius: 0 var(--env-form-input-border-radius)
+            var(--env-form-input-border-radius) 0;
       }
    }
 }
@@ -88,14 +91,14 @@
       width: var(--env-font-size-medium);
       height: var(--env-font-size-medium);
       transform: translate(0, -50%);
-      color: css-var('form-input-font-color');
+      color: var(--env-form-input-font-color);
       pointer-events: none;
    }
 
    input:first-child,
    textarea:first-child {
       padding-right: calc(
-         var(--env-font-size-medium) + #{css-var('spacing-medium')}
+         var(--env-font-size-medium) + #{var(--env-spacing-medium)}
       );
    }
 
@@ -108,7 +111,7 @@
    .env-icon + input,
    .env-icon + textarea {
       padding-left: calc(
-         var(--env-font-size-medium) + #{css-var('spacing-medium')}
+         var(--env-font-size-medium) + #{var(--env-spacing-medium)}
       );
    }
 }

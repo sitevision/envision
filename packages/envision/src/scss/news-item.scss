@@ -1,19 +1,19 @@
 .env-news-item {
-   background-color: css-var('section-background-color');
-   color: css-var('font-color');
+   background-color: var(--env-section-background-color);
+   color: var(--env-font-color);
    display: flex;
    flex-direction: column;
-   margin: css-var('spacing-xxx-small');
+   margin: var(--env-spacing-xxx-small);
    overflow-wrap: break-word;
-   border-radius: css-var('border-radius-medium');
+   border-radius: var(--env-border-radius-medium);
 
    &__headline {
-      padding: 0 css-var('spacing-x-small');
+      padding: 0 var(--env-spacing-x-small);
    }
 
    &__media,
    &__preamble,
    &__footer {
-      padding: css-var('spacing-x-small');
+      padding: var(--env-spacing-x-small);
    }
 }

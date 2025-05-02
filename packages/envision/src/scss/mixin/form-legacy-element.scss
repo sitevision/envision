@@ -1,5 +1,7 @@
+@use 'form-legacy-input-state';
+
 @mixin deprecated-form-element {
-   margin-bottom: css-var('spacing-medium');
+   margin-bottom: var(--env-spacing-medium);
 
    &__control {
       position: relative;
@@ -13,10 +15,10 @@
    }
    &__label {
       display: inline-block;
-      font-family: css-var('form-label-font-family');
-      font-size: css-var('font-size-medium');
-      font-weight: css-var('form-label-font-weight');
-      margin-bottom: css-var('spacing-xx-small');
+      font-family: var(--env-form-label-font-family);
+      font-size: var(--env-font-size-medium);
+      font-weight: var(--env-form-label-font-weight);
+      margin-bottom: var(--env-spacing-xx-small);
 
       // Legend reset
       padding: 0;
@@ -25,48 +27,52 @@
    &__help,
    &__feedback {
       display: block;
-      font-size: css-var('font-size-small');
+      font-size: var(--env-font-size-small);
       font-style: italic;
-      margin-bottom: css-var('spacing-x-small');
-      margin-top: css-var('spacing-x-small');
+      margin-bottom: var(--env-spacing-x-small);
+      margin-top: var(--env-spacing-x-small);
    }
 
    &__help {
-      color: css-var('font-color-muted');
-      font-size: css-var('font-size-small');
+      color: var(--env-font-color-muted);
+      font-size: var(--env-font-size-small);
    }
 
    &--success {
-      @include deprecated-input-element-color('success');
+      @include form-legacy-input-state.deprecated-input-element-color(
+         'success'
+      );
    }
 
    &--warning {
-      @include deprecated-input-element-color('warning');
+      @include form-legacy-input-state.deprecated-input-element-color(
+         'warning'
+      );
    }
 
    &--danger {
-      @include deprecated-input-element-color('danger');
+      @include form-legacy-input-state.deprecated-input-element-color('danger');
    }
 
    &--error {
       &,
       .env-form-element__label,
       .env-form-element__help {
-         color: css-var('ui-color-status-error-text');
+         color: var(--env-ui-color-status-error-text);
       }
 
       .env-form-input,
       .env-checkbox__fake,
       .env-form-radio__fake,
       .env-select__input {
-         border-color: css-var('ui-color-status-error-text') !important;
+         border-color: var(--env-ui-color-status-error-text) !important;
       }
 
       .env-select__item,
       .env-select__item__remove {
          // Tag select item
-         background-color: css-var('ui-color-status-error') !important;
-         color: css-var('ui-color-status-error-contrast');
+         background-color: var(--env-ui-color-status-error) !important;
+         color: var(--env-ui-color-status-error-contrast);
       }
    }
 

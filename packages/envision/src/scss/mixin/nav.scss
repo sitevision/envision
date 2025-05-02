@@ -1,18 +1,20 @@
+@use 'focus';
+
 @mixin filled-nav-states() {
    &:hover {
-      background-color: css-var('element-primary-background-color-dark');
-      color: css-var('element-primary-font-color');
+      background-color: var(--env-element-primary-background-color-dark);
+      color: var(--env-element-primary-font-color);
    }
 
    &[aria-current='page'],
    &--active {
-      background-color: css-var('element-primary-background-color');
-      color: css-var('element-primary-font-color');
+      background-color: var(--env-element-primary-background-color);
+      color: var(--env-element-primary-font-color);
    }
 }
 
 @mixin nav-link() {
-   color: css-var('link-font-color');
+   color: var(--env-link-font-color);
    display: block;
    text-decoration: none;
    transition:
@@ -20,13 +22,13 @@
       color 0.25s ease;
 
    &:hover {
-      color: css-var('link-hover-font-color');
+      color: var(--env-link-hover-font-color);
    }
 
-   @include focus-visible;
+   @include focus.focus-visible;
 
    &[aria-current='page'],
    &--active {
-      color: css-var('link-hover-font-color');
+      color: var(--env-link-hover-font-color);
    }
 }

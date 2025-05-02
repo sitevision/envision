@@ -2,8 +2,8 @@
    $color: 'element-font-color',
    $background-color: 'element-background-color'
 ) {
-   background-color: css-var($background-color);
-   color: css-var($color);
+   background-color: var(--env-#{$background-color});
+   color: var(--env-#{$color});
    pointer-events: none;
    filter: opacity(0.5) grayscale(100%);
 }

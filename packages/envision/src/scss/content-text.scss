@@ -1,5 +1,7 @@
+@use 'variable';
+
 .env-text {
-   @each $name in $CONTENT_TEXT_NAMES {
+   @each $name in variable.$CONTENT_TEXT_NAMES {
       &-#{$name} {
          font-family: var(--env-text-#{$name}-font-family);
          font-size: var(--env-text-#{$name}-font-size);
