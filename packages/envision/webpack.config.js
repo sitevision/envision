@@ -64,9 +64,7 @@ module.exports = [
                      loader: 'sass-loader',
                      options: {
                         api: 'modern-compiler',
-                        sassOptions: {
-                           // Your sass options
-                        },
+                        sassOptions: {},
                      },
                   },
                ],
@@ -106,6 +104,10 @@ module.exports = [
             root: 'jQuery',
          },
       },
+      // Uncomment to enable debugging of the sass-loader
+      // stats: {
+      //    loggingDebug: ['sass-loader'],
+      // },
       module: {
          rules: [
             {
@@ -145,7 +147,7 @@ module.exports = [
                      options: {
                         api: 'modern-compiler',
                         sassOptions: {
-                           // Your sass options
+                           style: 'compressed',
                         },
                      },
                   },

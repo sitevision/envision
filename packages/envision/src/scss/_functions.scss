@@ -1,7 +1,25 @@
 @use 'sass:meta';
 @use 'sass:string';
-@use 'variable';
+@use 'sass:color';
 @use 'sass:math';
+
+@function adjustLightness($color, $amount) {
+   // Color should be adjusted lighter/darker
+   // and then returned as a hex string
+   $color: color.adjust($color, $lightness: $amount);
+   @if (string.index('#{$color}', '#') == 1) {
+      // Adjusted color is HEX
+      @return $color;
+   }
+   @if (string.index('#{$color}', 'rgb(') == 1) {
+      // Adjusted color is RGB
+      @return string.unquote(
+         '#' + string.to-lower-case(string.slice(color.ie-hex-str($color), 4))
+      );
+   }
+   // Adjusted color is some other format (should not happen)
+   @return $color;
+}
 
 @function str-replace($string, $search, $replace: '') {
    $index: string.index($string, $search);
@@ -18,7 +36,7 @@
    @return $string;
 }
 
-@function em($px, $base: (variable.$BROWSER_FONT_SIZE * 1px)) {
+@function em($px, $base: 16px) {
    $em: math.div($px, $base) * 1em;
    @return $em;
 }
