@@ -1,10 +1,12 @@
 @use 'sass:color';
+@use 'sass:string';
 @use 'mixin/content-text';
 @use 'mixin/css-variables';
 
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:list';
+@use 'functions';
 
 // ===================
 // SASS ONLY VARIABLES
@@ -121,9 +123,9 @@ $section-background-color: #ffffff !default;
    (
       'background-color': $background-color,
       'section-background-color': $section-background-color,
-      'section-background-color-05': color.adjust(
+      'section-background-color-05': functions.adjustLightness(
             $section-background-color,
-            $lightness: -5%
+            -5%
          ),
    )
 );
@@ -530,17 +532,17 @@ $focus-size: 2px;
 );
 
 $color-primary: #3a71aa !default;
-$color-primary-light: color.adjust($color-primary, $lightness: 10%) !default;
-$color-primary-dark: color.adjust($color-primary, $lightness: -10%) !default;
+$color-primary-light: functions.adjustLightness($color-primary, 10%) !default;
+$color-primary-dark: functions.adjustLightness($color-primary, -10%) !default;
 $color-warning: #ffcd45 !default;
-$color-warning-dark: color.adjust($color-warning, $lightness: -10%) !default;
+$color-warning-dark: functions.adjustLightness($color-warning, -10%) !default;
 $color-danger: #c15252 !default;
 $color-success: #358156 !default;
 $color-info: #29818d !default;
 $color-hover: #f7f7f7 !default;
 $color-base: #000000 !default;
-$color-light: color.adjust($color-base, $lightness: 60%) !default;
-$color-lighter: color.adjust($color-base, $lightness: 80%) !default;
+$color-light: functions.adjustLightness($color-base, 60%) !default;
+$color-lighter: functions.adjustLightness($color-base, 80%) !default;
 
 // ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
 
@@ -593,73 +595,73 @@ $element-secondary-font-color: #ffffff;
    (
       'element-font-color': $font-color,
       'element-background-color': $element-default-background-color,
-      'element-background-color-dark': color.adjust(
+      'element-background-color-dark': functions.adjustLightness(
             $element-default-background-color,
-            $lightness: -8%
+            -8%
          ),
-      'element-background-color-light': color.adjust(
+      'element-background-color-light': functions.adjustLightness(
             $element-default-background-color,
-            $lightness: 3%
+            3%
          ),
       'element-primary-font-color': #ffffff,
       'element-primary-background-color': $color-primary,
-      'element-primary-background-color-dark': color.adjust(
+      'element-primary-background-color-dark': functions.adjustLightness(
             $color-primary,
-            $lightness: -8%
+            -8%
          ),
-      'element-primary-background-color-light': color.adjust(
+      'element-primary-background-color-light': functions.adjustLightness(
             $color-primary,
-            $lightness: 3%
+            3%
          ),
       'element-secondary-font-color': $element-secondary-font-color,
       'element-secondary-background-color': $element-secondary-background-color,
-      'element-secondary-background-color-dark': color.adjust(
+      'element-secondary-background-color-dark': functions.adjustLightness(
             $element-secondary-background-color,
-            $lightness: -8%
+            -8%
          ),
-      'element-secondary-background-color-light': color.adjust(
+      'element-secondary-background-color-light': functions.adjustLightness(
             $element-secondary-background-color,
-            $lightness: 3%
+            3%
          ),
       'element-success-font-color': #ffffff,
       'element-success-background-color': $color-success,
-      'element-success-background-color-dark': color.adjust(
+      'element-success-background-color-dark': functions.adjustLightness(
             $color-success,
-            $lightness: -8%
+            -8%
          ),
-      'element-success-background-color-light': color.adjust(
+      'element-success-background-color-light': functions.adjustLightness(
             $color-success,
-            $lightness: 3%
+            3%
          ),
       'element-warning-font-color': $font-color,
       'element-warning-background-color': $color-warning,
-      'element-warning-background-color-dark': color.adjust(
+      'element-warning-background-color-dark': functions.adjustLightness(
             $color-warning,
-            $lightness: -8%
+            -8%
          ),
-      'element-warning-background-color-light': color.adjust(
+      'element-warning-background-color-light': functions.adjustLightness(
             $color-warning,
-            $lightness: 3%
+            3%
          ),
       'element-danger-font-color': #ffffff,
       'element-danger-background-color': $color-danger,
-      'element-danger-background-color-dark': color.adjust(
+      'element-danger-background-color-dark': functions.adjustLightness(
             $color-danger,
-            $lightness: -8%
+            -8%
          ),
-      'element-danger-background-color-light': color.adjust(
+      'element-danger-background-color-light': functions.adjustLightness(
             $color-danger,
-            $lightness: 3%
+            3%
          ),
       'element-info-font-color': #ffffff,
       'element-info-background-color': $color-info,
-      'element-info-background-color-dark': color.adjust(
+      'element-info-background-color-dark': functions.adjustLightness(
             $color-info,
-            $lightness: -8%
+            -8%
          ),
-      'element-info-background-color-light': color.adjust(
+      'element-info-background-color-light': functions.adjustLightness(
             $color-info,
-            $lightness: 3%
+            3%
          ),
    )
 );
@@ -723,7 +725,7 @@ $radius-large: $radius-base * 1.5 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 $border-color: #ccc !default;
-$border-color-05: color.adjust($border-color, $lightness: 10%) !default;
+$border-color-05: functions.adjustLightness($border-color, 10%) !default;
 $tab-bottom-width: 3px !default;
 
 @include css-variables.to-css-custom-property(
@@ -973,8 +975,8 @@ $profile-image-radius: 50% !default;
 // All variables below this line are deprecated. To be removed later.
 // ------------------------------------------------------------------
 
-$font-color-light: color.adjust($font-color, $lightness: 10%) !default;
-$font-color-lighter: color.adjust($font-color, $lightness: 20%) !default;
+$font-color-light: functions.adjustLightness($font-color, 10%) !default;
+$font-color-lighter: functions.adjustLightness($font-color, 20%) !default;
 $font-color-invert: #ffffff !default;
 
 @include css-variables.to-css-custom-property(
@@ -995,23 +997,23 @@ $color-section-bg: #ffffff !default;
    )
 );
 
-$color-darker: color.adjust($color-base, $lightness: 5%) !default;
-$color-dark: color.adjust($color-base, $lightness: 20%) !default;
-$color-normal: color.adjust($color-base, $lightness: 40%) !default;
-$color-lightest: color.adjust($color-lighter, $lightness: 10%) !default;
+$color-darker: functions.adjustLightness($color-base, 5%) !default;
+$color-dark: functions.adjustLightness($color-base, 20%) !default;
+$color-normal: functions.adjustLightness($color-base, 40%) !default;
+$color-lightest: functions.adjustLightness($color-lighter, 10%) !default;
 
 $color-brand: $color-primary;
 $color-brand-light: $color-primary-light;
 $color-brand-dark: $color-primary-dark;
 
 $color-secondary: #6c757d !default;
-$color-secondary-light: color.adjust(
+$color-secondary-light: functions.adjustLightness(
    $color-secondary,
-   $lightness: 10%
+   10%
 ) !default;
-$color-secondary-dark: color.adjust(
+$color-secondary-dark: functions.adjustLightness(
    $color-secondary,
-   $lightness: -10%
+   -10%
 ) !default;
 
 $focus-color: #5cb3fd !default;
@@ -1054,9 +1056,9 @@ $image-control-color: #ffffff !default;
    )
 );
 
-$element-common-background-color: color.adjust(
+$element-common-background-color: functions.adjustLightness(
    #ffffff,
-   $lightness: -5%
+   -5%
 ); // => #f2f2f2;
 
 @include css-variables.to-css-custom-property(
