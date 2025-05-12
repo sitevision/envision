@@ -56,7 +56,7 @@ select[multiple].env-form-input,
       border-radius: var(--env-form-input-border-radius);
       appearance: none;
       color: var(--env-form-input-font-color);
-      font-size: var(--env-font-size-medium);
+      font-size: 1em;
       min-height: calc(
          #{math.div(
                variable.$form-input-height,
@@ -88,17 +88,18 @@ select[multiple].env-form-input,
 // https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select
 
 @supports (appearance: base-select) {
-   .env-form select,
-   select.env-form-input,
-   .env-form-select select {
-      appearance: base-select !important;
-      display: flex;
+   .env-form select:not([multiple]),
+   select:not([multiple]).env-form-input,
+   .env-form-select select:not([multiple]) {
+      appearance: base-select;
+      white-space: nowrap;
 
       selectedcontent {
          display: flex;
          justify-content: flex-start;
          align-items: center;
          gap: 0.5em;
+         white-space: nowrap;
       }
 
       optgroup {
@@ -155,16 +156,39 @@ select[multiple].env-form-input,
       padding: calc(var(--env-focus-size) + var(--env-focus-offset));
    }
 
-   .env-form select::picker-icon,
-   select.env-form-input::picker-icon {
-      background-color: transparent;
-      width: 0.5em;
-      height: 0.5em;
-      color: transparent;
-      transform: translate(-0.3em, 0.25em) rotate(45deg);
-      border-right: 0.125em solid var(--env-form-input-font-color);
-      border-bottom: 0.125em solid var(--env-form-input-font-color);
-      border-radius: 0.0625em;
+   .env-form select:not([multiple]),
+   select.env-form-input:not([multiple]) {
+      position: relative;
+
+      &:after {
+         content: '';
+         display: block;
+         position: absolute;
+         top: calc(50% - 0.4375em);
+         right: 1em;
+         background-color: transparent;
+         width: 0.5em;
+         height: 0.5em;
+         color: transparent;
+         transform: rotate(45deg);
+         border-right: 0.125em solid var(--env-form-input-font-color);
+         border-bottom: 0.125em solid var(--env-form-input-font-color);
+         border-radius: 0.0625em;
+      }
+   }
+
+   .env-form select:not([multiple])::picker-icon,
+   select.env-form-input:not([multiple])::picker-icon {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0.75em;
+      width: 1.2em;
+      height: 100%;
+      background-color: var(--env-form-input-background-color);
+      flex: 0 0 1em;
+      line-height: 1;
    }
 
    .env-form-select select::picker-icon {
