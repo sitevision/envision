@@ -4,6 +4,12 @@
 
 @use 'sass:math';
 
+$form-input-min-height: math.div(
+      variable.$form-input-height,
+      variable.$form-input-font-size
+   ) *
+   1em;
+
 %select-base {
    @include form.form-input-defaults;
 }
@@ -33,6 +39,14 @@ select[multiple].env-form-input,
 
    > option {
       padding: var(--env-spacing-x-small);
+   }
+}
+
+@supports (background: -webkit-named-image(i)) {
+   // Hack for Safari only to set height of native select
+   .env-form select:not([multiple]),
+   select.env-form-input:not([multiple]) {
+      height: $form-input-min-height;
    }
 }
 
@@ -88,18 +102,40 @@ select[multiple].env-form-input,
 // https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select
 
 @supports (appearance: base-select) {
-   .env-form select:not([multiple]),
-   select:not([multiple]).env-form-input,
-   .env-form-select select:not([multiple]) {
+   $pickerIconWidth: 1.25em;
+
+   select:not([multiple]).env-form-input:has(selectedcontent),
+   .env-form-select select:not([multiple]):has(selectedcontent) {
       appearance: base-select;
-      white-space: nowrap;
+      display: flex;
+      gap: 0;
+      justify-content: space-between;
+
+      > button {
+         display: block;
+         white-space: nowrap;
+         max-width: calc(100% - $pickerIconWidth);
+         flex: 1 1 100%;
+      }
 
       selectedcontent {
-         display: flex;
-         justify-content: flex-start;
-         align-items: center;
-         gap: 0.5em;
-         white-space: nowrap;
+         display: block;
+         max-width: 100%;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+
+      &::picker(select) {
+         appearance: base-select;
+         max-width: 100%;
+         font-size: var(--env-font-size-medium);
+         background-color: var(--env-section-background-color);
+         color: var(--env-font-color);
+         border: variable.$border-width variable.$border-style
+            var(--env-border-color-05);
+         border-radius: var(--env-border-radius-medium);
+         box-shadow: var(--env-box-shadow-small);
+         padding: calc(var(--env-focus-size) + var(--env-focus-offset));
       }
 
       optgroup {
@@ -119,7 +155,11 @@ select[multiple].env-form-input,
       }
 
       option {
+         display: block;
          padding: var(--env-spacing-x-small);
+         max-width: 100%;
+         overflow: hidden;
+         text-overflow: ellipsis;
 
          &:hover,
          &.focus {
@@ -142,57 +182,30 @@ select[multiple].env-form-input,
       }
    }
 
-   .env-form ::picker(select),
-   .env-form-input::picker(select),
-   .env-form-select ::picker(select) {
-      appearance: base-select;
-      font-size: var(--env-font-size-medium);
-      background-color: var(--env-section-background-color);
-      color: var(--env-font-color);
-      border: variable.$border-width variable.$border-style
-         var(--env-border-color-05);
-      border-radius: var(--env-border-radius-medium);
-      box-shadow: var(--env-box-shadow-small);
-      padding: calc(var(--env-focus-size) + var(--env-focus-offset));
-   }
-
-   .env-form select:not([multiple]),
-   select.env-form-input:not([multiple]) {
-      position: relative;
-
-      &:after {
-         content: '';
-         display: block;
-         position: absolute;
-         top: calc(50% - 0.4375em);
-         right: 1em;
-         background-color: transparent;
-         width: 0.5em;
-         height: 0.5em;
-         color: transparent;
-         transform: rotate(45deg);
-         border-right: 0.125em solid var(--env-form-input-font-color);
-         border-bottom: 0.125em solid var(--env-form-input-font-color);
-         border-radius: 0.0625em;
+   select:not([multiple]).env-form-input:has(selectedcontent),
+   .env-form-select:not(:has(> .env-icon))
+      select:not([multiple]):has(selectedcontent) {
+      &::picker-icon {
+         color: var(--env-form-input-font-color);
+         width: $pickerIconWidth;
+         text-align: center;
+         margin: 0;
       }
    }
 
-   .env-form select:not([multiple])::picker-icon,
-   select.env-form-input:not([multiple])::picker-icon {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0.75em;
-      width: 1.2em;
-      height: 100%;
-      background-color: var(--env-form-input-background-color);
-      flex: 0 0 1em;
-      line-height: 1;
+   .env-form-select:not(:has(> .env-icon))
+      select:not([multiple]):has(selectedcontent) {
+      padding-right: variable.$form-padding-x;
    }
 
-   .env-form-select select::picker-icon {
-      // Select component uses custom SVG-icon
-      display: none;
+   .env-form-select:has(> .env-icon)
+      select:not([multiple]):has(selectedcontent) {
+      > button {
+         max-width: 100%;
+      }
+      &::picker-icon {
+         // Select component uses custom SVG-icon
+         display: none;
+      }
    }
 }

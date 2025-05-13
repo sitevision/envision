@@ -30,6 +30,14 @@ $form-input-min-height: math.div(
 
    @include focus.focus-visible;
 
+   &[type='date'],
+   &[type='datetime-local'],
+   &[type='month'],
+   &[type='time'],
+   &[type='week'] {
+      height: 2.75em;
+   }
+
    @supports (-webkit-touch-callout: none) {
       // (hack) iOS specific styling for prettier date inputs
       &[type='date'],
