@@ -12,6 +12,7 @@ $form-input-min-height: math.div(
 
 %select-base {
    @include form.form-input-defaults;
+   min-height: $form-input-min-height;
 }
 
 // ----- Basic Select ---- //

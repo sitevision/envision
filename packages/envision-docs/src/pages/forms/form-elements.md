@@ -177,8 +177,9 @@ An optional placeholder may be added using attribute `aria-placeholder` on the c
 
 **Updated in 2025.05.1.**
 With the introduction of [Customizable select elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select),
-both the Select element and the Select component will use a progressively enhanced approach to use
-as much of Envision styling as possible while still keeping the native select element functionality.
+both the Select element and the Select component support a progressively enhanced approach that applies
+as much of the Envision styling as possible while maintaining native select element functionality.
+This feature is opt-in and can be enabled by adding a `button` with a `selectedcontent` tag inside the select element.
 
 <span id="select-component" class="offset-anchor"></span>
 
@@ -190,7 +191,7 @@ be customized.
 
 ```html
 <div class="env-form-field">
-   <label for="select-1" class="env-form-label">Select</label>
+   <label for="select-1" class="env-form-label">Select component</label>
    <div class="env-form-select">
       <select id="select-1">
          <option>Item</option>
@@ -205,16 +206,17 @@ be customized.
 </div>
 ```
 
-### Select component — Customizable <span class="doc-badge doc-badge--info">2025.05.1</span>
+### Customizable select <span class="doc-badge doc-badge--info">2025.05.1</span>
 
-If the browser does support customizable select elements, the picker will use fonts and colors from
-the theme. Options may also have icons. Should you want to use icons, the `.env-icon` class should be used.
-The icon may also be displayed in the selected option if a `button` element is added as a first child and a
-`selectedcontent` element is added inside the `button`.
+To opt in to the customizable version — which uses theme fonts, colors, and allows icons — add a `button` as
+the first child of the `select`, with a `selectedcontent` element inside the `button`. Use the `.env-icon` class to
+display icons in the options or in the selected value.
 
 ```html
 <div class="env-form-field">
-   <label for="select-2" class="env-form-label">Customizable select</label>
+   <label for="select-2" class="env-form-label"
+      >Customizable select component</label
+   >
    <div class="env-form-select">
       <select id="select-2">
          <button>
@@ -258,8 +260,22 @@ Native select element with class `.env-form-input`. Only light styling, might lo
 
 ```html
 <div class="env-form-field">
-   <label for="select-3" class="env-form-label">Select</label>
+   <label for="select-3" class="env-form-label">Select element</label>
    <select class="env-form-input" id="select-3">
+      <option>Item</option>
+      <option>Item 2</option>
+      <option>Item 3</option>
+      <option>Item 4</option>
+   </select>
+</div>
+<div class="env-form-field">
+   <label for="select-3" class="env-form-label"
+      >Customizable select element</label
+   >
+   <select class="env-form-input" id="select-3">
+      <button>
+         <selectedcontent></selectedcontent>
+      </button>
       <option>Item</option>
       <option>Item 2</option>
       <option>Item 3</option>
