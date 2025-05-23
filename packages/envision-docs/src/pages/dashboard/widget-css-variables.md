@@ -4,7 +4,7 @@ description: Additional CSS variables for styling dashboard widgets.
 dashboard: true
 ---
 
-### Palette Colors
+## Palette Colors
 
 - `--env-dashboard-color-black`
 - `--env-dashboard-color-white`

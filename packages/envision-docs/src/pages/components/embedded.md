@@ -10,7 +10,7 @@ description: The Embedded component displays images and text with flexible layou
    <div class="env-embedded__img-container">
       <img
          class="env-embedded__img"
-         alt="Image alternative"
+         alt=""
          src="https://envisionui.io/placeholders/text/640x480.png"
       />
    </div>
@@ -38,7 +38,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__img-container">
       <img
          class="env-embedded__img"
-         alt="Image alternative"
+         alt=""
          src="https://envisionui.io/placeholders/text/270x180.png"
       />
    </div>
@@ -60,7 +60,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__img-container env-embedded__img-container--right">
       <img
          class="env-embedded__img"
-         alt="Image alternative"
+         alt=""
          src="https://envisionui.io/placeholders/text/270x180.png"
       />
    </div>
@@ -84,7 +84,7 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__img-container">
       <img
          class="env-embedded__img"
-         alt="Image alternative"
+         alt=""
          src="https://envisionui.io/placeholders/text/769x180.png"
       />
    </div>
@@ -111,7 +111,7 @@ Uses `env-embedded__block--overlay` to position text on top of image. You can al
    <div class="env-embedded__img-container">
       <img
          class="env-embedded__img"
-         alt="Image alternative"
+         alt=""
          src="https://envisionui.io/placeholders/text/769x180.png"
       />
    </div>

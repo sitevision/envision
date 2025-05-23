@@ -166,6 +166,7 @@ Element colors are used for elements and components. See usage examples below.
               <div
                 class="env-progress__bar"
                 role="progressbar"
+                aria-label="Example progress bar"
                 style="width: 25%"
                 aria-valuenow="25"
                 aria-valuemin="0"
@@ -178,7 +179,7 @@ Element colors are used for elements and components. See usage examples below.
         </div>
         <div class="example-element">
           <div class="example-element-label">Tabs:</div>
-          <div class="env-tabs example-tabs">
+          <div class="env-tabs example-tabs" role="presentation">
             <ul
               class="env-tabs__nav env-tabs__nav--border-bottom"
               role="tablist"
@@ -189,7 +190,6 @@ Element colors are used for elements and components. See usage examples below.
                   class="env-tabs__link env-tabs__link--active"
                   href="#panel1"
                   role="tab"
-                  aria-controls="panel1"
                   aria-selected="true"
                   tabindex="0"
                 >Tab 1</a
@@ -238,12 +238,6 @@ Element colors are used for elements and components. See usage examples below.
         <button type="button" class="env-button env-button--success">
           Success
         </button>
-        <button
-          type="button"
-          class="env-button env-button--success env-button--ghost"
-        >
-          Success
-        </button>
       </div>
       <div class="example-element">
         <div class="example-element-label">Badge:</div>
@@ -253,15 +247,6 @@ Element colors are used for elements and components. See usage examples below.
         <div class="example-element-label">Alert:</div>
         <div class="env-alert env-alert--success" role="alert">
           <strong>Hello!</strong> this is successful alert
-          <button
-            type="button"
-            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
-            data-dismiss="alert"
-          >
-            <svg class="env-icon env-icon--xx-small">
-               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </div>
@@ -276,12 +261,6 @@ Element colors are used for elements and components. See usage examples below.
         <button type="button" class="env-button env-button--warning">
           Warning
         </button>
-        <button
-          type="button"
-          class="env-button env-button--warning env-button--ghost"
-        >
-          Warning
-        </button>
       </div>
       <div class="example-element">
         <div class="example-element-label">Badge:</div>
@@ -291,15 +270,6 @@ Element colors are used for elements and components. See usage examples below.
         <div class="example-element-label">Alert:</div>
         <div class="env-alert env-alert--warning" role="alert">
           <strong>Hello!</strong> this is warning alert
-          <button
-            type="button"
-            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
-            data-dismiss="alert"
-          >
-            <svg class="env-icon env-icon--xx-small">
-               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </div>
@@ -314,12 +284,6 @@ Element colors are used for elements and components. See usage examples below.
         <button type="button" class="env-button env-button--danger">
           Danger
         </button>
-        <button
-          type="button"
-          class="env-button env-button--danger env-button--ghost"
-        >
-          Danger
-        </button>
       </div>
       <div class="example-element">
         <div class="example-element-label">Badge:</div>
@@ -329,15 +293,6 @@ Element colors are used for elements and components. See usage examples below.
         <div class="example-element-label">Alert:</div>
         <div class="env-alert env-alert--danger" role="alert">
           <strong>Hello!</strong> this is danger alert
-          <button
-            type="button"
-            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
-            data-dismiss="alert"
-          >
-            <svg class="env-icon env-icon--xx-small">
-               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </div>
@@ -352,12 +307,6 @@ Element colors are used for elements and components. See usage examples below.
         <button type="button" class="env-button env-button--info">
           Info
         </button>
-        <button
-          type="button"
-          class="env-button env-button--info env-button--ghost"
-        >
-          Info
-        </button>
       </div>
       <div class="example-element">
         <div class="example-element-label">Badge:</div>
@@ -367,15 +316,6 @@ Element colors are used for elements and components. See usage examples below.
         <div class="example-element-label">Alert:</div>
         <div class="env-alert env-alert--info" role="alert">
           <strong>Hello!</strong> this is info alert
-          <button
-            type="button"
-            class="env-alert__close env-button env-button--link env-button--icon env-button--icon-small"
-            data-dismiss="alert"
-          >
-            <svg class="env-icon env-icon--xx-small">
-               <use href="/sitevision/envision-icons.svg#icon-delete"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </div>

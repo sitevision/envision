@@ -36,7 +36,7 @@ Status color text should be used when status color is applied to text on section
   </div>
 </div>
 
-### Examples of usage
+## Examples of usage
 
 <div class="example-grid">
   <div class="example-grid__col example-grid__col--50">
@@ -47,6 +47,7 @@ Status color text should be used when status color is applied to text on section
          <span class="env-badge env-badge--attention">42</span>
          <h3 class="env-ui-text-caption example-ui-color-status-heading">Custom inline SVG decoration</h3>
          <button type="button" class="env-button env-button--large env-button--icon env-button--link">
+            Alerts
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="env-icon env-icon--medium" aria-hidden="true">
                <circle cx="20" cy="4" r="4" class="env-icon--attention"></circle>
                <g transform="matrix(1,0,0,1,0,0)"><path d="M12,24c-1.23,0-2.36-.8-2.72-2.04-.12-.4,.11-.81,.51-.93,.4-.11,.81,.11,.93,.51,.21,.71,.95,1.11,1.66,.91,.44-.13,.78-.47,.91-.91,.12-.4,.54-.62,.93-.51,.4,.12,.62,.53,.51,.93-.27,.93-.99,1.65-1.92,1.92-.27,.08-.53,.11-.8,.11Z"></path><path d="M12,3.75c-.41,0-.75-.34-.75-.75V.75c0-.41,.34-.75,.75-.75s.75,.34,.75,.75V3c0,.41-.34,.75-.75,.75Z"></path><path d="M21,19.5H3c-.29,0-.55-.16-.67-.42-.13-.26-.09-.56,.08-.79,0,0,1.34-1.9,1.34-7.79C3.75,5.95,7.45,2.25,12,2.25c.37,0,.74,.02,1.1,.07,.41,.06,.7,.43,.64,.84-.05,.41-.44,.7-.84,.64-.3-.04-.6-.06-.9-.06-3.72,0-6.75,3.03-6.75,6.75,0,3.95-.57,6.26-1.04,7.5h15.5c-.45-1.16-.92-3.26-.96-6.99,0-.41,.33-.75,.74-.76,.42-.03,.75,.33,.76,.74,.06,5.91,1.24,7.19,1.25,7.2,.25,.2,.33,.52,.22,.82-.11,.3-.41,.49-.73,.49Z"></path></g>

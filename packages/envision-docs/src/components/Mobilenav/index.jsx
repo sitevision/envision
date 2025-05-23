@@ -19,13 +19,14 @@ const Mobilenav = ({ categories, menuItems }) => {
             <h2 className="env-ui-text-sectionheading">
                Envision documentation
             </h2>
-            <button className="mobileNav__close env-button env-button--ssecondary env-button--icon env-button--icon-small">
-               <svg className="env-icon env-icon--medium">
+            <button className="mobileNav__close env-button env-button--icon env-button--icon-small">
+               <span className="env-assistive-text">Close</span>
+               <svg className="env-icon env-icon--medium" aria-hidden="true">
                   <use href="/sitevision/envision-icons.svg#icon-delete"></use>
                </svg>
             </button>
          </div>
-         <nav aria-label="Envision documentation">
+         <nav aria-label="Mobile main menu">
             <ul className="env-nav env-nav--sidenav">
                {categories.map(({ title, slug, hasCurrentPage }) => (
                   <li
@@ -55,7 +56,10 @@ const Mobilenav = ({ categories, menuItems }) => {
                            aria-expanded="false"
                            aria-controls={`mobile-submenu-${slug}`}
                         >
-                           <svg className="env-icon">
+                           <span className="env-assistive-text">
+                              Toggle navigation for {title}
+                           </span>
+                           <svg className="env-icon" aria-hidden="true">
                               <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
                            </svg>
                         </Link>

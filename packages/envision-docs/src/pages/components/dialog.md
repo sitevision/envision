@@ -14,7 +14,7 @@ few extra features:
 - Nice fade-in animation
 - Focus trap to keep tab navigation from leaving the dialog
 
-### Default dialog
+## Default dialog
 
 <div class="example-demo-dialog">
 <dialog

@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Link from '../Link';
 
-const Teasernav = ({ menuItems, className = '', iconFile }) => {
+const Teasernav = ({
+   className = '',
+   headingsAs: Tag = 'h2',
+   ariaLabel,
+   menuItems,
+   iconFile,
+}) => {
    className = className ? className : '';
 
    return (
       <div className={classNames('teaserNav', className)}>
-         <nav aria-label="Envision documentation">
+         <nav aria-label={ariaLabel}>
             <ul className="env-cardholder-grid">
                {menuItems.map(({ title, description, spriteId, slug }) => (
                   <li
@@ -32,9 +38,9 @@ const Teasernav = ({ menuItems, className = '', iconFile }) => {
                            </div>
                         )}
                         <div className="env-card__body">
-                           <h3 className="env-ui-text-sectionheading">
+                           <Tag className="env-ui-text-sectionheading">
                               {title}
-                           </h3>
+                           </Tag>
                            {description && (
                               <p className="teaserNav__description env-text-body-03">
                                  {description}
@@ -52,6 +58,8 @@ const Teasernav = ({ menuItems, className = '', iconFile }) => {
 
 Teasernav.propTypes = {
    className: PropTypes.string,
+   ariaLabel: PropTypes.string,
+   headingsAs: PropTypes.string,
    menuItems: PropTypes.array,
    iconFile: PropTypes.string,
 };

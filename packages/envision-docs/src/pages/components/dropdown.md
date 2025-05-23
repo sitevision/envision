@@ -3,7 +3,7 @@ title: Dropdown
 description: Dropdowns displays a list of options that appears upon user interaction.
 ---
 
-### Default Dropdown
+## Default Dropdown
 
 Attribute `data-dropdown` is required on the button. Dropdown menu must use class `env-dropdown__menu`
 and should be located inside the same parent element as the button.

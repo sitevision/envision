@@ -13,7 +13,7 @@ description: The News Item component presents news content with images and text 
       <img
          class="env-image"
          src="https://envisionui.io/placeholders/900x400/01.webp"
-         alt=""
+         alt="Example image"
       />
    </div>
    <div class="env-news-item__headline">
@@ -60,7 +60,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/900x400/02.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -103,7 +103,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/900x400/03.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -146,7 +146,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/900x400/04.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -198,7 +198,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/06.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -241,7 +241,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/07.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -284,7 +284,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/08.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -327,7 +327,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/09.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -370,7 +370,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/10.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">
@@ -413,7 +413,7 @@ description: The News Item component presents news content with images and text 
             <img
                class="env-image"
                src="https://envisionui.io/placeholders/225x100/11.webp"
-               alt=""
+               alt="Example image"
             />
          </div>
          <div class="env-news-item__headline">

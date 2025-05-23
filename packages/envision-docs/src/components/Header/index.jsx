@@ -123,16 +123,17 @@ const Header = ({ title, description, menuItems, indexing }) => {
             {indexing === false && <meta name="robots" content="noindex" />}
          </Helmet>
          <header className="header">
+            <a href="#content" className="doc-skip-link">
+               Skip to main content
+            </a>
             <div className="container">
                <Link className="logo" href="/">
-                  <svg
-                     className="env-icon doc-svg-logo"
-                     aria-label="To start page"
-                  >
+                  <span className="env-assistive-text">To start page</span>
+                  <svg className="env-icon doc-svg-logo" aria-hidden="true">
                      <use href="/images/docs-logo.svg#logo"></use>
                   </svg>
                </Link>
-               <nav aria-label="Main">
+               <nav aria-label="Main menu">
                   <ul className="env-nav env-nav--menubar env-nav--border">
                      {menuItems.map(({ title, slug }) => (
                         <li className="env-nav__item" key={slug}>

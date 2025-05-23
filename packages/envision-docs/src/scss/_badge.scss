@@ -20,8 +20,8 @@
    }
 
    &--info {
-      background-color: #329597;
-      color: #fff;
+      background-color: var(--env-element-info-background-color);
+      color: var(--env-element-info-font-color);
    }
 
    &--danger {

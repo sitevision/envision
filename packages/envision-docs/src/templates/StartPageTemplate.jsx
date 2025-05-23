@@ -6,7 +6,7 @@ import Teasernav from '../components/Teasernav';
 const StartPageTemplate = ({ mainClassName, startpageMenuItems, ...props }) => {
    return (
       <div className="start-body">
-         <main className={classNames('main', mainClassName)}>
+         <main id="content" className={classNames('main', mainClassName)}>
             <div className="start-hero env-container">
                <div className="start-hero__body env-dynamic-font env-dynamic-font--downscale env-dynamic-font--scale-1_5">
                   <h2 className="start-hero__heading">
@@ -22,6 +22,8 @@ const StartPageTemplate = ({ mainClassName, startpageMenuItems, ...props }) => {
                </div>
             </div>
             <Teasernav
+               headingsAs={'h3'}
+               ariaLabel="Main categories menu"
                iconFile="/images/docs-navicons.svg"
                className="teaserNav--start"
                menuItems={startpageMenuItems}

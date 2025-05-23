@@ -95,7 +95,7 @@ const BaseTemplate = ({
             </>
          ) : (
             <div className="body">
-               <main className={classNames('main', mainClassName)}>
+               <main id="content" className={classNames('main', mainClassName)}>
                   <div className="content-wrapper">
                      {title && (
                         <h1 className="doc-main-heading">
@@ -111,6 +111,8 @@ const BaseTemplate = ({
                      {children}
                      {template === 'navigation' && (
                         <Teasernav
+                           headingsAs={'h2'}
+                           ariaLabel={`${title} submenu`}
                            menuItems={categoryMenuItems}
                            iconFile="/images/docs-component-navicons.svg"
                         ></Teasernav>

@@ -4,7 +4,7 @@ description: Styles for widget components such as labels, values, and badges.
 dashboard: true
 ---
 
-### Values and labels
+## Values and labels
 
 Additional styles only availble in widgets should be used for labels and values in charts and similar.
 
