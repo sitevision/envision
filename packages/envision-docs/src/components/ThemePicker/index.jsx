@@ -46,7 +46,10 @@ const ThemePicker = () => {
 
    return (
       <div className="theme-picker">
-         <label className="theme-picker__label" htmlFor="darkMode">
+         <label
+            className="theme-picker__label env-assistive-text"
+            htmlFor="darkMode"
+         >
             Default / Dark mode
          </label>
          <div className="doc-theme-switch">

@@ -43,12 +43,15 @@ const Footer = () => {
       <>
          <footer className="footer">
             <div className="container">
-               <nav aria-label="Main" className="footer-nav">
+               <nav aria-label="Footer menu" className="footer-nav">
                   <div className="footer-nav-col">
                      <Link className="logo" href="/">
+                        <span className="env-assistive-text">
+                           To start page
+                        </span>
                         <svg
                            className="env-icon doc-svg-logo"
-                           aria-label="To start page"
+                           aria-hidden="true"
                         >
                            <use href="/images/docs-logo.svg#logo"></use>
                         </svg>

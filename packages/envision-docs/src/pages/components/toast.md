@@ -7,7 +7,8 @@ description: Use the Toast component to display brief, customizable notification
 <div class="env-toast env-toast--visible">
    <div class="env-toast__content">Hello, World! This is a Toast message.</div>
    <button class="env-toast__close">
-      <svg class="env-icon env-icon--small">
+      <span class="env-assistive-text">Close</span>
+      <svg class="env-icon env-icon--small" aria-hidden="true">
          <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </button>
@@ -15,13 +16,14 @@ description: Use the Toast component to display brief, customizable notification
 
 <div class="env-toast env-toast--success env-toast--visible">
    <div class="env-toast__check">
-      <svg class="env-icon env-icon--small">
+      <svg class="env-icon env-icon--small" aria-hidden="true">
          <use href="/sitevision/envision-icons.svg#icon-check-done"></use>
       </svg>
    </div>
    <div class="env-toast__content">Hello, World! This is a Toast message.</div>
    <button class="env-toast__close">
-      <svg class="env-icon env-icon--small">
+      <span class="env-assistive-text">Close</span>
+      <svg class="env-icon env-icon--small" aria-hidden="true">
          <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </button>
@@ -29,7 +31,7 @@ description: Use the Toast component to display brief, customizable notification
 
 <div class="env-toast env-toast--primary env-toast--visible">
    <div class="env-toast__check">
-      <svg class="env-icon env-icon--small">
+      <svg class="env-icon env-icon--small" aria-hidden="true">
          <use href="/sitevision/envision-icons.svg#icon-check-done"></use>
       </svg>
    </div>
@@ -38,7 +40,8 @@ description: Use the Toast component to display brief, customizable notification
       toasty content!
    </div>
    <button class="env-toast__close">
-      <svg class="env-icon env-icon--small">
+      <span class="env-assistive-text">Close</span>
+      <svg class="env-icon env-icon--small" aria-hidden="true">
          <use href="/sitevision/envision-icons.svg#icon-delete"></use>
       </svg>
    </button>

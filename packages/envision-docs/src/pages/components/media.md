@@ -10,11 +10,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -38,11 +38,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -79,11 +79,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -107,11 +107,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media env-media--column">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -137,11 +137,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media env-media--center">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -163,11 +163,11 @@ description: The Media component is used to present user activity chronologicall
 ```html
 <div class="env-media env-media--column env-media--center">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -191,11 +191,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <div class="env-media env-media--column env-media">
    <div class="env-media__figure env-media__figure--center">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image"
             src="https://envisionui.io/placeholders/text/200x200.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -219,11 +219,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <div class="env-media env-media--bottom">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -249,11 +249,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <div class="env-media env-media--reverse">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -277,11 +277,11 @@ Alignment modifiers can also be applied to elements within the media container (
 ```html
 <div class="env-media">
    <div class="env-media__figure">
-      <a href="#">
+      <a href="#" aria-hidden="true">
          <img
             class="env-image env-image--small"
             src="https://envisionui.io/placeholders/text/400x400.png"
-            alt="Example image"
+            alt=""
          />
       </a>
    </div>
@@ -298,11 +298,11 @@ Alignment modifiers can also be applied to elements within the media container (
       </p>
       <div class="env-media">
          <div class="env-media__figure">
-            <a href="#">
+            <a href="#" aria-hidden="true">
                <img
                   class="env-image env-image--small"
                   src="https://envisionui.io/placeholders/text/400x400.png"
-                  alt="Example image"
+                  alt=""
                />
             </a>
          </div>

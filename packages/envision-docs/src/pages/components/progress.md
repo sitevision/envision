@@ -11,6 +11,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuenow="0"
          aria-valuemin="0"
          aria-valuemax="100"
@@ -20,6 +21,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -30,6 +32,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 100%"
          aria-valuenow="100"
          aria-valuemin="0"
@@ -49,6 +52,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 25%"
          aria-valuenow="25"
          aria-valuemin="0"
@@ -61,6 +65,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -73,6 +78,7 @@ description: The Progress Indicator component displays progress with customizabl
       <div
          class="env-progress__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 75%"
          aria-valuenow="75"
          aria-valuemin="0"
@@ -94,6 +100,7 @@ Use modifiers `--success`, `--warning` or `--danger` to change background color 
       <div
          class="env-progress__bar env-progress__bar--success"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -104,6 +111,7 @@ Use modifiers `--success`, `--warning` or `--danger` to change background color 
       <div
          class="env-progress__bar env-progress__bar--warning"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -114,6 +122,7 @@ Use modifiers `--success`, `--warning` or `--danger` to change background color 
       <div
          class="env-progress__bar env-progress__bar--danger"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -133,6 +142,7 @@ Apply modifier `--striped` to enhance the progress bar with stripes
       <div
          class="env-progress__bar env-progress__bar--striped"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -144,6 +154,7 @@ Apply modifier `--striped` to enhance the progress bar with stripes
       <div
          class="env-progress__bar env-progress__bar--success env-progress__bar--striped"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -161,6 +172,7 @@ Apply `--striped--flip` to flip stripes alignment
       <div
          class="env-progress__bar env-progress__bar--striped env-progress__bar--striped--flip"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 50%"
          aria-valuenow="50"
          aria-valuemin="0"
@@ -180,6 +192,7 @@ Add `--striped--animated` to animate the stripes
       <div
          class="env-progress__bar env-progress__bar--striped env-progress__bar--striped--animated"
          role="progressbar"
+         aria-label="Example progress bar"
          style="width: 75%"
          aria-valuenow="75"
          aria-valuemin="0"
@@ -200,6 +213,7 @@ Add `--striped--animated` to animate the stripes
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="10"
@@ -215,6 +229,7 @@ Add `--striped--animated` to animate the stripes
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="58"
@@ -227,6 +242,7 @@ Add `--striped--animated` to animate the stripes
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="32"

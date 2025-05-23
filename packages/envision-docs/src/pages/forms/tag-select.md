@@ -12,11 +12,14 @@ Tag Select offers an API for creating interaction with the component.
 
 By default, Tag select will use the HTML markup to generate the data.
 
-```HTML
-
+```html
 <div class="env-form-field">
    <label for="example-tag-select-1" class="env-form-label">Tag select</label>
-   <select class="env-form-input" id="example-tag-select-1" aria-label="Tag select">
+   <select
+      class="env-form-input"
+      id="example-tag-select-1"
+      aria-label="Tag select"
+   >
       <option value="">Select an item ...</option>
       <option value="item-1">Item</option>
       <option value="item-2">Item 2</option>
@@ -49,12 +52,16 @@ Note: Clear and remove buttons will not be available in a single select.
 
 Use `allowEmptyOption` and `sortField` to make behaviour similar to native select element.
 
-```HTML
+```html
 <div class="env-form-field">
    <label for="example-tag-select-single-1" class="env-form-label">
       Tag select single
    </label>
-   <select class="env-form-input" id="example-tag-select-single-1" aria-label="Tag select single">
+   <select
+      class="env-form-input"
+      id="example-tag-select-single-1"
+      aria-label="Tag select single"
+   >
       <option value="">Select an item ...</option>
       <option value="item-1">Item</option>
       <option value="item-3">Item 3</option>
@@ -179,17 +186,34 @@ var singleSelectExample = envision.select('#example-tag-select-single-1', {
 
 This example sets the options from the config. It will allow adding tags from the Tag Select itself, or from a separate input using the API.
 
-```HTML
+```html
 <div class="env-form-field">
-   <label for="example-tag-select-2" class="env-form-label">Advanced select</label>
-   <input class="env-form-input" id="example-tag-select-2" aria-label="Advanced select" />
+   <label for="example-tag-select-2" class="env-form-label"
+      >Advanced select</label
+   >
+   <input
+      class="env-form-input"
+      id="example-tag-select-2"
+      aria-label="Advanced select"
+   />
 </div>
 
 <div class="env-form-field">
-   <label for="example-tag-select-2-tag" class="env-form-label">Add tag using API</label>
+   <label for="example-tag-select-2-tag" class="env-form-label"
+      >Add tag using API</label
+   >
    <div class="env-form-control">
-      <input id="example-tag-select-2-tag" type="text" class="env-form-input" aria-label="Add tag using API" />
-      <button id="example-tag-select-2-add" type="submit" class="env-button env-button--primary">
+      <input
+         id="example-tag-select-2-tag"
+         type="text"
+         class="env-form-input"
+         aria-label="Add tag using API"
+      />
+      <button
+         id="example-tag-select-2-add"
+         type="submit"
+         class="env-button env-button--primary"
+      >
          Add
       </button>
    </div>
@@ -257,10 +281,14 @@ envision
 This example fetches repository names from github. It will preload some popular names on page load.
 The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.
 
-```HTML
+```html
 <div class="env-form-field">
    <label for="example-tag-select-3" class="env-form-label">Remote data</label>
-   <input class="env-form-input" id="example-tag-select-3" aria-label="Remote data" />
+   <input
+      class="env-form-input"
+      id="example-tag-select-3"
+      aria-label="Remote data"
+   />
 </div>
 ```
 

@@ -54,7 +54,7 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 
 ## Widget example
 
-<section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small" style="width: fit-content">
+<section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small" style="width: fit-content" role="presentation">
    <h2 class="env-ui-text-sectionheading">
       Chart widget example heading
    </h2>

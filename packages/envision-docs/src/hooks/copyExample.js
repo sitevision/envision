@@ -2,6 +2,31 @@ import * as React from 'react';
 
 export const useCopyExample = (content) => {
    React.useEffect(() => {
+      // Add aria-labels to code examples
+      const codeExampleAriaLabels = {
+         html: 'Example HTML code',
+         javascript: 'Example JavaScript code',
+         unknown: 'Example code',
+      };
+      content.current
+         .querySelectorAll('.gatsby-highlight[data-language]')
+         .forEach((codeElement) => {
+            let lang = codeElement.dataset.language?.toLowerCase() || '';
+            if (lang.includes('html')) {
+               lang = 'html';
+            }
+            if (!Object.hasOwnProperty.call(codeExampleAriaLabels, lang)) {
+               lang = 'unknown';
+            }
+            codeElement
+               .querySelector('code')
+               ?.setAttribute('aria-label', codeExampleAriaLabels[lang]);
+            console.log(
+               'codeElement.dataset.language',
+               codeElement.dataset.language
+            );
+         });
+
       // Initialize Code Highlighter
 
       content.current
@@ -10,21 +35,27 @@ export const useCopyExample = (content) => {
                '.gatsby-highlight[data-language=html-nocode],' +
                '.gatsby-highlight[data-language=html-resizeable]'
          )
-         .forEach((element) => {
-            const example = document.createElement('div');
-            example.classList.add('code-example');
-            element.dataset.language === 'html-resizeable' &&
-               example.classList.add('code-example--resizeable');
-            example.innerHTML = element.textContent;
-            element.parentNode.insertBefore(example, element);
+         .forEach((codeElement) => {
+            const exampleElement = document.createElement('div');
+
+            exampleElement.classList.add('code-example');
+            exampleElement.innerHTML = codeElement.textContent;
+
+            codeElement.dataset.language === 'html-resizeable' &&
+               exampleElement.classList.add('code-example--resizeable');
+
+            codeElement.parentNode.insertBefore(exampleElement, codeElement);
+
             // Add comments so example is not indexed by developer web.
             let noIndexStart = document.createElement('div');
             let noIndexEnd = document.createElement('div');
             noIndexStart.innerHTML = '<!--sv-no-index-->';
             noIndexEnd.innerHTML = '<!--/sv-no-index-->';
-            example.insertAdjacentElement('beforebegin', noIndexStart);
-            element.insertAdjacentElement('afterend', noIndexEnd);
-            element.dataset.language === 'html-nocode' && element.remove();
+            exampleElement.insertAdjacentElement('beforebegin', noIndexStart);
+            codeElement.insertAdjacentElement('afterend', noIndexEnd);
+
+            codeElement.dataset.language === 'html-nocode' &&
+               codeElement.remove();
          });
 
       const envision = window.envision;

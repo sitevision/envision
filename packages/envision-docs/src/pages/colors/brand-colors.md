@@ -57,7 +57,7 @@ verified against WCAG 2 AA.
 <div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
-      <h4 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h4>
+      <h2 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h2>
       <img
          class="env-card__image env-profile-image env-profile-image--small"
          src="https://envisionui.io/placeholders/profile/200x200/01.webp"
@@ -77,6 +77,7 @@ verified against WCAG 2 AA.
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="10"
@@ -92,6 +93,7 @@ verified against WCAG 2 AA.
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="58"
@@ -104,6 +106,7 @@ verified against WCAG 2 AA.
       <div
          class="env-progress-poll__bar"
          role="progressbar"
+         aria-label="Example progress bar"
          aria-valuemin="0"
          aria-valuemax="100"
          aria-valuenow="32"

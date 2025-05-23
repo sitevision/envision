@@ -9,10 +9,10 @@ const Sidenav = ({ topItem, menuItems }) => {
 
    return (
       <div className="sidenav" id="navigation">
-         <h2 className="sidenav__heading">
-            <Link href={topItem.slug}>{topItem.title}</Link>
-         </h2>
-         <nav aria-label="Envision documentation">
+         <nav aria-label={`${topItem.title} sidebar menu`}>
+            <h2 className="sidenav__heading">
+               <Link href={topItem.slug}>{topItem.title}</Link>
+            </h2>
             <ul className="sidenav__items">
                {menuItems.map(
                   ({ title, slug, deprecated, since, isCurrentPage }) => (

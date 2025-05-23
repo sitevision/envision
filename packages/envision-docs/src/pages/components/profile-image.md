@@ -22,7 +22,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--xx-large"
          src="https://envisionui.io/placeholders/text/xxl.png"
-         alt="Example profile image"
+         alt="Example profile image xx-large"
       />
    </div>
 
@@ -30,7 +30,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--x-large"
          src="https://envisionui.io/placeholders/text/xl.png"
-         alt="Example profile image"
+         alt="Example profile image x-large"
       />
    </div>
 
@@ -38,7 +38,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--large"
          src="https://envisionui.io/placeholders/text/l.png"
-         alt="Example profile image"
+         alt="Example profile image large"
       />
    </div>
 
@@ -46,7 +46,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--medium"
          src="https://envisionui.io/placeholders/text/m.png"
-         alt="Example profile image"
+         alt="Example profile image medium"
       />
    </div>
 
@@ -54,7 +54,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--small"
          src="https://envisionui.io/placeholders/text/s.png"
-         alt="Example profile image"
+         alt="Example profile image small"
       />
    </div>
 
@@ -62,7 +62,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--x-small"
          src="https://envisionui.io/placeholders/text/xs.png"
-         alt="Example profile image"
+         alt="Example profile image x-small"
       />
    </div>
 
@@ -70,7 +70,7 @@ element is smaller, the image will overflow.
       <img
          class="env-profile-image env-profile-image--xx-small"
          src="https://envisionui.io/placeholders/text/xxs.png"
-         alt="Example profile image"
+         alt="Example profile image xx-small"
       />
    </div>
 </div>
