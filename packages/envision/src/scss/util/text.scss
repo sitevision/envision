@@ -111,6 +111,22 @@ a.env-text,
    );
 }
 
+.env-linkicon {
+   --env-linkicon-size: 0.875em;
+   --env-linkicon-align: baseline;
+   --env-linkicon-gap: 0.125em;
+   --env-linkicon-color: var(--env-font-color);
+
+   stroke-width: 0;
+   stroke: var(--env-linkicon-color);
+   fill: var(--env-linkicon-color);
+   display: inline-block;
+   height: var(--env-linkicon-size);
+   width: var(--env-linkicon-size);
+   vertical-align: var(--env-linkicon-align);
+   margin-left: var(--env-linkicon-gap);
+}
+
 .env-text mark,
 .env-mark {
    color: var(--env-mark-font-color);
