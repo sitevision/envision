@@ -127,37 +127,6 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 </div>
 ```
 
-### Link icons
-
-```html
-<div class="example-link">
-   <a href="#links" class="env-link">
-      Link that opens in new window
-      <svg class="env-linkicon">
-         <use href="/sitevision/link-icons.svg#link-tab"></use>
-      </svg>
-   </a>
-</div>
-
-<div class="example-link">
-   <a href="#links" class="env-link">
-      An external link
-      <svg class="env-linkicon">
-         <use href="/sitevision/link-icons.svg#link-external"></use>
-      </svg>
-   </a>
-</div>
-
-<div class="example-link">
-   <a href="#links" class="env-link">
-      External link, opens in new window
-      <svg class="env-linkicon">
-         <use href="/sitevision/link-icons.svg#link-external-tab"></use>
-      </svg>
-   </a>
-</div>
-```
-
 ## Blockquote <span class="doc-badge doc-badge--info">2025.04.2</span>
 
 <div id="blockquote"></div>
