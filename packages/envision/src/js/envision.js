@@ -2,6 +2,7 @@
 import '../scss/base.scss';
 import '../icons/envision-icons.svg';
 import '../icons/link-icons.svg';
+import '../icons/file-icons.svg';
 
 export { default as popover } from './popover';
 export { default as select } from './select';
