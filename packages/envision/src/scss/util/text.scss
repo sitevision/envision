@@ -111,6 +111,21 @@ a.env-text,
    );
 }
 
+.env-link-icon {
+   display: inline-block;
+   vertical-align: baseline;
+   fill: var(--env-link-icon-color);
+   height: var(--env-link-icon-size);
+   width: var(--env-link-icon-size);
+   margin-left: var(--env-link-icon-gap);
+   transform: translateY(var(--env-link-icon-offset-y));
+}
+
+.env-link-meta {
+   font-size: var(--env-link-meta-font-size);
+   color: var(--env-link-meta-font-color);
+}
+
 .env-text mark,
 .env-mark {
    color: var(--env-mark-font-color);
