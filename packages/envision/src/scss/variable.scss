@@ -111,11 +111,9 @@ $link-hover-text-decoration: underline !default;
       'link-secondary-hover-text-decoration': var(
             --env-link-hover-text-decoration
          ),
-      'link-icon-color': var(--env-font-color),
       'link-icon-size': 0.875em,
-      'link-icon-gap': 0.125em,
+      'link-icon-gap': 0.25em,
       'link-icon-offset-y': 0.1em,
-      'link-meta-font-color': currentColor,
       'link-meta-font-size': 0.875em,
    )
 );
