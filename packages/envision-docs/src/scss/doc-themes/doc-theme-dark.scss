@@ -170,6 +170,11 @@
    );
    --env-link-secondary-text-decoration: var(--env-link-text-decoration);
    --env-link-text-decoration: underline;
+   --env-link-icon-color: var(--env-font-color);
+   --env-link-icon-size: 0.875em;
+   --env-link-icon-gap: 0.125em;
+   --env-link-meta-font-color: currentColor;
+   --env-link-meta-font-size: 0.875em;
    --env-modal-backdrop-background-color: #000;
    --env-modal-backdrop-opacity: 0.5;
    --env-modal-large-width: 900px;
