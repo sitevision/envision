@@ -184,6 +184,49 @@ Valid modifiers:
 </div>
 ```
 
+<span id="flex-gap" class="offset-anchor"></span>
+
+### Flex gap <span class="doc-badge doc-badge--info">2025.07.1</span>
+
+Modifiers applicable to flex containers (`env-flex`).
+
+Valid modifiers:
+
+- `env-flex--gap-{value}`
+- `env-flex--column-gap-{value}`
+- `env-flex--row-gap-{value}`
+
+Valid values
+
+`xxx-small` (0.125em), `xx-small` (0.25em), `x-small` (0.5em), `small` (0.75em), `medium` (1em), `large` (1.5em), `x-large` (2em), `xx-large` (3em), `xxx-large` (4em)
+
+```html
+<div class="example-flex env-flex env-flex--gap-medium">
+   <div class="env-flex__item env-flex__item--length-1">1</div>
+   <div class="env-flex__item env-flex__item--length-1">2</div>
+   <div class="env-flex__item env-flex__item--length-1">3</div>
+</div>
+```
+
+When wrapped, `env-flex--column-gap-{value}` will be applied to both rows and columns.
+To adjust the gap between rows and columns separately, use `env-flex--row-gap-{value}` and `env-flex--column-gap-{value}`.
+
+Width of flex items may be set using [Sizing util](/utils/sizing/) classnames.
+When using `env-flex--gap-{value}` or `env-flex--column-gap-{value}`,
+the sizing is adapted to the gap size, so that the items fit within the container.
+
+```html
+<div
+   class="example-flex env-flex env-flex--row-gap-x-small env-flex--column-gap-xx-large env-flex--wrap"
+>
+   <div class="env-flex__item env-w--50">1</div>
+   <div class="env-flex__item env-w--50">2</div>
+   <div class="env-flex__item env-w--25">3</div>
+   <div class="env-flex__item env-w--75">4</div>
+   <div class="env-flex__item env-w--100">5</div>
+</div>
+```
+
 ## Flex Items
 
 ### Align self
@@ -263,47 +306,6 @@ Valid values `1-10`
 </div>
 ```
 
-## Previous class names <span class="doc-badge doc-badge--danger">Deprecated</span>
+## Deprecated
 
-Direction
-
-- `env-flex--row-reverse`
-- `env-flex--column`
-- `env-flex--column-reverse`
-
-Justify content
-
-- `env-justify-content--end`
-- `env-justify-content--center`
-- `env-justify-content--between`
-- `env-justify-content--around`
-
-Align items
-
-- `env-align-items--stretch`
-- `env-align-items--start`
-- `env-align-items--end`
-- `env-align-items--center`
-- `env-align-items--baseline`
-
-Align self
-
-- `env-align-self--stretch`
-- `env-align-self--start`
-- `env-align-self--end`
-- `env-align-self--center`
-- `env-align-self--baseline`
-
-Flex length
-
-- `env-flex-length--{1-10}`
-
-Flex grow
-
-- `env-flex-grow--{1-10}`
-
-Flex wrap
-
-- `env-flex-wrap--nowrap`
-- `env-flex-wrap--wrap`
-- `env-flex-wrap--wrap-reverse`
+[List of deprecated class names](/deprecated/flexbox/)
