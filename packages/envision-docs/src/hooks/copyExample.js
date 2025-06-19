@@ -314,7 +314,9 @@ export const useCopyExample = (content) => {
       }
 
       // Disable example links
-      const links = document.querySelectorAll('a[href="#"]');
+      const links = document.querySelectorAll(
+         'a[href*="#"],a[href="javascript:void(0)"]'
+      );
       links.forEach((link) => {
          link.addEventListener('click', (e) => {
             e.preventDefault();
