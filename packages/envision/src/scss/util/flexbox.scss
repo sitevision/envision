@@ -95,6 +95,42 @@ $flexWrapValues: nowrap wrap wrap-reverse;
       }
    }
 
+   // Flex gap added in Sitevision 2025.07.1
+   $gap-sizes: (
+      'xxx-small': 0.125em,
+      'xx-small': 0.25em,
+      'x-small': 0.5em,
+      'small': 0.75em,
+      'medium': 1em,
+      'large': 1.5em,
+      'x-large': 2em,
+      'xx-large': 3em,
+      'xxx-large': 4em,
+   );
+
+   @each $name, $gap in $gap-sizes {
+      &--gap-#{$name} {
+         gap: #{$gap};
+      }
+      &--column-gap-#{$name} {
+         column-gap: #{$gap};
+      }
+      &--row-gap-#{$name} {
+         row-gap: #{$gap};
+      }
+      &--column-gap-#{$name},
+      &--gap-#{$name} {
+         // Sizing utility classes for width will need to be adjusted
+         // for the width of the gap to work as intended.
+         $sizing-values: 25 50 75;
+         @each $size in $sizing-values {
+            .env-w--#{$size} {
+               width: calc(#{$size}#{'%'} - #{$gap} / 2) !important;
+            }
+         }
+      }
+   }
+
    &__item {
       box-sizing: border-box;
 
