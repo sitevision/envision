@@ -208,25 +208,6 @@ Valid values
 </div>
 ```
 
-When wrapped, `env-flex--column-gap-{value}` will be applied to both rows and columns.
-To adjust the gap between rows and columns separately, use `env-flex--row-gap-{value}` and `env-flex--column-gap-{value}`.
-
-Width of flex items may be set using [Sizing util](/utils/sizing/) classnames.
-When using `env-flex--gap-{value}` or `env-flex--column-gap-{value}`,
-the sizing is adapted to the gap size, so that the items fit within the container.
-
-```html
-<div
-   class="example-flex env-flex env-flex--row-gap-x-small env-flex--column-gap-xx-large env-flex--wrap"
->
-   <div class="env-flex__item env-w--50">1</div>
-   <div class="env-flex__item env-w--50">2</div>
-   <div class="env-flex__item env-w--25">3</div>
-   <div class="env-flex__item env-w--75">4</div>
-   <div class="env-flex__item env-w--100">5</div>
-</div>
-```
-
 ## Flex Items
 
 ### Align self

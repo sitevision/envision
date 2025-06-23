@@ -118,17 +118,6 @@ $flexWrapValues: nowrap wrap wrap-reverse;
       &--row-gap-#{$name} {
          row-gap: #{$gap};
       }
-      &--column-gap-#{$name},
-      &--gap-#{$name} {
-         // Sizing utility classes for width will need to be adjusted
-         // for the width of the gap to work as intended.
-         $sizing-values: 25 50 75;
-         @each $size in $sizing-values {
-            .env-w--#{$size} {
-               width: calc(#{$size}#{'%'} - #{$gap} / 2) !important;
-            }
-         }
-      }
    }
 
    &__item {
