@@ -147,6 +147,29 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
+<span id="text-list-variables" class="offset-anchor"></span>
+
+#### Text lists <span class="doc-badge doc-badge--info">2025.09.1</span>
+
+- `--env-text-list-ul-style-type`
+- `--env-text-list-ol-style-type`
+- `--env-text-list-margin-block-start`
+- `--env-text-list-margin-block-end`
+- `--env-text-list-margin-inline-start`
+- `--env-text-list-margin-inline-end`
+- `--env-text-list-padding-block-start`
+- `--env-text-list-padding-block-end`
+- `--env-text-list-padding-inline-start`
+- `--env-text-list-padding-inline-end`
+- `--env-text-list-item-margin-block-start`
+- `--env-text-list-item-margin-block-end`
+- `--env-text-list-item-margin-inline-start`
+- `--env-text-list-item-margin-inline-end`
+- `--env-text-list-item-padding-block-start`
+- `--env-text-list-item-padding-block-end`
+- `--env-text-list-item-padding-inline-start`
+- `--env-text-list-item-padding-inline-end`
+
 #### Blockquote <span class="doc-badge doc-badge--info">2025.04.2</span>
 
 - `--env-blockquote-border-block-width`
