@@ -68,6 +68,29 @@ $font-family: inherit !default;
    )
 );
 
+@include css-variables.to-css-custom-property(
+   (
+      'text-list-ul-style-type': 'disc',
+      'text-list-ol-style-type': 'decimal',
+      'text-list-margin-block-start': 1em,
+      'text-list-margin-inline-end': 0,
+      'text-list-margin-inline-start': 0,
+      'text-list-margin-block-end': 1em,
+      'text-list-padding-block-start': 0,
+      'text-list-padding-inline-end': 0,
+      'text-list-padding-inline-start': 1.75em,
+      'text-list-padding-block-end': 0,
+      'text-list-item-margin-block-start': 0.25em,
+      'text-list-item-margin-inline-end': 0,
+      'text-list-item-margin-inline-start': 0,
+      'text-list-item-margin-block-end': 0.25em,
+      'text-list-item-padding-block-start': 0,
+      'text-list-item-padding-inline-end': 0,
+      'text-list-item-padding-inline-start': 0,
+      'text-list-item-padding-block-end': 0,
+   )
+);
+
 // Font Size
 $font-size-base: 1em !default;
 
