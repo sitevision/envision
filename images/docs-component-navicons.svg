@@ -136,6 +136,22 @@
          <path d="M209.5 125.274H38.5V127.274H209.5V125.274Z" style="fill:var(--doc-icon-element-02)" mask="url(#path-11-inside-4_170_2472)"/>
          <rect x="48.5" y="113.455" width="92.7407" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-01)"/>
       </symbol>
+      <symbol id="text-list" viewBox="0 0 248 170">
+         <rect width="248" height="170" rx="8" fill="transparent"/>
+         <rect width="160" height="136" transform="translate(44 17)" style="fill:var(--doc-icon-card-surface)"/>
+         <circle cx="65.5342" cy="45.5342" r="10.5342" style="fill:var(--doc-icon-element-01)"/>
+         <rect x="84.0684" y="35" width="57.8496" height="5.3511" rx="2.67555" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="46.3511" width="102.555" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="55.1696" width="91.6191" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+         <circle cx="65.5342" cy="80.5222" r="10.5342" style="fill:var(--doc-icon-element-01)"/>
+         <rect x="84.0684" y="69.988" width="57.8496" height="5.3511" rx="2.67555" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="81.3391" width="102.555" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="90.1576" width="91.6191" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+         <circle cx="65.5342" cy="115.51" r="10.5342" style="fill:var(--doc-icon-element-01)"/>
+         <rect x="84.0684" y="104.976" width="57.8496" height="5.3511" rx="2.67555" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="116.327" width="102.555" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+         <rect x="84.0684" y="125.146" width="91.6191" height="2.81848" rx="1.40924" style="fill:var(--doc-icon-text-02)"/>
+      </symbol>
       <symbol id="media" viewBox="0 0 248 170">
          <rect width="248" height="170" rx="8" fill="transparent"/>
          <rect width="160" height="136" transform="translate(44 17)" style="fill:var(--doc-icon-card-surface)"/>
