@@ -5,8 +5,7 @@ ol.env-text-list {
    list-style: var(--env-text-list-ol-style-type);
 }
 
-ul.env-text-list,
-ol.env-text-list {
+.env-text-list:is(ul, ol) {
    padding-block-start: var(--env-text-list-padding-block-start);
    padding-inline-end: var(--env-text-list-padding-inline-end);
    padding-block-end: var(--env-text-list-padding-block-end);
@@ -17,8 +16,7 @@ ol.env-text-list {
    margin-block-end: var(--env-text-list-margin-block-end);
    margin-inline-start: var(--env-text-list-margin-inline-start);
 
-   ul,
-   ol {
+   :is(ul, ol) {
       margin-block-start: 0;
       margin-block-end: 0;
    }
