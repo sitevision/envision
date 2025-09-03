@@ -96,32 +96,32 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
             role="tab"
             aria-controls="panel7"
             aria-selected="true"
-            >Tab 10
+            >Tab 7
       </li>
       <li   id="tab8"
             role="tab"
             aria-controls="panel8"
             aria-selected="false"
-            >Tab 11
+            >Tab 8
       </li>
       <li   id="tab9"
             role="tab"
             aria-controls="panel9"
             aria-selected="false"
-            >Tab 12</a
+            >Tab 9</a
          >
       </li>
       <li   id="tab10"
             role="tab"
             aria-controls="panel10"
             aria-selected="false"
-            >Tab 13
+            >Tab 10
       </li>
       <li   id="tab11"
             role="tab"
             aria-controls="panel11"
             aria-selected="false"
-            >Tab 14
+            >Tab 11
       </li>
    </ul>
 </div>
@@ -133,7 +133,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    role="tabpanel"
    aria-hidden="false"
 >
-   10
+   7
 </div>
 <div
    id="panel8"
@@ -142,7 +142,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    role="tabpanel"
    aria-hidden="true"
 >
-   11
+   8
 </div>
 <div
    id="panel9"
@@ -151,7 +151,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    role="tabpanel"
    aria-hidden="true"
 >
-   12
+   9
 </div>
 <div
    id="panel10"
@@ -160,7 +160,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    role="tabpanel"
    aria-hidden="true"
 >
-   13
+   10
 </div>
 <div
    id="panel11"
@@ -169,7 +169,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
    role="tabpanel"
    aria-hidden="true"
 >
-   14
+   11
 </div>
 ```
 
