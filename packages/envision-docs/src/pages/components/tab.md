@@ -85,19 +85,43 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
 </div>
 ```
 
-## Hover fill
+## Stacked
+
+Add class modifier `env-tabs--column` to tab stack container to make tabs vertical.
 
 ```html
-<div class="env-tabs env-tabs--hover-fill example-tabs2">
-   <ul class="env-tabs__nav" role="tablist">
-      <li id="tab7" role="tab" aria-controls="panel7" aria-selected="true">
-         Tab 7
+<div class="env-tabs example-tabs3">
+   <ul class="env-tabs__nav env-tabs--column" role="tablist">
+      <li   id="tab7"
+            role="tab"
+            aria-controls="panel7"
+            aria-selected="true"
+            >Tab 10
       </li>
-      <li id="tab8" role="tab" aria-controls="panel8" aria-selected="false">
-         Tab 8
+      <li   id="tab8"
+            role="tab"
+            aria-controls="panel8"
+            aria-selected="false"
+            >Tab 11
       </li>
-      <li id="tab9" role="tab" aria-controls="panel9" aria-selected="false">
-         Tab 9
+      <li   id="tab9"
+            role="tab"
+            aria-controls="panel9"
+            aria-selected="false"
+            >Tab 12</a
+         >
+      </li>
+      <li   id="tab10"
+            role="tab"
+            aria-controls="panel10"
+            aria-selected="false"
+            >Tab 13
+      </li>
+      <li   id="tab11"
+            role="tab"
+            aria-controls="panel11"
+            aria-selected="false"
+            >Tab 14
       </li>
    </ul>
 </div>
@@ -109,7 +133,7 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
    role="tabpanel"
    aria-hidden="false"
 >
-   7
+   10
 </div>
 <div
    id="panel8"
@@ -118,7 +142,7 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
    role="tabpanel"
    aria-hidden="true"
 >
-   8
+   11
 </div>
 <div
    id="panel9"
@@ -127,91 +151,21 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
    role="tabpanel"
    aria-hidden="true"
 >
-   9
+   12
 </div>
-```
-
-## Responsive
-
-Add class modifier `env-tabs--column` to tab stack container to make tabs vertical.
-
-```html
-<div class="env-tabs example-tabs3">
-   <ul class="env-tabs__nav env-tabs--column" role="tablist">
-      <li   id="tab10"
-            role="tab"
-            aria-controls="panel10"
-            aria-selected="true"
-            >Tab 10
-      </li>
-      <li   id="tab11"
-            role="tab"
-            aria-controls="panel11"
-            aria-selected="false"
-            >Tab 11
-      </li>
-      <li   id="tab12"
-            role="tab"
-            aria-controls="panel12"
-            aria-selected="false"
-            >Tab 12</a
-         >
-      </li>
-      <li   id="tab13"
-            role="tab"
-            aria-controls="panel13"
-            aria-selected="false"
-            >Tab 13
-      </li>
-      <li   id="tab14"
-            role="tab"
-            aria-controls="panel14"
-            aria-selected="false"
-            >Tab 14
-      </li>
-   </ul>
-</div>
-
 <div
    id="panel10"
    class="example-panel"
    aria-labelledby="tab10"
-   role="tabpanel"
-   aria-hidden="false"
->
-   10
-</div>
-<div
-   id="panel11"
-   class="example-panel"
-   aria-labelledby="tab11"
-   role="tabpanel"
-   aria-hidden="true"
->
-   11
-</div>
-<div
-   id="panel12"
-   class="example-panel"
-   aria-labelledby="tab12"
-   role="tabpanel"
-   aria-hidden="true"
->
-   12
-</div>
-<div
-   id="panel13"
-   class="example-panel"
-   aria-labelledby="tab13"
    role="tabpanel"
    aria-hidden="true"
 >
    13
 </div>
 <div
-   id="panel14"
+   id="panel11"
    class="example-panel"
-   aria-labelledby="tab14"
+   aria-labelledby="tab11"
    role="tabpanel"
    aria-hidden="true"
 >
