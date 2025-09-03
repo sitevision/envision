@@ -151,23 +151,25 @@ class RangeSlider {
 
       this._handleIndex = index;
 
-      closestHandleEl.focus();
+      if (closestHandleEl) {
+         closestHandleEl.focus();
 
-      const offset = this.#offset(closestHandleEl);
-      const boundingClientRect = closestHandleEl.getBoundingClientRect();
-      const compStyle = getComputedStyle(closestHandleEl);
+         const offset = this.#offset(closestHandleEl);
+         const boundingClientRect = closestHandleEl.getBoundingClientRect();
+         const compStyle = getComputedStyle(closestHandleEl);
 
-      this._clickOffset = {
-         left: position.x - offset.left - boundingClientRect.width / 2,
-         top:
-            position.y -
-            offset.top -
-            boundingClientRect.height / 2 -
-            (parseInt(compStyle.borderTopWidth, 10) || 0) -
-            (parseInt(compStyle.borderBottomWidth, 10) || 0) +
-            (parseInt(compStyle.marginTop, 10) || 0),
-      };
-      this._slide(e, index, normValue);
+         this._clickOffset = {
+            left: position.x - offset.left - boundingClientRect.width / 2,
+            top:
+               position.y -
+               offset.top -
+               boundingClientRect.height / 2 -
+               (parseInt(compStyle.borderTopWidth, 10) || 0) -
+               (parseInt(compStyle.borderBottomWidth, 10) || 0) +
+               (parseInt(compStyle.marginTop, 10) || 0),
+         };
+         this._slide(e, index, normValue);
+      }
    }
 
    _handleSlide(e) {
@@ -280,8 +282,8 @@ class RangeSlider {
    _getPosition(e) {
       const pos = {};
 
-      if (e.originalEvent?.touches) {
-         const touches = e.originalEvent.touches[0];
+      if (e?.touches) {
+         const touches = e.touches[0];
          pos.x = touches.pageX;
          pos.y = touches.pageY;
       } else {
