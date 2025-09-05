@@ -210,19 +210,16 @@ Combine zoom and captions using data attributes or links:
 ```
 
 - `buttons` _{ download, showText }_
-
    - Lightbox button options. Show/hide download button. Visible text in close/download buttons.
    - Default values: `{ download: true, showText: false }`
 
 - `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
-
    - Translation of buttons aria-label and aria-roledescription.
      Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
    - Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
      image, of_
 
 - `slides` _boolean_ | _{ [options object](#slides-options-object) }_
-
    - Initialize a slideshow with default or custom options
    - Default value: `false`
 
@@ -231,32 +228,26 @@ Combine zoom and captions using data attributes or links:
 ### Slides options object
 
 - `auto` _number_
-
    - Auto rotation possible, play button visible. Number is interval in _ms_.
    - Default value: `0` (auto rotation not available)
 
 - `speed` _number_
-
    - Slide speed in _ms_.
    - Default value: `300`
 
 - `draggable` _boolean_
-
    - Slides listen to mouse drag events in addition to touch events.
    - Default value: `true`
 
 - `playing` _boolean_
-
    - If `auto` is set to > 0, this will start auto rotation automatically.
    - Default value: `false`
 
 - `overlay` _boolean_
-
    - Control buttons and caption should overlay the slides.
    - Default value: `true`
 
 - `buttons` _{ size, type, ghost }_
-
    - Control button appearance.
    - Allowed value for `type`: Any Element color name in lowercase.
    - Allowed value for `size`: Any Button size name in lowercase.
@@ -276,37 +267,29 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 ### Slider
 
 - `slider.pause()`
-
    - Pause slider automatic rotation.
 
 - `slider.play()`
-
    - Start slider automatic rotation if available.
 
 - `slider.next()`
-
    - Show next image.
 
 - `slider.prev()`
-
    - Show previous image.
 
 - `slider.goTo(index, speed)`
-
    - Set slider to image at position _index_. Use _speed_ to control how fast image is shown.
 
 - `slider.getPos()`
-
    - Get index for current image.
 
 ### Lightbox
 
 - `lightbox.show(index)`
-
    - Show lightbox starting at _index_. Defaults to index 0.
 
 - `lightbox.close()`
-
    - Close the lightbox.
 
 ## Legacy documentation
