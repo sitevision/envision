@@ -460,17 +460,14 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
 ```
 
 - `opener` _'string'_ | _Node_
-
    - A selector as a string or a DOM Node to assign event listener for opening the dialog.
    - Default value: `null`
 
 - `backdropClick` _boolean_
-
    - Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
    - Default value: `true`
 
 - `placement` _'string'_ <span class="doc-badge doc-badge--info">since Sitevision 2024.09.2</span>
-
    - Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
    - Allowed values: `'body'`
    - Default value: `null`
@@ -499,15 +496,12 @@ envision.dialog('#dialog').then(function (dialogs) {
 ### Options
 
 - `el`
-
    - Access to the [HTMLDialogElement interface](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement), e.g. `open` and `returnValue`.
 
 - `show()`
-
    - Show the dialog. Uses [HTMLDialogElement showModal()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) to always display the dialog in the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer).
 
 - `close()`
-
    - Close the dialog.
 
 ## Events
