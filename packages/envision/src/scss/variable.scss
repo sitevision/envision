@@ -109,12 +109,10 @@ $font-size-base: 1em !default;
 );
 
 $font-color: #202330 !default;
-$font-color-muted: rgba($font-color, 0.65);
 
 @include css-variables.to-css-custom-property(
    (
       'font-color': $font-color,
-      'font-color-muted': $font-color-muted,
    )
 );
 
@@ -273,7 +271,7 @@ $UI_TEXT_NAMES:
       'ui-text-subheading-text-transform': none,
       'ui-text-subheading-letter-spacing': normal,
       'ui-text-caption-font-family': var(--env-font-family),
-      'ui-text-caption-font-color': var(--env-font-color-muted),
+      'ui-text-caption-font-color': rgba($font-color, 0.65),
       'ui-text-caption-font-size': 0.875em,
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
@@ -1005,12 +1003,14 @@ $profile-image-radius: 50% !default;
 $font-color-light: functions.adjustLightness($font-color, 10%) !default;
 $font-color-lighter: functions.adjustLightness($font-color, 20%) !default;
 $font-color-invert: #ffffff !default;
+$font-color-muted: rgba($font-color, 0.65);
 
 @include css-variables.to-css-custom-property(
    (
       'font-color-light': $font-color-light,
       'font-color-lighter': $font-color-lighter,
       'font-color-invert': $font-color-invert,
+      'font-color-muted': $font-color-muted,
    )
 );
 

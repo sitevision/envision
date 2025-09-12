@@ -17,10 +17,8 @@ description: The Embedded component displays images and text with flexible layou
    <div class="env-embedded__block">
       <h4 class="env-text">Lorem ipsum</h4>
       <p class="env-text">
-         <span class="env-text--muted">
-            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-            drumstick chuck ball tip biltong shoulder
-         </span>
+         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+         drumstick chuck ball tip biltong shoulder
       </p>
       <button type="button" class="env-button env-button--primary">
          Lorem ipsum
@@ -45,11 +43,9 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__block">
       <h4 class="env-text">Lorem ipsum</h4>
       <p class="env-text">
-         <span class="env-text--muted">
-            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-            loin.
-         </span>
+         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+         loin.
       </p>
    </div>
 </div>
@@ -67,11 +63,9 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__block">
       <h4 class="env-text">Lorem ipsum</h4>
       <p class="env-text">
-         <span class="env-text--muted">
-            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-            loin.
-         </span>
+         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+         loin.
       </p>
    </div>
 </div>
@@ -91,12 +85,9 @@ Uses `env-embedded--horizontal` and `env-embedded__img`. Use `env-embedded__img-
    <div class="env-embedded__block">
       <h4 class="env-text">Lorem ipsum</h4>
       <p class="env-text">
-         <span class="env-text--muted">
-            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-            loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock
-            salami.
-         </span>
+         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+         loin. Jowl pastrami drumstick pig, beef jerky chicken ham hock salami.
       </p>
    </div>
 </div>
@@ -118,11 +109,9 @@ Uses `env-embedded__block--overlay` to position text on top of image. You can al
    <div class="env-embedded__block--overlay">
       <h4 class="env-text">Lorem ipsum</h4>
       <p class="env-text">
-         <span class="env-text--muted">
-            Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
-            drumstick chuck ball tip biltong shoulder porchetta tenderloin short
-            loin.
-         </span>
+         Bacon ipsum dolor amet beef cupim brisket pork turducken salami pig
+         drumstick chuck ball tip biltong shoulder porchetta tenderloin short
+         loin.
       </p>
    </div>
 </div>

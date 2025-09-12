@@ -53,13 +53,6 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 <div class="env-text-small">Looks like small</div>
 ```
 
-```html
-<h3 class="env-text">
-   Fancy display heading
-   <small class="env-text--muted">With faded secondary text</small>
-</h3>
-```
-
 ## Transformation
 
 ```html
@@ -232,5 +225,16 @@ Classname `env-mark` or `<mark>` element inside an `env-text` wrapper will use t
 <p class="env-text">
    Sed do eiusmod tempor incididunt ut labore et <mark>ipsum dolor</mark> magna
    aliqua.
+</p>
+```
+
+## Legacy class names <span class="doc-badge doc-badge--danger">Deprecated</span>
+
+The class `env-text--muted` is deprecated. Use UI Text or Content Text styles instead.
+The muted style often results in insufficient contrast, especially in custom themes.
+
+```html
+<p class="env-text">
+   <small class="env-text--muted">Muted text</small>
 </p>
 ```
