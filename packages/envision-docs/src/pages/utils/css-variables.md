@@ -35,7 +35,6 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 
 - `--env-font-family`
 - `--env-font-color`
-- `--env-font-color-muted`
 - `--env-font-size-base`
 - `--env-font-size-x-small`
 - `--env-font-size-small`
@@ -382,6 +381,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-font-color-light`
 - `--env-font-color-lighter`
 - `--env-font-color-invert`
+- `--env-font-color-muted`
 - `--env-color-base`
 - `--env-color-darker`
 - `--env-color-dark`

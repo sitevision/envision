@@ -65,10 +65,8 @@ Deprecated classes:
          <div class="env-embedded__block">
             <h4 class="env-ui-text-subheading">Lorem ipsum</h4>
             <p class="env-text">
-               <span class="env-text--muted">
-                  Bacon ipsum dolor amet beef cupim brisket pork turducken
-                  salami pig drumstick chuck ball tip biltong shoulder
-               </span>
+               Bacon ipsum dolor amet beef cupim brisket pork turducken salami
+               pig drumstick chuck ball tip biltong shoulder
             </p>
          </div>
       </div>

@@ -8,6 +8,7 @@
    }
 
    --env-font-color: #{var(--env-block-#{$blockName}font-color)};
+   --env-font-color-muted: #{var(--env-block-#{$blockName}font-color)};
    @each $name in variable.$UI_TEXT_NAMES {
       --env-ui-text-#{$name}-font-color: #{var(
             --env-block-#{$blockName}font-color

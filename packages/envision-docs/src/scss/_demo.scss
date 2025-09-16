@@ -737,7 +737,6 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       position: absolute;
       padding: 3px 5px;
       inset: 0 0 auto auto;
-      color: var(--env-font-color-muted);
 
       &:before {
          content: 'Scale factor ';
