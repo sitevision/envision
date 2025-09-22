@@ -33,7 +33,7 @@
       "@eslint/js": "^9.28.0",
       "concurrently": "^9.1.2",
       "cross-env": "^10.0.0",
-      "eslint": "^9.28.0",
+      "eslint": "^9.36.0",
       "eslint-plugin-commonjs": "^1.0.2",
       "eslint-plugin-react": "^7.37.5",
       "eslint-plugin-react-hooks": "^5.2.0",
