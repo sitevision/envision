@@ -49,5 +49,6 @@
    },
    "dependencies": {
       "sharp": "^0.34.4"
-   }
+   },
+   "packageManager": "yarn@4.10.2"
 }
