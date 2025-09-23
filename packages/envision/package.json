@@ -27,25 +27,25 @@
       "babel-loader": "^10.0.0",
       "compression-webpack-plugin": "^11.1.0",
       "css-loader": "^7.1.2",
+      "css-vars-to-json": "1.0.0",
       "eslint-loader": "^4.0.2",
       "eslint-webpack-plugin": "^5.0.1",
       "file-loader": "^6.2.0",
       "mini-css-extract-plugin": "^2.9.2",
-      "sass": "^1.92.0",
       "optimize-css-assets-webpack-plugin": "^6.0.1",
       "postcss-loader": "^8.1.1",
+      "sass": "^1.92.0",
       "sass-loader": "^16.0.5",
       "terser-webpack-plugin": "^5.3.14",
       "webpack": "^5.101.3",
       "webpack-cli": "^6.0.1",
-      "webpack-merge": "^6.0.1",
-      "css-vars-to-json": "1.0.0"
+      "webpack-merge": "^6.0.1"
    },
    "dependencies": {
-      "jquery": "^3.7.1",
       "@popperjs/core": "^2.11.8",
-      "tom-select": "^2.4.3",
-      "swipejs": "^2.3.1"
+      "jquery": "^3.7.1",
+      "swipejs": "^2.3.1",
+      "tom-select": "^2.4.3"
    },
    "browserslist": [
       ">0.5%",
