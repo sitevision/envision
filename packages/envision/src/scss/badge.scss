@@ -20,6 +20,8 @@
       @include focus.focus-outline;
    }
 
+   // Hover state for primary and default badges if button or link
+   &--primary:where(a, button):hover,
    &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
          a,
          button
