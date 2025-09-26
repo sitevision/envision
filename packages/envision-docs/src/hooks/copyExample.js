@@ -21,10 +21,6 @@ export const useCopyExample = (content) => {
             codeElement
                .querySelector('code')
                ?.setAttribute('aria-label', codeExampleAriaLabels[lang]);
-            console.log(
-               'codeElement.dataset.language',
-               codeElement.dataset.language
-            );
          });
 
       // Initialize Code Highlighter
