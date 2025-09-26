@@ -968,14 +968,35 @@ canvas.example-canvas {
 }
 
 .example-imageviewer2-images {
-   a {
+   button {
+      position: relative;
+      appearance: none;
+      background: none;
+      border: none;
+      box-sizing: border-box;
+      cursor: pointer;
       display: block;
-      margin: 0 0.2em;
-   }
+      line-height: 1;
+      width: 100%;
+      height: 0;
+      margin: 0;
+      padding: 0 0 50%;
 
+      &:focus-visible {
+         @include variables.focus-outline;
+      }
+   }
    img {
       display: block;
       max-width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
    }
 }
 

@@ -92,17 +92,18 @@ $inset: var(--env-spacing-xx-large);
    // ----- Slider caption -----
 
    &__viewer__caption {
+      color: var(--env-text-caption-01-font-color);
       font-family: var(--env-text-caption-01-font-family);
       font-size: var(--env-text-caption-01-font-size);
-      font-weight: var(--env-text-caption-01-font-weight);
       font-style: var(--env-text-caption-01-font-style);
-      line-height: var(--env-text-caption-01-line-height);
-      text-transform: var(--env-text-caption-01-text-transform);
+      font-weight: var(--env-text-caption-01-font-weight);
       letter-spacing: var(--env-text-caption-01-letter-spacing);
-      color: var(--env-text-caption-01-font-color);
+      line-height: var(--env-text-caption-01-line-height);
+      margin-block-end: var(--env-text-caption-01-margin-block-end);
+      margin-block-start: var(--env-text-caption-01-margin-block-start);
+      text-transform: var(--env-text-caption-01-text-transform);
       text-align: left;
       overflow-wrap: anywhere;
-      padding: 0.5em 1em;
 
       .env-image-viewer-2--overlay & {
          position: absolute;
@@ -110,6 +111,8 @@ $inset: var(--env-spacing-xx-large);
          inset: auto auto 0 0;
          background-color: rgba(0, 0, 0, 0.65);
          color: #fff;
+         margin: 0;
+         padding: 0.5em 1em;
 
          * {
             color: #fff !important;
@@ -127,6 +130,7 @@ $inset: var(--env-spacing-xx-large);
       justify-content: center;
       align-items: center;
       --env-font-color: #fff;
+      --env-text-caption-01-font-color: #fff;
       --env-spinner-color: #fff;
       position: fixed;
       inset: 0;
@@ -190,6 +194,22 @@ $inset: var(--env-spacing-xx-large);
          position: relative;
          text-align: center;
          margin: 0 auto;
+      }
+
+      &__figure {
+         margin: 0;
+         padding: 0;
+      }
+
+      &__caption {
+         position: fixed;
+         z-index: 9999;
+         text-align: left;
+         max-width: 60em;
+         right: calc(#{$inset} + 0.5em + 2.75em + 2em);
+         bottom: calc(#{$inset} + 0.5em);
+         left: calc(#{$inset} + 0.5em);
+         margin: 0;
       }
 
       &__image {

@@ -44,22 +44,76 @@ with navigation arrows to switch between images. The link href:s should point to
 shown.
 
 ```html
-<div
-   id="example-imageviewer2-1"
-   class="example-imageviewer2-images env-text env-flex env-flex--justify-content-around"
->
-   <a href="/placeholders/originals/03.webp" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/03.webp" alt="Grass" />
-   </a>
-   <a href="/placeholders/originals/04.webp" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/04.webp" alt="Fern" />
-   </a>
-   <a href="/placeholders/originals/08.webp" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/08.webp" alt="Snail" />
-   </a>
-   <a href="/placeholders/originals/09.webp" data-zoom>
-      <img loading="lazy" src="/placeholders/225x100/09.webp" alt="Dandelion" />
-   </a>
+<div id="example-imageviewer2-1" class="example-imageviewer2-images">
+   <ul
+      class="env-list env-cardholder-grid"
+      style="--env-cardholder-grid-column-width: 10em;"
+   >
+      <li>
+         <button
+            type="button"
+            aria-label="Zoom image: Dry grass in sunlight"
+            data-href="/placeholders/originals/03.webp"
+            data-zoom
+         >
+            <img
+               loading="lazy"
+               src="/placeholders/225x100/03.webp"
+               data-figcaption="A strand of grass catching the warm glow of the sun"
+               alt="Dry grass in sunlight"
+            />
+         </button>
+         <p class="env-text-caption-01">Dry grass in sunlight</p>
+      </li>
+      <li>
+         <button
+            type="button"
+            aria-label="Zoom image: Bright green fern leaves"
+            data-href="/placeholders/originals/04.webp"
+            data-zoom
+         >
+            <img
+               loading="lazy"
+               src="/placeholders/225x100/04.webp"
+               alt="Bright green fern leaves"
+               data-figcaption="Bright green fern fronds filling the frame in soft light"
+            />
+         </button>
+         <p class="env-text-caption-01">Bright green fern leaves</p>
+      </li>
+      <li>
+         <button
+            type="button"
+            aria-label="Zoom image: Two little snails on a green leaf"
+            data-href="/placeholders/originals/08.webp"
+            data-zoom
+         >
+            <img
+               loading="lazy"
+               src="/placeholders/225x100/08.webp"
+               data-figcaption="Two little snails hanging out on a green leaf in the shade"
+               alt="Two little snails on a green leaf"
+            />
+         </button>
+         <p class="env-text-caption-01">Two little snails on a green leaf</p>
+      </li>
+      <li>
+         <button
+            type="button"
+            aria-label="Zoom image: A close-up of a dandelion"
+            data-href="/placeholders/originals/09.webp"
+            data-zoom
+         >
+            <img
+               loading="lazy"
+               src="/placeholders/225x100/09.webp"
+               data-figcaption="A close-up of a dandelion ready to spread its seeds on a sunny day"
+               alt="A close-up of a dandelion"
+            />
+         </button>
+         <p class="env-text-caption-01">A close-up of a dandelion</p>
+      </li>
+   </ul>
 </div>
 ```
 
