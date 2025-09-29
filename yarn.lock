@@ -7328,7 +7328,7 @@ __metadata:
     gatsby-transformer-sharp: "npm:^5.15.0"
     prismjs: "npm:^1.30.0"
     prop-types: "npm:^15.8.1"
-    react: "npm:^18.3.1"
+    react: "npm:^19.1.1"
     react-dom: "npm:^18.3.1"
     react-helmet: "npm:^6.1.0"
     sass: "npm:^1.92.0"
@@ -14439,12 +14439,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
-  version: 18.3.1
-  resolution: "react@npm:18.3.1"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
+"react@npm:^19.1.1":
+  version: 19.1.1
+  resolution: "react@npm:19.1.1"
+  checksum: 10c0/8c9769a2dfd02e603af6445058325e6c8a24b47b185d0e461f66a6454765ddcaecb3f0a90184836c68bb509f3c38248359edbc42f0d07c23eb500a5c30c87b4e
   languageName: node
   linkType: hard
 
