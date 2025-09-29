@@ -1,6 +1,7 @@
 @use 'mixin/focus';
 
-$inset: var(--env-spacing-xx-large);
+$imageInset: 1.75rem;
+$buttonInset: 2.25rem;
 
 @mixin overlayButton($opacity: 0.65) {
    background-color: rgba(0, 0, 0, $opacity);
@@ -136,7 +137,7 @@ $inset: var(--env-spacing-xx-large);
       inset: 0;
       width: auto;
       height: auto;
-      margin: $inset;
+      margin: $imageInset;
       padding: 0;
       overflow: hidden;
       text-align: center;
@@ -202,13 +203,16 @@ $inset: var(--env-spacing-xx-large);
       }
 
       &__caption {
+         $lineHeight: 1.5;
          position: fixed;
          z-index: 9999;
          text-align: left;
          max-width: 60em;
-         right: calc(#{$inset} + 0.5em + 2.75em + 2em);
-         bottom: calc(#{$inset} + 0.5em);
-         left: calc(#{$inset} + 0.5em);
+         right: calc(#{$buttonInset} + 2.75em + 2em);
+         bottom: $buttonInset;
+         bottom: $lineHeight * 0.25rem + $buttonInset;
+         left: $buttonInset;
+         line-height: 1.2;
          margin: 0;
       }
 
@@ -217,7 +221,7 @@ $inset: var(--env-spacing-xx-large);
          width: 100%;
          height: auto;
          max-width: 100%;
-         max-height: calc(100vh - #{$inset} * 2);
+         max-height: calc(100vh - #{$imageInset} * 2);
       }
 
       &__download,
@@ -244,15 +248,15 @@ $inset: var(--env-spacing-xx-large);
       &__download {
          position: fixed !important;
          z-index: 9999;
-         bottom: calc(#{$inset} + 0.5em);
-         right: calc(#{$inset} + 0.5em);
+         bottom: $buttonInset;
+         right: $buttonInset;
       }
 
       &__close {
          position: fixed !important;
          z-index: 9999;
-         top: calc(#{$inset} + 0.5em);
-         right: calc(#{$inset} + 0.5em);
+         top: $buttonInset;
+         right: $buttonInset;
       }
 
       &__next,
@@ -276,11 +280,11 @@ $inset: var(--env-spacing-xx-large);
       }
 
       &__next {
-         right: calc(#{$inset} + 0.5em);
+         right: $buttonInset;
       }
 
       &__prev {
-         left: calc(#{$inset} + 0.5em);
+         left: $buttonInset;
       }
 
       &::backdrop {
