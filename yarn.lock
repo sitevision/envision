@@ -7325,7 +7325,7 @@ __metadata:
     gatsby-remark-prismjs: "npm:^7.15.0"
     gatsby-source-filesystem: "npm:^5.14.0"
     gatsby-transformer-remark: "npm:^6.15.0"
-    gatsby-transformer-sharp: "npm:^5.14.0"
+    gatsby-transformer-sharp: "npm:^5.15.0"
     prismjs: "npm:^1.30.0"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.3.1"
@@ -9271,22 +9271,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-sharp@npm:^5.14.0":
-  version: 5.14.0
-  resolution: "gatsby-transformer-sharp@npm:5.14.0"
+"gatsby-transformer-sharp@npm:^5.15.0":
+  version: 5.15.0
+  resolution: "gatsby-transformer-sharp@npm:5.15.0"
   dependencies:
     "@babel/runtime": "npm:^7.20.13"
     bluebird: "npm:^3.7.2"
     common-tags: "npm:^1.8.2"
     fs-extra: "npm:^11.2.0"
-    gatsby-plugin-utils: "npm:^4.14.0"
+    gatsby-plugin-utils: "npm:^4.15.0"
     probe-image-size: "npm:^7.2.3"
     semver: "npm:^7.5.3"
     sharp: "npm:^0.32.6"
   peerDependencies:
     gatsby: ^5.0.0-next
     gatsby-plugin-sharp: ^5.0.0-next
-  checksum: 10c0/e57e78c28006c106571ca907f41cd84b838f66060c86328eb46f8696650adcf5657f54de892a8ffb8b83138715529c74ec9a536bc41345b9ac27f6eca43fe017
+  checksum: 10c0/20427a3f4135d22c1a13416792b8aee9c1ca68868960f01fddad51690066f940983b6a000b851a2d797fd63b6d3b6097f4d8718ec34860e3ed65eda363bbf133
   languageName: node
   linkType: hard
 

@@ -23,7 +23,7 @@
       "gatsby-remark-prismjs": "^7.15.0",
       "gatsby-source-filesystem": "^5.14.0",
       "gatsby-transformer-remark": "^6.15.0",
-      "gatsby-transformer-sharp": "^5.14.0",
+      "gatsby-transformer-sharp": "^5.15.0",
       "sass": "^1.92.0"
    },
    "dependencies": {
