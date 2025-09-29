@@ -209,7 +209,6 @@ $buttonInset: 2.25rem;
          text-align: left;
          max-width: 60em;
          right: calc(#{$buttonInset} + 2.75em + 2em);
-         bottom: $buttonInset;
          bottom: $lineHeight * 0.25rem + $buttonInset;
          left: $buttonInset;
          line-height: 1.2;
