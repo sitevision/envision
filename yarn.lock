@@ -5706,7 +5706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.4.2, chokidar@npm:^3.5.3":
+"chokidar@npm:^3.4.2":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -7323,7 +7323,7 @@ __metadata:
     gatsby-plugin-sharp: "npm:^5.14.0"
     gatsby-remark-classes: "npm:^1.0.2"
     gatsby-remark-prismjs: "npm:^7.15.0"
-    gatsby-source-filesystem: "npm:^5.14.0"
+    gatsby-source-filesystem: "npm:^5.15.0"
     gatsby-transformer-remark: "npm:^6.15.0"
     gatsby-transformer-sharp: "npm:^5.15.0"
     prismjs: "npm:^1.30.0"
@@ -9220,22 +9220,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^5.14.0":
-  version: 5.14.0
-  resolution: "gatsby-source-filesystem@npm:5.14.0"
+"gatsby-source-filesystem@npm:^5.15.0":
+  version: 5.15.0
+  resolution: "gatsby-source-filesystem@npm:5.15.0"
   dependencies:
     "@babel/runtime": "npm:^7.20.13"
-    chokidar: "npm:^3.5.3"
+    chokidar: "npm:^3.6.0"
     file-type: "npm:^16.5.4"
     fs-extra: "npm:^11.2.0"
-    gatsby-core-utils: "npm:^4.14.0"
+    gatsby-core-utils: "npm:^4.15.0"
     mime: "npm:^3.0.0"
     pretty-bytes: "npm:^5.6.0"
     valid-url: "npm:^1.0.9"
     xstate: "npm:^4.38.0"
   peerDependencies:
     gatsby: ^5.0.0-next
-  checksum: 10c0/e0cd8bb735d8c4ab3359b5d5f1cc159fcee1235194523460961919b0f5e5e56f78e953f72fb363f471603e6c32e78f2cae19d7772fa186b1305466810267ae2f
+  checksum: 10c0/fae1c1987a3ec7d5cd8c8a3b9240d59cb8ec0fd086ba3759ef6f68c41f835361ab5e99fbb8e5baa099fcd6f56ccdfd812aca5dae4945d81a6ee54e90223650de
   languageName: node
   linkType: hard
 
