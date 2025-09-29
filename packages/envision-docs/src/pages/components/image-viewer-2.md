@@ -203,24 +203,12 @@ and `data-zoom` should be added to the link, not the image.
 
 #### Caption
 
-Wrap the images in a `figure` tag and add a `figcaption` with class `env-image-viewer-2__viewer__caption`.
+Wrap images in a `figure` element and include a `figcaption` with the class `env-image-viewer-2__viewer__caption` to provide descriptive text.
 
-```html-no-example
-<section aria-label="Slideshow label">
-   <figure>
-      <img src="example-1.webp" alt="">
-      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
-   </figure>
-   <figure>
-      <img src="example-2.webp" alt="">
-      <figcaption class="env-image-viewer-2__viewer__caption">Image 2 caption</figcaption>
-   </figure>
-</section>
-```
+Captions can be combined with zoom functionality in two ways:
 
-#### Zoom and caption
-
-Combine zoom and captions using data attributes or links:
+- By adding `data-href` and `data-zoom` attributes directly on the <figure> element.
+- By using an `<a>` element with `href` and `data-zoom`, wrapping the image and caption.
 
 ```html-no-example
 <section aria-label="Slideshow label">
@@ -231,6 +219,25 @@ Combine zoom and captions using data attributes or links:
    <a href="example-2-large.webp" data-zoom>
       <img src="example-2.webp" alt="">
       <div class="env-image-viewer-2__viewer__caption">Image 2 caption</div>
+   </a>
+</section>
+```
+
+#### Zoom and caption <span class="doc-badge doc-badge--info">2025.09.2</span>
+
+A `<figcaption>` placed inside a `data-zoom` link or `<figure>` will automatically be displayed in the lightbox.
+
+Alternatively, use the `data-figcaption` attribute on an `<img>` to show caption text in the lightbox without
+rendering it in the slideshow.
+
+```html-no-example
+<section aria-label="Slideshow label">
+   <figure data-href="example-1-large.webp" data-zoom>
+      <img src="example-1.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
+   </figure>
+   <a href="example-2-large.webp" data-zoom>
+      <img src="example-2.webp" alt="" data-figcaption="Image 2 caption">
    </a>
 </section>
 ```
