@@ -1,6 +1,7 @@
 @use 'mixin/focus';
 
-$inset: var(--env-spacing-xx-large);
+$imageInset: 1.75rem;
+$buttonInset: 2.25rem;
 
 @mixin overlayButton($opacity: 0.65) {
    background-color: rgba(0, 0, 0, $opacity);
@@ -92,17 +93,18 @@ $inset: var(--env-spacing-xx-large);
    // ----- Slider caption -----
 
    &__viewer__caption {
+      color: var(--env-text-caption-01-font-color);
       font-family: var(--env-text-caption-01-font-family);
       font-size: var(--env-text-caption-01-font-size);
-      font-weight: var(--env-text-caption-01-font-weight);
       font-style: var(--env-text-caption-01-font-style);
-      line-height: var(--env-text-caption-01-line-height);
-      text-transform: var(--env-text-caption-01-text-transform);
+      font-weight: var(--env-text-caption-01-font-weight);
       letter-spacing: var(--env-text-caption-01-letter-spacing);
-      color: var(--env-text-caption-01-font-color);
+      line-height: var(--env-text-caption-01-line-height);
+      margin-block-end: var(--env-text-caption-01-margin-block-end);
+      margin-block-start: var(--env-text-caption-01-margin-block-start);
+      text-transform: var(--env-text-caption-01-text-transform);
       text-align: left;
       overflow-wrap: anywhere;
-      padding: 0.5em 1em;
 
       .env-image-viewer-2--overlay & {
          position: absolute;
@@ -110,6 +112,8 @@ $inset: var(--env-spacing-xx-large);
          inset: auto auto 0 0;
          background-color: rgba(0, 0, 0, 0.65);
          color: #fff;
+         margin: 0;
+         padding: 0.5em 1em;
 
          * {
             color: #fff !important;
@@ -127,12 +131,13 @@ $inset: var(--env-spacing-xx-large);
       justify-content: center;
       align-items: center;
       --env-font-color: #fff;
+      --env-text-caption-01-font-color: #fff;
       --env-spinner-color: #fff;
       position: fixed;
       inset: 0;
       width: auto;
       height: auto;
-      margin: $inset;
+      margin: $imageInset;
       padding: 0;
       overflow: hidden;
       text-align: center;
@@ -192,12 +197,30 @@ $inset: var(--env-spacing-xx-large);
          margin: 0 auto;
       }
 
+      &__figure {
+         margin: 0;
+         padding: 0;
+      }
+
+      &__caption {
+         $lineHeight: 1.5;
+         position: fixed;
+         z-index: 9999;
+         text-align: left;
+         max-width: 60em;
+         right: calc(#{$buttonInset} + 2.75em + 2em);
+         bottom: $lineHeight * 0.25rem + $buttonInset;
+         left: $buttonInset;
+         line-height: 1.2;
+         margin: 0;
+      }
+
       &__image {
          display: block;
          width: 100%;
          height: auto;
          max-width: 100%;
-         max-height: calc(100vh - #{$inset} * 2);
+         max-height: calc(100vh - #{$imageInset} * 2);
       }
 
       &__download,
@@ -224,15 +247,15 @@ $inset: var(--env-spacing-xx-large);
       &__download {
          position: fixed !important;
          z-index: 9999;
-         bottom: calc(#{$inset} + 0.5em);
-         right: calc(#{$inset} + 0.5em);
+         bottom: $buttonInset;
+         right: $buttonInset;
       }
 
       &__close {
          position: fixed !important;
          z-index: 9999;
-         top: calc(#{$inset} + 0.5em);
-         right: calc(#{$inset} + 0.5em);
+         top: $buttonInset;
+         right: $buttonInset;
       }
 
       &__next,
@@ -256,11 +279,11 @@ $inset: var(--env-spacing-xx-large);
       }
 
       &__next {
-         right: calc(#{$inset} + 0.5em);
+         right: $buttonInset;
       }
 
       &__prev {
-         left: calc(#{$inset} + 0.5em);
+         left: $buttonInset;
       }
 
       &::backdrop {

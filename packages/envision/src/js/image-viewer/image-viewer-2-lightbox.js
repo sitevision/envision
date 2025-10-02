@@ -55,8 +55,10 @@ export default class Imageviewer2Lightbox {
          el.dataset.href = src;
          el.href = '#0';
       }
-      let altEl;
-      let alt = '';
+      let altEl, captionEl;
+      let alt = '',
+         caption = '';
+
       if (el.hasAttribute('alt') || el.dataset.alt) {
          altEl = el;
       } else {
@@ -67,9 +69,21 @@ export default class Imageviewer2Lightbox {
       } else if (altEl && altEl.hasAttribute('alt')) {
          alt = altEl.getAttribute('alt');
       }
+      if (el.dataset.figcaption) {
+         captionEl = el;
+      } else {
+         captionEl = el.querySelector('figcaption, [data-figcaption]');
+      }
+      if (captionEl && captionEl.dataset.figcaption) {
+         caption = altEl.dataset.figcaption;
+      } else if (captionEl && captionEl.tagName === 'FIGCAPTION') {
+         caption = captionEl.textContent.trim();
+      }
+
       return {
          src: src,
          alt: alt,
+         caption: caption,
       };
    }
 
@@ -94,20 +108,35 @@ export default class Imageviewer2Lightbox {
          this.#lightbox
       );
       imgContainer.innerHTML = TEMPLATE.SPINNER;
+      const figureEl = document.createElement('figure');
+      figureEl.classList.add(`${CLASSNAME.LIGHTBOX}__figure`);
+
       const imgEl = new Image();
       const imageData = this.#images.find(
          (item) => item.src === this.#currentSrc
       );
-      imgEl.src = imageData.src;
-      imgEl.alt = imageData.alt;
-      imgEl.classList.add(`${CLASSNAME.LIGHTBOX}__image`);
+
+      if (imageData.caption) {
+         const captionEl = document.createElement('figcaption');
+         captionEl.classList.add('env-image-viewer-2__lightbox__showOnActive');
+         captionEl.classList.add('env-text-caption-01');
+         captionEl.classList.add(`${CLASSNAME.LIGHTBOX}__caption`);
+         captionEl.textContent = imageData.caption;
+         figureEl.appendChild(captionEl);
+      }
+
       imgEl.onload = () => {
          if (this.#config.buttons.download) {
             this.#downloadButton.href = imgEl.src;
          }
          setStyle(lightboxBgPanel, 'background-image', `url('${imgEl.src}')`);
-         imgContainer.replaceChildren(imgEl);
+         imgContainer.replaceChildren(figureEl);
       };
+      imgEl.alt = imageData.alt;
+      imgEl.classList.add(`${CLASSNAME.LIGHTBOX}__image`);
+      figureEl.prepend(imgEl);
+      imgEl.src = imageData.src;
+
       this.setVisibleButtons();
    }
 
@@ -202,8 +231,8 @@ export default class Imageviewer2Lightbox {
          e.target.closest('[data-zoom]').dataset.href
       ) {
          this.#currentSrc = e.target.closest('[data-zoom]').dataset.href;
+         this.showLightbox();
       }
-      this.showLightbox();
    };
 
    close() {
