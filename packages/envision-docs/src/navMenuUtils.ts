@@ -1,3 +1,5 @@
+import { slugify } from './utils.ts';
+
 interface Page {
    frontmatter?: {
       title?: string;
@@ -54,14 +56,17 @@ const getPageData = (page: Page, currentPath: string[]): Page => {
          ...page.frontmatter,
       },
       url: page.url,
-      slug: path.join('-'),
+      slug: slugify(page.url),
       isCurrentPage: isCurrentPage,
       hasCurrentPage: false,
       spriteId: spriteId,
    };
 };
 
-const getTopLevelItems = (results: Record<string, unknown>, currentPath: string[]): Page[] => {
+const getTopLevelItems = (
+   results: Record<string, unknown>,
+   currentPath: string[]
+): Page[] => {
    const pages = Object.values(results) as Page[];
    const items = pages
       .filter((page) => {
@@ -80,7 +85,10 @@ const getTopLevelItems = (results: Record<string, unknown>, currentPath: string[
    return items;
 };
 
-const getLevelTwoItems = (results: Record<string, unknown>, currentPath: string[]): Page[] => {
+const getLevelTwoItems = (
+   results: Record<string, unknown>,
+   currentPath: string[]
+): Page[] => {
    const pages = Object.values(results) as Page[];
    const items = pages
       .filter((page) => {
@@ -95,7 +103,9 @@ const getLevelTwoItems = (results: Record<string, unknown>, currentPath: string[
    return items.sort(sortPages);
 };
 
-export const getCurrentLevelOneItem = (frontmatter: Frontmatter): Page | undefined => {
+export const getCurrentLevelOneItem = (
+   frontmatter: Frontmatter
+): Page | undefined => {
    const results = getAllMarkdownPages();
    const currentPath = getPath(frontmatter.url);
 
@@ -112,7 +122,10 @@ export const getCurrentLevelOneItem = (frontmatter: Frontmatter): Page | undefin
    return items[0];
 };
 
-export const getMenuItems = (frontmatter: Frontmatter, path: string | null = null): Page[] => {
+export const getMenuItems = (
+   frontmatter: Frontmatter,
+   path: string | null = null
+): Page[] => {
    const results = getAllMarkdownPages();
    const currentPath = getPath(frontmatter.url);
 
@@ -123,7 +136,9 @@ export const getMenuItems = (frontmatter: Frontmatter, path: string | null = nul
    return getLevelTwoItems(results, currentPath);
 };
 
-export const getMobileMenuItems = (frontmatter: Frontmatter): { top: Page[]; children: { [index: string]: Page[] } } => {
+export const getMobileMenuItems = (
+   frontmatter: Frontmatter
+): { top: Page[]; children: { [index: string]: Page[] } } => {
    const currentPath = getPath(frontmatter.url);
    const results = getAllMarkdownPages();
    const topItems = getTopLevelItems(results, currentPath);
