@@ -354,17 +354,4 @@ document.addEventListener('DOMContentLoaded', () => {
    dynFontExamples.forEach((container) => {
       resizeObserver.observe(container);
    });
-
-   // To initialize Image slider examples,
-   // load event must be triggered again in gatsby.
-   // window.dispatchEvent(new Event('load'));
-   // To initialize Dropdown button examples,
-   // DOMContentLoaded event must be triggered again in gatsby.
-   // document.dispatchEvent(new Event('DOMContentLoaded'));
-
-   return () => {
-      dynFontExamples.forEach((container) => {
-         resizeObserver.unobserve(container);
-      });
-   };
 });
