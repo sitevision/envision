@@ -1,0 +1,639 @@
+.doc-dark-mode {
+   background-color: var(--env-background-color) !important;
+   color: var(--env-font-color);
+   font-family: var(--env-font-family);
+   color-scheme: dark;
+   --env-alert-background-color: var(--env-section-background-color);
+   --env-alert-border-radius: var(--env-border-radius-medium);
+   --env-alert-font-color: var(--env-font-color);
+   --env-alert-font-family: var(--env-font-family);
+   --env-background-color: #0b302c;
+   --env-badge-border-radius: var(--env-border-radius-medium);
+   --env-badge-font-family: var(--env-font-family);
+   --env-badge-font-size: 75%;
+   --env-block-background-color: #203c38;
+   --env-block-border-color: #295752;
+   --env-block-font-color: #c0e8e8;
+   --env-block-link-font-color: var(--env-link-font-color);
+   --env-block-link-hover-font-color: var(--env-link-hover-font-color);
+   --env-block-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-block-link-text-decoration: var(--env-link-text-decoration);
+   --env-block-primary-background-color: #203c38;
+   --env-block-primary-border-color: #474747;
+   --env-block-primary-font-color: #ffffff;
+   --env-block-primary-link-font-color: #ffffff;
+   --env-block-primary-link-hover-font-color: #ffffff;
+   --env-block-primary-link-hover-text-decoration: underline;
+   --env-block-primary-link-text-decoration: none;
+   --env-block-secondary-background-color: #12211f;
+   --env-block-secondary-border-color: #a7bed0;
+   --env-block-secondary-font-color: #c3d4d1;
+   --env-block-secondary-link-font-color: #ffffff;
+   --env-block-secondary-link-hover-font-color: #7bc6ff;
+   --env-block-secondary-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-block-secondary-link-text-decoration: var(--env-link-text-decoration);
+   --env-block-secondary-link-text-decoration: var(--env-link-text-decoration);
+   --env-border-color-light: hsl(150, 3%, 23%);
+   --env-border-color-05: hsl(150, 3%, 23%);
+   --env-border-color: #454a48;
+   --env-border-danger-color: #c15252;
+   --env-border-radius-large: calc(var(--env-border-radius) * 1.5);
+   --env-border-radius-medium: var(--env-border-radius);
+   --env-border-radius-small: calc(var(--env-border-radius) * 0.5);
+   --env-border-radius: 0.25em;
+   --env-border-success-color: #358156;
+   --env-border-warning-color: #ffbf12;
+   --env-box-shadow-color: rgba(3, 3, 3, 0);
+   --env-box-shadow-large: 0 1em 3em var(--env-box-shadow-color);
+   --env-box-shadow-small: 0 0.125em 0.25em var(--env-box-shadow-color);
+   --env-box-shadow: 0 0.5em 1em var(--env-box-shadow-color);
+   --env-brand-palette-muting: 79%;
+   --env-breadcrumb-divider-color: #999999;
+   --env-button-border-radius: 0.375em;
+   --env-button-font-family: var(--env-font-family);
+   --env-cardholder-column-max-width: 400px;
+   --env-cardholder-column-min-width: 240px;
+   --env-cardholder-column-spacing: var(--env-spacing-medium);
+   --env-cardholder-grid-column-width: 20em;
+   --env-cardholder-grid-gap: var(--env-spacing-medium);
+   --env-collapse-background-color: var(--env-element-background-color-light);
+   --env-collapse-border-color: var(--env-element-background-color);
+   --env-collapse-border-style: solid;
+   --env-collapse-border-width: 1px;
+   --env-collapse-expanded-background-color: var(
+      --env-element-background-color
+   );
+   --env-collapse-expanded-border-color: var(
+      --env-element-background-color-dark
+   );
+   --env-collapse-icon-color: var(--env-font-color);
+   --env-collapse-icon-height: 3px;
+   --env-collapse-icon-width: 15px;
+   --env-collapse-toggle-duration: 300ms;
+   --env-color-base: #000000;
+   --env-color-brand-dark: var(--env-element-primary-background-color-dark);
+   --env-color-brand-light: var(--env-element-primary-background-color-light);
+   --env-color-brand: var(--env-element-primary-background-color);
+   --env-color-danger: var(--env-element-danger-background-color);
+   --env-color-dark: #333333;
+   --env-color-darker: #0d0d0d;
+   --env-color-element-bg: #ffffff;
+   --env-color-hover: #f7f7f7;
+   --env-color-info: var(--env-element-info-background-color);
+   --env-color-light: #999999;
+   --env-color-lighter: #cccccc;
+   --env-color-lightest: #e6e6e6;
+   --env-color-normal: #666666;
+   --env-color-page-bg: #ffffff;
+   --env-color-success: var(--env-element-success-background-color);
+   --env-color-warning-dark: var(--env-element-warning-background-color-dark);
+   --env-color-warning: var(--env-element-warning-background-color);
+   --env-dialog-large-width: 900px;
+   --env-dialog-medium-width: 450px;
+   --env-dialog-small-width: 300px;
+   --env-dynamic-font-from-width: 400;
+   --env-dynamic-font-scale: 1.25;
+   --env-dynamic-font-to-width: 750;
+   --env-element-background-color-dark: hsl(156, 11%, 1%);
+   --env-element-background-color-light: hsl(156, 11%, 12%);
+   --env-element-background-color: #151a18;
+   --env-element-common-background-color: #323232;
+   --env-element-danger-background-color-dark: hsl(343, 65%, 41%);
+   --env-element-danger-background-color-light: hsl(343, 65%, 52%);
+   --env-element-danger-background-color: #cf2c5a;
+   --env-element-danger-font-color: #ffffff;
+   --env-element-font-color: #ffffff;
+   --env-element-info-background-color-dark: hsl(344, 82%, 83%);
+   --env-element-info-background-color-light: hsl(344, 82%, 94%);
+   --env-element-info-background-color: #fbd6e0;
+   --env-element-info-font-color: #661538;
+   --env-element-primary-background-color-dark: hsl(212, 55%, 40%);
+   --env-element-primary-background-color-light: hsl(212, 55%, 51%);
+   --env-element-primary-background-color: #3877bf;
+   --env-element-primary-font-color: #ffffff;
+   --env-element-secondary-background-color-dark: #3b3d3e;
+   --env-element-secondary-background-color-light: #56595b;
+   --env-element-secondary-background-color: #4f5153;
+   --env-element-secondary-font-color: #ffffff;
+   --env-element-success-background-color-dark: hsl(152, 63%, 64%);
+   --env-element-success-background-color-light: hsl(152, 63%, 75%);
+   --env-element-success-background-color: #8be5bb;
+   --env-element-success-font-color: #125b54;
+   --env-element-warning-background-color-dark: hsl(24, 85%, 33%);
+   --env-element-warning-background-color-light: hsl(24, 85%, 44%);
+   --env-element-warning-background-color: #c15710;
+   --env-element-warning-font-color: #ffffff;
+   --env-focus-background-color: rgba(0, 0, 0, 0.2);
+   --env-focus-box-shadow: 0 0 0 var(--env-focus-offset)
+      var(--env-focus-inner-color);
+   --env-focus-color: #5cb3fd;
+   --env-focus-inner-color: var(--env-section-background-color);
+   --env-focus-offset: var(--env-focus-size);
+   --env-focus-outline-color: #86bfc9;
+   --env-focus-outline: var(--env-focus-size) solid
+      var(--env-focus-outline-color);
+   --env-focus-size: 2px;
+   --env-font-color-invert: #ffffff;
+   --env-font-color-light: #34394f;
+   --env-font-color-lighter: #49506d;
+   --env-font-color-muted: hsla(160, 15%, 85%, 0.65);
+   --env-font-color: #d2deda;
+   --env-font-family: helvetica, arial, sans-serif;
+   --env-font-size-base: 1em;
+   --env-font-size-large: calc(var(--env-font-size-base) * 1.25);
+   --env-font-size-medium: var(--env-font-size-base);
+   --env-font-size-small: calc(var(--env-font-size-base) * 0.875);
+   --env-font-size-x-large: calc(var(--env-font-size-base) * 1.5);
+   --env-font-size-x-small: calc(var(--env-font-size-base) * 0.75);
+   --env-font-size-xx-large: calc(var(--env-font-size-base) * 1.75);
+   --env-font-size-xxx-large: calc(var(--env-font-size-base) * 2);
+   --env-font-size-xxxx-large: calc(var(--env-font-size-base) * 2.5);
+   --env-form-font-family: helvetica, arial, sans-serif;
+   --env-form-input-background-color: #2e403d;
+   --env-form-input-border-color: #659191;
+   --env-form-input-border-radius: var(--env-border-radius-medium);
+   --env-form-input-font-color: var(--env-font-color);
+   --env-form-label-font-family: helvetica, arial, sans-serif;
+   --env-form-label-font-weight: 500;
+   --env-image-control-color: #ffffff;
+   --env-link-font-color: #96ccff;
+   --env-link-hover-font-color: #8f8bff;
+   --env-link-hover-text-decoration: underline;
+   --env-link-secondary-font-color: var(--env-font-color);
+   --env-link-secondary-hover-font-color: var(--env-link-font-color);
+   --env-link-secondary-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-link-secondary-text-decoration: var(--env-link-text-decoration);
+   --env-link-text-decoration: underline;
+   --env-link-icon-color: var(--env-font-color);
+   --env-link-icon-size: 0.875em;
+   --env-link-icon-gap: 0.125em;
+   --env-link-meta-font-color: currentColor;
+   --env-link-meta-font-size: 0.875em;
+   --env-modal-backdrop-background-color: #000;
+   --env-modal-backdrop-opacity: 0.5;
+   --env-modal-large-width: 900px;
+   --env-modal-medium-width: 450px;
+   --env-modal-small-width: 300px;
+   --env-pagination-border-style: solid;
+   --env-pagination-border-width: 1px;
+   --env-pagination-font-family: var(--env-font-family);
+   --env-popover-width: 360px;
+   --env-profile-image-border-radius: 50%;
+   --env-progress-bar-poll-highlight-color: #4bc5f5;
+   --env-root-font-size: 16;
+   --env-section-background-color: #143632;
+   --env-section-background-color-05: #1b4943;
+   --env-spacing-large: 1.25em;
+   --env-spacing-medium: 1em;
+   --env-spacing-small: 0.75em;
+   --env-spacing-x-large: 1.5em;
+   --env-spacing-x-small: 0.5em;
+   --env-spacing-xx-large: 1.75em;
+   --env-spacing-xx-small: 0.25em;
+   --env-spacing-xxx-large: 2em;
+   --env-spacing-xxx-small: 0.125em;
+   --env-spinner-color: #5cb3fd;
+   --env-text-body-01-font-color: var(--env-font-color);
+   --env-text-body-01-font-family: var(--env-font-family);
+   --env-text-body-01-font-size: 1.2em;
+   --env-text-body-01-font-style: normal;
+   --env-text-body-01-font-weight: 400;
+   --env-text-body-01-letter-spacing: normal;
+   --env-text-body-01-line-height: 1.6;
+   --env-text-body-01-link-font-color: var(--env-link-font-color);
+   --env-text-body-01-link-hover-font-color: var(--env-link-hover-font-color);
+   --env-text-body-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-body-01-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-body-01-margin-block-end: 1em;
+   --env-text-body-01-margin-block-start: 0;
+   --env-text-body-01-text-transform: none;
+   --env-text-body-02-font-color: var(--env-font-color);
+   --env-text-body-02-font-family: var(--env-font-family);
+   --env-text-body-02-font-size: 1em;
+   --env-text-body-02-font-style: normal;
+   --env-text-body-02-font-weight: 400;
+   --env-text-body-02-letter-spacing: normal;
+   --env-text-body-02-line-height: 1.6;
+   --env-text-body-02-link-font-color: var(--env-link-font-color);
+   --env-text-body-02-link-hover-font-color: var(--env-link-hover-font-color);
+   --env-text-body-02-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-body-02-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-body-02-margin-block-end: 1em;
+   --env-text-body-02-margin-block-start: 0;
+   --env-text-body-02-text-transform: none;
+   --env-text-body-03-font-color: var(--env-font-color);
+   --env-text-body-03-font-family: var(--env-font-family);
+   --env-text-body-03-font-size: 0.8125em;
+   --env-text-body-03-font-style: normal;
+   --env-text-body-03-font-weight: 400;
+   --env-text-body-03-letter-spacing: normal;
+   --env-text-body-03-line-height: 1.6;
+   --env-text-body-03-link-font-color: var(--env-link-font-color);
+   --env-text-body-03-link-hover-font-color: var(--env-link-hover-font-color);
+   --env-text-body-03-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-body-03-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-body-03-margin-block-end: 1em;
+   --env-text-body-03-margin-block-start: 0;
+   --env-text-body-03-text-transform: none;
+   --env-text-body-04-font-color: var(--env-font-color);
+   --env-text-body-04-font-family: var(--env-font-family);
+   --env-text-body-04-font-size: 0.6875em;
+   --env-text-body-04-font-style: normal;
+   --env-text-body-04-font-weight: 400;
+   --env-text-body-04-letter-spacing: normal;
+   --env-text-body-04-line-height: 1.6;
+   --env-text-body-04-link-font-color: var(--env-link-font-color);
+   --env-text-body-04-link-hover-font-color: var(--env-link-hover-font-color);
+   --env-text-body-04-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-body-04-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-body-04-margin-block-end: 1em;
+   --env-text-body-04-margin-block-start: 0;
+   --env-text-body-04-text-transform: none;
+   --env-text-caption-01-font-color: var(--env-font-color);
+   --env-text-caption-01-font-family: var(--env-font-family);
+   --env-text-caption-01-font-size: 0.8125em;
+   --env-text-caption-01-font-style: normal;
+   --env-text-caption-01-font-weight: 400;
+   --env-text-caption-01-letter-spacing: normal;
+   --env-text-caption-01-line-height: 1.6;
+   --env-text-caption-01-link-font-color: var(--env-link-font-color);
+   --env-text-caption-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-caption-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-caption-01-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-caption-01-margin-block-end: 0;
+   --env-text-caption-01-margin-block-start: 0.25em;
+   --env-text-caption-01-text-transform: none;
+   --env-text-display-01-font-color: var(--env-font-color);
+   --env-text-display-01-font-family: var(--env-font-family);
+   --env-text-display-01-font-size: 3.05em;
+   --env-text-display-01-font-style: normal;
+   --env-text-display-01-font-weight: 200;
+   --env-text-display-01-letter-spacing: normal;
+   --env-text-display-01-line-height: 1.2;
+   --env-text-display-01-link-font-color: var(--env-font-color);
+   --env-text-display-01-link-hover-font-color: var(--env-link-font-color);
+   --env-text-display-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-display-01-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-display-01-margin-block-end: 0.25em;
+   --env-text-display-01-margin-block-start: 1em;
+   --env-text-display-01-text-transform: none;
+   --env-text-display-02-font-color: var(--env-font-color);
+   --env-text-display-02-font-family: var(--env-font-family);
+   --env-text-display-02-font-size: 1.952em;
+   --env-text-display-02-font-style: normal;
+   --env-text-display-02-font-weight: 200;
+   --env-text-display-02-letter-spacing: normal;
+   --env-text-display-02-line-height: 1.2;
+   --env-text-display-02-link-font-color: var(--env-font-color);
+   --env-text-display-02-link-hover-font-color: var(--env-link-font-color);
+   --env-text-display-02-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-display-02-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-display-02-margin-block-end: 0.25em;
+   --env-text-display-02-margin-block-start: 1em;
+   --env-text-display-02-text-transform: none;
+   --env-text-display-03-font-color: var(--env-font-color);
+   --env-text-display-03-font-family: var(--env-font-family);
+   --env-text-display-03-font-size: 1.24928em;
+   --env-text-display-03-font-style: normal;
+   --env-text-display-03-font-weight: 200;
+   --env-text-display-03-letter-spacing: normal;
+   --env-text-display-03-line-height: 1.2;
+   --env-text-display-03-link-font-color: var(--env-font-color);
+   --env-text-display-03-link-hover-font-color: var(--env-link-font-color);
+   --env-text-display-03-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-display-03-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-display-03-margin-block-end: 0.25em;
+   --env-text-display-03-margin-block-start: 1em;
+   --env-text-display-03-text-transform: none;
+   --env-text-heading-01-font-color: var(--env-font-color);
+   --env-text-heading-01-font-family: var(--env-font-family);
+   --env-text-heading-01-font-size: 3em;
+   --env-text-heading-01-font-style: normal;
+   --env-text-heading-01-font-weight: 800;
+   --env-text-heading-01-letter-spacing: normal;
+   --env-text-heading-01-line-height: 1.2;
+   --env-text-heading-01-link-font-color: var(--env-font-color);
+   --env-text-heading-01-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-01-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-01-margin-block-end: 0.5em;
+   --env-text-heading-01-margin-block-start: 0;
+   --env-text-heading-01-text-transform: none;
+   --env-text-heading-02-font-color: var(--env-font-color);
+   --env-text-heading-02-font-family: var(--env-font-family);
+   --env-text-heading-02-font-size: 2.5em;
+   --env-text-heading-02-font-style: normal;
+   --env-text-heading-02-font-weight: 800;
+   --env-text-heading-02-letter-spacing: normal;
+   --env-text-heading-02-line-height: 1.2;
+   --env-text-heading-02-link-font-color: var(--env-font-color);
+   --env-text-heading-02-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-02-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-02-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-02-margin-block-end: 0.5em;
+   --env-text-heading-02-margin-block-start: 0;
+   --env-text-heading-02-text-transform: none;
+   --env-text-heading-03-font-color: var(--env-font-color);
+   --env-text-heading-03-font-family: var(--env-font-family);
+   --env-text-heading-03-font-size: 2.0625em;
+   --env-text-heading-03-font-style: normal;
+   --env-text-heading-03-font-weight: 800;
+   --env-text-heading-03-letter-spacing: normal;
+   --env-text-heading-03-line-height: 1.2;
+   --env-text-heading-03-link-font-color: var(--env-font-color);
+   --env-text-heading-03-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-03-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-03-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-03-margin-block-end: 0.5em;
+   --env-text-heading-03-margin-block-start: 1.5em;
+   --env-text-heading-03-text-transform: none;
+   --env-text-heading-04-font-color: var(--env-font-color);
+   --env-text-heading-04-font-family: var(--env-font-family);
+   --env-text-heading-04-font-size: 1.75em;
+   --env-text-heading-04-font-style: normal;
+   --env-text-heading-04-font-weight: 800;
+   --env-text-heading-04-letter-spacing: normal;
+   --env-text-heading-04-line-height: 1.2;
+   --env-text-heading-04-link-font-color: var(--env-font-color);
+   --env-text-heading-04-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-04-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-04-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-04-margin-block-end: 0.5em;
+   --env-text-heading-04-margin-block-start: 1.5em;
+   --env-text-heading-04-text-transform: none;
+   --env-text-heading-05-font-color: var(--env-font-color);
+   --env-text-heading-05-font-family: var(--env-font-family);
+   --env-text-heading-05-font-size: 1.4375em;
+   --env-text-heading-05-font-style: normal;
+   --env-text-heading-05-font-weight: 800;
+   --env-text-heading-05-letter-spacing: normal;
+   --env-text-heading-05-line-height: 1.2;
+   --env-text-heading-05-link-font-color: var(--env-font-color);
+   --env-text-heading-05-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-05-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-05-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-05-margin-block-end: 0.5em;
+   --env-text-heading-05-margin-block-start: 1.5em;
+   --env-text-heading-05-text-transform: none;
+   --env-text-heading-06-font-color: var(--env-font-color);
+   --env-text-heading-06-font-family: var(--env-font-family);
+   --env-text-heading-06-font-size: 1.1875em;
+   --env-text-heading-06-font-style: normal;
+   --env-text-heading-06-font-weight: 800;
+   --env-text-heading-06-letter-spacing: normal;
+   --env-text-heading-06-line-height: 1.2;
+   --env-text-heading-06-link-font-color: var(--env-font-color);
+   --env-text-heading-06-link-hover-font-color: var(--env-link-font-color);
+   --env-text-heading-06-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-heading-06-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-heading-06-margin-block-end: 0.5em;
+   --env-text-heading-06-margin-block-start: 1.5em;
+   --env-text-heading-06-text-transform: none;
+   --env-text-quotation-01-font-color: var(--env-font-color);
+   --env-text-quotation-01-font-family: var(--env-font-family);
+   --env-text-quotation-01-font-size: 1.2em;
+   --env-text-quotation-01-font-style: normal;
+   --env-text-quotation-01-font-weight: 300;
+   --env-text-quotation-01-letter-spacing: normal;
+   --env-text-quotation-01-line-height: 1.6;
+   --env-text-quotation-01-link-font-color: var(--env-link-font-color);
+   --env-text-quotation-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-quotation-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-quotation-01-link-text-decoration: var(
+      --env-link-text-decoration
+   );
+   --env-text-quotation-01-margin-block-end: 1em;
+   --env-text-quotation-01-margin-block-start: 1em;
+   --env-text-quotation-01-text-transform: none;
+   --env-text-quotation-02-font-color: var(--env-font-color);
+   --env-text-quotation-02-font-family: var(--env-font-family);
+   --env-text-quotation-02-font-size: 1em;
+   --env-text-quotation-02-font-style: normal;
+   --env-text-quotation-02-font-weight: 300;
+   --env-text-quotation-02-letter-spacing: normal;
+   --env-text-quotation-02-line-height: 1.6;
+   --env-text-quotation-02-link-font-color: var(--env-link-font-color);
+   --env-text-quotation-02-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-quotation-02-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-quotation-02-link-text-decoration: var(
+      --env-link-text-decoration
+   );
+   --env-text-quotation-02-margin-block-end: 1em;
+   --env-text-quotation-02-margin-block-start: 1em;
+   --env-text-quotation-02-text-transform: none;
+   --env-text-summary-01-font-color: var(--env-font-color);
+   --env-text-summary-01-font-family: var(--env-font-family);
+   --env-text-summary-01-font-size: 1.125em;
+   --env-text-summary-01-font-style: normal;
+   --env-text-summary-01-font-weight: 400;
+   --env-text-summary-01-letter-spacing: normal;
+   --env-text-summary-01-line-height: 1.6;
+   --env-text-summary-01-link-font-color: var(--env-link-font-color);
+   --env-text-summary-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-summary-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-summary-01-link-text-decoration: var(--env-link-text-decoration);
+   --env-text-summary-01-margin-block-end: 1em;
+   --env-text-summary-01-margin-block-start: 1em;
+   --env-text-summary-01-text-transform: none;
+   --env-text-table-caption-01-font-color: var(--env-font-color);
+   --env-text-table-caption-01-font-family: var(--env-font-family);
+   --env-text-table-caption-01-font-size: 0.8125em;
+   --env-text-table-caption-01-font-style: normal;
+   --env-text-table-caption-01-font-weight: 400;
+   --env-text-table-caption-01-letter-spacing: normal;
+   --env-text-table-caption-01-line-height: 1.5;
+   --env-text-table-caption-01-link-font-color: var(--env-link-font-color);
+   --env-text-table-caption-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-table-caption-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-table-caption-01-link-text-decoration: var(
+      --env-link-text-decoration
+   );
+   --env-text-table-caption-01-margin-block-end: 0.25em;
+   --env-text-table-caption-01-margin-block-start: 1em;
+   --env-text-table-caption-01-text-transform: none;
+   --env-text-table-data-01-font-color: var(--env-font-color);
+   --env-text-table-data-01-font-family: var(--env-font-family);
+   --env-text-table-data-01-font-size: 1em;
+   --env-text-table-data-01-font-style: normal;
+   --env-text-table-data-01-font-weight: 400;
+   --env-text-table-data-01-letter-spacing: normal;
+   --env-text-table-data-01-line-height: 1.5;
+   --env-text-table-data-01-link-font-color: var(--env-link-font-color);
+   --env-text-table-data-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-table-data-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-table-data-01-link-text-decoration: var(
+      --env-link-text-decoration
+   );
+   --env-text-table-data-01-margin-block-end: 0;
+   --env-text-table-data-01-margin-block-start: 0;
+   --env-text-table-data-01-text-transform: none;
+   --env-text-table-heading-01-font-color: var(--env-font-color);
+   --env-text-table-heading-01-font-family: var(--env-font-family);
+   --env-text-table-heading-01-font-size: 1em;
+   --env-text-table-heading-01-font-style: normal;
+   --env-text-table-heading-01-font-weight: 700;
+   --env-text-table-heading-01-letter-spacing: normal;
+   --env-text-table-heading-01-line-height: 1.5;
+   --env-text-table-heading-01-link-font-color: var(--env-link-font-color);
+   --env-text-table-heading-01-link-hover-font-color: var(
+      --env-link-hover-font-color
+   );
+   --env-text-table-heading-01-link-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-text-table-heading-01-link-text-decoration: var(
+      --env-link-text-decoration
+   );
+   --env-text-table-heading-01-margin-block-end: 0;
+   --env-text-table-heading-01-margin-block-start: 0;
+   --env-text-table-heading-01-text-transform: none;
+   --env-tooltip-background-color: #000;
+   --env-tooltip-border-radius: var(--env-border-radius);
+   --env-tooltip-font-color: #eeeeee;
+   --env-tooltip-font-family: var(--env-font-family);
+   --env-tooltip-font-size: var(--env-font-size-small);
+   --env-tooltip-font-weight: 400;
+   --env-ui-color-brand-05-contrast: #81a29f;
+   --env-ui-color-brand-05: #1c2625;
+   --env-ui-color-brand-10-contrast: #81a29f;
+   --env-ui-color-brand-10: #212c2b;
+   --env-ui-color-brand-100-contrast: #526f6d;
+   --env-ui-color-brand-100: #f9fbfb;
+   --env-ui-color-brand-15-contrast: #81a29f;
+   --env-ui-color-brand-15: #253231;
+   --env-ui-color-brand-20-contrast: #90adaa;
+   --env-ui-color-brand-20: #2e3e3c;
+   --env-ui-color-brand-25-contrast: #9eb7b5;
+   --env-ui-color-brand-25: #344645;
+   --env-ui-color-brand-30-contrast: #bccdcb;
+   --env-ui-color-brand-30: #3d5250;
+   --env-ui-color-brand-35-contrast: #cad8d7;
+   --env-ui-color-brand-35: #48615e;
+   --env-ui-color-brand-40-contrast: #e8eeed;
+   --env-ui-color-brand-40: #526f6d;
+   --env-ui-color-brand-45-contrast: #000000;
+   --env-ui-color-brand-45: #5d7e7b;
+   --env-ui-color-brand-50-contrast: #000000;
+   --env-ui-color-brand-50: #688d89;
+   --env-ui-color-brand-55-contrast: #253231;
+   --env-ui-color-brand-55: #81a29f;
+   --env-ui-color-brand-60-contrast: #2e3e3c;
+   --env-ui-color-brand-60: #90adaa;
+   --env-ui-color-brand-65-contrast: #344645;
+   --env-ui-color-brand-65: #9eb7b5;
+   --env-ui-color-brand-70-contrast: #344645;
+   --env-ui-color-brand-70: #adc2c0;
+   --env-ui-color-brand-75-contrast: #3d5250;
+   --env-ui-color-brand-75: #bccdcb;
+   --env-ui-color-brand-80-contrast: #48615e;
+   --env-ui-color-brand-80: #cad8d7;
+   --env-ui-color-brand-85-contrast: #48615e;
+   --env-ui-color-brand-85: #d9e3e2;
+   --env-ui-color-brand-90-contrast: #526f6d;
+   --env-ui-color-brand-90: #e8eeed;
+   --env-ui-color-brand-95-contrast: #526f6d;
+   --env-ui-color-brand-95: #f3f6f6;
+   --env-ui-color-brand-contrast: #ffffff;
+   --env-ui-color-brand-dark: hsla(174.2, 67%, 13.399999999999999%, 1);
+   --env-ui-color-brand: #125b54;
+   --env-ui-color-status-active-contrast: #202330;
+   --env-ui-color-status-active-text: #44835d;
+   --env-ui-color-status-active: #58a978;
+   --env-ui-color-status-attention-contrast: #ffffff;
+   --env-ui-color-status-attention-text: #ce2e7e;
+   --env-ui-color-status-attention: #ce2e7e;
+   --env-ui-color-status-error-contrast: var(--env-element-danger-font-color);
+   --env-ui-color-status-error-text: var(--env-element-danger-background-color);
+   --env-ui-color-status-error: var(--env-element-danger-background-color);
+   --env-ui-color-status-neutral-contrast: #ffffff;
+   --env-ui-color-status-neutral: #393939;
+   --env-ui-text-caption-font-color: hsla(160, 15%, 85%, 0.65);
+   --env-ui-text-caption-font-family: var(--env-font-family);
+   --env-ui-text-caption-font-size: 0.875em;
+   --env-ui-text-caption-font-weight: 400;
+   --env-ui-text-caption-letter-spacing: normal;
+   --env-ui-text-caption-text-transform: none;
+   --env-ui-text-heading-font-color: #dddddd;
+   --env-ui-text-heading-font-family: helvetica, arial, sans-serif;
+   --env-ui-text-heading-font-size: 3.75em;
+   --env-ui-text-heading-font-weight: 800;
+   --env-ui-text-heading-letter-spacing: normal;
+   --env-ui-text-heading-text-transform: none;
+   --env-ui-text-overline-font-color: var(--env-font-color);
+   --env-ui-text-overline-font-family: var(--env-font-family);
+   --env-ui-text-overline-font-size: 0.75em;
+   --env-ui-text-overline-font-weight: 600;
+   --env-ui-text-overline-letter-spacing: 0.15em;
+   --env-ui-text-overline-text-transform: uppercase;
+   --env-ui-text-sectionheading-font-color: var(--env-font-color);
+   --env-ui-text-sectionheading-font-family: var(--env-font-family);
+   --env-ui-text-sectionheading-font-size: 1.25em;
+   --env-ui-text-sectionheading-font-weight: 600;
+   --env-ui-text-sectionheading-letter-spacing: normal;
+   --env-ui-text-sectionheading-text-transform: none;
+   --env-ui-text-subheading-font-color: var(--env-font-color);
+   --env-ui-text-subheading-font-family: var(--env-font-family);
+   --env-ui-text-subheading-font-size: 1em;
+   --env-ui-text-subheading-font-weight: 600;
+   --env-ui-text-subheading-letter-spacing: normal;
+   --env-ui-text-subheading-text-transform: none;
+   --env-blockquote-border-block-color: var(--env-font-color);
+   --env-blockquote-border-inline-start-color: var(--env-font-color);
+   --env-blockquote-border-inline-end-color: var(--env-font-color);
+}

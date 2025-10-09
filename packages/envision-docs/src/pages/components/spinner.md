@@ -42,7 +42,7 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
 
 ### Delayed spinner demo
 
-```html nocode
+```html-nocode
 <div id="demo-delayed-spinner" class="demo-delayed-spinner">
    <div class="env-spinner env-spinner--hide">
       <div class="env-rect1"></div>

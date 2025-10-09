@@ -3,7 +3,7 @@ title: Popover
 description: Popovers displays contextual overlays with customizable content, positioning, and trigger options.
 ---
 
-```html nocode
+```html-nocode
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">

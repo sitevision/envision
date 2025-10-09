@@ -2,7 +2,6 @@ node_modules
 build
 npm-debug.log
 yarn-error.log
-.astro
 .idea
 _site
 .sass-cache

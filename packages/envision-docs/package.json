@@ -1,15 +1,40 @@
 {
    "name": "envision-docs",
-   "type": "module",
    "version": "0.0.1",
    "description": "Sitevision CSS framework documentation",
    "scripts": {
-      "dev": "astro dev",
-      "build": "astro build",
-      "preview": "astro preview",
-      "astro": "astro"
+      "build": "node scripts/copyIcons.js && gatsby build",
+      "dev": "node scripts/copyIcons.js && gatsby develop"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/sitevision/envision.git"
+   },
+   "author": "Sitevision AB",
+   "license": "MIT",
+   "devDependencies": {
+      "gatsby": "^5.15.0",
+      "gatsby-plugin-manifest": "^5.15.0",
+      "gatsby-plugin-meta-redirect": "^1.1.1",
+      "gatsby-plugin-offline": "^6.15.0",
+      "gatsby-plugin-react-helmet": "^6.15.0",
+      "gatsby-plugin-sass": "^6.15.0",
+      "gatsby-plugin-sharp": "^5.15.0",
+      "gatsby-remark-prismjs": "^7.15.0",
+      "gatsby-source-filesystem": "^5.15.0",
+      "gatsby-transformer-remark": "^6.15.0",
+      "gatsby-transformer-sharp": "^5.15.0",
+      "sass": "^1.92.0"
    },
    "dependencies": {
-      "astro": "^5.14.1"
+      "@reach/router": "^1.3.4",
+      "classnames": "^2.5.1",
+      "envision": "0.0.1",
+      "gatsby-remark-classes": "^1.0.2",
+      "prismjs": "^1.30.0",
+      "prop-types": "^15.8.1",
+      "react": "^18.3.1",
+      "react-dom": "^18.3.1",
+      "react-helmet": "^6.1.0"
    }
 }

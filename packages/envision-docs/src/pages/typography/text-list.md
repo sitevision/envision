@@ -2,7 +2,6 @@
 title: Text lists
 description: Text lists are used for ordered and unordered lists in text content.
 since: 2025.09.1
-new: true
 ---
 
 Text lists are used for ordered and unordered lists in text content.

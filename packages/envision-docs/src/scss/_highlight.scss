@@ -1,0 +1,122 @@
+@use 'variables';
+
+:not(pre) > code[class*='language-'] {
+   // Inline code
+   font-family: var(--doc-code-font-family);
+   background-color: var(--doc-code-background-color);
+   color: var(--doc-code-font-color);
+   font-size: 0.875em !important;
+   text-shadow: none;
+   vertical-align: baseline;
+   padding: 0 0.25em;
+}
+
+.gatsby-highlight {
+   font-family: var(--doc-font-family);
+   position: relative;
+   text-align: right;
+   border: 4px solid transparent;
+   border-radius: 0 0 3px 3px;
+   text-shadow: none;
+
+   pre,
+   code {
+      font-family: var(--doc-code-font-family);
+   }
+
+   pre {
+      scrollbar-color: var(--env-ui-color-brand-40) transparent;
+      scrollbar-gutter: auto;
+
+      code {
+         text-shadow: none;
+      }
+
+      .token.property,
+      .token.tag,
+      .token.constant,
+      .token.symbol,
+      .token.deleted {
+         color: #f5518d;
+      }
+      .token.namespace {
+         opacity: 1;
+      }
+      font-size: 0.7em;
+      border: 0;
+      white-space: nowrap;
+      word-break: normal;
+      max-width: 100%;
+
+      @include variables.main-layout-break {
+         font-size: 0.8em;
+      }
+   }
+
+   &--expandable pre {
+      overflow: hidden;
+      max-height: 15vh;
+      box-shadow: inset 0 -16px 16px -10px rgba(0, 0, 0, 0.2);
+   }
+
+   &__toggler {
+      --env-font-color: var(--doc-font-color);
+
+      &[aria-expanded='true'] .env-icon {
+         transform: rotate(180deg);
+      }
+   }
+}
+
+.highlighter-rouge {
+   background-color: rgba(0, 0, 0, 0.05);
+   padding: 4px 8px;
+   border-radius: 3px;
+   margin: 0 2px;
+   font-size: 14px;
+}
+
+.code-example {
+   font-family: Helvetica, Arial, sans-serif;
+   padding: 20px;
+   box-sizing: border-box;
+   color: var(--env-font-color);
+   background-color: var(--env-section-background-color);
+   border: 4px solid rgba(0, 0, 0, 0.1);
+   border-radius: 3px;
+
+   &--resizeable {
+      position: relative;
+      box-sizing: border-box;
+      min-width: 328px;
+      max-width: 100%;
+      resize: horizontal;
+      overflow: hidden;
+      padding-bottom: 30px;
+
+      &:before {
+         content: 'Resize';
+         display: block;
+         position: absolute;
+         bottom: 0;
+         right: 15px;
+         padding: 0.5em;
+         text-align: center;
+         font-size: 10px;
+      }
+
+      &:after {
+         content: '→';
+         display: block;
+         position: absolute;
+         bottom: 5px;
+         right: 6px;
+         transform: rotate(28deg) translate(0.2em, 0.2em);
+         font-size: 12px;
+      }
+   }
+}
+
+.example-fill {
+   margin: -20px;
+}

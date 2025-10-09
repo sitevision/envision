@@ -42,7 +42,7 @@ module.exports = [
       output: {
          filename: 'envision-dashboard.js',
          path: dev
-            ? path.resolve(__dirname, '..', 'envision-docs', 'static', 'dist')
+            ? path.resolve(__dirname, '..', 'envision-docs', 'public', 'dist')
             : path.resolve(__dirname, 'dist'),
       },
       optimization,
@@ -79,7 +79,7 @@ module.exports = [
       output: {
          filename: 'envision.js',
          path: dev
-            ? path.resolve(__dirname, '..', 'envision-docs', 'static', 'dist')
+            ? path.resolve(__dirname, '..', 'envision-docs', 'public', 'dist')
             : path.resolve(__dirname, 'dist'),
          library: {
             name: 'envision',

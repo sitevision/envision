@@ -169,10 +169,10 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
 - All immediate child elements of the container will be included in slideshow.
 - The container used for initialization should have an `aria-label` attribute.
 
-```html noexample
+```html-no-example
 <section aria-label="Slideshow label">
-   <img src="example-1.webp" alt="Image description" />
-   <img src="example-2.webp" alt="Image description" />
+   <img src="example-1.webp" alt="Image description">
+   <img src="example-2.webp" alt="Image description">
 </section>
 ```
 
@@ -180,33 +180,23 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
 
 Add attribute `data-zoom` to activate zoom/lightbox. Add URL to larger images in `data-href`.
 
-```html noexample
+```html-no-example
 <section aria-label="Slideshow label">
-   <img
-      src="example-1.webp"
-      alt="Image description"
-      data-href="example-1-large.webp"
-      data-zoom
-   />
-   <img
-      src="example-2.webp"
-      alt="Image description"
-      data-href="example-2-large.webp"
-      data-zoom
-   />
+   <img src="example-1.webp" alt="Image description" data-href="example-1-large.webp" data-zoom>
+   <img src="example-2.webp" alt="Image description" data-href="example-2-large.webp" data-zoom>
 </section>
 ```
 
 Optionally wrap the image in a link pointing to the larger image. The `href` attribute will be used for zoom
 and `data-zoom` should be added to the link, not the image.
 
-```html noexample
+```html-no-example
 <section aria-label="Slideshow label">
    <a href="example-1-large.webp" data-zoom>
-      <img src="example-1.webp" alt="Image description" />
+      <img src="example-1.webp" alt="Image description">
    </a>
    <a href="example-2-large.webp" data-zoom>
-      <img src="example-2.webp" alt="Image description" />
+      <img src="example-2.webp" alt="Image description">
    </a>
 </section>
 ```
@@ -220,16 +210,14 @@ Captions can be combined with zoom functionality in two ways:
 - By adding `data-href` and `data-zoom` attributes directly on the <figure> element.
 - By using an `<a>` element with `href` and `data-zoom`, wrapping the image and caption.
 
-```html noexample
+```html-no-example
 <section aria-label="Slideshow label">
    <figure data-href="example-1-large.webp" data-zoom>
-      <img src="example-1.webp" alt="" />
-      <figcaption class="env-image-viewer-2__viewer__caption">
-         Image 1 caption
-      </figcaption>
+      <img src="example-1.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
    </figure>
    <a href="example-2-large.webp" data-zoom>
-      <img src="example-2.webp" alt="" />
+      <img src="example-2.webp" alt="">
       <div class="env-image-viewer-2__viewer__caption">Image 2 caption</div>
    </a>
 </section>
@@ -242,23 +230,21 @@ A `<figcaption>` placed inside a `data-zoom` link or `<figure>` will automatical
 Alternatively, use the `data-figcaption` attribute on an `<img>` to show caption text in the lightbox without
 rendering it in the slideshow.
 
-```html noexample
+```html-no-example
 <section aria-label="Slideshow label">
    <figure data-href="example-1-large.webp" data-zoom>
-      <img src="example-1.webp" alt="" />
-      <figcaption class="env-image-viewer-2__viewer__caption">
-         Image 1 caption
-      </figcaption>
+      <img src="example-1.webp" alt="">
+      <figcaption class="env-image-viewer-2__viewer__caption">Image 1 caption</figcaption>
    </figure>
    <a href="example-2-large.webp" data-zoom>
-      <img src="example-2.webp" alt="" data-figcaption="Image 2 caption" />
+      <img src="example-2.webp" alt="" data-figcaption="Image 2 caption">
    </a>
 </section>
 ```
 
 ## Options
 
-```js noexpand
+```js-no-expand
 // Default options
 {
    slides: false,

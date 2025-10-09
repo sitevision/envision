@@ -1,8 +1,9 @@
 ---
 title: Dynamic font size
 description: The Dynamic Font Size utility scales an element’s base font size based on container width.
-since: 2024.02.1
 ---
+
+<h2 class="doc-heading-2 doc-heading-2--main"><span class="doc-badge doc-badge--info">Since 2024.02.1</span></h2>
 
 Use Dynamic font size to scale the base font size of an element. Any element children using
 relative font sizes will scale proportionally.
@@ -50,10 +51,12 @@ The containment context determines the width from which the scaling of the dynam
 Inside the container, place one or more dynamic font elements using class `env-dynamic-font`.
 Text inside these elements will be dynamically scaled, text outside will not.
 
-```html noexample
+```html-no-example
 <div class="env-container">
    <div class="env-dynamic-font">
-      <p class="env-text">This text will resize!</p>
+      <p class="env-text">
+         This text will resize!
+      </p>
    </div>
 </div>
 ```
@@ -67,12 +70,16 @@ To not interfere with the width calculations, padding must be used on a
 separate element inside the container element. Elements placed inside the container but outside of
 `env-dynamic-font` will not scale.
 
-```html noexample
+```html-no-example
 <div class="env-container">
    <div class="env-p-around--medium">
-      <h2 class="env-ui-text-sectionheading">This heading will not resize</h2>
+      <h2 class="env-ui-text-sectionheading">
+         This heading will not resize
+      </h2>
       <div class="env-dynamic-font">
-         <p class="env-text">This text will resize ...</p>
+         <p class="env-text">
+            This text will resize ...
+         </p>
       </div>
    </div>
 </div>
@@ -157,10 +164,12 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
    </div>
 </div>
 
-```html noexample
+```html-no-example
 <div class="env-container">
    <div class="env-dynamic-font env-dynamic-font--scale-1_125">
-      <p class="env-text">Scaling factor 1.125</p>
+      <p class="env-text">
+         Scaling factor 1.125
+      </p>
    </div>
 </div>
 ```
@@ -218,12 +227,12 @@ src="/placeholders/examples/dyn-font.svg" />
    </div>
 </div>
 
-```html noexample
+```html-no-example
 <div class="env-container">
-   <div
-      class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500"
-   >
-      <p class="env-text">From 250 to 500</p>
+   <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500">
+      <p class="env-text">
+         From 250 to 500
+      </p>
    </div>
 </div>
 ```
@@ -277,21 +286,27 @@ at default settings.
    </div>
 </div>
 
-```html noexample
+```html-no-example
 <div class="env-container">
    <div class="env-dynamic-font">
-      <p class="env-text">Upscaling factor 1.25 (default)</p>
+      <p class="env-text">
+         Upscaling factor 1.25 (default)
+      </p>
    </div>
    <div class="env-dynamic-font env-dynamic-font--scale-2">
-      <p class="env-text">Upscaling factor 2</p>
+      <p class="env-text">
+         Upscaling factor 2
+      </p>
    </div>
    <div class="env-dynamic-font env-dynamic-font--downscale">
-      <p class="env-text">Downscaling factor 1.25</p>
+      <p class="env-text">
+         Downscaling factor 1.25
+      </p>
    </div>
-   <div
-      class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale"
-   >
-      <p class="env-text">Downscaling factor 2</p>
+   <div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale">
+      <p class="env-text">
+         Downscaling factor 2
+      </p>
    </div>
 </div>
 ```
@@ -302,15 +317,17 @@ For higher precision in setting the values, the following CSS variables may be s
 
 **Note!** Do not use any units.
 
-```html noexample
+```html-no-example
 <div class="env-container">
    <div class="env-dynamic-font example-custom-dynamic-font-settings">
-      <p class="env-text">Scaling factor 1.2345</p>
+      <p class="env-text">
+         Scaling factor 1.2345
+      </p>
    </div>
 </div>
 ```
 
-```css noexpand
+```css-no-expand
 .example-custom-dynamic-font-settings {
    /* Scaling factor */
    --env-dynamic-font-scale: 1.2345;

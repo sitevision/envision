@@ -1,8 +1,6 @@
 ---
 title: Dashboard Widgets
 template: navigation
-description: An extension to Envision that should be used when creating Sitevision Dashboard Widgets.
-menuSortOrder: 70
 ---
 
 <p class="doc-summary">Envision for Dashboard Widgets is an extension to Envision that

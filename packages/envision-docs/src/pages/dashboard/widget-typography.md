@@ -7,22 +7,34 @@ dashboard: true
 The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font family which has support for nine different weights
 100-900. Other font familes should in most cases not be used.
 
-```html nocode
-<p class="example-fw-100">Thin 100 — The quick brown fox jumps … 123456789</p>
-<p class="example-fw-200">
-   Extra Light 200 — The quick brown fox jumps … 123456789
-</p>
-<p class="example-fw-300">Light 300 — The quick brown fox jumps … 123456789</p>
-<p class="example-fw-400">Normal 400 — The quick brown fox jumps … 123456789</p>
-<p class="example-fw-500">Medium 500 — The quick brown fox jumps … 123456789</p>
-<p class="example-fw-600">
-   Semi Bold 600 — The quick brown fox jumps … 123456789
-</p>
-<p class="example-fw-700">Bold 700 — The quick brown fox jumps … 123456789</p>
-<p class="example-fw-800">
-   Extra Bold 800 — The quick brown fox jumps … 123456789
-</p>
-<p class="example-fw-900">Black 900 — The quick brown fox jumps … 123456789</p>
+```html-nocode
+   <p class="example-fw-100">
+      Thin 100 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-200">
+      Extra Light 200 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-300">
+      Light 300 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-400">
+      Normal 400 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-500">
+      Medium 500 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-600">
+      Semi Bold 600 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-700">
+      Bold 700 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-800">
+      Extra Bold 800 — The quick brown fox jumps … 123456789
+   </p>
+   <p class="example-fw-900">
+      Black 900 — The quick brown fox jumps … 123456789
+   </p>
 ```
 
 ```css

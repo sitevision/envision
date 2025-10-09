@@ -23,14 +23,16 @@ The grid column container where the app will be displayed is a [containment cont
    </section>
 </div>
 
-```html noexample noexpand
+```html-no-example
 <section class="env-dashboard-widget example-responsive-widget">
-   <h2 class="env-ui-text-sectionheading">Responsive example widget</h2>
+   <h2 class="env-ui-text-sectionheading">
+      Responsive example widget
+   </h2>
    <p class="env-ui-text-kpi-number">96%</p>
 </section>
 ```
 
-```css noexpand
+```css-no-expand
 @container dashboard-widget (max-width: 449px) {
    .example-responsive-widget .env-ui-text-kpi-number {
       font-size: var(--env-ui-text-kpi-number-font-size-small);
