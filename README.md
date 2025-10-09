@@ -24,3 +24,5 @@ Code copyright 2017-2025, Sitevision AB. Code is released under the
 ## Supported browsers
 
 Envision supports the **latest, stable releases** of all major browsers.
+
+.
