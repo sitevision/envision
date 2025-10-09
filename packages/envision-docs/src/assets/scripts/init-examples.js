@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
          },
       });
 
-   // TODO: Would be much nicer to use webpack externals, bu we run into a build issue..
    envision.popover('#example-popover-data');
 
    // Delayed spinner demo
