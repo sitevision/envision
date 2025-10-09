@@ -275,4 +275,7 @@
    --env-color-page-bg: #ffffff;
    --env-alert-font-family: var(--env-font-family);
    --env-font-size-base: 1em;
+   --env-ui-text-value-font-color: var(--env-ui-text-caption-font-color);
+   --env-ui-text-label-font-color: var(--env-font-color);
+   --env-ui-text-kpi-number-font-color: var(--env-font-color);
 }

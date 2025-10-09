@@ -1,0 +1,42 @@
+---
+import Master from './master/Master.astro';
+import Teasernav from './components/Teasernav.astro';
+import { getMainClassName } from './utils/utils.ts';
+const { frontmatter } = Astro.props;
+---
+
+<Master frontmatter={frontmatter}>
+   <div class="start-body" slot="main-content">
+      <main id="content" class={getMainClassName(frontmatter.dashboard)}>
+         <div class="start-hero env-container">
+            <div
+               class="start-hero__body env-dynamic-font env-dynamic-font--downscale env-dynamic-font--scale-1_5"
+            >
+               <h1 class="env-assistive-text">Envision by Sitevision</h1>
+               <h2 class="start-hero__heading">
+                  Create Sitevision like components and modules the easy way
+                  with Envision.
+               </h2>
+               <p class="start-hero__text">
+                  At Sitevision, we believe in making the complex simple. That’s
+                  why we created Envision — an open-source, easy-to-use CSS and
+                  component framework that streamlines your work with HTML, CSS,
+                  and JavaScript.
+               </p>
+            </div>
+         </div>
+         <Teasernav
+            frontmatter={frontmatter}
+            headingsAs={'h3'}
+            ariaLabel="Main categories menu"
+            iconFile="/images/docs-navicons.svg"
+            className="teaserNav--start"
+         />
+         <div class="start-content">
+            <div class="start-content__body">
+               <slot />
+            </div>
+         </div>
+      </main>
+   </div>
+</Master>

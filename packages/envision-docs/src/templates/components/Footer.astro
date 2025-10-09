@@ -1,0 +1,89 @@
+---
+const envisionMenuItems = [
+   {
+      text: 'Envision on GitHub',
+      url: 'https://github.com/sitevision/envision',
+   },
+];
+
+const developerMenuItems = [
+   {
+      text: 'Sitevision Developer Community',
+      url: 'https://developer.sitevision.se/',
+   },
+];
+
+const sitevisionMenuItems = [
+   {
+      text: 'About Sitevision',
+      url: 'https://www.sitevision.se/en/startpage/sitevision/about-sitevision',
+   },
+   {
+      text: 'Contact us',
+      url: 'https://www.sitevision.se/en/startpage/sitevision/contact-us',
+   },
+   {
+      text: 'Become one of us',
+      url: 'https://www.sitevision.se/en/startpage/sitevision/become-one-of-us',
+   },
+   {
+      text: 'Privacy Statement',
+      url: 'https://www.sitevision.se/en/startpage/sitevision/privacy-statement',
+   },
+   {
+      text: 'Pressroom',
+      url: 'https://www.sitevision.se/en/startpage/sitevision/pressroom',
+   },
+];
+---
+
+<footer class="footer">
+   <div class="container">
+      <nav aria-label="Footer menu" class="footer-nav">
+         <div class="footer-nav-col">
+            <a class="logo" href="/">
+               <span class="env-assistive-text"> To start page </span>
+               <svg class="env-icon doc-svg-logo" aria-hidden="true">
+                  <use href="/images/docs-logo.svg#logo"></use>
+               </svg>
+            </a>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Envision</h2>
+            <ul class="env-list">
+               {
+                  envisionMenuItems.map(({ text, url }) => (
+                     <li>
+                        <a href={url}>{text}</a>
+                     </li>
+                  ))
+               }
+            </ul>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Developer</h2>
+            <ul class="env-list">
+               {
+                  developerMenuItems.map(({ text, url }) => (
+                     <li class="env-nav__item env-m-vertical--medium">
+                        <a href={url}>{text}</a>
+                     </li>
+                  ))
+               }
+            </ul>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Sitevision</h2>
+            <ul class="env-list">
+               {
+                  sitevisionMenuItems.map(({ text, url }) => (
+                     <li class="env-nav__item env-m-vertical--medium">
+                        <a href={url}>{text}</a>
+                     </li>
+                  ))
+               }
+            </ul>
+         </div>
+      </nav>
+   </div>
+</footer>

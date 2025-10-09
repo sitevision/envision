@@ -23,7 +23,7 @@ This will set the correct background, borders and more for the widget. The wrapp
    <span class="env-ui-text-kpi-number" style="font-size: var(--env-ui-text-kpi-number-font-size-large)">96%</span>
 </section>
 
-```html-no-example
+```html noexample
 <section class="env-dashboard-widget">
    <!-- widget content --->
 </section>
@@ -96,28 +96,23 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 
 This example shows basic usage of CSS classes for headings, labels and more.
 
-```html-no-example
-
+```html noexample
 <section class="env-dashboard-widget">
-   <h2 class="env-ui-text-sectionheading">
-      Chart widget example heading
-   </h2>
+   <h2 class="env-ui-text-sectionheading">Chart widget example heading</h2>
    <p class="env-ui-text-value">
       <span class="env-dashboard-color-txt-orange-50">—</span> Legend line 1
       <span class="env-dashboard-color-txt-cyan-50">—</span> Legend line 2
    </p>
-   <h3 class="env-ui-text-label">
-      Y axis label
-   </h3>
+   <h3 class="env-ui-text-label">Y axis label</h3>
    <ul>
       <li class="env-ui-text-value">1,200</li>
       ...
    </ul>
-   <canvas aria-label="Example chart, this text should tell the chart values for accessibility."
-           role="img"></canvas>
-   <h3 class="env-ui-text-label">
-      X axis label
-   </h3>
+   <canvas
+      aria-label="Example chart, this text should tell the chart values for accessibility."
+      role="img"
+   ></canvas>
+   <h3 class="env-ui-text-label">X axis label</h3>
    <ul>
       <li class="env-ui-text-value">25 nov</li>
       ...
