@@ -1,0 +1,24 @@
+---
+const { frontmatter } = Astro.props;
+
+import { getMenuItems } from '../../navMenuUtils.ts';
+const menuItems = getMenuItems(frontmatter, '/');
+---
+
+<nav aria-label="Main menu">
+   <ul class="env-nav env-nav--menubar env-nav--border">
+      {
+         menuItems.map(({ frontmatter, url, isCurrentPage }) => (
+            <li class="env-nav__item">
+               <a
+                  href={url}
+                  class="env-nav__link"
+                  aria-current={isCurrentPage ? 'page' : 'false'}
+               >
+                  {frontmatter.title}
+               </a>
+            </li>
+         ))
+      }
+   </ul>
+</nav>

@@ -1,0 +1,19 @@
+---
+const { icons } = Astro.props;
+---
+
+<div class="icons-demo">
+   <ul
+      class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6"
+   >
+      {
+         icons.map((icon: string) => (
+            <li class="env-list__item" title={icon}>
+               <svg class="env-icon">
+                  <use href={`/sitevision/envision-icons.svg#${icon}`} />
+               </svg>
+            </li>
+         ))
+      }
+   </ul>
+</div>

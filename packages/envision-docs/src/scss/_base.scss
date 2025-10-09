@@ -1,5 +1,5 @@
 html {
-   font-family: Inter, sans-serif;
+   font-family: var(--doc-font-family);
 
    --doc-font-family: Inter, sans-serif;
    --doc-background-color: #f5fcf8;
@@ -37,39 +37,39 @@ html {
    --doc-icon-card-header-background: #daf4e5;
    --doc-icon-text-01: #737373;
    --doc-icon-text-02: #708770;
+}
 
-   .doc-dark-mode {
-      --doc-background-color: #0d2d2a;
-      --doc-section-background-color: #223936;
-      --doc-font-color: #d5deda;
-      --doc-link-font-color: #fff;
-      --doc-link-text-decoration: underline;
-      --doc-border-color: #555;
+.doc-dark-mode {
+   --doc-background-color: #0d2d2a;
+   --doc-section-background-color: #223936;
+   --doc-font-color: #d5deda;
+   --doc-link-font-color: #fff;
+   --doc-link-text-decoration: underline;
+   --doc-border-color: #555;
 
-      --doc-header-background-color: var(--doc-section-background-color);
-      --doc-header-font-color: #dfdccf;
-      --doc-footer-background-color: #000;
-      --doc-footer-font-color: #dfdccf;
-      --doc-sidenav-font-color: #dfdccf;
+   --doc-header-background-color: var(--doc-section-background-color);
+   --doc-header-font-color: #dfdccf;
+   --doc-footer-background-color: #000;
+   --doc-footer-font-color: #dfdccf;
+   --doc-sidenav-font-color: #dfdccf;
 
-      --doc-code-background-color: #666;
-      --doc-code-font-color: #fff;
+   --doc-code-background-color: #666;
+   --doc-code-font-color: #fff;
 
-      --doc-hero-background-color: #204541;
+   --doc-hero-background-color: #204541;
 
-      --doc-teasernav-header-background-color: #204541;
-      --doc-teasernav-header-contrast-color: #a2bdba;
+   --doc-teasernav-header-background-color: #204541;
+   --doc-teasernav-header-contrast-color: #a2bdba;
 
-      --doc-icon-card-surface: #18322f;
-      --doc-icon-card-border-color: #224f4a;
-      --doc-icon-element-01: #a2bdba;
-      --doc-icon-element-01-text: #435e5b;
-      --doc-icon-element-02: #6d9a94;
-      --doc-icon-element-02-text: #5c7e7a;
-      --doc-icon-card-header-background: #214541;
-      --doc-icon-text-01: #a2bdba;
-      --doc-icon-text-02: #87aaa6;
-   }
+   --doc-icon-card-surface: #18322f;
+   --doc-icon-card-border-color: #224f4a;
+   --doc-icon-element-01: #a2bdba;
+   --doc-icon-element-01-text: #435e5b;
+   --doc-icon-element-02: #6d9a94;
+   --doc-icon-element-02-text: #5c7e7a;
+   --doc-icon-card-header-background: #214541;
+   --doc-icon-text-01: #a2bdba;
+   --doc-icon-text-02: #87aaa6;
 }
 
 .sidenav,

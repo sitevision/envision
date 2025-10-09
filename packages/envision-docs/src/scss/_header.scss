@@ -87,7 +87,7 @@
          border-bottom-color: var(--doc-color-brand) !important;
       }
 
-      &[aria-current] {
+      &[aria-current='page'] {
          border-bottom-color: var(--doc-color-brand) !important;
          color: var(--doc-header-font-color) !important;
       }

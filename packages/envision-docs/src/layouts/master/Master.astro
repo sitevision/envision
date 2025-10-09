@@ -1,0 +1,116 @@
+---
+import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
+import Footer from '../components/Footer.astro';
+import Mobilenav from '../components/Mobilenav.astro';
+import DashboardScript from '../components/DashboardScript.astro';
+import { getMainClassName } from '../../utils.ts';
+
+const { frontmatter } = Astro.props;
+
+// Import Envision from source files
+import '../../../../envision/src/scss/base.scss';
+import '../../../../envision/src/scss/dashboard/envision-dashboard.scss';
+
+// Import docs specific styles
+import '../../scss/docs.scss';
+
+const title = frontmatter.title;
+---
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>
+         {
+            `${title ? title : ''}${title ? ' \u00B7 ' : ''}Envision by Sitevision`
+         }
+      </title>
+      <script is:inline>
+         ((win, docEl, key) => {
+            const st = win.sessionStorage;
+            const pref = st.getItem(key);
+            let cls;
+            if (pref) {
+               cls = pref;
+            } else {
+               cls = win.matchMedia('(prefers-color-scheme: dark)').matches
+                  ? 'doc-dark-mode'
+                  : 'doc-light-mode';
+               st.setItem(key, cls);
+            }
+            docEl.classList.add(cls);
+         })(window, document.documentElement, 'colorscheme');
+      </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link
+         rel="icon"
+         type="image/png"
+         href="/images/envision_logo.webp"
+         sizes="32x32"
+      />
+      <meta
+         name="generator"
+         data-template={frontmatter.template}
+         content={Astro.generator}
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      {
+         frontmatter.description && (
+            <meta name="description" content={frontmatter.description} />
+         )
+      }
+      {
+         frontmatter.indexing === false && (
+            <meta name="robots" content="noindex" />
+         )
+      }
+      <script
+         is:inline
+         src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+         crossorigin="anonymous"></script>
+      <script is:inline src="../../dist/envision.js"></script>
+      <!-- Additional head elements -->
+   </head>
+   <body>
+      <div class="layout">
+         <Header frontmatter={frontmatter} />
+         <Banner frontmatter={frontmatter} />
+         <slot name="main-content">
+            <div class="body">
+               <main
+                  id="content"
+                  class={getMainClassName(frontmatter.dashboard)}
+               >
+                  <div class="content-wrapper">
+                     {
+                        title && (
+                           <h1 class="doc-main-heading">
+                              {title}
+                              {frontmatter.since && (
+                                 <span class="doc-badge doc-badge--info">
+                                    Since {frontmatter.since}
+                                 </span>
+                              )}
+                           </h1>
+                        )
+                     }
+                     <slot />
+                  </div>
+               </main>
+               <slot name="sidenav" />
+            </div>
+         </slot>
+         <Footer />
+         <Mobilenav frontmatter={frontmatter} />
+         {!!frontmatter.dashboard}
+      </div>
+      <script src="../../scripts/init-code-blocks.js"></script>
+      <script src="../../scripts/init-examples.js"></script>
+      <script src="../../scripts/mobile-nav.js"></script>
+      <script src="../../scripts/theme-picker.js"></script>
+      {!!frontmatter.dashboard && <DashboardScript />}
+   </body>
+</html>

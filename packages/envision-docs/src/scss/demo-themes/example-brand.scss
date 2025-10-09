@@ -44,7 +44,7 @@
    --env-ui-color-brand-100-contrast: #919191;
 }
 
-body:not([class^='doc-dark-mode']):not([class*=' doc-dark-mode'])
+html:not([class^='doc-dark-mode']):not([class*=' doc-dark-mode'])
    .env-theme-example-brand {
    --env-ui-color-brand-20-contrast: #396b70;
    --env-ui-color-brand-30-contrast: #305b5f;

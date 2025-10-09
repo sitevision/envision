@@ -4,6 +4,7 @@ description:
    Text is designed to be used for content text. It is a versatile and flexible
    set of site fonts that can be used for a wide range of purposes.
 since: 2025.01.1
+new: true
 ---
 
 Text is designed to be used for content text. It is a versatile and flexible
@@ -12,7 +13,7 @@ headings and image captions.
 
 Text is divided into different sets, each with its own unique style and purpose.
 
-```html-nocode
+```html nocode
 <div class="example-content-text-demo">
    <h2 class="env-text-heading-01">Heading</h2>
    <h2 class="env-text-display-01">Display</h2>
