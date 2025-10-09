@@ -1,6 +1,6 @@
 ---
 const { frontmatter } = Astro.props;
-import { getCurrentLevelOneItem, getMenuItems } from '../../navMenuUtils.ts';
+import { getCurrentLevelOneItem, getMenuItems } from '../utils/navMenuUtils.ts';
 const topItem = getCurrentLevelOneItem(frontmatter);
 const menuItems = getMenuItems(frontmatter);
 ---

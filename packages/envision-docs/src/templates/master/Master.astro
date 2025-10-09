@@ -4,7 +4,7 @@ import Banner from '../components/Banner.astro';
 import Footer from '../components/Footer.astro';
 import Mobilenav from '../components/Mobilenav.astro';
 import DashboardScript from '../components/DashboardScript.astro';
-import { getMainClassName } from '../../utils.ts';
+import { getMainClassName } from '../utils/utils.ts';
 
 const { frontmatter } = Astro.props;
 
@@ -13,7 +13,7 @@ import '../../../../envision/src/scss/base.scss';
 import '../../../../envision/src/scss/dashboard/envision-dashboard.scss';
 
 // Import docs specific styles
-import '../../scss/docs.scss';
+import '../../assets/scss/docs.scss';
 
 const title = frontmatter.title;
 ---
@@ -107,10 +107,10 @@ const title = frontmatter.title;
          <Mobilenav frontmatter={frontmatter} />
          {!!frontmatter.dashboard}
       </div>
-      <script src="../../scripts/init-code-blocks.js"></script>
-      <script src="../../scripts/init-examples.js"></script>
-      <script src="../../scripts/mobile-nav.js"></script>
-      <script src="../../scripts/theme-picker.js"></script>
+      <script src="../../assets/scripts/init-code-blocks.js"></script>
+      <script src="../../assets/scripts/init-examples.js"></script>
+      <script src="../../assets/scripts/mobile-nav.js"></script>
+      <script src="../../assets/scripts/theme-picker.js"></script>
       {!!frontmatter.dashboard && <DashboardScript />}
    </body>
 </html>

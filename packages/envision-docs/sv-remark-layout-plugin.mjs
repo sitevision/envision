@@ -2,9 +2,9 @@ import path from 'path';
 
 export function svRemarkLayoutPlugin() {
    const templates = {
-      default: path.resolve('src/layouts/Default.astro'),
-      startpage: path.resolve('src/layouts/Startpage.astro'),
-      navigation: path.resolve('src/layouts/Navigation.astro'),
+      default: path.resolve('src/templates/Default.astro'),
+      startpage: path.resolve('src/templates/Startpage.astro'),
+      navigation: path.resolve('src/templates/Navigation.astro'),
    };
 
    return function (tree, file) {
