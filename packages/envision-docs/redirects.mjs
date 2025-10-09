@@ -1,4 +1,7 @@
-// export const redirects: readonly { [key: string]: { string; status: number } } = {
+// Will be used to render redirect pages for moved documentation pages.
+// Each key is the old path, and the value is the new path.
+// Make sure to include the trailing slash at the end of each path.
+
 export const redirects = {
    '/getting-started/introduction/': '/',
 

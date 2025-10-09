@@ -10,8 +10,14 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const watchEnvisionJS = () => ({
+   /**
+    * @param {import('vite').ViteDevServer} server
+    */
    configureServer(server) {
       console.log('[watch-extra-files] Plugin loaded');
+      /**
+       * @param {string} file
+       */
       const reload = (file) => {
          console.log(`[watch-extra-files] Reload triggered due to: ${file}`);
          server.ws.send({ type: 'full-reload' });
