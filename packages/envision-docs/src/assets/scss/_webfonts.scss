@@ -1,6 +1,6 @@
 @mixin font-face($familyName, $style, $weight, $fileName) {
    @font-face {
-      font-display: swap;
+      font-display: block;
       font-family: $familyName;
       font-style: $style;
       font-weight: $weight;
