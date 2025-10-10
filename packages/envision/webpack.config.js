@@ -41,9 +41,7 @@ module.exports = [
       entry: './src/scss/dashboard/envision-dashboard.scss',
       output: {
          filename: 'envision-dashboard.js',
-         path: dev
-            ? path.resolve(__dirname, '..', 'envision-docs', 'public', 'dist')
-            : path.resolve(__dirname, 'dist'),
+         path: path.resolve(__dirname, '..', 'envision-docs', 'static', 'dist'),
       },
       optimization,
       plugins: [
@@ -78,9 +76,7 @@ module.exports = [
       entry: './src/js/envision.js',
       output: {
          filename: 'envision.js',
-         path: dev
-            ? path.resolve(__dirname, '..', 'envision-docs', 'public', 'dist')
-            : path.resolve(__dirname, 'dist'),
+         path: path.resolve(__dirname, '..', 'envision-docs', 'static', 'dist'),
          library: {
             name: 'envision',
             type: 'umd',

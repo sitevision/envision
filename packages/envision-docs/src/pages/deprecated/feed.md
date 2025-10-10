@@ -4,7 +4,7 @@ deprecated: true
 indexing: false
 ---
 
-<p class="doc-summary bump">Feed is deprecated since 2025.01.2 and will eventually be removed.</p>
+<p class="doc-summary">Feed is deprecated since 2025.01.2 and will eventually be removed.</p>
 
 Deprecated classes:
 

@@ -1,0 +1,45 @@
+---
+import { getMenuItems } from '../utils/navMenuUtils.ts';
+const {
+   frontmatter,
+   className = '',
+   headingsAs: Tag = 'h2',
+   ariaLabel,
+   iconFile,
+} = Astro.props;
+const menuItems = getMenuItems(frontmatter);
+---
+
+<div class={`teaserNav ${className}`}>
+   <nav aria-label={ariaLabel}>
+      <ul class="env-cardholder-grid">
+         {
+            menuItems.map((menuItem) => (
+               <li class="env-card env-shadow-small env-border">
+                  <a
+                     href={menuItem.url}
+                     class="teaserNav__link"
+                     aria-current="page"
+                  >
+                     <div class="env-card__header">
+                        <div class="teaserNav__icon">
+                           <svg aria-hidden="true" class="env-icon">
+                              <use href={`${iconFile}#${menuItem.spriteId}`} />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="env-card__body">
+                        <Tag class="env-ui-text-sectionheading">
+                           {menuItem.frontmatter.title}
+                        </Tag>
+                        <p class="teaserNav__description env-text-body-03">
+                           {menuItem.frontmatter.description}
+                        </p>
+                     </div>
+                  </a>
+               </li>
+            ))
+         }
+      </ul>
+   </nav>
+</div>

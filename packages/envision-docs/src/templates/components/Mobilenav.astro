@@ -1,0 +1,83 @@
+---
+const { frontmatter } = Astro.props;
+import { getMobileMenuItems } from '../utils/navMenuUtils.ts';
+const menuItems = getMobileMenuItems(frontmatter);
+---
+
+<dialog class="mobileNav">
+   <div class="mobileNav__header">
+      <h2 class="env-ui-text-sectionheading">Envision documentation</h2>
+      <button
+         class="mobileNav__close env-button env-button--icon env-button--icon-small"
+      >
+         <span class="env-assistive-text">Close</span>
+         <svg class="env-icon env-icon--medium" aria-hidden="true">
+            <use href="/sitevision/envision-icons.svg#icon-delete"></use>
+         </svg>
+      </button>
+   </div>
+   <nav aria-label="Mobile main menu">
+      <ul class="env-nav env-nav--sidenav">
+         {
+            menuItems.top.map((item, key) => (
+               <li class="env-nav__item env-nav__item--hasChildren">
+                  <a
+                     href={item.url}
+                     class="env-nav__link level-1"
+                     aria-current={item.isCurrentPage ? 'page' : 'false'}
+                  >
+                     {item.frontmatter.title}
+                  </a>
+                  <a
+                     role="button"
+                     class="env-button env-button--icon env-button--link env-button--icon-small"
+                     href={`#mobile-submenu-${item.slug}`}
+                     data-env-collapse=""
+                     aria-expanded={
+                        item.isCurrentPage || item.hasCurrentPage
+                           ? 'true'
+                           : 'false'
+                     }
+                     aria-controls={`mobile-submenu-${item.slug}`}
+                  >
+                     <span class="env-assistive-text">
+                        Toggle navigation for {item.frontmatter.title}
+                     </span>
+                     <svg class="env-icon" aria-hidden="true">
+                        <use href="/sitevision/envision-icons.svg#icon-angle-down" />
+                     </svg>
+                  </a>
+                  <ul
+                     class={`env-collapse env-nav env-nav--sidenav ${item.isCurrentPage || item.hasCurrentPage ? ' env-collapse--show' : ''}`}
+                     id={`mobile-submenu-${item.slug}`}
+                  >
+                     {menuItems.children[item.slug].map(
+                        ({ frontmatter, url, isCurrentPage }) => (
+                           <li class="env-nav__item">
+                              <a
+                                 href={url}
+                                 aria-current={isCurrentPage ? 'page' : 'false'}
+                                 class="env-nav__link level-2"
+                              >
+                                 {frontmatter.title}
+                                 {frontmatter.deprecated && (
+                                    <span class="doc-badge doc-badge--danger">
+                                       Deprecated
+                                    </span>
+                                 )}
+                                 {frontmatter.new && (
+                                    <span class="doc-badge doc-badge--success">
+                                       New
+                                    </span>
+                                 )}
+                              </a>
+                           </li>
+                        )
+                     )}
+                  </ul>
+               </li>
+            ))
+         }
+      </ul>
+   </nav>
+</dialog>

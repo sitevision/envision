@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="theme-picker">
+   <label class="theme-picker__label env-assistive-text" for="darkMode">
+      Default / Dark mode
+   </label>
+   <div class="doc-theme-switch">
+      <input class="doc-theme-switch__checkbox" type="checkbox" id="darkMode" />
+      <svg
+         aria-hidden="true"
+         class="env-icon doc-theme-switch__moon"
+         width="24"
+         height="24"
+      >
+         <use href="/images/docs-images.svg#moon"></use>
+      </svg>
+      <svg
+         aria-hidden="true"
+         class="env-icon doc-theme-switch__sun"
+         width="24"
+         height="24"
+      >
+         <use href="/images/docs-images.svg#sun"></use>
+      </svg>
+   </div>
+   <script is:inline>
+      if (sessionStorage.getItem('colorscheme') === 'doc-dark-mode') {
+         document.getElementById('darkMode').checked = true;
+      }
+   </script>
+</div>
