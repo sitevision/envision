@@ -1,8 +1,9 @@
-import { c as createComponent, b as renderComponent, a as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, r as renderHead } from './docs.chunk.du3NNjBs.js';
+import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.BT_-Ioqz.js';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                    */
 /* empty css                    */
+import { $ as $$Favicon } from './docs.chunk.B2URcMjw.js';
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
@@ -3713,22 +3714,7 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Master;
   const { frontmatter } = Astro2.props;
   const title = frontmatter.title;
-  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="utf-8">', "<title>\n         ", '\n      </title><meta name="viewport" content="width=device-width, initial-scale=1">', `<script>
-         ((win, docEl, key) => {
-            const st = win.sessionStorage;
-            const pref = st.getItem(key);
-            let cls;
-            if (pref) {
-               cls = pref;
-            } else {
-               cls = win.matchMedia('(prefers-color-scheme: dark)').matches
-                  ? 'doc-dark-mode'
-                  : 'doc-light-mode';
-               st.setItem(key, cls);
-            }
-            docEl.classList.add(cls);
-         })(window, document.documentElement, 'colorscheme');
-      <\/script><link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96"><meta name="generator"`, "", '><script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script><script src="../../dist/envision.js"><\/script><!-- Additional head elements -->', '</head> <body> <div class="layout"> ', " ", " ", " ", " ", " ", " </div> ", " ", " ", " ", " ", " </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), renderHead(), renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate` <div class="body"> <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}> <div class="content-wrapper"> ${title && renderTemplate`<h1 class="doc-main-heading"> ${title} ${frontmatter.since && renderTemplate`<span class="doc-badge doc-badge--info">
+  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="utf-8">', "<title>\n         ", '\n      </title><meta name="viewport" content="width=device-width, initial-scale=1">', "<script>\n         ((win, docEl, key) => {\n            const st = win.sessionStorage;\n            const pref = st.getItem(key);\n            let cls;\n            if (pref) {\n               cls = pref;\n            } else {\n               cls = win.matchMedia('(prefers-color-scheme: dark)').matches\n                  ? 'doc-dark-mode'\n                  : 'doc-light-mode';\n               st.setItem(key, cls);\n            }\n            docEl.classList.add(cls);\n         })(window, document.documentElement, 'colorscheme');\n      <\/script>", '<meta name="generator"', "", '><script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script><script src="../../dist/envision.js"><\/script><!-- Additional head elements -->', '</head> <body> <div class="layout"> ', " ", " ", " ", " ", " ", " </div> ", " ", " ", " ", " ", " </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, renderComponent($$result, "Favicon", $$Favicon, {}), addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), renderHead(), renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate` <div class="body"> <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}> <div class="content-wrapper"> ${title && renderTemplate`<h1 class="doc-main-heading"> ${title} ${frontmatter.since && renderTemplate`<span class="doc-badge doc-badge--info">
 Since ${frontmatter.since} </span>`} </h1>`} ${renderSlot($$result, $$slots["default"])} </div> </main> ${renderSlot($$result, $$slots["sidenav"])} </div> `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro", void 0);
 
