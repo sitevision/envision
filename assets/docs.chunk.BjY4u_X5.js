@@ -3,7 +3,7 @@ import 'kleur/colors';
 import 'clsx';
 /* empty css                    */
 /* empty css                    */
-import { $ as $$Favicon } from './docs.chunk.B2URcMjw.js';
+import { $ as $$Favicon } from './docs.chunk.BrJ3CyrU.js';
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
@@ -167,7 +167,29 @@ const $$Teasernav = createComponent(($$result, $$props, $$slots) => {
     iconFile
   } = Astro2.props;
   const menuItems = getMenuItems(frontmatter);
-  return renderTemplate`${maybeRenderHead()}<div${addAttribute(`teaserNav ${className}`, "class")}> <nav${addAttribute(ariaLabel, "aria-label")}> <ul class="env-cardholder-grid"> ${menuItems.map((menuItem) => renderTemplate`<li class="env-card env-shadow-small env-border"> <a${addAttribute(menuItem.url, "href")} class="teaserNav__link" aria-current="page"> <div class="env-card__header"> <div class="teaserNav__icon"> <svg aria-hidden="true" class="env-icon"> <use${addAttribute(`${iconFile}#${menuItem.spriteId}`, "href")}></use> </svg> </div> </div> <div class="env-card__body"> ${renderComponent($$result, "Tag", Tag, { "class": "env-ui-text-sectionheading" }, { "default": ($$result2) => renderTemplate`${menuItem.frontmatter.title}` })} <p class="teaserNav__description env-text-body-03"> ${menuItem.frontmatter.description} </p> </div> </a> </li>`)} </ul> </nav> </div>`;
+  return renderTemplate`${maybeRenderHead()}<div${addAttribute(`teaserNav ${className}`, "class")}>
+   <nav${addAttribute(ariaLabel, "aria-label")}>
+      <ul class="env-cardholder-grid">
+         ${menuItems.map((menuItem) => renderTemplate`<li class="env-card env-shadow-small env-border">
+                  <a${addAttribute(menuItem.url, "href")} class="teaserNav__link" aria-current="page">
+                     <div class="env-card__header">
+                        <div class="teaserNav__icon">
+                           <svg aria-hidden="true" class="env-icon">
+                              <use${addAttribute(`${iconFile}#${menuItem.spriteId}`, "href")}></use>
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="env-card__body">
+                        ${renderComponent($$result, "Tag", Tag, { "class": "env-ui-text-sectionheading" }, { "default": ($$result2) => renderTemplate`${menuItem.frontmatter.title}` })}
+                        <p class="teaserNav__description env-text-body-03">
+                           ${menuItem.frontmatter.description}
+                        </p>
+                     </div>
+                  </a>
+               </li>`)}
+      </ul>
+   </nav>
+</div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Teasernav.astro", void 0);
 
 const $$Astro$9 = createAstro();
@@ -177,9 +199,24 @@ const $$Sidenav = createComponent(($$result, $$props, $$slots) => {
   const { frontmatter } = Astro2.props;
   const topItem = getCurrentLevelOneItem(frontmatter);
   const menuItems = getMenuItems(frontmatter);
-  return renderTemplate`${maybeRenderHead()}<div class="sidenav" id="navigation"> ${topItem && menuItems.length > 0 && renderTemplate`<nav${addAttribute(`${topItem.frontmatter.title} sidebar menu`, "aria-label")}> <h2 class="sidenav__heading"> <a${addAttribute(topItem.url, "href")}>${topItem.frontmatter.title}</a> </h2> <ul class="sidenav__items"> ${menuItems.map((menuItem) => renderTemplate`<li class="sidenav__item"> <a${addAttribute(menuItem.url, "href")} class="sidenav__item__link"${addAttribute(menuItem.isCurrentPage ? "page" : "false", "aria-current")}> ${menuItem.frontmatter.title} ${menuItem.frontmatter.deprecated && renderTemplate`<span class="doc-badge doc-badge--danger">
-Deprecated
-</span>`} ${menuItem.frontmatter.new && renderTemplate`<span class="doc-badge doc-badge--success">New</span>`} </a> </li>`)} </ul> </nav>`} </div>`;
+  return renderTemplate`${maybeRenderHead()}<div class="sidenav" id="navigation">
+   ${topItem && menuItems.length > 0 && renderTemplate`<nav${addAttribute(`${topItem.frontmatter.title} sidebar menu`, "aria-label")}>
+            <h2 class="sidenav__heading">
+               <a${addAttribute(topItem.url, "href")}>${topItem.frontmatter.title}</a>
+            </h2>
+            <ul class="sidenav__items">
+               ${menuItems.map((menuItem) => renderTemplate`<li class="sidenav__item">
+                     <a${addAttribute(menuItem.url, "href")} class="sidenav__item__link"${addAttribute(menuItem.isCurrentPage ? "page" : "false", "aria-current")}>
+                        ${menuItem.frontmatter.title}
+                        ${menuItem.frontmatter.deprecated && renderTemplate`<span class="doc-badge doc-badge--danger">
+                              Deprecated
+                           </span>`}
+                        ${menuItem.frontmatter.new && renderTemplate`<span class="doc-badge doc-badge--success">New</span>`}
+                     </a>
+                  </li>`)}
+            </ul>
+         </nav>`}
+</div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Sidenav.astro", void 0);
 
 const $$Astro$8 = createAstro();
@@ -187,7 +224,11 @@ const $$Navigation = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
   Astro2.self = $$Navigation;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate` ${renderSlot($$result2, $$slots["default"])} ${renderComponent($$result2, "Teasernav", $$Teasernav, { "headingsAs": "h2", "ariaLabel": `${frontmatter.title} submenu`, "iconFile": "/images/docs-component-navicons.svg", "frontmatter": frontmatter })}  `, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`
+   ${renderSlot($$result2, $$slots["default"])}
+   ${renderComponent($$result2, "Teasernav", $$Teasernav, { "headingsAs": "h2", "ariaLabel": `${frontmatter.title} submenu`, "iconFile": "/images/docs-component-navicons.svg", "frontmatter": frontmatter })}
+   
+`, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/Navigation.astro", void 0);
 
 const html$17 = () => "<p class=\"doc-summary\">Color classes and variables for elements, components and layouts.</p>";
@@ -2509,15 +2550,31 @@ const $$Startpage = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
   Astro2.self = $$Startpage;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "main-content": ($$result2) => renderTemplate`${maybeRenderHead()}<div class="start-body"> <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}> <div class="start-hero env-container"> <div class="start-hero__body env-dynamic-font env-dynamic-font--downscale env-dynamic-font--scale-1_5"> <h1 class="env-assistive-text">Envision by Sitevision</h1> <h2 class="start-hero__heading">
-Create Sitevision like components and modules the easy way
+  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "main-content": ($$result2) => renderTemplate`${maybeRenderHead()}<div class="start-body">
+      <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}>
+         <div class="start-hero env-container">
+            <div class="start-hero__body env-dynamic-font env-dynamic-font--downscale env-dynamic-font--scale-1_5">
+               <h1 class="env-assistive-text">Envision by Sitevision</h1>
+               <h2 class="start-hero__heading">
+                  Create Sitevision like components and modules the easy way
                   with Envision.
-</h2> <p class="start-hero__text">
-At Sitevision, we believe in making the complex simple. That’s
+               </h2>
+               <p class="start-hero__text">
+                  At Sitevision, we believe in making the complex simple. That’s
                   why we created Envision — an open-source, easy-to-use CSS and
                   component framework that streamlines your work with HTML, CSS,
                   and JavaScript.
-</p> </div> </div> ${renderComponent($$result2, "Teasernav", $$Teasernav, { "frontmatter": frontmatter, "headingsAs": "h3", "ariaLabel": "Main categories menu", "iconFile": "/images/docs-navicons.svg", "className": "teaserNav--start" })} <div class="start-content"> <div class="start-content__body"> ${renderSlot($$result2, $$slots["default"])} </div> </div> </main> </div>` })}`;
+               </p>
+            </div>
+         </div>
+         ${renderComponent($$result2, "Teasernav", $$Teasernav, { "frontmatter": frontmatter, "headingsAs": "h3", "ariaLabel": "Main categories menu", "iconFile": "/images/docs-navicons.svg", "className": "teaserNav--start" })}
+         <div class="start-content">
+            <div class="start-content__body">
+               ${renderSlot($$result2, $$slots["default"])}
+            </div>
+         </div>
+      </main>
+   </div>` })}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/Startpage.astro", void 0);
 
 const html$l = () => "<h2 class=\"doc-heading-2\" id=\"how-to-get-started\">How to get started</h2>\n<p class=\"doc-p\">Envision is included in all Sitevision websites. The components are ready to use in your projects.</p>\n<p class=\"doc-p\">Usage examples in Sitevision:</p>\n<ul class=\"doc-list\">\n<li class=\"doc-list__item\">Site themes</li>\n<li class=\"doc-list__item\">Themes in layouts</li>\n<li class=\"doc-list__item\">Theme colors in layouts</li>\n<li class=\"doc-list__item\">Site fonts</li>\n<li class=\"doc-list__item\">CSS rules</li>\n<li class=\"doc-list__item\">Custom templates</li>\n<li class=\"doc-list__item\">HTML- or Script modules</li>\n<li class=\"doc-list__item\">Webapps and Widgets</li>\n<li class=\"doc-list__item\">Anywhere where custom HTML, CSS, and JavaScript are used</li>\n</ul>\n<h2 class=\"doc-heading-2\" id=\"contribute\">Contribute</h2>\n<p class=\"doc-p\">Feel free to check out the <a href=\"https://github.com/sitevision/envision\" class=\"doc-link\">Envision GitHub repository</a>. Pull requests and issues are welcome.</p>\n<h3 class=\"doc-heading-3\" id=\"to-run-locally\">To run locally</h3>\n<ol class=\"doc-list\">\n<li class=\"doc-list__item\">[Clone repository]</li>\n<li class=\"doc-list__item\">Run <code class=\"doc-code\">yarn install</code> to install dependencies</li>\n<li class=\"doc-list__item\">Run <code class=\"doc-code\">yarn dev</code> to start locally</li>\n</ol>\n<h3 class=\"doc-heading-3\" id=\"to-build\">To build</h3>\n<p class=\"doc-p\">Run <code class=\"doc-code\">yarn build</code></p>\n<h2 class=\"doc-heading-2\" id=\"license-information\">License information</h2>\n<p class=\"doc-p\">Code copyright 2025, Sitevision AB. Code is released under the <a href=\"https://github.com/sitevision/envision/blob/master/LICENSE\" class=\"doc-link\">MIT license</a></p>";
@@ -3589,7 +3646,15 @@ const $$Headernav = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Headernav;
   const { frontmatter } = Astro2.props;
   const menuItems = getMenuItems(frontmatter, "/");
-  return renderTemplate`${maybeRenderHead()}<nav aria-label="Main menu"> <ul class="env-nav env-nav--menubar env-nav--border"> ${menuItems.map(({ frontmatter: frontmatter2, url, isCurrentPage }) => renderTemplate`<li class="env-nav__item"> <a${addAttribute(url, "href")} class="env-nav__link"${addAttribute(isCurrentPage ? "page" : "false", "aria-current")}> ${frontmatter2.title} </a> </li>`)} </ul> </nav>`;
+  return renderTemplate`${maybeRenderHead()}<nav aria-label="Main menu">
+   <ul class="env-nav env-nav--menubar env-nav--border">
+      ${menuItems.map(({ frontmatter: frontmatter2, url, isCurrentPage }) => renderTemplate`<li class="env-nav__item">
+               <a${addAttribute(url, "href")} class="env-nav__link"${addAttribute(isCurrentPage ? "page" : "false", "aria-current")}>
+                  ${frontmatter2.title}
+               </a>
+            </li>`)}
+   </ul>
+</nav>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Headernav.astro", void 0);
 
 var __freeze$1 = Object.freeze;
@@ -3597,13 +3662,25 @@ var __defProp$1 = Object.defineProperty;
 var __template$1 = (cooked, raw) => __freeze$1(__defProp$1(cooked, "raw", { value: __freeze$1(cooked.slice()) }));
 var _a$1;
 const $$Themepicker = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<div class="theme-picker"> <label class="theme-picker__label env-assistive-text" for="darkMode">
-Default / Dark mode
-</label> <div class="doc-theme-switch"> <input class="doc-theme-switch__checkbox" type="checkbox" id="darkMode"> <svg aria-hidden="true" class="env-icon doc-theme-switch__moon" width="24" height="24"> <use href="/images/docs-images.svg#moon"></use> </svg> <svg aria-hidden="true" class="env-icon doc-theme-switch__sun" width="24" height="24"> <use href="/images/docs-images.svg#sun"></use> </svg> </div> <script>
+  return renderTemplate(_a$1 || (_a$1 = __template$1(["", `<div class="theme-picker">
+   <label class="theme-picker__label env-assistive-text" for="darkMode">
+      Default / Dark mode
+   </label>
+   <div class="doc-theme-switch">
+      <input class="doc-theme-switch__checkbox" type="checkbox" id="darkMode">
+      <svg aria-hidden="true" class="env-icon doc-theme-switch__moon" width="24" height="24">
+         <use href="/images/docs-images.svg#moon"></use>
+      </svg>
+      <svg aria-hidden="true" class="env-icon doc-theme-switch__sun" width="24" height="24">
+         <use href="/images/docs-images.svg#sun"></use>
+      </svg>
+   </div>
+   <script>
       if (sessionStorage.getItem('colorscheme') === 'doc-dark-mode') {
          document.getElementById('darkMode').checked = true;
       }
-   <\/script> </div>`])), maybeRenderHead());
+   <\/script>
+</div>`])), maybeRenderHead());
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Themepicker.astro", void 0);
 
 const $$Astro$5 = createAstro();
@@ -3611,9 +3688,27 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Header;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<header class="header"> <a href="#content" class="doc-skip-link"> Skip to main content </a> <div class="container"> <a class="logo" href="/"> <span class="env-assistive-text">To start page</span> <svg class="env-icon doc-svg-logo" aria-hidden="true"> <use href="/images/docs-logo.svg#logo"></use> </svg> </a> ${renderComponent($$result, "Headernav", $$Headernav, { "frontmatter": frontmatter })} ${renderComponent($$result, "Themepicker", $$Themepicker, {})} <div class="mobile-nav-button"> <button class="env-button env-button--link env-button--icon"> <svg class="env-icon env-icon--xx-small"> <use href="/sitevision/envision-icons.svg#icon-menu-line"></use> </svg>
-Menu
-</button> </div> </div> </header>`;
+  return renderTemplate`${maybeRenderHead()}<header class="header">
+   <a href="#content" class="doc-skip-link"> Skip to main content </a>
+   <div class="container">
+      <a class="logo" href="/">
+         <span class="env-assistive-text">To start page</span>
+         <svg class="env-icon doc-svg-logo" aria-hidden="true">
+            <use href="/images/docs-logo.svg#logo"></use>
+         </svg>
+      </a>
+      ${renderComponent($$result, "Headernav", $$Headernav, { "frontmatter": frontmatter })}
+      ${renderComponent($$result, "Themepicker", $$Themepicker, {})}
+      <div class="mobile-nav-button">
+         <button class="env-button env-button--link env-button--icon">
+            <svg class="env-icon env-icon--xx-small">
+               <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
+            </svg>
+            Menu
+         </button>
+      </div>
+   </div>
+</header>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Header.astro", void 0);
 
 const $$Astro$4 = createAstro();
@@ -3627,20 +3722,37 @@ const $$Banner = createComponent(($$result, $$props, $$slots) => {
   } else if (frontmatter.beta) {
     bannerType = "beta";
   }
-  return renderTemplate`${bannerType && renderTemplate`${maybeRenderHead()}<section role="status"${addAttribute(`banner banner--${bannerType}`, "class")}>${bannerType === "deprecated" && renderTemplate`<div class="container"><div class="icon"><svg class="env-icon env-icon--large"><use href="/images/docs-images.svg#exclamation"></use></svg>
-Deprecated
-</div>
-The documentation you are viewing is for a deprecated version of
+  return renderTemplate`${bannerType && renderTemplate`${maybeRenderHead()}<section role="status"${addAttribute(`banner banner--${bannerType}`, "class")}>
+         ${bannerType === "deprecated" && renderTemplate`<div class="container">
+               <div class="icon">
+                  <svg class="env-icon env-icon--large">
+                     <use href="/images/docs-images.svg#exclamation"></use>
+                  </svg>
+                  Deprecated
+               </div>
+               The documentation you are viewing is for a deprecated version of
                an Envision component.
-</div>`}${bannerType === "beta" && renderTemplate`<div class="container"><div class="icon"><svg class="env-icon env-icon--large"><use href="/images/docs-images.svg#under-construction"></use></svg>
-Beta
-</div>
-The documentation you are viewing is for a beta version of an
+            </div>`}
+         ${bannerType === "beta" && renderTemplate`<div class="container">
+               <div class="icon">
+                  <svg class="env-icon env-icon--large">
+                     <use href="/images/docs-images.svg#under-construction"></use>
+                  </svg>
+                  Beta
+               </div>
+               The documentation you are viewing is for a beta version of an
                Envision component. It is stable but may be subject to change.
-</div>`}${bannerType === "since" && renderTemplate`<div class="container"><div class="icon"><svg class="env-icon env-icon--large"><use href="/images/docs-images.svg#exclamation"></use></svg>
-Since ${frontmatter.since}</div>
-This component was recently added to Envision.
-</div>`}</section>`}`;
+            </div>`}
+         ${bannerType === "since" && renderTemplate`<div class="container">
+               <div class="icon">
+                  <svg class="env-icon env-icon--large">
+                     <use href="/images/docs-images.svg#exclamation"></use>
+                  </svg>
+                  Since ${frontmatter.since}
+               </div>
+               This component was recently added to Envision.
+            </div>`}
+      </section>`}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Banner.astro", void 0);
 
 const $$Footer = createComponent(($$result, $$props, $$slots) => {
@@ -3678,7 +3790,44 @@ const $$Footer = createComponent(($$result, $$props, $$slots) => {
       url: "https://www.sitevision.se/en/startpage/sitevision/pressroom"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<footer class="footer"> <div class="container"> <nav aria-label="Footer menu" class="footer-nav"> <div class="footer-nav-col"> <a class="logo" href="/"> <span class="env-assistive-text"> To start page </span> <svg class="env-icon doc-svg-logo" aria-hidden="true"> <use href="/images/docs-logo.svg#logo"></use> </svg> </a> </div> <div class="footer-nav-col"> <h2 class="footer-nav-col__header">Envision</h2> <ul class="env-list"> ${envisionMenuItems.map(({ text, url }) => renderTemplate`<li> <a${addAttribute(url, "href")}>${text}</a> </li>`)} </ul> </div> <div class="footer-nav-col"> <h2 class="footer-nav-col__header">Developer</h2> <ul class="env-list"> ${developerMenuItems.map(({ text, url }) => renderTemplate`<li class="env-nav__item env-m-vertical--medium"> <a${addAttribute(url, "href")}>${text}</a> </li>`)} </ul> </div> <div class="footer-nav-col"> <h2 class="footer-nav-col__header">Sitevision</h2> <ul class="env-list"> ${sitevisionMenuItems.map(({ text, url }) => renderTemplate`<li class="env-nav__item env-m-vertical--medium"> <a${addAttribute(url, "href")}>${text}</a> </li>`)} </ul> </div> </nav> </div> </footer>`;
+  return renderTemplate`${maybeRenderHead()}<footer class="footer">
+   <div class="container">
+      <nav aria-label="Footer menu" class="footer-nav">
+         <div class="footer-nav-col">
+            <a class="logo" href="/">
+               <span class="env-assistive-text"> To start page </span>
+               <svg class="env-icon doc-svg-logo" aria-hidden="true">
+                  <use href="/images/docs-logo.svg#logo"></use>
+               </svg>
+            </a>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Envision</h2>
+            <ul class="env-list">
+               ${envisionMenuItems.map(({ text, url }) => renderTemplate`<li>
+                        <a${addAttribute(url, "href")}>${text}</a>
+                     </li>`)}
+            </ul>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Developer</h2>
+            <ul class="env-list">
+               ${developerMenuItems.map(({ text, url }) => renderTemplate`<li class="env-nav__item env-m-vertical--medium">
+                        <a${addAttribute(url, "href")}>${text}</a>
+                     </li>`)}
+            </ul>
+         </div>
+         <div class="footer-nav-col">
+            <h2 class="footer-nav-col__header">Sitevision</h2>
+            <ul class="env-list">
+               ${sitevisionMenuItems.map(({ text, url }) => renderTemplate`<li class="env-nav__item env-m-vertical--medium">
+                        <a${addAttribute(url, "href")}>${text}</a>
+                     </li>`)}
+            </ul>
+         </div>
+      </nav>
+   </div>
+</footer>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Footer.astro", void 0);
 
 const $$Astro$3 = createAstro();
@@ -3687,17 +3836,52 @@ const $$Mobilenav = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Mobilenav;
   const { frontmatter } = Astro2.props;
   const menuItems = getMobileMenuItems(frontmatter);
-  return renderTemplate`${maybeRenderHead()}<dialog class="mobileNav"> <div class="mobileNav__header"> <h2 class="env-ui-text-sectionheading">Envision documentation</h2> <button class="mobileNav__close env-button env-button--icon env-button--icon-small"> <span class="env-assistive-text">Close</span> <svg class="env-icon env-icon--medium" aria-hidden="true"> <use href="/sitevision/envision-icons.svg#icon-delete"></use> </svg> </button> </div> <nav aria-label="Mobile main menu"> <ul class="env-nav env-nav--sidenav"> ${menuItems.top.map((item, key) => renderTemplate`<li class="env-nav__item env-nav__item--hasChildren"> <a${addAttribute(item.url, "href")} class="env-nav__link level-1"${addAttribute(item.isCurrentPage ? "page" : "false", "aria-current")}> ${item.frontmatter.title} </a> <a role="button" class="env-button env-button--icon env-button--link env-button--icon-small"${addAttribute(`#mobile-submenu-${item.slug}`, "href")} data-env-collapse=""${addAttribute(
+  return renderTemplate`${maybeRenderHead()}<dialog class="mobileNav">
+   <div class="mobileNav__header">
+      <h2 class="env-ui-text-sectionheading">Envision documentation</h2>
+      <button class="mobileNav__close env-button env-button--icon env-button--icon-small">
+         <span class="env-assistive-text">Close</span>
+         <svg class="env-icon env-icon--medium" aria-hidden="true">
+            <use href="/sitevision/envision-icons.svg#icon-delete"></use>
+         </svg>
+      </button>
+   </div>
+   <nav aria-label="Mobile main menu">
+      <ul class="env-nav env-nav--sidenav">
+         ${menuItems.top.map((item, key) => renderTemplate`<li class="env-nav__item env-nav__item--hasChildren">
+                  <a${addAttribute(item.url, "href")} class="env-nav__link level-1"${addAttribute(item.isCurrentPage ? "page" : "false", "aria-current")}>
+                     ${item.frontmatter.title}
+                  </a>
+                  <a role="button" class="env-button env-button--icon env-button--link env-button--icon-small"${addAttribute(`#mobile-submenu-${item.slug}`, "href")} data-env-collapse=""${addAttribute(
     item.isCurrentPage || item.hasCurrentPage ? "true" : "false",
     "aria-expanded"
-  )}${addAttribute(`mobile-submenu-${item.slug}`, "aria-controls")}> <span class="env-assistive-text">
-Toggle navigation for ${item.frontmatter.title} </span> <svg class="env-icon" aria-hidden="true"> <use href="/sitevision/envision-icons.svg#icon-angle-down"></use> </svg> </a> <ul${addAttribute(`env-collapse env-nav env-nav--sidenav ${item.isCurrentPage || item.hasCurrentPage ? " env-collapse--show" : ""}`, "class")}${addAttribute(`mobile-submenu-${item.slug}`, "id")}> ${menuItems.children[item.slug].map(
-    ({ frontmatter: frontmatter2, url, isCurrentPage }) => renderTemplate`<li class="env-nav__item"> <a${addAttribute(url, "href")}${addAttribute(isCurrentPage ? "page" : "false", "aria-current")} class="env-nav__link level-2"> ${frontmatter2.title} ${frontmatter2.deprecated && renderTemplate`<span class="doc-badge doc-badge--danger">
-Deprecated
-</span>`} ${frontmatter2.new && renderTemplate`<span class="doc-badge doc-badge--success">
-New
-</span>`} </a> </li>`
-  )} </ul> </li>`)} </ul> </nav> </dialog>`;
+  )}${addAttribute(`mobile-submenu-${item.slug}`, "aria-controls")}>
+                     <span class="env-assistive-text">
+                        Toggle navigation for ${item.frontmatter.title}
+                     </span>
+                     <svg class="env-icon" aria-hidden="true">
+                        <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+                     </svg>
+                  </a>
+                  <ul${addAttribute(`env-collapse env-nav env-nav--sidenav ${item.isCurrentPage || item.hasCurrentPage ? " env-collapse--show" : ""}`, "class")}${addAttribute(`mobile-submenu-${item.slug}`, "id")}>
+                     ${menuItems.children[item.slug].map(
+    ({ frontmatter: frontmatter2, url, isCurrentPage }) => renderTemplate`<li class="env-nav__item">
+                              <a${addAttribute(url, "href")}${addAttribute(isCurrentPage ? "page" : "false", "aria-current")} class="env-nav__link level-2">
+                                 ${frontmatter2.title}
+                                 ${frontmatter2.deprecated && renderTemplate`<span class="doc-badge doc-badge--danger">
+                                       Deprecated
+                                    </span>`}
+                                 ${frontmatter2.new && renderTemplate`<span class="doc-badge doc-badge--success">
+                                       New
+                                    </span>`}
+                              </a>
+                           </li>`
+  )}
+                  </ul>
+               </li>`)}
+      </ul>
+   </nav>
+</dialog>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Mobilenav.astro", void 0);
 
 const $$DashboardScript = createComponent(($$result, $$props, $$slots) => {
@@ -3714,8 +3898,22 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Master;
   const { frontmatter } = Astro2.props;
   const title = frontmatter.title;
-  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="utf-8">', "<title>\n         ", '\n      </title><meta name="viewport" content="width=device-width, initial-scale=1">', "<script>\n         ((win, docEl, key) => {\n            const st = win.sessionStorage;\n            const pref = st.getItem(key);\n            let cls;\n            if (pref) {\n               cls = pref;\n            } else {\n               cls = win.matchMedia('(prefers-color-scheme: dark)').matches\n                  ? 'doc-dark-mode'\n                  : 'doc-light-mode';\n               st.setItem(key, cls);\n            }\n            docEl.classList.add(cls);\n         })(window, document.documentElement, 'colorscheme');\n      <\/script>", '<meta name="generator"', "", '><script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script><script src="../../dist/envision.js"><\/script><!-- Additional head elements -->', '</head> <body> <div class="layout"> ', " ", " ", " ", " ", " ", " </div> ", " ", " ", " ", " ", " </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, renderComponent($$result, "Favicon", $$Favicon, {}), addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), renderHead(), renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate` <div class="body"> <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}> <div class="content-wrapper"> ${title && renderTemplate`<h1 class="doc-main-heading"> ${title} ${frontmatter.since && renderTemplate`<span class="doc-badge doc-badge--info">
-Since ${frontmatter.since} </span>`} </h1>`} ${renderSlot($$result, $$slots["default"])} </div> </main> ${renderSlot($$result, $$slots["sidenav"])} </div> `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
+  return renderTemplate(_a || (_a = __template(['<html lang="en">\n   <head>\n      <meta charset="utf-8">\n      ', "\n      <title>\n         ", '\n      </title>\n      <meta name="viewport" content="width=device-width, initial-scale=1">\n      ', "\n      <script>\n         ((win, docEl, key) => {\n            const st = win.sessionStorage;\n            const pref = st.getItem(key);\n            let cls;\n            if (pref) {\n               cls = pref;\n            } else {\n               cls = win.matchMedia('(prefers-color-scheme: dark)').matches\n                  ? 'doc-dark-mode'\n                  : 'doc-light-mode';\n               st.setItem(key, cls);\n            }\n            docEl.classList.add(cls);\n         })(window, document.documentElement, 'colorscheme');\n      <\/script>\n      ", '\n      <meta name="generator"', "", '>\n      <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script>\n      <script src="../../dist/envision.js"><\/script>\n      <!-- Additional head elements -->\n   ', '</head>\n   <body>\n      <div class="layout">\n         ', "\n         ", "\n         ", "\n         ", "\n         ", "\n         ", "\n      </div>\n      ", "\n      ", "\n      ", "\n      ", "\n      ", "\n   </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, renderComponent($$result, "Favicon", $$Favicon, {}), addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), renderHead(), renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate`
+            <div class="body">
+               <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}>
+                  <div class="content-wrapper">
+                     ${title && renderTemplate`<h1 class="doc-main-heading">
+                              ${title}
+                              ${frontmatter.since && renderTemplate`<span class="doc-badge doc-badge--info">
+                                    Since ${frontmatter.since}
+                                 </span>`}
+                           </h1>`}
+                     ${renderSlot($$result, $$slots["default"])}
+                  </div>
+               </main>
+               ${renderSlot($$result, $$slots["sidenav"])}
+            </div>
+         `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro", void 0);
 
 const $$Astro$1 = createAstro();
@@ -3723,7 +3921,15 @@ const $$Icons = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Icons;
   const { icons } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="icons-demo"> <ul class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6"> ${icons.map((icon) => renderTemplate`<li class="env-list__item"${addAttribute(icon, "title")}> <svg class="env-icon"> <use${addAttribute(`/sitevision/envision-icons.svg#${icon}`, "href")}></use> </svg> </li>`)} </ul> </div>`;
+  return renderTemplate`${maybeRenderHead()}<div class="icons-demo">
+   <ul class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
+      ${icons.map((icon) => renderTemplate`<li class="env-list__item"${addAttribute(icon, "title")}>
+               <svg class="env-icon">
+                  <use${addAttribute(`/sitevision/envision-icons.svg#${icon}`, "href")}></use>
+               </svg>
+            </li>`)}
+   </ul>
+</div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Icons.astro", void 0);
 
 const $$Astro = createAstro();
@@ -3731,7 +3937,9 @@ const $$Default = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Default;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${renderSlot($$result2, $$slots["default"])}  `, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
+  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${renderSlot($$result2, $$slots["default"])}
+   
+`, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/Default.astro", void 0);
 
 const html = () => "<p class=\"doc-p\">There are a few general colors that are used for\nlarger sections or less defined parts of components.\nFor example, <code class=\"doc-code\">--env-section-background-color</code>\nis used as background color for Modal dialogs.</p>\n<ul class=\"doc-list\">\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-background-color</code> - Theme/body background color</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-section-background-color</code> - Used for larger content sections.</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-section-background-color-05</code> <span class=\"doc-badge doc-badge--info\">2025.03.1</span></li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-font-color</code> - Base text color</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-link-font-color</code> - Base link color</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-link-hover-font-color</code> - Base link:hover color</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-border-color</code> - Base border color</li>\n<li class=\"doc-list__item\"><code class=\"doc-code\">--env-border-color-05</code> - Alternative border color <span class=\"doc-badge doc-badge--info\">2025.03.1</span></li>\n</ul>\n<p class=\"doc-p\"><code class=\"doc-code\">--env-section-background-color-05</code> is calculated from <code class=\"doc-code\">--env-section-background-color</code>.</p>\n<p class=\"doc-p\"><code class=\"doc-code\">--env-border-color-05</code> is calculated from <code class=\"doc-code\">--env-border-color</code>.</p>\n<h2 class=\"doc-heading-2\" id=\"accessibility\">Accessibility</h2>\n<p class=\"doc-p\">Font and link colors should have at least a 4.5:1 contrast ratio on <code class=\"doc-code\">--env-background-color</code> and <code class=\"doc-code\">--env-section-background-color</code>.</p>\n<p class=\"doc-p\">Depending on design and usage, it´s recommended to try to get at least a 4.5:1 contrast ratio on <code class=\"doc-code\">--env-section-background-color-05</code> as well.</p>\n<h2 class=\"doc-heading-2\" id=\"examples\">Examples</h2>\n<p class=\"doc-p\"><code class=\"doc-code\">--env-background-color</code> is used outside the centered boxes.</p>\n<div class=\"doc-code-example\"><div class=\"example-fill example-basic-colors env-p-around--xx-large\">\n   <div class=\"env-ui-section env-border env-border--05 env-p-around--large env-m-bottom--large\">\n      <div class=\"env-text\">\n         Base text on section background with a border 05 and\n         <a href=\"javascript:void(0)\" class=\"env-link\">a link</a>.\n      </div>\n   </div>\n   <div class=\"env-ui-section-05 env-border env-p-around--large\">\n      <div class=\"env-text\">\n         Base text on section background 05, standard border and\n         <a href=\"javascript:void(0)\" class=\"env-link\">a link</a>.\n      </div>\n   </div>\n</div></div>\n<!--sv-no-index--><div class=\"doc-code-block doc-code-block--expandable\">\n<pre class=\"language-html\" data-language=\"html\"><code is:raw=\"\" class=\"language-html\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>example-fill example-basic-colors  env-p-around--xx-large<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>\n   <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>div</span>\n      <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-ui-section env-border env-border--05 env-p-around--large env-m-bottom--large<span class=\"token punctuation\">\"</span></span>\n   <span class=\"token punctuation\">></span></span>\n      <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-text<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>\n         Base text on section background with a border 05 and\n         <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>a</span> <span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>javascript:void(0)<span class=\"token punctuation\">\"</span></span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-link<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>a link<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>a</span><span class=\"token punctuation\">></span></span>.\n      <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>div</span><span class=\"token punctuation\">></span></span>\n   <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>div</span><span class=\"token punctuation\">></span></span>\n   <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-ui-section-05 env-border env-p-around--large<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>\n      <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-text<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>\n         Base text on section background 05, standard border and\n         <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;</span>a</span> <span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>javascript:void(0)<span class=\"token punctuation\">\"</span></span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation attr-equals\">=</span><span class=\"token punctuation\">\"</span>env-link<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>a link<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>a</span><span class=\"token punctuation\">></span></span>.\n      <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>div</span><span class=\"token punctuation\">></span></span>\n   <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&#x3C;/</span>div</span><span class=\"token punctuation\">></span></span>\n</code></pre>\n</div><!--/sv-no-index-->\n<h2 class=\"doc-heading-2\" id=\"legacy-colors-deprecated\">Legacy colors <span class=\"doc-badge doc-badge--danger\">Deprecated</span></h2>\n<p class=\"doc-p\">The following colors are deprecated and will be removed.</p>\n<ul class=\"doc-list\">\n<li class=\"doc-list__item\">env-bg-color—brand</li>\n<li class=\"doc-list__item\">env-bg-color—success</li>\n<li class=\"doc-list__item\">env-bg-color—info</li>\n<li class=\"doc-list__item\">env-bg-color—warning</li>\n<li class=\"doc-list__item\">env-bg-color—danger</li>\n<li class=\"doc-list__item\">env-bg-color—hover</li>\n<li class=\"doc-list__item\">env-bg-color—base</li>\n<li class=\"doc-list__item\">env-bg-color—darker</li>\n<li class=\"doc-list__item\">env-bg-color—dark</li>\n<li class=\"doc-list__item\">env-bg-color—normal</li>\n<li class=\"doc-list__item\">env-bg-color—light</li>\n<li class=\"doc-list__item\">env-bg-color—lighter</li>\n<li class=\"doc-list__item\">env-bg-color—lightest</li>\n<li class=\"doc-list__item\">env-color—brand</li>\n<li class=\"doc-list__item\">env-color—success</li>\n<li class=\"doc-list__item\">env-color—info</li>\n<li class=\"doc-list__item\">env-color—warning</li>\n<li class=\"doc-list__item\">env-color—danger</li>\n<li class=\"doc-list__item\">env-color—hover</li>\n<li class=\"doc-list__item\">env-color—base</li>\n<li class=\"doc-list__item\">env-color—darker</li>\n<li class=\"doc-list__item\">env-color—dark</li>\n<li class=\"doc-list__item\">env-color—normal</li>\n<li class=\"doc-list__item\">env-color—light</li>\n<li class=\"doc-list__item\">env-color—lighter</li>\n<li class=\"doc-list__item\">env-color—lightest</li>\n<li class=\"doc-list__item\">env-border-color-light <span class=\"doc-badge doc-badge--danger\">2025.03.1</span></li>\n</ul>";
