@@ -22,11 +22,22 @@ const title = frontmatter.title;
 <html lang="en">
    <head>
       <meta charset="utf-8" />
+      {
+         frontmatter.indexing === false && (
+            <meta name="robots" content="noindex" />
+         )
+      }
       <title>
          {
             `${title ? title : ''}${title ? ' \u00B7 ' : ''}Envision by Sitevision`
          }
       </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      {
+         frontmatter.description && (
+            <meta name="description" content={frontmatter.description} />
+         )
+      }
       <script is:inline>
          ((win, docEl, key) => {
             const st = win.sessionStorage;
@@ -43,29 +54,23 @@ const title = frontmatter.title;
             docEl.classList.add(cls);
          })(window, document.documentElement, 'colorscheme');
       </script>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link
          rel="icon"
          type="image/png"
-         href="/images/envision_logo.webp"
+         href="/images/favicon/favicon-32x32.png"
          sizes="32x32"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         href="/images/favicon/favicon-96x96.png"
+         sizes="96x96"
       />
       <meta
          name="generator"
          data-template={frontmatter.template}
          content={Astro.generator}
       />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {
-         frontmatter.description && (
-            <meta name="description" content={frontmatter.description} />
-         )
-      }
-      {
-         frontmatter.indexing === false && (
-            <meta name="robots" content="noindex" />
-         )
-      }
       <script
          is:inline
          src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
