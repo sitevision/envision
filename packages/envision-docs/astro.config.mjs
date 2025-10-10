@@ -41,7 +41,8 @@ export default defineConfig({
    output: 'static',
    compressHTML: true,
    build: {
-      inlineStylesheets: `never`,
+      inlineStylesheets: 'never',
+      assets: 'assets',
    },
    server: {
       port: 8000,
