@@ -1,4 +1,5 @@
 ---
+import Favicon from '../templates/components/Favicon.astro';
 import '../../../envision/src/scss/base.scss';
 import '../assets/scss/docs.scss';
 ---
@@ -10,18 +11,7 @@ import '../assets/scss/docs.scss';
       <meta name="robots" content="noindex" />
       <title>404 - Not Found</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link
-         rel="icon"
-         type="image/png"
-         href="/images/favicon/favicon-32x32.png"
-         sizes="32x32"
-      />
-      <link
-         rel="icon"
-         type="image/png"
-         href="/images/favicon/favicon-96x96.png"
-         sizes="96x96"
-      />
+      <Favicon />
    </head>
    <body>
       <div class="env-p-around--large">
