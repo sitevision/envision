@@ -2,6 +2,7 @@
 title: Form elements
 description: Form elements structures user inputs with labels, controls, and consistent spacing.
 since: 2024.07.1
+new: true
 ---
 
 Form classes and markup was updated in 2024.07.1.

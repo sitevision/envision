@@ -1,0 +1,118 @@
+@use 'variables';
+
+.doc-skip-link {
+   box-sizing: border-box;
+   display: block;
+   position: fixed;
+   z-index: 2147483647;
+   top: 1em;
+   padding: 1em;
+   @include variables.focus-visible;
+   transition: transform 0.05s;
+   left: 1em;
+   transform: translate(0, calc(-100% - 3em));
+   font-family: var(--env-tooltip-font-family);
+   background-color: var(--env-tooltip-background-color);
+   color: var(--env-tooltip-font-color);
+   font-weight: var(--env-tooltip-font-weight);
+   border-radius: var(--env-tooltip-border-radius);
+
+   &:focus-visible {
+      transform: translate(0, 0);
+   }
+}
+
+.header {
+   --env-font-color: var(--doc-header-font-color);
+   color: var(--doc-header-font-color);
+   background-color: var(--doc-header-background-color);
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 10000;
+
+   .container {
+      position: relative;
+      display: flex;
+      padding: variables.$site-padding;
+      height: 68px;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .logo {
+      display: block;
+
+      @include variables.focus-visible;
+      color: var(--doc-header-font-color);
+   }
+
+   nav {
+      display: none;
+
+      @include variables.header-layout-break {
+         flex: 1;
+         display: block;
+         padding: 0 1em;
+      }
+   }
+
+   .mobile-nav-button {
+      visibility: visible;
+
+      @include variables.header-layout-break {
+         visibility: hidden;
+      }
+   }
+
+   .env-nav--menubar {
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+   }
+
+   .env-nav__link {
+      font-family: Inter;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--doc-header-font-color);
+      line-height: 1.2;
+      text-align: left;
+      padding: var(--env-spacing-x-small) 0;
+      @include variables.focus-visible;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+         color: var(--doc-header-font-color) !important;
+         border-bottom-color: var(--doc-color-brand) !important;
+      }
+
+      &[aria-current='page'] {
+         border-bottom-color: var(--doc-color-brand) !important;
+         color: var(--doc-header-font-color) !important;
+      }
+   }
+
+   .theme-picker {
+      position: absolute;
+      top: 50%;
+      right: calc(#{variables.$site-padding} + 0.5em + 2.75em);
+      margin: 0;
+      padding: 0 0 0 1em;
+      transform: translateY(-50%);
+
+      @include variables.header-layout-break {
+         right: variables.$site-padding;
+      }
+
+      &__label {
+         text-transform: uppercase;
+         font-size: 9px;
+         margin: 0 0 4px;
+
+         @include variables.header-layout-break {
+            display: block;
+         }
+      }
+   }
+}

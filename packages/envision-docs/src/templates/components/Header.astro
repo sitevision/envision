@@ -1,0 +1,27 @@
+---
+import Headernav from './Headernav.astro';
+import Themepicker from './Themepicker.astro';
+const { frontmatter } = Astro.props;
+---
+
+<header class="header">
+   <a href="#content" class="doc-skip-link"> Skip to main content </a>
+   <div class="container">
+      <a class="logo" href="/">
+         <span class="env-assistive-text">To start page</span>
+         <svg class="env-icon doc-svg-logo" aria-hidden="true">
+            <use href="/images/docs-logo.svg#logo"></use>
+         </svg>
+      </a>
+      <Headernav frontmatter={frontmatter} />
+      <Themepicker />
+      <div class="mobile-nav-button">
+         <button class="env-button env-button--link env-button--icon">
+            <svg class="env-icon env-icon--xx-small">
+               <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
+            </svg>
+            Menu
+         </button>
+      </div>
+   </div>
+</header>
