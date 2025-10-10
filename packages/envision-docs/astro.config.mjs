@@ -41,17 +41,24 @@ export default defineConfig({
    trailingSlash: 'always',
    redirects: redirects,
    output: 'static',
-   compressHTML: true,
+   compressHTML: false,
    build: {
       inlineStylesheets: 'never',
       assets: ASSETS_FOLDER,
    },
-   server: {
-      port: 8000,
-   },
-   devToolbar: {
-      enabled: false,
-   },
+   integrations: [
+      (await import('astro-compress')).default({
+         CSS: false,
+         HTML: {
+            'html-minifier-terser': {
+               removeAttributeQuotes: false,
+            },
+         },
+         Image: false,
+         JavaScript: false,
+         SVG: false,
+      }),
+   ],
    markdown: {
       syntaxHighlight: 'prism',
       remarkPlugins: [
@@ -71,5 +78,11 @@ export default defineConfig({
             },
          },
       },
+   },
+   server: {
+      port: 8000,
+   },
+   devToolbar: {
+      enabled: false,
    },
 });
