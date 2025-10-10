@@ -1,5 +1,6 @@
 ---
 template: startpage
+description: Envision by Sitevision — an open-source CSS and component framework for Sitevision developers. Build modern, responsive UIs faster and easier.
 ---
 
 ## How to get started
