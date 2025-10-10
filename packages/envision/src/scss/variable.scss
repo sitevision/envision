@@ -271,7 +271,7 @@ $UI_TEXT_NAMES:
       'ui-text-subheading-text-transform': none,
       'ui-text-subheading-letter-spacing': normal,
       'ui-text-caption-font-family': var(--env-font-family),
-      'ui-text-caption-font-color': rgba($font-color, 0.65),
+      'ui-text-caption-font-color': var(--env-font-color),
       'ui-text-caption-font-size': 0.875em,
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
