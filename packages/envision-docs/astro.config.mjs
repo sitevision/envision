@@ -9,6 +9,8 @@ import path from 'path';
 import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const ASSETS_FOLDER = 'assets';
+
 const watchEnvisionJS = () => ({
    /**
     * @param {import('vite').ViteDevServer} server
@@ -42,7 +44,7 @@ export default defineConfig({
    compressHTML: true,
    build: {
       inlineStylesheets: 'never',
-      assets: 'assets',
+      assets: ASSETS_FOLDER,
    },
    server: {
       port: 8000,
@@ -63,10 +65,9 @@ export default defineConfig({
       build: {
          rollupOptions: {
             output: {
-               assetFileNames: (asset) =>
-                  asset?.names[0]?.endsWith('.css')
-                     ? `_astro/docs.[hash][extname]`
-                     : `_astro/docs.[name].[hash][extname]`,
+               entryFileNames: `${ASSETS_FOLDER}/docs.[hash].js`,
+               chunkFileNames: `${ASSETS_FOLDER}/docs.chunk.[hash].js`,
+               assetFileNames: `${ASSETS_FOLDER}/docs.[hash][extname]`,
             },
          },
       },
