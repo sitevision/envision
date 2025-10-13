@@ -1,3 +1,3 @@
 import 'kleur/colors';
-import './docs.chunk.BT_-Ioqz.js';
+import './docs.chunk.D50Du_kc.js';
 import 'clsx';

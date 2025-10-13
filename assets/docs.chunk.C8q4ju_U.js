@@ -1,9 +1,9 @@
-import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.BT_-Ioqz.js';
+import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.D50Du_kc.js';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                    */
 /* empty css                    */
-import { $ as $$Favicon } from './docs.chunk.BrJ3CyrU.js';
+import { $ as $$Favicon } from './docs.chunk.Mkjgy7OE.js';
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,

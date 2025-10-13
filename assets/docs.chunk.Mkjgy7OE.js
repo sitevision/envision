@@ -1,4 +1,4 @@
-import { c as createComponent, b as renderTemplate } from './docs.chunk.BT_-Ioqz.js';
+import { c as createComponent, b as renderTemplate } from './docs.chunk.D50Du_kc.js';
 import 'kleur/colors';
 import 'clsx';
 
