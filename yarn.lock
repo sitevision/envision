@@ -3144,9 +3144,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^5.14.4":
-  version: 5.14.4
-  resolution: "astro@npm:5.14.4"
+"astro@npm:^5.14.6":
+  version: 5.14.6
+  resolution: "astro@npm:5.14.6"
   dependencies:
     "@astrojs/compiler": "npm:^2.12.2"
     "@astrojs/internal-helpers": "npm:0.7.4"
@@ -3216,7 +3216,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/f75e969db6bfed9ed0abae14543c239adcbf70ee2df344c7952ae307ad18b7048ee6521f32f3d0173dbb30b4b00ced7227864fd80349cd0fd5c0e8a052d64d48
+  checksum: 10c0/dc3359bc8c25867011469b3f34b806491ae033919410a37c17b815de5c2bb4a869ba203891d640a4da4a4b8b6a39e18902b91f8e896618cb2cfc30262b815953
   languageName: node
   linkType: hard
 
@@ -4440,7 +4440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "envision-docs@workspace:packages/envision-docs"
   dependencies:
-    astro: "npm:^5.14.4"
+    astro: "npm:^5.14.6"
     astro-compress: "npm:^2.3.8"
   languageName: unknown
   linkType: soft
