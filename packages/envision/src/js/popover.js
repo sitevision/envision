@@ -125,8 +125,10 @@ class Popover {
       }
    }
 
+   /**
+    * When the focus trap after trigger element is focused, move focus to the first focusable element in the popover
+    */
    handleTriggerFocusTrap() {
-      // When the focus trap after trigger is focused, move focus to the first element in popover
       const popoverElement = this.getPopoverElement();
       const [popoverFocusTrapElementStart, popoverFocusTrapElementEnd] =
          this.getPopoverFocusTrapElements();
@@ -146,8 +148,10 @@ class Popover {
       this.el.focus();
    }
 
+   /**
+    * When the focus trap at end of popover is focused, move focus to the next element after the trigger
+    */
    handlePopoverFocusTrapEnd() {
-      // When the focus trap at end of popover is focused, move focus to the next element after the trigger
       const focusableElements = this.getFocusableElements(document).filter(
          (el) =>
             !el.closest(`.${POPOVER_CLASSNAME}`) &&
@@ -342,7 +346,6 @@ class Popover {
       const popoverElement = this.getPopoverElement();
       this.el.removeAttribute('aria-describedby');
 
-      // Remove focus trap after trigger
       if (
          this.triggerFocusTrapElement &&
          this.triggerFocusTrapElement.parentNode
@@ -366,7 +369,6 @@ class Popover {
          this.getPopoverFocusTrapElements();
       this.el.setAttribute('aria-describedby', this.popoverElement.id);
 
-      // Insert focus trap after trigger element
       const triggerFocusTrapElement = this.createTriggerFocusTrapElement();
       if (this.el.nextSibling) {
          this.el.parentNode.insertBefore(
