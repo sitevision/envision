@@ -360,14 +360,9 @@ class Popover {
          this.getPopoverFocusTrapElements();
       this.el.setAttribute('aria-describedby', this.popoverElement.id);
 
-      const triggerFocusTrapElement = this.createTriggerFocusTrapElement();
-      if (this.el.nextSibling) {
-         this.el.parentNode.insertBefore(
-            triggerFocusTrapElement,
-            this.el.nextSibling
-         );
-      } else {
-         this.el.parentNode.appendChild(triggerFocusTrapElement);
+      if (this.getFocusableElements(popoverElement).length > 0) {
+         const triggerFocusTrapElement = this.createTriggerFocusTrapElement();
+         this.el.after(triggerFocusTrapElement);
       }
 
       document.body.appendChild(popoverElement);
