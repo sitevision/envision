@@ -31,11 +31,13 @@ const DEFAULTS = {
       containerModifier,
       contentClassName
    ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="tooltip">
+   <span class="env-assistive-text" tabindex="0"></span>
    <div class="${ARROW_CLASSNAME}"></div>
    <div class="${HEADER_CLASSNAME}">
    <h4 class="env-ui-text-sectionheading ${TITLE_CLASSNAME}"></h4>
    </div>
    <div class="${contentClassName}"></div>
+   <span class="env-assistive-text" tabindex="0"></span>
    </div>`,
    title: '',
    trigger: 'click',
@@ -46,7 +48,29 @@ class Popover {
    constructor(element, config) {
       this.el = element;
       this.config = { ...DEFAULTS, ...this.el.dataset, ...config };
+
       this.bindEvents();
+   }
+
+   createTriggerFocusTrapElement() {
+      if (!this.triggerFocusTrapElement) {
+         this.triggerFocusTrapElement = document.createElement('span');
+         this.triggerFocusTrapElement.className = 'env-assistive-text';
+         this.triggerFocusTrapElement.setAttribute('tabindex', '0');
+         this.triggerFocusTrapElement.addEventListener(
+            'focus',
+            this.handleTriggerFocusTrap
+         );
+      }
+      return this.triggerFocusTrapElement;
+   }
+
+   getFocusableElements(element) {
+      return Array.from(
+         element.querySelectorAll(
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+         )
+      );
    }
 
    handleClick() {
@@ -94,6 +118,44 @@ class Popover {
    handleKeyboardEvent(e) {
       if (e.key === 'Escape') {
          this.hide();
+         const popoverElement = this.getPopoverElement();
+         if (popoverElement.contains(e.target)) {
+            setTimeout(() => this.el.focus(), 0);
+         }
+      }
+   }
+
+   handleTriggerFocusTrap() {
+      // When the focus trap after trigger is focused, move focus to the first element in popover
+      const popoverElement = this.getPopoverElement();
+      const [popoverFocusTrapElementStart, popoverFocusTrapElementEnd] =
+         this.getPopoverFocusTrapElements();
+      const focusableElements = this.getFocusableElements(
+         popoverElement
+      ).filter(
+         (element) =>
+            element !== popoverFocusTrapElementStart &&
+            element !== popoverFocusTrapElementEnd
+      );
+      if (focusableElements.length > 0) {
+         focusableElements[0].focus();
+      }
+   }
+
+   handlePopoverFocusTrapStart() {
+      this.el.focus();
+   }
+
+   handlePopoverFocusTrapEnd() {
+      // When the focus trap at end of popover is focused, move focus to the next element after the trigger
+      const focusableElements = this.getFocusableElements(document).filter(
+         (el) =>
+            !el.closest(`.${POPOVER_CLASSNAME}`) &&
+            el !== this.triggerFocusTrapElement
+      );
+      const triggerIndex = focusableElements.indexOf(this.el);
+      if (triggerIndex !== -1 && triggerIndex < focusableElements.length - 1) {
+         focusableElements[triggerIndex + 1].focus();
       }
    }
 
@@ -107,6 +169,11 @@ class Popover {
       this.handlePopoverMouseLeave = this.handlePopoverMouseLeave.bind(this);
       this.clickOutsideHandler = this.clickOutsideHandler.bind(this);
       this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
+      this.handleTriggerFocusTrap = this.handleTriggerFocusTrap.bind(this);
+      this.handlePopoverFocusTrapStart =
+         this.handlePopoverFocusTrapStart.bind(this);
+      this.handlePopoverFocusTrapEnd =
+         this.handlePopoverFocusTrapEnd.bind(this);
 
       triggers.forEach((trigger) => {
          if (trigger === 'click') {
@@ -223,6 +290,13 @@ class Popover {
       return this.popoverElement;
    }
 
+   getPopoverFocusTrapElements() {
+      const popoverElement = this.getPopoverElement();
+      return popoverElement.querySelectorAll(
+         'span.env-assistive-text[tabindex]'
+      );
+   }
+
    setText(popoverElement, className, text) {
       if (this.config.escapeContent) {
          popoverElement.querySelector(`.${className}`).textContent = text;
@@ -267,19 +341,41 @@ class Popover {
    hide() {
       const popoverElement = this.getPopoverElement();
       this.el.removeAttribute('aria-describedby');
+
+      // Remove focus trap after trigger
+      if (
+         this.triggerFocusTrapElement &&
+         this.triggerFocusTrapElement.parentNode
+      ) {
+         this.triggerFocusTrapElement.remove();
+      }
+
       popoverElement.remove();
 
       if (this.config.clickOutside) {
          document.body.removeEventListener('click', this.clickOutsideHandler);
       }
-      document.removeEventListener('keyup', this.handleKeyboardEvent);
+      document.removeEventListener('keydown', this.handleKeyboardEvent);
       this.isShowing = false;
    }
 
    show() {
       this.render();
       const popoverElement = this.getPopoverElement();
+      const [popoverFocusTrapElementStart, popoverFocusTrapElementEnd] =
+         this.getPopoverFocusTrapElements();
       this.el.setAttribute('aria-describedby', this.popoverElement.id);
+
+      // Insert focus trap after trigger element
+      const triggerFocusTrapElement = this.createTriggerFocusTrapElement();
+      if (this.el.nextSibling) {
+         this.el.parentNode.insertBefore(
+            triggerFocusTrapElement,
+            this.el.nextSibling
+         );
+      } else {
+         this.el.parentNode.appendChild(triggerFocusTrapElement);
+      }
 
       document.body.appendChild(popoverElement);
 
@@ -307,7 +403,15 @@ class Popover {
             document.body.addEventListener('click', this.clickOutsideHandler);
          }
 
-         document.addEventListener('keyup', this.handleKeyboardEvent);
+         document.addEventListener('keydown', this.handleKeyboardEvent);
+         popoverFocusTrapElementStart?.addEventListener(
+            'focus',
+            this.handlePopoverFocusTrapStart
+         );
+         popoverFocusTrapElementEnd?.addEventListener(
+            'focus',
+            this.handlePopoverFocusTrapEnd
+         );
 
          this.isShowing = true;
       });
