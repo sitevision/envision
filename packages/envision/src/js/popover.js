@@ -17,6 +17,7 @@ const TITLE_CLASSNAME = 'env-popover__header__title';
 const CONTENT_CLASSNAME = 'env-popover__content';
 const MENU_CLASSNAME = 'env-popover__menu';
 const TOOLTIP_CLASSNAME = 'env-popover--tooltip';
+const FOCUSTRAP_CLASSNAME = 'env-popover__focustrap';
 const ARROW_SIZE = 10;
 
 const DEFAULTS = {
@@ -31,13 +32,13 @@ const DEFAULTS = {
       containerModifier,
       contentClassName
    ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="tooltip">
-   <span class="env-assistive-text" tabindex="0"></span>
+   <span class="env-assistive-text ${FOCUSTRAP_CLASSNAME}" tabindex="0"></span>
    <div class="${ARROW_CLASSNAME}"></div>
    <div class="${HEADER_CLASSNAME}">
    <h4 class="env-ui-text-sectionheading ${TITLE_CLASSNAME}"></h4>
    </div>
    <div class="${contentClassName}"></div>
-   <span class="env-assistive-text" tabindex="0"></span>
+   <span class="env-assistive-text ${FOCUSTRAP_CLASSNAME}" tabindex="0"></span>
    </div>`,
    title: '',
    trigger: 'click',
@@ -68,7 +69,7 @@ class Popover {
    getFocusableElements(element) {
       return Array.from(
          element.querySelectorAll(
-            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            `a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]):not(.${FOCUSTRAP_CLASSNAME})`
          )
       );
    }
@@ -130,15 +131,7 @@ class Popover {
     */
    handleTriggerFocusTrap() {
       const popoverElement = this.getPopoverElement();
-      const [popoverFocusTrapElementStart, popoverFocusTrapElementEnd] =
-         this.getPopoverFocusTrapElements();
-      const focusableElements = this.getFocusableElements(
-         popoverElement
-      ).filter(
-         (element) =>
-            element !== popoverFocusTrapElementStart &&
-            element !== popoverFocusTrapElementEnd
-      );
+      const focusableElements = this.getFocusableElements(popoverElement);
       if (focusableElements.length > 0) {
          focusableElements[0].focus();
       }
@@ -296,9 +289,7 @@ class Popover {
 
    getPopoverFocusTrapElements() {
       const popoverElement = this.getPopoverElement();
-      return popoverElement.querySelectorAll(
-         'span.env-assistive-text[tabindex]'
-      );
+      return popoverElement.querySelectorAll(`.${FOCUSTRAP_CLASSNAME}`);
    }
 
    setText(popoverElement, className, text) {
