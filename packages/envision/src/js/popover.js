@@ -5,7 +5,13 @@
  */
 
 import $ from 'jquery';
-import { getNodes, uniqueId } from './util/nodes';
+import {
+   getNodes,
+   uniqueId,
+   getFocusable,
+   getNextFocusable,
+   isFollowing,
+} from './util/nodes';
 import { getPopper } from './util/popper';
 import Util from './util/util';
 
@@ -17,7 +23,6 @@ const TITLE_CLASSNAME = 'env-popover__header__title';
 const CONTENT_CLASSNAME = 'env-popover__content';
 const MENU_CLASSNAME = 'env-popover__menu';
 const TOOLTIP_CLASSNAME = 'env-popover--tooltip';
-const FOCUSTRAP_CLASSNAME = 'env-popover__focustrap';
 const ARROW_SIZE = 10;
 
 const DEFAULTS = {
@@ -32,13 +37,11 @@ const DEFAULTS = {
       containerModifier,
       contentClassName
    ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="tooltip">
-   <span class="env-assistive-text ${FOCUSTRAP_CLASSNAME}" tabindex="0"></span>
    <div class="${ARROW_CLASSNAME}"></div>
    <div class="${HEADER_CLASSNAME}">
    <h4 class="env-ui-text-sectionheading ${TITLE_CLASSNAME}"></h4>
    </div>
    <div class="${contentClassName}"></div>
-   <span class="env-assistive-text ${FOCUSTRAP_CLASSNAME}" tabindex="0"></span>
    </div>`,
    title: '',
    trigger: 'click',
@@ -49,29 +52,7 @@ class Popover {
    constructor(element, config) {
       this.el = element;
       this.config = { ...DEFAULTS, ...this.el.dataset, ...config };
-
       this.bindEvents();
-   }
-
-   createTriggerFocusTrapElement() {
-      if (!this.triggerFocusTrapElement) {
-         this.triggerFocusTrapElement = document.createElement('span');
-         this.triggerFocusTrapElement.className = 'env-assistive-text';
-         this.triggerFocusTrapElement.setAttribute('tabindex', '0');
-         this.triggerFocusTrapElement.addEventListener(
-            'focus',
-            this.handleTriggerFocusTrap
-         );
-      }
-      return this.triggerFocusTrapElement;
-   }
-
-   getFocusableElements(element) {
-      return Array.from(
-         element.querySelectorAll(
-            `a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"]):not(.${FOCUSTRAP_CLASSNAME})`
-         )
-      );
    }
 
    handleClick() {
@@ -116,43 +97,91 @@ class Popover {
       }
    }
 
-   handleKeyboardEvent(e) {
-      if (e.key === 'Escape') {
-         this.hide();
-         const popoverElement = this.getPopoverElement();
-         if (popoverElement.contains(e.target)) {
-            setTimeout(() => this.el.focus(), 0);
-         }
+   handleKeyEscape(e) {
+      const el = e.target;
+      const popoverElement = this.getPopoverElement();
+
+      this.hide();
+      if (popoverElement.contains(el)) {
+         setTimeout(() => this.el.focus(), 0);
       }
    }
 
-   /**
-    * When the focus trap after trigger element is focused, move focus to the first focusable element in the popover
-    */
-   handleTriggerFocusTrap() {
+   handleKeyTabForward(e) {
       const popoverElement = this.getPopoverElement();
-      const focusableElements = this.getFocusableElements(popoverElement);
+      const focusableElements = getFocusable(popoverElement);
+
       if (focusableElements.length > 0) {
+         e.preventDefault();
          focusableElements[0].focus();
       }
    }
 
-   handlePopoverFocusTrapStart() {
+   handleKeyTabBackward(e) {
+      e.preventDefault();
       this.el.focus();
    }
 
-   /**
-    * When the focus trap at end of popover is focused, move focus to the next element after the trigger
+   /*
+    * Handle focusin event on trigger element.
+    * When focus lands on the trigger element via Shift+Tab (from an element after it) while popover
+    * is open, redirect to last focusable element in popover.
     */
-   handlePopoverFocusTrapEnd() {
-      const focusableElements = this.getFocusableElements(document).filter(
-         (el) =>
-            !el.closest(`.${POPOVER_CLASSNAME}`) &&
-            el !== this.triggerFocusTrapElement
+   handleTriggerFocusIn(e) {
+      if (!this.isShowing) return;
+
+      const { relatedTarget } = e;
+
+      const popoverElement = this.getPopoverElement();
+      const relatedTargetNotContained =
+         relatedTarget && !popoverElement.contains(relatedTarget);
+      const relatedTargetIsFollowingTriggerElement = isFollowing(
+         relatedTarget,
+         this.el
       );
-      const triggerIndex = focusableElements.indexOf(this.el);
-      if (triggerIndex !== -1 && triggerIndex < focusableElements.length - 1) {
-         focusableElements[triggerIndex + 1].focus();
+      if (relatedTargetNotContained && relatedTargetIsFollowingTriggerElement) {
+         const focusableElements = getFocusable(popoverElement);
+         focusableElements[focusableElements.length - 1]?.focus();
+      }
+   }
+
+   handleKeyTabInPopover(e) {
+      const { target } = e;
+      const popoverElement = this.getPopoverElement();
+      const focusableElements = getFocusable(popoverElement);
+
+      if (focusableElements.length === 0) return;
+
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+
+      // Shift+Tab on first element - go back to the trigger element
+      if (e.shiftKey && target === firstFocusable) {
+         this.handleKeyTabBackward(e);
+      }
+      // Tab on last element - go to next element after the trigger element
+      else if (!e.shiftKey && target === lastFocusable) {
+         e.preventDefault();
+         const nextFocusable = getNextFocusable(this.el);
+         if (nextFocusable) {
+            nextFocusable.focus();
+         }
+      }
+   }
+
+   handleKeyboardEvent(e) {
+      const { target } = e;
+      const popoverElement = this.getPopoverElement();
+
+      if (e.key === 'Escape') {
+         this.handleKeyEscape(e);
+      } else if (e.key === 'Tab') {
+         if (popoverElement.contains(target)) {
+            this.handleKeyTabInPopover(e);
+         } else if (target === this.el && this.isShowing && !e.shiftKey) {
+            // Tab on trigger when popover is open - go to first focusable in popover
+            this.handleKeyTabForward(e);
+         }
       }
    }
 
@@ -166,11 +195,9 @@ class Popover {
       this.handlePopoverMouseLeave = this.handlePopoverMouseLeave.bind(this);
       this.clickOutsideHandler = this.clickOutsideHandler.bind(this);
       this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
-      this.handleTriggerFocusTrap = this.handleTriggerFocusTrap.bind(this);
-      this.handlePopoverFocusTrapStart =
-         this.handlePopoverFocusTrapStart.bind(this);
-      this.handlePopoverFocusTrapEnd =
-         this.handlePopoverFocusTrapEnd.bind(this);
+      this.handleTriggerFocusIn = this.handleTriggerFocusIn.bind(this);
+
+      this.el.addEventListener('focusin', this.handleTriggerFocusIn);
 
       triggers.forEach((trigger) => {
          if (trigger === 'click') {
@@ -186,6 +213,8 @@ class Popover {
    }
 
    removeEvents() {
+      this.el.removeEventListener('focusin', this.handleTriggerFocusIn);
+
       const triggers = this.config.trigger.split(' ');
       triggers.forEach((trigger) => {
          if (trigger === 'click') {
@@ -287,11 +316,6 @@ class Popover {
       return this.popoverElement;
    }
 
-   getPopoverFocusTrapElements() {
-      const popoverElement = this.getPopoverElement();
-      return popoverElement.querySelectorAll(`.${FOCUSTRAP_CLASSNAME}`);
-   }
-
    setText(popoverElement, className, text) {
       if (this.config.escapeContent) {
          popoverElement.querySelector(`.${className}`).textContent = text;
@@ -336,14 +360,6 @@ class Popover {
    hide() {
       const popoverElement = this.getPopoverElement();
       this.el.removeAttribute('aria-describedby');
-
-      if (
-         this.triggerFocusTrapElement &&
-         this.triggerFocusTrapElement.parentNode
-      ) {
-         this.triggerFocusTrapElement.remove();
-      }
-
       popoverElement.remove();
 
       if (this.config.clickOutside) {
@@ -356,15 +372,7 @@ class Popover {
    show() {
       this.render();
       const popoverElement = this.getPopoverElement();
-      const [popoverFocusTrapElementStart, popoverFocusTrapElementEnd] =
-         this.getPopoverFocusTrapElements();
       this.el.setAttribute('aria-describedby', this.popoverElement.id);
-
-      if (this.getFocusableElements(popoverElement).length > 0) {
-         const triggerFocusTrapElement = this.createTriggerFocusTrapElement();
-         this.el.after(triggerFocusTrapElement);
-      }
-
       document.body.appendChild(popoverElement);
 
       getPopper().then((createPopper) => {
@@ -392,15 +400,6 @@ class Popover {
          }
 
          document.addEventListener('keydown', this.handleKeyboardEvent);
-         popoverFocusTrapElementStart?.addEventListener(
-            'focus',
-            this.handlePopoverFocusTrapStart
-         );
-         popoverFocusTrapElementEnd?.addEventListener(
-            'focus',
-            this.handlePopoverFocusTrapEnd
-         );
-
          this.isShowing = true;
       });
    }

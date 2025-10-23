@@ -187,3 +187,19 @@ export const uniqueId = (() => {
       });
    };
 })();
+
+export const isPreceding = (node, otherNode) => {
+   return (
+      (otherNode.compareDocumentPosition(node) &
+         Node.DOCUMENT_POSITION_PRECEDING) !==
+      0
+   );
+};
+
+export const isFollowing = (node, otherNode) => {
+   return (
+      (otherNode.compareDocumentPosition(node) &
+         Node.DOCUMENT_POSITION_FOLLOWING) !==
+      0
+   );
+};
