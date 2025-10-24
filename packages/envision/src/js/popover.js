@@ -107,7 +107,7 @@ class Popover {
       }
    }
 
-   handleKeyTabForward(e) {
+   handleKeyTabForwardToPopover(e) {
       const popoverElement = this.getPopoverElement();
       const focusableElements = getFocusable(popoverElement);
 
@@ -117,16 +117,11 @@ class Popover {
       }
    }
 
-   handleKeyTabBackward(e) {
+   handleKeyTabBackwardOutPopover(e) {
       e.preventDefault();
       this.el.focus();
    }
 
-   /*
-    * Handle focusin event on trigger element.
-    * When focus lands on the trigger element via Shift+Tab (from an element after it) while popover
-    * is open, redirect to last focusable element in popover.
-    */
    handleTriggerFocusIn(e) {
       if (!this.isShowing) return;
 
@@ -155,12 +150,9 @@ class Popover {
       const firstFocusable = focusableElements[0];
       const lastFocusable = focusableElements[focusableElements.length - 1];
 
-      // Shift+Tab on first element - go back to the trigger element
       if (e.shiftKey && target === firstFocusable) {
-         this.handleKeyTabBackward(e);
-      }
-      // Tab on last element - go to next element after the trigger element
-      else if (!e.shiftKey && target === lastFocusable) {
+         this.handleKeyTabBackwardOutPopover(e);
+      } else if (!e.shiftKey && target === lastFocusable) {
          e.preventDefault();
          const nextFocusable = getNextFocusable(this.el);
          if (nextFocusable) {
@@ -175,13 +167,15 @@ class Popover {
 
       if (e.key === 'Escape') {
          this.handleKeyEscape(e);
-      } else if (e.key === 'Tab') {
-         if (popoverElement.contains(target)) {
-            this.handleKeyTabInPopover(e);
-         } else if (target === this.el && this.isShowing && !e.shiftKey) {
-            // Tab on trigger when popover is open - go to first focusable in popover
-            this.handleKeyTabForward(e);
-         }
+      } else if (e.key === 'Tab' && popoverElement.contains(target)) {
+         this.handleKeyTabInPopover(e);
+      } else if (
+         e.key === 'Tab' &&
+         target === this.el &&
+         this.isShowing &&
+         !e.shiftKey
+      ) {
+         this.handleKeyTabForwardToPopover(e);
       }
    }
 
