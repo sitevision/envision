@@ -124,11 +124,6 @@ class Popover {
       }
    }
 
-   handleKeyTabBackwardOutPopover(e) {
-      e.preventDefault();
-      this.el.focus();
-   }
-
    handleTriggerFocusIn(e) {
       if (!this.isShowing) return;
 
@@ -176,7 +171,8 @@ class Popover {
       const lastFocusable = focusableElements[focusableElements.length - 1];
 
       if (e.shiftKey && target === firstFocusable) {
-         this.handleKeyTabBackwardOutPopover(e);
+         e.preventDefault();
+         this.el.focus();
       } else if (!e.shiftKey && target === lastFocusable) {
          e.preventDefault();
          const nextFocusable = getNextFocusable(this.el);
