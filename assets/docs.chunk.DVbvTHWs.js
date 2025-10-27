@@ -1,4 +1,3 @@
-import 'kleur/colors';
 import { clsx } from 'clsx';
 import { escape } from 'html-escaper';
 import { encodeBase64, encodeHexUpperCase, decodeBase64 } from '@oslojs/encoding';
@@ -156,7 +155,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "5.14.4";
+const ASTRO_VERSION = "5.15.1";
 const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
 function createAstroGlobFn() {
@@ -656,7 +655,7 @@ function isRenderInstruction(chunk) {
 }
 
 const voidElementNames = /^(area|base|br|col|command|embed|hr|img|input|keygen|link|meta|param|source|track|wbr)$/i;
-const htmlBooleanAttributes = /^(?:allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|disablepictureinpicture|disableremoteplayback|formnovalidate|hidden|inert|loop|nomodule|novalidate|open|playsinline|readonly|required|reversed|scoped|seamless|selected|itemscope)$/i;
+const htmlBooleanAttributes = /^(?:allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|disablepictureinpicture|disableremoteplayback|formnovalidate|hidden|inert|loop|muted|nomodule|novalidate|open|playsinline|readonly|required|reversed|scoped|seamless|selected|itemscope)$/i;
 const AMPERSAND_REGEX = /&/g;
 const DOUBLE_QUOTE_REGEX = /"/g;
 const STATIC_DIRECTIVES = /* @__PURE__ */ new Set(["set:html", "set:text"]);
@@ -1205,9 +1204,12 @@ class ServerIslandComponent {
         )
       );
     }
+    const adapterHeaders = this.result.internalFetchHeaders || {};
+    const headersJson = safeJsonStringify(adapterHeaders);
     const method = useGETRequest ? (
       // GET request
-      `let response = await fetch('${serverIslandUrl}');`
+      `const headers = new Headers(${headersJson});
+let response = await fetch('${serverIslandUrl}', { headers });`
     ) : (
       // POST request
       `let data = {
@@ -1215,9 +1217,11 @@ class ServerIslandComponent {
 	encryptedProps: ${safeJsonStringify(propsEncrypted)},
 	slots: ${safeJsonStringify(renderedSlots)},
 };
+const headers = new Headers({ 'Content-Type': 'application/json', ...${headersJson} });
 let response = await fetch('${serverIslandUrl}', {
 	method: 'POST',
 	body: JSON.stringify(data),
+	headers,
 });`
     );
     this.islandContent = `${method}replaceServerIsland('${hostId}', response);`;

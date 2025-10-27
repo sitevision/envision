@@ -1,9 +1,8 @@
-import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.D50Du_kc.js';
-import 'kleur/colors';
+import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.DVbvTHWs.js';
 import 'clsx';
 /* empty css                    */
 /* empty css                    */
-import { $ as $$Favicon } from './docs.chunk.Mkjgy7OE.js';
+import { $ as $$Favicon } from './docs.chunk.DhT3CrGg.js';
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
@@ -155,7 +154,7 @@ const _page$18 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: url$18
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$Astro$a = createAstro();
+const $$Astro$a = createAstro("https://envisionui.io");
 const $$Teasernav = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
   Astro2.self = $$Teasernav;
@@ -192,7 +191,7 @@ const $$Teasernav = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Teasernav.astro", void 0);
 
-const $$Astro$9 = createAstro();
+const $$Astro$9 = createAstro("https://envisionui.io");
 const $$Sidenav = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
   Astro2.self = $$Sidenav;
@@ -219,7 +218,7 @@ const $$Sidenav = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Sidenav.astro", void 0);
 
-const $$Astro$8 = createAstro();
+const $$Astro$8 = createAstro("https://envisionui.io");
 const $$Navigation = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
   Astro2.self = $$Navigation;
@@ -2545,7 +2544,7 @@ const slugify = (input) => {
   return slug;
 };
 
-const $$Astro$7 = createAstro();
+const $$Astro$7 = createAstro("https://envisionui.io");
 const $$Startpage = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
   Astro2.self = $$Startpage;
@@ -3640,7 +3639,7 @@ const getMobileMenuItems = (frontmatter) => {
   return menuItems;
 };
 
-const $$Astro$6 = createAstro();
+const $$Astro$6 = createAstro("https://envisionui.io");
 const $$Headernav = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
   Astro2.self = $$Headernav;
@@ -3683,7 +3682,7 @@ const $$Themepicker = createComponent(($$result, $$props, $$slots) => {
 </div>`])), maybeRenderHead());
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Themepicker.astro", void 0);
 
-const $$Astro$5 = createAstro();
+const $$Astro$5 = createAstro("https://envisionui.io");
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Header;
@@ -3711,7 +3710,7 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
 </header>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Header.astro", void 0);
 
-const $$Astro$4 = createAstro();
+const $$Astro$4 = createAstro("https://envisionui.io");
 const $$Banner = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Banner;
@@ -3830,7 +3829,7 @@ const $$Footer = createComponent(($$result, $$props, $$slots) => {
 </footer>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Footer.astro", void 0);
 
-const $$Astro$3 = createAstro();
+const $$Astro$3 = createAstro("https://envisionui.io");
 const $$Mobilenav = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Mobilenav;
@@ -3892,7 +3891,7 @@ var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
 var _a;
-const $$Astro$2 = createAstro();
+const $$Astro$2 = createAstro("https://envisionui.io");
 const $$Master = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Master;
@@ -3916,7 +3915,7 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
          `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro", void 0);
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://envisionui.io");
 const $$Icons = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Icons;
@@ -3932,7 +3931,7 @@ const $$Icons = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Icons.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://envisionui.io");
 const $$Default = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Default;
