@@ -132,7 +132,7 @@ class Popover {
    handleTriggerFocusIn(e) {
       if (!this.isShowing) return;
 
-      const { relatedTarget } = e;
+      const relatedTarget = e.relatedTarget;
 
       const popoverElement = this.getPopoverElement();
       const relatedTargetNotContained =
@@ -166,7 +166,7 @@ class Popover {
    }
 
    handleKeyTabInPopover(e) {
-      const { target } = e;
+      const target = e.target;
       const popoverElement = this.getPopoverElement();
       const focusableElements = getFocusable(popoverElement);
 
@@ -187,7 +187,7 @@ class Popover {
    }
 
    handleMenuKeys(e) {
-      const { target } = e;
+      const target = e.target;
       const popoverElement = this.getPopoverElement();
       const menuItemCount = this.menuItems.length;
 
@@ -222,7 +222,7 @@ class Popover {
    }
 
    handleKeysInPopover(e) {
-      const { target } = e;
+      const target = e.target;
       const popoverElement = this.getPopoverElement();
 
       if (e.key === 'Tab' && popoverElement.contains(target)) {
