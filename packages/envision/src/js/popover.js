@@ -150,14 +150,18 @@ class Popover {
    handleTriggerKeyDown(e) {
       if (this.config.type !== 'menu') return;
 
-      if (e.key === 'ArrowDown' || e.key === ' ') {
+      if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'Enter') {
          e.preventDefault();
          this.show();
-         this.menuItems[0].focus();
+         setTimeout(() => {
+            this.menuItems[0].focus();
+         }, 0);
       } else if (e.key === 'ArrowUp') {
          e.preventDefault();
          this.show();
-         this.menuItems[this.menuItems.length - 1].focus();
+         setTimeout(() => {
+            this.menuItems[this.menuItems.length - 1].focus();
+         }, 0);
       }
    }
 
@@ -494,12 +498,6 @@ class Popover {
 
          document.addEventListener('keydown', this.handleKeyboardEvent);
          this.isShowing = true;
-
-         if (this.config.type === 'menu') {
-            setTimeout(() => {
-               this.menuItems[0].focus();
-            }, 0);
-         }
       });
    }
 
