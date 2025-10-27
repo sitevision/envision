@@ -22,8 +22,10 @@ const HEADER_CLASSNAME = 'env-popover__header';
 const TITLE_CLASSNAME = 'env-popover__header__title';
 const CONTENT_CLASSNAME = 'env-popover__content';
 const MENU_CLASSNAME = 'env-popover__menu';
+const MENU_ITEM_CLASSNAME = 'env-popover__item';
 const TOOLTIP_CLASSNAME = 'env-popover--tooltip';
 const ARROW_SIZE = 10;
+const INDEX_DATA_ATTR = 'envPopoverMenuIndex';
 
 const DEFAULTS = {
    clickOutside: false,
@@ -35,8 +37,9 @@ const DEFAULTS = {
    placement: 'top',
    template: (
       containerModifier,
-      contentClassName
-   ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="tooltip">
+      contentClassName,
+      containerRole
+   ) => `<div class="${POPOVER_CLASSNAME} ${containerModifier}" role="${containerRole}">
    <div class="${ARROW_CLASSNAME}"></div>
    <div class="${HEADER_CLASSNAME}">
    <h4 class="env-ui-text-sectionheading ${TITLE_CLASSNAME}"></h4>
@@ -53,6 +56,10 @@ class Popover {
       this.el = element;
       this.config = { ...DEFAULTS, ...this.el.dataset, ...config };
       this.bindEvents();
+      if (this.config.type === 'menu') {
+         this.el.setAttribute('aria-haspopup', 'true');
+         this.el.setAttribute('aria-expanded', 'false');
+      }
    }
 
    handleClick() {
@@ -140,6 +147,20 @@ class Popover {
       }
    }
 
+   handleTriggerKeyDown(e) {
+      if (this.config.type !== 'menu') return;
+
+      if (e.key === 'ArrowDown' || e.key === ' ') {
+         e.preventDefault();
+         this.show();
+         this.menuItems[0].focus();
+      } else if (e.key === 'ArrowUp') {
+         e.preventDefault();
+         this.show();
+         this.menuItems[this.menuItems.length - 1].focus();
+      }
+   }
+
    handleKeyTabInPopover(e) {
       const { target } = e;
       const popoverElement = this.getPopoverElement();
@@ -161,13 +182,46 @@ class Popover {
       }
    }
 
-   handleKeyboardEvent(e) {
+   handleMenuKeys(e) {
+      const { target } = e;
+      const popoverElement = this.getPopoverElement();
+      const menuItemCount = this.menuItems.length;
+
+      if (popoverElement.contains(target) && menuItemCount > 0) {
+         const current = parseInt(target.dataset[INDEX_DATA_ATTR], 10);
+
+         if (e.key === ' ' && target.tagName !== 'BUTTON') {
+            e.preventDefault();
+            const menuItemEl = target.closest('[role=menuitem]');
+            menuItemEl && menuItemEl.click();
+         } else if (e.key === 'Tab') {
+            e.preventDefault();
+            const nextFocusable = getNextFocusable(this.el);
+            nextFocusable.focus();
+            this.hide();
+         } else if (e.key === 'Home') {
+            e.preventDefault();
+            this.menuItems[0].focus();
+         } else if (e.key === 'End') {
+            e.preventDefault();
+            this.menuItems[this.menuItems.length - 1].focus();
+         } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = current > 0 ? current - 1 : this.menuItems.length - 1;
+            this.menuItems[prev].focus();
+         } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = current < this.menuItems.length - 1 ? current + 1 : 0;
+            this.menuItems[next].focus();
+         }
+      }
+   }
+
+   handleKeysInPopover(e) {
       const { target } = e;
       const popoverElement = this.getPopoverElement();
 
-      if (e.key === 'Escape') {
-         this.handleKeyEscape(e);
-      } else if (e.key === 'Tab' && popoverElement.contains(target)) {
+      if (e.key === 'Tab' && popoverElement.contains(target)) {
          this.handleKeyTabInPopover(e);
       } else if (
          e.key === 'Tab' &&
@@ -176,6 +230,16 @@ class Popover {
          !e.shiftKey
       ) {
          this.handleKeyTabForwardToPopover(e);
+      }
+   }
+
+   handleKeyboardEvent(e) {
+      if (e.key === 'Escape') {
+         this.handleKeyEscape(e);
+      } else if (this.config.type === 'menu') {
+         this.handleMenuKeys(e);
+      } else {
+         this.handleKeysInPopover(e);
       }
    }
 
@@ -190,8 +254,10 @@ class Popover {
       this.clickOutsideHandler = this.clickOutsideHandler.bind(this);
       this.handleKeyboardEvent = this.handleKeyboardEvent.bind(this);
       this.handleTriggerFocusIn = this.handleTriggerFocusIn.bind(this);
+      this.handleTriggerKeyDown = this.handleTriggerKeyDown.bind(this);
 
       this.el.addEventListener('focusin', this.handleTriggerFocusIn);
+      this.el.addEventListener('keydown', this.handleTriggerKeyDown);
 
       triggers.forEach((trigger) => {
          if (trigger === 'click') {
@@ -208,6 +274,7 @@ class Popover {
 
    removeEvents() {
       this.el.removeEventListener('focusin', this.handleTriggerFocusIn);
+      this.el.removeEventListener('keydown', this.handleTriggerKeyDown);
 
       const triggers = this.config.trigger.split(' ');
       triggers.forEach((trigger) => {
@@ -289,11 +356,13 @@ class Popover {
          this.config.type === 'tooltip' ? TOOLTIP_CLASSNAME : '';
       const contentClassName =
          this.config.type === 'menu' ? MENU_CLASSNAME : CONTENT_CLASSNAME;
+      const containerRole = this.config.type === 'menu' ? 'menu' : 'tooltip';
 
       if (typeof this.config.template === 'function') {
          this.config.template = this.config.template(
             containerModifier,
-            contentClassName
+            contentClassName,
+            containerRole
          );
       }
 
@@ -310,6 +379,11 @@ class Popover {
       return this.popoverElement;
    }
 
+   getPopoverMenuItems() {
+      const popoverElement = this.getPopoverElement();
+      return getNodes(`.${MENU_ITEM_CLASSNAME}`, popoverElement);
+   }
+
    setText(popoverElement, className, text) {
       if (this.config.escapeContent) {
          popoverElement.querySelector(`.${className}`).textContent = text;
@@ -321,6 +395,9 @@ class Popover {
    setTitle(popoverElement) {
       if (this.config.title) {
          this.setText(popoverElement, TITLE_CLASSNAME, this.config.title);
+         this.popoverElement
+            .querySelector(`.${TITLE_CLASSNAME}`)
+            .setAttribute('id', popoverElement.id + '-title');
       } else {
          const header = this.popoverElement.querySelector(
             `.${HEADER_CLASSNAME}`
@@ -353,8 +430,14 @@ class Popover {
 
    hide() {
       const popoverElement = this.getPopoverElement();
-      this.el.removeAttribute('aria-describedby');
       popoverElement.remove();
+
+      if (this.config.type === 'menu') {
+         this.el.setAttribute('aria-expanded', 'false');
+         this.el.removeAttribute('aria-controls');
+      } else {
+         this.el.removeAttribute('aria-describedby');
+      }
 
       if (this.config.clickOutside) {
          document.body.removeEventListener('click', this.clickOutsideHandler);
@@ -366,8 +449,24 @@ class Popover {
    show() {
       this.render();
       const popoverElement = this.getPopoverElement();
-      this.el.setAttribute('aria-describedby', this.popoverElement.id);
+
       document.body.appendChild(popoverElement);
+
+      if (this.config.type === 'menu') {
+         this.el.setAttribute('aria-expanded', 'true');
+         this.el.setAttribute('aria-controls', this.popoverElement.id);
+         popoverElement.setAttribute(
+            'aria-labelledby',
+            this.config.title ? `${this.popoverElement.id}-title` : this.el.id
+         );
+         this.menuItems = this.getPopoverMenuItems();
+         this.menuItems.forEach((el, i) => {
+            el.dataset[INDEX_DATA_ATTR] = i;
+            el.setAttribute('role', 'menuitem');
+         });
+      } else {
+         this.el.setAttribute('aria-describedby', this.popoverElement.id);
+      }
 
       getPopper().then((createPopper) => {
          this._popper = createPopper(this.el, popoverElement, {
@@ -395,6 +494,12 @@ class Popover {
 
          document.addEventListener('keydown', this.handleKeyboardEvent);
          this.isShowing = true;
+
+         if (this.config.type === 'menu') {
+            setTimeout(() => {
+               this.menuItems[0].focus();
+            }, 0);
+         }
       });
    }
 
