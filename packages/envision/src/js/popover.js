@@ -383,11 +383,6 @@ class Popover {
       return this.popoverElement;
    }
 
-   getPopoverMenuItems() {
-      const popoverElement = this.getPopoverElement();
-      return getNodes(`.${MENU_ITEM_CLASSNAME}`, popoverElement);
-   }
-
    setText(popoverElement, className, text) {
       if (this.config.escapeContent) {
          popoverElement.querySelector(`.${className}`).textContent = text;
@@ -463,7 +458,7 @@ class Popover {
             'aria-labelledby',
             this.config.title ? `${this.popoverElement.id}-title` : this.el.id
          );
-         this.menuItems = this.getPopoverMenuItems();
+         this.menuItems = getNodes(`.${MENU_ITEM_CLASSNAME}`, popoverElement);
          this.menuItems.forEach((el, i) => {
             el.dataset[INDEX_DATA_ATTR] = i;
             el.setAttribute('role', 'menuitem');
