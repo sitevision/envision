@@ -125,7 +125,9 @@ class Popover {
    }
 
    handleTriggerFocusIn(e) {
-      if (!this.isShowing) return;
+      if (!this.isShowing) {
+         return;
+      }
 
       const relatedTarget = e.relatedTarget;
 
@@ -143,7 +145,9 @@ class Popover {
    }
 
    handleTriggerKeyDown(e) {
-      if (this.config.type !== 'menu') return;
+      if (this.config.type !== 'menu') {
+         return;
+      }
 
       if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'Enter') {
          e.preventDefault();
@@ -165,7 +169,9 @@ class Popover {
       const popoverElement = this.getPopoverElement();
       const focusableElements = getFocusable(popoverElement);
 
-      if (focusableElements.length === 0) return;
+      if (focusableElements.length === 0) {
+         return;
+      }
 
       const firstFocusable = focusableElements[0];
       const lastFocusable = focusableElements[focusableElements.length - 1];
