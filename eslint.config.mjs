@@ -33,6 +33,9 @@ export default defineConfig([
          ecmaVersion: 13,
          sourceType: 'module',
       },
+      rules: {
+         curly: 'error',
+      },
    },
    {
       files: ['packages/css-vars-to-json/**/*.js'],
