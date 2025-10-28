@@ -11,6 +11,7 @@ icons:
    - icon-arrow-fill-right
    - icon-arrow-fill-up
    - icon-bell
+   - icon-bubble
    - icon-cart
    - icon-chat
    - icon-check-blank
