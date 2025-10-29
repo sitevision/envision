@@ -11,7 +11,6 @@ const { frontmatter } = Astro.props;
 
 // Import Envision from source files
 import '../../../../envision/src/scss/base.scss';
-import '../../../../envision/src/scss/dashboard/envision-dashboard.scss';
 
 // Import docs specific styles
 import '../../assets/scss/docs.scss';
@@ -68,6 +67,11 @@ const title = frontmatter.title;
          integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
          crossorigin="anonymous"></script>
       <script is:inline src="/dist/envision.js"></script>
+      {
+         !!frontmatter.dashboard && (
+            <link rel="stylesheet" href="/dist/envision-dashboard.css" />
+         )
+      }
       <!-- Additional head elements -->
    </head>
    <body>

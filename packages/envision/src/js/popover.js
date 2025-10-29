@@ -202,8 +202,13 @@ class Popover {
             menuItemEl && menuItemEl.click();
          } else if (e.key === 'Tab') {
             e.preventDefault();
-            const nextFocusable = getNextFocusable(this.el);
-            nextFocusable.focus();
+            if (e.shiftKey) {
+               e.preventDefault();
+               this.el.focus();
+            } else {
+               const nextFocusable = getNextFocusable(this.el);
+               nextFocusable.focus();
+            }
             this.hide();
          } else if (e.key === 'Home') {
             e.preventDefault();
@@ -385,17 +390,10 @@ class Popover {
       return this.popoverElement;
    }
 
-   setText(popoverElement, className, text) {
-      if (this.config.escapeContent) {
-         popoverElement.querySelector(`.${className}`).textContent = text;
-      } else {
-         popoverElement.querySelector(`.${className}`).innerHTML = text;
-      }
-   }
-
    setTitle(popoverElement) {
       if (this.config.title) {
-         this.setText(popoverElement, TITLE_CLASSNAME, this.config.title);
+         popoverElement.querySelector(`.${TITLE_CLASSNAME}`).textContent =
+            this.config.title;
          this.popoverElement
             .querySelector(`.${TITLE_CLASSNAME}`)
             .setAttribute('id', popoverElement.id + '-title');
@@ -411,11 +409,15 @@ class Popover {
       if (this.config.content instanceof HTMLElement) {
          this.config.content = this.config.content.innerHTML;
       }
-      this.setText(
-         popoverElement,
-         this.config.type === 'menu' ? MENU_CLASSNAME : CONTENT_CLASSNAME,
-         this.config.content
-      );
+      const className =
+         this.config.type === 'menu' ? MENU_CLASSNAME : CONTENT_CLASSNAME;
+      if (this.config.escapeContent) {
+         popoverElement.querySelector(`.${className}`).innerHTML =
+            `<p class="env-text">${this.config.content}</p>`;
+      } else {
+         popoverElement.querySelector(`.${className}`).innerHTML =
+            this.config.content;
+      }
    }
 
    updateConfig(config) {
