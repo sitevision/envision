@@ -76,7 +76,10 @@ const commitHash = childProcess
          crossorigin="anonymous"></script>
 
       <script is:inline src={`/dist/envision.js?v=${commitHash}`}></script>
-
+      <!-- Additional head elements -->
+   </head>
+   <body>
+      <!-- Dashboard style must be loaded after envision.css -->
       {
          !!frontmatter.dashboard && (
             <link
@@ -85,9 +88,6 @@ const commitHash = childProcess
             />
          )
       }
-      <!-- Additional head elements -->
-   </head>
-   <body>
       <div class="layout">
          <Header frontmatter={frontmatter} />
          <Banner frontmatter={frontmatter} />
