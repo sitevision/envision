@@ -103,6 +103,16 @@ module.exports = [
                      'sitevision'
                   ),
                },
+               {
+                  from: path.resolve(__dirname, 'src', 'icons'),
+                  to: path.resolve(
+                     __dirname,
+                     '..',
+                     'envision-docs',
+                     'static',
+                     'dist'
+                  ),
+               },
             ],
          }),
          ...commonPlugins,
