@@ -1,22 +1,30 @@
 ---
+import childProcess from 'child_process';
+
 import Favicon from '../components/Favicon.astro';
 import Header from '../components/Header.astro';
 import Banner from '../components/Banner.astro';
 import Footer from '../components/Footer.astro';
 import Mobilenav from '../components/Mobilenav.astro';
+import Favicon from '../components/Favicon.astro';
 import DashboardScript from '../components/DashboardScript.astro';
+
 import { getMainClassName } from '../utils/utils.ts';
 
 const { frontmatter } = Astro.props;
 
 // Import Envision from source files
 import '../../../../envision/src/scss/base.scss';
-
 // Import docs specific styles
 import '../../assets/scss/docs.scss';
-import Favicon from '../components/Favicon.astro';
 
 const title = frontmatter.title;
+
+// obtain Git commit hash for cache busting
+const commitHash = childProcess
+   .execSync('git rev-parse --short HEAD')
+   .toString()
+   .trim();
 ---
 
 <!doctype html>
@@ -66,10 +74,15 @@ const title = frontmatter.title;
          src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
          integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
          crossorigin="anonymous"></script>
-      <script is:inline src="/dist/envision.js"></script>
+
+      <script is:inline src={`/dist/envision.js?v=${commitHash}`}></script>
+
       {
          !!frontmatter.dashboard && (
-            <link rel="stylesheet" href="/dist/envision-dashboard.css" />
+            <link
+               rel="stylesheet"
+               href={`/dist/envision-dashboard.css?v=${commitHash}`}
+            />
          )
       }
       <!-- Additional head elements -->
