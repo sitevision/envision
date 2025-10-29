@@ -187,3 +187,10 @@ export const uniqueId = (() => {
       });
    };
 })();
+
+export const isFollowing = (node, otherNode) => {
+   return (
+      otherNode.compareDocumentPosition(node) ===
+      Node.DOCUMENT_POSITION_FOLLOWING
+   );
+};
