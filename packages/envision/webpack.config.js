@@ -6,6 +6,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const zlib = require('zlib');
 
 const dev = process.env.NODE_ENV === 'development';
@@ -89,6 +90,20 @@ module.exports = [
       plugins: [
          new MiniCssExtractPlugin({
             filename: 'envision.css',
+         }),
+         new CopyPlugin({
+            patterns: [
+               {
+                  from: path.resolve(__dirname, 'src', 'icons'),
+                  to: path.resolve(
+                     __dirname,
+                     '..',
+                     'envision-docs',
+                     'static',
+                     'sitevision'
+                  ),
+               },
+            ],
          }),
          ...commonPlugins,
       ],
