@@ -3231,9 +3231,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^5.15.1":
-  version: 5.15.1
-  resolution: "astro@npm:5.15.1"
+"astro@npm:^5.15.3":
+  version: 5.15.3
+  resolution: "astro@npm:5.15.3"
   dependencies:
     "@astrojs/compiler": "npm:^2.12.2"
     "@astrojs/internal-helpers": "npm:0.7.4"
@@ -3290,7 +3290,7 @@ __metadata:
     unist-util-visit: "npm:^5.0.0"
     unstorage: "npm:^1.17.0"
     vfile: "npm:^6.0.3"
-    vite: "npm:^6.3.6"
+    vite: "npm:^6.4.1"
     vitefu: "npm:^1.1.1"
     xxhash-wasm: "npm:^1.1.0"
     yargs-parser: "npm:^21.1.1"
@@ -3303,7 +3303,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/da7148411162dc709df8e0a679a10cc17c25f5d81904a4d439d2a08ed5b2e6295385d27f81046591b639661fbc818e8cd697eb1549d704faea31feb4481f2d03
+  checksum: 10c0/7cefee00b53d4ecf5e1b0826bf6a19e70f44f58fac573bdbb0d8fe8d6005ee15973bdb396a78559ecb968db800688e906c1b82bc9ff9de1e288f7d455a164b36
   languageName: node
   linkType: hard
 
@@ -4542,7 +4542,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "envision-docs@workspace:packages/envision-docs"
   dependencies:
-    astro: "npm:^5.15.1"
+    astro: "npm:^5.15.3"
     astro-compress: "npm:^2.3.8"
   languageName: unknown
   linkType: soft
@@ -9594,7 +9594,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.3.6":
+"vite@npm:^6.3.6, vite@npm:^6.4.1":
   version: 6.4.1
   resolution: "vite@npm:6.4.1"
   dependencies:
