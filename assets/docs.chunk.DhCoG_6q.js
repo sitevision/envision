@@ -1,7 +1,7 @@
-import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.DVbvTHWs.js';
+import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, d as createAstro, m as maybeRenderHead, e as addAttribute, f as renderSlot, g as renderScript, a as renderHead } from './docs.chunk.DAMg8QaH.js';
 import childProcess from 'child_process';
 import 'clsx';
-import { $ as $$Favicon } from './docs.chunk.DhT3CrGg.js';
+import { $ as $$Favicon } from './docs.chunk.Cn-DSYgP.js';
 /* empty css                    */
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
