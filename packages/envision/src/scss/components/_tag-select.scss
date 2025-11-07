@@ -1,0 +1,230 @@
+@use '../abstracts/functions';
+@use '../abstracts/mixins/focus';
+@use '../abstracts/mixins/form';
+@use '../abstracts/scss-variables' as *;
+
+@use 'sass:math';
+
+.env-select {
+   position: relative;
+
+   &.single {
+      // Single select version
+      .env-select__input {
+         padding: 0.25em 2em 0.25em 0.5em;
+
+         > input {
+            min-width: 0;
+         }
+      }
+
+      .env-select__item {
+         font-size: 1em;
+         background-color: transparent;
+         color: var(--env-form-input-font-color);
+         padding: 0.5625em 0.25em;
+      }
+
+      > .env-icon {
+         pointer-events: none;
+         display: block;
+         position: absolute;
+         top: 50%;
+         right: 0.9375em;
+         transform: translateY(-50%);
+         width: 0.875em;
+         height: 0.875em;
+      }
+   }
+
+   &__input {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      font-family: inherit;
+      background-color: var(--env-form-input-background-color);
+      background-image: none;
+      border: $border-width $border-style var(--env-form-input-border-color);
+      border-radius: var(--env-form-input-border-radius);
+      box-sizing: border-box;
+      color: var(--env-form-input-font-color);
+      font-size: var(--env-font-size-medium);
+      line-height: 1;
+      margin: 0;
+      padding: 0.25em;
+      transition:
+         border-color 0.2s ease-in-out,
+         box-shadow 0.2s ease-in-out;
+      width: 100%;
+      min-height: (math.div($form-input-height, $BROWSER_FONT_SIZE) * 1em);
+      cursor: text;
+      overflow: hidden;
+
+      .env-select.has-items & {
+         padding-bottom: 0;
+      }
+
+      .env-select.plugin-clear_button & {
+         padding-right: 1.5em;
+      }
+
+      > * {
+         vertical-align: baseline;
+         display: inline-flex;
+      }
+
+      > input {
+         background: none;
+         color: var(--env-form-input-font-color);
+         border: 0;
+         box-shadow: none;
+         display: inline-block;
+         flex: 1 1 auto;
+         font-size: 1em;
+         line-height: math.div(34, $BROWSER_FONT_SIZE);
+         margin: 0 0 0 functions.em(4px);
+         max-height: none;
+         max-width: 100%;
+         min-height: 0;
+         min-width: 7rem;
+         padding: 0;
+         text-indent: 0;
+         user-select: auto;
+
+         @include form.placeholder {
+            color: var(--env-form-input-font-color);
+            filter: opacity(0.65);
+         }
+
+         &:focus {
+            @include focus.wcagSafeOutlineNone;
+         }
+      }
+
+      .env-select.full & > input,
+      .env-select.input-hidden & > input {
+         left: -10000px;
+         opacity: 0;
+         position: absolute;
+      }
+
+      .env-select.focus & {
+         @include focus.focus-outline();
+      }
+
+      .env-select--locked &,
+      .env-select.locked &,
+      .env-select.disabled & {
+         @include form.disabled;
+
+         .env-select__input__clear {
+            display: none !important;
+         }
+      }
+
+      .env-select--locked &,
+      .env-select.locked & {
+         &,
+         .env-select__item,
+         a,
+         button {
+            cursor: default !important;
+         }
+      }
+
+      .env-select.disabled & {
+         * {
+            cursor: default !important;
+         }
+      }
+
+      &__clear {
+         display: none;
+         cursor: pointer;
+         position: absolute;
+         top: calc(#{var(--env-spacing-xx-small)} + 1px);
+         right: var(--env-spacing-xxx-small);
+         color: var(--env-form-input-font-color);
+         width: 1.4em;
+         height: 1.9em;
+         line-height: 1.9;
+         text-align: center;
+      }
+
+      .env-select.has-items &:hover .env-select__input__clear,
+      .env-select.has-items &:focus .env-select__input__clear,
+      .env-select.has-items.focus & .env-select__input__clear {
+         display: block;
+      }
+   }
+
+   &__item {
+      cursor: pointer;
+      margin: 0 functions.em(4px, 14px) functions.em(4px, 14px) 0;
+      align-items: center;
+      display: flex;
+      border-radius: var(--env-border-radius-medium);
+      font-size: functions.em(14px);
+      line-height: 1;
+      padding: functions.em(10px, 14px);
+      color: var(--env-element-primary-font-color);
+      background-color: var(--env-element-primary-background-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .plugin-remove_button & {
+         padding: 0 0 0 functions.em(10px, 14px);
+      }
+
+      &__remove {
+         text-decoration: none !important;
+         color: var(--env-element-primary-font-color);
+         padding: functions.em(9px, 14px) functions.em(7px, 14px);
+      }
+   }
+
+   &__dropdown {
+      display: none;
+      background-color: var(--env-section-background-color);
+      color: var(--env-font-color);
+      border: $border-width $border-style var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium);
+      box-shadow: var(--env-box-shadow-small);
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      left: 0;
+      z-index: $zindex-tagselect;
+      font-size: var(--env-font-size-medium);
+
+      &__content {
+         padding: var(--env-spacing-x-small) 0;
+         max-height: 200px;
+         overflow-x: hidden;
+         overflow-y: auto;
+         scroll-behavior: smooth;
+      }
+
+      .create,
+      .no-results,
+      &__option {
+         padding: var(--env-spacing-x-small);
+      }
+
+      .create,
+      &__option {
+         &:hover,
+         &.active {
+            background-color: var(--env-section-background-color-05);
+            color: var(--env-font-color);
+         }
+      }
+   }
+
+   &__spinner {
+      display: inline-block;
+      margin: var(--env-spacing-small) auto 0 0;
+      padding: 0 0 0 var(--env-spacing-x-small);
+   }
+}

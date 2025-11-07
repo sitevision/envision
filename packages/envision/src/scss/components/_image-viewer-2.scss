@@ -1,0 +1,305 @@
+@use '../abstracts/mixins/focus';
+
+$imageInset: 1.75rem;
+$buttonInset: 2.25rem;
+
+@mixin overlayButton($opacity: 0.65) {
+   background-color: rgba(0, 0, 0, $opacity);
+   border-color: transparent;
+   color: #fff;
+}
+
+@mixin overlayButtonFocusVisible($inner, $outer) {
+   box-shadow: 0 0 0 var(--env-focus-offset) $inner;
+   outline: var(--env-focus-size) solid $outer;
+   outline-offset: var(--env-focus-offset);
+}
+
+.env-image-viewer-2 {
+   position: relative;
+   text-align: center;
+
+   //----- Core slider styling -----
+
+   &__viewer {
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+   }
+
+   &__viewer__items {
+      overflow: hidden;
+      position: relative;
+   }
+
+   &__viewer__item {
+      float: left;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      figure {
+         margin: 0;
+      }
+
+      img {
+         display: block;
+         max-width: 100%;
+      }
+   }
+
+   //----- Slider controls -----
+
+   &__viewer__controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      justify-items: start;
+      margin: 0 0 0.5em 0;
+
+      .env-image-viewer-2--overlay & {
+         position: absolute;
+         z-index: 1;
+         inset: 0 0 auto;
+         margin: 0;
+         padding: 0.25em;
+
+         &__button {
+            @include overlayButton;
+
+            &:hover,
+            &:focus,
+            &:active {
+               @include overlayButton(0.75);
+            }
+
+            &:focus-visible {
+               @include overlayButtonFocusVisible(#fff, rgba(0, 0, 0, 0.75));
+            }
+         }
+      }
+
+      &__button:first-child {
+         // Zoom or Autoplay button
+         margin: 0 0.25em 0 0;
+      }
+
+      &__button:nth-last-child(2) {
+         // Prev-button
+         margin: 0 0.25em 0 auto;
+      }
+   }
+
+   // ----- Slider caption -----
+
+   &__viewer__caption {
+      color: var(--env-text-caption-01-font-color);
+      font-family: var(--env-text-caption-01-font-family);
+      font-size: var(--env-text-caption-01-font-size);
+      font-style: var(--env-text-caption-01-font-style);
+      font-weight: var(--env-text-caption-01-font-weight);
+      letter-spacing: var(--env-text-caption-01-letter-spacing);
+      line-height: var(--env-text-caption-01-line-height);
+      margin-block-end: var(--env-text-caption-01-margin-block-end);
+      margin-block-start: var(--env-text-caption-01-margin-block-start);
+      text-transform: var(--env-text-caption-01-text-transform);
+      text-align: left;
+      overflow-wrap: anywhere;
+
+      .env-image-viewer-2--overlay & {
+         position: absolute;
+         z-index: 1;
+         inset: auto auto 0 0;
+         background-color: rgba(0, 0, 0, 0.65);
+         color: #fff;
+         margin: 0;
+         padding: 0.5em 1em;
+
+         * {
+            color: #fff !important;
+         }
+
+         a {
+            text-decoration: underline !important;
+         }
+      }
+   }
+
+   // ----- Lightbox -----
+
+   &__lightbox {
+      justify-content: center;
+      align-items: center;
+      --env-font-color: #fff;
+      --env-text-caption-01-font-color: #fff;
+      --env-spinner-color: #fff;
+      position: fixed;
+      inset: 0;
+      width: auto;
+      height: auto;
+      margin: $imageInset;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+      border: none;
+      border-radius: var(--env-border-radius-large);
+      background-color: transparent;
+      opacity: 0;
+      transition: all 0.2s linear;
+
+      @include focus.focus-visible;
+
+      &--in {
+         opacity: 1;
+      }
+
+      &[open] {
+         display: flex;
+      }
+
+      &__panel {
+         position: absolute;
+         inset: 0;
+         overflow: hidden;
+         background-color: #000;
+         background-position: 50%;
+         background-size: cover;
+         filter: blur(40px) brightness(0.4);
+
+         &__header-gradient,
+         &__footer-gradient {
+            position: absolute;
+            inset: 0 0 auto;
+            z-index: 1;
+            height: 85px;
+            // For button icon and text, the background will be at least
+            // #767676 on a white image for all text but the very top of
+            // some large letters.
+            background-image: linear-gradient(
+               rgba(0, 0, 0, 0.7),
+               rgba(0, 0, 0, 0)
+            );
+            pointer-events: none;
+         }
+
+         &__footer-gradient {
+            inset: auto 0 0;
+            background-image: linear-gradient(
+               rgba(0, 0, 0, 0),
+               rgba(0, 0, 0, 0.7)
+            );
+         }
+      }
+
+      &__image-container {
+         position: relative;
+         text-align: center;
+         margin: 0 auto;
+      }
+
+      &__figure {
+         margin: 0;
+         padding: 0;
+      }
+
+      &__caption {
+         $lineHeight: 1.5;
+         position: fixed;
+         z-index: 9999;
+         text-align: left;
+         max-width: 60em;
+         right: calc(#{$buttonInset} + 2.75em + 2em);
+         bottom: $lineHeight * 0.25rem + $buttonInset;
+         left: $buttonInset;
+         line-height: 1.2;
+         margin: 0;
+      }
+
+      &__image {
+         display: block;
+         width: 100%;
+         height: auto;
+         max-width: 100%;
+         max-height: calc(100vh - #{$imageInset} * 2);
+      }
+
+      &__download,
+      &__close {
+         &,
+         &:focus,
+         &:hover {
+            background-color: transparent;
+            border-color: transparent;
+            color: #fff;
+         }
+
+         &:focus,
+         &:hover {
+            backdrop-filter: invert(10%);
+            transition: backdrop-filter 0.025s ease-in-out;
+         }
+
+         &:focus-visible {
+            @include overlayButtonFocusVisible(#fff, #000);
+         }
+      }
+
+      &__download {
+         position: fixed !important;
+         z-index: 9999;
+         bottom: $buttonInset;
+         right: $buttonInset;
+      }
+
+      &__close {
+         position: fixed !important;
+         z-index: 9999;
+         top: $buttonInset;
+         right: $buttonInset;
+      }
+
+      &__next,
+      &__prev {
+         position: fixed !important;
+         top: 50%;
+         transform: translateY(-50%);
+         border-radius: 50%;
+
+         &,
+         &:hover,
+         &:focus {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+         }
+
+         &:focus-visible {
+            @include overlayButtonFocusVisible(#000, #fff);
+         }
+      }
+
+      &__next {
+         right: $buttonInset;
+      }
+
+      &__prev {
+         left: $buttonInset;
+      }
+
+      &::backdrop {
+         background: rgba(0, 0, 0, 0.9);
+      }
+
+      &__showOnActive {
+         @media (hover: hover) {
+            opacity: 0;
+            transition: opacity 0.1s 0.2s;
+         }
+
+         .env-image-viewer-2__lightbox--active &,
+         .env-image-viewer-2__lightbox:hover & {
+            opacity: 1;
+         }
+      }
+   }
+}

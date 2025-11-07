@@ -1,0 +1,331 @@
+@use 'sass:math';
+@use 'sass:list';
+
+@use '../abstracts/functions';
+
+// ===================
+// SASS ONLY VARIABLES
+// ===================
+
+// Helpers
+$BROWSER_FONT_SIZE: 16;
+
+// z-index value
+$zindex-imageslider-indicator: 15 !default;
+$zindex-radio-button: 100 !default;
+$zindex-popover: 1030 !default;
+$zindex-dropdown: 1060 !default;
+$zindex-tagselect: 1070 !default;
+$zindex-tooltip: 1080 !default;
+$zindex-alert: 1090 !default;
+// Docs Site Header z-index: 10000;
+$zindex-modal-backdrop: 10010 !default;
+$zindex-modal: 10020 !default;
+$zindex-modal-close-btn: 10030 !default;
+
+// Animation
+$toggle-duration: 300ms !default;
+
+// Font weight
+$font-weight-regular: 400 !default;
+$font-weight-semibold: 500 !default;
+$font-weight-bold: 600 !default;
+
+// Line height
+$line-height-medium: 1.4 !default;
+$line-height-wcag-min: 1.5 !default;
+
+// Buttons and inputs
+$button-line-height: 1 !default;
+
+// Icon Size
+// Decimal value used to calculate size relative to font-size-base
+$icon-size-xx-small: math.div(11, $BROWSER_FONT_SIZE) !default;
+$icon-size-x-small: math.div(14, $BROWSER_FONT_SIZE) !default;
+$icon-size-small: math.div(20, $BROWSER_FONT_SIZE) !default;
+$icon-size-medium: math.div(30, $BROWSER_FONT_SIZE) !default;
+$icon-size-large: math.div(40, $BROWSER_FONT_SIZE) !default;
+$icon-size-x-large: math.div(50, $BROWSER_FONT_SIZE) !default;
+$icon-size-xx-large: math.div(60, $BROWSER_FONT_SIZE) !default;
+
+// =============================
+// CSS CUSTOM PROPERTY VARIABLES
+// =============================
+
+// ----- TEXT -----
+
+// Font family
+$font-family: inherit !default;
+
+// Font Size
+$font-size-base: 1em !default;
+
+$font-color: #202330 !default;
+$link-color: #3a71aa !default;
+$link-text-decoration: none !default;
+$link-hover-text-decoration: underline !default;
+
+// ----- GENERAL COLORS -----
+
+$background-color: #ffffff !default;
+$section-background-color: #ffffff !default;
+
+// ----- UI STATUS COLORS -----
+
+$ui-color-status-neutral: #393939;
+$ui-color-status-neutral-contrast: #ffffff;
+$ui-color-status-active: #58a978;
+$ui-color-status-active-contrast: #202330;
+$ui-color-status-active-text: #44835d;
+$ui-color-status-attention: #ce2e7e;
+$ui-color-status-attention-contrast: #ffffff;
+$ui-color-status-attention-text: #ce2e7e;
+$ui-color-status-error: #c15252;
+$ui-color-status-error-contrast: #ffffff;
+$ui-color-status-error-text: #c15252;
+
+// ----- UI BRAND COLORS -----
+
+$BRAND_COLOR_VARIANTS:
+   '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65',
+   '70', '75', '80', '85', '90', '95', '100';
+
+// ----- UI TEXT -----
+
+$UI_TEXT_NAMES:
+   'overline', 'heading', 'sectionheading', 'subheading', 'caption';
+
+// ----- CONTENT TEXT -----
+
+$CONTENT_TEXT_HEADING_NAMES:
+   'heading-01', 'heading-02', 'heading-03', 'heading-04', 'heading-05',
+   'heading-06', 'display-01', 'display-02', 'display-03';
+$CONTENT_TEXT_BODY_NAMES:
+   'summary-01', 'body-01', 'body-02', 'body-03', 'body-04', 'caption-01',
+   'quotation-01', 'quotation-02', 'table-caption-01', 'table-heading-01',
+   'table-data-01';
+
+$CONTENT_TEXT_NAMES: list.join(
+   $CONTENT_TEXT_HEADING_NAMES,
+   $CONTENT_TEXT_BODY_NAMES
+);
+
+$content-text-base: (
+   'font-family': var(--env-font-family),
+   'font-color': var(--env-font-color),
+   'font-weight': 400,
+   'font-style': normal,
+   'text-transform': none,
+   'letter-spacing': normal,
+   'line-height': 1.6,
+   'font-size': 1em,
+   'margin-block-start': 1em,
+   'margin-block-end': 1em,
+);
+
+$content-text-links: (
+   'link-font-color': var(--env-link-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-hover-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
+
+// ----- FOCUS -----
+
+// Color
+$focus-size: 2px;
+
+// TODO: SET HEADING
+
+$color-primary: #3a71aa !default;
+$color-primary-light: functions.adjustLightness($color-primary, 10%) !default;
+$color-primary-dark: functions.adjustLightness($color-primary, -10%) !default;
+$color-warning: #ffcd45 !default;
+$color-warning-dark: functions.adjustLightness($color-warning, -10%) !default;
+$color-danger: #be4848 !default;
+$color-success: #327951 !default;
+$color-info: #257680 !default;
+$color-hover: #f7f7f7 !default;
+$color-base: #000000 !default;
+$color-light: functions.adjustLightness($color-base, 60%) !default;
+$color-lighter: functions.adjustLightness($color-base, 80%) !default;
+
+// ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
+
+$block-default-background-color: #ffffff;
+$block-default-border-color: #e7e7e7;
+
+$block-primary-background-color: #f7f7f7;
+$block-primary-border-color: #ccc;
+
+$block-secondary-background-color: #ebf2ff;
+$block-secondary-border-color: #a7bed0;
+$block-secondary-link-font-color: #3a71aa;
+
+$element-default-background-color: #f0f1f2;
+
+$element-secondary-background-color: #4f5153;
+$element-secondary-font-color: #ffffff;
+
+// ----- SPACING -----
+
+// Size (Margin/Padding)
+$spacing-base: 1em !default;
+$spacing-xxx-small: $spacing-base * 0.125 !default;
+$spacing-xx-small: $spacing-base * 0.25 !default;
+$spacing-x-small: $spacing-base * 0.5 !default;
+$spacing-small: $spacing-base * 0.75 !default;
+$spacing-medium: $spacing-base !default;
+$spacing-large: $spacing-base * 1.25 !default;
+$spacing-x-large: $spacing-base * 1.5 !default;
+$spacing-xx-large: $spacing-base * 1.75 !default;
+$spacing-xxx-large: $spacing-base * 2 !default;
+
+// ----- BORDERS -----
+
+// Radius
+$radius-base: 0.25em !default;
+$radius-small: $radius-base * 0.5 !default;
+$radius-medium: $radius-base !default;
+$radius-large: $radius-base * 1.5 !default;
+
+$border-width: 1px !default;
+$border-style: solid !default;
+$border-color: #ccc !default;
+$border-color-05: functions.adjustLightness($border-color, 10%) !default;
+$tab-bottom-width: 3px !default;
+
+// ----- SPINNER -----
+
+$spinner-color: #5cb3fd !default;
+
+// ----- TOOLTIP -----
+
+$tooltip-background-color: #000;
+$tooltip-font-color: #eeeeee;
+
+// ----- POPOVER -----
+
+// Popover
+$popover-width: 360px !default;
+
+// ----- MODAL DIALOG -----
+
+$modal-small: 300px !default;
+$modal-medium: 450px !default;
+$modal-large: 900px !default;
+
+// ----- BREADCRUMB -----
+
+$breadcrumb-divider-color: $color-light !default;
+$breadcrumb-divider: '/' !default;
+
+// ----- BADGE -----
+
+$badge-font-size: 0.75em !default;
+$badge-font-family: $font-family !default;
+
+// ----- BUTTONS -----
+
+$button-border-radius: 0.375em !default;
+
+// ----- FORM ELEMENTS -----
+
+// Radio button
+
+$native-radiobutton-size: 1.375em !default;
+$native-radiobutton-checked-size: 0.75em !default;
+
+// Legacy radio button
+
+$radiobutton-size: 1.25em !default;
+$radiobutton-checked-size: 60% !default;
+
+// Checkbox
+$checkbox-size: 1.25em !default;
+$checkbox-tick-height: $checkbox-size * 0.4 !default;
+$checkbox-tick-width: $checkbox-size * 0.7 !default;
+$checkbox-disabled-color: $color-lighter !default;
+
+$form-input-height: 44;
+$form-input-font-size: 16;
+$form-input-line-height: 1.375; // 22px @ 16px font size
+$form-input-border-color: #949494 !default;
+$form-padding-x: 0.75em;
+$form-padding-y: 0.625em;
+
+// ----- PROGRESS BAR -----
+
+// Progress bar
+$progress-bar-height: 1.25em !default;
+
+// Poll
+$progress-bar-poll-highlight-color: #4bc5f5 !default;
+
+// ----- COLLAPSE -----
+
+// Collapse
+$collapse-icon-height: 3px !default;
+$collapse-icon-width: 15px !default;
+$collapse-icon-top: 50% !default;
+$collapse-icon-right: 15px !default;
+$collapse-heading-min-height: 30px !default;
+$collapse-toggle-duration: $toggle-duration !default;
+
+// Collapse border
+$collapse-border-width: $border-width !default;
+$collapse-border-style: $border-style !default;
+
+// ----- PAGINATION -----
+
+// Pagination
+$pagination-font: $font-family !default;
+$pagination-border-width: $border-width !default;
+$pagination-border-style: $border-style !default;
+
+// ----- PROFILE IMAGE -----
+
+$profile-image-radius: 50% !default;
+
+// ----- DEPRECATED -----
+
+// All variables below this line are deprecated. To be removed later.
+// ------------------------------------------------------------------
+
+$font-color-light: functions.adjustLightness($font-color, 10%) !default;
+$font-color-lighter: functions.adjustLightness($font-color, 20%) !default;
+$font-color-invert: #ffffff !default;
+$font-color-muted: rgba($font-color, 0.65);
+
+$color-page-bg: #ffffff !default;
+$color-section-bg: #ffffff !default;
+
+$color-darker: functions.adjustLightness($color-base, 5%) !default;
+$color-dark: functions.adjustLightness($color-base, 20%) !default;
+$color-normal: functions.adjustLightness($color-base, 40%) !default;
+$color-lightest: functions.adjustLightness($color-lighter, 10%) !default;
+
+$color-brand: $color-primary;
+$color-brand-light: $color-primary-light;
+$color-brand-dark: $color-primary-dark;
+
+$color-secondary: #6c757d !default;
+$color-secondary-light: functions.adjustLightness(
+   $color-secondary,
+   10%
+) !default;
+$color-secondary-dark: functions.adjustLightness(
+   $color-secondary,
+   -10%
+) !default;
+
+$focus-color: #5cb3fd !default;
+
+$focus-background-color: rgba(0, 0, 0, 0.2) !default;
+
+$image-control-color: #ffffff !default;
+
+$element-common-background-color: functions.adjustLightness(
+   #ffffff,
+   -5%
+); // => #f2f2f2;

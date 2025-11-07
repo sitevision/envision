@@ -1,0 +1,105 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/scss-variables' as *;
+
+.env-badge {
+   display: inline-block;
+   font-family: var(--env-badge-font-family);
+   font-size: var(--env-badge-font-size);
+   font-weight: var(--env-badge-font-weight);
+   text-decoration: none !important;
+   text-transform: var(--env-badge-text-transform);
+   letter-spacing: var(--env-badge-letter-spacing);
+   color: var(--env-element-primary-font-color);
+   background-color: var(--env-element-primary-background-color);
+   padding: var(--env-spacing-xx-small) var(--env-spacing-x-small);
+   border: none;
+   border-radius: var(--env-badge-border-radius);
+   vertical-align: baseline;
+
+   &:focus-visible {
+      @include focus.focus-outline;
+   }
+
+   // Hover state for primary and default badges if button or link
+   &--primary:where(a, button):hover,
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):hover,
+   &:not([class^='env-badge--']):not([class*=' env-badge--']):where(
+         a,
+         button
+      ):focus {
+      background-color: var(--env-element-primary-background-color-dark);
+   }
+
+   $badgeNames: 'success', 'danger', 'info', 'warning';
+
+   @each $name in $badgeNames {
+      // Element color variants will have hover state if button or link
+      &--#{$name} {
+         color: var(--env-element-#{$name}-font-color);
+         background-color: var(--env-element-#{$name}-background-color);
+
+         &:where(a, button):hover,
+         &:where(a, button):focus {
+            background-color: var(--env-element-#{$name}-background-color-dark);
+         }
+      }
+   }
+
+   // ----- STATUS VARIANTS -----
+
+   &--neutral {
+      color: var(--env-ui-color-status-neutral-contrast);
+      background-color: var(--env-ui-color-status-neutral);
+   }
+
+   &--active {
+      color: var(--env-ui-color-status-active-contrast);
+      background-color: var(--env-ui-color-status-active);
+   }
+
+   &--attention {
+      color: var(--env-ui-color-status-attention-contrast);
+      background-color: var(--env-ui-color-status-attention);
+   }
+
+   // ----- BRAND VARIANTS -----
+
+   &--brand {
+      color: var(--env-ui-color-brand-contrast);
+      background-color: var(--env-ui-color-brand);
+   }
+
+   @each $key, $val in $BRAND_COLOR_VARIANTS {
+      &--brand-#{$key} {
+         color: var(--env-ui-color-brand-#{$key}-contrast);
+         background-color: var(--env-ui-color-brand-#{$key});
+      }
+   }
+}
+
+.env-status-badge {
+   position: relative;
+   padding: 0 0 0 1.375em;
+   box-sizing: content-box;
+
+   &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0.8em;
+      height: 0.8em;
+      margin-top: -0.5em;
+      border-radius: 50%;
+      border: 0.125em solid var(--env-font-color);
+      background-color: var(--env-section-background-color);
+   }
+
+   &--active:after {
+      border-color: var(--env-ui-color-status-active);
+      background-color: var(--env-ui-color-status-active);
+   }
+}

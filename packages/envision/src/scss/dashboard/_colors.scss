@@ -1,0 +1,43 @@
+@use 'constants';
+@use '../abstracts/mixins/css-vars';
+
+// ===== DASHBOARD COLOR PALETTE =====
+
+.env-dashboard-color-bg-black {
+   background-color: var(--env-dashboard-color-black);
+}
+
+.env-dashboard-color-txt-black {
+   color: var(--env-dashboard-color-black);
+}
+
+.env-dashboard-color-bg-white {
+   background-color: var(--env-dashboard-color-white);
+}
+
+.env-dashboard-color-txt-white {
+   color: var(--env-dashboard-color-white);
+}
+
+@include css-vars.add-declaration(
+   (
+      'dashboard-color-black': #202330,
+      'dashboard-color-white': #ffffff,
+   )
+);
+
+@each $colorName, $variants in constants.$DASHBOARD_COLORS {
+   @each $variant, $color in $variants {
+      .env-dashboard-color-bg-#{$colorName}-#{$variant} {
+         background-color: var(--env-dashboard-color-#{$colorName}-#{$variant});
+      }
+      .env-dashboard-color-txt-#{$colorName}-#{$variant} {
+         color: var(--env-dashboard-color-#{$colorName}-#{$variant});
+      }
+      @include css-vars.add-declaration(
+         (
+            'dashboard-color-#{$colorName}-#{$variant}': $color,
+         )
+      );
+   }
+}

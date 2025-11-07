@@ -1,0 +1,73 @@
+@use '../abstracts/functions';
+@use '../abstracts/mixins/css-vars';
+
+@include css-vars.add-declaration(
+   (
+      'root-font-size': 16,
+      'dynamic-font-scale': 1.25,
+      'dynamic-font-from-width': 400,
+      'dynamic-font-to-width': 750,
+   )
+);
+
+.env-dynamic-font {
+   --df-root: var(--env-root-font-size);
+   --df-scale: var(--env-dynamic-font-scale);
+   --df-from-width: var(--env-dynamic-font-from-width);
+   --df-to-width: var(--env-dynamic-font-to-width);
+
+   --df-from-font-size: 1;
+   --df-to-font-size: var(--df-scale) * var(--df-from-font-size);
+   --df-slope: calc(
+      (
+         (var(--df-to-font-size) - var(--df-from-font-size)) /
+            (
+               (var(--df-to-width) / var(--env-root-font-size)) - var(
+                     --df-from-width
+                  ) /
+                  var(--env-root-font-size)
+            )
+      )
+   );
+   --df-yaxis: calc(
+      (
+            var(--df-from-width) / var(--env-root-font-size) * -1 *
+               var(--df-slope) + var(--df-from-font-size)
+         ) *
+         1rem
+   );
+
+   box-sizing: border-box;
+   font-size: clamp(
+      var(--df-from-font-size) * 1em,
+      var(--df-yaxis) + var(--df-slope) * 100cqw,
+      var(--df-to-font-size) * 1em
+   );
+
+   $scaleSizes: '1.125', '1.25', '1.375', '1.5', '1.625', '1.75', '1.875', '2';
+
+   @each $scaleSize in $scaleSizes {
+      &--scale-#{functions.str-replace($scaleSize, '.', '_')} {
+         --env-dynamic-font-scale: #{$scaleSize};
+      }
+   }
+
+   $fromSizes: '250', '300', '350', '400', '450', '500', '550';
+   $toSizes: '500', '550', '600', '650', '700', '750', '800', '900', '1000';
+
+   @each $fromSize in $fromSizes {
+      &--from-#{$fromSize} {
+         --env-dynamic-font-from-width: #{$fromSize};
+      }
+   }
+   @each $toSize in $toSizes {
+      &--to-#{$toSize} {
+         --env-dynamic-font-to-width: #{$toSize};
+      }
+   }
+
+   &--downscale {
+      --df-from-font-size: 1 / var(--df-scale);
+      --df-to-font-size: 1;
+   }
+}

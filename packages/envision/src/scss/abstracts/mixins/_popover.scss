@@ -1,0 +1,84 @@
+@use 'sass:map';
+
+@use '../scss-variables' as *;
+
+@mixin arrowBase($arrow-size) {
+   border-color: transparent;
+   border-style: $border-style;
+   border-width: $arrow-size;
+   display: block;
+   height: 0;
+   position: absolute;
+   width: 0;
+
+   &::after {
+      border-color: transparent;
+      border-style: $border-style;
+      border-width: $arrow-size;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      width: 0;
+   }
+
+   [data-popper-placement='top'] & {
+      clip-path: inset(0 0 50% 0);
+   }
+   [data-popper-placement='bottom'] & {
+      clip-path: inset(50% 0 0 0);
+   }
+
+   [data-popper-placement='top'] &,
+   [data-popper-placement='bottom'] & {
+      &::after {
+         transform: translateX(-50%);
+      }
+   }
+
+   [data-popper-placement='right'] & {
+      clip-path: inset(0 0 0 50%);
+   }
+
+   [data-popper-placement='left'] & {
+      clip-path: inset(0 50% 0 0);
+   }
+
+   [data-popper-placement='right'] &,
+   [data-popper-placement='left'] & {
+      &::after {
+         transform: translateY(-50%);
+      }
+   }
+}
+
+@mixin arrow(
+   $location,
+   $arrow-size,
+   $branded-border-width,
+   $color: var(--env-ui-color-brand)
+) {
+   $oppositeLocation: map.get(
+      (
+         'top': 'bottom',
+         'right': 'left',
+         'bottom': 'top',
+         'left': 'right',
+      ),
+      $location
+   );
+
+   &[data-popper-placement='#{$location}'] {
+      border-#{$oppositeLocation}: $branded-border-width solid $color;
+
+      .env-popover__arrow {
+         #{$oppositeLocation}: -$arrow-size * 2 - $branded-border-width + 1px;
+
+         &::after {
+            border-#{$location}-color: $color;
+            border-#{$oppositeLocation}-width: 0;
+            #{$oppositeLocation}: 0;
+         }
+      }
+   }
+}

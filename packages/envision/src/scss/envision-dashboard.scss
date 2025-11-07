@@ -1,0 +1,7 @@
+@use 'sass:meta';
+
+@include meta.load-css('dashboard/env-dashboard-theme');
+@include meta.load-css('dashboard/core');
+@include meta.load-css('dashboard/colors');
+@include meta.load-css('dashboard/components');
+@include meta.load-css('dashboard/typography');

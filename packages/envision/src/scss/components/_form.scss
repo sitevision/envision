@@ -1,0 +1,114 @@
+@use '../abstracts/mixins/form-input-option';
+@use '../abstracts/mixins/form-legacy-element';
+@use '../abstracts/mixins/form-legacy-fake-option';
+
+@use 'sass:math';
+
+.env-form {
+   input,
+   select,
+   textarea {
+      font-family: var(--env-form-font-family);
+   }
+
+   input {
+      margin: 0;
+   }
+
+   // New markup and classes added in 2024.07.1
+
+   & fieldset,
+   &-fieldset {
+      margin: var(--env-spacing-medium) 0;
+      padding: 0;
+      border: none;
+   }
+
+   & legend,
+   &-legend,
+   & label,
+   &-label {
+      // Since 2024.07.1
+      display: inline-block;
+      color: var(--env-font-color);
+      font-family: var(--env-form-label-font-family);
+      font-size: var(--env-font-size-medium);
+   }
+
+   & legend,
+   &-legend {
+      // Since 2024.07.1
+      font-weight: 600;
+      margin-bottom: var(--env-spacing-x-small);
+      padding: 0;
+   }
+
+   & label,
+   &-label {
+      font-weight: var(--env-form-label-font-weight);
+      margin-bottom: var(--env-spacing-xx-small);
+   }
+
+   &-field {
+      position: relative;
+      margin-bottom: var(--env-spacing-medium);
+
+      &--error {
+         --env-font-color: var(--env-ui-color-status-error-text);
+         --env-font-color-muted: var(--env-ui-color-status-error-text);
+         --env-form-input-border-color: var(--env-ui-color-status-error-text);
+      }
+
+      .env-form fieldset &,
+      .env-form-fieldset & {
+         margin-bottom: var(--env-spacing-x-small);
+      }
+   }
+
+   &-field-help {
+      display: block;
+      font-size: var(--env-font-size-small);
+      margin: var(--env-spacing-x-small) 0 0;
+   }
+}
+
+// Fake radio button, deprecated since SV 10.1
+.env-form-radio {
+   @include form-input-option.input-option-base('radio');
+
+   [type='radio'] {
+      margin-right: var(--env-spacing-xx-small);
+
+      &:checked {
+         @include form-input-option.radio-button-checked;
+      }
+   }
+
+   @include form-legacy-fake-option.deprecated-fake-radio-checkbox-fix;
+}
+
+// New native radiobutton since SV 10.1
+.env-radio {
+   @include form-input-option.input-option-base('radio');
+}
+
+.env-checkbox {
+   // New native checkbox styling since 2024.07.1
+   @include form-input-option.input-option-base('checkbox');
+
+   // Deprecated fake markup  since 2024.07.1
+   @include form-legacy-fake-option.deprecated-fake-radio-checkbox-fix;
+}
+
+.env-switch {
+   // New native checkbox styling for switch since 2024.07.1
+   @include form-input-option.input-option-switch;
+
+   // Deprecated fake markup since 2024.07.1
+   @include form-legacy-fake-option.deprecated-fake-switch-fix;
+}
+
+.env-form-element {
+   // Deprecated since 2024.07.1. Replaced by .env-form-field.
+   @include form-legacy-element.deprecated-form-element;
+}

@@ -1,0 +1,109 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/mixins/list';
+@use '../abstracts/mixins/nav';
+@use '../abstracts/scss-variables' as *;
+
+.env-tabs {
+   $radius: min(var(--env-border-radius-medium), 1em);
+   &__nav {
+      @include list.reset-list();
+      display: flex;
+
+      &--border-bottom {
+         border-bottom: $tab-bottom-width $border-style
+            var(--env-ui-color-brand);
+      }
+
+      :first-child > a {
+         margin-left: 0;
+      }
+
+      :last-child > a {
+         margin-right: 0;
+      }
+   }
+
+   &__link,
+   [role='tab'] {
+      display: block;
+      align-items: center;
+      box-sizing: border-box;
+      appearance: none;
+      font-family: var(--env-font-family);
+      font-size: var(--env-font-size-medium);
+      line-height: 1;
+      text-align: left;
+      color: var(--env-font-color);
+      background-color: transparent;
+      border: {
+         style: none;
+         width: 0;
+         radius: 0;
+      }
+      box-shadow: none;
+      text-shadow: none;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+         background-color 0.25s ease,
+         color 0.25s ease;
+      border-radius: $radius $radius 0 0;
+      margin: 0 var(--env-spacing-xxx-small);
+      padding: var(--env-spacing-x-small) var(--env-spacing-medium);
+
+      &[aria-selected='true'] {
+         background-color: var(--env-ui-color-brand);
+         color: var(--env-ui-color-brand-contrast);
+      }
+
+      @include focus.focus-visible;
+   }
+
+   &__panel[role='tabpanel'] {
+      @include focus.focus-visible;
+   }
+
+   &--simple {
+      @include list.reset-list();
+      display: flex;
+
+      .env-tabs__link,
+      [role='tab'] {
+         background-color: transparent;
+         border-color: transparent;
+         color: var(--env-font-color);
+         margin: 0 var(--env-spacing-xx-small);
+         padding: var(--env-spacing-x-small) var(--env-spacing-x-small);
+         transition: border-color 0.5s ease;
+
+         &[aria-selected='true'] {
+            border-bottom: $tab-bottom-width $border-style
+               var(--env-ui-color-brand);
+         }
+
+         &:hover {
+            border-bottom: $tab-bottom-width $border-style
+               var(--env-ui-color-brand);
+         }
+
+         @include focus.focus-visible;
+      }
+   }
+
+   &--hover-fill {
+      .env-tabs__link {
+         @include nav.nav-link();
+         @include nav.filled-nav-states();
+      }
+   }
+
+   &--column {
+      display: block;
+      width: 100%;
+   }
+
+   &--column [role='tab'] {
+      border-radius: $radius;
+      margin: 0;
+   }
+}

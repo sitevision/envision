@@ -1,0 +1,100 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/mixins/list';
+@use '../abstracts/mixins/pagination';
+@use '../abstracts/mixins/states';
+
+.env-pagination {
+   @include list.reset-list();
+   display: flex;
+   flex-wrap: wrap;
+
+   &__link {
+      @include pagination.pagination-size(
+         'spacing-xx-small',
+         'spacing-small',
+         'font-size-medium'
+      );
+      background-color: transparent;
+      border: {
+         style: var(--env-pagination-border-style);
+         width: var(--env-pagination-border-width);
+         color: var(--env-border-color);
+         radius: 0;
+      }
+      color: var(--env-font-color);
+      display: inline-block;
+      font-family: var(--env-pagination-font-family);
+      margin-top: calc(var(--env-pagination-border-width) * -1);
+      margin-left: calc(var(--env-pagination-border-width) * -1);
+      position: relative;
+      text-decoration: none;
+
+      .env-pagination__item:first-child & {
+         border-radius: var(--env-border-radius-medium) 0 0
+            var(--env-border-radius-medium);
+      }
+
+      .env-pagination__item:last-child & {
+         border-radius: 0 var(--env-border-radius-medium)
+            var(--env-border-radius-medium) 0;
+      }
+
+      &:focus {
+         z-index: 3;
+      }
+
+      @include focus.focus-visible;
+
+      // env-is-active is deprecated
+      &[aria-current='true'],
+      &[aria-current='page'],
+      &.env-is-active {
+         background-color: var(--env-element-primary-background-color);
+         color: var(--env-element-primary-font-color);
+         border-color: var(--env-element-primary-background-color);
+      }
+
+      &:hover {
+         background-color: var(--env-element-primary-background-color);
+         border-color: var(--env-element-primary-background-color);
+         color: var(--env-element-primary-font-color);
+         z-index: 2;
+      }
+   }
+
+   &--center {
+      justify-content: center;
+   }
+
+   &--end {
+      justify-content: flex-end;
+   }
+
+   &--small {
+      .env-pagination__link {
+         @include pagination.pagination-size(
+            'spacing-xxx-small',
+            'spacing-x-small',
+            'font-size-small'
+         );
+      }
+   }
+
+   &--large {
+      .env-pagination__link {
+         @include pagination.pagination-size(
+            'spacing-x-small',
+            'spacing-medium',
+            'font-size-large'
+         );
+      }
+   }
+}
+
+a.env-pagination__link[href=''],
+.env-pagination__link:not([href]):not(:is(button)),
+button.env-pagination__link[disabled],
+.env-pagination__link.env-is-disabled {
+   // env-is-disabled is deprecated
+   @include states.is-disabled();
+}
