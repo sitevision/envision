@@ -4,6 +4,7 @@ const process = require('process');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -39,13 +40,13 @@ module.exports = [
    {
       mode: dev ? 'development' : 'production',
       devtool: 'source-map',
-      entry: './src/scss/dashboard/envision-dashboard.scss',
+      entry: './src/scss/envision-dashboard.scss',
       output: {
-         filename: 'envision-dashboard.js',
          path: path.resolve(__dirname, '..', 'envision-docs', 'static', 'dist'),
       },
       optimization,
       plugins: [
+         new RemoveEmptyScriptsPlugin(),
          new MiniCssExtractPlugin({
             filename: 'envision-dashboard.css',
          }),
@@ -167,9 +168,7 @@ module.exports = [
                      loader: 'sass-loader',
                      options: {
                         api: 'modern-compiler',
-                        sassOptions: {
-                           style: 'compressed',
-                        },
+                        sassOptions: {},
                      },
                   },
                ],

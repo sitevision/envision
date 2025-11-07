@@ -1,0 +1,210 @@
+@use '../abstracts/mixins/text';
+@use '../abstracts/mixins/truncate';
+@use '../abstracts/scss-variables' as *;
+
+.env-text {
+   font-family: var(--env-font-family);
+   font-size: var(--env-font-size-medium);
+   font-weight: $font-weight-regular;
+   text-size-adjust: 100%;
+   text-align: start;
+   line-height: $line-height-medium;
+   color: var(--env-font-color);
+
+   &--muted {
+      font-weight: $font-weight-regular;
+      color: var(--env-font-color-muted) !important;
+   }
+
+   &--uppercase {
+      text-transform: uppercase !important;
+   }
+
+   &--lowercase {
+      text-transform: lowercase !important;
+   }
+
+   &--capitalize {
+      text-transform: capitalize !important;
+   }
+
+   &--truncate {
+      @include truncate.truncate-text();
+   }
+
+   &--strike {
+      text-decoration: line-through !important;
+   }
+
+   &--attention {
+      color: var(--env-ui-color-status-attention-text) !important;
+   }
+
+   &--active {
+      color: var(--env-ui-color-status-active-text) !important;
+   }
+
+   &--error {
+      color: var(--env-ui-color-status-error-text) !important;
+   }
+
+   // Text alignment
+   &-align--right {
+      text-align: right;
+   }
+
+   &-align--center {
+      text-align: center;
+   }
+
+   &-align--left {
+      text-align: left;
+   }
+
+   &--rtl {
+      direction: rtl;
+      text-align: start;
+   }
+
+   &-align--start {
+      text-align: start !important;
+   }
+
+   &-align--end {
+      text-align: end !important;
+   }
+}
+
+button:not(.env-button).env-link,
+button:not(.env-button).env-link-secondary {
+   appearance: none;
+   display: inline;
+   border: none;
+   font-family: var(--env-font-family);
+   font-size: 1em !important;
+   margin: 0;
+   padding: 0;
+   background-color: transparent;
+   white-space: normal;
+   cursor: pointer;
+}
+
+.env-link,
+a.env-text,
+.env-text a:not([class^='env-']):not([class*=' env-']) {
+   @include text.link(
+      'link-font-color',
+      'link-text-decoration',
+      'link-hover-font-color',
+      'link-hover-text-decoration'
+   );
+}
+
+.env-text .env-link-secondary,
+.env-text a.env-link-secondary,
+.env-link-secondary {
+   @include text.link(
+      'link-secondary-font-color',
+      'link-secondary-text-decoration',
+      'link-secondary-hover-font-color',
+      'link-secondary-hover-text-decoration'
+   );
+}
+
+.env-link-icon {
+   display: inline-block;
+   vertical-align: baseline;
+   fill: currentColor;
+   height: var(--env-link-icon-size);
+   width: var(--env-link-icon-size);
+   margin-left: var(--env-link-icon-gap);
+   transform: translateY(var(--env-link-icon-offset-y));
+}
+
+.env-link-meta {
+   font-size: var(--env-link-meta-font-size);
+   color: var(--env-font-color);
+}
+
+.env-text mark,
+.env-mark {
+   color: var(--env-mark-font-color);
+   background-color: var(--env-mark-background-color);
+}
+
+.env-text blockquote,
+.env-blockquote {
+   border-block: var(--env-blockquote-border-block-width) solid
+      var(--env-blockquote-border-block-color);
+   border-inline-end: var(--env-blockquote-border-inline-end-width) solid
+      var(--env-blockquote-border-inline-end-color);
+   border-inline-start: var(--env-blockquote-border-inline-start-width) solid
+      var(--env-blockquote-border-inline-start-color);
+   padding-block-start: var(--env-blockquote-padding-block-start);
+   padding-inline-end: var(--env-blockquote-padding-inline-end);
+   padding-block-end: var(--env-blockquote-padding-block-end);
+   padding-inline-start: var(--env-blockquote-padding-inline-start);
+   margin-block-start: var(--env-blockquote-margin-block-start);
+   margin-block-end: var(--env-blockquote-margin-block-end);
+   margin-inline: 0;
+}
+
+@include text.block-text-size(
+   'h1',
+   'font-size-xxxx-large',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'h2',
+   'font-size-xxx-large',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'h3',
+   'font-size-xx-large',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'h4',
+   'font-size-x-large',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'h5',
+   'font-size-large',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'h6',
+   'font-size-medium',
+   'spacing-xx-small',
+   $font-weight-semibold
+);
+@include text.block-text-size(
+   'p',
+   'font-size-medium',
+   'spacing-xx-small',
+   $font-weight-regular,
+   $line-height-wcag-min
+);
+
+// .env-text--small is not following BEM standards and have
+// never been documented. Kept for backwards compatibility.
+small.env-text,
+.env-text small,
+.env-text-small,
+.env-text--small {
+   font-size: smaller;
+}
+
+// Since we set .env-text to font-weight 400,
+// We need to set it back to bold for strong and b.
+b.env-text,
+strong.env-text {
+   font-weight: $font-weight-bold;
+}

@@ -1,0 +1,110 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/mixins/form';
+@use '../abstracts/scss-variables' as *;
+
+@use 'sass:math';
+
+$form-input-min-height: math.div($form-input-height, $form-input-font-size) *
+   1em;
+
+.env-form-input {
+   @include form.form-input-defaults;
+   @include form.placeholder {
+      color: var(--env-form-input-font-color);
+      filter: opacity(0.65);
+   }
+
+   fieldset[disabled] &,
+   &[disabled],
+   &[readonly] {
+      @include form.disabled;
+   }
+
+   fieldset[disabled] &,
+   &[disabled] {
+      user-select: none;
+   }
+
+   @include focus.focus-visible;
+
+   &[type='date'],
+   &[type='datetime-local'],
+   &[type='month'],
+   &[type='time'],
+   &[type='week'] {
+      height: 2.75em;
+   }
+
+   @supports (-webkit-touch-callout: none) {
+      // (hack) iOS specific styling for prettier date inputs
+      &[type='date'],
+      &[type='datetime-local'],
+      &[type='month'],
+      &[type='time'],
+      &[type='week'] {
+         appearance: none;
+
+         &::-webkit-date-and-time-value {
+            text-align: left;
+         }
+      }
+   }
+
+   &[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button {
+         display: none;
+      }
+   }
+
+   &--search[type='search'] {
+      appearance: none;
+
+      &::-webkit-search-cancel-button {
+         display: block;
+      }
+
+      &::-ms-clear {
+         display: block;
+      }
+   }
+
+   &[contenteditable=''],
+   &[contenteditable='true'] {
+      position: relative;
+      height: 5.5em;
+      overflow: auto;
+      resize: vertical;
+
+      &[aria-placeholder]:before {
+         content: attr(aria-placeholder);
+      }
+
+      ~ .env-form-element__contenteditable-placeholder, // Deprecated
+      &[aria-placeholder]:before {
+         display: none;
+         position: absolute;
+         top: calc(#{var(--env-spacing-x-small)} + 1px);
+         left: calc(#{var(--env-spacing-small)} + 1px);
+         pointer-events: none;
+         speak: never;
+         color: var(--env-form-input-font-color);
+         filter: opacity(0.5);
+         line-height: 1.4;
+         font-size: var(--env-font-size-medium);
+      }
+
+      &:empty ~ .env-form-element__contenteditable-placeholder, // Deprecated
+      &[aria-placeholder]:empty:before {
+         display: block;
+      }
+   }
+}
+
+.env-form textarea,
+textarea.env-form-input {
+   resize: vertical;
+   min-height: $form-input-min-height;
+}

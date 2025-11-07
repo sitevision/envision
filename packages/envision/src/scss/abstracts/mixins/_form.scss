@@ -1,0 +1,31 @@
+@use '../scss-variables' as *;
+
+@mixin form-input-defaults {
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
+   margin: 0;
+   padding: $form-padding-y $form-padding-x;
+   font-family: var(--env-form-font-family);
+   font-size: var(--env-font-size-medium);
+   line-height: $form-input-line-height;
+   color: var(--env-form-input-font-color);
+   background-color: var(--env-form-input-background-color);
+   background-image: none;
+   border: $border-width $border-style var(--env-form-input-border-color);
+   border-radius: var(--env-form-input-border-radius);
+}
+
+@mixin disabled($grayscale: true) {
+   @if ($grayscale) {
+      filter: opacity(0.5) grayscale(100%);
+   } @else {
+      filter: opacity(0.5);
+   }
+}
+
+@mixin placeholder() {
+   &::placeholder {
+      @content;
+   }
+}

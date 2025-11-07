@@ -1,0 +1,133 @@
+@use '../abstracts/scss-variables' as *;
+
+.env-progress {
+   border-radius: var(--env-border-radius-medium);
+   display: flex;
+   font-family: var(--env-font-family);
+   font-size: var(--env-font-size-small);
+   overflow: hidden;
+   text-align: center;
+   backdrop-filter: invert(4%);
+
+   &__bar {
+      background-color: var(--env-element-primary-background-color);
+      color: var(--env-element-primary-font-color);
+      height: $progress-bar-height;
+
+      &--success {
+         background-color: var(--env-color-success);
+      }
+
+      &--warning {
+         background-color: var(--env-color-warning);
+      }
+
+      &--danger {
+         background-color: var(--env-color-danger);
+      }
+
+      &--striped {
+         background-image: linear-gradient(
+            -45deg,
+            transparent 33%,
+            rgba(255, 255, 255, 0.15) 33%,
+            rgba(255, 255, 255, 0.15) 66%,
+            transparent 66%
+         );
+         background-size: $spacing-xx-large $spacing-large; // Keep
+
+         &--flip {
+            background-image: linear-gradient(
+               45deg,
+               transparent 33%,
+               rgba(255, 255, 255, 0.15) 33%,
+               rgba(255, 255, 255, 0.15) 66%,
+               transparent 66%
+            );
+         }
+
+         &--animated {
+            animation: env-progress-animation 1s linear infinite;
+         }
+      }
+   }
+
+   &-poll {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 3.25em;
+      margin-bottom: var(--env-spacing-x-small);
+      line-height: 1;
+      background-color: var(--env-ui-color-brand-10);
+      color: var(--env-ui-color-brand-10-contrast);
+      padding: 0 var(--env-spacing-x-small);
+
+      &,
+      * {
+         box-sizing: border-box;
+      }
+
+      &__bar {
+         position: absolute;
+         z-index: 1;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         background-color: var(--env-ui-color-brand-20);
+         border-radius: var(--env-border-radius-medium);
+      }
+
+      &__label,
+      &__value {
+         position: relative;
+         z-index: 2;
+         box-sizing: border-box;
+         padding: 0 var(--env-spacing-x-small);
+      }
+
+      &--highlighted {
+         font-weight: bold;
+
+         .env-progress-poll__bar {
+            background-color: var(--env-ui-color-brand-40);
+         }
+
+         .env-progress-poll__label {
+            color: var(--env-ui-color-brand-40-contrast);
+         }
+      }
+
+      &__label {
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         text-align: left;
+      }
+
+      &__value {
+         text-align: right;
+         white-space: nowrap;
+      }
+
+      &__icon {
+         flex: 0 0 1.25em;
+         width: 1.25em;
+         height: 1.25em;
+         margin: 0 var(--env-spacing-xx-small);
+         stroke-width: 0;
+         stroke: currentColor;
+         fill: currentColor;
+      }
+   }
+}
+
+@keyframes env-progress-animation {
+   0% {
+      background-position: $spacing-xx-large 0; // Keep
+   }
+   100% {
+      background-position: 0 0;
+   }
+}

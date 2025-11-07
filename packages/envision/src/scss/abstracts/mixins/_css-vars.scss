@@ -1,0 +1,7 @@
+@mixin add-declaration($variables, $selector: ':root') {
+   #{$selector} {
+      @each $name, $value in $variables {
+         --env-#{$name}: #{$value};
+      }
+   }
+}

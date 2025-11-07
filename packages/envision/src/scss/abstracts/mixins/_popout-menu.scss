@@ -1,0 +1,81 @@
+@use '../scss-variables' as *;
+@use 'focus';
+@use 'form';
+
+@use 'sass:math';
+
+@mixin popout-menu($horizontalPadding: 1.125em) {
+   $menu-item-min-height: math.div(52, $BROWSER_FONT_SIZE) * 1em;
+   $menu-item-padding: $horizontalPadding;
+   $menu-inner-spacing: 0.75em;
+   // $icon-size: Icon 20 x 20 px at browser default font size (16px)
+   $icon-size: math.div(20, $BROWSER_FONT_SIZE) * 1em;
+
+   &__menu {
+      font-family: var(--env-font-family);
+      font-size: var(--env-font-size-medium);
+      list-style: none;
+      margin: 0;
+      padding: $menu-inner-spacing 0;
+
+      > ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
+   }
+
+   &__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      box-sizing: border-box;
+      appearance: none;
+      width: 100%;
+      min-height: $menu-item-min-height;
+      margin: 0;
+      padding: 0 $menu-item-padding;
+      font-family: var(--env-font-family);
+      font-size: 1em;
+      line-height: 1;
+      text-align: left;
+      color: var(--env-font-color);
+      background-color: transparent;
+      border: {
+         style: none;
+         width: 0;
+         radius: 0;
+      }
+      box-shadow: none;
+      text-shadow: none;
+      text-decoration: none;
+      cursor: pointer;
+
+      &--active,
+      &:active,
+      &:hover {
+         background-color: var(--env-section-background-color-05);
+         color: var(--env-font-color);
+      }
+
+      &[aria-disabled='true'] {
+         background-color: transparent;
+         @include form.disabled(true);
+         cursor: default;
+      }
+
+      @include focus.focus-visible;
+
+      .env-icon {
+         flex: 0 0 $icon-size;
+         width: $icon-size;
+         height: $icon-size;
+         margin: 0 calc($menu-item-padding / 2) 0 0;
+      }
+   }
+
+   &--divider {
+      border-bottom: $border-width $border-style var(--env-border-color-05);
+      margin: $menu-inner-spacing 0;
+   }
+}

@@ -1,0 +1,122 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/scss-variables' as *;
+
+.env-dialog {
+   z-index: $zindex-modal;
+   background-color: var(--env-section-background-color);
+   color: var(--env-font-color);
+   box-shadow: var(--env-box-shadow);
+   width: var(--env-dialog-medium-width);
+   max-width: calc(100% - 2em);
+   max-height: calc(100% - 2em);
+   padding: 0;
+   text-align: start;
+   vertical-align: middle;
+   overflow-wrap: anywhere;
+   word-break: normal;
+   white-space: normal;
+   border: $border-width $border-style var(--env-border-color);
+   border-radius: var(--env-border-radius-medium);
+   overflow: hidden;
+   transition: opacity 0.2s linear;
+
+   &--fade {
+      opacity: 0;
+   }
+
+   &--in {
+      opacity: 1;
+   }
+
+   // Dialog element may get focus in certain conditions
+   @include focus.focus-visible;
+
+   &--large {
+      width: var(--env-dialog-large-width);
+   }
+
+   &--small {
+      width: var(--env-dialog-small-width);
+   }
+
+   &__title {
+      display: block;
+      padding: var(--env-spacing-small) 1.5rem;
+      border-bottom: $border-width $border-style var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium)
+         var(--env-border-radius-medium) 0 0;
+      font-family: var(--env-font-family);
+      font-weight: $font-weight-semibold;
+      font-style: normal;
+      font-size: var(--env-font-size-large);
+      text-align: start;
+      line-height: $line-height-medium;
+      color: var(--env-font-color);
+      margin: 0;
+   }
+
+   &__main {
+      padding: var(--env-spacing-small) 1.5rem;
+      // Margin + header + footer height = 180px = 11.25em
+      max-height: min(calc(100vh - 11.25em), 50vh);
+      min-height: 3em;
+      overflow-y: auto;
+   }
+
+   &__controls {
+      padding: var(--env-spacing-small) 1.5rem;
+      border-top: $border-width $border-style var(--env-border-color-05);
+      border-radius: 0 0 var(--env-border-radius-medium)
+         var(--env-border-radius-medium);
+      text-align: start;
+
+      &--end {
+         text-align: end !important;
+      }
+   }
+
+   &::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+   }
+
+   &[role='alertdialog'] {
+      border: none;
+      border-radius: 0;
+      border-top: 6px $border-style var(--env-element-primary-background-color);
+
+      .env-dialog__title,
+      .env-dialog__controls {
+         border: none;
+      }
+
+      .env-dialog__controls {
+         padding-bottom: 1.5rem;
+      }
+   }
+
+   &__icon {
+      color: var(--env-element-primary-background-color);
+      margin: 1em 0 0;
+      padding: 0.5em 0;
+      text-align: center;
+   }
+
+   &.env-dialog--error[role='alertdialog'] {
+      border-top-color: var(--env-ui-color-status-error-text);
+
+      .env-dialog__icon {
+         color: var(--env-ui-color-status-error-text);
+      }
+   }
+
+   $variableNames: 'success', 'warning', 'info';
+   @each $name in $variableNames {
+      &.env-dialog--#{$name}[role='alertdialog'] {
+         border-top-color: var(--env-element-#{$name}-background-color);
+
+         .env-dialog__icon {
+            color: var(--env-element-#{$name}-background-color);
+         }
+      }
+   }
+}

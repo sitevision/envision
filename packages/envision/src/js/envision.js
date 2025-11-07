@@ -1,5 +1,5 @@
 /*! Envision JS */
-import '../scss/base.scss';
+import '../scss/envision.scss';
 
 export { default as popover } from './popover';
 export { default as select } from './select';

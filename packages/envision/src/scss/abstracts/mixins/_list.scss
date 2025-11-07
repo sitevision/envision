@@ -1,0 +1,25 @@
+@use '../scss-variables' as *;
+
+@use 'sass:math';
+
+@mixin basis-value($i) {
+   flex-basis: math.percentage(math.div(1, $i));
+}
+
+@mixin dot-divider() {
+   background-color: $color-dark;
+   content: '';
+   display: inline-block;
+   height: var(--env-spacing-xxx-small);
+   vertical-align: middle;
+   width: var(--env-spacing-xxx-small);
+   margin-left: var(--env-spacing-x-small);
+   margin-right: var(--env-spacing-x-small);
+   border-radius: 50%;
+}
+
+@mixin reset-list() {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}

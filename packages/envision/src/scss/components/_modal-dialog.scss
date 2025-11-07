@@ -1,0 +1,165 @@
+@use '../abstracts/mixins/backdrop';
+@use '../abstracts/scss-variables' as *;
+
+@keyframes env-fade {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 0.5;
+   }
+}
+
+.env-modal-dialog,
+.env-modal-alert {
+   position: fixed;
+   display: none;
+   opacity: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   overflow-x: hidden;
+   transition: opacity 0.3s linear;
+   z-index: $zindex-modal;
+   white-space: nowrap;
+   text-align: center;
+
+   &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+   }
+
+   &--show {
+      display: block;
+      opacity: 1;
+   }
+
+   &__dialog {
+      position: relative;
+      text-align: left;
+      vertical-align: middle;
+      display: inline-block;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      // Inline-block styling needs some left/right margin compensation.
+      // Optimized for Chrome, shoudn't matter too much in other browsers.
+      margin: 1em 14px 1em 10px;
+      white-space: normal;
+      width: var(--env-modal-medium-width);
+      max-width: calc(100% - 30px);
+   }
+
+   &__content {
+      position: relative;
+      background-color: var(--env-section-background-color);
+      box-shadow: var(--env-box-shadow);
+      color: var(--env-font-color);
+   }
+}
+
+.env-modal-dialog {
+   &--inner-scroll {
+      overflow-y: hidden;
+   }
+
+   &__dialog {
+      &--large {
+         width: var(--env-modal-large-width);
+      }
+
+      &--small {
+         width: var(--env-modal-small-width);
+      }
+   }
+
+   &__content {
+      border: $border-width $border-style var(--env-border-color);
+      border-radius: var(--env-border-radius-medium);
+   }
+
+   &__header {
+      display: block;
+      padding: var(--env-spacing-small) var(--env-spacing-x-large);
+      border-bottom: $border-width $border-style var(--env-border-color-05);
+      border-radius: var(--env-border-radius-medium)
+         var(--env-border-radius-medium) 0 0;
+
+      &__title {
+         margin-bottom: 0 !important;
+         padding: 0;
+      }
+   }
+
+   &__backdrop {
+      @include backdrop.backdrop();
+
+      &--in {
+         @include backdrop.backdrop-in();
+      }
+   }
+
+   &__body {
+      padding: var(--env-spacing-small) var(--env-spacing-x-large);
+
+      .env-modal-dialog--inner-scroll & {
+         // Margin + header + footer height = 180px = 11.25em
+         max-height: min(calc(100vh - 11.25em), 50vh);
+         min-height: 3em;
+         overflow-y: auto;
+      }
+   }
+
+   &__footer {
+      padding: var(--env-spacing-small) var(--env-spacing-x-large);
+      border-top: $border-width $border-style var(--env-border-color-05);
+      border-radius: 0 0 var(--env-border-radius-medium)
+         var(--env-border-radius-medium);
+      text-align: left;
+
+      &--right {
+         text-align: right;
+      }
+   }
+}
+
+.env-modal-alert {
+   &__content {
+      border-top: 6px $border-style var(--env-element-primary-background-color);
+      padding: var(--env-spacing-large) var(--env-spacing-xx-large)
+         var(--env-spacing-xx-large);
+   }
+
+   &__icon {
+      color: var(--env-element-primary-background-color);
+      margin: 0 0 1em;
+      padding: 0.5em 0;
+      text-align: center;
+   }
+
+   &__body {
+      margin: var(--env-spacing-large) 0 var(--env-spacing-xxx-large);
+   }
+
+   &__footer {
+      &--right {
+         text-align: right;
+      }
+   }
+
+   $variableNames: 'secondary', 'success', 'warning', 'danger', 'info';
+
+   @each $name in $variableNames {
+      &.env-modal-alert--#{$name} {
+         .env-modal-alert__content {
+            border-top-color: var(--env-element-#{$name}-background-color);
+         }
+
+         .env-modal-alert__icon {
+            color: var(--env-element-#{$name}-background-color);
+         }
+      }
+   }
+}

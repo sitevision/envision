@@ -1,0 +1,821 @@
+@use 'sass:color';
+@use 'sass:string';
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
+
+@use '../abstracts/functions';
+@use '../abstracts/scss-variables' as *;
+@use '../abstracts/mixins/content-text';
+@use '../abstracts/mixins/css-vars';
+
+// ----- TEXT -----
+
+@include css-vars.add-declaration(
+   (
+      'font-family': $font-family,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'text-list-ul-style-type': 'disc',
+      'text-list-ol-style-type': 'decimal',
+      'text-list-margin-block-start': 1em,
+      'text-list-margin-inline-end': 0,
+      'text-list-margin-inline-start': 0,
+      'text-list-margin-block-end': 1em,
+      'text-list-padding-block-start': 0,
+      'text-list-padding-inline-end': 0,
+      'text-list-padding-inline-start': 1.75em,
+      'text-list-padding-block-end': 0,
+      'text-list-item-margin-block-start': 0.25em,
+      'text-list-item-margin-inline-end': 0,
+      'text-list-item-margin-inline-start': 0,
+      'text-list-item-margin-block-end': 0.25em,
+      'text-list-item-padding-block-start': 0,
+      'text-list-item-padding-inline-end': 0,
+      'text-list-item-padding-inline-start': 0,
+      'text-list-item-padding-block-end': 0,
+   )
+);
+
+// Font Size
+
+@include css-vars.add-declaration(
+   (
+      'font-size-base': $font-size-base,
+      'font-size-x-small': calc(var(--env-font-size-base) * 0.75),
+      'font-size-small': calc(var(--env-font-size-base) * 0.875),
+      'font-size-medium': var(--env-font-size-base),
+      'font-size-large': calc(var(--env-font-size-base) * 1.25),
+      'font-size-x-large': calc(var(--env-font-size-base) * 1.5),
+      'font-size-xx-large': calc(var(--env-font-size-base) * 1.75),
+      'font-size-xxx-large': calc(var(--env-font-size-base) * 2),
+      'font-size-xxxx-large': calc(var(--env-font-size-base) * 2.5),
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'font-color': $font-color,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'link-font-color': $link-color,
+      'link-text-decoration': $link-text-decoration,
+      'link-hover-font-color': var(--env-link-font-color),
+      'link-hover-text-decoration': $link-hover-text-decoration,
+      'link-secondary-font-color': var(--env-font-color),
+      'link-secondary-text-decoration': var(--env-link-text-decoration),
+      'link-secondary-hover-font-color': var(--env-link-font-color),
+      'link-secondary-hover-text-decoration': var(
+            --env-link-hover-text-decoration
+         ),
+      'link-icon-size': 0.875em,
+      'link-icon-gap': 0.25em,
+      'link-icon-offset-y': 0.1em,
+      'link-meta-font-size': 0.875em,
+   )
+);
+
+// ----- GENERAL COLORS -----
+
+@include css-vars.add-declaration(
+   (
+      'background-color': $background-color,
+      'section-background-color': $section-background-color,
+      'section-background-color-05': functions.adjustLightness(
+            $section-background-color,
+            -5%
+         ),
+   )
+);
+
+// ----- UI STATUS COLORS -----
+
+@include css-vars.add-declaration(
+   (
+      'ui-color-status-neutral': $ui-color-status-neutral,
+      'ui-color-status-neutral-contrast': $ui-color-status-neutral-contrast,
+      'ui-color-status-active': $ui-color-status-active,
+      'ui-color-status-active-text': $ui-color-status-active-text,
+      'ui-color-status-active-contrast': $ui-color-status-active-contrast,
+      'ui-color-status-attention': $ui-color-status-attention,
+      'ui-color-status-attention-contrast': $ui-color-status-attention-contrast,
+      'ui-color-status-attention-text': $ui-color-status-attention-text,
+      'ui-color-status-error': $ui-color-status-error,
+      'ui-color-status-error-contrast': $ui-color-status-error-contrast,
+      'ui-color-status-error-text': $ui-color-status-error-text,
+   )
+);
+
+// ----- UI BRAND COLORS -----
+
+@include css-vars.add-declaration(
+   (
+      'ui-color-brand': #767676,
+      'ui-color-brand-dark': #626262,
+      'ui-color-brand-contrast': #ffffff,
+      'ui-color-brand-05': #fafafa,
+      'ui-color-brand-05-contrast': #6e6e6e,
+      'ui-color-brand-10': #f5f5f5,
+      'ui-color-brand-10-contrast': #6e6e6e,
+      'ui-color-brand-15': #ebebeb,
+      'ui-color-brand-15-contrast': #616161,
+      'ui-color-brand-20': #dedede,
+      'ui-color-brand-20-contrast': #616161,
+      'ui-color-brand-25': #d1d1d1,
+      'ui-color-brand-25-contrast': #545454,
+      'ui-color-brand-30': #c4c4c4,
+      'ui-color-brand-30-contrast': #474747,
+      'ui-color-brand-35': #b8b8b8,
+      'ui-color-brand-35-contrast': #474747,
+      'ui-color-brand-40': #ababab,
+      'ui-color-brand-40-contrast': #3d3d3d,
+      'ui-color-brand-45': #9e9e9e,
+      'ui-color-brand-45-contrast': #363636,
+      'ui-color-brand-50': #919191,
+      'ui-color-brand-50-contrast': #262626,
+      'ui-color-brand-55': #7a7a7a,
+      'ui-color-brand-55-contrast': #000000,
+      'ui-color-brand-60': #6e6e6e,
+      'ui-color-brand-60-contrast': #f5f5f5,
+      'ui-color-brand-65': #616161,
+      'ui-color-brand-65-contrast': #dedede,
+      'ui-color-brand-70': #545454,
+      'ui-color-brand-70-contrast': #d1d1d1,
+      'ui-color-brand-75': #474747,
+      'ui-color-brand-75-contrast': #b8b8b8,
+      'ui-color-brand-80': #3d3d3d,
+      'ui-color-brand-80-contrast': #ababab,
+      'ui-color-brand-85': #363636,
+      'ui-color-brand-85-contrast': #9e9e9e,
+      'ui-color-brand-90': #2b2b2b,
+      'ui-color-brand-90-contrast': #9e9e9e,
+      'ui-color-brand-95': #262626,
+      'ui-color-brand-95-contrast': #919191,
+      'ui-color-brand-100': #212121,
+      'ui-color-brand-100-contrast': #919191,
+   )
+);
+
+// ----- UI TEXT -----
+
+@include css-vars.add-declaration(
+   (
+      'ui-text-overline-font-family': var(--env-font-family),
+      'ui-text-overline-font-color': var(--env-font-color),
+      'ui-text-overline-font-size': 0.75em,
+      'ui-text-overline-font-weight': 600,
+      'ui-text-overline-text-transform': uppercase,
+      'ui-text-overline-letter-spacing': 0.15em,
+      'ui-text-heading-font-family': var(--env-font-family),
+      'ui-text-heading-font-color': var(--env-font-color),
+      'ui-text-heading-font-size': 1.82em,
+      'ui-text-heading-font-weight': 600,
+      'ui-text-heading-text-transform': none,
+      'ui-text-heading-letter-spacing': normal,
+      'ui-text-sectionheading-font-family': var(--env-font-family),
+      'ui-text-sectionheading-font-color': var(--env-font-color),
+      'ui-text-sectionheading-font-size': 1.25em,
+      'ui-text-sectionheading-font-weight': 600,
+      'ui-text-sectionheading-text-transform': none,
+      'ui-text-sectionheading-letter-spacing': normal,
+      'ui-text-subheading-font-family': var(--env-font-family),
+      'ui-text-subheading-font-color': var(--env-font-color),
+      'ui-text-subheading-font-size': 1em,
+      'ui-text-subheading-font-weight': 600,
+      'ui-text-subheading-text-transform': none,
+      'ui-text-subheading-letter-spacing': normal,
+      'ui-text-caption-font-family': var(--env-font-family),
+      'ui-text-caption-font-color': var(--env-font-color),
+      'ui-text-caption-font-size': 0.875em,
+      'ui-text-caption-font-weight': 400,
+      'ui-text-caption-text-transform': none,
+      'ui-text-caption-letter-spacing': normal,
+   )
+);
+
+// ----- CONTENT TEXT -----
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'heading',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 800,
+                  'line-height': 1.2,
+                  'margin-block-start': 1.5em,
+                  'margin-block-end': 0.5em,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (
+            'margin-block-start': 0,
+            'font-size': 3em,
+         ),
+         '02': (
+            'margin-block-start': 0,
+            'font-size': 2.5em,
+         ),
+         '03': (
+            'font-size': 2.0625em,
+         ),
+         '04': (
+            'font-size': 1.75em,
+         ),
+         '05': (
+            'font-size': 1.4375em,
+         ),
+         '06': (
+            'font-size': 1.1875em,
+         ),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'display',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'line-height': 1.2,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 0.25em,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 3.05em,
+         ),
+         '02': (
+            'font-size': 1.952em,
+         ),
+         '03': (
+            'font-size': 1.24928em,
+         ),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'summary',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 1.125em,
+                  'line-height': 1.6,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'body',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'line-height': 1.6,
+                  'margin-block-start': 0,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 1.2em,
+         ),
+         '02': (
+            'font-size': 1em,
+         ),
+         '03': (
+            'font-size': 0.8125em,
+         ),
+         '04': (
+            'font-size': 0.6875em,
+         ),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'caption',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-size': 0.8125em,
+                  'line-height': 1.6,
+                  'margin-block-start': 0.25em,
+                  'margin-block-end': 0,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'quotation',
+      'defaults': map.merge(
+            map.merge(
+               $content-text-base,
+               (
+                  'font-weight': 300,
+                  'line-height': 1.6,
+                  'margin-block-start': 1em,
+                  'margin-block-end': 1em,
+               )
+            ),
+            $content-text-links
+         ),
+      'variants': (
+         '01': (
+            'font-size': 1.2em,
+         ),
+         '02': (
+            'font-size': 1em,
+         ),
+      ),
+   )
+);
+
+@include content-text.content-text-font-to-css-custom-properties(
+   (
+      'name': 'table',
+      'defaults': map.merge(
+            map.merge($content-text-base, ()),
+            $content-text-links
+         ),
+      'variants': (
+         'caption-01': (
+            'font-size': 0.8125em,
+            'line-height': 1.5,
+            'margin-block-start': 1em,
+            'margin-block-end': 0.25em,
+         ),
+         'heading-01': (
+            'font-weight': 700,
+            'line-height': 1.5,
+            'margin-block-start': 0,
+            'margin-block-end': 0,
+         ),
+         'data-01': (
+            'line-height': 1.5,
+            'margin-block-start': 0,
+            'margin-block-end': 0,
+         ),
+      ),
+   )
+);
+
+// ----- MARK -----
+
+@include css-vars.add-declaration(
+   (
+      'mark-font-color': #202330,
+      'mark-background-color': #fcea4c,
+   )
+);
+
+// ----- BLOCKQUOTE -----
+
+@include css-vars.add-declaration(
+   (
+      'blockquote-border-block-width': 0,
+      'blockquote-border-block-color': var(--env-font-color),
+      'blockquote-border-inline-start-width': 2px,
+      'blockquote-border-inline-start-color': var(--env-font-color),
+      'blockquote-border-inline-end-width': 0,
+      'blockquote-border-inline-end-color': var(--env-font-color),
+      'blockquote-padding-block-start': 0,
+      'blockquote-padding-inline-end': 2em,
+      'blockquote-padding-block-end': 0,
+      'blockquote-padding-inline-start': 2em,
+      'blockquote-margin-block-start': 1.5em,
+      'blockquote-margin-block-end': 1.5em,
+   )
+);
+
+// ----- FOCUS -----
+
+@include css-vars.add-declaration(
+   (
+      'focus-size': $focus-size,
+      'focus-offset': var(--env-focus-size),
+      'focus-outline-color': var(--env-font-color),
+      'focus-inner-color': var(--env-section-background-color),
+      'focus-box-shadow': 0 0 0 var(--env-focus-offset)
+         var(--env-focus-inner-color),
+      'focus-outline': var(--env-focus-size) solid
+         var(--env-focus-outline-color),
+   )
+);
+
+// ----- COLOR COMBO BLOCKS & ELEMENT COLORS -----
+
+@include css-vars.add-declaration(
+   (
+      'block-font-color': $font-color,
+      'block-link-font-color': var(--env-link-font-color),
+      'block-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-link-text-decoration': var(--env-link-text-decoration),
+      'block-link-hover-text-decoration': var(--env-link-hover-text-decoration),
+      'block-background-color': $block-default-background-color,
+      'block-border-color': $block-default-border-color,
+      'block-primary-font-color': $font-color,
+      'block-primary-link-font-color': var(--env-link-font-color),
+      'block-primary-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-primary-link-text-decoration': var(--env-link-text-decoration),
+      'block-primary-link-hover-text-decoration': var(
+            --env-link-hover-text-decoration
+         ),
+      'block-primary-background-color': $block-primary-background-color,
+      'block-primary-border-color': $block-primary-border-color,
+      'block-secondary-font-color': $font-color,
+      'block-secondary-link-font-color': var(--env-link-font-color),
+      'block-secondary-link-hover-font-color': var(--env-link-hover-font-color),
+      'block-secondary-link-text-decoration': var(--env-link-text-decoration),
+      'block-secondary-link-hover-text-decoration': var(
+            --env-link-hover-text-decoration
+         ),
+      'block-secondary-background-color': $block-secondary-background-color,
+      'block-secondary-border-color': $block-secondary-border-color,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'element-font-color': $font-color,
+      'element-background-color': $element-default-background-color,
+      'element-background-color-dark': functions.adjustLightness(
+            $element-default-background-color,
+            -8%
+         ),
+      'element-background-color-light': functions.adjustLightness(
+            $element-default-background-color,
+            3%
+         ),
+      'element-primary-font-color': #ffffff,
+      'element-primary-background-color': $color-primary,
+      'element-primary-background-color-dark': functions.adjustLightness(
+            $color-primary,
+            -8%
+         ),
+      'element-primary-background-color-light': functions.adjustLightness(
+            $color-primary,
+            3%
+         ),
+      'element-secondary-font-color': $element-secondary-font-color,
+      'element-secondary-background-color': $element-secondary-background-color,
+      'element-secondary-background-color-dark': functions.adjustLightness(
+            $element-secondary-background-color,
+            -8%
+         ),
+      'element-secondary-background-color-light': functions.adjustLightness(
+            $element-secondary-background-color,
+            3%
+         ),
+      'element-success-font-color': #ffffff,
+      'element-success-background-color': $color-success,
+      'element-success-background-color-dark': functions.adjustLightness(
+            $color-success,
+            -8%
+         ),
+      'element-success-background-color-light': functions.adjustLightness(
+            $color-success,
+            3%
+         ),
+      'element-warning-font-color': $font-color,
+      'element-warning-background-color': $color-warning,
+      'element-warning-background-color-dark': functions.adjustLightness(
+            $color-warning,
+            -8%
+         ),
+      'element-warning-background-color-light': functions.adjustLightness(
+            $color-warning,
+            3%
+         ),
+      'element-danger-font-color': #ffffff,
+      'element-danger-background-color': $color-danger,
+      'element-danger-background-color-dark': functions.adjustLightness(
+            $color-danger,
+            -8%
+         ),
+      'element-danger-background-color-light': functions.adjustLightness(
+            $color-danger,
+            3%
+         ),
+      'element-info-font-color': #ffffff,
+      'element-info-background-color': $color-info,
+      'element-info-background-color-dark': functions.adjustLightness(
+            $color-info,
+            -8%
+         ),
+      'element-info-background-color-light': functions.adjustLightness(
+            $color-info,
+            3%
+         ),
+   )
+);
+
+// ----- SPACING -----
+
+@include css-vars.add-declaration(
+   (
+      'spacing-xxx-small': $spacing-xxx-small,
+      'spacing-xx-small': $spacing-xx-small,
+      'spacing-x-small': $spacing-x-small,
+      'spacing-small': $spacing-small,
+      'spacing-medium': $spacing-medium,
+      'spacing-large': $spacing-large,
+      'spacing-x-large': $spacing-x-large,
+      'spacing-xx-large': $spacing-xx-large,
+      'spacing-xxx-large': $spacing-xxx-large,
+   )
+);
+
+// ----- SHADOWS -----
+
+@include css-vars.add-declaration(
+   (
+      'box-shadow-color': rgba(0, 0, 0, 0.15),
+      'box-shadow': 0 0.5em 1em #{var(--env-box-shadow-color)},
+      'box-shadow-small': 0 0.125em 0.25em #{var(--env-box-shadow-color)},
+      'box-shadow-large': 0 1em 3em #{var(--env-box-shadow-color)},
+   )
+);
+
+// ----- BORDERS -----
+
+@include css-vars.add-declaration(
+   (
+      'border-radius': $radius-base,
+      'border-radius-small': calc(#{var(--env-border-radius)} * 0.5),
+      'border-radius-medium': #{var(--env-border-radius)},
+      'border-radius-large': calc(#{var(--env-border-radius)} * 1.5),
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'border-color': $border-color,
+      'border-color-light': $border-color-05,
+      'border-color-05': $border-color-05,
+      'border-success-color': $color-success,
+      'border-warning-color': $color-warning-dark,
+      'border-danger-color': $color-danger,
+   )
+);
+
+// ==================
+// COMPONENT SPECIFIC
+// ==================
+
+// ----- SPINNER -----
+
+@include css-vars.add-declaration(
+   (
+      'spinner-color': $spinner-color,
+   )
+);
+
+// ----- TOOLTIP -----
+
+@include css-vars.add-declaration(
+   (
+      'tooltip-font-family': var(--env-font-family),
+      'tooltip-font-size': 0.875em,
+      'tooltip-font-color': $tooltip-font-color,
+      'tooltip-font-weight': $font-weight-regular,
+      'tooltip-background-color': $tooltip-background-color,
+      'tooltip-border-radius': var(--env-border-radius),
+   )
+);
+
+// ----- POPOVER -----
+
+@include css-vars.add-declaration(
+   (
+      'popover-width': $popover-width,
+   )
+);
+
+// ----- MODAL DIALOG -----
+
+@include css-vars.add-declaration(
+   (
+      'modal-small-width': $modal-small,
+      'modal-medium-width': $modal-medium,
+      'modal-large-width': $modal-large,
+      'modal-backdrop-background-color': #000,
+      'modal-backdrop-opacity': 0.5,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'dialog-small-width': $modal-small,
+      'dialog-medium-width': $modal-medium,
+      'dialog-large-width': $modal-large,
+   )
+);
+
+// ----- BREADCRUMB -----
+
+@include css-vars.add-declaration(
+   (
+      'breadcrumb-divider-color': $breadcrumb-divider-color,
+   )
+);
+
+// ----- BADGE -----
+
+@include css-vars.add-declaration(
+   (
+      'badge-font-family': var(--env-font-family),
+      'badge-font-size': $badge-font-size,
+      'badge-border-radius': var(--env-border-radius-medium),
+      'badge-text-transform': none,
+      'badge-font-weight': $font-weight-bold,
+      'badge-letter-spacing': normal,
+   )
+);
+
+// ----- BUTTONS -----
+
+@include css-vars.add-declaration(
+   (
+      'button-font-family': var(--env-font-family),
+      'button-border-radius': $button-border-radius,
+   )
+);
+
+// ----- FORM ELEMENTS -----
+
+@include css-vars.add-declaration(
+   (
+      'form-font-family': var(--env-font-family),
+      'form-label-font-family': var(--env-font-family),
+      'form-label-font-weight': $font-weight-semibold,
+      'form-input-border-radius': var(--env-border-radius-medium),
+      'form-input-font-color': var(--env-font-color),
+      'form-input-border-color': $form-input-border-color,
+      'form-input-background-color': var(--env-section-background-color),
+   )
+);
+
+// ----- PROGRESS BAR -----
+
+@include css-vars.add-declaration(
+   (
+      'progress-bar-poll-highlight-color': $progress-bar-poll-highlight-color,
+   )
+);
+
+// ----- COLLAPSE -----
+
+@include css-vars.add-declaration(
+   (
+      'collapse-border-style': $collapse-border-style,
+      'collapse-border-width': $collapse-border-width,
+      'collapse-icon-color': var(--env-font-color),
+      'collapse-icon-width': $collapse-icon-width,
+      'collapse-icon-height': $collapse-icon-height,
+      'collapse-toggle-duration': $collapse-toggle-duration,
+      'collapse-background-color': var(--env-element-background-color-light),
+      'collapse-border-color': var(--env-element-background-color),
+      'collapse-expanded-background-color': var(--env-element-background-color),
+      'collapse-expanded-border-color': var(--env-element-background-color-dark),
+   )
+);
+
+// ----- PAGINATION -----
+
+@include css-vars.add-declaration(
+   (
+      'pagination-font-family': var(--env-font-family),
+      'pagination-border-width': $pagination-border-width,
+      'pagination-border-style': $pagination-border-style,
+   )
+);
+
+// ----- ALERT -----
+
+@include css-vars.add-declaration(
+   (
+      'alert-font-family': var(--env-font-family),
+      'alert-border-radius': var(--env-border-radius-medium),
+      'alert-background-color': var(--env-section-background-color),
+      'alert-font-color': var(--env-font-color),
+   )
+);
+
+// ----- PROFILE IMAGE -----
+
+@include css-vars.add-declaration(
+   (
+      'profile-image-border-radius': $profile-image-radius,
+   )
+);
+
+// ----- CARDHOLDER -----
+
+@include css-vars.add-declaration(
+   (
+      'cardholder-column-min-width': 240px,
+      'cardholder-column-max-width': 400px,
+      'cardholder-column-spacing': var(--env-spacing-medium),
+      'cardholder-grid-column-width': 20em,
+      'cardholder-grid-gap': var(--env-spacing-medium),
+   )
+);
+
+// ----- DEPRECATED -----
+
+// All variables below this line are deprecated. To be removed later.
+// ------------------------------------------------------------------
+
+@include css-vars.add-declaration(
+   (
+      'font-color-light': $font-color-light,
+      'font-color-lighter': $font-color-lighter,
+      'font-color-invert': $font-color-invert,
+      'font-color-muted': $font-color-muted,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'color-page-bg': $color-page-bg,
+      'color-element-bg': $color-section-bg,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'color-brand': var(--env-element-primary-background-color),
+      'color-brand-light': var(--env-element-primary-background-color-light),
+      'color-brand-dark': var(--env-element-primary-background-color-dark),
+      'color-warning': var(--env-element-warning-background-color),
+      'color-warning-dark': var(--env-element-warning-background-color-dark),
+      'color-danger': var(--env-element-danger-background-color),
+      'color-success': var(--env-element-success-background-color),
+      'color-info': var(--env-element-info-background-color),
+      'color-hover': $color-hover,
+      'color-base': $color-base,
+      'color-darker': $color-darker,
+      'color-dark': $color-dark,
+      'color-normal': $color-normal,
+      'color-light': $color-light,
+      'color-lighter': $color-lighter,
+      'color-lightest': $color-lightest,
+      'focus-color': $focus-color,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'focus-background-color': $focus-background-color,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'image-control-color': $image-control-color,
+   )
+);
+
+@include css-vars.add-declaration(
+   (
+      'element-common-background-color': $element-common-background-color,
+   )
+);

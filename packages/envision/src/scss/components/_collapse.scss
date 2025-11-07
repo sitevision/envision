@@ -1,0 +1,76 @@
+@use '../abstracts/mixins/focus';
+@use '../abstracts/scss-variables' as *;
+
+.env-collapse {
+   html:not(.sv-no-js) &:not(.env-collapse--show) {
+      display: none;
+   }
+
+   overflow-wrap: anywhere;
+   word-break: normal;
+
+   // Margin collapse fix
+   &:after {
+      content: '';
+      display: block;
+      overflow: auto;
+   }
+
+   > :first-child {
+      padding-top: var(--env-spacing-xx-small);
+   }
+}
+
+.env-collapse-header {
+   width: 100%;
+   padding: var(--env-spacing-x-small);
+   cursor: pointer;
+   box-sizing: border-box;
+   border: {
+      style: var(--env-collapse-border-style);
+      width: var(--env-collapse-border-width);
+      color: var(--env-collapse-border-color);
+   }
+   background-color: var(--env-collapse-background-color);
+   overflow-wrap: anywhere;
+   word-break: normal;
+   color: inherit;
+   text-decoration: none;
+   border-radius: var(--env-border-radius-medium);
+
+   @include focus.focus-visible;
+
+   &:hover,
+   &.env-collapse--expanded {
+      background-color: var(--env-collapse-expanded-background-color);
+      border-color: var(--env-collapse-expanded-border-color);
+   }
+}
+
+[data-env-collapse] {
+   &:not(.env-collapse--expanded) {
+      .env-collapse-header--icons {
+         &::before {
+            transform: rotate(-90deg);
+         }
+      }
+   }
+}
+
+.env-collapse-header--icons {
+   margin-left: $collapse-icon-width;
+   min-height: $collapse-heading-min-height;
+   position: relative;
+
+   &::before,
+   &::after {
+      content: '';
+      top: $collapse-icon-top;
+      right: $collapse-icon-right;
+      width: var(--env-collapse-icon-width);
+      height: var(--env-collapse-icon-height);
+      transition: transform var(--env-collapse-toggle-duration) ease-out;
+      position: absolute;
+      background-color: var(--env-collapse-icon-color);
+   }
+}

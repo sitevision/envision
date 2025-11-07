@@ -1,0 +1,120 @@
+//@use 'sizing';
+
+$properties: margin padding;
+$specifiers: top right bottom left;
+$sizes: (
+   xxx-small: 'spacing-xxx-small',
+   xx-small: 'spacing-xx-small',
+   x-small: 'spacing-x-small',
+   small: 'spacing-small',
+   medium: 'spacing-medium',
+   large: 'spacing-large',
+   x-large: 'spacing-x-large',
+   xx-large: 'spacing-xx-large',
+   xxx-large: 'spacing-xxx-large',
+);
+
+.env {
+   @each $specifier in $specifiers {
+      &-m-#{$specifier}--0 {
+         margin-#{$specifier}: 0 !important;
+      }
+      &-m-#{$specifier}--a {
+         margin-#{$specifier}: auto !important;
+      }
+      &-p-#{$specifier}--0 {
+         padding-#{$specifier}: 0 !important;
+      }
+   }
+
+   &-m-around--0 {
+      margin: 0 !important;
+   }
+
+   &-m-around--a {
+      margin: auto !important;
+   }
+
+   &-m-horizontal--0 {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+   }
+
+   &-m-horizontal--a {
+      margin-right: auto !important;
+      margin-left: auto !important;
+   }
+
+   &-m-vertical--0 {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+   }
+
+   &-m-vertical--a {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+   }
+
+   &-p-around--0 {
+      padding: 0 !important;
+   }
+
+   &-p-horizontal--0 {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+   }
+
+   &-p-vertical--0 {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+   }
+
+   @each $size, $variableName in $sizes {
+      @each $specifier in $specifiers {
+         &-m-#{$specifier}--#{$size} {
+            margin-#{$specifier}: var(--env-#{$variableName}) !important;
+         }
+         &-m-#{$specifier}--#{$size}.env-m-#{$specifier}--negative {
+            margin-#{$specifier}: calc(
+               var(--env-#{$variableName}) * -1
+            ) !important;
+         }
+         &-p-#{$specifier}--#{$size} {
+            padding-#{$specifier}: var(--env-#{$variableName}) !important;
+         }
+      }
+      &-m-around--#{$size} {
+         margin: var(--env-#{$variableName}) !important;
+      }
+      &-m-around--#{$size}.env-m-around--negative {
+         margin: calc(var(--env-#{$variableName}) * -1) !important;
+      }
+      &-p-around--#{$size} {
+         padding: var(--env-#{$variableName}) !important;
+      }
+      &-m-horizontal--#{$size} {
+         margin-right: var(--env-#{$variableName}) !important;
+         margin-left: var(--env-#{$variableName}) !important;
+      }
+      &-m-horizontal--negative.env-m-horizontal--#{$size} {
+         margin-right: calc(var(--env-#{$variableName}) * -1) !important;
+         margin-left: calc(var(--env-#{$variableName}) * -1) !important;
+      }
+      &-m-vertical--#{$size} {
+         margin-top: var(--env-#{$variableName}) !important;
+         margin-bottom: var(--env-#{$variableName}) !important;
+      }
+      &-m-vertical--negative.env-m-horizontal--#{$size} {
+         margin-top: calc(var(--env-#{$variableName}) * -1) !important;
+         margin-bottom: calc(var(--env-#{$variableName}) * -1) !important;
+      }
+      &-p-horizontal--#{$size} {
+         padding-right: var(--env-#{$variableName}) !important;
+         padding-left: var(--env-#{$variableName}) !important;
+      }
+      &-p-vertical--#{$size} {
+         padding-top: var(--env-#{$variableName}) !important;
+         padding-bottom: var(--env-#{$variableName}) !important;
+      }
+   }
+}

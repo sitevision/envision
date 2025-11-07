@@ -1,0 +1,102 @@
+@use '../abstracts/mixins/table';
+@use '../abstracts/scss-variables' as *;
+
+.env-table {
+   border-collapse: collapse;
+
+   caption {
+      @include table.table-text('table-caption-01');
+      text-align: left;
+      margin: 0 0 0.5rem;
+      padding: 0 0.5rem;
+   }
+
+   thead th {
+      vertical-align: bottom;
+   }
+
+   th {
+      @include table.table-text('table-heading-01');
+      text-align: left;
+   }
+
+   td {
+      @include table.table-text('table-data-01');
+   }
+
+   th,
+   td {
+      border-top: $border-width $border-style var(--env-border-color);
+      padding: 0.5rem;
+      vertical-align: top;
+   }
+
+   &--zebra {
+      tbody tr:nth-of-type(odd) {
+         background-color: var(--env-section-background-color-05);
+      }
+   }
+
+   &--borders-around {
+      th,
+      td {
+         border: $border-width $border-style var(--env-border-color);
+      }
+   }
+
+   $border-directions: right bottom left;
+   @each $direction in $border-directions {
+      &--borders-#{$direction} {
+         th,
+         td {
+            border-top: 0;
+            border-#{$direction}: $border-width
+               $border-style
+               var(--env-border-color);
+         }
+      }
+   }
+
+   &--small {
+      caption {
+         padding: 0 0.25rem;
+      }
+      th,
+      td {
+         padding: 0.25rem;
+      }
+   }
+
+   &--large {
+      caption {
+         padding: 0 0.75rem;
+      }
+      th,
+      td {
+         padding: 0.75rem;
+      }
+   }
+
+   &--hover {
+      tbody tr:hover {
+         background-color: var(--env-section-background-color-05);
+      }
+   }
+
+   // Deprecated 2024.02.1
+   $colors: (
+      active: 'block-primary-background-color',
+      info: 'color-brand',
+      success: 'color-success',
+      warning: 'color-warning',
+      danger: 'color-danger',
+   );
+   $blocks: row cell;
+   @each $state, $color in $colors {
+      @each $block in $blocks {
+         .env-table__#{$block}--#{$state} {
+            background-color: var(--env-#{$color});
+         }
+      }
+   }
+}

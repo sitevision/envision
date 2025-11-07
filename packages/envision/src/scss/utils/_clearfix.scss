@@ -1,0 +1,5 @@
+@use '../abstracts/mixins/clearfix';
+
+.env-clearfix {
+   @include clearfix.clearfix();
+}

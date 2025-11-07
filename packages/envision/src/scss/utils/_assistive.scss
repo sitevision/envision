@@ -1,0 +1,9 @@
+@use '../abstracts/mixins/assistive';
+
+.env-assistive-text {
+   @include assistive.visually-hidden();
+
+   &--focusable {
+      @include assistive.visually-hidden-focusable();
+   }
+}
