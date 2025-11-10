@@ -46,7 +46,7 @@
       ".{eslintrc,babelrc}": "prettier --write"
    },
    "dependencies": {
-      "sharp": "^0.34.4"
+      "sharp": "^0.34.5"
    },
    "packageManager": "yarn@4.10.2"
 }
