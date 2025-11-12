@@ -5,6 +5,8 @@ description: UI Text provides standardized styles for headings and text across t
 
 UI Text is a set of text styles that should be used for headings and other text in templates, components and applications.
 
+New UI Text style Body available since <span class="doc-badge doc-badge--info">2026.01.1</span>
+
 ```html
 <p class="env-ui-text-overline">Overline</p>
 <h1 class="env-ui-text-heading">Heading</h1>
