@@ -76,6 +76,9 @@ const commitHash = childProcess
          crossorigin="anonymous"></script>
 
       <script is:inline src={`/dist/envision.js?v=${commitHash}`}></script>
+      <style is:inline>
+         @layer sv.reset, sv.core, docs;
+      </style>
       <!-- Additional head elements -->
    </head>
    <body>

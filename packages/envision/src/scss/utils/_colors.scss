@@ -6,7 +6,7 @@ $variableNames:
 
 @each $name in $variableNames {
    .env-color--#{$name} {
-      color: var(--env-color-#{$name}) !important;
+      color: var(--env-color-#{$name}); /* !important; */
    }
    .env-bg-color--#{$name},
    .env-bg-color--#{$name}--80,

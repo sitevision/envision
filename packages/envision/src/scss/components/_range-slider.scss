@@ -67,7 +67,7 @@
       }
 
       .env-range-slider__value {
-         margin-left: -($handle-size-touch * 0.5) !important;
+         margin-left: -($handle-size-touch * 0.5); /* !important; */
          top: $spacing-x-large; // Keep
       }
    }

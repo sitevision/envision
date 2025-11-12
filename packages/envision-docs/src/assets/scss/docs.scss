@@ -1,27 +1,34 @@
-@use 'webfonts';
+@use 'sass:meta';
 
-@use 'base';
-@use 'sitevision-font-issue-detection';
+// @layer  sv.reset, sv.core, docs;
+@include meta.load-css('webfonts');
 
-@use 'layout';
-@use 'banner';
-@use 'header';
-@use 'sidenav';
-@use 'mobilenav';
-@use 'teasernav';
-@use 'footer';
+@layer sv.core {
+   @include meta.load-css('sitevision-font-issue-detection');
+}
 
-@use 'startpage';
+@layer docs {
+   @include meta.load-css('base');
+   @include meta.load-css('layout');
+   @include meta.load-css('banner');
+   @include meta.load-css('header');
+   @include meta.load-css('sidenav');
+   @include meta.load-css('mobilenav');
+   @include meta.load-css('teasernav');
+   @include meta.load-css('footer');
 
-@use 'badge';
-@use 'theme-switch';
-@use 'markdown-generated-content';
-@use 'prism-custom';
-@use 'code';
-@use 'icons';
+   @include meta.load-css('startpage');
 
-@use 'demo';
-@use 'demo-themes/example-brand';
-@use 'doc-themes/doc-theme-dark';
+   @include meta.load-css('badge');
+   @include meta.load-css('theme-switch');
+   @include meta.load-css('markdown-generated-content');
+   @include meta.load-css('prism-custom');
+   @include meta.load-css('code');
+   @include meta.load-css('icons');
 
-@use 'print';
+   @include meta.load-css('demo');
+   @include meta.load-css('demo-themes/example-brand');
+   @include meta.load-css('doc-themes/doc-theme-dark');
+
+   @include meta.load-css('print');
+}

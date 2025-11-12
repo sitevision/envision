@@ -71,7 +71,7 @@
       text-align: start;
 
       &--end {
-         text-align: end !important;
+         text-align: end; /* !important; */
       }
    }
 

@@ -116,11 +116,11 @@ $buttonInset: 2.25rem;
          padding: 0.5em 1em;
 
          * {
-            color: #fff !important;
+            color: #fff; /* !important; */
          }
 
          a {
-            text-decoration: underline !important;
+            text-decoration: underline; /* !important; */
          }
       }
    }
@@ -245,14 +245,14 @@ $buttonInset: 2.25rem;
       }
 
       &__download {
-         position: fixed !important;
+         position: fixed !important; /* KEEP! */
          z-index: 9999;
          bottom: $buttonInset;
          right: $buttonInset;
       }
 
       &__close {
-         position: fixed !important;
+         position: fixed !important; /* KEEP! */
          z-index: 9999;
          top: $buttonInset;
          right: $buttonInset;
@@ -260,7 +260,7 @@ $buttonInset: 2.25rem;
 
       &__next,
       &__prev {
-         position: fixed !important;
+         position: fixed !important; /* KEEP! */
          top: 50%;
          transform: translateY(-50%);
          border-radius: 50%;

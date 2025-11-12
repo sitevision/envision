@@ -118,7 +118,7 @@
          @include form.disabled;
 
          .env-select__input__clear {
-            display: none !important;
+            display: none !important; /* KEEP */
          }
       }
 
@@ -128,13 +128,13 @@
          .env-select__item,
          a,
          button {
-            cursor: default !important;
+            cursor: default !important; /* KEEP */
          }
       }
 
       .env-select.disabled & {
          * {
-            cursor: default !important;
+            cursor: default !important; /* KEEP */
          }
       }
 
@@ -178,7 +178,7 @@
       }
 
       &__remove {
-         text-decoration: none !important;
+         text-decoration: none; /* !important; */
          color: var(--env-element-primary-font-color);
          padding: functions.em(9px, 14px) functions.em(7px, 14px);
       }

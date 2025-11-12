@@ -30,7 +30,7 @@
          var(--env-spacing-small);
 
       &__title {
-         margin-bottom: 0 !important;
+         margin-bottom: 0 !important; /* KEEP! */
       }
    }
 
@@ -78,7 +78,7 @@
       & {
          color: var(--env-tooltip-font-color);
          background-color: var(--env-tooltip-background-color);
-         border: none !important;
+         border: none; /* !important; */
       }
 
       [class^='env-ui-text-'],

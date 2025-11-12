@@ -100,7 +100,7 @@ div.env-profile-image {
       position: absolute;
       white-space: nowrap;
       display: block;
-      margin: 0 !important;
+      margin: 0; /* !important; */
       padding: 60% 0 0;
       width: 60%;
       height: 0;

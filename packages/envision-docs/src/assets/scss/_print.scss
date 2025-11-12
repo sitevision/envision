@@ -16,14 +16,15 @@
 
       nav,
       .theme-picker,
+      .doc-skip-link,
       .mobile-nav-button {
-         display: none !important;
+         display: none; /* !important; */
       }
    }
 
    .theme-picker,
    .sidenav,
    .footer {
-      display: none !important;
+      display: none; /* !important; */
    }
 }

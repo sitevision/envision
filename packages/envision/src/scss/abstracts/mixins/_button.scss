@@ -31,9 +31,9 @@
       padding: 0 $padding $padding;
 
       .env-icon {
-         margin: 0 !important;
-         width: $iconSize !important;
-         height: $iconSize !important;
+         margin: 0; /* !important; */
+         width: $iconSize; /* !important; */
+         height: $iconSize; /* !important; */
          top: $padding;
       }
 
@@ -41,8 +41,8 @@
          padding: 0 $paddingLink $paddingLink;
 
          .env-icon {
-            width: $iconSize * 1.25 !important;
-            height: $iconSize * 1.25 !important;
+            width: $iconSize * 1.25; /* !important; */
+            height: $iconSize * 1.25; /* !important; */
             top: $paddingLink;
          }
       }

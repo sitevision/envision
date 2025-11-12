@@ -4,7 +4,7 @@
    border: $border-width $border-style var(--env-border-color);
 
    &-none {
-      border: none !important;
+      border: none !important; /* KEEP */
    }
 
    $logicalProps:
@@ -38,23 +38,23 @@
 
 .env-border {
    &--0 {
-      border: 0 !important;
+      border: 0 !important; /* KEEP */
    }
 
    &--t-0 {
-      border-top: 0 !important;
+      border-top: 0 !important; /* KEEP */
    }
 
    &--r-0 {
-      border-right: 0 !important;
+      border-right: 0 !important; /* KEEP */
    }
 
    &--b-0 {
-      border-bottom: 0 !important;
+      border-bottom: 0 !important; /* KEEP */
    }
 
    &--l-0 {
-      border-left: 0 !important;
+      border-left: 0 !important; /* KEEP */
    }
 
    $physicalProps: 'top', 'right', 'bottom', 'left';
@@ -62,7 +62,7 @@
       &-#{$p} {
          border-#{$p}: $border-width
             $border-style
-            var(--env-border-color) !important;
+            var(--env-border-color); /* !important; */
       }
    }
 }

@@ -1,64 +1,68 @@
 @use 'sass:meta';
 
-@include meta.load-css('base/css-variables');
+@layer sv.reset, sv.core;
 
-// ----- Utils -----
-// Please, do not sort utils alphabetically.
-// Order is important. Color needs to be set after Text etc.
-@include meta.load-css('utils/assistive');
-@include meta.load-css('utils/borders');
-@include meta.load-css('utils/clearfix');
-@include meta.load-css('utils/container');
-@include meta.load-css('utils/flexbox');
-@include meta.load-css('utils/display');
-@include meta.load-css('utils/dynamic-font-size');
-@include meta.load-css('utils/image');
-@include meta.load-css('utils/shadow');
-@include meta.load-css('utils/sizing');
-@include meta.load-css('utils/spacing');
-@include meta.load-css('utils/text');
-@include meta.load-css('utils/colors');
-@include meta.load-css('utils/vertical-alignment');
+@layer sv.core {
+   @include meta.load-css('base/css-variables');
 
-// ----- Components -----
-@include meta.load-css('components/accordion');
-@include meta.load-css('components/alert');
-@include meta.load-css('components/badge');
-@include meta.load-css('components/breadcrumb');
-@include meta.load-css('components/cards');
-@include meta.load-css('components/content-text');
-@include meta.load-css('components/profile-image');
-@include meta.load-css('components/button');
-@include meta.load-css('components/button-group');
-@include meta.load-css('components/collapse');
-@include meta.load-css('components/dropdown');
-@include meta.load-css('components/embedded');
-@include meta.load-css('components/feed');
-@include meta.load-css('components/form');
-@include meta.load-css('components/form-control');
-@include meta.load-css('components/form-input');
-@include meta.load-css('components/form-layout');
-@include meta.load-css('components/form-select');
-@include meta.load-css('components/icons');
-@include meta.load-css('components/image-slider');
-@include meta.load-css('components/image-viewer');
-@include meta.load-css('components/image-viewer-2');
-@include meta.load-css('components/list');
-@include meta.load-css('components/media');
-@include meta.load-css('components/modal-dialog');
-@include meta.load-css('components/dialog');
-@include meta.load-css('components/nav');
-@include meta.load-css('components/news-item');
-@include meta.load-css('components/pagination');
-@include meta.load-css('components/popover');
-@include meta.load-css('components/progress');
-@include meta.load-css('components/range-slider');
-@include meta.load-css('components/spinner');
-@include meta.load-css('components/tab');
-@include meta.load-css('components/table');
-@include meta.load-css('components/tag-select');
-@include meta.load-css('components/text-list');
-@include meta.load-css('components/toast');
-@include meta.load-css('components/tooltip');
-@include meta.load-css('components/ui-color');
-@include meta.load-css('components/ui-text');
+   // ----- Utils -----
+   // Please, do not sort utils alphabetically.
+   // Order is important. Color needs to be set after Text etc.
+   @include meta.load-css('utils/assistive');
+   @include meta.load-css('utils/borders');
+   @include meta.load-css('utils/clearfix');
+   @include meta.load-css('utils/container');
+   @include meta.load-css('utils/flexbox');
+   @include meta.load-css('utils/display');
+   @include meta.load-css('utils/dynamic-font-size');
+   @include meta.load-css('utils/image');
+   @include meta.load-css('utils/shadow');
+   @include meta.load-css('utils/sizing');
+   @include meta.load-css('utils/spacing');
+   @include meta.load-css('utils/text');
+   @include meta.load-css('utils/colors');
+   @include meta.load-css('utils/vertical-alignment');
+
+   // ----- Components -----
+   @include meta.load-css('components/accordion');
+   @include meta.load-css('components/alert');
+   @include meta.load-css('components/badge');
+   @include meta.load-css('components/breadcrumb');
+   @include meta.load-css('components/cards');
+   @include meta.load-css('components/content-text');
+   @include meta.load-css('components/profile-image');
+   @include meta.load-css('components/button');
+   @include meta.load-css('components/button-group');
+   @include meta.load-css('components/collapse');
+   @include meta.load-css('components/dropdown');
+   @include meta.load-css('components/embedded');
+   @include meta.load-css('components/feed');
+   @include meta.load-css('components/form');
+   @include meta.load-css('components/form-control');
+   @include meta.load-css('components/form-input');
+   @include meta.load-css('components/form-layout');
+   @include meta.load-css('components/form-select');
+   @include meta.load-css('components/icons');
+   @include meta.load-css('components/image-slider');
+   @include meta.load-css('components/image-viewer');
+   @include meta.load-css('components/image-viewer-2');
+   @include meta.load-css('components/list');
+   @include meta.load-css('components/media');
+   @include meta.load-css('components/modal-dialog');
+   @include meta.load-css('components/dialog');
+   @include meta.load-css('components/nav');
+   @include meta.load-css('components/news-item');
+   @include meta.load-css('components/pagination');
+   @include meta.load-css('components/popover');
+   @include meta.load-css('components/progress');
+   @include meta.load-css('components/range-slider');
+   @include meta.load-css('components/spinner');
+   @include meta.load-css('components/tab');
+   @include meta.load-css('components/table');
+   @include meta.load-css('components/tag-select');
+   @include meta.load-css('components/text-list');
+   @include meta.load-css('components/toast');
+   @include meta.load-css('components/tooltip');
+   @include meta.load-css('components/ui-color');
+   @include meta.load-css('components/ui-text');
+}

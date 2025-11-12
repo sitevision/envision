@@ -1,5 +1,5 @@
 .env-dashboard-theme {
-   background-color: var(--env-background-color) !important;
+   background-color: var(--env-background-color); /* !important; */
    color: var(--env-font-color);
    font-family: var(--env-font-family);
    --env-link-hover-font-color: #1866e3;

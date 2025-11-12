@@ -14,12 +14,12 @@
    .env-select__input {
       border-color: var(
          --env-element-#{$colorName}-background-color
-      ) !important;
+      ) !important; /* DEPRECATED - KEEP! */
    }
 
    .env-select__item {
       background-color: var(
          --env-element-#{$colorName}-background-color
-      ) !important;
+      ) !important; /* DEPRECATED - KEEP! */
    }
 }

@@ -10,7 +10,7 @@
    vertical-align: baseline;
    color: #000;
    background-color: #80c5ff;
-   text-decoration: none !important;
+   text-decoration: none; /* !important; */
 
    @include variables.dark-mode-status-override;
 

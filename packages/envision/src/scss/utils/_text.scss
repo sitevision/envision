@@ -13,19 +13,19 @@
 
    &--muted {
       font-weight: $font-weight-regular;
-      color: var(--env-font-color-muted) !important;
+      color: var(--env-font-color-muted) !important; /* KEEP */
    }
 
    &--uppercase {
-      text-transform: uppercase !important;
+      text-transform: uppercase !important; /* KEEP */
    }
 
    &--lowercase {
-      text-transform: lowercase !important;
+      text-transform: lowercase !important; /* KEEP */
    }
 
    &--capitalize {
-      text-transform: capitalize !important;
+      text-transform: capitalize !important; /* KEEP */
    }
 
    &--truncate {
@@ -33,19 +33,19 @@
    }
 
    &--strike {
-      text-decoration: line-through !important;
+      text-decoration: line-through !important; /* KEEP */
    }
 
    &--attention {
-      color: var(--env-ui-color-status-attention-text) !important;
+      color: var(--env-ui-color-status-attention-text) !important; /* KEEP */
    }
 
    &--active {
-      color: var(--env-ui-color-status-active-text) !important;
+      color: var(--env-ui-color-status-active-text) !important; /* KEEP */
    }
 
    &--error {
-      color: var(--env-ui-color-status-error-text) !important;
+      color: var(--env-ui-color-status-error-text) !important; /* KEEP */
    }
 
    // Text alignment
@@ -67,11 +67,11 @@
    }
 
    &-align--start {
-      text-align: start !important;
+      text-align: start !important; /* KEEP */
    }
 
    &-align--end {
-      text-align: end !important;
+      text-align: end !important; /* KEEP */
    }
 }
 
@@ -81,7 +81,7 @@ button:not(.env-button).env-link-secondary {
    display: inline;
    border: none;
    font-family: var(--env-font-family);
-   font-size: 1em !important;
+   font-size: 1em !important; /* KEEP */
    margin: 0;
    padding: 0;
    background-color: transparent;

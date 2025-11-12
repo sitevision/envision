@@ -65,13 +65,17 @@
       .env-checkbox__fake,
       .env-form-radio__fake,
       .env-select__input {
-         border-color: var(--env-ui-color-status-error-text) !important;
+         border-color: var(
+            --env-ui-color-status-error-text
+         ) !important; /* DEPRECATED - KEEP! */
       }
 
       .env-select__item,
       .env-select__item__remove {
          // Tag select item
-         background-color: var(--env-ui-color-status-error) !important;
+         background-color: var(
+            --env-ui-color-status-error
+         ) !important; /* DEPRECATED - KEEP! */
          color: var(--env-ui-color-status-error-contrast);
       }
    }

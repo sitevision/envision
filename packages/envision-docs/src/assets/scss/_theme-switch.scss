@@ -27,12 +27,12 @@
       width: 0.8em;
       inset: 50% auto auto 0.45em;
       transform: translateY(-50%);
-      fill: var(--fg) !important;
+      fill: var(--fg); /* !important; */
    }
 
    &__moon {
       inset: 50% 0.5em auto auto;
-      fill: var(--ch) !important;
+      fill: var(--ch); /* !important; */
    }
 
    &__checkbox {

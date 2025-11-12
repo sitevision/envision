@@ -65,7 +65,7 @@
       position: relative;
 
       .env-button {
-         position: absolute !important;
+         position: absolute; /* !important; */
          inset: 0 0 auto auto;
          border-radius: 0;
       }

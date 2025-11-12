@@ -6,7 +6,7 @@
    font-family: var(--env-badge-font-family);
    font-size: var(--env-badge-font-size);
    font-weight: var(--env-badge-font-weight);
-   text-decoration: none !important;
+   text-decoration: none; /* !important; */
    text-transform: var(--env-badge-text-transform);
    letter-spacing: var(--env-badge-letter-spacing);
    color: var(--env-element-primary-font-color);

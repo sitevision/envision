@@ -13,7 +13,7 @@ description: Use the Badge component to display small labels for status, notific
 ## Variants
 
 ```html
-<span class="env-badge">Primary</span>
+<a href="#0" class="env-badge">Primary</a>
 <span class="env-badge env-badge--success">Success</span>
 <span class="env-badge env-badge--warning">Warning</span>
 <span class="env-badge env-badge--danger">Danger</span>

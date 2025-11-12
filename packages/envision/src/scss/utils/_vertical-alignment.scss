@@ -1,6 +1,6 @@
 $alignProperties: baseline top middle bottom text-bottom text-top;
 @each $value in $alignProperties {
    .env-align--#{$value} {
-      vertical-align: $value !important;
+      vertical-align: $value !important; /* KEEP */
    }
 }

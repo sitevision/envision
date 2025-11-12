@@ -83,13 +83,13 @@
       border-bottom: 2px solid transparent;
 
       &:hover {
-         color: var(--doc-header-font-color) !important;
-         border-bottom-color: var(--doc-color-brand) !important;
+         //color: var(--doc-header-font-color) !important;
+         border-bottom-color: var(--doc-color-brand); /* !important; */
       }
 
       &[aria-current='page'] {
-         border-bottom-color: var(--doc-color-brand) !important;
-         color: var(--doc-header-font-color) !important;
+         border-bottom-color: var(--doc-color-brand); /* !important; */
+         //color: var(--doc-header-font-color) !important;
       }
    }
 
