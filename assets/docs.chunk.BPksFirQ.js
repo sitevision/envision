@@ -1,4 +1,5 @@
-import { c as createComponent, b as renderTemplate } from './docs.chunk.DIz4f-0X.js';
+import { c as createComponent, b as renderTemplate } from './docs.chunk.OYZRMOgv.js';
+import 'piccolore';
 import 'clsx';
 
 const $$Favicon = createComponent(($$result, $$props, $$slots) => {

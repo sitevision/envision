@@ -1,3 +1,4 @@
+import 'piccolore';
 import { clsx } from 'clsx';
 import { escape } from 'html-escaper';
 import { encodeBase64, encodeHexUpperCase, decodeBase64 } from '@oslojs/encoding';
@@ -155,7 +156,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "5.15.9";
+const ASTRO_VERSION = "5.16.0";
 const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
 function createAstroGlobFn() {
