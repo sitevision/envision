@@ -28,7 +28,7 @@
    "author": "Sitevision AB",
    "license": "MIT",
    "devDependencies": {
-      "@eslint/eslintrc": "^3.3.1",
+      "@eslint/eslintrc": "^3.3.3",
       "@eslint/js": "^9.39.1",
       "concurrently": "^9.1.2",
       "cross-env": "^10.1.0",
