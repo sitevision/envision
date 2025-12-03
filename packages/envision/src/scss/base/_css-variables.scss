@@ -682,6 +682,33 @@
    (
       'button-font-family': var(--env-font-family),
       'button-border-radius': $button-border-radius,
+      'button-font-weight': 400,
+      'button-letter-spacing': normal,
+      'button-text-transform': none,
+   )
+);
+
+// ----- CTA Button -----
+
+@include css-vars.add-declaration(
+   (
+      'cta-font-family': var(--env-font-family),
+      'cta-font-size': 1.25rem,
+      'cta-font-weight': 400,
+      'cta-letter-spacing': normal,
+      'cta-text-transform': none,
+      'cta-border-radius': var(--env-border-radius-medium),
+      'cta-border-width': 0,
+      'cta-padding-inline': 1.5em,
+      'cta-padding-block': 1em,
+
+      'cta-font-color': #f3f3f7,
+      'cta-background-color': #313649,
+      'cta-border-color': #313649,
+
+      'cta-hover-font-color': #f3f3f7,
+      'cta-hover-background-color': #202330,
+      'cta-hover-border-color': #202330,
    )
 );
 

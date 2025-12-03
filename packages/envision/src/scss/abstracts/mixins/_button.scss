@@ -51,19 +51,16 @@
 
 @mixin button-base() {
    appearance: none;
-   border: $border-width $border-style;
    box-sizing: border-box;
    cursor: pointer;
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   font-family: var(--env-button-font-family);
    margin: 0;
    text-align: center;
    text-decoration: none;
    user-select: none;
    vertical-align: middle;
-   line-height: $button-line-height;
 
    // Reset inner elements in apps
    > span:not([class]):not([style]),

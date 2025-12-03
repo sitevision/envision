@@ -1,0 +1,47 @@
+@use '../abstracts/mixins/button';
+@use '../abstracts/mixins/cta';
+@use '../abstracts/mixins/focus';
+@use '../abstracts/mixins/text';
+
+.env-cta {
+   @include button.button-base;
+   font-family: var(--env-cta-font-family);
+   font-size: var(--env-cta-font-size);
+   font-weight: var(--env-cta-font-weight);
+   line-height: 1.25;
+   letter-spacing: var(--env-cta-letter-spacing);
+   text-transform: var(--env-cta-text-transform);
+   padding-inline: var(--env-cta-padding-inline);
+   padding-block: var(--env-cta-padding-block);
+   border-radius: var(--env-cta-border-radius);
+   border-width: var(--env-cta-border-width);
+   border-style: solid;
+   height: auto;
+
+   // ----- COLORS -----
+   @include cta.color-variant();
+
+   $buttonNames:
+      'brand', 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
+
+   @each $name in $buttonNames {
+      &--#{$name} {
+         @include cta.color-variant($name);
+      }
+   }
+
+   // ----- VARIANTS -----
+   &--block {
+      display: flex;
+      width: 100%;
+      white-space: normal;
+   }
+
+   // ----- ICONS -----
+   &:has(.env-icon) {
+      gap: 1em;
+   }
+   .env-icon {
+      margin: 0 -0.5em;
+   }
+}

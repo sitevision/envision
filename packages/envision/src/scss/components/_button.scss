@@ -1,9 +1,16 @@
 @use '../abstracts/mixins/button';
 @use '../abstracts/mixins/focus';
 @use '../abstracts/mixins/text';
+@use '../abstracts/scss-variables' as *;
 
 .env-button {
    @include button.button-base;
+   font-family: var(--env-button-font-family);
+   font-weight: var(--env-button-font-weight);
+   line-height: $button-line-height;
+   letter-spacing: var(--env-button-letter-spacing);
+   text-transform: var(--env-button-text-transform);
+   border: $border-width $border-style;
 
    & {
       @include button.button-size('medium');
