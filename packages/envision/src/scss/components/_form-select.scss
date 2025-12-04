@@ -73,6 +73,7 @@ select[multiple].env-form-input,
          #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
       );
       padding: $form-padding-y 2em $form-padding-y $form-padding-x;
+      background-color: var(--env-form-input-background-color);
 
       @include focus.hide-focus-visible;
    }
