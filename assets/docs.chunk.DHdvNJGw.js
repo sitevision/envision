@@ -1,3 +1,3 @@
 import 'piccolore';
-import './docs.chunk.DB_uvtHY.js';
+import './docs.chunk.S_32VEFl.js';
 import 'clsx';

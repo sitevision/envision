@@ -71,7 +71,7 @@ class AstroError extends Error {
     this.frame = codeFrame(source, location);
   }
   static is(err) {
-    return err.type === "AstroError";
+    return err?.type === "AstroError";
   }
 }
 class AstroUserError extends Error {
@@ -87,7 +87,7 @@ class AstroUserError extends Error {
     this.hint = hint;
   }
   static is(err) {
-    return err.type === "AstroUserError";
+    return err?.type === "AstroUserError";
   }
 }
 
@@ -172,7 +172,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "5.16.0";
+const ASTRO_VERSION = "5.16.4";
 const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
 function createAstroGlobFn() {
