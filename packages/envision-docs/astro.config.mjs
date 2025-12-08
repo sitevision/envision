@@ -4,9 +4,11 @@ import { redirects } from './redirects.mjs';
 import { svRemarkLayoutPlugin } from './sv-remark-layout-plugin.mjs';
 import { svRemarkClassNames } from './sv-remark-class-names.mjs';
 import { svRemarkCopyExamples } from './sv-remark-copy-examples.mjs';
+import mdx from '@astrojs/mdx';
 
 import path from 'path';
 import { fileURLToPath } from 'node:url';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ASSETS_FOLDER = 'assets';
@@ -47,6 +49,7 @@ export default defineConfig({
       assets: ASSETS_FOLDER,
    },
    integrations: [
+      mdx(),
       (await import('astro-compress')).default({
          CSS: false,
          HTML: {

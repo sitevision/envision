@@ -148,7 +148,7 @@ The textarea will be resizable vertically.
 </div>
 ```
 
-<span id="contenteditable" class="offset-anchor"></span>
+<span id="contenteditable" className="offset-anchor"></span>
 
 ### Contenteditable element
 
@@ -182,7 +182,7 @@ both the Select element and the Select component support a progressively enhance
 as much of the Envision styling as possible while maintaining native select element functionality.
 This feature is opt-in and can be enabled by adding a `button` with a `selectedcontent` tag inside the select element.
 
-<span id="select-component" class="offset-anchor"></span>
+<span id="select-component" className="offset-anchor"></span>
 
 ### Select component
 
@@ -213,7 +213,49 @@ To opt in to the customizable version — which uses theme fonts, colors, and al
 the first child of the `select`, with a `selectedcontent` element inside the `button`. Use the `.env-icon` class to
 display icons in the options or in the selected value.
 
-```html
+<div className={'doc-code-example'}>
+   <div className="env-form-field">
+      <label for="select-2" className="env-form-label">
+         <>Customizable select component</>
+      </label>
+      <div className="env-form-select">
+         <select id="select-2">
+            <button>
+               <selectedcontent></selectedcontent>
+            </button>
+            <option>
+               <svg className="env-icon" aria-hidden="true">
+                  <use href="/sitevision/envision-icons.svg#icon-file"></use>
+               </svg>{' '}
+               <>Option 1</>
+            </option>
+            <option>
+               <svg className="env-icon" aria-hidden="true">
+                  <use href="/sitevision/envision-icons.svg#icon-files"></use>
+               </svg>{' '}
+               <>Option 2</>
+            </option>
+            <option>
+               <svg className="env-icon" aria-hidden="true">
+                  <use href="/sitevision/envision-icons.svg#icon-image"></use>
+               </svg>{' '}
+               <>Option 3</>
+            </option>
+            <option>
+               <svg className="env-icon" aria-hidden="true">
+                  <use href="/sitevision/envision-icons.svg#icon-images"></use>
+               </svg>{' '}
+               <>Option 4</>
+            </option>
+         </select>
+         <svg aria-hidden="true" className="env-icon">
+            <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         </svg>
+      </div>
+   </div>
+</div>
+
+```html noexample
 <div class="env-form-field">
    <label for="select-2" class="env-form-label"
       >Customizable select component</label
@@ -259,7 +301,46 @@ display icons in the options or in the selected value.
 
 Native select element with class `.env-form-input`. Only light styling, might look different in different browsers.
 
-```html
+<div className={'doc-code-example'}>
+   <div className="env-form-field">
+      <label for="select-3" className="env-form-label">
+         <>Select element</>
+      </label>
+      <select className="env-form-input" id="select-3">
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+   </div>
+   <div class="env-form-field">
+      <label for="select-4" className="env-form-label">
+         <>Customizable select element</>
+      </label>
+      <select className="env-form-input" id="select-4">
+         <button>
+            <selectedcontent></selectedcontent>
+         </button>
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+   </div>
+   <div class="env-form-field">
+      <label for="multiple-select-1" className="env-form-label">
+         <>Multiple select</>
+      </label>
+      <select className="env-form-input" id="multiple-select-1" multiple>
+         <option>Item</option>
+         <option>Item 2</option>
+         <option>Item 3</option>
+         <option>Item 4</option>
+      </select>
+   </div>
+</div>
+
+```html noexample
 <div class="env-form-field">
    <label for="select-3" class="env-form-label">Select element</label>
    <select class="env-form-input" id="select-3">
@@ -270,10 +351,10 @@ Native select element with class `.env-form-input`. Only light styling, might lo
    </select>
 </div>
 <div class="env-form-field">
-   <label for="select-3" class="env-form-label"
+   <label for="select-4" class="env-form-label"
       >Customizable select element</label
    >
-   <select class="env-form-input" id="select-3">
+   <select class="env-form-input" id="select-4">
       <button>
          <selectedcontent></selectedcontent>
       </button>

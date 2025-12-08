@@ -10,6 +10,7 @@
       "astro": "astro"
    },
    "dependencies": {
+      "@astrojs/mdx": "^4.3.12",
       "astro": "^5.16.0",
       "astro-compress": "^2.3.8"
    }

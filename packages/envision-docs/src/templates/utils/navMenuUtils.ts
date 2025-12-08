@@ -31,7 +31,7 @@ const sortPages = (a: Page, b: Page): number => {
 };
 
 const getAllMarkdownPages = (): Record<string, unknown> => {
-   return import.meta.glob(['/src/pages/**/*.md'], { eager: true });
+   return import.meta.glob(['/src/pages/**/*.md', '/src/pages/**/*.mdx'], { eager: true });
 };
 
 const getPath = (url: string): string[] => {
