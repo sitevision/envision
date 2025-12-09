@@ -10,8 +10,11 @@
    display: flex;
    flex-direction: column;
    align-items: stretch;
-   height: 100%;
    border-radius: var(--env-border-radius-medium);
+
+   .env-cardholder & {
+      height: 100%;
+   }
 
    &__header {
       order: 1;
