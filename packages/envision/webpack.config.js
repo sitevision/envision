@@ -1,7 +1,7 @@
 /* globals require:false, module:false, __dirname:false */
 const path = require('path');
 const process = require('process');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
@@ -15,7 +15,7 @@ const dev = process.env.NODE_ENV === 'development';
 console.log('Running dev mode', dev);
 
 const optimization = {
-   minimizer: [new OptimizeCSSAssetsPlugin(), new TerserWebpackPlugin()],
+   minimizer: [new CssMinimizerPlugin(), new TerserWebpackPlugin()],
 };
 
 const commonPlugins = [
