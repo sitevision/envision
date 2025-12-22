@@ -44,7 +44,7 @@ depending on whether it triggers an action or navigates the user.
 </p>
 ```
 
-## Call to Action button
+## Call to Action button <span class="doc-badge doc-badge--info">2026.01.1</span>
 
 A call-to-action (CTA) button is a prominently styled button designed to encourage users to take a specific
 desired action. It is typically used in marketing-oriented layouts and links to a page, form, or other
