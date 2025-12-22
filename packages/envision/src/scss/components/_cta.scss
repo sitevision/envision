@@ -21,6 +21,8 @@
    // ----- COLORS -----
    @include cta.color-variant();
 
+   @include focus.focus-visible;
+
    $buttonNames:
       'brand', 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
 
