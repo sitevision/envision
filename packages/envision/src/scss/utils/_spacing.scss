@@ -1,12 +1,12 @@
 @use 'sass:list';
 
-// Usage of physical properties top, right etc. is deprecated since 2026.02.1
-$physicalProps: 'top', 'right', 'bottom', 'left';
 $logicalProps:
    'block', 'inline', 'block-start', 'inline-end', 'block-end', 'inline-start';
-$logicalAndPhysicalProps:
-   'block', 'inline', 'top', 'block-start', 'right', 'inline-end', 'bottom',
-   'block-end', 'left', 'inline-start'; // list.join($physicalProps, $logicalProps);
+// Usage of physical properties top, right etc. is deprecated since 2026.02.1
+$physicalProps: 'top', 'right', 'bottom', 'left';
+
+// Join lists, remove physical properties in future versions.
+$logicalAndPhysicalProps: list.join($physicalProps, $logicalProps);
 
 // Around is deprecated, replaced by shorthand usage
 // Horizontal is deprecated, replaced by "inline"
