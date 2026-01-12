@@ -21,6 +21,8 @@
    // ----- COLORS -----
    @include cta.color-variant();
 
+   @include focus.focus-visible;
+
    $buttonNames:
       'brand', 'primary', 'secondary', 'success', 'danger', 'info', 'warning';
 
@@ -39,9 +41,6 @@
 
    // ----- ICONS -----
    &:has(.env-icon) {
-      gap: 1em;
-   }
-   .env-icon {
-      margin: 0 -0.5em;
+      gap: 0.5em;
    }
 }

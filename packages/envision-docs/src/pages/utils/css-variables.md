@@ -292,6 +292,27 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 - `--env-button-font-family`
 - `--env-button-border-radius`
+- `--env-button-font-weight` <span class="doc-badge doc-badge--info">2026.01.1</span>
+- `--env-button-letter-spacing` <span class="doc-badge doc-badge--info">2026.01.1</span>
+- `--env-button-text-transform` <span class="doc-badge doc-badge--info">2026.01.1</span>
+
+#### Call to Action buttons <span class="doc-badge doc-badge--info">2026.01.1</span>
+
+- `--env-cta-font-family`
+- `--env-cta-font-size`
+- `--env-cta-font-weight`
+- `--env-cta-letter-spacing`
+- `--env-cta-text-transform`
+- `--env-cta-border-radius`
+- `--env-cta-border-width`
+- `--env-cta-padding-inline`
+- `--env-cta-padding-block`
+- `--env-cta-font-color`
+- `--env-cta-background-color`
+- `--env-cta-border-color`
+- `--env-cta-hover-font-color`
+- `--env-cta-hover-background-color`
+- `--env-cta-hover-border-color`
 
 #### Cardholder
 
