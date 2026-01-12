@@ -4,26 +4,26 @@ description: The Spacing utility provides classes for consistent margin and padd
 ---
 
 Padding and margin utility classes are named using the format: `env-{property}-{specifier}--{size}`
+or shorthand `env-{property}--{size}` to apply to all sides.
 
-Valid values for _property_
+## Valid values
 
-- `m` for `margin`
-- `p` for `padding`
+- **{property}**: `m`, `p` where _m_ is margin and _p_ is padding.
 
-Valid values for _specifier_
+- **{specifier}**: `block`, `inline`, `block-start`, `inline-end`, `block-end`, `inline-start`
 
-- `top`
-- `right`
-- `bottom`
-- `left`
-- `horizontal`
-- `vertical`
-- `around`
+- **{size}**: `0`, `a`, `xxx-small`, `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`
 
-Valid values for _size_
+### Notes on property, specifier and size
 
-- `0`
-- `a` auto, only applicable to `margin`
+Property `m` is margin and `p` is padding.
+
+Specifier may be omitted for shorthand usage (apply to all sides).
+
+Size `a` means auto and is only applicable to `margin`.
+
+Size values:
+
 - `xxx-small` <small>(0.125em)</small>
 - `xx-small` <small>(0.25em)</small>
 - `x-small` <small>(0.5em)</small>
@@ -34,65 +34,69 @@ Valid values for _size_
 - `xx-large` <small>(1.75em)</small>
 - `xxx-large` <small>(2em)</small>
 
-Invert values for margin by adding the negative modifier
+### Negative margin
 
-- `env-m-{specifier}--negative`
+Invert values for margin by adding the negative modifier: `env-m-{specifier}--negative`.
 
 ### Spacing examples
 
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-around--medium env-p-around--medium">
+      <div class="example-spacing__padding env-m--medium env-p--medium">
          <div class="example-spacing__content">
-            env-m-around--medium<br />env-p-around--medium
+            env-m--medium<br />env-p--medium
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-horizontal--xxx-large env-p-vertical--large">
+      <div class="example-spacing__padding env-m-inline--xxx-large env-p-block--large">
          <div class="example-spacing__content">
-            env-m-horizontal--xxx-large<br />env-p-vertical--large
+            env-m-inline--xxx-large<br />env-p-block--large
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-horizontal--negative env-m-horizontal--large env-m-vertical--medium env-p-around--small">
+      <div class="example-spacing__padding env-m-inline--negative env-m-inline--large env-m-block--medium env-p--small">
          <div class="example-spacing__content">
-            env-m-horizontal--large<br />
-            env-m-horizontal--negative<br /> 
-            env-m-vertical--medium<br />
-            env-p-around--small<br />
+            env-m-inline--large<br />
+            env-m-inline--negative<br /> 
+            env-m-block--medium<br />
+            env-p--small<br />
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-top--negative env-m-top--medium env-m-right--medium env-m-bottom--small env-m-left--xxx-large env-p-around--medium">
+      <div class="example-spacing__padding env-m-block-start--negative env-m-block-start--medium env-m-inline-end--medium env-m-block-end--small env-m-inline-start--xxx-large env-p--medium">
          <div class="example-spacing__content">
-            env-m-top--negative<br />
-            env-m-top--medium<br />
-            env-m-right--medium<br />
-            env-m-bottom--small<br />
-            env-m-left--xxx-large<br />
-            env-p-around--medium<br />
+            env-m-block-start--negative<br />
+            env-m-block-start--medium<br />
+            env-m-inline-end--medium<br />
+            env-m-block-end--small<br />
+            env-m-inline-start--xxx-large<br />
+            env-p--medium
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-w--50 env-m-vertical--medium env-m-horizontal--a env-p-around--medium">
+      <div class="example-spacing__padding env-w--50 env-m-block--medium env-m-inline--a env-p--medium">
          <div class="example-spacing__content">
             env-w--50<br />
-            env-m-vertical--medium<br />
-            env-m-horizontal--a<br />
-            env-p-around--medium<br />
+            env-m-block--medium<br />
+            env-m-inline--a<br />
+            env-p--medium<br />
          </div>
       </div>
    </div>
 </div>
+
+## Deprecated
+
+Since 2026.02.1, physical properties `top`, `right`, `bottom` and `left`, and `horizontal`, `vertical`and `around` are deprecated and replaced by logical properties.
