@@ -172,7 +172,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "5.16.4";
+const ASTRO_VERSION = "5.16.8";
 const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
 function createAstroGlobFn() {
