@@ -1,150 +1,93 @@
-@use 'sass:list';
-
-$logicalProps:
-   'block', 'inline', 'block-start', 'inline-end', 'block-end', 'inline-start';
-// Usage of physical properties top, right etc. is deprecated since 2026.02.1
-$physicalProps: 'top', 'right', 'bottom', 'left';
-
-// Join lists, remove physical properties in future versions.
-$logicalAndPhysicalProps: list.join($physicalProps, $logicalProps);
-
-// Around is deprecated, replaced by shorthand usage
-// Horizontal is deprecated, replaced by "inline"
-// Vertical is deprecated, replaced by "block"
-$deprecatedSpecialProps: 'around', 'horizontal', 'vertical';
-
-$sizes: (
-   xxx-small: 'spacing-xxx-small',
-   xx-small: 'spacing-xx-small',
-   x-small: 'spacing-x-small',
-   small: 'spacing-small',
-   medium: 'spacing-medium',
-   large: 'spacing-large',
-   x-large: 'spacing-x-large',
-   xx-large: 'spacing-xx-large',
-   xxx-large: 'spacing-xxx-large',
+// Logical props map - value is deprecated physical prop
+$logicalProps: (
+   'block': 'vertical',
+   'inline': 'horizontal',
+   'block-start': 'top',
+   'inline-end': 'right',
+   'block-end': 'bottom',
+   'inline-start': 'left',
 );
 
-.env {
-   // Margin 0 and auto, padding 0
-   @each $p in $logicalAndPhysicalProps {
-      &-m-#{$p}--0 {
-         margin-#{$p}: 0 !important;
-      }
-      &-m-#{$p}--a {
-         margin-#{$p}: auto !important;
-      }
-      &-p-#{$p}--0 {
-         padding-#{$p}: 0 !important;
-      }
-   }
+$sizes:
+   'xxx-small', 'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large',
+   'xx-large', 'xxx-large';
 
-   &-m-around--0, // Around is deprecated, replaced by shorthand
+.env {
+   // Shorthand (all sides)
+   // ---------------------
+   // Around is deprecated, replaced by shorthand
+
+   &-m-around--0,
    &-m--0 {
       margin: 0 !important;
    }
 
-   &-m-around--a, // Around is deprecated, replaced by shorthand
+   &-m-around--a,
    &-m--a {
       margin: auto !important;
    }
 
-   &-p-around--0, // Around is deprecated, replaced by shorthand
+   &-p-around--0,
    &-p--0 {
       padding: 0 !important;
    }
 
-   &-m-horizontal--0 {
-      // Horizontal is deprecated, replaced by "inline"
-      margin-right: 0 !important;
-      margin-left: 0 !important;
-   }
-
-   &-m-horizontal--a {
-      // Horizontal is deprecated, replaced by "inline"
-      margin-right: auto !important;
-      margin-left: auto !important;
-   }
-
-   &-p-horizontal--0 {
-      // Horizontal is deprecated, replaced by "inline"
-      padding-right: 0 !important;
-      padding-left: 0 !important;
-   }
-
-   &-m-vertical--0 {
-      // Vertical is deprecated, replaced by "block"
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-   }
-
-   &-m-vertical--a {
-      // Vertical is deprecated, replaced by "block"
-      margin-top: auto !important;
-      margin-bottom: auto !important;
-   }
-
-   &-p-vertical--0 {
-      // Vertical is deprecated, replaced by "block"
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-   }
-
-   @each $size, $variableName in $sizes {
-      @each $p in $logicalAndPhysicalProps {
-         &-m-#{$p}--#{$size} {
-            margin-#{$p}: var(--env-#{$variableName}) !important;
-         }
-         &-m-#{$p}--#{$size}.env-m-#{$p}--negative {
-            margin-#{$p}: calc(var(--env-#{$variableName}) * -1) !important;
-         }
-         &-p-#{$p}--#{$size} {
-            padding-#{$p}: var(--env-#{$variableName}) !important;
-         }
-      }
-
+   @each $size in $sizes {
       &-m-around--#{$size}, // Around is deprecated, replaced by shorthand
       &-m--#{$size} {
-         margin: var(--env-#{$variableName}) !important;
+         margin: var(--env-spacing-#{$size}) !important;
       }
       &-m-around--#{$size}.env-m-around--negative, // Around is deprecated, replaced by shorthand
       &-m--#{$size}.env-m--negative {
-         margin: calc(var(--env-#{$variableName}) * -1) !important;
+         margin: calc(var(--env-spacing-#{$size}) * -1) !important;
       }
       &-p-around--#{$size}, // Around is deprecated, replaced by shorthand
       &-p--#{$size} {
-         padding: var(--env-#{$variableName}) !important;
+         padding: var(--env-spacing-#{$size}) !important;
+      }
+   }
+
+   // Logical props
+   // -------------
+   // Top is deprecated, replaced by "block-start"
+   // Right is deprecated, replaced by "inline-end"
+   // Bottom is deprecated, replaced by "block-end"
+   // Left is deprecated, replaced by "inline-start"
+
+   // Shorthand (block and inline)
+   // ----------------------------
+   // Horizontal is deprecated, replaced by "inline"
+   // Vertical is deprecated, replaced by "block
+
+   @each $logicalProp, $legacyProp in $logicalProps {
+      &-m-#{$legacyProp}--0,
+      &-m-#{$logicalProp}--0 {
+         margin-#{$logicalProp}: 0 !important;
+      }
+      &-m-#{$legacyProp}--a,
+      &-m-#{$logicalProp}--a {
+         margin-#{$logicalProp}: auto !important;
+      }
+      &-p-#{$legacyProp}--0,
+      &-p-#{$logicalProp}--0 {
+         padding-#{$logicalProp}: 0 !important;
       }
 
-      &-m-horizontal--#{$size} {
-         // Horizontal is deprecated, replaced by "inline"
-         margin-right: var(--env-#{$variableName}) !important;
-         margin-left: var(--env-#{$variableName}) !important;
-      }
-      &-m-horizontal--negative.env-m-horizontal--#{$size} {
-         // Horizontal is deprecated, replaced by "inline"
-         margin-right: calc(var(--env-#{$variableName}) * -1) !important;
-         margin-left: calc(var(--env-#{$variableName}) * -1) !important;
-      }
-      &-p-horizontal--#{$size} {
-         // Horizontal is deprecated, replaced by "inline"
-         padding-right: var(--env-#{$variableName}) !important;
-         padding-left: var(--env-#{$variableName}) !important;
-      }
-      &-m-vertical--#{$size} {
-         // Vertical is deprecated, replaced by "block"
-         margin-top: var(--env-#{$variableName}) !important;
-         margin-bottom: var(--env-#{$variableName}) !important;
-      }
-      &-m-vertical--negative.env-m-horizontal--#{$size} {
-         // Vertical is deprecated, replaced by "block"
-         margin-top: calc(var(--env-#{$variableName}) * -1) !important;
-         margin-bottom: calc(var(--env-#{$variableName}) * -1) !important;
-      }
-      &-p-vertical--#{$size} {
-         // Vertical is deprecated, replaced by "block"
-         padding-top: var(--env-#{$variableName}) !important;
-         padding-bottom: var(--env-#{$variableName}) !important;
+      @each $size in $sizes {
+         &-m-#{$legacyProp}--#{$size},
+         &-m-#{$logicalProp}--#{$size} {
+            margin-#{$logicalProp}: var(--env-spacing-#{$size}) !important;
+         }
+         &-m-#{$legacyProp}--negative.env-m-#{$legacyProp}--#{$size},
+         &-m-#{$logicalProp}--negative.env-m-#{$logicalProp}--#{$size} {
+            margin-#{$logicalProp}: calc(
+               var(--env-spacing-#{$size}) * -1
+            ) !important;
+         }
+         &-p-#{$legacyProp}--#{$size},
+         &-p-#{$logicalProp}--#{$size} {
+            padding-#{$logicalProp}: var(--env-spacing-#{$size}) !important;
+         }
       }
    }
 }

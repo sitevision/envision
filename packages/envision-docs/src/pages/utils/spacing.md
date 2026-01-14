@@ -3,27 +3,38 @@ title: Spacing
 description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
 ---
 
-Padding and margin utility classes are named using the format: `env-{property}-{specifier}--{size}`
-or shorthand `env-{property}--{size}` to apply to all sides.
+The spacing utility was updated in **2026.01.2** and now uses logical properties, see [example](/utils/spacing/#logical-properties).
 
-## Valid values
+Classes using physical properties are [deprecated](/utils/spacing/#deprecated).
 
-- **{property}**: `m`, `p` where _m_ is margin and _p_ is padding.
+## Usage
 
-- **{specifier}**: `block`, `inline`, `block-start`, `inline-end`, `block-end`, `inline-start`
+Use spacing utilities to apply margin and padding consistently across the system.
 
-- **{size}**: `0`, `a`, `xxx-small`, `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`
+Use the pattern `env-{property}-{specifier}--{size}`, or use the shorthand  
+`env-{property}--{size}` to apply spacing to all sides.
 
-### Notes on property, specifier and size
+### Valid values
 
-Property `m` is margin and `p` is padding.
+#### {property}
 
-Specifier may be omitted for shorthand usage (apply to all sides).
+- `m` <small>margin</small>
+- `p` <small>padding</small>
 
-Size `a` means auto and is only applicable to `margin`.
+#### {specifier}
 
-Size values:
+- `block-start`
+- `inline-end`
+- `block-end`
+- `inline-start`
+- `block` <small>block-start & block-end shorthand</small>
+- `inline` <small>inline-start & inline-end shorthand</small>
+- `{omitted}` <small>block and inline shorthand</small>
 
+#### {size}
+
+- `0` <small>No margin</small>
+- `a` <small>auto, only applicable to margin</small>
 - `xxx-small` <small>(0.125em)</small>
 - `xx-small` <small>(0.25em)</small>
 - `x-small` <small>(0.5em)</small>
@@ -36,7 +47,11 @@ Size values:
 
 ### Negative margin
 
-Invert values for margin by adding the negative modifier: `env-m-{specifier}--negative`.
+Negative margin is applied by combining a size class with the `--negative` modifier. Negative values are only available for margin.
+
+Example:
+
+`<div class="env-m-inline--large env-m-inline--negative">...</div>`
 
 ### Spacing examples
 
@@ -97,6 +112,54 @@ Invert values for margin by adding the negative modifier: `env-m-{specifier}--ne
    </div>
 </div>
 
+## Logical properties example
+
+Logical properties are based on the content’s writing flow instead of physical sides.
+This allows spacing to adapt naturally to different languages and writing modes.
+
+All of the examples below use the same classes:
+
+`env-m-block-start--medium`, `env-p--x-small`, `env-p-block-start--0`, `env-p-inline-end--xx-large`
+
+<div class="example-spacing">
+<div class="env-flex env-flex--wrap env-flex--gap-medium">
+<div class="env-flex__item">
+   <div class="example-spacing__margin" style="max-inline-size: 12em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">
+            We believe in making the complex simple.
+         </div>
+      </div>
+   </div>
+</div>
+<div class="env-flex__item">
+   <div class="example-spacing__margin" lang="ar" style="direction: rtl; max-inline-size: 12em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">نحن نؤمن بضرورة تبسيط الأمور المعقدة.</div>
+      </div>
+   </div>
+</div>
+<div class="env-flex__item" >
+   <div class="example-spacing__margin" lang="ja" style="writing-mode: vertical-rl; max-inline-size: 8em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">私たちは複雑なものをシンプルにすることに取り組んでいます。</div>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+
+Read more about [CSS logical properties and values (MDN)
+](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values).
+
 ## Deprecated
 
-Since 2026.02.1, physical properties `top`, `right`, `bottom` and `left`, and `horizontal`, `vertical`and `around` are deprecated and replaced by logical properties.
+Since 2026.02.1, the following physical properties and custom specifiers are deprecated:
+
+- `top` <small>replaced by `block-start`</small>
+- `right` <small>replaced by `inline-end`</small>
+- `bottom` <small>replaced by `block-end`</small>
+- `left` <small>replaced by `inline-start`</small>
+- `horizontal` <small>replaced by `inline`</small>
+- `vertical` <small>replaced by `block`</small>
+- `around` <small>replaced by omitting the specifier</small>
