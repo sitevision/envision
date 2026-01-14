@@ -492,8 +492,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    &__lineheight {
       &:before {
          position: absolute;
-         top: 1px;
-         left: 1px;
+         inset-block-start: 1px;
+         inset-inline-start: 1px;
          font-family: Helvetica, Arial, sans-serif;
          font-size: 9px;
          font-weight: 400;
@@ -518,8 +518,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
    &__margin[data-margin-block-end]:after {
       position: absolute;
-      bottom: 1px;
-      left: 1px;
+      inset-block-end: 1px;
+      inset-inline-start: 1px;
       font-family: Helvetica, Arial, sans-serif;
       font-size: 9px;
       font-weight: 400;
