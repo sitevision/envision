@@ -2,8 +2,10 @@
 
 .env-breadcrumb {
    list-style: none;
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
 
    &__item {
       display: inline-block;
@@ -12,8 +14,8 @@
          color: var(--env-breadcrumb-divider-color);
          content: '#{$breadcrumb-divider}';
          display: inline-block;
-         padding-left: var(--env-spacing-x-small);
-         padding-right: var(--env-spacing-x-small);
+         padding-inset-inline-start: var(--env-spacing-x-small);
+         padding-inset-inline-end: var(--env-spacing-x-small);
       }
    }
 
@@ -28,7 +30,7 @@
       color: var(--env-breadcrumb-divider-color);
       content: '#{$breadcrumb-divider}';
       display: inline-block;
-      padding-left: var(--env-spacing-x-small);
-      padding-right: var(--env-spacing-x-small);
+      padding-inset-inline-start: var(--env-spacing-x-small);
+      padding-inset-inline-end: var(--env-spacing-x-small);
    }
 }

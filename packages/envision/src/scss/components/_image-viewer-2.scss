@@ -33,13 +33,14 @@ $buttonInset: 2.25rem;
    }
 
    &__viewer__item {
-      float: left;
+      float: inline-start;
       width: 100%;
       position: relative;
       overflow: hidden;
 
       figure {
-         margin: 0;
+         margin-block: 0;
+         margin-inline: 0;
       }
 
       img {
@@ -55,14 +56,19 @@ $buttonInset: 2.25rem;
       justify-content: space-between;
       align-items: center;
       justify-items: start;
-      margin: 0 0 0.5em 0;
+      margin-block-start: 0;
+      margin-inline-end: 0;
+      margin-block-end: 0.5em;
+      margin-inline-start: 0;
 
       .env-image-viewer-2--overlay & {
          position: absolute;
          z-index: 1;
          inset: 0 0 auto;
-         margin: 0;
-         padding: 0.25em;
+         margin-block: 0;
+         margin-inline: 0;
+         padding-block: 0.25em;
+         padding-inline: 0.25em;
 
          &__button {
             @include overlayButton;
@@ -81,12 +87,18 @@ $buttonInset: 2.25rem;
 
       &__button:first-child {
          // Zoom or Autoplay button
-         margin: 0 0.25em 0 0;
+         margin-block-start: 0;
+         margin-inline-end: 0.25em;
+         margin-block-end: 0;
+         margin-inline-start: 0;
       }
 
       &__button:nth-last-child(2) {
          // Prev-button
-         margin: 0 0.25em 0 auto;
+         margin-block-start: 0;
+         margin-inline-end: 0.25em;
+         margin-block-end: 0;
+         margin-inline-start: auto;
       }
    }
 
@@ -103,7 +115,7 @@ $buttonInset: 2.25rem;
       margin-block-end: var(--env-text-caption-01-margin-block-end);
       margin-block-start: var(--env-text-caption-01-margin-block-start);
       text-transform: var(--env-text-caption-01-text-transform);
-      text-align: left;
+      text-align: start;
       overflow-wrap: anywhere;
 
       .env-image-viewer-2--overlay & {
@@ -112,8 +124,10 @@ $buttonInset: 2.25rem;
          inset: auto auto 0 0;
          background-color: rgba(0, 0, 0, 0.65);
          color: #fff;
-         margin: 0;
-         padding: 0.5em 1em;
+         margin-block: 0;
+         margin-inline: 0;
+         padding-block: 0.5em;
+         padding-inline: 1em;
 
          * {
             color: #fff !important;
@@ -137,8 +151,10 @@ $buttonInset: 2.25rem;
       inset: 0;
       width: auto;
       height: auto;
-      margin: $imageInset;
-      padding: 0;
+      margin-block: $imageInset;
+      margin-inline: $imageInset;
+      padding-block: 0;
+      padding-inline: 0;
       overflow: hidden;
       text-align: center;
       border: none;
@@ -194,25 +210,29 @@ $buttonInset: 2.25rem;
       &__image-container {
          position: relative;
          text-align: center;
-         margin: 0 auto;
+         margin-block: 0;
+         margin-inline: auto;
       }
 
       &__figure {
-         margin: 0;
-         padding: 0;
+         margin-block: 0;
+         margin-inline: 0;
+         padding-block: 0;
+         padding-inline: 0;
       }
 
       &__caption {
          $lineHeight: 1.5;
          position: fixed;
          z-index: 9999;
-         text-align: left;
+         text-align: start;
          max-width: 60em;
-         right: calc(#{$buttonInset} + 2.75em + 2em);
-         bottom: $lineHeight * 0.25rem + $buttonInset;
-         left: $buttonInset;
+         inset-inline-end: calc(#{$buttonInset} + 2.75em + 2em);
+         inset-block-end: $lineHeight * 0.25rem + $buttonInset;
+         inset-inline-start: $buttonInset;
          line-height: 1.2;
-         margin: 0;
+         margin-block: 0;
+         margin-inline: 0;
       }
 
       &__image {
@@ -247,21 +267,21 @@ $buttonInset: 2.25rem;
       &__download {
          position: fixed !important;
          z-index: 9999;
-         bottom: $buttonInset;
-         right: $buttonInset;
+         inset-block-end: $buttonInset;
+         inset-inline-end: $buttonInset;
       }
 
       &__close {
          position: fixed !important;
          z-index: 9999;
-         top: $buttonInset;
-         right: $buttonInset;
+         inset-block-start: $buttonInset;
+         inset-inline-end: $buttonInset;
       }
 
       &__next,
       &__prev {
          position: fixed !important;
-         top: 50%;
+         inset-block-start: 50%;
          transform: translateY(-50%);
          border-radius: 50%;
 
@@ -279,11 +299,11 @@ $buttonInset: 2.25rem;
       }
 
       &__next {
-         right: $buttonInset;
+         inset-inline-end: $buttonInset;
       }
 
       &__prev {
-         left: $buttonInset;
+         inset-inline-start: $buttonInset;
       }
 
       &::backdrop {

@@ -111,7 +111,7 @@
 
       .env-icon {
          position: absolute;
-         top: 50%;
+         inset-block-start: 50%;
       }
    }
 
@@ -131,7 +131,7 @@
       }
 
       .env-icon {
-         left: 50%;
+         inset-inline-start: 50%;
       }
    }
 

@@ -15,13 +15,17 @@
       font-family: var(--env-font-family);
       font-size: var(--env-font-size-medium);
       list-style: none;
-      margin: 0;
-      padding: $menu-inner-spacing 0;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block: $menu-inner-spacing;
+      padding-inline: 0;
 
       > ul {
          list-style: none;
-         margin: 0;
-         padding: 0;
+         margin-block: 0;
+         margin-inline: 0;
+         padding-block: 0;
+         padding-inline: 0;
       }
    }
 
@@ -33,12 +37,14 @@
       appearance: none;
       width: 100%;
       min-height: $menu-item-min-height;
-      margin: 0;
-      padding: 0 $menu-item-padding;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block: 0;
+      padding-inline: $menu-item-padding;
       font-family: var(--env-font-family);
       font-size: 1em;
       line-height: 1;
-      text-align: left;
+      text-align: start;
       color: var(--env-font-color);
       background-color: transparent;
       border: {
@@ -70,12 +76,16 @@
          flex: 0 0 $icon-size;
          width: $icon-size;
          height: $icon-size;
-         margin: 0 calc($menu-item-padding / 2) 0 0;
+         margin-block-start: 0;
+         margin-inline-end: calc($menu-item-padding / 2);
+         margin-block-end: 0;
+         margin-inline-start: 0;
       }
    }
 
    &--divider {
-      border-bottom: $border-width $border-style var(--env-border-color-05);
-      margin: $menu-inner-spacing 0;
+      border-block-end: $border-width $border-style var(--env-border-color-05);
+      margin-block: $menu-inner-spacing;
+      margin-inline: 0;
    }
 }

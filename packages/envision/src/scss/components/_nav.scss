@@ -17,7 +17,8 @@
    display: flex;
 
    .env-nav__link {
-      padding: var(--env-spacing-small);
+      padding-block: var(--env-spacing-small);
+      padding-inline: var(--env-spacing-small);
    }
 
    &.env-nav--fill {
@@ -31,16 +32,16 @@
 
    &.env-nav--border {
       .env-nav__link {
-         border-bottom: $border-width $border-style transparent;
+         border-block-end: $border-width $border-style transparent;
 
          &:hover {
-            border-bottom-color: var(--env-link-hover-font-color);
+            border-block-end-color: var(--env-link-hover-font-color);
             color: var(--env-link-hover-font-color);
          }
 
          &[aria-current='page'],
          &--active {
-            border-bottom-color: var(--env-link-hover-font-color);
+            border-block-end-color: var(--env-link-hover-font-color);
             color: var(--env-link-hover-font-color);
          }
       }
@@ -49,15 +50,16 @@
 
 .env-nav--sidenav {
    .env-nav__link {
-      border-bottom: $border-width $border-style var(--env-border-color-05);
+      border-block-end: $border-width $border-style var(--env-border-color-05);
       color: var(--env-link-secondary-font-color);
-      padding: var(--env-spacing-small) 0;
+      padding-block: var(--env-spacing-small);
+      padding-inline: 0;
 
       &[aria-current='page'],
       &--active {
-         border-left: 2px $border-style
+         border-inline-start: 2px $border-style
             var(--env-link-secondary-hover-font-color);
-         padding-left: var(--env-spacing-x-small);
+         padding-inset-inline-start: var(--env-spacing-x-small);
       }
 
       &:hover {

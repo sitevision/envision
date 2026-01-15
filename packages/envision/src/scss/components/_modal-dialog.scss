@@ -15,10 +15,10 @@
    position: fixed;
    display: none;
    opacity: 0;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
+   inset-block-start: 0;
+   inset-inline-end: 0;
+   inset-block-end: 0;
+   inset-inline-start: 0;
    overflow-x: hidden;
    transition: opacity 0.3s linear;
    z-index: $zindex-modal;
@@ -39,14 +39,17 @@
 
    &__dialog {
       position: relative;
-      text-align: left;
+      text-align: start;
       vertical-align: middle;
       display: inline-block;
       overflow-wrap: anywhere;
       word-break: normal;
       // Inline-block styling needs some left/right margin compensation.
       // Optimized for Chrome, shoudn't matter too much in other browsers.
-      margin: 1em 14px 1em 10px;
+      margin-block-start: 1em;
+      margin-inline-end: 14px;
+      margin-block-end: 1em;
+      margin-inline-start: 10px;
       white-space: normal;
       width: var(--env-modal-medium-width);
       max-width: calc(100% - 30px);
@@ -82,14 +85,16 @@
 
    &__header {
       display: block;
-      padding: var(--env-spacing-small) var(--env-spacing-x-large);
-      border-bottom: $border-width $border-style var(--env-border-color-05);
+      padding-block: var(--env-spacing-small);
+      padding-inline: var(--env-spacing-x-large);
+      border-block-end: $border-width $border-style var(--env-border-color-05);
       border-radius: var(--env-border-radius-medium)
          var(--env-border-radius-medium) 0 0;
 
       &__title {
-         margin-bottom: 0 !important;
-         padding: 0;
+         margin-inset-block-end: 0 !important;
+         padding-block: 0;
+         padding-inline: 0;
       }
    }
 
@@ -102,7 +107,8 @@
    }
 
    &__body {
-      padding: var(--env-spacing-small) var(--env-spacing-x-large);
+      padding-block: var(--env-spacing-small);
+      padding-inline: var(--env-spacing-x-large);
 
       .env-modal-dialog--inner-scroll & {
          // Margin + header + footer height = 180px = 11.25em
@@ -113,39 +119,47 @@
    }
 
    &__footer {
-      padding: var(--env-spacing-small) var(--env-spacing-x-large);
-      border-top: $border-width $border-style var(--env-border-color-05);
+      padding-block: var(--env-spacing-small);
+      padding-inline: var(--env-spacing-x-large);
+      border-block-start: $border-width $border-style var(--env-border-color-05);
       border-radius: 0 0 var(--env-border-radius-medium)
          var(--env-border-radius-medium);
-      text-align: left;
+      text-align: start;
 
       &--right {
-         text-align: right;
+         text-align: end;
       }
    }
 }
 
 .env-modal-alert {
    &__content {
-      border-top: 6px $border-style var(--env-element-primary-background-color);
-      padding: var(--env-spacing-large) var(--env-spacing-xx-large)
-         var(--env-spacing-xx-large);
+      border-block-start: 6px $border-style
+         var(--env-element-primary-background-color);
+      padding-block-start: var(--env-spacing-large);
+      padding-inline: var(--env-spacing-xx-large);
+      padding-block-end: var(--env-spacing-xx-large);
    }
 
    &__icon {
       color: var(--env-element-primary-background-color);
-      margin: 0 0 1em;
-      padding: 0.5em 0;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 1em;
+      padding-block: 0.5em;
+      padding-inline: 0;
       text-align: center;
    }
 
    &__body {
-      margin: var(--env-spacing-large) 0 var(--env-spacing-xxx-large);
+      margin-block-start: var(--env-spacing-large);
+      margin-inline: 0;
+      margin-block-end: var(--env-spacing-xxx-large);
    }
 
    &__footer {
       &--right {
-         text-align: right;
+         text-align: end;
       }
    }
 
@@ -154,7 +168,9 @@
    @each $name in $variableNames {
       &.env-modal-alert--#{$name} {
          .env-modal-alert__content {
-            border-top-color: var(--env-element-#{$name}-background-color);
+            border-block-start-color: var(
+               --env-element-#{$name}-background-color
+            );
          }
 
          .env-modal-alert__icon {

@@ -11,12 +11,14 @@
    box-shadow: 0px 5px 10px -8px var(--env-element-secondary-background-color);
    color: var(--env-element-secondary-font-color);
    display: flex;
-   margin: 0;
+   margin-block: 0;
+   margin-inline: 0;
    min-width: 300px;
    max-height: 0;
    max-width: 600px;
    opacity: 0;
-   padding: 0;
+   padding-block: 0;
+   padding-inline: 0;
    position: relative;
    transform: translate3d(0, 0, 0);
    transition-duration: 300ms;
@@ -24,14 +26,18 @@
 
    &__check {
       display: flex;
-      margin: 0 0 0 var(--env-spacing-medium);
+      margin-block-start: 0;
+      margin-inline-end: 0;
+      margin-block-end: 0;
+      margin-inline-start: var(--env-spacing-medium);
    }
 
    &__content {
       flex: 1 1 100%;
-      margin-right: var(--env-spacing-medium);
+      margin-inset-inline-end: var(--env-spacing-medium);
       overflow-wrap: anywhere;
-      padding: var(--env-spacing-medium);
+      padding-block: var(--env-spacing-medium);
+      padding-inline: var(--env-spacing-medium);
       word-break: normal;
    }
 
@@ -41,8 +47,12 @@
       background-color: transparent;
       border: 0;
       cursor: pointer;
-      margin: 0 var(--env-spacing-xx-small) 0 auto;
-      padding: 0;
+      margin-block-start: 0;
+      margin-inline-end: var(--env-spacing-xx-small);
+      margin-block-end: 0;
+      margin-inline-start: auto;
+      padding-block: 0;
+      padding-inline: 0;
       flex: 0 0 44px;
       width: 44px;
       height: 44px;
@@ -59,8 +69,8 @@
    }
 
    &--visible {
-      bottom: 0;
-      margin-top: var(--env-spacing-small);
+      inset-block-end: 0;
+      margin-inset-block-start: var(--env-spacing-small);
       max-height: 100%;
       opacity: 1;
       transition-duration: 200ms;
@@ -68,7 +78,8 @@
    }
 
    &--hide {
-      margin: 0;
+      margin-block: 0;
+      margin-inline: 0;
       max-height: 0;
       transition-duration: 200ms;
       transition-timing-function: ease;

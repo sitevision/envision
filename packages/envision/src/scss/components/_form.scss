@@ -12,15 +12,18 @@
    }
 
    input {
-      margin: 0;
+      margin-block: 0;
+      margin-inline: 0;
    }
 
    // New markup and classes added in 2024.07.1
 
    & fieldset,
    &-fieldset {
-      margin: var(--env-spacing-medium) 0;
-      padding: 0;
+      margin-block: var(--env-spacing-medium);
+      margin-inline: 0;
+      padding-block: 0;
+      padding-inline: 0;
       border: none;
    }
 
@@ -39,19 +42,20 @@
    &-legend {
       // Since 2024.07.1
       font-weight: 600;
-      margin-bottom: var(--env-spacing-x-small);
-      padding: 0;
+      margin-inset-block-end: var(--env-spacing-x-small);
+      padding-block: 0;
+      padding-inline: 0;
    }
 
    & label,
    &-label {
       font-weight: var(--env-form-label-font-weight);
-      margin-bottom: var(--env-spacing-xx-small);
+      margin-inset-block-end: var(--env-spacing-xx-small);
    }
 
    &-field {
       position: relative;
-      margin-bottom: var(--env-spacing-medium);
+      margin-inset-block-end: var(--env-spacing-medium);
 
       &--error {
          --env-font-color: var(--env-ui-color-status-error-text);
@@ -61,14 +65,16 @@
 
       .env-form fieldset &,
       .env-form-fieldset & {
-         margin-bottom: var(--env-spacing-x-small);
+         margin-inset-block-end: var(--env-spacing-x-small);
       }
    }
 
    &-field-help {
       display: block;
       font-size: var(--env-font-size-small);
-      margin: var(--env-spacing-x-small) 0 0;
+      margin-block-start: var(--env-spacing-x-small);
+      margin-inline: 0;
+      margin-block-end: 0;
    }
 }
 
@@ -77,7 +83,7 @@
    @include form-input-option.input-option-base('radio');
 
    [type='radio'] {
-      margin-right: var(--env-spacing-xx-small);
+      margin-inset-inline-end: var(--env-spacing-xx-small);
 
       &:checked {
          @include form-input-option.radio-button-checked;

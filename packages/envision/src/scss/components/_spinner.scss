@@ -20,7 +20,8 @@
       display: inline-block;
       height: 100%;
       width: 6px;
-      margin: 0 1px;
+      margin-block: 0;
+      margin-inline: 1px;
       background-color: var(--env-spinner-color);
       transform: scaleY(0.4);
       animation-name: env-stretchdelay;
@@ -77,7 +78,8 @@
 
    > div {
       display: inline-block;
-      padding: 9px;
+      padding-block: 9px;
+      padding-inline: 9px;
       border-radius: 100%;
       background-color: var(--env-spinner-color);
       transform: scaleY(0);

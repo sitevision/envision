@@ -5,14 +5,17 @@
    position: fixed;
    z-index: 2147483646;
    inset: 0;
-   padding: 4.5em 0.5em 0.5em;
+   padding-block-start: 4.5em;
+   padding-inline: 0.5em;
+   padding-block-end: 0.5em;
    overflow-x: hidden;
    overflow-y: auto;
    --env-font-color: var(--doc-font-color);
 
    width: auto;
    height: auto;
-   margin: 0;
+   margin-block: 0;
+   margin-inline: 0;
    border: none;
 
    @include variables.dark-mode-element-override;
@@ -28,11 +31,12 @@
       box-sizing: border-box;
       position: fixed;
       z-index: 2147483647;
-      top: 0;
-      right: 0;
-      left: 0;
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      inset-inline-start: 0;
       height: 3.75em;
-      padding: 0.5em;
+      padding-block: 0.5em;
+      padding-inline: 0.5em;
       background-color: var(--doc-section-background-color);
       color: var(--doc-font-color);
       display: flex;
@@ -43,8 +47,8 @@
          content: '';
          position: absolute;
          z-index: 2147483646;
-         top: 100%;
-         left: 0;
+         inset-block-start: 100%;
+         inset-inline-start: 0;
          width: 100%;
          height: 0.5em;
          background: linear-gradient(
@@ -75,12 +79,13 @@
       }
    }
    .env-nav__link {
-      border-bottom: 1px solid var(--doc-border-color);
+      border-block-end: 1px solid var(--doc-border-color);
       color: var(--doc-font-color);
-      padding: 0.75em 0.875em;
+      padding-block: 0.75em;
+      padding-inline: 0.875em;
 
       &:not([aria-current='page']) {
-         border-left: 2px solid transparent;
+         border-inline-start: 2px solid transparent;
       }
 
       &:hover {
@@ -89,33 +94,33 @@
 
       &.level-1 {
          font-weight: 700;
-         padding-left: 0.875em;
+         padding-inset-inline-start: 0.875em;
 
          &:not([aria-current='page']) {
-            border-left: 2px solid transparent;
+            border-inline-start: 2px solid transparent;
          }
       }
 
       &.level-2 {
          font-weight: 500;
-         padding-left: 2.5em;
+         padding-inset-inline-start: 2.5em;
 
          &:not([aria-current='page']) {
-            border-left: 2px solid transparent;
+            border-inline-start: 2px solid transparent;
          }
       }
 
       &.level-2[aria-current='page'],
       &--active.level-2 {
-         border-left: 2px solid var(--doc-color-brand);
-         padding-left: 2.5em;
+         border-inline-start: 2px solid var(--doc-color-brand);
+         padding-inset-inline-start: 2.5em;
       }
 
       .doc-badge {
-         margin-left: 0.5em;
+         margin-inset-inline-start: 0.5em;
       }
    }
    .env-nav__item .env-nav__item:last-child .level-2 {
-      border-bottom-color: var(--doc-sidenav-font-color);
+      border-block-end-color: var(--doc-sidenav-font-color);
    }
 }

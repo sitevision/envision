@@ -1,15 +1,17 @@
 @use 'form-legacy-input-state';
 
 @mixin deprecated-form-element {
-   margin-bottom: var(--env-spacing-medium);
+   margin-inset-block-end: var(--env-spacing-medium);
 
    &__control {
       position: relative;
 
       & {
          // Fieldset reset
-         margin: 0;
-         padding: 0;
+         margin-block: 0;
+         margin-inline: 0;
+         padding-block: 0;
+         padding-inline: 0;
          border: none;
       }
    }
@@ -18,10 +20,11 @@
       font-family: var(--env-form-label-font-family);
       font-size: var(--env-font-size-medium);
       font-weight: var(--env-form-label-font-weight);
-      margin-bottom: var(--env-spacing-xx-small);
+      margin-inset-block-end: var(--env-spacing-xx-small);
 
       // Legend reset
-      padding: 0;
+      padding-block: 0;
+      padding-inline: 0;
    }
 
    &__help,
@@ -29,8 +32,8 @@
       display: block;
       font-size: var(--env-font-size-small);
       font-style: italic;
-      margin-bottom: var(--env-spacing-x-small);
-      margin-top: var(--env-spacing-x-small);
+      margin-inset-block-end: var(--env-spacing-x-small);
+      margin-inset-block-start: var(--env-spacing-x-small);
    }
 
    &__help {

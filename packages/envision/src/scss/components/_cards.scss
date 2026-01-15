@@ -29,8 +29,9 @@
    }
 
    &__header {
-      padding: var(--env-spacing-large) var(--env-spacing-large)
-         var(--env-spacing-x-small);
+      padding-block-start: var(--env-spacing-large);
+      padding-inline: var(--env-spacing-large);
+      padding-block-end: var(--env-spacing-x-small);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,25 +40,28 @@
 
    &__body {
       flex: 1 1 100%;
-      padding: var(--env-spacing-large);
+      padding-block: var(--env-spacing-large);
+      padding-inline: var(--env-spacing-large);
 
       .env-card__header ~ & {
-         padding-top: 0;
+         padding-inset-block-start: 0;
       }
    }
 
    &__footer {
-      padding: var(--env-spacing-x-small) var(--env-spacing-large)
-         var(--env-spacing-large);
+      padding-block-start: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-large);
+      padding-block-end: var(--env-spacing-large);
 
       .env-card__body ~ & {
-         margin-top: calc(#{var(--env-spacing-large)} * -1);
+         margin-inset-block-start: calc(#{var(--env-spacing-large)} * -1);
       }
    }
 
    &__text {
       // Todo: Set deprecated?
-      margin: var(--env-spacing-xx-small) 0;
+      margin-block: var(--env-spacing-xx-small);
+      margin-inline: 0;
 
       &--title {
          @include text.sitevision-site-font-override(
@@ -66,7 +70,8 @@
             $font-weight-semibold,
             $line-height-medium
          );
-         margin: 0;
+         margin-block: 0;
+         margin-inline: 0;
       }
 
       &--secondary {
@@ -76,10 +81,11 @@
 
    &__image,
    .env-media {
-      margin: var(--env-spacing-medium) 0;
+      margin-block: var(--env-spacing-medium);
+      margin-inline: 0;
 
       &:first-child {
-         margin-top: 0;
+         margin-inset-block-start: 0;
       }
    }
 }
@@ -91,7 +97,8 @@
    justify-content: center;
    align-items: stretch;
    justify-items: stretch;
-   margin: 0 calc(#{var(--env-cardholder-column-spacing)} / -2);
+   margin-block: 0;
+   margin-inline: calc(#{var(--env-cardholder-column-spacing)} / -2);
 
    &--start {
       justify-content: flex-start;
@@ -99,7 +106,8 @@
 
    &__slot {
       box-sizing: border-box;
-      padding: calc(#{var(--env-cardholder-column-spacing)} / 2);
+      padding-block: calc(#{var(--env-cardholder-column-spacing)} / 2);
+      padding-inline: calc(#{var(--env-cardholder-column-spacing)} / 2);
       flex: 1 1 100%;
       min-width: var(--env-cardholder-column-min-width);
 
@@ -164,7 +172,8 @@
    grid-template-columns: repeat(auto-fill, minmax(#{var(--ch-col-w)}, 1fr));
    grid-auto-rows: 1fr;
    gap: #{var(--ch-g)};
-   margin: 0 auto;
+   margin-block: 0;
+   margin-inline: auto;
 
    &--gap-none {
       --ch-g: 0em;
@@ -199,6 +208,7 @@
    .env-cardholder__slot {
       min-width: 0;
       max-width: none;
-      padding: 0;
+      padding-block: 0;
+      padding-inline: 0;
    }
 }

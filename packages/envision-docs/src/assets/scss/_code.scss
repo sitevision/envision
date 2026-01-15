@@ -8,7 +8,8 @@
    vertical-align: baseline;
    border-radius: 0.3em;
    white-space: normal;
-   padding: 0 0.25em;
+   padding-block: 0;
+   padding-inline: 0.25em;
 }
 
 .doc-code-block {
@@ -16,7 +17,7 @@
    container-name: doc-code-example;
    font-family: var(--doc-font-family);
    position: relative;
-   text-align: right;
+   text-align: end;
    border: 4px solid transparent;
    border-radius: 0 0 3px 3px;
    text-shadow: none;
@@ -38,7 +39,8 @@
 
 .doc-code-example {
    font-family: Helvetica, Arial, sans-serif;
-   padding: 20px;
+   padding-block: 20px;
+   padding-inline: 20px;
    box-sizing: border-box;
    color: var(--env-font-color);
    background-color: var(--env-section-background-color);
@@ -52,15 +54,16 @@
       max-width: 100%;
       resize: horizontal;
       overflow: hidden;
-      padding-bottom: 30px;
+      padding-inset-block-end: 30px;
 
       &:before {
          content: 'Resize';
          display: block;
          position: absolute;
-         bottom: 0;
-         right: 15px;
-         padding: 0.5em;
+         inset-block-end: 0;
+         inset-inline-end: 15px;
+         padding-block: 0.5em;
+         padding-inline: 0.5em;
          text-align: center;
          font-size: 10px;
       }
@@ -69,8 +72,8 @@
          content: '→';
          display: block;
          position: absolute;
-         bottom: 5px;
-         right: 6px;
+         inset-block-end: 5px;
+         inset-inline-end: 6px;
          transform: rotate(28deg) translate(0.2em, 0.2em);
          font-size: 12px;
       }
@@ -78,5 +81,6 @@
 }
 
 .example-fill {
-   margin: -20px;
+   margin-block: -20px;
+   margin-inline: -20px;
 }

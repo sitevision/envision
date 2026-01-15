@@ -45,7 +45,7 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
          appearance: none;
 
          &::-webkit-date-and-time-value {
-            text-align: left;
+            text-align: start;
          }
       }
    }
@@ -86,8 +86,8 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
       &[aria-placeholder]:before {
          display: none;
          position: absolute;
-         top: calc(#{var(--env-spacing-x-small)} + 1px);
-         left: calc(#{var(--env-spacing-small)} + 1px);
+         inset-block-start: calc(#{var(--env-spacing-x-small)} + 1px);
+         inset-inline-start: calc(#{var(--env-spacing-small)} + 1px);
          pointer-events: none;
          speak: never;
          color: var(--env-form-input-font-color);

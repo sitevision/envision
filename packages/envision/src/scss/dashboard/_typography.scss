@@ -55,7 +55,8 @@ $DASHBOARD_UI_TEXT_NAMES: 'label', 'value', 'kpi-number';
          letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
          line-height: $line-height-medium;
          color: var(--env-ui-text-#{$name}-font-color);
-         margin: 0 !important;
+         margin-block: 0 !important;
+         margin-inline: 0 !important;
       }
    }
 }

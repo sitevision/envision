@@ -24,8 +24,8 @@
       color: var(--env-font-color);
       display: inline-block;
       font-family: var(--env-pagination-font-family);
-      margin-top: calc(var(--env-pagination-border-width) * -1);
-      margin-left: calc(var(--env-pagination-border-width) * -1);
+      margin-inset-block-start: calc(var(--env-pagination-border-width) * -1);
+      margin-inset-inline-start: calc(var(--env-pagination-border-width) * -1);
       position: relative;
       text-decoration: none;
 

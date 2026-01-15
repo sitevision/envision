@@ -5,7 +5,7 @@
    pre {
       color: #f8f8f2;
       background: #33342f;
-      text-align: left;
+      text-align: start;
       white-space: pre;
       word-spacing: normal;
       word-break: normal;
@@ -17,8 +17,10 @@
       scrollbar-gutter: auto;
       border: 0;
       max-width: 100%;
-      padding: 1em;
-      margin: 0.5em 0;
+      padding-block: 1em;
+      padding-inline: 1em;
+      margin-block: 0.5em;
+      margin-inline: 0;
       overflow: auto;
       border-radius: 0.3em;
       font-size: 1em;

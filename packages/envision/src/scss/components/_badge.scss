@@ -11,7 +11,8 @@
    letter-spacing: var(--env-badge-letter-spacing);
    color: var(--env-element-primary-font-color);
    background-color: var(--env-element-primary-background-color);
-   padding: var(--env-spacing-xx-small) var(--env-spacing-x-small);
+   padding-block: var(--env-spacing-xx-small);
+   padding-inline: var(--env-spacing-x-small);
    border: none;
    border-radius: var(--env-badge-border-radius);
    vertical-align: baseline;
@@ -82,17 +83,20 @@
 
 .env-status-badge {
    position: relative;
-   padding: 0 0 0 1.375em;
+   padding-block-start: 0;
+   padding-inline-end: 0;
+   padding-block-end: 0;
+   padding-inline-start: 1.375em;
    box-sizing: content-box;
 
    &:after {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 0;
+      inset-block-start: 50%;
+      inset-inline-start: 0;
       width: 0.8em;
       height: 0.8em;
-      margin-top: -0.5em;
+      margin-inset-block-start: -0.5em;
       border-radius: 50%;
       border: 0.125em solid var(--env-font-color);
       background-color: var(--env-section-background-color);

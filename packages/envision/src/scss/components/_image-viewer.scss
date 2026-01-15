@@ -9,14 +9,15 @@
 
    &__modal {
       display: block;
-      bottom: 0;
-      left: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
       opacity: 1;
-      margin: 3% 0;
+      margin-block: 3%;
+      margin-inline: 0;
       position: fixed;
-      right: 0;
+      inset-inline-end: 0;
       text-align: center;
-      top: 0;
+      inset-block-start: 0;
       z-index: $zindex-modal;
    }
 
@@ -29,7 +30,8 @@
    &__modal-container {
       position: relative;
       text-align: center;
-      margin: 0 auto;
+      margin-block: 0;
+      margin-inline: auto;
    }
 
    &__backdrop {
@@ -50,12 +52,12 @@
    &--prev {
       appearance: none;
       align-items: center;
-      bottom: 0;
+      inset-block-end: 0;
       cursor: pointer;
       display: flex;
       font-size: 2em;
       position: absolute;
-      top: 0;
+      inset-block-start: 0;
       width: 33%;
       z-index: $zindex-imageslider-indicator;
       border: none;
@@ -66,18 +68,18 @@
 
    &--next {
       justify-content: flex-end;
-      right: 0;
+      inset-inline-end: 0;
    }
 
    &--prev {
       justify-content: flex-start;
-      left: 0;
+      inset-inline-start: 0;
    }
 
    &__item--next,
    &__item--prev {
       position: absolute;
-      top: 0;
+      inset-block-start: 0;
    }
 
    &__prev-icon,
@@ -92,27 +94,27 @@
    }
 
    &__next-icon {
-      margin-right: var(--env-spacing-xxx-small);
+      margin-inset-inline-end: var(--env-spacing-xxx-small);
    }
 
    &__prev-icon {
-      margin-left: var(--env-spacing-xxx-small);
+      margin-inset-inline-start: var(--env-spacing-xxx-small);
    }
 
    &__thumbnails {
-      bottom: 0;
+      inset-block-end: 0;
       display: flex;
       justify-content: center;
-      left: 0;
+      inset-inline-start: 0;
       list-style: none;
-      margin-top: var(--env-spacing-x-small);
-      padding-left: 0;
-      right: 0;
+      margin-inset-block-start: var(--env-spacing-x-small);
+      padding-inset-inline-start: 0;
+      inset-inline-end: 0;
       z-index: $zindex-imageslider-indicator;
 
       li {
          cursor: pointer;
-         margin-right: var(--env-spacing-x-small);
+         margin-inset-inline-end: var(--env-spacing-x-small);
          position: relative;
       }
    }

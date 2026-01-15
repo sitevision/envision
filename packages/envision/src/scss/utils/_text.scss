@@ -50,7 +50,7 @@
 
    // Text alignment
    &-align--right {
-      text-align: right;
+      text-align: end;
    }
 
    &-align--center {
@@ -58,7 +58,7 @@
    }
 
    &-align--left {
-      text-align: left;
+      text-align: start;
    }
 
    &--rtl {
@@ -82,8 +82,10 @@ button:not(.env-button).env-link-secondary {
    border: none;
    font-family: var(--env-font-family);
    font-size: 1em !important;
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
    background-color: transparent;
    white-space: normal;
    cursor: pointer;
@@ -117,7 +119,7 @@ a.env-text,
    fill: currentColor;
    height: var(--env-link-icon-size);
    width: var(--env-link-icon-size);
-   margin-left: var(--env-link-icon-gap);
+   margin-inset-inline-start: var(--env-link-icon-gap);
    transform: translateY(var(--env-link-icon-offset-y));
 }
 

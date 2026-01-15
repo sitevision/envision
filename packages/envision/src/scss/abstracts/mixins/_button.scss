@@ -28,22 +28,27 @@
       min-height: $height;
       min-width: $height;
       border-radius: $borderRadius;
-      padding: 0 $padding $padding;
+      padding-block-start: 0;
+      padding-inline: $padding;
+      padding-block-end: $padding;
 
       .env-icon {
-         margin: 0 !important;
+         margin-block: 0 !important;
+         margin-inline: 0 !important;
          width: $iconSize !important;
          height: $iconSize !important;
-         top: $padding;
+         inset-block-start: $padding;
       }
 
       &.env-button--link {
-         padding: 0 $paddingLink $paddingLink;
+         padding-block-start: 0;
+         padding-inline: $paddingLink;
+         padding-block-end: $paddingLink;
 
          .env-icon {
             width: $iconSize * 1.25 !important;
             height: $iconSize * 1.25 !important;
-            top: $paddingLink;
+            inset-block-start: $paddingLink;
          }
       }
    }
@@ -56,7 +61,8 @@
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   margin: 0;
+   margin-block: 0;
+   margin-inline: 0;
    text-align: center;
    text-decoration: none;
    user-select: none;
@@ -91,7 +97,7 @@
 
    // Dark border for dropdown split button
    .env-dropdown.env-button-group &:not(:first-child):not(.env-button--ghost) {
-      border-left-color: var(--env-#{$background-color-hover});
+      border-inline-start-color: var(--env-#{$background-color-hover});
    }
 
    &.env-button--ghost {
@@ -215,88 +221,114 @@
    $min-height: map.get($minHeights, $size);
 
    font-size: var(--env-#{$font-size});
-   padding: 0 $padding-x;
+   padding-block: 0;
+   padding-inline: $padding-x;
    border-radius: calc(#{var(--env-button-border-radius)} * #{$radius-scale});
    min-height: $min-height;
 
    @include squareIconButton {
       height: $min-height;
       width: $min-height;
-      padding: calc(#{$min-height} - 2px) 0 0; // Compensate for border
+      padding-block-start: calc(#{$min-height} - 2px);
+      padding-inline: 0;
+      padding-block-end: 0; // Compensate for border
    }
 
    &.env-button--icon .env-icon {
       width: #{$icon-size};
       height: #{$icon-size};
-      margin: #{math.div($icon-size, -2)} 0 0 0;
+      margin-block-start: #{math.div($icon-size, -2)};
+      margin-inline-end: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
    }
 
    &.env-button--icon-before {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inset-inline-start: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon {
-         left: $padding-x;
+         inset-inline-start: $padding-x;
       }
 
       &.env-button--block {
-         padding-left: $padding-x;
+         padding-inset-inline-start: $padding-x;
 
          .env-icon {
             position: relative;
-            left: 0;
-            top: auto;
-            margin: 0 0.5em 0 0;
+            inset-inline-start: 0;
+            inset-block-start: auto;
+            margin-block-start: 0;
+            margin-inline-end: 0.5em;
+            margin-block-end: 0;
+            margin-inline-start: 0;
          }
       }
    }
 
    &.env-button--icon-after {
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inset-inline-end: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon {
-         right: $padding-x;
+         inset-inline-end: $padding-x;
       }
 
       &.env-button--block {
-         padding-right: $padding-x;
+         padding-inset-inline-end: $padding-x;
 
          .env-icon {
             position: relative;
-            right: 0;
-            top: auto;
-            margin: 0 0 0 0.5em;
+            inset-inline-end: 0;
+            inset-block-start: auto;
+            margin-block-start: 0;
+            margin-inline-end: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0.5em;
          }
       }
    }
 
    &.env-button--icon-around {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inset-inline-start: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
+      padding-inset-inline-end: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon:first-child {
-         left: $padding-x;
+         inset-inline-start: $padding-x;
       }
 
       .env-icon:last-child {
-         right: $padding-x;
+         inset-inline-end: $padding-x;
       }
 
       &.env-button--block {
-         padding-left: $padding-x;
-         padding-right: $padding-x;
+         padding-inset-inline-start: $padding-x;
+         padding-inset-inline-end: $padding-x;
 
          .env-icon {
             position: relative;
-            top: auto;
+            inset-block-start: auto;
 
             &:first-child {
-               left: 0;
-               margin: 0 0.5em 0 0;
+               inset-inline-start: 0;
+               margin-block-start: 0;
+               margin-inline-end: 0.5em;
+               margin-block-end: 0;
+               margin-inline-start: 0;
             }
 
             &:last-child {
-               right: 0;
-               margin: 0 0 0 0.5em;
+               inset-inline-end: 0;
+               margin-block-start: 0;
+               margin-inline-end: 0;
+               margin-block-end: 0;
+               margin-inline-start: 0.5em;
             }
          }
       }
@@ -377,7 +409,10 @@
 
    @include squareIconButton {
       .env-icon {
-         margin: #{math.div($icon-size, -2)} 0 0 #{math.div($icon-size, -2)};
+         margin-block-start: #{math.div($icon-size, -2)};
+         margin-inline-end: 0;
+         margin-block-end: 0;
+         margin-inline-start: #{math.div($icon-size, -2)};
       }
    }
 
@@ -386,25 +421,30 @@
    &.env-button--icon-small.env-button--icon .env-icon {
       width: #{$small-icon-size};
       height: #{$small-icon-size};
-      margin: #{math.div($small-icon-size, -2)} 0 0 0;
+      margin-block-start: #{math.div($small-icon-size, -2)};
+      margin-inline-end: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
    }
 
    &.env-button--icon-small.env-button--icon-before {
-      padding-left: calc(
+      padding-inset-inline-start: calc(
          #{$padding-x} + #{$small-icon-size} + #{$padding-x * 0.5}
       );
    }
 
    &.env-button--icon-small.env-button--icon-after {
-      padding-right: calc(
+      padding-inset-inline-end: calc(
          #{$padding-x} + #{$small-icon-size} + #{$padding-x * 0.5}
       );
    }
 
    @include squareIconButton('-small') {
       .env-icon {
-         margin: #{math.div($small-icon-size, -2)} 0 0
-            #{math.div($small-icon-size, -2)};
+         margin-block-start: #{math.div($small-icon-size, -2)};
+         margin-inline-end: 0;
+         margin-block-end: 0;
+         margin-inline-start: #{math.div($small-icon-size, -2)};
       }
    }
 }

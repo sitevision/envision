@@ -75,8 +75,12 @@
       font-size: 0.5em;
       font-weight: 400;
       text-transform: uppercase;
-      padding: 0.1em 0.25em;
-      margin: 0 0 0 0.5em;
+      padding-block: 0.1em;
+      padding-inline: 0.25em;
+      margin-block-start: 0;
+      margin-inline-end: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0.5em;
       transform: translateY(-0.15em);
    }
 }
@@ -90,7 +94,9 @@
    --df-from-font-size: 2;
    --df-to-font-size: 3;
    line-height: 1;
-   margin: 0 0 0.75em;
+   margin-block-start: 0;
+   margin-inline: 0;
+   margin-block-end: 0.75em;
 }
 
 .doc-heading-1 {
@@ -98,22 +104,27 @@
    --df-from-font-size: 2;
    --df-to-font-size: 3;
    line-height: 1;
-   margin: 0 0 1em;
+   margin-block-start: 0;
+   margin-inline: 0;
+   margin-block-end: 1em;
 }
 
 .doc-heading-2 {
    @include restore-doc-font;
    --df-from-font-size: 1.5;
    --df-to-font-size: 2;
-   margin: 1em 0 0.5em;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 0.5em;
 
    &--main {
       font-size: 24px;
       line-height: 1;
-      margin: 1em 0;
+      margin-block: 1em;
+      margin-inline: 0;
 
       .doc-badge {
-         margin-right: 0.125em;
+         margin-inset-inline-end: 0.125em;
       }
    }
 }
@@ -122,7 +133,9 @@
    @include restore-doc-font;
    --df-from-font-size: 1.25;
    --df-to-font-size: 1.5;
-   margin: 1em 0 0.5em;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 0.5em;
 }
 
 .doc-heading-4,
@@ -131,7 +144,9 @@
    @include restore-doc-font;
    --df-from-font-size: 1.25;
    --df-to-font-size: 1;
-   margin: 1em 0 0.5em;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 0.5em;
 }
 
 .doc-p {
@@ -141,7 +156,9 @@
    --df-to-font-size: 1.1;
    font-weight: 400;
    line-height: 1.5;
-   margin: 0 0 1em;
+   margin-block-start: 0;
+   margin-inline: 0;
+   margin-block-end: 1em;
 }
 
 .doc-summary {
@@ -151,7 +168,9 @@
    --df-to-font-size: 1.3;
    font-weight: 500;
    line-height: 1.5;
-   margin: 0 0 1em;
+   margin-block-start: 0;
+   margin-inline: 0;
+   margin-block-end: 1em;
 }
 
 .doc-strong {
@@ -161,9 +180,12 @@
 blockquote.doc-blockquote {
    font-family: var(--doc-font-family);
    color: var(--doc-font-color);
-   margin: 2em 0;
-   padding: 1em 1em 0;
-   border-left: 4px solid var(--doc-color-brand);
+   margin-block: 2em;
+   margin-inline: 0;
+   padding-block-start: 1em;
+   padding-inline: 1em;
+   padding-block-end: 0;
+   border-inline-start: 4px solid var(--doc-color-brand);
    font-style: italic;
 
    &::after {
@@ -178,17 +200,25 @@ blockquote.doc-blockquote {
    --df-from-font-size: 1;
    --df-to-font-size: 1.1;
    list-style-type: square;
-   margin: 2em 0;
-   padding: 0 0 0 1.5em;
+   margin-block: 2em;
+   margin-inline: 0;
+   padding-block-start: 0;
+   padding-inline-end: 0;
+   padding-block-end: 0;
+   padding-inline-start: 1.5em;
 
    &__item {
-      margin: 0 0 0.5em;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 0.5em;
    }
 }
 
 .doc-table {
    border-collapse: collapse;
-   margin: 1em 0 2em;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 2em;
    color: var(--doc-font-color);
    --df-from-font-size: 0.9;
    --df-to-font-size: 1;
@@ -196,9 +226,12 @@ blockquote.doc-blockquote {
    caption {
       font-size: 1.25em;
       font-weight: 700;
-      text-align: left;
-      margin: 0 0 0.5em;
-      padding: 0 0.675em;
+      text-align: start;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 0.5em;
+      padding-block: 0;
+      padding-inline: 0.675em;
    }
 
    thead th {
@@ -206,7 +239,7 @@ blockquote.doc-blockquote {
    }
 
    th {
-      text-align: left;
+      text-align: start;
    }
 
    th,
@@ -214,8 +247,9 @@ blockquote.doc-blockquote {
       font-size: 1em;
 
       font-weight: 400;
-      border-top: 1px solid var(--doc-border-color);
-      padding: 0.5em;
+      border-block-start: 1px solid var(--doc-border-color);
+      padding-block: 0.5em;
+      padding-inline: 0.5em;
       vertical-align: top;
    }
 

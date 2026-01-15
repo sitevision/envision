@@ -267,8 +267,8 @@ $progress-bar-poll-highlight-color: #4bc5f5 !default;
 // Collapse
 $collapse-icon-height: 3px !default;
 $collapse-icon-width: 15px !default;
-$collapse-icon-top: 50% !default;
-$collapse-icon-right: 15px !default;
+$collapse-icon-inset-block-start: 50% !default;
+$collapse-icon-inset-inline-end: 15px !default;
 $collapse-heading-min-height: 30px !default;
 $collapse-toggle-duration: $toggle-duration !default;
 

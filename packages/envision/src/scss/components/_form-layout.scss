@@ -24,7 +24,7 @@
       }
 
       &__help {
-         margin-left: 20%;
+         margin-inset-inline-start: 20%;
       }
    }
 }
@@ -36,22 +36,22 @@
    .env-form-element {
       align-items: center;
       display: flex;
-      margin-bottom: 0;
-      margin-right: var(--env-spacing-x-small);
+      margin-inset-block-end: 0;
+      margin-inset-inline-end: var(--env-spacing-x-small);
 
       &__label {
-         margin-bottom: 0;
-         margin-right: var(--env-spacing-x-small);
+         margin-inset-block-end: 0;
+         margin-inset-inline-end: var(--env-spacing-x-small);
       }
 
       &__help {
-         margin-left: var(--env-spacing-xx-small);
+         margin-inset-inline-start: var(--env-spacing-xx-small);
       }
    }
 
    .env-form-radio,
    .env-checkbox {
-      margin-bottom: 0;
+      margin-inset-block-end: 0;
    }
 }
 
@@ -145,7 +145,7 @@
    }
 
    + .env-form-row {
-      margin-top: var(--env-spacing-medium);
+      margin-inset-block-start: var(--env-spacing-medium);
    }
 
    &:has(> .env-form-control:not([class*='env-form-column']) > .env-radio),

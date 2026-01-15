@@ -2,23 +2,25 @@
 
 @mixin slide-indicator {
    position: absolute;
-   right: 0;
-   bottom: 10px;
-   left: 0;
+   inset-inline-end: 0;
+   inset-block-end: 10px;
+   inset-inline-start: 0;
    z-index: 15;
    display: flex;
    justify-content: center;
-   margin: 0;
+   margin-block: 0;
+   margin-inline: 0;
    list-style: none; // keep, legacy image slider <ol>
-   padding: 15px;
+   padding-block: 15px;
+   padding-inline: 15px;
 
    li, // keep, legacy image slider
    button {
       cursor: pointer;
       width: 30px;
       height: 3px;
-      margin-right: 3px;
-      margin-left: 3px;
+      margin-inset-inline-end: 3px;
+      margin-inset-inline-start: 3px;
       border: none;
       background-color: var(--env-image-control-color);
       filter: opacity(0.5);
