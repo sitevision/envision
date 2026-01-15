@@ -1,12 +1,12 @@
 # Envision by Sitevision ![Build Envision and Docs](https://github.com/sitevision/envision/workflows/Build%20Envision%20and%20Docs/badge.svg)
 
-An open source UI Library for [Sitevision](https://www.sitevision.se/).
-You can watch the documentation and examples at [http://envisionui.io/](http://envisionui.io/)
+An open-source UI library for [Sitevision](https://www.sitevision.se/).
+You can view the documentation and examples at [http://envisionui.io/](http://envisionui.io/)
 
 ## Getting started
 
-1. Clone repository `git clone https://github.com/sitevision/envision.git`
-2. Change directory to repo folder `cd envision`
+1. Clone the repository `git clone https://github.com/sitevision/envision.git`
+2. Change to the repo folder `cd envision`
 3. Run `yarn install` to install dependencies
 4. Run `yarn build`
 5. Run `yarn dev` to start local server
@@ -24,5 +24,3 @@ Code copyright 2017-2025, Sitevision AB. Code is released under the
 ## Supported browsers
 
 Envision supports the **latest, stable releases** of all major browsers.
-
-.

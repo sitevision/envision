@@ -125,7 +125,7 @@ var singleSelectExample = envision.select('#example-tag-select-single-1', {
 
 - `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ add, no_results, remove_button, clear_button }_
    - Translation of remove button, clear button, add item and no results.
-     Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
+     Use predefined strings (Swedish, English, or Norwegian) or write your own translation. Default is 'sv'.
 
 - `load` _function(query, callback)_
    - Loads options by invoking the provided function. The function should accept two arguments (query, callback)
@@ -260,7 +260,7 @@ envision
 
 ### Options from remote data API
 
-This example fetches repository names from github. It will preload some popular names on page load.
+This example fetches repository names from GitHub. It will preload some popular names on page load.
 The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.
 
 ```html
@@ -277,7 +277,7 @@ The data does not follow the Tag Select naming standards so value-/label-/search
 ```javascript
 envision.select('#example-tag-select-3', {
    maxItems: 5,
-   placeholder: 'Select a Github repository...',
+   placeholder: 'Select a GitHub repository...',
    i18n: 'en',
    valueField: 'url',
    labelField: 'name',
@@ -306,7 +306,7 @@ envision.select('#example-tag-select-3', {
 ### Disabled
 
 A Tag Select may be disabled by adding the `disabled` attribute in the HTML.
-When disabled, the control can not receive focus.
+When disabled, the control cannot receive focus.
 
 ```html
 <div class="env-form-field">
@@ -424,7 +424,7 @@ envision.select('#tag-select').then(function (selects) {
    - Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
 
 - `getOption(value)`
-   - Retrieves the dom element for the option identified by the given value.
+   - Retrieves the DOM element for the option identified by the given value.
 
 - `updateOption(value, data)`
    - Updates an option available for selection. If it is visible in the selected items or options dropdown, it will be re-rendered automatically.
@@ -456,7 +456,7 @@ envision.select('#tag-select').then(function (selects) {
 ### Items
 
 - `getItem(value)`
-   - Returns the dom element of the item matching the given value.
+   - Returns the DOM element of the item matching the given value.
 
 - `addItem(value, silent)`
    - "Selects" an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.
@@ -476,7 +476,7 @@ envision.select('#tag-select').then(function (selects) {
    - Re-enables user input on the control.
 
 - `disable()`
-   - Disables user input on the control. The control can not receive focus.
+   - Disables user input on the control. The control cannot receive focus.
 
 - `enable()`
    - Re-enables the control.
