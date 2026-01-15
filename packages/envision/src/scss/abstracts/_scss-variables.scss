@@ -294,7 +294,7 @@ $profile-image-radius: 50% !default;
 
 $font-color-light: functions.adjustLightness($font-color, 10%) !default;
 $font-color-lighter: functions.adjustLightness($font-color, 20%) !default;
-$font-color-invert: #ffffff !default;
+// $font-color-invert: #ffffff !default; Removed in sv 2026.01.2
 $font-color-muted: rgba($font-color, 0.65);
 
 $color-page-bg: #ffffff !default;
