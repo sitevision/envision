@@ -13,7 +13,7 @@ Image slider · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=2009ca9"></script>
+<script src="/dist/envision.js?v=2b23ca8"></script>
 <link href="/assets/docs.B3lLecqg.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -101,7 +101,7 @@ The documentation you are viewing is for a deprecated version of an Envision com
 <h1 class="doc-main-heading">
 Image slider
 </h1>
-<p class="doc-p">Image slider is deprecated since 2023.07.1 and will eventually be removed. Please use <a href="/components/image-viewer-2/" class="doc-link">Image Viewer 2</a>.</p>
+<p class="doc-p">Image slider is deprecated and will eventually be removed. Please use <a href="/components/image-viewer-2/" class="doc-link">Image Viewer 2</a>.</p>
 <h3 class="doc-heading-3" id="slides-only">Slides only</h3>
 <div class="doc-code-example"><div class="env-image-slider env-image-slider--slide" id="exampleSlider0" data-image-slider="cycle" data-buttons="false" data-interval="2000">
 <div class="env-image-slider__inner">
@@ -442,13 +442,13 @@ to pass a slide index to the imageSlider <code class="doc-code">data-move-to="1"
 <p class="doc-p">Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code class="doc-code">data-</code>, as in <code class="doc-code">data-interval=""</code>.</p>
 <p class="doc-p"><code class="doc-code">interval = 5000</code> The amount of delay between automatically cycling through slides.</p>
 <p class="doc-p"><code class="doc-code">keyboard = false</code> Whether the imageSlider should react to keyboard events.</p>
-<p class="doc-p"><code class="doc-code">pause = 'hover'</code> If set to <code class="doc-code">hover</code>, pauses the cycling of the imageSlider on <code class="doc-code">mouseenter</code> and resumes on <code class="doc-code">mouseleave</code>. If set to <code class="doc-code">null</code>, hovering wont pause the imageSlider.</p>
+<p class="doc-p"><code class="doc-code">pause = 'hover'</code> If set to <code class="doc-code">hover</code>, pauses the cycling of the imageSlider on <code class="doc-code">mouseenter</code> and resumes on <code class="doc-code">mouseleave</code>. If set to <code class="doc-code">null</code>, hovering won’t pause the imageSlider.</p>
 <p class="doc-p"><code class="doc-code">wrap = true</code> Whether the imageSlider should cycle continuously or have hard stops.</p>
 <p class="doc-p"><code class="doc-code">buttons = true</code> Will generate <code class="doc-code">slide</code> buttons even if there is only one image in the image slider.</p>
-<p class="doc-p"><code class="doc-code">swipe = false</code> Will disable swipe functionallity on mobile devices.</p>
+<p class="doc-p"><code class="doc-code">swipe = false</code> Will disable swipe functionality on mobile devices.</p>
 <p class="doc-p"><code class="doc-code">i18n</code> <em class="doc-em">‘sv’</em> | <em class="doc-em">‘en’</em> | <em class="doc-em">{ prev, next }</em></p>
 <ul class="doc-list">
-<li class="doc-list__item">Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is ‘sv’ or ‘en’ depending on HTML lang attribute.</li>
+<li class="doc-list__item">Translation of previous and next buttons. Use predefined strings for Swedish or English, or write your own translation. Default is ‘sv’ or ‘en’ depending on HTML lang attribute.</li>
 </ul>
 <h2 class="doc-heading-2" id="methods">Methods</h2>
 <p class="doc-p">Initialize the imageSlider with an optional <code class="doc-code">object</code> and starts cycling through slides.</p>
@@ -676,9 +676,6 @@ Basic text
 </li><li class="env-nav__item">
 <a href="/typography/text/" class="env-nav__link level-2" aria-current="false">
 Content text
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/typography/dynamic-font-size/" class="env-nav__link level-2" aria-current="false">
@@ -721,16 +718,10 @@ Button group
 </li><li class="env-nav__item">
 <a href="/forms/form-elements/" class="env-nav__link level-2" aria-current="false">
 Form elements
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/forms/form-layout/" class="env-nav__link level-2" aria-current="false">
 Form layout
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/forms/range-slider/" class="env-nav__link level-2" aria-current="false">

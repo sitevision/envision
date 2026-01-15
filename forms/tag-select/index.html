@@ -13,7 +13,7 @@ Tag Select · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=2009ca9"></script>
+<script src="/dist/envision.js?v=2b23ca8"></script>
 <link href="/assets/docs.B3lLecqg.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -253,7 +253,7 @@ Tag select single
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">i18n</code> <em class="doc-em">‘sv’</em> | <em class="doc-em">‘en’</em> | <em class="doc-em">‘no’</em> | <em class="doc-em">{ add, no_results, remove_button, clear_button }</em></p>
 <ul class="doc-list">
-<li class="doc-list__item">Translation of remove button, clear button, add item and no results. Use predefined strings (swedish, english or norwegian) or write your own translation. Default is ‘sv’.</li>
+<li class="doc-list__item">Translation of remove button, clear button, add item and no results. Use predefined strings (Swedish, English, or Norwegian) or write your own translation. Default is ‘sv’.</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -425,7 +425,7 @@ Add
 </code></pre>
 </div><!--/sv-no-index-->
 <h3 class="doc-heading-3" id="options-from-remote-data-api">Options from remote data API</h3>
-<p class="doc-p">This example fetches repository names from github. It will preload some popular names on page load. The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.</p>
+<p class="doc-p">This example fetches repository names from GitHub. It will preload some popular names on page load. The data does not follow the Tag Select naming standards so value-/label-/search-/sortField must be defined.</p>
 <div class="doc-code-example"><div class="env-form-field">
 <label class="env-form-label" for="example-tag-select-3">Remote data</label>
 <input class="env-form-input" id="example-tag-select-3" aria-label="Remote data">
@@ -444,7 +444,7 @@ Add
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'#example-tag-select-3'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
    <span class="token literal-property property">maxItems</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-   <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">'Select a Github repository...'</span><span class="token punctuation">,</span>
+   <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">'Select a GitHub repository...'</span><span class="token punctuation">,</span>
    <span class="token literal-property property">i18n</span><span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
    <span class="token literal-property property">valueField</span><span class="token operator">:</span> <span class="token string">'url'</span><span class="token punctuation">,</span>
    <span class="token literal-property property">labelField</span><span class="token operator">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span>
@@ -470,7 +470,7 @@ Add
 </div><!--/sv-no-index-->
 <h2 class="doc-heading-2" id="states">States</h2>
 <h3 class="doc-heading-3" id="disabled">Disabled</h3>
-<p class="doc-p">A Tag Select may be disabled by adding the <code class="doc-code">disabled</code> attribute in the HTML. When disabled, the control can not receive focus.</p>
+<p class="doc-p">A Tag Select may be disabled by adding the <code class="doc-code">disabled</code> attribute in the HTML. When disabled, the control cannot receive focus.</p>
 <div class="doc-code-example"><div class="env-form-field">
 <label class="env-form-label" for="example-tag-select-4"> Disabled </label>
 <select aria-label="Disabled" class="env-form-input example-tag-select" id="example-tag-select-4" multiple="multiple" disabled="disabled">
@@ -650,7 +650,7 @@ Locked (readonly)
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">getOption(value)</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">Retrieves the dom element for the option identified by the given value.</li>
+<li class="doc-list__item">Retrieves the DOM element for the option identified by the given value.</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -713,7 +713,7 @@ Locked (readonly)
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">getItem(value)</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">Returns the dom element of the item matching the given value.</li>
+<li class="doc-list__item">Returns the DOM element of the item matching the given value.</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -752,7 +752,7 @@ Locked (readonly)
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">disable()</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">Disables user input on the control. The control can not receive focus.</li>
+<li class="doc-list__item">Disables user input on the control. The control cannot receive focus.</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -799,12 +799,10 @@ Button group
 </li><li class="sidenav__item">
 <a href="/forms/form-elements/" class="sidenav__item__link" aria-current="false">
 Form elements
-<span class="doc-badge doc-badge--success">New</span>
 </a>
 </li><li class="sidenav__item">
 <a href="/forms/form-layout/" class="sidenav__item__link" aria-current="false">
 Form layout
-<span class="doc-badge doc-badge--success">New</span>
 </a>
 </li><li class="sidenav__item">
 <a href="/forms/range-slider/" class="sidenav__item__link" aria-current="false">
@@ -932,9 +930,6 @@ Basic text
 </li><li class="env-nav__item">
 <a href="/typography/text/" class="env-nav__link level-2" aria-current="false">
 Content text
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/typography/dynamic-font-size/" class="env-nav__link level-2" aria-current="false">
@@ -977,16 +972,10 @@ Button group
 </li><li class="env-nav__item">
 <a href="/forms/form-elements/" class="env-nav__link level-2" aria-current="false">
 Form elements
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/forms/form-layout/" class="env-nav__link level-2" aria-current="false">
 Form layout
-<span class="doc-badge doc-badge--success">
-New
-</span>
 </a>
 </li><li class="env-nav__item">
 <a href="/forms/range-slider/" class="env-nav__link level-2" aria-current="false">
