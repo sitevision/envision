@@ -75,10 +75,10 @@ class RangeSlider {
             ((val - this.config.min) / (this.config.max - this.config.min)) *
             100;
 
-         setStyle(handle, 'left', `${valPercent}%`);
+         setStyle(handle, 'inset-inline-start', `${valPercent}%`);
 
          if (i === 0) {
-            setStyle(this.rangeEl, 'left', `${valPercent}%`);
+            setStyle(this.rangeEl, 'inset-inline-start', `${valPercent}%`);
          } else {
             setStyle(this.rangeEl, 'width', `${valPercent - lastValPercent}%`);
          }
@@ -158,15 +158,34 @@ class RangeSlider {
          const boundingClientRect = closestHandleEl.getBoundingClientRect();
          const compStyle = getComputedStyle(closestHandleEl);
 
+         const borderBlockStartWidth =
+            parseInt(
+               compStyle.getPropertyValue('border-block-start-width'),
+               10
+            ) ||
+            parseInt(compStyle.borderTopWidth, 10) ||
+            0;
+         const borderBlockEndWidth =
+            parseInt(
+               compStyle.getPropertyValue('border-block-end-width'),
+               10
+            ) ||
+            parseInt(compStyle.borderBottomWidth, 10) ||
+            0;
+         const marginBlockStart =
+            parseInt(compStyle.getPropertyValue('margin-block-start'), 10) ||
+            parseInt(compStyle.marginTop, 10) ||
+            0;
+
          this._clickOffset = {
             left: position.x - offset.left - boundingClientRect.width / 2,
             top:
                position.y -
                offset.top -
                boundingClientRect.height / 2 -
-               (parseInt(compStyle.borderTopWidth, 10) || 0) -
-               (parseInt(compStyle.borderBottomWidth, 10) || 0) +
-               (parseInt(compStyle.marginTop, 10) || 0),
+               borderBlockStartWidth -
+               borderBlockEndWidth +
+               marginBlockStart,
          };
          this._slide(e, index, normValue);
       }

@@ -87,13 +87,13 @@ export const setAttributes = (node, attributes) => {
 };
 
 export const lockScroll = function () {
-   setStyle(document.body, 'overflow-x', '');
-   setStyle(document.body, 'overflow-y', '');
+   setStyle(document.body, 'overflow-inline', '');
+   setStyle(document.body, 'overflow-block', '');
    setStyle(document.body, 'overflow', 'hidden', 'important');
 };
 
 export const unlockScroll = function () {
-   ['overflow', 'overflow-x', 'overflow-y'].forEach((p) => {
+   ['overflow', 'overflow-inline', 'overflow-block'].forEach((p) => {
       resetStyle(document.body, p);
    });
 };

@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!showMobileNav) {
          openButton.setAttribute('aria-expanded', 'true');
          mobileNav.classList.add('show');
-         document.body.style.setProperty('overflow-x', '');
-         document.body.style.setProperty('overflow-y', '');
+         document.body.style.setProperty('overflow-inline', '');
+         document.body.style.setProperty('overflow-block', '');
          document.body.style.setProperty('overflow', 'hidden', 'important');
          document.body.addEventListener('keydown', handleKeyDown);
          const focusable = getFocusable(mobileNav);
@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
          openButton.setAttribute('aria-expanded', 'false');
          mobileNav.classList.remove('show');
          document.body.style.removeProperty('overflow');
+         document.body.style.removeProperty('overflow-inline');
+         document.body.style.removeProperty('overflow-block');
          document.body.removeEventListener('keydown', handleKeyDown);
          openButton.focus();
       }
