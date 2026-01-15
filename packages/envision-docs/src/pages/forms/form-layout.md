@@ -1,8 +1,6 @@
 ---
 title: Form layout
 description: Form Layout offers structured classes for creating accessible, consistent, and responsive form layouts.
-since: 2024.07.1
-new: true
 ---
 
 The class `.env-form-row` creates a multi purpose container used to create form layouts. The class `.env-form-column-{n}` inside a row will control the sizing of the columns.

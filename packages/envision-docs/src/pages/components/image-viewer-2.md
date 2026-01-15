@@ -369,7 +369,7 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 
 ## Legacy documentation
 
-Image Viewer 2 is a replacement for the following, which are deprecated since 2023.07.1:
+Image Viewer 2 is a replacement for the following deprecated components:
 
 - [Image slider](/deprecated/image-slider/)
 - [Image viewer](/deprecated/image-viewer/)

@@ -1,7 +1,6 @@
 ---
 title: Dynamic font size
 description: The Dynamic Font Size utility scales an element’s base font size based on container width.
-since: 2024.02.1
 ---
 
 Use Dynamic font size to scale the base font size of an element. Any element children using

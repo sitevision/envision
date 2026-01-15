@@ -115,7 +115,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Typography
 
-#### Text <span class="doc-badge doc-badge--info">2025.01.1</span>
+#### Text
 
 - `--env-text-{name}-font-family`
 - `--env-text-{name}-font-color`
