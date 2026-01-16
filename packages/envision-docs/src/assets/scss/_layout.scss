@@ -24,15 +24,21 @@ $layout-col-main: 59em;
    box-sizing: border-box;
    flex: 1 1 100%;
    grid-area: body;
-   margin: 0 auto;
-   padding: 7.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
+   margin-block: 0;
+   margin-inline: auto;
+   padding-block-start: 7.5em;
+   padding-inline: #{'min(2.6666vw,' + variables.$site-padding + ')'};
+   padding-block-end: 0;
    width: 100%;
    max-width: 80em;
 
    @include variables.main-layout-break {
       display: grid;
-      margin: 0 auto;
-      padding: 9.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
+      margin-block: 0;
+      margin-inline: auto;
+      padding-block-start: 9.5em;
+      padding-inline: #{'min(2.6666vw,' + variables.$site-padding + ')'};
+      padding-block-end: 0;
       gap: 2em;
       grid-template-areas: 'sidenav main';
       grid-template-columns: min($layout-col-sidenav, 23.75vw) min(
@@ -42,27 +48,28 @@ $layout-col-main: 59em;
    }
 
    .banner + & {
-      padding-top: 2em;
+      padding-inset-block-start: 2em;
    }
 }
 
 .main {
    grid-area: main;
    container-type: inline-size;
-   margin-bottom: 2em;
+   margin-inset-block-end: 2em;
    font-family: Helvetica, Arial, sans-serif;
 }
 
 .content-wrapper {
    background-color: var(--doc-section-background-color);
    box-sizing: border-box;
-   padding: #{'max(10px, 5.0847cqw)'};
+   padding-block: #{'max(10px, 5.0847cqw)'};
+   padding-inline: #{'max(10px, 5.0847cqw)'};
    height: 100%;
 }
 
 .sidenav {
    grid-area: sidenav;
-   margin-bottom: 2em;
+   margin-inset-block-end: 2em;
 }
 
 .footer {
@@ -71,5 +78,6 @@ $layout-col-main: 59em;
 
 .container {
    max-width: $layout-gap + $layout-col-sidenav + $layout-col-main;
-   margin: 0 auto;
+   margin-block: 0;
+   margin-inline: auto;
 }

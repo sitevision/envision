@@ -5,7 +5,8 @@
    --doc-code-font-family: 'JetBrains Mono', monospace;
    background-color: var(--doc-footer-background-color);
    color: var(--doc-footer-font-color);
-   padding: min(6vh, 6em) variables.$site-padding;
+   padding-block: min(6vh, 6em);
+   padding-inline: variables.$site-padding;
 
    .logo {
       display: inline-block;
@@ -25,19 +26,20 @@
       box-sizing: border-box;
       flex: 1 1 25%;
       max-width: 25%;
-      padding: 0 1em;
+      padding-block: 0;
+      padding-inline: 1em;
 
       @media (max-width: 930px) {
          &:first-child {
             flex: 1 1 100%;
             max-width: 100%;
-            margin-bottom: 3em;
+            margin-inset-block-end: 3em;
          }
       }
 
       @media (max-width: 730px) {
          & {
-            margin-bottom: 2em;
+            margin-inset-block-end: 2em;
          }
       }
 

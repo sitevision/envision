@@ -16,9 +16,9 @@
       border: $border-width $border-style
          var(--env-element-background-color-dark);
       height: $handle-size-desktop;
-      margin-left: -($handle-size-desktop * 0.5);
+      margin-inset-inline-start: -($handle-size-desktop * 0.5);
       position: absolute;
-      top: calc(
+      inset-block-start: calc(
          -1 * (((#{$handle-size-desktop} - #{$range-height}) / 2) + 1px)
       );
       transition:
@@ -31,7 +31,7 @@
 
    &__values {
       display: flex;
-      margin-top: $spacing-large; // Keep
+      margin-inset-block-start: $spacing-large; // Keep
       position: relative;
 
       &__value {
@@ -59,16 +59,16 @@
    @media (hover: none) {
       .env-range-slider__handle {
          height: $handle-size-touch;
-         margin-left: -($handle-size-touch * 0.5);
-         top: calc(
+         margin-inset-inline-start: -($handle-size-touch * 0.5);
+         inset-block-start: calc(
             -1 * (((#{$handle-size-touch} - #{$range-height}) / 2) + 1px)
          );
          width: $handle-size-touch;
       }
 
       .env-range-slider__value {
-         margin-left: -($handle-size-touch * 0.5) !important;
-         top: $spacing-x-large; // Keep
+         margin-inset-inline-start: -($handle-size-touch * 0.5) !important;
+         inset-block-start: $spacing-x-large; // Keep
       }
    }
 }

@@ -27,16 +27,19 @@ select[multiple].env-form-input,
    // .env-form-multiple-select is deprecated
    min-height: 2.75em;
    height: auto;
-   padding: var(--env-spacing-xx-small);
+   padding-block: var(--env-spacing-xx-small);
+   padding-inline: var(--env-spacing-xx-small);
 
    @supports (-webkit-touch-callout: none) {
       // (hack) iOS specific styling for prettier select[multiple]
       height: 2.75em;
-      padding: $form-padding-y $form-padding-x;
+      padding-block: $form-padding-y;
+      padding-inline: $form-padding-x;
    }
 
    > option {
-      padding: var(--env-spacing-x-small);
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-x-small);
    }
 }
 
@@ -55,7 +58,8 @@ select[multiple].env-form-input,
 .env-form-select {
    @extend %select-base;
    position: relative;
-   padding: 0;
+   padding-block: 0;
+   padding-inline: 0;
 
    @include focus.focus-within;
 
@@ -72,7 +76,10 @@ select[multiple].env-form-input,
       min-height: calc(
          #{math.div($form-input-height, $form-input-font-size) * 1em} - 2px
       );
-      padding: $form-padding-y 2em $form-padding-y $form-padding-x;
+      padding-block-start: $form-padding-y;
+      padding-inline-end: 2em;
+      padding-block-end: $form-padding-y;
+      padding-inline-start: $form-padding-x;
 
       @include focus.hide-focus-visible;
    }
@@ -81,8 +88,8 @@ select[multiple].env-form-input,
       pointer-events: none;
       display: block;
       position: absolute;
-      top: 50%;
-      right: 0.9375em;
+      inset-block-start: 50%;
+      inset-inline-end: 0.9375em;
       transform: translateY(-50%);
       width: 0.875em;
       height: 0.875em;
@@ -128,18 +135,21 @@ select[multiple].env-form-input,
          border: $border-width $border-style var(--env-border-color-05);
          border-radius: var(--env-border-radius-medium);
          box-shadow: var(--env-box-shadow-small);
-         padding: calc(var(--env-focus-size) + var(--env-focus-offset));
+         padding-block: calc(var(--env-focus-size) + var(--env-focus-offset));
+         padding-inline: calc(var(--env-focus-size) + var(--env-focus-offset));
       }
 
       optgroup {
          font-weight: 600;
-         padding: var(--env-spacing-x-small) 0 0;
+         padding-block-start: var(--env-spacing-x-small);
+         padding-inline: 0;
+         padding-block-end: 0;
 
          &:last-child {
-            padding-bottom: var(--env-spacing-x-small);
+            padding-inset-block-end: var(--env-spacing-x-small);
          }
          option:first-of-type {
-            margin-top: var(--env-spacing-x-small);
+            margin-inset-block-start: var(--env-spacing-x-small);
          }
 
          legend {
@@ -149,7 +159,8 @@ select[multiple].env-form-input,
 
       option {
          display: block;
-         padding: var(--env-spacing-x-small);
+         padding-block: var(--env-spacing-x-small);
+         padding-inline: var(--env-spacing-x-small);
          max-width: 100%;
          overflow: hidden;
          text-overflow: ellipsis;
@@ -182,13 +193,14 @@ select[multiple].env-form-input,
          color: var(--env-form-input-font-color);
          width: $pickerIconWidth;
          text-align: center;
-         margin: 0;
+         margin-block: 0;
+         margin-inline: 0;
       }
    }
 
    .env-form-select:not(:has(> .env-icon))
       select:not([multiple]):has(selectedcontent) {
-      padding-right: $form-padding-x;
+      padding-inset-inline-end: $form-padding-x;
    }
 
    .env-form-select:has(> .env-icon)

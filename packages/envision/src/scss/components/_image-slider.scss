@@ -34,7 +34,7 @@
       border: none;
       background: transparent;
       align-items: center;
-      bottom: 0;
+      inset-block-end: 0;
       display: flex;
       font-size: 2em;
       justify-content: center;
@@ -42,24 +42,24 @@
       position: absolute;
       text-align: center;
       text-decoration: none;
-      top: 0;
+      inset-block-start: 0;
       width: 15%;
 
       @include focus.focus-visible;
    }
 
    &--next {
-      right: 0;
+      inset-inline-end: 0;
    }
 
    &--prev {
-      left: 0;
+      inset-inline-start: 0;
    }
 
    &__item--next,
    &__item--prev {
       position: absolute;
-      top: 0;
+      inset-block-start: 0;
 
       @include focus.focus-visible;
    }
@@ -94,20 +94,20 @@
    }
 
    &__thumbnails {
-      bottom: 0;
+      inset-block-end: 0;
       display: flex;
       justify-content: flex-start;
-      left: 0;
+      inset-inline-start: 0;
       list-style: none;
-      margin-top: var(--env-spacing-x-small);
+      margin-inset-block-start: var(--env-spacing-x-small);
       overflow: auto;
-      padding-left: 0;
-      right: 0;
+      padding-inset-inline-start: 0;
+      inset-inline-end: 0;
       z-index: $zindex-imageslider-indicator;
 
       li {
          cursor: pointer;
-         margin-right: var(--env-spacing-x-small);
+         margin-inset-inline-end: var(--env-spacing-x-small);
          position: relative;
       }
 
@@ -127,13 +127,13 @@
    }
 
    &__caption {
-      bottom: var(--env-spacing-large);
+      inset-block-end: var(--env-spacing-large);
       color: rgba(255, 255, 255, 1);
-      left: ((100% - 70%) * 0.5);
-      padding-bottom: var(--env-spacing-large);
-      padding-top: var(--env-spacing-large);
+      inset-inline-start: ((100% - 70%) * 0.5);
+      padding-inset-block-end: var(--env-spacing-large);
+      padding-inset-block-start: var(--env-spacing-large);
       position: absolute;
-      right: ((100% - 70%) * 0.5);
+      inset-inline-end: ((100% - 70%) * 0.5);
       text-align: center;
       z-index: $zindex-imageslider-indicator;
    }

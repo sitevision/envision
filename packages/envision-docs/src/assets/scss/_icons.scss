@@ -1,12 +1,14 @@
 .icons-demo {
    color: var(--env-font-color);
    background-color: var(--env-section-background-color);
-   margin: 2em 0;
+   margin-block: 2em;
+   margin-inline: 0;
    backdrop-filter: invert(3%);
 
    li {
       backdrop-filter: invert(3%);
-      padding: 1.5em;
+      padding-block: 1.5em;
+      padding-inline: 1.5em;
       text-align: center;
 
       &:hover {

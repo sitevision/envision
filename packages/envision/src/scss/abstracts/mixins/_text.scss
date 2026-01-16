@@ -35,7 +35,9 @@
          $font-weight,
          $line-height
       );
-      margin: 0 0 var(--env-#{$margin-bottom});
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: var(--env-#{$margin-bottom});
    }
 }
 

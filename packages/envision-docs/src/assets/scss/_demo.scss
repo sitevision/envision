@@ -25,7 +25,8 @@ $exampleElPaddingBg: #c3d08a;
    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
    display: block;
    visibility: visible;
-   padding: 45px 15px;
+   padding-block: 45px;
+   padding-inline: 15px;
    position: relative;
    z-index: 900;
    opacity: 1;
@@ -37,7 +38,7 @@ $exampleElPaddingBg: #c3d08a;
 
 .example-progress > div {
    + div {
-      margin-top: 10px;
+      margin-inset-block-start: 10px;
    }
 }
 
@@ -45,7 +46,7 @@ $exampleElPaddingBg: #c3d08a;
 .example-tabs1,
 .example-tabs2,
 .example-tabs3 {
-   margin-bottom: 15px;
+   margin-inset-block-end: 15px;
 }
 
 .example-panel {
@@ -69,13 +70,14 @@ $exampleElPaddingBg: #c3d08a;
 }
 
 .example-flex {
-   margin-bottom: 10px;
+   margin-inset-block-end: 10px;
    backdrop-filter: invert(10%);
 
    .env-flex__item {
-      margin-top: -1px;
-      margin-left: -1px;
-      padding: 0.5em;
+      margin-inset-block-start: -1px;
+      margin-inset-inline-start: -1px;
+      padding-block: 0.5em;
+      padding-inline: 0.5em;
       text-align: center;
       background-color: $exampleElBg;
       color: $exampleElColor;
@@ -89,29 +91,34 @@ $exampleElPaddingBg: #c3d08a;
 }
 
 .example-link {
-   margin: 1em 0;
+   margin-block: 1em;
+   margin-inline: 0;
 }
 
 .example-color {
    text-align: center;
 
    > * {
-      padding: 1em 0 1em 1em;
-      margin-bottom: 0.5em;
+      padding-block-start: 1em;
+      padding-inline-end: 0;
+      padding-block-end: 1em;
+      padding-inline-start: 1em;
+      margin-inset-block-end: 0.5em;
    }
 }
 
 .example-display > div {
    @include exampleEl;
-   margin-top: 20px;
+   margin-inset-block-start: 20px;
 }
 
 .example-list-item {
    @include exampleEl;
    box-sizing: border-box;
-   margin-top: -1px;
-   margin-left: -1px;
-   padding: 1em;
+   margin-inset-block-start: -1px;
+   margin-inset-inline-start: -1px;
+   padding-block: 1em;
+   padding-inline: 1em;
    text-align: center;
 }
 
@@ -119,9 +126,10 @@ $exampleElPaddingBg: #c3d08a;
    @include exampleEl;
    height: 100px;
    line-height: 100px;
-   margin-top: -1px;
-   margin-left: -1px;
-   padding: 1em;
+   margin-inset-block-start: -1px;
+   margin-inset-inline-start: -1px;
+   padding-block: 1em;
+   padding-inline: 1em;
    text-align: center;
    width: 150px;
 }
@@ -131,7 +139,8 @@ $exampleElPaddingBg: #c3d08a;
    width: 5rem;
    height: 5rem;
    backdrop-filter: invert(3%);
-   margin: 5px;
+   margin-block: 5px;
+   margin-inline: 5px;
 }
 
 .example-shadow-util {
@@ -143,7 +152,8 @@ $exampleElPaddingBg: #c3d08a;
    width: 12rem;
    height: 6rem;
    background-color: var(--env-section-background-color);
-   margin: 5px;
+   margin-block: 5px;
+   margin-inline: 5px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -154,15 +164,17 @@ $exampleElPaddingBg: #c3d08a;
 }
 
 .example-color-size {
-   padding: 1.5em !important;
-   margin-top: 0.75em !important;
-   margin-bottom: 0.75em !important;
+   padding-block: 1.5em !important;
+   padding-inline: 1.5em !important;
+   margin-inset-block-start: 0.75em !important;
+   margin-inset-block-end: 0.75em !important;
 }
 
 .example-color-size-large {
-   padding: 3em !important;
-   margin-top: 0.75em !important;
-   margin-bottom: 0.75em !important;
+   padding-block: 3em !important;
+   padding-inline: 3em !important;
+   margin-inset-block-start: 0.75em !important;
+   margin-inset-block-end: 0.75em !important;
 }
 
 .example-profile-images {
@@ -186,7 +198,7 @@ $exampleElPaddingBg: #c3d08a;
    [data-demo-size] {
       display: block;
       position: absolute;
-      top: 0;
+      inset-block-start: 0;
 
       &[data-demo-size-fixed] {
          width: max-content;
@@ -202,38 +214,39 @@ $exampleElPaddingBg: #c3d08a;
       $xxs: 32px;
 
       &:nth-child(1) {
-         top: 0;
-         left: 0;
+         inset-block-start: 0;
+         inset-inline-start: 0;
       }
 
       &:nth-child(2) {
-         top: ($xxl - $xl);
-         left: $xxl - $xl * 0.25;
+         inset-block-start: ($xxl - $xl);
+         inset-inline-start: $xxl - $xl * 0.25;
       }
 
       &:nth-child(3) {
-         top: ($xxl - $l);
-         left: $xxl + $xl - ($xl + $l) * 0.25;
+         inset-block-start: ($xxl - $l);
+         inset-inline-start: $xxl + $xl - ($xl + $l) * 0.25;
       }
 
       &:nth-child(4) {
-         top: ($xxl - $m);
-         left: $xxl + $xl + $l - ($xl + $l + $m) * 0.25;
+         inset-block-start: ($xxl - $m);
+         inset-inline-start: $xxl + $xl + $l - ($xl + $l + $m) * 0.25;
       }
 
       &:nth-child(5) {
-         top: ($xxl - $s);
-         left: $xxl + $xl + $l + $m - ($xl + $l + $m + $s) * 0.25;
+         inset-block-start: ($xxl - $s);
+         inset-inline-start: $xxl + $xl + $l + $m - ($xl + $l + $m + $s) * 0.25;
       }
 
       &:nth-child(6) {
-         top: ($xxl - $xs);
-         left: $xxl + $xl + $l + $m + $s - ($xl + $l + $m + $s + $xs) * 0.25;
+         inset-block-start: ($xxl - $xs);
+         inset-inline-start: $xxl + $xl + $l + $m + $s -
+            ($xl + $l + $m + $s + $xs) * 0.25;
       }
 
       &:nth-child(7) {
-         top: ($xxl - $xxs);
-         left: $xxl + $xl + $l + $m + $s + $xs -
+         inset-block-start: ($xxl - $xxs);
+         inset-inline-start: $xxl + $xl + $l + $m + $s + $xs -
             ($xl + $l + $m + $s + $xs + $xxs) * 0.25;
       }
    }
@@ -241,9 +254,9 @@ $exampleElPaddingBg: #c3d08a;
    [data-demo-size] {
       &:after {
          position: absolute;
-         bottom: -14px;
-         left: 0;
-         right: 0;
+         inset-block-end: -14px;
+         inset-inline-start: 0;
+         inset-inline-end: 0;
          text-align: center;
          font-size: 10px;
          color: #666;
@@ -253,7 +266,7 @@ $exampleElPaddingBg: #c3d08a;
 
    [data-demo-size][data-demo-size-inside] {
       &:after {
-         bottom: 14px;
+         inset-block-end: 14px;
          color: #000;
       }
    }
@@ -267,24 +280,31 @@ $exampleElPaddingBg: #c3d08a;
 .example-element-color-variant,
 .example-variant {
    flex: 1 1 50%;
-   padding: 1em;
+   padding-block: 1em;
+   padding-inline: 1em;
    text-align: center;
 
    h2,
    p {
-      margin: 0 0 0.5em;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 0.5em;
    }
 }
 
 .example-element-color p,
 .example-ui-color-status p {
-   padding: 1em;
-   margin: 0;
+   padding-block: 1em;
+   padding-inline: 1em;
+   margin-block: 0;
+   margin-inline: 0;
    text-align: center;
 }
 
 .example-ui-color-status-text {
-   margin: 1em 0 0;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 0;
    text-align: center;
 }
 
@@ -292,25 +312,29 @@ $exampleElPaddingBg: #c3d08a;
    text-align: center;
 
    h2 {
-      margin: 0;
+      margin-block: 0;
+      margin-inline: 0;
    }
 }
 
 .example-ui-color-status-heading {
-   margin: 0 0 1em !important;
-   border-bottom: 1px dotted var(--env-border-color-05);
+   margin-block-start: 0 !important;
+   margin-inline: 0 !important;
+   margin-block-end: 1em !important;
+   border-block-end: 1px dotted var(--env-border-color-05);
 
    &:not(:first-child) {
-      margin-top: 2em !important;
+      margin-inset-block-start: 2em !important;
    }
 }
 
 .example-element {
-   margin: 2em 0;
+   margin-block: 2em;
+   margin-inline: 0;
    text-align: center;
 
    &--left > :not(.example-element-label) {
-      text-align: left;
+      text-align: start;
    }
 
    .env-nav,
@@ -322,7 +346,9 @@ $exampleElPaddingBg: #c3d08a;
 .example-element-label {
    font-weight: bold;
    text-align: center;
-   margin: 0 0 0.5em;
+   margin-block-start: 0;
+   margin-inline: 0;
+   margin-block-end: 0.5em;
 }
 
 $variableNames: 'primary', 'secondary', 'success', 'warning', 'danger', 'info';
@@ -370,7 +396,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 .example-grid {
    display: flex;
    flex-wrap: wrap;
-   margin: 2em -0.5em;
+   margin-block: 2em;
+   margin-inline: -0.5em;
    box-sizing: border-box;
    align-content: stretch;
    justify-content: center;
@@ -379,14 +406,16 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
    .code-example > &,
    .example-grid {
-      margin: 0;
+      margin-block: 0;
+      margin-inline: 0;
    }
 
    &__col {
       box-sizing: border-box;
       min-width: 25%;
       flex: 1 1 25%;
-      padding: 0.5em;
+      padding-block: 0.5em;
+      padding-inline: 0.5em;
 
       &--33 {
          flex: 1 1 33.3333%;
@@ -407,18 +436,22 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       box-sizing: border-box;
       border: 1px solid var(--env-border-color-05);
       background-color: var(--env-section-background-color);
-      padding: 1em;
+      padding-block: 1em;
+      padding-inline: 1em;
       height: 100%;
    }
 }
 
 .example-card,
 .example-card-parts {
-   margin: 0 auto 2em;
+   margin-block-start: 0;
+   margin-inline: auto;
+   margin-block-end: 2em;
    max-width: 400px;
 
    &:last-child {
-      margin: 0 auto;
+      margin-block: 0;
+      margin-inline: auto;
    }
 }
 
@@ -427,12 +460,16 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    .env-card__footer,
    div {
       border: 1px dashed #ccc;
-      margin: 0 0.5em 0.5em !important;
-      padding: 0.25em 1em !important;
+      margin-block-start: 0 !important;
+      margin-inline: 0.5em !important;
+      margin-block-end: 0.5em !important;
+      padding-block: 0.25em !important;
+      padding-inline: 1em !important;
    }
 
    .env-card__header {
-      margin: 0.5em !important;
+      margin-block: 0.5em !important;
+      margin-inline: 0.5em !important;
    }
 }
 
@@ -440,11 +477,15 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 .demo-cardholder-flex {
    h4 {
       font-weight: bold;
-      margin: 1em 0 0.25em;
+      margin-block-start: 1em;
+      margin-inline: 0;
+      margin-block-end: 0.25em;
    }
 
    p {
-      margin: 0 0 0.5em;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 0.5em;
       font-size: 0.7em;
    }
 
@@ -470,22 +511,26 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    --env-cardholder-column-spacing: 6px;
 
    &__resizeable {
-      padding: 4px 8px;
+      padding-block: 4px;
+      padding-inline: 8px;
    }
 }
 
 .demo-cardholder-grid {
    &__resizeable {
       font-size: 0.1815em; // (font-size controls column width and gap scale)
-      padding: 8px;
+      padding-block: 8px;
+      padding-inline: 8px;
    }
 }
 
 .example-spacing {
    color: $exampleElColor;
    border: 1px dotted #5f6368;
-   margin: 2em 0;
-   padding: 2em;
+   margin-block: 2em;
+   margin-inline: 0;
+   padding-block: 2em;
+   padding-inline: 2em;
 
    &__margin,
    &__padding,
@@ -549,8 +594,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
       &:before {
          content: 'line-height';
-         left: auto;
-         right: 1px;
+         inset-inline-start: auto;
+         inset-inline-end: 1px;
          background-color: $exampleElBg;
       }
    }
@@ -589,8 +634,10 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    list-style-type: none;
    display: flex;
    flex-wrap: wrap;
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
 
    li {
       flex: 1 1 25%;
@@ -602,7 +649,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       }
 
       > div {
-         padding: 1em 1em;
+         padding-block: 1em;
+         padding-inline: 1em;
       }
    }
 }
@@ -613,8 +661,10 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
 .example-dashboard-color-list {
    list-style-type: none;
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
 
    li {
       font-size: 0.8em;
@@ -625,7 +675,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       }
 
       > div {
-         padding: 0 1em;
+         padding-block: 0;
+         padding-inline: 1em;
          height: 3em;
          display: flex;
          justify-content: space-between;
@@ -635,7 +686,10 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
          .example-dashboard-color-list-icon {
             border: 1px solid rgba(255, 255, 255, 0.5);
-            margin: 0 0 0 0.5em;
+            margin-block-start: 0;
+            margin-inline-end: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0.5em;
          }
 
          span {
@@ -649,7 +703,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
 .example-dashboard-color-list-icon {
    border: 1px solid rgba(32, 35, 48, 0.5);
-   padding: 2px;
+   padding-block: 2px;
+   padding-inline: 2px;
    border-radius: 3px;
 }
 
@@ -673,14 +728,19 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
 
    .example-dashboard-color-list-icon {
       font-size: 1.4em;
-      margin: 0 0.5em 0 0;
+      margin-block-start: 0;
+      margin-inline-end: 0.5em;
+      margin-block-end: 0;
+      margin-inline-start: 0;
    }
 }
 
 .example-dynamic-font-chart {
    max-width: 576px;
    border: 1px solid var(--env-border-color-05);
-   margin: 1em 0 2em;
+   margin-block-start: 1em;
+   margin-inline: 0;
+   margin-block-end: 2em;
 }
 
 .example-dynamic-font-wrapper {
@@ -722,8 +782,11 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
          line-height: 1.4;
          color: var(--env-ui-text-caption-font-color);
          text-transform: var(--env-ui-text-caption-text-transform);
-         margin: 0 15px 10px 0;
-         text-align: right;
+         margin-block-start: 0;
+         margin-inline-end: 15px;
+         margin-block-end: 10px;
+         margin-inline-start: 0;
+         text-align: end;
 
          &__arrow {
             font-size: 1.25em;
@@ -735,7 +798,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    &__dffontsize {
       font-size: 12px;
       position: absolute;
-      padding: 3px 5px;
+      padding-block: 3px;
+      padding-inline: 5px;
       inset: 0 0 auto auto;
 
       &:before {
@@ -753,7 +817,8 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
       display: inline-block;
       font-family: var(--env-badge-font-family);
       font-weight: 600;
-      padding: var(--env-spacing-xxx-small);
+      padding-block: var(--env-spacing-xxx-small);
+      padding-inline: var(--env-spacing-xxx-small);
    }
 }
 
@@ -858,21 +923,26 @@ canvas.example-canvas {
 #example-chart {
    position: relative;
    width: fit-content;
-   margin: 1.5em 0 3em 4em;
+   margin-block-start: 1.5em;
+   margin-inline-end: 0;
+   margin-block-end: 3em;
+   margin-inline-start: 4em;
 }
 
 .example-chart-axis {
    list-style-type: none;
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
 }
 
 .example-chart-axis--x {
    display: flex;
    position: absolute;
-   top: calc(100% + 0.125em);
-   right: 0;
-   left: 0;
+   inset-block-start: calc(100% + 0.125em);
+   inset-inline-end: 0;
+   inset-inline-start: 0;
 }
 
 .example-chart-axis--x li {
@@ -885,10 +955,10 @@ canvas.example-canvas {
 
 .example-chart-axis--y {
    position: absolute;
-   top: 0;
-   right: calc(100% + 0.25em);
-   bottom: 0;
-   margin-top: -2px;
+   inset-block-start: 0;
+   inset-inline-end: calc(100% + 0.25em);
+   inset-block-end: 0;
+   margin-inset-block-start: -2px;
 }
 
 .example-chart-axis--y li {
@@ -908,17 +978,17 @@ canvas.example-canvas {
 }
 
 .example-chart-axis-label-x {
-   top: calc(100% + 1.5em);
-   left: 0;
-   right: 0;
+   inset-block-start: calc(100% + 1.5em);
+   inset-inline-start: 0;
+   inset-inline-end: 0;
    text-align: center;
 }
 
 .example-chart-axis-label-y {
-   left: auto;
-   right: calc(100% + 2.5em);
-   top: 0;
-   bottom: 0;
+   inset-inline-start: auto;
+   inset-inline-end: calc(100% + 2.5em);
+   inset-block-start: 0;
+   inset-block-end: 0;
    rotate: -180deg;
    text-align: center;
    writing-mode: vertical-lr;
@@ -939,10 +1009,12 @@ canvas.example-canvas {
 }
 
 .example-badges {
-   margin: 0 -0.25em;
+   margin-block: 0;
+   margin-inline: -0.25em;
 
    .env-badge {
-      margin: 0.25em;
+      margin-block: 0.25em;
+      margin-inline: 0.25em;
    }
 }
 
@@ -955,16 +1027,16 @@ canvas.example-canvas {
 .example-static-popover[data-popper-placement='bottom'] .env-popover__arrow,
 .code-example [data-popper-placement='top'] .env-popover__arrow,
 .code-example [data-popper-placement='bottom'] .env-popover__arrow {
-   left: 50%;
-   margin-left: -10px;
+   inset-inline-start: 50%;
+   margin-inset-inline-start: -10px;
 }
 
 .example-static-popover[data-popper-placement='right'] .env-popover__arrow,
 .example-static-popover[data-popper-placement='left'] .env-popover__arrow,
 .code-example [data-popper-placement='right'] .env-popover__arrow,
 .code-example [data-popper-placement='left'] .env-popover__arrow {
-   top: 50%;
-   margin-top: -10px;
+   inset-block-start: 50%;
+   margin-inset-block-start: -10px;
 }
 
 .example-imageviewer2-images {
@@ -979,8 +1051,11 @@ canvas.example-canvas {
       line-height: 1;
       width: 100%;
       height: 0;
-      margin: 0;
-      padding: 0 0 50%;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block-start: 0;
+      padding-inline: 0;
+      padding-block-end: 50%;
 
       &:focus-visible {
          @include variables.focus-outline;
@@ -990,10 +1065,10 @@ canvas.example-canvas {
       display: block;
       max-width: 100%;
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1014,8 +1089,10 @@ canvas.example-canvas {
 
 .example-dropdown-placement {
    position: relative;
-   margin: 0 auto;
-   padding: 1em;
+   margin-block: 0;
+   margin-inline: auto;
+   padding-block: 1em;
+   padding-inline: 1em;
    max-width: 400px;
    border: 1px dashed var(--env-border-color-05);
 
@@ -1027,7 +1104,8 @@ canvas.example-canvas {
 
 .example-content-text-demo {
    > * {
-      margin: 0 !important;
+      margin-block: 0 !important;
+      margin-inline: 0 !important;
    }
 }
 
@@ -1037,8 +1115,9 @@ canvas.example-canvas {
    caption,
    th,
    td {
-      padding: 0.25rem;
-      text-align: left;
+      padding-block: 0.25rem;
+      padding-inline: 0.25rem;
+      text-align: start;
    }
    th,
    td {

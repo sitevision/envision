@@ -20,7 +20,7 @@
          order: 3;
 
          .env-embedded__img {
-            float: right;
+            float: inline-end;
          }
       }
    }
@@ -28,41 +28,42 @@
    &__title,
    &__text {
       // Todo: Set deprecated?
-      padding-top: var(--env-spacing-x-small);
+      padding-inset-block-start: var(--env-spacing-x-small);
    }
 
    &__block {
       flex: 3;
       flex-grow: 2;
       order: 2;
-      padding: var(--env-spacing-medium);
+      padding-block: var(--env-spacing-medium);
+      padding-inline: var(--env-spacing-medium);
 
       button {
-         margin-top: var(--env-spacing-medium);
+         margin-inset-block-start: var(--env-spacing-medium);
          border-radius: var(--env-button-border-radius);
       }
    }
 
    &__block--overlay {
-      left: 15%;
+      inset-inline-start: 15%;
       position: absolute;
       text-align: center;
-      top: 15%;
+      inset-block-start: 15%;
       width: 70%;
 
       @media screen and (max-width: 769px) {
-         left: 5%;
-         padding-bottom: var(--env-spacing-small);
+         inset-inline-start: 5%;
+         padding-inset-block-end: var(--env-spacing-small);
          position: relative;
          width: 90%;
       }
 
       &--right {
-         text-align: right;
+         text-align: end;
       }
 
       &--left {
-         text-align: left;
+         text-align: start;
       }
    }
 

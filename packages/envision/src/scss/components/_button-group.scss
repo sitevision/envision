@@ -24,7 +24,7 @@
       }
 
       &--ghost:last-of-type {
-         margin-left: -1px;
+         margin-inset-inline-start: -1px;
       }
    }
 }

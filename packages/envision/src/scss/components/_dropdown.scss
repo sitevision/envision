@@ -14,11 +14,11 @@
       border: $border-width $border-style var(--env-border-color-05);
       border-radius: var(--env-border-radius-medium);
       box-shadow: var(--env-box-shadow);
-      left: 0;
+      inset-inline-start: 0;
       max-width: (math.div(240, $BROWSER_FONT_SIZE) * 1em);
       min-width: (math.div(180, $BROWSER_FONT_SIZE) * 1em);
       position: fixed;
-      top: 100%;
+      inset-block-start: 100%;
       z-index: $zindex-dropdown;
 
       &[data-env-dropdown] {

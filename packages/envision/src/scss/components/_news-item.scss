@@ -3,17 +3,20 @@
    color: var(--env-font-color);
    display: flex;
    flex-direction: column;
-   margin: var(--env-spacing-xxx-small);
+   margin-block: var(--env-spacing-xxx-small);
+   margin-inline: var(--env-spacing-xxx-small);
    overflow-wrap: break-word;
    border-radius: var(--env-border-radius-medium);
 
    &__headline {
-      padding: 0 var(--env-spacing-x-small);
+      padding-block: 0;
+      padding-inline: var(--env-spacing-x-small);
    }
 
    &__media,
    &__preamble,
    &__footer {
-      padding: var(--env-spacing-x-small);
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-x-small);
    }
 }

@@ -5,11 +5,12 @@
    display: block;
    position: fixed;
    z-index: 2147483647;
-   top: 1em;
-   padding: 1em;
+   inset-block-start: 1em;
+   padding-block: 1em;
+   padding-inline: 1em;
    @include variables.focus-visible;
    transition: transform 0.05s;
-   left: 1em;
+   inset-inline-start: 1em;
    transform: translate(0, calc(-100% - 3em));
    font-family: var(--env-tooltip-font-family);
    background-color: var(--env-tooltip-background-color);
@@ -27,14 +28,15 @@
    color: var(--doc-header-font-color);
    background-color: var(--doc-header-background-color);
    position: fixed;
-   top: 0;
+   inset-block-start: 0;
    width: 100%;
    z-index: 10000;
 
    .container {
       position: relative;
       display: flex;
-      padding: variables.$site-padding;
+      padding-block: variables.$site-padding;
+      padding-inline: variables.$site-padding;
       height: 68px;
       align-items: center;
       justify-content: space-between;
@@ -53,7 +55,8 @@
       @include variables.header-layout-break {
          flex: 1;
          display: block;
-         padding: 0 1em;
+         padding-block: 0;
+         padding-inline: 1em;
       }
    }
 
@@ -77,38 +80,45 @@
       font-weight: 500;
       color: var(--doc-header-font-color);
       line-height: 1.2;
-      text-align: left;
-      padding: var(--env-spacing-x-small) 0;
+      text-align: start;
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: 0;
       @include variables.focus-visible;
-      border-bottom: 2px solid transparent;
+      border-block-end: 2px solid transparent;
 
       &:hover {
          color: var(--doc-header-font-color) !important;
-         border-bottom-color: var(--doc-color-brand) !important;
+         border-block-end-color: var(--doc-color-brand) !important;
       }
 
       &[aria-current='page'] {
-         border-bottom-color: var(--doc-color-brand) !important;
+         border-block-end-color: var(--doc-color-brand) !important;
          color: var(--doc-header-font-color) !important;
       }
    }
 
    .theme-picker {
       position: absolute;
-      top: 50%;
-      right: calc(#{variables.$site-padding} + 0.5em + 2.75em);
-      margin: 0;
-      padding: 0 0 0 1em;
+      inset-block-start: 50%;
+      inset-inline-end: calc(#{variables.$site-padding} + 0.5em + 2.75em);
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block-start: 0;
+      padding-inline-end: 0;
+      padding-block-end: 0;
+      padding-inline-start: 1em;
       transform: translateY(-50%);
 
       @include variables.header-layout-break {
-         right: variables.$site-padding;
+         inset-inline-end: variables.$site-padding;
       }
 
       &__label {
          text-transform: uppercase;
          font-size: 9px;
-         margin: 0 0 4px;
+         margin-block-start: 0;
+         margin-inline: 0;
+         margin-block-end: 4px;
 
          @include variables.header-layout-break {
             display: block;

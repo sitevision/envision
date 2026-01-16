@@ -3,5 +3,6 @@
 @mixin pagination-size($padding-y, $padding-x, $font-size) {
    font-size: var(--env-#{$font-size});
    line-height: $line-height-medium;
-   padding: var(--env-#{$padding-y}) var(--env-#{$padding-x});
+   padding-block: var(--env-#{$padding-y});
+   padding-inline: var(--env-#{$padding-x});
 }

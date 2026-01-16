@@ -13,13 +13,14 @@
    gap: var(--env-spacing-x-small);
    justify-content: flex-start;
    align-items: center;
-   margin-bottom: var(--env-spacing-x-small);
+   margin-inset-block-end: var(--env-spacing-x-small);
 
    label,
    .env-form-field &,
    .env-form-label,
    .env-form-element__label {
-      margin: 0;
+      margin-block: 0;
+      margin-inline: 0;
    }
 }
 
@@ -52,8 +53,10 @@
       color: var(--env-form-input-font-color);
       font-size: var(--env-font-size-medium);
       line-height: $form-input-line-height;
-      padding: var(--env-spacing-x-small);
-      margin: 0;
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-x-small);
+      margin-block: 0;
+      margin-inline: 0;
    }
 
    .env-form-input-group__label,
@@ -64,7 +67,7 @@
       position: relative;
       z-index: 1;
       border-radius: 0;
-      margin-right: -1px;
+      margin-inset-inline-end: -1px;
 
       &:first-child {
          border-radius: var(--env-form-input-border-radius) 0 0
@@ -72,7 +75,7 @@
       }
 
       &:last-child {
-         margin-right: 0;
+         margin-inset-inline-end: 0;
          border-radius: 0 var(--env-form-input-border-radius)
             var(--env-form-input-border-radius) 0;
       }
@@ -85,8 +88,8 @@
 .env-form-control:has(.env-icon):not(:has(.env-form-label)):not(:has(.env-button)) {
    .env-icon {
       position: absolute;
-      top: 50%;
-      left: calc(var(--env-font-size-base) * 0.75);
+      inset-block-start: 50%;
+      inset-inline-start: calc(var(--env-font-size-base) * 0.75);
       width: var(--env-font-size-medium);
       height: var(--env-font-size-medium);
       transform: translate(0, -50%);
@@ -96,20 +99,20 @@
 
    input:first-child,
    textarea:first-child {
-      padding-right: calc(
+      padding-inset-inline-end: calc(
          var(--env-font-size-medium) + #{var(--env-spacing-medium)}
       );
    }
 
    input + .env-icon,
    textarea + .env-icon {
-      left: auto;
-      right: calc(var(--env-font-size-base) * 0.75);
+      inset-inline-start: auto;
+      inset-inline-end: calc(var(--env-font-size-base) * 0.75);
    }
 
    .env-icon + input,
    .env-icon + textarea {
-      padding-left: calc(
+      padding-inset-inline-start: calc(
          var(--env-font-size-medium) + #{var(--env-spacing-medium)}
       );
    }

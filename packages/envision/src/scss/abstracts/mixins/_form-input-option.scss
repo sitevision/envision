@@ -8,14 +8,14 @@
       font-family: var(--env-form-label-font-family);
       font-size: var(--env-font-size-medium);
       font-weight: var(--env-form-label-font-weight);
-      margin-bottom: var(--env-spacing-x-small);
+      margin-inset-block-end: var(--env-spacing-x-small);
    }
    @at-root label#{&} {
       display: inline-flex;
       gap: var(--env-spacing-x-small); // 0;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: var(--env-spacing-x-small);
+      margin-inset-block-end: var(--env-spacing-x-small);
    }
 }
 
@@ -39,14 +39,14 @@
       content: '';
       display: block;
       position: absolute;
-      top: 40%;
-      left: 50%;
+      inset-block-start: 40%;
+      inset-inline-start: 50%;
       transform: translate3d(-49%, -45%, 0) rotate(-50deg);
       width: 0.9em;
       height: 0.3em;
       background-color: transparent;
-      border-bottom: 0.15em solid var(--env-element-primary-font-color);
-      border-left: 0.15em solid var(--env-element-primary-font-color);
+      border-block-end: 0.15em solid var(--env-element-primary-font-color);
+      border-inline-start: 0.15em solid var(--env-element-primary-font-color);
    }
 }
 
@@ -57,8 +57,8 @@
       content: '';
       display: block;
       position: absolute;
-      top: 50%;
-      left: 50%;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
       transform: scale(1) translate(-50%, -50%);
       width: 0.75em;
       height: 0.75em;
@@ -86,8 +86,10 @@
       border-radius: 0.75em;
       background-color: var(--env-element-primary-background-color);
       filter: grayscale(100%);
-      margin: 0;
-      padding: 0;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block: 0;
+      padding-inline: 0;
 
       &:before {
          content: '';
@@ -108,9 +110,9 @@
          content: '';
          height: 0.375em;
          width: 0.375em;
-         left: auto;
-         right: 0.375em;
-         top: 50%;
+         inset-inline-start: auto;
+         inset-inline-end: 0.375em;
+         inset-block-start: 50%;
          background-color: transparent;
          transform: translateY(-50%);
          opacity: 0.5;
@@ -128,8 +130,8 @@
          &:after {
             height: 0.625em;
             width: 0.125em;
-            left: 0.7em;
-            right: auto;
+            inset-inline-start: 0.7em;
+            inset-inline-end: auto;
             background-color: var(--env-element-primary-font-color);
             border-radius: 2px;
             border: none;
@@ -165,8 +167,10 @@
       flex: 0 0 1.375em;
       width: 1.375em;
       height: 1.375em;
-      margin: 0;
-      padding: 0;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-block: 0;
+      padding-inline: 0;
       font-size: var(--env-font-size-medium);
       background-color: var(--env-form-input-background-color);
       border: $border-width $border-style var(--env-form-input-border-color);

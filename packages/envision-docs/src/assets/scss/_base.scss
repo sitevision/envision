@@ -117,8 +117,10 @@ body {
    font-family: var(--doc-font-family);
    background: var(--doc-background-color);
    color: var(--doc-font-color);
-   padding: 0;
-   margin: 0;
+   padding-block: 0;
+   padding-inline: 0;
+   margin-block: 0;
+   margin-inline: 0;
    overscroll-behavior: none;
    --env-font-family: Helvetica, Arial, sans-serif;
 }
@@ -131,8 +133,10 @@ body {
 }
 
 figure {
-   margin: 0;
-   padding: 0;
+   margin-block: 0;
+   margin-inline: 0;
+   padding-block: 0;
+   padding-inline: 0;
 }
 
 img {
@@ -149,6 +153,6 @@ img {
 .offset-anchor {
    display: block;
    position: relative;
-   top: -120px;
+   inset-block-start: -120px;
    visibility: hidden;
 }

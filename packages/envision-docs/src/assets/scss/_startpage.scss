@@ -2,14 +2,18 @@
 
 .start-hero {
    background-color: var(--doc-hero-background-color);
-   padding: 7.5em 0 10em;
+   padding-block-start: 7.5em;
+   padding-inline: 0;
+   padding-block-end: 10em;
 
    @include variables.main-layout-break {
-      padding: 16em 0;
+      padding-block: 16em;
+      padding-inline: 0;
    }
 
    &__body {
-      margin: 0 auto;
+      margin-block: 0;
+      margin-inline: auto;
       max-width: min(54em, calc(100vw - 2em - 2em));
    }
 
@@ -20,7 +24,9 @@
       font-style: var(--env-text-display-01-font-style);
       line-height: 1.25;
       color: var(--doc-font-color);
-      margin: 0 0 1em;
+      margin-block-start: 0;
+      margin-inline: 0;
+      margin-block-end: 1em;
    }
 
    &__text {
@@ -38,12 +44,15 @@
 }
 
 .start-content {
-   margin: 0 auto;
+   margin-block: 0;
+   margin-inline: auto;
    max-width: min(66em, calc(100vw - 2em - 2em));
 }
 
 .start-content__body {
    background-color: var(--doc-section-background-color);
-   padding: 1em min(3em, 4vw) min(3em, 4vw);
+   padding-block-start: 1em;
+   padding-inline: min(3em, 4vw);
+   padding-block-end: min(3em, 4vw);
    max-width: 54em;
 }

@@ -14,10 +14,11 @@
    box-shadow: var(--env-box-shadow);
    font-family: var(--env-font-family);
    color: var(--env-font-color);
-   margin: 0;
+   margin-block: 0;
+   margin-inline: 0;
    max-width: var(--env-popover-width);
    position: relative;
-   text-align: left;
+   text-align: start;
    z-index: $zindex-popover;
    overflow-wrap: anywhere;
    word-break: normal;
@@ -26,20 +27,22 @@
       border-radius: var(--env-border-radius-medium)
          var(--env-border-radius-medium) 0 0;
       display: block;
-      padding: var(--env-spacing-large) var(--env-spacing-x-large)
-         var(--env-spacing-small);
+      padding-block-start: var(--env-spacing-large);
+      padding-inline: var(--env-spacing-x-large);
+      padding-block-end: var(--env-spacing-small);
 
       &__title {
-         margin-bottom: 0 !important;
+         margin-inset-block-end: 0 !important;
       }
    }
 
    &__content {
       display: block;
-      padding: var(--env-spacing-x-large);
+      padding-block: var(--env-spacing-x-large);
+      padding-inline: var(--env-spacing-x-large);
 
       .env-popover__header + & {
-         padding-top: var(--env-spacing-small);
+         padding-inset-block-start: var(--env-spacing-small);
       }
    }
 

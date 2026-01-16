@@ -11,7 +11,8 @@
       display: none;
       background-color: var(--env-tooltip-background-color);
       color: var(--env-tooltip-font-color);
-      padding: 0.25em 0.75em;
+      padding-block: 0.25em;
+      padding-inline: 0.75em;
       border-radius: var(--env-tooltip-border-radius);
       font-family: var(--env-tooltip-font-family);
       font-size: var(--env-tooltip-font-size);
@@ -30,31 +31,34 @@
       }
 
       &[data-popper-placement^='top']::after {
-         left: calc(50% - #{$arrow-size});
-         bottom: $arrow-size * -1;
-         border-top: $arrow-size solid var(--env-tooltip-background-color);
-         border-bottom: none;
+         inset-inline-start: calc(50% - #{$arrow-size});
+         inset-block-end: $arrow-size * -1;
+         border-block-start: $arrow-size solid
+            var(--env-tooltip-background-color);
+         border-block-end: none;
       }
 
       &[data-popper-placement^='bottom']::after {
-         left: calc(50% - #{$arrow-size});
-         top: $arrow-size * -1;
-         border-bottom: $arrow-size solid var(--env-tooltip-background-color);
-         border-top: none;
+         inset-inline-start: calc(50% - #{$arrow-size});
+         inset-block-start: $arrow-size * -1;
+         border-block-end: $arrow-size solid var(--env-tooltip-background-color);
+         border-block-start: none;
       }
 
       &[data-popper-placement^='right']::after {
-         top: calc(50% - #{$arrow-size});
-         left: $arrow-size * -1;
-         border-right: $arrow-size solid var(--env-tooltip-background-color);
-         border-left: none;
+         inset-block-start: calc(50% - #{$arrow-size});
+         inset-inline-start: $arrow-size * -1;
+         border-inline-end: $arrow-size solid
+            var(--env-tooltip-background-color);
+         border-inline-start: none;
       }
 
       &[data-popper-placement^='left']::after {
-         top: calc(50% - #{$arrow-size});
-         right: $arrow-size * -1;
-         border-left: $arrow-size solid var(--env-tooltip-background-color);
-         border-right: none;
+         inset-block-start: calc(50% - #{$arrow-size});
+         inset-inline-end: $arrow-size * -1;
+         border-inline-start: $arrow-size solid
+            var(--env-tooltip-background-color);
+         border-inline-end: none;
       }
    }
 }

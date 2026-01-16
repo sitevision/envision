@@ -19,31 +19,37 @@ $sizes:
 
    &-m-around--0,
    &-m--0 {
-      margin: 0 !important;
+      margin-block: 0 !important;
+      margin-inline: 0 !important;
    }
 
    &-m-around--a,
    &-m--a {
-      margin: auto !important;
+      margin-block: auto !important;
+      margin-inline: auto !important;
    }
 
    &-p-around--0,
    &-p--0 {
-      padding: 0 !important;
+      padding-block: 0 !important;
+      padding-inline: 0 !important;
    }
 
    @each $size in $sizes {
       &-m-around--#{$size}, // Around is deprecated, replaced by shorthand
       &-m--#{$size} {
-         margin: var(--env-spacing-#{$size}) !important;
+         margin-block: var(--env-spacing-#{$size}) !important;
+         margin-inline: var(--env-spacing-#{$size}) !important;
       }
       &-m-around--#{$size}.env-m-around--negative, // Around is deprecated, replaced by shorthand
       &-m--#{$size}.env-m--negative {
-         margin: calc(var(--env-spacing-#{$size}) * -1) !important;
+         margin-block: calc(var(--env-spacing-#{$size}) * -1) !important;
+         margin-inline: calc(var(--env-spacing-#{$size}) * -1) !important;
       }
       &-p-around--#{$size}, // Around is deprecated, replaced by shorthand
       &-p--#{$size} {
-         padding: var(--env-spacing-#{$size}) !important;
+         padding-block: var(--env-spacing-#{$size}) !important;
+         padding-inline: var(--env-spacing-#{$size}) !important;
       }
    }
 

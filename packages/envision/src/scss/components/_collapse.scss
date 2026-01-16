@@ -17,13 +17,14 @@
    }
 
    > :first-child {
-      padding-top: var(--env-spacing-xx-small);
+      padding-inset-block-start: var(--env-spacing-xx-small);
    }
 }
 
 .env-collapse-header {
    width: 100%;
-   padding: var(--env-spacing-x-small);
+   padding-block: var(--env-spacing-x-small);
+   padding-inline: var(--env-spacing-x-small);
    cursor: pointer;
    box-sizing: border-box;
    border: {
@@ -58,15 +59,15 @@
 }
 
 .env-collapse-header--icons {
-   margin-left: $collapse-icon-width;
+   margin-inset-inline-start: $collapse-icon-width;
    min-height: $collapse-heading-min-height;
    position: relative;
 
    &::before,
    &::after {
       content: '';
-      top: $collapse-icon-top;
-      right: $collapse-icon-right;
+      inset-block-start: $collapse-icon-inset-block-start;
+      inset-inline-end: $collapse-icon-inset-inline-end;
       width: var(--env-collapse-icon-width);
       height: var(--env-collapse-icon-height);
       transition: transform var(--env-collapse-toggle-duration) ease-out;

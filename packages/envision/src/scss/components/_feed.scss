@@ -7,46 +7,51 @@
    &__entry,
    &__attachment,
    &__shared {
-      border-bottom: 1px solid transparent;
+      border-block-end: 1px solid transparent;
    }
 
    &__shared {
       .env-post {
-         border-left: 3px solid var(--env-element-primary-background-color);
+         border-inline-start: 3px solid
+            var(--env-element-primary-background-color);
          border-radius: 0;
 
          &__entry {
-            padding: var(--env-spacing-x-small);
+            padding-block: var(--env-spacing-x-small);
+            padding-inline: var(--env-spacing-x-small);
          }
       }
    }
 
    > :not(:last-child) {
-      padding: var(--env-spacing-x-small);
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-x-small);
    }
 }
 
 .env-comments {
-   border-top: 1px solid transparent;
+   border-block-start: 1px solid transparent;
 
    &__wrapper {
-      padding: var(--env-spacing-x-small);
+      padding-block: var(--env-spacing-x-small);
+      padding-inline: var(--env-spacing-x-small);
    }
 
    &__comment {
       align-items: center;
-      padding-top: var(--env-spacing-x-small);
+      padding-inset-block-start: var(--env-spacing-x-small);
    }
 }
 
 .env-comment {
-   border-bottom: 1px solid transparent;
-   padding: var(--env-spacing-x-small) 0;
+   border-block-end: 1px solid transparent;
+   padding-block: var(--env-spacing-x-small);
+   padding-inline: 0;
    border-radius: var(--env-border-radius-medium);
 }
 
 .env-feed {
    &__item:not(:last-child) {
-      padding-bottom: var(--env-spacing-x-small);
+      padding-inset-block-end: var(--env-spacing-x-small);
    }
 }
