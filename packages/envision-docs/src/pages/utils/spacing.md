@@ -3,27 +3,38 @@ title: Spacing
 description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
 ---
 
-Padding and margin utility classes are named using the format: `env-{property}-{specifier}--{size}`
+The spacing utility was updated in **2026.01.2** and now uses logical properties, see [example](/utils/spacing/#logical-properties).
 
-Valid values for _property_
+Classes using physical properties are [deprecated](/utils/spacing/#deprecated).
 
-- `m` for `margin`
-- `p` for `padding`
+## Usage
 
-Valid values for _specifier_
+Use spacing utilities to apply margin and padding consistently across the system.
 
-- `top`
-- `right`
-- `bottom`
-- `left`
-- `horizontal`
-- `vertical`
-- `around`
+Use the pattern `env-{property}-{specifier}--{size}`, or use the shorthand  
+`env-{property}--{size}` to apply spacing to all sides.
 
-Valid values for _size_
+### Valid values
 
-- `0`
-- `a` auto, only applicable to `margin`
+#### {property}
+
+- `m` <small>margin</small>
+- `p` <small>padding</small>
+
+#### {specifier}
+
+- `block-start`
+- `inline-end`
+- `block-end`
+- `inline-start`
+- `block` <small>block-start & block-end shorthand</small>
+- `inline` <small>inline-start & inline-end shorthand</small>
+- `{omitted}` <small>block and inline shorthand</small>
+
+#### {size}
+
+- `0` <small>No margin</small>
+- `a` <small>auto, only applicable to margin</small>
 - `xxx-small` <small>(0.125em)</small>
 - `xx-small` <small>(0.25em)</small>
 - `x-small` <small>(0.5em)</small>
@@ -34,65 +45,121 @@ Valid values for _size_
 - `xx-large` <small>(1.75em)</small>
 - `xxx-large` <small>(2em)</small>
 
-Invert values for margin by adding the negative modifier
+### Negative margin
 
-- `env-m-{specifier}--negative`
+Negative margin is applied by combining a size class with the `--negative` modifier. Negative values are only available for margin.
+
+Example:
+
+`<div class="env-m-inline--large env-m-inline--negative">...</div>`
 
 ### Spacing examples
 
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-around--medium env-p-around--medium">
+      <div class="example-spacing__padding env-m--medium env-p--medium">
          <div class="example-spacing__content">
-            env-m-around--medium<br />env-p-around--medium
+            env-m--medium<br />env-p--medium
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-horizontal--xxx-large env-p-vertical--large">
+      <div class="example-spacing__padding env-m-inline--xxx-large env-p-block--large">
          <div class="example-spacing__content">
-            env-m-horizontal--xxx-large<br />env-p-vertical--large
+            env-m-inline--xxx-large<br />env-p-block--large
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-horizontal--negative env-m-horizontal--large env-m-vertical--medium env-p-around--small">
+      <div class="example-spacing__padding env-m-inline--negative env-m-inline--large env-m-block--medium env-p--small">
          <div class="example-spacing__content">
-            env-m-horizontal--large<br />
-            env-m-horizontal--negative<br /> 
-            env-m-vertical--medium<br />
-            env-p-around--small<br />
+            env-m-inline--large<br />
+            env-m-inline--negative<br /> 
+            env-m-block--medium<br />
+            env-p--small<br />
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-m-top--negative env-m-top--medium env-m-right--medium env-m-bottom--small env-m-left--xxx-large env-p-around--medium">
+      <div class="example-spacing__padding env-m-block-start--negative env-m-block-start--medium env-m-inline-end--medium env-m-block-end--small env-m-inline-start--xxx-large env-p--medium">
          <div class="example-spacing__content">
-            env-m-top--negative<br />
-            env-m-top--medium<br />
-            env-m-right--medium<br />
-            env-m-bottom--small<br />
-            env-m-left--xxx-large<br />
-            env-p-around--medium<br />
+            env-m-block-start--negative<br />
+            env-m-block-start--medium<br />
+            env-m-inline-end--medium<br />
+            env-m-block-end--small<br />
+            env-m-inline-start--xxx-large<br />
+            env-p--medium
          </div>
       </div>
    </div>
 </div>
 <div class="example-spacing">
    <div class="example-spacing__margin">
-      <div class="example-spacing__padding env-w--50 env-m-vertical--medium env-m-horizontal--a env-p-around--medium">
+      <div class="example-spacing__padding env-w--50 env-m-block--medium env-m-inline--a env-p--medium">
          <div class="example-spacing__content">
             env-w--50<br />
-            env-m-vertical--medium<br />
-            env-m-horizontal--a<br />
-            env-p-around--medium<br />
+            env-m-block--medium<br />
+            env-m-inline--a<br />
+            env-p--medium<br />
          </div>
       </div>
    </div>
 </div>
+
+## Logical properties example
+
+Logical properties are based on the content’s writing flow instead of physical sides.
+This allows spacing to adapt naturally to different languages and writing modes.
+
+All of the examples below use the same classes:
+
+`env-m-block-start--medium`, `env-p--x-small`, `env-p-block-start--0`, `env-p-inline-end--xx-large`
+
+<div class="example-spacing">
+<div class="env-flex env-flex--wrap env-flex--gap-medium">
+<div class="env-flex__item">
+   <div class="example-spacing__margin" style="max-inline-size: 12em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">
+            We believe in making the complex simple.
+         </div>
+      </div>
+   </div>
+</div>
+<div class="env-flex__item">
+   <div class="example-spacing__margin" lang="ar" style="direction: rtl; max-inline-size: 12em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">نحن نؤمن بضرورة تبسيط الأمور المعقدة.</div>
+      </div>
+   </div>
+</div>
+<div class="env-flex__item" >
+   <div class="example-spacing__margin" lang="ja" style="writing-mode: vertical-rl; max-inline-size: 8em">
+      <div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+         <div class="example-spacing__env-content">私たちは複雑なものをシンプルにすることに取り組んでいます。</div>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+
+Read more about [CSS logical properties and values (MDN)
+](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values).
+
+## Deprecated
+
+Since 2026.02.1, the following physical properties and custom specifiers are deprecated:
+
+- `top` <small>replaced by `block-start`</small>
+- `right` <small>replaced by `inline-end`</small>
+- `bottom` <small>replaced by `block-end`</small>
+- `left` <small>replaced by `inline-start`</small>
+- `horizontal` <small>replaced by `inline`</small>
+- `vertical` <small>replaced by `block`</small>
+- `around` <small>replaced by omitting the specifier</small>
