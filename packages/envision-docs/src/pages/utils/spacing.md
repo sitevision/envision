@@ -168,6 +168,6 @@ Read more about [CSS logical properties and values (MDN)
 
 Since 2026.02.1, the following custom specifiers are deprecated:
 
-- `horizontal` <small>replaced by `inline`</small>
-- `vertical` <small>replaced by `block`</small>
-- `around` <small>replaced by omitting the specifier</small>
+- `horizontal` <small>use `inline` for direction-aware spacing, or `left` and `right` for physical spacing</small>
+- `vertical` <small>use `block` for direction-aware spacing, or `top` and `bottom` for physical spacing</small>
+- `around` <small>use the shorthand by omitting the specifier</small>
