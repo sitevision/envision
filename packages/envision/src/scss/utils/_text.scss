@@ -117,7 +117,7 @@ a.env-text,
    fill: currentColor;
    height: var(--env-link-icon-size);
    width: var(--env-link-icon-size);
-   margin-left: var(--env-link-icon-gap);
+   margin-inset-inline-start: var(--env-link-icon-gap);
    transform: translateY(var(--env-link-icon-offset-y));
 }
 

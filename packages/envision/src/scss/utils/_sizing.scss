@@ -1,8 +1,8 @@
 $values: 25 50 75 100;
 
 $properties: (
-   w: inline-size,
-   h: block-size,
+   w: width,
+   h: height,
 );
 
 @each $propKey, $property in $properties {
