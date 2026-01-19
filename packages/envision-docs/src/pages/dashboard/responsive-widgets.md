@@ -12,8 +12,8 @@ The grid column container where the app will be displayed is a [containment cont
 ### Responsive widget example
 
 <div class="example-responsive-widget-wrapper">
-   <section class="env-dashboard-widget example-responsive-widget env-m-bottom--large">
-      <div class="example-responsive-widget__resizeable env-p-horizontal--large env-p-vertical--small">
+   <section class="env-dashboard-widget example-responsive-widget env-m-block-end--large">
+      <div class="example-responsive-widget__resizeable env-p-inline--large env-p-block--small">
          <h2 class="env-ui-text-sectionheading">
             Responsive example widget   
          </h2>

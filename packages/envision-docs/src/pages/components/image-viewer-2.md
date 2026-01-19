@@ -7,7 +7,7 @@ Image viewer 2 is an accessible, configurable component providing options for sh
 and/or a lightbox viewer with navigation between images.
 
 <section id="demoImageViewer2"
-class="env-m-vertical--large"
+class="env-m-block--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
       <img src="/placeholders/900x400/10.webp" alt="">
@@ -126,7 +126,7 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
 ```html
 <section
    id="example-imageviewer2-2"
-   class="env-p-around--medium"
+   class="env-p--medium"
    aria-label="Photos from Örebro"
 >
    <figure data-href="/placeholders/originals/10.webp" data-zoom>

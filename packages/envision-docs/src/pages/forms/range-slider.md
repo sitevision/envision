@@ -8,7 +8,7 @@ Capture a range
 ```html
 <div
    id="my-slider"
-   class="env-range-slider example-range-slider env-m-bottom--xxx-large"
+   class="env-range-slider example-range-slider env-m-block-end--xxx-large"
 >
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>

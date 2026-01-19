@@ -14,16 +14,16 @@ described below.
 The default values are a scaling factor of `1 – 1.25` between widths `400px – 750px`.
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <div class="env-dynamic-font">
                   <h2 class="env-ui-text-sectionheading">
                      Dynamic font
                      <span class="example-dynamic-font__elfontsize"></span>
                   </h2>
-                  <p class="env-text env-m-top--small">
+                  <p class="env-text env-m-block-start--small">
                      This text will resize dynamically depending on the width of the containment context.
                      Baseline font-size will go from 1em to 1.25em starting at 400px width up to 750px.
                      The heading will also scale to a factor of 1.25, but starting at 1.25em it will scale up to 1.5625em.
@@ -68,7 +68,7 @@ separate element inside the container element. Elements placed inside the contai
 
 ```html noexample
 <div class="env-container">
-   <div class="env-p-around--medium">
+   <div class="env-p--medium">
       <h2 class="env-ui-text-sectionheading">This heading will not resize</h2>
       <div class="env-dynamic-font">
          <p class="env-text">This text will resize ...</p>
@@ -90,14 +90,14 @@ Default scaling factor is `1.25` which is identical to using the `1_25` modifer.
 _Note that dot is replaced by underscore as dot is not allowed in CSS class names._
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Scaling factor
                </h2>
-               <div class="env-dynamic-font env-dynamic-font--scale-1_125 env-m-top--small">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_125 env-m-block-start--small">
                   <p class="env-text">
                      Scaling factor 1.125
                      <span class="example-dynamic-font__elfontsize"></span>
@@ -182,26 +182,26 @@ alt="Dynamic font scaling chart"
 src="/placeholders/examples/dyn-font.svg" />
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Boundaries
                </h2>
-               <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500 env-m-block--small">
                   <p class="env-text">
                      From 250 to 500
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-               <div class="env-dynamic-font env-dynamic-font--from-400 env-dynamic-font--to-650 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-400 env-dynamic-font--to-650 env-m-block--small">
                   <p class="env-text">
                      From 400 to 650
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-               <div class="env-dynamic-font env-dynamic-font--from-550 env-dynamic-font--to-800 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-550 env-dynamic-font--to-800 env-m-block--small">
                   <p class="env-text">
                      From 550 to 800
                      <span class="example-dynamic-font__elfontsize"></span>
@@ -237,31 +237,31 @@ the modifier `env-dynamic-font--downscale`. The lowest factor will then be `1 / 
 at default settings.
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Upscaling vs downscaling
                </h2>
-               <div class="env-dynamic-font env-m-vertical--small">
+               <div class="env-dynamic-font env-m-block--small">
                   <p class="env-text">
                      Upscaling factor 1.25 (default)
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-m-vertical--small">
+<div class="env-dynamic-font env-dynamic-font--scale-2 env-m-block--small">
 <p class="env-text">
                      Upscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p></div>
-               <div class="env-dynamic-font env-dynamic-font--downscale env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--downscale env-m-block--small">
                   <p class="env-text">
                      Downscaling factor 1.25
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-vertical--small">
+<div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-block--small">
 <p class="env-text">
                      Downscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>

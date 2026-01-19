@@ -20,7 +20,7 @@ indexing: false
         This story delves into one of the lesser-known legends of Örebro Castle, a
         tale of mystery and courage that has been passed down through generations.
       </p>
-      <figure class="env-m-vertical--xx-large">
+      <figure class="env-m-block--xx-large">
          <img src="/placeholders/900x400/10.webp" alt="Örebro Castle">
          <figcaption class="env-text-caption-01">Örebro Castle, a historic fortress located in the heart of Sweden</figcaption>
       </figure>
@@ -100,8 +100,8 @@ indexing: false
         Local blacksmiths and artisans gather annually to pay homage, forging new
         creations in honor of John's legacy.
       </p>
-      <div class="env-block-secondary env-p-around--large">
-        <h3 class="env-text-display-03 env-m-top--0">
+      <div class="env-block-secondary env-p--large">
+        <h3 class="env-text-display-03 env-m-block-start--0">
           Summary
         </h3>
         <p class="env-text-body-03">

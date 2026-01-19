@@ -54,7 +54,7 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
 </div>
 ```
 
-<div class="env-m-top--x-small">
+<div class="env-m-block-start--x-small">
    <button class="env-button" id="toggle-spinner-1">Short delay</button>
    <button class="env-button" id="toggle-spinner-2">Medium delay</button>
    <button class="env-button" id="toggle-spinner-3">Long delay</button>

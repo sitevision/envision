@@ -18,7 +18,7 @@ verified against WCAG 2 AA.
 
 <button type="button" class="env-button env-button--brand">Brand button</button>
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <span class="env-badge env-badge--brand">Badge</span>
 </div>
 
@@ -54,7 +54,7 @@ verified against WCAG 2 AA.
 </div>
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h2 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h2>
@@ -70,7 +70,7 @@ verified against WCAG 2 AA.
 </div>
 
 <div class="example-progress">
-   <p class="env-ui-text-sectionheading env-m-bottom--large">
+   <p class="env-ui-text-sectionheading env-m-block-end--large">
       Section heading
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">
@@ -162,7 +162,7 @@ verified against WCAG 2 AA.
 
 ## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
 
-<ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
+<ol class="example-brand-color-list env-m-block--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
    <li class="example-section-brand-10"><div>Brand 10</div></li>
