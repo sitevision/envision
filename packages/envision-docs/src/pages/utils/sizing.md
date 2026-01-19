@@ -3,9 +3,7 @@ title: Sizing
 description: The Sizing utility offers classes to define elements’ width and height using preset values.
 ---
 
-The sizing utility was updated in **2026.01.2** and now uses logical properties.
-
-Sizing utilities are available for both inline-size (width) and block-size (height).
+Sizing utilities provide classes for defining an element’s width and height.
 
 ## Usage
 
@@ -17,8 +15,8 @@ Classes follow the pattern `env-{property}--{size}`.
 
 #### {property}
 
-- `w` <small>inline-size (width)</small>
-- `h` <small>block-size (height)</small>
+- `w` <small>(width)</small>
+- `h` <small>(height)</small>
 
 #### {size}
 
@@ -29,7 +27,7 @@ Available values are percentage-based:
 - `75`
 - `100`
 
-### Inline-size examples
+### Width examples
 
 ```html
 <div class="example-sizing">
@@ -40,7 +38,7 @@ Available values are percentage-based:
 </div>
 ```
 
-### Block-size examples
+### Height examples
 
 ```html
 <div class="example-sizing-h">
@@ -67,5 +65,5 @@ Available values are percentage-based:
 
 Utility classes are also available for constraining elements to their container:
 
-- `env-mw--100` <small>max-inline-size (max-width)</small>
-- `env-mh--100` <small>max-block-size (max-height)</small>
+- `env-mw--100` <small>(max-width)</small>
+- `env-mh--100` <small>(max-height)</small>

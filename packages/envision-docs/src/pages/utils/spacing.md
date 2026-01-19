@@ -3,9 +3,11 @@ title: Spacing
 description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
 ---
 
-The spacing utility was updated in **2026.01.2** and now uses logical properties, see [example](/utils/spacing/#logical-properties).
+The spacing utility was updated in **2026.01.2** to support logical properties alongside physical ones.
+See the [logical properties example](/utils/spacing/#logical-properties).
 
-Classes using physical properties are [deprecated](/utils/spacing/#deprecated).
+The custom specifiers `horizontal`, `vertical`, and `around` are deprecated.
+See [Deprecated](/utils/spacing/#deprecated) for details.
 
 ## Usage
 
@@ -23,6 +25,14 @@ Use the pattern `env-{property}-{specifier}--{size}`, or use the shorthand
 
 #### {specifier}
 
+Physical and logical properties are both supported.
+Logical properties are recommended for spacing within components and internationalized content,
+while physical properties remain useful for overall layout and dimensions.
+
+- `top`
+- `right`
+- `bottom`
+- `left`
 - `block-start`
 - `inline-end`
 - `block-end`
@@ -112,6 +122,8 @@ Example:
    </div>
 </div>
 
+<span id="logical-properties" class="offset-anchor"></span>
+
 ## Logical properties example
 
 Logical properties are based on the content’s writing flow instead of physical sides.
@@ -154,12 +166,8 @@ Read more about [CSS logical properties and values (MDN)
 
 ## Deprecated
 
-Since 2026.02.1, the following physical properties and custom specifiers are deprecated:
+Since 2026.02.1, the following custom specifiers are deprecated:
 
-- `top` <small>replaced by `block-start`</small>
-- `right` <small>replaced by `inline-end`</small>
-- `bottom` <small>replaced by `block-end`</small>
-- `left` <small>replaced by `inline-start`</small>
 - `horizontal` <small>replaced by `inline`</small>
 - `vertical` <small>replaced by `block`</small>
 - `around` <small>replaced by omitting the specifier</small>
