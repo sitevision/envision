@@ -11,7 +11,8 @@
       display: none;
       background-color: var(--env-tooltip-background-color);
       color: var(--env-tooltip-font-color);
-      padding: 0.25em 0.75em;
+      padding-block: 0.25em;
+      padding-inline: 0.75em;
       border-radius: var(--env-tooltip-border-radius);
       font-family: var(--env-tooltip-font-family);
       font-size: var(--env-tooltip-font-size);

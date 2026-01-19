@@ -40,8 +40,8 @@ Use `env-border-none` to remove a border from all sides.
 
 ### Physical properties & modifiers
 
-Since 2023.11.1, classnames `env-border-top`, `env-border-right`, `env-border-bottom` and `env-border-left` are deprecated and replaced by logical properties.
+Classnames `env-border-top`, `env-border-right`, `env-border-bottom` and `env-border-left` are deprecated and replaced by logical properties.
 
 Modifiers `env-border--0` and `env-border--{p}-0` are deprecated, where `env-border--0` is replaced by `env-border-none`.
 
-Since 2025.03.1, variable `--env-border-color-light` is deprecated and replaced by `--env-border-color-05`.
+Variable `--env-border-color-light` is deprecated and replaced by `--env-border-color-05`.

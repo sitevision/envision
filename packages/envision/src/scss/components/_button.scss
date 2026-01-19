@@ -41,22 +41,6 @@
       );
    }
 
-   &--invert {
-      // DEPRECATED since 10.0
-      background-color: transparent;
-      border-color: transparent;
-      color: var(--env-element-primary-background-color-dark);
-
-      &:hover,
-      &:active,
-      &:focus,
-      &:active {
-         background-color: transparent;
-         border-color: transparent;
-         backdrop-filter: invert(4%);
-      }
-   }
-
    &--link {
       &,
       &:hover,

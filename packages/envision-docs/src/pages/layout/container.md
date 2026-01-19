@@ -1,7 +1,6 @@
 ---
 title: Container
 description: The Container utility establishes a containment context for applying container query at-rules.
-since: 2024.02.1
 ---
 
 Using the class `env-container` on an element will declare a containment context

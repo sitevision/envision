@@ -4,7 +4,7 @@ deprecated: true
 indexing: false
 ---
 
-Image slider is deprecated since 2023.07.1 and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
+Image slider is deprecated and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
 
 ### Slides only
 
@@ -275,17 +275,17 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 `keyboard = false` Whether the imageSlider should react to keyboard events.
 
-`pause = 'hover'` If set to `hover`, pauses the cycling of the imageSlider on `mouseenter` and resumes on `mouseleave`. If set to `null`, hovering wont pause the imageSlider.
+`pause = 'hover'` If set to `hover`, pauses the cycling of the imageSlider on `mouseenter` and resumes on `mouseleave`. If set to `null`, hovering won't pause the imageSlider.
 
 `wrap = true` Whether the imageSlider should cycle continuously or have hard stops.
 
 `buttons = true` Will generate `slide` buttons even if there is only one image in the image slider.
 
-`swipe = false` Will disable swipe functionallity on mobile devices.
+`swipe = false` Will disable swipe functionality on mobile devices.
 
 `i18n` _'sv'_ | _'en'_ | _{ prev, next }_
 
-- Translation of previous and next buttons. Use predefined strings for swedish or english or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
+- Translation of previous and next buttons. Use predefined strings for Swedish or English, or write your own translation. Default is 'sv' or 'en' depending on HTML lang attribute.
 
 ## Methods
 

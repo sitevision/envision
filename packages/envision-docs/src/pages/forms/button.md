@@ -350,7 +350,3 @@ The disabled state is available for standard buttons.
 ```html
 <button type="button" class="env-button" disabled>Disabled</button>
 ```
-
-## Deprecated
-
-Invert button <span class="doc-badge doc-badge--danger">10.0</span>

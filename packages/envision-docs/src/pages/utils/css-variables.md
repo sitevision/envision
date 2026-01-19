@@ -115,7 +115,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Typography
 
-#### Text <span class="doc-badge doc-badge--info">2025.01.1</span>
+#### Text
 
 - `--env-text-{name}-font-family`
 - `--env-text-{name}-font-color`
@@ -401,7 +401,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-color-hover`
 - `--env-font-color-light`
 - `--env-font-color-lighter`
-- `--env-font-color-invert`
 - `--env-font-color-muted`
 - `--env-color-base`
 - `--env-color-darker`
@@ -422,7 +421,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 ### Removed
 
-- `--env-page-background-color`
 - `--env-default-button-color`
-- `--env-image-control-inactive-color`
 - `--env-element-common-background-color-dark`
+- `--env-font-color-invert`
+- `--env-image-control-inactive-color`
+- `--env-page-background-color`

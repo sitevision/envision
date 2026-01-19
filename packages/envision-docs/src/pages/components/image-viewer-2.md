@@ -290,7 +290,7 @@ rendering it in the slideshow.
 
 - `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
    - Translation of buttons aria-label and aria-roledescription.
-     Use predefined strings (swedish, english or norwegian) or write your own translation. Default is 'sv'.
+     Use predefined strings (Swedish, English, or Norwegian) or write your own translation. Default is 'sv'.
    - Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
      image, of_
 
@@ -369,7 +369,7 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 
 ## Legacy documentation
 
-Image Viewer 2 is a replacement for the following, which are deprecated since 2023.07.1:
+Image Viewer 2 is a replacement for the following deprecated components:
 
 - [Image slider](/deprecated/image-slider/)
 - [Image viewer](/deprecated/image-viewer/)
