@@ -178,7 +178,7 @@ For standard buttons, additional modifier classes are used to position icons as 
    type="button"
    class="env-button env-button--primary env-button--ghost env-button--icon env-button--icon-before"
 >
-   Icon left
+   Icon before
    <svg class="env-icon">
       <use href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
@@ -187,19 +187,19 @@ For standard buttons, additional modifier classes are used to position icons as 
    type="button"
    class="env-button env-button--secondary env-button--icon env-button--icon-after"
 >
-   Icon right
+   Icon after
    <svg class="env-icon">
       <use href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>
 </button>
 <button
    type="button"
-   class="env-button env-button--icon env-button--icon-around"
+   class="env-button env-button--icon env-button--icon-before env-button--icon-after"
 >
    <svg class="env-icon">
       <use href="/sitevision/envision-icons.svg#icon-star"></use>
    </svg>
-   Icons around
+   Icons before & after
    <svg class="env-icon">
       <use href="/sitevision/envision-icons.svg#icon-phone"></use>
    </svg>

@@ -1,7 +1,5 @@
 @use 'sass:map';
-
 @use '../scss-variables' as *;
-
 @use 'sass:math';
 
 @mixin squareIconButton($modifier: '') {
@@ -232,72 +230,64 @@
    }
 
    &.env-button--icon-before {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inline-start: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon {
-         left: $padding-x;
-      }
-
-      &.env-button--block {
-         padding-left: $padding-x;
-
-         .env-icon {
-            position: relative;
-            left: 0;
-            top: auto;
-            margin: 0 0.5em 0 0;
-         }
+         inset-inline-start: $padding-x;
       }
    }
 
    &.env-button--icon-after {
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inline-end: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon {
-         right: $padding-x;
-      }
-
-      &.env-button--block {
-         padding-right: $padding-x;
-
-         .env-icon {
-            position: relative;
-            right: 0;
-            top: auto;
-            margin: 0 0 0 0.5em;
-         }
+         inset-inline-end: $padding-x;
       }
    }
 
+   &.env-button--icon-before.env-button--block,
+   &.env-button--icon-after.env-button--block {
+      padding-inline: $padding-x;
+      gap: 0.5em;
+
+      .env-icon {
+         position: relative;
+         inset: 0;
+         top: auto;
+         margin: 0;
+      }
+   }
+
+   &.env-button--icon-before.env-button--icon-after,
    &.env-button--icon-around {
-      padding-left: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
-      padding-right: calc(#{$padding-x} + #{$icon-size} + #{$padding-x * 0.5});
+      padding-inline-start: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
+      padding-inline-end: calc(
+         #{$padding-x} + #{$icon-size} + #{$padding-x * 0.5}
+      );
 
       .env-icon:first-child {
-         left: $padding-x;
+         inset-inline-start: $padding-x;
+         inset-inline-end: auto;
       }
 
       .env-icon:last-child {
-         right: $padding-x;
+         inset-inline-start: auto;
+         inset-inline-end: $padding-x;
       }
 
       &.env-button--block {
-         padding-left: $padding-x;
-         padding-right: $padding-x;
+         padding-inline: $padding-x;
 
          .env-icon {
             position: relative;
-            top: auto;
-
-            &:first-child {
-               left: 0;
-               margin: 0 0.5em 0 0;
-            }
-
-            &:last-child {
-               right: 0;
-               margin: 0 0 0 0.5em;
-            }
+            inset: auto 0;
+            margin: 0;
          }
       }
    }
