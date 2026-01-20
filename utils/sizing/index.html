@@ -13,8 +13,8 @@ Sizing · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=6fac423"></script>
-<link href="/assets/docs.BG8oiPjd.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=08d1ddf"></script>
+<link href="/assets/docs.BEak-PRQ.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -90,74 +90,79 @@ Menu
 <h1 class="doc-main-heading">
 Sizing
 </h1>
-<p class="doc-p">Sizing utility classes are available for width and height. Classes are named using the the format: <code class="doc-code">env-{property}--{size}</code></p>
-<p class="doc-p">Valid values for <em class="doc-em">property</em></p>
+<p class="doc-p">Sizing utilities provide classes for defining an element’s width and height.</p>
+<h2 class="doc-heading-2" id="usage">Usage</h2>
+<p class="doc-p">Use sizing utilities to define an element’s width or height using preset values.</p>
+<p class="doc-p">Classes follow the pattern <code class="doc-code">env-{property}--{size}</code>.</p>
+<h3 class="doc-heading-3" id="valid-values">Valid values</h3>
+<h4 class="doc-heading-4" id="property">{property}</h4>
 <ul class="doc-list">
-<li class="doc-list__item"><code class="doc-code">w</code> for <code class="doc-code">width</code></li>
-<li class="doc-list__item"><code class="doc-code">h</code> for <code class="doc-code">height</code></li>
+<li class="doc-list__item"><code class="doc-code">w</code> <small>(width)</small></li>
+<li class="doc-list__item"><code class="doc-code">h</code> <small>(height)</small></li>
 </ul>
-<p class="doc-p">Valid values for <em class="doc-em">size</em> (%)</p>
+<h4 class="doc-heading-4" id="size">{size}</h4>
+<p class="doc-p">Available values are percentage-based:</p>
 <ul class="doc-list">
 <li class="doc-list__item"><code class="doc-code">25</code></li>
 <li class="doc-list__item"><code class="doc-code">50</code></li>
 <li class="doc-list__item"><code class="doc-code">75</code></li>
 <li class="doc-list__item"><code class="doc-code">100</code></li>
 </ul>
-<p class="doc-p">Examples <code class="doc-code">width</code></p>
+<h3 class="doc-heading-3" id="width-examples">Width examples</h3>
 <div class="doc-code-example"><div class="example-sizing">
-<div class="env-p-around--x-small env-m-bottom--small env-w--25">25%</div>
-<div class="env-p-around--x-small env-m-bottom--small env-w--50">50%</div>
-<div class="env-p-around--x-small env-m-bottom--small env-w--75">75%</div>
-<div class="env-p-around--x-small env-w--100">100%</div>
+<div class="env-p--x-small env-m-block-end--small env-w--25">25%</div>
+<div class="env-p--x-small env-m-block-end--small env-w--50">50%</div>
+<div class="env-p--x-small env-m-block-end--small env-w--75">75%</div>
+<div class="env-p--x-small env-w--100">100%</div>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-sizing<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--25 env-p-around--x-small env-m-bottom--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>25%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--50 env-p-around--x-small env-m-bottom--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--75 env-p-around--x-small env-m-bottom--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>75%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--100 env-p-around--x-small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--25 env-p--x-small env-m-block-end--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>25%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--50 env-p--x-small env-m-block-end--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>50%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--75 env-p--x-small env-m-block-end--small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>75%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-w--100 env-p--x-small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Examples <code class="doc-code">height</code></p>
+<h3 class="doc-heading-3" id="height-examples">Height examples</h3>
 <div class="doc-code-example"><div class="example-sizing-h">
-<div class="env-p-around--x-small env-d--inline-block env-m-right--small env-h--25">
+<div class="env-p--x-small env-d--inline-block env-m-inline-end--small env-h--25">
 25%
 </div>
-<div class="env-p-around--x-small env-d--inline-block env-m-right--small env-h--50">
+<div class="env-p--x-small env-d--inline-block env-m-inline-end--small env-h--50">
 50%
 </div>
-<div class="env-p-around--x-small env-d--inline-block env-m-right--small env-h--75">
+<div class="env-p--x-small env-d--inline-block env-m-inline-end--small env-h--75">
 75%
 </div>
-<div class="env-p-around--x-small env-d--inline-block env-h--100">100%</div>
+<div class="env-p--x-small env-d--inline-block env-h--100">100%</div>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-sizing-h<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span>
-      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--25 env-p-around--x-small env-m-right--small env-d--inline-block<span class="token punctuation">"</span></span>
+      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--25 env-p--x-small env-m-inline-end--small env-d--inline-block<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
       25%
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span>
-      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--50 env-p-around--x-small env-m-right--small env-d--inline-block<span class="token punctuation">"</span></span>
+      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--50 env-p--x-small env-m-inline-end--small env-d--inline-block<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
       50%
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span>
-      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--75 env-p-around--x-small env-m-right--small env-d--inline-block<span class="token punctuation">"</span></span>
+      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--75 env-p--x-small env-m-inline-end--small env-d--inline-block<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
       75%
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--100 env-p-around--x-small env-d--inline-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-h--100 env-p--x-small env-d--inline-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>100%<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Utility classes are also available for <code class="doc-code">max-width:100%</code> and <code class="doc-code">max-height:100%</code> and are named using the format: <code class="doc-code">env-m{property}--100</code></p>
-<p class="doc-p">Valid values for <em class="doc-em">property</em></p>
+<h2 class="doc-heading-2" id="max-size">Max size</h2>
+<p class="doc-p">Utility classes are also available for constraining elements to their container:</p>
 <ul class="doc-list">
-<li class="doc-list__item"><code class="doc-code">w</code> for <code class="doc-code">width</code></li>
-<li class="doc-list__item"><code class="doc-code">h</code> for <code class="doc-code">height</code></li>
+<li class="doc-list__item"><code class="doc-code">env-mw--100</code> <small>(max-width)</small></li>
+<li class="doc-list__item"><code class="doc-code">env-mh--100</code> <small>(max-height)</small></li>
 </ul>
 </div>
 </main>

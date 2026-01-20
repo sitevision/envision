@@ -13,8 +13,8 @@ Spacing · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=6fac423"></script>
-<link href="/assets/docs.BG8oiPjd.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=08d1ddf"></script>
+<link href="/assets/docs.BEak-PRQ.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -90,26 +90,37 @@ Menu
 <h1 class="doc-main-heading">
 Spacing
 </h1>
-<p class="doc-p">Padding and margin utility classes are named using the format: <code class="doc-code">env-{property}-{specifier}--{size}</code></p>
-<p class="doc-p">Valid values for <em class="doc-em">property</em></p>
+<p class="doc-p">The spacing utility was updated in <strong class="doc-strong">2026.01.2</strong> to support logical properties alongside physical ones. See the <a href="/utils/spacing/#logical-properties" class="doc-link">logical properties example</a>.</p>
+<p class="doc-p">The custom specifiers <code class="doc-code">horizontal</code>, <code class="doc-code">vertical</code>, and <code class="doc-code">around</code> are deprecated. See <a href="/utils/spacing/#deprecated" class="doc-link">Deprecated</a> for details.</p>
+<h2 class="doc-heading-2" id="usage">Usage</h2>
+<p class="doc-p">Use spacing utilities to apply margin and padding consistently across the system.</p>
+<p class="doc-p">Use the pattern <code class="doc-code">env-{property}-{specifier}--{size}</code>, or use the shorthand<br>
+<code class="doc-code">env-{property}--{size}</code> to apply spacing to all sides.</p>
+<h3 class="doc-heading-3" id="valid-values">Valid values</h3>
+<h4 class="doc-heading-4" id="property">{property}</h4>
 <ul class="doc-list">
-<li class="doc-list__item"><code class="doc-code">m</code> for <code class="doc-code">margin</code></li>
-<li class="doc-list__item"><code class="doc-code">p</code> for <code class="doc-code">padding</code></li>
+<li class="doc-list__item"><code class="doc-code">m</code> <small>margin</small></li>
+<li class="doc-list__item"><code class="doc-code">p</code> <small>padding</small></li>
 </ul>
-<p class="doc-p">Valid values for <em class="doc-em">specifier</em></p>
+<h4 class="doc-heading-4" id="specifier">{specifier}</h4>
+<p class="doc-p">Physical and logical properties are both supported. Logical properties are recommended for spacing within components and internationalized content, while physical properties remain useful for overall layout and dimensions.</p>
 <ul class="doc-list">
 <li class="doc-list__item"><code class="doc-code">top</code></li>
 <li class="doc-list__item"><code class="doc-code">right</code></li>
 <li class="doc-list__item"><code class="doc-code">bottom</code></li>
 <li class="doc-list__item"><code class="doc-code">left</code></li>
-<li class="doc-list__item"><code class="doc-code">horizontal</code></li>
-<li class="doc-list__item"><code class="doc-code">vertical</code></li>
-<li class="doc-list__item"><code class="doc-code">around</code></li>
+<li class="doc-list__item"><code class="doc-code">block-start</code></li>
+<li class="doc-list__item"><code class="doc-code">inline-end</code></li>
+<li class="doc-list__item"><code class="doc-code">block-end</code></li>
+<li class="doc-list__item"><code class="doc-code">inline-start</code></li>
+<li class="doc-list__item"><code class="doc-code">block</code> <small>block-start &#x26; block-end shorthand</small></li>
+<li class="doc-list__item"><code class="doc-code">inline</code> <small>inline-start &#x26; inline-end shorthand</small></li>
+<li class="doc-list__item"><code class="doc-code">{omitted}</code> <small>block and inline shorthand</small></li>
 </ul>
-<p class="doc-p">Valid values for <em class="doc-em">size</em></p>
+<h4 class="doc-heading-4" id="size">{size}</h4>
 <ul class="doc-list">
-<li class="doc-list__item"><code class="doc-code">0</code></li>
-<li class="doc-list__item"><code class="doc-code">a</code> auto, only applicable to <code class="doc-code">margin</code></li>
+<li class="doc-list__item"><code class="doc-code">0</code> <small>No margin</small></li>
+<li class="doc-list__item"><code class="doc-code">a</code> <small>auto, only applicable to margin</small></li>
 <li class="doc-list__item"><code class="doc-code">xxx-small</code> <small>(0.125em)</small></li>
 <li class="doc-list__item"><code class="doc-code">xx-small</code> <small>(0.25em)</small></li>
 <li class="doc-list__item"><code class="doc-code">x-small</code> <small>(0.5em)</small></li>
@@ -120,67 +131,108 @@ Spacing
 <li class="doc-list__item"><code class="doc-code">xx-large</code> <small>(1.75em)</small></li>
 <li class="doc-list__item"><code class="doc-code">xxx-large</code> <small>(2em)</small></li>
 </ul>
-<p class="doc-p">Invert values for margin by adding the negative modifier</p>
-<ul class="doc-list">
-<li class="doc-list__item"><code class="doc-code">env-m-{specifier}--negative</code></li>
-</ul>
+<h3 class="doc-heading-3" id="negative-margin">Negative margin</h3>
+<p class="doc-p">Negative margin is applied by combining a size class with the <code class="doc-code">--negative</code> modifier. Negative values are only available for margin.</p>
+<p class="doc-p">Example:</p>
+<p class="doc-p"><code class="doc-code">&#x3C;div class="env-m-inline--large env-m-inline--negative">...&#x3C;/div></code></p>
 <h3 class="doc-heading-3" id="spacing-examples">Spacing examples</h3>
 <div class="example-spacing">
 <div class="example-spacing__margin">
-<div class="example-spacing__padding env-p-around--medium env-m-around--medium">
+<div class="example-spacing__padding env-p--medium env-m--medium">
 <div class="example-spacing__content">
-env-m-around--medium<br>env-p-around--medium
+env-m--medium<br>env-p--medium
 </div>
 </div>
 </div>
 </div>
 <div class="example-spacing">
 <div class="example-spacing__margin">
-<div class="example-spacing__padding env-m-horizontal--xxx-large env-p-vertical--large">
+<div class="example-spacing__padding env-m-inline--xxx-large env-p-block--large">
 <div class="example-spacing__content">
-env-m-horizontal--xxx-large<br>env-p-vertical--large
+env-m-inline--xxx-large<br>env-p-block--large
 </div>
 </div>
 </div>
 </div>
 <div class="example-spacing">
 <div class="example-spacing__margin">
-<div class="env-m-vertical--medium example-spacing__padding env-m-horizontal--large env-m-horizontal--negative env-p-around--small">
+<div class="example-spacing__padding env-m-block--medium env-m-inline--large env-m-inline--negative env-p--small">
 <div class="example-spacing__content">
-env-m-horizontal--large<br>
-env-m-horizontal--negative<br>
-env-m-vertical--medium<br>
-env-p-around--small<br>
+env-m-inline--large<br>
+env-m-inline--negative<br>
+env-m-block--medium<br>
+env-p--small<br>
 </div>
 </div>
 </div>
 </div>
 <div class="example-spacing">
 <div class="example-spacing__margin">
-<div class="example-spacing__padding env-p-around--medium env-m-bottom--small env-m-left--xxx-large env-m-right--medium env-m-top--medium env-m-top--negative">
+<div class="example-spacing__padding env-m-block-start--medium env-m-block-end--small env-m-block-start--negative env-m-inline-end--medium env-m-inline-start--xxx-large env-p--medium">
 <div class="example-spacing__content">
-env-m-top--negative<br>
-env-m-top--medium<br>
-env-m-right--medium<br>
-env-m-bottom--small<br>
-env-m-left--xxx-large<br>
-env-p-around--medium<br>
+env-m-block-start--negative<br>
+env-m-block-start--medium<br>
+env-m-inline-end--medium<br>
+env-m-block-end--small<br>
+env-m-inline-start--xxx-large<br>
+env-p--medium
 </div>
 </div>
 </div>
 </div>
 <div class="example-spacing">
 <div class="example-spacing__margin">
-<div class="env-m-vertical--medium example-spacing__padding env-m-horizontal--a env-p-around--medium env-w--50">
+<div class="example-spacing__padding env-p--medium env-m-block--medium env-m-inline--a env-w--50">
 <div class="example-spacing__content">
 env-w--50<br>
-env-m-vertical--medium<br>
-env-m-horizontal--a<br>
-env-p-around--medium<br>
+env-m-block--medium<br>
+env-m-inline--a<br>
+env-p--medium<br>
 </div>
 </div>
 </div>
 </div>
+<p class="doc-p"><span class="offset-anchor" id="logical-properties"></span></p>
+<h2 class="doc-heading-2" id="logical-properties-example">Logical properties example</h2>
+<p class="doc-p">Logical properties are based on the content’s writing flow instead of physical sides. This allows spacing to adapt naturally to different languages and writing modes.</p>
+<p class="doc-p">All of the examples below use the same classes:</p>
+<p class="doc-p"><code class="doc-code">env-m-block-start--medium</code>, <code class="doc-code">env-p--x-small</code>, <code class="doc-code">env-p-block-start--0</code>, <code class="doc-code">env-p-inline-end--xx-large</code></p>
+<div class="example-spacing">
+<div class="env-flex env-flex--gap-medium env-flex--wrap">
+<div class="env-flex__item">
+<div class="example-spacing__margin" style="max-inline-size:12em">
+<div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+<div class="example-spacing__env-content">
+We believe in making the complex simple.
+</div>
+</div>
+</div>
+</div>
+<div class="env-flex__item">
+<div class="example-spacing__margin" style="direction:rtl;max-inline-size:12em" lang="ar">
+<div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+<div class="example-spacing__env-content">نحن نؤمن بضرورة تبسيط الأمور المعقدة.</div>
+</div>
+</div>
+</div>
+<div class="env-flex__item">
+<div class="example-spacing__margin" style="writing-mode:vertical-rl;max-inline-size:8em" lang="ja">
+<div class="example-spacing__padding env-m-block-start--medium env-p--x-small env-p-block-start--0 env-p-inline-end--xx-large">
+<div class="example-spacing__env-content">私たちは複雑なものをシンプルにすることに取り組んでいます。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="doc-p">Read more about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values" class="doc-link">CSS logical properties and values (MDN)
+</a>.</p>
+<h2 class="doc-heading-2" id="deprecated">Deprecated</h2>
+<p class="doc-p">Since 2026.02.1, the following custom specifiers are deprecated:</p>
+<ul class="doc-list">
+<li class="doc-list__item"><code class="doc-code">horizontal</code> <small>use <code class="doc-code">inline</code> for direction-aware spacing, or <code class="doc-code">left</code> and <code class="doc-code">right</code> for physical spacing</small></li>
+<li class="doc-list__item"><code class="doc-code">vertical</code> <small>use <code class="doc-code">block</code> for direction-aware spacing, or <code class="doc-code">top</code> and <code class="doc-code">bottom</code> for physical spacing</small></li>
+<li class="doc-list__item"><code class="doc-code">around</code> <small>use the shorthand by omitting the specifier</small></li>
+</ul>
 </div>
 </main>
 <div class="sidenav" id="navigation">
