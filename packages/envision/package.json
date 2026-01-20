@@ -46,7 +46,7 @@
    },
    "dependencies": {
       "@popperjs/core": "^2.11.8",
-      "jquery": "^3.7.1",
+      "jquery": "^4.0.0",
       "swipejs": "^2.3.1",
       "tom-select": "^2.4.3"
    },
