@@ -89,7 +89,6 @@ $form-input-min-height: math.div($form-input-height, $form-input-font-size) *
          top: calc(#{var(--env-spacing-x-small)} + 1px);
          left: calc(#{var(--env-spacing-small)} + 1px);
          pointer-events: none;
-         speak: never;
          color: var(--env-form-input-font-color);
          filter: opacity(0.5);
          line-height: 1.4;
