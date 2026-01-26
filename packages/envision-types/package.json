@@ -1,0 +1,26 @@
+{
+   "name": "@sitevision/envision-types",
+   "version": "1.0.0",
+   "description": "TypeScript definitions for Envision UI framework in Sitevision CMS",
+   "types": "index.d.ts",
+   "files": [
+      "index.d.ts",
+      "src/**/*.d.ts"
+   ],
+   "keywords": [
+      "envision",
+      "sitevision",
+      "typescript",
+      "types",
+      "definitions",
+      "cms"
+   ],
+   "author": "Sitevision",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/sitevision/envision.git",
+      "directory": "packages/envision-types"
+   },
+   "packageManager": "yarn@4.10.2"
+}
