@@ -16,3 +16,11 @@ export const slugify = (input: string): string => {
    slug = slug.replace(/[\s-]+/g, '-');
    return slug;
 };
+
+export const getGithubUrl = (fileUrl: string) => {
+   let url = fileUrl.split('/envision-docs/src/pages/');
+   if (url.length === 2) {
+      return `https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/${url[1]}`;
+   }
+   return null;
+};
