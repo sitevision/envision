@@ -11997,6 +11997,13 @@ const slugify = (input) => {
   slug = slug.replace(/[\s-]+/g, "-");
   return slug;
 };
+const getGithubUrl = (fileUrl) => {
+  let url = fileUrl.split("/envision-docs/src/pages/");
+  if (url.length === 2) {
+    return `https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/${url[1]}`;
+  }
+  return null;
+};
 
 const $$Astro$7 = createAstro("https://envisionui.io");
 const $$Startpage = createComponent(($$result, $$props, $$slots) => {
@@ -13393,7 +13400,18 @@ const $$Default = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Default;
   const { frontmatter } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${renderSlot($$result2, $$slots["default"])}
+  const gitHubAddress = getGithubUrl(frontmatter.file);
+  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${gitHubAddress && renderTemplate`${maybeRenderHead()}<a class="doc-md-icon env-button env-button--link env-button--icon" target="_blank" title="View page as Markdown"${addAttribute(gitHubAddress, "href")}>
+            <svg class="env-icon" viewBox="0 0 208 128">
+               <g>
+                  ${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate`
+                     <path clip-rule="evenodd" d="m15 10c-2.7614 0-5 2.2386-5 5v98c0 2.761 2.2386 5 5 5h178c2.761 0 5-2.239 5-5v-98c0-2.7614-2.239-5-5-5zm-15 5c0-8.28427 6.71573-15 15-15h178c8.284 0 15 6.71573 15 15v98c0 8.284-6.716 15-15 15h-178c-8.28427 0-15-6.716-15-15z" fill-rule="evenodd"></path>
+                     <path d="m30 98v-68h20l20 25 20-25h20v68h-20v-39l-20 25-20-25v39zm125 0-30-33h20v-35h20v35h20z"></path>
+                  ` })}
+               </g>
+            </svg>
+            View page as Markdown
+         </a>`}${renderSlot($$result2, $$slots["default"])}
    
 `, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/Default.astro", void 0);
