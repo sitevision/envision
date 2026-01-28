@@ -155,9 +155,9 @@ const _page$18 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	url: url$18
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const $$Astro$a = createAstro("https://envisionui.io");
+const $$Astro$b = createAstro("https://envisionui.io");
 const $$Teasernav = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$b, $$props, $$slots);
   Astro2.self = $$Teasernav;
   const {
     frontmatter,
@@ -192,9 +192,9 @@ const $$Teasernav = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Teasernav.astro", void 0);
 
-const $$Astro$9 = createAstro("https://envisionui.io");
+const $$Astro$a = createAstro("https://envisionui.io");
 const $$Sidenav = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
   Astro2.self = $$Sidenav;
   const { frontmatter } = Astro2.props;
   const topItem = getCurrentLevelOneItem(frontmatter);
@@ -219,9 +219,9 @@ const $$Sidenav = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Sidenav.astro", void 0);
 
-const $$Astro$8 = createAstro("https://envisionui.io");
+const $$Astro$9 = createAstro("https://envisionui.io");
 const $$Navigation = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
   Astro2.self = $$Navigation;
   const { frontmatter } = Astro2.props;
   return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`
@@ -12005,9 +12005,9 @@ const getGithubUrl = (fileUrl) => {
   return null;
 };
 
-const $$Astro$7 = createAstro("https://envisionui.io");
+const $$Astro$8 = createAstro("https://envisionui.io");
 const $$Startpage = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
   Astro2.self = $$Startpage;
   const { frontmatter } = Astro2.props;
   return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "main-content": ($$result2) => renderTemplate`${maybeRenderHead()}<div class="start-body">
@@ -13102,9 +13102,9 @@ const getMobileMenuItems = (frontmatter) => {
   return menuItems;
 };
 
-const $$Astro$6 = createAstro("https://envisionui.io");
+const $$Astro$7 = createAstro("https://envisionui.io");
 const $$Headernav = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
   Astro2.self = $$Headernav;
   const { frontmatter } = Astro2.props;
   const menuItems = getMenuItems(frontmatter, "/");
@@ -13145,9 +13145,9 @@ const $$Themepicker = createComponent(($$result, $$props, $$slots) => {
 </div>`])), maybeRenderHead());
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Themepicker.astro", void 0);
 
-const $$Astro$5 = createAstro("https://envisionui.io");
+const $$Astro$6 = createAstro("https://envisionui.io");
 const $$Header = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
   Astro2.self = $$Header;
   const { frontmatter } = Astro2.props;
   return renderTemplate`${maybeRenderHead()}<header class="header">
@@ -13173,9 +13173,9 @@ const $$Header = createComponent(($$result, $$props, $$slots) => {
 </header>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Header.astro", void 0);
 
-const $$Astro$4 = createAstro("https://envisionui.io");
+const $$Astro$5 = createAstro("https://envisionui.io");
 const $$Banner = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Banner;
   const { frontmatter } = Astro2.props;
   let bannerType = null;
@@ -13292,9 +13292,9 @@ const $$Footer = createComponent(($$result, $$props, $$slots) => {
 </footer>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Footer.astro", void 0);
 
-const $$Astro$3 = createAstro("https://envisionui.io");
+const $$Astro$4 = createAstro("https://envisionui.io");
 const $$Mobilenav = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Mobilenav;
   const { frontmatter } = Astro2.props;
   const menuItems = getMobileMenuItems(frontmatter);
@@ -13354,9 +13354,9 @@ var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
 var _a;
-const $$Astro$2 = createAstro("https://envisionui.io");
+const $$Astro$3 = createAstro("https://envisionui.io");
 const $$Master = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Master;
   const { frontmatter } = Astro2.props;
   const title = frontmatter.title;
@@ -13379,9 +13379,9 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
          `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro", void 0);
 
-const $$Astro$1 = createAstro("https://envisionui.io");
+const $$Astro$2 = createAstro("https://envisionui.io");
 const $$Icons = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Icons;
   const { icons } = Astro2.props;
   return renderTemplate`${maybeRenderHead()}<div class="icons-demo">
@@ -13395,23 +13395,34 @@ const $$Icons = createComponent(($$result, $$props, $$slots) => {
 </div>`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/Icons.astro", void 0);
 
-const $$Astro = createAstro("https://envisionui.io");
-const $$Default = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$Default;
+const $$Astro$1 = createAstro("https://envisionui.io");
+const $$MarkdownLink = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$MarkdownLink;
   const { frontmatter } = Astro2.props;
   const gitHubAddress = getGithubUrl(frontmatter.file);
-  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${gitHubAddress && renderTemplate`${maybeRenderHead()}<a class="doc-md-icon env-button env-button--link env-button--icon" target="_blank" title="View page as Markdown"${addAttribute(gitHubAddress, "href")}>
-            <svg class="env-icon" viewBox="0 0 208 128">
+  return renderTemplate`${gitHubAddress && renderTemplate`${maybeRenderHead()}<div class="doc-md-link">
+         <a${addAttribute(gitHubAddress, "href")} class="env-button env-button--primary env-button--ghost env-button--icon env-button--icon-before">
+            <svg class="env-icon doc-md-link__icon" viewBox="0 0 208 128" aria-hidden="true">
                <g>
-                  ${renderComponent($$result2, "Fragment", Fragment, {}, { "default": ($$result3) => renderTemplate`
+                  ${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`
                      <path clip-rule="evenodd" d="m15 10c-2.7614 0-5 2.2386-5 5v98c0 2.761 2.2386 5 5 5h178c2.761 0 5-2.239 5-5v-98c0-2.7614-2.239-5-5-5zm-15 5c0-8.28427 6.71573-15 15-15h178c8.284 0 15 6.71573 15 15v98c0 8.284-6.716 15-15 15h-178c-8.28427 0-15-6.716-15-15z" fill-rule="evenodd"></path>
                      <path d="m30 98v-68h20l20 25 20-25h20v68h-20v-39l-20 25-20-25v39zm125 0-30-33h20v-35h20v35h20z"></path>
                   ` })}
                </g>
             </svg>
-            View page as Markdown
-         </a>`}${renderSlot($$result2, $$slots["default"])}
+            View this page as Markdown
+         </a>
+      </div>`}`;
+}, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/MarkdownLink.astro", void 0);
+
+const $$Astro = createAstro("https://envisionui.io");
+const $$Default = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Default;
+  const { frontmatter } = Astro2.props;
+  return renderTemplate`${renderComponent($$result, "Master", $$Master, { "frontmatter": frontmatter }, { "default": ($$result2) => renderTemplate`${frontmatter.icons && frontmatter.icons.length > 0 && renderTemplate`${renderComponent($$result2, "Icons", $$Icons, { "icons": frontmatter.icons })}`}${renderSlot($$result2, $$slots["default"])}
+   ${renderComponent($$result2, "MarkdownLink", $$MarkdownLink, { "frontmatter": frontmatter })}
    
 `, "sidenav": ($$result2) => renderTemplate`${renderComponent($$result2, "Sidenav", $$Sidenav, { "slot": "sidenav", "frontmatter": frontmatter })}` })}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/Default.astro", void 0);
