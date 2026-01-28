@@ -1,0 +1,23 @@
+@use 'variables';
+
+.doc-md-link {
+   --env-element-primary-background-color: var(
+      --env-font-color
+   ); // Ghost button text & border
+   --env-element-primary-font-color: var(
+      --env-section-background-color
+   ); // Ghost button text on hover
+   --env-element-primary-background-color-dark: var(
+      --env-font-color
+   ); // Ghost button bg on hover
+
+   position: relative;
+   margin: 4em 0 0;
+   padding: 2em 0 0;
+   border-top: 1px solid var(--doc-border-color);
+
+   &__icon {
+      width: 2.75em !important;
+      margin: -0.5625em 0 0 -1.125em !important;
+   }
+}
