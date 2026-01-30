@@ -23,7 +23,7 @@
 
    &__button__text {
       @container (min-width: 45em) {
-         display: none;
+         @include variables.visually-hidden();
       }
    }
 
