@@ -3,16 +3,25 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
-import { createElement, getNode, uniqueId, wrapElement } from '../util/nodes';
+import {
+   createElement,
+   getFocusable,
+   getNode,
+   setStyle,
+   uniqueId,
+   wrapElement,
+} from '../util/nodes';
 import {
    AUTOPLAY_STATE,
    CLASSNAME,
    getButtonElement,
    getButtonIcon,
    ICON,
+   SLIDESHOW_TYPE,
    SLIDER_CONTROLS_TEMPLATE,
    SLIDER_ITEM_TEMPLATE,
    SLIDER_VIEWER_TEMPLATE,
+   isOverlayPlacement,
 } from './image-viewer-2-util';
 
 export default class Imageviewer2Slider {
@@ -20,88 +29,122 @@ export default class Imageviewer2Slider {
    #lightbox;
    #config;
    #autoplayState;
+   #autoplayPreviousInteractionEvent;
    #slider;
    #sliderEl;
    #viewerEl;
    #autoplayButtonEl;
 
-   constructor(element, settings, lightbox, Swipe) {
+   constructor(
+      element,
+      settings,
+      lightbox,
+      [EmblaCarousel, Autoplay, AutoHeight, Fade]
+   ) {
       this.#el = element;
       this.#config = settings;
       this.#lightbox = lightbox;
 
-      this.bindThis();
+      if (!EmblaCarousel) {
+         return;
+      }
 
       this.setupSlider();
       this.setupSliderControls();
 
-      // a prefers-reduced-motion user setting must always override autoplay
-      const prefersReducedMotion = window.matchMedia(
-         '(prefers-reduced-motion: reduce)'
-      ).matches;
+      const plugins = [];
 
-      this.#config.slides.auto =
-         !prefersReducedMotion && this.#config.slides.auto > 0
-            ? this.#config.slides.auto
-            : 0;
-      this.#autoplayState = this.#config.slides.auto
-         ? AUTOPLAY_STATE.PLAY
-         : AUTOPLAY_STATE.STOP;
+      // Add conditional plugins
+
+      if (this.#config.slides.auto && Autoplay instanceof Function) {
+         this.#autoplayPreviousInteractionEvent = null;
+         this.#autoplayState = this.#config.slides.auto
+            ? AUTOPLAY_STATE.PLAY
+            : AUTOPLAY_STATE.STOP;
+         plugins.push(
+            Autoplay({
+               delay: this.#config.slides.auto,
+               defaultInteraction: false,
+            })
+         );
+      }
+
+      if (this.#config.slides.autoHeight) {
+         if (AutoHeight) {
+            plugins.push(AutoHeight());
+         }
+      }
+
+      if (this.#config.slides.transition === 'fade' && Fade) {
+         plugins.push(Fade());
+      }
 
       this.setSliderAriaLive();
-      this.setPlayButton();
 
-      if (this.#config.slides.overlay) {
-         this.#el.classList.add(`${CLASSNAME.BASE}--overlay`);
-      }
-
-      this.#slider = new Swipe(this.#viewerEl, {
-         speed: prefersReducedMotion ? 1 : this.#config.slides.speed,
-         draggable: this.#config.slides.draggable,
-         auto: this.#config.slides.auto, // 0 = av
-         stopPropagation: true,
-         transitionEnd: this.#handleTransitionEnd,
-      });
-
-      if (this.#config.slides.auto && this.#config.slides.playing === false) {
-         this.#setAutoplay(AUTOPLAY_STATE.STOP);
-      }
-
-      this.#setSlideMarkup(
+      this.#slider = EmblaCarousel(
          this.#viewerEl,
-         this.#viewerEl.querySelector(`.${CLASSNAME.ITEM}`)
+         this.#config.slides,
+         plugins
       );
 
-      // API
-      this.prev = this.#slider.prev;
-      this.next = this.#slider.next;
-      this.goTo = this.#slider.slide;
-      this.getPos = this.#slider.getPos;
-   }
+      if (this.#config.slides.auto) {
+         this.#setAutoplay(
+            this.#config.slides.playing
+               ? AUTOPLAY_STATE.PLAY
+               : AUTOPLAY_STATE.STOP
+         );
+      }
 
-   bindThis() {
-      this.#setAutoplay = this.#setAutoplay.bind(this);
-      this.#handleAutoplayButton = this.#handleAutoplayButton.bind(this);
-      this.#prev = this.#prev.bind(this);
-      this.#next = this.#next.bind(this);
-      this.#handleFocus = this.#handleFocus.bind(this);
-      this.#handleBlur = this.#handleBlur.bind(this);
-      this.#handleTransitionEnd = this.#handleTransitionEnd.bind(this);
-      this.#handleLightboxZoom = this.#handleLightboxZoom.bind(this);
-      this.#handlePauseEvent = this.#handlePauseEvent.bind(this);
+      this.#setSlideMarkup(this.#viewerEl, 0);
+
+      // Make visible after initialized
+      setStyle(this.#viewerEl, 'visibility', 'visible');
+
+      // Public API functions
+      this.pause = () => this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+      this.play = () => this.#setAutoplay(AUTOPLAY_STATE.PLAY);
+      this.prev = () => this.#slider?.goToPrev?.();
+      this.next = () => this.#slider?.goToNext?.();
+      this.goTo = (index, instant) => {
+         if (Number.isInteger(instant)) {
+            // Handle legacy speed parameter
+            instant = instant <= 0;
+         }
+         this.#slider?.goTo?.(index, instant);
+      };
+      this.getPos = () => this.#slider?.selectedSnap?.() ?? 0;
    }
 
    setupSlider() {
       this.#el.classList.add(CLASSNAME.BASE);
+      this.#config.slides.transition &&
+         this.#el.classList.add(
+            `${CLASSNAME.BASE}--transition-${this.#config.slides.transition}`
+         );
       if (this.#el.tagName !== 'SECTION') {
          this.#el.setAttribute('role', 'region');
       }
       this.#el.setAttribute(
          'aria-roledescription',
-         this.#config.i18n.roledescription
+         this.#config.i18n.roledescription.slideshow
       );
+      if (isOverlayPlacement(this.#config.slides.buttons.placement)) {
+         this.#el.classList.add(`${CLASSNAME.BASE}--overlay`);
+         this.#el.classList.add(
+            `${CLASSNAME.BASE}--${this.#config.slides.buttons.placement}`
+         );
+      }
 
-      this.#viewerEl = createElement(SLIDER_VIEWER_TEMPLATE);
+      if (this.#config.slides.type === SLIDESHOW_TYPE.IMAGES) {
+         this.#viewerEl = createElement(
+            SLIDER_VIEWER_TEMPLATE[SLIDESHOW_TYPE.IMAGES]
+         );
+      } else {
+         this.#viewerEl = createElement(
+            SLIDER_VIEWER_TEMPLATE[SLIDESHOW_TYPE.HTML]
+         );
+      }
+
       this.#sliderEl = getNode(`.${CLASSNAME.ITEMS}`, this.#viewerEl);
       uniqueId(this.#sliderEl);
 
@@ -119,6 +162,10 @@ export default class Imageviewer2Slider {
                this.#config.i18n.of
             } ${slideCount}`
          );
+         childNode.setAttribute(
+            'aria-roledescription',
+            this.#config.i18n.roledescription.slide
+         );
          this.#sliderEl.prepend(childNode);
       }
 
@@ -127,7 +174,7 @@ export default class Imageviewer2Slider {
 
    getSliderButtonClassNames() {
       let className = `${CLASSNAME.BASE}__viewer__controls__button`;
-      if (!this.#config.slides.overlay) {
+      if (!this.#config.slides.buttons?.placement?.startsWith('overlay')) {
          if (this.#config.slides.buttons?.type) {
             className = `env-button--${
                this.#config.slides.buttons.type
@@ -190,7 +237,10 @@ export default class Imageviewer2Slider {
       }
 
       let zoomBtn;
-      if (this.#lightbox?.getImageCount() > 0) {
+      if (
+         this.#config.slides.type === SLIDESHOW_TYPE.IMAGES &&
+         this.#lightbox?.getImageCount() > 0
+      ) {
          zoomBtn = getButtonElement({
             text: `${this.#config.i18n.zoom} <span class="env-assistive-text">${
                this.#config.i18n.largeImage
@@ -202,62 +252,85 @@ export default class Imageviewer2Slider {
          });
          containerEl.prepend(zoomBtn);
       }
-      this.bindEvents(prevBtn, nextBtn, zoomBtn);
-      this.#el.prepend(containerEl);
+
+      if (this.#config.slides.buttons.placement === 'top') {
+         this.#el.prepend(containerEl);
+      } else {
+         this.#el.append(containerEl);
+      }
+
+      setTimeout(() => {
+         this.bindEvents(prevBtn, nextBtn, zoomBtn);
+      }, 1);
    }
 
    #setAutoplay = (state) => {
-      if (state === AUTOPLAY_STATE.PAUSE) {
-         if (this.#autoplayState !== AUTOPLAY_STATE.STOP) {
-            this.#autoplayState = AUTOPLAY_STATE.PAUSE;
-            this.#slider.stop();
-         }
-      } else if (state === AUTOPLAY_STATE.CONTINUE) {
-         if (
-            this.#autoplayState !== AUTOPLAY_STATE.STOP &&
-            this.#config.slides.auto
-         ) {
-            this.#autoplayState = AUTOPLAY_STATE.PLAY;
-            this.#slider.restart();
-         }
+      const autoplay = this.#slider.plugins().autoplay;
+
+      if (
+         state === AUTOPLAY_STATE.PAUSE &&
+         this.#autoplayState !== AUTOPLAY_STATE.STOP
+      ) {
+         this.#autoplayState = AUTOPLAY_STATE.PAUSE;
+         autoplay?.pause();
       } else if (state === AUTOPLAY_STATE.STOP) {
          this.#autoplayState = AUTOPLAY_STATE.STOP;
-         this.#slider.stop();
+         autoplay?.stop();
       } else if (state === AUTOPLAY_STATE.PLAY && this.#config.slides.auto) {
          this.#autoplayState = AUTOPLAY_STATE.PLAY;
-         this.#slider.restart();
+         autoplay?.play();
       }
+
       this.setPlayButton();
       this.setSliderAriaLive();
    };
 
    #next = () => {
-      this.#slider.next();
+      this.#slider.goToNext();
       this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
    };
 
    #prev = () => {
-      this.#slider.prev();
+      this.#slider.goToPrev();
       this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
    };
 
-   #setSlideMarkup(viewerEl, currentSlideEl) {
-      viewerEl.querySelectorAll('a, button, input').forEach((el) => {
-         if (el.getAttribute('tabindex') !== '-1') {
+   #setSlideMarkup(viewerEl, currentSlideIndex) {
+      // Set tabindex for focusable elements
+      // Add assistive text for image slideshow
+
+      const currentSlideEl = viewerEl.querySelectorAll(`.${CLASSNAME.ITEM}`)[
+         currentSlideIndex
+      ];
+      const allFocusable = getFocusable(viewerEl);
+
+      allFocusable.forEach((el) => {
+         const tabIndex =
+            el.dataset.envImageViewer2Tabindex ||
+            el.getAttribute('tabindex') ||
+            '0';
+         if (tabIndex !== '-1') {
             el.setAttribute('tabindex', '-1');
-            el.dataset.tabindex = 'true';
          }
+         el.dataset.envImageViewer2Tabindex = tabIndex;
       });
-      currentSlideEl.querySelectorAll('[data-tabindex]').forEach((el) => {
-         el.removeAttribute('tabindex');
-         el.dataset.tabindex = 'true';
+
+      const currentFocusable = getFocusable(currentSlideEl);
+
+      currentFocusable.forEach((el) => {
+         const tabIndex = el.dataset.envImageViewer2Tabindex || '0';
+         el.setAttribute('tabindex', tabIndex);
       });
-      const assistiveText = `${
-         currentSlideEl.querySelector('img')?.alt
-      } ${currentSlideEl.textContent.trim()}`;
-      if (assistiveText) {
-         viewerEl.querySelector(`.${CLASSNAME.BASE}__assistive`).textContent =
-            assistiveText;
+
+      if (this.#config.slides.type === SLIDESHOW_TYPE.IMAGES) {
+         const assistiveText = `${
+            currentSlideEl.querySelector('img')?.alt
+         } ${currentSlideEl.textContent.trim()}`;
+         if (assistiveText) {
+            viewerEl.querySelector(
+               `.${CLASSNAME.BASE}__assistive`
+            ).textContent = assistiveText;
+         }
       }
    }
 
@@ -273,13 +346,19 @@ export default class Imageviewer2Slider {
       if (!this.#autoplayButtonEl) {
          return;
       }
-      if (this.#autoplayState === AUTOPLAY_STATE.PLAY) {
+      const currentIcon =
+         this.#autoplayButtonEl.querySelector(`[data-icon]`)?.dataset.icon;
+
+      if (
+         this.#autoplayState === AUTOPLAY_STATE.PLAY &&
+         currentIcon !== ICON.PAUSE
+      ) {
          this.#autoplayButtonEl.innerHTML = `${
             this.#config.i18n.pause
          } <span class="env-assistive-text">${
             this.#config.i18n.slideshow
          }</span>${getButtonIcon(ICON.PAUSE)}`;
-      } else {
+      } else if (currentIcon !== ICON.PLAY) {
          this.#autoplayButtonEl.innerHTML = `${
             this.#config.i18n.play
          } <span class="env-assistive-text">${
@@ -298,42 +377,64 @@ export default class Imageviewer2Slider {
       }
    };
 
-   #handlePauseEvent = () => {
-      this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+   #handleInteraction = (interaction) => {
+      if (this.#config.slides.draggable) {
+         if (
+            interaction === 'pointerdown' &&
+            this.#autoplayState === AUTOPLAY_STATE.PLAY
+         ) {
+            this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+         }
+      } else {
+         if (interaction === 'click') {
+            this.#setAutoplay(AUTOPLAY_STATE.STOP);
+            this.#autoplayPreviousInteractionEvent = interaction;
+         } else if (
+            interaction === 'mouseenter' &&
+            this.#autoplayState === AUTOPLAY_STATE.PLAY
+         ) {
+            this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
+            this.#autoplayPreviousInteractionEvent = interaction;
+         } else if (
+            interaction === 'mouseleave' &&
+            this.#autoplayPreviousInteractionEvent === 'mouseenter' &&
+            this.#autoplayState === AUTOPLAY_STATE.PAUSE
+         ) {
+            this.#setAutoplay(AUTOPLAY_STATE.PLAY);
+            this.#autoplayPreviousInteractionEvent = interaction;
+         }
+      }
    };
 
-   #handleTransitionEnd = (index, elem) => {
-      this.#setSlideMarkup(this.#viewerEl, elem);
+   #handleClickEvent = () => {
+      this.#handleInteraction('click');
+   };
+
+   #handleInteractionEvent = (api, apiEvt) => {
+      const interaction = apiEvt?.detail?.interaction;
+      this.#handleInteraction(interaction);
    };
 
    #handleFocus = (e) => {
       if (
-         e.target.tagName !== 'BUTTON' &&
-         this.#el.contains(document.activeElement)
+         this.#config.slides.auto &&
+         this.#autoplayState === AUTOPLAY_STATE.PLAY &&
+         this.#viewerEl.contains(e.target)
       ) {
          this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
       }
    };
 
-   #handleBlur = (e) => {
-      if (e.target.tagName !== 'BUTTON' && !this.#el.contains(e.target)) {
-         this.#setAutoplay(AUTOPLAY_STATE.CONTINUE);
-      }
+   #handleSlidesInView = (api, apiEvt) => {
+      this.#setSlideMarkup(
+         this.#viewerEl,
+         apiEvt?.detail?.slidesInView[0] || 0
+      );
    };
 
    #handleLightboxZoom = () => {
-      this.#lightbox?.show(this.#slider.getPos());
+      this.#lightbox?.show(this.getPos());
    };
-
-   pause() {
-      // API Method
-      this.#setAutoplay(AUTOPLAY_STATE.STOP);
-   }
-
-   play() {
-      // API Method
-      this.#setAutoplay(AUTOPLAY_STATE.PLAY);
-   }
 
    bindEvents(prevBtn, nextBtn, zoomBtn) {
       this.#autoplayButtonEl?.addEventListener(
@@ -346,9 +447,10 @@ export default class Imageviewer2Slider {
       zoomBtn?.addEventListener('click', this.#handleLightboxZoom);
 
       if (this.#config.slides.auto) {
-         this.#el.addEventListener('focus', this.#handleFocus, true);
-         this.#el.addEventListener('blur', this.#handleBlur, true);
-         this.#el.addEventListener('pause', this.#handlePauseEvent);
+         this.#viewerEl.addEventListener('focus', this.#handleFocus, true);
+         this.#viewerEl.addEventListener('click', this.#handleClickEvent, true);
+         this.#slider.on('slidesinview', this.#handleSlidesInView);
+         this.#slider.on('autoplay:interaction', this.#handleInteractionEvent);
       }
    }
 }

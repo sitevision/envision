@@ -18,23 +18,33 @@ $buttonInset: 2.25rem;
 .env-image-viewer-2 {
    position: relative;
    text-align: center;
-
    //----- Core slider styling -----
 
    &__viewer {
       overflow: hidden;
       visibility: hidden;
       position: relative;
+      transition: height 0.3s;
+
+      .env-image-viewer-2--transition-none & {
+         transition: height 0s;
+      }
+      .env-image-viewer-2--transition-slideSlow & {
+         transition: height 0.8s;
+      }
    }
 
    &__viewer__items {
-      overflow: hidden;
       position: relative;
+      display: flex;
+      transition-property: transform;
+      will-change: transform;
+      align-items: flex-start;
    }
 
    &__viewer__item {
-      float: left;
       width: 100%;
+      flex: 0 0 100%;
       position: relative;
       overflow: hidden;
 
@@ -55,7 +65,11 @@ $buttonInset: 2.25rem;
       justify-content: space-between;
       align-items: center;
       justify-items: start;
-      margin: 0 0 0.5em 0;
+      margin: 0 0 0.5em;
+
+      .env-image-viewer-2__viewer + & {
+         margin: 0.5em 0 0;
+      }
 
       .env-image-viewer-2--overlay & {
          position: absolute;
@@ -77,6 +91,10 @@ $buttonInset: 2.25rem;
                @include overlayButtonFocusVisible(#fff, rgba(0, 0, 0, 0.75));
             }
          }
+      }
+
+      .env-image-viewer-2--overlay-bottom & {
+         inset: auto 0 0 0;
       }
 
       &__button:first-child {

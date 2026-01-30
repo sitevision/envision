@@ -44,7 +44,10 @@ with navigation arrows to switch between images. The link href:s should point to
 shown.
 
 ```html
-<div id="example-imageviewer2-1" class="example-imageviewer2-images">
+<div
+   id="example-image-viewer-2-lightbox-only"
+   class="example-imageviewer2-images"
+>
    <ul
       class="env-list env-cardholder-grid"
       style="--env-cardholder-grid-column-width: 10em;"
@@ -118,14 +121,16 @@ shown.
 ```
 
 ```javascript
-envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
+envision.imageViewer2(
+   document.querySelector('#example-image-viewer-2-lightbox-only')
+);
 ```
 
 ## Slideshow
 
 ```html
 <section
-   id="example-imageviewer2-2"
+   id="example-image-viewer-2"
    class="env-p-around--medium"
    aria-label="Photos from Örebro"
 >
@@ -151,7 +156,7 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
 ```
 
 ```javascript
-envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
+envision.imageViewer2(document.querySelector('#example-image-viewer-2'), {
    slides: {
       auto: 3000,
       playing: false,
