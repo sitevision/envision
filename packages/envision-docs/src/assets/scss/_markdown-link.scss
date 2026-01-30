@@ -1,23 +1,51 @@
 @use 'variables';
 
 .doc-md-link {
-   --env-element-primary-background-color: var(
-      --env-font-color
-   ); // Ghost button text & border
-   --env-element-primary-font-color: var(
-      --env-section-background-color
-   ); // Ghost button text on hover
-   --env-element-primary-background-color-dark: var(
-      --env-font-color
-   ); // Ghost button bg on hover
+   // Ghost button text & border
+   --env-element-primary-background-color: var(--env-font-color);
+   // Ghost button text on hover
+   --env-element-primary-font-color: var(--env-section-background-color);
+   // Ghost button bg on hover
+   --env-element-primary-background-color-dark: var(--env-font-color);
 
-   position: relative;
-   margin: 4em 0 0;
-   padding: 2em 0 0;
-   border-top: 1px solid var(--doc-border-color);
+   @container (max-width: 44.999em) {
+      position: relative;
+      margin: 4em 0 0;
+      padding: 2em 0 0;
+      border-top: 1px solid var(--doc-border-color);
+   }
+
+   @container (min-width: 45em) {
+      position: absolute;
+      top: 0;
+      right: 0;
+   }
+
+   &__button__text {
+      @container (min-width: 45em) {
+         display: none;
+      }
+   }
+
+   &__button {
+      @container (min-width: 45em) {
+         width: 2.75em;
+         margin: 1em 1em 0 0;
+         padding: 0 1.3125em !important;
+      }
+   }
 
    &__icon {
-      width: 2.75em !important;
-      margin: -0.5625em 0 0 -1.125em !important;
+      width: auto !important;
+      height: 1.625em !important;
+      margin: -0.8125em 0 0 -0.5em !important;
+
+      @container (min-width: 45em) {
+         inset: 50% 0 0 50% !important;
+         width: auto !important;
+         height: 1.75em !important;
+         margin: 0 !important;
+         transform: translate(-50%, -50%);
+      }
    }
 }
