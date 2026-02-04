@@ -11,19 +11,20 @@ const defaults = {
    i18n: 'sv',
 };
 
+// Deprecated in 2026.02.1: speed, overlay
 const slidesDefaults = {
    auto: 0,
    playing: false,
-   transition: 'slide',
+   transition: 'slide', // Added in 2026.02.1, replaces "speed"
    draggable: true,
    buttons: {
-      placement: 'overlay-top',
+      placement: 'overlay-top', // Added in 2026.02.1, replaces "overlay"
       type: null,
       ghost: false,
       size: null,
    },
-   autoHeight: false,
-   type: 'images', // Undocumented. Not for public use. Force lightbox off.
+   autoHeight: false, // Added in 2026.02.1
+   type: 'images', // Added in 2026.02.1. Unofficial, undocumented.
 };
 
 const convertLegacySlideOptions = (options) => {

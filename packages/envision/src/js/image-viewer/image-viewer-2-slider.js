@@ -219,9 +219,7 @@ export default class Imageviewer2Slider {
 
       if (this.#config.slides.auto) {
          this.#autoplayButtonEl = getButtonElement({
-            text: `${
-               this.#config.i18n.pause
-            } <span class="env-assistive-text">${
+            text: `${this.#config.i18n.play} <span class="env-assistive-text">${
                this.#config.i18n.slideshow
             }</span>`,
             icon: ICON.PLAY,
