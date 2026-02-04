@@ -104,6 +104,6 @@ export const SLIDER_VIEWER_TEMPLATE = {
 </div>`,
 };
 
-export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group"></div>`;
+export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group" aria-roledescription="slide"></div>`;
 
 export const SLIDER_CONTROLS_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer__controls"></div>`;
