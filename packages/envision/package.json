@@ -47,7 +47,6 @@
    "dependencies": {
       "@popperjs/core": "^2.11.8",
       "embla-carousel": "^9.0.0-rc.0",
-      "embla-carousel-accessibility": "^9.0.0-rc.0",
       "embla-carousel-auto-height": "^9.0.0-rc.0",
       "embla-carousel-autoplay": "^9.0.0-rc.0",
       "embla-carousel-fade": "^9.0.0-rc.0",
