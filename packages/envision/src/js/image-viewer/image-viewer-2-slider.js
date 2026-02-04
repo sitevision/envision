@@ -257,9 +257,11 @@ export default class Imageviewer2Slider {
          this.#el.append(containerEl);
       }
 
-      setTimeout(() => {
+      // Defer event binding until after the browser
+      // has processed the latest DOM updates.
+      requestAnimationFrame(() => {
          this.bindEvents(prevBtn, nextBtn, zoomBtn);
-      }, 1);
+      });
    }
 
    #setAutoplay = (state) => {
