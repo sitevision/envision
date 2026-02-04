@@ -1,0 +1,62 @@
+# Envision Docs
+
+> Documentation for the Envision UI framework.
+
+## Pages
+- [Colors – Basic colors](https://envisionui.io/colors/basic-colors/): The “Basic colors” section defines general colors for backgrounds, text, links, and borders.
+- [Colors – Block colors](https://envisionui.io/colors/block-colors/): The “Block colors” section offers preset color combinations for large content areas.
+- [Colors – Brand colors](https://envisionui.io/colors/brand-colors/): The “Brand Colors” section defines primary brand hues with contrast-friendly shades for accessibility.
+- [Colors – Element colors](https://envisionui.io/colors/element-colors/): The “Element Colors” section defines specific shades for buttons, icons, and interactive elements.
+- [Colors – Status colors](https://envisionui.io/colors/status-colors/): The “Status Colors” section provides distinct hues representing success, warnings, errors, and informational states.
+- [Components – Accordion](https://envisionui.io/components/accordion/): The Accordion component toggles the visibility of content sections, allowing users to expand or collapse them.
+- [Components – Alert](https://envisionui.io/components/alert/): The Alert component displays brief, important messages to users, with variations for success, warning, danger, and info alerts.
+- [Components – Badge](https://envisionui.io/components/badge/): Use the Badge component to display small labels for status, notifications, or event counts.
+- [Components – Breadcrumb](https://envisionui.io/components/breadcrumb/): Use breadcrumbs to display the user´s location within a site’s hierarchy, enhancing navigation.
+- [Components – Cards](https://envisionui.io/components/cards/): Cards are simple containers for displaying information about pages, groups, or users.
+- [Components – Collapse](https://envisionui.io/components/collapse/): The Collapse component toggles content visibility, allowing sections to expand or collapse as needed.
+- [Components – Dialog](https://envisionui.io/components/dialog/): Use Dialog to present modal dialogs with customizable sizes, animations, and focus management.
+- [Components – Dropdown](https://envisionui.io/components/dropdown/): Dropdowns displays a list of options that appears upon user interaction.
+- [Components – Embedded](https://envisionui.io/components/embedded/): The Embedded component displays images and text with flexible layouts and overlay options.
+- [Components – Icons](https://envisionui.io/components/icons/): The Icon component simplifies icon integration with customizable styles.
+- [Components – Image viewer](https://envisionui.io/components/image-viewer-2/): The Image Viewer component displays slideshows and lightbox galleries with navigation controls.
+- [Components – List](https://envisionui.io/components/list/): The List component displays items in vertical or horizontal layouts, with optional dividers.
+- [Components – Media](https://envisionui.io/components/media/): The Media component is used to present user activity chronologically.
+- [Components – Navigation](https://envisionui.io/components/navigation/): The Navigation component provides customizable menus for site navigation, including menubars and side navigation.
+- [Components – News item](https://envisionui.io/components/news-item/): The News Item component presents news content with images and text in a structured layout.
+- [Components – Pagination](https://envisionui.io/components/pagination/): The Pagination component provides accessible navigation for multi-page content, with customizable alignment and sizing options.
+- [Components – Popover](https://envisionui.io/components/popover/): Popovers displays contextual overlays with customizable content, positioning, and trigger options.
+- [Components – Profile image](https://envisionui.io/components/profile-image/): The Profile Image component displays images with fixed or responsive sizes.
+- [Components – Progress indicator](https://envisionui.io/components/progress/): The Progress Indicator component displays progress with customizable colors, labels, and animations.
+- [Components – Spinner](https://envisionui.io/components/spinner/): The Spinner component displays loading animations with standard or bounce styles and optional delays.
+- [Components – Tab](https://envisionui.io/components/tab/): The Tab component organizes content into sections, displaying one panel at a time.
+- [Components – Table](https://envisionui.io/components/table/): Use a Table to display data in rows and columns, with customizable styles and responsive layouts.
+- [Components – Toast](https://envisionui.io/components/toast/): Use the Toast component to display brief, customizable notifications to inform users of system events.
+- [Components – Tooltip](https://envisionui.io/components/tooltip/): Use Tooltip to display brief, informative messages when users hover over or focus on elements.
+- [Dashboard – Basics](https://envisionui.io/dashboard/basics/): Basics of designing a dashboard widget
+- [Dashboard – Responsive widgets](https://envisionui.io/dashboard/responsive-widgets/): Use CSS container queries to make widgets responsive to different sizes.
+- [Dashboard – Widget colors](https://envisionui.io/dashboard/widget-colors/): The widget color palette provides a set of colors that can be used to style widgets.
+- [Dashboard – Widget components](https://envisionui.io/dashboard/widget-components/): Styles for widget components such as labels, values, and badges.
+- [Dashboard – Widget CSS variables](https://envisionui.io/dashboard/widget-css-variables/): Additional CSS variables for styling dashboard widgets.
+- [Dashboard – Widget typography](https://envisionui.io/dashboard/widget-typography/): Typography guidelines for dashboard widgets.
+- [Forms – Button group](https://envisionui.io/forms/button-group/): Button Group groups related buttons together, providing a unified interface for multiple actions.
+- [Forms – Button](https://envisionui.io/forms/button/): Buttons provide interactive elements with various styles, sizes, and icon options.
+- [Forms – Form elements](https://envisionui.io/forms/form-elements/): Form elements structures user inputs with labels, controls, and consistent spacing.
+- [Forms – Form layout](https://envisionui.io/forms/form-layout/): Form Layout offers structured classes for creating accessible, consistent, and responsive form layouts.
+- [Forms – Range slider](https://envisionui.io/forms/range-slider/): The Range Slider component lets users select a value or range with customizable intervals and limits.
+- [Forms – Tag Select](https://envisionui.io/forms/tag-select/): Tag Select enables customizable multi-select interfaces with cross-browser support and styling.
+- [Layout – Cardholder](https://envisionui.io/layout/cardholder/): A Cardholder utilizes CSS grid or flexbox to create a responsive card grid that adapts to available space.
+- [Layout – Container](https://envisionui.io/layout/container/): The Container utility establishes a containment context for applying container query at-rules.
+- [Layout – Flexbox](https://envisionui.io/layout/flexbox/): Use the Flexbox utility to provide classes for flexible layouts, including direction, alignment, and wrapping.
+- [Typography – Basic text](https://envisionui.io/typography/basic-text/): The Basic Text utility offers classes for headings, alignment, transformations, status colors, and links.
+- [Typography – Dynamic font size](https://envisionui.io/typography/dynamic-font-size/): The Dynamic Font Size utility scales an element’s base font size based on container width.
+- [Typography – Text lists](https://envisionui.io/typography/text-list/): Text lists are used for ordered and unordered lists in text content.
+- [Typography – Content text](https://envisionui.io/typography/text/)
+- [Typography – UI Text](https://envisionui.io/typography/ui-text/): UI Text provides standardized styles for headings and text across templates, components, and applications.
+- [Utils – Assistive text](https://envisionui.io/utils/assistive-text/): Assistive text provides helpful context, guidance, or feedback for improved accessibility and user understanding.
+- [Utils – Borders](https://envisionui.io/utils/borders/): Use the Borders utility to set or remove borders.
+- [Utils – CSS variables](https://envisionui.io/utils/css-variables/): CSS Variables utility offers predefined custom properties for consistent styling across components.
+- [Utils – Display](https://envisionui.io/utils/display/): The Display utility provides classes to set an element’s display property, such as inline, block, flex, inline-block, inline-flex, or none.
+- [Utils – Shadows](https://envisionui.io/utils/shadows/): Use the Shadows utility classes to apply various sized shadows to elements.
+- [Utils – Sizing](https://envisionui.io/utils/sizing/): The Sizing utility offers classes to define elements’ width and height using preset values.
+- [Utils – Spacing](https://envisionui.io/utils/spacing/): The Spacing utility provides classes for consistent margin and padding adjustments across elements.
+- [Utils – Vertical alignment](https://envisionui.io/utils/vertical-alignment/): The Vertical Alignment utility offers classes to align elements – baseline, top, middle, bottom, text-top, and text-bottom.
