@@ -2,7 +2,6 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const PAGES_DIR = fileURLToPath(new URL('../../pages', import.meta.url));
 const MARKDOWN_EXTENSIONS = new Set(['.md', '.mdx']);
 const EXCLUDED_DIRS = new Set(['deprecated', 'examples']);
 
@@ -179,8 +178,30 @@ async function walkPages(dir: string, relativeRoot = ''): Promise<PageFile[]> {
    return files;
 }
 
+async function resolvePagesDir(): Promise<string> {
+   const candidates = [
+      fileURLToPath(new URL('../../pages', import.meta.url)),
+      fileURLToPath(new URL('../../../src/pages', import.meta.url)),
+      path.join(process.cwd(), 'src/pages'),
+   ];
+
+   for (const candidate of candidates) {
+      try {
+         const stat = await fs.stat(candidate);
+         if (stat.isDirectory()) {
+            return candidate;
+         }
+      } catch {
+         // try next candidate
+      }
+   }
+
+   throw new Error('Unable to resolve pages directory for llms generation.');
+}
+
 export async function getDocsItems(): Promise<LlmsItem[]> {
-   const pages = await walkPages(PAGES_DIR);
+   const pagesDir = await resolvePagesDir();
+   const pages = await walkPages(pagesDir);
    const items: LlmsItem[] = [];
 
    for (const page of pages) {
@@ -203,7 +224,8 @@ export async function getDocsItems(): Promise<LlmsItem[]> {
 }
 
 export async function getDocsFullItems(): Promise<LlmsFullItem[]> {
-   const pages = await walkPages(PAGES_DIR);
+   const pagesDir = await resolvePagesDir();
+   const pages = await walkPages(pagesDir);
    const items: LlmsFullItem[] = [];
 
    for (const page of pages) {
