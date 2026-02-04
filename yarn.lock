@@ -4965,7 +4965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-fade@npm:^9.0.0-rc01":
+"embla-carousel-fade@npm:^9.0.0-rc.0":
   version: 9.0.0-rc01
   resolution: "embla-carousel-fade@npm:9.0.0-rc01"
   peerDependencies:
@@ -5113,7 +5113,7 @@ __metadata:
     embla-carousel-accessibility: "npm:^9.0.0-rc.0"
     embla-carousel-auto-height: "npm:^9.0.0-rc.0"
     embla-carousel-autoplay: "npm:^9.0.0-rc.0"
-    embla-carousel-fade: "npm:^9.0.0-rc01"
+    embla-carousel-fade: "npm:^9.0.0-rc.0"
     eslint: "npm:^9.39.1"
     eslint-webpack-plugin: "npm:^5.0.1"
     file-loader: "npm:^6.2.0"
