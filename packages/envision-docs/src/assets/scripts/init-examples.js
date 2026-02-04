@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       envision.imageViewer2(imageViewer2Example, {
          slides: {
             auto: 3000,
-            playing: false,
             buttons: {
                placement: 'top',
                type: 'secondary',

@@ -182,7 +182,6 @@ The container element should have an `aria-label` attribute.
 envision.imageViewer2(document.querySelector('#example-image-viewer'), {
    slides: {
       auto: 3000,
-      playing: false,
       buttons: {
          placement: 'top',
          type: 'secondary',
