@@ -50,7 +50,7 @@
       "embla-carousel-auto-height": "^9.0.0-rc.0",
       "embla-carousel-autoplay": "^9.0.0-rc.0",
       "embla-carousel-fade": "^9.0.0-rc.0",
-      "jquery": "^3.7.1",
+      "jquery": "^4.0.0",
       "tom-select": "^2.4.3"
    },
    "browserslist": [
