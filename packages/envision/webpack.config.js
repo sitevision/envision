@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const zlib = require('zlib');
+const buildSvgSprites = require('build-svg-sprites');
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -34,6 +34,44 @@ const commonPlugins = [
          },
       },
    }),
+];
+
+class SvgSpriteBuildPlugin {
+   constructor(iconDirs) {
+      this.iconDirs = iconDirs;
+   }
+
+   apply(compiler) {
+      const addDependencies = (compilation) => {
+         if (compilation.fileDependencies) {
+            this.iconDirs.forEach((dir) =>
+               compilation.fileDependencies.add(dir)
+            );
+         }
+         if (compilation.contextDependencies) {
+            this.iconDirs.forEach((dir) =>
+               compilation.contextDependencies.add(dir)
+            );
+         }
+      };
+
+      compiler.hooks.thisCompilation.tap(
+         'SvgSpriteBuildPlugin',
+         addDependencies
+      );
+      compiler.hooks.beforeRun.tapPromise('SvgSpriteBuildPlugin', () =>
+         buildSvgSprites()
+      );
+      compiler.hooks.watchRun.tapPromise('SvgSpriteBuildPlugin', () =>
+         buildSvgSprites()
+      );
+   }
+}
+
+const iconDirs = [
+   path.resolve(__dirname, 'src', 'icons', 'envision-icons'),
+   path.resolve(__dirname, 'src', 'icons', 'file-icons'),
+   path.resolve(__dirname, 'src', 'icons', 'link-icons'),
 ];
 
 module.exports = [
@@ -92,30 +130,7 @@ module.exports = [
          new MiniCssExtractPlugin({
             filename: 'envision.css',
          }),
-         new CopyPlugin({
-            patterns: [
-               {
-                  from: path.resolve(__dirname, 'src', 'icons'),
-                  to: path.resolve(
-                     __dirname,
-                     '..',
-                     'envision-docs',
-                     'static',
-                     'sitevision'
-                  ),
-               },
-               {
-                  from: path.resolve(__dirname, 'src', 'icons'),
-                  to: path.resolve(
-                     __dirname,
-                     '..',
-                     'envision-docs',
-                     'static',
-                     'dist'
-                  ),
-               },
-            ],
-         }),
+         new SvgSpriteBuildPlugin(iconDirs),
          ...commonPlugins,
       ],
       externals: {
