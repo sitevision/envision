@@ -6,7 +6,7 @@
 Image viewer · Envision by Sitevision
 </title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<meta content="The Image Viewer component displays slideshows and lightbox galleries with navigation controls." name="description">
+<meta content="Accessible image slideshows and lightbox galleries with flexible layout and predictable motion." name="description">
 <link href="/llms.txt" rel="alternate" type="text/plain">
 <link href="/llms-full.txt" rel="alternate" type="text/plain">
 <script>((e,o,t)=>{const c=e.sessionStorage,d=c.getItem(t);let s;d?s=d:(s=e.matchMedia("(prefers-color-scheme: dark)").matches?"doc-dark-mode":"doc-light-mode",c.setItem(t,s)),o.classList.add(s)})(window,document.documentElement,"colorscheme")</script>
@@ -15,8 +15,8 @@ Image viewer · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=e616bab"></script>
-<link href="/assets/docs.CoTzEQkv.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=e619a70"></script>
+<link href="/assets/docs.OgKesUaZ.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -92,8 +92,7 @@ Menu
 <h1 class="doc-main-heading">
 Image viewer
 </h1>
-<p class="doc-p">Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow and/or a lightbox viewer with navigation between images.</p>
-<section aria-label="Photos from Örebro" class="env-m-vertical--large" id="demoImageViewer2">
+<section aria-label="Photos from Örebro" class="env-m-vertical--large" id="demo-image-viewer">
 <figure data-href="/placeholders/originals/10.webp" data-zoom="">
 <img alt="" src="/placeholders/900x400/10.webp">
 <figcaption class="env-image-viewer-2__viewer__caption">Örebro Castle</figcaption>
@@ -111,19 +110,36 @@ Highland cattle at Oset outside Örebro
 </figcaption>
 </figure>
 </section>
-<h2 class="doc-heading-2" id="features-include">Features include</h2>
+<p class="doc-p">The component supports mouse, touch, keyboard, and assistive technologies out of the box, with predictable navigation and motion-safe defaults.</p>
+<p class="doc-p">Typical use cases:</p>
 <ul class="doc-list">
-<li class="doc-list__item">Buttons for displaying the previous and next slides.</li>
-<li class="doc-list__item">Button for stopping and restarting rotation.</li>
-<li class="doc-list__item">Keyboard navigation support.</li>
-<li class="doc-list__item">Aria-live announcement for image changes.</li>
-<li class="doc-list__item">Optional automatic rotation, always disabled for users who prefers reduced motion.</li>
-<li class="doc-list__item">Optional download button in lightbox.</li>
-<li class="doc-list__item">Optional placement of slideshow buttons.</li>
+<li class="doc-list__item">
+<p class="doc-p"><strong class="doc-strong">Lightbox</strong><br>
+A gallery of images that opens in a modal viewer when activated.</p>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><strong class="doc-strong">Slideshow</strong><br>
+A carousel that displays one image at a time, with navigation controls.</p>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><strong class="doc-strong">Slideshow with lightbox</strong><br>
+A slideshow where images also can be opened in a lightbox for a larger view.</p>
+</li>
 </ul>
+<h2 class="doc-heading-2" id="accessibility">Accessibility</h2>
+<p class="doc-p">Image Viewer 2 is built with accessibility in mind.</p>
+<ul class="doc-list">
+<li class="doc-list__item">Full keyboard navigation</li>
+<li class="doc-list__item">Screen reader support using <code class="doc-code">aria-live</code></li>
+<li class="doc-list__item">Reduced motion support via <code class="doc-code">prefers-reduced-motion</code></li>
+<li class="doc-list__item">Explicit labeling of slideshow containers using <code class="doc-code">aria-label</code></li>
+</ul>
+<p class="doc-p">Automatic rotation and animated transitions are disabled or simplified when the user prefers reduced motion.</p>
 <h2 class="doc-heading-2" id="lightbox">Lightbox</h2>
-<p class="doc-p">Use attribute <code class="doc-code">data-zoom</code> on one or more links inside the element being initialized from script. The lightbox opens with navigation arrows to switch between images. The link href:s should point to a large version of the image being shown.</p>
-<div class="doc-code-example"><div class="example-imageviewer2-images" id="example-imageviewer2-1">
+<p class="doc-p">To enable the lightbox, add the <code class="doc-code">data-zoom</code> attribute to one or more links or buttons inside a container element. Initialize the container using JavaScript.</p>
+<p class="doc-p">Activating any data-zoom element opens the lightbox and enables navigation between all data-zoom elements in that container.</p>
+<p class="doc-p">Use <code class="doc-code">href</code> on links or <code class="doc-code">data-href</code> on buttons to specify the large version of the image.</p>
+<div class="doc-code-example"><div class="example-imageviewer2-images" id="example-image-viewer-lightbox-only">
 <ul class="env-list env-cardholder-grid" style="--env-cardholder-grid-column-width:10em">
 <li>
 <button aria-label="Zoom image: Dry grass in sunlight" data-href="/placeholders/originals/03.webp" data-zoom="" type="button">
@@ -152,7 +168,10 @@ Highland cattle at Oset outside Örebro
 </ul>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-imageviewer2-1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-imageviewer2-images<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span>
+   <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-image-viewer-lightbox-only<span class="token punctuation">"</span></span>
+   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-imageviewer2-images<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span>
       <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-list env-cardholder-grid<span class="token punctuation">"</span></span>
       <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token css language-css value"><span class="token property">--env-cardholder-grid-column-width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span>
@@ -226,11 +245,15 @@ Highland cattle at Oset outside Örebro
 </code></pre>
 </div><!--/sv-no-index-->
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">imageViewer2</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#example-imageviewer2-1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">imageViewer2</span><span class="token punctuation">(</span>
+   document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#example-image-viewer-lightbox-only'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </div><!--/sv-no-index-->
 <h2 class="doc-heading-2" id="slideshow">Slideshow</h2>
-<div class="doc-code-example"><section aria-label="Photos from Örebro" class="env-p-around--medium" id="example-imageviewer2-2">
+<p class="doc-p">Initializing the Image Viewer with the <code class="doc-code">slides</code> option turns the container into a slideshow (carousel).</p>
+<p class="doc-p">All immediate child elements of the container are treated as individual slides. The container element should have an <code class="doc-code">aria-label</code> attribute.</p>
+<div class="doc-code-example"><section aria-label="Photos from Örebro" class="env-p-around--medium" id="example-image-viewer">
 <figure data-href="/placeholders/originals/10.webp" data-zoom="">
 <img alt="" src="/placeholders/900x400/10.webp">
 <figcaption class="env-image-viewer-2__viewer__caption">
@@ -252,7 +275,7 @@ Highland cattle at Oset outside Örebro
 </section></div>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span>
-   <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-imageviewer2-2<span class="token punctuation">"</span></span>
+   <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-image-viewer<span class="token punctuation">"</span></span>
    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-p-around--medium<span class="token punctuation">"</span></span>
    <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Photos from Örebro<span class="token punctuation">"</span></span>
 <span class="token punctuation">></span></span>
@@ -278,12 +301,11 @@ Highland cattle at Oset outside Örebro
 </code></pre>
 </div><!--/sv-no-index-->
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">imageViewer2</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#example-imageviewer2-2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">imageViewer2</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#example-image-viewer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
    <span class="token property literal-property">slides</span><span class="token operator">:</span> <span class="token punctuation">{</span>
       <span class="token property literal-property">auto</span><span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span>
-      <span class="token property literal-property">playing</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-      <span class="token property literal-property">overlay</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
       <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+         <span class="token property literal-property">placement</span><span class="token operator">:</span> <span class="token string">'top'</span><span class="token punctuation">,</span>
          <span class="token property literal-property">type</span><span class="token operator">:</span> <span class="token string">'secondary'</span><span class="token punctuation">,</span>
          <span class="token property literal-property">size</span><span class="token operator">:</span> <span class="token string">'slim'</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -293,18 +315,23 @@ Highland cattle at Oset outside Örebro
 </div><!--/sv-no-index-->
 <h3 class="doc-heading-3" id="slideshow-markup">Slideshow markup</h3>
 <ul class="doc-list">
-<li class="doc-list__item">All immediate child elements of the container will be included in slideshow.</li>
-<li class="doc-list__item">The container used for initialization should have an <code class="doc-code">aria-label</code> attribute.</li>
+<li class="doc-list__item">Each immediate child element of the container becomes a slide.</li>
+<li class="doc-list__item">The container should include an <code class="doc-code">aria-label</code> describing the slideshow content.</li>
+<li class="doc-list__item"></li>
 </ul>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image description<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-2.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image description<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image description 1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-2.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Image description 2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h4 class="doc-heading-4" id="zoom">Zoom</h4>
-<p class="doc-p">Add attribute <code class="doc-code">data-zoom</code> to activate zoom/lightbox. Add URL to larger images in <code class="doc-code">data-href</code>.</p>
+<h3 class="doc-heading-3" id="slideshow-with-lightbox">Slideshow with lightbox</h3>
+<p class="doc-p">Add the <code class="doc-code">data-zoom</code> attribute to enable the lightbox. Provide a larger image using <code class="doc-code">data-href</code> or <code class="doc-code">href</code>.</p>
+<ul class="doc-list">
+<li class="doc-list__item">Use <code class="doc-code">data-href</code> when the slide element is a button or figure</li>
+<li class="doc-list__item">Use <code class="doc-code">href</code> when the slide element is a link</li>
+</ul>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span>
@@ -322,7 +349,7 @@ Highland cattle at Oset outside Örebro
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Optionally wrap the image in a link pointing to the larger image. The <code class="doc-code">href</code> attribute will be used for zoom and <code class="doc-code">data-zoom</code> should be added to the link, not the image.</p>
+<p class="doc-p">Optionally wrap the image in a link pointing to the larger image. The <code class="doc-code">href</code> attribute will be used for zoom and <code class="doc-code">data-zoom</code> must be added to the link, not the image.</p>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1-large.webp<span class="token punctuation">"</span></span> <span class="token attr-name">data-zoom</span><span class="token punctuation">></span></span>
@@ -334,13 +361,9 @@ Highland cattle at Oset outside Örebro
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h4 class="doc-heading-4" id="caption">Caption</h4>
-<p class="doc-p">Wrap images in a <code class="doc-code">figure</code> element and include a <code class="doc-code">figcaption</code> with the class <code class="doc-code">env-image-viewer-2__viewer__caption</code> to provide descriptive text.</p>
-<p class="doc-p">Captions can be combined with zoom functionality in two ways:</p>
-<ul class="doc-list">
-<li class="doc-list__item">By adding <code class="doc-code">data-href</code> and <code class="doc-code">data-zoom</code> attributes directly on the <figure> element.</figure></li>
-<li class="doc-list__item">By using an <code class="doc-code">&#x3C;a></code> element with <code class="doc-code">href</code> and <code class="doc-code">data-zoom</code>, wrapping the image and caption.</li>
-</ul>
+<h3 class="doc-heading-3" id="slideshow-captions">Slideshow captions</h3>
+<p class="doc-p">To display captions in the slideshow, wrap images in a <code class="doc-code">figure</code> element and include a <code class="doc-code">figcaption</code> with the class <code class="doc-code">env-image-viewer-2__viewer__caption</code>.</p>
+<p class="doc-p">Using <code class="doc-code">figure</code> is recommended, but captions can also be added to links.</p>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>figure</span> <span class="token attr-name">data-href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1-large.webp<span class="token punctuation">"</span></span> <span class="token attr-name">data-zoom</span><span class="token punctuation">></span></span>
@@ -356,9 +379,9 @@ Highland cattle at Oset outside Örebro
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h4 class="doc-heading-4" id="zoom-and-caption-2025092">Zoom and caption <span class="doc-badge doc-badge--info">2025.09.2</span></h4>
-<p class="doc-p">A <code class="doc-code">&#x3C;figcaption></code> placed inside a <code class="doc-code">data-zoom</code> link or <code class="doc-code">&#x3C;figure></code> will automatically be displayed in the lightbox.</p>
-<p class="doc-p">Alternatively, use the <code class="doc-code">data-figcaption</code> attribute on an <code class="doc-code">&#x3C;img></code> to show caption text in the lightbox without rendering it in the slideshow.</p>
+<h3 class="doc-heading-3" id="lightbox-captions-2025092">Lightbox captions <span class="doc-badge doc-badge--info">2025.09.2</span></h3>
+<p class="doc-p">A <code class="doc-code">figcaption</code> placed inside a <code class="doc-code">data-zoom</code> element is automatically displayed in the lightbox.</p>
+<p class="doc-p">Alternatively, use the <code class="doc-code">data-figcaption</code> attribute on an <code class="doc-code">&#x3C;img></code> to provide a caption that is only shown in the lightbox.</p>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>figure</span> <span class="token attr-name">data-href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-1-large.webp<span class="token punctuation">"</span></span> <span class="token attr-name">data-zoom</span><span class="token punctuation">></span></span>
@@ -373,106 +396,52 @@ Highland cattle at Oset outside Örebro
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h2 class="doc-heading-2" id="options">Options</h2>
-<div class="doc-code-block">
-<pre class="language-js" data-language="js"><code class="language-js" is:raw=""><span class="token comment">// Default options</span>
-<span class="token punctuation">{</span>
-   <span class="token property literal-property">slides</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property literal-property">download</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      <span class="token property literal-property">showText</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">i18n</span><span class="token operator">:</span> <span class="token string">'sv'</span><span class="token punctuation">,</span>
+<h2 class="doc-heading-2" id="configuration">Configuration</h2>
+<h3 class="doc-heading-3" id="top-level-options">Top-level options</h3>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-js" data-language="js"><code class="language-js" is:raw=""><span class="token punctuation">{</span>
+  <span class="token property literal-property">slides</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property literal-property">download</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property literal-property">showText</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property literal-property">i18n</span><span class="token operator">:</span> <span class="token string">'sv'</span>
 <span class="token punctuation">}</span>
-
-<span class="token comment">// Default slides options if set to true</span>
-<span class="token punctuation">{</span>
-   <span class="token property literal-property">auto</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">speed</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">draggable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">playing</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">overlay</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-   <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property literal-property">type</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-      <span class="token property literal-property">ghost</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-      <span class="token property literal-property">size</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span>
 </code></pre>
 </div><!--/sv-no-index-->
-<ul class="doc-list">
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">buttons</code> <em class="doc-em">{ download, showText }</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Lightbox button options. Show/hide download button. Visible text in close/download buttons.</li>
-<li class="doc-list__item">Default values: <code class="doc-code">{ download: true, showText: false }</code></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">i18n</code> <em class="doc-em">‘sv’</em> | <em class="doc-em">‘en’</em> | <em class="doc-em">‘no’</em> | <em class="doc-em">{ language keys }</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Translation of buttons aria-label and aria-roledescription. Use predefined strings (Swedish, English, or Norwegian) or write your own translation. Default is ‘sv’.</li>
-<li class="doc-list__item">Available language keys: <em class="doc-em">roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download, image, of</em></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">slides</code> <em class="doc-em">boolean</em> | <em class="doc-em">{ <a href="#slides-options-object" class="doc-link">options object</a> }</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Initialize a slideshow with default or custom options</li>
-<li class="doc-list__item">Default value: <code class="doc-code">false</code></li>
-</ul>
-</li>
-</ul>
-<p class="doc-p"><span class="offset-anchor" id="slides-options-object"></span></p>
-<h3 class="doc-heading-3" id="slides-options-object">Slides options object</h3>
-<ul class="doc-list">
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">auto</code> <em class="doc-em">number</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Auto rotation possible, play button visible. Number is interval in <em class="doc-em">ms</em>.</li>
-<li class="doc-list__item">Default value: <code class="doc-code">0</code> (auto rotation not available)</li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">speed</code> <em class="doc-em">number</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Slide speed in <em class="doc-em">ms</em>.</li>
-<li class="doc-list__item">Default value: <code class="doc-code">300</code></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">draggable</code> <em class="doc-em">boolean</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Slides listen to mouse drag events in addition to touch events.</li>
-<li class="doc-list__item">Default value: <code class="doc-code">true</code></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">playing</code> <em class="doc-em">boolean</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">If <code class="doc-code">auto</code> is set to > 0, this will start auto rotation automatically.</li>
-<li class="doc-list__item">Default value: <code class="doc-code">false</code></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">overlay</code> <em class="doc-em">boolean</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Control buttons and caption should overlay the slides.</li>
-<li class="doc-list__item">Default value: <code class="doc-code">true</code></li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">buttons</code> <em class="doc-em">{ size, type, ghost }</em></p>
-<ul class="doc-list">
-<li class="doc-list__item">Control button appearance.</li>
-<li class="doc-list__item">Allowed value for <code class="doc-code">type</code>: Any Element color name in lowercase.</li>
-<li class="doc-list__item">Allowed value for <code class="doc-code">size</code>: Any Button size name in lowercase.</li>
-<li class="doc-list__item">Allowed value for <code class="doc-code">ghost</code>: true/false</li>
-</ul>
-</li>
-</ul>
+<table class="doc-table"><thead><tr><th>Option</th><th>Type</th><th>Description</th><th>Default value</th></tr></thead><tbody><tr><td><code class="doc-code">slides</code></td><td>bool | object</td><td>Enable slideshow behavior</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.download</code></td><td>bool</td><td>Show download button in lightbox</td><td><code class="doc-code">true</code></td></tr><tr><td><code class="doc-code">buttons.showText</code></td><td>bool</td><td>Show visible button labels</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">i18n</code></td><td>string | object</td><td>Language or custom translations</td><td><code class="doc-code">"sv"</code></td></tr></tbody></table>
+<h3 class="doc-heading-3" id="slides-options">Slides options</h3>
+<div class="doc-code-block">
+<pre class="language-js" data-language="js"><code class="language-js" is:raw=""><span class="token punctuation">{</span>
+   <span class="token property literal-property">slides</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property literal-property">auto</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+     <span class="token property literal-property">transition</span><span class="token operator">:</span> <span class="token string">'slide'</span><span class="token punctuation">,</span>
+     <span class="token property literal-property">draggable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+     <span class="token property literal-property">playing</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+     <span class="token property literal-property">autoHeight</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+     <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+         <span class="token property literal-property">placement</span><span class="token operator">:</span> <span class="token string">'overlay-top'</span><span class="token punctuation">,</span>
+         <span class="token property literal-property">type</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+         <span class="token property literal-property">ghost</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+         <span class="token property literal-property">size</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<table class="doc-table"><thead><tr><th>Option</th><th>Type</th><th>Description</th><th>Default value</th></tr></thead><tbody><tr><td><code class="doc-code">auto</code></td><td>number</td><td>Auto-rotation interval (ms), <code class="doc-code">0</code> disables</td><td><code class="doc-code">0</code></td></tr><tr><td><code class="doc-code">transition</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">slide</code>, <code class="doc-code">slideSlow</code>, <code class="doc-code">fade</code>, <code class="doc-code">none</code></td><td><code class="doc-code">"slide"</code></td></tr><tr><td><code class="doc-code">draggable</code></td><td>boolean</td><td>Enable mouse drag navigation</td><td><code class="doc-code">true</code></td></tr><tr><td><code class="doc-code">playing</code></td><td>boolean</td><td>Start auto-rotation automatically</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">autoHeight</code><em class="doc-em">*</em></td><td>boolean</td><td>Adjust height to current slide</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.placement</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">top</code>, <code class="doc-code">bottom</code>, <code class="doc-code">overlay-top</code>, <code class="doc-code">overlay-bottom</code></td><td><code class="doc-code">overlay-top</code></td></tr><tr><td><code class="doc-code">buttons.type</code></td><td>string</td><td>Any <a href="/colors/element-colors/" class="doc-link">Element color</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr><tr><td><code class="doc-code">buttons.ghost</code></td><td>boolean</td><td>Use <a href="/forms/button/" class="doc-link">ghost button</a> type</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.size</code></td><td>string</td><td>Any <a href="/forms/button/#sizes" class="doc-link">Button size</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr></tbody></table>
+<div>
+<p class="env-m-top--0 example-dashboard-color-list-legend">
+<span style="font-size:1.4em">*</span> = Option was added in 2026.02.1.
+</p>
+</div>
+<div>
+<p class="env-m-top--0 example-dashboard-color-list-legend">
+Options speed and overlay were deprecated in 2026.02.1, please use transition and buttons.placement instead.
+</p>
+</div>
 <h2 class="doc-heading-2" id="api-functions">API functions</h2>
-<p class="doc-p">Instances of Image viewer 2 may be controlled by the methods described below.</p>
+<p class="doc-p">Instances of Image viewer may be controlled by the methods described below.</p>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript" is:raw="">envision<span class="token punctuation">.</span><span class="token function">imageViewer2</span><span class="token punctuation">(</span><span class="token string">'#image-viewer'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">imageViewers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    imageViewers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slider<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -533,12 +502,6 @@ Highland cattle at Oset outside Örebro
 <li class="doc-list__item">Close the lightbox.</li>
 </ul>
 </li>
-</ul>
-<h2 class="doc-heading-2" id="legacy-documentation">Legacy documentation</h2>
-<p class="doc-p">Image Viewer 2 is a replacement for the following deprecated components:</p>
-<ul class="doc-list">
-<li class="doc-list__item"><a href="/deprecated/image-slider/" class="doc-link">Image slider</a></li>
-<li class="doc-list__item"><a href="/deprecated/image-viewer/" class="doc-link">Image viewer</a></li>
 </ul>
 <div class="doc-md-link">
 <a href="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/components/image-viewer-2.md" class="env-button env-button--icon doc-md-link__button env-button--ghost env-button--icon-before env-button--primary" rel="noopener noreferrer" target="_blank">
@@ -1067,6 +1030,6 @@ Widget typography
 </div>
 <script type="module">((e,d,t)=>{const c=window.matchMedia("(prefers-color-scheme: dark)"),o=c=>{c?d.classList.add(t):d.classList.remove(t),e.sessionStorage.setItem("colorscheme",c?t:"doc-light-mode")};document.addEventListener("DOMContentLoaded",()=>{document.getElementById("darkMode").addEventListener("change",e=>{o(e.target.checked)})}),c.addEventListener("change",()=>{o(c.matches),document.getElementById("darkMode").checked=c.matches})})(window,document.documentElement,"doc-dark-mode")</script>
 <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".mobile-nav-button button"),t=document.querySelector(".mobileNav"),o=document.querySelector(".mobileNav__close");let n=!1;const r=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},d=function(e){const t=["a[href]","input:not([disabled])","button:not([disabled])"].join(","),o=e.querySelectorAll(t),n=[];for(let e=0;e<o.length;e++)r(o[e])&&n.push(o[e]);return n},s=e=>{if("Escape"===e.key)e.preventDefault(),l();else if("Tab"===e.key){const o=d(t),n=o[0],r=o[o.length-1];e.shiftKey?e.target===n&&(e.preventDefault(),r.focus()):e.target===r&&(e.preventDefault(),n.focus())}},l=()=>{n?(e.setAttribute("aria-expanded","false"),t.classList.remove("show"),document.body.style.removeProperty("overflow"),document.body.removeEventListener("keydown",s),e.focus()):(e.setAttribute("aria-expanded","true"),t.classList.add("show"),document.body.style.setProperty("overflow-x",""),document.body.style.setProperty("overflow-y",""),document.body.style.setProperty("overflow","hidden","important"),document.body.addEventListener("keydown",s),d(t)[1].focus()),n=!n};o&&o.addEventListener("click",l),e&&e.addEventListener("click",l)})</script>
-<script type="module" src="/assets/docs.74IWxkn_.js"></script>
+<script type="module" src="/assets/docs.CEd-UyJx.js"></script>
 <script type="module">const b=(()=>{let e=0;const t=()=>(e+=1,"env-"+e);return e=>{if(!e.id){let n=t();for(;document.getElementById(n);)n=t();e.id=n}}})();document.addEventListener("DOMContentLoaded",()=>{const e={html:"Example HTML code",javascript:"Example JavaScript code",unknown:"Example code"};document.body.querySelectorAll(".astro-code[data-language]").forEach(t=>{let n=t.dataset.language?.toLowerCase()||"";n.includes("html")&&(n="html"),Object.hasOwnProperty.call(e,n)||(n="unknown"),t.querySelector("code")?.setAttribute("aria-label",e[n])});const t="doc-code-block--hidden",n=["doc-code-block__toggler","env-button","env-button--link","env-button--icon","env-button--icon-after","env-button--secondary","env-button--small"],o="Show full example";document.body.querySelectorAll(".doc-code-block--expandable").forEach(e=>{const a="PRE"===e.tagName?e:e.querySelector("pre");if(a&&a.clientHeight>.25*window.innerHeight){b(e),e.classList.add(t);const a=document.createElement("span");a.textContent=o;const c=document.createElement("button");c.insertAdjacentHTML("afterbegin",'<svg class="env-icon env-icon--small">\n                <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down">\n                </use></svg>'),c.setAttribute("type","button"),c.setAttribute("aria-expanded","false"),c.classList.add(...n),c.setAttribute("aria-controls",e.id),c.appendChild(a),e.appendChild(c),c.addEventListener("click",()=>{const n="true"===c.getAttribute("aria-expanded");n?(e.classList.add(t),setTimeout(()=>{e.scrollIntoView({behavior:"auto",block:"center"})},1),a.textContent=o):(e.classList.remove(t),a.textContent="Hide full example"),c.setAttribute("aria-expanded",!n)})}})})</script>
 </body></html>

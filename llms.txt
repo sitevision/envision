@@ -18,7 +18,7 @@
 - [Components – Dropdown](https://envisionui.io/components/dropdown/): Dropdowns displays a list of options that appears upon user interaction.
 - [Components – Embedded](https://envisionui.io/components/embedded/): The Embedded component displays images and text with flexible layouts and overlay options.
 - [Components – Icons](https://envisionui.io/components/icons/): The Icon component simplifies icon integration with customizable styles.
-- [Components – Image viewer](https://envisionui.io/components/image-viewer-2/): The Image Viewer component displays slideshows and lightbox galleries with navigation controls.
+- [Components – Image viewer](https://envisionui.io/components/image-viewer-2/): Accessible image slideshows and lightbox galleries with flexible layout and predictable motion.
 - [Components – List](https://envisionui.io/components/list/): The List component displays items in vertical or horizontal layouts, with optional dividers.
 - [Components – Media](https://envisionui.io/components/media/): The Media component is used to present user activity chronologically.
 - [Components – Navigation](https://envisionui.io/components/navigation/): The Navigation component provides customizable menus for site navigation, including menubars and side navigation.
