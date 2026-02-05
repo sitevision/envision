@@ -1,19 +1,42 @@
 ---
-const { icons } = Astro.props;
+import IconList from './IconsList.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const iconDirs = {
+   'envision-icons': 'Envision icons',
+   'file-icons': 'File icons',
+   'link-icons': 'Link icons',
+};
+
+const iconsRoot = path.resolve(
+   new URL('.', import.meta.url).pathname,
+   '../../../../envision/src/icons/'
+);
+
+// Make a list of all icons in the envision source icons directory
+const getIconsInDir = (dir: string) => {
+   return fs
+      .readdirSync(`${iconsRoot}/${dir}`)
+      .filter((name) => name.endsWith('.svg'))
+      .map((name) => name.replace(/\.svg$/, ''))
+      .sort();
+};
 ---
 
 <div class="icons-demo">
-   <ul
-      class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6"
-   >
-      {
-         icons.map((icon: string) => (
-            <li class="env-list__item" title={icon}>
-               <svg class="env-icon">
-                  <use href={`/sitevision/envision-icons.svg#${icon}`} />
-               </svg>
-            </li>
-         ))
-      }
-   </ul>
+   {
+      Object.entries(iconDirs).map(([dir, title]) => (
+         <>
+            <h2 class="doc-heading-2">{title}</h2>
+            <p class="env-text-caption-01 env-m-block-end--large">
+               Path:{' '}
+               <code class="doc-code">
+                  /sitevision/{dir}.svg#{'{icon-symbol-id}'}
+               </code>
+            </p>
+            <IconList icons={getIconsInDir(dir)} sprite={`${dir}.svg`} />
+         </>
+      ))
+   }
 </div>

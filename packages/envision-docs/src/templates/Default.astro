@@ -7,11 +7,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <Master frontmatter={frontmatter}>
-   {
-      frontmatter.icons && frontmatter.icons.length > 0 && (
-         <Icons icons={frontmatter.icons} />
-      )
-   }
+   {frontmatter.icons && <Icons />}
    <slot />
    <MarkdownLink frontmatter={frontmatter} />
    <Sidenav slot="sidenav" frontmatter={frontmatter} />
