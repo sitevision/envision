@@ -1,12 +1,9 @@
 ---
 title: Image viewer
-description: The Image Viewer component displays slideshows and lightbox galleries with navigation controls.
+description: Accessible image slideshows and lightbox galleries with flexible layout and predictable motion.
 ---
 
-Image viewer 2 is an accessible, configurable component providing options for showing an image slideshow
-and/or a lightbox viewer with navigation between images.
-
-<section id="demoImageViewer2"
+<section id="demo-image-viewer"
 class="env-m-vertical--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
@@ -27,24 +24,47 @@ class="env-m-vertical--large"
    </figure>
 </section>
 
-## Features include
+The component supports mouse, touch, keyboard, and assistive technologies out of the box,
+with predictable navigation and motion-safe defaults.
 
-- Buttons for displaying the previous and next slides.
-- Button for stopping and restarting rotation.
-- Keyboard navigation support.
-- Aria-live announcement for image changes.
-- Optional automatic rotation, always disabled for users who prefers reduced motion.
-- Optional download button in lightbox.
-- Optional placement of slideshow buttons.
+Typical use cases:
+
+- **Lightbox**  
+  A gallery of images that opens in a modal viewer when activated.
+
+- **Slideshow**  
+  A carousel that displays one image at a time, with navigation controls.
+
+- **Slideshow with lightbox**  
+  A slideshow where images also can be opened in a lightbox for a larger view.
+
+## Accessibility
+
+Image Viewer 2 is built with accessibility in mind.
+
+- Full keyboard navigation
+- Screen reader support using `aria-live`
+- Reduced motion support via `prefers-reduced-motion`
+- Explicit labeling of slideshow containers using `aria-label`
+
+Automatic rotation and animated transitions are disabled or simplified
+when the user prefers reduced motion.
 
 ## Lightbox
 
-Use attribute `data-zoom` on one or more links inside the element being initialized from script. The lightbox opens
-with navigation arrows to switch between images. The link href:s should point to a large version of the image being
-shown.
+To enable the lightbox, add the `data-zoom` attribute to one or more links or buttons
+inside a container element. Initialize the container using JavaScript.
+
+Activating any data-zoom element opens the lightbox and enables navigation
+between all data-zoom elements in that container.
+
+Use `href` on links or `data-href` on buttons to specify the large version of the image.
 
 ```html
-<div id="example-imageviewer2-1" class="example-imageviewer2-images">
+<div
+   id="example-image-viewer-lightbox-only"
+   class="example-imageviewer2-images"
+>
    <ul
       class="env-list env-cardholder-grid"
       style="--env-cardholder-grid-column-width: 10em;"
@@ -118,14 +138,22 @@ shown.
 ```
 
 ```javascript
-envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
+envision.imageViewer2(
+   document.querySelector('#example-image-viewer-lightbox-only')
+);
 ```
 
 ## Slideshow
 
+Initializing the Image Viewer with the `slides` option turns the container
+into a slideshow (carousel).
+
+All immediate child elements of the container are treated as individual slides.
+The container element should have an `aria-label` attribute.
+
 ```html
 <section
-   id="example-imageviewer2-2"
+   id="example-image-viewer"
    class="env-p-around--medium"
    aria-label="Photos from Örebro"
 >
@@ -151,12 +179,11 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-1'));
 ```
 
 ```javascript
-envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
+envision.imageViewer2(document.querySelector('#example-image-viewer'), {
    slides: {
       auto: 3000,
-      playing: false,
-      overlay: false,
       buttons: {
+         placement: 'top',
          type: 'secondary',
          size: 'slim',
       },
@@ -166,19 +193,24 @@ envision.imageViewer2(document.querySelector('#example-imageviewer2-2'), {
 
 ### Slideshow markup
 
-- All immediate child elements of the container will be included in slideshow.
-- The container used for initialization should have an `aria-label` attribute.
+- Each immediate child element of the container becomes a slide.
+- The container should include an `aria-label` describing the slideshow content.
+-
 
 ```html noexample
 <section aria-label="Slideshow label">
-   <img src="example-1.webp" alt="Image description" />
-   <img src="example-2.webp" alt="Image description" />
+   <img src="example-1.webp" alt="Image description 1" />
+   <img src="example-2.webp" alt="Image description 2" />
 </section>
 ```
 
-#### Zoom
+### Slideshow with lightbox
 
-Add attribute `data-zoom` to activate zoom/lightbox. Add URL to larger images in `data-href`.
+Add the `data-zoom` attribute to enable the lightbox.
+Provide a larger image using `data-href` or `href`.
+
+- Use `data-href` when the slide element is a button or figure
+- Use `href` when the slide element is a link
 
 ```html noexample
 <section aria-label="Slideshow label">
@@ -198,7 +230,7 @@ Add attribute `data-zoom` to activate zoom/lightbox. Add URL to larger images in
 ```
 
 Optionally wrap the image in a link pointing to the larger image. The `href` attribute will be used for zoom
-and `data-zoom` should be added to the link, not the image.
+and `data-zoom` must be added to the link, not the image.
 
 ```html noexample
 <section aria-label="Slideshow label">
@@ -211,14 +243,12 @@ and `data-zoom` should be added to the link, not the image.
 </section>
 ```
 
-#### Caption
+### Slideshow captions
 
-Wrap images in a `figure` element and include a `figcaption` with the class `env-image-viewer-2__viewer__caption` to provide descriptive text.
+To display captions in the slideshow, wrap images in a `figure` element and include
+a `figcaption` with the class `env-image-viewer-2__viewer__caption`.
 
-Captions can be combined with zoom functionality in two ways:
-
-- By adding `data-href` and `data-zoom` attributes directly on the <figure> element.
-- By using an `<a>` element with `href` and `data-zoom`, wrapping the image and caption.
+Using `figure` is recommended, but captions can also be added to links.
 
 ```html noexample
 <section aria-label="Slideshow label">
@@ -235,12 +265,13 @@ Captions can be combined with zoom functionality in two ways:
 </section>
 ```
 
-#### Zoom and caption <span class="doc-badge doc-badge--info">2025.09.2</span>
+### Lightbox captions <span class="doc-badge doc-badge--info">2025.09.2</span>
 
-A `<figcaption>` placed inside a `data-zoom` link or `<figure>` will automatically be displayed in the lightbox.
+A `figcaption` placed inside a `data-zoom` element is automatically displayed
+in the lightbox.
 
-Alternatively, use the `data-figcaption` attribute on an `<img>` to show caption text in the lightbox without
-rendering it in the slideshow.
+Alternatively, use the `data-figcaption` attribute on an `<img>` to provide
+a caption that is only shown in the lightbox.
 
 ```html noexample
 <section aria-label="Slideshow label">
@@ -256,81 +287,74 @@ rendering it in the slideshow.
 </section>
 ```
 
-## Options
+## Configuration
 
-```js noexpand
-// Default options
+### Top-level options
+
+```js
 {
-   slides: false,
-   buttons: {
-      download: true,
-      showText: false,
-   },
-   i18n: 'sv',
+  slides: false,
+  buttons: {
+    download: true,
+    showText: false
+  },
+  i18n: 'sv'
 }
-
-// Default slides options if set to true
-{
-   auto: 0,
-   speed: 300,
-   draggable: true,
-   playing: false,
-   overlay: true,
-   buttons: {
-      type: null,
-      ghost: false,
-      size: null,
-   },
-},
 ```
 
-- `buttons` _{ download, showText }_
-   - Lightbox button options. Show/hide download button. Visible text in close/download buttons.
-   - Default values: `{ download: true, showText: false }`
+| Option             | Type             | Description                      | Default value |
+| ------------------ | ---------------- | -------------------------------- | ------------- |
+| `slides`           | bool \| object   | Enable slideshow behavior        | `false`       |
+| `buttons.download` | bool             | Show download button in lightbox | `true`        |
+| `buttons.showText` | bool             | Show visible button labels       | `false`       |
+| `i18n`             | string \| object | Language or custom translations  | `"sv"`        |
 
-- `i18n` _'sv'_ | _'en'_ | _'no'_ | _{ language keys }_
-   - Translation of buttons aria-label and aria-roledescription.
-     Use predefined strings (Swedish, English, or Norwegian) or write your own translation. Default is 'sv'.
-   - Available language keys: _roledescription, prev, next, pause, play, slideshow, zoom, largeImage, close, download,
-     image, of_
+### Slides options
 
-- `slides` _boolean_ | _{ [options object](#slides-options-object) }_
-   - Initialize a slideshow with default or custom options
-   - Default value: `false`
+```js noexpand
+{
+   slides: {
+     auto: 0,
+     transition: 'slide',
+     draggable: true,
+     playing: false,
+     autoHeight: false,
+     buttons: {
+         placement: 'overlay-top',
+         type: null,
+         ghost: false,
+         size: null,
+     }
+   }
+}
+```
 
-<span id="slides-options-object" class="offset-anchor"></span>
+| Option                  | Type    | Description                                                    | Default value |
+| ----------------------- | ------- | -------------------------------------------------------------- | ------------- |
+| `auto`                  | number  | Auto-rotation interval (ms), `0` disables                      | `0`           |
+| `transition`_\*_        | string  | `slide`, `slideSlow`, `fade`, `none`                           | `"slide"`     |
+| `draggable`             | boolean | Enable mouse drag navigation                                   | `true`        |
+| `playing`               | boolean | Start auto-rotation automatically                              | `false`       |
+| `autoHeight`_\*_        | boolean | Adjust height to current slide                                 | `false`       |
+| `buttons.placement`_\*_ | string  | `top`, `bottom`, `overlay-top`, `overlay-bottom`               | `overlay-top` |
+| `buttons.type`          | string  | Any [Element color](/colors/element-colors/) name in lowercase | `null`        |
+| `buttons.ghost`         | boolean | Use [ghost button](/forms/button/) type                        | `false`       |
+| `buttons.size`          | string  | Any [Button size](/forms/button/#sizes) name in lowercase      | `null`        |
 
-### Slides options object
-
-- `auto` _number_
-   - Auto rotation possible, play button visible. Number is interval in _ms_.
-   - Default value: `0` (auto rotation not available)
-
-- `speed` _number_
-   - Slide speed in _ms_.
-   - Default value: `300`
-
-- `draggable` _boolean_
-   - Slides listen to mouse drag events in addition to touch events.
-   - Default value: `true`
-
-- `playing` _boolean_
-   - If `auto` is set to > 0, this will start auto rotation automatically.
-   - Default value: `false`
-
-- `overlay` _boolean_
-   - Control buttons and caption should overlay the slides.
-   - Default value: `true`
-
-- `buttons` _{ size, type, ghost }_
-   - Control button appearance.
-   - Allowed value for `type`: Any Element color name in lowercase.
-   - Allowed value for `size`: Any Button size name in lowercase.
-   - Allowed value for `ghost`: true/false
+<div>
+<p class="example-dashboard-color-list-legend env-m-top--0">
+   <span style="font-size:1.4em">*</span> = Option was added in 2026.02.1.
+</p>
+</div>
+<div>
+<p class="example-dashboard-color-list-legend env-m-top--0">
+   Options speed and overlay were deprecated in 2026.02.1, please use transition and buttons.placement instead.
+</p>
+</div>
 
 ## API functions
 
-Instances of Image viewer 2 may be controlled by the methods described below.
+Instances of Image viewer may be controlled by the methods described below.
 
 ```javascript
 envision.imageViewer2('#image-viewer').then(function (imageViewers) {
@@ -366,10 +390,3 @@ envision.imageViewer2('#image-viewer').then(function (imageViewers) {
 
 - `lightbox.close()`
    - Close the lightbox.
-
-## Legacy documentation
-
-Image Viewer 2 is a replacement for the following deprecated components:
-
-- [Image slider](/deprecated/image-slider/)
-- [Image viewer](/deprecated/image-viewer/)

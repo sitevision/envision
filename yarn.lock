@@ -5260,6 +5260,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-auto-height@npm:^9.0.0-rc.0":
+  version: 9.0.0-rc01
+  resolution: "embla-carousel-auto-height@npm:9.0.0-rc01"
+  peerDependencies:
+    embla-carousel: 9.0.0-rc01
+  checksum: 10c0/6e189f860a3a3568e82678b2fa5b172744338b2f4cddf975184c4f6009e483d00bffe3f6304fcfca232bbec8b875c3a27f52666acd708320cbb484d5cd89914a
+  languageName: node
+  linkType: hard
+
+"embla-carousel-autoplay@npm:^9.0.0-rc.0":
+  version: 9.0.0-rc01
+  resolution: "embla-carousel-autoplay@npm:9.0.0-rc01"
+  peerDependencies:
+    embla-carousel: 9.0.0-rc01
+  checksum: 10c0/00dc124991bf0e2b3702b0c07fe66239e380cca3a7c1de6d557de04d76bd779ccd65804122c9ab1675a327e46fafb67226f60ba543f7f294a5c0196e1cd1d3b7
+  languageName: node
+  linkType: hard
+
+"embla-carousel-fade@npm:^9.0.0-rc.0":
+  version: 9.0.0-rc01
+  resolution: "embla-carousel-fade@npm:9.0.0-rc01"
+  peerDependencies:
+    embla-carousel: 9.0.0-rc01
+  checksum: 10c0/866a69fd58a2bd1728c797faaba7852224e5aa06b3b69ba1421bbf6d7d37063fbef90c34ffb7fab8300116ab9d7eb1a7275548b889c5a84b5df27636ef155176
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:^9.0.0-rc.0":
+  version: 9.0.0-rc01
+  resolution: "embla-carousel@npm:9.0.0-rc01"
+  checksum: 10c0/ef43b72390f6d8a8a989a9e6b88837f69b7931dda48413599084e2f7a248f44d95df2dd07639631534ad92768581e726a78c2db4576de0dea5e10d2e5138049c
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^10.3.0":
   version: 10.5.0
   resolution: "emoji-regex@npm:10.5.0"
@@ -5402,6 +5436,10 @@ __metadata:
     css-loader: "npm:^7.1.2"
     css-minimizer-webpack-plugin: "npm:^7.0.4"
     css-vars-to-json: "npm:1.0.0"
+    embla-carousel: "npm:^9.0.0-rc.0"
+    embla-carousel-auto-height: "npm:^9.0.0-rc.0"
+    embla-carousel-autoplay: "npm:^9.0.0-rc.0"
+    embla-carousel-fade: "npm:^9.0.0-rc.0"
     eslint: "npm:^9.39.1"
     eslint-webpack-plugin: "npm:^5.0.1"
     file-loader: "npm:^6.2.0"
@@ -5411,7 +5449,6 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     sass: "npm:^1.94.2"
     sass-loader: "npm:^16.0.6"
-    swipejs: "npm:^2.3.1"
     terser-webpack-plugin: "npm:^5.3.15"
     tom-select: "npm:^2.4.3"
     webpack: "npm:^5.104.1"
@@ -10617,13 +10654,6 @@ __metadata:
   bin:
     svgo: ./bin/svgo.js
   checksum: 10c0/2b01c910d59d10bb15e17714181a8fa96531b09a4e2cf2ca1abe24dbcb8400725b6d542d6e456c62222546e334d5b344799c170c5b6be0c48e31b02c23297275
-  languageName: node
-  linkType: hard
-
-"swipejs@npm:^2.3.1":
-  version: 2.3.1
-  resolution: "swipejs@npm:2.3.1"
-  checksum: 10c0/461f0ea3d519f83f846d62b4480443c7861b4688602ee47a6c62a49c6c8ebc6f2db275233c2c9e47502d0aef10770849073acfc3921c8c37adcc383d02c502a0
   languageName: node
   linkType: hard
 

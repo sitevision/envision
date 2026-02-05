@@ -46,8 +46,11 @@
    },
    "dependencies": {
       "@popperjs/core": "^2.11.8",
+      "embla-carousel": "^9.0.0-rc.0",
+      "embla-carousel-auto-height": "^9.0.0-rc.0",
+      "embla-carousel-autoplay": "^9.0.0-rc.0",
+      "embla-carousel-fade": "^9.0.0-rc.0",
       "jquery": "^3.7.1",
-      "swipejs": "^2.3.1",
       "tom-select": "^2.4.3"
    },
    "browserslist": [
