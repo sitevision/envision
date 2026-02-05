@@ -9,10 +9,7 @@ const iconDirs = {
    'link-icons': 'Link icons',
 };
 
-const iconsRoot = path.resolve(
-   new URL('.', import.meta.url).pathname,
-   '../../../../envision/src/icons/'
-);
+const iconsRoot = path.resolve(process.cwd(), '..', 'envision', 'src', 'icons');
 
 // Make a list of all icons in the envision source icons directory
 const getIconsInDir = (dir: string) => {
