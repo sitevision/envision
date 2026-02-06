@@ -9,7 +9,7 @@ const { icons, sprite } = Astro.props as {
    {
       icons.map((icon) => (
          <li class="env-list__item" title={icon}>
-            <svg class="env-icon">
+            <svg class="env-icon env-icon--small">
                <use href={`/sitevision/${sprite}#${icon}`} />
             </svg>
          </li>
