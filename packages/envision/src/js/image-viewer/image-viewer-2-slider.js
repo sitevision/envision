@@ -170,6 +170,12 @@ export default class Imageviewer2Slider {
       }
 
       this.#el.replaceChildren(this.#viewerEl);
+
+      // Disable autoplay when there is only a single slide.
+      if (slideCount <= 1 && this.#config?.slides?.auto) {
+         this.#config.slides.auto = false;
+         this.#config.slides.playing = false;
+      }
    }
 
    getSliderButtonClassNames() {

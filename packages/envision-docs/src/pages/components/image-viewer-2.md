@@ -314,7 +314,7 @@ a caption that is only shown in the lightbox.
 ```js noexpand
 {
    slides: {
-     auto: 0,
+     auto: false,
      transition: 'slide',
      draggable: true,
      playing: false,
@@ -331,7 +331,7 @@ a caption that is only shown in the lightbox.
 
 | Option                  | Type    | Description                                                    | Default value |
 | ----------------------- | ------- | -------------------------------------------------------------- | ------------- |
-| `auto`                  | number  | Auto-rotation interval (ms), `0` disables                      | `0`           |
+| `auto`                  | number  | Auto-rotation interval (ms), `false` disables                  | `false`       |
 | `transition`_\*_        | string  | `slide`, `slideSlow`, `fade`, `none`                           | `"slide"`     |
 | `draggable`             | boolean | Enable mouse drag navigation                                   | `true`        |
 | `playing`               | boolean | Start auto-rotation automatically                              | `false`       |

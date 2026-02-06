@@ -13,7 +13,7 @@ const defaults = {
 
 // Deprecated in 2026.02.1: speed, overlay
 const slidesDefaults = {
-   auto: 0,
+   auto: false,
    playing: false,
    transition: 'slide', // Added in 2026.02.1, replaces "speed"
    draggable: true,
