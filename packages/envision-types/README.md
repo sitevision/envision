@@ -8,12 +8,6 @@ TypeScript definitions for the Envision UI framework in Sitevision CMS.
 npm install @sitevision/envision-types --save-dev
 ```
 
-or with yarn:
-
-```bash
-yarn add -D @sitevision/envision-types
-```
-
 ## Configuration
 
 Add the types to your `tsconfig.json`:
@@ -26,9 +20,27 @@ Add the types to your `tsconfig.json`:
 }
 ```
 
+### ESLint Configuration
+
+For ESLint, add `envision` and `Envision` as global variables in your `eslint.config.js`:
+
+```javascript
+export default [
+   {
+      languageOptions: {
+         globals: {
+            envision: 'readonly',
+            Envision: 'readonly',
+         },
+      },
+   },
+   // ...other config
+];
+```
+
 ## Usage
 
-The types are globally available - no imports needed! Just use the `envision` object in your code:
+The types are then globally available - no imports needed! Just use the `envision` object in your code:
 
 ```typescript
 // Select component
@@ -46,12 +58,6 @@ select[0].addOptions([
    { value: '2', text: 'Option 2' },
 ]);
 ```
-
-## Available Components
-
-- **Select** - Tag Select / Autocomplete component
-
-More components will be added as the type definitions expand.
 
 ## Documentation
 
