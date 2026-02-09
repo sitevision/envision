@@ -20,7 +20,7 @@ declare namespace Envision {
      */
     readonly el: HTMLDialogElement;
     /** The configuration options for this instance */
-    readonly options: Required<DialogConfig>;
+    readonly options: DialogConfig;
 
     /**
      * Show the dialog

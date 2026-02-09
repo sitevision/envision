@@ -2,7 +2,6 @@
  * Global Envision object declaration
  * This declares the globally available envision object in the Sitevision CMS
  */
-
 declare namespace Envision {
   interface EnvisionGlobal {
     /**
@@ -30,7 +29,7 @@ declare namespace Envision {
      * @returns Promise that resolves to array of DialogInstance
      */
     dialog(
-      element: HTMLElement | NodeList,
+      element: HTMLDialogElement,
       config?: DialogConfig
     ): Promise<DialogInstance[]>;
 
