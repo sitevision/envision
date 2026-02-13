@@ -2415,7 +2415,6 @@ envision.imageViewer2(document.querySelector('#example-image-viewer'), {
 
 - Each immediate child element of the container becomes a slide.
 - The container should include an `aria-label` describing the slideshow content.
--
 
 ```html noexample
 <section aria-label="Slideshow label">
@@ -2541,9 +2540,9 @@ a caption that is only shown in the lightbox.
      autoHeight: false,
      buttons: {
          placement: 'overlay-top',
-         type: null,
-         ghost: false,
          size: null,
+         type: null,   // only placement top/bottom
+         ghost: false, // only placement top/bottom
      }
    }
 }
@@ -2557,13 +2556,18 @@ a caption that is only shown in the lightbox.
 | `playing`               | boolean | Start auto-rotation automatically                              | `false`       |
 | `autoHeight`_\*_        | boolean | Adjust height to current slide                                 | `false`       |
 | `buttons.placement`_\*_ | string  | `top`, `bottom`, `overlay-top`, `overlay-bottom`               | `overlay-top` |
-| `buttons.type`          | string  | Any [Element color](/colors/element-colors/) name in lowercase | `null`        |
-| `buttons.ghost`         | boolean | Use [ghost button](/forms/button/) type                        | `false`       |
 | `buttons.size`          | string  | Any [Button size](/forms/button/#sizes) name in lowercase      | `null`        |
+| `buttons.type`_\*\*_    | string  | Any [Element color](/colors/element-colors/) name in lowercase | `null`        |
+| `buttons.ghost`_\*\*_   | boolean | Use [ghost button](/forms/button/) type                        | `false`       |
 
 <div>
 <p class="example-dashboard-color-list-legend env-m-top--0">
-   <span style="font-size:1.4em">*</span> = Option was added in 2026.02.1.
+   <span style="font-size:1.4em">*</span> = Option added in 2026.02.1.
+</p>
+</div>
+<div>
+<p class="example-dashboard-color-list-legend env-m-top--0">
+   <span style="font-size:1.4em">**</span> = Options type and ghost not applicable for overlay placement.
 </p>
 </div>
 <div>

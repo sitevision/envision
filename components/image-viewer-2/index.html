@@ -15,8 +15,8 @@ Image viewer · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=cc36448"></script>
-<link href="/assets/docs.OgKesUaZ.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=37b1af4"></script>
+<link href="/assets/docs.BVQfkoL9.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -317,7 +317,6 @@ Highland cattle at Oset outside Örebro
 <ul class="doc-list">
 <li class="doc-list__item">Each immediate child element of the container becomes a slide.</li>
 <li class="doc-list__item">The container should include an <code class="doc-code">aria-label</code> describing the slideshow content.</li>
-<li class="doc-list__item"></li>
 </ul>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Slideshow label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -421,18 +420,23 @@ Highland cattle at Oset outside Örebro
      <span class="token property literal-property">autoHeight</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
      <span class="token property literal-property">buttons</span><span class="token operator">:</span> <span class="token punctuation">{</span>
          <span class="token property literal-property">placement</span><span class="token operator">:</span> <span class="token string">'overlay-top'</span><span class="token punctuation">,</span>
-         <span class="token property literal-property">type</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-         <span class="token property literal-property">ghost</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
          <span class="token property literal-property">size</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+         <span class="token property literal-property">type</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>   <span class="token comment">// only placement top/bottom</span>
+         <span class="token property literal-property">ghost</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// only placement top/bottom</span>
      <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 </div><!--/sv-no-index-->
-<table class="doc-table"><thead><tr><th>Option</th><th>Type</th><th>Description</th><th>Default value</th></tr></thead><tbody><tr><td><code class="doc-code">auto</code></td><td>number</td><td>Auto-rotation interval (ms), <code class="doc-code">false</code> disables</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">transition</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">slide</code>, <code class="doc-code">slideSlow</code>, <code class="doc-code">fade</code>, <code class="doc-code">none</code></td><td><code class="doc-code">"slide"</code></td></tr><tr><td><code class="doc-code">draggable</code></td><td>boolean</td><td>Enable mouse drag navigation</td><td><code class="doc-code">true</code></td></tr><tr><td><code class="doc-code">playing</code></td><td>boolean</td><td>Start auto-rotation automatically</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">autoHeight</code><em class="doc-em">*</em></td><td>boolean</td><td>Adjust height to current slide</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.placement</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">top</code>, <code class="doc-code">bottom</code>, <code class="doc-code">overlay-top</code>, <code class="doc-code">overlay-bottom</code></td><td><code class="doc-code">overlay-top</code></td></tr><tr><td><code class="doc-code">buttons.type</code></td><td>string</td><td>Any <a href="/colors/element-colors/" class="doc-link">Element color</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr><tr><td><code class="doc-code">buttons.ghost</code></td><td>boolean</td><td>Use <a href="/forms/button/" class="doc-link">ghost button</a> type</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.size</code></td><td>string</td><td>Any <a href="/forms/button/#sizes" class="doc-link">Button size</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr></tbody></table>
+<table class="doc-table"><thead><tr><th>Option</th><th>Type</th><th>Description</th><th>Default value</th></tr></thead><tbody><tr><td><code class="doc-code">auto</code></td><td>number</td><td>Auto-rotation interval (ms), <code class="doc-code">false</code> disables</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">transition</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">slide</code>, <code class="doc-code">slideSlow</code>, <code class="doc-code">fade</code>, <code class="doc-code">none</code></td><td><code class="doc-code">"slide"</code></td></tr><tr><td><code class="doc-code">draggable</code></td><td>boolean</td><td>Enable mouse drag navigation</td><td><code class="doc-code">true</code></td></tr><tr><td><code class="doc-code">playing</code></td><td>boolean</td><td>Start auto-rotation automatically</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">autoHeight</code><em class="doc-em">*</em></td><td>boolean</td><td>Adjust height to current slide</td><td><code class="doc-code">false</code></td></tr><tr><td><code class="doc-code">buttons.placement</code><em class="doc-em">*</em></td><td>string</td><td><code class="doc-code">top</code>, <code class="doc-code">bottom</code>, <code class="doc-code">overlay-top</code>, <code class="doc-code">overlay-bottom</code></td><td><code class="doc-code">overlay-top</code></td></tr><tr><td><code class="doc-code">buttons.size</code></td><td>string</td><td>Any <a href="/forms/button/#sizes" class="doc-link">Button size</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr><tr><td><code class="doc-code">buttons.type</code><em class="doc-em">**</em></td><td>string</td><td>Any <a href="/colors/element-colors/" class="doc-link">Element color</a> name in lowercase</td><td><code class="doc-code">null</code></td></tr><tr><td><code class="doc-code">buttons.ghost</code><em class="doc-em">**</em></td><td>boolean</td><td>Use <a href="/forms/button/" class="doc-link">ghost button</a> type</td><td><code class="doc-code">false</code></td></tr></tbody></table>
 <div>
 <p class="env-m-top--0 example-dashboard-color-list-legend">
-<span style="font-size:1.4em">*</span> = Option was added in 2026.02.1.
+<span style="font-size:1.4em">*</span> = Option added in 2026.02.1.
+</p>
+</div>
+<div>
+<p class="env-m-top--0 example-dashboard-color-list-legend">
+<span style="font-size:1.4em">**</span> = Options type and ghost not applicable for overlay placement.
 </p>
 </div>
 <div>
