@@ -141,6 +141,10 @@ $buttonInset: 2.25rem;
             text-decoration: underline !important;
          }
       }
+
+      .env-image-viewer-2--overlay-bottom & {
+         inset: 0 auto auto 0;
+      }
    }
 
    // ----- Lightbox -----
