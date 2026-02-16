@@ -5449,7 +5449,7 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     sass: "npm:^1.94.2"
     sass-loader: "npm:^16.0.6"
-    terser-webpack-plugin: "npm:^5.3.15"
+    terser-webpack-plugin: "npm:^5.3.16"
     tom-select: "npm:^2.4.3"
     webpack: "npm:^5.104.1"
     webpack-cli: "npm:^6.0.1"
@@ -10681,28 +10681,6 @@ __metadata:
     minizlib: "npm:^3.1.0"
     yallist: "npm:^5.0.0"
   checksum: 10c0/e5e3237bca325fbb33282d92d9807f4c8d81abaf71bf2627efdf93bd5610c146460c78fc7e9767d4ab5ae3c0b18af8197314c964f8cbd23b30b25bf4d42d7cb4
-  languageName: node
-  linkType: hard
-
-"terser-webpack-plugin@npm:^5.3.15":
-  version: 5.3.15
-  resolution: "terser-webpack-plugin@npm:5.3.15"
-  dependencies:
-    "@jridgewell/trace-mapping": "npm:^0.3.25"
-    jest-worker: "npm:^27.4.5"
-    schema-utils: "npm:^4.3.0"
-    serialize-javascript: "npm:^6.0.2"
-    terser: "npm:^5.31.1"
-  peerDependencies:
-    webpack: ^5.1.0
-  peerDependenciesMeta:
-    "@swc/core":
-      optional: true
-    esbuild:
-      optional: true
-    uglify-js:
-      optional: true
-  checksum: 10c0/e36493869e22b3d76aa9e8ae75802efc5f07461eec819823d5ce78c79f73de5c8c50b6da1e9674274e53fb4e60c09deacc83e9e9c74bce700b6fba74ecbaae7a
   languageName: node
   linkType: hard
 
