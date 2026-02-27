@@ -35,6 +35,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 
 - `--env-font-family`
 - `--env-font-color`
+- `--env-font-color-muted`
 - `--env-font-size-base`
 - `--env-font-size-x-small`
 - `--env-font-size-small`
@@ -200,6 +201,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 #### Blocks
 
 - `--env-block-font-color`
+- `--env-block-font-color-muted`
 - `--env-block-background-color`
 - `--env-block-border-color`
 - `--env-block-link-font-color`
@@ -208,6 +210,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-block-link-hover-text-decoration`
   <br><br>
 - `--env-block-primary-font-color`
+- `--env-block-primary-font-color-muted`
 - `--env-block-primary-background-color`
 - `--env-block-primary-border-color`
 - `--env-block-primary-link-font-color`
@@ -216,6 +219,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-block-primary-link-hover-text-decoration`
   <br><br>
 - `--env-block-secondary-font-color`
+- `--env-block-secondary-font-color-muted`
 - `--env-block-secondary-background-color`
 - `--env-block-secondary-border-color`
 - `--env-block-secondary-link-font-color`
@@ -401,7 +405,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-color-hover`
 - `--env-font-color-light`
 - `--env-font-color-lighter`
-- `--env-font-color-muted`
 - `--env-color-base`
 - `--env-color-darker`
 - `--env-color-dark`
