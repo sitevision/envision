@@ -227,14 +227,3 @@ Classname `env-mark` or `<mark>` element inside an `env-text` wrapper will use t
    aliqua.
 </p>
 ```
-
-## Legacy class names <span class="doc-badge doc-badge--danger">Deprecated</span>
-
-The class `env-text--muted` is deprecated. Use UI Text or Content Text styles instead.
-The muted style often results in insufficient contrast, especially in custom themes.
-
-```html
-<p class="env-text">
-   <small class="env-text--muted">Muted text</small>
-</p>
-```

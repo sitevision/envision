@@ -6,6 +6,7 @@
    --env-ui-color-brand-20-contrast: #616161;
    --env-modal-large-width: 900px;
    --env-block-secondary-font-color: #dedfe0;
+   --env-block-secondary-font-color-muted: hsla(210, 3%, 87%, 0.65);
    --env-modal-small-width: 300px;
    --env-background-color: #f7f7f9;
    --env-element-secondary-background-color-light: hsl(228, 12%, 27%);
@@ -203,13 +204,14 @@
    --env-focus-inner-color: var(--env-section-background-color);
    --env-ui-color-brand-85-contrast: #9e9e9e;
    --env-block-font-color: #202330;
+   --env-block-font-color-muted: hsla(229, 20%, 16%, 0.65);
    --env-ui-color-brand-100-contrast: #919191;
    --env-ui-text-heading-text-transform: none;
    --env-image-control-color: #ffffff;
    --env-font-size-xx-large: calc(var(--env-font-size-base) * 1.75);
    --env-spacing-xxx-small: 0.125em;
    --env-element-success-background-color-light: hsl(152, 70%, 34%);
-   --env-block-primary-link-font-color: var(--env-link-font-color);
+   --env-block-primary-link-font-color: #366591;
    --env-ui-color-brand-05-contrast: #6e6e6e;
    --env-block-secondary-link-hover-text-decoration: underline;
    --env-ui-text-caption-font-weight: 400;
@@ -225,6 +227,7 @@
    --env-collapse-border-style: solid;
    --env-color-warning-dark: var(--env-element-warning-background-color-dark);
    --env-block-primary-font-color: #202330;
+   --env-block-primary-font-color-muted: hsla(229, 20%, 16%, 0.7);
    --env-ui-color-brand-65-contrast: #dedede;
    --env-cardholder-grid-column-width: 20em;
    --env-button-font-family: var(--env-font-family);

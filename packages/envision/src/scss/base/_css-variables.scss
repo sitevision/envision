@@ -59,6 +59,7 @@
 @include css-vars.add-declaration(
    (
       'font-color': $font-color,
+      'font-color-muted': $font-color-muted,
    )
 );
 
@@ -451,6 +452,7 @@
 @include css-vars.add-declaration(
    (
       'block-font-color': $font-color,
+      'block-font-color-muted': $font-color-muted,
       'block-link-font-color': var(--env-link-font-color),
       'block-link-hover-font-color': var(--env-link-hover-font-color),
       'block-link-text-decoration': var(--env-link-text-decoration),
@@ -458,6 +460,7 @@
       'block-background-color': $block-default-background-color,
       'block-border-color': $block-default-border-color,
       'block-primary-font-color': $font-color,
+      'block-primary-font-color-muted': $font-color-muted,
       'block-primary-link-font-color': var(--env-link-font-color),
       'block-primary-link-hover-font-color': var(--env-link-hover-font-color),
       'block-primary-link-text-decoration': var(--env-link-text-decoration),
@@ -467,6 +470,7 @@
       'block-primary-background-color': $block-primary-background-color,
       'block-primary-border-color': $block-primary-border-color,
       'block-secondary-font-color': $font-color,
+      'block-secondary-font-color-muted': $font-color-muted,
       'block-secondary-link-font-color': var(--env-link-font-color),
       'block-secondary-link-hover-font-color': var(--env-link-hover-font-color),
       'block-secondary-link-text-decoration': var(--env-link-text-decoration),
@@ -801,7 +805,6 @@
    (
       'font-color-light': $font-color-light,
       'font-color-lighter': $font-color-lighter,
-      'font-color-muted': $font-color-muted,
    )
 );
 
