@@ -11,7 +11,7 @@
    },
    "dependencies": {
       "@astrojs/mdx": "^4.3.13",
-      "astro": "^5.16.4",
+      "astro": "^5.17.1",
       "astro-compress": "^2.3.8"
    }
 }
