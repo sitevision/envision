@@ -4,7 +4,7 @@ deprecated: true
 indexing: false
 ---
 
-Image viewer is deprecated since 2023.07.1 and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
+Image viewer is deprecated and will eventually be removed. Please use [Image Viewer 2](/components/image-viewer-2/).
 
 ```html
 <div id="image-viewer" data-image-viewer class="env-image-viewer">

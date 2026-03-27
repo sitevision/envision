@@ -1,0 +1,39 @@
+@use 'sass:string';
+
+@mixin color-variant($name: '') {
+   $font-color: 'cta-font-color';
+   $background-color: 'cta-background-color';
+   $border-color: 'cta-border-color';
+   $hover-font-color: 'cta-hover-font-color';
+   $hover-background-color: 'cta-hover-background-color';
+   $hover-border-color: 'cta-hover-border-color';
+
+   @if (string.index($name, 'brand') == 1) {
+      $font-color: 'ui-color-brand-contrast';
+      $background-color: 'ui-color-brand';
+      $border-color: 'ui-color-brand';
+      $hover-font-color: 'ui-color-brand-contrast';
+      $hover-background-color: 'ui-color-brand-dark';
+      $hover-border-color: 'ui-color-brand-dark';
+   } @else if ($name != '') {
+      $font-color: 'element-#{$name}-font-color';
+      $background-color: 'element-#{$name}-background-color';
+      $border-color: 'element-#{$name}-background-color';
+      $hover-font-color: 'element-#{$name}-font-color';
+      $hover-background-color: 'element-#{$name}-background-color-dark';
+      $hover-border-color: 'element-#{$name}-background-color-dark';
+   }
+   & {
+      background-color: var(--env-#{$background-color});
+      border-color: var(--env-#{$border-color});
+      color: var(--env-#{$font-color});
+   }
+
+   &:hover,
+   &:focus,
+   &:active {
+      background-color: var(--env-#{$hover-background-color});
+      border-color: var(--env-#{$hover-border-color});
+      color: var(--env-#{$hover-font-color});
+   }
+}

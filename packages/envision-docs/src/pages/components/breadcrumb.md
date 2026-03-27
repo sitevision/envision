@@ -3,8 +3,7 @@ title: Breadcrumb
 description: Use breadcrumbs to display the user´s location within a site’s hierarchy, enhancing navigation.
 ---
 
-**Updated in 2025.01.2**: A new class `env-breadcrumb__separator` is available.
-Its purpose is hiding the separator character from assistive technology which is done by setting `aria-hidden="true"`.
+Use `env-breadcrumb__separator` in combination with `aria-hidden="true"` to hide the separator character from assistive technology.
 
 ```html
 <nav aria-label="Breadcrumb">

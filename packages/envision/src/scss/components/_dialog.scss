@@ -28,8 +28,11 @@
       opacity: 1;
    }
 
-   // Dialog element may get focus in certain conditions
-   @include focus.focus-visible;
+   &:focus,
+   &:focus-visible,
+   &:focus-within {
+      outline: none !important;
+   }
 
    &--large {
       width: var(--env-dialog-large-width);

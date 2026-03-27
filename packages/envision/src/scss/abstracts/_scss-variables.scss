@@ -61,6 +61,7 @@ $font-family: inherit !default;
 $font-size-base: 1em !default;
 
 $font-color: #202330 !default;
+$font-color-muted: rgba($font-color, 0.65) !default;
 $link-color: #3a71aa !default;
 $link-text-decoration: none !default;
 $link-hover-text-decoration: underline !default;
@@ -294,8 +295,7 @@ $profile-image-radius: 50% !default;
 
 $font-color-light: functions.adjustLightness($font-color, 10%) !default;
 $font-color-lighter: functions.adjustLightness($font-color, 20%) !default;
-$font-color-invert: #ffffff !default;
-$font-color-muted: rgba($font-color, 0.65);
+// $font-color-invert: #ffffff !default; Removed in sv 2026.01.2
 
 $color-page-bg: #ffffff !default;
 $color-section-bg: #ffffff !default;

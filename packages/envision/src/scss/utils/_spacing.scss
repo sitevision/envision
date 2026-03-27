@@ -1,120 +1,125 @@
-//@use 'sizing';
+@use 'sass:list';
 
-$properties: margin padding;
-$specifiers: top right bottom left;
-$sizes: (
-   xxx-small: 'spacing-xxx-small',
-   xx-small: 'spacing-xx-small',
-   x-small: 'spacing-x-small',
-   small: 'spacing-small',
-   medium: 'spacing-medium',
-   large: 'spacing-large',
-   x-large: 'spacing-x-large',
-   xx-large: 'spacing-xx-large',
-   xxx-large: 'spacing-xxx-large',
+$propertyMap: (
+   // Physical props
+   'top': top,
+   'right': right,
+   'bottom': bottom,
+   'left': left,
+
+   // Logical props
+   'inline': inline,
+   'block': block,
+   'block-start': block-start,
+   'inline-end': inline-end,
+   'block-end': block-end,
+   'inline-start': inline-start,
+
+   // Custom props (deprecated)
+   'vertical': top bottom,
+   'horizontal': right left
 );
 
-.env {
-   @each $specifier in $specifiers {
-      &-m-#{$specifier}--0 {
-         margin-#{$specifier}: 0 !important;
-      }
-      &-m-#{$specifier}--a {
-         margin-#{$specifier}: auto !important;
-      }
-      &-p-#{$specifier}--0 {
-         padding-#{$specifier}: 0 !important;
-      }
+$sizes:
+   'xxx-small', 'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large',
+   'xx-large', 'xxx-large';
+
+@mixin spacing-declaration(
+   $type,
+   $propModifier,
+   $props,
+   $size,
+   $value,
+   $includeNegative: false
+) {
+   $typeModifier: 'm';
+   @if $type == 'padding' {
+      $typeModifier: 'p';
+   }
+   $p1: list.nth($props, 1);
+   $p2: null;
+   @if list.length($props) > 1 {
+      $p2: list.nth($props, 2);
    }
 
-   &-m-around--0 {
+   &-#{$typeModifier}-#{$propModifier}--#{$size} {
+      #{$type}-#{$p1}: $value !important;
+      @if $p2 {
+         #{$type}-#{$p2}: $value !important;
+      }
+   }
+   @if $includeNegative {
+      &-#{$typeModifier}-#{$propModifier}--#{$size}.env-#{$typeModifier}-#{$propModifier}--negative {
+         #{$type}-#{$p1}: calc(#{$value} * -1) !important;
+         @if $p2 {
+            #{$type}-#{$p2}: calc(#{$value} * -1) !important;
+         }
+      }
+   }
+}
+
+.env {
+   // Shorthand (all sides)
+   // ---------------------
+   // Around is deprecated, replaced by shorthand
+
+   &-m-around--0,
+   &-m--0 {
       margin: 0 !important;
    }
 
-   &-m-around--a {
+   &-m-around--a,
+   &-m--a {
       margin: auto !important;
    }
 
-   &-m-horizontal--0 {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
-   }
-
-   &-m-horizontal--a {
-      margin-right: auto !important;
-      margin-left: auto !important;
-   }
-
-   &-m-vertical--0 {
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-   }
-
-   &-m-vertical--a {
-      margin-top: auto !important;
-      margin-bottom: auto !important;
-   }
-
-   &-p-around--0 {
+   &-p-around--0,
+   &-p--0 {
       padding: 0 !important;
    }
 
-   &-p-horizontal--0 {
-      padding-right: 0 !important;
-      padding-left: 0 !important;
+   @each $size in $sizes {
+      &-m-around--#{$size},
+      &-m--#{$size} {
+         margin: var(--env-spacing-#{$size}) !important;
+      }
+      &-m-around--#{$size}.env-m-around--negative,
+      &-m--#{$size}.env-m--negative {
+         margin: calc(var(--env-spacing-#{$size}) * -1) !important;
+      }
+      &-p-around--#{$size},
+      &-p--#{$size} {
+         padding: var(--env-spacing-#{$size}) !important;
+      }
    }
 
-   &-p-vertical--0 {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-   }
+   @each $propName, $props in $propertyMap {
+      // Zero and auto
+      // -------------
 
-   @each $size, $variableName in $sizes {
-      @each $specifier in $specifiers {
-         &-m-#{$specifier}--#{$size} {
-            margin-#{$specifier}: var(--env-#{$variableName}) !important;
-         }
-         &-m-#{$specifier}--#{$size}.env-m-#{$specifier}--negative {
-            margin-#{$specifier}: calc(
-               var(--env-#{$variableName}) * -1
-            ) !important;
-         }
-         &-p-#{$specifier}--#{$size} {
-            padding-#{$specifier}: var(--env-#{$variableName}) !important;
-         }
-      }
-      &-m-around--#{$size} {
-         margin: var(--env-#{$variableName}) !important;
-      }
-      &-m-around--#{$size}.env-m-around--negative {
-         margin: calc(var(--env-#{$variableName}) * -1) !important;
-      }
-      &-p-around--#{$size} {
-         padding: var(--env-#{$variableName}) !important;
-      }
-      &-m-horizontal--#{$size} {
-         margin-right: var(--env-#{$variableName}) !important;
-         margin-left: var(--env-#{$variableName}) !important;
-      }
-      &-m-horizontal--negative.env-m-horizontal--#{$size} {
-         margin-right: calc(var(--env-#{$variableName}) * -1) !important;
-         margin-left: calc(var(--env-#{$variableName}) * -1) !important;
-      }
-      &-m-vertical--#{$size} {
-         margin-top: var(--env-#{$variableName}) !important;
-         margin-bottom: var(--env-#{$variableName}) !important;
-      }
-      &-m-vertical--negative.env-m-horizontal--#{$size} {
-         margin-top: calc(var(--env-#{$variableName}) * -1) !important;
-         margin-bottom: calc(var(--env-#{$variableName}) * -1) !important;
-      }
-      &-p-horizontal--#{$size} {
-         padding-right: var(--env-#{$variableName}) !important;
-         padding-left: var(--env-#{$variableName}) !important;
-      }
-      &-p-vertical--#{$size} {
-         padding-top: var(--env-#{$variableName}) !important;
-         padding-bottom: var(--env-#{$variableName}) !important;
+      @include spacing-declaration(margin, $propName, $props, 0, 0);
+      @include spacing-declaration(margin, $propName, $props, 'a', auto);
+      @include spacing-declaration(padding, $propName, $props, 0, 0);
+
+      // All regular sizes
+      // -----------------
+
+      @each $size in $sizes {
+         @include spacing-declaration(
+            margin,
+            $propName,
+            $props,
+            $size,
+            var(--env-spacing-#{$size}),
+            true
+         );
+         @include spacing-declaration(
+            padding,
+            $propName,
+            $props,
+            $size,
+            var(--env-spacing-#{$size})
+         );
       }
    }
 }

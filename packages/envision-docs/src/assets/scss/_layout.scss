@@ -54,6 +54,7 @@ $layout-col-main: 59em;
 }
 
 .content-wrapper {
+   position: relative;
    background-color: var(--doc-section-background-color);
    box-sizing: border-box;
    padding: #{'max(10px, 5.0847cqw)'};

@@ -35,6 +35,7 @@ CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/
 
 - `--env-font-family`
 - `--env-font-color`
+- `--env-font-color-muted`
 - `--env-font-size-base`
 - `--env-font-size-x-small`
 - `--env-font-size-small`
@@ -115,7 +116,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Typography
 
-#### Text <span class="doc-badge doc-badge--info">2025.01.1</span>
+#### Text
 
 - `--env-text-{name}-font-family`
 - `--env-text-{name}-font-color`
@@ -200,6 +201,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 #### Blocks
 
 - `--env-block-font-color`
+- `--env-block-font-color-muted`
 - `--env-block-background-color`
 - `--env-block-border-color`
 - `--env-block-link-font-color`
@@ -208,6 +210,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-block-link-hover-text-decoration`
   <br><br>
 - `--env-block-primary-font-color`
+- `--env-block-primary-font-color-muted`
 - `--env-block-primary-background-color`
 - `--env-block-primary-border-color`
 - `--env-block-primary-link-font-color`
@@ -216,6 +219,7 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-block-primary-link-hover-text-decoration`
   <br><br>
 - `--env-block-secondary-font-color`
+- `--env-block-secondary-font-color-muted`
 - `--env-block-secondary-background-color`
 - `--env-block-secondary-border-color`
 - `--env-block-secondary-link-font-color`
@@ -292,6 +296,27 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 - `--env-button-font-family`
 - `--env-button-border-radius`
+- `--env-button-font-weight` <span class="doc-badge doc-badge--info">2026.01.1</span>
+- `--env-button-letter-spacing` <span class="doc-badge doc-badge--info">2026.01.1</span>
+- `--env-button-text-transform` <span class="doc-badge doc-badge--info">2026.01.1</span>
+
+#### Call to Action buttons <span class="doc-badge doc-badge--info">2026.01.1</span>
+
+- `--env-cta-font-family`
+- `--env-cta-font-size`
+- `--env-cta-font-weight`
+- `--env-cta-letter-spacing`
+- `--env-cta-text-transform`
+- `--env-cta-border-radius`
+- `--env-cta-border-width`
+- `--env-cta-padding-inline`
+- `--env-cta-padding-block`
+- `--env-cta-font-color`
+- `--env-cta-background-color`
+- `--env-cta-border-color`
+- `--env-cta-hover-font-color`
+- `--env-cta-hover-background-color`
+- `--env-cta-hover-border-color`
 
 #### Cardholder
 
@@ -380,8 +405,6 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 - `--env-color-hover`
 - `--env-font-color-light`
 - `--env-font-color-lighter`
-- `--env-font-color-invert`
-- `--env-font-color-muted`
 - `--env-color-base`
 - `--env-color-darker`
 - `--env-color-dark`
@@ -401,7 +424,8 @@ Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subhead
 
 ### Removed
 
-- `--env-page-background-color`
 - `--env-default-button-color`
-- `--env-image-control-inactive-color`
 - `--env-element-common-background-color-dark`
+- `--env-font-color-invert`
+- `--env-image-control-inactive-color`
+- `--env-page-background-color`

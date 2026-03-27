@@ -4,7 +4,7 @@ deprecated: true
 indexing: false
 ---
 
-The following form classnames are deprecated since 2024.07.1 or earlier and will be removed in a future release.
+The following form classnames are deprecated and will be removed in a future release.
 
 - `env-form-element`
 - `env-form-element__label`
@@ -648,7 +648,7 @@ Error validation state uses the Status color [Error text](/utils/colors/#status-
 </div>
 ```
 
-Since 2023.07.1, modifiers `.env-form-element--success` and `.env-form-element--danger` are deprecated.
+Modifiers `.env-form-element--success` and `.env-form-element--danger` are deprecated.
 
 ```html
 <div class="env-form-element env-form-element--success">

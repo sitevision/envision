@@ -63,7 +63,7 @@ select[multiple].env-form-input,
    select.env-form-input {
       display: block;
       width: 100%;
-      background: none;
+      background-color: var(--env-form-input-background-color);
       border: none;
       border-radius: var(--env-form-input-border-radius);
       appearance: none;

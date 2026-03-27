@@ -3,8 +3,7 @@ title: Table
 description: Use a Table to display data in rows and columns, with customizable styles and responsive layouts.
 ---
 
-Default table styling has been updated in 2025.01.1. Text styles will now use the variables
-and styling from the [Text component](/components/text/).
+Default table styling uses the variables and styling from the [Text component](/components/text/).
 
 ## Types
 

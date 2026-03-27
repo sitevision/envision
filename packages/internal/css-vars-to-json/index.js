@@ -1,3 +1,4 @@
+/* globals require:false, module:false */
 const cssTree = require('css-tree');
 
 module.exports = function (content) {

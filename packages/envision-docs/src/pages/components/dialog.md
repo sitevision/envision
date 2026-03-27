@@ -312,7 +312,7 @@ to communicate an important message and require a response.</q></i>
 To make a Dialog an alertdialog, add `role="alertdialog"`, and make sure to use an accessible name and description
 for example by adding attributes `aria-labelledby` and `aria-describedby`.
 
-**Note**: The option `backdropClick` will automatically be set to `false` for alertdialogs and can not be overridden.
+**Note**: The option `backdropClick` will automatically be set to `false` for alertdialogs and cannot be overridden.
 Keypress `Escape` will not close the dialog.
 
 Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'info'`
@@ -467,7 +467,7 @@ Available alertdialog variations: `env-dialog--'error', 'success', 'warning', 'i
    - Click on backdrop (outside dialog) should close the dialog (not available for alertdialog).
    - Default value: `true`
 
-- `placement` _'string'_ <span class="doc-badge doc-badge--info">since Sitevision 2024.09.2</span>
+- `placement` _'string'_
    - Dialog window should be moved in the DOM and open as an immediate child of `<body>`.
    - Allowed values: `'body'`
    - Default value: `null`
@@ -525,4 +525,4 @@ envision
 
 ## Legacy documentation
 
-Dialog is a replacement for [Modal Dialog](/deprecated/modal-dialog/), deprecated since 2023.07.1.
+Dialog is a replacement for the deprecated [Modal Dialog](/deprecated/modal-dialog/).

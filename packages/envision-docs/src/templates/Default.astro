@@ -2,15 +2,13 @@
 import Master from './master/Master.astro';
 import Icons from './components/Icons.astro';
 import Sidenav from './components/Sidenav.astro';
+import MarkdownLink from './components/MarkdownLink.astro';
 const { frontmatter } = Astro.props;
 ---
 
 <Master frontmatter={frontmatter}>
-   {
-      frontmatter.icons && frontmatter.icons.length > 0 && (
-         <Icons icons={frontmatter.icons} />
-      )
-   }
+   {frontmatter.icons && <Icons />}
    <slot />
+   <MarkdownLink frontmatter={frontmatter} />
    <Sidenav slot="sidenav" frontmatter={frontmatter} />
 </Master>

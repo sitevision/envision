@@ -1,9 +1,16 @@
 @use '../abstracts/mixins/button';
 @use '../abstracts/mixins/focus';
 @use '../abstracts/mixins/text';
+@use '../abstracts/scss-variables' as *;
 
 .env-button {
    @include button.button-base;
+   font-family: var(--env-button-font-family);
+   font-weight: var(--env-button-font-weight);
+   line-height: $button-line-height;
+   letter-spacing: var(--env-button-letter-spacing);
+   text-transform: var(--env-button-text-transform);
+   border: $border-width $border-style;
 
    & {
       @include button.button-size('medium');
@@ -32,22 +39,6 @@
          'ui-color-brand-dark',
          'ui-color-brand-contrast'
       );
-   }
-
-   &--invert {
-      // DEPRECATED since 10.0
-      background-color: transparent;
-      border-color: transparent;
-      color: var(--env-element-primary-background-color-dark);
-
-      &:hover,
-      &:active,
-      &:focus,
-      &:active {
-         background-color: transparent;
-         border-color: transparent;
-         backdrop-filter: invert(4%);
-      }
    }
 
    &--link {
@@ -118,7 +109,6 @@
          // Insert spacing before text to avoid
          // certain letters showing in button.
          content: '';
-         speak: never;
          display: inline-block;
          height: 1em;
       }

@@ -35,4 +35,4 @@ Run `yarn build`
 
 ## License information
 
-Code copyright 2025, Sitevision AB. Code is released under the [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
+Copyright 2026, Sitevision AB. Code is released under the [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
