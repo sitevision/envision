@@ -1,6 +1,6 @@
 # @sitevision/envision-types
 
-TypeScript definitions for the Envision UI framework in Sitevision CMS.
+TypeScript definitions for the Envision UI framework in Sitevision.
 
 ## Installation
 
@@ -40,7 +40,8 @@ export default [
 
 ## Usage
 
-The types are then globally available - no imports needed! Just use the `envision` object in your code:
+The types are then globally available, so no imports needed.  
+You can use the global `envision` object in your code:
 
 ```typescript
 // Select component

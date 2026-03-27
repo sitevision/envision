@@ -1,7 +1,7 @@
 {
    "name": "@sitevision/envision-types",
    "version": "2026.3.1",
-   "description": "TypeScript definitions for Envision UI framework in Sitevision CMS",
+   "description": "TypeScript definitions for Envision UI framework in Sitevision",
    "types": "index.d.ts",
    "files": [
       "index.d.ts",
@@ -12,8 +12,7 @@
       "sitevision",
       "typescript",
       "types",
-      "definitions",
-      "cms"
+      "definitions"
    ],
    "author": "Sitevision",
    "license": "MIT",

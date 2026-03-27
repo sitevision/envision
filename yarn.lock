@@ -3255,6 +3255,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sitevision/envision-types@workspace:packages/envision-types":
+  version: 0.0.0-use.local
+  resolution: "@sitevision/envision-types@workspace:packages/envision-types"
+  languageName: unknown
+  linkType: soft
+
 "@so-ric/colorspace@npm:^1.1.6":
   version: 1.1.6
   resolution: "@so-ric/colorspace@npm:1.1.6"
