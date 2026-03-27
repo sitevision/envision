@@ -1,6 +1,6 @@
 {
    "name": "@sitevision/envision-types",
-   "version": "1.0.0",
+   "version": "2026.3.1",
    "description": "TypeScript definitions for Envision UI framework in Sitevision CMS",
    "types": "index.d.ts",
    "files": [
