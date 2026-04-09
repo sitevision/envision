@@ -15,8 +15,8 @@ Dropdown · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v5.16.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=4dda2bc"></script>
-<link href="/assets/docs.Cm_m3jsP.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=121f54b"></script>
+<link href="/assets/docs.DKypmr7s.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -203,16 +203,18 @@ Dropdown
 </div><!--/sv-no-index-->
 <h3 class="doc-heading-3" id="split-button-dropdown">Split button dropdown</h3>
 <p class="doc-p">Use <code class="doc-code">env-button-group</code> to split buttons.</p>
-<div class="doc-code-example"><div class="env-dropdown env-button-group env_list__item" role="group">
+<div class="doc-code-example"><div class="env-dropdown">
+<div class="env-button-group" role="group">
 <button class="env-button env-button--primary env-button--ghost" type="button">
 Button
 </button>
-<button class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost" type="button" aria-controls="example2-menu" aria-expanded="false" aria-haspopup="menu" data-dropdown="" id="example2-button">
+<button class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost" type="button" aria-controls="example2-menu" aria-expanded="false" aria-haspopup="menu" data-dropdown="" id="example2-button" data-target=".env-dropdown">
 <svg class="env-icon">
 <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
 </svg>
 <span class="env-assistive-text">Toggle Dropdown Menu</span>
 </button>
+</div>
 <ul class="env-dropdown__menu" id="example2-menu" aria-labelledby="example2-button" role="menu">
 <li role="presentation">
 <a href="#" class="env-dropdown__item" role="menuitem">Action</a>
@@ -227,27 +229,30 @@ Button
 </ul>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-dropdown env-button-group env_list__item<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span>
-      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-button env-button--ghost env-button--primary<span class="token punctuation">"</span></span>
-      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
-   <span class="token punctuation">></span></span>
-      Button
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span>
-      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2-button<span class="token punctuation">"</span></span>
-      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost<span class="token punctuation">"</span></span>
-      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
-      <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
-      <span class="token attr-name">aria-haspopup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span>
-      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2-menu<span class="token punctuation">"</span></span>
-      <span class="token attr-name">data-dropdown</span>
-   <span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>svg</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-         <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>use</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/sitevision/envision-icons.svg#icon-angle-down<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>use</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>svg</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-assistive-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Toggle Dropdown Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+<pre class="language-html" data-language="html"><code class="language-html" is:raw=""><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-dropdown<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-button-group<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span>
+         <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-button env-button--ghost env-button--primary<span class="token punctuation">"</span></span>
+         <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
+      <span class="token punctuation">></span></span>
+         Button
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span>
+         <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2-button<span class="token punctuation">"</span></span>
+         <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost<span class="token punctuation">"</span></span>
+         <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
+         <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+         <span class="token attr-name">aria-haspopup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span>
+         <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2-menu<span class="token punctuation">"</span></span>
+         <span class="token attr-name">data-target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>.env-dropdown<span class="token punctuation">"</span></span>
+         <span class="token attr-name">data-dropdown</span>
+      <span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>svg</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>use</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/sitevision/envision-icons.svg#icon-angle-down<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>use</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>svg</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-assistive-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Toggle Dropdown Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span>
       <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example2-menu<span class="token punctuation">"</span></span>
       <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span>
