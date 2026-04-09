@@ -2,50 +2,41 @@
 
 .doc-md-link {
    // Ghost button text & border
-   --env-element-primary-background-color: var(--env-font-color);
+   --env-element-background-color: var(--env-font-color);
    // Ghost button text on hover
-   --env-element-primary-font-color: var(--env-section-background-color);
+   --env-element-font-color: var(--env-section-background-color);
    // Ghost button bg on hover
-   --env-element-primary-background-color-dark: var(--env-font-color);
+   --env-element-background-color-dark: var(--env-font-color);
 
-   @container (max-width: 44.999em) {
+   @media (max-width: 39.999em) {
       position: relative;
       margin: 4em 0 0;
       padding: 2em 0 0;
       border-top: 1px solid var(--doc-border-color);
    }
 
-   @container (min-width: 45em) {
+   @media (min-width: 40em) {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 1em;
+      right: 1em;
    }
 
-   &__button__text {
-      @container (min-width: 45em) {
-         @include variables.visually-hidden();
-      }
+   [data-md-copy-lbl] {
+      display: inline-block;
+      min-width: 5.5em;
+      text-align: left;
    }
 
-   &__button {
-      @container (min-width: 45em) {
-         width: 2.75em;
-         margin: 1em 1em 0 0;
-         padding: 0 1.3125em !important;
-      }
+   &__menu-item {
+      display: block;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      line-height: 1.5;
    }
 
-   &__icon {
-      width: auto !important;
-      height: 1.625em !important;
-      margin: -0.8125em 0 0 -0.5em !important;
-
-      @container (min-width: 45em) {
-         inset: 50% 0 0 50% !important;
-         width: auto !important;
-         height: 1.75em !important;
-         margin: 0 !important;
-         transform: translate(-50%, -50%);
-      }
+   &__menu-item__description {
+      display: block;
+      font-size: var(--env-font-size-x-small);
+      color: var(--env-font-color-muted);
    }
 }

@@ -59,6 +59,12 @@ $layout-col-main: 59em;
    box-sizing: border-box;
    padding: #{'max(10px, 5.0847cqw)'};
    height: 100%;
+
+   &:has(.doc-md-link) {
+      @media (min-width: 40em) and (max-width: 64.999em) {
+         padding-top: 4em;
+      }
+   }
 }
 
 .sidenav {
