@@ -13382,7 +13382,7 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
             docEl.classList.add(cls);
          })(window, document.documentElement, 'colorscheme');
       <\/script>
-      `, '\n      <meta name="generator"', "", '>\n      <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script>\n\n      <script', "><\/script>\n      <!-- Additional head elements -->\n   ", "</head>\n   <body>\n      <!-- Dashboard style must be loaded after envision.css -->\n      ", '\n      <div class="layout">\n         ', "\n         ", "\n         ", "\n         ", "\n         ", "\n         ", "\n      </div>\n      ", "\n      ", "\n      ", "\n      ", "\n      ", "\n   </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, renderComponent($$result, "Favicon", $$Favicon, {}), addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), addAttribute(`/dist/envision.js?v=${commitHash}`, "src"), renderHead(), !!frontmatter.dashboard && renderTemplate`<link rel="stylesheet"${addAttribute(`/dist/envision-dashboard.css?v=${commitHash}`, "href")}>`, renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate`
+      `, '\n      <meta name="generator"', "", '>\n      <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"><\/script>\n\n      <script', "><\/script>\n      <!-- Additional head elements -->\n   ", "</head>\n   <body>\n      \n      ", '\n      <div class="layout">\n         ', "\n         ", "\n         ", "\n         ", "\n         ", "\n         ", "\n      </div>\n      ", "\n      ", "\n      ", "\n      ", "\n      ", "\n      ", "\n   </body></html>"])), frontmatter.indexing === false && renderTemplate`<meta name="robots" content="noindex">`, `${title ? title : ""}${title ? " \xB7 " : ""}Envision by Sitevision`, frontmatter.description && renderTemplate`<meta name="description"${addAttribute(frontmatter.description, "content")}>`, renderComponent($$result, "Favicon", $$Favicon, {}), addAttribute(frontmatter.template, "data-template"), addAttribute(Astro2.generator, "content"), addAttribute(`/dist/envision.js?v=${commitHash}`, "src"), renderHead(), !!frontmatter.dashboard && renderTemplate`<link rel="stylesheet"${addAttribute(`/dist/envision-dashboard.css?v=${commitHash}`, "href")}>`, renderComponent($$result, "Header", $$Header, { "frontmatter": frontmatter }), renderComponent($$result, "Banner", $$Banner, { "frontmatter": frontmatter }), renderSlot($$result, $$slots["main-content"], renderTemplate`
             <div class="body">
                <main id="content"${addAttribute(getMainClassName(frontmatter.dashboard), "class")}>
                   <div class="content-wrapper">
@@ -13397,7 +13397,7 @@ const $$Master = createComponent(($$result, $$props, $$slots) => {
                </main>
                ${renderSlot($$result, $$slots["sidenav"])}
             </div>
-         `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
+         `), renderComponent($$result, "Footer", $$Footer, {}), renderComponent($$result, "Mobilenav", $$Mobilenav, { "frontmatter": frontmatter }), !!frontmatter.dashboard, renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=0&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=1&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=2&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=3&lang.ts"), renderScript($$result, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro?astro&type=script&index=4&lang.ts"), !!frontmatter.dashboard && renderTemplate`${renderComponent($$result, "DashboardScript", $$DashboardScript, {})}`);
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/master/Master.astro", void 0);
 
 const $$Astro$2 = createAstro("https://envisionui.io");
@@ -13444,24 +13444,97 @@ const $$MarkdownLink = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$MarkdownLink;
   const { frontmatter } = Astro2.props;
   const gitHubAddress = getGithubUrl(frontmatter.file);
+  const prompt = gitHubAddress ? `Read from ${gitHubAddress} so I can ask questions about it.` : "";
+  const chatGptUrl = `https://chatgpt.com/?${new URLSearchParams({ prompt }).toString()}`;
+  const claudeUrl = `https://claude.ai/new?${new URLSearchParams({ q: prompt }).toString()}`;
+  const perplexityUrl = `https://perplexity.ai/search/new?${new URLSearchParams({ q: prompt }).toString()}`;
   return renderTemplate`${gitHubAddress && renderTemplate`${maybeRenderHead()}<div class="doc-md-link">
-         <a${addAttribute(gitHubAddress, "href")} target="_blank" rel="noopener noreferrer" class="env-button env-button--primary env-button--ghost env-button--icon env-button--icon-before doc-md-link__button">
-            <svg class="env-icon doc-md-link__icon" viewBox="0 0 48 48" aria-hidden="true">
-               ${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`
-                  <g clip-path="url(#a)">
-                     <path d="M44.528 5.998H3.466c-1.915 0-3.469 1.63-3.469 3.635v28.726c0 2.006 1.554 3.639 3.469 3.639h41.062c1.91 0 3.468-1.633 3.468-3.639V9.633c0-2.006-1.554-3.635-3.468-3.635Zm-17.531 28.5h-6v-10.5l-4.5 6-4.5-6v10.5h-6v-21h6l4.5 7.5 4.5-7.5h6v21Zm9 0-7.5-10.5H33l-.004-10.5h6v10.5h4.5l-7.5 10.5Z"></path>
-                  </g>
-                  <defs>
-                     <clipPath id="a">
-                        <path d="M-.003-.002h47.999v47.999H-.003z"></path>
-                     </clipPath>
-                  </defs>
-               ` })}
-            </svg>
-            <span class="doc-md-link__button__text">
-               View this page as Markdown
-            </span>
-         </a>
+         <div class="env-dropdown env-button-group" role="group">
+            <button class="doc-md-link__copy-button env-button env-button--slim env-button--ghost env-button--icon env-button--icon-before" type="button"${addAttribute(gitHubAddress, "data-md-github-url")}>
+               <svg class="env-icon doc-md-link__icon" viewBox="0 0 48 48" aria-hidden="true">
+                  ${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`
+                     <g clip-path="url(#a)">
+                        <path d="M44.528 5.998H3.466c-1.915 0-3.469 1.63-3.469 3.635v28.726c0 2.006 1.554 3.639 3.469 3.639h41.062c1.91 0 3.468-1.633 3.468-3.639V9.633c0-2.006-1.554-3.635-3.468-3.635Zm-17.531 28.5h-6v-10.5l-4.5 6-4.5-6v10.5h-6v-21h6l4.5 7.5 4.5-7.5h6v21Zm9 0-7.5-10.5H33l-.004-10.5h6v10.5h4.5l-7.5 10.5Z"></path>
+                     </g>
+                     <defs>
+                        <clipPath id="a">
+                           <path d="M-.003-.002h47.999v47.999H-.003z"></path>
+                        </clipPath>
+                     </defs>
+                  ` })}
+               </svg>
+               <span data-md-copy-lbl aria-live="polite">
+                  Copy page
+               </span>
+            </button>
+            <button id="doc-md-link-menu-button" class="env-button env-button--slim env-button--icon env-button--icon-small env-button--ghost" type="button" aria-expanded="false" aria-haspopup="menu" aria-controls="doc-md-link-menu" data-target=".doc-md-link" data-placement="end" data-dropdown>
+               <svg class="env-icon">
+                  <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+               </svg>
+               <span class="env-assistive-text">Toggle page actions menu</span>
+            </button>
+         </div>
+         <ul id="doc-md-link-menu" role="menu" aria-labelledby="doc-md-link-menu-button" class="env-dropdown__menu">
+            <li role="presentation">
+               <button type="button" class="env-dropdown__item doc-md-link__menu-item" data-md-copy-action>
+                  Copy page
+                  <span class="doc-md-link__menu-item__description">
+                     Copy page as Markdown for LLMs
+                  </span>
+               </button>
+            </li>
+            <li role="presentation">
+               <a${addAttribute(gitHubAddress, "href")} target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  View as Markdown
+                  <span class="doc-md-link__menu-item__description">
+                     Open the raw Markdown in a new tab
+                  </span>
+               </a>
+            </li>
+            <li class="env-dropdown--divider" role="separator"></li>
+            <li role="presentation">
+               <a${addAttribute(chatGptUrl, "href")} target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  Open in ChatGPT
+                  <span class="doc-md-link__menu-item__description">
+                     Ask questions about this page
+                  </span>
+               </a>
+            </li>
+            <li role="presentation">
+               <a${addAttribute(claudeUrl, "href")} target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  Open in Claude
+                  <span class="doc-md-link__menu-item__description">
+                     Ask questions about this page
+                  </span>
+               </a>
+            </li>
+            <li role="presentation">
+               <a${addAttribute(perplexityUrl, "href")} target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  Open in Perplexity
+                  <span class="doc-md-link__menu-item__description">
+                     Ask questions about this page
+                  </span>
+               </a>
+            </li>
+            <li class="env-dropdown--divider" role="separator"></li>
+            <li role="presentation">
+               <a href="/llms.txt" target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  LLMs.txt
+                  <span class="doc-md-link__menu-item__description">
+                     Provide compact index to help LLMs use docs pages
+                  </span>
+               </a>
+            </li>
+            <li role="presentation">
+               <a href="/llms-full.txt" target="_blank" rel="noopener noreferrer" class="env-dropdown__item doc-md-link__menu-item">
+                  LLMs-full.txt
+                  <span class="doc-md-link__menu-item__description">
+                     Provide the full docs in one plain-text file to help LLMs
+                     use docs pages
+                  </span>
+               </a>
+            </li>
+         </ul>
       </div>`}`;
 }, "/home/runner/work/envision/envision/packages/envision-docs/src/templates/components/MarkdownLink.astro", void 0);
 
