@@ -172,7 +172,7 @@ function createComponent(arg1, moduleId, propagation) {
   }
 }
 
-const ASTRO_VERSION = "5.16.8";
+const ASTRO_VERSION = "5.18.1";
 const NOOP_MIDDLEWARE_HEADER = "X-Astro-Noop";
 
 function createAstroGlobFn() {
@@ -1026,6 +1026,13 @@ class SlotString extends HTMLString {
 function isSlotString(str) {
   return !!str[slotString];
 }
+function mergeSlotInstructions(target, source) {
+  if (source.instructions?.length) {
+    target ??= [];
+    target.push(...source.instructions);
+  }
+  return target;
+}
 function renderSlot(result, slotted, fallback) {
   if (!slotted && fallback) {
     return renderSlot(result, fallback);
@@ -1043,10 +1050,7 @@ async function renderSlotToString(result, slotted, fallback) {
     write(chunk) {
       if (chunk instanceof SlotString) {
         content += chunk;
-        if (chunk.instructions) {
-          instructions ??= [];
-          instructions.push(...chunk.instructions);
-        }
+        instructions = mergeSlotInstructions(instructions, chunk);
       } else if (chunk instanceof Response) return;
       else if (typeof chunk === "object" && "type" in chunk && typeof chunk.type === "string") {
         if (instructions === null) {
@@ -1099,9 +1103,9 @@ const COMMENT_REPLACER = "\\u003C!--";
 function safeJsonStringify(obj) {
   return JSON.stringify(obj).replace(SCRIPT_RE, SCRIPT_REPLACER).replace(COMMENT_RE, COMMENT_REPLACER);
 }
-function createSearchParams(componentExport, encryptedProps, slots) {
+function createSearchParams(encryptedComponentExport, encryptedProps, slots) {
   const params = new URLSearchParams();
-  params.set("e", componentExport);
+  params.set("e", encryptedComponentExport);
   params.set("p", encryptedProps);
   params.set("s", slots);
   return params;
@@ -1203,13 +1207,14 @@ class ServerIslandComponent {
       }
     }
     const key = await this.result.key;
+    const componentExportEncrypted = await encryptString(key, componentExport);
     const propsEncrypted = Object.keys(this.props).length === 0 ? "" : await encryptString(key, JSON.stringify(this.props));
     const slotsEncrypted = Object.keys(renderedSlots).length === 0 ? "" : await encryptString(key, JSON.stringify(renderedSlots));
     const hostId = await this.getHostId();
     const slash = this.result.base.endsWith("/") ? "" : "/";
     let serverIslandUrl = `${this.result.base}${slash}_server-islands/${componentId}${this.result.trailingSlash === "always" ? "/" : ""}`;
     const potentialSearchParams = createSearchParams(
-      componentExport,
+      componentExportEncrypted,
       propsEncrypted,
       slotsEncrypted
     );
@@ -1231,7 +1236,7 @@ let response = await fetch('${serverIslandUrl}', { headers });`
     ) : (
       // POST request
       `let data = {
-	componentExport: ${safeJsonStringify(componentExport)},
+	encryptedComponentExport: ${safeJsonStringify(componentExportEncrypted)},
 	encryptedProps: ${safeJsonStringify(propsEncrypted)},
 	encryptedSlots: ${safeJsonStringify(slotsEncrypted)},
 };
@@ -1316,6 +1321,14 @@ function stringifyChunk(result, chunk) {
         }
         result._metadata.hasRenderedServerIslandRuntime = true;
         return renderServerIslandRuntime();
+      }
+      case "script": {
+        const { id, content } = instruction;
+        if (result._metadata.renderedScripts.has(id)) {
+          return "";
+        }
+        result._metadata.renderedScripts.add(id);
+        return content;
       }
       default: {
         throw new Error(`Unknown chunk type: ${chunk.type}`);
@@ -1977,10 +1990,23 @@ async function renderJSX(result, vnode) {
       return vnode;
     case (!vnode && vnode !== 0):
       return "";
-    case Array.isArray(vnode):
-      return markHTMLString(
-        (await Promise.all(vnode.map((v) => renderJSX(result, v)))).join("")
-      );
+    case Array.isArray(vnode): {
+      const renderedItems = await Promise.all(vnode.map((v) => renderJSX(result, v)));
+      let instructions = null;
+      let content = "";
+      for (const item of renderedItems) {
+        if (item instanceof SlotString) {
+          content += item;
+          instructions = mergeSlotInstructions(instructions, item);
+        } else {
+          content += item;
+        }
+      }
+      if (instructions) {
+        return markHTMLString(new SlotString(content, instructions));
+      }
+      return markHTMLString(content);
+    }
   }
   return renderJSXVNode(result, vnode);
 }
@@ -2112,20 +2138,17 @@ function prerenderElementChildren(tag, children) {
 }
 
 async function renderScript(result, id) {
-  if (result._metadata.renderedScripts.has(id)) return;
-  result._metadata.renderedScripts.add(id);
   const inlined = result.inlinedScripts.get(id);
+  let content = "";
   if (inlined != null) {
     if (inlined) {
-      return markHTMLString(`<script type="module">${inlined}</script>`);
-    } else {
-      return "";
+      content = `<script type="module">${inlined}</script>`;
     }
+  } else {
+    const resolved = await result.resolve(id);
+    content = `<script type="module" src="${result.userAssetsBase ? (result.base === "/" ? "" : result.base) + result.userAssetsBase : ""}${resolved}"></script>`;
   }
-  const resolved = await result.resolve(id);
-  return markHTMLString(
-    `<script type="module" src="${result.userAssetsBase ? (result.base === "/" ? "" : result.base) + result.userAssetsBase : ""}${resolved}"></script>`
-  );
+  return createRenderInstruction({ type: "script", id, content });
 }
 
 "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_".split("").reduce((v, c) => (v[c.charCodeAt(0)] = c, v), []);

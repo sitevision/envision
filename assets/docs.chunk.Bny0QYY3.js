@@ -1,8 +1,8 @@
-import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, g as createAstro, m as maybeRenderHead, h as addAttribute, i as renderSlot, e as createVNode, F as Fragment, _ as __astro_tag_component__, j as renderScript, a as renderHead } from './docs.chunk.n1_DPFjh.js';
+import { c as createComponent, r as renderComponent, b as renderTemplate, u as unescapeHTML, g as createAstro, m as maybeRenderHead, h as addAttribute, i as renderSlot, e as createVNode, F as Fragment, _ as __astro_tag_component__, j as renderScript, a as renderHead } from './docs.chunk.B6Cqj7cq.js';
 import 'piccolore';
 import childProcess from 'child_process';
 import 'clsx';
-import { $ as $$Favicon } from './docs.chunk.DBXLE_UO.js';
+import { $ as $$Favicon } from './docs.chunk.DDou9-se.js';
 /* empty css                    */
 import fs from 'node:fs';
 import path from 'node:path';

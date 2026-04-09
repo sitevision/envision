@@ -1,4 +1,4 @@
-import { c as createComponent, b as renderTemplate } from './docs.chunk.n1_DPFjh.js';
+import { c as createComponent, b as renderTemplate } from './docs.chunk.B6Cqj7cq.js';
 import 'piccolore';
 import 'clsx';
 
