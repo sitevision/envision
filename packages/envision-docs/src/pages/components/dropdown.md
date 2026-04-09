@@ -85,27 +85,30 @@ Add an empty list item to menu with the class `env-dropdown--divider` and `role=
 Use `env-button-group` to split buttons.
 
 ```html
-<div class="env-dropdown env-button-group env_list__item" role="group">
-   <button
-      class="env-button env-button--ghost env-button--primary"
-      type="button"
-   >
-      Button
-   </button>
-   <button
-      id="example2-button"
-      class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost"
-      type="button"
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-controls="example2-menu"
-      data-dropdown
-   >
-      <svg class="env-icon">
-         <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
-      </svg>
-      <span class="env-assistive-text">Toggle Dropdown Menu</span>
-   </button>
+<div class="env-dropdown">
+   <div class="env-button-group" role="group">
+      <button
+         class="env-button env-button--ghost env-button--primary"
+         type="button"
+      >
+         Button
+      </button>
+      <button
+         id="example2-button"
+         class="env-button env-button--icon env-button--icon-small env-button--primary env-button--ghost"
+         type="button"
+         aria-expanded="false"
+         aria-haspopup="menu"
+         aria-controls="example2-menu"
+         data-target=".env-dropdown"
+         data-dropdown
+      >
+         <svg class="env-icon">
+            <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
+         </svg>
+         <span class="env-assistive-text">Toggle Dropdown Menu</span>
+      </button>
+   </div>
    <ul
       id="example2-menu"
       role="menu"

@@ -50,10 +50,10 @@ Applicable to flex containers (`env-flex`). Modifier classes are named using the
 
 Valid values
 
-- `center`
 - `end`
-- `around`
+- `center`
 - `between`
+- `around`
 
 Examples
 
@@ -105,9 +105,9 @@ Modifier classes are named using the format: `env-flex--align-items-{value}`
 Valid values
 
 - `stretch`
-- `center`
 - `start`
 - `end`
+- `center`
 - `baseline`
 
 ```html
