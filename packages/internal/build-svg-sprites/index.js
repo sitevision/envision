@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const SVGSpriter = require('svg-sprite');
+const zlib = require('zlib');
 
 const REPO_ROOT = path.resolve(__dirname, '..', '..', '..');
 
@@ -95,10 +96,24 @@ const buildSprite = ({ name, dir }, outDir) => {
          );
 
          fs.mkdirSync(outDir, { recursive: true });
-         fs.writeFileSync(path.join(outDir, `${name}.svg`), contents);
+         const outPath = path.join(outDir, `${name}.svg`);
+         fs.writeFileSync(outPath, contents);
+         writeCompressed(outPath, contents);
          resolve();
       });
    });
+};
+
+const writeCompressed = (filePath, contents) => {
+   fs.writeFileSync(`${filePath}.gz`, zlib.gzipSync(contents));
+   fs.writeFileSync(
+      `${filePath}.br`,
+      zlib.brotliCompressSync(contents, {
+         params: {
+            [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+         },
+      })
+   );
 };
 
 const buildSprites = async () => {

@@ -81,7 +81,7 @@ const commitHash = childProcess
       <!-- Additional head elements -->
    </head>
    <body>
-      <!-- Dashboard style must be loaded after envision.css -->
+      {/* Dashboard style must be loaded after envision.css */}
       {
          !!frontmatter.dashboard && (
             <link
@@ -126,6 +126,7 @@ const commitHash = childProcess
       <script src="../../assets/scripts/init-examples.js"></script>
       <script src="../../assets/scripts/mobile-nav.js"></script>
       <script src="../../assets/scripts/theme-picker.js"></script>
+      <script src="../../assets/scripts/markdown-button.js"></script>
       {!!frontmatter.dashboard && <DashboardScript />}
    </body>
 </html>

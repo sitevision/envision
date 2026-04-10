@@ -33,7 +33,7 @@ Icon size utility classes are named using the format: `env-icon--{size}`
 Valid values for _size_
 
 - `xx-small`
-- `x-small`
+- `x-small` (default)
 - `small`
 - `medium`
 - `large`
