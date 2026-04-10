@@ -15,7 +15,7 @@ Brand colors · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.1.5" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=a381582"></script>
+<script src="/dist/envision.js?v=54dbb5d"></script>
 <link href="/assets/docs.DXsCkqn1.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -92,12 +92,42 @@ Menu
 <h1 class="doc-main-heading">
 Brand colors
 </h1>
-<p class="doc-p">An Envision theme will have one brand color and a matching contrast color. <a href="#brand-defaults" class="doc-link">The default theme</a> uses a neutral color.</p>
-<p class="doc-p">The brand color is used to generate a palette of lighter and darker variants. Each color in the palette has a matching contrast color verified against WCAG 2 AA.</p>
-<p class="doc-p"><span class="offset-anchor" id="ui-text"></span></p>
+<p class="doc-p">An Envision theme uses one base brand color and one matching contrast color.</p>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Brand color</strong> is the primary color for the theme.</li>
+<li class="doc-list__item"><strong class="doc-strong">Brand contrast color</strong> is the text/icon color used on top of the brand color.</li>
+<li class="doc-list__item">From the base brand color, Envision generates a palette of lighter and darker variants.</li>
+<li class="doc-list__item">Each palette color has a matching contrast color verified against <strong class="doc-strong">WCAG 2 AA</strong>.</li>
+</ul>
+<p class="doc-p"><a href="/colors/brand-colors/#brand-defaults" class="doc-link">The default theme</a> uses a neutral brand color.</p>
+<h2 class="doc-heading-2" id="palette-rules">Palette rules</h2>
+<p class="doc-p">The brand palette follows these rules:</p>
+<ul class="doc-list">
+<li class="doc-list__item"><code class="doc-code">--env-ui-color-brand</code> is the base brand color.</li>
+<li class="doc-list__item"><code class="doc-code">--env-ui-color-brand-{n}</code> are generated variants of the base brand color.</li>
+<li class="doc-list__item">The scale is ordered from lighter to darker variants in a normal theme.</li>
+<li class="doc-list__item">Each palette value has a matching contrast variable that meets <strong class="doc-strong">WCAG 2 AA</strong> requirements.</li>
+</ul>
+<p class="doc-p">In dark themes, where the font color is lighter than the section background color, the scale is reversed:</p>
+<ul class="doc-list">
+<li class="doc-list__item"><code class="doc-code">05</code> is the darkest variant</li>
+<li class="doc-list__item"><code class="doc-code">100</code> is the lightest variant</li>
+</ul>
+<h2 class="doc-heading-2" id="usage">Usage</h2>
+<p class="doc-p">Use the generated brand palette (CSS variables or utility classes) for components and UI states that should follow the active theme branding.</p>
+<p class="doc-p">Typical branded usage includes:</p>
+<ul class="doc-list">
+<li class="doc-list__item">buttons</li>
+<li class="doc-list__item">badges</li>
+<li class="doc-list__item">dropdown triggers</li>
+<li class="doc-list__item">popovers</li>
+<li class="doc-list__item">progress indicators</li>
+<li class="doc-list__item">highlighted UI sections</li>
+</ul>
 <h2 class="doc-heading-2">
 Example branding of components <span class="offset-anchor" id="examples"></span>
 </h2>
+<p class="doc-p">The following examples are visual demonstrations and do not define the color system.</p>
 <div class="env-theme-example-brand">
 <p class="doc-p"><button class="env-button env-button--brand" type="button">Brand button</button></p>
 <div class="env-m-vertical--large">
@@ -187,6 +217,7 @@ Branded poll label 3
 </div>
 </div>
 <h2 class="doc-heading-2" id="default-brand-color-palette-">Default brand color palette <span class="brand-defaults" id="brand-defaults"></span></h2>
+<p class="doc-p">The default theme uses this neutral brand palette.</p>
 <ol class="env-m-vertical--large env-theme-default-brand example-brand-color-list">
 <li class="example-section-brand"><div>Brand color</div></li>
 <li class="example-section-brand-05"><div>Brand 05</div></li>
@@ -210,7 +241,38 @@ Branded poll label 3
 <li class="example-section-brand-95"><div>Brand 95</div></li>
 <li class="example-section-brand-100"><div>Brand 100</div></li>
 </ol>
-<p class="doc-p">Inverted themes where the font color is lighter than the section background color will result in an inverted (reversed) palette where <code class="doc-code">05</code> is the darkest and <code class="doc-code">100</code> is the lightest variant.</p>
+<h2 class="doc-heading-2" id="brand-color-variables">Brand color variables</h2>
+<p class="doc-p">The following CSS variables are available:</p>
+<h3 class="doc-heading-3" id="base-colors">Base colors</h3>
+<ul class="doc-list">
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">--env-ui-color-brand</code><br>
+Primary brand color</p>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">--env-ui-color-brand-contrast</code><br>
+Text/icon color used on top of the brand color</p>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">--env-ui-color-brand-dark</code><br>
+A predefined darker variant of the brand color, separate from the numeric scale, typically used for hover and emphasis states</p>
+</li>
+</ul>
+<h3 class="doc-heading-3" id="generated-palette">Generated palette</h3>
+<p class="doc-p">The brand palette is available as a numeric scale:</p>
+<ul class="doc-list">
+<li class="doc-list__item"><code class="doc-code">--env-ui-color-brand-{n}</code></li>
+<li class="doc-list__item"><code class="doc-code">--env-ui-color-brand-{n}-contrast</code></li>
+</ul>
+<p class="doc-p">Where <code class="doc-code">{n}</code> is one of:</p>
+<p class="doc-p"><code class="doc-code">05</code>, <code class="doc-code">10</code>, <code class="doc-code">15</code>, <code class="doc-code">20</code>, <code class="doc-code">25</code>, <code class="doc-code">30</code>, <code class="doc-code">35</code>, <code class="doc-code">40</code>, <code class="doc-code">45</code>, <code class="doc-code">50</code>, <code class="doc-code">55</code>, <code class="doc-code">60</code>, <code class="doc-code">65</code>, <code class="doc-code">70</code>, <code class="doc-code">75</code>, <code class="doc-code">80</code>, <code class="doc-code">85</code>, <code class="doc-code">90</code>, <code class="doc-code">95</code>, <code class="doc-code">100</code></p>
+<p class="doc-p">Each <code class="doc-code">{n}</code> value defines a color and its corresponding contrast color.</p>
+<h3 class="doc-heading-3" id="notes">Notes</h3>
+<ul class="doc-list">
+<li class="doc-list__item">Lower values (<code class="doc-code">05</code>) are lighter variants</li>
+<li class="doc-list__item">Higher values (<code class="doc-code">100</code>) are darker variants</li>
+<li class="doc-list__item">Each <code class="doc-code">{n}</code> value has a matching <code class="doc-code">-contrast</code> color that meets WCAG 2 AA</li>
+</ul>
 <div class="doc-md-link">
 <div class="env-dropdown env-button-group" role="group">
 <button class="env-button env-button--icon env-button--ghost env-button--slim doc-md-link__copy-button env-button--icon-before" type="button" data-md-github-url="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/colors/brand-colors.md">
