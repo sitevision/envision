@@ -3,16 +3,47 @@ title: Brand colors
 description: The “Brand Colors” section defines primary brand hues with contrast-friendly shades for accessibility.
 ---
 
-An Envision theme will have one brand color and a matching contrast color. [The default theme](#brand-defaults) uses a neutral color.
+An Envision theme uses one base brand color and one matching contrast color.
 
-The brand color is used to generate a palette of lighter and darker variants. Each color in the palette has a matching contrast color
-verified against WCAG 2 AA.
+- **Brand color** is the primary color for the theme.
+- **Brand contrast color** is the text/icon color used on top of the brand color.
+- From the base brand color, Envision generates a palette of lighter and darker variants.
+- Each palette color has a matching contrast color verified against **WCAG 2 AA**.
 
-<span id="ui-text" class="offset-anchor"></span>
+[The default theme](/colors/brand-colors/#brand-defaults) uses a neutral brand color.
+
+## Palette rules
+
+The brand palette follows these rules:
+
+- `--env-ui-color-brand` is the base brand color.
+- `--env-ui-color-brand-{n}` are generated variants of the base brand color.
+- The scale is ordered from lighter to darker variants in a normal theme.
+- Each palette value has a matching contrast variable that meets **WCAG 2 AA** requirements.
+
+In dark themes, where the font color is lighter than the section background color, the scale is reversed:
+
+- `05` is the darkest variant
+- `100` is the lightest variant
+
+## Usage
+
+Use the generated brand palette (CSS variables or utility classes) for components and UI states that should follow the active theme branding.
+
+Typical branded usage includes:
+
+- buttons
+- badges
+- dropdown triggers
+- popovers
+- progress indicators
+- highlighted UI sections
 
 <h2 class="doc-heading-2">
    Example branding of components <span id="examples" class="offset-anchor"></span>
 </h2>
+
+The following examples are visual demonstrations and do not define the color system.
 
 <div class="env-theme-example-brand">
 
@@ -162,6 +193,8 @@ verified against WCAG 2 AA.
 
 ## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
 
+The default theme uses this neutral brand palette.
+
 <ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
@@ -186,5 +219,36 @@ verified against WCAG 2 AA.
    <li class="example-section-brand-100"><div>Brand 100</div></li>
 </ol>
 
-Inverted themes where the font color is lighter than the section background color will result in an inverted (reversed)
-palette where `05` is the darkest and `100` is the lightest variant.
+## Brand color variables
+
+The following CSS variables are available:
+
+### Base colors
+
+- `--env-ui-color-brand`  
+  Primary brand color
+
+- `--env-ui-color-brand-contrast`  
+  Text/icon color used on top of the brand color
+
+- `--env-ui-color-brand-dark`  
+  A predefined darker variant of the brand color, separate from the numeric scale, typically used for hover and emphasis states
+
+### Generated palette
+
+The brand palette is available as a numeric scale:
+
+- `--env-ui-color-brand-{n}`
+- `--env-ui-color-brand-{n}-contrast`
+
+Where `{n}` is one of:
+
+`05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`, `50`, `55`, `60`, `65`, `70`, `75`, `80`, `85`, `90`, `95`, `100`
+
+Each `{n}` value defines a color and its corresponding contrast color.
+
+### Notes
+
+- Lower values (`05`) are lighter variants
+- Higher values (`100`) are darker variants
+- Each `{n}` value has a matching `-contrast` color that meets WCAG 2 AA
