@@ -104,7 +104,7 @@ Possible values for N are `2`, `3`, `4`, `5`, `6`, `8`.
 
 To further adjust the size and spacing of the columns there are two CSS variables that may be set:
 
-```CSS
+```css
 .your-cardholder-grid-container {
    /*
    column-width is used to auto fit columns.
@@ -370,7 +370,7 @@ may not fill the entire screen width.
 
 To control the size and spacing of the columns there are three CSS variables that may be set:
 
-```CSS
+```css
 .your-cardholder-container {
    /*
    min-width is used to control when column count breakpoints occur.
