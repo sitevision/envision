@@ -5206,12 +5206,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-auto-height@npm:^9.0.0-rc.0":
-  version: 9.0.0-rc01
-  resolution: "embla-carousel-auto-height@npm:9.0.0-rc01"
+"embla-carousel-auto-height@npm:^9.0.0-rc02":
+  version: 9.0.0-rc02
+  resolution: "embla-carousel-auto-height@npm:9.0.0-rc02"
   peerDependencies:
-    embla-carousel: 9.0.0-rc01
-  checksum: 10c0/6e189f860a3a3568e82678b2fa5b172744338b2f4cddf975184c4f6009e483d00bffe3f6304fcfca232bbec8b875c3a27f52666acd708320cbb484d5cd89914a
+    embla-carousel: 9.0.0-rc02
+  checksum: 10c0/5471095246a49445d7d78803ce63f2d7458df4dcf65a6e170dfae0c71ab836fb93132e3325823ff40f2184012f35b37b446968be49f2c6c24e54e20b14f31e4b
   languageName: node
   linkType: hard
 
@@ -5383,7 +5383,7 @@ __metadata:
     css-minimizer-webpack-plugin: "npm:^7.0.4"
     css-vars-to-json: "npm:1.0.0"
     embla-carousel: "npm:^9.0.0-rc.0"
-    embla-carousel-auto-height: "npm:^9.0.0-rc.0"
+    embla-carousel-auto-height: "npm:^9.0.0-rc02"
     embla-carousel-autoplay: "npm:^9.0.0-rc.0"
     embla-carousel-fade: "npm:^9.0.0-rc.0"
     eslint: "npm:^9.39.1"
