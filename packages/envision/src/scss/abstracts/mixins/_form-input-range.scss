@@ -1,0 +1,126 @@
+@use '../../abstracts/mixins/focus';
+@use 'sass:math';
+
+$thumbDiameter: 1.75em;
+$thumbMinDiameter: 24px;
+$trackHeight: 0.675em;
+
+@mixin _track() {
+   height: $trackHeight;
+   background:
+      // Selected range
+      radial-gradient(
+            circle 1px at 100%,
+            var(--env-element-primary-background-color) 100%,
+            var(--env-element-primary-background-color)
+         )
+         0 / calc(var(--rng-js) * var(--rng-x-pos)),
+      // Unselected range
+      radial-gradient(
+            circle 1px at 0,
+            var(--env-section-background-color-05) 100%,
+            var(--env-section-background-color-05)
+         )
+         100% / calc(var(--rng-js) * (100% - var(--rng-x-pos)))
+         // fallback for no JS-initialization
+      var(--env-section-background-color-05);
+   background-repeat: no-repeat;
+   border: 1px solid var(--env-form-input-border-color);
+   border-radius: var(--env-border-radius-medium);
+}
+
+@mixin _thumb($browser) {
+   @if $browser == 'webkit' {
+      transform: translateY(calc(-50% + #{math.div($trackHeight, 2)}));
+   }
+
+   box-sizing: border-box;
+   width: $thumbDiameter;
+   height: $thumbDiameter;
+   min-width: $thumbMinDiameter;
+   min-height: $thumbMinDiameter;
+   border: none;
+   border-radius: 50%;
+
+   // fallback background in the no JS case
+   background: var(--env-element-primary-background-color);
+
+   @include focus.focus-outline;
+}
+
+@mixin input-range() {
+   // ----- Range Input internal variables -----
+   // Is set to 1 when initialized in JS.
+   --rng-js: 0;
+
+   // 1 or 0 depending on if component has been initialized from JS.
+   --rng-not-js: calc(1 - var(--rng-js));
+
+   // Value is set from script on change.
+   // Used to calculate x-position for placement
+   // of the gradient background.
+   --rng-val: 50;
+   --rng-x-pos: calc(var(--rng-val)/100 * 100%);
+
+   appearance: none;
+   display: block;
+   box-sizing: border-box;
+   position: relative;
+   z-index: 2;
+   width: 100%;
+   max-width: 100%;
+   height: max(#{$thumbDiameter}, #{$thumbMinDiameter});
+   margin: 0;
+   background: transparent;
+   color: var(--env-element-primary-background-color);
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+
+   &::-webkit-slider-runnable-track,
+   &::-webkit-slider-thumb {
+      appearance: none;
+   }
+
+   &::-webkit-slider-runnable-track {
+      @include _track;
+   }
+   &::-webkit-slider-thumb {
+      @include _thumb('webkit');
+   }
+
+   &::-moz-range-track {
+      @include _track;
+   }
+   &::-moz-range-thumb {
+      @include _thumb('moz');
+   }
+
+   &:not(:focus-visible) {
+      // Focus outline is displayed on the thumb.
+      // When it does not have focus, we will use
+      // the focus ring as a border replacement.
+      --env-focus-inner-color: transparent;
+      --env-focus-outline-color: var(--env-section-background-color);
+      --env-focus-offset: 0;
+      --env-focus-size: 2px;
+   }
+
+   &[list] + .env-range__markers {
+      // Markers are added from script.
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      height: 0.375em;
+      margin: 0
+         max(#{math.div($thumbDiameter, 2)}, #{math.div($thumbMinDiameter, 2)})
+         0;
+
+      > i {
+         display: block;
+         width: 1px;
+         height: 0.375em;
+         background-color: var(--env-font-color);
+      }
+   }
+}

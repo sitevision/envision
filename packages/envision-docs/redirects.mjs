@@ -13,6 +13,10 @@ export const redirects = {
 
    '/components/feed/': '/deprecated/feed/',
 
+   '/components/range-slider/': '/deprecated/range-slider/',
+
+   '/forms/range-slider/': '/deprecated/range-slider/',
+
    '/ui/': '/colors/brand-colors/',
 
    '/utils/icons/': '/components/icons/',
@@ -34,8 +38,6 @@ export const redirects = {
    '/components/button-group/': '/forms/button-group/',
 
    '/components/select/': '/forms/tag-select/',
-
-   '/components/range-slider/': '/forms/range-slider/',
 
    '/utils/container/': '/layout/container/',
 
