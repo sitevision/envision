@@ -118,10 +118,10 @@ $trackHeight: 0.675em;
          display: block;
          position: absolute;
          top: 0;
+         left: 0%; // Will be set from script.
          width: 1px;
          height: 0.375em;
          background-color: var(--env-font-color);
-         left: 0%;
          transform: translateX(-50%);
       }
    }
