@@ -9,36 +9,80 @@ import { getNodes } from './util/nodes';
 const NAME = 'envRange';
 const RANGE_CLASSNAME = 'env-range';
 
+// Chrome browser does not support customizing the filled part of the track.
+// These variables are used in CSS to set the color as a gradient.
 const CSS_VAR_INITIALIZED = '--rng-js';
 const CSS_VAR_VALUE = '--rng-val';
+const CSS_VAR_PROGRESS = '--rng-progress';
 
 class Range {
    constructor(element) {
-      // Chrome browser does not support customizing the filled part of the track.
-      // These variables are used in CSS to set the color as a gradient.
       element.style.setProperty(CSS_VAR_INITIALIZED, 1);
-      element.style.setProperty(CSS_VAR_VALUE, Number(element.value));
-      //
+
+      this.#updateRangeProgress(element);
+
       element.addEventListener('input', () => {
-         element.style.setProperty(CSS_VAR_VALUE, Number(element.value));
+         this.#updateRangeProgress(element);
       });
 
       // Markers disappears when using custom styles and datalist
       // can not be styled in Safari, so we will add empty elements
       // as replacement.
       const list = element.getAttribute('list');
-      const el = list ? document.getElementById(list) : null;
+      const datalistEl = list ? document.getElementById(list) : null;
 
-      if (el?.tagName === 'DATALIST') {
-         const markers = document.createElement('div');
-         markers.className = `${RANGE_CLASSNAME}__markers`;
+      if (datalistEl?.tagName === 'DATALIST') {
+         this.#addCustomMarkers(element, datalistEl);
+      }
+   }
 
-         Array.from(el.options).forEach(() => {
-            markers.appendChild(document.createElement('i'));
-         });
+   #addCustomMarkers(element, datalistEl) {
+      const markers = document.createElement('div');
+      markers.className = `${RANGE_CLASSNAME}__markers`;
+      const min = Number(element.min || 0);
+      const max = Number(element.max || 100);
+      const range = max - min;
+      const markerPositions = new Set();
 
+      Array.from(datalistEl.options).forEach((option) => {
+         const value = Number(option.value);
+
+         if (
+            !Number.isFinite(value) ||
+            range <= 0 ||
+            value < min ||
+            value > max
+         ) {
+            return;
+         }
+
+         const position = ((value - min) / range) * 100;
+         const positionKey = position.toFixed(4);
+
+         if (markerPositions.has(positionKey)) {
+            return;
+         }
+
+         const marker = document.createElement('span');
+         markerPositions.add(positionKey);
+         marker.dataset.value = String(value);
+         marker.style.setProperty('left', `${position}%`);
+         markers.appendChild(marker);
+      });
+
+      if (markers.childElementCount > 0) {
          element.parentNode.insertBefore(markers, element.nextSibling);
       }
+   }
+
+   #updateRangeProgress(element) {
+      const min = Number(element.min || 0);
+      const max = Number(element.max || 100);
+      const value = Number(element.value);
+      const progress = max > min ? ((value - min) / (max - min)) * 100 : 0;
+
+      element.style.setProperty(CSS_VAR_VALUE, value);
+      element.style.setProperty(CSS_VAR_PROGRESS, `${progress}%`);
    }
 
    static _init() {

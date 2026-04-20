@@ -14,14 +14,14 @@ $trackHeight: 0.675em;
             var(--env-element-primary-background-color) 100%,
             var(--env-element-primary-background-color)
          )
-         0 / calc(var(--rng-js) * var(--rng-x-pos)),
+         0 / calc(var(--rng-js) * var(--rng-progress)),
       // Unselected range
       radial-gradient(
             circle 1px at 0,
             var(--env-section-background-color-05) 100%,
             var(--env-section-background-color-05)
          )
-         100% / calc(var(--rng-js) * (100% - var(--rng-x-pos)))
+         100% / calc(var(--rng-js) * (100% - var(--rng-progress)))
          // fallback for no JS-initialization
       var(--env-section-background-color-05);
    background-repeat: no-repeat;
@@ -57,10 +57,10 @@ $trackHeight: 0.675em;
    --rng-not-js: calc(1 - var(--rng-js));
 
    // Value is set from script on change.
-   // Used to calculate x-position for placement
+   // Progress is the calculated x-position for placement
    // of the gradient background.
    --rng-val: 50;
-   --rng-x-pos: calc(var(--rng-val)/100 * 100%);
+   --rng-progress: 50%;
 
    appearance: none;
    display: block;
@@ -109,18 +109,20 @@ $trackHeight: 0.675em;
       // Markers are added from script.
       position: relative;
       z-index: 1;
-      display: flex;
-      justify-content: space-between;
       height: 0.375em;
       margin: 0
          max(#{math.div($thumbDiameter, 2)}, #{math.div($thumbMinDiameter, 2)})
          0;
 
-      > i {
+      > span {
          display: block;
+         position: absolute;
+         top: 0;
          width: 1px;
          height: 0.375em;
          background-color: var(--env-font-color);
+         left: 0%;
+         transform: translateX(-50%);
       }
    }
 }

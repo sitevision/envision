@@ -5,7 +5,7 @@ deprecated: true
 indexing: false
 ---
 
-Feed is deprecated and will eventually be removed.
+Range slider is deprecated and will eventually be removed.
 
 Capture a range
 
