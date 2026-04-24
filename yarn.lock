@@ -5396,7 +5396,7 @@ __metadata:
     sass: "npm:^1.94.2"
     sass-loader: "npm:^16.0.6"
     terser-webpack-plugin: "npm:^5.4.0"
-    tom-select: "npm:^2.4.3"
+    tom-select: "npm:^2.6.0"
     webpack: "npm:^5.104.1"
     webpack-cli: "npm:^6.0.1"
     webpack-merge: "npm:^6.0.1"
@@ -10781,13 +10781,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tom-select@npm:^2.4.3":
-  version: 2.4.3
-  resolution: "tom-select@npm:2.4.3"
+"tom-select@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "tom-select@npm:2.6.0"
   dependencies:
     "@orchidjs/sifter": "npm:^1.1.0"
     "@orchidjs/unicode-variants": "npm:^1.1.2"
-  checksum: 10c0/0567c48e31d954227ac88f53586b61f784338d97f00115c17e5fc3606552e117bdd4d53e4fa912736569daada938ef7e72092ae16d22420eab0d1bb3472b62ea
+  checksum: 10c0/02ddfd834ecfd20d8eba32785b81be89ab581cbba51db0e428e02a18b638ed615ff08119eae5c100872a97abb7c27901e841564d7cda7de2f0427f23f69e361b
   languageName: node
   linkType: hard
 
