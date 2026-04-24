@@ -50,7 +50,7 @@ const defaults = {
          clear_button: {
             title: `${lang.sv.clear_button}`,
             html: function (data) {
-               return `<button class="env-select__input__clear">${data.title}</button>`;
+               return `<button type="button" class="env-select__input__clear">${data.title}</button>`;
             },
          },
       },
@@ -243,7 +243,12 @@ const getSettings = (options, node) => {
 
    settings.onDropdownOpen = function (dropDnEl) {
       // Always make dropdown visible on page
-      dropDnEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      dropDnEl.scrollIntoView({
+         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+         block: 'nearest',
+      });
 
       // Possible user added callback
       if (typeof options.onDropdownOpen === 'function') {
