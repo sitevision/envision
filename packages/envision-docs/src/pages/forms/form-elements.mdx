@@ -450,7 +450,24 @@ Use `.env-form-control` to wrap `.env-checkbox` and `.env-form-label`.
 </fieldset>
 ```
 
-### Range input element
+### Switch component
+
+Use `.env-form-control` to wrap an `.env-switch` checkbox and `.env-form-label`.
+
+```html
+<div class="env-form-control">
+   <input
+      class="env-switch"
+      type="checkbox"
+      id="switch-1"
+      name="switches"
+      checked
+   />
+   <label class="env-form-label" for="switch-1">One option</label>
+</div>
+```
+
+## Range input element
 
 Use an input element with class `.env-range` and `[type="range"]`.
 
@@ -462,7 +479,7 @@ Use an input element with class `.env-range` and `[type="range"]`.
 ```
 
 To display step markers below the input, add a `datalist` element and connect it to the input
-with the `list` attribute. The `datalist` must contain `option` elements with a `value` attribute.`
+with the `list` attribute. The `datalist` must contain `option` elements with a `value` attribute.
 
 ```html
 <div class="env-form-field">
@@ -495,23 +512,6 @@ Range elements added to the DOM after the document has loaded must be initialize
 ```javascript
 // Initialize range elements added after DOMContentLoaded
 envision.range();
-```
-
-### Switch component
-
-Use `.env-form-control` to wrap an `.env-switch` checkbox and `.env-form-label`.
-
-```html
-<div class="env-form-control">
-   <input
-      class="env-switch"
-      type="checkbox"
-      id="switch-1"
-      name="switches"
-      checked
-   />
-   <label class="env-form-label" for="switch-1">One option</label>
-</div>
 ```
 
 <div id="input-icons"></div>
