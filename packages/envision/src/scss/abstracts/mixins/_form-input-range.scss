@@ -53,13 +53,8 @@ $trackHeight: 0.675em;
    // Is set to 1 when initialized in JS.
    --rng-js: 0;
 
-   // 1 or 0 depending on if component has been initialized from JS.
-   --rng-not-js: calc(1 - var(--rng-js));
-
-   // Value is set from script on change.
    // Progress is the calculated x-position for placement
    // of the gradient background.
-   --rng-val: 50;
    --rng-progress: 50%;
 
    appearance: none;

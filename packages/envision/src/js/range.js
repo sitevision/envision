@@ -12,7 +12,6 @@ const RANGE_CLASSNAME = 'env-range';
 // Chrome browser does not support customizing the filled part of the track.
 // These variables are used in CSS to set the color as a gradient.
 const CSS_VAR_INITIALIZED = '--rng-js';
-const CSS_VAR_VALUE = '--rng-val';
 const CSS_VAR_PROGRESS = '--rng-progress';
 
 class Range {
@@ -25,8 +24,8 @@ class Range {
          this.#updateRangeProgress(element);
       });
 
-      // Markers disappears when using custom styles and datalist
-      // can not be styled in Safari, so we will add empty elements
+      // Markers disappear when using custom styles and datalist
+      // cannot be styled in Safari, so we will add empty elements
       // as replacement.
       const list = element.getAttribute('list');
       const datalistEl = list ? document.getElementById(list) : null;
@@ -81,18 +80,17 @@ class Range {
       const value = Number(element.value);
       const progress = max > min ? ((value - min) / (max - min)) * 100 : 0;
 
-      element.style.setProperty(CSS_VAR_VALUE, value);
       element.style.setProperty(CSS_VAR_PROGRESS, `${progress}%`);
    }
 
    static _init() {
       const nodes = getNodes(`.${RANGE_CLASSNAME}[type="range"]`);
       if (nodes.length > 0) {
-         nodes.map((node) => {
+         return nodes.map((node) => {
             if (!node[NAME]) {
-               new Range(node);
-               node[NAME] = true;
+               node[NAME] = new Range(node);
             }
+            return node[NAME];
          });
       }
    }
