@@ -48,8 +48,9 @@ const defaults = {
             className: 'env-select__item__remove',
          },
          clear_button: {
-            html: function () {
-               return `<button class="env-select__input__clear">${lang.sv.clear_button}</button>`;
+            title: `${lang.sv.clear_button}`,
+            html: function (data) {
+               return `<button class="env-select__input__clear">${data.title}</button>`;
             },
          },
       },
