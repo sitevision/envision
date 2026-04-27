@@ -1,5 +1,5 @@
 /**
- * Envision UI TypeScript definitions
+ * Envision UI
  * Documentation: https://envisionui.io/
  *
  * Provides globally available TypeScript definitions
