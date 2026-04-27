@@ -3,7 +3,7 @@
    "version": "2026.4.1",
    "description": "Sitevision CSS framework",
    "main": "dist/envision.js",
-   "types": "dist/types/global.d.ts",
+   "types": "types/global.d.ts",
    "files": [
       "types"
    ],
