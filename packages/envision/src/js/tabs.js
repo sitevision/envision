@@ -4,6 +4,28 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} TabsConfig
+ * @property {number} [active] - Index of the initially active tab. Default: 0
+ */
+
+/**
+ * @typedef {Object} TabActivatedEventDetail
+ * @property {HTMLElement} tab - The activated tab element
+ * @property {HTMLElement | null} panel - The associated panel element
+ */
+
+/**
+ * @typedef {Object} TabsInstance
+ * @property {HTMLElement} el - The tabs container element
+ * @property {HTMLElement[]} tabs - Array of tab elements
+ * @property {Record<string, HTMLElement | null>} panels - Map of panel elements keyed by tab ID
+ * @property {HTMLElement} [activeTab] - The currently active tab element
+ * @property {Required<TabsConfig>} config - The configuration settings for this instance
+ * @property {(index: number) => void} activate - Activate a tab by index
+ * @property {() => void} destroy - Destroy the tabs instance and remove event listeners
+ */
+
 import $ from 'jquery';
 import Util from './util/util';
 import { uniqueId, hide, resetDisplay, getNodes } from './util/nodes';
@@ -218,6 +240,11 @@ if (typeof document !== 'undefined') {
    };
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @param {TabsConfig} [settings] - Configuration options
+ * @returns {Promise<TabsInstance[] | undefined>}
+ */
 export default async (elements, settings, argument) => {
    return Tabs._init(elements, settings, argument);
 };

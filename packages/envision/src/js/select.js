@@ -4,6 +4,90 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} SelectOption
+ * @property {string} value
+ * @property {string} text
+ */
+
+/**
+ * @typedef {Object} SelectRenderFunctions
+ * @property {(data: SelectOption, escape: (str: string) => string) => string} [item]
+ * @property {(data: SelectOption, escape: (str: string) => string) => string} [option]
+ * @property {(data: SelectOption, escape: (str: string) => string) => string} [option_create]
+ * @property {(data: SelectOption, escape: (str: string) => string) => string} [no_results]
+ * @property {(data: SelectOption, escape: (str: string) => string) => string} [loading]
+ */
+
+/**
+ * @typedef {Object} SelectSortField
+ * @property {string} field
+ * @property {'asc' | 'desc'} [direction]
+ */
+
+/**
+ * @typedef {Object} SelectConfig
+ * @property {number | null} [maxItems] - The max number of items the user can select. Default: null (unlimited). Set to 1 for single select.
+ * @property {boolean} [create] - Allow adding new tags. Default: false
+ * @property {RegExp | string | ((input: string) => boolean)} [createFilter] - RegExp or function to validate new tags
+ * @property {boolean} [clearButton] - Show clear all button. Default: true. Not available in single select.
+ * @property {boolean} [allowEmptyOption] - Only available in single select. Option with no value will be selectable if true. Default: false
+ * @property {string} [placeholder] - Custom placeholder text
+ * @property {string} [dropdownParent] - The element the dropdown menu is appended to
+ * @property {SelectOption[]} [options] - Create a Tag select from custom dataset
+ * @property {number | null} [maxOptions] - Limits the number of visible options. Default: null (unlimited)
+ * @property {string[]} [items] - An array of the initial selected values
+ * @property {'sv' | 'en' | 'no' | { add?: string; no_results?: string; remove_button?: string; clear_button?: string }} [i18n] - Translation of UI elements
+ * @property {(query: string, callback: (data?: SelectOption[]) => void) => void} [load] - Function to load options from remote source
+ * @property {boolean | 'focus'} [preload] - If true, load function will be called on init. Can be 'focus' to call on focus.
+ * @property {string} [labelField] - The property name to render as an option/item label
+ * @property {string} [valueField] - The property name to use as the value
+ * @property {string | string[]} [searchField] - Property name(s) to search when filtering
+ * @property {string | SelectSortField[] | ((a: SelectOption, b: SelectOption) => number)} [sortField] - Sort configuration for options
+ * @property {SelectRenderFunctions} [render] - Custom render functions
+ * @property {() => void} [onInitialize] - Invoked once the control is completely initialized
+ * @property {(value: string) => void} [onChange] - Invoked when the value of the control changes
+ * @property {(value: string, item: HTMLElement) => void} [onItemAdd] - Invoked when an item is selected
+ * @property {(value: string) => void} [onItemRemove] - Invoked when an item is deselected
+ * @property {() => void} [onClear] - Invoked when the control is manually cleared
+ * @property {(value: string, data: SelectOption) => void} [onOptionAdd] - Invoked when a new option is added
+ * @property {(value: string) => void} [onOptionRemove] - Invoked when an option is removed
+ * @property {() => void} [onOptionClear] - Invoked when all options are removed
+ * @property {(dropdown: HTMLElement) => void} [onDropdownOpen] - Invoked when the dropdown opens
+ * @property {(dropdown: HTMLElement) => void} [onDropdownClose] - Invoked when the dropdown closes
+ * @property {(str: string) => void} [onType] - Invoked when the user types while filtering options
+ * @property {() => void} [onFocus] - Invoked when the control gains focus
+ * @property {() => void} [onBlur] - Invoked when the control loses focus
+ * @property {() => void} [onLoad] - Invoked when new options have been loaded via the load option
+ */
+
+/**
+ * @typedef {Object} SelectInstance
+ * @property {HTMLElement} el - The original select/input element
+ * @property {SelectConfig} settings - The configuration settings for this instance
+ * @property {(data: SelectOption | SelectOption[]) => void} addOptions - Adds an available option or array of options
+ * @property {(value: string) => HTMLElement | null} getOption - Retrieves the DOM element for the option identified by the given value
+ * @property {(value: string, data: SelectOption) => void} updateOption - Updates an option available for selection
+ * @property {(value: string) => void} removeOption - Removes the option identified by the given value
+ * @property {(triggerDropdown?: boolean) => void} refreshOptions - Refreshes the list of available options
+ * @property {(query: string) => void} load - Invoked when new options should be loaded from the server
+ * @property {() => void} open - Shows the autocomplete dropdown
+ * @property {() => void} close - Closes the autocomplete dropdown
+ * @property {(silent?: boolean) => void} clear - Resets/clears all selected items
+ * @property {(clearFilter?: boolean) => void} clearOptions - Removes all unselected options
+ * @property {(value: string) => HTMLElement | null} getItem - Returns the DOM element of the item matching the given value
+ * @property {(value: string, silent?: boolean) => void} addItem - Selects an item
+ * @property {() => string | string[]} getValue - Returns the value of the control
+ * @property {(value: string | string[], silent?: boolean) => void} setValue - Resets the selected items to the given value
+ * @property {() => void} lock - Disables user input on the control (can still receive focus)
+ * @property {() => void} unlock - Re-enables user input on the control
+ * @property {() => void} disable - Disables user input on the control (cannot receive focus)
+ * @property {() => void} enable - Re-enables the control
+ * @property {() => void} destroy - Destroys the control and unbinds event listeners
+ * @property {() => void} focus - Focuses the control
+ * @property {() => void} blur - Blurs the control
+ */
+
 import Util from './util/util';
 import { getNodes } from './util/nodes';
 
@@ -251,7 +335,11 @@ const getSettings = (options, node) => {
    return settings;
 };
 
-// Plugin / extension for envision library
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @param {SelectConfig} [options] - Configuration options
+ * @returns {Promise<SelectInstance[] | undefined>}
+ */
 export default async (elements, options) => {
    const nodes = getNodes(elements);
    if (nodes.length > 0) {

@@ -4,6 +4,32 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} RangeSliderEventDetail
+ * @property {number[]} values - Array of current slider values [min, max]
+ */
+
+/**
+ * @typedef {Object} RangeSliderConfig
+ * @property {number} [min] - The minimum value of the slider. Default: 0
+ * @property {number} [max] - The maximum value of the slider. Default: 100
+ * @property {number} [step] - The size of every step between min and max. Default: 1
+ * @property {number[]} [values] - Values to initialize the slider with. Default: [0, 0]
+ * @property {boolean} [visibleValues] - If values should be visible below the handles. Default: true
+ * @property {(event: Event, data: RangeSliderEventDetail) => void} [slide] - @deprecated Use 'input' event listener instead
+ * @property {(event: Event, data: RangeSliderEventDetail) => void} [slidestop] - @deprecated Use 'change' event listener instead
+ */
+
+/**
+ * @typedef {Object} RangeSliderInstance
+ * @property {HTMLElement} el - The slider container element
+ * @property {Required<RangeSliderConfig>} config - The configuration settings for this instance
+ * @property {HTMLElement[]} handlesEl - Array of handle elements
+ * @property {HTMLElement} rangeEl - The range indicator element
+ * @property {HTMLElement[]} [valueHoldersEl] - Array of value display elements (if visibleValues is true)
+ * @property {(values: number[]) => void} values - Set the values for the range
+ */
+
 import $ from 'jquery';
 import { getNode, getNodes, setStyle } from './util/nodes';
 import Util from './util/util';
@@ -397,6 +423,11 @@ if (typeof document !== 'undefined') {
    };
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @param {RangeSliderConfig} [settings] - Configuration options
+ * @returns {Promise<RangeSliderInstance[] | undefined>}
+ */
 export default async (elements, settings) => {
    return RangeSlider._init(elements, settings);
 };

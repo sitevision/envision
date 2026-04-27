@@ -4,6 +4,33 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} PopoverConfig
+ * @property {boolean} [clickOutside] - Close popover on click outside. Default: false
+ * @property {any[]} [constraints] - Positioning constraints (legacy, not documented)
+ * @property {string | HTMLElement} [container] - Container element for the popover. Default: 'body'
+ * @property {string | HTMLElement} [content] - Popover content. Default: ''
+ * @property {number} [delay] - Milliseconds for delaying the popover closing. Default: 0
+ * @property {boolean} [escapeContent] - Treat option content as text or HTML. If popover content is HTML, set to false. Default: true
+ * @property {'top' | 'right' | 'bottom' | 'left'} [placement] - Preferred initial placement. Default: 'top'
+ * @property {(containerModifier: string, contentClassName: string, containerRole: string) => string} [template] - Custom template function for popover HTML
+ * @property {string} [title] - Popover title. Default: ''
+ * @property {string} [trigger] - Single event or multiple space separated events for opening the popover. Default: 'click'
+ * @property {'menu' | 'tooltip' | null} [type] - Popover styling. Allowed values: 'menu', 'tooltip', null. Default: null
+ */
+
+/**
+ * @typedef {Object} PopoverInstance
+ * @property {HTMLElement} el - The trigger element
+ * @property {Required<PopoverConfig>} config - The configuration settings for this instance
+ * @property {boolean} [isShowing] - Whether the popover is currently showing
+ * @property {() => void} show - Show the popover
+ * @property {() => void} hide - Hide the popover
+ * @property {(config: Partial<PopoverConfig>) => void} updateConfig - Update configuration options
+ * @property {() => void} render - Re-render the popover
+ * @property {() => void} destroy - Destroy the popover instance and remove event listeners
+ */
+
 import $ from 'jquery';
 import {
    getNodes,
@@ -556,6 +583,11 @@ if (typeof document !== 'undefined') {
    };
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @param {PopoverConfig} [settings] - Configuration options
+ * @returns {Promise<PopoverInstance[] | undefined>}
+ */
 export default async (elements, settings) => {
    return Popover._init(elements, settings);
 };
