@@ -1,9 +1,12 @@
 {
-   "name": "envision",
-   "version": "0.0.1",
+   "name": "@sitevision/envision",
+   "version": "2026.4.1",
    "description": "Sitevision CSS framework",
    "main": "dist/envision.js",
    "types": "dist/types/global.d.ts",
+   "files": [
+      "dist/types"
+   ],
    "scripts": {
       "build": "webpack --config webpack.config.js",
       "build:types": "tsc --project tsconfig.json",
@@ -45,9 +48,7 @@
       "webpack": "^5.104.1",
       "webpack-cli": "^6.0.1",
       "webpack-merge": "^6.0.1",
-      "webpack-remove-empty-scripts": "^1.1.1"
-   },
-   "dependencies": {
+      "webpack-remove-empty-scripts": "^1.1.1",
       "@popperjs/core": "^2.11.8",
       "embla-carousel": "^9.0.0-rc.0",
       "embla-carousel-auto-height": "^9.0.0-rc.0",
