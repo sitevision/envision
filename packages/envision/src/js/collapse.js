@@ -4,6 +4,16 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} CollapseInstance
+ * @property {HTMLElement} el - The collapse content element
+ * @property {HTMLElement | null} togglerEl - The toggler button/link element
+ * @property {number} speed - Animation speed in milliseconds
+ * @property {() => void} toggle - Toggles the collapse between expanded and collapsed states
+ * @property {() => void} show - Expands the collapse content
+ * @property {() => void} hide - Collapses the content
+ */
+
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNode, getNodes, show } from './util/nodes';
@@ -120,6 +130,10 @@ if (typeof document !== 'undefined') {
    });
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @returns {Promise<CollapseInstance[] | undefined>}
+ */
 export default async (elements, settings) => {
    return Collapse._init(elements, settings);
 };

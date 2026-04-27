@@ -1,0 +1,30 @@
+{
+   "compilerOptions": {
+      "allowJs": true,
+      "checkJs": false,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "outDir": "./dist/types",
+      "rootDir": "./src",
+      "module": "ESNext",
+      "target": "ES2019",
+      "lib": ["ES2019", "DOM"],
+      "moduleResolution": "bundler",
+      "skipLibCheck": true,
+      "strict": false
+   },
+   "include": [
+      "src/js/accordion.js",
+      "src/js/collapse.js",
+      "src/js/dropdown.js",
+      "src/js/modal-dialog.js",
+      "src/js/image-viewer-2.js",
+      "src/js/popover.js",
+      "src/js/range-slider.js",
+      "src/js/select.js",
+      "src/js/tabs.js",
+      "src/js/tooltip.js",
+      "src/global.ts"
+   ],
+   "exclude": ["node_modules", "dist"]
+}

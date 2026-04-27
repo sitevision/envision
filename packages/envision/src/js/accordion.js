@@ -3,6 +3,18 @@
  * Licensed under MIT https://github.com/sitevision/envision/blob/master/LICENSE
  * --------------------------------------------------------------------------
  */
+
+/**
+ * @typedef {Object} AccordionInstance
+ * @property {HTMLElement} el - The accordion content element
+ * @property {HTMLElement | null} parentEl - The parent container element if specified via data-parent
+ * @property {HTMLElement | null} togglerEl - The toggler button/link element
+ * @property {number} speed - Animation speed in milliseconds
+ * @property {() => void} toggle - Toggles the accordion between expanded and collapsed states
+ * @property {() => void} show - Expands the accordion content
+ * @property {() => void} hide - Collapses the accordion content
+ */
+
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNode, getNodes, show } from './util/nodes';
@@ -171,6 +183,10 @@ if (typeof document !== 'undefined') {
    });
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
+ * @returns {Promise<AccordionInstance[] | undefined>}
+ */
 export default async (elements, settings) => {
    return Accordion._init(elements, settings);
 };

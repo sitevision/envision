@@ -4,6 +4,25 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} TooltipConfig
+ * @property {string} [placement] - Preferred initial placement. Default: 'top'. Possible values: 'top', 'right', 'bottom', 'left', 'auto'. Possible value modifiers: '{value}-start', '{value}-end'
+ * @property {number} [delay] - Milliseconds for delaying the tooltip opening and closing. Default: 200
+ * @property {any[]} [modifiers] - Advanced positioning modifiers (Popper.js configuration)
+ */
+
+/**
+ * @typedef {Object} TooltipInstance
+ * @property {HTMLElement} container - The tooltip container element
+ * @property {HTMLElement} el - The trigger element (child without role="tooltip")
+ * @property {HTMLElement} tooltip - The tooltip element (child with role="tooltip")
+ * @property {Required<TooltipConfig>} config - The configuration settings for this instance
+ * @property {boolean} [isShowing] - Whether the tooltip is currently showing
+ * @property {() => void} show - Show the tooltip
+ * @property {() => void} hide - Hide the tooltip
+ * @property {() => void} destroy - Destroy the tooltip instance and remove event listeners
+ */
+
 import { getNodes, setStyle, uniqueId } from './util/nodes';
 import { getPopper } from './util/popper';
 
@@ -168,6 +187,11 @@ if (typeof document !== 'undefined') {
    document.addEventListener('DOMContentLoaded', Tooltip._init);
 }
 
+/**
+ * @param {string | HTMLElement | NodeList} [elements] - CSS selector, DOM node, or node list. Leave empty to initialize all new elements with class 'env-tooltip'
+ * @param {TooltipConfig} [settings] - Configuration options
+ * @returns {Promise<TooltipInstance[] | undefined>}
+ */
 export default async (elements, settings) => {
    return Tooltip._init(elements, settings);
 };

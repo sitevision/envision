@@ -4,6 +4,21 @@
  * --------------------------------------------------------------------------
  */
 
+/**
+ * @typedef {Object} DialogConfig
+ * @property {string | HTMLElement | null} [opener] - A selector or DOM Node to assign event listener for opening the dialog. Default: null
+ * @property {boolean} [backdropClick] - Click on backdrop (outside dialog) should close the dialog (not available for alertdialog). Default: true
+ * @property {'body' | null} [placement] - Move dialog in DOM as immediate child of body. Allowed values: 'body'. Default: null
+ */
+
+/**
+ * @typedef {Object} DialogInstance
+ * @property {HTMLDialogElement} el - The dialog element. Provides access to native dialog properties like 'open' and 'returnValue'
+ * @property {DialogConfig} options - The configuration options for this instance
+ * @property {(event?: Event) => void} show - Show the dialog using HTMLDialogElement.showModal()
+ * @property {() => void} close - Close the dialog
+ */
+
 import $ from 'jquery';
 import CssUtil from './util/css-util';
 import { getNodes, lockScroll, unlockScroll } from './util/nodes';
@@ -266,6 +281,11 @@ if (typeof document !== 'undefined') {
    });
 }
 
+/**
+ * @param {HTMLDialogElement | string} elements - DOM element or CSS selector
+ * @param {DialogConfig | string} [action] - Configuration options or method name (legacy)
+ * @returns {Promise<DialogInstance[] | undefined>}
+ */
 export default async (elements, action) => {
    return ModalDialog._init(elements, action);
 };
