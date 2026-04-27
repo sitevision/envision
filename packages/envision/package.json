@@ -40,7 +40,7 @@
       "postcss-loader": "^8.1.1",
       "sass": "^1.94.2",
       "sass-loader": "^16.0.6",
-      "terser-webpack-plugin": "^5.4.0",
+      "terser-webpack-plugin": "^5.3.15",
       "typescript": "^5.9.3",
       "webpack": "^5.104.1",
       "webpack-cli": "^6.0.1",

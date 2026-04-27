@@ -4,7 +4,6 @@
  * --------------------------------------------------------------------------
  */
 
-
 /**
  * @typedef {Object} ImageViewer2ButtonConfig
  * @property {'primary' | 'secondary' | 'danger' | 'success' | null} [type] - Type of button styling
@@ -110,7 +109,6 @@ class Imageviewer2 {
       }
    }
 }
-
 
 /**
  * @param {string | HTMLElement | NodeList} elements - CSS selector, DOM node, or node list
