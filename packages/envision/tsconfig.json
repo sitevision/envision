@@ -4,7 +4,7 @@
       "checkJs": false,
       "declaration": true,
       "emitDeclarationOnly": true,
-      "outDir": "./dist/types",
+      "outDir": "./types",
       "rootDir": "./src",
       "module": "ESNext",
       "target": "ES2019",

@@ -1,0 +1,17 @@
+export function getNodes(elements: any, root: any): any[];
+export function getNode(elements: any, root: any): any;
+export function createElement(htmlString: any): Element;
+export function wrapElement(node: any, wrapperEl: any): any;
+export function resetStyle(node: any, prop: any): void;
+export function setStyle(node: any, prop: any, val: any, prio: any): void;
+export function setAttributes(node: any, attributes: any): void;
+export function lockScroll(): void;
+export function unlockScroll(): void;
+export function hide(elements: any): void;
+export function show(elements: any): void;
+export function resetDisplay(elements: any): void;
+export function isVisible(element: any): boolean;
+export function getFocusable(root: any): any[];
+export function getNextFocusable(focusable: any, root: any): any;
+export function uniqueId(elements: any): void;
+export function isFollowing(node: any, otherNode: any): boolean;
