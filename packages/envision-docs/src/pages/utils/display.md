@@ -18,11 +18,11 @@ Examples
 
 ```html
 <div class="example-display">
-   <div class="env-p-around--x-small env-d--inline">Inline</div>
-   <div class="env-p-around--x-small env-d--block">Block</div>
-   <div class="env-p-around--x-small env-d--inline-block">Inline block</div>
-   <div class="env-p-around--x-small env-d--flex">Flex</div>
-   <div class="env-p-around--x-small env-d--inline-flex">Inline flex</div>
-   <div class="env-p-around--x-small env-d--none">None</div>
+   <div class="env-p--x-small env-d--inline">Inline</div>
+   <div class="env-p--x-small env-d--block">Block</div>
+   <div class="env-p--x-small env-d--inline-block">Inline block</div>
+   <div class="env-p--x-small env-d--flex">Flex</div>
+   <div class="env-p--x-small env-d--inline-flex">Inline flex</div>
+   <div class="env-p--x-small env-d--none">None</div>
 </div>
 ```

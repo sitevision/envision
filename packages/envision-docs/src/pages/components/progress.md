@@ -206,7 +206,7 @@ Add `--striped--animated` to animate the stripes
 
 ```html
 <div class="example-progress">
-   <p class="env-text env-m-bottom--large">
+   <p class="env-text env-m-block-end--large">
       Lorem ipsum lectus molestie vivamus?
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">

@@ -36,7 +36,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 , `85`, `90`, `95`, `100`.
 
 <div class="example-badges">
-   <div class="env-m-bottom--small">
+   <div class="env-m-block-end--small">
       <span class="env-badge env-badge--brand">Brand</span>
       <span class="env-badge env-badge--brand-05">Brand 05</span>
       <span class="env-badge env-badge--brand-10">Brand 10</span>

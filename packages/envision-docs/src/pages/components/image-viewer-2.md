@@ -4,7 +4,7 @@ description: Accessible image slideshows and lightbox galleries with flexible la
 ---
 
 <section id="demo-image-viewer"
-class="env-m-vertical--large"
+class="env-m-block--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
       <img src="/placeholders/900x400/10.webp" alt="">
@@ -154,7 +154,7 @@ The container element should have an `aria-label` attribute.
 ```html
 <section
    id="example-image-viewer"
-   class="env-p-around--medium"
+   class="env-p--medium"
    aria-label="Photos from Örebro"
 >
    <figure data-href="/placeholders/originals/10.webp" data-zoom>

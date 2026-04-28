@@ -25,23 +25,23 @@ is used as background color for Modal dialogs.
 
 Font and link colors should have at least a 4.5:1 contrast ratio on `--env-background-color` and `--env-section-background-color`.
 
-Depending on design and usage, it´s recommended to try to get at least a 4.5:1 contrast ratio on `--env-section-background-color-05` as well.
+Depending on design and usage, it's recommended to try to get at least a 4.5:1 contrast ratio on `--env-section-background-color-05` as well.
 
 ## Examples
 
 `--env-background-color` is used outside the centered boxes.
 
 ```html
-<div class="example-fill example-basic-colors  env-p-around--xx-large">
+<div class="example-fill example-basic-colors  env-p--xx-large">
    <div
-      class="env-ui-section env-border env-border--05 env-p-around--large env-m-bottom--large"
+      class="env-ui-section env-border env-border--05 env-p--large env-m-block-end--large"
    >
       <div class="env-text">
          Base text on section background with a border 05 and
          <a href="javascript:void(0)" class="env-link">a link</a>.
       </div>
    </div>
-   <div class="env-ui-section-05 env-border env-p-around--large">
+   <div class="env-ui-section-05 env-border env-p--large">
       <div class="env-text">
          Base text on section background 05, standard border and
          <a href="javascript:void(0)" class="env-link">a link</a>.

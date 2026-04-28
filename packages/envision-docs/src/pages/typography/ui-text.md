@@ -19,7 +19,7 @@ New UI Text style Body available since <span class="doc-badge doc-badge--info">2
 ## Usage example
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h4 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h4>

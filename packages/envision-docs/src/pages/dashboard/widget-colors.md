@@ -35,12 +35,12 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
    </ul>
 </div>
 
-<p class="example-dashboard-color-list-legend env-m-bottom--0">
+<p class="example-dashboard-color-list-legend env-m-block-end--0">
    <svg class="env-icon example-dashboard-color-list-icon">
       <use href="/images/docs-images.svg#text"></use>
    </svg> = The color will pass WCAG 2 level AA contrast requirements as text on white (widget wrapper) background.
 </p>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="example-dashboard-color-list-legend env-m-block-start--0">
    <span style="font-size:1.4em">*</span> = The color also passes contrast requirements if used as text on gray-05 (theme body) background.
 </p>
 
@@ -62,12 +62,12 @@ patterns as CSS variable names.
 
 ```html
 <div
-   class="env-dashboard-color-bg-purple-20 env-p-around--medium env-m-bottom--medium"
+   class="env-dashboard-color-bg-purple-20 env-p--medium env-m-block-end--medium"
 >
    This is a purple-20 area with default font color.
 </div>
 <div
-   class="env-dashboard-color-bg-purple-50 env-dashboard-color-txt-white env-p-around--medium"
+   class="env-dashboard-color-bg-purple-50 env-dashboard-color-txt-white env-p--medium"
 >
    This is a purple-50 area with white font color.
 </div>

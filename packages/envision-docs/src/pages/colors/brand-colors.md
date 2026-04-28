@@ -49,7 +49,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 <button type="button" class="env-button env-button--brand">Brand button</button>
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <span class="env-badge env-badge--brand">Badge</span>
 </div>
 
@@ -85,7 +85,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h2 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h2>
@@ -101,7 +101,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="example-progress">
-   <p class="env-ui-text-sectionheading env-m-bottom--large">
+   <p class="env-ui-text-sectionheading env-m-block-end--large">
       Section heading
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">
@@ -195,7 +195,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 The default theme uses this neutral brand palette.
 
-<ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
+<ol class="example-brand-color-list env-m-block--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
    <li class="example-section-brand-10"><div>Brand 10</div></li>
