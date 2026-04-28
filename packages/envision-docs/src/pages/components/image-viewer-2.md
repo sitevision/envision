@@ -3,7 +3,7 @@ title: Image viewer
 description: Accessible image slideshows and lightbox galleries with flexible layout and predictable motion.
 ---
 
-<section id="demoImageViewer2"
+<section id="demo-image-viewer"
 class="env-m-block--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
