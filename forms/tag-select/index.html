@@ -15,8 +15,8 @@ Tag Select · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.1.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=7e5b55b"></script>
-<link href="/assets/docs.HIU8vixx.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=45ad560"></script>
+<link href="/assets/docs.Q9ZTytZs.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -560,13 +560,13 @@ Locked (readonly)
 </ul>
 </li>
 <li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">onItemAdd</code> <em class="doc-em">function(value, $item) { … }</em></p>
+<p class="doc-p"><code class="doc-code">onItemAdd</code> <em class="doc-em">function(value, item) { … }</em></p>
 <ul class="doc-list">
 <li class="doc-list__item">Invoked when an item is selected.</li>
 </ul>
 </li>
 <li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">onItemRemove</code> <em class="doc-em">function(value) { … }</em></p>
+<p class="doc-p"><code class="doc-code">onItemRemove</code> <em class="doc-em">function(value, item) { … }</em></p>
 <ul class="doc-list">
 <li class="doc-list__item">Invoked when an item is deselected.</li>
 </ul>
@@ -626,9 +626,9 @@ Locked (readonly)
 </ul>
 </li>
 <li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">onLoad</code> <em class="doc-em">function() { … }</em></p>
+<p class="doc-p"><code class="doc-code">onLoad</code> <em class="doc-em">function(options, optgroup) { … }</em></p>
 <ul class="doc-list">
-<li class="doc-list__item">Invoked when new options have been loaded and added to the control via the load option.</li>
+<li class="doc-list__item">Invoked when new options have been loaded and added to the control via the load option or <code class="doc-code">load</code> API method.</li>
 </ul>
 </li>
 </ul>
@@ -644,9 +644,9 @@ Locked (readonly)
 <h3 class="doc-heading-3" id="options-1">Options</h3>
 <ul class="doc-list">
 <li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">addOptions(data)</code></p>
+<p class="doc-p"><code class="doc-code">addOptions(data|data[])</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).</li>
+<li class="doc-list__item">Adds one option object or an array of option objects. If an option already exists, nothing will happen. Note: this does not refresh the options list dropdown (use <code class="doc-code">refreshOptions()</code> for that).</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -676,25 +676,7 @@ Locked (readonly)
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">load(query)</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">Invoked when new options should be loaded from the server. Called with the current query string.</li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">open()</code></p>
-<ul class="doc-list">
-<li class="doc-list__item">Shows the autocomplete dropdown containing the available options.</li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">close()</code></p>
-<ul class="doc-list">
-<li class="doc-list__item">Closes the autocomplete dropdown menu.</li>
-</ul>
-</li>
-<li class="doc-list__item">
-<p class="doc-p"><code class="doc-code">clear(silent)</code></p>
-<ul class="doc-list">
-<li class="doc-list__item">Resets / clears all selected items from the control. If <code class="doc-code">silent</code> is truthy, no change event will be fired on the original input.</li>
+<li class="doc-list__item">Initiates loading options from the remote data provider for the given query string.</li>
 </ul>
 </li>
 <li class="doc-list__item">
@@ -721,7 +703,28 @@ Locked (readonly)
 <li class="doc-list__item">
 <p class="doc-p"><code class="doc-code">addItem(value, silent)</code></p>
 <ul class="doc-list">
-<li class="doc-list__item">“Selects” an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.</li>
+<li class="doc-list__item">“Selects” an item. Adds it to the list at the current caret position. If <code class="doc-code">silent</code> is truthy, no change event will be fired on the original input.</li>
+</ul>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">clear(silent)</code></p>
+<ul class="doc-list">
+<li class="doc-list__item">Resets / clears all selected items from the control. If <code class="doc-code">silent</code> is truthy, no change event will be fired on the original input.</li>
+</ul>
+</li>
+</ul>
+<h3 class="doc-heading-3" id="dropdown">Dropdown</h3>
+<ul class="doc-list">
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">open()</code></p>
+<ul class="doc-list">
+<li class="doc-list__item">Shows the autocomplete dropdown containing the available options.</li>
+</ul>
+</li>
+<li class="doc-list__item">
+<p class="doc-p"><code class="doc-code">close()</code></p>
+<ul class="doc-list">
+<li class="doc-list__item">Closes the autocomplete dropdown menu.</li>
 </ul>
 </li>
 </ul>

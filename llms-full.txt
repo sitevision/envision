@@ -7253,10 +7253,10 @@ _Note: The `readonly` attribute is not supported or relevant to the Tag Select c
 - `onChange` _function(value) { ... }_
    - Invoked when the value of the control changes.
 
-- `onItemAdd` _function(value, $item) { ... }_
+- `onItemAdd` _function(value, item) { ... }_
    - Invoked when an item is selected.
 
-- `onItemRemove` _function(value) { ... }_
+- `onItemRemove` _function(value, item) { ... }_
    - Invoked when an item is deselected.
 
 - `onClear` _function() { ... }_
@@ -7286,8 +7286,8 @@ _Note: The `readonly` attribute is not supported or relevant to the Tag Select c
 - `onBlur` _function() { ... }_
    - Invoked when the control loses focus.
 
-- `onLoad` _function() { ... }_
-   - Invoked when new options have been loaded and added to the control via the load option.
+- `onLoad` _function(options, optgroup) { ... }_
+   - Invoked when new options have been loaded and added to the control via the load option or `load` API method.
 
 ## API functions
 
@@ -7302,8 +7302,8 @@ envision.select('#tag-select').then(function (selects) {
 
 ### Options
 
-- `addOptions(data)`
-   - Adds an available option, or array of options. If it already exists, nothing will happen. Note: this does not refresh the options list dropdown (use refreshOptions() for that).
+- `addOptions(data|data[])`
+   - Adds one option object or an array of option objects. If an option already exists, nothing will happen. Note: this does not refresh the options list dropdown (use `refreshOptions()` for that).
 
 - `getOption(value)`
    - Retrieves the DOM element for the option identified by the given value.
@@ -7318,16 +7318,7 @@ envision.select('#tag-select').then(function (selects) {
    - Refreshes the list of available options shown in the autocomplete dropdown menu.
 
 - `load(query)`
-   - Invoked when new options should be loaded from the server. Called with the current query string.
-
-- `open()`
-   - Shows the autocomplete dropdown containing the available options.
-
-- `close()`
-   - Closes the autocomplete dropdown menu.
-
-- `clear(silent)`
-   - Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
+   - Initiates loading options from the remote data provider for the given query string.
 
 - `clearOptions(clearFilter?)`
    - Removes all unselected options from the control. To clear selection options, call clear() before calling clearOptions().
@@ -7341,7 +7332,18 @@ envision.select('#tag-select').then(function (selects) {
    - Returns the DOM element of the item matching the given value.
 
 - `addItem(value, silent)`
-   - "Selects" an item. Adds it to the list at the current caret position. If silent is truthy, no change event will be fired on the original input.
+   - "Selects" an item. Adds it to the list at the current caret position. If `silent` is truthy, no change event will be fired on the original input.
+
+- `clear(silent)`
+   - Resets / clears all selected items from the control. If `silent` is truthy, no change event will be fired on the original input.
+
+### Dropdown
+
+- `open()`
+   - Shows the autocomplete dropdown containing the available options.
+
+- `close()`
+   - Closes the autocomplete dropdown menu.
 
 ### Other
 
