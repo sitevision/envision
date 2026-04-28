@@ -30,20 +30,23 @@ The form field wrapper may also contain a help text using `.env-form-field-help`
 
 ### Form control container
 
-The class `.env-form-control` creates a multi purpose container used to enhance single form controls.
+The class `.env-form-control` creates a multipurpose container used to group and enhance form
+controls and related elements.
 
-It can only contain elements of the following types:
+Common elements used inside `.env-form-control` include:
 
 - `.env-form-label`
 - `.env-form-input`
 - `.env-button`
 - `.env-icon`
-- `[aria-hidden="true"]`
+- `.env-radio`
+- `.env-checkbox`
+- `.env-switch`
 
 #### Usages
 
-Create an [input group](#input-group) with label, input and button with a combinations of
-elements using `.env-form-input`, `.env-button` and `.env-form-label`.
+Create an [input group](#input-group) with a label, input and button using a combination of
+`.env-form-input`, `.env-button`, and `.env-form-label`.
 
 ```html
 <div class="env-form-field">
@@ -65,10 +68,10 @@ elements using `.env-form-input`, `.env-button` and `.env-form-label`.
 </div>
 ```
 
-[Option elements](#option-elements), such as radio buttons, checkboxes and switches in combination with a label
-should use the wrapper for alignment and spacing.
+[Option elements](#option-elements), such as radio buttons, checkboxes and switches should use
+the wrapper together with a label for alignment and spacing.
 
-Use the combination of `.env-radio`, `.env-checkbox` or `.env-switch` and `.env-form-label`.
+Use `.env-radio`, `.env-checkbox`, or `.env-switch` together with `.env-form-label`.
 
 ```html
 <div class="env-form-control">
@@ -462,6 +465,55 @@ Use `.env-form-control` to wrap an `.env-switch` checkbox and `.env-form-label`.
    />
    <label class="env-form-label" for="switch-1">One option</label>
 </div>
+```
+
+## Range input element <span class="doc-badge doc-badge--info">2026.05.1</span>
+
+Use an input element with class `.env-range` and `[type="range"]`.
+
+For the deprecated two-handle component, see [Range slider](/deprecated/range-slider/).
+
+```html
+<div class="env-form-field">
+   <label for="range-1" class="env-form-label">Range input</label>
+   <input class="env-range" type="range" id="range-1" />
+</div>
+```
+
+To display step markers below the input, add a `datalist` element and connect it to the input
+with the `list` attribute. The `datalist` must contain `option` elements with a `value` attribute.
+
+```html
+<div class="env-form-field">
+   <label for="range-2" class="env-form-label">Range with markers</label>
+   <input
+      class="env-range"
+      type="range"
+      id="range-2"
+      value="100"
+      min="50"
+      max="250"
+      step="50"
+      list="range-2-markers"
+   />
+</div>
+<datalist id="range-2-markers">
+   <option value="50"></option>
+   <option value="100"></option>
+   <option value="150"></option>
+   <option value="200"></option>
+   <option value="250"></option>
+</datalist>
+```
+
+All elements with class `.env-range` and `[type="range"]` are automatically initialized on
+`DOMContentLoaded`.
+
+Range elements added to the DOM after the document has loaded must be initialized from script.
+
+```javascript
+// Initialize range elements added after DOMContentLoaded
+envision.range();
 ```
 
 <div id="input-icons"></div>

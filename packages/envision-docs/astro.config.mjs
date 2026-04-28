@@ -5,6 +5,7 @@ import { svRemarkLayoutPlugin } from './sv-remark-layout-plugin.mjs';
 import { svRemarkClassNames } from './sv-remark-class-names.mjs';
 import { svRemarkCopyExamples } from './sv-remark-copy-examples.mjs';
 import mdx from '@astrojs/mdx';
+import { normalizePath } from 'vite';
 
 import path from 'path';
 import { fileURLToPath } from 'node:url';
@@ -13,25 +14,39 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ASSETS_FOLDER = 'assets';
 
-const watchEnvisionJS = () => ({
+const watchEnvisionBuild = () => ({
+   name: 'watch-envision-build',
    /**
     * @param {import('vite').ViteDevServer} server
     */
    configureServer(server) {
-      console.log('[watch-extra-files] Plugin loaded');
+      console.log('[watch-envision-build] Plugin loaded');
+      const watchFiles = [
+         path.resolve(__dirname, './static/dist/envision.js'),
+      ].map(normalizePath);
+
       /**
        * @param {string} file
        */
       const reload = (file) => {
-         console.log(`[watch-extra-files] Reload triggered due to: ${file}`);
+         const normalizedFile = normalizePath(file);
+
+         if (!watchFiles.includes(normalizedFile)) {
+            return;
+         }
+
+         console.log(`[watch-envision-build] Reload triggered due to: ${file}`);
          server.ws.send({ type: 'full-reload' });
       };
-      const watchPaths = [path.resolve(__dirname, '../envision/src/js/')];
-      server.watcher.add(watchPaths);
-      console.log('[watch-extra-files] Watching paths:', watchPaths);
+
+      server.watcher.add(watchFiles);
+      console.log('[watch-envision-build] Watching files:', watchFiles);
       server.watcher.on('change', reload);
+
+      server.httpServer?.once('close', () => {
+         server.watcher.off('change', reload);
+      });
    },
-   name: 'watch-extra-files',
 });
 
 export default defineConfig({
@@ -75,7 +90,7 @@ export default defineConfig({
       ],
    },
    vite: {
-      plugins: [watchEnvisionJS()],
+      plugins: [watchEnvisionBuild()],
       build: {
          rollupOptions: {
             output: {

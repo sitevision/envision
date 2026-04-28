@@ -13,17 +13,17 @@
          z-index: 2;
       }
 
-      &:first-of-type {
+      &:nth-child(1 of .env-button) {
          border-radius: var(--env-button-border-radius) 0 0
             var(--env-button-border-radius);
       }
 
-      &:last-of-type {
+      &:nth-last-child(1 of .env-button) {
          border-radius: 0 var(--env-button-border-radius)
             var(--env-button-border-radius) 0;
       }
 
-      &--ghost:last-of-type {
+      &--ghost:not(:nth-child(1 of .env-button)) {
          margin-left: -1px;
       }
    }

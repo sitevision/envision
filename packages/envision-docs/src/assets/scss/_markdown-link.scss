@@ -1,0 +1,42 @@
+@use 'variables';
+
+.doc-md-link {
+   // Ghost button text & border
+   --env-element-background-color: var(--env-font-color);
+   // Ghost button text on hover
+   --env-element-font-color: var(--env-section-background-color);
+   // Ghost button bg on hover
+   --env-element-background-color-dark: var(--env-font-color);
+
+   @media (max-width: 39.999em) {
+      position: relative;
+      margin: 4em 0 0;
+      padding: 2em 0 0;
+      border-top: 1px solid var(--doc-border-color);
+   }
+
+   @media (min-width: 40em) {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+   }
+
+   [data-md-copy-lbl] {
+      display: inline-block;
+      min-width: 5.5em;
+      text-align: left;
+   }
+
+   &__menu-item {
+      display: block;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      line-height: 1.5;
+   }
+
+   &__menu-item__description {
+      display: block;
+      font-size: var(--env-font-size-x-small);
+      color: var(--env-font-color-muted);
+   }
+}

@@ -3,26 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const envision = window.envision || {};
 
-   const demoImageViewer2 = document.querySelector('#demoImageViewer2');
-   demoImageViewer2 &&
-      envision.imageViewer2(demoImageViewer2, {
+   // First slider, top of page
+   const demoImageViewer = document.querySelector('#demo-image-viewer');
+   demoImageViewer &&
+      envision.imageViewer2(demoImageViewer, {
          slides: {
             auto: 2000,
-            playing: false,
          },
       });
 
-   const imageViewer2_1 = document.querySelector('#example-imageviewer2-1');
-   imageViewer2_1 && envision.imageViewer2(imageViewer2_1);
+   // Lightbox only example, no slides
+   const imageViewer2Lightbox = document.querySelector(
+      '#example-image-viewer-lightbox-only'
+   );
+   imageViewer2Lightbox && envision.imageViewer2(imageViewer2Lightbox);
 
-   const imageViewer2_2 = document.querySelector('#example-imageviewer2-2');
-   imageViewer2_2 &&
-      envision.imageViewer2(imageViewer2_2, {
+   // Code example slider, center page
+   const imageViewer2Example = document.querySelector('#example-image-viewer');
+   imageViewer2Example &&
+      envision.imageViewer2(imageViewer2Example, {
          slides: {
             auto: 3000,
-            playing: false,
-            overlay: false,
             buttons: {
+               placement: 'top',
                type: 'secondary',
                size: 'slim',
             },

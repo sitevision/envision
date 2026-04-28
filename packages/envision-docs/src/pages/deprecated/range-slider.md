@@ -1,7 +1,11 @@
 ---
 title: Range slider
 description: The Range Slider component lets users select a value or range with customizable intervals and limits.
+deprecated: true
+indexing: false
 ---
+
+Range slider is deprecated and will eventually be removed.
 
 Capture a range
 

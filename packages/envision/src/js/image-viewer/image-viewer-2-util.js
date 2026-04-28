@@ -19,7 +19,6 @@ export const CLASSNAME = {
 export const AUTOPLAY_STATE = {
    STOP: 'STOP',
    PAUSE: 'PAUSE',
-   CONTINUE: 'PAUSE',
    PLAY: 'PLAY',
 };
 
@@ -33,8 +32,27 @@ export const ICON = {
    DOWNLOAD: 'download',
 };
 
+export const BUTTON_PLACEMENT = {
+   TOP: 'top',
+   BOTTOM: 'bottom',
+   OVERLAY_TOP: 'overlay-top',
+   OVERLAY_BOTTOM: 'overlay-bottom',
+};
+
+export const SLIDESHOW_TYPE = {
+   IMAGES: 'images',
+   HTML: 'html',
+};
+
+export const isOverlayPlacement = (placement) => {
+   return (
+      placement === BUTTON_PLACEMENT.OVERLAY_TOP ||
+      placement === BUTTON_PLACEMENT.OVERLAY_BOTTOM
+   );
+};
+
 export const getButtonIcon = (iconName) => {
-   return `<svg class="env-icon">
+   return `<svg class="env-icon" data-icon="${iconName}">
       <use href="/sitevision/envision-icons.svg#icon-${iconName}"></use>
       </svg>`;
 };
@@ -76,10 +94,15 @@ export const TEMPLATE = {
       <div class="env-rect4"></div><div class="env-rect5"></div></div>`,
 };
 
-export const SLIDER_VIEWER_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer" aria-live="off">
+export const SLIDER_VIEWER_TEMPLATE = {
+   images: `<div class="${CLASSNAME.BASE}__viewer" aria-live="off">
 <div class="${CLASSNAME.ITEMS}"></div>
 <div class="env-assistive-text ${CLASSNAME.BASE}__assistive"></div>
-</div>`;
+</div>`,
+   html: `<div class="${CLASSNAME.BASE}__viewer" aria-live="off">
+<div class="${CLASSNAME.ITEMS}"></div>
+</div>`,
+};
 
 export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group" aria-roledescription="slide"></div>`;
 

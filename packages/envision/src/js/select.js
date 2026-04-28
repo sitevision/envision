@@ -15,19 +15,19 @@ const lang = {
    sv: {
       add: 'Lägg till',
       remove_button: 'Ta bort val',
-      clear_button: 'Ta bort alla val',
+      clear_button: 'Rensa',
       no_results: 'Inga alternativ matchar',
    },
    en: {
       add: 'Add',
       remove_button: 'Remove',
-      clear_button: 'Clear all',
+      clear_button: 'Clear',
       no_results: 'No results found',
    },
    no: {
       add: 'Legg til',
       remove_button: 'Fjern',
-      clear_button: 'Fjern alt',
+      clear_button: 'Tøm',
       no_results: 'Ingen resultater funnet',
    },
 };
@@ -42,13 +42,16 @@ const defaults = {
       optionClass: 'env-select__dropdown__option',
       plugins: {
          caret_position: {},
+         input_autogrow: {},
          remove_button: {
             title: `${lang.sv.remove_button}`,
             className: 'env-select__item__remove',
          },
          clear_button: {
             title: `${lang.sv.clear_button}`,
-            className: 'env-select__input__clear',
+            html: function (data) {
+               return `<button type="button" class="env-select__input__clear">${data.title}</button>`;
+            },
          },
       },
    },
@@ -65,6 +68,7 @@ const defaults = {
       create: false,
       clearButton: true,
       placeholder: null,
+      clearAfterSelect: true,
       sortField: function (a, b) {
          const aText = this.items[a.id].text;
          const bText = this.items[b.id].text;
@@ -98,11 +102,11 @@ const defaults = {
             );
          },
       },
-      load: null, // function() { ... }
+      load: null, // function(query, callback) { ... }
       onInitialize: null, // function() { ... }
       onChange: null, // function(value) { ... }
-      onItemAdd: null, // function(value, $item) { ... }
-      onItemRemove: null, // function(value) { ... }
+      onItemAdd: null, // function(value, item) { ... }
+      onItemRemove: null, // function(value, item) { ... }
       onClear: null, // function() { ... }
       onOptionAdd: null, // function(value, data) { ... }
       onOptionRemove: null, // function(value) { ... }
@@ -110,8 +114,8 @@ const defaults = {
       onDropdownOpen: null, // function(dropdown) { ... }
       onDropdownClose: null, // function(dropdown) { ... }
       onType: null, // function(str) { ... }
-      onFocus: null, // function(str) { ... }
-      onBlur: null, // function(str) { ... },
+      onFocus: null, // function() { ... }
+      onBlur: null, // function() { ... },
       onLoad: null, // function(options, optgroup) { ... },
       i18n: 'sv',
    },
@@ -215,6 +219,8 @@ const getSettings = (options, node) => {
    if (settings.maxItems === 1) {
       // Settings not allowed in Single select
       delete settings.plugins.clear_button;
+      delete settings.plugins.input_autogrow;
+      delete settings.plugins.caret_position;
       delete settings.plugins.remove_button;
    } else {
       // Setting only allowed for Single select
@@ -229,12 +235,40 @@ const getSettings = (options, node) => {
    }
 
    // Must remove from settings to use HTML markup
-
    ['items', 'placeholder', 'options'].forEach((prop) => {
       if (!settings[prop]) {
          delete settings[prop];
       }
    });
+
+   settings.onDropdownOpen = function (dropDnEl) {
+      // Always make dropdown visible on page
+      dropDnEl.scrollIntoView({
+         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+         block: 'nearest',
+      });
+
+      // Possible user added callback
+      if (typeof options.onDropdownOpen === 'function') {
+         options.onDropdownOpen.call(this, dropDnEl);
+      }
+   };
+
+   settings.onBlur = function () {
+      const input = this.control_input;
+
+      // Placeholder is not automatically restored on blur
+      if (input?.tagName === 'INPUT' && this.settings?.placeholder) {
+         input.setAttribute('placeholder', this.settings.placeholder);
+      }
+
+      // Possible user added callback
+      if (typeof options.onBlur === 'function') {
+         options.onBlur.call(this);
+      }
+   };
 
    // Handle language option
    // May be set to string 'sv', 'en' - use lang variable

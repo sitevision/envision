@@ -1,0 +1,10 @@
+{
+   "name": "build-svg-sprites",
+   "version": "1.0.0",
+   "main": "index.js",
+   "author": "Sitevision AB",
+   "license": "MIT",
+   "dependencies": {
+      "svg-sprite": "^2.0.4"
+   }
+}
