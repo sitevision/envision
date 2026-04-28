@@ -28,23 +28,23 @@ is used as background color for Modal dialogs.
 
 Font and link colors should have at least a 4.5:1 contrast ratio on `--env-background-color` and `--env-section-background-color`.
 
-Depending on design and usage, it´s recommended to try to get at least a 4.5:1 contrast ratio on `--env-section-background-color-05` as well.
+Depending on design and usage, it's recommended to try to get at least a 4.5:1 contrast ratio on `--env-section-background-color-05` as well.
 
 ## Examples
 
 `--env-background-color` is used outside the centered boxes.
 
 ```html
-<div class="example-fill example-basic-colors  env-p-around--xx-large">
+<div class="example-fill example-basic-colors  env-p--xx-large">
    <div
-      class="env-ui-section env-border env-border--05 env-p-around--large env-m-bottom--large"
+      class="env-ui-section env-border env-border--05 env-p--large env-m-block-end--large"
    >
       <div class="env-text">
          Base text on section background with a border 05 and
          <a href="javascript:void(0)" class="env-link">a link</a>.
       </div>
    </div>
-   <div class="env-ui-section-05 env-border env-p-around--large">
+   <div class="env-ui-section-05 env-border env-p--large">
       <div class="env-text">
          Base text on section background 05, standard border and
          <a href="javascript:void(0)" class="env-link">a link</a>.
@@ -186,7 +186,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 <button type="button" class="env-button env-button--brand">Brand button</button>
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <span class="env-badge env-badge--brand">Badge</span>
 </div>
 
@@ -222,7 +222,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h2 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h2>
@@ -238,7 +238,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="example-progress">
-   <p class="env-ui-text-sectionheading env-m-bottom--large">
+   <p class="env-ui-text-sectionheading env-m-block-end--large">
       Section heading
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">
@@ -332,7 +332,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 The default theme uses this neutral brand palette.
 
-<ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
+<ol class="example-brand-color-list env-m-block--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
    <li class="example-section-brand-10"><div>Brand 10</div></li>
@@ -996,7 +996,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 , `85`, `90`, `95`, `100`.
 
 <div class="example-badges">
-   <div class="env-m-bottom--small">
+   <div class="env-m-block-end--small">
       <span class="env-badge env-badge--brand">Brand</span>
       <span class="env-badge env-badge--brand-05">Brand 05</span>
       <span class="env-badge env-badge--brand-10">Brand 10</span>
@@ -1143,7 +1143,7 @@ its width and height to make a nice aligned grid of cards.
       </div>
       <div class="env-card__footer env-text--small">
          <a href="#" type="button" class="env-button env-button--link">
-            <svg class="env-icon env-icon--small env-m-right--xx-small">
+            <svg class="env-icon env-icon--small env-m-inline-end--xx-small">
                <use href="/sitevision/envision-icons.svg#icon-phone"></use>
             </svg>
             Administrator
@@ -1219,7 +1219,7 @@ Add `env-collapse-header--icons` to add icons
       aria-expanded="false"
       aria-controls="container2"
    >
-      <span class="env-m-right--x-large"> Example 2 </span>
+      <span class="env-m-inline-end--x-large"> Example 2 </span>
       <span class="env-collapse-header--icons"></span>
    </a>
 </h4>
@@ -2291,7 +2291,7 @@ URL: https://envisionui.io/components/image-viewer-2/
 Description: Accessible image slideshows and lightbox galleries with flexible layout and predictable motion.
 
 <section id="demo-image-viewer"
-class="env-m-vertical--large"
+class="env-m-block--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
       <img src="/placeholders/900x400/10.webp" alt="">
@@ -2441,7 +2441,7 @@ The container element should have an `aria-label` attribute.
 ```html
 <section
    id="example-image-viewer"
-   class="env-p-around--medium"
+   class="env-p--medium"
    aria-label="Photos from Örebro"
 >
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
@@ -3966,7 +3966,7 @@ if (popoverContentEl) {
 Add `type: 'menu'` in JS or `data-type="menu"` in HTML
 for a menu-styled popover. Use class `env-popover__item` for the menu items.
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
@@ -4045,7 +4045,7 @@ if (popoverMenuContentEl) {
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
 for a Tooltip-styled popover. Common text components will adjust color automatically.
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <div class="example-static-popover env-popover env-popover--tooltip" data-popper-placement="bottom">
 <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
@@ -4456,7 +4456,7 @@ Add `--striped--animated` to animate the stripes
 
 ```html
 <div class="example-progress">
-   <p class="env-text env-m-bottom--large">
+   <p class="env-text env-m-block-end--large">
       Lorem ipsum lectus molestie vivamus?
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">
@@ -4570,7 +4570,7 @@ Data attribute `data-delay="short"` may be used to control delay timing. Allowed
 </div>
 ```
 
-<div class="env-m-top--x-small">
+<div class="env-m-block-start--x-small">
    <button class="env-button" id="toggle-spinner-1">Short delay</button>
    <button class="env-button" id="toggle-spinner-2">Medium delay</button>
    <button class="env-button" id="toggle-spinner-3">Long delay</button>
@@ -5176,7 +5176,7 @@ Other colors and hard coded color values should be avoided.
 Most dashboard widgets should be placed inside a wrapper element with class `env-dashboard-widget`.
 This will set the correct background, borders and more for the widget. The wrapper does not set a padding.
 
-<section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small env-m-bottom--large" style="width: fit-content">
+<section class="env-dashboard-widget env-p-inline--large env-p-block--small env-m-block-end--large" style="width: fit-content">
    <h2 class="env-ui-text-sectionheading">
    Simple widget   
    </h2>
@@ -5214,13 +5214,13 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 
 ## Widget example
 
-<section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small" style="width: fit-content" role="presentation">
+<section class="env-dashboard-widget env-p-inline--large env-p-block--small" style="width: fit-content" role="presentation">
    <h2 class="env-ui-text-sectionheading">
       Chart widget example heading
    </h2>
-   <div class="env-m-vertical--medium">
+   <div class="env-m-block--medium">
 <p class="env-ui-text-value">
-<span class="env-m-right--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
+<span class="env-m-inline-end--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
 <span><b class="env-dashboard-color-txt-cyan-50">—</b>&nbsp;Legend line 2</span>
 </p>
 </div>
@@ -5294,8 +5294,8 @@ The grid column container where the app will be displayed is a [containment cont
 ### Responsive widget example
 
 <div class="example-responsive-widget-wrapper">
-   <section class="env-dashboard-widget example-responsive-widget env-m-bottom--large">
-      <div class="example-responsive-widget__resizeable env-p-horizontal--large env-p-vertical--small">
+   <section class="env-dashboard-widget example-responsive-widget env-m-block-end--large">
+      <div class="example-responsive-widget__resizeable env-p-inline--large env-p-block--small">
          <h2 class="env-ui-text-sectionheading">
             Responsive example widget   
          </h2>
@@ -5365,12 +5365,12 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
    </ul>
 </div>
 
-<p class="example-dashboard-color-list-legend env-m-bottom--0">
+<p class="example-dashboard-color-list-legend env-m-block-end--0">
    <svg class="env-icon example-dashboard-color-list-icon">
       <use href="/images/docs-images.svg#text"></use>
    </svg> = The color will pass WCAG 2 level AA contrast requirements as text on white (widget wrapper) background.
 </p>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="example-dashboard-color-list-legend env-m-block-start--0">
    <span style="font-size:1.4em">*</span> = The color also passes contrast requirements if used as text on gray-05 (theme body) background.
 </p>
 
@@ -5392,12 +5392,12 @@ patterns as CSS variable names.
 
 ```html
 <div
-   class="env-dashboard-color-bg-purple-20 env-p-around--medium env-m-bottom--medium"
+   class="env-dashboard-color-bg-purple-20 env-p--medium env-m-block-end--medium"
 >
    This is a purple-20 area with default font color.
 </div>
 <div
-   class="env-dashboard-color-bg-purple-50 env-dashboard-color-txt-white env-p-around--medium"
+   class="env-dashboard-color-bg-purple-50 env-dashboard-color-txt-white env-p--medium"
 >
    This is a purple-50 area with white font color.
 </div>
@@ -7093,7 +7093,7 @@ envision
       render: {
          item: (data, escape) =>
             `<div>
-               <svg class="env-icon env-m-right--x-small"><use href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
+               <svg class="env-icon env-m-inline-end--x-small"><use href="/sitevision/envision-icons.svg#icon-check-line"></use></svg>
                ${escape(data.text)}
             </div>`,
       },
@@ -8391,16 +8391,16 @@ described below.
 The default values are a scaling factor of `1 – 1.25` between widths `400px – 750px`.
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <div class="env-dynamic-font">
                   <h2 class="env-ui-text-sectionheading">
                      Dynamic font
                      <span class="example-dynamic-font__elfontsize"></span>
                   </h2>
-                  <p class="env-text env-m-top--small">
+                  <p class="env-text env-m-block-start--small">
                      This text will resize dynamically depending on the width of the containment context.
                      Baseline font-size will go from 1em to 1.25em starting at 400px width up to 750px.
                      The heading will also scale to a factor of 1.25, but starting at 1.25em it will scale up to 1.5625em.
@@ -8445,7 +8445,7 @@ separate element inside the container element. Elements placed inside the contai
 
 ```html noexample
 <div class="env-container">
-   <div class="env-p-around--medium">
+   <div class="env-p--medium">
       <h2 class="env-ui-text-sectionheading">This heading will not resize</h2>
       <div class="env-dynamic-font">
          <p class="env-text">This text will resize ...</p>
@@ -8467,14 +8467,14 @@ Default scaling factor is `1.25` which is identical to using the `1_25` modifer.
 _Note that dot is replaced by underscore as dot is not allowed in CSS class names._
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Scaling factor
                </h2>
-               <div class="env-dynamic-font env-dynamic-font--scale-1_125 env-m-top--small">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_125 env-m-block-start--small">
                   <p class="env-text">
                      Scaling factor 1.125
                      <span class="example-dynamic-font__elfontsize"></span>
@@ -8492,39 +8492,39 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_5">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_5">
                   <p class="env-text">
                      Scaling factor 1.5
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_625">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_625">
                   <p class="env-text">
                      Scaling factor 1.625
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_75">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_75">
                   <p class="env-text">
                      Scaling factor 1.75
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_875">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_875">
                   <p class="env-text">
                      Scaling factor 1.875
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
             
-<div class="env-dynamic-font env-dynamic-font--scale-2">
+               <div class="env-dynamic-font env-dynamic-font--scale-2">
                   <p class="env-text">
                      Scaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
+            </div>
          </div>
-</div>
          <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
@@ -8559,26 +8559,26 @@ alt="Dynamic font scaling chart"
 src="/placeholders/examples/dyn-font.svg" />
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Boundaries
                </h2>
-               <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-250 env-dynamic-font--to-500 env-m-block--small">
                   <p class="env-text">
                      From 250 to 500
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-               <div class="env-dynamic-font env-dynamic-font--from-400 env-dynamic-font--to-650 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-400 env-dynamic-font--to-650 env-m-block--small">
                   <p class="env-text">
                      From 400 to 650
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-               <div class="env-dynamic-font env-dynamic-font--from-550 env-dynamic-font--to-800 env-m-vertical--small">
+               <div class="env-dynamic-font env-dynamic-font--from-550 env-dynamic-font--to-800 env-m-block--small">
                   <p class="env-text">
                      From 550 to 800
                      <span class="example-dynamic-font__elfontsize"></span>
@@ -8614,35 +8614,37 @@ the modifier `env-dynamic-font--downscale`. The lowest factor will then be `1 / 
 at default settings.
 
 <div class="example-dynamic-font-wrapper">
-   <div class="example-dynamic-font env-m-bottom--large">
+   <div class="example-dynamic-font env-m-block-end--large">
       <div class="example-dynamic-font__resizeable">
          <div class="env-container example-dynamic-container">
-            <div class="env-p-around--medium">
+            <div class="env-p--medium">
                <h2 class="env-ui-text-sectionheading">
                   Upscaling vs downscaling
                </h2>
-               <div class="env-dynamic-font env-m-vertical--small">
+               <div class="env-dynamic-font env-m-block--small">
                   <p class="env-text">
                      Upscaling factor 1.25 (default)
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-m-vertical--small">
-<p class="env-text">
+               <div class="env-dynamic-font env-dynamic-font--scale-2 env-m-block--small">
+                  <p class="env-text">
                      Upscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
-                  </p></div>
-               <div class="env-dynamic-font env-dynamic-font--downscale env-m-vertical--small">
+                  </p>
+               </div>
+               <div class="env-dynamic-font env-dynamic-font--downscale env-m-block--small">
                   <p class="env-text">
                      Downscaling factor 1.25
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-vertical--small">
-<p class="env-text">
+               <div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-block--small">
+                  <p class="env-text">
                      Downscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
-                  </p></div>
+                  </p>
+               </div>
             </div>
          </div>
          <p class="example-dynamic-font__resizeable__help">
@@ -8974,7 +8976,7 @@ New UI Text style Body available since <span class="doc-badge doc-badge--info">2
 ## Usage example
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h4 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h4>
@@ -9510,12 +9512,12 @@ Examples
 
 ```html
 <div class="example-display">
-   <div class="env-p-around--x-small env-d--inline">Inline</div>
-   <div class="env-p-around--x-small env-d--block">Block</div>
-   <div class="env-p-around--x-small env-d--inline-block">Inline block</div>
-   <div class="env-p-around--x-small env-d--flex">Flex</div>
-   <div class="env-p-around--x-small env-d--inline-flex">Inline flex</div>
-   <div class="env-p-around--x-small env-d--none">None</div>
+   <div class="env-p--x-small env-d--inline">Inline</div>
+   <div class="env-p--x-small env-d--block">Block</div>
+   <div class="env-p--x-small env-d--inline-block">Inline block</div>
+   <div class="env-p--x-small env-d--flex">Flex</div>
+   <div class="env-p--x-small env-d--inline-flex">Inline flex</div>
+   <div class="env-p--x-small env-d--none">None</div>
 </div>
 ```
 
