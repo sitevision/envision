@@ -39,11 +39,9 @@ $trackHeight: 0.675em;
    height: $thumbDiameter;
    min-width: $thumbMinDiameter;
    min-height: $thumbMinDiameter;
+   background-color: var(--env-element-primary-background-color);
    border: none;
    border-radius: 50%;
-
-   // fallback background in the no JS case
-   background: var(--env-element-primary-background-color);
 
    @include focus.focus-outline;
 }
