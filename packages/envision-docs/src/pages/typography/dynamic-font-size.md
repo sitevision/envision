@@ -115,39 +115,39 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_5">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_5">
                   <p class="env-text">
                      Scaling factor 1.5
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_625">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_625">
                   <p class="env-text">
                      Scaling factor 1.625
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_75">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_75">
                   <p class="env-text">
                      Scaling factor 1.75
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-1_875">
+               <div class="env-dynamic-font env-dynamic-font--scale-1_875">
                   <p class="env-text">
                      Scaling factor 1.875
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
             
-<div class="env-dynamic-font env-dynamic-font--scale-2">
+               <div class="env-dynamic-font env-dynamic-font--scale-2">
                   <p class="env-text">
                      Scaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
+            </div>
          </div>
-</div>
          <p class="example-dynamic-font__resizeable__help">
             Resize container (<span class="example-dynamic-font__width"></span>px)
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
@@ -250,22 +250,24 @@ at default settings.
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-m-block--small">
-<p class="env-text">
+               <div class="env-dynamic-font env-dynamic-font--scale-2 env-m-block--small">
+                  <p class="env-text">
                      Upscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
-                  </p></div>
+                  </p>
+               </div>
                <div class="env-dynamic-font env-dynamic-font--downscale env-m-block--small">
                   <p class="env-text">
                      Downscaling factor 1.25
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-<div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-block--small">
-<p class="env-text">
+               <div class="env-dynamic-font env-dynamic-font--scale-2 env-dynamic-font--downscale env-m-block--small">
+                  <p class="env-text">
                      Downscaling factor 2
                      <span class="example-dynamic-font__elfontsize"></span>
-                  </p></div>
+                  </p>
+               </div>
             </div>
          </div>
          <p class="example-dynamic-font__resizeable__help">
