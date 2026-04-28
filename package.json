@@ -34,7 +34,7 @@
       "cross-env": "^10.1.0",
       "eslint": "^9.39.1",
       "eslint-plugin-commonjs": "^1.0.2",
-      "globals": "^16.5.0",
+      "globals": "^17.5.0",
       "husky": "^9.1.7",
       "lint-staged": "^16.2.7",
       "prettier": "^3.8.0",
