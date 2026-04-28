@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta content="noindex" name="robots">
 <title>
-Borders · Envision by Sitevision
+Range slider · Envision by Sitevision
 </title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<meta content="Use the Borders utility to set or remove borders." name="description">
+<meta content="The Range Slider component lets users select a value or range with customizable intervals and limits." name="description">
 <link href="/llms.txt" rel="alternate" type="text/plain">
 <link href="/llms-full.txt" rel="alternate" type="text/plain">
 <script>((e,o,t)=>{const c=e.sessionStorage,d=c.getItem(t);let s;d?s=d:(s=e.matchMedia("(prefers-color-scheme: dark)").matches?"doc-dark-mode":"doc-light-mode",c.setItem(t,s)),o.classList.add(s)})(window,document.documentElement,"colorscheme")</script>
@@ -86,59 +87,158 @@ Menu
 </div>
 </div>
 </header>
+<section class="banner banner--deprecated" role="status">
+<div class="container">
+<div class="icon">
+<svg class="env-icon env-icon--large">
+<use href="/images/docs-images.svg#exclamation"></use>
+</svg>
+Deprecated
+</div>
+The documentation you are viewing is for a deprecated version of an Envision component.
+</div>
+</section>
 <div class="body">
 <main class="main" id="content">
 <div class="content-wrapper">
 <h1 class="doc-main-heading">
-Borders
+Range slider
 </h1>
-<p class="doc-p">Set or remove borders.</p>
-<h2 class="doc-heading-2" id="set-borders">Set borders</h2>
-<p class="doc-p">Use <code class="doc-code">env-border</code> or <code class="doc-code">env-border-{p}</code> to set border on one or more sides.</p>
-<p class="doc-p">Valid values for <code class="doc-code">{p}</code> are: <code class="doc-code">block</code>, <code class="doc-code">inline</code>, <code class="doc-code">block-start</code>, <code class="doc-code">block-end</code>, <code class="doc-code">inline-start</code>, <code class="doc-code">inline-end</code>.</p>
-<p class="doc-p">You can use <code class="doc-code">env-border--05</code> to set a muted border color.</p>
-<div class="doc-code-example"><div class="example-borders">
-<span class="env-border"></span>
-<span class="env-border env-border--05"></span>
-<span class="env-border-block"></span>
-<span class="env-border-inline"></span>
-<span class="env-border-block-start"></span>
-<span class="env-border-block-end"></span>
-<span class="env-border-inline-start"></span>
-<span class="env-border-inline-end"></span>
+<p class="doc-p">Range slider is deprecated and will eventually be removed.</p>
+<p class="doc-p">Capture a range</p>
+<div class="doc-code-example"><div class="env-m-bottom--xxx-large env-range-slider example-range-slider" id="my-slider">
+<div class="env-range-slider__range"></div>
+<div class="env-range-slider__handle" tabindex="0"></div>
+<div class="env-range-slider__handle" tabindex="0"></div>
+<div class="env-range-slider__values">
+<span class="env-text env-range-slider__values__value env-range-slider__values__value--from"></span>
+<span class="env-text env-range-slider__values__separator">-</span>
+<span class="env-text env-range-slider__values__value"></span>
+</div>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-borders<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border env-border--05<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-inline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-block-start<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-block-end<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-inline-start<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-inline-end<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span>
+   <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-slider<span class="token punctuation">"</span></span>
+   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider example-range-slider env-m-bottom--xxx-large<span class="token punctuation">"</span></span>
+<span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__range<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__handle<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__handle<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__values<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span>
+         <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__values__value env-range-slider__values__value--from env-text<span class="token punctuation">"</span></span>
+      <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__values__separator env-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>-<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-range-slider__values__value env-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h2 class="doc-heading-2" id="remove-borders">Remove borders</h2>
-<p class="doc-p">Use <code class="doc-code">env-border-none</code> to remove a border from all sides.</p>
-<div class="doc-code-example"><div class="example-borders">
-<span class="env-border-none" style="border:3px dashed red"> </span>
-</div></div>
 <div class="doc-code-block doc-code-block--expandable">
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-borders<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token css language-css value"><span class="token property">border</span><span class="token punctuation">:</span> 3px dashed red</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-border-none<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> object<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h2 class="doc-heading-2" id="deprecated">Deprecated</h2>
-<h3 class="doc-heading-3" id="physical-properties--modifiers">Physical properties &#x26; modifiers</h3>
-<p class="doc-p">Classnames <code class="doc-code">env-border-top</code>, <code class="doc-code">env-border-right</code>, <code class="doc-code">env-border-bottom</code> and <code class="doc-code">env-border-left</code> are deprecated and replaced by logical properties.</p>
-<p class="doc-p">Modifiers <code class="doc-code">env-border--0</code> and <code class="doc-code">env-border--{p}-0</code> are deprecated, where <code class="doc-code">env-border--0</code> is replaced by <code class="doc-code">env-border-none</code>.</p>
-<p class="doc-p">Variable <code class="doc-code">--env-border-color-light</code> is deprecated and replaced by <code class="doc-code">--env-border-color-05</code>.</p>
+<h2 class="doc-heading-2" id="options">Options</h2>
+<h3 class="doc-heading-3" id="values">values</h3>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Type:</strong> Array</li>
+<li class="doc-list__item"><strong class="doc-strong">Default:</strong> [0, 0]</li>
+</ul>
+<p class="doc-p">Values to initialize the slider with.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">values</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="min">min</h3>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Type:</strong> Number</li>
+<li class="doc-list__item"><strong class="doc-strong">Default:</strong> 0</li>
+</ul>
+<p class="doc-p">The minimum value of the slider.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">min</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="max">max</h3>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Type:</strong> Number</li>
+<li class="doc-list__item"><strong class="doc-strong">Default:</strong> 100</li>
+</ul>
+<p class="doc-p">The maximum value of the slider.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">max</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="step">step</h3>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Type:</strong> Number</li>
+<li class="doc-list__item"><strong class="doc-strong">Default:</strong> 1</li>
+</ul>
+<p class="doc-p">The size of every step between min and max. The value range (max - min) should be evenly divisible by the step.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">step</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="visiblevalues">visibleValues</h3>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">Type:</strong> Boolean</li>
+<li class="doc-list__item"><strong class="doc-strong">Default:</strong> true</li>
+</ul>
+<p class="doc-p">If values should be visible below the handles.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+   <span class="token literal-property property">visibleValues</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<p class="doc-p"><span class="offset-anchor" id="events"></span></p>
+<h2 class="doc-heading-2" id="events">Events</h2>
+<h3 class="doc-heading-3" id="input">input</h3>
+<p class="doc-p">Triggered for every move during slide.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="change">change</h3>
+<p class="doc-p">Triggered when slide is completed.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+   <span class="token comment">// Triggered when slide is completed</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h3 class="doc-heading-3" id="slide-deprecated">slide <span class="doc-badge doc-badge--danger">Deprecated</span></h3>
+<p class="doc-p">Triggered for every move during slide. Event <code class="doc-code">slide</code> is deprecated, please use <code class="doc-code">input</code> event.</p>
+<h3 class="doc-heading-3" id="slidestop-deprecated">slidestop <span class="doc-badge doc-badge--danger">Deprecated</span></h3>
+<p class="doc-p">Triggered when slide is completed. Event <code class="doc-code">slidestop</code> is deprecated, please use <code class="doc-code">change</code> event.</p>
+<h2 class="doc-heading-2" id="methods">Methods</h2>
+<h3 class="doc-heading-3" id="valuesvalues">values(values)</h3>
+<p class="doc-p">Parameters</p>
+<ul class="doc-list">
+<li class="doc-list__item"><strong class="doc-strong">values:</strong> An array of values to set</li>
+</ul>
+<p class="doc-p">Set the values for the range.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">rangeSlider</span><span class="token punctuation">(</span><span class="token string">'#my-slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">sliders</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   sliders<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</div><!--/sv-no-index-->
 <div class="doc-md-link">
 <div class="env-button-group env-dropdown" role="group">
-<button class="env-button env-button--icon env-button--ghost env-button--slim doc-md-link__copy-button env-button--icon-before" type="button" data-md-github-url="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/utils/borders.md">
+<button class="env-button env-button--icon env-button--ghost env-button--slim doc-md-link__copy-button env-button--icon-before" type="button" data-md-github-url="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/deprecated/range-slider.md">
 <svg class="env-icon doc-md-link__icon" aria-hidden="true" viewBox="0 0 48 48">
 <g clip-path="url(#a)">
 <path d="M44.528 5.998H3.466c-1.915 0-3.469 1.63-3.469 3.635v28.726c0 2.006 1.554 3.639 3.469 3.639h41.062c1.91 0 3.468-1.633 3.468-3.639V9.633c0-2.006-1.554-3.635-3.468-3.635Zm-17.531 28.5h-6v-10.5l-4.5 6-4.5-6v10.5h-6v-21h6l4.5 7.5 4.5-7.5h6v21Zm9 0-7.5-10.5H33l-.004-10.5h6v10.5h4.5l-7.5 10.5Z"></path>
@@ -170,7 +270,7 @@ Copy page as Markdown for LLMs
 </button>
 </li>
 <li role="presentation">
-<a href="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/utils/borders.md" class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
+<a href="https://raw.githubusercontent.com/sitevision/envision/refs/heads/master/packages/envision-docs/src/pages/deprecated/range-slider.md" class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
 View as Markdown
 <span class="doc-md-link__menu-item__description">
 Open the raw Markdown in a new tab
@@ -179,7 +279,7 @@ Open the raw Markdown in a new tab
 </li>
 <li class="env-dropdown--divider" role="separator"></li>
 <li role="presentation">
-<a href="https://chatgpt.com/?prompt=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Futils%2Fborders.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
+<a href="https://chatgpt.com/?prompt=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Fdeprecated%2Frange-slider.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
 Open in ChatGPT
 <span class="doc-md-link__menu-item__description">
 Ask questions about this page
@@ -187,7 +287,7 @@ Ask questions about this page
 </a>
 </li>
 <li role="presentation">
-<a href="https://claude.ai/new?q=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Futils%2Fborders.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
+<a href="https://claude.ai/new?q=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Fdeprecated%2Frange-slider.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
 Open in Claude
 <span class="doc-md-link__menu-item__description">
 Ask questions about this page
@@ -195,7 +295,7 @@ Ask questions about this page
 </a>
 </li>
 <li role="presentation">
-<a href="https://perplexity.ai/search/new?q=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Futils%2Fborders.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
+<a href="https://perplexity.ai/search/new?q=Read+from+https%3A%2F%2Fraw.githubusercontent.com%2Fsitevision%2Fenvision%2Frefs%2Fheads%2Fmaster%2Fpackages%2Fenvision-docs%2Fsrc%2Fpages%2Fdeprecated%2Frange-slider.md+so+I+can+ask+questions+about+it." class="doc-md-link__menu-item env-dropdown__item" rel="noopener noreferrer" target="_blank">
 Open in Perplexity
 <span class="doc-md-link__menu-item__description">
 Ask questions about this page
@@ -224,42 +324,59 @@ Provide the full docs in one plain-text file to help LLMs use docs pages
 </div>
 </main>
 <div class="sidenav" id="navigation">
-<nav aria-label="Utils sidebar menu">
+<nav aria-label="Deprecated sidebar menu">
 <h2 class="sidenav__heading">
-<a href="/utils/">Utils</a>
+<a href="/deprecated/">Deprecated</a>
 </h2>
 <ul class="sidenav__items">
 <li class="sidenav__item">
-<a href="/utils/assistive-text/" class="sidenav__item__link" aria-current="false">
-Assistive text
+<a href="/deprecated/feed/" class="sidenav__item__link" aria-current="false">
+Feed
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/borders/" class="sidenav__item__link" aria-current="page">
-Borders
+<a href="/deprecated/flexbox/" class="sidenav__item__link" aria-current="false">
+Flexbox
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/css-variables/" class="sidenav__item__link" aria-current="false">
-CSS variables
+<a href="/deprecated/form/" class="sidenav__item__link" aria-current="false">
+Form
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/display/" class="sidenav__item__link" aria-current="false">
-Display
+<a href="/deprecated/image-slider/" class="sidenav__item__link" aria-current="false">
+Image slider
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/shadows/" class="sidenav__item__link" aria-current="false">
-Shadows
+<a href="/deprecated/image-viewer/" class="sidenav__item__link" aria-current="false">
+Image viewer
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/sizing/" class="sidenav__item__link" aria-current="false">
-Sizing
+<a href="/deprecated/modal-dialog/" class="sidenav__item__link" aria-current="false">
+Modal dialog
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li><li class="sidenav__item">
-<a href="/utils/spacing/" class="sidenav__item__link" aria-current="false">
-Spacing
-</a>
-</li><li class="sidenav__item">
-<a href="/utils/vertical-alignment/" class="sidenav__item__link" aria-current="false">
-Vertical alignment
+<a href="/deprecated/range-slider/" class="sidenav__item__link" aria-current="page">
+Range slider
+<span class="doc-badge doc-badge--danger">
+Deprecated
+</span>
 </a>
 </li>
 </ul>
@@ -547,7 +664,7 @@ Tooltip
 <a href="/utils/" class="env-nav__link level-1" aria-current="false">
 Utils
 </a>
-<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-utils" aria-expanded="true" data-env-collapse="" role="button">
+<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-utils" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Utils
 </span>
@@ -555,13 +672,13 @@ Toggle navigation for Utils
 <use href="/sitevision/envision-icons.svg#icon-angle-down"></use>
 </svg>
 </a>
-<ul class="env-nav env-nav--sidenav env-collapse env-collapse--show" id="mobile-submenu-utils">
+<ul class="env-nav env-nav--sidenav env-collapse" id="mobile-submenu-utils">
 <li class="env-nav__item">
 <a href="/utils/assistive-text/" class="env-nav__link level-2" aria-current="false">
 Assistive text
 </a>
 </li><li class="env-nav__item">
-<a href="/utils/borders/" class="env-nav__link level-2" aria-current="page">
+<a href="/utils/borders/" class="env-nav__link level-2" aria-current="false">
 Borders
 </a>
 </li><li class="env-nav__item">

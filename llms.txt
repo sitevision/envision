@@ -42,7 +42,6 @@
 - [Forms – Button](https://envisionui.io/forms/button/): Buttons provide interactive elements with various styles, sizes, and icon options.
 - [Forms – Form elements](https://envisionui.io/forms/form-elements/): Form elements structures user inputs with labels, controls, and consistent spacing.
 - [Forms – Form layout](https://envisionui.io/forms/form-layout/): Form Layout offers structured classes for creating accessible, consistent, and responsive form layouts.
-- [Forms – Range slider](https://envisionui.io/forms/range-slider/): The Range Slider component lets users select a value or range with customizable intervals and limits.
 - [Forms – Tag Select](https://envisionui.io/forms/tag-select/): Tag Select enables customizable multi-select interfaces with cross-browser support and styling.
 - [Layout – Cardholder](https://envisionui.io/layout/cardholder/): A Cardholder utilizes CSS grid or flexbox to create a responsive card grid that adapts to available space.
 - [Layout – Container](https://envisionui.io/layout/container/): The Container utility establishes a containment context for applying container query at-rules.

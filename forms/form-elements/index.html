@@ -15,8 +15,8 @@ Form elements · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.1.8" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=552e177"></script>
-<link href="/assets/docs.DD6ruaso.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=7e5b55b"></script>
+<link href="/assets/docs.HIU8vixx.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -122,17 +122,20 @@ Form elements
 </code></pre>
 </div>
 <h3 class="doc-heading-3" id="form-control-container">Form control container</h3>
-<p class="doc-p">The class <code class="doc-code">.env-form-control</code> creates a multi purpose container used to enhance single form controls.</p>
-<p class="doc-p">It can only contain elements of the following types:</p>
+<p class="doc-p">The class <code class="doc-code">.env-form-control</code> creates a multipurpose container used to group and enhance form controls and related elements.</p>
+<p class="doc-p">Common elements used inside <code class="doc-code">.env-form-control</code> include:</p>
 <ul class="doc-list">
 <li class="doc-list__item"><code class="doc-code">.env-form-label</code></li>
 <li class="doc-list__item"><code class="doc-code">.env-form-input</code></li>
 <li class="doc-list__item"><code class="doc-code">.env-button</code></li>
 <li class="doc-list__item"><code class="doc-code">.env-icon</code></li>
-<li class="doc-list__item"><code class="doc-code">[aria-hidden=&quot;true&quot;]</code></li>
+<li class="doc-list__item"><code class="doc-code">.env-radio</code></li>
+<li class="doc-list__item"><code class="doc-code">.env-checkbox</code></li>
+<li class="doc-list__item"><code class="doc-code">.env-switch</code></li>
 </ul>
 <h4 class="doc-heading-4" id="usages">Usages</h4>
-<p class="doc-p">Create an <a href="#input-group" class="doc-link">input group</a> with label, input and button with a combinations of elements using <code class="doc-code">.env-form-input</code>, <code class="doc-code">.env-button</code> and <code class="doc-code">.env-form-label</code>.</p>
+<p class="doc-p">Create an <a href="#input-group" class="doc-link">input group</a> with a label, input and button using a combination of
+<code class="doc-code">.env-form-input</code>, <code class="doc-code">.env-button</code>, and <code class="doc-code">.env-form-label</code>.</p>
 <div class="doc-code-example"><div class="env-form-field">
 <label class="env-form-label" for="text-2">Phone number</label>
 <div class="env-form-control">
@@ -165,8 +168,8 @@ Form elements
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 </div>
-<p class="doc-p"><a href="#option-elements" class="doc-link">Option elements</a>, such as radio buttons, checkboxes and switches in combination with a label should use the wrapper for alignment and spacing.</p>
-<p class="doc-p">Use the combination of <code class="doc-code">.env-radio</code>, <code class="doc-code">.env-checkbox</code> or <code class="doc-code">.env-switch</code> and <code class="doc-code">.env-form-label</code>.</p>
+<p class="doc-p"><a href="#option-elements" class="doc-link">Option elements</a>, such as radio buttons, checkboxes and switches should use the wrapper together with a label for alignment and spacing.</p>
+<p class="doc-p">Use <code class="doc-code">.env-radio</code>, <code class="doc-code">.env-checkbox</code>, or <code class="doc-code">.env-switch</code> together with <code class="doc-code">.env-form-label</code>.</p>
 <div class="doc-code-example"><div class="env-form-control">
 <input class="env-checkbox" id="checkbox-1" type="checkbox" checked="checked"/>
 <label class="env-form-label" for="checkbox-1">Checkbox</label>
@@ -519,6 +522,63 @@ With the introduction of <a href="https://developer.mozilla.org/en-US/docs/Learn
    <span class="token punctuation">/&gt;</span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-form-label<span class="token punctuation">&quot;</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>switch-1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>One option<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</div>
+<h2 class="doc-heading-2" id="range-input-element-2026051">Range input element <span class="doc-badge doc-badge--info">2026.05.1</span></h2>
+<p class="doc-p">Use an input element with class <code class="doc-code">.env-range</code> and <code class="doc-code">[type=&quot;range&quot;]</code>.</p>
+<p class="doc-p">For the deprecated two-handle component, see <a href="/deprecated/range-slider/" class="doc-link">Range slider</a>.</p>
+<div class="doc-code-example"><div class="env-form-field">
+<label class="env-form-label" for="range-1">Range input</label>
+<input class="env-range" id="range-1" type="range"/>
+</div></div>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-form-field<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-form-label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Range input<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-1<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</div>
+<p class="doc-p">To display step markers below the input, add a <code class="doc-code">datalist</code> element and connect it to the input with the <code class="doc-code">list</code> attribute. The <code class="doc-code">datalist</code> must contain <code class="doc-code">option</code> elements with a <code class="doc-code">value</code> attribute.</p>
+<div class="doc-code-example"><div class="env-form-field">
+<label class="env-form-label" for="range-2">Range with markers</label>
+<input class="env-range" id="range-2" type="range" list="range-2-markers" max="250" min="50" step="50" value="100"/>
+</div>
+<datalist id="range-2-markers">
+<option value="50"></option>
+<option value="100"></option>
+<option value="150"></option>
+<option value="200"></option>
+<option value="250"></option>
+</datalist></div>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-form-field<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-form-label<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Range with markers<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>env-range<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-2<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>100<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>50<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>250<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>50<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">list</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-2-markers<span class="token punctuation">&quot;</span></span>
+   <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>datalist</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>range-2-markers<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>50<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>100<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>150<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>200<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>250<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>datalist</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</div>
+<p class="doc-p">All elements with class <code class="doc-code">.env-range</code> and <code class="doc-code">[type=&quot;range&quot;]</code> are automatically initialized on
+<code class="doc-code">DOMContentLoaded</code>.</p>
+<p class="doc-p">Range elements added to the DOM after the document has loaded must be initialized from script.</p>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// Initialize range elements added after DOMContentLoaded</span>
+envision<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </div>
 <div id="input-icons"></div>
@@ -933,10 +993,6 @@ Form elements
 Form layout
 </a>
 </li><li class="sidenav__item">
-<a href="/forms/range-slider/" class="sidenav__item__link" aria-current="false">
-Range slider
-</a>
-</li><li class="sidenav__item">
 <a href="/forms/tag-select/" class="sidenav__item__link" aria-current="false">
 Tag Select
 </a>
@@ -1104,10 +1160,6 @@ Form elements
 </li><li class="env-nav__item">
 <a href="/forms/form-layout/" class="env-nav__link level-2" aria-current="false">
 Form layout
-</a>
-</li><li class="env-nav__item">
-<a href="/forms/range-slider/" class="env-nav__link level-2" aria-current="false">
-Range slider
 </a>
 </li><li class="env-nav__item">
 <a href="/forms/tag-select/" class="env-nav__link level-2" aria-current="false">
