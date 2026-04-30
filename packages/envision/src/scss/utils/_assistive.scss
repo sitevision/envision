@@ -1,9 +1,33 @@
-@use '../abstracts/mixins/assistive';
+@use '../abstracts/mixins/focus';
 
 .env-assistive-text {
-   @include assistive.visually-hidden();
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip-path: inset(50%);
+   border: 0;
+   white-space: nowrap;
+
+   table & {
+      // ENV-360: In tables, assistive text can affect layout width.
+      // Move it off-screen to prevent the table from expanding beyond its container.
+      left: -999em;
+   }
 
    &--focusable {
-      @include assistive.visually-hidden-focusable();
+      &:active,
+      &:focus {
+         position: static;
+         width: auto;
+         height: auto;
+         margin: 0;
+         overflow: visible;
+         clip-path: none;
+         white-space: normal;
+         @include focus.focus-visible;
+      }
    }
 }
