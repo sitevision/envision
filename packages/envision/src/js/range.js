@@ -78,8 +78,8 @@ class Range {
       const min = Number(element.min || 0);
       const max = Number(element.max || 100);
       const value = Number(element.value);
-      const progress = max > min ? ((value - min) / (max - min)) * 100 : 0;
-
+      const progress =
+         max > min ? Math.round(((value - min) / (max - min)) * 100) : 0;
       element.style.setProperty(CSS_VAR_PROGRESS, `${progress}%`);
    }
 
