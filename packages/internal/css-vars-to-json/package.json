@@ -5,6 +5,6 @@
    "author": "Sitevision AB",
    "license": "MIT",
    "dependencies": {
-      "css-tree": "^3.1.0"
+      "css-tree": "^3.2.1"
    }
 }
