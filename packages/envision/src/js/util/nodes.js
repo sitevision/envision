@@ -87,15 +87,27 @@ export const setAttributes = (node, attributes) => {
 };
 
 export const lockScroll = function () {
+   const scrollPosition = window.scrollY;
    setStyle(document.body, 'overflow-x', '');
    setStyle(document.body, 'overflow-y', '');
    setStyle(document.body, 'overflow', 'hidden', 'important');
+   setStyle(document.body, 'position', 'fixed');
+   setStyle(document.body, 'width', '100%');
+   setStyle(document.body, 'top', `-${scrollPosition}px`);
+   document.body.dataset.envScrollY = `${scrollPosition}`;
 };
 
 export const unlockScroll = function () {
-   ['overflow', 'overflow-x', 'overflow-y'].forEach((p) => {
-      resetStyle(document.body, p);
-   });
+   const scrollPosition = Number.parseInt(document.body.dataset.envScrollY, 10);
+   ['overflow', 'overflow-x', 'overflow-y', 'position', 'width', 'top'].forEach(
+      (p) => {
+         resetStyle(document.body, p);
+      }
+   );
+   delete document.body.dataset.envScrollY;
+   if (Number.isFinite(scrollPosition)) {
+      window.scrollTo(0, scrollPosition);
+   }
 };
 
 export const hide = function (elements) {

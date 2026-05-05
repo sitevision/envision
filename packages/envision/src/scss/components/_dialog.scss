@@ -18,6 +18,7 @@
    border: $border-width $border-style var(--env-border-color);
    border-radius: var(--env-border-radius-medium);
    overflow: hidden;
+   overscroll-behavior: contain;
    transition: opacity 0.2s linear;
 
    &--fade {
@@ -80,6 +81,7 @@
 
    &::backdrop {
       background: rgba(0, 0, 0, 0.5);
+      overscroll-behavior: contain;
    }
 
    &[role='alertdialog'] {
