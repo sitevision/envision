@@ -46,6 +46,8 @@ export const wrapElement = function (node, wrapperEl) {
 };
 
 const PREV_ATTR = 'data-env-prev-style';
+const SCROLL_LOCK_COUNT = 'envScrollLockCount';
+const SCROLL_LOCK_Y = 'envScrollY';
 
 export const resetStyle = function (node, prop) {
    // Restore style for an element set by setStyle
@@ -87,15 +89,55 @@ export const setAttributes = (node, attributes) => {
 };
 
 export const lockScroll = function () {
-   setStyle(document.body, 'overflow-x', '');
-   setStyle(document.body, 'overflow-y', '');
-   setStyle(document.body, 'overflow', 'hidden', 'important');
+   const count =
+      Number.parseInt(document.body.dataset[SCROLL_LOCK_COUNT], 10) || 0;
+
+   if (count === 0) {
+      const scrollPosition = window.scrollY;
+      setStyle(document.body, 'overflow-x', '');
+      setStyle(document.body, 'overflow-y', '');
+      setStyle(document.body, 'overflow', 'hidden', 'important');
+      setStyle(document.body, 'position', 'fixed');
+      setStyle(document.body, 'width', '100%');
+      setStyle(document.body, 'top', `-${scrollPosition}px`);
+      document.body.dataset[SCROLL_LOCK_Y] = `${scrollPosition}`;
+   }
+
+   document.body.dataset[SCROLL_LOCK_COUNT] = `${count + 1}`;
 };
 
 export const unlockScroll = function () {
-   ['overflow', 'overflow-x', 'overflow-y'].forEach((p) => {
-      resetStyle(document.body, p);
-   });
+   const count =
+      Number.parseInt(document.body.dataset[SCROLL_LOCK_COUNT], 10) || 0;
+
+   if (count <= 0) {
+      return;
+   }
+
+   if (count === 1) {
+      const scrollPosition = Number.parseInt(
+         document.body.dataset[SCROLL_LOCK_Y],
+         10
+      );
+      [
+         'overflow',
+         'overflow-x',
+         'overflow-y',
+         'position',
+         'width',
+         'top',
+      ].forEach((p) => {
+         resetStyle(document.body, p);
+      });
+      delete document.body.dataset[SCROLL_LOCK_COUNT];
+      delete document.body.dataset[SCROLL_LOCK_Y];
+      if (Number.isFinite(scrollPosition)) {
+         window.scrollTo(window.scrollX, scrollPosition);
+      }
+      return;
+   }
+
+   document.body.dataset[SCROLL_LOCK_COUNT] = `${count - 1}`;
 };
 
 export const hide = function (elements) {

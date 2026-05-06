@@ -64,6 +64,7 @@
       max-height: min(calc(100vh - 11.25em), 50vh);
       min-height: 3em;
       overflow-y: auto;
+      overscroll-behavior-y: contain;
    }
 
    &__controls {
