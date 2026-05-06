@@ -132,7 +132,7 @@ export const unlockScroll = function () {
       delete document.body.dataset[SCROLL_LOCK_COUNT];
       delete document.body.dataset[SCROLL_LOCK_Y];
       if (Number.isFinite(scrollPosition)) {
-         window.scrollTo(0, scrollPosition);
+         window.scrollTo(window.scrollX, scrollPosition);
       }
       return;
    }
