@@ -31,7 +31,7 @@
       "css-minimizer-webpack-plugin": "^7.0.4",
       "css-vars-to-json": "1.0.0",
       "eslint": "^9.39.1",
-      "eslint-webpack-plugin": "^5.0.1",
+      "eslint-webpack-plugin": "^6.0.0",
       "file-loader": "^6.2.0",
       "mini-css-extract-plugin": "^2.9.2",
       "postcss": "^8.5.10",
