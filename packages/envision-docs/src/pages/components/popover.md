@@ -155,8 +155,6 @@ if (popoverMenuContentEl) {
 }
 ```
 
-<span id="tooltip"></span>
-
 ## Popover Tooltip
 
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
@@ -209,7 +207,7 @@ if (popoverTooltipContentEl) {
 }
 ```
 
-## Options <span id="options"></span>
+## Options
 
 - `placement` _string_
    - Prefered initial placement.

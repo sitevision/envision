@@ -15,7 +15,7 @@ const Util = (() => {
                   .replace(/Imageslider/, 'imageSlider')
                   .replace(/Imageviewer/, 'imageWiewer');
                envName = envName.charAt(0).toLowerCase() + envName.slice(1);
-               return `WARNING: $.fn.${jqName} is deprecated. Please update your code with new method envision.${envName}. Refer to ${DOC_URL}warnings/#jquery for documentation.`;
+               return `WARNING: $.fn.${jqName} is deprecated. Please update your code with new method envision.${envName}. Refer to ${DOC_URL}warnings/#jquery-warnings for documentation.`;
             },
             component: (componentName, anchor, replacementComponent) => {
                const replacementText = replacementComponent

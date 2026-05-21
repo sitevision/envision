@@ -20,7 +20,7 @@ description: Use the Badge component to display small labels for status, notific
 <span class="env-badge env-badge--info">Info</span>
 ```
 
-### Status variants <span id="status-variant"></span>
+### Status variants
 
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
@@ -61,7 +61,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
    </div>
 </div>
 
-### Status badge <span id="status-badge"></span>
+### Status badge
 
 Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
 

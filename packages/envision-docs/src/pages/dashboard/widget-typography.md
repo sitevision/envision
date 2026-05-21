@@ -44,7 +44,7 @@ Widgets should use [UI Text](/typography/ui-text/) for headings.
 <p class="env-ui-text-caption">Caption / description</p>
 ```
 
-### Dynamic font size in widgets <span id="dynamic-font-size"></span>
+### Dynamic font size in widgets
 
 Widgets already has a containment context which makes them dynamic font containers by default.
 Therefore the dynamic font container is **not** required.
@@ -60,7 +60,7 @@ The dashboard grid adapts between 1–4 columns depending on available screen sp
 | Extra Large |  250–523 |   524-812 |  813-1071 | 1072–1440 |
 
 There are additional widget specific boundaries available for Dynamic fonts. Regular boundaries are documented
-on the [Dynamic font size page](/typography/basic-text/#dynamic-font-width-boundaries).
+on the [Dynamic font size page](/typography/dynamic-font-size/#scaling-width-boundaries).
 Boundaries are set using modifier classes `env-dynamic-font--from-{value}` and `env-dynamic-font--to-{value}`.
 
 Additional boundaries for **from** values: `524`, `813`, `1072`

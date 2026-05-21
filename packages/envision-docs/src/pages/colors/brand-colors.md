@@ -10,7 +10,7 @@ An Envision theme uses one base brand color and one matching contrast color.
 - From the base brand color, Envision generates a palette of lighter and darker variants.
 - Each palette color has a matching contrast color verified against **WCAG 2 AA**.
 
-[The default theme](/colors/brand-colors/#brand-defaults) uses a neutral brand color.
+[The default theme](/colors/brand-colors/#default-brand-color-palette) uses a neutral brand color.
 
 ## Palette rules
 
@@ -39,9 +39,7 @@ Typical branded usage includes:
 - progress indicators
 - highlighted UI sections
 
-<h2 class="doc-heading-2">
-   Example branding of components <span id="examples"></span>
-</h2>
+## Example branding of components
 
 The following examples are visual demonstrations and do not define the color system.
 
@@ -191,7 +189,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 </div>
 
-## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
+## Default brand color palette
 
 The default theme uses this neutral brand palette.
 

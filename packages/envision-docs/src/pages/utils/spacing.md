@@ -4,7 +4,7 @@ description: The Spacing utility provides classes for consistent margin and padd
 ---
 
 The spacing utility was updated in **2026.01.2** to support logical properties alongside physical ones.
-See the [logical properties example](/utils/spacing/#logical-properties).
+See the [logical properties example](/utils/spacing/#logical-properties-example).
 
 The custom specifiers `horizontal`, `vertical`, and `around` are deprecated.
 See [Deprecated](/utils/spacing/#deprecated) for details.
@@ -121,8 +121,6 @@ Example:
       </div>
    </div>
 </div>
-
-<span id="logical-properties"></span>
 
 ## Logical properties example
 

@@ -93,9 +93,9 @@ Status color text should be used when status color is applied to text on section
 
 Documentation of examples:
 
-- [Status variant Badge](/components/badge/#status-variant)
+- [Status variant Badge](/components/badge/#status-variants)
 - [Custom inline SVG decoration](/components/icons/#attention)
 - [Status badge](/components/badge/#status-badge)
-- [Status badge on Profile image](/components/profile-image/#status-badge)
-- [Form error message](/forms/form-elements/#validation)
+- [Status badge on Profile image](/components/profile-image/#status-badge-in-responsive-size-profile-image)
+- [Form error message](/forms/form-elements/#validation-error)
 - [Text status colors](/typography/basic-text/#status-colors)

@@ -96,8 +96,6 @@ the image is smaller than the image.
 </div>
 ```
 
-<span id="status-badge"></span>
-
 #### Status badge in responsive size Profile image
 
 A responsive size Profile image may have a [Status badge](/components/badge/#status-badge) inside.

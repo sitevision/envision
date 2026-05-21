@@ -23,7 +23,7 @@ A child element with `role="tooltip"` is required.
 envision.tooltip();
 ```
 
-**Note:** HTML is not allowed inside the tooltip. For advanced content, please use [Popover Tooltip](/components/popover/#tooltip).
+**Note:** HTML is not allowed inside the tooltip. For advanced content, please use [Popover Tooltip](/components/popover/#popover-tooltip).
 
 ## Configuration
 
@@ -75,7 +75,7 @@ if (tooltipEl) {
 }
 ```
 
-## Options <span id="options"></span>
+## Options
 
 `envision.tooltip` takes two parameters:
 

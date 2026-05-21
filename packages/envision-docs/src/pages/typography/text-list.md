@@ -9,7 +9,7 @@ Text lists are used for ordered and unordered lists in text content.
 
 The class `env-text-list` is used to style both types of lists and must be applied to the `<ul>` or `<ol>` element.
 
-List style, paddings and margins may be customized [using the text list variables](/utils/css-variables/#text-list-variables).
+List style, paddings and margins may be customized [using the text list variables](/utils/css-variables/#text-lists).
 
 Nested lists do not get top or bottom margins, to prevent extra spacing inside the list.
 
