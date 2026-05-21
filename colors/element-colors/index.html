@@ -15,7 +15,7 @@ Element colors · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.3.3" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=578f53b"></script>
+<script src="/dist/envision.js?v=c0077ae"></script>
 <link href="/assets/docs.DtybeaY9.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -257,12 +257,14 @@ Ghost
 <div class="env-tabs example-tabs" role="presentation">
 <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
 <li class="env-tabs__item" role="presentation">
-<a href="#panel1" class="env-tabs__link env-tabs__link--active" role="tab" aria-selected="true" id="tab1" tabindex="0">Tab 1</a>
+<a href="#panel1" class="env-tabs__link env-tabs__link--active" aria-controls="panel1" role="tab" aria-selected="true" id="tab1" tabindex="0">Tab 1</a>
 </li>
 <li class="env-tabs__item" role="presentation">
-<a href="#panel2" class="env-tabs__link" role="tab" aria-controls="panel2" aria-selected="false" id="tab2" tabindex="0">Tab 2</a>
+<a href="#panel2" class="env-tabs__link" aria-controls="panel2" role="tab" aria-selected="false" id="tab2" tabindex="0">Tab 2</a>
 </li>
 </ul>
+<div role="tabpanel" aria-labelledby="tab1" hidden id="panel1"></div>
+<div role="tabpanel" aria-labelledby="tab2" hidden id="panel2"></div>
 </div>
 </div>
 <div class="example-element example-element--left">
@@ -554,7 +556,7 @@ Status colors
 <a href="/colors/" class="env-nav__link level-1" aria-current="false">
 Colors
 </a>
-<a href="#mobile-submenu-colors" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-colors" aria-expanded="true" data-env-collapse="">
+<a href="#mobile-submenu-colors" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-colors" role="button" aria-expanded="true" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Colors
 </span>
@@ -589,7 +591,7 @@ Status colors
 <a href="/typography/" class="env-nav__link level-1" aria-current="false">
 Typography
 </a>
-<a href="#mobile-submenu-typography" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-typography" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-typography" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-typography" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Typography
 </span>
@@ -627,7 +629,7 @@ UI Text
 <a href="/forms/" class="env-nav__link level-1" aria-current="false">
 Forms
 </a>
-<a href="#mobile-submenu-forms" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-forms" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-forms" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-forms" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Forms
 </span>
@@ -662,7 +664,7 @@ Tag Select
 <a href="/components/" class="env-nav__link level-1" aria-current="false">
 Components
 </a>
-<a href="#mobile-submenu-components" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-components" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-components" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-components" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Components
 </span>
@@ -773,7 +775,7 @@ Tooltip
 <a href="/utils/" class="env-nav__link level-1" aria-current="false">
 Utils
 </a>
-<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-utils" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-utils" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Utils
 </span>
@@ -820,7 +822,7 @@ Vertical alignment
 <a href="/layout/" class="env-nav__link level-1" aria-current="false">
 Layout
 </a>
-<a href="#mobile-submenu-layout" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-layout" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-layout" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-layout" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Layout
 </span>
@@ -847,7 +849,7 @@ Flexbox
 <a href="/dashboard/" class="env-nav__link level-1" aria-current="false">
 Dashboard Widgets
 </a>
-<a href="#mobile-submenu-dashboard" class="env-button env-button--icon env-button--icon-small env-button--link" role="button" aria-controls="mobile-submenu-dashboard" aria-expanded="false" data-env-collapse="">
+<a href="#mobile-submenu-dashboard" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-dashboard" role="button" aria-expanded="false" data-env-collapse="">
 <span class="env-assistive-text">
 Toggle navigation for Dashboard Widgets
 </span>
