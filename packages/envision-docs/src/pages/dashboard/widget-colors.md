@@ -35,12 +35,12 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
    </ul>
 </div>
 
-<p class="example-dashboard-color-list-legend env-m-block-end--0">
+<p class="doc-legend env-m-block-end--0">
    <svg class="env-icon example-dashboard-color-list-icon">
       <use href="/images/docs-images.svg#text"></use>
    </svg> = The color will pass WCAG 2 level AA contrast requirements as text on white (widget wrapper) background.
 </p>
-<p class="example-dashboard-color-list-legend env-m-block-start--0">
+<p class="doc-legend">
    <span style="font-size:1.4em">*</span> = The color also passes contrast requirements if used as text on gray-05 (theme body) background.
 </p>
 

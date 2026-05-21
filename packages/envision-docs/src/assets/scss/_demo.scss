@@ -663,20 +663,6 @@ $variableNames: 'neutral', 'active', 'attention', 'error';
    border-color: currentColor !important;
 }
 
-.example-dashboard-color-list-legend {
-   display: inline-flex;
-   justify-content: flex-start;
-   align-items: flex-start;
-   font-size: 0.8em;
-   color: var(--doc-font-color);
-   filter: opacity(0.675);
-
-   .example-dashboard-color-list-icon {
-      font-size: 1.4em;
-      margin: 0 0.5em 0 0;
-   }
-}
-
 .example-dynamic-font-chart {
    max-width: 576px;
    border: 1px solid var(--env-border-color-05);
@@ -1043,5 +1029,21 @@ canvas.example-canvas {
    th,
    td {
       border: 1px solid var(--env-border-color);
+   }
+}
+
+.doc-legend {
+   display: inline-flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 0.5em;
+   font-size: 0.8em;
+   color: var(--doc-font-color);
+   filter: opacity(0.675);
+   margin: 0 0 1.25em;
+
+   .example-dashboard-color-list-icon {
+      font-size: 1.4em;
+      margin: 0 0.5em 0 0;
    }
 }
