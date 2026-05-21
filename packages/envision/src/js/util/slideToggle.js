@@ -1,5 +1,33 @@
 // https://dev.to/bmsvieira/vanilla-js-slidedown-up-4dkn
 
+const SPACING_PROPS = [
+   'padding-top',
+   'padding-bottom',
+   'margin-top',
+   'margin-bottom',
+];
+
+const TOGGLE_PROPS = [
+   'height',
+   'overflow',
+   'transition-duration',
+   'transition-property',
+].concat(SPACING_PROPS);
+
+const removeToggleProps = (target, props) => {
+   props = props || TOGGLE_PROPS;
+   props.forEach((prop) => {
+      target.style.removeProperty(prop);
+   });
+};
+
+const prepareSpacingProps = (target) => {
+   target.style.setProperty('overflow', 'hidden');
+   SPACING_PROPS.concat('height').forEach((prop) => {
+      target.style.setProperty(prop, 0);
+   });
+};
+
 export const slideUp = (target, options) => {
    options = Object.assign(
       {
@@ -20,22 +48,10 @@ export const slideUp = (target, options) => {
       target.style.height = target.offsetHeight - pt - pb - bt - bb + 'px';
    }
    target.offsetHeight;
-   target.style.overflow = 'hidden';
-   target.style.height = 0;
-   target.style.paddingTop = 0;
-   target.style.paddingBottom = 0;
-   target.style.marginTop = 0;
-   target.style.marginBottom = 0;
-   window.setTimeout(() => {
+   prepareSpacingProps(target);
+   return window.setTimeout(() => {
       target.style.display = 'none';
-      target.style.removeProperty('height');
-      target.style.removeProperty('padding-top');
-      target.style.removeProperty('padding-bottom');
-      target.style.removeProperty('margin-top');
-      target.style.removeProperty('margin-bottom');
-      target.style.removeProperty('overflow');
-      target.style.removeProperty('transition-duration');
-      target.style.removeProperty('transition-property');
+      removeToggleProps(target);
       if (options.complete && options.complete instanceof Function) {
          options.complete.call();
       }
@@ -56,28 +72,27 @@ export const slideDown = (target, options) => {
    }
    target.style.display = display;
    let height = target.offsetHeight;
-   target.style.overflow = 'hidden';
-   target.style.height = 0;
-   target.style.paddingTop = 0;
-   target.style.paddingBottom = 0;
-   target.style.marginTop = 0;
-   target.style.marginBottom = 0;
+   prepareSpacingProps(target);
    target.offsetHeight;
    target.style.boxSizing = 'border-box';
    target.style.transitionProperty = 'height, margin, padding';
    target.style.transitionDuration = options.duration + 'ms';
    target.style.height = height + 'px';
-   target.style.removeProperty('padding-top');
-   target.style.removeProperty('padding-bottom');
-   target.style.removeProperty('margin-top');
-   target.style.removeProperty('margin-bottom');
-   window.setTimeout(() => {
-      target.style.removeProperty('height');
-      target.style.removeProperty('overflow');
-      target.style.removeProperty('transition-duration');
-      target.style.removeProperty('transition-property');
+   removeToggleProps(target, SPACING_PROPS);
+   return window.setTimeout(() => {
+      removeToggleProps(target);
       if (options.complete && options.complete instanceof Function) {
          options.complete.call();
       }
    }, options.duration);
+};
+
+export const cancelSlideToggle = (target, timer) => {
+   if (timer) {
+      window.clearTimeout(timer);
+   }
+
+   removeToggleProps(target);
+
+   return null;
 };
