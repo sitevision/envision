@@ -44,7 +44,7 @@ Widgets should use [UI Text](/typography/ui-text/) for headings.
 <p class="env-ui-text-caption">Caption / description</p>
 ```
 
-### Dynamic font size in widgets <span id="dynamic-font-size" class="offset-anchor"></span>
+### Dynamic font size in widgets <span id="dynamic-font-size"></span>
 
 Widgets already has a containment context which makes them dynamic font containers by default.
 Therefore the dynamic font container is **not** required.

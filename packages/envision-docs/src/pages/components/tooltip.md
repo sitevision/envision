@@ -75,7 +75,7 @@ if (tooltipEl) {
 }
 ```
 
-## Options <span id="options" class="offset-anchor"></span>
+## Options <span id="options"></span>
 
 `envision.tooltip` takes two parameters:
 

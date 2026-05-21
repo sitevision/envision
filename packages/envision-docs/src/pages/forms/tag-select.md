@@ -43,7 +43,7 @@ tagSelect.then(function (selects) {
 });
 ```
 
-<span id="single-select" class="offset-anchor"></span>
+<span id="single-select"></span>
 
 ## Single select
 

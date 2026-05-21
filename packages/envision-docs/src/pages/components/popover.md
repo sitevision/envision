@@ -155,7 +155,7 @@ if (popoverMenuContentEl) {
 }
 ```
 
-<span id="tooltip" class="offset-anchor"></span>
+<span id="tooltip"></span>
 
 ## Popover Tooltip
 
@@ -209,7 +209,7 @@ if (popoverTooltipContentEl) {
 }
 ```
 
-## Options <span id="options" class="offset-anchor"></span>
+## Options <span id="options"></span>
 
 - `placement` _string_
    - Prefered initial placement.

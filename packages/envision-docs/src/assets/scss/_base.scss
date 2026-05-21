@@ -121,6 +121,7 @@ body {
    margin: 0;
    overscroll-behavior: none;
    --env-font-family: Helvetica, Arial, sans-serif;
+   --doc-scroll-offset: 116px;
 }
 
 .env-dashboard-theme .main-body *,
@@ -146,9 +147,7 @@ img {
    height: 56px;
 }
 
-.offset-anchor {
-   display: block;
-   position: relative;
-   top: -120px;
-   visibility: hidden;
+[id] {
+   // Offset for anchor links
+   scroll-margin-top: var(--doc-scroll-offset);
 }

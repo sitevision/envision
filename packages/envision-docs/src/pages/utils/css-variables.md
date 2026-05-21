@@ -147,7 +147,7 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
-<span id="text-list-variables" class="offset-anchor"></span>
+<span id="text-list-variables"></span>
 
 #### Text lists <span class="doc-badge doc-badge--info">2025.09.1</span>
 

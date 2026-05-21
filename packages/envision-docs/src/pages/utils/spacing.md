@@ -122,7 +122,7 @@ Example:
    </div>
 </div>
 
-<span id="logical-properties" class="offset-anchor"></span>
+<span id="logical-properties"></span>
 
 ## Logical properties example
 

@@ -152,7 +152,7 @@ Valid values
 </div>
 ```
 
-### Flex wrap <span id="flex-wrap" class="offset-anchor"></span>
+### Flex wrap <span id="flex-wrap"></span>
 
 Modifiers applicable to flex containers (`env-flex`).
 
@@ -184,7 +184,7 @@ Valid modifiers:
 </div>
 ```
 
-<span id="flex-gap" class="offset-anchor"></span>
+<span id="flex-gap"></span>
 
 ### Flex gap <span class="doc-badge doc-badge--info">2025.07.1</span>
 

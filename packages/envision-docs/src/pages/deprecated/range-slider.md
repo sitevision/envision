@@ -99,7 +99,7 @@ envision.rangeSlider('#my-slider', {
 });
 ```
 
-<span id="events" class="offset-anchor"></span>
+<span id="events"></span>
 
 ## Events
 

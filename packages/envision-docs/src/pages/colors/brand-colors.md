@@ -40,7 +40,7 @@ Typical branded usage includes:
 - highlighted UI sections
 
 <h2 class="doc-heading-2">
-   Example branding of components <span id="examples" class="offset-anchor"></span>
+   Example branding of components <span id="examples"></span>
 </h2>
 
 The following examples are visual demonstrations and do not define the color system.

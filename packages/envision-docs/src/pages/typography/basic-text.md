@@ -92,7 +92,7 @@ description: The Basic Text utility offers classes for headings, alignment, tran
 </div>
 ```
 
-<span id="status-colors" class="offset-anchor"></span>
+<span id="status-colors"></span>
 
 ## Status colors
 

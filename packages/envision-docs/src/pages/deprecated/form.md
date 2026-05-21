@@ -143,7 +143,7 @@ Native select element with class `env-form-input`. Only light styling, might loo
 </div>
 ```
 
-<span id="select-component" class="offset-anchor"></span>
+<span id="select-component"></span>
 
 ## Select component
 
@@ -624,7 +624,7 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 </div>
 ```
 
-<span id="validation" class="offset-anchor"></span>
+<span id="validation"></span>
 
 ## Validation
 

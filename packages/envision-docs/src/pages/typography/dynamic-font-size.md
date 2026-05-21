@@ -164,7 +164,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
 </div>
 ```
 
-### Scaling width boundaries <span id="dynamic-font-width-boundaries" class="offset-anchor"></span>
+### Scaling width boundaries <span id="dynamic-font-width-boundaries"></span>
 
 The scaling will occur between two set widths. If the container width is smaller than the from-value,
 the scaling will be set to the lowest possible value and vice versa for the to-value.

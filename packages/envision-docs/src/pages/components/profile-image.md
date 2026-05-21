@@ -96,7 +96,7 @@ the image is smaller than the image.
 </div>
 ```
 
-<span id="status-badge" class="offset-anchor"></span>
+<span id="status-badge"></span>
 
 #### Status badge in responsive size Profile image
 
