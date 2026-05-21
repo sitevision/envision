@@ -147,7 +147,7 @@ An Envision theme uses one base brand color and one matching contrast color.
 - From the base brand color, Envision generates a palette of lighter and darker variants.
 - Each palette color has a matching contrast color verified against **WCAG 2 AA**.
 
-[The default theme](/colors/brand-colors/#brand-defaults) uses a neutral brand color.
+[The default theme](/colors/brand-colors/#default-brand-color-palette) uses a neutral brand color.
 
 ## Palette rules
 
@@ -176,9 +176,7 @@ Typical branded usage includes:
 - progress indicators
 - highlighted UI sections
 
-<h2 class="doc-heading-2">
-   Example branding of components <span id="examples"></span>
-</h2>
+## Example branding of components
 
 The following examples are visual demonstrations and do not define the color system.
 
@@ -328,7 +326,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 </div>
 
-## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
+## Default brand color palette
 
 The default theme uses this neutral brand palette.
 
@@ -811,11 +809,11 @@ Status color text should be used when status color is applied to text on section
 
 Documentation of examples:
 
-- [Status variant Badge](/components/badge/#status-variant)
+- [Status variant Badge](/components/badge/#status-variants)
 - [Custom inline SVG decoration](/components/icons/#attention)
 - [Status badge](/components/badge/#status-badge)
-- [Status badge on Profile image](/components/profile-image/#status-badge)
-- [Form error message](/forms/form-elements/#validation)
+- [Status badge on Profile image](/components/profile-image/#status-badge-in-responsive-size-profile-image)
+- [Form error message](/forms/form-elements/#validation-error)
 - [Text status colors](/typography/basic-text/#status-colors)
 
 ---
@@ -980,7 +978,7 @@ Description: Use the Badge component to display small labels for status, notific
 <span class="env-badge env-badge--info">Info</span>
 ```
 
-### Status variants <span id="status-variant"></span>
+### Status variants
 
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
@@ -1021,7 +1019,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
    </div>
 </div>
 
-### Status badge <span id="status-badge"></span>
+### Status badge
 
 Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
 
@@ -2254,7 +2252,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 </div>
 ```
 
-## Attention <span id="attention"></span>
+## Attention
 
 For Envision icons and custom inline SVG images you may use modifier `env-icon--attention`
 on the icon or on part of an icon. The modifier will set the color to Status color Attention.
@@ -4038,8 +4036,6 @@ if (popoverMenuContentEl) {
 }
 ```
 
-<span id="tooltip"></span>
-
 ## Popover Tooltip
 
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
@@ -4092,7 +4088,7 @@ if (popoverTooltipContentEl) {
 }
 ```
 
-## Options <span id="options"></span>
+## Options
 
 - `placement` _string_
    - Prefered initial placement.
@@ -4226,8 +4222,6 @@ the image is smaller than the image.
    </div>
 </div>
 ```
-
-<span id="status-badge"></span>
 
 #### Status badge in responsive size Profile image
 
@@ -5085,7 +5079,7 @@ A child element with `role="tooltip"` is required.
 envision.tooltip();
 ```
 
-**Note:** HTML is not allowed inside the tooltip. For advanced content, please use [Popover Tooltip](/components/popover/#tooltip).
+**Note:** HTML is not allowed inside the tooltip. For advanced content, please use [Popover Tooltip](/components/popover/#popover-tooltip).
 
 ## Configuration
 
@@ -5137,7 +5131,7 @@ if (tooltipEl) {
 }
 ```
 
-## Options <span id="options"></span>
+## Options
 
 `envision.tooltip` takes two parameters:
 
@@ -5624,7 +5618,7 @@ Widgets should use [UI Text](/typography/ui-text/) for headings.
 <p class="env-ui-text-caption">Caption / description</p>
 ```
 
-### Dynamic font size in widgets <span id="dynamic-font-size"></span>
+### Dynamic font size in widgets
 
 Widgets already has a containment context which makes them dynamic font containers by default.
 Therefore the dynamic font container is **not** required.
@@ -5640,7 +5634,7 @@ The dashboard grid adapts between 1–4 columns depending on available screen sp
 | Extra Large |  250–523 |   524-812 |  813-1071 | 1072–1440 |
 
 There are additional widget specific boundaries available for Dynamic fonts. Regular boundaries are documented
-on the [Dynamic font size page](/typography/basic-text/#dynamic-font-width-boundaries).
+on the [Dynamic font size page](/typography/dynamic-font-size/#scaling-width-boundaries).
 Boundaries are set using modifier classes `env-dynamic-font--from-{value}` and `env-dynamic-font--to-{value}`.
 
 Additional boundaries for **from** values: `524`, `813`, `1072`
@@ -6171,8 +6165,6 @@ The textarea will be resizable vertically.
 </div>
 ```
 
-<span id="contenteditable"></span>
-
 ### Contenteditable element
 
 Make sure to add `role="textbox"` and `aria-multiline="true"` to the contenteditable element.
@@ -6204,8 +6196,6 @@ With the introduction of [Customizable select elements](https://developer.mozill
 both the Select element and the Select component support a progressively enhanced approach that applies
 as much of the Envision styling as possible while maintaining native select element functionality.
 This feature is opt-in and can be enabled by adding a `button` with a `selectedcontent` tag inside the select element.
-
-<span id="select-component"></span>
 
 ### Select component
 
@@ -6398,8 +6388,6 @@ Native select element with class `.env-form-input`. Only light styling, might lo
 </div>
 ```
 
-<span id="option-elements"></span>
-
 ## Option elements
 
 ### Radiobutton input element
@@ -6581,8 +6569,6 @@ Use `.env-form-control` to wrap `.env-icon` and `.env-form-input`.
 </div>
 ```
 
-<span id="input-group"></span>
-
 ## Input group
 
 Wrap text, input and button with `.env-form-control` to create an input group.
@@ -6731,8 +6717,6 @@ Attribute `[readonly]` is also available for input elements.
    </div>
 </form>
 ```
-
-<span id="validation"></span>
 
 ## Validation error
 
@@ -6924,8 +6908,6 @@ tagSelect.then(function (selects) {
    selects[0].addOptions({ value: 'newOption', text: 'New option' });
 });
 ```
-
-<span id="single-select"></span>
 
 ## Single select
 
@@ -8004,7 +7986,7 @@ Valid values
 </div>
 ```
 
-### Flex wrap <span id="flex-wrap"></span>
+### Flex wrap
 
 Modifiers applicable to flex containers (`env-flex`).
 
@@ -8036,9 +8018,7 @@ Valid modifiers:
 </div>
 ```
 
-<span id="flex-gap"></span>
-
-### Flex gap <span class="doc-badge doc-badge--info">2025.07.1</span>
+### Flex gap <span id="flex-gap"></span><span class="doc-badge doc-badge--info">2025.07.1</span>
 
 Modifiers applicable to flex containers (`env-flex`).
 
@@ -8238,8 +8218,6 @@ Description: The Basic Text utility offers classes for headings, alignment, tran
 </div>
 ```
 
-<span id="status-colors"></span>
-
 ## Status colors
 
 ```html
@@ -8434,7 +8412,7 @@ Text inside these elements will be dynamically scaled, text outside will not.
 </div>
 ```
 
-Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size),
+Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size-in-widgets),
 the container element is not required since the widget already is a containment context.
 
 ### Additional markup
@@ -8541,7 +8519,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
 </div>
 ```
 
-### Scaling width boundaries <span id="dynamic-font-width-boundaries"></span>
+### Scaling width boundaries
 
 The scaling will occur between two set widths. If the container width is smaller than the from-value,
 the scaling will be set to the lowest possible value and vice versa for the to-value.
@@ -8604,7 +8582,7 @@ src="/placeholders/examples/dyn-font.svg" />
 </div>
 ```
 
-Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size),
+Note: When using [Envision for Dashboard Widgets](/dashboard/widget-typography/#dynamic-font-size-in-widgets),
 there are additional widget specific boundaries available.
 
 ### Downscaling
@@ -8708,7 +8686,7 @@ Text lists are used for ordered and unordered lists in text content.
 
 The class `env-text-list` is used to style both types of lists and must be applied to the `<ul>` or `<ol>` element.
 
-List style, paddings and margins may be customized [using the text list variables](/utils/css-variables/#text-list-variables).
+List style, paddings and margins may be customized [using the text list variables](/utils/css-variables/#text-lists).
 
 Nested lists do not get top or bottom margins, to prevent extra spacing inside the list.
 
@@ -9208,9 +9186,7 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
-<span id="text-list-variables"></span>
-
-#### Text lists <span class="doc-badge doc-badge--info">2025.09.1</span>
+#### Text lists <span id="text-lists"></span><span class="doc-badge doc-badge--info">2025.09.1</span>
 
 - `--env-text-list-ul-style-type`
 - `--env-text-list-ol-style-type`
@@ -9615,7 +9591,7 @@ URL: https://envisionui.io/utils/spacing/
 Description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
 
 The spacing utility was updated in **2026.01.2** to support logical properties alongside physical ones.
-See the [logical properties example](/utils/spacing/#logical-properties).
+See the [logical properties example](/utils/spacing/#logical-properties-example).
 
 The custom specifiers `horizontal`, `vertical`, and `around` are deprecated.
 See [Deprecated](/utils/spacing/#deprecated) for details.
@@ -9732,8 +9708,6 @@ Example:
       </div>
    </div>
 </div>
-
-<span id="logical-properties"></span>
 
 ## Logical properties example
 

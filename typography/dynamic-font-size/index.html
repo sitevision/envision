@@ -15,7 +15,7 @@ Dynamic font size · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.3.3" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=d1bded6"></script>
+<script src="/dist/envision.js?v=578f53b"></script>
 <link href="/assets/docs.DtybeaY9.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -131,7 +131,7 @@ Resize container (<span class="example-dynamic-font__width"></span>px)
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Note: When using <a href="/dashboard/widget-typography/#dynamic-font-size" class="doc-link">Envision for Dashboard Widgets</a>, the container element is not required since the widget already is a containment context.</p>
+<p class="doc-p">Note: When using <a href="/dashboard/widget-typography/#dynamic-font-size-in-widgets" class="doc-link">Envision for Dashboard Widgets</a>, the container element is not required since the widget already is a containment context.</p>
 <h3 class="doc-heading-3" id="additional-markup">Additional markup</h3>
 <p class="doc-p">To not interfere with the width calculations, padding must be used on a separate element inside the container element. Elements placed inside the container but outside of
 <code class="doc-code">env-dynamic-font</code> will not scale.</p>
@@ -228,7 +228,7 @@ Scaling factor 1.875
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<h3 class="doc-heading-3" id="scaling-width-boundaries-">Scaling width boundaries <span id="dynamic-font-width-boundaries"></span></h3>
+<h3 class="doc-heading-3" id="scaling-width-boundaries">Scaling width boundaries</h3>
 <p class="doc-p">The scaling will occur between two set widths. If the container width is smaller than the from-value, the scaling will be set to the lowest possible value and vice versa for the to-value.</p>
 <p class="doc-p">Boundaries are set using modifier classes <code class="doc-code">env-dynamic-font--from-{value}</code> and <code class="doc-code">env-dynamic-font--to-{value}</code>.</p>
 <p class="doc-p">Allowed <strong class="doc-strong">from</strong> values: <code class="doc-code">250</code>, <code class="doc-code">300</code>, <code class="doc-code">350</code>, <code class="doc-code">400</code>, <code class="doc-code">450</code>, <code class="doc-code">500</code>, <code class="doc-code">550</code></p>
@@ -280,7 +280,7 @@ Resize container (<span class="example-dynamic-font__width"></span>px)
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Note: When using <a href="/dashboard/widget-typography/#dynamic-font-size" class="doc-link">Envision for Dashboard Widgets</a>, there are additional widget specific boundaries available.</p>
+<p class="doc-p">Note: When using <a href="/dashboard/widget-typography/#dynamic-font-size-in-widgets" class="doc-link">Envision for Dashboard Widgets</a>, there are additional widget specific boundaries available.</p>
 <h3 class="doc-heading-3" id="downscaling">Downscaling</h3>
 <p class="doc-p">The default is scaling up from <code class="doc-code">1 – 1.25</code>. Scaling may be reversed, so <code class="doc-code">1</code> is the highest factor by using the modifier <code class="doc-code">env-dynamic-font--downscale</code>. The lowest factor will then be <code class="doc-code">1 / {scale}</code>, which is <code class="doc-code">0.8</code>
 at default settings.</p>
