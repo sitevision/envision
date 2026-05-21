@@ -177,7 +177,7 @@ Typical branded usage includes:
 - highlighted UI sections
 
 <h2 class="doc-heading-2">
-   Example branding of components <span id="examples" class="offset-anchor"></span>
+   Example branding of components <span id="examples"></span>
 </h2>
 
 The following examples are visual demonstrations and do not define the color system.
@@ -980,7 +980,7 @@ Description: Use the Badge component to display small labels for status, notific
 <span class="env-badge env-badge--info">Info</span>
 ```
 
-### Status variants <span id="status-variant" class="offset-anchor"></span>
+### Status variants <span id="status-variant"></span>
 
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
@@ -1021,7 +1021,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
    </div>
 </div>
 
-### Status badge <span id="status-badge" class="offset-anchor"></span>
+### Status badge <span id="status-badge"></span>
 
 Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
 
@@ -2254,7 +2254,7 @@ An icon can be marked as inactive by adding modifier: `env-icon--inactive` which
 </div>
 ```
 
-## Attention <span id="attention" class="offset-anchor"></span>
+## Attention <span id="attention"></span>
 
 For Envision icons and custom inline SVG images you may use modifier `env-icon--attention`
 on the icon or on part of an icon. The modifier will set the color to Status color Attention.
@@ -2628,17 +2628,17 @@ a caption that is only shown in the lightbox.
 | `buttons.ghost`_\*\*_   | boolean | Use [ghost button](/forms/button/) type                        | `false`       |
 
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend env-m-block-end--0">
    <span style="font-size:1.4em">*</span> = Option added in 2026.02.1.
 </p>
 </div>
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend env-m-block-end--0">
    <span style="font-size:1.4em">**</span> = Options type and ghost not applicable for overlay placement.
 </p>
 </div>
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend">
    Options speed and overlay were deprecated in 2026.02.1, please use transition and buttons.placement instead.
 </p>
 </div>
@@ -4038,7 +4038,7 @@ if (popoverMenuContentEl) {
 }
 ```
 
-<span id="tooltip" class="offset-anchor"></span>
+<span id="tooltip"></span>
 
 ## Popover Tooltip
 
@@ -4092,7 +4092,7 @@ if (popoverTooltipContentEl) {
 }
 ```
 
-## Options <span id="options" class="offset-anchor"></span>
+## Options <span id="options"></span>
 
 - `placement` _string_
    - Prefered initial placement.
@@ -4227,7 +4227,7 @@ the image is smaller than the image.
 </div>
 ```
 
-<span id="status-badge" class="offset-anchor"></span>
+<span id="status-badge"></span>
 
 #### Status badge in responsive size Profile image
 
@@ -5137,7 +5137,7 @@ if (tooltipEl) {
 }
 ```
 
-## Options <span id="options" class="offset-anchor"></span>
+## Options <span id="options"></span>
 
 `envision.tooltip` takes two parameters:
 
@@ -5365,12 +5365,12 @@ please use a [color contrast checker](https://webaim.org/resources/contrastcheck
    </ul>
 </div>
 
-<p class="example-dashboard-color-list-legend env-m-block-end--0">
+<p class="doc-legend env-m-block-end--0">
    <svg class="env-icon example-dashboard-color-list-icon">
       <use href="/images/docs-images.svg#text"></use>
    </svg> = The color will pass WCAG 2 level AA contrast requirements as text on white (widget wrapper) background.
 </p>
-<p class="example-dashboard-color-list-legend env-m-block-start--0">
+<p class="doc-legend">
    <span style="font-size:1.4em">*</span> = The color also passes contrast requirements if used as text on gray-05 (theme body) background.
 </p>
 
@@ -5624,7 +5624,7 @@ Widgets should use [UI Text](/typography/ui-text/) for headings.
 <p class="env-ui-text-caption">Caption / description</p>
 ```
 
-### Dynamic font size in widgets <span id="dynamic-font-size" class="offset-anchor"></span>
+### Dynamic font size in widgets <span id="dynamic-font-size"></span>
 
 Widgets already has a containment context which makes them dynamic font containers by default.
 Therefore the dynamic font container is **not** required.
@@ -6171,7 +6171,7 @@ The textarea will be resizable vertically.
 </div>
 ```
 
-<span id="contenteditable" className="offset-anchor"></span>
+<span id="contenteditable"></span>
 
 ### Contenteditable element
 
@@ -6205,7 +6205,7 @@ both the Select element and the Select component support a progressively enhance
 as much of the Envision styling as possible while maintaining native select element functionality.
 This feature is opt-in and can be enabled by adding a `button` with a `selectedcontent` tag inside the select element.
 
-<span id="select-component" className="offset-anchor"></span>
+<span id="select-component"></span>
 
 ### Select component
 
@@ -6398,7 +6398,7 @@ Native select element with class `.env-form-input`. Only light styling, might lo
 </div>
 ```
 
-<span id="option-elements" class="offset-anchor"></span>
+<span id="option-elements"></span>
 
 ## Option elements
 
@@ -6581,7 +6581,7 @@ Use `.env-form-control` to wrap `.env-icon` and `.env-form-input`.
 </div>
 ```
 
-<span id="input-group" class="offset-anchor"></span>
+<span id="input-group"></span>
 
 ## Input group
 
@@ -6732,7 +6732,7 @@ Attribute `[readonly]` is also available for input elements.
 </form>
 ```
 
-<span id="validation" class="offset-anchor"></span>
+<span id="validation"></span>
 
 ## Validation error
 
@@ -6925,7 +6925,7 @@ tagSelect.then(function (selects) {
 });
 ```
 
-<span id="single-select" class="offset-anchor"></span>
+<span id="single-select"></span>
 
 ## Single select
 
@@ -8004,7 +8004,7 @@ Valid values
 </div>
 ```
 
-### Flex wrap <span id="flex-wrap" class="offset-anchor"></span>
+### Flex wrap <span id="flex-wrap"></span>
 
 Modifiers applicable to flex containers (`env-flex`).
 
@@ -8036,7 +8036,7 @@ Valid modifiers:
 </div>
 ```
 
-<span id="flex-gap" class="offset-anchor"></span>
+<span id="flex-gap"></span>
 
 ### Flex gap <span class="doc-badge doc-badge--info">2025.07.1</span>
 
@@ -8238,7 +8238,7 @@ Description: The Basic Text utility offers classes for headings, alignment, tran
 </div>
 ```
 
-<span id="status-colors" class="offset-anchor"></span>
+<span id="status-colors"></span>
 
 ## Status colors
 
@@ -8541,7 +8541,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
 </div>
 ```
 
-### Scaling width boundaries <span id="dynamic-font-width-boundaries" class="offset-anchor"></span>
+### Scaling width boundaries <span id="dynamic-font-width-boundaries"></span>
 
 The scaling will occur between two set widths. If the container width is smaller than the from-value,
 the scaling will be set to the lowest possible value and vice versa for the to-value.
@@ -9208,7 +9208,7 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
-<span id="text-list-variables" class="offset-anchor"></span>
+<span id="text-list-variables"></span>
 
 #### Text lists <span class="doc-badge doc-badge--info">2025.09.1</span>
 
@@ -9733,7 +9733,7 @@ Example:
    </div>
 </div>
 
-<span id="logical-properties" class="offset-anchor"></span>
+<span id="logical-properties"></span>
 
 ## Logical properties example
 
