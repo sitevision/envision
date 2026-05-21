@@ -43,8 +43,6 @@ tagSelect.then(function (selects) {
 });
 ```
 
-<span id="single-select"></span>
-
 ## Single select
 
 Create a Single select by using a Tag select and set `maxItems` to `1`.

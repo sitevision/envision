@@ -143,8 +143,6 @@ Native select element with class `env-form-input`. Only light styling, might loo
 </div>
 ```
 
-<span id="select-component"></span>
-
 ## Select component
 
 A select element wrapped in an element with class `env-form-select` will have the same appearance cross browsers.
@@ -623,8 +621,6 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
    </div>
 </div>
 ```
-
-<span id="validation"></span>
 
 ## Validation
 

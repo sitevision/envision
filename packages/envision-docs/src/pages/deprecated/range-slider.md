@@ -99,8 +99,6 @@ envision.rangeSlider('#my-slider', {
 });
 ```
 
-<span id="events"></span>
-
 ## Events
 
 ### input
