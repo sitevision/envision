@@ -190,6 +190,7 @@ Element colors are used for elements and components. See usage examples below.
                   class="env-tabs__link env-tabs__link--active"
                   href="#panel1"
                   role="tab"
+                  aria-controls="panel1"
                   aria-selected="true"
                   tabindex="0"
                 >Tab 1</a
@@ -208,6 +209,8 @@ Element colors are used for elements and components. See usage examples below.
                 >
               </li>
             </ul>
+            <div id="panel1" role="tabpanel" aria-labelledby="tab1" hidden></div>
+            <div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden></div>
           </div>
         </div>
         <div class="example-element example-element--left">

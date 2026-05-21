@@ -63,7 +63,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 
 ### Status badge
 
-Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
+Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge-in-responsive-size-profile-image).
 
 ```html
 <p class="env-status-badge">Last logged in 5 h</p>

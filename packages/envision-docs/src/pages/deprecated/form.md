@@ -627,7 +627,7 @@ For disabled legacy radio buttons, apply modifier `.env-radio--disabled` to its 
 Add modifier `.env-form-element--error` to define error validation state.
 The `aria-describedby` attribute should be used to reference the `ID` of the text that describes the element.
 
-Error validation state uses the Status color [Error text](/utils/colors/#status-colors).
+Error validation state uses the Status color [Error text](/typography/basic-text/#status-colors).
 
 ```html
 <div class="env-form-element env-form-element--error">
