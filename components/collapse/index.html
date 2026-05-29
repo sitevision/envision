@@ -6,7 +6,7 @@
 Collapse · Envision by Sitevision
 </title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<meta content="The Collapse component toggles content visibility, allowing sections to expand or collapse as needed." name="description">
+<meta content="The Collapse component is used to show and hide content through a trigger element." name="description">
 <link href="/llms.txt" rel="alternate" type="text/plain">
 <link href="/llms-full.txt" rel="alternate" type="text/plain">
 <script>((e,o,t)=>{const c=e.sessionStorage,d=c.getItem(t);let s;d?s=d:(s=e.matchMedia("(prefers-color-scheme: dark)").matches?"doc-dark-mode":"doc-light-mode",c.setItem(t,s)),o.classList.add(s)})(window,document.documentElement,"colorscheme")</script>
@@ -15,7 +15,7 @@ Collapse · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.3.3" name="generator" data-template="default">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=c0077ae"></script>
+<script src="/dist/envision.js?v=8e12d5d"></script>
 <link href="/assets/docs.DtybeaY9.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
@@ -92,13 +92,14 @@ Menu
 <h1 class="doc-main-heading">
 Collapse
 </h1>
-<h2 class="doc-heading-2" id="collapsible-content">Collapsible content</h2>
+<p class="doc-p">Use Collapse when you want to show or hide a section of content. The component consists of a toggle button and a collapsible content element. The content is hidden by default and becomes visible when the toggle button is activated.</p>
+<h2 class="doc-heading-2" id="basic-example">Basic example</h2>
 <div class="doc-code-example"><h4 class="env-ui-text-sectionheading">
-<a href="#container1" class="env-link" aria-controls="container1" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#collapse-1" class="env-link" aria-controls="collapse-1" aria-expanded="false" data-env-collapse="" role="button">
 Example 1
 </a>
 </h4>
-<div class="env-collapse" id="container1">
+<div class="env-collapse" id="collapse-1">
 <p class="env-text-body-02">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
 </p>
@@ -108,16 +109,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis 
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span>
       <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
       <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-link<span class="token punctuation">"</span></span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#container1<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#collapse-1<span class="token punctuation">"</span></span>
       <span class="token attr-name">data-env-collapse</span>
       <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
-      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container1<span class="token punctuation">"</span></span>
+      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-1<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
       Example 1
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h4</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-text-body-02<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
       lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus
@@ -126,18 +126,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Add <code class="doc-code">env-collapse--show</code> to have your content expanded</p>
-<h2 class="doc-heading-2" id="background">Background</h2>
-<p class="doc-p">Add <code class="doc-code">env-collapse-header</code> to give the collapsible header a background Add <code class="doc-code">env-collapse-header--icons</code> to add icons</p>
+<h2 class="doc-heading-2" id="required-markup">Required markup</h2>
+<p class="doc-p">The collapsible content element must have:</p>
+<ul class="doc-list">
+<li class="doc-list__item"><code class="doc-code">class="env-collapse"</code></li>
+<li class="doc-list__item">a unique <code class="doc-code">id</code></li>
+</ul>
+<p class="doc-p">The toggle button element must have:</p>
+<ul class="doc-list">
+<li class="doc-list__item">Attribute <code class="doc-code">data-env-collapse</code></li>
+<li class="doc-list__item">Either <code class="doc-code">href="#id"</code> or <code class="doc-code">data-target="#id"</code><em class="doc-em">*</em></li>
+<li class="doc-list__item"><code class="doc-code">aria-controls="id"</code><em class="doc-em">*</em></li>
+<li class="doc-list__item"><code class="doc-code">aria-expanded="true|false"</code></li>
+</ul>
+<p class="doc-legend">
+<span style="font-size:1.4em">*</span> = The ID of the collapsible content element.
+</p>
+<p class="doc-p">When using an <code class="doc-code">&#x3C;a></code> element as the toggle button, also add <code class="doc-code">role="button"</code>.</p>
+<p class="doc-p">A <code class="doc-code">&#x3C;button type="button"></code> must use <code class="doc-code">data-target</code>.</p>
+<h2 class="doc-heading-2" id="styled-toggle-button">Styled toggle button</h2>
+<p class="doc-p">Use <code class="doc-code">env-collapse-header</code> to style the toggle button as an expandable section header. Add <code class="doc-code">env-collapse-header--icons</code> to display expand and collapse icons.</p>
 <div class="doc-code-example"><h4 class="env-ui-text-sectionheading">
-<a href="#container2" class="env-collapse-header env-flex env-flex--justify-content-between" aria-controls="container2" aria-expanded="false" data-env-collapse="" role="button">
-<span class="env-m-inline-end--x-large"> Example 2 </span>
+<a href="#collapse-2" class="env-collapse-header env-flex env-flex--justify-content-between" aria-controls="collapse-2" aria-expanded="false" data-env-collapse="" role="button">
+<span class="env-m-inline-end--x-large">Example 2</span>
 <span class="env-collapse-header--icons"></span>
 </a>
 </h4>
-<div class="env-collapse" id="container2">
+<div class="env-collapse" id="collapse-2">
 <p class="env-text-body-02">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus quam. Proin eu tincidunt metus.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 </p>
 </div></div>
 <div class="doc-code-block doc-code-block--expandable">
@@ -145,41 +162,76 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lobortis 
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span>
       <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse-header env-flex env-flex--justify-content-between<span class="token punctuation">"</span></span>
       <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#container2<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#collapse-2<span class="token punctuation">"</span></span>
       <span class="token attr-name">data-env-collapse</span>
       <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
-      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container2<span class="token punctuation">"</span></span>
+      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-2<span class="token punctuation">"</span></span>
    <span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-m-inline-end--x-large<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> Example 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-m-inline-end--x-large<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Example 2<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse-header--icons<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h4</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-text-body-02<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
-      lobortis dui, in accumsan augue. Quisque nec augue quam. Donec sed purus
-      quam. Proin eu tincidunt metus.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </div><!--/sv-no-index-->
+<h2 class="doc-heading-2" id="initially-expanded">Initially expanded</h2>
+<p class="doc-p">Add <code class="doc-code">env-collapse--show</code> to the content element if the content should be visible when the page loads.</p>
+<p class="doc-p">Add <code class="doc-code">env-collapse--expanded</code> to the toggle button. Make sure the toggle button uses
+<code class="doc-code">aria-expanded="true"</code>.</p>
+<div class="doc-code-example"><h4 class="env-ui-text-sectionheading">
+<a href="#collapse-3" class="env-collapse-header env-flex env-flex--justify-content-between env-collapse--expanded" aria-controls="collapse-3" aria-expanded="true" data-env-collapse="" role="button">
+<span class="env-m-inline-end--x-large">Example 3</span>
+<span class="env-collapse-header--icons"></span>
+</a>
+</h4>
+<div class="env-collapse env-collapse--show" id="collapse-3">
+<p class="env-text-body-02">This content is visible when the page loads.</p>
+</div></div>
+<div class="doc-code-block doc-code-block--expandable">
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-ui-text-sectionheading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span>
+      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse-header env-collapse--expanded env-flex env-flex--justify-content-between<span class="token punctuation">"</span></span>
+      <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#collapse-3<span class="token punctuation">"</span></span>
+      <span class="token attr-name">data-env-collapse</span>
+      <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-3<span class="token punctuation">"</span></span>
+   <span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-m-inline-end--x-large<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Example 3<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse-header--icons<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h4</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-collapse env-collapse--show<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>collapse-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-text-body-02<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>This content is visible when the page loads.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+</div><!--/sv-no-index-->
+<h2 class="doc-heading-2" id="initialization">Initialization</h2>
+<p class="doc-p">Toggle buttons using data-env-collapse are initialized automatically. No manual JavaScript initialization is required for standard click interactions. The component is initialized the first time it is used.</p>
+<h2 class="doc-heading-2" id="linking-to-content-inside-a-collapse-2026071">Linking to content inside a collapse <span class="doc-badge doc-badge--info">2026.07.1</span></h2>
+<p class="doc-p">If the page loads with a hash pointing to content inside a collapsed section, the section is automatically expanded so the target content becomes accessible.</p>
+<p class="doc-p">The same behavior applies when clicking a same-page anchor link that points to content inside a collapsed section.</p>
 <h2 class="doc-heading-2" id="methods">Methods</h2>
-<p class="doc-p">Show</p>
+<p class="doc-p">The selector argument should target the <code class="doc-code">.env-collapse</code> content element, not the toggle button.</p>
+<h3 class="doc-heading-3" id="show">Show</h3>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Hide</p>
+<h3 class="doc-heading-3" id="hide">Hide</h3>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </div><!--/sv-no-index-->
-<p class="doc-p">Toggle</p>
+<h3 class="doc-heading-3" id="toggle">Toggle</h3>
 <div class="doc-code-block doc-code-block--expandable">
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript">envision<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token string">'#myCollapse'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">collapses</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    collapses<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

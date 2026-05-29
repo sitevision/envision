@@ -13,7 +13,7 @@
 - [Components – Badge](https://envisionui.io/components/badge/): Use the Badge component to display small labels for status, notifications, or event counts.
 - [Components – Breadcrumb](https://envisionui.io/components/breadcrumb/): Use breadcrumbs to display the user´s location within a site’s hierarchy, enhancing navigation.
 - [Components – Cards](https://envisionui.io/components/cards/): Cards are simple containers for displaying information about pages, groups, or users.
-- [Components – Collapse](https://envisionui.io/components/collapse/): The Collapse component toggles content visibility, allowing sections to expand or collapse as needed.
+- [Components – Collapse](https://envisionui.io/components/collapse/): The Collapse component is used to show and hide content through a trigger element.
 - [Components – Dialog](https://envisionui.io/components/dialog/): Use Dialog to present modal dialogs with customizable sizes, animations, and focus management.
 - [Components – Dropdown](https://envisionui.io/components/dropdown/): Dropdowns displays a list of options that appears upon user interaction.
 - [Components – Embedded](https://envisionui.io/components/embedded/): The Embedded component displays images and text with flexible layouts and overlay options.
