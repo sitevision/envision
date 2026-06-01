@@ -197,7 +197,10 @@ const getSamePageLinkHash = (e) => {
 };
 
 const getHashTargetEl = (hash) => {
-   const id = hash.slice(1);
+   const id =
+      typeof hash === 'string' && hash.length > 1 && hash.startsWith('#')
+         ? hash.slice(1)
+         : null;
 
    if (!id) {
       return null;
@@ -283,7 +286,7 @@ if (typeof document !== 'undefined') {
 
       // Check for #hash link clicks targeting a closed collapse
       const hash = getSamePageLinkHash(e);
-      const targetEl = hash && getHashTargetEl(hash);
+      const targetEl = hash ? getHashTargetEl(hash) : null;
 
       if (targetEl?.closest(COLLAPSE_SELECTOR)) {
          e.preventDefault();
