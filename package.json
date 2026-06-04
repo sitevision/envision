@@ -30,7 +30,7 @@
    "devDependencies": {
       "@eslint/eslintrc": "^3.3.3",
       "@eslint/js": "^10.0.1",
-      "concurrently": "^9.1.2",
+      "concurrently": "^10.0.3",
       "cross-env": "^10.1.0",
       "eslint": "^9.39.1",
       "eslint-plugin-commonjs": "^1.0.2",
