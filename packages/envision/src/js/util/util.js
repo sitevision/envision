@@ -32,7 +32,7 @@ const Util = (() => {
 
       getLanguageOptions(i18nSetting, langObj, rootEl) {
          const FALLBACK = 'en';
-         let i18n = {};
+         let i18n;
 
          const getLangObj = () => {
             rootEl = rootEl || document.documentElement;
