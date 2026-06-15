@@ -19,6 +19,12 @@ import '../../../../envision/src/scss/envision.scss';
 import '../../assets/scss/docs.scss';
 
 const title = frontmatter.title;
+const pageUrl = frontmatter.url ?? Astro.url.pathname;
+const pathSegments = pageUrl.split('/').filter(Boolean);
+const shouldIndexPage =
+   pathSegments.length > 1 &&
+   !['deprecated', 'examples'].includes(pathSegments[0]) &&
+   pageUrl !== '/warnings/';
 
 // obtain Git commit hash for cache busting
 const commitHash = childProcess
@@ -49,6 +55,7 @@ const commitHash = childProcess
       }
       <link rel="alternate" type="text/plain" href="/llms.txt" />
       <link rel="alternate" type="text/plain" href="/llms-full.txt" />
+      <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css" />
       <script is:inline>
          ((win, docEl, key) => {
             const st = win.sessionStorage;
@@ -78,6 +85,7 @@ const commitHash = childProcess
          crossorigin="anonymous"></script>
 
       <script is:inline src={`/dist/envision.js?v=${commitHash}`}></script>
+      <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
       <!-- Additional head elements -->
    </head>
    <body>
@@ -98,6 +106,7 @@ const commitHash = childProcess
                <main
                   id="content"
                   class={getMainClassName(frontmatter.dashboard)}
+                  {...shouldIndexPage ? { 'data-pagefind-body': true } : {}}
                >
                   <div class="content-wrapper">
                      {
@@ -120,8 +129,10 @@ const commitHash = childProcess
          </slot>
          <Footer />
          <Mobilenav frontmatter={frontmatter} />
+         <pagefind-modal reset-on-close></pagefind-modal>
          {!!frontmatter.dashboard}
       </div>
+      <script src="../../assets/scripts/init-search.js"></script>
       <script src="../../assets/scripts/init-code-blocks.js"></script>
       <script src="../../assets/scripts/init-examples.js"></script>
       <script src="../../assets/scripts/mobile-nav.js"></script>

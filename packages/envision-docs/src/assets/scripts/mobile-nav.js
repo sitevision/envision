@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-   const openButton = document.querySelector('.mobile-nav-button button');
+   const openButton = document.querySelector('.mobile-nav-open-button');
    const mobileNav = document.querySelector('.mobileNav');
    const closeButton = document.querySelector('.mobileNav__close');
    let showMobileNav = false;

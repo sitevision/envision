@@ -51,17 +51,34 @@
       display: none;
 
       @include variables.header-layout-break {
-         flex: 1;
          display: block;
-         padding: 0 1em;
+         padding: 0 1em 0 2em;
       }
    }
 
    .mobile-nav-button {
       visibility: visible;
+      display: flex;
+      align-items: center;
+      gap: 0.25em;
+
+      pagefind-modal-trigger {
+         --pf-text: var(--doc-header-font-color);
+         --pf-background: transparent;
+         --pf-border: transparent;
+         --pf-border-focus: var(--doc-color-brand);
+         --pf-outline-focus: var(--env-focus-outline-color);
+      }
+
+      .theme-picker {
+         position: static;
+         transform: none;
+         padding: 0;
+         display: block;
+      }
 
       @include variables.header-layout-break {
-         visibility: hidden;
+         display: none;
       }
    }
 
@@ -93,16 +110,39 @@
       }
    }
 
-   .theme-picker {
-      position: absolute;
-      top: 50%;
-      right: calc(#{variables.$site-padding} + 0.5em + 2.75em);
-      margin: 0;
-      padding: 0 0 0 1em;
-      transform: translateY(-50%);
+   .header-actions {
+      display: none;
 
       @include variables.header-layout-break {
-         right: variables.$site-padding;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 0.75em;
+         margin-left: auto;
+      }
+   }
+
+   pagefind-modal-trigger {
+      --pf-text: var(--doc-header-font-color);
+      --pf-text-secondary: var(--doc-header-font-color);
+      --pf-text-muted: var(--doc-header-font-color);
+      --pf-background: transparent;
+      --pf-border: var(--doc-header-font-color);
+      --pf-border-focus: var(--doc-color-brand);
+      --pf-hover: var(--doc-background-color);
+      --pf-outline-focus: var(--env-focus-outline-color);
+      --pf-input-height: 40px;
+      --pf-border-radius: var(--env-button-border-radius);
+   }
+
+   .theme-picker {
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      @include variables.header-layout-break {
+         display: flex;
+         align-items: center;
       }
 
       &__label {

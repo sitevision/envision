@@ -14,9 +14,17 @@ const { frontmatter } = Astro.props;
          </svg>
       </a>
       <Headernav frontmatter={frontmatter} />
-      <Themepicker />
+      <div class="header-actions">
+         <Themepicker />
+         <div class="doc-search">
+            <pagefind-modal-trigger placeholder="Search docs" hide-shortcut
+            ></pagefind-modal-trigger>
+         </div>
+      </div>
       <div class="mobile-nav-button">
-         <button class="env-button env-button--link env-button--icon">
+         <Themepicker />
+         <pagefind-modal-trigger compact hide-shortcut></pagefind-modal-trigger>
+         <button class="mobile-nav-open-button env-button env-button--link env-button--icon">
             <svg class="env-icon env-icon--xx-small">
                <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
             </svg>
