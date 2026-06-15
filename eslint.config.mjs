@@ -20,6 +20,7 @@ export default defineConfig([
       '**/envision.js',
       '**/public',
       '**/.cache',
+      '**/static/pagefind',
    ]),
    {
       extends: compat.extends('eslint:recommended'),

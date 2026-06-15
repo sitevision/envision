@@ -2,3 +2,4 @@ dist
 docs
 public
 .cache
+packages/envision-docs/static/pagefind
