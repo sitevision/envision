@@ -15,14 +15,14 @@ const { frontmatter } = Astro.props;
       </a>
       <Headernav frontmatter={frontmatter} />
       <div class="header-actions">
-         <Themepicker />
+         <Themepicker id="darkModeDesktop" />
          <div class="doc-search">
             <pagefind-modal-trigger placeholder="Search docs" hide-shortcut
             ></pagefind-modal-trigger>
          </div>
       </div>
       <div class="mobile-nav-button">
-         <Themepicker />
+         <Themepicker id="darkModeMobile" />
          <pagefind-modal-trigger compact hide-shortcut></pagefind-modal-trigger>
          <button
             class="mobile-nav-open-button env-button env-button--link env-button--icon"

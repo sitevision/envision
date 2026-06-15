@@ -1,16 +1,16 @@
 ---
-
+const { id = 'darkMode' } = Astro.props;
 ---
 
 <div class="theme-picker">
-   <label class="theme-picker__label env-assistive-text" for="darkMode">
+   <label class="theme-picker__label env-assistive-text" for={id}>
       Default / Dark mode
    </label>
    <div class="doc-theme-switch">
       <input
          class="doc-theme-switch__checkbox doc-darkmode-checkbox"
          type="checkbox"
-         id="darkMode"
+         id={id}
       />
       <svg
          aria-hidden="true"

@@ -4,8 +4,9 @@
    "version": "0.0.1",
    "description": "Sitevision CSS framework documentation",
    "scripts": {
-      "dev": "astro dev",
-      "build": "astro build && pagefind --site ../../docs && cp -r ../../docs/pagefind ./static/pagefind",
+      "dev": "yarn pagefind:prepare && astro dev",
+      "build": "yarn pagefind:prepare",
+      "pagefind:prepare": "astro build && pagefind --site ../../docs && node scripts/copy-pagefind.mjs",
       "preview": "astro preview",
       "astro": "astro"
    },
