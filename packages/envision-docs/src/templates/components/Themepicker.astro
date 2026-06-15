@@ -7,7 +7,7 @@
       Default / Dark mode
    </label>
    <div class="doc-theme-switch">
-      <input class="doc-theme-switch__checkbox" type="checkbox" id="darkMode" />
+      <input class="doc-theme-switch__checkbox doc-darkmode-checkbox" type="checkbox" id="darkMode" />
       <svg
          aria-hidden="true"
          class="env-icon doc-theme-switch__moon"
@@ -27,7 +27,9 @@
    </div>
    <script is:inline>
       if (sessionStorage.getItem('colorscheme') === 'doc-dark-mode') {
-         document.getElementById('darkMode').checked = true;
+         document.querySelectorAll('.doc-darkmode-checkbox').forEach((el) => {
+            el.checked = true;
+         });
       }
    </script>
 </div>

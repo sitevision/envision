@@ -1,0 +1,29 @@
+pagefind-modal-body,
+.pf-modal-body {
+   min-height: 200px;
+
+   .pf-result-card:has([data-pf-selected]) {
+      background: var(--pf-hover) !important;
+   }
+}
+
+.pf-modal-close {
+   display: flex !important;
+}
+
+pagefind-modal-footer,
+.pf-modal-footer {
+   font-size: 14px !important;
+
+   .pf-modal-footer-key,
+   .pf-keyboard-key {
+      font-size: 12px !important;
+      height: 22px !important;
+      min-width: 22px !important;
+   }
+}
+
+pagefind-keyboard-hints,
+.pf-keyboard-hints {
+   font-size: 14px !important;
+}

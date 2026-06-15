@@ -5,7 +5,7 @@
    "description": "Sitevision CSS framework documentation",
    "scripts": {
       "dev": "astro dev",
-      "build": "astro build",
+      "build": "astro build && pagefind --site ../../docs && cp -r ../../docs/pagefind ./static/pagefind",
       "preview": "astro preview",
       "astro": "astro"
    },
@@ -13,5 +13,8 @@
       "@astrojs/mdx": "^6.0.2",
       "astro": "^6.4.0",
       "astro-compress": "^2.4.1"
+   },
+   "devDependencies": {
+      "pagefind": "^1.5.2"
    }
 }

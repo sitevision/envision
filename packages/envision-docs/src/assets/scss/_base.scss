@@ -37,6 +37,20 @@ html {
    --doc-icon-card-header-background: #daf4e5;
    --doc-icon-text-01: #737373;
    --doc-icon-text-02: #708770;
+
+   --pf-font: var(--doc-font-family);
+   --pf-text: var(--doc-font-color);
+   --pf-text-secondary: #596157;
+   --pf-text-muted: #737373;
+   --pf-background: var(--doc-section-background-color);
+   --pf-border: var(--doc-border-color);
+   --pf-border-focus: var(--doc-color-brand);
+   --pf-hover: var(--doc-background-color);
+   --pf-mark: var(--doc-font-color);
+   --pf-outline-focus: var(--env-focus-outline-color);
+   --pf-border-radius: 4px;
+   --pf-modal-backdrop: rgba(0, 0, 0, 0.5);
+   --pf-modal-max-width: 640px;
 }
 
 .doc-dark-mode {
@@ -70,6 +84,16 @@ html {
    --doc-icon-card-header-background: #214541;
    --doc-icon-text-01: #a2bdba;
    --doc-icon-text-02: #87aaa6;
+
+   --pf-text: var(--doc-font-color);
+   --pf-text-secondary: #a2bdba;
+   --pf-text-muted: #87aaa6;
+   --pf-background: var(--doc-section-background-color);
+   --pf-border: var(--doc-border-color);
+   --pf-border-focus: var(--doc-color-brand);
+   --pf-hover: #18322f;
+   --pf-mark: var(--doc-font-color);
+   --pf-scroll-shadow: rgba(255, 255, 255, 0.1);
 }
 
 .sidenav,
