@@ -1,4 +1,7 @@
 document.addEventListener('click', (e) => {
+   if (!(e.target instanceof Element)) {
+      return;
+   }
    const link = e.target.closest('.pf-result-link');
    if (!link) {
       return;

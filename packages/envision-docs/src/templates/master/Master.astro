@@ -106,7 +106,8 @@ const commitHash = childProcess
                <main
                   id="content"
                   class={getMainClassName(frontmatter.dashboard)}
-                  {...shouldIndexPage ? { 'data-pagefind-body': true } : {}}
+                  data-pagefind-body
+                  {...!shouldIndexPage ? { 'data-pagefind-ignore': true } : {}}
                >
                   <div class="content-wrapper">
                      {
