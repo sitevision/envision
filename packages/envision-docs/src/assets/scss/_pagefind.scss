@@ -6,11 +6,14 @@
    --pf-input-font-size: 1em;
    --pf-font: var(--doc-font-family);
    --pf-text: var(--env-font-color);
+   --pf-text-muted: var(--env-font-color-muted);
    --pf-text-secondary: var(--env-font-color-muted);
    --pf-background: var(--env-section-background-color);
    --pf-border: var(--env-border-color);
    --pf-hover: var(--env-section-background-color-05);
    --pf-mark: var(--env-font-color);
+   --pf-skeleton: var(--env-section-background-color-05);
+   --pf-skeleton-shine: var(--env-section-background-color);
 }
 
 :is(*, #\#):is(*, #\#):is(*, #\#) {
