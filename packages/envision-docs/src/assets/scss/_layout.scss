@@ -1,9 +1,5 @@
 @use 'variables';
 
-$layout-gap: 2em;
-$layout-col-sidenav: 19em;
-$layout-col-main: 59em;
-
 .layout {
    min-height: 100vh;
    display: flex;
@@ -13,10 +9,55 @@ $layout-col-main: 59em;
 
 .header {
    grid-area: header;
+}
 
-   .container {
+.header-grid {
+   display: grid;
+   grid-template-columns: 148px 1fr 154px;
+   grid-template-rows: 1fr;
+   gap: 1em;
+
+   @include variables.max-header-mobile-break {
+      grid-template-columns: 111px 1fr 154px;
+   }
+
+   .header-grid-item-logo {
+      order: 1;
+   }
+
+   .header-grid-item-search {
+      order: 3;
+      grid-column: span 3;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .header-grid-item-buttons {
+      order: 2;
+      grid-column: span 2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.125em;
+   }
+
+   @include variables.header-layout-break {
+      grid-template-columns: 148px 1fr 55px;
+      grid-template-rows: 1fr;
+      gap: 1em 0;
+
+      .header-grid-item-logo {
+         order: 1;
+      }
+      .header-grid-item-search {
+         order: 2;
+         grid-column: span 1;
+      }
+      .header-grid-item-buttons {
+         order: 3;
+         grid-column: span 1;
+      }
    }
 }
 
@@ -35,10 +76,13 @@ $layout-col-main: 59em;
       padding: 9.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
       gap: 2em;
       grid-template-areas: 'sidenav main';
-      grid-template-columns: min($layout-col-sidenav, 23.75vw) min(
-            $layout-col-main,
-            calc(100vw - 2em - 2em - 23.75vw)
-         );
+      grid-template-columns:
+         #{'min(' + variables.$layout-col-sidenav + ', 23.75vw)'}
+         #{'min(' + variables.$layout-col-main + ', calc(100vw - 2em - 2em - 23.75vw))'};
+   }
+
+   @include variables.header-layout-break {
+      padding: 2.5em #{'min(2.6666vw,' + variables.$site-padding + ')'} 0;
    }
 
    .banner + & {
@@ -77,6 +121,7 @@ $layout-col-main: 59em;
 }
 
 .container {
-   max-width: $layout-gap + $layout-col-sidenav + $layout-col-main;
+   max-width: variables.$layout-gap + variables.$layout-col-sidenav +
+      variables.$layout-col-main;
    margin: 0 auto;
 }

@@ -5,7 +5,7 @@ import { getMenuItems } from '../utils/navMenuUtils.ts';
 const menuItems = getMenuItems(frontmatter, '/');
 ---
 
-<nav aria-label="Main menu">
+<nav class="header-nav" aria-label="Main menu">
    <ul class="env-nav env-nav--menubar env-nav--border">
       {
          menuItems.map(({ frontmatter, url, isCurrentPage }) => (
