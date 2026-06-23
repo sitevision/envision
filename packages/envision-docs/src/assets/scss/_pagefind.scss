@@ -1,0 +1,39 @@
+@use 'variables';
+
+:root {
+   --pf-searchbox-max-width: none;
+   --pf-input-height: 2.75em;
+   --pf-input-font-size: 1em;
+   --pf-font: var(--doc-font-family);
+   --pf-text: var(--env-font-color);
+   --pf-text-secondary: var(--env-font-color-muted);
+   --pf-background: var(--env-section-background-color);
+   --pf-border: var(--env-border-color);
+   --pf-hover: var(--env-section-background-color-05);
+   --pf-mark: var(--env-font-color);
+}
+
+:is(*, #\#):is(*, #\#):is(*, #\#) {
+   .pf-input,
+   .pf-searchbox-input {
+      background-color: var(--doc-background-color);
+   }
+
+   .pf-searchbox-result[data-pf-selected] {
+      background-color: var(--env-section-background-color-05);
+   }
+
+   :is(*, #\#):is(*, #\#):is(*, #\#) .pf-searchbox-results {
+      @include variables.scrollbar;
+   }
+
+   .pf-searchbox-result[data-pf-selected],
+   .pf-searchbox-input:focus-visible,
+   .pf-input-clear:focus-visible,
+   .pf-dropdown-trigger:focus-visible,
+   .pf-dropdown-clear:focus-visible,
+   .pf-trigger-btn:focus-visible,
+   .pf-modal-close:focus-visible {
+      @include variables.focus-outline;
+   }
+}

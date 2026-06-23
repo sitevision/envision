@@ -8,6 +8,10 @@ $site-padding: 1em;
 $bp-mobile: 520px;
 $bp-tablet: 768px;
 
+$layout-gap: 2em;
+$layout-col-sidenav: 19em;
+$layout-col-main: 59em;
+
 $BRAND_COLOR_VARIANTS:
    '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65',
    '70', '75', '80', '85', '90', '95', '100';
@@ -21,6 +25,20 @@ $BRAND_COLOR_VARIANTS:
 
 @mixin header-layout-break {
    @media (min-width: 64em) {
+      // 1024px = 64em
+      @content;
+   }
+}
+
+@mixin max-header-layout-break {
+   @media (max-width: 63.99999em) {
+      // 1024px = 64em
+      @content;
+   }
+}
+
+@mixin max-header-mobile-break {
+   @media (max-width: 30em) {
       // 1024px = 64em
       @content;
    }
@@ -68,5 +86,53 @@ $BRAND_COLOR_VARIANTS:
 @mixin focus-visible {
    &:focus-visible {
       @include focus-outline;
+   }
+}
+
+@mixin scrollbar(
+   $color: var(--env-ui-color-brand-40),
+   $background: transparent
+) {
+   overflow-y: auto;
+   scrollbar-color: $color $background;
+   scrollbar-gutter: auto;
+
+   // WebKit
+   &::-webkit-scrollbar {
+      width: 8px;
+      height: auto;
+
+      &:horizontal {
+         height: 8px;
+         width: auto;
+      }
+   }
+
+   &::-webkit-scrollbar-track-piece {
+      background: $background;
+   }
+
+   &::-webkit-scrollbar-track {
+      background: $background;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: $background;
+      width: 8px;
+      border-radius: 4px;
+   }
+
+   &:hover::-webkit-scrollbar-thumb {
+      background-color: $color;
+   }
+
+   &:hover::-webkit-scrollbar {
+      width: 8px;
+      height: auto;
+   }
+
+   &:hover::-webkit-scrollbar:horizontal {
+      height: 8px;
+      width: auto;
    }
 }
