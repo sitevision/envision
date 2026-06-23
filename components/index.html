@@ -15,20 +15,62 @@ Components · Envision by Sitevision
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v6.4.4" name="generator" data-template="navigation">
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
-<script src="/dist/envision.js?v=6998a52"></script>
-<link href="/assets/docs.BjGiJmQR.css" rel="stylesheet"></head>
+<script src="/dist/envision.js?v=f96833c"></script>
+<link href="/assets/docs.Ct799I1i.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
 <a href="#content" class="doc-skip-link"> Skip to main content </a>
-<div class="container">
-<a href="/" class="logo">
+<div class="header-grid">
+<div class="header-grid-item-logo">
+<a href="/" class="logo header-logo">
 <span class="env-assistive-text">To start page</span>
 <svg class="env-icon doc-svg-logo" aria-hidden="true">
 <use href="/images/docs-logo.svg#logo"></use>
 </svg>
 </a>
-<nav aria-label="Main menu">
+</div>
+<div class="header-grid-item-search">
+<div class="doc-search" aria-label="Search Envision documentation" role="search">
+<pagefind-config base-url="/" bundle-path="/pagefind/" excerpt-length="40"></pagefind-config>
+<pagefind-searchbox placeholder="Search Envision documentation"></pagefind-searchbox>
+</div>
+</div>
+<div class="header-grid-item-buttons">
+<div class="theme-picker">
+<label class="env-assistive-text theme-picker__label" for="darkMode">
+Default / Dark mode
+</label>
+<div class="doc-theme-switch">
+<input class="doc-theme-switch__checkbox" id="darkMode" type="checkbox">
+<svg class="env-icon doc-theme-switch__moon" aria-hidden="true" height="24" width="24">
+<use href="/images/docs-images.svg#moon"></use>
+</svg>
+<svg class="env-icon doc-theme-switch__sun" aria-hidden="true" height="24" width="24">
+<use href="/images/docs-images.svg#sun"></use>
+</svg>
+</div>
+<script>"doc-dark-mode"===sessionStorage.getItem("colorscheme")&&(document.getElementById("darkMode").checked=!0)</script>
+</div>
+<div class="mobile-search-button">
+<button class="env-button env-button--icon env-button--link">
+<svg class="env-icon env-icon--xx-small">
+<use href="/sitevision/envision-icons.svg#icon-search"></use>
+</svg>
+Search
+</button>
+</div>
+<div class="mobile-nav-button">
+<button class="env-button env-button--icon env-button--link">
+<svg class="env-icon env-icon--xx-small">
+<use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
+</svg>
+Menu
+</button>
+</div>
+</div>
+</div>
+<nav aria-label="Main menu" class="header-nav">
 <ul class="env-nav env-nav--border env-nav--menubar">
 <li class="env-nav__item">
 <a href="/colors/" class="env-nav__link" aria-current="false">
@@ -61,33 +103,9 @@ Dashboard Widgets
 </li>
 </ul>
 </nav>
-<div class="theme-picker">
-<label class="env-assistive-text theme-picker__label" for="darkMode">
-Default / Dark mode
-</label>
-<div class="doc-theme-switch">
-<input class="doc-theme-switch__checkbox" id="darkMode" type="checkbox">
-<svg class="env-icon doc-theme-switch__moon" aria-hidden="true" height="24" width="24">
-<use href="/images/docs-images.svg#moon"></use>
-</svg>
-<svg class="env-icon doc-theme-switch__sun" aria-hidden="true" height="24" width="24">
-<use href="/images/docs-images.svg#sun"></use>
-</svg>
-</div>
-<script>"doc-dark-mode"===sessionStorage.getItem("colorscheme")&&(document.getElementById("darkMode").checked=!0)</script>
-</div>
-<div class="mobile-nav-button">
-<button class="env-button env-button--icon env-button--link">
-<svg class="env-icon env-icon--xx-small">
-<use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
-</svg>
-Menu
-</button>
-</div>
-</div>
 </header>
 <div class="body">
-<main class="main" id="content">
+<main class="main" data-pagefind-body id="content">
 <div class="content-wrapper">
 <h1 class="doc-main-heading">
 Components
@@ -655,7 +673,7 @@ Tooltip
 <a href="/colors/" class="env-nav__link level-1" aria-current="false">
 Colors
 </a>
-<a href="#mobile-submenu-colors" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-colors" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-colors" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-colors" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Colors
 </span>
@@ -690,7 +708,7 @@ Status colors
 <a href="/typography/" class="env-nav__link level-1" aria-current="false">
 Typography
 </a>
-<a href="#mobile-submenu-typography" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-typography" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-typography" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-typography" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Typography
 </span>
@@ -728,7 +746,7 @@ UI Text
 <a href="/forms/" class="env-nav__link level-1" aria-current="false">
 Forms
 </a>
-<a href="#mobile-submenu-forms" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-forms" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-forms" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-forms" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Forms
 </span>
@@ -763,7 +781,7 @@ Tag Select
 <a href="/components/" class="env-nav__link level-1" aria-current="page">
 Components
 </a>
-<a href="#mobile-submenu-components" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-components" aria-expanded="true" data-env-collapse="" role="button">
+<a href="#mobile-submenu-components" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-components" aria-expanded="true" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Components
 </span>
@@ -874,7 +892,7 @@ Tooltip
 <a href="/utils/" class="env-nav__link level-1" aria-current="false">
 Utils
 </a>
-<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-utils" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-utils" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-utils" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Utils
 </span>
@@ -921,7 +939,7 @@ Vertical alignment
 <a href="/layout/" class="env-nav__link level-1" aria-current="false">
 Layout
 </a>
-<a href="#mobile-submenu-layout" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-layout" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-layout" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-layout" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Layout
 </span>
@@ -948,7 +966,7 @@ Flexbox
 <a href="/dashboard/" class="env-nav__link level-1" aria-current="false">
 Dashboard Widgets
 </a>
-<a href="#mobile-submenu-dashboard" class="env-button env-button--icon env-button--icon-small env-button--link" aria-controls="mobile-submenu-dashboard" aria-expanded="false" data-env-collapse="" role="button">
+<a href="#mobile-submenu-dashboard" class="env-button env-button--icon env-button--link env-button--icon-small" aria-controls="mobile-submenu-dashboard" aria-expanded="false" data-env-collapse="" role="button">
 <span class="env-assistive-text">
 Toggle navigation for Dashboard Widgets
 </span>
@@ -988,9 +1006,10 @@ Widget typography
 </nav>
 </dialog>
 </div>
+<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
 <script type="module">const b=(()=>{let e=0;const t=()=>(e+=1,"env-"+e);return e=>{if(!e.id){let n=t();for(;document.getElementById(n);)n=t();e.id=n}}})();document.addEventListener("DOMContentLoaded",()=>{const e={html:"Example HTML code",javascript:"Example JavaScript code",unknown:"Example code"};document.body.querySelectorAll(".astro-code[data-language]").forEach(t=>{let n=t.dataset.language?.toLowerCase()||"";n.includes("html")&&(n="html"),Object.hasOwnProperty.call(e,n)||(n="unknown"),t.querySelector("code")?.setAttribute("aria-label",e[n])});const t="doc-code-block--hidden",n=["doc-code-block__toggler","env-button","env-button--link","env-button--icon","env-button--icon-after","env-button--secondary","env-button--small"],o="Show full example";document.body.querySelectorAll(".doc-code-block--expandable").forEach(e=>{const a="PRE"===e.tagName?e:e.querySelector("pre");if(a&&a.clientHeight>.25*window.innerHeight){b(e),e.classList.add(t);const a=document.createElement("span");a.textContent=o;const c=document.createElement("button");c.insertAdjacentHTML("afterbegin",'<svg class="env-icon env-icon--small">\n                <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down">\n                </use></svg>'),c.setAttribute("type","button"),c.setAttribute("aria-expanded","false"),c.classList.add(...n),c.setAttribute("aria-controls",e.id),c.appendChild(a),e.appendChild(c),c.addEventListener("click",()=>{const n="true"===c.getAttribute("aria-expanded");n?(e.classList.add(t),setTimeout(()=>{e.scrollIntoView({behavior:"auto",block:"center"})},1),a.textContent=o):(e.classList.remove(t),a.textContent="Hide full example"),c.setAttribute("aria-expanded",!n)})}})})</script>
 <script type="module" src="/assets/Master.astro_astro_type_script_index_1_lang.Fg2Mmmau.js"></script>
-<script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".mobile-nav-button button"),t=document.querySelector(".mobileNav"),o=document.querySelector(".mobileNav__close");let n=!1;const r=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},d=function(e){const t=["a[href]","input:not([disabled])","button:not([disabled])"].join(","),o=e.querySelectorAll(t),n=[];for(let e=0;e<o.length;e++)r(o[e])&&n.push(o[e]);return n},s=e=>{if("Escape"===e.key)e.preventDefault(),l();else if("Tab"===e.key){const o=d(t),n=o[0],r=o[o.length-1];e.shiftKey?e.target===n&&(e.preventDefault(),r.focus()):e.target===r&&(e.preventDefault(),n.focus())}},l=()=>{n?(e.setAttribute("aria-expanded","false"),t.classList.remove("show"),document.body.style.removeProperty("overflow"),document.body.removeEventListener("keydown",s),e.focus()):(e.setAttribute("aria-expanded","true"),t.classList.add("show"),document.body.style.setProperty("overflow-x",""),document.body.style.setProperty("overflow-y",""),document.body.style.setProperty("overflow","hidden","important"),document.body.addEventListener("keydown",s),d(t)[1].focus()),n=!n};o&&o.addEventListener("click",l),e&&e.addEventListener("click",l)})</script>
+<script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".mobile-nav-button button"),t=document.querySelector(".mobile-search-button button"),o=document.querySelector(".mobileNav"),n=document.querySelector(".header-grid-item-search"),r=document.querySelector(".mobileNav__close"),d=function(e){return!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)},l=function(e){const t=["a[href]","input:not([disabled])","button:not([disabled])"].join(","),o=e.querySelectorAll(t),n=[];for(let e=0;e<o.length;e++)d(o[e])&&n.push(o[e]);return n},c=e=>{if(e){const e=window.scrollY;document.body.style.setProperty("overflow-x",""),document.body.style.setProperty("overflow-y",""),document.body.style.setProperty("overflow","hidden","important"),document.body.style.setProperty("position","fixed"),document.body.style.setProperty("width","100%"),document.body.style.setProperty("top",`-${e}px`),document.body.dataset.docScrollY=`${e}`}else{const e=Number.parseInt(document.body.dataset.docScrollY,10);["overflow","overflow-x","overflow-y","position","width","top"].forEach(e=>{document.body.style.removeProperty(e)}),delete document.body.dataset.docScrollY,Number.isFinite(e)&&window.scrollTo(window.scrollX,e)}},s=function(e,t,{initialFocusIndex:o=0,lockScroll:n=!1}={}){if(!e||!t)return;let r=!1;const d=e=>{if("Escape"===e.key)e.preventDefault(),s();else if("Tab"===e.key){const o=l(t),n=o[0],r=o[o.length-1];if(!n||!r)return;e.shiftKey?e.target===n&&(e.preventDefault(),r.focus()):e.target===r&&(e.preventDefault(),n.focus())}},s=()=>{e.setAttribute("aria-expanded","false"),t.classList.remove("show"),n&&c(!1),document.body.removeEventListener("keydown",d),e.focus(),r=!1},i=()=>{r?s():(()=>{e.setAttribute("aria-expanded","true"),t.classList.add("show"),n&&c(!0),document.body.addEventListener("keydown",d);const s=l(t),i=s[o]||s[0];i&&i.focus(),r=!0})()};return e.addEventListener("click",i),{close:s,toggle:i}},i=s(e,o,{initialFocusIndex:1,lockScroll:!0});s(t,n,{initialFocusIndex:0}),r&&i&&r.addEventListener("click",i.close)})</script>
 <script type="module">((e,d,t)=>{const c=window.matchMedia("(prefers-color-scheme: dark)"),o=c=>{c?d.classList.add(t):d.classList.remove(t),e.sessionStorage.setItem("colorscheme",c?t:"doc-light-mode")};document.addEventListener("DOMContentLoaded",()=>{document.getElementById("darkMode").addEventListener("change",e=>{o(e.target.checked)})}),c.addEventListener("change",()=>{o(c.matches),document.getElementById("darkMode").checked=c.matches})})(window,document.documentElement,"doc-dark-mode")</script>
 <script type="module">((t,e)=>{const o=e.querySelector(".doc-md-link [data-md-github-url]"),a=e.querySelector(".doc-md-link [data-md-copy-action]");let r;const i=async()=>{const t=o.dataset.mdGithubUrl,e=o.querySelector("[data-md-copy-lbl]");e.textContent="Copying...",o.disabled=!0;try{const o=await fetch(t);if(!o.ok)throw new Error(`Request failed: ${o.status}`);await(async t=>{if(!navigator.clipboard?.writeText)throw new Error("Clipboard API is not supported");await navigator.clipboard.writeText(t)})(await o.text()),e.textContent="Copied!"}catch(t){e.textContent="Copy failed",console.error(t)}};o&&o.addEventListener("click",e=>{e.preventDefault(),i().then(()=>{(e=>{const o=e.querySelector("[data-md-copy-lbl]");t.clearTimeout(r),r=t.setTimeout(()=>{e.disabled=!1,o.textContent="Copy page"},2500)})(o)})}),o&&a&&a.addEventListener("click",()=>o.click())})(window,document)</script>
 </body></html>
