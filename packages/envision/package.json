@@ -40,7 +40,7 @@
       "sass-loader": "^16.0.6",
       "terser-webpack-plugin": "^5.4.0",
       "webpack": "^5.107.2",
-      "webpack-cli": "^6.0.1",
+      "webpack-cli": "^7.0.3",
       "webpack-merge": "^6.0.1",
       "webpack-remove-empty-scripts": "^1.1.1"
    },
