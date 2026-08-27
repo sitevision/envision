@@ -1,6 +1,7 @@
 ---
 title: UI Text
 description: UI Text provides standardized styles for headings and text across templates, components, and applications.
+menuSortOrder: 30
 ---
 
 UI Text is a set of text styles that should be used for headings and other text in templates, components and applications.

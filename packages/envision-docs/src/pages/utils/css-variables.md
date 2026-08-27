@@ -1,6 +1,7 @@
 ---
 title: CSS variables
 description: CSS Variables utility offers predefined custom properties for consistent styling across components.
+menuSortOrder: 10
 ---
 
 CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) are available with the format: `--env-{variable}`
