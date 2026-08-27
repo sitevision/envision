@@ -1,6 +1,7 @@
 ---
 title: Basic colors
 description: The “Basic colors” section defines general colors for backgrounds, text, links, and borders.
+menuSortOrder: 10
 ---
 
 There are a few general colors that are used for

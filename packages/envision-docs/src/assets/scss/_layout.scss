@@ -105,7 +105,7 @@
    height: 100%;
 
    &:has(.doc-md-link) {
-      @media (min-width: 40em) and (max-width: 64.999em) {
+      @media (min-width: 640px) and (max-width: 1039px) {
          padding-top: 4em;
       }
    }
