@@ -17,29 +17,25 @@ $BRAND_COLOR_VARIANTS:
    '70', '75', '80', '85', '90', '95', '100';
 
 @mixin main-layout-break {
-   @media (min-width: 48em) {
-      // 768px = 48em
+   @media (min-width: 768px) {
       @content;
    }
 }
 
 @mixin header-layout-break {
-   @media (min-width: 64em) {
-      // 1024px = 64em
+   @media (min-width: 1024px) {
       @content;
    }
 }
 
 @mixin max-header-layout-break {
-   @media (max-width: 63.99999em) {
-      // 1024px = 64em
+   @media (max-width: 1023px) {
       @content;
    }
 }
 
 @mixin max-header-mobile-break {
-   @media (max-width: 30em) {
-      // 1024px = 64em
+   @media (max-width: 480px) {
       @content;
    }
 }
