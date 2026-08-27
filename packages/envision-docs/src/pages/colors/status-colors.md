@@ -1,6 +1,7 @@
 ---
 title: Status colors
 description: The “Status Colors” section provides distinct hues representing success, warnings, errors, and informational states.
+menuSortOrder: 40
 ---
 
 Status colors are UI colors that are used to signal a status,

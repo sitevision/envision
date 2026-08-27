@@ -1,6 +1,7 @@
 ---
 title: Borders
 description: Use the Borders utility to set or remove borders.
+menuSortOrder: 40
 ---
 
 Set or remove borders.

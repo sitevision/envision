@@ -17,6 +17,7 @@ export default defineConfig([
    globalIgnores([
       '**/dist',
       '**/docs',
+      '**/envision-docs/static/pagefind',
       '**/envision.js',
       '**/public',
       '**/.cache',
@@ -45,6 +46,14 @@ export default defineConfig([
       languageOptions: {
          ecmaVersion: 13,
          sourceType: 'commonjs',
+      },
+   },
+   {
+      files: ['packages/envision-docs/scripts/**/*.mjs'],
+      languageOptions: {
+         globals: {
+            ...globals.node,
+         },
       },
    },
 ]);

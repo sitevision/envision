@@ -1,6 +1,7 @@
 ---
 title: Spacing
 description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
+menuSortOrder: 30
 ---
 
 The spacing utility was updated in **2026.01.2** to support logical properties alongside physical ones.

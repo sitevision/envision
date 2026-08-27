@@ -8,14 +8,14 @@
    // Ghost button bg on hover
    --env-element-background-color-dark: var(--env-font-color);
 
-   @media (max-width: 39.999em) {
+   @media (max-width: 639px) {
       position: relative;
       margin: 4em 0 0;
       padding: 2em 0 0;
       border-top: 1px solid var(--doc-border-color);
    }
 
-   @media (min-width: 40em) {
+   @media (min-width: 640px) {
       position: absolute;
       top: 1em;
       right: 1em;

@@ -23,50 +23,74 @@
 }
 
 .header {
+   position: relative;
    --env-font-color: var(--doc-header-font-color);
    color: var(--doc-header-font-color);
    background-color: var(--doc-header-background-color);
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 10000;
 
-   .container {
-      position: relative;
-      display: flex;
-      padding: variables.$site-padding;
-      height: 68px;
-      align-items: center;
-      justify-content: space-between;
+   @include variables.max-header-layout-break {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10000;
    }
 
-   .logo {
+   .header-logo {
       display: block;
 
       @include variables.focus-visible;
       color: var(--doc-header-font-color);
+
+      .doc-svg-logo {
+         @include variables.max-header-mobile-break {
+            width: 111px;
+            height: 42px;
+         }
+      }
    }
 
-   nav {
+   .header-grid-item-search {
+      @include variables.max-header-layout-break {
+         display: none;
+
+         &.show {
+            display: block;
+         }
+      }
+   }
+
+   .doc-search {
+      flex: 1 1 auto;
+      max-width: 42em;
+   }
+
+   .header-nav .env-nav,
+   .header-grid {
+      padding: variables.$site-padding;
+      max-width: variables.$layout-gap + variables.$layout-col-sidenav +
+         variables.$layout-col-main;
+      margin: 0 auto;
+   }
+
+   .header-nav {
       display: none;
 
       @include variables.header-layout-break {
          flex: 1;
          display: block;
-         padding: 0 1em;
+         border-top: 4px solid var(--doc-background-color);
       }
    }
 
-   .mobile-nav-button {
-      visibility: visible;
-
+   .mobile-nav-button,
+   .mobile-search-button {
       @include variables.header-layout-break {
-         visibility: hidden;
+         display: none;
       }
    }
 
    .env-nav--menubar {
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 1em;
    }
@@ -90,29 +114,6 @@
       &[aria-current='page'] {
          border-bottom-color: var(--doc-color-brand) !important;
          color: var(--doc-header-font-color) !important;
-      }
-   }
-
-   .theme-picker {
-      position: absolute;
-      top: 50%;
-      right: calc(#{variables.$site-padding} + 0.5em + 2.75em);
-      margin: 0;
-      padding: 0 0 0 1em;
-      transform: translateY(-50%);
-
-      @include variables.header-layout-break {
-         right: variables.$site-padding;
-      }
-
-      &__label {
-         text-transform: uppercase;
-         font-size: 9px;
-         margin: 0 0 4px;
-
-         @include variables.header-layout-break {
-            display: block;
-         }
       }
    }
 }

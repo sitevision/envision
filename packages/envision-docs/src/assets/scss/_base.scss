@@ -119,6 +119,7 @@ body {
    color: var(--doc-font-color);
    padding: 0;
    margin: 0;
+   min-width: 320px;
    overscroll-behavior: none;
    --env-font-family: Helvetica, Arial, sans-serif;
    --doc-scroll-offset: 116px;

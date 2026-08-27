@@ -1,6 +1,7 @@
 ---
 title: Vertical alignment
 description: The Vertical Alignment utility offers classes to align elements – baseline, top, middle, bottom, text-top, and text-bottom.
+menuSortOrder: 60
 ---
 
 ## Types

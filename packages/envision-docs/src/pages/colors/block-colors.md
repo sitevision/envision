@@ -1,6 +1,7 @@
 ---
 title: Block colors
 description: The “Block colors” section offers preset color combinations for large content areas.
+menuSortOrder: 30
 ---
 
 Preset color combinations, use for larger blocks of content.
