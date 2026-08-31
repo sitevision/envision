@@ -48,7 +48,7 @@
       "@popperjs/core": "^2.11.8",
       "core-js": "^3.49.0",
       "embla-carousel": "^9.0.0-rc02",
-      "embla-carousel-auto-height": "^9.0.0-rc02",
+      "embla-carousel-auto-height": "^9.0.0-rc03",
       "embla-carousel-autoplay": "^9.0.0-rc02",
       "embla-carousel-fade": "^9.0.0-rc02",
       "jquery": "^4.0.0",
