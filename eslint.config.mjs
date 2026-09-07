@@ -65,8 +65,7 @@ export default defineConfig([
                selector:
                   "CallExpression[callee.type='MemberExpression'][callee.property.name='includes']",
                message:
-                  'Avoid .includes() in shipped JS because Babel may inject core-js polyfills. Use indexOf(...) !== -1 when possible.',
-            },
+                  'Avoid .includes() in shipped JS because Babel may inject core-js polyfills. Prefer alternatives that do not require polyfills (e.g. for strings: indexOf(...) !== -1). Note: Array#includes and indexOf are not equivalent for NaN.',
          ],
       },
    },
