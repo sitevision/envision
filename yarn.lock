@@ -6342,37 +6342,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-auto-height@npm:^9.0.0-rc02":
-  version: 9.0.0-rc02
-  resolution: "embla-carousel-auto-height@npm:9.0.0-rc02"
+"embla-carousel-auto-height@npm:9.0.0-rc03":
+  version: 9.0.0-rc03
+  resolution: "embla-carousel-auto-height@npm:9.0.0-rc03"
   peerDependencies:
-    embla-carousel: 9.0.0-rc02
-  checksum: 10c0/5471095246a49445d7d78803ce63f2d7458df4dcf65a6e170dfae0c71ab836fb93132e3325823ff40f2184012f35b37b446968be49f2c6c24e54e20b14f31e4b
+    embla-carousel: 9.0.0-rc03
+  checksum: 10c0/e038df60a6ff336f97ad82a8d2f608ca422f0f492d82dcecdbc866099523230f6d248b3d2267f9a07ad8a79e2ecc41086babcec6be5bc1aed7a919210035cdb3
   languageName: node
   linkType: hard
 
-"embla-carousel-autoplay@npm:^9.0.0-rc02":
-  version: 9.0.0-rc02
-  resolution: "embla-carousel-autoplay@npm:9.0.0-rc02"
+"embla-carousel-autoplay@npm:9.0.0-rc03":
+  version: 9.0.0-rc03
+  resolution: "embla-carousel-autoplay@npm:9.0.0-rc03"
   peerDependencies:
-    embla-carousel: 9.0.0-rc02
-  checksum: 10c0/c74f10d9035dc061c986ff6aacb9edc37a9a50ea50bf18a65b5ab7aa751eb8534ce007bfb9cd4a0290932ef760a23533fc0409a7bbda6622a041b7ae461ea010
+    embla-carousel: 9.0.0-rc03
+  checksum: 10c0/bcf0410b5974bd219bf4ea884678988bad663f4bbf65a89e85aecdfdc736a49487f890d85ea031c26ac8844544cc59f780bea12644b8e553b73b212c2e734060
   languageName: node
   linkType: hard
 
-"embla-carousel-fade@npm:^9.0.0-rc02":
-  version: 9.0.0-rc02
-  resolution: "embla-carousel-fade@npm:9.0.0-rc02"
+"embla-carousel-fade@npm:9.0.0-rc03":
+  version: 9.0.0-rc03
+  resolution: "embla-carousel-fade@npm:9.0.0-rc03"
   peerDependencies:
-    embla-carousel: 9.0.0-rc02
-  checksum: 10c0/e5cde74c157d43a4d55afdca89ee42aad5e09582d8e1452c806c6e782dbd45d24df676d3295d503249cbbd569a1064d55f477a116dcb60209de0ee3efbbb07e9
+    embla-carousel: 9.0.0-rc03
+  checksum: 10c0/10956d13eca6cb7ba89ee4b35612e1cb217e9a3bb02716cdba6a91aa665027cbe3882aed622d13554394f87622adb18459790f810a5eee95598091d6971445c4
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:^9.0.0-rc02":
-  version: 9.0.0-rc02
-  resolution: "embla-carousel@npm:9.0.0-rc02"
-  checksum: 10c0/efec7604f7b208820e566899af3f86af682ee835ba92f9540acb266ce744c58b1d7a357ef736ce2f52249ccca36fa076ff3acb43b03578f295e18a8636291f78
+"embla-carousel@npm:9.0.0-rc03":
+  version: 9.0.0-rc03
+  resolution: "embla-carousel@npm:9.0.0-rc03"
+  checksum: 10c0/575b338c6cc329486dd26f58dadb2e2ba4672311a87df51772423a80822971a0803b462cfba33f9289d05afb11d23e739e4e300bd5d005ee5581edf71ae43887
   languageName: node
   linkType: hard
 
@@ -6520,10 +6520,10 @@ __metadata:
     css-loader: "npm:^7.1.2"
     css-minimizer-webpack-plugin: "npm:^7.0.4"
     css-vars-to-json: "npm:1.0.0"
-    embla-carousel: "npm:^9.0.0-rc02"
-    embla-carousel-auto-height: "npm:^9.0.0-rc02"
-    embla-carousel-autoplay: "npm:^9.0.0-rc02"
-    embla-carousel-fade: "npm:^9.0.0-rc02"
+    embla-carousel: "npm:9.0.0-rc03"
+    embla-carousel-auto-height: "npm:9.0.0-rc03"
+    embla-carousel-autoplay: "npm:9.0.0-rc03"
+    embla-carousel-fade: "npm:9.0.0-rc03"
     eslint: "npm:^10.4.1"
     eslint-webpack-plugin: "npm:^6.0.0"
     file-loader: "npm:^6.2.0"
