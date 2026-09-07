@@ -56,4 +56,18 @@ export default defineConfig([
          },
       },
    },
+   {
+      files: ['packages/envision/src/js/**/*.js'],
+      rules: {
+         'no-restricted-syntax': [
+            'error',
+            {
+               selector:
+                  "CallExpression[callee.type='MemberExpression'][callee.property.name='includes']",
+               message:
+                  'Avoid .includes() in shipped JS because Babel may inject core-js polyfills. Use indexOf(...) !== -1 when possible.',
+            },
+         ],
+      },
+   },
 ]);
