@@ -21,8 +21,7 @@ $trackHeight: 0.675em;
             var(--env-section-background-color-05) 100%,
             var(--env-section-background-color-05)
          )
-         100% / calc(var(--rng-js) * (100% - var(--rng-progress)))
-         // fallback for no JS-initialization
+         100% / calc(var(--rng-js) * (100% - var(--rng-progress))) // fallback for no JS-initialization
       var(--env-section-background-color-05);
    background-repeat: no-repeat;
    border: 1px solid var(--env-form-input-border-color);

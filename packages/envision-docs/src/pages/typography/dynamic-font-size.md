@@ -139,7 +139,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
                      <span class="example-dynamic-font__elfontsize"></span>
                   </p>
                </div>
-            
+
                <div class="env-dynamic-font env-dynamic-font--scale-2">
                   <p class="env-text">
                      Scaling factor 2
@@ -153,6 +153,7 @@ _Note that dot is replaced by underscore as dot is not allowed in CSS class name
             <span class="example-dynamic-font__resizeable__help__arrow">&rarr;</span>
          </p>
       </div>
+
    </div>
 </div>
 
