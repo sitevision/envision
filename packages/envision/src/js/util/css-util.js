@@ -23,9 +23,9 @@ const CssUtil = (() => {
             ).getPropertyValue(durationCustomProperty);
          }
          if (duration && parseFloat(duration) > 0) {
-            if (duration.includes('ms')) {
+            if (duration.indexOf('ms') !== -1) {
                speed = parseInt(duration, 10);
-            } else if (duration.includes('s')) {
+            } else if (duration.indexOf('s') !== -1) {
                speed = parseFloat(duration) * 1000;
             }
          }
