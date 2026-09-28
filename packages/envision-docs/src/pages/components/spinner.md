@@ -66,7 +66,7 @@ Use `env-flex--gap-x-small` to add a small gap between the spinner and the butto
    Spinner
 </button>
 
-<button class="env-button env-button--primary env-button env-flex--gap-x-small">
+<button class="env-button env-button--primary env-flex--gap-x-small">
    Spinner
    <span class="env-spinner-bounce">
       <span></span>
