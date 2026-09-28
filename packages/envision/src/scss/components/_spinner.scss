@@ -13,6 +13,12 @@
       height: 1.25em;
       width: 1.25em;
       min-width: 1.25em;
+
+      > div,
+      > span {
+         width: 0.15em;
+         margin: 0 0.05em;
+      }
    }
 
    &--hide {
@@ -83,13 +89,12 @@
    text-align: center;
 
    .env-button & {
-      min-width: 2.354em;
+      min-width: 2.5em;
 
       > div,
       > span {
          --env-spinner-color: currentColor;
          padding: 0.4em;
-         //transform: scale(0.5);
       }
    }
 
