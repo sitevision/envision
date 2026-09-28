@@ -1,6 +1,6 @@
 ---
 title: Spinner
-description: The Spinner component displays loading animations with standard or bounce styles and optional delays.
+description: The Spinner component displays loading animations with different styles and optional delays.
 ---
 
 ## Standard
@@ -25,15 +25,83 @@ description: The Spinner component displays loading animations with standard or 
 </div>
 ```
 
+## Ellipsis <span class="doc-badge doc-badge--info">2026.10.1</span>
+
+A simple text-based spinner that uses three dots to indicate loading.
+
+```html
+<p>
+   Laddar<span class="env-spinner-ellipsis" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+   </span>
+</p>
+```
+
+## Spinners in buttons <span class="doc-badge doc-badge--info">2026.10.1</span>
+
+Buttons may now include a spinner to indicate loading state.
+
+The spinner will inherit the button's text color and size.
+Use `env-flex--gap-x-small` to add a small gap between the spinner and the button text.
+
+```html
+<button class="env-button env-button--primary">
+   Spinner<span class="env-spinner-ellipsis" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+   </span>
+</button>
+
+<button class="env-button env-button--primary env-flex--gap-x-small">
+   <span class="env-spinner">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+   </span>
+   Spinner
+</button>
+
+<button class="env-button env-button--primary env-button env-flex--gap-x-small">
+   Spinner
+   <span class="env-spinner-bounce">
+      <span></span>
+      <span></span>
+      <span></span>
+   </span>
+</button>
+
+<button
+   type="button"
+   class="env-button  env-button--primary env-button--ghost env-button--icon env-button--icon-before"
+>
+   Icon before
+   <span class="env-spinner env-m-inline-start--x-small">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+   </span>
+   <svg class="env-icon">
+      <use href="/sitevision/envision-icons.svg#icon-phone"></use>
+   </svg>
+</button>
+```
+
 ## Hide spinner
 
-Use modifier `env-spinner--hide` or `env-spinner-bounce--hide` to hide the spinner. i.e `env-spinner env-spinner--hide`
+Use modifier `env-spinner--hide`, `env-spinner-bounce--hide` or `env-spinner-ellipsis--hide` to hide the spinner.
 
 ## Delayed spinner
 
 Delay showing the spinner to avoid spinner flashing when the content loads fast.
 
-Use modifier `env-spinner--fade-in` or `env-spinner-bounce--fade-in` for a delayed spinner.
+Use modifier `env-spinner--fade-in`, `env-spinner-bounce--fade-in` or `env-spinner-ellipsis--fade-in` for a delayed spinner.
 Data attribute `data-delay="short"` may be used to control delay timing. Allowed values are:
 
 - `short` (0.25s delay)
