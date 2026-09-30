@@ -27,7 +27,7 @@
 - [Components – Popover](https://envisionui.io/components/popover/): Popovers displays contextual overlays with customizable content, positioning, and trigger options.
 - [Components – Profile image](https://envisionui.io/components/profile-image/): The Profile Image component displays images with fixed or responsive sizes.
 - [Components – Progress indicator](https://envisionui.io/components/progress/): The Progress Indicator component displays progress with customizable colors, labels, and animations.
-- [Components – Spinner](https://envisionui.io/components/spinner/): The Spinner component displays loading animations with standard or bounce styles and optional delays.
+- [Components – Spinner](https://envisionui.io/components/spinner/): The Spinner component displays loading animations with different styles and optional delays.
 - [Components – Tab](https://envisionui.io/components/tab/): The Tab component organizes content into sections, displaying one panel at a time.
 - [Components – Table](https://envisionui.io/components/table/): Use a Table to display data in rows and columns, with customizable styles and responsive layouts.
 - [Components – Toast](https://envisionui.io/components/toast/): Use the Toast component to display brief, customizable notifications to inform users of system events.
