@@ -52,7 +52,7 @@ UI Text is a set of text styles that should be used for text in templates, compo
 
 <div id="navigation-text-styles"></div>
 
-## Navigation text styles <span class="doc-badge doc-badge--info">2026.10.1</span>
+## Navigation text styles <span class="doc-badge doc-badge--info">2026.11.1</span>
 
 The following text styles are used for navigation components such as Breadcrumb, Navigation and Pagination:
 
