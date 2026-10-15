@@ -15,7 +15,7 @@ $NOT_TEXT_SELECTOR: ':not([class^="env-text"]):not([class*=" env-text"])';
       line-height: 1.4;
       color: var(--env-font-color);
 
-      a {
+      a:where(:not([class^='env-']):not([class*=' env-'])) {
          color: var(--env-link-font-color);
          text-decoration: var(--env-link-text-decoration);
 

@@ -47,7 +47,7 @@
       $selector: null
    );
 }
-@media (prefers-color-scheme: dark) {
+.doc-dark-mode {
    .example-env-theme {
       @include example-core.example-theme-core-dark;
 

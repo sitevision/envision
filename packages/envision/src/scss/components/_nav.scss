@@ -40,7 +40,7 @@
 
    @each $name in $UI_TEXT_NAV_NAMES {
       :where(&.env-ui-text-#{$name}) {
-         .env-nav__link {
+         > :where(.env-nav__item) > .env-nav__link {
             color: var(--env-ui-text-#{$name}-link-font-color);
             text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
 
@@ -63,7 +63,7 @@
    .env-nav--menubar.env-nav--fill:where(.env-ui-text-#{$name}),
    .env-nav--menubar.env-nav--border:where(.env-ui-text-#{$name}),
    .env-nav--sidenav:where(.env-ui-text-#{$name}) {
-      .env-nav__link {
+      > :where(.env-nav__item) > .env-nav__link {
          color: var(--env-ui-text-#{$name}-link-font-color);
          text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
 
@@ -96,7 +96,7 @@
 
       @each $name in $UI_TEXT_NAV_NAMES {
          &:where(.env-ui-text-#{$name}) {
-            .env-nav__link {
+            > :where(.env-nav__item) > .env-nav__link {
                &[aria-current='page'],
                &--active {
                   background-color: var(
@@ -133,7 +133,7 @@
 
       @each $name in $UI_TEXT_NAV_NAMES {
          &:where(.env-ui-text-#{$name}) {
-            .env-nav__link {
+            > :where(.env-nav__item) > .env-nav__link {
                &[aria-current='page'],
                &--active {
                   border-bottom-color: var(
@@ -182,7 +182,7 @@
 
    @each $name in $UI_TEXT_NAV_NAMES {
       &:where(.env-ui-text-#{$name}) {
-         .env-nav__link {
+         > :where(.env-nav__item) > .env-nav__link {
             &[aria-current='page'],
             &--active {
                border-left: 2px
