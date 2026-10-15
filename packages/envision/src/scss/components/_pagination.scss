@@ -37,12 +37,6 @@
             var(--env-border-radius-medium) 0;
       }
 
-      &:focus {
-         z-index: 3;
-      }
-
-      @include focus.focus-visible;
-
       // env-is-active is deprecated
       &[aria-current='true'],
       &[aria-current='page'],
@@ -50,6 +44,12 @@
       &:hover {
          z-index: 2;
       }
+
+      &:focus {
+         z-index: 3;
+      }
+
+      @include focus.focus-visible;
    }
 
    :where(&#{$NOT_UI_TEXT_NAV_SELECTOR}) {

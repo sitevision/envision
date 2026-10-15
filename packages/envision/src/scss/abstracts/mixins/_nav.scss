@@ -1,13 +1,14 @@
 @use 'focus';
 
 @mixin filled-nav-states() {
+   &:hover {
+      background-color: var(--env-element-primary-background-color-dark);
+      color: var(--env-element-primary-font-color);
+   }
+
    &[aria-current='page'],
    &--active {
       background-color: var(--env-element-primary-background-color);
-      color: var(--env-element-primary-font-color);
-   }
-   &:hover {
-      background-color: var(--env-element-primary-background-color-dark);
       color: var(--env-element-primary-font-color);
    }
 }
