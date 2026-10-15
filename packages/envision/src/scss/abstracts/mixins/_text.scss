@@ -66,22 +66,28 @@
    @include focus.focus-visible;
 }
 
-@mixin text-font-to-css-custom-properties($text-font, $selector: ':root') {
+@mixin _text-font-to-css-custom-properties($text-font) {
    $prefix: map.get($text-font, 'prefix');
    $name: map.get($text-font, 'name');
    $defaults: map.get($text-font, 'defaults');
    $variants: map.get($text-font, 'variants');
 
-   #{$selector} {
-      @each $variant, $overrides in $variants {
-         $values: map.merge($defaults, $overrides);
+   @each $variant, $overrides in $variants {
+      $values: map.merge($defaults, $overrides);
 
-         @each $prop, $_ in $defaults {
-            --#{$prefix}-#{$name}-#{$variant}-#{$prop}: #{map.get(
-                  $values,
-                  $prop
-               )};
-         }
+      @each $prop, $_ in $defaults {
+         --#{$prefix}-#{$name}-#{$variant}-#{$prop}: #{map.get($values, $prop)};
       }
+   }
+}
+
+@mixin text-font-to-css-custom-properties($text-font, $selector: ':root') {
+   // Call with $selector: null to output the custom properties without a selector
+   @if $selector {
+      #{$selector} {
+         @include _text-font-to-css-custom-properties($text-font);
+      }
+   } @else {
+      @include _text-font-to-css-custom-properties($text-font);
    }
 }
