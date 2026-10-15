@@ -1,7 +1,9 @@
 @use '../abstracts/scss-variables' as *;
+@use '../abstracts/mixins/focus';
+@use 'sass:list';
 
 .env-ui-text {
-   @each $name in $UI_TEXT_NAMES {
+   @each $name in $UI_TEXT_ALL_NAMES {
       &-#{$name} {
          font-family: var(--env-ui-text-#{$name}-font-family);
          font-size: var(--env-ui-text-#{$name}-font-size);
@@ -9,25 +11,62 @@
          font-style: normal;
          text-transform: var(--env-ui-text-#{$name}-text-transform);
          letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
-         line-height: $line-height-medium;
+         @if list.index($UI_TEXT_NAV_NAMES, $name) {
+            line-height: var(--env-ui-text-#{$name}-line-height);
+         } @else {
+            line-height: $line-height-medium;
+         }
          color: var(--env-ui-text-#{$name}-font-color);
          margin: 0 !important;
       }
    }
 }
 
-@each $name in $UI_TEXT_NAMES {
-   a.env-ui-text-#{$name},
-   .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
+@each $name in $UI_TEXT_BASE_NAMES {
+   a.env-ui-text-#{$name} {
       @extend %ui-text-link;
+   }
+   .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
+      @extend %ui-text-inner-link;
+   }
+}
+@each $name in $UI_TEXT_NAV_NAMES {
+   .env-ui-text-#{$name} {
+      :where([aria-current='page'], [aria-current='true']) {
+         color: var(--env-ui-text-#{$name}-current-font-color);
+      }
+   }
+   a.env-ui-text-#{$name},
+   .env-ui-text-#{$name} a:where(:not([class^='env-']):not([class*=' env-'])) {
+      color: var(--env-ui-text-#{$name}-link-font-color);
+      text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
+
+      @include focus.focus-visible;
+
+      &[aria-current='page'],
+      &[aria-current='true'] {
+         color: var(--env-ui-text-#{$name}-current-link-font-color);
+      }
+      &:hover {
+         color: var(--env-ui-text-#{$name}-link-hover-font-color);
+         text-decoration: var(
+            --env-ui-text-#{$name}-link-hover-text-decoration
+         );
+      }
    }
 }
 
 %ui-text-link {
-   color: inherit;
    text-decoration: none;
+
+   @include focus.focus-visible;
 
    &:hover {
       text-decoration: underline;
    }
+}
+
+%ui-text-inner-link {
+   @extend %ui-text-link;
+   color: inherit;
 }

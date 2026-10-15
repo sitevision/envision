@@ -9,9 +9,29 @@
 
    --env-font-color: #{var(--env-block-#{$blockName}font-color)};
    --env-font-color-muted: #{var(--env-block-#{$blockName}font-color-muted)};
-   @each $name in $UI_TEXT_NAMES {
+   @each $name in $UI_TEXT_ALL_NAMES {
       --env-ui-text-#{$name}-font-color: #{var(
             --env-block-#{$blockName}font-color
+         )};
+   }
+   @each $name in $UI_TEXT_NAV_NAMES {
+      --env-ui-text-#{$name}-link-font-color: #{var(
+            --env-block-#{$blockName}link-font-color
+         )};
+      --env-ui-text-#{$name}-link-hover-font-color: #{var(
+            --env-block-#{$blockName}link-hover-font-color
+         )};
+      --env-ui-text-#{$name}-link-text-decoration: #{var(
+            --env-block-#{$blockName}link-text-decoration
+         )};
+      --env-ui-text-#{$name}-link-hover-text-decoration: #{var(
+            --env-block-#{$blockName}link-hover-text-decoration
+         )};
+      --env-ui-text-#{$name}-current-font-color: #{var(
+            --env-block-#{$blockName}font-color
+         )};
+      --env-ui-text-#{$name}-current-link-font-color: #{var(
+            --env-block-#{$blockName}link-font-color
          )};
    }
 

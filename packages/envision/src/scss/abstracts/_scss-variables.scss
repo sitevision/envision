@@ -93,22 +93,50 @@ $BRAND_COLOR_VARIANTS:
 
 // ----- UI TEXT -----
 
-$UI_TEXT_NAMES:
-   'overline', 'heading', 'sectionheading', 'subheading', 'body', 'caption';
+$UI_TEXT_HEADING_NAMES: 'heading', 'sectionheading', 'subheading';
+$UI_TEXT_PARAGRAPH_NAMES: 'overline', 'body', 'caption';
+$UI_TEXT_NAV_NAMES: 'nav-01', 'nav-02', 'nav-03', 'nav-04';
+
+$NOT_UI_TEXT_NAV_SELECTOR: ':not([class^="env-ui-text-nav-"]):not([class*=" env-ui-text-nav-"])';
+
+$UI_TEXT_BASE_NAMES: list.join(
+   $UI_TEXT_HEADING_NAMES,
+   $UI_TEXT_PARAGRAPH_NAMES
+);
+$UI_TEXT_ALL_NAMES: list.join($UI_TEXT_BASE_NAMES, $UI_TEXT_NAV_NAMES);
+
+$ui-text-nav-base: (
+   'font-family': var(--env-font-family),
+   'font-color': var(--env-font-color),
+   'current-font-color': var(--env-font-color),
+   'font-size': 1em,
+   'font-weight': 400,
+   'text-transform': none,
+   'letter-spacing': normal,
+   'line-height': 1.2,
+);
+
+$ui-text-nav-links: (
+   'link-font-color': var(--env-link-font-color),
+   'current-link-font-color': var(--env-link-font-color),
+   'link-text-decoration': var(--env-link-text-decoration),
+   'link-hover-font-color': var(--env-link-hover-font-color),
+   'link-hover-text-decoration': var(--env-link-hover-text-decoration),
+);
 
 // ----- CONTENT TEXT -----
 
 $CONTENT_TEXT_HEADING_NAMES:
    'heading-01', 'heading-02', 'heading-03', 'heading-04', 'heading-05',
    'heading-06', 'display-01', 'display-02', 'display-03';
-$CONTENT_TEXT_BODY_NAMES:
+$CONTENT_TEXT_PARAGRAPH_NAMES:
    'summary-01', 'body-01', 'body-02', 'body-03', 'body-04', 'caption-01',
    'quotation-01', 'quotation-02', 'table-caption-01', 'table-heading-01',
    'table-data-01';
 
 $CONTENT_TEXT_NAMES: list.join(
    $CONTENT_TEXT_HEADING_NAMES,
-   $CONTENT_TEXT_BODY_NAMES
+   $CONTENT_TEXT_PARAGRAPH_NAMES
 );
 
 $content-text-base: (
@@ -219,7 +247,6 @@ $modal-large: 900px !default;
 // ----- BREADCRUMB -----
 
 $breadcrumb-divider-color: $color-light !default;
-$breadcrumb-divider: '/' !default;
 
 // ----- BADGE -----
 

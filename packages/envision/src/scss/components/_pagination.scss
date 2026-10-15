@@ -2,6 +2,7 @@
 @use '../abstracts/mixins/list';
 @use '../abstracts/mixins/pagination';
 @use '../abstracts/mixins/states';
+@use '../abstracts/scss-variables' as *;
 
 .env-pagination {
    @include list.reset-list();
@@ -21,13 +22,10 @@
          color: var(--env-border-color);
          radius: 0;
       }
-      color: var(--env-font-color);
       display: inline-block;
-      font-family: var(--env-pagination-font-family);
       margin-top: calc(var(--env-pagination-border-width) * -1);
       margin-left: calc(var(--env-pagination-border-width) * -1);
       position: relative;
-      text-decoration: none;
 
       .env-pagination__item:first-child & {
          border-radius: var(--env-border-radius-medium) 0 0
@@ -48,17 +46,65 @@
       // env-is-active is deprecated
       &[aria-current='true'],
       &[aria-current='page'],
-      &.env-is-active {
-         background-color: var(--env-element-primary-background-color);
-         color: var(--env-element-primary-font-color);
-         border-color: var(--env-element-primary-background-color);
-      }
-
+      &.env-is-active,
       &:hover {
-         background-color: var(--env-element-primary-background-color);
-         border-color: var(--env-element-primary-background-color);
-         color: var(--env-element-primary-font-color);
          z-index: 2;
+      }
+   }
+
+   :where(&#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+      .env-pagination__link {
+         color: var(--env-font-color);
+         font-family: var(--env-pagination-font-family);
+         text-decoration: none;
+         line-height: $line-height-medium;
+
+         &[aria-current='true'],
+         &[aria-current='page'],
+         &.env-is-active,
+         &:hover {
+            background-color: var(--env-element-primary-background-color);
+            border-color: var(--env-element-primary-background-color);
+            color: var(--env-element-primary-font-color);
+         }
+      }
+   }
+
+   @each $name in $UI_TEXT_NAV_NAMES {
+      &:where(.env-ui-text-#{$name}) {
+         .env-pagination__link {
+            font-family: var(--env-ui-text-#{$name}-font-family);
+            font-weight: var(--env-ui-text-#{$name}-font-weight);
+            color: var(--env-ui-text-#{$name}-link-font-color);
+            letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
+            text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
+            text-transform: var(--env-ui-text-#{$name}-text-transform);
+            line-height: var(--env-ui-text-#{$name}-line-height);
+
+            // env-is-active is deprecated
+            &[aria-current='true'],
+            &[aria-current='page'],
+            &.env-is-active {
+               background-color: var(
+                  --env-ui-text-#{$name}-current-link-font-color
+               );
+               color: var(--env-section-background-color);
+               border-color: var(
+                  --env-ui-text-#{$name}-current-link-font-color
+               );
+            }
+
+            &:hover {
+               background-color: var(
+                  --env-ui-text-#{$name}-link-hover-font-color
+               );
+               color: var(--env-section-background-color);
+               border-color: var(--env-ui-text-#{$name}-link-hover-font-color);
+               text-decoration: var(
+                  --env-ui-text-#{$name}-link-hover-text-decoration
+               );
+            }
+         }
       }
    }
 
