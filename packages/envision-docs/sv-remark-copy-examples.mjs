@@ -31,6 +31,10 @@ export function svRemarkCopyExamples() {
          let exampleElClassName = 'doc-code-example';
          let codeWrapperElClassName = 'doc-code-block';
 
+         if (meta.includes('example-theme')) {
+            exampleElClassName += ' example-env-theme';
+         }
+
          if (meta.includes('resizeable')) {
             exampleElClassName += ' doc-code-example--resizeable';
          }

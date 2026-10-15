@@ -1,0 +1,69 @@
+// Shared theme variables for component examples. Add text styles and
+// component overrides in the theme that imports this file.
+
+@mixin example-theme-core {
+   color-scheme: var(--env-color-scheme);
+   background-color: var(--env-background-color) !important;
+   color: var(--env-font-color);
+   font-family: var(--env-font-family);
+
+   // Backgrounds
+   --env-background-color: #fafbfb;
+   --env-color-scheme: normal;
+   --env-section-background-color: #ffffff;
+   --env-section-background-color-05: hsl(0, 0%, 95%);
+
+   // Typography
+   --env-font-family: Inter, helvetica;
+   --env-font-color: #202330;
+   --env-font-color-muted: hsla(229, 20%, 16%, 0.65);
+
+   // Links
+   --env-link-font-color: #3a71aa;
+   --env-link-text-decoration: none;
+   --env-link-hover-font-color: #3a71aa;
+   --env-link-hover-text-decoration: underline;
+   --env-link-secondary-font-color: var(--env-font-color);
+   --env-link-secondary-hover-font-color: var(--env-link-font-color);
+   --env-link-secondary-hover-text-decoration: var(
+      --env-link-hover-text-decoration
+   );
+   --env-link-secondary-text-decoration: var(--env-link-text-decoration);
+
+   iframe {
+      color-scheme: normal;
+   }
+}
+
+//@media (prefers-color-scheme: dark) {
+@mixin example-theme-core-dark {
+   // Backgrounds
+   --env-background-color: #1d201d;
+   --env-color-scheme: dark;
+   --env-section-background-color: #222522;
+   --env-section-background-color-05: hsl(120, 4%, 19%);
+
+   // Typography
+   --env-font-family: Inter, helvetica;
+   --env-font-color: #dddddd;
+   --env-font-color-muted: hsla(0, 0%, 87%, 0.65);
+
+   // Links
+   --env-link-font-color: #93cdff;
+   --env-link-hover-font-color: #73a1c9;
+   --env-link-text-decoration: underline;
+
+   // Shadows
+   --env-box-shadow-color: rgba(3, 3, 3, 0);
+
+   // Borders
+   --env-border-color: #222e24;
+   --env-border-color-05: hsl(130, 15%, 11%);
+
+   // Focus
+   --env-focus-outline-color: #eeeeee;
+
+   iframe {
+      color-scheme: normal;
+   }
+}

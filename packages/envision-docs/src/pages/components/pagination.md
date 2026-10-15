@@ -3,6 +3,11 @@ title: Pagination
 description: The Pagination component provides accessible navigation for multi-page content, with customizable alignment and sizing options.
 ---
 
+Pagination component uses basic text styles by default.
+
+The component may also use [navigation text styles](/typography/ui-text/#navigation-text-styles).
+Apply the appropriate class to the root element of the navigation component.
+
 ## Overview
 
 ```html

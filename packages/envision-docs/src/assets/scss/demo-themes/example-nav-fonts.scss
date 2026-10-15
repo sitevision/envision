@@ -1,0 +1,96 @@
+@use 'sass:map';
+
+@use 'example-core';
+@use '../../../../../envision/src/scss/abstracts/scss-variables' as *;
+@use '../../../../../envision/src/scss/abstracts/mixins/text';
+
+.example-env-theme {
+   @include example-core.example-theme-core;
+
+   @include text.text-font-to-css-custom-properties(
+      (
+         'prefix': 'env-ui-text',
+         'name': 'nav',
+         'defaults': map.merge($ui-text-nav-base, $ui-text-nav-links),
+         'variants': (
+            '02': (
+               'font-family': 'Oswald',
+               'font-color': #000,
+               'font-weight': 500,
+               'link-font-color': #737373,
+               'current-font-color': #000,
+               'current-link-font-color': #006600,
+               'link-text-decoration': 'none',
+               'link-hover-font-color': #2a4492,
+            ),
+            '01': (
+               'font-family': 'Newsreader',
+               'font-color': #000,
+               'font-weight': 500,
+               'link-font-color': #737373,
+               'current-link-font-color': #006600,
+               'link-text-decoration': 'underline',
+               'link-hover-font-color': #2a4492,
+            ),
+            '03': (
+               'font-family': 'Inter',
+               'font-color': #000,
+               'font-weight': 500,
+               'link-font-color': #333,
+               'current-link-font-color': #737373,
+               'link-text-decoration': 'none',
+               'link-hover-font-color': #2a4492,
+            ),
+            '04': (),
+         ),
+      ),
+      $selector: null
+   );
+}
+@media (prefers-color-scheme: dark) {
+   .example-env-theme {
+      @include example-core.example-theme-core-dark;
+
+      @include text.text-font-to-css-custom-properties(
+         (
+            'prefix': 'env-ui-text',
+            'name': 'nav',
+            'defaults': map.merge($ui-text-nav-base, $ui-text-nav-links),
+            'variants': (
+               '02': (
+                  'font-family': 'Oswald',
+                  'font-color': #e5e9e5,
+                  'font-weight': 500,
+                  'link-font-color': #b5bdb5,
+                  'current-font-color': #e5e9e5,
+                  'current-link-font-color': #8acb8a,
+                  'link-text-decoration': 'none',
+                  'link-hover-font-color': #9bb4ff,
+               ),
+               '01': (
+                  'font-family': 'Newsreader',
+                  'font-color': #e5e9e5,
+                  'font-weight': 500,
+                  'link-font-color': #b5bdb5,
+                  'current-font-color': #e5e9e5,
+                  'current-link-font-color': #8acb8a,
+                  'link-text-decoration': 'underline',
+                  'link-hover-font-color': #9bb4ff,
+               ),
+               '03': (
+                  'font-family': 'Inter',
+                  'font-color': #e5e9e5,
+                  'font-weight': 500,
+                  'link-font-color': #d3d9d3,
+                  'current-font-color': #e5e9e5,
+                  'current-link-font-color': #b5bdb5,
+                  'link-text-decoration': 'none',
+                  'link-hover-font-color': #9bb4ff,
+               ),
+               '04': (),
+            ),
+         ),
+         $selector: null
+      );
+   }
+}
