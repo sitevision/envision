@@ -123,9 +123,13 @@ body {
    --env-font-family: Helvetica, Arial, sans-serif;
 }
 
-.env-dashboard-theme .main-body *,
-.env-dashboard-theme .main-body *::before,
-.env-dashboard-theme .main-body *::after {
+:where(div.env-dashboard-theme) {
+   display: contents;
+}
+
+.env-dashboard-theme *,
+.env-dashboard-theme *::before,
+.env-dashboard-theme *::after {
    // Same box sizing as dashboard in Sitevision
    box-sizing: border-box;
 }

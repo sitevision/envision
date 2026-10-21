@@ -80,4 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
          });
       }
    });
+
+   document.body
+      .querySelectorAll('main.dashboard .doc-code-example')
+      .forEach((element) => {
+         element.classList.add('env-dashboard-theme');
+      });
 });
