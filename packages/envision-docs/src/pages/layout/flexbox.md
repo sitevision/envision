@@ -1,6 +1,7 @@
 ---
 title: Flexbox
 description: Use the Flexbox utility to provide classes for flexible layouts, including direction, alignment, and wrapping.
+menuSortOrder: 10
 ---
 
 ## Flex Container
@@ -152,7 +153,7 @@ Valid values
 </div>
 ```
 
-### Flex wrap <span id="flex-wrap" class="offset-anchor"></span>
+### Flex wrap
 
 Modifiers applicable to flex containers (`env-flex`).
 
@@ -184,9 +185,7 @@ Valid modifiers:
 </div>
 ```
 
-<span id="flex-gap" class="offset-anchor"></span>
-
-### Flex gap <span class="doc-badge doc-badge--info">2025.07.1</span>
+### Flex gap <span id="flex-gap"></span><span class="doc-badge doc-badge--info">2025.07.1</span>
 
 Modifiers applicable to flex containers (`env-flex`).
 

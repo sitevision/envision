@@ -5,7 +5,11 @@
    padding: 7.5em 0 10em;
 
    @include variables.main-layout-break {
-      padding: 16em 0;
+      padding: 8em 0 12em;
+   }
+
+   @include variables.header-layout-break {
+      padding: 4em 0 12em;
    }
 
    &__body {

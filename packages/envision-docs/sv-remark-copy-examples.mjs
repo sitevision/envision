@@ -49,7 +49,7 @@ export function svRemarkCopyExamples() {
             // Add no-index comments around example and wrap it in a DIV.
             addAt(
                i,
-               `<!--sv-no-index--><div class="${codeWrapperElClassName}">`
+               `<!--sv-no-index--><div class="${codeWrapperElClassName}" data-pagefind-ignore>`
             );
             addAt(i + 2, `</div><!--/sv-no-index-->`);
             // Bump i to skip over the nodes we just added
@@ -61,7 +61,7 @@ export function svRemarkCopyExamples() {
             // Add no-index comments around example and wrap it in a DIV.
             addAt(
                i + 1,
-               `<!--sv-no-index--><div class="${codeWrapperElClassName}">`
+               `<!--sv-no-index--><div class="${codeWrapperElClassName}" data-pagefind-ignore>`
             );
             addAt(i + 3, `</div><!--/sv-no-index-->`);
             // Bump i to skip over the nodes we just added

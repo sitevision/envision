@@ -1,6 +1,7 @@
 ---
 title: Brand colors
 description: The “Brand Colors” section defines primary brand hues with contrast-friendly shades for accessibility.
+menuSortOrder: 50
 ---
 
 An Envision theme uses one base brand color and one matching contrast color.
@@ -10,7 +11,7 @@ An Envision theme uses one base brand color and one matching contrast color.
 - From the base brand color, Envision generates a palette of lighter and darker variants.
 - Each palette color has a matching contrast color verified against **WCAG 2 AA**.
 
-[The default theme](/colors/brand-colors/#brand-defaults) uses a neutral brand color.
+[The default theme](/colors/brand-colors/#default-brand-color-palette) uses a neutral brand color.
 
 ## Palette rules
 
@@ -39,9 +40,7 @@ Typical branded usage includes:
 - progress indicators
 - highlighted UI sections
 
-<h2 class="doc-heading-2">
-   Example branding of components <span id="examples" class="offset-anchor"></span>
-</h2>
+## Example branding of components
 
 The following examples are visual demonstrations and do not define the color system.
 
@@ -49,7 +48,7 @@ The following examples are visual demonstrations and do not define the color sys
 
 <button type="button" class="env-button env-button--brand">Brand button</button>
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <span class="env-badge env-badge--brand">Badge</span>
 </div>
 
@@ -85,7 +84,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="env-theme-example-brand">
-<div class="env-popover example-static-popover env-m-vertical--large" data-popper-placement="top">
+<div class="env-popover example-static-popover env-m-block--large" data-popper-placement="top">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__content">
       <h2 class="env-ui-text-sectionheading env-popover__header__title">Section heading</h2>
@@ -101,7 +100,7 @@ The following examples are visual demonstrations and do not define the color sys
 </div>
 
 <div class="example-progress">
-   <p class="env-ui-text-sectionheading env-m-bottom--large">
+   <p class="env-ui-text-sectionheading env-m-block-end--large">
       Section heading
    </p>
    <div class="env-progress-poll" title="Number of votes: 5">
@@ -191,11 +190,11 @@ The following examples are visual demonstrations and do not define the color sys
 
 </div>
 
-## Default brand color palette <span id="brand-defaults" class="brand-defaults"></span>
+## Default brand color palette
 
 The default theme uses this neutral brand palette.
 
-<ol class="example-brand-color-list env-m-vertical--large env-theme-default-brand">
+<ol class="example-brand-color-list env-m-block--large env-theme-default-brand">
    <li class="example-section-brand"><div>Brand color</div></li>
    <li class="example-section-brand-05"><div>Brand 05</div></li>
    <li class="example-section-brand-10"><div>Brand 10</div></li>

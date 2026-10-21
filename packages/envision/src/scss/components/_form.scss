@@ -1,4 +1,5 @@
 @use '../abstracts/mixins/form-input-option';
+@use '../abstracts/mixins/form-input-range';
 @use '../abstracts/mixins/form-legacy-element';
 @use '../abstracts/mixins/form-legacy-fake-option';
 
@@ -67,6 +68,7 @@
 
    &-field-help {
       display: block;
+      color: var(--env-font-color);
       font-size: var(--env-font-size-small);
       margin: var(--env-spacing-x-small) 0 0;
    }
@@ -106,6 +108,10 @@
 
    // Deprecated fake markup since 2024.07.1
    @include form-legacy-fake-option.deprecated-fake-switch-fix;
+}
+
+.env-range[type='range'] {
+   @include form-input-range.input-range;
 }
 
 .env-form-element {

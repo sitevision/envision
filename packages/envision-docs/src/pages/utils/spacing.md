@@ -1,10 +1,11 @@
 ---
 title: Spacing
 description: The Spacing utility provides classes for consistent margin and padding adjustments across elements.
+menuSortOrder: 30
 ---
 
 The spacing utility was updated in **2026.01.2** to support logical properties alongside physical ones.
-See the [logical properties example](/utils/spacing/#logical-properties).
+See the [logical properties example](/utils/spacing/#logical-properties-example).
 
 The custom specifiers `horizontal`, `vertical`, and `around` are deprecated.
 See [Deprecated](/utils/spacing/#deprecated) for details.
@@ -121,8 +122,6 @@ Example:
       </div>
    </div>
 </div>
-
-<span id="logical-properties" class="offset-anchor"></span>
 
 ## Logical properties example
 

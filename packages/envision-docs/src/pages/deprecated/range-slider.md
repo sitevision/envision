@@ -1,14 +1,18 @@
 ---
 title: Range slider
 description: The Range Slider component lets users select a value or range with customizable intervals and limits.
+deprecated: true
+indexing: false
 ---
+
+Range slider is deprecated and will eventually be removed.
 
 Capture a range
 
 ```html
 <div
    id="my-slider"
-   class="env-range-slider example-range-slider env-m-bottom--xxx-large"
+   class="env-range-slider example-range-slider env-m-block-end--xxx-large"
 >
    <div class="env-range-slider__range"></div>
    <div class="env-range-slider__handle" tabindex="0"></div>
@@ -94,8 +98,6 @@ envision.rangeSlider('#my-slider', {
    visibleValues: false,
 });
 ```
-
-<span id="events" class="offset-anchor"></span>
 
 ## Events
 

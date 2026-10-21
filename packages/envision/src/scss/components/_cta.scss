@@ -40,7 +40,7 @@
    }
 
    // ----- ICONS -----
-   &:has(.env-icon) {
+   &:has(.env-icon, .env-spinner, .env-spinner-bounce, .env-spinner-ellipsis) {
       gap: 0.5em;
    }
 }

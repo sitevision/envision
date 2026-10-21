@@ -1,6 +1,7 @@
 ---
 title: Block colors
 description: The “Block colors” section offers preset color combinations for large content areas.
+menuSortOrder: 30
 ---
 
 Preset color combinations, use for larger blocks of content.
@@ -12,9 +13,9 @@ Preset color combinations, use for larger blocks of content.
          <div class="example-variant">
             <h2 class="env-text-h4">Default</h2>
             <p>
-               Bacon <a href="#block" class="env-link">ipsum</a> dolor
+               Bacon <a href="#blocks" class="env-link">ipsum</a> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
-               <a href="#block" class="env-link-secondary">turducken</a>.
+               <a href="#blocks" class="env-link-secondary">turducken</a>.
             </p>
          </div>
       </div>
@@ -24,9 +25,9 @@ Preset color combinations, use for larger blocks of content.
          <div class="example-variant">
             <h2 class="env-text-h4">Primary</h2>
             <p>
-               Bacon <a href="#block" class="env-link">ipsum</a> dolor
+               Bacon <a href="#blocks" class="env-link">ipsum</a> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
-               <a href="#block" class="env-link-secondary">turducken</a>.
+               <a href="#blocks" class="env-link-secondary">turducken</a>.
             </p>
          </div>
       </div>
@@ -36,9 +37,9 @@ Preset color combinations, use for larger blocks of content.
          <div class="example-variant">
             <h2 class="env-text-h4">Secondary</h2>
             <p>
-               Bacon <span href="#block" class="env-link">ipsum</span> dolor
+               Bacon <span href="#blocks" class="env-link">ipsum</span> dolor
                <a href="#blocks">amet beef</a> cupim brisket pork
-               <a href="#block" class="env-link-secondary">turducken</a>.
+               <a href="#blocks" class="env-link-secondary">turducken</a>.
             </p>
          </div>
       </div>

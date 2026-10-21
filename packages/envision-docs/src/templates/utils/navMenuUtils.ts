@@ -23,11 +23,25 @@ interface Frontmatter {
 }
 
 const sortPages = (a: Page, b: Page): number => {
-   const titleA = a.frontmatter?.title?.toUpperCase() || '';
-   const titleB = b.frontmatter?.title?.toUpperCase() || '';
-   if (titleA < titleB) return -1;
-   if (titleA > titleB) return 1;
-   return 0;
+   const sortOrderA = a.frontmatter?.menuSortOrder;
+   const sortOrderB = b.frontmatter?.menuSortOrder;
+
+   if (sortOrderA !== undefined || sortOrderB !== undefined) {
+      const sortOrderDiff = (sortOrderA ?? 9999) - (sortOrderB ?? 9999);
+
+      if (sortOrderDiff !== 0) {
+         return sortOrderDiff;
+      }
+   }
+
+   return (a.frontmatter?.title || '').localeCompare(
+      b.frontmatter?.title || '',
+      'en',
+      {
+         numeric: true,
+         sensitivity: 'base',
+      }
+   );
 };
 
 const getAllMarkdownPages = (): Record<string, unknown> => {
@@ -78,11 +92,7 @@ const getTopLevelItems = (
       })
       .map((page) => getPageData(page, currentPath));
 
-   items.sort((a, b) => {
-      const aOrder = a.frontmatter?.menuSortOrder || 9999;
-      const bOrder = b.frontmatter?.menuSortOrder || 9999;
-      return aOrder - bOrder;
-   });
+   items.sort(sortPages);
 
    return items;
 };

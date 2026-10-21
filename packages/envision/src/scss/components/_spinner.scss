@@ -7,16 +7,33 @@
    font-size: 10px;
    text-align: center;
 
+   .env-cta &,
+   .env-button & {
+      --env-spinner-color: currentColor;
+      font-size: 1em;
+      height: 1.25em;
+      width: 1.25em;
+      min-width: 1.25em;
+
+      > div,
+      > span {
+         width: 0.15em;
+         margin: 0 0.05em;
+      }
+   }
+
    &--hide {
       display: none;
       animation-name: none;
 
-      > div {
+      > div,
+      > span {
          animation-name: none;
       }
    }
 
-   > div {
+   > div,
+   > span {
       display: inline-block;
       height: 100%;
       width: 6px;
@@ -30,23 +47,28 @@
       animation-timing-function: ease-in-out;
    }
 
-   .env-rect1 {
+   > div:nth-child(1),
+   > span:nth-child(1) {
       animation-delay: calc(-0.9s + var(--delay));
    }
 
-   .env-rect2 {
+   > div:nth-child(2),
+   > span:nth-child(2) {
       animation-delay: calc(-0.8s + var(--delay));
    }
 
-   .env-rect3 {
+   > div:nth-child(3),
+   > span:nth-child(3) {
       animation-delay: calc(-0.7s + var(--delay));
    }
 
-   .env-rect4 {
+   > div:nth-child(4),
+   > span:nth-child(4) {
       animation-delay: calc(-0.6s + var(--delay));
    }
 
-   .env-rect5 {
+   > div:nth-child(5),
+   > span:nth-child(5) {
       animation-delay: calc(-0.5s + var(--delay));
    }
 }
@@ -67,15 +89,28 @@
    min-width: 63px;
    text-align: center;
 
+   .env-cta &,
+   .env-button & {
+      min-width: 2.5em;
+
+      > div,
+      > span {
+         --env-spinner-color: currentColor;
+         padding: 0.4em;
+      }
+   }
+
    &--hide {
       display: none;
 
-      > div {
+      > div,
+      > span {
          animation-name: none;
       }
    }
 
-   > div {
+   > div,
+   > span {
       display: inline-block;
       padding: 9px;
       border-radius: 100%;
@@ -89,15 +124,18 @@
       animation-fill-mode: both;
    }
 
-   .env-bounce1 {
+   > div:nth-child(1),
+   > span:nth-child(1) {
       animation-delay: calc(-0.32s + var(--delay));
    }
 
-   .env-bounce2 {
+   > div:nth-child(2),
+   > span:nth-child(2) {
       animation-delay: calc(-0.16s + var(--delay));
    }
 
-   .env-bounce3 {
+   > div:nth-child(3),
+   > span:nth-child(3) {
       animation-delay: var(--delay);
    }
 }
@@ -111,6 +149,52 @@
 
    40% {
       transform: scale(1);
+   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .loader {
+      clip-path: none;
+      animation: none;
+   }
+
+   .env-spinner:not(.env-spinner--hide) {
+      > div,
+      > span {
+         transform: scaleY(0.5);
+         animation-name: env-spinner-color-pulse;
+         animation-duration: 1.8s;
+      }
+   }
+
+   .env-spinner-bounce:not(.env-spinner-bounce--hide) {
+      > div,
+      > span {
+         animation-name: env-spinner-color-pulse;
+         animation-duration: 1.8s;
+         transform: scale(0.8);
+
+         .env-cta &,
+         .env-button & {
+            padding: 0.4em;
+            transform: scale(0.9);
+         }
+      }
+   }
+}
+
+@keyframes env-spinner-color-pulse {
+   0%,
+   100% {
+      background-color: var(--env-spinner-color);
+   }
+
+   50% {
+      background-color: color-mix(
+         in srgb,
+         var(--env-spinner-color) 35%,
+         transparent
+      );
    }
 }
 
@@ -143,5 +227,72 @@
    }
    to {
       opacity: 1;
+   }
+}
+
+.env-spinner-ellipsis {
+   --delay: 0s;
+   display: inline-flex;
+   align-items: center;
+
+   &--hide {
+      display: none;
+
+      > span {
+         animation-name: none;
+      }
+   }
+
+   &--fade-in {
+      --delay: 0.5s;
+      animation-name: env-fadein;
+      animation-duration: 0s;
+      animation-delay: var(--delay);
+      animation-iteration-count: 1;
+      animation-timing-function: step-end;
+      animation-fill-mode: both;
+
+      &[data-delay='short'] {
+         --delay: 0.25s;
+      }
+
+      &[data-delay='long'] {
+         --delay: 1s;
+      }
+   }
+
+   > span {
+      opacity: 0;
+
+      &:before {
+         content: '.';
+      }
+
+      @for $i from 1 through 3 {
+         &:nth-child(#{$i}) {
+            animation-name: env-spinner-ellipsis-dot-#{$i};
+            animation-duration: 1.2s;
+            animation-delay: calc(var(--delay) + #{0.3s * ($i - 1)});
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(1, end);
+         }
+         @keyframes env-spinner-ellipsis-dot-#{$i} {
+            0%,
+            #{100% - (25% * $i)} {
+               opacity: 1;
+            }
+            #{100% - (25% * $i) + 0.01%},
+            100% {
+               opacity: 0;
+            }
+         }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+         & {
+            opacity: 1 !important;
+            animation: none !important;
+         }
+      }
    }
 }

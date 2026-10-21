@@ -6,22 +6,51 @@ const { frontmatter } = Astro.props;
 
 <header class="header">
    <a href="#content" class="doc-skip-link"> Skip to main content </a>
-   <div class="container">
-      <a class="logo" href="/">
-         <span class="env-assistive-text">To start page</span>
-         <svg class="env-icon doc-svg-logo" aria-hidden="true">
-            <use href="/images/docs-logo.svg#logo"></use>
-         </svg>
-      </a>
-      <Headernav frontmatter={frontmatter} />
-      <Themepicker />
-      <div class="mobile-nav-button">
-         <button class="env-button env-button--link env-button--icon">
-            <svg class="env-icon env-icon--xx-small">
-               <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
+   <div class="header-grid">
+      <div class="header-grid-item-logo">
+         <a class="logo header-logo" href="/">
+            <span class="env-assistive-text">To start page</span>
+            <svg class="env-icon doc-svg-logo" aria-hidden="true">
+               <use href="/images/docs-logo.svg#logo"></use>
             </svg>
-            Menu
-         </button>
+         </a>
+      </div>
+      <div class="header-grid-item-search">
+         <div
+            class="doc-search"
+            role="search"
+            aria-label="Search Envision documentation"
+         >
+            <pagefind-config
+               bundle-path="/pagefind/"
+               base-url="/"
+               excerpt-length="40"></pagefind-config>
+            <pagefind-searchbox placeholder="Search Envision documentation"
+            ></pagefind-searchbox>
+         </div>
+      </div>
+      <div class="header-grid-item-buttons">
+         <Themepicker />
+
+         <div class="mobile-search-button">
+            <button class="env-button env-button--link env-button--icon">
+               <svg class="env-icon env-icon--xx-small">
+                  <use href="/sitevision/envision-icons.svg#icon-search"></use>
+               </svg>
+               Search
+            </button>
+         </div>
+
+         <div class="mobile-nav-button">
+            <button class="env-button env-button--link env-button--icon">
+               <svg class="env-icon env-icon--xx-small">
+                  <use href="/sitevision/envision-icons.svg#icon-menu-line"
+                  ></use>
+               </svg>
+               Menu
+            </button>
+         </div>
       </div>
    </div>
+   <Headernav frontmatter={frontmatter} />
 </header>

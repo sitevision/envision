@@ -4,7 +4,7 @@ description: Accessible image slideshows and lightbox galleries with flexible la
 ---
 
 <section id="demo-image-viewer"
-class="env-m-vertical--large"
+class="env-m-block--large"
          aria-label="Photos from Örebro">
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
       <img src="/placeholders/900x400/10.webp" alt="">
@@ -154,7 +154,7 @@ The container element should have an `aria-label` attribute.
 ```html
 <section
    id="example-image-viewer"
-   class="env-p-around--medium"
+   class="env-p--medium"
    aria-label="Photos from Örebro"
 >
    <figure data-href="/placeholders/originals/10.webp" data-zoom>
@@ -341,17 +341,17 @@ a caption that is only shown in the lightbox.
 | `buttons.ghost`_\*\*_   | boolean | Use [ghost button](/forms/button/) type                        | `false`       |
 
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend env-m-block-end--0">
    <span style="font-size:1.4em">*</span> = Option added in 2026.02.1.
 </p>
 </div>
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend env-m-block-end--0">
    <span style="font-size:1.4em">**</span> = Options type and ghost not applicable for overlay placement.
 </p>
 </div>
 <div>
-<p class="example-dashboard-color-list-legend env-m-top--0">
+<p class="doc-legend">
    Options speed and overlay were deprecated in 2026.02.1, please use transition and buttons.placement instead.
 </p>
 </div>

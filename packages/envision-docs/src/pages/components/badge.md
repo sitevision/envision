@@ -20,7 +20,7 @@ description: Use the Badge component to display small labels for status, notific
 <span class="env-badge env-badge--info">Info</span>
 ```
 
-### Status variants <span id="status-variant" class="offset-anchor"></span>
+### Status variants
 
 ```html
 <span class="env-badge env-badge--neutral">Neutral</span>
@@ -36,7 +36,7 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
 , `85`, `90`, `95`, `100`.
 
 <div class="example-badges">
-   <div class="env-m-bottom--small">
+   <div class="env-m-block-end--small">
       <span class="env-badge env-badge--brand">Brand</span>
       <span class="env-badge env-badge--brand-05">Brand 05</span>
       <span class="env-badge env-badge--brand-10">Brand 10</span>
@@ -61,9 +61,9 @@ Valid values for `{n}` are: `05`, `10`, `15`, `20`, `25`, `30`, `35`, `40`, `45`
    </div>
 </div>
 
-### Status badge <span id="status-badge" class="offset-anchor"></span>
+### Status badge
 
-Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge).
+Indicates active/inactive status. May be used on text elements and also in combination with [profile image](/components/profile-image/#status-badge-in-responsive-size-profile-image).
 
 ```html
 <p class="env-status-badge">Last logged in 5 h</p>

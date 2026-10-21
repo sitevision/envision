@@ -17,6 +17,7 @@ export default defineConfig([
    globalIgnores([
       '**/dist',
       '**/docs',
+      '**/envision-docs/static/pagefind',
       '**/envision.js',
       '**/public',
       '**/.cache',
@@ -45,6 +46,28 @@ export default defineConfig([
       languageOptions: {
          ecmaVersion: 13,
          sourceType: 'commonjs',
+      },
+   },
+   {
+      files: ['packages/envision-docs/scripts/**/*.mjs'],
+      languageOptions: {
+         globals: {
+            ...globals.node,
+         },
+      },
+   },
+   {
+      files: ['packages/envision/src/js/**/*.js'],
+      rules: {
+         'no-restricted-syntax': [
+            'error',
+            {
+               selector:
+                  "CallExpression[callee.type='MemberExpression'][callee.property.name='includes']",
+               message:
+                  'Avoid .includes() in shipped JS because Babel may inject core-js polyfills. Prefer alternatives that do not require polyfills (e.g. for strings: indexOf(...) !== -1). Note: Array#includes and indexOf are not equivalent for NaN.',
+            },
+         ],
       },
    },
 ]);

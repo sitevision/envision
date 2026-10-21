@@ -158,6 +158,7 @@ module.exports = [
                            [
                               '@babel/preset-env',
                               {
+                                 configPath: __dirname,
                                  corejs: { version: '3' },
                                  useBuiltIns: 'usage',
                               },

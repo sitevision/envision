@@ -15,11 +15,10 @@ Other colors and hard coded color values should be avoided.
 
 Most dashboard widgets should be placed inside a wrapper element with class `env-dashboard-widget`.
 This will set the correct background, borders and more for the widget. The wrapper does not set a padding.
-
 <div class="env-dashboard-theme">
-   <section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small env-m-bottom--large" style="width: fit-content">
+   <section class="env-dashboard-widget env-p-inline--large env-p-block--small env-m-block-end--large" style="width: fit-content">
       <h2 class="env-ui-text-sectionheading">
-      Simple widget   
+         Simple widget   
       </h2>
       <span class="env-ui-text-kpi-number" style="font-size: var(--env-ui-text-kpi-number-font-size-large)">96%</span>
    </section>
@@ -57,43 +56,15 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 ## Widget example
 
 <div class="env-dashboard-theme">
-   <section class="env-dashboard-widget env-p-horizontal--large env-p-vertical--small" style="width: fit-content" role="presentation">
+   <section class="env-dashboard-widget env-p-inline--large env-p-block--small" style="width: fit-content" role="presentation">
       <h2 class="env-ui-text-sectionheading">
          Chart widget example heading
       </h2>
-      <div class="env-m-vertical--medium">
+      <div class="env-m-block--medium">
    <p class="env-ui-text-value">
-   <span class="env-m-right--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
-   <span><b class="env-dashboard-color-txt-cyan-50">—</b>&nbsp;Legend line 2</span>
+      <span class="env-m-inline-end--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
+      <span><b class="env-dashboard-color-txt-cyan-50">—</b>&nbsp;Legend line 2</span>
    </p>
-   </div>
-   <div id="example-chart">
-      <h3 class="env-ui-text-label example-chart-axis-label-y">
-         Y axis label
-      </h3>
-      <ul class="example-chart-axis example-chart-axis--y">
-         <li class="env-ui-text-value">1,200</li>
-         <li class="env-ui-text-value">1,000</li>
-         <li class="env-ui-text-value">800</li>
-         <li class="env-ui-text-value">600</li>
-         <li class="env-ui-text-value">400</li>
-      </ul>
-      <img class="env-border example-canvas"
-            alt="Example chart" 
-            src="https://envisionui.io/placeholders/examples/chart.webp" />
-      <h3 class="env-ui-text-label example-chart-axis-label-x">
-         X axis label
-      </h3>
-      <ul class="example-chart-axis example-chart-axis--x">
-         <li class="env-ui-text-value">25 nov</li>
-         <li class="env-ui-text-value">26 nov</li>
-         <li class="env-ui-text-value">27 nov</li>
-         <li class="env-ui-text-value">28 nov</li>
-         <li class="env-ui-text-value">29 nov</li>
-         <li>&nbsp;</li>
-      </ul>
-   </div>
-   </section>
 </div>
 
 ### Simplified code example

@@ -97,6 +97,9 @@ const commitHash = childProcess
                <main
                   id="content"
                   class={getMainClassName(frontmatter.dashboard)}
+                  data-pagefind-body={frontmatter.indexing === false
+                     ? null
+                     : ''}
                >
                   <div class="content-wrapper">
                      {
@@ -121,6 +124,8 @@ const commitHash = childProcess
          <Mobilenav frontmatter={frontmatter} />
          {!!frontmatter.dashboard}
       </div>
+      <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"
+      ></script>
       <script src="../../assets/scripts/init-code-blocks.js"></script>
       <script src="../../assets/scripts/init-examples.js"></script>
       <script src="../../assets/scripts/mobile-nav.js"></script>

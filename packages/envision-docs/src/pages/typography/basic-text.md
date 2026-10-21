@@ -1,6 +1,7 @@
 ---
 title: Basic text
 description: The Basic Text utility offers classes for headings, alignment, transformations, status colors, and links.
+menuSortOrder: 10
 ---
 
 ## Headings
@@ -91,8 +92,6 @@ description: The Basic Text utility offers classes for headings, alignment, tran
    <div class="env-text env-text-align--end">محاذاة النهاية</div>
 </div>
 ```
-
-<span id="status-colors" class="offset-anchor"></span>
 
 ## Status colors
 

@@ -83,7 +83,7 @@ if (popoverContentEl) {
 Add `type: 'menu'` in JS or `data-type="menu"` in HTML
 for a menu-styled popover. Use class `env-popover__item` for the menu items.
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <div class="example-static-popover env-popover" data-popper-placement="bottom">
    <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
@@ -155,14 +155,12 @@ if (popoverMenuContentEl) {
 }
 ```
 
-<span id="tooltip" class="offset-anchor"></span>
-
 ## Popover Tooltip
 
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
 for a Tooltip-styled popover. Common text components will adjust color automatically.
 
-<div class="env-m-vertical--large">
+<div class="env-m-block--large">
 <div class="example-static-popover env-popover env-popover--tooltip" data-popper-placement="bottom">
 <div class="env-popover__arrow"></div>
    <div class="env-popover__header">
@@ -209,7 +207,7 @@ if (popoverTooltipContentEl) {
 }
 ```
 
-## Options <span id="options" class="offset-anchor"></span>
+## Options
 
 - `placement` _string_
    - Prefered initial placement.

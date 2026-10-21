@@ -15,6 +15,7 @@ docs
 .DS_Store
 package-lock.json
 packages/envision-docs/static/sitevision
+packages/envision-docs/static/pagefind
 
 .yarn/*
 !.yarn/patches

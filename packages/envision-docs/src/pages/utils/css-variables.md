@@ -1,6 +1,7 @@
 ---
 title: CSS variables
 description: CSS Variables utility offers predefined custom properties for consistent styling across components.
+menuSortOrder: 10
 ---
 
 CSS variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)) are available with the format: `--env-{variable}`
@@ -147,9 +148,7 @@ Valid values for `{name}` are: `heading-01` – `heading-06`, `display-01` – `
 
 Valid values for `{name}` are: `overline`, `heading`, `sectionheading`, `subheading`, `caption`.
 
-<span id="text-list-variables" class="offset-anchor"></span>
-
-#### Text lists <span class="doc-badge doc-badge--info">2025.09.1</span>
+#### Text lists <span id="text-lists"></span><span class="doc-badge doc-badge--info">2025.09.1</span>
 
 - `--env-text-list-ul-style-type`
 - `--env-text-list-ol-style-type`
