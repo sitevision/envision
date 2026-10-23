@@ -5318,13 +5318,14 @@ Other colors and hard coded color values should be avoided.
 
 Most dashboard widgets should be placed inside a wrapper element with class `env-dashboard-widget`.
 This will set the correct background, borders and more for the widget. The wrapper does not set a padding.
-
-<section class="env-dashboard-widget env-p-inline--large env-p-block--small env-m-block-end--large" style="width: fit-content">
-   <h2 class="env-ui-text-sectionheading">
-   Simple widget   
-   </h2>
-   <span class="env-ui-text-kpi-number" style="font-size: var(--env-ui-text-kpi-number-font-size-large)">96%</span>
-</section>
+<div class="env-dashboard-theme doc-dashboard-example">
+   <section class="env-dashboard-widget env-p-inline--large env-p-block--small env-m-block-end--large" style="width: fit-content">
+      <h2 class="env-ui-text-sectionheading">
+         Simple widget   
+      </h2>
+      <span class="env-ui-text-kpi-number" style="font-size: var(--env-ui-text-kpi-number-font-size-large)">96%</span>
+   </section>
+</div>
 
 ```html noexample
 <section class="env-dashboard-widget">
@@ -5357,43 +5358,43 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 
 ## Widget example
 
-<section class="env-dashboard-widget env-p-inline--large env-p-block--small" style="width: fit-content" role="presentation">
-   <h2 class="env-ui-text-sectionheading">
-      Chart widget example heading
-   </h2>
-   <div class="env-m-block--medium">
-<p class="env-ui-text-value">
-<span class="env-m-inline-end--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
-<span><b class="env-dashboard-color-txt-cyan-50">—</b>&nbsp;Legend line 2</span>
-</p>
+<div class="env-dashboard-theme doc-dashboard-example">
+   <section class="env-dashboard-widget env-p-inline--large env-p-block--small" style="width: fit-content" role="presentation">
+      <h2 class="env-ui-text-sectionheading">
+         Chart widget example heading
+      </h2>
+      <div class="env-m-block--medium">
+         <p class="env-ui-text-value">
+            <span class="env-m-inline-end--large"><b class="env-dashboard-color-txt-orange-50">—</b>&nbsp;Legend line 1</span>
+            <span><b class="env-dashboard-color-txt-cyan-50">—</b>&nbsp;Legend line 2</span>
+         </p>
+      </div>
+      <div id="example-chart">
+         <h3 class="env-ui-text-label example-chart-axis-label-y">
+            Y axis label
+         </h3>
+         <ul class="example-chart-axis example-chart-axis--y">
+            <li class="env-ui-text-value">1,200</li>
+            <li class="env-ui-text-value">1,000</li>
+            <li class="env-ui-text-value">800</li>
+            <li class="env-ui-text-value">600</li>
+            <li class="env-ui-text-value">400</li>
+         </ul>
+         <img class="env-border example-canvas" alt="Example chart" src="https://envisionui.io/placeholders/examples/chart.webp" />
+         <h3 class="env-ui-text-label example-chart-axis-label-x">
+            X axis label
+         </h3>
+         <ul class="example-chart-axis example-chart-axis--x">
+            <li class="env-ui-text-value">25 nov</li>
+            <li class="env-ui-text-value">26 nov</li>
+            <li class="env-ui-text-value">27 nov</li>
+            <li class="env-ui-text-value">28 nov</li>
+            <li class="env-ui-text-value">29 nov</li>
+            <li>&nbsp;</li>
+         </ul>
+      </div>
+   </section>
 </div>
-<div id="example-chart">
-   <h3 class="env-ui-text-label example-chart-axis-label-y">
-      Y axis label
-   </h3>
-   <ul class="example-chart-axis example-chart-axis--y">
-      <li class="env-ui-text-value">1,200</li>
-      <li class="env-ui-text-value">1,000</li>
-      <li class="env-ui-text-value">800</li>
-      <li class="env-ui-text-value">600</li>
-      <li class="env-ui-text-value">400</li>
-   </ul>
-   <img class="env-border example-canvas"
-           alt="Example chart" 
-           src="https://envisionui.io/placeholders/examples/chart.webp" />
-   <h3 class="env-ui-text-label example-chart-axis-label-x">
-      X axis label
-   </h3>
-   <ul class="example-chart-axis example-chart-axis--x">
-      <li class="env-ui-text-value">25 nov</li>
-      <li class="env-ui-text-value">26 nov</li>
-      <li class="env-ui-text-value">27 nov</li>
-      <li class="env-ui-text-value">28 nov</li>
-      <li class="env-ui-text-value">29 nov</li>
-      <li>&nbsp;</li>
-   </ul>
-</div>
-</section>
 
 ### Simplified code example
 
@@ -5436,7 +5437,7 @@ The grid column container where the app will be displayed is a [containment cont
 
 ### Responsive widget example
 
-<div class="example-responsive-widget-wrapper">
+<div class="env-dashboard-theme doc-dashboard-example example-responsive-widget-wrapper">
    <section class="env-dashboard-widget example-responsive-widget env-m-block-end--large">
       <div class="example-responsive-widget__resizeable env-p-inline--large env-p-block--small">
          <h2 class="env-ui-text-sectionheading">
@@ -5533,7 +5534,7 @@ Simple decoration of areas may be done using CSS classes. Each palette color has
 Available classnames are `env-dashboard-bg-color-{colorName}-{variant}` where `colorName` and `variant` follow the same
 patterns as CSS variable names.
 
-```html
+```html dashboard
 <div
    class="env-dashboard-color-bg-purple-20 env-p--medium env-m-block-end--medium"
 >
@@ -5556,7 +5557,7 @@ Description: Styles for widget components such as labels, values, and badges.
 
 Additional styles only availble in widgets should be used for labels and values in charts and similar.
 
-```html
+```html dashboard
 <p class="env-ui-text-label">Axis label / Label</p>
 <p class="env-ui-text-value">Axis value / Legend</p>
 ```
@@ -5566,7 +5567,7 @@ Additional styles only availble in widgets should be used for labels and values 
 For displaying key performance indicators you should use the `env-ui-text-kpi-number` class.
 Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`.
 
-```html
+```html dashboard
 <span class="env-ui-text-kpi-number example-kpi-x-small">96%</span>
 <span class="env-ui-text-kpi-number example-kpi-small">96%</span>
 <span class="env-ui-text-kpi-number">96%</span>
@@ -5597,7 +5598,7 @@ Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`
 If a value has changed for the better, the worse or is unchanged it may be displayed using one of the
 widget specific badges availble.
 
-```html
+```html dashboard
 <span class="env-badge env-badge--negative">
    <svg class="env-icon env-icon--xx-small">
       <use href="/sitevision/envision-icons.svg#icon-arrow-fill-down"></use>
@@ -5730,7 +5731,7 @@ Description: Typography guidelines for dashboard widgets.
 The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font family which has support for nine different weights
 100-900. Other font familes should in most cases not be used.
 
-```html nocode
+```html nocode dashboard
 <p class="example-fw-100">Thin 100 — The quick brown fox jumps … 123456789</p>
 <p class="example-fw-200">
    Extra Light 200 — The quick brown fox jumps … 123456789
@@ -5759,7 +5760,7 @@ The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font fami
 
 Widgets should use [UI Text](/typography/ui-text/) for headings.
 
-```html
+```html dashboard
 <p class="env-ui-text-overline">Overline</p>
 <h1 class="env-ui-text-heading">Heading</h1>
 <h2 class="env-ui-text-sectionheading">Section heading</h2>
