@@ -15,7 +15,7 @@ Other colors and hard coded color values should be avoided.
 
 Most dashboard widgets should be placed inside a wrapper element with class `env-dashboard-widget`.
 This will set the correct background, borders and more for the widget. The wrapper does not set a padding.
-<div class="env-dashboard-theme">
+<div class="env-dashboard-theme doc-dashboard-example">
    <section class="env-dashboard-widget env-p-inline--large env-p-block--small env-m-block-end--large" style="width: fit-content">
       <h2 class="env-ui-text-sectionheading">
          Simple widget   
@@ -55,7 +55,7 @@ For adapting a widget to different sizes, see [Responsive widgets](/dashboard/re
 
 ## Widget example
 
-<div class="env-dashboard-theme">
+<div class="env-dashboard-theme doc-dashboard-example">
    <section class="env-dashboard-widget env-p-inline--large env-p-block--small" style="width: fit-content" role="presentation">
       <h2 class="env-ui-text-sectionheading">
          Chart widget example heading

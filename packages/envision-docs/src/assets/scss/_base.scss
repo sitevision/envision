@@ -125,15 +125,17 @@ body {
    --doc-scroll-offset: 116px;
 }
 
-:where(div.env-dashboard-theme) {
-   display: contents;
-}
+.env-dashboard-theme {
+   &.doc-dashboard-example {
+      background: transparent !important;
+   }
 
-.env-dashboard-theme *,
-.env-dashboard-theme *::before,
-.env-dashboard-theme *::after {
-   // Same box sizing as dashboard in Sitevision
-   box-sizing: border-box;
+   *,
+   *::before,
+   *::after {
+      // Same box sizing as dashboard in Sitevision
+      box-sizing: border-box;
+   }
 }
 
 figure {

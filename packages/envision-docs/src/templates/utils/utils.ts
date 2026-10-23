@@ -1,7 +1,3 @@
-export const getMainClassName = (isDashboard: boolean) => {
-   return isDashboard ? 'main dashboard' : 'main';
-};
-
 export const slugify = (input: string): string => {
    if (!input) {
       return '';
