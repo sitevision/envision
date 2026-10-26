@@ -234,15 +234,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-satteri@npm:0.4.1":
-  version: 0.4.1
-  resolution: "@astrojs/markdown-satteri@npm:0.4.1"
+"@astrojs/markdown-satteri@npm:0.4.2":
+  version: 0.4.2
+  resolution: "@astrojs/markdown-satteri@npm:0.4.2"
   dependencies:
     "@astrojs/internal-helpers": "npm:0.11.0"
     "@astrojs/prism": "npm:4.0.2"
     github-slugger: "npm:^2.0.0"
     satteri: "npm:^0.10.3"
-  checksum: 10c0/04b8ec777ee6e19c212887f022b151f3348a4150c1f66ab33d4927e986722820b9b1c2b6b10c3a45721b11eef429ab33cfca1b342b11b5d040e0a90e79a8f83e
+  checksum: 10c0/0f0aace3bc5e1982d78a044a3aa3d01bc40eca3df15f37eb83fe2cc517170df70afae2bf76ccff0446633ec132bd7bc8a232cf5814b24dd24f18d719cd41f5a3
   languageName: node
   linkType: hard
 
@@ -4794,13 +4794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^7.3.3":
-  version: 7.3.3
-  resolution: "astro@npm:7.3.3"
+"astro@npm:^7.3.4":
+  version: 7.3.4
+  resolution: "astro@npm:7.3.4"
   dependencies:
     "@astrojs/compiler-rs": "npm:^0.4.0"
     "@astrojs/internal-helpers": "npm:0.11.0"
-    "@astrojs/markdown-satteri": "npm:0.4.1"
+    "@astrojs/markdown-satteri": "npm:0.4.2"
     "@astrojs/telemetry": "npm:3.3.3"
     "@capsizecss/unpack": "npm:^4.0.0"
     "@clack/prompts": "npm:^1.1.0"
@@ -4824,13 +4824,13 @@ __metadata:
     github-slugger: "npm:^2.0.0"
     html-escaper: "npm:3.0.3"
     http-cache-semantics: "npm:^4.2.0"
-    js-yaml: "npm:^4.3.0"
+    js-yaml: "npm:^4.3.2"
     jsonc-parser: "npm:^3.3.1"
     magic-string: "npm:^1.0.0"
     magicast: "npm:^0.5.2"
     mrmime: "npm:^2.0.1"
     neotraverse: "npm:^1.0.1"
-    obug: "npm:^2.1.1"
+    obug: "npm:^3.0.0"
     p-limit: "npm:^7.3.0"
     p-queue: "npm:^9.1.0"
     package-manager-detector: "npm:^1.6.0"
@@ -4838,9 +4838,9 @@ __metadata:
     picomatch: "npm:^4.0.4"
     sharp: "npm:^0.35.4"
     shiki: "npm:^4.0.2"
-    smol-toml: "npm:^1.6.0"
-    svgo: "npm:^4.0.2"
-    tinyclip: "npm:^0.1.12"
+    smol-toml: "npm:^1.8.0"
+    svgo: "npm:^4.1.0"
+    tinyclip: "npm:^1.0.1"
     tinyexec: "npm:^1.0.4"
     tinyglobby: "npm:^0.2.15"
     ultrahtml: "npm:^1.6.0"
@@ -4862,7 +4862,7 @@ __metadata:
       optional: true
   bin:
     astro: ./bin/astro.mjs
-  checksum: 10c0/6b34cf49a3e86fcbc43427b3ebfa2c1aeaebb7c391e9ed4b097b8f07be91998d2ea65a99bad486e8a505e25fe3d546a903603ab83ad8e667647a6d4058c02182
+  checksum: 10c0/8112000dd8bad468a3b0808970dab9018a02a8b616470b98601de67bd76f8ce36ac639db619fe100205ed4291664c1094c8db4b0cb04fac6d0a2dfc8f5c3ad41
   languageName: node
   linkType: hard
 
@@ -6196,7 +6196,7 @@ __metadata:
   resolution: "envision-docs@workspace:packages/envision-docs"
   dependencies:
     "@astrojs/mdx": "npm:^7.0.8"
-    astro: "npm:^7.3.3"
+    astro: "npm:^7.3.4"
     astro-compress: "npm:^2.4.1"
     pagefind: "npm:^1.5.2"
   languageName: unknown
@@ -11707,6 +11707,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"smol-toml@npm:^1.8.0":
+  version: 1.9.1
+  resolution: "smol-toml@npm:1.9.1"
+  checksum: 10c0/8acccf7bbc063f29405f58f5014ab39bf4eb9d7f0e000e5e3f140f7d4d6ead5696681a7c15260d1f2910213012c0af43b31a05bf94f704b0bdf39989fba08c02
+  languageName: node
+  linkType: hard
+
 "socks-proxy-agent@npm:^8.0.3":
   version: 8.0.5
   resolution: "socks-proxy-agent@npm:8.0.5"
@@ -12031,7 +12038,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^4.0.2":
+"svgo@npm:^4.1.0":
   version: 4.1.0
   resolution: "svgo@npm:4.1.0"
   dependencies:
@@ -12188,6 +12195,13 @@ __metadata:
   version: 0.1.12
   resolution: "tinyclip@npm:0.1.12"
   checksum: 10c0/5319ca4d430cc7cafe9624b86ba331467e0f6c718b2a961e3fc2a48bff932a319b1aaf8bd7f8edb70f4bef24e233e442e4fc9ffa77c994bace415324e0bc86cf
+  languageName: node
+  linkType: hard
+
+"tinyclip@npm:^1.0.1":
+  version: 1.0.3
+  resolution: "tinyclip@npm:1.0.3"
+  checksum: 10c0/50d16fb1829ac8f2b7096c37a8a62bfe9fc5e328ffc70e0fbe06638040e2c352c61e8e30d1b6c1b34b663603f08af99b584ba655669b764f8cacec35a3f77cc2
   languageName: node
   linkType: hard
 
