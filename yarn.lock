@@ -3192,14 +3192,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/sourcemap-codec@npm:^1.6.0":
+"@jridgewell/sourcemap-codec@npm:^1.6.0, @jridgewell/sourcemap-codec@npm:^1.6.0-beta.0":
   version: 1.6.0
   resolution: "@jridgewell/sourcemap-codec@npm:1.6.0"
   checksum: 10c0/b5be700e45a775f218589c3466c4ffea630582b4988657652da464e5ab8a7d18bf928ee4fd2363fb346ede4bea9c6ff0bae05a538358c4565ece6199531b5f72
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.24, @jridgewell/trace-mapping@npm:^0.3.25, @jridgewell/trace-mapping@npm:^0.3.28":
+"@jridgewell/trace-mapping@npm:^0.3.24, @jridgewell/trace-mapping@npm:^0.3.25, @jridgewell/trace-mapping@npm:^0.3.28, @jridgewell/trace-mapping@npm:^0.3.31":
   version: 0.3.31
   resolution: "@jridgewell/trace-mapping@npm:0.3.31"
   dependencies:
@@ -11317,7 +11317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.5.4, semver@npm:^7.6.2, semver@npm:^7.7.2":
+"semver@npm:^7.3.5, semver@npm:^7.6.2, semver@npm:^7.7.2":
   version: 7.7.2
   resolution: "semver@npm:7.7.2"
   bin:
@@ -12654,6 +12654,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"verkit@npm:^0.4.0":
+  version: 0.4.1
+  resolution: "verkit@npm:0.4.1"
+  checksum: 10c0/b184269beec1d8ee90915d504f3d3671663a9c840cae01e664ea2614fcd5ff7e42472ce0b2795b66a967abaef6dfe2ecf89c5d2a6f1826c8cab9e65a41b7fd0f
+  languageName: node
+  linkType: hard
+
 "verkit@npm:^0.5.0":
   version: 0.5.0
   resolution: "verkit@npm:0.5.0"
@@ -13152,14 +13159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^4.3.6":
-  version: 4.6.7
-  resolution: "zod@npm:4.6.7"
-  checksum: 10c0/4ce2eb14034317b7254e347ca37b5ad591cf8333147030cf05b9b5d31692d45073f7f2747aa50cf8c6b29012194d2b22978cecc89969cf34a0d18e89d0ee7d7b
-  languageName: node
-  linkType: hard
-
-"zod@npm:^4.5.4":
+"zod@npm:^4.3.6, zod@npm:^4.5.4":
   version: 4.6.7
   resolution: "zod@npm:4.6.7"
   checksum: 10c0/4ce2eb14034317b7254e347ca37b5ad591cf8333147030cf05b9b5d31692d45073f7f2747aa50cf8c6b29012194d2b22978cecc89969cf34a0d18e89d0ee7d7b
