@@ -3,7 +3,15 @@
 .banner {
    grid-area: banner;
    display: block;
-   padding: 7.5em 1em variables.$site-padding;
+   padding: 1em 1em variables.$site-padding;
+
+   @include variables.max-header-layout-break {
+      padding-top: 6.5em;
+   }
+
+   @include variables.max-header-mobile-break {
+      padding-top: 5.8em;
+   }
 
    @include variables.dark-mode-status-override;
 
