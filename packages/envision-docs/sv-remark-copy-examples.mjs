@@ -5,6 +5,7 @@ export function svRemarkCopyExamples() {
    // noexpand => code block always shown att full size (not expandable)
    // nocode => show example, hide code block
    // noexample => show code block, hide example
+   // dashboard => wrap example in the dashboard theme
    //
    // Usage example in Markdown:
    // ```html resizeable noexpand
@@ -39,11 +40,16 @@ export function svRemarkCopyExamples() {
             codeWrapperElClassName += ' doc-code-block--expandable';
          }
 
+         const exampleHtml = `<div class="${exampleElClassName}">${node.value}</div>`;
+         const wrappedExampleHtml = meta.includes('dashboard')
+            ? `<div class="env-dashboard-theme doc-dashboard-example">${exampleHtml}</div>`
+            : exampleHtml;
+
          if (meta.includes('nocode')) {
             // Replace code block with example HTML
             tree.children[i] = {
                type: 'html',
-               value: `<div class="${exampleElClassName}">${node.value}</div>`,
+               value: wrappedExampleHtml,
             };
          } else if (meta.includes('noexample') || node.lang !== 'html') {
             // Add no-index comments around example and wrap it in a DIV.
@@ -56,7 +62,7 @@ export function svRemarkCopyExamples() {
             i += 2;
          } else {
             // Add example code as HTML before code block
-            addAt(i, `<div class="${exampleElClassName}">${node.value}</div>`);
+            addAt(i, wrappedExampleHtml);
             // Code block is now at index i + 1
             // Add no-index comments around example and wrap it in a DIV.
             addAt(

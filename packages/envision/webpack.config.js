@@ -154,13 +154,14 @@ module.exports = [
                   {
                      loader: 'babel-loader',
                      options: {
-                        presets: [
+                        targets: require('./package.json').browserslist,
+                        presets: ['@babel/preset-env'],
+                        plugins: [
                            [
-                              '@babel/preset-env',
+                              'babel-plugin-polyfill-corejs3',
                               {
-                                 configPath: __dirname,
-                                 corejs: { version: '3' },
-                                 useBuiltIns: 'usage',
+                                 method: 'usage-global',
+                                 version: '3.50',
                               },
                            ],
                         ],

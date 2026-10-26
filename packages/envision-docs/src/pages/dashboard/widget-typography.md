@@ -7,7 +7,7 @@ dashboard: true
 The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font family which has support for nine different weights
 100-900. Other font familes should in most cases not be used.
 
-```html nocode
+```html nocode dashboard
 <p class="example-fw-100">Thin 100 — The quick brown fox jumps … 123456789</p>
 <p class="example-fw-200">
    Extra Light 200 — The quick brown fox jumps … 123456789
@@ -36,7 +36,7 @@ The widget theme uses [Inter](https://fonts.google.com/specimen/Inter) font fami
 
 Widgets should use [UI Text](/typography/ui-text/) for headings.
 
-```html
+```html dashboard
 <p class="env-ui-text-overline">Overline</p>
 <h1 class="env-ui-text-heading">Heading</h1>
 <h2 class="env-ui-text-sectionheading">Section heading</h2>

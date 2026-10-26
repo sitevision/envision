@@ -125,11 +125,17 @@ body {
    --doc-scroll-offset: 116px;
 }
 
-.env-dashboard-theme .main-body *,
-.env-dashboard-theme .main-body *::before,
-.env-dashboard-theme .main-body *::after {
-   // Same box sizing as dashboard in Sitevision
-   box-sizing: border-box;
+.env-dashboard-theme {
+   &.doc-dashboard-example {
+      background: transparent !important;
+   }
+
+   *,
+   *::before,
+   *::after {
+      // Same box sizing as dashboard in Sitevision
+      box-sizing: border-box;
+   }
 }
 
 figure {

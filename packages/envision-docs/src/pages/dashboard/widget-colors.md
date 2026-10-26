@@ -60,7 +60,7 @@ Simple decoration of areas may be done using CSS classes. Each palette color has
 Available classnames are `env-dashboard-bg-color-{colorName}-{variant}` where `colorName` and `variant` follow the same
 patterns as CSS variable names.
 
-```html
+```html dashboard
 <div
    class="env-dashboard-color-bg-purple-20 env-p--medium env-m-block-end--medium"
 >
