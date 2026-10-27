@@ -37,7 +37,7 @@
 }
 
 .doc-code-example {
-   font-family: Helvetica, Arial, sans-serif;
+   font-family: var(--env-font-family);
    padding: 20px;
    box-sizing: border-box;
    color: var(--env-font-color);

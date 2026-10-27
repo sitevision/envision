@@ -8,7 +8,7 @@ dashboard: true
 
 Additional styles only availble in widgets should be used for labels and values in charts and similar.
 
-```html
+```html dashboard
 <p class="env-ui-text-label">Axis label / Label</p>
 <p class="env-ui-text-value">Axis value / Legend</p>
 ```
@@ -18,7 +18,7 @@ Additional styles only availble in widgets should be used for labels and values 
 For displaying key performance indicators you should use the `env-ui-text-kpi-number` class.
 Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`.
 
-```html
+```html dashboard
 <span class="env-ui-text-kpi-number example-kpi-x-small">96%</span>
 <span class="env-ui-text-kpi-number example-kpi-small">96%</span>
 <span class="env-ui-text-kpi-number">96%</span>
@@ -49,7 +49,7 @@ Set different sizes using CSS variables `--env-ui-text-kpi-number-font-size-{x}`
 If a value has changed for the better, the worse or is unchanged it may be displayed using one of the
 widget specific badges availble.
 
-```html
+```html dashboard
 <span class="env-badge env-badge--negative">
    <svg class="env-icon env-icon--xx-small">
       <use href="/sitevision/envision-icons.svg#icon-arrow-fill-down"></use>
