@@ -3,7 +3,7 @@ title: Breadcrumb
 description: Use breadcrumbs to display the user´s location within a site’s hierarchy, enhancing navigation.
 ---
 
-Breadcrumb component uses basic text styles by default.
+The Breadcrumb component uses basic text styles by default.
 
 The component may also use [navigation text styles](/typography/ui-text/#navigation-text-styles).
 Apply the appropriate class to the root element of the navigation component.
