@@ -32,12 +32,13 @@
 }
 @each $name in $UI_TEXT_NAV_NAMES {
    .env-ui-text-#{$name} {
+      &:where([aria-current='page'], [aria-current='true']),
       :where([aria-current='page'], [aria-current='true']) {
          color: var(--env-ui-text-#{$name}-current-font-color);
       }
    }
    a.env-ui-text-#{$name},
-   .env-ui-text-#{$name} a:where(:not([class^='env-']):not([class*=' env-'])) {
+   .env-ui-text-#{$name} a:not([class^='env-']):not([class*=' env-']) {
       color: var(--env-ui-text-#{$name}-link-font-color);
       text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
 

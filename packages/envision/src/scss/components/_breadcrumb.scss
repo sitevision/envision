@@ -1,6 +1,9 @@
 @use '../abstracts/scss-variables' as *;
 @use '../abstracts/mixins/focus';
 
+// Any env-text* class intentionally opts out of the default text styles.
+// Pair root-level text utilities with env-text or env-ui-text-nav-* for
+// typography and link styling. The utility itself still applies without them.
 $NOT_TEXT_SELECTOR: ':not([class^="env-text"]):not([class*=" env-text"])';
 
 .env-breadcrumb {

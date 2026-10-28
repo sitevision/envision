@@ -74,6 +74,7 @@
       &:where(.env-ui-text-#{$name}) {
          .env-pagination__link {
             font-family: var(--env-ui-text-#{$name}-font-family);
+            font-size: inherit;
             font-weight: var(--env-ui-text-#{$name}-font-weight);
             color: var(--env-ui-text-#{$name}-link-font-color);
             letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
