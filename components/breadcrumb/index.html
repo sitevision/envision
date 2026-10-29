@@ -13,8 +13,8 @@ Breadcrumb · Envision by Sitevision
 <link href="/images/favicon.svg" rel="icon" type="image/svg+xml" sizes="any">
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 <meta content="Astro v7.3.4" name="generator" data-template="default">
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script><script src="/dist/envision.js?v=d095b74"></script>
-<link href="/assets/docs.D2yrmP1Y.css" rel="stylesheet"></head>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script><script src="/dist/envision.js?v=6db7bdf"></script>
+<link href="/assets/docs.DDi9AHCw.css" rel="stylesheet"></head>
 <body>
 <div class="layout">
 <header class="header">
@@ -107,9 +107,11 @@ Dashboard Widgets
 <h1 class="doc-main-heading">
 Breadcrumb
 </h1>
+<p class="doc-p">The Breadcrumb component uses basic text styles by default.</p>
+<p class="doc-p">The component may also use <a href="/typography/ui-text/#navigation-text-styles" class="doc-link">navigation text styles</a>. Apply the appropriate class to the root element of the navigation component.</p>
 <p class="doc-p">Use <code class="doc-code">env-breadcrumb__separator</code> in combination with <code class="doc-code">aria-hidden="true"</code> to hide the separator character from assistive technology.</p>
 <div class="doc-code-example"><nav aria-label="Breadcrumb">
-<ol class="env-breadcrumb env-text">
+<ol class="env-breadcrumb">
 <li class="env-breadcrumb__item">
 <a href="#">Root node</a>
 <span class="env-breadcrumb__separator" aria-hidden="true">/</span>
@@ -123,7 +125,7 @@ Breadcrumb
 </nav></div>
 <div class="doc-code-block doc-code-block--expandable" data-pagefind-ignore="">
 <pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>nav</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Breadcrumb<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-breadcrumb env-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-breadcrumb<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-breadcrumb__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
          <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Root node<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
          <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>env-breadcrumb__separator<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>/<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>

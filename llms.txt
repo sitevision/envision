@@ -53,7 +53,7 @@
 - [Typography – UI Text](https://envisionui.io/typography/ui-text/): UI Text provides standardized styles for headings and text across templates, components, and applications.
 - [Utils – Assistive text](https://envisionui.io/utils/assistive-text/): Assistive text provides helpful context, guidance, or feedback for improved accessibility and user understanding.
 - [Utils – Borders](https://envisionui.io/utils/borders/): Use the Borders utility to set or remove borders.
-- [Utils – CSS variables](https://envisionui.io/utils/css-variables/): CSS Variables utility offers predefined custom properties for consistent styling across components.
+- [Utils – CSS variables](https://envisionui.io/utils/css-variables/): The CSS Variables utility offers predefined custom properties for consistent styling across components.
 - [Utils – Display](https://envisionui.io/utils/display/): The Display utility provides classes to set an element’s display property, such as inline, block, flex, inline-block, inline-flex, or none.
 - [Utils – Shadows](https://envisionui.io/utils/shadows/): Use the Shadows utility classes to apply various sized shadows to elements.
 - [Utils – Sizing](https://envisionui.io/utils/sizing/): The Sizing utility offers classes to define elements’ width and height using preset values.
