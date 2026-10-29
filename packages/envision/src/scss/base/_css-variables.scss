@@ -7,6 +7,7 @@
 @use '../abstracts/functions';
 @use '../abstracts/scss-variables' as *;
 @use '../abstracts/mixins/content-text';
+@use '../abstracts/mixins/text';
 @use '../abstracts/mixins/css-vars';
 
 // ----- TEXT -----
@@ -203,6 +204,20 @@
       'ui-text-caption-font-weight': 400,
       'ui-text-caption-text-transform': none,
       'ui-text-caption-letter-spacing': normal,
+   )
+);
+
+@include text.text-font-to-css-custom-properties(
+   (
+      'prefix': 'env-ui-text',
+      'name': 'nav',
+      'defaults': map.merge($ui-text-nav-base, $ui-text-nav-links),
+      'variants': (
+         '01': (),
+         '02': (),
+         '03': (),
+         '04': (),
+      ),
    )
 );
 

@@ -1,15 +1,78 @@
 @use '../abstracts/mixins/list';
 @use '../abstracts/mixins/nav';
 @use '../abstracts/scss-variables' as *;
+@use '../abstracts/mixins/focus';
 
 .env-nav {
    @include list.reset-list();
-   font-family: var(--env-font-family);
-   font-size: var(--env-font-size-medium);
-   font-weight: $font-weight-regular;
+
+   // Anything inside :where is zero specificity, so it can be overridden by any
+   // other class. We must use this to not break existing implementations of the
+   // nav component that are using the default font styles, but we want to allow
+   // for overrides with the env-ui-text-nav-* classes.
+   &:where(#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+      font-family: var(--env-font-family);
+      font-size: var(--env-font-size-medium);
+      font-weight: $font-weight-regular;
+   }
 
    &__link {
-      @include nav.nav-link();
+      display: block;
+      transition:
+         background-color 0.25s ease,
+         color 0.25s ease;
+
+      @include focus.focus-visible;
+   }
+
+   :where(&#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+      .env-nav__link {
+         color: var(--env-link-font-color);
+         text-decoration: none;
+
+         &[aria-current='page'],
+         &--active,
+         &:hover {
+            color: var(--env-link-hover-font-color);
+         }
+      }
+   }
+
+   @each $name in $UI_TEXT_NAV_NAMES {
+      :where(&.env-ui-text-#{$name}) {
+         > :where(.env-nav__item) > .env-nav__link {
+            color: var(--env-ui-text-#{$name}-link-font-color);
+            text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
+
+            &[aria-current='page'],
+            &--active {
+               color: var(--env-ui-text-#{$name}-current-link-font-color);
+            }
+            &:hover {
+               color: var(--env-ui-text-#{$name}-link-hover-font-color);
+               text-decoration: var(
+                  --env-ui-text-#{$name}-link-hover-text-decoration
+               );
+            }
+         }
+      }
+   }
+}
+
+@each $name in $UI_TEXT_NAV_NAMES {
+   .env-nav--menubar.env-nav--fill:where(.env-ui-text-#{$name}),
+   .env-nav--menubar.env-nav--border:where(.env-ui-text-#{$name}),
+   .env-nav--sidenav:where(.env-ui-text-#{$name}) {
+      > :where(.env-nav__item) > .env-nav__link {
+         color: var(--env-ui-text-#{$name}-link-font-color);
+         text-decoration: var(--env-ui-text-#{$name}-link-text-decoration);
+
+         &:hover {
+            text-decoration: var(
+               --env-ui-text-#{$name}-link-hover-text-decoration
+            );
+         }
+      }
    }
 }
 
@@ -22,26 +85,69 @@
 
    &.env-nav--fill {
       .env-nav__link {
-         & {
-            border-radius: var(--env-border-radius-medium);
+         border-radius: var(--env-border-radius-medium);
+      }
+
+      &:where(#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+         .env-nav__link {
+            @include nav.filled-nav-states();
          }
-         @include nav.filled-nav-states();
+      }
+
+      @each $name in $UI_TEXT_NAV_NAMES {
+         &:where(.env-ui-text-#{$name}) {
+            > :where(.env-nav__item) > .env-nav__link {
+               &[aria-current='page'],
+               &--active {
+                  background-color: var(
+                     --env-ui-text-#{$name}-current-link-font-color
+                  );
+                  color: var(--env-section-background-color);
+               }
+               &:hover {
+                  background-color: var(
+                     --env-ui-text-#{$name}-link-hover-font-color
+                  );
+                  color: var(--env-section-background-color);
+               }
+            }
+         }
       }
    }
 
    &.env-nav--border {
       .env-nav__link {
          border-bottom: $border-width $border-style transparent;
+      }
 
-         &:hover {
-            border-bottom-color: var(--env-link-hover-font-color);
-            color: var(--env-link-hover-font-color);
+      &:where(#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+         .env-nav__link {
+            &[aria-current='page'],
+            &--active,
+            &:hover {
+               border-bottom-color: var(--env-link-hover-font-color);
+               color: var(--env-link-hover-font-color);
+            }
          }
+      }
 
-         &[aria-current='page'],
-         &--active {
-            border-bottom-color: var(--env-link-hover-font-color);
-            color: var(--env-link-hover-font-color);
+      @each $name in $UI_TEXT_NAV_NAMES {
+         &:where(.env-ui-text-#{$name}) {
+            > :where(.env-nav__item) > .env-nav__link {
+               &[aria-current='page'],
+               &--active {
+                  border-bottom-color: var(
+                     --env-ui-text-#{$name}-current-link-font-color
+                  );
+                  color: var(--env-ui-text-#{$name}-current-link-font-color);
+               }
+               &:hover {
+                  border-bottom-color: var(
+                     --env-ui-text-#{$name}-link-hover-font-color
+                  );
+                  color: var(--env-ui-text-#{$name}-link-hover-font-color);
+               }
+            }
          }
       }
    }
@@ -49,19 +155,46 @@
 
 .env-nav--sidenav {
    .env-nav__link {
-      border-bottom: $border-width $border-style var(--env-border-color-05);
-      color: var(--env-link-secondary-font-color);
+      border-bottom: $border-style $border-width var(--env-border-color-05);
       padding: var(--env-spacing-small) 0;
 
       &[aria-current='page'],
       &--active {
-         border-left: 2px $border-style
-            var(--env-link-secondary-hover-font-color);
          padding-left: var(--env-spacing-x-small);
       }
+   }
 
-      &:hover {
-         color: var(--env-link-secondary-hover-font-color);
+   &:where(#{$NOT_UI_TEXT_NAV_SELECTOR}) {
+      .env-nav__link {
+         color: var(--env-link-secondary-font-color);
+
+         &[aria-current='page'],
+         &--active {
+            border-left: 2px $border-style
+               var(--env-link-secondary-hover-font-color);
+         }
+
+         &:hover {
+            color: var(--env-link-secondary-hover-font-color);
+         }
+      }
+   }
+
+   @each $name in $UI_TEXT_NAV_NAMES {
+      &:where(.env-ui-text-#{$name}) {
+         > :where(.env-nav__item) > .env-nav__link {
+            &[aria-current='page'],
+            &--active {
+               border-left: 2px
+                  $border-style
+                  var(--env-ui-text-#{$name}-current-link-font-color);
+               color: var(--env-ui-text-#{$name}-current-link-font-color);
+            }
+
+            &:hover {
+               color: var(--env-ui-text-#{$name}-link-hover-font-color);
+            }
+         }
       }
    }
 }

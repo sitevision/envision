@@ -1,32 +1,52 @@
 @use '../abstracts/scss-variables' as *;
+@use '../abstracts/mixins/focus';
+
+// Any env-text* class intentionally opts out of the default text styles.
+// Pair root-level text utilities with env-text or env-ui-text-nav-* for
+// typography and link styling. The utility itself still applies without them.
+$NOT_TEXT_SELECTOR: ':not([class^="env-text"]):not([class*=" env-text"])';
 
 .env-breadcrumb {
    list-style: none;
    margin: 0;
    padding: 0;
 
+   &:where(#{$NOT_UI_TEXT_NAV_SELECTOR}#{$NOT_TEXT_SELECTOR}) {
+      font-family: var(--env-font-family);
+      font-size: var(--env-font-size-medium);
+      font-weight: $font-weight-regular;
+      line-height: 1.4;
+      color: var(--env-font-color);
+
+      a:where(:not([class^='env-']):not([class*=' env-'])) {
+         color: var(--env-link-font-color);
+         text-decoration: var(--env-link-text-decoration);
+
+         &:hover {
+            color: var(--env-link-hover-font-color);
+            text-decoration: var(--env-link-hover-text-decoration);
+         }
+
+         @include focus.focus-visible;
+      }
+   }
+
    &__item {
       display: inline-block;
+   }
 
-      &:nth-child(1n + 2)::before {
+   &:not(:has(.env-breadcrumb__separator)) {
+      .env-breadcrumb__item:nth-child(1n + 2)::before {
          color: var(--env-breadcrumb-divider-color);
-         content: '#{$breadcrumb-divider}';
+         content: '/';
          display: inline-block;
          padding-left: var(--env-spacing-x-small);
          padding-right: var(--env-spacing-x-small);
       }
    }
 
-   &:has(.env-breadcrumb__separator) {
-      .env-breadcrumb__item:nth-child(1n + 2)::before {
-         display: none;
-         content: '';
-      }
-   }
-
    &__separator {
       color: var(--env-breadcrumb-divider-color);
-      content: '#{$breadcrumb-divider}';
       display: inline-block;
       padding-left: var(--env-spacing-x-small);
       padding-right: var(--env-spacing-x-small);
