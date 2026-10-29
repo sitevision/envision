@@ -1,6 +1,6 @@
 ---
 title: CSS variables
-description: CSS Variables utility offers predefined custom properties for consistent styling across components.
+description: The CSS Variables utility offers predefined custom properties for consistent styling across components.
 menuSortOrder: 10
 ---
 

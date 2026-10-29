@@ -5,9 +5,9 @@ description: The Navigation component provides customizable menus for site navig
 
 Use `aria-current="page"` on a link to indicate that the user is currently on that page.
 
-Navigation component uses basic text styles by default.
+The Navigation component uses basic text styles by default.
 
-The components may also use [navigation text styles](/typography/ui-text/#navigation-text-styles).
+The component may also use [navigation text styles](/typography/ui-text/#navigation-text-styles).
 Apply the appropriate class to the root element of the navigation component.
 
 ## Menubar
