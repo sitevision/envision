@@ -450,10 +450,10 @@ export default class Imageviewer2Slider {
 
    #handleLightboxZoom = () => {
       const slideEl = this.#sliderEl.children[this.getPos()];
-      const zoomEl = slideEl.querySelector('[data-zoom]');
+      const lightboxTriggerEl = slideEl.querySelector('[data-zoom]');
       const imageIndex = Array.from(
          this.#el.querySelectorAll('[data-zoom]')
-      ).indexOf(zoomEl);
+      ).indexOf(lightboxTriggerEl);
       if (imageIndex >= 0) {
          this.#lightbox?.show(imageIndex);
       }
