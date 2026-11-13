@@ -71,7 +71,16 @@ export default class Imageviewer2Slider {
 
       if (this.#config.slides.autoHeight) {
          if (AutoHeight) {
-            plugins.push(AutoHeight());
+            const autoHeight = AutoHeight();
+            const destroy = autoHeight.destroy;
+            autoHeight.destroy = () => {
+               // Embla destroys plugins before measuring the new engine. Keep
+               // the height so a temporary scrollbar cannot change its width.
+               const height = this.#viewerEl.style.height;
+               destroy();
+               this.#viewerEl.style.height = height;
+            };
+            plugins.push(autoHeight);
          }
       }
 
@@ -87,12 +96,25 @@ export default class Imageviewer2Slider {
          plugins
       );
 
+      if (this.#config.slides.autoHeight && AutoHeight) {
+         // Plugin teardown also runs on reinit; only clear the preserved
+         // height when the carousel is actually destroyed.
+         this.#slider.on('destroy', () => {
+            this.#viewerEl.style.height = '';
+         });
+      }
+
       if (this.#config.slides.auto) {
          this.#setAutoplay(
             this.#config.slides.playing
                ? AUTOPLAY_STATE.PLAY
                : AUTOPLAY_STATE.STOP
          );
+         this.#slider.on('reinit', () => {
+            // The plugin has already stopped by this event. Envision owns
+            // the intended state, including user pauses and stops.
+            this.#setAutoplay(this.#autoplayState);
+         });
       }
 
       this.#setSlideMarkup(this.#viewerEl, 0);
@@ -364,7 +386,10 @@ export default class Imageviewer2Slider {
          } <span class="env-assistive-text">${
             this.#config.i18n.slideshow
          }</span>${getButtonIcon(ICON.PAUSE)}`;
-      } else if (currentIcon !== ICON.PLAY) {
+      } else if (
+         this.#autoplayState !== AUTOPLAY_STATE.PLAY &&
+         currentIcon !== ICON.PLAY
+      ) {
          this.#autoplayButtonEl.innerHTML = `${
             this.#config.i18n.play
          } <span class="env-assistive-text">${
