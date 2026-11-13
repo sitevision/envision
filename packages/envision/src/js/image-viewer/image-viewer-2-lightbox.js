@@ -29,12 +29,14 @@ export default class Imageviewer2Lightbox {
    #config;
    #lightbox;
    #images;
-   #currentSrc;
+   #currentIndex = 0;
    #downloadButton;
+   #callbacks;
 
-   constructor(element, settings) {
+   constructor(element, settings, callbacks = {}) {
       this.#el = element;
       this.#config = settings;
+      this.#callbacks = callbacks;
       this.#images = [];
 
       getNodes('[data-zoom]', this.#el).forEach((el) => {
@@ -81,6 +83,7 @@ export default class Imageviewer2Lightbox {
       }
 
       return {
+         element: el,
          src: src,
          alt: alt,
          caption: caption,
@@ -112,9 +115,8 @@ export default class Imageviewer2Lightbox {
       figureEl.classList.add(`${CLASSNAME.LIGHTBOX}__figure`);
 
       const imgEl = new Image();
-      const imageData = this.#images.find(
-         (item) => item.src === this.#currentSrc
-      );
+      const imageIndex = this.#currentIndex;
+      const imageData = this.#images[imageIndex];
 
       if (imageData.caption) {
          const captionEl = document.createElement('figcaption');
@@ -126,6 +128,9 @@ export default class Imageviewer2Lightbox {
       }
 
       imgEl.onload = () => {
+         if (this.#currentIndex !== imageIndex) {
+            return;
+         }
          if (this.#config.buttons.download) {
             this.#downloadButton.href = imgEl.src;
          }
@@ -138,6 +143,7 @@ export default class Imageviewer2Lightbox {
       imgEl.src = imageData.src;
 
       this.setVisibleButtons();
+      this.#callbacks.onChange?.(imageData.element);
    }
 
    createLightbox() {
@@ -203,15 +209,12 @@ export default class Imageviewer2Lightbox {
          this.createLightbox();
          this.bindEvents();
       }
+      this.#callbacks.onShow?.();
       document.body.appendChild(this.#lightbox);
       this.loadImage();
       lockScroll();
       this.#lightbox.showModal();
       this.fadeIn();
-
-      if (this.#config.slides?.auto) {
-         this.#el.dispatchEvent(new Event('pause'));
-      }
    }
 
    show(i) {
@@ -220,7 +223,7 @@ export default class Imageviewer2Lightbox {
       if (i < 0 || i > this.#images.length - 1) {
          i = 0;
       }
-      this.#currentSrc = this.#images[i].src;
+      this.#currentIndex = i;
       this.showLightbox();
    }
 
@@ -230,8 +233,11 @@ export default class Imageviewer2Lightbox {
          e.target.closest('[data-zoom]') &&
          e.target.closest('[data-zoom]').dataset.href
       ) {
-         this.#currentSrc = e.target.closest('[data-zoom]').dataset.href;
-         this.showLightbox();
+         this.show(
+            this.#images.findIndex(
+               (image) => image.element === e.target.closest('[data-zoom]')
+            )
+         );
       }
    };
 
@@ -249,14 +255,11 @@ export default class Imageviewer2Lightbox {
    }
 
    getCurrentIndex() {
-      const i = this.#images.findIndex(
-         (image) => image.src === this.#currentSrc
-      );
-      return i >= 0 ? i : 0;
+      return this.#currentIndex;
    }
 
    goTo(i) {
-      this.#currentSrc = this.#images[i].src;
+      this.#currentIndex = i;
       this.loadImage();
    }
 
@@ -264,8 +267,7 @@ export default class Imageviewer2Lightbox {
       let i = this.getCurrentIndex();
       i++;
       if (i >= this.#images.length) {
-         i = this.#images.length - 1;
-         this.#currentSrc = this.#images[i].src;
+         return;
       } else {
          this.goTo(i);
       }
@@ -275,7 +277,7 @@ export default class Imageviewer2Lightbox {
       let i = this.getCurrentIndex();
       i--;
       if (i < 0) {
-         this.#currentSrc = this.#images[0].src;
+         return;
       } else {
          this.goTo(i);
       }
