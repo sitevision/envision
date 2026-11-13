@@ -12,7 +12,7 @@
    },
    "dependencies": {
       "@astrojs/mdx": "^7.0.8",
-      "astro": "^7.3.4",
+      "astro": "^7.4.7",
       "astro-compress": "^2.4.3",
       "pagefind": "^1.5.2"
    }
