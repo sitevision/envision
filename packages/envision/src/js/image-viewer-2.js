@@ -17,9 +17,14 @@ class Imageviewer2 {
    constructor(element, settings) {
       this.el = element;
       this.config = settings;
+      const lightboxCallbacks = {};
 
       if (getNodes('[data-zoom]', this.el).length > 0) {
-         this.lightbox = new Imageviewer2Lightbox(this.el, this.config);
+         this.lightbox = new Imageviewer2Lightbox(
+            this.el,
+            this.config,
+            lightboxCallbacks
+         );
       }
 
       if (this.config.slides) {
@@ -35,7 +40,8 @@ class Imageviewer2 {
                   this.el,
                   this.config,
                   this.lightbox,
-                  [EmblaCarousel, Autoplay, AutoHeight, Fade]
+                  [EmblaCarousel, Autoplay, AutoHeight, Fade],
+                  lightboxCallbacks
                );
                return this;
             }

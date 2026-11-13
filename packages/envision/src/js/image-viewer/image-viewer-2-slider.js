@@ -34,12 +34,14 @@ export default class Imageviewer2Slider {
    #sliderEl;
    #viewerEl;
    #autoplayButtonEl;
+   #zoomButtonEl;
 
    constructor(
       element,
       settings,
       lightbox,
-      [EmblaCarousel, Autoplay, AutoHeight, Fade]
+      [EmblaCarousel, Autoplay, AutoHeight, Fade],
+      lightboxCallbacks = {}
    ) {
       this.#el = element;
       this.#config = settings;
@@ -95,6 +97,7 @@ export default class Imageviewer2Slider {
          this.#config.slides,
          plugins
       );
+      this.#slider.on('select', this.#handleSlideSelect);
 
       if (this.#config.slides.autoHeight && AutoHeight) {
          // Plugin teardown also runs on reinit; only clear the preserved
@@ -135,6 +138,11 @@ export default class Imageviewer2Slider {
          this.#slider?.goTo?.(index, instant);
       };
       this.getPos = () => this.#slider?.selectedSnap?.() ?? 0;
+
+      if (this.#lightbox) {
+         lightboxCallbacks.onShow = this.#handleLightboxShow;
+         lightboxCallbacks.onChange = this.#handleLightboxChange;
+      }
    }
 
    setupSlider() {
@@ -276,6 +284,7 @@ export default class Imageviewer2Slider {
                showText && CLASSNAME.BUTTON_ICON_BEFORE
             }`,
          });
+         this.#zoomButtonEl = zoomBtn;
          containerEl.prepend(zoomBtn);
       }
 
@@ -330,6 +339,10 @@ export default class Imageviewer2Slider {
       const currentSlideEl = viewerEl.querySelectorAll(`.${CLASSNAME.ITEM}`)[
          currentSlideIndex
       ];
+      if (this.#zoomButtonEl) {
+         this.#zoomButtonEl.disabled =
+            !currentSlideEl.querySelector('[data-zoom]');
+      }
       const allFocusable = getFocusable(viewerEl);
 
       allFocusable.forEach((el) => {
@@ -456,15 +469,33 @@ export default class Imageviewer2Slider {
       }
    };
 
-   #handleSlidesInView = (api, apiEvt) => {
-      this.#setSlideMarkup(
-         this.#viewerEl,
-         apiEvt?.detail?.slidesInView[0] || 0
-      );
+   #handleSlideSelect = (api) => {
+      this.#setSlideMarkup(this.#viewerEl, api.selectedSnap());
    };
 
    #handleLightboxZoom = () => {
-      this.#lightbox?.show(this.getPos());
+      const slideEl = this.#sliderEl.children[this.getPos()];
+      const lightboxTriggerEl = slideEl.querySelector('[data-zoom]');
+      const imageIndex = Array.from(
+         this.#el.querySelectorAll('[data-zoom]')
+      ).indexOf(lightboxTriggerEl);
+      if (imageIndex >= 0) {
+         this.#lightbox?.show(imageIndex);
+      }
+   };
+
+   #handleLightboxShow = () => {
+      this.#autoplayPreviousInteractionEvent = null;
+      this.pause();
+   };
+
+   #handleLightboxChange = (element) => {
+      const slideIndex = Array.from(this.#sliderEl.children).indexOf(
+         element.closest(`.${CLASSNAME.ITEM}`)
+      );
+      if (slideIndex >= 0) {
+         this.goTo(slideIndex, true);
+      }
    };
 
    bindEvents(prevBtn, nextBtn, zoomBtn) {
@@ -480,7 +511,6 @@ export default class Imageviewer2Slider {
       if (this.#config.slides.auto) {
          this.#viewerEl.addEventListener('focus', this.#handleFocus, true);
          this.#viewerEl.addEventListener('click', this.#handleClickEvent, true);
-         this.#slider.on('slidesinview', this.#handleSlidesInView);
          this.#slider.on('autoplay:interaction', this.#handleInteractionEvent);
       }
    }
