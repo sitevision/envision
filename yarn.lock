@@ -6219,10 +6219,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:9.0.0-rc03":
-  version: 9.0.0-rc03
-  resolution: "embla-carousel@npm:9.0.0-rc03"
-  checksum: 10c0/575b338c6cc329486dd26f58dadb2e2ba4672311a87df51772423a80822971a0803b462cfba33f9289d05afb11d23e739e4e300bd5d005ee5581edf71ae43887
+"embla-carousel@npm:9.0.0-rc04":
+  version: 9.0.0-rc04
+  resolution: "embla-carousel@npm:9.0.0-rc04"
+  checksum: 10c0/4ca5d2f31d2ed48e65fa1d8669462ad849c49843ef02e5222af2623848ba1376d94941ce2e88913266f512b6b958c964ae181f5f258d3a12b751e4a52ff9ac45
   languageName: node
   linkType: hard
 
@@ -6371,7 +6371,7 @@ __metadata:
     css-loader: "npm:^7.1.5"
     css-minimizer-webpack-plugin: "npm:^8.0.0"
     css-vars-to-json: "npm:1.0.0"
-    embla-carousel: "npm:9.0.0-rc03"
+    embla-carousel: "npm:9.0.0-rc04"
     embla-carousel-auto-height: "npm:9.0.0-rc03"
     embla-carousel-autoplay: "npm:9.0.0-rc03"
     embla-carousel-fade: "npm:9.0.0-rc03"
