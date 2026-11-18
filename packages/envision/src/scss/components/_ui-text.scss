@@ -1,6 +1,5 @@
 @use '../abstracts/scss-variables' as *;
 @use '../abstracts/mixins/focus';
-@use 'sass:list';
 
 .env-ui-text {
    @each $name in $UI_TEXT_ALL_NAMES {
@@ -11,11 +10,7 @@
          font-style: normal;
          text-transform: var(--env-ui-text-#{$name}-text-transform);
          letter-spacing: var(--env-ui-text-#{$name}-letter-spacing);
-         @if list.index($UI_TEXT_NAV_NAMES, $name) {
-            line-height: var(--env-ui-text-#{$name}-line-height);
-         } @else {
-            line-height: $line-height-medium;
-         }
+         line-height: var(--env-ui-text-#{$name}-line-height);
          color: var(--env-ui-text-#{$name}-font-color);
          margin: 0 !important;
       }
