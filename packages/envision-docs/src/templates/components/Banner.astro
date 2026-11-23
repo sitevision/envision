@@ -14,44 +14,42 @@ if (frontmatter.deprecated) {
 }
 ---
 
-{
-   bannerType && (
-      <section role="status" class={`banner banner--${bannerType}`}>
-         {bannerType === 'deprecated' && (
-            <div class="container">
-               <div class="icon">
-                  <svg class="env-icon env-icon--large">
-                     <use href="/images/docs-images.svg#exclamation" />
-                  </svg>
-                  Deprecated
-               </div>
-               The documentation you are viewing is for a deprecated version of
-               an Envision component.
+{bannerType && (
+   <section role="status" class={`banner banner--${bannerType}`}>
+      {bannerType === 'deprecated' && (
+         <div class="container">
+            <div class="icon">
+               <svg class="env-icon env-icon--large">
+                  <use href="/images/docs-images.svg#exclamation" />
+               </svg>
+               Deprecated
             </div>
-         )}
-         {bannerType === 'beta' && (
-            <div class="container">
-               <div class="icon">
-                  <svg class="env-icon env-icon--large">
-                     <use href="/images/docs-images.svg#under-construction" />
-                  </svg>
-                  Beta
-               </div>
-               The documentation you are viewing is for a beta version of an
-               Envision component. It is stable but may be subject to change.
+            The documentation you are viewing is for a deprecated version of an
+            Envision component.
+         </div>
+      )}
+      {bannerType === 'beta' && (
+         <div class="container">
+            <div class="icon">
+               <svg class="env-icon env-icon--large">
+                  <use href="/images/docs-images.svg#under-construction" />
+               </svg>
+               Beta
             </div>
-         )}
-         {bannerType === 'since' && (
-            <div class="container">
-               <div class="icon">
-                  <svg class="env-icon env-icon--large">
-                     <use href="/images/docs-images.svg#exclamation" />
-                  </svg>
-                  Since {frontmatter.since}
-               </div>
-               This component was recently added to Envision.
+            The documentation you are viewing is for a beta version of an
+            Envision component. It is stable but may be subject to change.
+         </div>
+      )}
+      {bannerType === 'since' && (
+         <div class="container">
+            <div class="icon">
+               <svg class="env-icon env-icon--large">
+                  <use href="/images/docs-images.svg#exclamation" />
+               </svg>
+               Since {frontmatter.since}
             </div>
-         )}
-      </section>
-   )
-}
+            This component was recently added to Envision.
+         </div>
+      )}
+   </section>
+)}

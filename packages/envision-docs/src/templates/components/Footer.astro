@@ -51,37 +51,31 @@ const sitevisionMenuItems = [
          <div class="footer-nav-col">
             <h2 class="footer-nav-col__header">Envision</h2>
             <ul class="env-list">
-               {
-                  envisionMenuItems.map(({ text, url }) => (
-                     <li>
-                        <a href={url}>{text}</a>
-                     </li>
-                  ))
-               }
+               {envisionMenuItems.map(({ text, url }) => (
+                  <li>
+                     <a href={url}>{text}</a>
+                  </li>
+               ))}
             </ul>
          </div>
          <div class="footer-nav-col">
             <h2 class="footer-nav-col__header">Developer</h2>
             <ul class="env-list">
-               {
-                  developerMenuItems.map(({ text, url }) => (
-                     <li class="env-nav__item env-m-block--medium">
-                        <a href={url}>{text}</a>
-                     </li>
-                  ))
-               }
+               {developerMenuItems.map(({ text, url }) => (
+                  <li class="env-nav__item env-m-block--medium">
+                     <a href={url}>{text}</a>
+                  </li>
+               ))}
             </ul>
          </div>
          <div class="footer-nav-col">
             <h2 class="footer-nav-col__header">Sitevision</h2>
             <ul class="env-list">
-               {
-                  sitevisionMenuItems.map(({ text, url }) => (
-                     <li class="env-nav__item env-m-block--medium">
-                        <a href={url}>{text}</a>
-                     </li>
-                  ))
-               }
+               {sitevisionMenuItems.map(({ text, url }) => (
+                  <li class="env-nav__item env-m-block--medium">
+                     <a href={url}>{text}</a>
+                  </li>
+               ))}
             </ul>
          </div>
       </nav>
