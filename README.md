@@ -16,9 +16,13 @@ You can view the documentation and examples at [http://envisionui.io/](http://en
 
 Run `yarn build`
 
+## Accessibility
+
+Read the [Envision accessibility statement](ACCESSIBILITY.md) for accessibility goals, known limitations, and ways to report a barrier.
+
 ## License information
 
-Code copyright 2017-2025, Sitevision AB. Code is released under the
+Code copyright 2017-2026, Sitevision AB. Code is released under the
 [MIT license](https://github.com/sitevision/envision/blob/master/LICENSE)
 
 ## Supported browsers
