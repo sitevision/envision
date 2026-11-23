@@ -3,10 +3,11 @@
 Sitevision is committed to making Envision usable by people with disabilities. This statement covers the Envision UI
 library, its documentation, and its component examples. [Envision documentation](https://envisionui.io/)
 
-## Accessibility goals and status
+## Accessibility goals
 
-Our goal is to meet the applicable Web Content Accessibility Guidelines (WCAG) 2.2 Level AA criteria in Envision
-components, documentation, and examples. Project-wide conformance is currently unverified. [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+We aim to meet the applicable Web Content Accessibility Guidelines (WCAG) 2.2 Level AA criteria in Envision
+components, documentation, and examples. We focus on making interactive elements usable with a keyboard and screen
+readers, keeping keyboard focus visible, and providing sufficient color contrast. [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 
 Envision supports the latest stable releases of major web browsers. The accessibility of a website or app built with
 Envision depends on how it uses components, including its markup, content, themes, and custom interactions.
