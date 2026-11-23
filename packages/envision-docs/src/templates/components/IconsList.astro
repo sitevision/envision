@@ -6,13 +6,11 @@ const { icons, sprite } = Astro.props as {
 ---
 
 <ul class="env-list env-list--horizontal--fixed env-list--horizontal--fixed--6">
-   {
-      icons.map((icon) => (
-         <li class="env-list__item" title={icon}>
-            <svg class="env-icon env-icon--small">
-               <use href={`/sitevision/${sprite}#${icon}`} />
-            </svg>
-         </li>
-      ))
-   }
+   {icons.map((icon) => (
+      <li class="env-list__item" title={icon}>
+         <svg class="env-icon env-icon--small">
+            <use href={`/sitevision/${sprite}#${icon}`} />
+         </svg>
+      </li>
+   ))}
 </ul>

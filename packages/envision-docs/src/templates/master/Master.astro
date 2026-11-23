@@ -28,22 +28,18 @@ const commitHash = childProcess
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      {
-         frontmatter.indexing === false && (
-            <meta name="robots" content="noindex" />
-         )
-      }
+      {frontmatter.indexing === false && (
+         <meta name="robots" content="noindex" />
+      )}
       <title>
          {
             `${title ? title : ''}${title ? ' \u00B7 ' : ''}Envision by Sitevision`
          }
       </title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      {
-         frontmatter.description && (
-            <meta name="description" content={frontmatter.description} />
-         )
-      }
+      {frontmatter.description && (
+         <meta name="description" content={frontmatter.description} />
+      )}
       <link rel="alternate" type="text/plain" href="/llms.txt" />
       <link rel="alternate" type="text/plain" href="/llms-full.txt" />
       <script is:inline>
@@ -72,21 +68,20 @@ const commitHash = childProcess
          is:inline
          src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
          integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-         crossorigin="anonymous"></script>
+         crossorigin="anonymous"
+      ></script>
 
       <script is:inline src={`/dist/envision.js?v=${commitHash}`}></script>
       <!-- Additional head elements -->
    </head>
    <body>
       {/* Dashboard style must be loaded after envision.css */}
-      {
-         !!frontmatter.dashboard && (
-            <link
-               rel="stylesheet"
-               href={`/dist/envision-dashboard.css?v=${commitHash}`}
-            />
-         )
-      }
+      {!!frontmatter.dashboard && (
+         <link
+            rel="stylesheet"
+            href={`/dist/envision-dashboard.css?v=${commitHash}`}
+         />
+      )}
       <div class="layout">
          <Header frontmatter={frontmatter} />
          <Banner frontmatter={frontmatter} />
@@ -95,23 +90,21 @@ const commitHash = childProcess
                <main
                   id="content"
                   class="main"
-                  data-pagefind-body={frontmatter.indexing === false
-                     ? null
-                     : ''}
+                  data-pagefind-body={
+                     frontmatter.indexing === false ? null : ''
+                  }
                >
                   <div class="content-wrapper">
-                     {
-                        title && (
-                           <h1 class="doc-main-heading">
-                              {title}
-                              {frontmatter.since && (
-                                 <span class="doc-badge doc-badge--info">
-                                    Since {frontmatter.since}
-                                 </span>
-                              )}
-                           </h1>
-                        )
-                     }
+                     {title && (
+                        <h1 class="doc-main-heading">
+                           {title}
+                           {frontmatter.since && (
+                              <span class="doc-badge doc-badge--info">
+                                 Since {frontmatter.since}
+                              </span>
+                           )}
+                        </h1>
+                     )}
                      <slot />
                   </div>
                </main>
@@ -121,7 +114,10 @@ const commitHash = childProcess
          <Footer />
          <Mobilenav frontmatter={frontmatter} />
       </div>
-      <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"
+      <script
+         is:inline
+         type="module"
+         src="/pagefind/pagefind-component-ui.js"
       ></script>
       <script src="../../assets/scripts/init-code-blocks.js"></script>
       <script src="../../assets/scripts/init-examples.js"></script>
