@@ -5,7 +5,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <header class="header">
-   <a href="#content" class="doc-skip-link"> Skip to main content </a>
+   <a href="#content" class="doc-skip-link">
+      {' '}
+      Skip to main content{' '}
+   </a>
    <div class="header-grid">
       <div class="header-grid-item-logo">
          <a class="logo header-logo" href="/">
@@ -24,9 +27,9 @@ const { frontmatter } = Astro.props;
             <pagefind-config
                bundle-path="/pagefind/"
                base-url="/"
-               excerpt-length="40"></pagefind-config>
-            <pagefind-searchbox placeholder="Search Envision documentation"
-            ></pagefind-searchbox>
+               excerpt-length="40"
+            ></pagefind-config>
+            <pagefind-searchbox placeholder="Search Envision documentation"></pagefind-searchbox>
          </div>
       </div>
       <div class="header-grid-item-buttons">
@@ -44,8 +47,7 @@ const { frontmatter } = Astro.props;
          <div class="mobile-nav-button">
             <button class="env-button env-button--link env-button--icon">
                <svg class="env-icon env-icon--xx-small">
-                  <use href="/sitevision/envision-icons.svg#icon-menu-line"
-                  ></use>
+                  <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
                </svg>
                Menu
             </button>

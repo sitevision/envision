@@ -22,18 +22,16 @@ const getIconsInDir = (dir: string) => {
 ---
 
 <div class="icons-demo">
-   {
-      Object.entries(iconDirs).map(([dir, title]) => (
-         <>
-            <h2 class="doc-heading-2">{title}</h2>
-            <p class="env-text-caption-01 env-m-block-end--large">
-               Path:{' '}
-               <code class="doc-code">
-                  /sitevision/{dir}.svg#{'{icon-symbol-id}'}
-               </code>
-            </p>
-            <IconList icons={getIconsInDir(dir)} sprite={`${dir}.svg`} />
-         </>
-      ))
-   }
+   {Object.entries(iconDirs).map(([dir, title]) => (
+      <>
+         <h2 class="doc-heading-2">{title}</h2>
+         <p class="env-text-caption-01 env-m-block-end--large">
+            Path:{' '}
+            <code class="doc-code">
+               /sitevision/{dir}.svg#{'{icon-symbol-id}'}
+            </code>
+         </p>
+         <IconList icons={getIconsInDir(dir)} sprite={`${dir}.svg`} />
+      </>
+   ))}
 </div>
