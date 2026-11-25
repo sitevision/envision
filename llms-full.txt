@@ -4912,7 +4912,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
 
 <div id="init"></div>
 
-## Initiation
+## Initialization
 
 ```javascript
 envision.tabs('.example-tabs');
@@ -4924,7 +4924,7 @@ envision.tabs('.example-tabs');
 URL: https://envisionui.io/components/table/
 Description: Use a Table to display data in rows and columns, with customizable styles and responsive layouts.
 
-Default table styling uses the variables and styling from the [Text component](/components/text/).
+Default table styling uses the variables and styling from the [Text component](/typography/text/).
 
 ## Types
 
