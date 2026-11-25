@@ -30,7 +30,7 @@ The following form classnames are deprecated and will be removed in a future rel
 - `env-radio--disabled`
 - `env-checkbox--disabled`
 
-Additionaly, the following combinations of element type and classname are deprecated and will be removed in a future release.
+Additionally, the following combinations of element type and classname are deprecated and will be removed in a future release.
 
 - `label.env-radio`
 - `div.env-checkbox`

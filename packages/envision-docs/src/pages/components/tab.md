@@ -175,7 +175,7 @@ Add class modifier `env-tabs--column` to tab stack container to make tabs vertic
 
 <div id="init"></div>
 
-## Initiation
+## Initialization
 
 ```javascript
 envision.tabs('.example-tabs');
