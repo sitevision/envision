@@ -1,7 +1,7 @@
 # Envision by Sitevision ![Build Envision and Docs](https://github.com/sitevision/envision/workflows/Build%20Envision%20and%20Docs/badge.svg)
 
 An open-source UI library for [Sitevision](https://www.sitevision.se/).
-You can view the documentation and examples at [https://envisionui.io/](http://envisionui.io/)
+You can view the documentation and examples at [https://envisionui.io/](https://envisionui.io/)
 
 ## Getting started
 
