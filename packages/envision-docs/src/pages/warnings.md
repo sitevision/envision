@@ -5,7 +5,7 @@ title: Console warnings
 ## jQuery Warnings
 
 All jQuery dependencies in Envision are deprecated and will be removed. Warnings will appear in the
-browser console when you use any of the following Envision specific jQuery plugins. The warnings means that you
+browser console when you use any of the following Envision specific jQuery plugins. The warnings mean that you
 have code in your page that eventually will stop working.
 
 Please follow the link to the plugin's documentation to see how to migrate to the new version.
@@ -24,7 +24,7 @@ Please follow the link to the plugin's documentation to see how to migrate to th
 ### Image slider
 
 Image slider is deprecated and will be removed from Envision. Warnings will appear in the
-browser console when you use the component. The warnings means that you
+browser console when you use the component. The warnings mean that you
 have code in your page that eventually will stop working.
 
 Please see the documentation and migrate to the new component [Image viewer 2](/components/image-viewer-2/).
@@ -32,7 +32,7 @@ Please see the documentation and migrate to the new component [Image viewer 2](/
 ### Image viewer
 
 Image viewer is deprecated and will be removed from Envision. Warnings will appear in the
-browser console when you use the component. The warnings means that you
+browser console when you use the component. The warnings mean that you
 have code in your page that eventually will stop working.
 
 Please see the documentation and migrate to the new component [Image viewer 2](/components/image-viewer-2/).
