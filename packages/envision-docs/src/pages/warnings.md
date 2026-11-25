@@ -17,7 +17,7 @@ Please follow the link to the plugin's documentation to see how to migrate to th
 - [$.fn.envTabs](/components/tab/)
 - [$.fn.envImageslider](/deprecated/image-slider/)
 - [$.fn.envImageviewer](/deprecated/image-viewer/)
-- [$.fn.envRangeSlider](/components/range-slider/)
+- [$.fn.envRangeSlider](/deprecated/range-slider/)
 
 ## Component Warnings
 
