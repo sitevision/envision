@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(({ target }) => updateScrollFocus(target));
    });
 
-   document.body.querySelectorAll('.doc-code-block pre').forEach((pre) => {
+   const codeBlocks = document.body.querySelectorAll('.doc-code-block pre');
+   codeBlocks.forEach((pre) => {
       const element = pre.closest(`.${EXPANDABLE}`);
       if (element && pre.clientHeight > window.innerHeight * 0.25) {
          uniqueId(pre);
@@ -90,5 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
          });
       }
       resizeObserver.observe(pre);
+   });
+
+   document.fonts.ready.then(() => {
+      codeBlocks.forEach(updateScrollFocus);
    });
 });
