@@ -47,13 +47,13 @@ envision.popover('#example-popover-data');
 
 ### Example using JavaScript
 
-The content will be fetched from a template element and displayed in the popover.
+Use a template element to display formatted text in the popover.
 
 ```html
 <template id="example-popover-content">
    <div class="env-text">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p>In fermentum <a href="#">nunc bibendum laoreet</a> malesuada.</p>
+      <p>In fermentum nunc bibendum laoreet malesuada.</p>
       <p>
          Proin eget augue tortor. <b>Sed bibendum cursus eros</b>, vitae mattis
          leo laoreet eget.
@@ -159,6 +159,7 @@ if (popoverMenuContentEl) {
 
 Add `type: 'tooltip'` in JS or `data-type="tooltip"` in HTML
 for a Tooltip-styled popover. Common text components will adjust color automatically.
+Use this variant for non-interactive content such as formatted text.
 
 <div class="env-m-block--large">
 <div class="example-static-popover env-popover env-popover--tooltip" data-popper-placement="bottom">
@@ -177,9 +178,8 @@ for a Tooltip-styled popover. Common text components will adjust color automatic
 ```html
 <template id="example-popover-tooltip-content">
    <p class="env-text">
-      Lorem ipsum dolor sit amet,
-      <a href="javascript:void(0)">consectetur adipiscing elit</a>. In fermentum
-      nunc bibendum laoreet malesuada.
+      Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>.
+      In fermentum nunc bibendum laoreet malesuada.
    </p>
    <p class="env-ui-text-caption">Aliquam diam risus tincidunt.</p>
 </template>

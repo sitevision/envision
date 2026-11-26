@@ -1,26 +1,10 @@
 import { uniqueId } from './utils/unique-id.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-   const codeExampleAriaLabels = {
+   const codeBlockLabels = {
       html: 'Example HTML code',
       javascript: 'Example JavaScript code',
-      unknown: 'Example code',
    };
-
-   document.body
-      .querySelectorAll('.astro-code[data-language]')
-      .forEach((codeElement) => {
-         let lang = codeElement.dataset.language?.toLowerCase() || '';
-         if (lang.includes('html')) {
-            lang = 'html';
-         }
-         if (!Object.hasOwnProperty.call(codeExampleAriaLabels, lang)) {
-            lang = 'unknown';
-         }
-         codeElement
-            .querySelector('code')
-            ?.setAttribute('aria-label', codeExampleAriaLabels[lang]);
-      });
 
    const EXPANDABLE = 'doc-code-block--expandable',
       HIDDEN = 'doc-code-block--hidden',
@@ -35,17 +19,39 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       MORE = 'Show full example',
       LESS = 'Hide full example',
-      SVG = `<svg class="env-icon env-icon--small">
+      SVG = `<svg class="env-icon env-icon--small" aria-hidden="true">
                 <use xlink:href="/sitevision/envision-icons.svg#icon-angle-down">
                 </use></svg>`;
 
-   document.body.querySelectorAll(`.${EXPANDABLE}`).forEach((element) => {
-      const pre =
-         element.tagName === 'PRE' ? element : element.querySelector('pre');
+   const updateScrollFocus = (pre) => {
+      const canScroll =
+         !pre.closest(`.${HIDDEN}`) &&
+         (pre.scrollWidth > pre.clientWidth ||
+            pre.scrollHeight > pre.clientHeight);
+      if (canScroll) {
+         const language = pre.dataset.language?.toLowerCase();
+         pre.tabIndex = 0;
+         pre.setAttribute('role', 'region');
+         pre.setAttribute(
+            'aria-label',
+            Object.hasOwn(codeBlockLabels, language)
+               ? codeBlockLabels[language]
+               : 'Example code'
+         );
+      } else {
+         pre.removeAttribute('tabindex');
+         pre.removeAttribute('role');
+         pre.removeAttribute('aria-label');
+      }
+   };
+   const resizeObserver = new ResizeObserver((entries) => {
+      entries.forEach(({ target }) => updateScrollFocus(target));
+   });
 
-      if (pre && pre.clientHeight > window.innerHeight * 0.25) {
-         uniqueId(element);
-         // element.classList.add(EXPANDABLE);
+   document.body.querySelectorAll('.doc-code-block pre').forEach((pre) => {
+      const element = pre.closest(`.${EXPANDABLE}`);
+      if (element && pre.clientHeight > window.innerHeight * 0.25) {
+         uniqueId(pre);
          element.classList.add(HIDDEN);
 
          const span = document.createElement('span');
@@ -56,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
          button.setAttribute('type', 'button');
          button.setAttribute('aria-expanded', 'false');
          button.classList.add(...TOGGLER);
-         button.setAttribute('aria-controls', element.id);
+         button.setAttribute('aria-controls', pre.id);
 
          button.appendChild(span);
          element.appendChild(button);
@@ -77,7 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
                span.textContent = LESS;
             }
             button.setAttribute('aria-expanded', !expanded);
+            updateScrollFocus(pre);
+            if (!expanded && pre.tabIndex === 0) {
+               pre.focus();
+            }
          });
       }
+      resizeObserver.observe(pre);
    });
 });

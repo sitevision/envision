@@ -45,7 +45,13 @@ const { frontmatter } = Astro.props;
          </div>
 
          <div class="mobile-nav-button">
-            <button class="env-button env-button--link env-button--icon">
+            <button
+               type="button"
+               class="env-button env-button--link env-button--icon"
+               aria-haspopup="dialog"
+               aria-expanded="false"
+               aria-controls="mobile-nav"
+            >
                <svg class="env-icon env-icon--xx-small">
                   <use href="/sitevision/envision-icons.svg#icon-menu-line"></use>
                </svg>

@@ -20,10 +20,10 @@ few extra features:
 <dialog
    id="demo-dialog"
   class="env-dialog env-dialog--in"
-  aria-labelledby="dialogHeader-1" open>
+  aria-labelledby="demo-dialog-title" open>
     <h2
       class="env-dialog__title"
-      id="dialogHeader-1"
+      id="demo-dialog-title"
     >
       Dialog Title
     </h2>

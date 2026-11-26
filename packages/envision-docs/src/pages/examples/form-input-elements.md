@@ -170,11 +170,11 @@ Examples of form input elements in Envision.
          </div>
       </div>
       <div class="env-form-field">
-         <label for="select-2d" class="env-form-label"
+         <label for="select-with-selected-content" class="env-form-label"
             >env-form-select select w selectedcontent</label
          >
          <div class="env-form-select">
-            <select id="select-2d">
+            <select id="select-with-selected-content">
                <button>
                   <selectedcontent></selectedcontent>
                </button>
@@ -194,11 +194,11 @@ Examples of form input elements in Envision.
          </div>
       </div>
       <div class="env-form-field">
-         <label for="select-2d" class="env-form-label"
+         <label for="select-with-form-input-class" class="env-form-label"
             >env-form-select select.env-form-input</label
          >
          <div class="env-form-select">
-            <select class="env-form-input" id="select-2d">
+            <select class="env-form-input" id="select-with-form-input-class">
                <option>
                   Each form field combination of text label and form control
                   may optionally be wrapped
@@ -215,11 +215,11 @@ Examples of form input elements in Envision.
          </div>
       </div>
       <div class="env-form-field">
-         <label for="select-2d" class="env-form-label"
+         <label for="select-with-form-input-and-selected-content" class="env-form-label"
             >env-form-select select.env-form-input w selectedcontent</label
          >
          <div class="env-form-select">
-            <select class="env-form-input" id="select-2d">
+            <select class="env-form-input" id="select-with-form-input-and-selected-content">
                <button>
                   <selectedcontent></selectedcontent>
                </button>
@@ -239,11 +239,11 @@ Examples of form input elements in Envision.
          </div>
       </div>
       <div class="env-form-field">
-         <label for="select-2d" class="env-form-label"
+         <label for="select-with-selected-content-no-icon" class="env-form-label"
             >env-form-select select w selectedcontent, no icon</label
          >
          <div class="env-form-select">
-            <select id="select-2d">
+            <select id="select-with-selected-content-no-icon">
                <button>
                   <selectedcontent></selectedcontent>
                </button>
@@ -338,13 +338,23 @@ Examples of form input elements in Envision.
 </div>
 
 <div class="env-form-field">
-   <label class="env-form-label" class="env-form-label">Input text</label>
-   <input class="env-form-input" type="date" value="2017-06-01" />
+   <label class="env-form-label" for="example-start-date">Start date</label>
+   <input
+      class="env-form-input"
+      id="example-start-date"
+      type="date"
+      value="2017-06-01"
+   />
 </div>
 
 <div class="env-form-field">
-   <label class="env-form-label" class="env-form-label">Input text</label>
-   <input class="env-form-input" type="date" value="2017-06-01" />
+   <label class="env-form-label" for="example-end-date">End date</label>
+   <input
+      class="env-form-input"
+      id="example-end-date"
+      type="date"
+      value="2017-06-01"
+   />
 </div>
 
 <fieldset id="forms__html5">

@@ -4,10 +4,16 @@ import { getMobileMenuItems } from '../utils/navMenuUtils.ts';
 const menuItems = getMobileMenuItems(frontmatter);
 ---
 
-<dialog class="mobileNav">
+<dialog id="mobile-nav" class="mobileNav" aria-labelledby="mobile-nav-title">
    <div class="mobileNav__header">
-      <h2 class="env-ui-text-sectionheading">Envision documentation</h2>
-      <button class="mobileNav__close env-button env-button--icon env-button--icon-small">
+      <h2 id="mobile-nav-title" class="env-ui-text-sectionheading">
+         Envision documentation
+      </h2>
+      <button
+         type="button"
+         class="mobileNav__close env-button env-button--icon env-button--icon-small"
+         autofocus
+      >
          <span class="env-assistive-text">Close</span>
          <svg class="env-icon env-icon--medium" aria-hidden="true">
             <use href="/sitevision/envision-icons.svg#icon-delete"></use>
