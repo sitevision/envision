@@ -170,7 +170,7 @@ export const isVisible = function (element) {
    );
 };
 
-export const getFocusable = function (root) {
+export const getFocusable = function (root, { includeHidden = false } = {}) {
    const SELECTOR = [
       'a[href]',
       'area[href]',
@@ -184,13 +184,7 @@ export const getFocusable = function (root) {
       '[contenteditable]',
    ].join(',');
    const allFocusable = getNodes(SELECTOR, root);
-   const visibleFocusable = [];
-   for (let i = 0; i < allFocusable.length; i++) {
-      if (isVisible(allFocusable[i])) {
-         visibleFocusable.push(allFocusable[i]);
-      }
-   }
-   return visibleFocusable;
+   return includeHidden ? allFocusable : allFocusable.filter(isVisible);
 };
 
 export const getNextFocusable = (focusable, root) => {

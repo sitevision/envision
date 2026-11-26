@@ -382,11 +382,13 @@ export default class Imageviewer2Slider {
       }
 
       if (inactive && !this.#inactiveSlideTabIndexes.has(slide)) {
-         const tabIndexes = getFocusable(slide).map((element) => {
-            const tabIndex = element.getAttribute('tabindex');
-            element.tabIndex = -1;
-            return [element, tabIndex];
-         });
+         const tabIndexes = getFocusable(slide, { includeHidden: true }).map(
+            (element) => {
+               const tabIndex = element.getAttribute('tabindex');
+               element.tabIndex = -1;
+               return [element, tabIndex];
+            }
+         );
          this.#inactiveSlideTabIndexes.set(slide, tabIndexes);
       } else if (!inactive) {
          this.#inactiveSlideTabIndexes

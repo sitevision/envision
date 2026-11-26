@@ -54,7 +54,11 @@ const DEFAULTS = {
 class Popover {
    constructor(element, config) {
       this.el = element;
-      this.config = { ...DEFAULTS, ...this.el.dataset, ...config };
+      const dataOptions = { ...element.dataset };
+      if (dataOptions.escapeContent === 'false') {
+         dataOptions.escapeContent = false;
+      }
+      this.config = { ...DEFAULTS, ...dataOptions, ...config };
       this.bindEvents();
       if (this.config.type === 'menu') {
          this.el.setAttribute('aria-haspopup', 'true');
