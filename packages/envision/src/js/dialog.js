@@ -17,6 +17,7 @@ export default class Dialog {
    #initialized;
    #modalEventsBound;
    #elementPlaceholder;
+   #scrollLocked = false;
 
    constructor(element, options) {
       this.options = options;
@@ -49,7 +50,7 @@ export default class Dialog {
    }
 
    _bindModalEvents() {
-      this.el.addEventListener('close', this.close);
+      this.el.addEventListener('close', this.#finishClose);
       this.el.addEventListener('click', this.#handleClick, { capture: false });
       this.el.addEventListener('keydown', this.#handleKeydown);
       this.#modalEventsBound = true;
@@ -104,29 +105,51 @@ export default class Dialog {
       if (e) {
          e.preventDefault();
       }
+      if (this.el.open) {
+         return;
+      }
+      this.#finishClose();
       if (this.options.placement === 'body') {
          this.el.after(this.#elementPlaceholder);
          document.body.append(this.el);
       }
-      lockScroll();
-      this.el.showModal();
-      this._fadeIn();
       if (!this.#modalEventsBound) {
          this._bindModalEvents();
+      }
+      lockScroll();
+      this.#scrollLocked = true;
+      try {
+         this.el.showModal();
+      } catch (error) {
+         this.#finishClose();
+         throw error;
+      }
+      if (this.el.open) {
+         this._fadeIn();
+      } else {
+         this.#finishClose();
       }
    }
 
    close() {
-      if (this.el.classList.contains(CLASSNAME.ANIMATION)) {
-         this.el.classList.remove(CLASSNAME.ANIMATION);
+      if (this.#scrollLocked && this.el.open) {
          this.el.close();
-         if (this.options.placement === 'body') {
-            this.#elementPlaceholder.after(this.el);
-            this.#elementPlaceholder.remove();
-         }
-         unlockScroll();
       }
+      this.#finishClose();
    }
+
+   #finishClose = () => {
+      if (!this.#scrollLocked || this.el.open) {
+         return;
+      }
+      this.#scrollLocked = false;
+      this.el.classList.remove(CLASSNAME.ANIMATION);
+      if (this.#elementPlaceholder) {
+         this.#elementPlaceholder.after(this.el);
+         this.#elementPlaceholder.remove();
+      }
+      unlockScroll();
+   };
 }
 
 const dialogDefaults = {

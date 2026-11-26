@@ -54,7 +54,7 @@ class Tooltip {
       this.el.setAttribute('aria-describedby', this.tooltip.id);
 
       setStyle(this.tooltip, 'display', 'none');
-      this.tooltip.innerHTML = this.tooltip.textContent;
+      this.tooltip.replaceChildren(this.tooltip.textContent);
 
       this.handleShowEvent = this.handleShowEvent.bind(this);
       this.handleHideEvent = this.handleHideEvent.bind(this);
@@ -112,35 +112,51 @@ class Tooltip {
    }
 
    hide() {
-      setStyle(this.tooltip, 'display', 'none');
+      clearTimeout(this.showtimeout);
+      clearTimeout(this.hidetimeout);
       this.isShowing = false;
+      this._popperRequest = undefined;
+      this._popper?.destroy();
+      this._popper = undefined;
+      if (this.tooltip) {
+         setStyle(this.tooltip, 'display', 'none');
+      }
       document.removeEventListener('keyup', this.handleKeyboardEvent);
    }
 
    show() {
+      if (!this.el || !this.tooltip || this.isShowing) {
+         return;
+      }
+      this.isShowing = true;
       setStyle(this.tooltip, 'display', 'block');
-      getPopper().then((createPopper) => {
+      const popperRequest = getPopper();
+      this._popperRequest = popperRequest;
+      popperRequest.then((createPopper) => {
+         if (this._popperRequest !== popperRequest) {
+            return;
+         }
          this._popper = createPopper(this.container, this.tooltip, {
             placement: this.config.placement,
             modifiers: this.config.modifiers,
          });
-         this._popper.update();
-         this.isShowing = true;
       });
       document.addEventListener('keyup', this.handleKeyboardEvent);
    }
 
    destroy() {
       this.hide();
-      this._popper && this._popper.destroy();
-      this._popper = undefined;
-      this.isShowing = false;
+      if (!this.el || !this.tooltip) {
+         return;
+      }
       this.el.removeEventListener('mouseenter', this.handleShowEvent);
       this.el.removeEventListener('focusin', this.handleShowEvent);
       this.el.removeEventListener('mouseleave', this.handleHideEvent);
       this.el.removeEventListener('focusout', this.handleHideEvent);
       this.el.removeEventListener('mouseleave', this.handleHoverIntent);
       this.el.removeEventListener('focusout', this.handleHoverIntent);
+      this.tooltip.removeEventListener('mouseenter', this.handleShowEvent);
+      this.tooltip.removeEventListener('mouseleave', this.handleHideEvent);
    }
 
    static async _init(elements, settings) {

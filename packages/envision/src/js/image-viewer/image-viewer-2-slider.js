@@ -34,7 +34,9 @@ export default class Imageviewer2Slider {
    #sliderEl;
    #viewerEl;
    #autoplayButtonEl;
+   #wasPlayingOnPointerDown = false;
    #zoomButtonEl;
+   #inactiveSlideTabIndexes = new WeakMap();
 
    constructor(
       element,
@@ -98,6 +100,7 @@ export default class Imageviewer2Slider {
          plugins
       );
       this.#slider.on('select', this.#handleSlideSelect);
+      this.#slider.on('reinit', this.#handleSlideSelect);
 
       if (this.#config.slides.autoHeight && AutoHeight) {
          // Plugin teardown also runs on reinit; only clear the preserved
@@ -108,6 +111,7 @@ export default class Imageviewer2Slider {
       }
 
       if (this.#config.slides.auto) {
+         this.#el.addEventListener('focusin', this.#handleFocus);
          this.#setAutoplay(
             this.#config.slides.playing
                ? AUTOPLAY_STATE.PLAY
@@ -120,7 +124,7 @@ export default class Imageviewer2Slider {
          });
       }
 
-      this.#setSlideMarkup(this.#viewerEl, 0);
+      this.#handleSlideSelect(this.#slider);
 
       // Make visible after initialized
       setStyle(this.#viewerEl, 'visibility', 'visible');
@@ -332,46 +336,69 @@ export default class Imageviewer2Slider {
       this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
    };
 
-   #setSlideMarkup(viewerEl, currentSlideIndex) {
-      // Set tabindex for focusable elements
-      // Add assistive text for image slideshow
+   #setSlideMarkup(currentSlideIndex) {
+      const slides = this.#sliderEl.children;
+      const currentSlideEl = slides[currentSlideIndex];
+      if (!currentSlideEl) {
+         return;
+      }
 
-      const currentSlideEl = viewerEl.querySelectorAll(`.${CLASSNAME.ITEM}`)[
-         currentSlideIndex
-      ];
+      this.#setSlideInactive(currentSlideEl, false);
+      const focusedElement = document.activeElement;
+      if (
+         this.#sliderEl.contains(focusedElement) &&
+         !currentSlideEl.contains(focusedElement)
+      ) {
+         currentSlideEl.focus({ preventScroll: true });
+      }
+      for (const slide of slides) {
+         if (slide !== currentSlideEl) {
+            this.#setSlideInactive(slide, true);
+         }
+      }
       if (this.#zoomButtonEl) {
          this.#zoomButtonEl.disabled =
             !currentSlideEl.querySelector('[data-zoom]');
       }
-      const allFocusable = getFocusable(viewerEl);
-
-      allFocusable.forEach((el) => {
-         const tabIndex =
-            el.dataset.envImageViewer2Tabindex ||
-            el.getAttribute('tabindex') ||
-            '0';
-         if (tabIndex !== '-1') {
-            el.setAttribute('tabindex', '-1');
-         }
-         el.dataset.envImageViewer2Tabindex = tabIndex;
-      });
-
-      const currentFocusable = getFocusable(currentSlideEl);
-
-      currentFocusable.forEach((el) => {
-         const tabIndex = el.dataset.envImageViewer2Tabindex || '0';
-         el.setAttribute('tabindex', tabIndex);
-      });
 
       if (this.#config.slides.type === SLIDESHOW_TYPE.IMAGES) {
-         const assistiveText = `${
-            currentSlideEl.querySelector('img')?.alt
-         } ${currentSlideEl.textContent.trim()}`;
-         if (assistiveText) {
-            viewerEl.querySelector(
-               `.${CLASSNAME.BASE}__assistive`
-            ).textContent = assistiveText;
-         }
+         const alt = currentSlideEl.querySelector('img')?.alt ?? '';
+         this.#viewerEl.querySelector(
+            `.${CLASSNAME.BASE}__assistive`
+         ).textContent = `${alt} ${currentSlideEl.textContent}`.trim();
+      }
+   }
+
+   #setSlideInactive(slide, inactive) {
+      if (inactive) {
+         slide.setAttribute('aria-hidden', 'true');
+      } else {
+         slide.removeAttribute('aria-hidden');
+      }
+
+      if ('inert' in slide) {
+         slide.inert = inactive;
+         return;
+      }
+
+      if (inactive && !this.#inactiveSlideTabIndexes.has(slide)) {
+         const tabIndexes = getFocusable(slide).map((element) => {
+            const tabIndex = element.getAttribute('tabindex');
+            element.tabIndex = -1;
+            return [element, tabIndex];
+         });
+         this.#inactiveSlideTabIndexes.set(slide, tabIndexes);
+      } else if (!inactive) {
+         this.#inactiveSlideTabIndexes
+            .get(slide)
+            ?.forEach(([element, tabIndex]) => {
+               if (tabIndex === null) {
+                  element.removeAttribute('tabindex');
+               } else {
+                  element.setAttribute('tabindex', tabIndex);
+               }
+            });
+         this.#inactiveSlideTabIndexes.delete(slide);
       }
    }
 
@@ -414,11 +441,15 @@ export default class Imageviewer2Slider {
    #handleAutoplayButton = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      if (this.#autoplayState !== AUTOPLAY_STATE.PLAY) {
-         this.#setAutoplay(AUTOPLAY_STATE.PLAY);
-      } else {
+      if (
+         this.#autoplayState === AUTOPLAY_STATE.PLAY ||
+         (e.detail > 0 && this.#wasPlayingOnPointerDown)
+      ) {
          this.#setAutoplay(AUTOPLAY_STATE.STOP);
+      } else {
+         this.#setAutoplay(AUTOPLAY_STATE.PLAY);
       }
+      this.#wasPlayingOnPointerDown = false;
    };
 
    #handleInteraction = (interaction) => {
@@ -459,18 +490,15 @@ export default class Imageviewer2Slider {
       this.#handleInteraction(interaction);
    };
 
-   #handleFocus = (e) => {
-      if (
-         this.#config.slides.auto &&
-         this.#autoplayState === AUTOPLAY_STATE.PLAY &&
-         this.#viewerEl.contains(e.target)
-      ) {
+   #handleFocus = () => {
+      this.#autoplayPreviousInteractionEvent = null;
+      if (this.#autoplayState === AUTOPLAY_STATE.PLAY) {
          this.#setAutoplay(AUTOPLAY_STATE.PAUSE);
       }
    };
 
    #handleSlideSelect = (api) => {
-      this.#setSlideMarkup(this.#viewerEl, api.selectedSnap());
+      this.#setSlideMarkup(api.selectedSnap());
    };
 
    #handleLightboxZoom = () => {
@@ -499,6 +527,11 @@ export default class Imageviewer2Slider {
    };
 
    bindEvents(prevBtn, nextBtn, zoomBtn) {
+      this.#autoplayButtonEl?.addEventListener('pointerdown', () => {
+         // Focus can pause rotation before the click is received.
+         this.#wasPlayingOnPointerDown =
+            this.#autoplayState === AUTOPLAY_STATE.PLAY;
+      });
       this.#autoplayButtonEl?.addEventListener(
          'click',
          this.#handleAutoplayButton
@@ -509,7 +542,6 @@ export default class Imageviewer2Slider {
       zoomBtn?.addEventListener('click', this.#handleLightboxZoom);
 
       if (this.#config.slides.auto) {
-         this.#viewerEl.addEventListener('focus', this.#handleFocus, true);
          this.#viewerEl.addEventListener('click', this.#handleClickEvent, true);
          this.#slider.on('autoplay:interaction', this.#handleInteractionEvent);
       }

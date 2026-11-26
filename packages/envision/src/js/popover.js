@@ -406,18 +406,26 @@ class Popover {
    }
 
    setContent(popoverElement) {
-      if (this.config.content instanceof HTMLElement) {
-         this.config.content = this.config.content.innerHTML;
-      }
+      const { content, escapeContent } = this.config;
       const className =
          this.config.type === 'menu' ? MENU_CLASSNAME : CONTENT_CLASSNAME;
-      if (this.config.escapeContent) {
-         popoverElement.querySelector(`.${className}`).innerHTML =
-            `<p class="env-text">${this.config.content}</p>`;
-      } else {
-         popoverElement.querySelector(`.${className}`).innerHTML =
-            this.config.content;
+      const contentElement = popoverElement.querySelector(`.${className}`);
+      if (escapeContent === false) {
+         contentElement.innerHTML =
+            content instanceof HTMLElement ? content.innerHTML : content;
+         return;
       }
+
+      const paragraph = document.createElement('p');
+      paragraph.className = 'env-text';
+      if (content instanceof HTMLTemplateElement) {
+         paragraph.textContent = content.content.textContent;
+      } else if (content instanceof HTMLElement) {
+         paragraph.textContent = content.textContent;
+      } else {
+         paragraph.textContent = content ?? '';
+      }
+      contentElement.replaceChildren(paragraph);
    }
 
    updateConfig(config) {
@@ -432,8 +440,13 @@ class Popover {
    }
 
    hide() {
-      const popoverElement = this.getPopoverElement();
-      popoverElement.remove();
+      clearTimeout(this.showtimeout);
+      clearTimeout(this.hidetimeout);
+      this.isShowing = false;
+      this._popperRequest = undefined;
+      this._popper?.destroy();
+      this._popper = undefined;
+      this.popoverElement?.remove();
 
       if (this.config.type === 'menu') {
          this.el.setAttribute('aria-expanded', 'false');
@@ -442,18 +455,18 @@ class Popover {
          this.el.removeAttribute('aria-describedby');
       }
 
-      if (this.config.clickOutside) {
-         document.body.removeEventListener('click', this.clickOutsideHandler);
-      }
+      document.body.removeEventListener('click', this.clickOutsideHandler);
       document.removeEventListener('keydown', this.handleKeyboardEvent);
-      this.isShowing = false;
    }
 
    show() {
       this.render();
       const popoverElement = this.getPopoverElement();
 
-      document.body.appendChild(popoverElement);
+      if (!this.isShowing) {
+         document.body.appendChild(popoverElement);
+      }
+      this.isShowing = true;
 
       if (this.config.type === 'menu') {
          this.el.setAttribute('aria-expanded', 'true');
@@ -471,7 +484,20 @@ class Popover {
          this.el.setAttribute('aria-describedby', this.popoverElement.id);
       }
 
-      getPopper().then((createPopper) => {
+      if (this.config.clickOutside) {
+         document.body.addEventListener('click', this.clickOutsideHandler);
+      } else {
+         document.body.removeEventListener('click', this.clickOutsideHandler);
+      }
+      document.addEventListener('keydown', this.handleKeyboardEvent);
+
+      const popperRequest = getPopper();
+      this._popperRequest = popperRequest;
+      popperRequest.then((createPopper) => {
+         if (this._popperRequest !== popperRequest) {
+            return;
+         }
+         this._popper?.destroy();
          this._popper = createPopper(this.el, popoverElement, {
             placement: this.config.placement,
             modifiers: [
@@ -489,27 +515,20 @@ class Popover {
                },
             ],
          });
-         this._popper.update();
-
-         if (this.config.clickOutside) {
-            document.body.addEventListener('click', this.clickOutsideHandler);
-         }
-
-         document.addEventListener('keydown', this.handleKeyboardEvent);
-         this.isShowing = true;
       });
    }
 
    destroy() {
       this.hide();
-
-      if (this._popper) {
-         this._popper.destroy();
-      }
-
-      this._popper = undefined;
-      this.isShowing = false;
       this.removeEvents();
+      this.popoverElement?.removeEventListener(
+         'mouseenter',
+         this.handlePopoverMouseEnter
+      );
+      this.popoverElement?.removeEventListener(
+         'mouseleave',
+         this.handlePopoverMouseLeave
+      );
    }
 
    static async _init(elements, settings) {

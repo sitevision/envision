@@ -7,7 +7,6 @@ import { createElement } from '../util/nodes';
 
 export const CLASSNAME = {
    BASE: 'env-image-viewer-2',
-   ANIMATING: 'env-animation-in-progress',
    ITEM: 'env-image-viewer-2__viewer__item',
    ITEMS: 'env-image-viewer-2__viewer__items',
    LIGHTBOX: 'env-image-viewer-2__lightbox',
@@ -104,6 +103,6 @@ export const SLIDER_VIEWER_TEMPLATE = {
 </div>`,
 };
 
-export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group" aria-roledescription="slide"></div>`;
+export const SLIDER_ITEM_TEMPLATE = `<div class="${CLASSNAME.ITEM}" role="group" aria-roledescription="slide" tabindex="-1"></div>`;
 
 export const SLIDER_CONTROLS_TEMPLATE = `<div class="${CLASSNAME.BASE}__viewer__controls"></div>`;

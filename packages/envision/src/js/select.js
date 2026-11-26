@@ -69,11 +69,7 @@ const defaults = {
       clearButton: true,
       placeholder: null,
       clearAfterSelect: true,
-      sortField: function (a, b) {
-         const aText = this.items[a.id].text;
-         const bText = this.items[b.id].text;
-         return aText && bText ? aText.localeCompare(bText) : 0;
-      },
+      sortField: undefined,
       createFilter: function (input) {
          input = input.toLowerCase();
          return !(input in this.options);
@@ -124,6 +120,18 @@ const defaults = {
 const SelectPlugin = function (el, settings, TomSelect) {
    this.el = el;
    this.settings = settings;
+   const inputId = el.id;
+   const labels = Array.from(el.labels ?? []).filter(
+      (label) => inputId && label.htmlFor === inputId
+   );
+   const inputClasses = [
+      'env-form-input',
+      'env-assistive-text',
+      'env-select--locked',
+   ].map((name) => [name, el.classList.contains(name)]);
+   const inputAttributes = ['multiple', 'tabindex', 'disabled', 'readonly'].map(
+      (name) => [name, el.getAttribute(name)]
+   );
 
    // Initialize
    this.el.classList.remove('env-form-input');
@@ -183,7 +191,26 @@ const SelectPlugin = function (el, settings, TomSelect) {
    this.disable = select.disable.bind(select);
    this.enable = select.enable.bind(select);
    this.destroy = function () {
+      const focusId = select.focus_node.id;
       select.destroy();
+      labels.forEach((label) => {
+         if (label.htmlFor === focusId) {
+            label.htmlFor = inputId;
+         }
+      });
+      inputClasses.forEach(([name, present]) => {
+         el.classList.toggle(name, present);
+      });
+      inputAttributes.forEach(([name, value]) => {
+         if (value === null) {
+            el.removeAttribute(name);
+         } else {
+            el.setAttribute(name, value);
+         }
+      });
+      if (el[NAME] === this) {
+         delete el[NAME];
+      }
       for (let key in this) {
          if (Object.prototype.hasOwnProperty.call(this, key)) {
             delete this[key];
@@ -215,6 +242,15 @@ const getSettings = (options, node) => {
       defaults.userConfig,
       options
    );
+
+   if (settings.sortField === undefined) {
+      const { labelField } = settings;
+      settings.sortField = function (a, b) {
+         const aLabel = String(this.items[a.id]?.[labelField] ?? '');
+         const bLabel = String(this.items[b.id]?.[labelField] ?? '');
+         return aLabel && bLabel ? aLabel.localeCompare(bLabel) : 0;
+      };
+   }
 
    if (settings.maxItems === 1) {
       // Settings not allowed in Single select
