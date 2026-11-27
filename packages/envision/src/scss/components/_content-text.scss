@@ -1,4 +1,5 @@
 @use '../abstracts/scss-variables' as *;
+@use '../abstracts/mixins/focus';
 
 .env-text {
    @each $name in $CONTENT_TEXT_NAMES {
@@ -25,6 +26,8 @@
                   --env-text-#{$name}-link-hover-text-decoration
                );
             }
+
+            @include focus.focus-visible;
          }
       }
    }
