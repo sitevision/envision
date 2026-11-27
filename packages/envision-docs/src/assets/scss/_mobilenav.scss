@@ -1,17 +1,22 @@
 @use 'variables';
 
+html:has(.mobileNav:modal) {
+   overflow: hidden;
+}
+
 .mobileNav {
    display: none;
    position: fixed;
-   z-index: 2147483646;
    inset: 0;
    padding: 4.5em 0.5em 0.5em;
    overflow-x: hidden;
    overflow-y: auto;
+   overscroll-behavior: contain;
    --env-font-color: var(--doc-font-color);
 
    width: auto;
    height: auto;
+   max-width: none;
    margin: 0;
    border: none;
 
@@ -20,7 +25,7 @@
    background-color: var(--doc-section-background-color);
    color: var(--doc-font-color);
 
-   &.show {
+   &[open] {
       display: block;
    }
 

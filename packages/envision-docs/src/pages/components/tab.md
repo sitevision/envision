@@ -9,19 +9,47 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
 
 ```html
 <div class="env-tabs example-tabs">
-   <ul class="env-tabs__nav env-tabs__nav--border-bottom" role="tablist">
-      <li role="tab" aria-controls="panel1" aria-selected="true">Tab 1</li>
-      <li role="tab" aria-controls="panel2" aria-selected="false">Tab 2</li>
-      <li role="tab" aria-controls="panel3" aria-selected="false">Tab 3</li>
+   <ul
+      class="env-tabs__nav env-tabs__nav--border-bottom"
+      role="tablist"
+      aria-label="Default tabs"
+   >
+      <li id="tab1" role="tab" aria-controls="panel1" aria-selected="true">
+         Tab 1
+      </li>
+      <li id="tab2" role="tab" aria-controls="panel2" aria-selected="false">
+         Tab 2
+      </li>
+      <li id="tab3" role="tab" aria-controls="panel3" aria-selected="false">
+         Tab 3
+      </li>
    </ul>
 </div>
-<div id="panel1" class="example-panel" role="tabpanel" aria-hidden="false">
+<div
+   id="panel1"
+   class="example-panel"
+   aria-labelledby="tab1"
+   role="tabpanel"
+   aria-hidden="false"
+>
    1
 </div>
-<div id="panel2" class="example-panel" role="tabpanel" aria-hidden="true">
+<div
+   id="panel2"
+   class="example-panel"
+   aria-labelledby="tab2"
+   role="tabpanel"
+   aria-hidden="true"
+>
    2
 </div>
-<div id="panel3" class="example-panel" role="tabpanel" aria-hidden="true">
+<div
+   id="panel3"
+   class="example-panel"
+   aria-labelledby="tab3"
+   role="tabpanel"
+   aria-hidden="true"
+>
    3
 </div>
 ```
@@ -30,28 +58,15 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
 
 ```html
 <div class="env-tabs env-tabs--simple example-tabs1">
-   <ul class="env-tabs__nav" role="tablist">
-         <li
-            id="tab4"
-            role="tab"
-            aria-controls="panel4"
-            aria-selected="false"
-            >Tab 4</li
-         >
-         <li
-            id="tab5"
-            role="tab"
-            aria-controls="panel5"
-            aria-selected="true"
-            >Tab 5</li
-         >
-         <li
-            id="tab6"
-            role="tab"
-            aria-controls="panel6"
-            aria-selected="false"
-            >Tab 6</li
-         >
+   <ul class="env-tabs__nav" role="tablist" aria-label="Simple tabs">
+      <li id="tab4" role="tab" aria-controls="panel4" aria-selected="false">
+         Tab 4
+      </li>
+      <li id="tab5" role="tab" aria-controls="panel5" aria-selected="true">
+         Tab 5
+      </li>
+      <li id="tab6" role="tab" aria-controls="panel6" aria-selected="false">
+         Tab 6
       </li>
    </ul>
 </div>
@@ -87,41 +102,31 @@ Note: All examples below require tabs to be [initialized from JavaScript](#init)
 
 ## Stacked
 
-Add class modifier `env-tabs--column` to tab stack container to make tabs vertical.
+Add `env-tabs--column` and `aria-orientation="vertical"` to the tab list for
+vertical tabs. Use the Up and Down arrow keys to move between tabs.
 
 ```html
 <div class="env-tabs example-tabs3">
-   <ul class="env-tabs__nav env-tabs--column" role="tablist">
-      <li   id="tab7"
-            role="tab"
-            aria-controls="panel7"
-            aria-selected="true"
-            >Tab 7
+   <ul
+      class="env-tabs__nav env-tabs--column"
+      role="tablist"
+      aria-label="Stacked tabs"
+      aria-orientation="vertical"
+   >
+      <li id="tab7" role="tab" aria-controls="panel7" aria-selected="true">
+         Tab 7
       </li>
-      <li   id="tab8"
-            role="tab"
-            aria-controls="panel8"
-            aria-selected="false"
-            >Tab 8
+      <li id="tab8" role="tab" aria-controls="panel8" aria-selected="false">
+         Tab 8
       </li>
-      <li   id="tab9"
-            role="tab"
-            aria-controls="panel9"
-            aria-selected="false"
-            >Tab 9</a
-         >
+      <li id="tab9" role="tab" aria-controls="panel9" aria-selected="false">
+         Tab 9
       </li>
-      <li   id="tab10"
-            role="tab"
-            aria-controls="panel10"
-            aria-selected="false"
-            >Tab 10
+      <li id="tab10" role="tab" aria-controls="panel10" aria-selected="false">
+         Tab 10
       </li>
-      <li   id="tab11"
-            role="tab"
-            aria-controls="panel11"
-            aria-selected="false"
-            >Tab 11
+      <li id="tab11" role="tab" aria-controls="panel11" aria-selected="false">
+         Tab 11
       </li>
    </ul>
 </div>
