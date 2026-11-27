@@ -6,7 +6,7 @@
 
 import $ from 'jquery';
 import Util from './util/util';
-import { uniqueId, hide, resetDisplay, getNodes } from './util/nodes';
+import { uniqueId, getNodes } from './util/nodes';
 
 const ARIA_SELECTED = 'aria-selected';
 const ARIA_HIDDEN = 'aria-hidden';
@@ -21,11 +21,29 @@ const DEFAULTS = {
    active: 0,
 };
 
+const saveMarkup = (element, attributes, className) => {
+   const values = attributes.map((name) => [name, element.getAttribute(name)]);
+   const hadClass = element.classList.contains(className);
+
+   return () => {
+      values.forEach(([name, value]) => {
+         if (value === null) {
+            element.removeAttribute(name);
+         } else {
+            element.setAttribute(name, value);
+         }
+      });
+      element.classList.toggle(className, hadClass);
+   };
+};
+
 class Tabs {
    constructor(element, config) {
       this.el = element;
       this.tabs = getNodes(this.el.querySelectorAll(TAB_SELECTOR));
-      this.panels = {};
+      this.panels = new Map();
+      this.restoreTabs = [];
+      this.panelMarkup = new Map();
       this.activeTab = undefined;
 
       this.config = Object.assign(
@@ -65,13 +83,20 @@ class Tabs {
 
    initialize() {
       this.tabs.forEach((tab, i) => {
+         this.restoreTabs.push(
+            saveMarkup(
+               tab,
+               ['id', ARIA_SELECTED, DATA_INDEX, 'tabindex'],
+               IS_ACTIVE
+            )
+         );
          uniqueId(tab);
          let panel = document.getElementById(tab.getAttribute('aria-controls'));
-         if (!panel) {
-            // Legacy selector fallback
-            document.querySelector(tab.getAttribute('href'));
+         const href = tab.getAttribute('href');
+         if (!panel && href?.startsWith('#')) {
+            panel = document.getElementById(href.slice(1));
          }
-         this.panels[tab.getAttribute('id')] = panel;
+         this.panels.set(tab, panel);
          if (
             tab.getAttribute(ARIA_SELECTED) === 'true' ||
             tab.classList.contains(IS_ACTIVE)
@@ -82,16 +107,27 @@ class Tabs {
          tab.setAttribute(ARIA_SELECTED, false);
          tab.setAttribute(DATA_INDEX, i);
          tab.setAttribute('tabindex', '-1');
-         if (panel) {
+         if (panel && !this.panelMarkup.has(panel)) {
+            const restore = saveMarkup(
+               panel,
+               ['tabindex', 'role', ARIA_HIDDEN],
+               TAB_PANEL_CLASS
+            );
+            const display = panel.style.getPropertyValue('display');
+            const priority = panel.style.getPropertyPriority('display');
+            this.panelMarkup.set(panel, { restore, display, priority });
             panel.setAttribute('tabindex', '0');
             panel.setAttribute('role', 'tabpanel');
             panel.setAttribute(ARIA_HIDDEN, true);
             panel.classList.add(TAB_PANEL_CLASS);
-            hide(panel);
+            panel.style.setProperty('display', 'none', 'important');
          }
       });
-      this.tabs[this.config.active].setAttribute('tabindex', '0');
-      this._setActive(this.tabs[this.config.active], false);
+      const activeTab = this.tabs[this.config.active] ?? this.tabs[0];
+      if (activeTab) {
+         activeTab.setAttribute('tabindex', '0');
+         this._setActive(activeTab, false);
+      }
    }
 
    activate(index) {
@@ -101,11 +137,21 @@ class Tabs {
    }
 
    destroy() {
+      if (!this.el) {
+         return;
+      }
       this.tabs.forEach((tab) => {
          tab.removeEventListener('click', this._clickHandler, false);
          tab.removeEventListener('keydown', this._keydownHandler, false);
-         tab.removeAttribute(DATA_INDEX);
       });
+      this.restoreTabs.forEach((restore) => restore());
+      this.panelMarkup.forEach(({ restore, display, priority }, panel) => {
+         restore();
+         panel.style.setProperty('display', display, priority);
+      });
+      if (this.el[NAME] === this) {
+         delete this.el[NAME];
+      }
       for (let key in this) {
          delete this[key];
       }
@@ -141,7 +187,8 @@ class Tabs {
       const panel = this._getPanelForTab(tab);
       if (panel) {
          panel.setAttribute(ARIA_HIDDEN, false);
-         resetDisplay(panel);
+         const { display, priority } = this.panelMarkup.get(panel);
+         panel.style.setProperty('display', display, priority);
       }
       this.activeTab = tab;
 
@@ -162,7 +209,7 @@ class Tabs {
    }
 
    _getPanelForTab(tab) {
-      return this.panels[tab.getAttribute('id')];
+      return this.panels.get(tab);
    }
 
    _resetActive() {
@@ -172,7 +219,7 @@ class Tabs {
          const panel = this._getPanelForTab(this.activeTab);
          if (panel) {
             panel.setAttribute(ARIA_HIDDEN, true);
-            hide(panel);
+            panel.style.setProperty('display', 'none', 'important');
          }
       }
    }
@@ -181,17 +228,19 @@ class Tabs {
       const nodes = getNodes(elements);
       if (nodes.length > 0) {
          const tabs = nodes.map((node) => {
-            if (!node[NAME]) {
-               node[NAME] = new Tabs(node, settings);
-               node[NAME].initialize();
+            let instance = node[NAME];
+            if (!instance) {
+               instance = new Tabs(node, settings);
+               node[NAME] = instance;
+               instance.initialize();
             }
             if (typeof settings === 'string') {
-               if (!node[NAME][settings]) {
+               if (!instance[settings]) {
                   throw new Error(`Invalid method name "${settings}"`);
                }
-               node[NAME][settings].call(node[NAME], argument);
+               instance[settings](argument);
             }
-            return node[NAME];
+            return instance;
          });
          return tabs;
       }

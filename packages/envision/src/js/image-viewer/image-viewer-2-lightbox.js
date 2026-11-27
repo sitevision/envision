@@ -32,6 +32,8 @@ export default class Imageviewer2Lightbox {
    #currentIndex = 0;
    #downloadButton;
    #callbacks;
+   #scrollLocked = false;
+   #closeTransition;
 
    constructor(element, settings, callbacks = {}) {
       this.#el = element;
@@ -77,7 +79,7 @@ export default class Imageviewer2Lightbox {
          captionEl = el.querySelector('figcaption, [data-figcaption]');
       }
       if (captionEl && captionEl.dataset.figcaption) {
-         caption = altEl.dataset.figcaption;
+         caption = captionEl.dataset.figcaption;
       } else if (captionEl && captionEl.tagName === 'FIGCAPTION') {
          caption = captionEl.textContent.trim();
       }
@@ -193,28 +195,34 @@ export default class Imageviewer2Lightbox {
       }
    }
 
-   fadeIn() {
-      this.#lightbox.addEventListener(
-         'transitionend',
-         (e) => {
-            e.currentTarget?.classList.remove(CLASSNAME.ANIMATING);
-         },
-         { once: true }
-      );
-      this.#lightbox.classList.add(CLASSNAME.ANIMATION, CLASSNAME.ANIMATING);
-   }
-
    showLightbox() {
       if (!this.#lightbox) {
          this.createLightbox();
          this.bindEvents();
       }
       this.#callbacks.onShow?.();
+      if (this.#lightbox.open) {
+         this.#closeTransition = undefined;
+         this.#lightbox.classList.add(CLASSNAME.ANIMATION);
+         this.loadImage();
+         return;
+      }
+      this.#finishClose();
       document.body.appendChild(this.#lightbox);
       this.loadImage();
       lockScroll();
-      this.#lightbox.showModal();
-      this.fadeIn();
+      this.#scrollLocked = true;
+      try {
+         this.#lightbox.showModal();
+      } catch (error) {
+         this.#finishClose();
+         throw error;
+      }
+      if (this.#lightbox.open) {
+         this.#lightbox.classList.add(CLASSNAME.ANIMATION);
+      } else {
+         this.#finishClose();
+      }
    }
 
    show(i) {
@@ -243,16 +251,42 @@ export default class Imageviewer2Lightbox {
 
    close() {
       // API Method
-      const fadeOutCallback = () => {
-         this.#lightbox.close();
-         this.#lightbox.remove();
-         unlockScroll();
-      };
-      this.#lightbox.addEventListener('transitionend', fadeOutCallback, {
-         once: true,
-      });
+      if (!this.#lightbox?.open) {
+         this.#finishClose();
+         return;
+      }
+      if (this.#closeTransition) {
+         return;
+      }
       this.#lightbox.classList.remove(CLASSNAME.ANIMATION);
+      const transition = this.#lightbox
+         .getAnimations()
+         .find((animation) => animation.transitionProperty === 'opacity');
+      if (!transition) {
+         this.#lightbox.close();
+         this.#finishClose();
+         return;
+      }
+      this.#closeTransition = transition;
+      const closeAfterTransition = () => {
+         if (this.#closeTransition === transition) {
+            this.#lightbox.close();
+            this.#finishClose();
+         }
+      };
+      transition.finished.then(closeAfterTransition, closeAfterTransition);
    }
+
+   #finishClose = () => {
+      if (!this.#scrollLocked || this.#lightbox.open) {
+         return;
+      }
+      this.#scrollLocked = false;
+      this.#closeTransition = undefined;
+      this.#lightbox.classList.remove(CLASSNAME.ANIMATION);
+      this.#lightbox.remove();
+      unlockScroll();
+   };
 
    getCurrentIndex() {
       return this.#currentIndex;
@@ -358,9 +392,7 @@ export default class Imageviewer2Lightbox {
             break;
          case 'Escape':
             e.preventDefault();
-            if (!this.#lightbox.classList.contains(CLASSNAME.ANIMATING)) {
-               this.close();
-            }
+            this.close();
             break;
          case 'Tab':
             if (e.shiftKey) {
@@ -386,6 +418,7 @@ export default class Imageviewer2Lightbox {
    };
 
    bindEvents() {
+      this.#lightbox.addEventListener('close', this.#finishClose);
       this.#lightbox.addEventListener('click', this.#handleClickInside);
       this.#lightbox.addEventListener('keydown', this.#handleKeydown);
       this.#lightbox.addEventListener('mouseenter', this.#handleLightboxActive);

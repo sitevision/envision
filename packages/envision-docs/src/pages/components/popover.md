@@ -223,7 +223,7 @@ if (popoverTooltipContentEl) {
    - Default value: `''`
 
 - `escapeContent` _boolean_
-   - Treat option `content` as text or HTML. If popover content is HTML, this needs to be set to `false`.
+   - Display `content` as text. To render trusted HTML, set `escapeContent: false` in JavaScript or `data-escape-content="false"` on the opener.
    - Default value: `true`
 
 - `trigger` _string_

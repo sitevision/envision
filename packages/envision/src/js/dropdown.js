@@ -76,15 +76,26 @@ class Dropdown {
       }
    }
 
-   show(focusIndex) {
-      focusIndex = focusIndex || 0;
+   show(focusIndex = 0) {
+      this.focusIndex = focusIndex;
+      if (this._popperRequest) {
+         if (this._popper) {
+            this.menuitems[focusIndex]?.focus();
+         }
+         return;
+      }
       this.button.setAttribute('aria-expanded', 'true');
       if (this.openInBody) {
          document.body.appendChild(this.menu);
       }
       show(this.menu);
       this._bindMenuEvents();
-      getPopper().then((createPopper) => {
+      const popperRequest = getPopper();
+      this._popperRequest = popperRequest;
+      popperRequest.then(async (createPopper) => {
+         if (this._popperRequest !== popperRequest) {
+            return;
+         }
          const placementEnd =
             this.button.dataset[PLACEMENT_DATA_ATTR] === 'end';
          const placement = placementEnd ? 'bottom-end' : 'bottom-start';
@@ -93,22 +104,22 @@ class Dropdown {
             this.menu,
             {
                placement: placement,
-               modifiers: {
-                  name: 'flip',
-                  enabled: false,
-               },
+               modifiers: [{ name: 'flip', enabled: false }],
             }
          );
-         this._popper.update();
-         setTimeout(() => {
-            this.menuitems[focusIndex].focus();
-         }, 1);
+         await this._popper.update();
+         if (this._popperRequest === popperRequest) {
+            this.menuitems[this.focusIndex]?.focus();
+         }
       });
    }
 
    hide() {
       this.button.setAttribute('aria-expanded', 'false');
       this._unbindMenuEvents();
+      this._popperRequest = undefined;
+      this._popper?.destroy();
+      this._popper = undefined;
       hide(this.menu);
       if (this.openInBody) {
          this.placeholder.insertAdjacentElement('afterend', this.menu);
